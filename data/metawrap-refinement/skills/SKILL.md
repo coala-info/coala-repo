@@ -1,8 +1,9 @@
 ---
 name: metawrap-refinement
-description: The `metawrap-refinement` skill provides a specialized workflow for the bin consolidation phase of metagenomic analysis.
+description: This tool consolidates and optimizes metagenomic bins from multiple binning predictions to produce a refined set of high-quality genomes. Use when user asks to refine metagenomic bins, consolidate binning outputs, or improve bin completion and contamination using CheckM.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-refinement
 

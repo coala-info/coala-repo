@@ -1,8 +1,9 @@
 ---
 name: perl-term-detect-software
-description: The `perl-term-detect-software` skill provides a programmatic way to identify which terminal emulator is currently running a script.
+description: This tool identifies the terminal emulator currently running a script and maps it to supported features like color depth and mouse protocols. Use when user asks to detect terminal software, check for TrueColor or Unicode support, or determine terminal emulator capabilities.
 homepage: https://metacpan.org/pod/Term::Detect::Software
 ---
+
 
 # perl-term-detect-software
 

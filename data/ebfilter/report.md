@@ -1,9 +1,9 @@
 # ebfilter CWL Generation Report
 
-## ebfilter
+## ebfilter_EBFilter
 
 ### Tool Description
-Empirical Bayesian mutation filtering tool. (Note: The provided text is a container runtime error log and does not contain the tool's help documentation or argument definitions.)
+EBFilter is a tool for filtering mutations based on read counts in target and control BAM files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ebfilter:0.2.2--pyh5ca1d4c_0
@@ -18,11 +18,31 @@ Empirical Bayesian mutation filtering tool. (Note: The provided text is a contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ebfilter:0.2.2--pyh5ca1d4c_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3273717012: no space left on device
+usage: EBFilter [-h] [--version] [-f {vcf,anno}] [-t thread_num]
+                [-q mapping_qual_thres] [-Q base_qual_thres]
+                [--ff filter_flags] [--loption] [--region REGION] [--debug]
+                target.vcf target.bam controlBam_list.txt output.vcf
+
+positional arguments:
+  target.vcf            the path to the mutation file
+  target.bam            the path to the target bam file
+  controlBam_list.txt   the list of paths to control bam files
+  output.vcf            the path to the output
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -f {vcf,anno}         the format of mutation file vcf or annovar (tsv)
+                        format
+  -t thread_num         the number of threads
+  -q mapping_qual_thres
+                        threshold for mapping quality for calculating base
+                        counts
+  -Q base_qual_thres    threshold for base quality for calculating base counts
+  --ff filter_flags     skip reads with mask bits set
+  --loption             use samtools mpileup -l option
+  --region REGION       restrict the chromosomal region for mutation. active
+                        only if loption is on
+  --debug               keep intermediate files
 ```
 
-
-## Metadata
-- **Skill**: generated

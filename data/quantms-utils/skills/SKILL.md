@@ -1,8 +1,9 @@
 ---
 name: quantms-utils
-description: The `quantms-utils` library provides a suite of command-line tools and Python helpers designed to support the quantms proteomics pipeline.
+description: quantms-utils provides a suite of command-line tools and Python helpers for proteomics data transformation, quality control metric extraction, and experimental design validation. Use when user asks to convert DIA-NN results to mzTab, extract mass spectrometry statistics into parquet files, validate SDRF sample sheets, or convert idXML files to CSV.
 homepage: https://www.github.com/bigbio/quantms-utils
 ---
+
 
 # quantms-utils
 

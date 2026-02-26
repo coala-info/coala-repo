@@ -1,8 +1,9 @@
 ---
 name: r-sceasy
-description: R package sceasy (documentation from project home).
+description: r-sceasy is an R package that converts single-cell data between formats such as Seurat, SingleCellExperiment, AnnData, and Loom. Use when user asks to convert Seurat objects to AnnData, transform SingleCellExperiment to Loom, or switch between R and Python single-cell data structures.
 homepage: https://cran.r-project.org/web/packages/sceasy/index.html
 ---
+
 
 # r-sceasy
 

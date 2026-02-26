@@ -2,15 +2,32 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mirfix_runMIRfix.sh
 label: mirfix_runMIRfix.sh
-doc: "MIRfix is a tool for miRNA sequence analysis and fixing. Note: The provided
-  help text contains only container runtime error messages and does not list specific
-  command-line arguments.\n\nTool homepage: https://github.com/Bierinformatik/MIRfix"
-inputs: []
+doc: "Running MIRfix with 1 cores, 10nt extension at --help\n\nTool homepage: https://github.com/Bierinformatik/MIRfix"
+inputs:
+  - id: cores
+    type:
+      - 'null'
+      - int
+    doc: number of cores
+    default: 1
+    inputBinding:
+      position: 101
+  - id: extension_length
+    type:
+      - 'null'
+      - int
+    doc: extension length in nt
+    default: 10
+    inputBinding:
+      position: 101
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Creating output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mirfix:2.1.1--hdfd78af_0
-stdout: mirfix_runMIRfix.sh.out

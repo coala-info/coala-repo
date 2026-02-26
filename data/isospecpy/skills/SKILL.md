@@ -1,8 +1,9 @@
 ---
 name: isospecpy
-description: The `isospecpy` skill provides a Python interface to the IsoSpec++ library, a hyperfast isotopic structure calculator.
+description: "isospecpy calculates the isotopic distribution and fine structure of molecules using the IsoSpec++ library. Use when user asks to calculate isotopic envelopes, determine mass spectrometry peak probabilities, or find the isotopic distribution of a chemical formula."
 homepage: http://matteolacki.github.io/IsoSpec/
 ---
+
 
 # isospecpy
 

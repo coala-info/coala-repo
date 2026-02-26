@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminamousev1p1.db
-description: the package is available on all platforms; click for details.
+description: This package provides biological annotation and re-annotation data for the Illumina Mouse v1.1 platform. Use when user asks to map Illumina Mouse v1.1 probe IDs to gene identifiers, retrieve probe sequences, or filter probes by quality metrics.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaMousev1p1.db.html
 ---
+
 
 # bioconductor-illuminamousev1p1.db
 

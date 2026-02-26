@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bayesknockdown
-description: the package is available on all platforms; click for details.
+description: This tool uses a Bayesian framework to estimate the posterior probability of regulatory relationships between a predictor gene and potential targets in genetic perturbation experiments. Use when user asks to estimate posterior probabilities of gene regulation, analyze knockdown or over-expression data, and perform differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/BayesKnockdown.html
 ---
+
 
 # bioconductor-bayesknockdown
 

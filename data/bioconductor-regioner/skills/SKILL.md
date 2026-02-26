@@ -1,8 +1,9 @@
 ---
 name: bioconductor-regioner
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical association analysis between sets of genomic regions using permutation tests. Use when user asks to test the significance of overlaps between genomic regions, perform permutation tests on genomic data, or evaluate spatial associations between region sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/regioneR.html
 ---
+
 
 # bioconductor-regioner
 

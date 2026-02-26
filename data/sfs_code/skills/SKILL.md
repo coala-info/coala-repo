@@ -1,8 +1,9 @@
 ---
 name: sfs_code
-description: The `sfs_code` tool is a forward-in-time population genetic simulator designed to model finite sites under complex evolutionary scenarios.
+description: sfs_code is a forward-in-time population genetic simulator that models finite sites under complex evolutionary scenarios including selection, linkage, and demography. Use when user asks to simulate synthetic genomic data, model natural selection and demographic shifts, or generate site frequency spectra under non-coalescent models.
 homepage: http://sfscode.sourceforge.net/SFS_CODE/index/index.html
 ---
+
 
 # sfs_code
 

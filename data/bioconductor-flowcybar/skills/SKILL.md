@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowcybar
-description: the package is available on all platforms; click for details.
+description: The flowCyBar package implements cytometric barcoding to analyze and visualize variations in cell abundance across gates in flow cytometry datasets. Use when user asks to normalize cell counts, create barcode heatmaps and boxplots, perform nonmetric multidimensional scaling, or correlate cell abundances with abiotic parameters.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowCyBar.html
 ---
+
 
 # bioconductor-flowcybar
 

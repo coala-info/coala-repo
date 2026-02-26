@@ -1,8 +1,9 @@
 ---
 name: perl-mce
-description: Perl-MCE (Many-Core Engine) provides a robust framework for parallelizing Perl scripts without the overhead of forking a new process for every data element.
+description: Perl-MCE provides a framework for parallelizing Perl scripts across multiple CPU cores using a bank-queuing model for efficient load balancing. Use when user asks to parallelize data processing, run loops in parallel, process large files using multiple cores, or implement multi-stage workflows in Perl.
 homepage: https://github.com/marioroy/mce-perl
 ---
+
 
 # perl-mce
 

@@ -1,8 +1,9 @@
 ---
 name: aquila_sv
-description: AquilaSV is a specialized bioinformatics pipeline designed to detect structural variants by performing local, phased diploid assemblies.
+description: AquilaSV detects structural variants by performing local, phased diploid assemblies from linked-read sequencing data. Use when user asks to detect structural variants, perform local phased assembly, or identify haplotype-specific genomic variations.
 homepage: https://github.com/maiziezhoulab/AquilaSV
 ---
+
 
 # aquila_sv
 

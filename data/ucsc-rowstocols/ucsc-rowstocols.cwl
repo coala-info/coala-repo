@@ -2,14 +2,36 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rowsToCols
 label: ucsc-rowstocols
-doc: "A UCSC utility to convert a file from rows to columns (transpose a matrix).\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Convert rows to columns (transpose a file).\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input
+    type: File
+    doc: Input file to be transposed.
+    inputBinding:
+      position: 1
+  - id: field_separator
+    type:
+      - 'null'
+      - string
+    doc: Use specified character as field separator.
+    default: tab
+    inputBinding:
+      position: 102
+      prefix: -fs
+  - id: var_col
+    type:
+      - 'null'
+      - boolean
+    doc: Allow variable number of columns.
+    inputBinding:
+      position: 102
+      prefix: -varCol
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type: File
+    doc: Output file where transposed data is written.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-rowstocols:482--h0b57e2e_0
-stdout: ucsc-rowstocols.out

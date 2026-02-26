@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgudkfz31.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the hguDKFZ31 platform to map manufacturer probe identifiers to biological annotations in R. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene IDs, find GO terms, or access KEGG pathway information for the hguDKFZ31 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguDKFZ31.db.html
 ---
+
 
 # bioconductor-hgudkfz31.db
 

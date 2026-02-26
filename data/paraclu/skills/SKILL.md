@@ -1,8 +1,9 @@
 ---
 name: paraclu
-description: Paraclu is a tool for finding clusters in data mapped to genomic sequences.
+description: Paraclu identifies clusters of signal in genomic sequence data by finding regions that are maximal with respect to density. Use when user asks to find transcription start site clusters, identify peaks in CAGE data, or find stable clusters in functional genomics assays.
 homepage: http://cbrc3.cbrc.jp/~martin/paraclu/
 ---
+
 
 # paraclu
 

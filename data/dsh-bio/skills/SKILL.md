@@ -1,8 +1,9 @@
 ---
 name: dsh-bio
-description: The `dsh-bio` suite provides a collection of high-performance command-line utilities for genomic data manipulation.
+description: The dsh-bio suite provides high-performance command-line utilities for genomic data manipulation and format conversion. Use when user asks to convert between genomic file formats, downsample FASTQ files, migrate GFA versions, or transform biological data into Parquet for big data applications.
 homepage: https://github.com/heuermh/dishevelled-bio
 ---
+
 
 # dsh-bio
 

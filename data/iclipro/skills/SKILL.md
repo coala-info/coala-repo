@@ -1,8 +1,9 @@
 ---
 name: iclipro
-description: The `iclipro` skill enables the diagnostic analysis of iCLIP data by examining how fragment length affects the positioning of fragment start sites.
+description: The iclipro tool analyzes iCLIP data to determine if fragment start sites or center positions should be used for high-resolution mapping of RNA-protein interactions. Use when user asks to analyze fragment length-dependent offsets, generate overlap heatmaps, or calculate start site overlap ratios for iCLIP libraries.
 homepage: http://www.biolab.si/iCLIPro/doc/
 ---
+
 
 # iclipro
 

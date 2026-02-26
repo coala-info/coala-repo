@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyexpress
-description: the package is available on all platforms; click for details.
+description: This package provides an integrated pipeline for quality control, preprocessing, and differential expression analysis of Affymetrix microarray data. Use when user asks to perform quality assessment, normalize raw data, filter probes, or identify significant genes using single-factor and interaction models.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AffyExpress.html
 ---
+
 
 # bioconductor-affyexpress
 

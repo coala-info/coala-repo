@@ -1,8 +1,9 @@
 ---
 name: spclust
-description: SpCLUST is a specialized tool for clustering divergent biological sequences.
+description: "SpCLUST clusters divergent biological sequences using a Gaussian Mixture Model and MUSCLE-based distance matrices. Use when user asks to cluster divergent sequences, calculate distance matrices with specific substitution matrices, or perform parallel sequence clustering using MPI."
 homepage: https://github.com/johnymatar/SpCLUST/
 ---
+
 
 # spclust
 

@@ -1,8 +1,9 @@
 ---
 name: pandoc
-description: Pandoc is a powerful command-line utility designed to translate one markup format into another.
+description: "Pandoc is a command-line utility that converts files between different markup and document formats. Use when user asks to convert documents between formats like Markdown, PDF, and DOCX, generate slide decks, or process academic citations and metadata."
 homepage: https://github.com/jgm/pandoc
 ---
+
 
 # pandoc
 

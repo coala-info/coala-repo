@@ -3,7 +3,7 @@
 ## checkatlas
 
 ### Tool Description
-A tool for quality control and checking of single-cell datasets. (Note: The provided text is a container build error log and does not contain CLI help information; therefore, no arguments could be extracted.)
+CheckAtlas is a one liner tool to check the quality of your single-cell atlases. For every atlas, it produces the quality control tables and figures which can be then processed by multiqc. CheckAtlas is able to load Scanpy, Seurat, and CellRanger files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/checkatlas:0.7.1--pyhdfd78af_0
@@ -18,14 +18,63 @@ A tool for quality control and checking of single-cell datasets. (Note: The prov
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/checkatlas:0.7.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3959031938/rootfs/usr/bin/bash: no space left on device
+usage: checkatlas [OPTIONS] process atlas_name your_search_folder/
+
+CheckAtlas is a one liner tool to check the quality of your single-cell
+atlases. For every atlas, it produces the quality control tables and figures
+which can be then processed by multiqc. CheckAtlas is able to load Scanpy,
+Seurat, and CellRanger files.
+
+positional arguments:
+  process               Required argument: Type of process to run among
+                        ['summary', 'qc', 'metric_cluster', 'metric_annot',
+                        'metric_dimred']
+  atlas_name            Required argument: The name of the atlas to
+                        process.Atlas_name should be found in one of the
+                        samplesheet provided tonf-checkatlas, or directly
+                        created by checkatlas.list_all_atlases() function
+  path                  Required argument: Your folder containing Scanpy,
+                        CellRanger and Seurat atlasesv
+
+options:
+  -h, --help            show this help message and exit
+  -d, --debug           Print out all debug messages.
+  -v, --version         Display checkatlas version.
+
+QC options:
+  --qc_display QC_DISPLAY [QC_DISPLAY ...]
+                        List of QC to display. Available qc = violin_plot,
+                        total_counts, n_genes_by_counts, pct_counts_mt.
+                        Default: --qc_display violin_plot total_counts
+                        n_genes_by_counts pct_counts_mt
+  --plot_celllimit PLOT_CELLLIMIT
+                        Set the maximum number of cellsto plot in QC, UMAP,
+                        t-SNE, etc....If plot_celllimit=0, no limit willbe
+                        applied.
+
+Metric options:
+  --obs_cluster OBS_CLUSTER [OBS_CLUSTER ...]
+                        List of obs from the adata file to use in the
+                        clustering metric calculus.Example: --obs_cluster
+                        celltype leuven seurat_clusters
+  --metric_cluster METRIC_CLUSTER [METRIC_CLUSTER ...]
+                        Specify the list of clustering metrics to calculate.
+                        Example: --metric_cluster silhouette davies_bouldin
+                        List of cluster metrics: ['silhouette',
+                        'davies_bouldin', 'calinski_harabasz']
+  --metric_annot METRIC_ANNOT [METRIC_ANNOT ...]
+                        Specify the list of clustering metrics to calculate.
+                        Example: --metric_annot rand_index List of annotation
+                        metrics: ['rand_index', 'fowlkes_mallow',
+                        'adj_mutual_info', 'vmeasure', 'dunn_index',
+                        'adj_rand_index', 'normalized_mutual_info',
+                        'mutual_info', 'isolated_f1_score']
+  --metric_dimred METRIC_DIMRED [METRIC_DIMRED ...]
+                        Specify the list of dimensionality reduction metrics
+                        to calculate. Example: --metric_dimred kruskal_stress
+                        List of dim. red. metrics: ['kruskal_stress',
+                        'spearman_rho', 'entourage']
+
+Enjoy the checkatlas functionality!
 ```
 
-
-## Metadata
-- **Skill**: generated

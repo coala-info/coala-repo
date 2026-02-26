@@ -1,8 +1,9 @@
 ---
 name: r-polynom
-description: "A collection of functions to implement a class for univariate   polynomial manipulations.</p>"
+description: This tool performs univariate polynomial manipulations in R using the polynom package. Use when user asks to create, evaluate, differentiate, integrate, perform arithmetic operations on polynomials, or calculate interpolating and orthogonal polynomials.
 homepage: https://cloud.r-project.org/web/packages/polynom/index.html
 ---
+
 
 # r-polynom
 

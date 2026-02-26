@@ -1,8 +1,9 @@
 ---
 name: phyloacc
-description: PhyloAcc is a Bayesian framework designed to identify genomic elements that have undergone changes in evolutionary constraints.
+description: PhyloAcc is a Bayesian framework that identifies genomic elements with accelerated evolutionary rates in specific lineages by comparing substitution rates across a phylogeny. Use when user asks to identify accelerated evolution in non-coding DNA, detect shifts in evolutionary constraints, or account for gene tree discordance when testing for rate changes.
 homepage: https://github.com/phyloacc/PhyloAcc
 ---
+
 
 # phyloacc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellmigration
-description: the package is available on all platforms; click for details.
+description: This tool tracks and analyzes cell movements over time from multi-stack TIFF images of fluorescent cells. Use when user asks to import TIFF files, optimize tracking parameters, compute cell tracks, and perform trajectory analysis including speed, directionality, and Mean Square Displacement.
 homepage: https://bioconductor.org/packages/release/bioc/html/cellmigRation.html
 ---
+
 
 # bioconductor-cellmigration
 

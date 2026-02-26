@@ -1,8 +1,9 @@
 ---
 name: seqprep-data
-description: SeqPrep is a specialized utility designed to handle the "read-through" problem in paired-end sequencing.
+description: SeqPrep trims adapter sequences from paired-end reads and merges overlapping reads into single, higher-quality sequences. Use when user asks to trim adapters from sequencing data, merge overlapping paired-end reads, or handle read-through in short DNA fragments.
 homepage: https://github.com/jstjohn/SeqPrep
 ---
+
 
 # seqprep-data
 

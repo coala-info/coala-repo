@@ -1,8 +1,9 @@
 ---
 name: peptide-shaker
-description: PeptideShaker is a search engine-independent platform designed to aggregate and refine proteomics data.
+description: PeptideShaker aggregates and refines proteomics data by combining results from multiple search engines into a statistically validated identification set. Use when user asks to process search results, perform protein inference, re-score PTM localizations, or generate standardized proteomics reports.
 homepage: https://compomics.github.io/projects/peptide-shaker.html
 ---
+
 
 # peptide-shaker
 

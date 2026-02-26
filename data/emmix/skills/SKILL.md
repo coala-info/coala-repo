@@ -1,8 +1,9 @@
 ---
 name: emmix
-description: The `emmix` (EMMIXmfa) skill provides a specialized workflow for clustering multivariate data by adopting component-wise factor analyzers.
+description: The emmix tool performs clustering of high-dimensional multivariate data using finite mixture models with component-wise factor analyzers. Use when user asks to cluster high-dimensional data, fit mixture of factor analyzers, perform robust clustering with t-distributions, or visualize data in a reduced factor space.
 homepage: https://github.com/suren-rathnayake/EMMIXmfa
 ---
+
 
 # emmix
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-imcdatasets
-description: the package is available on all platforms; click for details.
+description: The imcdatasets package provides access to curated, publicly available Imaging Mass Cytometry datasets including single-cell data, raw images, and segmentation masks. Use when user asks to list available IMC datasets, retrieve single-cell expression data, download multichannel images or masks, or access dataset metadata for downstream analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/imcdatasets.html
 ---
+
 
 # bioconductor-imcdatasets
 

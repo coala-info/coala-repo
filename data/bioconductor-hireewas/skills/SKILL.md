@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hireewas
-description: the package is available on all platforms; click for details.
+description: HIREewas deconvolutes bulk methylation data into cell-type-specific signals to identify associations between phenotypes and specific cell types. Use when user asks to perform cell-type-specific epigenome-wide association studies, estimate cell type proportions, or identify which cell types drive differential methylation.
 homepage: https://bioconductor.org/packages/release/bioc/html/HIREewas.html
 ---
+
 
 # bioconductor-hireewas
 

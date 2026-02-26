@@ -1,8 +1,9 @@
 ---
 name: cmat
-description: The ClinVar Mapping and Annotation Toolkit (CMAT) is a specialized suite of tools designed to parse, enrich, and standardize ClinVar XML data.
+description: The ClinVar Mapping and Annotation Toolkit parses, enriches, and standardizes ClinVar XML data by mapping variants to genes and clinical traits to ontology terms. Use when user asks to annotate ClinVar records, generate spreadsheets for manual trait curation, or export curated results back into master mapping files.
 homepage: https://github.com/EBIvariation/CMAT
 ---
+
 
 # cmat
 

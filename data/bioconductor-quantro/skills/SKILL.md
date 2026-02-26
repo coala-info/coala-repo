@@ -1,8 +1,9 @@
 ---
 name: bioconductor-quantro
-description: the package is available on all platforms; click for details.
+description: This tool provides a data-driven test to determine if global normalization methods are appropriate for a given dataset. Use when user asks to test for global differences between groups, assess the suitability of quantile normalization, or evaluate normalization assumptions across experimental conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/quantro.html
 ---
+
 
 # bioconductor-quantro
 

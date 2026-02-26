@@ -1,8 +1,9 @@
 ---
 name: svim-asm
-description: `svim-asm` is a specialized tool for detecting large genomic rearrangements (typically >50bp) by comparing assembled contigs to a reference genome.
+description: svim-asm detects large structural variants by comparing assembled genomic contigs to a reference genome. Use when user asks to call structural variants from assemblies, identify genomic rearrangements like deletions or inversions, or process assembly-to-reference alignments.
 homepage: https://github.com/eldariont/svim-asm
 ---
+
 
 # svim-asm
 

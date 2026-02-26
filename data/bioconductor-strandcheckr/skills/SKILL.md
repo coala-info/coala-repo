@@ -1,8 +1,9 @@
 ---
 name: bioconductor-strandcheckr
-description: the package is available on all platforms; click for details.
+description: strandCheckR assesses and visualizes the strand specificity of RNA-seq data to ensure library quality. Use when user asks to check strand specificity, verify library preparation, or identify the strandedness of sequencing reads.
 homepage: https://bioconductor.org/packages/release/bioc/html/strandCheckR.html
 ---
+
 
 # bioconductor-strandcheckr
 

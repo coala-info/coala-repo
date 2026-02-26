@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tcseq
-description: the package is available on all platforms; click for details.
+description: TCseq provides tools for the analysis and clustering of time course sequencing data. Use when user asks to analyze temporal patterns in sequencing data, perform differential expression analysis over time, or cluster genomic signals into longitudinal profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/TCseq.html
 ---
+
 
 # bioconductor-tcseq
 

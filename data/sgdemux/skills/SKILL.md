@@ -1,8 +1,9 @@
 ---
 name: sgdemux
-description: sgdemux is a specialized utility designed for the high-performance demultiplexing of sequencing runs from the Singular Genomics G4 platform.
+description: sgdemux demultiplexes sequencing runs from the Singular Genomics G4 platform by assigning reads to samples based on barcode metadata and read structures. Use when user asks to demultiplex G4 sequencing data, process BGZF FASTQ files, or assign reads to samples using dual-indexing and UMIs.
 homepage: https://github.com/Singular-Genomics/singular-demux
 ---
+
 
 # sgdemux
 

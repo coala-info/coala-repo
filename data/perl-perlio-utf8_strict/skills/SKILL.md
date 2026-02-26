@@ -1,8 +1,9 @@
 ---
 name: perl-perlio-utf8_strict
-description: This skill provides guidance on implementing the `PerlIO::utf8_strict` layer in Perl applications.
+description: This tool provides a fast, strict UTF-8 PerlIO layer that validates and enforces correct UTF-8 encoding during file input and output operations. Use when user asks to implement strict UTF-8 validation, replace the standard Perl utf8 layer for better performance, or prevent malformed character sequences in data processing.
 homepage: https://metacpan.org/pod/PerlIO::utf8_strict
 ---
+
 
 # perl-perlio-utf8_strict
 

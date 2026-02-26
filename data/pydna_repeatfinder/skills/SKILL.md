@@ -1,8 +1,9 @@
 ---
 name: pydna_repeatfinder
-description: `pydna_repeatfinder` is a specialized tool for the rapid detection of repetitive DNA sequences.
+description: pydna_repeatfinder detects direct and inverted repetitive DNA sequences in genomic data. Use when user asks to find repeats in a FASTA file, generate GenBank repeat annotations, or identify repetitive sequences using Python.
 homepage: https://github.com/linsalrob/repeatfinder
 ---
+
 
 # pydna_repeatfinder
 

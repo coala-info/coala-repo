@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cadd.v1.6.hg19
-description: the package is available on all platforms; click for details.
+description: This tool retrieves CADD v1.6 pathogenicity scores for human genetic variants using the hg19 genome assembly. Use when user asks to annotate genomic coordinates with pathogenicity scores, prioritize functional variants, or retrieve CADD scores for specific alleles.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cadd.v1.6.hg19.html
 ---
+
 
 # bioconductor-cadd.v1.6.hg19
 

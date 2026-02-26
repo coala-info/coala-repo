@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanv2beadid.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Illumina Humanv2 BeadID identifiers to biological features and genomic locations. Use when user asks to map BeadIDs to gene symbols, retrieve functional annotations like GO terms or KEGG pathways, or find chromosomal locations for Illumina Humanv2 platform identifiers.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2BeadID.db.html
 ---
+
 
 # bioconductor-illuminahumanv2beadid.db
 

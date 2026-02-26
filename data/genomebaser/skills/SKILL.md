@@ -1,8 +1,9 @@
 ---
 name: genomebaser
-description: GenomeBaser is a specialized utility for synchronizing bacterial genomic data from NCBI RefSeq.
+description: GenomeBaser synchronizes and organizes bacterial genomic data from NCBI RefSeq into standardized, human-readable directory structures. Use when user asks to download complete bacterial genomes, synchronize local genomic databases using rsync, or organize RefSeq files into genus-species-strain formats for downstream analysis.
 homepage: https://github.com/mscook/GenomeBaser
 ---
+
 
 # genomebaser
 

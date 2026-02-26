@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcg110probe
-description: the package is available on all platforms; click for details.
+description: This package provides sequence-level data and array coordinates for the Affymetrix hcg110 microarray chip. Use when user asks to retrieve probe sequences, access x/y coordinates, or perform sequence-level analysis for the hcg110 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hcg110probe.html
 ---
+
 
 # bioconductor-hcg110probe
 

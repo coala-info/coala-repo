@@ -3,7 +3,7 @@
 ## probcons
 
 ### Tool Description
-Probabilistic Consistency-based Multiple Sequence Alignment
+PROBCONS is a tool for generating multiple alignments of protein sequences. It uses a combination of probabilistic modeling and consistency-based alignment techniques.
 
 ### Metadata
 - **Docker Image**: biocontainers/probcons:v1.12-12-deb_cv1
@@ -12,19 +12,23 @@ Probabilistic Consistency-based Multiple Sequence Alignment
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/probcons/overview
-- **Total Downloads**: 70.1K
+- **Total Downloads**: 70.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/probcons:v1.12-12-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'biocontainers/probcons:v1.12-12-deb_cv1' locally
+v1.12-12-deb_cv1: Pulling from biocontainers/probcons
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+ba94e8c739ae: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1029264816: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

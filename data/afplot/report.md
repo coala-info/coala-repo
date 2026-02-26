@@ -1,9 +1,9 @@
 # afplot CWL Generation Report
 
-## afplot_build
+## afplot_regions
 
 ### Tool Description
-A tool or script for building a SIF (Singularity Image Format) container for afplot from an OCI/Docker image.
+Create plots for regions of interest for one VCF. Plots will be colored on call type (het/hom_alt/hom_ref). Your VCF file MUST contain an AD column in the FORMAT field, have contig names and lengths in the header, and be indexed with tabix.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/afplot:0.2.1--py36h24bf2e0_1
@@ -15,52 +15,67 @@ A tool or script for building a SIF (Singularity Image Format) container for afp
 - **Total Downloads**: 8.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/sndrtj/afplot
-- **Stars**: 11
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 13:05:55  warn rootless{dev/random} creating empty file in place of device 1:8
-2026/02/05 13:05:55  warn rootless{dev/full} creating empty file in place of device 1:7
-2026/02/05 13:05:55  warn rootless{dev/urandom} creating empty file in place of device 1:9
-2026/02/05 13:05:55  warn rootless{dev/tty} creating empty file in place of device 5:0
-2026/02/05 13:05:55  warn rootless{dev/null} creating empty file in place of device 1:3
-2026/02/05 13:05:55  warn rootless{dev/zero} creating empty file in place of device 1:5
-2026/02/05 13:05:57  warn rootless{usr/local/man} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
-FATAL:   Unable to handle docker://quay.io/biocontainers/afplot:0.2.1--py36h24bf2e0_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:04cb4c0c7760a35771d929faf697e001f2861e2a5ed6ae95c2b30251ded53330: unpack entry: usr/local/bin/bcftools: unpack to regular file: short write: write /tmp/build-temp-2518558666/rootfs/usr/local/bin/bcftools: no space left on device
+Usage: afplot regions [OPTIONS] COMMAND [ARGS]...
+
+  Create plots for regions of interest for one VCF.
+
+  Plots will be colored on call type (het/hom_alt/hom_ref).
+
+  Your VCF file *MUST* contain an AD column in the FORMAT field. Your VCF
+  file *MUST* have contig names and lengths placed in the header. Your VCF
+  file *MUST* be indexed with tabix.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  distance   Region distance plot
+  histogram  Region histogram
+  scatter    Region scatter plot
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## afplot
+## afplot_whole-genome
 
 ### Tool Description
-A tool for plotting allele frequencies from VCF files (Note: The provided text is a container execution error log and does not contain help documentation).
+Create whole-genome plots for one or multiple VCFs. If only one VCF is supplied, plots will be colored on call type (het/hom_ref/hom_alt). If multiple VCF files are supplied, plots will be colored per file/label. Only one sample per VCF file can be plotted.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/afplot:0.2.1--py36h24bf2e0_1
 - **Homepage**: https://github.com/sndrtj/afplot
 - **Package**: https://anaconda.org/channels/bioconda/packages/afplot/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 13:07:19  warn rootless{dev/random} creating empty file in place of device 1:8
-2026/02/05 13:07:19  warn rootless{dev/full} creating empty file in place of device 1:7
-2026/02/05 13:07:19  warn rootless{dev/urandom} creating empty file in place of device 1:9
-2026/02/05 13:07:19  warn rootless{dev/tty} creating empty file in place of device 5:0
-2026/02/05 13:07:19  warn rootless{dev/null} creating empty file in place of device 1:3
-2026/02/05 13:07:19  warn rootless{dev/zero} creating empty file in place of device 1:5
-2026/02/05 13:07:21  warn rootless{usr/local/man} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
-FATAL:   Unable to handle docker://quay.io/biocontainers/afplot:0.2.1--py36h24bf2e0_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:04cb4c0c7760a35771d929faf697e001f2861e2a5ed6ae95c2b30251ded53330: unpack entry: usr/local/bin/bcftools: unpack to regular file: short write: write /tmp/build-temp-1869178092/rootfs/usr/local/bin/bcftools: no space left on device
+Usage: afplot whole-genome [OPTIONS] COMMAND [ARGS]...
+
+  Create whole-genome plots for one or multiple VCFs.
+
+  If only one VCF is supplied, plots will be colored on call type
+  (het/hom_ref/hom_alt). If multiple VCF files are supplied, plots will be
+  colored per file/label. Only *one* sample per VCF file can be plotted.
+
+  Your VCF file *MUST* contain an AD column in the FORMAT field. Your VCF
+  file *MUST* have contig names and lengths placed in the header. Your VCF
+  file *MUST* be indexed with tabix.
+
+  VCF files preferably have the same contigs, i.e. they are produced with
+  the same reference. If this is not the case, this script will select the
+  vcf file with the largest number of contigs.
+
+  You may exclude contigs by supplying a regex pattern to the -e parameter.
+  This parameter may be repeated.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  distance   Whole-genome distance plot
+  histogram  Whole-genome histogram
+  scatter    Whole-genome scatter plot
 ```
 

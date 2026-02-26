@@ -1,8 +1,9 @@
 ---
 name: r-r4cker
-description: R package r4cker (documentation from project home).
+description: The r4cker package provides a pipeline for identifying interaction domains in 4C-Seq data using adaptive windowing and Hidden Markov Models. Use when user asks to identify high-interaction domains near the bait, analyze cis or trans interactions, or perform differential analysis between 4C-Seq conditions.
 homepage: https://cran.r-project.org/web/packages/r4cker/index.html
 ---
+
 
 # r-r4cker
 

@@ -1,8 +1,9 @@
 ---
 name: perl-ipc-run3
-description: The `IPC::Run3` module provides a simple, "Perlish" interface for running child processes.
+description: The IPC::Run3 module provides a simple interface for executing child processes with redirected input and output streams. Use when user asks to run subprocesses, capture standard output or error to variables, or redirect streams to files and arrays in Perl.
 homepage: http://metacpan.org/pod/IPC::Run3
 ---
+
 
 # perl-ipc-run3
 

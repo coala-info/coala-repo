@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg17
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the hg17 assembly of the human genome as Biostrings objects. Use when user asks to load hg17 sequences, extract specific genomic regions, or perform genome-wide motif searching on the May 2004 human assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg17.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg17
 

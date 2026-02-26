@@ -1,8 +1,9 @@
 ---
 name: ibdne
-description: The ibdne skill provides a specialized workflow for estimating the historical effective population size ($N_e$) of specific ancestral components within an admixed population.
+description: The ibdne tool estimates the historical effective population size of specific ancestral components within an admixed population by integrating local ancestry inference with IBD segment analysis. Use when user asks to reconstruct demographic histories for distinct lineages, estimate ancestral effective population size, or analyze IBD segments in admixed cohorts.
 homepage: https://github.com/hennlab/AS-IBDNe
 ---
+
 
 # ibdne
 

@@ -1,8 +1,9 @@
 ---
 name: gfviewer
-description: The `gfviewer` skill enables the automated generation of genomic visualization plots.
+description: gfviewer generates automated genomic visualization plots from tabular gene family data and sequence length information. Use when user asks to visualize gene family distributions, identify gene clusters or tandem duplications, and plot chromosome maps with centromeric regions.
 homepage: https://github.com/sakshar/GFViewer
 ---
+
 
 # gfviewer
 

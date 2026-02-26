@@ -1,9 +1,9 @@
 # pmlst CWL Generation Report
 
-## pmlst
+## pmlst_pmlst.py
 
 ### Tool Description
-The provided text does not contain help information for the tool 'pmlst'. It appears to be an error log from a container build process (Singularity/Apptainer).
+Perform pMLST prediction on FASTA or FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0
@@ -18,33 +18,31 @@ The provided text does not contain help information for the tool 'pmlst'. It app
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pmlst.py [-h] -i INFILE [INFILE ...] [-o OUTDIR] -s SCHEME
+                [-p DATABASE] [-t TMP_DIR] [-mp METHOD_PATH] [-x] [-q]
 
-
-## Metadata
-- **Skill**: generated
-
-## pmlst_pmlst.py
-
-### Tool Description
-The provided text does not contain help information for pmlst_pmlst.py; it is a log of a container build failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0
-- **Homepage**: https://bitbucket.org/genomicepidemiology/pmlst
-- **Package**: https://anaconda.org/channels/bioconda/packages/pmlst/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pmlst:2.0.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INFILE [INFILE ...], --infile INFILE [INFILE ...]
+                        FASTA or FASTQ files to do pMLST on.
+  -o OUTDIR, --outdir OUTDIR
+                        Output directory.
+  -s SCHEME, --scheme SCHEME
+                        scheme database used for pMLST prediction
+  -p DATABASE, --database DATABASE
+                        Directory containing the databases.
+  -t TMP_DIR, --tmp_dir TMP_DIR
+                        Temporary directory for storage of the results from
+                        the external software.
+  -mp METHOD_PATH, --method_path METHOD_PATH
+                        Path to the method to use (kma or blastn) if assembled
+                        contigs are inputted the path to executable blastn
+                        should be given, if fastq files are given path to
+                        executable kma should be given
+  -x, --extented_output
+                        Give extented output with allignment files, template
+                        and query hits in fasta and a tab seperated file with
+                        allele profile results
+  -q, --quiet
 ```
 

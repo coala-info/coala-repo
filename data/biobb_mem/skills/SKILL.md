@@ -1,8 +1,9 @@
 ---
 name: biobb_mem
-description: The `biobb_mem` module is a specialized component of the BioExcel Building Blocks (BioBB) ecosystem dedicated to membrane biology.
+description: The biobb_mem module provides a standardized interface for performing membrane characterization tasks such as identifying lipid leaflets and calculating structural properties. Use when user asks to calculate membrane thickness, determine area per lipid, analyze lipid tail order parameters, or detect lipid flip-flop events.
 homepage: https://github.com/bioexcel/biobb_mem
 ---
+
 
 # biobb_mem
 

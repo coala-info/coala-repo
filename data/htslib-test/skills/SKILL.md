@@ -1,8 +1,9 @@
 ---
 name: htslib-test
-description: HTSlib is the foundational C library for processing genomic data formats.
+description: HTSlib-test provides standalone utilities for identifying, compressing, and indexing genomic data files. Use when user asks to identify file formats, compress files with bgzip, or index and query tab-delimited genomic files using tabix.
 homepage: https://github.com/samtools/htslib
 ---
+
 
 # htslib-test
 

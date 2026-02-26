@@ -1,8 +1,9 @@
 ---
 name: idemuxcpp
-description: idemuxcpp is a high-performance C++ tool used to demultiplex sequencing data based on various index types.
+description: idemuxcpp is a high-performance C++ tool used to demultiplex sequencing data based on various index types. Use when user asks to demultiplex FASTQ files, process Lexogen 12nt Unique Dual Indices, handle inline barcodes, or auto-detect i5 index orientation.
 homepage: https://github.com/Lexogen-Tools/idemuxcpp
 ---
+
 
 # idemuxcpp
 

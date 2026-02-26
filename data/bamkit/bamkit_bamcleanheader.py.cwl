@@ -2,10 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bamkit_bamcleanheader.py
 label: bamkit_bamcleanheader.py
-doc: "A tool for cleaning BAM headers. (Note: The provided help text contains system
-  error messages regarding container image extraction and disk space, rather than
-  tool usage information.)\n\nTool homepage: https://github.com/hall-lab/bamkit"
-inputs: []
+doc: "remove illegal and malformed fields from a BAM file's header\n\nTool homepage:
+  https://github.com/hall-lab/bamkit"
+inputs:
+  - id: input
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: SAM/BAM file to inject header lines into. If '-' or absent then 
+      defaults to stdin.
+    inputBinding:
+      position: 1
+  - id: is_sam
+    type:
+      - 'null'
+      - boolean
+    doc: input is SAM
+    inputBinding:
+      position: 102
+      prefix: --is_sam
 outputs:
   - id: stdout
     type: stdout

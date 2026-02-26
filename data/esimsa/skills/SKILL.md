@@ -1,8 +1,9 @@
 ---
 name: esimsa
-description: `esimsa` is a specialized utility for the deconvolution of ESI-MS data.
+description: esimsa is a utility for the deconvolution of ESI-MS data that identifies charge states by measuring the distance between isotopic peaks. Use when user asks to deconvolute mass spectrometry data, determine neutral masses from peak lists, or process ESI-MS spectra using isotopic resolution.
 homepage: http://www.ms-utils.org/esimsa.html
 ---
+
 
 # esimsa
 

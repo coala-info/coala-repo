@@ -1,8 +1,9 @@
 ---
 name: cnvkit
-description: CNVkit is a comprehensive toolkit for inferring copy number changes from DNA sequencing.
+description: CNVkit is a comprehensive toolkit for inferring and visualizing copy number changes from DNA sequencing data using both on-target and off-target reads. Use when user asks to detect copy number variations, run a somatic batch pipeline, normalize sequencing coverage, or export copy number calls to VCF format.
 homepage: https://github.com/etal/cnvkit
 ---
+
 
 # cnvkit
 

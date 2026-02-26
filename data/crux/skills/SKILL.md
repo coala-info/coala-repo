@@ -1,8 +1,9 @@
 ---
 name: crux
-description: Crux is a framework designed to centralize application business logic and behavior in a single, side-effect-free Rust "Core." By strictly separating pure logic from platform-specific side effects, Crux allows developers to write complex behavior once and project it onto thin, native "Shells" (SwiftUI, Jetpack Compose, React).
+description: Crux is a Rust framework that centralizes application business logic in a platform-agnostic core while delegating side effects to native shells. Use when user asks to share business logic across mobile and web platforms, implement a unidirectional data flow in Rust, or separate pure application logic from platform-specific side effects.
 homepage: https://github.com/redbadger/crux
 ---
+
 
 # crux
 

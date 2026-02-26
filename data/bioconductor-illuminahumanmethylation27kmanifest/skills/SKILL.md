@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation27kmanifest
-description: the package is available on all platforms; click for details.
+description: This package provides the manifest object containing the array design and probe metadata for the Illumina HumanMethylation27 microarray. Use when user asks to process 27k DNA methylation data, map probes to the 27k platform, or load manifest structures for use with minfi and methylumi.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27kmanifest.html
 ---
+
 
 # bioconductor-illuminahumanmethylation27kmanifest
 

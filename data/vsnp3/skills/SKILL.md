@@ -1,8 +1,9 @@
 ---
 name: vsnp3
-description: vSNP3 is a specialized tool for high-resolution pathogen surveillance that identifies strain differences down to the single nucleotide level.
+description: vSNP3 is a specialized tool for high-resolution pathogen surveillance, identifying strain differences down to the single nucleotide level and generating comparative analyses. Use when user asks to process individual pathogen samples, align reads, call SNPs, generate comparative SNP matrices, create phylogenetic trees, classify pathogen strains, or identify mixed pathogen infections.
 homepage: https://github.com/USDA-VS/vsnp3
 ---
+
 
 # vsnp3
 

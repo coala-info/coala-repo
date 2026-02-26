@@ -1,9 +1,9 @@
 # revbayes CWL Generation Report
 
-## revbayes
+## revbayes_rb
 
 ### Tool Description
-RevBayes is a software for Bayesian phylogenetic inference. (Note: The provided text appears to be a container build error log rather than the tool's help text, so no arguments could be extracted.)
+Bayesian phylogenetic inference using probabilistic graphical models and an interpreted language
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/revbayes:1.3.2--hf316886_0
@@ -18,33 +18,26 @@ RevBayes is a software for Bayesian phylogenetic inference. (Note: The provided 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/revbayes:1.3.2--hf316886_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Bayesian phylogenetic inference using probabilistic graphical models and an 
+interpreted language 
 
+Usage: rb [options]
+       rb [options] file [args]
+       rb [options] -e expr [-e expr2 ...] [args]
 
-## Metadata
-- **Skill**: generated
+OPTIONS:
+  -h,      --help                  Print this help message and exit 
+  -v,      --version               Show version and exit 
+  -j,      --jupyter               Run in jupyter mode 
+  -q,      --quiet                 Hide startup message (if no file or -e expr) 
+  -i,      --interactive           Force interactive (with file or -e expr) 
+  -c,      --continue              Continue after error (with file or -e expr) 
+  -s,      --seed UINT             Random seed (unsigned integer) 
+  -o,      --setOption TEXT ...    Set an option key=value (See ?setOption for 
+                                   the list of available keys and their 
+                                   associated values) 
 
-## revbayes_rb
-
-### Tool Description
-RevBayes is a software for Bayesian phylogenetic inference. (Note: The provided help text contains container build errors and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/revbayes:1.3.2--hf316886_0
-- **Homepage**: https://revbayes.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/revbayes/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/revbayes:1.3.2--hf316886_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Expressions (one or more '-e <expr>') may be used *instead* of 'file'. 
+See http://revbayes.github.io for more information.
 ```
 

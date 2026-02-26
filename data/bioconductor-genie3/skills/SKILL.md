@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genie3
-description: the package is available on all platforms; click for details.
+description: This tool infers directed gene regulatory networks from gene expression data using tree-based ensemble methods like Random Forest or Extra-Trees. Use when user asks to infer gene regulatory networks, identify regulatory links between transcription factors and target genes, or rank regulatory interactions based on expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/GENIE3.html
 ---
+
 
 # bioconductor-genie3
 

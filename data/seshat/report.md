@@ -1,9 +1,9 @@
 # seshat CWL Generation Report
 
-## seshat_build
+## seshat_find-in-gmail
 
 ### Tool Description
-A tool for converting OCI blobs to SIF format and building container images.
+Finds emails in Gmail and annotates them.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0
@@ -12,61 +12,118 @@ A tool for converting OCI blobs to SIF format and building container images.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/seshat/overview
-- **Total Downloads**: 482
+- **Total Downloads**: 484
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/clintval/tp53
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2d8624ddd0a42f1472af64cae65d1519ef00f4af8964d81debc4e787592297aa: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-2925134764/rootfs/usr/local/bin/python3.13: no space left on device
+required
+  -i, --input  <arg>         The path to the input VCF file.
+  -o, --output  <arg>        The output path prefix for writing annotations.
+
+ optional
+  -c, --credentials  <arg>   The Google OAuth credentials JSON.
+  -n, --newer-than  <arg>    Only consider emails that arrived <= hours.
+                             (default: 10).
+  -w, --wait-for  <arg>      How long to wait for Seshat to email in seconds.
+                             (default: 200)
+
+  -h, --help                 Show help message
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## seshat
+## seshat_merge
 
 ### Tool Description
-Seshat is a tool for the annotation of TP53 variants.
+Merge VCF files with annotations.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0
 - **Homepage**: https://github.com/clintval/tp53
 - **Package**: https://anaconda.org/channels/bioconda/packages/seshat/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2d8624ddd0a42f1472af64cae65d1519ef00f4af8964d81debc4e787592297aa: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-2625870665/rootfs/usr/local/bin/python3.13: no space left on device
+required
+  -i, --input  <arg>         The path to the input VCF file.
+  -a, --annotations  <arg>   The annotation text file output from Seshat.
+  -o, --output  <arg>        The path to the output VCF file.
+
+  -h, --help                 Show help message
 ```
 
-## seshat_bcftools
+
+## seshat_round-trip
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a system error log indicating a failed container build due to insufficient disk space ('no space left on device').
+Seshat round-trip annotation tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0
 - **Homepage**: https://github.com/clintval/tp53
 - **Package**: https://anaconda.org/channels/bioconda/packages/seshat/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2d8624ddd0a42f1472af64cae65d1519ef00f4af8964d81debc4e787592297aa: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-4229512763/rootfs/usr/local/bin/python3.13: no space left on device
+required
+  -i, --input  <arg>              The path to the input VCF file.
+  -o, --output  <arg>             The output path prefix for the annotations and
+                                  annotated VCF.
+  -e, --email  <arg>              The email address for delivering Seshat
+                                  annotations.
+
+ optional
+  -a, --assembly  <arg>           The human genome assembly of the input VCF.
+                                  Available options: (hg17, hg19, hg38).
+                                  (default: hg38).
+      --annotation-type  <arg>    The annotation text file output from Seshat.
+                                  Available options: (short, long).
+                                  (default: long).
+  -u, --url  <arg>                The Seshat batch annotation URL.
+                                  (default:
+                                  http://vps338341.ovh.net/batch_analysis).
+  -w, --wait-for-upload  <arg>    Seconds to wait before raising an exception.
+                                  (default: 200).
+      --wait-for-email  <arg>     How long to wait for Seshat to email in
+                                  seconds.
+                                  (default: 200)
+  -n, --newer-than-email  <arg>   Only consider emails that arrived <= hours.
+                                  (default: 10).
+  -c, --credentials  <arg>        The Google OAuth credentials JSON.
+
+  -h, --help                      Show help message
+```
+
+
+## seshat_upload-vcf
+
+### Tool Description
+Uploads a VCF file to Seshat for annotation.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/seshat:0.10.0--py313hdfd78af_0
+- **Homepage**: https://github.com/clintval/tp53
+- **Package**: https://anaconda.org/channels/bioconda/packages/seshat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+required
+  -i, --input  <arg>      The path to the input VCF file.
+  -e, --email  <arg>      The email address for delivering Seshat annotations.
+
+ optional
+  -u, --url  <arg>        The Seshat batch annotation URL.
+                          (default: http://vps338341.ovh.net/batch_analysis).
+  -w, --wait-for  <arg>   Seconds to wait before raising an exception.
+                          (default: 200).
+
+  -a, --assembly  <arg>   The human genome assembly of the input VCF.
+                          Available options: (hg17, hg19, hg38).
+                          (default: hg38).
+  -h, --help              Show help message
 ```
 

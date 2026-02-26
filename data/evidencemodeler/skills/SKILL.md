@@ -1,8 +1,9 @@
 ---
 name: evidencemodeler
-description: EVidenceModeler (EVM) serves as a consensus builder for genome annotation.
+description: EVidenceModeler integrates diverse gene predictions and evidence types into a single consensus genome annotation. Use when user asks to combine ab initio predictions, protein homology, and transcript assemblies into a best-fit gene structure or partition large genomes for parallel annotation processing.
 homepage: https://github.com/EVidenceModeler/EVidenceModeler
 ---
+
 
 # evidencemodeler
 

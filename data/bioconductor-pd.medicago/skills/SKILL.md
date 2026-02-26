@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.medicago
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Medicago truncatula genome array. Use when user asks to access annotation data for Medicago microarrays, analyze Medicago truncatula expression data, or build platform design objects for the Medicago genome array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.medicago.html
 ---
+
 
 # bioconductor-pd.medicago
 

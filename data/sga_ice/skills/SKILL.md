@@ -1,8 +1,9 @@
 ---
 name: sga_ice
-description: SGA-ICE (SGA-Iteratively Correcting Errors) is a specialized pipeline designed to maximize the accuracy of long Illumina sequencing reads.
+description: SGA-ICE generates a shell script to perform iterative k-mer and overlap-based error correction on Illumina sequencing reads using the String Graph Assembler. Use when user asks to correct errors in sequencing reads, generate an SGA error correction pipeline, or improve the accuracy of long Illumina reads.
 homepage: https://github.com/hillerlab/IterativeErrorCorrection
 ---
+
 
 # sga_ice
 

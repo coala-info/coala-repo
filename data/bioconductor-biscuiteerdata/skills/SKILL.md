@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biscuiteerdata
-description: the package is available on all platforms; click for details.
+description: This package provides essential genomic datasets and resources required for methylation analysis with the biscuiteer package. Use when user asks to retrieve PMD locations, access solo-WCGW CpG site subsets, or load reference data for methylation normalization.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/biscuiteerData.html
 ---
+
 
 # bioconductor-biscuiteerdata
 

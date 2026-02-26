@@ -1,8 +1,9 @@
 ---
 name: dechat
-description: DeChat is a specialized error correction tool designed for Nanopore R10 reads, which typically feature error rates below 2%.
+description: DeChat performs error correction for Nanopore R10 reads using a combination of de Bruijn graphs and variant-aware multiple sequence alignment. Use when user asks to perform self-correction of ONT reads, conduct hybrid correction using NGS or HiFi data, or remove sequencing errors while preserving biological variants.
 homepage: https://github.com/LuoGroup2023/DeChat
 ---
+
 
 # dechat
 

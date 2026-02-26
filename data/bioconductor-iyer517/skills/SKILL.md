@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iyer517
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Iyer genomic time series dataset for analyzing the transcriptional response of human fibroblasts to serum. Use when user asks to load the Iyer517 ExpressionSet, access cDNA-chip expression data, visualize gene expression heatmaps, or analyze cluster trajectories from the Iyer et al. (1999) study.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Iyer517.html
 ---
+
 
 # bioconductor-iyer517
 

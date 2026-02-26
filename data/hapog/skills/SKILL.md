@@ -1,8 +1,9 @@
 ---
 name: hapog
-description: HAPO-G (Haplotype-Aware Polishing of Genomes) is a genomic tool designed to improve the consensus quality of an assembly using high-accuracy reads.
+description: HAPO-G is a haplotype-aware genomic tool designed to improve assembly consensus quality and maintain phasing using high-accuracy reads. Use when user asks to polish a genome assembly, correct mismatches and small indels, or identify homozygous and heterozygous assembly errors.
 homepage: https://github.com/institut-de-genomique/HAPO-G
 ---
+
 
 # hapog
 

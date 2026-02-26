@@ -1,8 +1,9 @@
 ---
 name: apoc
-description: The Alignment of Pockets (APoc) tool is a specialized structural biology utility used to quantify the similarity between protein functional sites.
+description: APoc aligns and compares protein binding pockets to quantify their structural and chemical similarity. Use when user asks to compare protein functional sites, identify convergent evolution in binding pockets, or screen a pocket against a library of structures.
 homepage: http://cssb.biology.gatech.edu/APoc
 ---
+
 
 # apoc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilpublish
-description: the package (e.g., select information from the package DESCRIPTION file and from vignette YAML headings) are used to populate the 'DASHBOARD'. Vignettes are translated to python notebooks ready for evaluation in AnVIL.
+description: This tool creates and updates AnVIL workspaces from R/Bioconductor packages or collections of Rmarkdown files. Use when user asks to publish R resources to the AnVIL platform, convert vignettes into Jupyter notebooks, or manage workspace permissions for Bioconductor users.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILPublish.html
 ---
+
 
 # bioconductor-anvilpublish
 

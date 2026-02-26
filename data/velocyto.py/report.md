@@ -1,50 +1,45 @@
 # velocyto.py CWL Generation Report
 
-## velocyto.py
+## velocyto.py_velocyto
 
 ### Tool Description
-The provided text is a container execution error log and does not contain help documentation or usage instructions for velocyto.py. No arguments could be extracted.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/velocyto.py:0.17.17--py38h24c8ff8_6
+- **Docker Image**: quay.io/biocontainers/velocyto.py:0.17.17--py37hc1659b7_0
 - **Homepage**: https://github.com/velocyto-team/velocyto.py
 - **Package**: https://anaconda.org/channels/bioconda/packages/velocyto.py/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/velocyto.py/overview
 - **Total Downloads**: 22.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/velocyto-team/velocyto.py
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/velocyto.py:0.17.17--py38h24c8ff8_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: velocyto [OPTIONS] COMMAND [ARGS]...
 
+Options:
+  --version  Show the version and exit.
+  --help     Show this message and exit.
 
-## Metadata
-- **Skill**: generated
-
-## velocyto.py_velocyto
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it appears to be a container execution log showing a fatal error during the image build/fetch process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/velocyto.py:0.17.17--py38h24c8ff8_6
-- **Homepage**: https://github.com/velocyto-team/velocyto.py
-- **Package**: https://anaconda.org/channels/bioconda/packages/velocyto.py/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/velocyto.py:0.17.17--py38h24c8ff8_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Commands:
+  run            Runs the velocity analysis outputting a loom file
+  run10x         Runs the velocity analysis for a Chromium Sample
+  run-dropest    Runs the velocity analysis on DropEst preprocessed data
+  run-smartseq2  Runs the velocity analysis on SmartSeq2 data (independent bam file per cell)
+  tools          helper tools for velocyto
 ```
 

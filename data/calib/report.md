@@ -3,7 +3,7 @@
 ## calib
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool 'calib'. It consists of error logs from a container runtime (Apptainer/Singularity) attempting to fetch and build the tool's image.
+Clustering without alignment using LSH and MinHashing of barcoded reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/calib:0.3.4--hdcf5f25_5
@@ -18,41 +18,26 @@ The provided text does not contain help information or a description for the too
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calib:0.3.4--hdcf5f25_5 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## calib_calib_cons
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system logs and error messages related to a container build failure (No space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/calib:0.3.4--hdcf5f25_5
-- **Homepage**: https://github.com/vpc-ccg/calib
-- **Package**: https://anaconda.org/channels/bioconda/packages/calib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calib:0.3.4--hdcf5f25_5 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+Combined barcode lengths must be a positive integer and each mate barcode length must be non-negative! Note if both mates have the same barcode length you can use -l/--barcode-length parameter instead.
+Calib: Clustering without alignment using LSH and MinHashing of barcoded reads
+Usage: calib [--PARAMETER VALUE]
+Example: calib -f R1.fastq -r R2.fastq -o my_out. -e 1 -l 8 -m 5 -t 2 -k 4 --silent
+Calib's paramters arguments:
+	-f    --input-forward                 	(type: string;   REQUIRED paramter)
+	-r    --input-reverse                 	(type: string;   REQUIRED paramter)
+	-o    --output-prefix                 	(type: string;   REQUIRED paramter)
+	-s    --silent                        	(type: no value; default: unset)
+	-q    --no-sort                       	(type: no value; default:  unset)
+	-g    --gzip-input                    	(type: no value; default:  unset)
+	-l    --barcode-length                	(type: int;      REQUIRED paramter unless -l1 and -l2 are provided)
+	-l1   --barcode-length-1              	(type: int;      REQUIRED paramter unless -l is provided)
+	-l2   --barcode-length-2              	(type: int;      REQUIRED paramter unless -l is provided)
+	-p    --ignored-sequence-prefix-length	(type: int;      default: 0)
+	-m    --minimizer-count               	(type: int;      default: Depends on observed read length;)
+	-k    --kmer-size                     	(type: int;      default: Depends on observed read length;)
+	-e    --error-tolerance               	(type: int;      default: Depends on observed read length;)
+	-t    --minimizer-threshold           	(type: int;      default: Depends on observed read length;)
+	-c    --threads                       	(type: int;      default: 1)
+	-h    --help
 ```
 

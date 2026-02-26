@@ -1,8 +1,9 @@
 ---
 name: bioconductor-targetsearch
-description: The package will automatically search those targets in the chromatograms resulting in a data matrix that can be used for further data analysis.
+description: TargetSearch performs automated targeted metabolite identification and quantification in GC-MS data. Use when user asks to identify metabolites in chromatograms, perform retention time correction, or generate a data matrix from GC-MS files.
 homepage: https://bioconductor.org/packages/release/bioc/html/TargetSearch.html
 ---
+
 
 # bioconductor-targetsearch
 

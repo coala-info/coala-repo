@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iclusterplus
-description: the package is available on all platforms; click for details.
+description: This tool performs integrative clustering of multi-type genomic data using joint latent variable modeling across various statistical distributions. Use when user asks to identify disease subtypes, perform joint analysis of multi-omics data, or select driver features across mutation, copy number, and expression datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/iClusterPlus.html
 ---
+
 
 # bioconductor-iclusterplus
 

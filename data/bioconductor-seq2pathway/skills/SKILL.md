@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seq2pathway
-description: the package is available on all platforms; click for details.
+description: Bioconductor-seq2pathway performs functional gene-set enrichment analysis by mapping genomic regions to biological pathways. Use when user asks to map genomic coordinates to genes, perform pathway enrichment analysis on sequencing data, or link genomic regions to biological functions.
 homepage: https://bioconductor.org/packages/release/bioc/html/seq2pathway.html
 ---
+
 
 # bioconductor-seq2pathway
 

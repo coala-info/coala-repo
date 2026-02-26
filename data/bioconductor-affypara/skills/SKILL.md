@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affypara
-description: The package contains parallelized functions for exploratory oligonucleotide array analysis. The package is designed for large numbers of microarray data.
+description: This tool provides parallelized preprocessing methods for Affymetrix oligonucleotide microarrays to handle large datasets efficiently. Use when user asks to perform background correction, normalization, or summarization on large numbers of CEL files using a computer cluster or multicore processor.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/affyPara.html
 ---
+
 
 # bioconductor-affypara
 

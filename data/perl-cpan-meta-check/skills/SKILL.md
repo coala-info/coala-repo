@@ -1,8 +1,9 @@
 ---
 name: perl-cpan-meta-check
-description: The `perl-cpan-meta-check` skill provides a mechanism to validate that a Perl environment meets the specific version requirements and dependencies defined in CPAN metadata.
+description: This tool verifies that a Perl environment satisfies the version requirements and dependencies specified in CPAN metadata. Use when user asks to verify module dependencies, check for version conflicts, or validate environment consistency against META.json or META.yml files.
 homepage: http://metacpan.org/pod/CPAN::Meta::Check
 ---
+
 
 # perl-cpan-meta-check
 

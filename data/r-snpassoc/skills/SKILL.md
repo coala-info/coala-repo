@@ -1,8 +1,9 @@
 ---
 name: r-snpassoc
-description: "Functions to perform most of the common analysis in genome      association studies are implemented. These analyses include descriptive      statistics and exploratory analysis of missing values, calculation of      Hardy-Weinberg equilibrium, analysis of association based on generalized     linear models (either for quantitative or binary traits), and analysis     of multiple SNPs (haplotype and epistasis analysis). Permutation test      and related tests (sum statistic and truncated product) are also      implemented. Max-statistic and genetic risk-allele score exact      distributions are also possible to be estimated. The methods are      described in Gonzalez JR et al."
+description: The SNPassoc R package provides tools for performing genetic association studies, including data preparation, quality control, and statistical modeling of SNP data. Use when user asks to prepare SNP data for analysis, test for Hardy-Weinberg Equilibrium, perform single-SNP or whole-genome association studies, or analyze gene-environment and gene-gene interactions.
 homepage: https://cloud.r-project.org/web/packages/SNPassoc/index.html
 ---
+
 
 # r-snpassoc
 

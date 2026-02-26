@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytofast
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "bioconductor-cytofast is an R package for the downstream analysis and visualization of clustered cytometry data. Use when user asks to relate cell populations to phenotypes, calculate cluster frequencies, generate aligned heatmaps of marker expression and abundance, or perform statistical testing on cluster distributions."
 homepage: https://bioconductor.org/packages/3.9/bioc/html/cytofast.html
 ---
+
 
 # bioconductor-cytofast
 

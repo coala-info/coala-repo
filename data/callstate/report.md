@@ -3,7 +3,7 @@
 ## callstate
 
 ### Tool Description
-The provided text does not contain help or usage information for the tool 'callstate'. It contains error logs related to a container image build failure (no space left on device).
+Calculate callable states for a BAM file based on a BED file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/callstate:0.0.2--h0fde405_1
@@ -18,14 +18,34 @@ The provided text does not contain help or usage information for the tool 'calls
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/callstate:0.0.2--h0fde405_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2b0c9ea705f9d5c52f870c5f0adebba9727aac3c9b9686b9ece93bc963ed9331: unpack entry: usr/local/lib/libasan.so.5.0.0: unpack to regular file: short write: write /tmp/build-temp-1469771991/rootfs/usr/local/lib/libasan.so.5.0.0: no space left on device
+callstate 0.0.1
+
+  Usage: callstate [options] <BED> <BAM>
+
+Arguments:
+
+  <BAM>  the alignment file for which to calculate callable states
+  <BED>  The BED file that contains regions.
+
+Common Options:
+
+  -t --threads <threads>                 Number of BAM decompression threads [default: 4]
+  -o --output <output>                   The output BED file
+  -bdout --base-depth-output <bdout>     If a file name is given, per-base depth will be written to this file
+
+Quality Metrics Options:
+
+  -mbq --min-base-qual <mbq>             The minimum base quality for a base to contribute to QC depth [default: 10]
+  -mmq --min-mapq <mmq>                  The minimum mapping quality of reads to count as QC depth [default: 10]
+  -mdp --min-depth <mdp>                 The minimum QC read depth before a read is considered callable [default: 20]
+  -mlmq --max-low-mapq <mlmq>            The maximum value of MAPQ before a read is considered as problematic mapped read. [default: 1]
+  -mxdp --max-depth <mxdp>               The maximum read depth before a locus is considered high coverage [default: -1]
+  -mdflmq --min-depth-low-mapq <mdflmq>  Minimum read depth before a locus is considered candidate for poorly mapped [default: 10]
+  -frlmq --low-mapq-frac <frlmq>         If the fraction of low mapping reads exceeds this value, the site is considered poorly mapped [default: 0.5]
+
+Other options:
+  
+  -F --flag <FLAG >                      exclude reads with any of the bits in FLAG set [default: 1796]
+  -h --help                              show help
 ```
 
-
-## Metadata
-- **Skill**: generated

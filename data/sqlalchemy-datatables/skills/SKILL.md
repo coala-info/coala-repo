@@ -1,8 +1,9 @@
 ---
 name: sqlalchemy-datatables
-description: The `sqlalchemy-datatables` library acts as a bridge between SQLAlchemy models and the jQuery DataTables frontend plugin.
+description: This library integrates SQLAlchemy models with the jQuery DataTables plugin to simplify server-side processing of complex data requests. Use when user asks to translate DataTables request parameters into SQLAlchemy queries, implement server-side pagination and filtering, or map database columns to frontend table displays.
 homepage: https://github.com/pegase745/sqlalchemy-datatables
 ---
+
 
 # sqlalchemy-datatables
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hyperdraw
-description: the package is available on all platforms; click for details.
+description: This package provides a specialized algorithm for visualizing hypergraphs by representing them as bipartite graphs and rendering smooth Bezier curves. Use when user asks to visualize hypergraphs, create bipartite graph representations, or render complex directed relationships using smooth curves.
 homepage: https://bioconductor.org/packages/release/bioc/html/hyperdraw.html
 ---
+
 
 # bioconductor-hyperdraw
 

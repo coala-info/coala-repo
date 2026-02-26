@@ -1,8 +1,9 @@
 ---
 name: poseidon-xerxes
-description: The `xerxes` tool is the primary analysis component of the Poseidon aDNA framework.
+description: Poseidon-xerxes performs population genetic analyses and calculates f-statistics directly on standardized Poseidon aDNA packages. Use when user asks to calculate f3, f4, or D-statistics, estimate genetic drift, or list available groups and packages within a Poseidon environment.
 homepage: https://poseidon-framework.github.io/#/
 ---
+
 
 # poseidon-xerxes
 

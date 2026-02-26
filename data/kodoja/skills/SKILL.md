@@ -1,8 +1,9 @@
 ---
 name: kodoja
-description: Kodoja is a bioinformatics pipeline specifically designed to detect viruses in plant transcriptomic data.
+description: Kodoja is a bioinformatics pipeline that detects viruses in plant transcriptomic data by combining k-mer-based classification and protein-level searches. Use when user asks to identify viral pathogens in sequencing data, build viral and host databases, or retrieve specific viral sequences from classified results.
 homepage: https://github.com/abaizan/kodoja/
 ---
+
 
 # kodoja
 

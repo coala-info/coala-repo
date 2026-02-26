@@ -1,8 +1,9 @@
 ---
 name: pipelign
-description: Pipelign is a specialized bioinformatics pipeline designed to address the complexities of viral sequence alignment, such as high genetic diversity and the presence of partial genomic fragments.
+description: Pipelign is a bioinformatics pipeline designed to create high-quality alignments for diverse viral sequences and genomic fragments. Use when user asks to align viral sequences, handle partial genomic fragments, cluster sequences using profile HMMs, or convert GenBank files to FASTA format.
 homepage: https://github.com/asmmhossain/pipelign/
 ---
+
 
 # pipelign
 

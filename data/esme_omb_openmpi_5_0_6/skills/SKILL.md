@@ -1,8 +1,9 @@
 ---
 name: esme_omb_openmpi_5_0_6
-description: The `esme_omb_openmpi_5_0_6` skill provides procedural knowledge for utilizing the OSU Micro Benchmarks (OMB) to profile MPI communication performance.
+description: This tool profiles MPI communication performance using the OSU Micro Benchmarks suite. Use when user asks to measure network latency, evaluate MPI collective performance, or benchmark point-to-point bandwidth.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_openmpi_5_0_6
 

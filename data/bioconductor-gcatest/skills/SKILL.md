@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcatest
-description: the package is available on all platforms; click for details.
+description: This tool performs genetic association testing in structured populations using the Genotype Conditional Association Test. Use when user asks to perform genome-wide association studies in structured populations, calculate p-values for SNP-trait associations, or account for population structure using logistic factor analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/gcatest.html
 ---
+
 
 # bioconductor-gcatest
 

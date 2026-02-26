@@ -1,8 +1,9 @@
 ---
 name: heinz
-description: HEINZ (Heuristic for Enriched Interaction Network Zone) is a computational tool designed to find the most significant functional modules within a larger interaction network.
+description: HEINZ identifies the most significant functional modules within an interaction network by solving the Maximum Weight Connected Subgraph problem. Use when user asks to find active subnetworks, identify high-scoring connected components, or extract functional modules from weighted interaction data.
 homepage: https://github.com/ls-cwi/heinz
 ---
+
 
 # heinz
 

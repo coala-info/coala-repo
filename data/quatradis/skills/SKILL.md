@@ -1,8 +1,9 @@
 ---
 name: quatradis
-description: QuaTradis (Quadram TraDIS) is a comprehensive bioinformatics pipeline designed to handle the end-to-end processing of transposon insertion libraries.
+description: QuaTradis is a bioinformatics pipeline for processing transposon insertion libraries and performing comparative analysis of gene essentiality. Use when user asks to process raw FASTQ data into insertion plots, identify essential genes, or compare transposon datasets across different experimental conditions.
 homepage: https://github.com/quadram-institute-bioscience/QuaTradis
 ---
+
 
 # quatradis
 

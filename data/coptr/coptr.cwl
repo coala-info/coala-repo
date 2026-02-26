@@ -2,9 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: coptr
 label: coptr
-doc: "CoPTR (Contig Ploidy and Taxon Retrieval) is a tool for estimating the relative
-  ploidy of contigs in metagenomic assemblies.\n\nTool homepage: https://github.com/tyjo/coptr"
-inputs: []
+doc: "CoPTR (v1.1.4): Compute PTRs from complete reference genomes and assemblies.\n\
+  \nTool homepage: https://github.com/tyjo/coptr"
+inputs:
+  - id: command
+    type: string
+    doc: Command to run.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

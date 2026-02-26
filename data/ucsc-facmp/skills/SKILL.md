@@ -1,8 +1,9 @@
 ---
 name: ucsc-facmp
-description: The `ucsc-facmp` skill provides guidance on using the `faCmp` utility, a specialized tool from the UCSC Genome Browser "kent" suite.
+description: The ucsc-facmp tool compares two FASTA files record-by-record. Use when user asks to compare two FASTA files, verify FASTA file identity, find differences between FASTA files, perform quality control on genome assemblies, or verify sequence manipulation script output.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-facmp
 

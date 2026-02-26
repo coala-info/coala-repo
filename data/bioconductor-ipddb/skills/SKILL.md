@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ipddb
-description: the package is available on all platforms; click for details.
+description: The bioconductor-ipddb package provides an SQLite-based interface to query allele names, DNA sequences, and gene structures from the IPD IMGT/HLA and IPD-KIR databases. Use when user asks to retrieve HLA or KIR sequences, map alleles to their closest full-length reference, or obtain genomic coordinates for specific alleles.
 homepage: https://bioconductor.org/packages/release/bioc/html/ipdDb.html
 ---
+
 
 # bioconductor-ipddb
 

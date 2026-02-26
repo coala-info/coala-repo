@@ -3,7 +3,7 @@
 ## pygcap
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'pygcap'. It appears to be a log of a failed container build/fetch process.
+Find Gene Cluster
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pygcap:1.2.6--pyhdfd78af_0
@@ -18,13 +18,26 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pygcap:1.2.6--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: pygcap [-h] [-w WORKING_DIR] [-t THREAD] [-i IDENTITY]
+              [-m MAX_TARGET_SEQS]
+              [-s {ncbi,mmseqs2,parsing,uniprot,blastdb,all}]
+              TAXON probe_path
+
+Find Gene Cluster
+
+positional arguments:
+  TAXON                 Taxon identifier
+  probe_path            Probe file path
+
+options:
+  -h, --help            show this help message and exit
+  -w WORKING_DIR, --working_dir WORKING_DIR
+                        Working directory path
+  -t THREAD, --thread THREAD
+  -i IDENTITY, --identity IDENTITY
+  -m MAX_TARGET_SEQS, --max_target_seqs MAX_TARGET_SEQS
+  -s {ncbi,mmseqs2,parsing,uniprot,blastdb,all}, --skip {ncbi,mmseqs2,parsing,uniprot,blastdb,all}
+                        Options to skip steps, e.g., ncbi, mmseqs2, parsing,
+                        uniprot, blastdb or all
 ```
 
-
-## Metadata
-- **Skill**: generated

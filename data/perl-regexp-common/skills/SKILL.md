@@ -1,8 +1,9 @@
 ---
 name: perl-regexp-common
-description: The `perl-regexp-common` skill leverages the `Regexp::Common` Perl module to provide a robust library of regular expressions.
+description: This tool provides a library of pre-defined, reliable regular expressions for common patterns like numbers, quoted strings, and balanced delimiters. Use when user asks to match real numbers, find balanced parentheses, extract quoted strings, or perform complex pattern-based substitutions in Perl.
 homepage: http://metacpan.org/pod/Regexp::Common
 ---
+
 
 # perl-regexp-common
 

@@ -1,8 +1,9 @@
 ---
 name: r-e1071
-description: "Functions for latent class analysis, short time Fourier 	     transform, fuzzy clustering, support vector machines, 	     shortest path computation, bagged clustering, naive Bayes 	     classifier, generalized k-nearest neighbour ...</p>"
+description: The e1071 package provides a suite of statistical and machine learning tools including Support Vector Machines, Naive Bayes classifiers, and fuzzy clustering. Use when user asks to train SVM models, perform Naive Bayes classification, execute fuzzy C-means clustering, or calculate statistical moments like skewness and kurtosis.
 homepage: https://cloud.r-project.org/web/packages/e1071/index.html
 ---
+
 
 # r-e1071
 

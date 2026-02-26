@@ -1,8 +1,9 @@
 ---
 name: gaftools
-description: gaftools is a high-performance toolkit tailored for the pangenomics ecosystem.
+description: gaftools is a toolkit for processing and analyzing Graph Alignment Format files within pangenomic workflows. Use when user asks to convert GFA to rGFA, order graph nodes, sort and index GAF files, realign sequences to a graph, or generate alignment statistics.
 homepage: https://github.com/marschall-lab/gaftools
 ---
+
 
 # gaftools
 

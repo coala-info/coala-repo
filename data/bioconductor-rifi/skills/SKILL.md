@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rifi
-description: the package is available on all platforms; click for details.
+description: bioconductor-rifi analyzes RNA stability and transcription kinetics from time-course transcriptomics data. Use when user asks to calculate RNA half-lives, estimate transcription rates, or model RNA degradation profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/rifi.html
 ---
+
 
 # bioconductor-rifi
 

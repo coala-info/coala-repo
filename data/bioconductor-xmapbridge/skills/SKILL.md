@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xmapbridge
-description: the package is available on all platforms; click for details.
+description: This package exports genomic data from R to the XMapView genome browser for visualization. Use when user asks to export genomic data to XMapView, visualize R data in a genome browser, or display genomic coordinates in XMapView.
 homepage: https://bioconductor.org/packages/release/bioc/html/xmapbridge.html
 ---
+
 
 # bioconductor-xmapbridge
 

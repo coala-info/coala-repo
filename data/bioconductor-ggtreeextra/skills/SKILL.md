@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggtreeextra
-description: the package is available on all platforms; click for details.
+description: This tool extends ggtree to visualize phylogenetic trees with multiple layers of associated data in circular, fan, or radial layouts. Use when user asks to align external data layers to tree tips, add heatmaps or bar plots to circular trees, and visualize complex metadata alongside phylogenetic structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggtreeExtra.html
 ---
+
 
 # bioconductor-ggtreeextra
 

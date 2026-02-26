@@ -3,10 +3,10 @@
 ## msms
 
 ### Tool Description
-The provided text contains error messages related to a container runtime (Apptainer/Singularity) failure and does not include the help documentation for the msms tool. As a result, no arguments could be extracted.
+Compute molecular surfaces
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/msms:2.6.1--1
+- **Docker Image**: quay.io/biocontainers/msms:2.6.1--h9ee0642_3
 - **Homepage**: https://github.com/MotorolaMobilityLLC/kernel-msm
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,11 +18,28 @@ The provided text contains error messages related to a container runtime (Apptai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/msms:2.6.1--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4292650532: no space left on device
+Usage : msms parameters 
+  -probe_radius float : probe sphere radius, [1.5]
+  -density float      : surface points density, [1.0]
+  -hdensity float     : surface points high density, [3.0]
+  -surface <tses,ases>: triangulated or Analytical SES, [tses]
+  -no_area            : turns off the analytical surface area computation
+  -socketName servicename : socket connection from a client
+  -socketPort portNumber : socket connection from a client
+  -xdr                : use xdr encoding over socket
+  -sinetd             : inetd server connection
+  -noh                : ignore atoms with radius 1.2
+  -no_rest_on_pbr     : no restart if pb. during triangulation
+  -no_rest            : no restart if pb. are encountered
+  -if filename        : sphere input file
+  -of filename        : output for triangulated surface
+  -af filename        : area file
+  -no_header         : do not add comment line to the output
+  -free_vertices      : turns on computation for isolated RS vertices
+  -all_components     : compute all the surfaces components
+  -one_cavity #atoms at1 [at2][at3] : Compute the surface for an internal                        cavity for which at least one atom is specified
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

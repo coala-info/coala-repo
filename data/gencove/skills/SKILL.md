@@ -1,8 +1,9 @@
 ---
 name: gencove
-description: The Gencove skill provides a streamlined interface for managing high-throughput genomic data workflows.
+description: Gencove manages high-throughput genomic data workflows by automating file uploads, tracking sample processing, and retrieving analysis deliverables. Use when user asks to upload sequencing reads, track sample status, list projects, or download analysis results.
 homepage: https://docs.gencove.com
 ---
+
 
 # gencove
 

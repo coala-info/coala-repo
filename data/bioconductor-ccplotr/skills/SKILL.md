@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccplotr
-description: the package is available on all platforms; click for details.
+description: Bioconductor-ccplotr visualizes cell-cell interactions predicted from single-cell RNA-seq data using various plot types like heatmaps, network diagrams, and circos plots. Use when user asks to visualize ligand-receptor interactions, generate interaction heatmaps or dotplots, and create network or chord diagrams from tools like Liana, CellPhoneDB, or NATMI.
 homepage: https://bioconductor.org/packages/release/bioc/html/CCPlotR.html
 ---
+
 
 # bioconductor-ccplotr
 

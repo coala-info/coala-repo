@@ -1,8 +1,9 @@
 ---
 name: scoop
-description: SCOOP is a distributed task module designed to make concurrent parallel programming in Python simple and scalable.
+description: SCOOP is a distributed task module for executing concurrent parallel Python programs across local workstations and high-performance computing clusters. Use when user asks to parallelize Python code, distribute computations across multiple nodes using a hostfile, or manage hierarchical task execution using the futures API.
 homepage: https://github.com/soravux/scoop
 ---
+
 
 # scoop
 

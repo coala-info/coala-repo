@@ -1,8 +1,9 @@
 ---
 name: treeqmc
-description: TREE-QMC (Quartet Max Cut) is a specialized phylogenetic tool designed to infer species trees from a collection of gene trees or characters.
+description: TREE-QMC infers species trees from gene trees or character matrices. Use when user asks to infer a species tree, reconstruct a tree of blobs, map individuals to species, root a tree, compute quartet support, contract branches, or infer a tree from quartets.
 homepage: https://github.com/molloy-lab/TREE-QMC
 ---
+
 
 # treeqmc
 

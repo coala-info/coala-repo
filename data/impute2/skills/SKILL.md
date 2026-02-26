@@ -1,8 +1,9 @@
 ---
 name: impute2
-description: This skill provides a workflow for imputing whole-genome SNPs from 23andMe raw data files.
+description: This tool imputes whole-genome SNPs from 23andMe raw data files by automating data conversion, phasing, and the execution of IMPUTE2 commands. Use when user asks to impute genotypes from 23andMe data, phase typed sites, or generate IMPUTE2 commands for genomic analysis.
 homepage: https://github.com/johnlees/23andme-impute
 ---
+
 
 # impute2
 

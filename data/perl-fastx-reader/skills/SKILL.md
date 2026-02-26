@@ -1,8 +1,9 @@
 ---
 name: perl-fastx-reader
-description: The `perl-fastx-reader` package provides a high-performance, dependency-light way to handle biological sequence files.
+description: This tool provides a high-performance interface and command-line utility for reading and counting FASTA and FASTQ sequence files. Use when user asks to count sequences in FASTA or FASTQ files, iterate through sequence records in Perl scripts, or process compressed biological sequence data.
 homepage: https://github.com/telatin/FASTQ-Parser
 ---
+
 
 # perl-fastx-reader
 

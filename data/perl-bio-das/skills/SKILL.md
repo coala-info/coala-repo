@@ -1,8 +1,9 @@
 ---
 name: perl-bio-das
-description: This skill enables programmatic access to genomic sequencing and annotation data hosted on DAS servers.
+description: This tool provides a programmatic interface for querying and retrieving genomic sequences and annotations from Distributed Annotation System (DAS) servers. Use when user asks to access genomic data from DAS sources, retrieve biological features like genes or SNPs, or fetch raw DNA sequences from remote databases.
 homepage: http://metacpan.org/pod/Bio::Das
 ---
+
 
 # perl-bio-das
 

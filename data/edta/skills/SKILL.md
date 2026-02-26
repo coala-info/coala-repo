@@ -1,8 +1,9 @@
 ---
 name: edta
-description: The Extensive de-novo TE Annotator (EDTA) is a comprehensive pipeline designed to streamline the identification and classification of Transposable Elements (TEs) in genome assemblies.
+description: EDTA is a comprehensive pipeline designed to identify, classify, and annotate transposable elements in genome assemblies. Use when user asks to annotate transposable elements, create a curated TE library, or mask repetitive sequences in a genome.
 homepage: https://github.com/oushujun/EDTA
 ---
+
 
 # edta
 

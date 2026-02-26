@@ -1,7 +1,8 @@
 ---
 name: afwdist
-description: Calculate pairwise genetic distances between samples based on fixed and non-fixed allele frequencies. Use this skill when you need to analyze viral intra-patient evolution (VIPERA workflow) or compare groups of genetic variants using frequency-based metrics rather than simple consensus sequences. It is specifically designed for input tables (CSV) containing variant frequencies and a corresponding reference genome (FASTA).
+description: afwdist calculates pairwise distance metrics between groups of genetic variants using allele frequencies. Use when user asks to calculate genetic distances between samples, compare intra-patient viral populations, or measure distances against a reference genome.
 ---
+
 
 # afwdist
 

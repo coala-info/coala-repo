@@ -1,9 +1,9 @@
 # gb_taxonomy_tools CWL Generation Report
 
-## gb_taxonomy_tools
+## gb_taxonomy_tools_gid-taxid
 
 ### Tool Description
-GenBank taxonomy tools (Note: The provided help text contains a fatal error message regarding container building and does not list usage instructions or arguments).
+Maps GenBank IDs to TaxIDs using a provided mapping file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7
@@ -18,80 +18,65 @@ GenBank taxonomy tools (Note: The provided help text contains a fatal error mess
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2007189878: no space left on device
+Usage: gid-taxid <list of genbank ids> <GenBank file mapping gids to taxids (gi_taxid files from ftp://ftp.ncbi.nih.gov/pub/taxonomy/)>
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## gb_taxonomy_tools_gid-taxid
-
-### Tool Description
-A tool from the gb_taxonomy_tools suite. Note: The provided help text contains only system error messages regarding container execution and does not list specific arguments or usage instructions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7
-- **Homepage**: https://github.com/spond/gb_taxonomy_tools
-- **Package**: https://anaconda.org/channels/bioconda/packages/gb_taxonomy_tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2268625294: no space left on device
-```
 
 ## gb_taxonomy_tools_taxonomy-reader
 
 ### Tool Description
-A tool from the gb_taxonomy_tools suite, likely used for reading or processing taxonomy data. Note: The provided help text contains only system error messages regarding container execution and does not list specific arguments.
+Reads GenBank taxonomic information from provided map and hierarchy files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7
 - **Homepage**: https://github.com/spond/gb_taxonomy_tools
 - **Package**: https://anaconda.org/channels/bioconda/packages/gb_taxonomy_tools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2853607609: no space left on device
+Usage: taxonomy-reader
+	<GenBank taxid to name map file (e.g. taxdump/names from ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz)>
+	<GenBank taxonomic hierarcy file (e.g. taxdump/nodes from ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz)>
+	[ integer index (0-based) of the field containing tax ID in each tab-separated input line; the default is field 1]
 ```
+
 
 ## gb_taxonomy_tools_taxonomy2tree
 
 ### Tool Description
-A tool to convert taxonomy information into a tree structure. (Note: The provided help text contained only system error messages regarding container execution and did not list specific arguments.)
+Converts a taxonomy dump file into a tree structure and a summary.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7
 - **Homepage**: https://github.com/spond/gb_taxonomy_tools
 - **Package**: https://anaconda.org/channels/bioconda/packages/gb_taxonomy_tools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4103968485: no space left on device
+taxonomy2tree 
+	<tax dump file(tab separated taxonomy dump)>
+	<max tree level (<=0 to show all)>
+	<write tree file here>
+	<write tab separated summary here>
+	include empty nodes; 0 or 1; default 0)]
 ```
+
 
 ## gb_taxonomy_tools_tree2ps
 
 ### Tool Description
-A tool from the gb_taxonomy_tools suite (description unavailable due to execution error).
+Converts a Newick tree file to a PostScript file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7
 - **Homepage**: https://github.com/spond/gb_taxonomy_tools
 - **Package**: https://anaconda.org/channels/bioconda/packages/gb_taxonomy_tools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gb_taxonomy_tools:1.0.1--h503566f_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1007666305: no space left on device
+tree2ps <newick_file> <PostScript output file> <maximum taxonomic depth (<=0 to show all levels)> <font_size (in 2-255, 8 is a good default)> <nmax_leaves (<=0 to show all)> <count_duplicate_tax_id (0 or 1; with 0 multiple copies of the same taxid count as 1)>
 ```
 

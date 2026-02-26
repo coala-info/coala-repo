@@ -1,8 +1,9 @@
 ---
 name: pydnase
-description: pydnase is designed specifically for the nuances of DNase-seq data, where the focus is on the 5' end of aligned fragments (the "cut site") rather than the full fragment overlap typical of ChIP-seq.
+description: pydnase is a Python library and suite of command-line tools designed for analyzing DNase-seq data with a focus on cut site analysis and genomic footprinting. Use when user asks to perform Wellington footprinting, access strand-specific DNase-seq cut counts from BAM files, or identify transcription factor binding sites in hypersensitive regions.
 homepage: http://jpiper.github.io/pyDNase
 ---
+
 
 # pydnase
 

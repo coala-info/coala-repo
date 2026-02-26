@@ -1,8 +1,9 @@
 ---
 name: bedtools-test
-description: The bedtools-test skill provides a specialized workflow for handling genomic intervals.
+description: Bedtools-test performs genomic interval arithmetic to manipulate and analyze genomic features. Use when user asks to intersect genomic intervals, merge overlapping regions, find the closest feature, or calculate coverage.
 homepage: http://bedtools.readthedocs.org/
 ---
+
 
 # bedtools-test
 

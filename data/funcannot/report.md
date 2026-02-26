@@ -3,7 +3,7 @@
 ## funcannot
 
 ### Tool Description
-Functional annotation of genomes (Note: The provided help text contains only system error messages and no usage information).
+Annotates each line of a VCF file to show codon, protein, and mutation for each gene given in the genelist
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/funcannot:v2.8--0
@@ -18,11 +18,27 @@ Functional annotation of genomes (Note: The provided help text contains only sys
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/funcannot:v2.8--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2395673682: no space left on device
+funcannot  v2.8-20170607
+Annotates each line of a VCF file to show codon, protein, and mutation for each gene given in the genelist
+Please note that TYP and GENE annotations must have been performed prior to running this program
+
+    usage: ./funcannot <INPUTS> <FLAGS> <OUTPUTS>
+
+(the following arguments are all MANDATORY)
+INPUTS:
+file1.vcf[+file2.vcf]  VCF file, or list seperated with '+' (NO SPACES)
+input.genemap          Genemap for positions of genes/exons
+input.dnamap           DNA codon map of format: Alu[TAB]AAC,AGC,GCA
+FASTA_folder           Folder containing FASTA .fa files for each chromosome
+
+FLAGS:
+--geneid=AL            specifies common genelist identifier in VCF file(s)
+
+OUTPUTS:
+annotated_folder       each of the annotated VCF files will be placed here
+rejects_folder         each of the corresponding rejects will be placed here
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

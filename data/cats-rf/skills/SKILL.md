@@ -1,8 +1,9 @@
 ---
 name: cats-rf
-description: CATS-rf (Comprehensive Assessment of Transcript Sequences - reference-free) is a diagnostic tool for assessing the quality of transcriptomes assembled from short-read RNA-seq data.
+description: CATS-rf assesses the quality of transcriptomes assembled from short-read RNA-seq data using a reference-free diagnostic pipeline. Use when user asks to evaluate assembly quality, calculate transcript quality scores, or compare multiple transcriptome assembly versions.
 homepage: https://github.com/bodulic/CATS-rf
 ---
+
 
 # cats-rf
 

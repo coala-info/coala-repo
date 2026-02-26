@@ -1,8 +1,9 @@
 ---
 name: umis
-description: The `umis` toolkit is designed to handle the specific requirements of RNA-tag sequencing, where transcripts are identified by both a cellular barcode (CB) and a Unique Molecular Identifier (UMI).
+description: The `umis` toolkit processes RNA-tag sequencing data by transforming raw FASTQ files, filtering barcodes, and generating UMI count matrices from aligned reads. Use when user asks to 'transform FASTQ files', 'filter cellular barcodes', 'generate barcode histograms', 'count UMIs', or 'prepare files for Kallisto'.
 homepage: https://github.com/vals/umis
 ---
+
 
 # umis
 

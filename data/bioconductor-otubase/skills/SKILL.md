@@ -1,8 +1,9 @@
 ---
 name: bioconductor-otubase
-description: the package is available on all platforms; click for details.
+description: OTUbase provides a standardized framework for managing and analyzing Operational Taxonomic Unit data within the R environment. Use when user asks to organize OTU sequences, link taxonomic classifications with sample metadata, or manage microbial community datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/OTUbase.html
 ---
+
 
 # bioconductor-otubase
 

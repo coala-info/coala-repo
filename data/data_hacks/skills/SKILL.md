@@ -1,8 +1,9 @@
 ---
 name: data_hacks
-description: `data_hacks` is a suite of lightweight Python utilities designed for "quick and dirty" data analysis directly in the terminal.
+description: Data_hacks provides a suite of command-line utilities for performing quick statistical analysis and generating ASCII visualizations from data streams. Use when user asks to generate histograms, create bar charts, calculate the 95th percentile, or sample data directly in the terminal.
 homepage: https://github.com/bitly/data_hacks
 ---
+
 
 # data_hacks
 

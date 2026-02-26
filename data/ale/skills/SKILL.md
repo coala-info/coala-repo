@@ -1,8 +1,9 @@
 ---
 name: ale
-description: The provided text does not contain help information or a description of the tool; it is a system error log regarding a failed container build (no space left on device).
+description: ALE evaluates the quality of a genome assembly by calculating a likelihood score based on how well sequenced reads support the assembly. Use when user asks to assess assembly quality without a reference, calculate assembly likelihood scores, or identify base-level inconsistencies in a genome.
 homepage: https://github.com/sc932/ALE
 ---
+
 
 # ale
 

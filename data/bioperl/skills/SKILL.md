@@ -1,8 +1,9 @@
 ---
 name: bioperl
-description: BioPerl is a comprehensive collection of object-oriented Perl modules designed for bioinformatics.
+description: BioPerl is a collection of object-oriented Perl modules used for processing biological data and automating bioinformatics workflows. Use when user asks to parse sequence files, convert between file formats, manipulate sequences, or retrieve data from remote biological databases.
 homepage: https://github.com/bioperl/bioperl-live
 ---
+
 
 # bioperl
 

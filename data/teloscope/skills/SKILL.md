@@ -1,8 +1,9 @@
 ---
 name: teloscope
-description: Teloscope is a specialized bioinformatics tool designed for the rapid identification and quantification of telomeric repeats within genome assemblies.
+description: Teloscope identifies and quantifies terminal and interstitial telomeric repeats within genome assemblies to generate BED-formatted annotations. Use when user asks to annotate telomeres, detect interstitial telomeric sequences, or calculate repeat density and sequence metrics across sliding windows.
 homepage: https://github.com/vgl-hub/teloscope
 ---
+
 
 # teloscope
 

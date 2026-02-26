@@ -1,8 +1,9 @@
 ---
 name: hclust2
-description: hclust2 is a specialized tool designed to produce publication-quality heatmaps from matrix-like data.
+description: hclust2 generates publication-quality heatmaps and performs hierarchical clustering on matrix-like data. Use when user asks to create heatmaps, perform hierarchical clustering on rows and columns, or visualize taxonomic and functional profiles.
 homepage: https://bitbucket.org/nsegata/hclust2
 ---
+
 
 # hclust2
 

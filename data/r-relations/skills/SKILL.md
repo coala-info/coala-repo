@@ -1,8 +1,9 @@
 ---
 name: r-relations
-description: "Data structures and algorithms for k-ary relations with   arbitrary domains, featuring relational algebra, predicate functions,   and fitters for consensus relations.</p>"
+description: This tool provides data structures and algorithms for creating, manipulating, and analyzing k-ary mathematical relations in R. Use when user asks to perform relational algebra operations, test mathematical properties like transitivity or reflexivity, or compute consensus relations from ensembles.
 homepage: https://cloud.r-project.org/web/packages/relations/index.html
 ---
+
 
 # r-relations
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-zebrafishprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Zebrafish Genome Array. Use when user asks to retrieve probe sequences for zebrafish microarrays or analyze Affymetrix zebrafish genome array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/zebrafishprobe.html
 ---
+
 
 # bioconductor-zebrafishprobe
 

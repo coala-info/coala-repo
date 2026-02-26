@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hiergwas
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical significance testing in Genome-Wide Association Studies using hierarchical inference and joint models to identify SNPs or clusters associated with phenotypes. Use when user asks to perform hierarchical clustering of SNPs, conduct multiple sample splitting with LASSO selection, or test for significant SNP-trait associations while controlling the family-wise error rate.
 homepage: https://bioconductor.org/packages/release/bioc/html/hierGWAS.html
 ---
+
 
 # bioconductor-hiergwas
 

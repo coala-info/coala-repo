@@ -1,8 +1,9 @@
 ---
 name: perl-ensembl-core
-description: The `perl-ensembl-core` skill enables efficient interaction with the Ensembl database system using its native Perl API.
+description: This tool provides a Perl interface to interact with the Ensembl database for retrieving and manipulating genomic data. Use when user asks to fetch gene models, retrieve genomic sequences via slices, perform coordinate conversions, or automate data extraction from the Ensembl database.
 homepage: https://www.ensembl.org/info/docs/api/index.html
 ---
+
 
 # perl-ensembl-core
 

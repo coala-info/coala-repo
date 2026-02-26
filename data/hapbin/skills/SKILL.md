@@ -1,8 +1,9 @@
 ---
 name: hapbin
-description: hapbin is a high-performance toolset designed for rapid scans of positive selection in large genomic datasets.
+description: hapbin is a high-performance toolset for calculating EHH, iHS, and XP-EHH statistics to detect positive selection in large genomic datasets. Use when user asks to convert haplotype files to binary format, calculate extended haplotype homozygosity for specific loci, or perform genome-wide iHS and XP-EHH scans.
 homepage: https://github.com/evotools/hapbin
 ---
+
 
 # hapbin
 

@@ -1,8 +1,9 @@
 ---
 name: soda-gallery
-description: `soda-gallery` is a specialized tool for generating "soda plots"—visual galleries of genomic regions captured directly from a UCSC Genome Browser instance.
+description: soda-gallery generates visual galleries of genomic regions by capturing snapshots from the UCSC Genome Browser based on a BED file and session ID. Use when user asks to create a soda plot gallery, automate genome browser snapshots, or visualize genomic regions in an HTML gallery.
 homepage: https://github.com/alexpreynolds/soda
 ---
+
 
 # soda-gallery
 

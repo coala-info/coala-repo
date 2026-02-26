@@ -1,8 +1,9 @@
 ---
 name: rnavirhost
-description: rnavirhost is a specialized classification framework designed to predict RNA virus hosts based solely on viral genomes.
+description: rnavirhost is a hierarchical classification framework that predicts RNA virus hosts based on viral genome sequences. Use when user asks to predict RNA virus hosts, classify viral taxonomic orders, or identify host groups for metagenomic viral sequences.
 homepage: https://github.com/GreyGuoweiChen/VirHost.git
 ---
+
 
 # rnavirhost
 

@@ -3,7 +3,7 @@
 ## shigeifinder
 
 ### Tool Description
-Shigeifinder is a tool for the identification of Shigella and enteroinvasive Escherichia coli (EIEC). (Note: The provided text is a system error log and does not contain help documentation; no arguments could be extracted.)
+ShigeiFinder.py is a tool for analyzing assembly or raw read data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shigeifinder:1.3.5--pyhdfd78af_0
@@ -18,14 +18,41 @@ Shigeifinder is a tool for the identification of Shigella and enteroinvasive Esc
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shigeifinder:1.3.5--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:576269c0bc0fb2068169ee01269c9e1d8e78e26642d71ea3cb9db17abf671c8b: unpack entry: usr/local/bin/nghttpx: unpack to regular file: short write: write /tmp/build-temp-3129372621/rootfs/usr/local/bin/nghttpx: no space left on device
+usage: 
+Assembly fasta input/s:
+ ShigeiFinder.py -i <input_data1> <input_data2> ... OR
+ ShigeiFinder.py -i <directory/*> 
+Paired end raw read fastq(.gz) input/s:
+ ShigeiFinder.py -r -i <Read1> <Read2> OR 
+ ShigeiFinder.py -r -i <directory/*> 
+Single end raw read fastq(.gz) input/s:
+ ShigeiFinder.py -r --single_end -i <Reads> OR 
+ ShigeiFinder.py -r --single_end -i <directory/*>
+
+options:
+  -h, --help            show this help message and exit
+  -i I [I ...]          <string>: path/to/input_data
+  -r                    Add flag if file is raw reads.
+  -t T                  number of threads. Default 4.
+  --single_end          Add flag if raw reads are single end rather than
+                        paired.
+  --hits                To show the blast/alignment hits
+  --dratio              To show the depth ratios of cluster-specific genes to
+                        House Keeping genes
+  --update_db           Add flag if you added new sequences to genes database.
+  --output OUTPUT       output file to write to (if not used writes to stdout)
+  --check               To show the blast/alignment hits
+  --o_depth O_DEPTH     When using reads as input the minimum depth percentage
+                        relative to genome average for positive O antigen gene
+                        call (default 1.0).
+  --ipaH_depth IPAH_DEPTH
+                        When using reads as input the minimum depth percentage
+                        relative to genome average for positive ipaH gene call
+                        (default 1.0).
+  --depth DEPTH         When using reads as input the minimum read depth for
+                        non ipaH/Oantigen gene to be called (default 10.0).
+  --tmpdir TMPDIR       temporary folder to use for intermediate files
+  --noheader            do not print output header
+  -v, --version         Print version information.
 ```
 
-
-## Metadata
-- **Skill**: generated

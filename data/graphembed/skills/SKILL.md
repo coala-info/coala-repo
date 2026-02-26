@@ -1,8 +1,9 @@
 ---
 name: graphembed
-description: graphembed is a specialized toolset designed for efficient and robust network embedding.
+description: Graphembed transforms complex graph structures into low-dimensional vector representations for downstream machine learning tasks. Use when user asks to embed large-scale networks, perform link prediction, or identify dense node groups through graph decomposition.
 homepage: https://github.com/jean-pierreBoth/graphembed
 ---
+
 
 # graphembed
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg18.60mer.expr
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the NimbleGen hg18 60mer expression microarray. Use when user asks to process NimbleGen hg18 60mer expression data, access metadata for this specific microarray platform, or analyze these arrays using the oligo package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg18.60mer.expr.html
 ---
+
 
 # bioconductor-pd.hg18.60mer.expr
 

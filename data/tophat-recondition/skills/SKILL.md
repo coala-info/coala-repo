@@ -1,8 +1,9 @@
 ---
 name: tophat-recondition
-description: TopHat-Recondition is a specialized post-processor designed to resolve compatibility issues between TopHat's unmapped read output and standard bioinformatics suites.
+description: TopHat-Recondition fixes compatibility issues in TopHat's unmapped BAM files for downstream bioinformatics analysis. Use when user asks to fix unmapped BAM files, make them standard-compliant, prepare them for variant calling or read group addition, or resolve Picard compatibility errors.
 homepage: https://github.com/cbrueffer/tophat-recondition
 ---
+
 
 # tophat-recondition
 

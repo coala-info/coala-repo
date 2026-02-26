@@ -1,8 +1,9 @@
 ---
 name: schicexplorer
-description: scHiCExplorer is a specialized suite of tools designed to handle the unique computational challenges of single-cell Hi-C data, particularly its extreme sparsity.
+description: scHiCExplorer is a specialized suite of tools designed for the processing, normalization, clustering, and visualization of single-cell Hi-C data. Use when user asks to demultiplex raw reads, convert interaction formats to scool, normalize sparse matrices, cluster cells using MinHash, or visualize consensus chromatin architecture.
 homepage: https://github.com/joachimwolff/scHiCExplorer
 ---
+
 
 # schicexplorer
 

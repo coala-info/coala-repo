@@ -1,8 +1,9 @@
 ---
 name: trumicount
-description: TRUmiCount provides a mechanistic model for PCR amplification to improve the accuracy of molecule counting.
+description: TRUmiCount corrects for PCR amplification bias to provide accurate molecule counts from indexed BAM files. Use when user asks to get bias-corrected transcript counts, process BAM files for corrected gene counts, handle specific UMI formats, or apply filtering thresholds to counts.
 homepage: https://cibiv.github.io/trumicount/
 ---
+
 
 # trumicount
 

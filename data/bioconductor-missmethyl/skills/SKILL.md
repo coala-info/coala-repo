@@ -1,8 +1,9 @@
 ---
 name: bioconductor-missmethyl
-description: the package is available on all platforms; click for details.
+description: The bioconductor-missmethyl package performs normalization and differential methylation analysis for Illumina HumanMethylation450 and MethylationEPIC array data. Use when user asks to normalize methylation array data, perform differential methylation analysis, or conduct gene set enrichment analysis while accounting for probe density bias.
 homepage: https://bioconductor.org/packages/release/bioc/html/missMethyl.html
 ---
+
 
 # bioconductor-missmethyl
 

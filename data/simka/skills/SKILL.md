@@ -1,8 +1,9 @@
 ---
 name: simka
-description: Simka is a de novo comparative metagenomics suite that enables the comparison of multiple metagenomic read sets by representing each dataset as a k-mer spectrum.
+description: Simka is a de novo comparative metagenomics tool that computes ecological distances between multiple large NGS datasets using k-mer spectra. Use when user asks to compare metagenomic read sets without a reference genome, calculate ecological distance matrices like Bray-Curtis or Jaccard, or perform rapid k-mer subsampling with SimkaMin.
 homepage: https://github.com/GATB/simka
 ---
+
 
 # simka
 

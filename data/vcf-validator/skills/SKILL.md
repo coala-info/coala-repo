@@ -1,8 +1,9 @@
 ---
 name: vcf-validator
-description: This skill provides procedural knowledge for validating VCF files using the EBI Variation team's C++ validation suite.
+description: The vcf-validator tool validates VCF file format compliance and verifies VCF records against a reference genome. Use when user asks to validate VCF files, check VCF syntax and semantics, verify VCF records against a reference genome, generate validation reports, filter VCF records, or ensure VCF files meet database submission standards.
 homepage: https://github.com/EBIVariation/vcf-validator
 ---
+
 
 # vcf-validator
 

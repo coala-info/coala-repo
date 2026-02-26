@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgloadout
-description: The `ucsc-hgloadout` utility is a specialized data-loading tool from the UCSC Kent Utilities suite.
+description: The `ucsc-hgloadout` tool parses RepeatMasker output files and loads the extracted data into a MySQL database table. Use when user asks to load RepeatMasker data into a database, populate a database table with repeat annotations, or create repeat annotation tracks for a genome browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgloadout
 

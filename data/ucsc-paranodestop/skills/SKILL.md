@@ -1,8 +1,9 @@
 ---
 name: ucsc-paranodestop
-description: `ucsc-paranodestop` is a specialized administrative tool from the UCSC Kent toolkit used to remotely terminate the `paraNode` daemon on multiple compute nodes.
+description: This tool remotely terminates the `paraNode` daemon on multiple compute nodes in a Parasol cluster. Use when user asks to stop paraNode daemons, shut down a Parasol cluster, reconfigure a Parasol cluster, or perform cluster maintenance.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-paranodestop
 

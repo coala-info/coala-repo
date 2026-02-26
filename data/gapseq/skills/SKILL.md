@@ -1,8 +1,9 @@
 ---
 name: gapseq
-description: gapseq is a specialized tool for the informed prediction of bacterial and archaeal metabolic pathways and the reconstruction of genome-scale metabolic networks.
+description: "gapseq predicts metabolic pathways and reconstructs genome-scale metabolic networks for bacteria and archaea. Use when user asks to predict metabolic pathways, infer membrane transporters, reconstruct draft metabolic models, or perform gap-filling for biomass production."
 homepage: https://github.com/jotech/gapseq
 ---
+
 
 # gapseq
 

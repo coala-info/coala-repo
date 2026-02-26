@@ -1,8 +1,9 @@
 ---
 name: genome-uploader
-description: The `genome-uploader` tool is a specialized utility designed to simplify the submission of metagenomic bins and MAGs to the ENA.
+description: The genome-uploader tool automates the submission of metagenomic bins and MAGs to the European Nucleotide Archive by generating required metadata and linking genomes to their source data. Use when user asks to submit genomes to ENA, upload metagenomic bins or MAGs, or generate metadata manifests for genomic data submissions.
 homepage: https://github.com/EBI-Metagenomics/genome_uploader
 ---
+
 
 # genome-uploader
 

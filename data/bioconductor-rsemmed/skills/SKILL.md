@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rsemmed
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for analyzing RNA-seq expression data using mixed models. Use when user asks to analyze RNA-seq expression levels, apply mixed models to transcriptomic data, or perform differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/rsemmed.html
 ---
+
 
 # bioconductor-rsemmed
 

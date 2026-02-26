@@ -1,8 +1,9 @@
 ---
 name: sccellfie
-description: The `sccellfie` skill enables the analysis of cellular metabolism at single-cell resolution.
+description: The sccellfie tool analyzes cellular metabolism at single-cell resolution by mapping transcriptomic data onto genome-scale metabolic models to calculate reaction and task activity scores. Use when user asks to calculate metabolic activity scores, identify active metabolic pathways in cell clusters, or run a metabolic phenotyping pipeline on single-cell or spatial transcriptomic data.
 homepage: https://github.com/earmingol/scCellFie
 ---
+
 
 # sccellfie
 

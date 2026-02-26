@@ -1,9 +1,9 @@
 # baczy CWL Generation Report
 
-## baczy
+## baczy_run
 
 ### Tool Description
-A tool for bacterial genome analysis (Note: The provided text is an error log from a container build and does not contain help documentation. Arguments could not be extracted from the provided input.)
+Run baczy
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0
@@ -18,14 +18,81 @@ A tool for bacterial genome analysis (Note: The provided text is an error log fr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0448afd8f1a6e3b5b7459974ae179da69a98b2b3b5a303c2d261015d6250a707: unpack entry: usr/local/lib/python3.9/site-packages/urllib3/contrib/emscripten/fetch.py: unpack to regular file: short write: write /scratch/21813747/build-temp-1182361701/rootfs/usr/local/lib/python3.9/site-packages/urllib3/contrib/emscripten/fetch.py: no space left on device
+Usage: baczy run [OPTIONS] [SNAKE_ARGS]...
+
+  Run baczy
+
+Options:
+  --input TEXT                    Input file/directory  [required]
+  --sequencing [paired|longread]  sequencing method  [default: paired]
+  --output PATH                   Output directory  [default: baczy.out]
+  --configfile TEXT               Custom config file [default:
+                                  (outputDir)/config.yaml]
+  --threads INTEGER               Number of threads to use  [default: 1]
+  --profile TEXT                  Snakemake profile to use
+  --use-conda / --no-use-conda    Use conda for Snakemake rules  [default: no-
+                                  use-conda]
+  --use-singularity / --no-use-singularity
+                                  Use containers for Snakemake rules
+                                  [default: use-singularity]
+  --conda-prefix PATH             Custom conda env directory
+  --snake-default TEXT            Customise Snakemake runtime args  [default:
+                                  --printshellcmds, --nolock, --show-failed-
+                                  logs]
+  -h, --help                      Show this message and exit.
+
+  CLUSTER EXECUTION:
+  baczy run ... --profile [profile]
+  For information on Snakemake profiles see:
+  https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles
+  
 ```
 
 
-## Metadata
-- **Skill**: generated
+## baczy_config
+
+### Tool Description
+Copy the system default config file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0
+- **Homepage**: https://github.com/npbhavya/baczy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/baczy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: baczy config [OPTIONS]
+
+  Copy the system default config file
+
+Options:
+  --configfile TEXT  Copy template config to file  [default: config.yaml]
+  -h, --help         Show this message and exit.
+```
+
+
+## baczy_citation
+
+### Tool Description
+Please cite sphaehost in your paper using this article:
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/baczy:1.0.3--pyhdfd78af_0
+- **Homepage**: https://github.com/npbhavya/baczy/
+- **Package**: https://anaconda.org/channels/bioconda/packages/baczy/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Please cite sphaehost in your paper using this article:
+
+
+Please consider also citing these dependencies:
+Snaketool:
+https://doi.org/10.1371/journal.pcbi.1010705
+
+Snakemake:
+https://doi.org/10.12688/f1000research.29032.1
+```
+

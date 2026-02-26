@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ping
-description: the package is available on all platforms; click for details.
+description: PING performs probabilistic inference of nucleosome positioning from ChIP-seq data. Use when user asks to identify nucleosome positions, analyze ChIP-seq data for nucleosome occupancy, or model sequencing read distributions.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PING.html
 ---
+
 
 # bioconductor-ping
 

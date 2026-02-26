@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rat2302probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Rat Genome 230 2.0 Array. Use when user asks to retrieve probe sequences for the Rat2302 microarray or perform sequence-specific analysis for this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rat2302probe.html
 ---
+
 
 # bioconductor-rat2302probe
 

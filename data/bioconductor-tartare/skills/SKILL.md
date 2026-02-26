@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tartare
-description: The package is considered to be used with the rawrr package and the Spectra MsBackends.
+description: This package provides example mass spectrometry data for use with the rawrr package and Spectra MsBackends. Use when user asks to access example mass spectrometry raw files, test rawrr package functionality, or demonstrate Spectra MsBackends.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tartare.html
 ---
+
 
 # bioconductor-tartare
 

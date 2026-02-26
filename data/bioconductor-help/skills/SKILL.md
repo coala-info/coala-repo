@@ -1,8 +1,9 @@
 ---
 name: bioconductor-help
-description: The package contains a modular pipeline for analysis of HELP microarray data, and includes graphical and mathematical tools with more general applications.
+description: This tool provides a pipeline for analyzing DNA methylation microarray data from the HELP assay protocol. Use when user asks to import Roche NimbleGen .pair files, perform spatial quality control, calculate probe melting temperatures, apply quantile normalization, or summarize probe-level data into methylation measures.
 homepage: https://bioconductor.org/packages/release/bioc/html/HELP.html
 ---
+
 
 # bioconductor-help
 

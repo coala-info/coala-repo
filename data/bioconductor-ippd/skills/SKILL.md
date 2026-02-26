@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ippd
-description: The package provides functionality to extract isotopic peak patterns from raw mass spectra. This is done by fitting a large set of template basis functions to the raw spectrum using either nonnegative least squares or least absolute deviation fittting. The package offers a flexible function which tries to estimate model parameters in a way tailored to the peak shapes in the data. The package also provides functionality to process LCMS runs.
+description: This tool extracts isotopic patterns from raw protein mass spectrometry data by decomposing complex spectra into monoisotopic peaks. Use when user asks to extract isotopic patterns, estimate peak shape parameters, perform peak deconvolution, or process LC-MS runs to identify monoisotopic peaks.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/IPPD.html
 ---
+
 
 # bioconductor-ippd
 

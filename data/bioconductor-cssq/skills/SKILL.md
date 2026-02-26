@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cssq
-description: the package is available on all platforms; click for details.
+description: CSSQ performs signal quantitation and statistical analysis of ChIP-seq data to identify differential binding regions. Use when user asks to quantify ChIP-seq signals, detect differential enrichment between conditions, or analyze protein-DNA binding sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/CSSQ.html
 ---
+
 
 # bioconductor-cssq
 

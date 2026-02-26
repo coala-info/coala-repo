@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netomics
-description: The package can be combined with timeOmics to incorporate time-course expression data and build sub-networks from multi-omics kinetic clusters. Finally, from the generated multi-omics networks, propagation analyses allow the identification of missing biological functions (1), multi-omics mechanisms (2) and molecules between kinetic clusters (3). This helps to resolve complex regulatory mechanisms.
+description: This tool builds multi-omics sub-networks from kinetic clusters and performs network propagation to identify biological mechanisms. Use when user asks to build multi-omics networks, perform propagation analyses, or identify missing biological functions and molecules between kinetic clusters.
 homepage: https://bioconductor.org/packages/3.14/bioc/html/netOmics.html
 ---
+
 
 # bioconductor-netomics
 

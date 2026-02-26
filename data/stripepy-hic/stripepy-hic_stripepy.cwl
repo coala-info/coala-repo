@@ -2,9 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: stripepy
 label: stripepy-hic_stripepy
-doc: "The provided text does not contain help information for the tool. It is a log
-  of a failed container build process for stripepy-hic.\n\nTool homepage: https://github.com/paulsengroup/StripePy"
-inputs: []
+doc: "stripepy is designed to recognize linear patterns in contact maps (.hic, .mcool,
+  .cool) through the geometric reasoning, including topological persistence and quasi-interpolation.\n\
+  \nTool homepage: https://github.com/paulsengroup/StripePy"
+inputs:
+  - id: cite
+    type:
+      - 'null'
+      - boolean
+    doc: Print StripePy's reference and return.
+    inputBinding:
+      position: 101
+      prefix: --cite
+  - id: license
+    type:
+      - 'null'
+      - boolean
+    doc: Print StripePy's license and return.
+    inputBinding:
+      position: 101
+      prefix: --license
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-polyphen.hsapiens.dbsnp131
-description: the package is available on all platforms; click for details.
+description: This package provides PolyPhen predictions for human single nucleotide polymorphisms based on dbSNP build 131. Use when user asks to predict the functional impact of amino acid substitutions, retrieve PolyPhen scores for human SNPs, or analyze dbSNP build 131 variants.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/PolyPhen.Hsapiens.dbSNP131.html
 ---
+
 
 # bioconductor-polyphen.hsapiens.dbsnp131
 

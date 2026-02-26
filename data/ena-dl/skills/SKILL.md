@@ -1,8 +1,9 @@
 ---
 name: ena-dl
-description: ena-dl is a specialized utility that automates the retrieval of genomic data by querying the ENA Data Warehouse API.
+description: ena-dl automates the retrieval of genomic data by querying the ENA Data Warehouse API to identify and download files via Aspera or FTP. Use when user asks to download FASTQ files from ENA, fetch data for specific run, experiment, or study accessions, or organize genomic downloads by sample metadata.
 homepage: https://github.com/rpetit3/ena-dl
 ---
+
 
 # ena-dl
 

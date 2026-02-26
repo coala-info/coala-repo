@@ -1,8 +1,9 @@
 ---
 name: bugseq-porechop
-description: bugseq-porechop is a specialized fork of the original Porechop tool, optimized for cleaning Oxford Nanopore Technologies (ONT) data.
+description: "bugseq-porechop identifies and removes adapter sequences from Oxford Nanopore Technologies sequencing data. Use when user asks to trim adapters from ONT reads, demultiplex barcoded samples, or detect and remove chimeric reads."
 homepage: https://gitlab.com/bugseq/porechop
 ---
+
 
 # bugseq-porechop
 

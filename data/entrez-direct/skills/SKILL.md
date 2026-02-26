@@ -1,8 +1,9 @@
 ---
 name: entrez-direct
-description: Entrez Direct (EDirect) is a powerful suite of command-line tools designed to interface with the National Center for Biotechnology Information (NCBI) Entrez system.
+description: "Entrez Direct provides a suite of command-line tools to search, link, and retrieve biological data from NCBI databases. Use when user asks to search for publications, download sequences in FASTA or GenBank format, link records across different databases, or extract specific fields from NCBI XML data."
 homepage: https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.0.20250527/README
 ---
+
 
 # entrez-direct
 

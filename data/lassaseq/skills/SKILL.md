@@ -1,8 +1,9 @@
 ---
 name: lassaseq
-description: The `lassaseq` tool is a specialized command-line utility for virologists and bioinformaticians working with Lassa virus data.
+description: "lassaseq retrieves, filters, and analyzes Lassa virus genomic data to generate alignments and phylogenetic trees. Use when user asks to download Lassa virus sequences, filter data by host or geography, and perform phylogenetic analysis on L and S segments."
 homepage: https://github.com/DaanJansen94/LassaSeq
 ---
+
 
 # lassaseq
 

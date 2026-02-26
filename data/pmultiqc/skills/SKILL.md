@@ -1,8 +1,9 @@
 ---
 name: pmultiqc
-description: pmultiqc is a specialized MultiQC plugin designed for the proteomics community.
+description: pmultiqc is a MultiQC plugin that generates interactive, web-based quality control reports for proteomics data from various search engines and pipelines. Use when user asks to create QC reports for proteomics experiments, assess instrument performance, identify batch effects, or visualize results from tools like MaxQuant, DIA-NN, and FragPipe.
 homepage: https://github.com/bigbio/pmultiqc/
 ---
+
 
 # pmultiqc
 

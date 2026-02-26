@@ -1,8 +1,9 @@
 ---
 name: aevol
-description: Aevol is a digital genetics platform for simulating the evolution of populations of digital organisms.
+description: Aevol is a specialized C++ simulator designed for high-performance computing tasks to test parallelization, vectorization, and GPU acceleration. Use when user asks to build the simulation binaries, run CPU or GPU-accelerated experiments, or resume simulations from specific checkpoints.
 homepage: https://github.com/otouat/micro-aevol2-hypervitesse
 ---
+
 
 # aevol
 

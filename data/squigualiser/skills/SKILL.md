@@ -1,8 +1,9 @@
 ---
 name: squigualiser
-description: squigualiser is a specialized tool for the interactive visualization of raw nanopore sequencing signals.
+description: squigualiser provides interactive visualization of raw nanopore sequencing signals aligned to genomic sequences or reads. Use when user asks to visualize raw signal pileups, inspect signal-to-base alignments, or debug basecalling and modifications in nanopore data.
 homepage: https://github.com/hiruna72/squigualiser
 ---
+
 
 # squigualiser
 

@@ -1,8 +1,9 @@
 ---
 name: requests-toolbelt
-description: The `requests-toolbelt` is a utility belt for the `requests` library, providing classes and functions that handle complex HTTP scenarios not covered by the core library.
+description: The requests-toolbelt is a collection of utility classes and functions that extend the requests library to handle complex HTTP scenarios. Use when user asks to stream multipart form-data for large file uploads, construct custom user-agent strings, enforce specific SSL/TLS protocols, or implement stateless sessions with a forgetful cookie jar.
 homepage: https://github.com/requests/toolbelt
 ---
+
 
 # requests-toolbelt
 

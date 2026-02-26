@@ -1,8 +1,9 @@
 ---
 name: cami-opal
-description: OPAL (Open-community Profiling Assessment tooL) is a benchmarking utility designed to standardize the evaluation of taxonomic profilers in metagenomics.
+description: cami-opal is a benchmarking utility that evaluates and compares the performance of taxonomic profilers in metagenomics against a gold standard. Use when user asks to assess taxonomic profiling accuracy, compare multiple metagenomic profilers, or generate performance metrics and spider plots for microbial community reconstruction.
 homepage: https://github.com/CAMI-challenge/OPAL
 ---
+
 
 # cami-opal
 

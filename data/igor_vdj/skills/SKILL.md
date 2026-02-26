@@ -1,8 +1,9 @@
 ---
 name: igor_vdj
-description: IGoR (Inference and Generation Of Repertoires) is a C++ framework designed to provide a detailed statistical characterization of the V(D)J recombination process.
+description: IGoR is a statistical framework for characterizing the V(D)J recombination process through probabilistic inference and sequence generation. Use when user asks to calculate generation probabilities of TCR or BCR sequences, infer recombination model parameters from experimental data, or generate synthetic immune repertoires.
 homepage: https://github.com/qmarcou/IGoR
 ---
+
 
 # igor_vdj
 

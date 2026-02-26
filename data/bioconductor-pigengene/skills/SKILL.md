@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pigengene
-description: the package is available on all platforms; click for details.
+description: Pigengene computes eigengenes from gene expression modules to build predictive models for classification and diagnosis. Use when user asks to identify gene modules, calculate eigengenes, or perform gene expression-based classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/Pigengene.html
 ---
+
 
 # bioconductor-pigengene
 

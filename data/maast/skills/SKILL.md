@@ -1,8 +1,9 @@
 ---
 name: maast
-description: Maast (Microbial agile accurate SNP Typer) is a high-performance bioinformatics tool designed to identify core-genome Single Nucleotide Polymorphisms (SNPs) and genotype them in conspecific genomes, contigs, or unassembled reads.
+description: Maast identifies core-genome single nucleotide polymorphisms and genotypes them in microbial genomes or sequencing reads using a k-mer based approach. Use when user asks to call SNPs from assemblies, build a k-mer database for genotyping, or perform end-to-end SNP discovery and sample genotyping.
 homepage: https://github.com/zjshi/Maast
 ---
+
 
 # maast
 

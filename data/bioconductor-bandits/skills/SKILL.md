@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bandits
-description: the package is available on all platforms; click for details.
+description: BANDITS is a Bayesian hierarchical method for detecting differential transcript usage in RNA-seq data while accounting for mapping uncertainty and over-dispersion. Use when user asks to perform differential transcript usage analysis, test for gene-level or transcript-level changes, or model transcript abundance using Dirichlet-multinomial distributions and equivalence classes.
 homepage: https://bioconductor.org/packages/release/bioc/html/BANDITS.html
 ---
+
 
 # bioconductor-bandits
 

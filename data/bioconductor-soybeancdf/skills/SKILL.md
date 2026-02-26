@@ -1,8 +1,9 @@
 ---
 name: bioconductor-soybeancdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Soybean Genome Array. Use when user asks to load soybean microarray probe mappings, analyze Affymetrix soybean expression data, or access the soybean CDF environment in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/soybeancdf.html
 ---
+
 
 # bioconductor-soybeancdf
 

@@ -1,8 +1,9 @@
 ---
 name: r-proteus-bartongroup
-description: R package proteus-bartongroup (documentation from project home).
+description: Proteus is an R package for the downstream analysis of MaxQuant proteomics data, including data normalization, visualization, and differential expression analysis. Use when user asks to import protein groups, perform median normalization, visualize sample distributions with PCA or volcano plots, or conduct differential expression analysis using limma.
 homepage: https://cran.r-project.org/web/packages/proteus-bartongroup/index.html
 ---
+
 
 # r-proteus-bartongroup
 

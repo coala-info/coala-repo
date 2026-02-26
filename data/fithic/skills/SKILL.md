@@ -1,8 +1,9 @@
 ---
 name: fithic
-description: Fit-Hi-C (and the updated FitHiC2) is a specialized tool for the statistical analysis of chromosomal contact maps.
+description: Fit-Hi-C identifies statistically significant interactions in chromosomal contact maps by modeling expected contact frequencies based on genomic distance. Use when user asks to identify significant interactions in Hi-C data, filter raw contact counts, or perform statistical analysis on intra-chromosomal and inter-chromosomal contact maps.
 homepage: https://github.com/ay-lab/fithic/tree/master
 ---
+
 
 # fithic
 

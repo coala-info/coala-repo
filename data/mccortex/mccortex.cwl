@@ -2,11 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mccortex
 label: mccortex
-doc: "The provided text does not contain help information or usage instructions for
-  mccortex. It appears to be an error log from a container runtime (Apptainer/Singularity)
-  indicating a failure to build the image due to insufficient disk space.\n\nTool
-  homepage: https://github.com/mcveanlab/mccortex"
-inputs: []
+doc: "Wrapper to find the correct mccortex binary given kmer size (K)\n\nTool homepage:
+  https://github.com/mcveanlab/mccortex"
+inputs:
+  - id: kmer_size
+    type: int
+    doc: kmer size (K)
+    inputBinding:
+      position: 1
+  - id: cmd
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Additional commands to pass to the correct mccortex binary
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

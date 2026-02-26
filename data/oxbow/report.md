@@ -3,26 +3,32 @@
 ## oxbow
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the oxbow image due to insufficient disk space.
+FAIL to generate CWL: oxbow not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/oxbow:0.5.1--py310hec43fc7_0
 - **Homepage**: https://github.com/abdenlab/oxbow
 - **Package**: https://anaconda.org/channels/bioconda/packages/oxbow/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/oxbow/overview
-- **Total Downloads**: 10.5K
+- **Total Downloads**: 10.8K
 - **Last updated**: 2025-12-10
 - **GitHub**: https://github.com/abdenlab/oxbow
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: oxbow not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: oxbow not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/oxbow:0.5.1--py310hec43fc7_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3691578143: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

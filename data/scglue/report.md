@@ -3,24 +3,32 @@
 ## scglue
 
 ### Tool Description
-Graph-linked unified embedding for single-cell multi-omics data integration.
+FAIL to generate CWL: scglue not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scglue:0.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/gao-lab/GLUE
 - **Package**: https://anaconda.org/channels/bioconda/packages/scglue/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/scglue/overview
 - **Total Downloads**: 12.7K
 - **Last updated**: 2025-09-03
 - **GitHub**: https://github.com/gao-lab/GLUE
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: scglue not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: scglue not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/c3aac5820c2f91afccbb61917bd6f485e58d5c5324bb004877f7f3fe2c134ff9: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scglue:0.4.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1786463408: no space left on device
+
 ```
 

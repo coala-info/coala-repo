@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggtools
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs eQTL analysis by integrating expression and genotype data to identify genetic sources of expression variation. Use when user asks to perform focused or comprehensive eQTL searches, manage smlSet data structures, apply genotype filters, or calculate permutation-based FDR for cis-eQTL associations.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GGtools.html
 ---
+
 
 # bioconductor-ggtools
 

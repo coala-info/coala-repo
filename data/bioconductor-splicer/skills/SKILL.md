@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splicer
-description: the package is available on all platforms; click for details.
+description: spliceR classifies alternative splicing events and predicts the coding potential of transcripts from RNA-seq data. Use when user asks to classify alternative splicing patterns, predict protein-coding potential, or analyze isoform switches.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/spliceR.html
 ---
+
 
 # bioconductor-splicer
 

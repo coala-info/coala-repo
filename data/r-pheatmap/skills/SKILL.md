@@ -1,8 +1,9 @@
 ---
 name: r-pheatmap
-description: "Implementation of heatmaps that offers more control     over dimensions and appearance.</p>"
+description: This R package generates highly customizable, publication-quality heatmaps with hierarchical clustering. Use when user asks to visualize matrix data, perform hierarchical clustering, add row or column annotations, scale data, or customize heatmap aesthetics like color scales and cell sizes.
 homepage: https://cloud.r-project.org/web/packages/pheatmap/index.html
 ---
+
 
 # r-pheatmap
 

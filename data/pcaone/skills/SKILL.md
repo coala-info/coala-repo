@@ -1,8 +1,9 @@
 ---
 name: pcaone
-description: PCAone is a high-performance C++ framework designed for fast and memory-efficient PCA.
+description: PCAone is a high-performance framework for fast and memory-efficient principal component analysis on large-scale genomic and single-cell datasets. Use when user asks to calculate principal components from PLINK or Beagle files, perform out-of-core PCA for datasets exceeding RAM, or handle biological noise and missingness in sequencing data.
 homepage: https://github.com/Zilong-Li/PCAone
 ---
+
 
 # pcaone
 

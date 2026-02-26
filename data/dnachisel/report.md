@@ -3,7 +3,7 @@
 ## dnachisel
 
 ### Tool Description
-A Python library and CLI tool for DNA sequence optimization (Note: The provided text contains only system error logs and no help documentation to parse).
+DNA Chisel Command Line Interface
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dnachisel:3.2.16--pyh7e72e81_0
@@ -12,17 +12,38 @@ A Python library and CLI tool for DNA sequence optimization (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dnachisel/overview
-- **Total Downloads**: 45.0K
+- **Total Downloads**: 45.2K
 - **Last updated**: 2025-05-10
 - **GitHub**: https://github.com/Edinburgh-Genome-Foundry/DnaChisel
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dnachisel:3.2.16--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1074794032: no space left on device
+DNA Chisel Command Line Interface
+
+Usage:
+  dnachisel <source> <target> [--circular] [--mute] [--with_sequence_edits]
+
+Where ``source`` is a fasta or Genbank file, and target can be one of:
+- A folder name or a zip name (extension .zip). In this case a complete report
+  along with the sequence will be generated.
+- A Genbank file. In this case, only the optimized sequence file is created.
+  The with_sequence_edits option specifies that edits are also annotated in the
+  Genbank file. Note that the filename must end with '.gb'.
+
+Note: this CLI will be developed on a per-request basis, so don't hesitate to
+ask for more handles and options on Github
+(https://github.com/Edinburgh-Genome-Foundry/DnaChisel/issues)
+
+Example to output the result to a genbank:
+
+>>> dnachisel annotated_record.gb optimized_record.gb
+
+Example to output the result to a folder:
+
+>>> dnachisel annotated_record.gb optimization_report/
+
+Example to output the result to a zip archive:
+
+>>> dnachisel annotated_record.gb optimization_report.zip
 ```
 
-
-## Metadata
-- **Skill**: generated

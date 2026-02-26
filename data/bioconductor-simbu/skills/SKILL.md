@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simbu
-description: the package is available on all platforms; click for details.
+description: SimBu simulates bulk RNA-seq data from single-cell RNA-seq datasets to create synthetic transcriptomes with known cell-type proportions. Use when user asks to simulate pseudo-bulk data, generate synthetic RNA-seq samples, or benchmark cell-type deconvolution algorithms.
 homepage: https://bioconductor.org/packages/release/bioc/html/SimBu.html
 ---
+
 
 # bioconductor-simbu
 

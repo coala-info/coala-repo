@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqarchr
-description: the package is available on all platforms; click for details.
+description: seqArchR enables de novo discovery and visualization of sequence architectures in genomic data through non-negative matrix factorization. Use when user asks to identify promoter architectures, cluster sequences by motif patterns, or discover structural features in genomic sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/seqArchR.html
 ---
+
 
 # bioconductor-seqarchr
 

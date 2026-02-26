@@ -1,8 +1,9 @@
 ---
 name: bioconductor-saigegds
-description: the package is available on all platforms; click for details.
+description: SAIGEgds performs scalable genome-wide association studies using generalized linear mixed models on large-scale genomic data. Use when user asks to perform genome-wide association studies, account for sample relatedness in genetic analysis, or analyze binary traits in large biobank datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/SAIGEgds.html
 ---
+
 
 # bioconductor-saigegds
 

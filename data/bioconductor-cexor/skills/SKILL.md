@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cexor
-description: the package is available on all platforms; click for details.
+description: CexoR analyzes ChIP-exo data to identify high-resolution protein-DNA binding sites by modeling strand-specific count differences. Use when user asks to call reproducible peak-pairs from ChIP-exo BAM files, estimate Irreproducible Discovery Rate for binding events, or visualize protein-DNA interaction profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/CexoR.html
 ---
+
 
 # bioconductor-cexor
 

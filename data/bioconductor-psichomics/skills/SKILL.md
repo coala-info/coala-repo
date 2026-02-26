@@ -1,8 +1,9 @@
 ---
 name: bioconductor-psichomics
-description: the package is available on all platforms; click for details.
+description: Psichomics is an R package for the integrative analysis and visualization of alternative splicing data. Use when user asks to quantify alternative splicing, perform differential splicing analysis, or visualize splicing events from TCGA and GTEx datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/psichomics.html
 ---
+
 
 # bioconductor-psichomics
 

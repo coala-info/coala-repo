@@ -1,8 +1,9 @@
 ---
 name: r-ngsplotdb-mm10
-description: R package ngsplotdb-mm10 (documentation from project home).
+description: This R package provides genomic databases and annotation tables for visualizing next-generation sequencing data specifically for the mouse mm10 genome. Use when user asks to generate average profiles, create heatmaps of genomic enrichment, or visualize NGS data at functional regions like TSS and enhancers for Mus musculus.
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-mm10/index.html
 ---
+
 
 # r-ngsplotdb-mm10
 

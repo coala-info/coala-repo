@@ -1,8 +1,9 @@
 ---
 name: scexecute
-description: The `scexecute` tool bridges the gap between aggregate single-cell BAM files and cell-level analysis.
+description: scexecute splits a single-cell BAM file by cell barcodes and executes a specified command on each resulting subset. Use when user asks to split BAM files by barcode, run commands on individual cell subsets, or process single-cell data using tools that are not natively single-cell aware.
 homepage: https://github.com/HorvathLab/NGS/tree/master/SCExecute#readme
 ---
+
 
 # scexecute
 

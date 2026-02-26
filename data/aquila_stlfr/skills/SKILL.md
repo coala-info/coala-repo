@@ -1,8 +1,9 @@
 ---
 name: aquila_stlfr
-description: Aquila_stLFR is a specialized genomic tool designed for the reconstruction of diploid human genomes using stLFR technology.
+description: Aquila_stLFR reconstructs diploid human genomes and generates haplotype-resolved assemblies from stLFR linked-read data. Use when user asks to generate phased contigs, perform local assembly of linked-reads, or detect assembly-based variants from stLFR sequencing runs.
 homepage: https://github.com/maiziex/Aquila_stLFR
 ---
+
 
 # aquila_stlfr
 

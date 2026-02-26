@@ -1,8 +1,9 @@
 ---
 name: bioconductor-analysispageserver
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool creates and deploys interactive R analysis pages and web servers for sharing customizable data visualizations and reports. Use when user asks to generate interactive SVG reports, build dynamic web applications with R backends, or configure complex parameter sets for user input.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/AnalysisPageServer.html
 ---
+
 
 # bioconductor-analysispageserver
 

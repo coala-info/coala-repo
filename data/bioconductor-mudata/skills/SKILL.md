@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mudata
-description: the package is available on all platforms; click for details.
+description: The MuData package provides a data structure for representing and manipulating multi-modal biological datasets within the Bioconductor ecosystem. Use when user asks to organize multi-modal data, read or write H5MU files, or manage multi-assay experiments in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/MuData.html
 ---
+
 
 # bioconductor-mudata
 

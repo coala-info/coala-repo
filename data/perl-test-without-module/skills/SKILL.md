@@ -1,8 +1,9 @@
 ---
 name: perl-test-without-module
-description: This skill provides instructions for using `Test::Without::Module` to verify that Perl applications handle missing dependencies gracefully.
+description: This tool simulates the absence of Perl modules to test how applications handle missing dependencies. Use when user asks to hide specific modules during testing, verify graceful degradation, or ensure error handling works when a dependency is unavailable.
 homepage: http://metacpan.org/pod/Test-Without-Module
 ---
+
 
 # perl-test-without-module
 

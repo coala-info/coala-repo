@@ -1,8 +1,9 @@
 ---
 name: dagchainer
-description: DAGchainer is a specialized bioinformatics tool used to find chains of gene pairs that share a conserved order between genomic regions.
+description: DAGchainer identifies chains of gene pairs that share a conserved order between genomic regions to find syntenic blocks. Use when user asks to identify large-scale duplications, find orthologous regions between species, or visualize syntenic chains.
 homepage: https://github.com/kullrich/dagchainer
 ---
+
 
 # dagchainer
 

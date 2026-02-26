@@ -2,10 +2,76 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: spingo
 label: spingo
-doc: "The provided text is an error log from a container execution environment (Apptainer/Singularity)
-  and does not contain help text or usage information for the tool 'spingo'.\n\nTool
-  homepage: https://github.com/homedepot/spingo"
-inputs: []
+doc: "SPecies level IdentificatioN of metaGenOmic amplicons.\n\nTool homepage: https://github.com/homedepot/spingo"
+inputs:
+  - id: ambiguous
+    type:
+      - 'null'
+      - boolean
+    doc: if specified, species which lead to an ambiguous hit will be listed
+    inputBinding:
+      position: 101
+      prefix: --ambiguous
+  - id: bootstrap
+    type:
+      - 'null'
+      - int
+    doc: number of bootstrap samples
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: --bootstrap
+  - id: database
+    type:
+      - 'null'
+      - File
+    doc: path to the fasta format reference database
+    inputBinding:
+      position: 101
+      prefix: --database
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: path to the fasta format input file
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: kmersize
+    type:
+      - 'null'
+      - int
+    doc: K-mer size
+    default: 8
+    inputBinding:
+      position: 101
+      prefix: --kmersize
+  - id: processors
+    type:
+      - 'null'
+      - int
+    doc: number of processor threads
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --processors
+  - id: subsample
+    type:
+      - 'null'
+      - float
+    doc: fraction of kmers to be subsampled for bootstrapping. Default is 
+      kmersize
+    inputBinding:
+      position: 101
+      prefix: --subsample
+  - id: write_index
+    type:
+      - 'null'
+      - boolean
+    doc: if specified, index will be written to disk
+    inputBinding:
+      position: 101
+      prefix: --write-index
 outputs:
   - id: stdout
     type: stdout

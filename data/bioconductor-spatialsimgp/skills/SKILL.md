@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spatialsimgp
-description: the package is available on all platforms; click for details.
+description: This R package simulates spatial transcriptomics data using Gaussian processes to model spatial gene expression patterns. Use when user asks to simulate spatial transcriptomics data, generate synthetic spatial gene expression patterns, or create benchmark datasets for spatial analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialSimGP.html
 ---
+
 
 # bioconductor-spatialsimgp
 

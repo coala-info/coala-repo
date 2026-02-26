@@ -1,8 +1,9 @@
 ---
 name: r-airr
-description: Skill for using the CRAN R package r-airr.
+description: The r-airr package provides tools to read, write, and validate Adaptive Immune Receptor Repertoire (AIRR) data according to community standards. Use when user asks to read or write Rearrangement TSV files, handle AIRR Data Model YAML/JSON files, or validate data structures for schema compliance.
 homepage: https://cloud.r-project.org/web/packages/airr/index.html
 ---
+
 
 # r-airr
 

@@ -1,8 +1,9 @@
 ---
 name: perl-file-which
-description: The `perl-file-which` skill provides a reliable, platform-independent method for finding the full path to an executable.
+description: This tool provides a platform-independent way to find the full path of an executable across different operating systems. Use when user asks to find the location of an executable, check if a dependency is installed, or resolve absolute paths for system commands.
 homepage: https://metacpan.org/pod/File::Which
 ---
+
 
 # perl-file-which
 

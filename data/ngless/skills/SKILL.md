@@ -1,8 +1,9 @@
 ---
 name: ngless
-description: ngless is a domain-specific language (DSL) designed to streamline the initial phases of NGS analysis.
+description: ngless is a domain-specific language designed to streamline next-generation sequencing analysis through high-level pipelines for quality control, read filtering, and feature counting. Use when user asks to process raw sequencing data, perform read mapping and selection, or generate functional and taxonomic profiles from metagenomic datasets.
 homepage: http://ngless.embl.de
 ---
+
 
 # ngless
 

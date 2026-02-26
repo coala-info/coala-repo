@@ -1,8 +1,9 @@
 ---
 name: perl-crypt-openssl-rsa
-description: This skill provides procedural knowledge for the `Crypt::OpenSSL::RSA` Perl module.
+description: This tool provides procedural knowledge for the Crypt::OpenSSL::RSA Perl module to perform secure RSA cryptographic operations. Use when user asks to generate RSA key pairs, encrypt or decrypt data, and manage digital signatures using OpenSSL.
 homepage: http://github.com/toddr/Crypt-OpenSSL-RSA
 ---
+
 
 # perl-crypt-openssl-rsa
 

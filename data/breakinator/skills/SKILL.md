@@ -1,8 +1,9 @@
 ---
 name: breakinator
-description: The breakinator skill provides a specialized workflow for identifying structural artifacts in long-read sequencing datasets.
+description: Breakinator identifies structural artifacts like foldbacks and chimeras in long-read sequencing alignment files. Use when user asks to detect sequencing artifacts, identify foldbacks or chimeras, resolve diploid assemblies, or generate consensus breakpoints.
 homepage: https://github.com/jheinz27/breakinator
 ---
+
 
 # breakinator
 

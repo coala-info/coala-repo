@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancerupp
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Miller et al. (2005) breast cancer gene expression dataset as a curated Bioconductor ExpressionSet. Use when user asks to load the UPP dataset, analyze p53 mutation status in breast cancer, or access Affymetrix microarray data for primary breast cancer samples.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerUPP.html
 ---
+
 
 # bioconductor-breastcancerupp
 

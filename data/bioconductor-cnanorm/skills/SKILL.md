@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnanorm
-description: the package is available on all platforms; click for details.
+description: CNAnorm normalizes copy number variation data from next-generation sequencing to detect genomic alterations. Use when user asks to normalize copy number data, correct for GC content bias, or identify copy number alterations in sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNAnorm.html
 ---
+
 
 # bioconductor-cnanorm
 

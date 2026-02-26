@@ -1,8 +1,9 @@
 ---
 name: isajson-validator
-description: The `isajson-validator` is a specialized utility that audits ISA-JSON files to identify syntactic errors and metadata inconsistencies.
+description: The isajson-validator audits ISA-JSON files to identify syntactic errors and metadata inconsistencies against the ISA-JSON schema. Use when user asks to validate ISA-JSON files, check experimental metadata for compliance, or generate validation reports for metabolomics data.
 homepage: https://github.com/phnmnl/container-isajson-validator
 ---
+
 
 # isajson-validator
 

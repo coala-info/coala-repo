@@ -1,8 +1,9 @@
 ---
 name: braker
-description: BRAKER is a fully automated pipeline designed for the prediction of protein-coding gene structures in eukaryotic genomes.
+description: BRAKER is an automated pipeline that predicts protein-coding gene structures in eukaryotic genomes by integrating GeneMark and AUGUSTUS. Use when user asks to predict genes in a genome assembly, generate gene annotations using RNA-Seq or protein evidence, or perform ab initio gene finding.
 homepage: https://github.com/Gaius-Augustus/BRAKER
 ---
+
 
 # braker
 

@@ -1,8 +1,9 @@
 ---
 name: sspace_basic
-description: SSPACE Basic (Scaffolding Pre-Assemblies After Contig Extension) is a Perl-based tool used to refine genomic assemblies.
+description: SSPACE Basic is a Perl-based tool that uses paired-read information to link genomic contigs into larger scaffolds. Use when user asks to scaffold pre-assembled contigs, extend contig ends using unmapped reads, or refine genomic assemblies using paired-end or mate-pair libraries.
 homepage: https://github.com/nsoranzo/sspace_basic
 ---
+
 
 # sspace_basic
 

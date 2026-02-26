@@ -1,8 +1,9 @@
 ---
 name: vardict-java
-description: VarDictJava is a high-performance Java port of the VarDict variant caller.
+description: VarDictJava identifies genomic variations including SNPs, MNPs, and structural variants directly from BAM files. Use when user asks to identify genomic variations, perform single-sample variant calling, perform paired/somatic variant calling, or call variants in specific genomic regions.
 homepage: https://github.com/AstraZeneca-NGS/VarDictJava
 ---
+
 
 # vardict-java
 

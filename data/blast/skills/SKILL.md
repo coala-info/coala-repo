@@ -1,8 +1,9 @@
 ---
 name: blast
-description: Translated Query-Translated Subject BLAST 2.17.0+
+description: BLAST finds regions of local similarity between biological sequences to identify matches and calculate statistical significance. Use when user asks to search sequences against a database, identify unknown sequences, or perform comparative genomics.
 homepage: https://blast.ncbi.nlm.nih.gov/doc/blast-help/
 ---
+
 
 # blast
 

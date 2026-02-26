@@ -3,7 +3,7 @@
 ## tspex
 
 ### Tool Description
-The provided text is a system error log indicating a failed container build (no space left on device) and does not contain help text or argument definitions for the tool 'tspex'.
+Compute gene tissue-specificity from an expression matrix and save the output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tspex:0.6.3--pyhdfd78af_0
@@ -18,14 +18,35 @@ The provided text is a system error log indicating a failed container build (no 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tspex:0.6.3--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:93615a2420f54d19c16c303b1b00e483fa942bfc2be860dbd6dafdb930abbb2b: unpack entry: usr/local/include/openssl/sslerr.h: unpack to regular file: short write: write /tmp/build-temp-3736472281/rootfs/usr/local/include/openssl/sslerr.h: no space left on device
+usage: tspex [-h] [--version] [-l] [-d] [-t THRESHOLD]
+             input_file output_file method
+
+Compute gene tissue-specificity from an expression matrix and save the output.
+
+positional arguments:
+  input_file            Expression matrix file in the TSV, CSV or Excel
+                        formats.
+  output_file           Output TSV file containing tissue-specificity values.
+  method                Tissue-specificity metric. Allowed values are:
+                        "counts", "tau", "gini", "simpson",
+                        "shannon_specificity", "roku_specificity", "tsi",
+                        "zscore", "spm", "spm_dpm", "js_specificity",
+                        "js_specificity_dpm".
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -l, --log             Log-transform expression values. (default: False)
+  -d, --disable_transformation
+                        By default, tissue-specificity values are transformed
+                        so that they range from 0 (perfectly ubiquitous) to 1
+                        (perfectly tissue-specific). If this parameter is
+                        used, transformation will be disabled and each metric
+                        will have have a diferent range of possible values.
+                        (default: False)
+  -t THRESHOLD, --threshold THRESHOLD
+                        Threshold to be used with the "counts" metric. If
+                        another method is chosen, this parameter will be
+                        ignored. (default: 0)
 ```
 
-
-## Metadata
-- **Skill**: generated

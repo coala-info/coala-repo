@@ -3,7 +3,7 @@
 ## buscolite
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container execution failure (no space left on device).
+BUSCOlite: simplified BUSCO analysis for genome annotation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/buscolite:26.1.26--pyhdfd78af_0
@@ -12,15 +12,33 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/buscolite/overview
-- **Total Downloads**: 2.3K
+- **Total Downloads**: 2.4K
 - **Last updated**: 2026-02-08
 - **GitHub**: https://github.com/nextgenusfs/buscolite
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/fb97357a6a245c073d8dc937d7f8f391ade2a2499a566db29e6489e7c17f84da: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/buscolite:26.1.26--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2174308817: no space left on device
+usage: buscolite -i  -o  -m  -l  [-c ] [-s ] [-f ] [-h] [--version]
+
+BUSCOlite: simplified BUSCO analysis for genome annotation
+
+Required arguments:
+  -i, --input     Input sequence file in FASTA format (genome or proteome)
+  -o, --out       Give your analysis run a recognisable short name
+  -m, --mode      Specify which BUSCO analysis mode to run. [genome, proteins
+  -l, --lineage   Specify location of the BUSCO lineage data to be used (full
+                  path).
+
+Optional arguments:
+  -c, --cpus      Specify the number (N=integer) of threads/cores to use.
+                  (default: 1)
+  -s, --species   Name of existing Augustus species gene finding parameters.
+                  (default: anidulans)
+  -f, --flanks    Length of flanking region to use for augustus prediction
+                  from miniprot hits. (default: 2000)
+
+Help:
+  -h, --help      Show this help message and exit
+  --version       show program's version number and exit
 ```
 

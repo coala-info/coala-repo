@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crcl18
-description: the package is available on all platforms; click for details.
+description: This package provides transcriptomic and genomic data for 18 colorectal cancer cell lines. Use when user asks to access colorectal cancer cell line datasets, analyze transcriptomic data from CRCL18, or perform genomic studies on specific CRC models.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CRCL18.html
 ---
+
 
 # bioconductor-crcl18
 

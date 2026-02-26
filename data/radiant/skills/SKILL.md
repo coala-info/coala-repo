@@ -1,8 +1,9 @@
 ---
 name: radiant
-description: Radiant is a specialized bioinformatics tool designed for the fast and efficient annotation of proteomes.
+description: Radiant maps protein sequences to Pfam domains for fast and efficient proteome annotation. Use when user asks to annotate a proteome, identify protein domains, or map sequences to Pfam.
 homepage: https://domainworld.uni-muenster.de/data/radiant-db/index.html
 ---
+
 
 # radiant
 

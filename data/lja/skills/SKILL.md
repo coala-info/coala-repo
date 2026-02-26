@@ -1,8 +1,9 @@
 ---
 name: lja
-description: LJA (La Jolla Assembler) is a genome assembly tool optimized specifically for PacBio HiFi reads.
+description: LJA is a genome assembly tool that uses high k-mer de Bruijn graphs to resolve repeats in PacBio HiFi reads. Use when user asks to assemble genomes from HiFi data, resolve complex genomic repeats, or perform homopolymer-compressed assembly and polishing.
 homepage: https://github.com/AntonBankevich/LJA
 ---
+
 
 # lja
 

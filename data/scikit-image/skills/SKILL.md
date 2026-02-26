@@ -1,8 +1,9 @@
 ---
 name: scikit-image
-description: scikit-image is a robust Python library dedicated to image processing algorithms.
+description: scikit-image is a Python library that provides a collection of algorithms for scientific image processing. Use when user asks to perform image filtering, segmentation, feature detection, geometric transformations, or color space conversions.
 homepage: https://github.com/scikit-image/scikit-image
 ---
+
 
 # scikit-image
 

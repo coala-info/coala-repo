@@ -1,8 +1,9 @@
 ---
 name: biscot
-description: BiSCoT (Bionano SCaffolding Correction Tool) is a specialized utility designed to post-process and improve hybrid assemblies generated through Bionano optical mapping.
+description: BiSCoT improves hybrid genome assemblies by correcting errors and merging sequences in Bionano optical mapping scaffolds. Use when user asks to refine hybrid assemblies, resolve negative gaps, or merge contigs using enzymatic labeling sites and sequence similarity.
 homepage: https://github.com/institut-de-genomique/biscot
 ---
+
 
 # biscot
 

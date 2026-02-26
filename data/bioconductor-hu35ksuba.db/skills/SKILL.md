@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksuba.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Genome Hu35K Set A platform. Use when user asks to map manufacturer probe identifiers to biological identifiers, retrieve functional annotations, or find genomic locations for the hu35ksuba array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksuba.db.html
 ---
+
 
 # bioconductor-hu35ksuba.db
 

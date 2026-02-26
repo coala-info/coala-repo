@@ -1,8 +1,9 @@
 ---
 name: metawrap-reassemble-bins
-description: The `reassemble_bins` module is a specialized tool within the MetaWRAP suite designed to refine draft genomes.
+description: This tool improves the quality of metagenomic bins by extracting bin-specific reads and reassembling them with a non-metagenomic assembler. Use when user asks to reassemble bins, refine draft genomes, or improve bin completion and purity.
 homepage: https://github.com/bxlab/metaWRAP
 ---
+
 
 # metawrap-reassemble-bins
 

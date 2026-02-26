@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgmql
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: RGMQL provides an R interface for the GenoMetric Query Language to perform large-scale genomic data integration and analysis. Use when user asks to query genomic datasets, perform cross-dataset operations, or integrate heterogeneous biological data using GMQL.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/RGMQL.html
 ---
+
 
 # bioconductor-rgmql
 

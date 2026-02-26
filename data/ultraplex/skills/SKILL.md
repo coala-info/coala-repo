@@ -1,8 +1,9 @@
 ---
 name: ultraplex
-description: Ultraplex is a high-performance tool designed to process raw sequencing data from custom library preparations.
+description: Ultraplex processes raw sequencing data by combining adapter trimming, quality filtering, UMI extraction, and combinatorial demultiplexing. Use when user asks to demultiplex sequencing data, trim adapters, filter reads by quality, extract UMIs, or process paired-end sequencing data.
 homepage: https://github.com/ulelab/ultraplex.git
 ---
+
 
 # ultraplex
 

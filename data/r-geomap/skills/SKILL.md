@@ -1,8 +1,9 @@
 ---
 name: r-geomap
-description: R package geomap (documentation from project home).
+description: r-geomap is an R package for topographic and geologic mapping, coordinate projections, and spatial data visualization. Use when user asks to perform map projections, convert coordinates between geographic and Cartesian systems, create topographic or perspective plots, or handle geological map symbols.
 homepage: https://cran.r-project.org/web/packages/geomap/index.html
 ---
+
 
 # r-geomap
 

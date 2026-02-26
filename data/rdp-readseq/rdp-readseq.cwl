@@ -1,10 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rdp-readseq
+baseCommand: ReadSeqMain
 label: rdp-readseq
-doc: The provided text does not contain help information or usage instructions for
-  rdp-readseq; it is a log of a failed container image retrieval.
-inputs: []
+doc: Main entry point for ReadSeq operations. Use with a subcommand.
+inputs:
+  - id: subcommand
+    type: string
+    doc: The subcommand to execute (e.g., random-sample, reverse-comp, 
+      rm-dupseq, select-seqs, split, to-fasta, to-fastq, to-stk)
+    inputBinding:
+      position: 1
+  - id: subcommand_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified subcommand
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

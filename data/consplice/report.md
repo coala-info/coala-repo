@@ -1,9 +1,9 @@
 # consplice CWL Generation Report
 
-## consplice
+## consplice_ml
 
 ### Tool Description
-The provided text contains system error messages related to a Singularity container execution failure and does not contain the tool's help documentation. No arguments could be parsed.
+ConSplice: error: argument command: invalid choice: 'ml' (choose from 'ML', 'constraint')
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/consplice:0.0.6--pyh5e36f6f_0
@@ -18,9 +18,62 @@ The provided text contains system error messages related to a Singularity contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/a703e57e58e6f5fdb2407bf6c1b3ced281126c8223e3118e423e405f8a722f6f: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/consplice:0.0.6--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3266326619: no space left on device
+usage: ConSplice [-h] [-v] [--config-path CONFIG_PATH] {ML,constraint} ...
+ConSplice: error: argument command: invalid choice: 'ml' (choose from 'ML', 'constraint')
+```
+
+
+## consplice_constraint
+
+### Tool Description
+Module to generate genic or regional
+splicing constraint using patterns of
+purifying selection and evidence of
+alternative splicing
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/consplice:0.0.6--pyh5e36f6f_0
+- **Homepage**: https://github.com/mikecormier/ConSplice
+- **Package**: https://anaconda.org/channels/bioconda/packages/consplice/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: ConSplice constraint [-h]
+                            {sub-matrix,oe-counts,calculate-oe,select-score,agg-overlapping-reg,to-bed,score-txt,score-bed,score-vcf}
+                            ...
+
+	#######################
+	# Splicing Constraint #
+	#######################
+
+	Module to generate genic or regional
+	splicing constraint using patterns of
+	purifying selection and evidence of
+	alternative splicing
+
+positional arguments:
+  {sub-matrix,oe-counts,calculate-oe,select-score,agg-overlapping-reg,to-bed,score-txt,score-bed,score-vcf}
+    sub-matrix          Build a substitution matrix using gnomAD variants and
+                        SpliceAI scores
+    oe-counts           Calculate Observed and Expected splicing variant
+                        counts for genic or intragenic regions of genes
+    calculate-oe        Calculate the O/E and Percentile constraint scores
+    select-score        Select an O/E and matching Percentile score to filter
+                        on and remove all other non-essential columns after
+                        ConSplice scoring
+    agg-overlapping-reg
+                        Aggregate scores from overlapping regions where the
+                        step size of a region is less than the window size of
+                        the region
+    to-bed              Convert the 1-based scored ConSplice txt file to a
+                        0-based bed file
+    score-txt           Add ConSplice scores to a tab-delimited txt variant
+                        file
+    score-bed           Add ConSplice scores to a bed variant file
+    score-vcf           Add ConSplice scores to a vcf file
+
+optional arguments:
+  -h, --help            show this help message and exit
 ```
 

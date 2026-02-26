@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bdmmacorrect
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs Bayesian Dirichlet-multinomial regression meta-analysis for batch effect correction and taxon selection in microbiome data. Use when user asks to correct for batch effects in metagenomic read counts, identify microbial taxa associated with phenotypes, or perform variable selection while accounting for overdispersion and confounding variables.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BDMMAcorrect.html
 ---
+
 
 # bioconductor-bdmmacorrect
 

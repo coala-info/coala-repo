@@ -1,8 +1,9 @@
 ---
 name: oligon-design
-description: The `oligon-design` tool provides a streamlined approach for researchers to generate specific genetic markers from heterogeneous environmental data.
+description: This tool identifies unique oligonucleotide candidates for FISH or PCR by comparing target sequences against an exclusion set. Use when user asks to design genetic markers, generate specific probes for ribosomal DNA, or identify unique oligonucleotides from environmental data.
 homepage: https://github.com/MiguelMSandin/oligoN-design
 ---
+
 
 # oligon-design
 

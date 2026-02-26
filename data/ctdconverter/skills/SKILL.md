@@ -1,8 +1,9 @@
 ---
 name: ctdconverter
-description: The `ctdconverter` skill enables the transformation of CTD files—which describe the inputs, outputs, and parameters of a tool—into functional wrappers for workflow platforms.
+description: The ctdconverter tool transforms CTD files into functional wrappers for workflow platforms like Galaxy. Use when user asks to convert CTD files to Galaxy XML wrappers, perform batch conversion of tool definitions, or generate tool configuration files.
 homepage: https://github.com/WorkflowConversion/CTDConverter
 ---
+
 
 # ctdconverter
 

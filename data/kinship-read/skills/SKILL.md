@@ -1,8 +1,9 @@
 ---
 name: kinship-read
-description: The `kinship-read` skill provides a specialized workflow for analyzing genetic distance between ancient individuals.
+description: This tool estimates biological kinship between ancient DNA samples by calculating normalized proportions of non-matching alleles. Use when user asks to estimate kinship between ancient individuals, analyze genetic distance from low-coverage sequencing data, or run the READv2 workflow.
 homepage: https://bitbucket.org/tguenther/read/src/master/
 ---
+
 
 # kinship-read
 

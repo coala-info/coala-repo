@@ -1,8 +1,9 @@
 ---
 name: megadepth
-description: Megadepth is a high-speed utility designed for large-scale genomic data processing.
+description: "Megadepth is a high-speed utility for quantifying genomic coverage and processing BigWig, BAM, or CRAM files. Use when user asks to calculate coverage, generate BigWig files, summarize intervals, or count junctions from genomic data."
 homepage: https://github.com/ChristopherWilks/megadepth
 ---
+
 
 # megadepth
 

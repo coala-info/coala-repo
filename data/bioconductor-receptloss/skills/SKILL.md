@@ -1,8 +1,9 @@
 ---
 name: bioconductor-receptloss
-description: the package is available on all platforms; click for details.
+description: This R package identifies receptor loss in cancer gene expression data using an unsupervised approach. Use when user asks to identify receptor loss in cancer, analyze gene expression distributions, or determine receptor status from transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/receptLoss.html
 ---
+
 
 # bioconductor-receptloss
 

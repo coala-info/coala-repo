@@ -1,11 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastga
+baseCommand: GIXmv
 label: fastga_GIXmv
-doc: "FastGA is a tool for fast genome alignment. (Note: The provided help text contains
-  only system error messages regarding container execution and does not list specific
-  command-line arguments.)\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
-inputs: []
+doc: "Move or rename GIX database files.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
+inputs:
+  - id: source
+    type: File
+    doc: Source GIX database file path
+    inputBinding:
+      position: 1
+  - id: target
+    type: File
+    doc: Target GIX database file path
+    inputBinding:
+      position: 2
+  - id: force_quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Force operation quietly
+    inputBinding:
+      position: 103
+      prefix: -f
+  - id: interactive
+    type:
+      - 'null'
+      - boolean
+    doc: Prompt for each deletion
+    inputBinding:
+      position: 103
+      prefix: -i
+  - id: no_overwrite
+    type:
+      - 'null'
+      - boolean
+    doc: Do not overwrite existing files.
+    inputBinding:
+      position: 103
+      prefix: -n
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose mode, list what is being deleted.
+    inputBinding:
+      position: 103
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

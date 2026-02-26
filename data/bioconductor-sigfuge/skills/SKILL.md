@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sigfuge
-description: the package is available on all platforms; click for details.
+description: SigFuge identifies gene fusion signatures and clusters RNA-seq read depth coverage patterns to detect structural variations. Use when user asks to identify gene fusions, cluster RNA-seq coverage, or detect genomic rearrangements in transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SigFuge.html
 ---
+
 
 # bioconductor-sigfuge
 

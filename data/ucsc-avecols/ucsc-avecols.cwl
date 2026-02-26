@@ -2,15 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: aveCols
 label: ucsc-avecols
-doc: "The provided text does not contain help information for the tool. It is a fatal
-  error log from a container runtime (Apptainer/Singularity) indicating a failure
-  to build the image due to insufficient disk space.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Average columns in a file. This tool calculates the average value for each column
+  across multiple rows in a provided input file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input file containing columns of numbers to be averaged.
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Output file where the averaged column results will be written.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-avecols:482--h0b57e2e_0
-stdout: ucsc-avecols.out

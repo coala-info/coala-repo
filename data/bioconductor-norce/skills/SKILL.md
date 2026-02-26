@@ -1,8 +1,9 @@
 ---
 name: bioconductor-norce
-description: the package is available on all platforms; click for details.
+description: NoRCE performs functional enrichment analysis for non-coding RNAs by leveraging their genomic proximity to protein-coding genes. Use when user asks to perform enrichment analysis for non-coding RNAs, identify functional associations of ncRNAs, or analyze cis-regulatory elements.
 homepage: https://bioconductor.org/packages/release/bioc/html/NoRCE.html
 ---
+
 
 # bioconductor-norce
 

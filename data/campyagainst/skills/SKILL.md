@@ -1,8 +1,9 @@
 ---
 name: campyagainst
-description: The campyagainst skill (utilizing the campygstyper tool) provides a specialized workflow for taxonomically classifying Campylobacter genomic data.
+description: This tool taxonomically classifies *Campylobacter* genomic data by comparing query genomes against reference centroids using fastANI. Use when user asks to classify Campylobacter isolates, assign genomes to species clusters, or identify potentially novel genomic species.
 homepage: https://github.com/LanLab/campyagainst
 ---
+
 
 # campyagainst
 

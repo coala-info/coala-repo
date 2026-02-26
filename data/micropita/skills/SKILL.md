@@ -1,8 +1,9 @@
 ---
 name: micropita
-description: microPITA (microbiome Picking Interesting Taxa for Analysis) is a computational tool designed to optimize sample selection in large-scale studies.
+description: microPITA selects a subset of microbiome samples from a larger dataset based on specific ecological or taxonomic criteria to optimize sequencing resources. Use when user asks to select representative samples, maximize diversity, target specific taxa, or identify samples that distinguish between metadata categories.
 homepage: http://huttenhower.sph.harvard.edu/micropita
 ---
+
 
 # micropita
 

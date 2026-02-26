@@ -1,8 +1,9 @@
 ---
 name: perl-sys-info-driver-linux
-description: This skill enables the extraction of detailed system metadata on Linux platforms through the `Sys::Info::Driver::Linux` backend.
+description: This tool extracts detailed Linux system metadata and hardware information through the Sys::Info API. Use when user asks to identify Linux distribution details, extract CPU architecture and flags, or retrieve memory and resource statistics.
 homepage: http://metacpan.org/pod/Sys::Info::Driver::Linux
 ---
+
 
 # perl-sys-info-driver-linux
 

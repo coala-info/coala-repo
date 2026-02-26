@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ensdb.mmusculus.v75
-description: the package is available on all platforms; click for details.
+description: This package provides Ensembl-based genome annotations for Mus musculus from version 75. Use when user asks to retrieve mouse genomic features, map genomic coordinates, or perform functional annotation using the ensembldb framework.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Mmusculus.v75.html
 ---
+
 
 # bioconductor-ensdb.mmusculus.v75
 

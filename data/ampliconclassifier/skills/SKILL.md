@@ -1,8 +1,9 @@
 ---
 name: ampliconclassifier
-description: The `ampliconclassifier` tool is the standard downstream analysis component for the AmpliconSuite.
+description: The ampliconclassifier tool categorizes focal amplifications from AmpliconArchitect outputs into biological classes such as ecDNA, BFB cycles, and linear amplifications. Use when user asks to classify genomic amplicons, identify ecDNA or BFB status, extract gene-level copy number data, or quantify the genomic complexity of amplified regions.
 homepage: https://github.com/jluebeck/AmpliconClassifier
 ---
+
 
 # ampliconclassifier
 

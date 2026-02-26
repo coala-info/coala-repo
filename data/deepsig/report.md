@@ -3,7 +3,7 @@
 ## deepsig
 
 ### Tool Description
-DeepSig: deep learning method for signal peptide prediction (Note: The provided text contains container runtime errors rather than tool help documentation).
+Predictor of signal peptides in proteins
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/deepsig:1.2.5--pyhca03a8a_1
@@ -18,29 +18,23 @@ DeepSig: deep learning method for signal peptide prediction (Note: The provided 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deepsig:1.2.5--pyhca03a8a_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2968811842: no space left on device
-```
+usage: deepsig [-h] -f FASTA -o OUTF -k {euk,gramp,gramn} [-m {json,gff3}]
+               [-t THREADS] [--version]
 
+DeepSig: Predictor of signal peptides in proteins
 
-## Metadata
-- **Skill**: generated
-
-## deepsig_deepsig.py
-
-### Tool Description
-DeepSig: prediction of signal peptides in proteins. (Note: The provided help text contains only system error messages regarding container execution and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deepsig:1.2.5--pyhca03a8a_1
-- **Homepage**: https://github.com/BolognaBiocomp/deepsig
-- **Package**: https://anaconda.org/channels/bioconda/packages/deepsig/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deepsig:1.2.5--pyhca03a8a_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2361512101: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FASTA, --fasta FASTA
+                        The input multi-FASTA file name
+  -o OUTF, --outf OUTF  The output file
+  -k {euk,gramp,gramn}, --organism {euk,gramp,gramn}
+                        The organism the sequences belongs to
+  -m {json,gff3}, --outfmt {json,gff3}
+                        The output format: json or gff3 (default)
+  -t THREADS, --threads THREADS
+                        Number of threads to use (default = number of
+                        available CPUs)
+  --version             show program's version number and exit
 ```
 

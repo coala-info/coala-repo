@@ -1,8 +1,9 @@
 ---
 name: secapr
-description: SECAPR (SEquence CApture PRocessor) is a specialized bioinformatic pipeline designed to transform raw FASTQ data from sequence capture protocols into phylogenetically informative alignments.
+description: SECAPR is a bioinformatic pipeline that processes raw sequence capture data into phylogenetically informative alignments. Use when user asks to clean raw reads, assemble contigs, identify target loci, align sequences, or phase alleles for diploid data.
 homepage: https://github.com/AntonelliLab/seqcap_processor
 ---
+
 
 # secapr
 

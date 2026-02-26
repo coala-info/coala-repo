@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eir
-description: the package is available on all platforms; click for details.
+description: This tool performs accelerated similarity searching and clustering of small molecules using geometric embedding and Locality Sensitive Hashing. Use when user asks to manage large chemical compound databases, perform fast nearest neighbor lookups, or execute Jarvis-Patrick clustering on chemical structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/eiR.html
 ---
+
 
 # bioconductor-eir
 

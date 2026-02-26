@@ -1,8 +1,9 @@
 ---
 name: perl-json-maybexs
-description: JSON::MaybeXS serves as a smart compatibility layer for JSON handling in Perl.
+description: This tool provides a smart compatibility layer for Perl that automatically selects the fastest available JSON backend for encoding and decoding data. Use when user asks to encode Perl data structures to JSON, decode JSON strings into Perl, or handle JSON booleans with cross-backend compatibility.
 homepage: http://metacpan.org/pod/JSON::MaybeXS
 ---
+
 
 # perl-json-maybexs
 

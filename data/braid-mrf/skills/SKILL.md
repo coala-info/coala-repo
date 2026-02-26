@@ -1,8 +1,9 @@
 ---
 name: braid-mrf
-description: braid-mrf is a specialized tool for predicting protein complexes by modeling protein-protein interaction (PPI) networks using a Markov Random Field approach.
+description: braid-mrf predicts protein complexes by modeling protein-protein interaction networks using a Markov Random Field approach. Use when user asks to predict protein complexes from bait-prey data, cluster protein interaction networks, or generate SIF files for Cytoscape visualization.
 homepage: https://github.com/wasineer-dev/braid.git
 ---
+
 
 # braid-mrf
 

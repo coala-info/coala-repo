@@ -1,8 +1,9 @@
 ---
 name: jbrowse2
-description: JBrowse 2 is a highly extensible, next-generation genome browser capable of visualizing complex structural variants, synteny, and 3D protein structures.
+description: JBrowse 2 is a genome browser used to visualize complex genomic data, structural variants, and protein structures. Use when user asks to initialize a web instance, add reference genomes, register data tracks, or generate text indexes for searching gene names.
 homepage: https://jbrowse.org/
 ---
+
 
 # jbrowse2
 

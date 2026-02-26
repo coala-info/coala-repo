@@ -1,9 +1,9 @@
 # perl-go-perl CWL Generation Report
 
-## perl-go-perl
+## perl-go-perl_go2fmt.pl
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help information or command-line arguments for the tool.
+parses any GO/OBO style ontology file and writes out as a different format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-go-perl:0.15--pl526_3
@@ -18,79 +18,134 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:19:09  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-go-perl:0.15--pl526_3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ea297593a203b058acac31a0d8c48fa8699a9926d14b56961629b2913a8d49ef: unpack entry: usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/Common.pm: unpack to regular file: short write: write /tmp/build-temp-3861103453/rootfs/usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/Common.pm: no space left on device
-```
+NAME
+    go2fmt.pl go2obo_xml go2owl go2rdf_xml go2obo_text
 
+SYNOPSIS
+      go2fmt.pl -w obo_xml -e errlog.xml ontology/*.ontology
+      go2fmt.pl -w obo_xml -e errlog.xml ontology/gene_ontology.obo
 
-## Metadata
-- **Skill**: generated
+DESCRIPTION
+    parses any GO/OBO style ontology file and writes out as a different
+    format
 
-## perl-go-perl_go2fmt.pl
+  ARGUMENTS
+   -e ERRFILE
+    writes parse errors in XML - defaults to STDERR (there should be no
+    parse errors in well formed files)
 
-### Tool Description
-Note: The provided text is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or run the container due to insufficient disk space. It does not contain the actual help text or usage instructions for the tool.
+   -p FORMAT
+    determines which parser to use; if left unspecified, will make a guess
+    based on file suffix. See below for formats
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-go-perl:0.15--pl526_3
-- **Homepage**: http://metacpan.org/pod/go-perl
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-go-perl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:20:14  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-go-perl:0.15--pl526_3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ea297593a203b058acac31a0d8c48fa8699a9926d14b56961629b2913a8d49ef: unpack entry: usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: unpack to regular file: short write: write /tmp/build-temp-3233543804/rootfs/usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: no space left on device
-```
+   -w|writer FORMAT
+    format for output - see below for list
 
-## perl-go-perl_go-filter.pl
+   -|xslt XSLT
+    The name or filename of an XSLT transform
 
-### Tool Description
-A script from the perl-go-perl package (Gene Ontology Perl library) used for filtering GO files. Note: The provided input text was a system error log rather than help text, so specific arguments could not be extracted.
+    This can either be an absolute path to a file anywhere on the
+    filesystem, or it can just be the name of the xslt; eg
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-go-perl:0.15--pl526_3
-- **Homepage**: http://metacpan.org/pod/go-perl
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-go-perl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:20:50  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-go-perl:0.15--pl526_3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ea297593a203b058acac31a0d8c48fa8699a9926d14b56961629b2913a8d49ef: unpack entry: usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: unpack to regular file: short write: write /tmp/build-temp-2901665063/rootfs/usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: no space left on device
-```
+      go2fmt.pl -xslt oboxml_to_owl go.obo
 
-## perl-go-perl_go-stats.pl
+    If the name is specified, then first of all $GO_ROOT/xml/xsl/*.xsl will
+    be searched; if GO_ROOT is not set, then the perl modules dir where GO
+    is installed will be searched (the xslts will be installed here
+    automatically if you follow the normal install process)
 
-### Tool Description
-A tool from the perl-go-perl package. (Note: The provided input text is a system error log regarding a failed container build due to insufficient disk space and does not contain the actual help text or usage instructions for the tool.)
+  -use_cache
+    If this switch is specified, then caching mode is turned on.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-go-perl:0.15--pl526_3
-- **Homepage**: http://metacpan.org/pod/go-perl
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-go-perl/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 12:21:21  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-go-perl:0.15--pl526_3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ea297593a203b058acac31a0d8c48fa8699a9926d14b56961629b2913a8d49ef: unpack entry: usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: unpack to regular file: short write: write /tmp/build-temp-3135896984/rootfs/usr/local/lib/site_perl/5.26.2/x86_64-linux-thread-multi/XML/LibXML/CDATASection.pod: no space left on device
+    With caching mode, the first time you parse a file, then an additional
+    file will be exported in a special format that is fast to parse. This
+    file will have the same filename as the original file, except it will
+    have the ".cache" suffix.
+
+    The next time you parse the file, this program will automatically check
+    for the existence of the ".cache" file. If it exists, and is more recent
+    than the file you specified, this is parsed instead. If it does not
+    exist, it is rebuilt.
+
+    This will bring a speed improvement for b<some> of the output formats
+    below (such as pathlist). Most output formats work with event-based
+    parsing, so caching the object brings no benefit and will in fact be
+    slower than bypassing the cache
+
+  FORMATS
+    writable formats are
+
+    go_ont
+        Files with suffix ".ontology"
+
+        These store the ontology DAGs
+
+    go_def
+        Files with suffix ".defs"
+
+    go_xref
+        External database references for GO terms
+
+        Files with suffix "2go" (eg ec2go, metacyc2go)
+
+    go_assoc
+        Annotations of genes or gene products using GO
+
+        Files with prefix "gene-association."
+
+    obo_text
+        Files with suffix ".obo"
+
+        This is a new file format replacement for the existing GO flat file
+        formats. It handles ontologies, definitions and xrefs (but not
+        associations)
+
+    obo_xml
+        Files with suffix ".obo.xml" or ".obo-xml"
+
+        This is the XML version of the OBO flat file format above
+
+    prolog
+        prolog facts - you will need a prolog compiler/interpreter to use
+        these. You can reason over these facts using Obol or the forthcoming
+        Bio-LP project
+
+    tbl simple (lossy) tabular representation
+
+    summary
+        can be used on both ontology files and association files
+
+    pathlist
+        shows all paths to the root
+
+    owl OWL format (default: OWL-DL)
+
+        OWL is a W3C standard format for ontologies
+
+        You will need the XSL files from the full go-dev distribution to run
+        this; see the XML section in <http://www.godatabase.org/dev>
+
+    obj_yaml
+        a YAML representation of a GO::Model::Graph object
+
+    obj_storable
+        A dump of the perl GO::Model::Graph object. You need Storable from
+        CPAN for this to work. This is intended to cache objects on the
+        filesystem, for fast access. The obj_storable representation may not
+        be portable
+
+    text_html
+        A html-ified OBO output format
+
+    godb_prestore
+        XML that maps directly to the GODB relational schema (can then be
+        loaded using stag-storenode.pl)
+
+    chadodb_prestore
+        XML that maps directly to the Chado relational schema (can then be
+        loaded using stag-storenode.pl)
+
+  DOCUMENTATION
+    <http://www.godatabase.org/dev>
 ```
 

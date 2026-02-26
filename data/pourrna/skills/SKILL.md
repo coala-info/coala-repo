@@ -1,8 +1,9 @@
 ---
 name: pourrna
-description: The `pourRNA` tool is a specialized utility within the ViennaRNA ecosystem designed to map the energy landscape of a given RNA sequence.
+description: pourRNA maps the energy landscape of an RNA sequence by identifying local minima and calculating transition rates between structures. Use when user asks to map RNA energy landscapes, identify representative structures, calculate thermodynamic equilibrium densities, or generate transition rate matrices for kinetic simulations.
 homepage: https://github.com/ViennaRNA/pourRNA
 ---
+
 
 # pourrna
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgu74cv2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix MG-U74Cv2 microarray. Use when user asks to retrieve probe sequences, perform sequence-level analysis, or map probes for the MG-U74Cv2 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74cv2probe.html
 ---
+
 
 # bioconductor-mgu74cv2probe
 

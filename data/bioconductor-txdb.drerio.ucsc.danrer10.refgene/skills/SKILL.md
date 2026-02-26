@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.drerio.ucsc.danrer10.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-level annotations for the zebrafish danRer10 genome assembly using UCSC refGene data. Use when user asks to retrieve zebrafish gene models, access genomic coordinates for danRer10 transcripts, or perform genomic range analysis on zebrafish refGene data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Drerio.UCSC.danRer10.refGene.html
 ---
+
 
 # bioconductor-txdb.drerio.ucsc.danrer10.refgene
 

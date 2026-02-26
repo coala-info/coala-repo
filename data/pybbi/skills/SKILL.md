@@ -1,8 +1,9 @@
 ---
 name: pybbi
-description: pybbi provides high-performance Python bindings to the UCSC Big Binary Indexed (BBI) file library.
+description: pybbi provides high-performance Python bindings for reading BigWig and BigBed genomic data files into NumPy and Pandas. Use when user asks to fetch quantitative signal from BigWig files, retrieve intervals from BigBed files, inspect genomic file metadata, or generate stacked heatmaps from multiple genomic regions.
 homepage: https://github.com/nvictus/pybbi
 ---
+
 
 # pybbi
 

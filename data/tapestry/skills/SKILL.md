@@ -1,8 +1,9 @@
 ---
 name: tapestry
-description: Tapestry is a specialized toolset for the final stages of genome assembly.
+description: Tapestry is a toolset for the final stages of genome assembly that combines long-read mapping, telomere identification, and ploidy estimation to facilitate manual curation. Use when user asks to generate an assembly report, identify telomeres, estimate ploidy, or create a cleaned FASTA file based on manual filtering.
 homepage: https://github.com/johnomics/tapestry
 ---
+
 
 # tapestry
 

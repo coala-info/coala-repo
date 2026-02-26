@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnafusion
-description: the package is available on all platforms; click for details.
+description: This package detects and characterizes EML4-ALK fusions in cfDNA sequencing BAM files. Use when user asks to detect EML4-ALK fusions, identify genomic breakpoint positions, or classify specific EML4-ALK variants.
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAfusion.html
 ---
+
 
 # bioconductor-dnafusion
 

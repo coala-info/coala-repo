@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mmdiffbamsubset
-description: the package is available on all platforms; click for details.
+description: This package provides a subset of BAM files for demonstrating and testing the MMDiff differential peak analysis tool. Use when user asks to access example sequencing data for MMDiff, run package vignettes, or test differential binding analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MMDiffBamSubset.html
 ---
+
 
 # bioconductor-mmdiffbamsubset
 

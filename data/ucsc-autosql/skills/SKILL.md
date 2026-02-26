@@ -1,8 +1,9 @@
 ---
 name: ucsc-autosql
-description: The `ucsc-autosql` tool (commonly invoked as `autoSql`) is a core utility from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-autosql tool generates SQL and C code from an AutoSql definition file. Use when user asks to generate SQL for a database table, create C code for data structures, define a database schema, or synchronize database schemas with application code.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-autosql
 

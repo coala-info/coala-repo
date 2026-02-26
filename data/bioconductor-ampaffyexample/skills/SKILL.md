@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ampaffyexample
-description: the package is available on all platforms; click for details.
+description: This package provides a sample AffyBatch dataset for comparing amplified RNA to standard RNA labeling procedures on Affymetrix GeneChip arrays. Use when user asks to load the AmpData dataset, benchmark normalization methods for amplified RNA, or perform quality control on this specific experiment data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AmpAffyExample.html
 ---
+
 
 # bioconductor-ampaffyexample
 

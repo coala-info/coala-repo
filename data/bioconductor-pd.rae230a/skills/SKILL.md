@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rae230a
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Rat Expression 230A microarray. Use when user asks to process Affymetrix RAE230A microarray data, access probe sequences, or perform low-level analysis on Rat Expression 230A chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rae230a.html
 ---
+
 
 # bioconductor-pd.rae230a
 

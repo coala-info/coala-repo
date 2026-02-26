@@ -1,8 +1,9 @@
 ---
 name: privateer
-description: Privateer (the Swiss Army knife for carbohydrate structures) is a specialized utility for glycobiologists and structural biologists.
+description: Privateer validates carbohydrate structures in 3D models by checking stereochemistry and consistency with experimental electron density. Use when user asks to validate sugar molecules, detect errors in carbohydrate modeling, generate SNFG vector diagrams, or produce torsion restraints for refinement.
 homepage: https://github.com/glycojones/privateer
 ---
+
 
 # privateer
 

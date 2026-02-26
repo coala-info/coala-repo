@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowworkspacedata
-description: the package is available on all platforms; click for details.
+description: This package provides experimental flow cytometry data and XML workspaces for testing and demonstrating analysis workflows. Use when user asks to access sample FCS files, load FlowJo or Diva workspaces for testing, or run vignettes for flow cytometry analysis packages.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/flowWorkspaceData.html
 ---
+
 
 # bioconductor-flowworkspacedata
 

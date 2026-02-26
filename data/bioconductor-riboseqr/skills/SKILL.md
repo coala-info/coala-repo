@@ -1,8 +1,9 @@
 ---
 name: bioconductor-riboseqr
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for the analysis of ribosome profiling data to identify translated sequences and frame preferences. Use when user asks to analyze Ribo-seq data, identify coding sequences, or evaluate triplet periodicity and frame preference in sequencing reads.
 homepage: https://bioconductor.org/packages/release/bioc/html/riboSeqR.html
 ---
+
 
 # bioconductor-riboseqr
 

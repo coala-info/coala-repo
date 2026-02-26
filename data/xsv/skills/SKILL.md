@@ -1,8 +1,9 @@
 ---
 name: xsv
-description: `xsv` is a specialized command-line toolkit designed for the rapid manipulation and analysis of CSV files.
+description: xsv is a command-line toolkit for rapid manipulation and analysis of CSV files. Use when user asks to inspect, analyze, filter, transform, join, concatenate, sample, partition, or index CSV files.
 homepage: https://github.com/BurntSushi/xsv
 ---
+
 
 # xsv
 

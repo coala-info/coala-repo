@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htrat230pmprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix HT_Rat230_PM microarray. Use when user asks to access probe sequences, map probes to genomic coordinates, or perform GC-content based normalization for rat genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htrat230pmprobe.html
 ---
+
 
 # bioconductor-htrat230pmprobe
 

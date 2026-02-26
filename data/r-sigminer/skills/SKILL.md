@@ -1,8 +1,9 @@
 ---
 name: r-sigminer
-description: "Genomic alterations including single nucleotide substitution,     copy number alteration, etc. are the major force for cancer     initialization and development. Due to the specificity of molecular     lesions caused by genomic alterations, we can generate characteristic     alteration spectra, called 'signature' (Wang, Shixiang, et al."
+description: The sigminer package provides a comprehensive toolset for mutational signature analysis across various genomic variation types. Use when user asks to extract de novo signatures, tally mutation components, estimate signature exposures, or visualize mutational profiles.
 homepage: https://cran.r-project.org/web/packages/sigminer/index.html
 ---
+
 
 # r-sigminer
 

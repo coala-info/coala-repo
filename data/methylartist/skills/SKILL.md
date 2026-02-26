@@ -1,8 +1,9 @@
 ---
 name: methylartist
-description: methylartist is a specialized suite designed for the analysis and visualization of Oxford Nanopore Technologies (ONT) methylation data.
+description: Methylartist is a suite of tools designed for the analysis and visualization of Oxford Nanopore Technologies methylation data. Use when user asks to initialize methylation databases from raw outputs, aggregate methylation counts over genomic intervals, or generate publication-quality locus and region plots.
 homepage: https://github.com/adamewing/methylartist
 ---
+
 
 # methylartist
 

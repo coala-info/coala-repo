@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgubeta7.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings for the Affymetrix hgubeta7 platform to link probe identifiers with biological metadata. Use when user asks to map hgubeta7 probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgubeta7.db.html
 ---
+
 
 # bioconductor-hgubeta7.db
 

@@ -1,8 +1,9 @@
 ---
 name: fuc
-description: The `fuc` (Frequently Used Commands) package is a Python-based suite designed to consolidate disparate bioinformatics tasks into a streamlined command-line interface.
+description: The fuc package provides a suite of command-line tools for streamlining bioinformatics tasks such as genomic data manipulation, file format conversion, and end-to-end NGS pipeline execution. Use when user asks to manipulate VCF or BAM files, visualize MAF data, run germline or somatic variant discovery pipelines, and perform table operations.
 homepage: https://github.com/sbslee/fuc
 ---
+
 
 # fuc
 

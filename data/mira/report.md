@@ -3,7 +3,8 @@
 ## mira
 
 ### Tool Description
-MIRA is a multi-purpose assembly system for whole genome sequencing (Note: The provided text contains container runtime errors and does not include the actual help documentation for the tool).
+A multi-pass sequencing data assembler or mapper for small genomes and
+EST/RNASeq projects.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mira:5.0.0rc2--hb5a7bbe_0
@@ -12,17 +13,39 @@ MIRA is a multi-purpose assembly system for whole genome sequencing (Note: The p
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mira/overview
-- **Total Downloads**: 29.5K
+- **Total Downloads**: 29.6K
 - **Last updated**: 2025-09-24
 - **GitHub**: https://github.com/DrMicrobit/mira
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mira:5.0.0rc2--hb5a7bbe_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1222541658: no space left on device
+Usage: mira [options] manifest_file [manifest_file ...]
+
+A multi-pass sequencing data assembler or mapper for small genomes and
+EST/RNASeq projects.
+
+Recommended scope of usage:
+  - de-novo assembly of haploid organisms, < ~40 megabases.
+  - mapping / polishing genomes: < ~40 megabases.
+  - EST/RNA assembly or maping: 40 to 60m reads.
+  - Sanger and Illumina work well. Ion Torrent and 454 are ok.
+  - Do not use with PacBio or Oxford Nanopore reads.
+
+Options:
+  -h / --help				Print short help and exit
+  -c / --cwd=		directory	Change working directory
+  -m / --mcheck				Only check the manifest file, then exit.
+  -M / --mdcheck			Like -m, but also check existence of
+					 data files.
+  -r / --resume				Resume/restart an interrupted assembly
+  -t / --threads=	integer		Force number of threads (overrides
+					 equivalent -GE:not manifest entry)
+  -v / --version			Print version and exit
+
+Reporting bugs:
+Please use the GitHub issue tracker at https://github.com/bachev/mira/issues
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

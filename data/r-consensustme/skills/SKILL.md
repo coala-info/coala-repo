@@ -1,8 +1,9 @@
 ---
 name: r-consensustme
-description: R package consensustme (documentation from project home).
+description: This tool estimates the relative abundance of immune and stromal cell types in the tumor microenvironment using cancer-specific consensus gene sets and enrichment analysis. Use when user asks to perform cell type deconvolution, estimate tumor microenvironment composition, or calculate enrichment scores for immune and stromal signatures in bulk transcriptomic data.
 homepage: https://cran.r-project.org/web/packages/consensustme/index.html
 ---
+
 
 # r-consensustme
 

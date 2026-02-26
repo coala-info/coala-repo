@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gostats
-description: the package is available on all platforms; click for details.
+description: This tool performs functional enrichment analysis using hypergeometric tests for Gene Ontology terms and KEGG pathways. Use when user asks to perform over-representation analysis, conduct conditional GO testing, or identify enriched biological pathways in gene lists.
 homepage: https://bioconductor.org/packages/release/bioc/html/GOstats.html
 ---
+
 
 # bioconductor-gostats
 

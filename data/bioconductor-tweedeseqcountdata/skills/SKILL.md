@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tweedeseqcountdata
-description: the package is available on all platforms; click for details.
+description: This package provides RNA-seq count data and metadata for differential expression analysis using the tweeDEseq package. Use when user asks to access example RNA-seq datasets, load the Pickrell or Montgomery count data, or use the tweeDEseqCountData package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tweeDEseqCountData.html
 ---
+
 
 # bioconductor-tweedeseqcountdata
 

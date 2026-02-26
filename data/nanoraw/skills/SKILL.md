@@ -1,8 +1,9 @@
 ---
 name: nanoraw
-description: nanoraw is a specialized toolkit designed for genome-guided re-segmentation and visualization of raw nanopore sequencing data.
+description: "nanoraw is a toolkit for genome-guided re-segmentation and visualization of raw nanopore sequencing data. Use when user asks to resquiggle nanopore reads, visualize signal intensity at specific genomic locations, or identify differences in signal between control and treatment groups."
 homepage: https://github.com/marcus1487/nanoraw
 ---
+
 
 # nanoraw
 

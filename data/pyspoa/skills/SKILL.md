@@ -1,8 +1,9 @@
 ---
 name: pyspoa
-description: pyspoa provides high-performance Python bindings for the `spoa` (Simplicial Partial Order Alignment) C++ library.
+description: pyspoa provides Python bindings for the spoa library to generate consensus sequences and multiple sequence alignments using directed acyclic graphs. Use when user asks to generate a consensus sequence, perform multiple sequence alignment, or use partial order alignment for genomic sequences.
 homepage: https://github.com/nanoporetech/pyspoa
 ---
+
 
 # pyspoa
 

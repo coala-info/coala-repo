@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basilisk
-description: the package is available on all platforms; click for details.
+description: The basilisk package provides a framework for Bioconductor packages to provision and manage dedicated, isolated Python environments to ensure version stability and reproducibility. Use when user asks to create a BasiliskEnvironment, execute Python code via basiliskRun, manage local Python instances for R scripts, or configure environment storage settings.
 homepage: https://bioconductor.org/packages/release/bioc/html/basilisk.html
 ---
+
 
 # bioconductor-basilisk
 

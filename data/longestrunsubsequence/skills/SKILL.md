@@ -1,8 +1,9 @@
 ---
 name: longestrunsubsequence
-description: The `longestrunsubsequence` tool provides a specialized solver for a specific string optimization problem.
+description: The longestrunsubsequence tool extracts the longest possible subsequence from a string or list where each unique element appears in only one contiguous block. Use when user asks to find the longest run subsequence, reconcile contig sets in genomic research, or identify trends that maintain single-visit consistency for each category.
 homepage: https://github.com/AlBi-HHU/longest-run-subsequence
 ---
+
 
 # longestrunsubsequence
 

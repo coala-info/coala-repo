@@ -1,8 +1,9 @@
 ---
 name: amplici
-description: AmpliCI (Amplicon Clustering Inference) is a specialized tool for denoising Illumina amplicon sequences.
+description: AmpliCI is a model-based clustering tool used to denoise Illumina amplicon sequences and distinguish true biological haplotypes from sequencing errors. Use when user asks to estimate sequencing error profiles, infer haplotypes and their abundances, or assign reads to a reference set of haplotypes.
 homepage: https://github.com/DormanLab/AmpliCI
 ---
+
 
 # amplici
 

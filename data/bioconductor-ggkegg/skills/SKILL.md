@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggkegg
-description: The package supports visualizing KEGG information using ggplot2 and ggraph through using the grammar of graphics. The package enables the direct visualization of the results from various omics analysis packages.
+description: This tool visualizes KEGG pathways, modules, and networks using the grammar of graphics framework in R. Use when user asks to import KEGG data into tidy graph formats, create customizable pathway maps, highlight omics results on KEGG diagrams, or analyze KEGG module completeness.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggkegg.html
 ---
+
 
 # bioconductor-ggkegg
 

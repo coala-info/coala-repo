@@ -1,8 +1,9 @@
 ---
 name: igdiscover
-description: igdiscover is a specialized bioinformatics pipeline designed for the discovery of new V gene alleles and the comprehensive analysis of antibody and T-cell receptor repertoires.
+description: Igdiscover is a bioinformatics pipeline for discovering novel V gene alleles and analyzing antibody or T-cell receptor repertoires. Use when user asks to initialize a repertoire analysis project, run the germline discovery pipeline, group sequences into clonotypes, or create a consensus database from multiple libraries.
 homepage: https://igdiscover.se/
 ---
+
 
 # igdiscover
 

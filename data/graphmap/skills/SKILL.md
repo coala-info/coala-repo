@@ -1,8 +1,9 @@
 ---
 name: graphmap
-description: GraphMap is a highly sensitive mapper designed specifically for third-generation sequencing data.
+description: GraphMap is a highly sensitive mapper designed to align long, error-prone third-generation sequencing reads to a reference or to each other. Use when user asks to map Nanopore or PacBio reads to a genome, perform spliced RNA-seq alignment, or generate read-to-read overlaps for de novo assembly.
 homepage: https://github.com/lbcb-sci/graphmap2
 ---
+
 
 # graphmap
 

@@ -2,10 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genomedata-query
 label: genomedata_genomedata-query
-doc: "A tool for querying genomedata archives. (Note: The provided help text contained
-  system error messages rather than usage information; no arguments could be extracted.)\n
-  \nTool homepage: http://genomedata.hoffmanlab.org"
-inputs: []
+doc: "print data from genomedata archive in specified trackname and coordinates\n\n\
+  Tool homepage: http://genomedata.hoffmanlab.org"
+inputs:
+  - id: gdarchive
+    type: string
+    doc: genomedata archive
+    inputBinding:
+      position: 1
+  - id: trackname
+    type: string
+    doc: track name
+    inputBinding:
+      position: 2
+  - id: chrom
+    type: string
+    doc: chromosome name
+    inputBinding:
+      position: 3
+  - id: begin
+    type: int
+    doc: chromosome start
+    inputBinding:
+      position: 4
+  - id: end
+    type: int
+    doc: chromosome end
+    inputBinding:
+      position: 5
 outputs:
   - id: stdout
     type: stdout

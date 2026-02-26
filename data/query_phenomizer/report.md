@@ -3,7 +3,7 @@
 ## query_phenomizer
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains error logs from a container runtime (Apptainer/Singularity) failing to fetch the image.
+Give hpo terms either on the form 'HP:0001623', or '0001623'
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/query_phenomizer:1.2.1--pyh7cba7a3_0
@@ -18,13 +18,20 @@ The provided text does not contain help information for the tool; it contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/query_phenomizer:1.2.1--pyh7cba7a3_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: query_phenomizer [OPTIONS] [HPO_TERM]...
+
+  Give hpo terms either on the form 'HP:0001623', or '0001623'
+
+Options:
+  -u, --username TEXT    A username for phenomizer
+  -p, --password TEXT    A password for phenomizer
+  -c, --check-terms      Check if the term(s) exist
+  -o, --output FILENAME  Specify the path to a file for storing the phenomizer
+                         output.
+  --p-value-limit FLOAT  Specify the highest p-value that you want included.
+                         [default: 1.0]
+  --to-json              If result should be printed to json format
+  -v, --verbose
+  --help                 Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

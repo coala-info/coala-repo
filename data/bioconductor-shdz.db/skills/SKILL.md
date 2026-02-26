@@ -1,8 +1,9 @@
 ---
 name: bioconductor-shdz.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix SHDZ chip. Use when user asks to map Affymetrix SHDZ probe identifiers to gene symbols, retrieve genomic annotations for the SHDZ platform, or perform functional enrichment analysis using these mappings.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SHDZ.db.html
 ---
+
 
 # bioconductor-shdz.db
 

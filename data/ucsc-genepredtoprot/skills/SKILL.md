@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredtoprot
-description: The `genePredToProt` utility is a specialized tool from the UCSC Genome Browser "Kent" suite.
+description: The `ucsc-genepredtoprot` tool translates gene prediction data and a reference sequence into amino acid sequences. Use when user asks to 'validate gene models', 'perform proteogenomics analysis', or 'generate custom protein databases for mass spectrometry'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-genepredtoprot
 

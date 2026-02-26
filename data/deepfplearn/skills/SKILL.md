@@ -1,8 +1,9 @@
 ---
 name: deepfplearn
-description: DeepFPlearn (and its extension DeepFPlearn+) is a specialized tool for predicting the association between small molecules and multiple targets, such as receptor proteins.
+description: DeepFPlearn predicts associations between small molecules and biological targets using fingerprint-based or graph neural network models. Use when user asks to train machine learning models for drug discovery, predict molecular properties, or convert chemical structures into binary fingerprints.
 homepage: https://github.com/yigbt/deepFPlearn
 ---
+
 
 # deepfplearn
 

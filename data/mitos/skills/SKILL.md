@@ -1,8 +1,9 @@
 ---
 name: mitos
-description: MITOS is a specialized bioinformatics pipeline designed specifically for the unique challenges of metazoan mitochondrial genome annotation.
+description: MITOS is a specialized bioinformatics pipeline for the automated annotation of metazoan mitochondrial genomes. Use when user asks to annotate mitochondrial sequences, identify mitochondrial protein-coding genes, or generate publication-ready annotations for mitochondrial assemblies.
 homepage: http://mitos.bioinf.uni-leipzig.de
 ---
+
 
 # mitos
 

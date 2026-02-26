@@ -3,7 +3,7 @@
 ## maffilter
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container runtime (Singularity/Apptainer) failing to build an image due to insufficient disk space.
+MAF Filter
 
 ### Metadata
 - **Docker Image**: biocontainers/maffilter:v1.3.1dfsg-1b1-deb_cv1
@@ -18,11 +18,22 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/maffilter:v1.3.1dfsg-1b1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3727171092: no space left on device
+******************************************************************
+*                  MAF Filter, version 1.3.1                     *
+* Author: J. Dutheil                        Created on  10/09/10 *
+*                                           Last Modif. 18/08/18 *
+******************************************************************
+
+__________________________________________________________________________
+maffilter name1=value1 name2=value2
+      ... param=option_file
+
+  Refer to the MafFilter Manual for a list of available options.
+  Online version: https://jydu.github.io/maffilter/Manual/index.html
+  Or type 'info maffilter' in a terminal.
+__________________________________________________________________________
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

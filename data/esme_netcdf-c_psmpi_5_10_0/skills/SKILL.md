@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_psmpi_5_10_0
-description: This skill provides guidance for utilizing the NetCDF-C interface within high-performance computing (HPC) environments.
+description: This tool provides a C interface for the NetCDF data format optimized for parallel I/O using PSMPI in high-performance computing environments. Use when user asks to inspect NetCDF file structures, generate C code templates from datasets, create binary files from CDL descriptions, or implement parallel data access for scientific modeling.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_psmpi_5_10_0
 

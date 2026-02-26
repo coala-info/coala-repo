@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm39
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the Mus musculus mm39 assembly for use in R. Use when user asks to access mouse reference sequences, extract DNA sequences for specific genomic coordinates, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm39.html
 ---
+
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm39
 

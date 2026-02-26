@@ -1,8 +1,9 @@
 ---
 name: mutscan
-description: Mutscan is a specialized tool designed for the rapid detection of targeted mutations directly from raw sequencing data (FASTQ).
+description: "Mutscan rapidly detects targeted mutations directly from raw FASTQ sequencing data using a k-mer based approach. Use when user asks to scan for specific variants, monitor oncogenic mutations, or verify CRISPR editing results without performing full genome alignment."
 homepage: https://github.com/OpenGene/genefuse
 ---
+
 
 # mutscan
 

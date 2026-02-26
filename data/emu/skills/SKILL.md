@@ -1,8 +1,9 @@
 ---
 name: emu
-description: Emu is a specialized bioinformatics tool designed to estimate the relative abundance of microbial species from 16S rRNA gene sequencing data.
+description: Emu estimates the relative abundance of microbial species from 16S rRNA gene sequencing data using an Expectation-Maximization algorithm. Use when user asks to estimate taxonomic abundance, manage 16S databases, or combine multiple sample outputs into a single profile.
 homepage: https://gitlab.com/treangenlab/emu
 ---
+
 
 # emu
 

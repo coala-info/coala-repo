@@ -1,8 +1,9 @@
 ---
 name: perl-db-file
-description: The `perl-db-file` skill provides the necessary environment and procedural knowledge to work with the Perl `DB_File` module, which interfaces with Berkeley DB 1.x.
+description: This tool provides an interface for Perl scripts to interact with Berkeley DB 1.x for managing disk-based hash and array structures. Use when user asks to create persistent data structures, index large datasets for fast retrieval, or tie Perl hashes and arrays to physical files.
 homepage: https://metacpan.org/pod/Set::IntervalTree
 ---
+
 
 # perl-db-file
 

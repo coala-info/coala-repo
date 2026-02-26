@@ -1,8 +1,9 @@
 ---
 name: crazydoc
-description: crazydoc is a specialized utility designed to bridge the gap between informal laboratory documentation and computational biology.
+description: Crazydoc parses and converts stylized Microsoft Word documents into annotated Biopython records and GenBank files. Use when user asks to extract sequences from .docx files, convert Word documents to GenBank format, or visualize annotated sequences from text styling.
 homepage: https://github.com/Edinburgh-Genome-Foundry/crazydoc
 ---
+
 
 # crazydoc
 

@@ -1,8 +1,9 @@
 ---
 name: rdp-classifier
-description: The RDP Classifier is a specialized tool for the rapid taxonomic placement of ribosomal RNA sequences.
+description: The RDP Classifier uses a Naive Bayesian algorithm to provide rapid taxonomic assignments and confidence values for ribosomal RNA sequences. Use when user asks to classify sequences into taxonomic ranks, compare microbial libraries, or update BIOM files with taxonomic metadata.
 homepage: https://github.com/rdpstaff/classifier
 ---
+
 
 # rdp-classifier
 

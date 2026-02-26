@@ -1,8 +1,9 @@
 ---
 name: perl-data-visitor
-description: The `Data::Visitor` module provides a flexible API for recursive traversal of Perl data structures.
+description: This tool provides a flexible API for the recursive traversal and transformation of complex Perl data structures. Use when user asks to traverse data structures, modify nested values, or handle specific data types during a recursive walk.
 homepage: http://metacpan.org/release/Data-Visitor
 ---
+
 
 # perl-data-visitor
 

@@ -1,13 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - coatran
-  - constant
+baseCommand: coatran_constant
 label: coatran_coatran_constant
-doc: "COdon-Aware TRANslation (coatran) constant subcommand. Note: The provided help
-  text contains only system error logs and no usage information.\n\nTool homepage:
-  https://github.com/niemasd/CoaTran"
-inputs: []
+doc: "CoaTran (constant effective population size)\n\nTool homepage: https://github.com/niemasd/CoaTran"
+inputs:
+  - id: trans_network
+    type: File
+    doc: Transmission network file
+    inputBinding:
+      position: 1
+  - id: sample_times
+    type: File
+    doc: Sample times file
+    inputBinding:
+      position: 2
+  - id: eff_pop_size
+    type: float
+    doc: Constant effective population size
+    inputBinding:
+      position: 3
 outputs:
   - id: stdout
     type: stdout

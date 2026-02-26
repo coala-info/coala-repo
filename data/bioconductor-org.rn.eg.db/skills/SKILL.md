@@ -1,8 +1,9 @@
 ---
 name: bioconductor-org.rn.eg.db
-description: the package is available on all platforms; click for details.
+description: This package provides genome-wide annotations for the rat (Rattus norvegicus) based on Entrez Gene identifiers. Use when user asks to map rat gene identifiers, retrieve gene ontology information for rat genes, or perform functional annotation for rat genomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Rn.eg.db.html
 ---
+
 
 # bioconductor-org.rn.eg.db
 

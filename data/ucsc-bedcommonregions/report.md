@@ -3,7 +3,7 @@
 ## ucsc-bedcommonregions
 
 ### Tool Description
-Find regions common to all input BED files. Note: The provided help text contains a system error and does not list specific arguments.
+Find regions common to all input files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-bedcommonregions:482--h0b57e2e_0
@@ -18,14 +18,13 @@ Find regions common to all input BED files. Note: The provided help text contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-bedcommonregions:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5195b57b9ce7f50c5d5eb07a09a04fdb34dbb9d6f1c9f9e7b2ad6f1839f22e66: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-3047986363/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+Unable to find image 'quay.io/biocontainers/ucsc-bedcommonregions:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-bedcommonregions
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+5195b57b9ce7: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3693733772: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -3,26 +3,32 @@
 ## mordred
 
 ### Tool Description
-Molecular descriptor calculator
+FAIL to generate CWL: mordred not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mordred:1.2.0--2
+- **Docker Image**: quay.io/biocontainers/mordred:1.2.0--1
 - **Homepage**: https://github.com/mordred-descriptor/mordred
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/mordred/overview
 - **Total Downloads**: 125.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/mordred-descriptor/mordred
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: mordred not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: mordred not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mordred:1.2.0--2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1536130975: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

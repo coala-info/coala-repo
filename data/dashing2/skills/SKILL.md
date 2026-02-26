@@ -1,8 +1,9 @@
 ---
 name: dashing2
-description: Dashing2 is a high-performance toolkit designed for the rapid analysis of genomic sequences through sketching.
+description: Dashing2 is a high-performance toolkit for the rapid analysis and comparison of genomic sequences through sketching. Use when user asks to compare genomic sequences, estimate distances between datasets, build k-nearest neighbor graphs, or sketch DNA and protein sequences.
 homepage: https://github.com/dnbaker/dashing2
 ---
+
 
 # dashing2
 

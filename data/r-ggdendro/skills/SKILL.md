@@ -1,8 +1,9 @@
 ---
 name: r-ggdendro
-description: "This is a set of tools for dendrograms and     tree plots using 'ggplot2'.  The 'ggplot2' philosophy is to     clearly separate data from the presentation.     Unfortunately the plot method for dendrograms plots     directly to a plot device without exposing the data.     The 'ggdendro' package resolves this by making available     functions that extract the dendrogram plot data. The package     provides implementations for 'tree', 'rpart', as well as diana and agnes     (from 'cluster') diagrams.</p>"
+description: The r-ggdendro package extracts plot data from R model objects to create dendrograms and tree diagrams using ggplot2. Use when user asks to create customizable dendrograms, extract segment and label data from clustering models, or apply ggplot2 themes to hierarchical and decision tree visualizations.
 homepage: https://cloud.r-project.org/web/packages/ggdendro/index.html
 ---
+
 
 # r-ggdendro
 

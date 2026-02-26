@@ -1,8 +1,9 @@
 ---
 name: oligomap
-description: Oligomap is a specialized alignment tool designed for the rapid mapping of small RNA (sRNA) sequences.
+description: Oligomap is a specialized alignment tool designed for the rapid mapping of small RNA sequences to a reference with zero or one error. Use when user asks to map sRNA sequences, find all occurrences of a query in a genome, or perform small RNA alignment with mismatches and indels.
 homepage: https://github.com/zavolanlab/oligomap
 ---
+
 
 # oligomap
 

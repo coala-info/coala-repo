@@ -1,8 +1,9 @@
 ---
 name: fiji-morpholibj
-description: MorphoLibJ is a specialized library for Fiji/ImageJ that extends standard morphological operations into 3D and adds advanced algorithms like morphological reconstruction and marker-controlled watershed.
+description: MorphoLibJ provides advanced morphological operations and segmentation tools for 2D and 3D image analysis in Fiji. Use when user asks to perform morphological filtering, execute marker-controlled watershed segmentation, or extract quantitative morphometric data from label images.
 homepage: http://imagej.net/MorphoLibJ
 ---
+
 
 # fiji-morpholibj
 

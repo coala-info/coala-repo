@@ -1,8 +1,9 @@
 ---
 name: prodigal-gv
-description: Prodigal-gv is a specialized fork of the Prodigal gene caller designed to improve the identification of protein-coding sequences in giant viruses and viral lineages with non-standard translation tables.
+description: Prodigal-gv identifies protein-coding sequences in giant viruses and viral lineages with non-standard translation tables. Use when user asks to predict genes in NCLDVs, identify viral proteins using genetic code 15, or run gene calling on giant virus genomes.
 homepage: https://github.com/apcamargo/prodigal-gv
 ---
+
 
 # prodigal-gv
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pathview
-description: the package is available on all platforms; click for details.
+description: Pathview maps and renders biological data onto KEGG pathway graphs for data integration and visualization. Use when user asks to visualize gene expression data on KEGG pathways, integrate multi-omics data with biological pathways, or generate pathway diagrams.
 homepage: https://bioconductor.org/packages/release/bioc/html/pathview.html
 ---
+
 
 # bioconductor-pathview
 

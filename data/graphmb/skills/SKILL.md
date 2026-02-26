@@ -1,8 +1,9 @@
 ---
 name: graphmb
-description: GraphMB is a metagenomic binning tool designed for long-read assemblies.
+description: GraphMB is a metagenomic binning tool that uses graph machine learning on assembly graphs to group contigs into bins. Use when user asks to perform metagenomic binning on long-read assemblies, process assembly graphs with machine learning, or resolve bins using contig overlaps and depth.
 homepage: https://github.com/MicrobialDarkMatter/GraphMB
 ---
+
 
 # graphmb
 

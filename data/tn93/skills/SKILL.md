@@ -1,8 +1,9 @@
 ---
 name: tn93
-description: tn93 is a specialized tool for computing pairwise genetic distances between aligned nucleotide sequences.
+description: tn93 computes pairwise genetic distances between aligned nucleotide sequences. Use when user asks to compute pairwise genetic distances, identify closely related sequences, compare distances between two datasets, handle ambiguous nucleotides, filter by sequence overlap, specify output format, or count pairs below a threshold.
 homepage: https://github.com/veg/tn93
 ---
+
 
 # tn93
 

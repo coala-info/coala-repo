@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ncgtw
-description: the package is available on all platforms; click for details.
+description: ncGTW performs alignment of liquid chromatography-mass spectrometry data using a non-conjugate generalized time warping algorithm. Use when user asks to align LC-MS profiles, correct retention time shifts, or perform peak alignment across multiple samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/ncGTW.html
 ---
+
 
 # bioconductor-ncgtw
 

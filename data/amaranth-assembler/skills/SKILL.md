@@ -1,8 +1,9 @@
 ---
 name: amaranth-assembler
-description: Amaranth is a specialized transcriptome assembler built upon the Scallop2 framework, specifically tuned to handle the nuances of single-cell RNA-seq datasets.
+description: Amaranth is a specialized transcriptome assembler designed to reconstruct high-quality transcripts from single-cell RNA-seq datasets. Use when user asks to install the amaranth-assembler package, perform transcriptome assembly from reference-aligned BAM files, or execute single-cell research workflows.
 homepage: https://github.com/Shao-Group/amaranth
 ---
+
 
 # amaranth-assembler
 

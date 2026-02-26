@@ -1,11 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: bigmag
+baseCommand: app.py
 label: bigmag
-doc: "The provided text does not contain help information or usage instructions for
-  the tool 'bigmag'. It appears to be a log of a failed container build process (Apptainer/Singularity)
-  due to insufficient disk space.\n\nTool homepage: https://github.com/jeffe107/BIgMAG"
-inputs: []
+doc: "BIgMAG\n\nTool homepage: https://github.com/jeffe107/BIgMAG"
+inputs:
+  - id: file
+    type: File
+    doc: File with concatenated dataframes.
+    inputBinding:
+      position: 1
+  - id: host
+    type:
+      - 'null'
+      - string
+    doc: Host to run the app.
+    default: 127.0.0.1
+    inputBinding:
+      position: 102
+      prefix: --host
+  - id: port
+    type:
+      - 'null'
+      - int
+    doc: Port to run the app.
+    default: 8050
+    inputBinding:
+      position: 102
+      prefix: --port
 outputs:
   - id: stdout
     type: stdout

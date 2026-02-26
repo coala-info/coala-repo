@@ -1,8 +1,9 @@
 ---
 name: beamspy
-description: BEAMSpy (Birmingham mEtabolite Annotation for Mass Spectrometry) is a Python-based toolkit designed for the putative annotation of metabolites in untargeted metabolomics assays.
+description: BEAMSpy is a Python toolkit for the putative annotation of metabolites in untargeted LC-MS and DIMS metabolomics assays. Use when user asks to annotate metabolites, match features against reference databases, or perform correlation analysis to group metabolic features.
 homepage: https://github.com/computational-metabolomics/beamspy
 ---
+
 
 # beamspy
 

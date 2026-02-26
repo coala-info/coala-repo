@@ -1,8 +1,9 @@
 ---
 name: haystack_bio
-description: `haystack_bio` is a specialized bioinformatics suite designed to uncover the mechanistic links between chromatin states and gene regulation.
+description: haystack_bio is a bioinformatics suite used to identify variable genomic hotspots and the transcription factors that regulate them across different biological conditions. Use when user asks to identify epigenetic hotspots, perform transcription factor motif analysis, or integrate chromatin states with gene expression data.
 homepage: https://github.com/rfarouni/haystack_bio
 ---
+
 
 # haystack_bio
 

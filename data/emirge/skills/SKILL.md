@@ -1,8 +1,9 @@
 ---
 name: emirge
-description: EMIRGE (Expectation-Maximization Iterative Reconstruction of Genes from the Environment) is a specialized assembly tool designed to overcome the challenges of assembling highly conserved but divergent ribosomal genes from metagenomic or amplicon datasets.
+description: EMIRGE reconstructs full-length ribosomal RNA genes from metagenomic or amplicon sequencing data using an iterative expectation-maximization algorithm. Use when user asks to reconstruct 16S or 18S sequences, estimate taxonomic abundances from environmental samples, or assemble conserved genes from short-read datasets.
 homepage: https://github.com/csmiller/EMIRGE
 ---
+
 
 # emirge
 

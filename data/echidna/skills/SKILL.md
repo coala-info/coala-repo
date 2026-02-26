@@ -1,8 +1,9 @@
 ---
 name: echidna
-description: Echidna is a Bayesian framework designed to map genotype to phenotype by integrating transcriptomic and genomic data.
+description: Echidna is a Bayesian framework that maps genotype to phenotype by integrating transcriptomic and genomic data to quantify how chromosomal alterations drive phenotypic plasticity. Use when user asks to infer gene dosage, track clonal evolution across longitudinal single-cell datasets, or integrate scRNA-seq and WGS data to analyze chromosomal amplifications and deletions.
 homepage: https://github.com/azizilab/echidna
 ---
+
 
 # echidna
 

@@ -1,9 +1,9 @@
 # atactk CWL Generation Report
 
-## atactk
+## atactk_trim_adapters
 
 ### Tool Description
-A toolkit for ATAC-seq data analysis. (Note: The provided input text was a container engine error log and did not contain help documentation for argument extraction.)
+Trim adapters from paired-end HTS reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/atactk:0.1.9--pyh3252c3a_0
@@ -18,12 +18,34 @@ A toolkit for ATAC-seq data analysis. (Note: The provided input text was a conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/atactk:0.1.9--pyh3252c3a_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/ca0c1d614c256c203edc1ea62cc83393ae686e03e019927a4de50c5fea6722192739084823: no space left on device
+usage: trim_adapters [-h] [-d EDIT_DISTANCE] [-f FUDGE] [-s TRIM_START]
+                     [-r RC_LENGTH] [-v]
+                     forward reverse
+
+Trim adapters from paired-end HTS reads.
+
+positional arguments:
+  forward               The (optionally gzipped) FASTQ file containing the
+                        forward reads.
+  reverse               The (optionally gzipped) FASTQ file containing the
+                        reverse reads.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d EDIT_DISTANCE, --max-edit-distance EDIT_DISTANCE
+                        The maximum edit distance permitted when aligning the
+                        paired reads (default: 1).
+  -f FUDGE, --fudge FUDGE
+                        An arbitrary number of extra bases to trim from the
+                        ends of reads (default: 1) because the original
+                        pyadapter_trim.py script did so.
+  -s TRIM_START, --trim-from-start TRIM_START
+                        Trim this number of bases from the start of each
+                        sequence (default: 0).
+  -r RC_LENGTH, --rc-length RC_LENGTH
+                        Use the reverse complement of this number of bases
+                        from the beginning of the reverse read to align the
+                        reads (default: 20).
+  -v, --verbose         Report on the handling of each FASTQ record.
 ```
 
-
-## Metadata
-- **Skill**: generated

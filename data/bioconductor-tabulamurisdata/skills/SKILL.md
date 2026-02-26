@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tabulamurisdata
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Tabula Muris single-cell RNA sequencing data from various mouse tissues. Use when user asks to access Tabula Muris datasets, retrieve single-cell transcriptomic data from mouse tissues, or load processed single-cell RNA-seq objects.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TabulaMurisData.html
 ---
+
 
 # bioconductor-tabulamurisdata
 

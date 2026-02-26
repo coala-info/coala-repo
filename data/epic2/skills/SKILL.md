@@ -1,8 +1,9 @@
 ---
 name: epic2
-description: epic2 is an ultraperformant reimplementation of the SICER algorithm, optimized for speed and low memory consumption.
+description: "epic2 is a high-performance tool for identifying broad peaks and diffuse domains in ChIP-Seq data. Use when user asks to call broad peaks, identify enriched domains, or perform differential enrichment analysis between conditions."
 homepage: http://github.com/endrebak/epic2
 ---
+
 
 # epic2
 

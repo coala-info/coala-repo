@@ -1,8 +1,9 @@
 ---
 name: proovframe
-description: proovframe is a specialized tool designed to detect and correct frameshift errors in long-read (meta)genomic data.
+description: proovframe detects and corrects frameshift errors in long-read genomic data using protein alignments as guides. Use when user asks to map reference proteins to reads, fix frameshifts in sequences, or restore frame-fidelity in metagenomic assemblies.
 homepage: https://github.com/thackl/proovframe
 ---
+
 
 # proovframe
 

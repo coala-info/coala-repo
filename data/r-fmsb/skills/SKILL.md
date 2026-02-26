@@ -1,8 +1,9 @@
 ---
 name: r-fmsb
-description: "Several utility functions for the book entitled  	\"Practices of Medical and Health Data Analysis using R\" 	(Pearson Education Japan, 2007) with Japanese demographic 	data and some demographic analysis related functions.</p>"
+description: This tool provides specialized functions for medical statistics, demographic analysis, and health data visualization in R. Use when user asks to create radar charts, calculate epidemiological indices like odds ratios and risk ratios, construct life tables, or analyze Japanese demographic data.
 homepage: https://cloud.r-project.org/web/packages/fmsb/index.html
 ---
+
 
 # r-fmsb
 

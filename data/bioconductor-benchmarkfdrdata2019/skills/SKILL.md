@@ -1,8 +1,9 @@
 ---
 name: bioconductor-benchmarkfdrdata2019
-description: the package is available on all platforms; click for details.
+description: This package provides access to benchmarking results and datasets for evaluating False Discovery Rate control methods. Use when user asks to load SummarizedBenchmark objects from the Korthauer and Kimes study, evaluate performance metrics like FDR and TPR, or extend existing benchmarks with new statistical methods.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/benchmarkfdrData2019.html
 ---
+
 
 # bioconductor-benchmarkfdrdata2019
 

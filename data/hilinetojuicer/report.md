@@ -3,26 +3,32 @@
 ## hilinetojuicer
 
 ### Tool Description
-The provided text is an error log from a container runtime and does not contain help information or usage instructions for the tool 'hilinetojuicer'.
+FAIL to generate CWL: hilinetojuicer not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hilinetojuicer:0.0.2--pyhdfd78af_0
 - **Homepage**: https://pypi.org/project/HiLineToJuicer/0.0.1/
 - **Package**: https://anaconda.org/channels/bioconda/packages/hilinetojuicer/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/hilinetojuicer/overview
-- **Total Downloads**: 5.0K
+- **Total Downloads**: 5.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: hilinetojuicer not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: hilinetojuicer not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hilinetojuicer:0.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1586086907: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

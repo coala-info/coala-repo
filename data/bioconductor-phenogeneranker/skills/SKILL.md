@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phenogeneranker
-description: the package is available on all platforms; click for details.
+description: PhenoGeneRanker ranks genes and phenotypes by integrating multiple data types into a multiplex heterogeneous network. Use when user asks to rank genes or phenotypes based on seed sets, integrate multiple biological networks, or perform prioritization using multiplex heterogeneous networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/PhenoGeneRanker.html
 ---
+
 
 # bioconductor-phenogeneranker
 

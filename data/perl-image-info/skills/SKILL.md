@@ -1,8 +1,9 @@
 ---
 name: perl-image-info
-description: The `perl-image-info` skill leverages the `Image::Info` Perl module to parse and retrieve technical details from image files.
+description: This tool extracts technical metadata and identifies file formats for a wide variety of image types using the Image::Info Perl module. Use when user asks to retrieve image dimensions, identify file types, extract metadata from images, or detect file corruption.
 homepage: https://metacpan.org/pod/Image::Info
 ---
+
 
 # perl-image-info
 

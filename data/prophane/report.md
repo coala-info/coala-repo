@@ -1,9 +1,9 @@
 # prophane CWL Generation Report
 
-## prophane
+## prophane_info
 
 ### Tool Description
-A tool for functional and taxonomic profiling of metaproteomes (Note: The provided text contains error logs rather than help text; no arguments could be extracted).
+This is prophane version v6.2.6
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
@@ -18,33 +18,136 @@ A tool for functional and taxonomic profiling of metaproteomes (Note: The provid
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/prophane:6.2.6--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+This is prophane version v6.2.6
+
+Package install path: /usr/local/bin
+General config file: None
+snakemake Snakefile: /usr/local/opt/prophane/Snakefile
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## prophane_prophane.py
+## prophane_init
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for prophane_prophane.py. It contains log messages related to a failed Singularity/Apptainer image build process.
+Write DB_DIR path for storing prophane databases to general config file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
 - **Homepage**: https://gitlab.com/s.fuchs/prophane/
 - **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/prophane:6.2.6--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: prophane init [OPTIONS] DB_DIR
+
+  Write DB_DIR path for storing prophane databases to general config file.
+
+Options:
+  --help  Show this message and exit.
+```
+
+
+## prophane_list-dbs
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
+- **Homepage**: https://gitlab.com/s.fuchs/prophane/
+- **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Usage: prophane list-dbs [OPTIONS]
+Try 'prophane list-dbs --help' for help.
+
+Error: No such option: --h Did you mean --help?
+```
+
+
+## prophane_list-styles
+
+### Tool Description
+Styles available in "/usr/local/opt/prophane/styles"
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
+- **Homepage**: https://gitlab.com/s.fuchs/prophane/
+- **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Styles available in "/usr/local/opt/prophane/styles":
+
+source              version report_style                
+            Generic   1.0                   generic.yaml
+            Generic 1.0.0               mztab_1_0_0.yaml
+                MPA 1.8.x                 mpa_1_8_x.yaml
+         MPA_server   3.4    mpa_server_multisample.yaml
+Proteome Discoverer   2.5   proteome_discoverer_2_5.yaml
+           Scaffold 4.8.x            scaffold_4_8_x.yaml
+            generic 1.2.0             mzident_1_2_0.yaml
+```
+
+
+## prophane_prepare-dbs
+
+### Tool Description
+download the databases required to execute the tasks in the provided CONFIGFILE
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
+- **Homepage**: https://gitlab.com/s.fuchs/prophane/
+- **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: prophane prepare-dbs [OPTIONS] CONFIGFILE [SNAKEMAKE_ARGS]...
+
+  download the databases required to execute the tasks in the provided
+  CONFIGFILE
+
+Options:
+  --verbose
+  --help     Show this message and exit.
+```
+
+
+## prophane_run
+
+### Tool Description
+execute prophane workflow (using snakemake underneath)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/prophane:6.2.6--hdfd78af_0
+- **Homepage**: https://gitlab.com/s.fuchs/prophane/
+- **Package**: https://anaconda.org/channels/bioconda/packages/prophane/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: prophane run [OPTIONS] CONFIGFILE [SNAKEMAKE_ARGS]...
+
+  execute prophane workflow (using snakemake underneath)
+
+Options:
+  --verbose
+  --help     Show this message and exit.
 ```
 

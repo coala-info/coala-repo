@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bacon
-description: the package is available on all platforms; click for details.
+description: bioconductor-bacon controls for bias and inflation in large-scale association studies by estimating the empirical null distribution using a Gibbs sampling algorithm. Use when user asks to estimate empirical null distributions from z-scores, correct for genomic inflation in EWAS or TWAS, perform bias-corrected meta-analysis, or visualize Gibbs sampling diagnostics and corrected QQ-plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/bacon.html
 ---
+
 
 # bioconductor-bacon
 

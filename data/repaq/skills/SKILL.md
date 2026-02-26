@@ -1,8 +1,9 @@
 ---
 name: repaq
-description: repaq is a specialized, lossless compressor designed for FASTQ files.
+description: "repaq is a lossless compressor for FASTQ files that offers high-speed or high-ratio compression modes for genomic data. Use when user asks to compress FASTQ files, decompress RFQ files, or verify the integrity of compressed genomic data."
 homepage: https://github.com/OpenGene/repaq
 ---
+
 
 # repaq
 

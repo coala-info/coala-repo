@@ -1,8 +1,9 @@
 ---
 name: bioconductor-evaluomer
-description: the package is available on all platforms; click for details.
+description: This tool evaluates the reliability of bioinformatics metrics by analyzing their correlations, clustering stability, and classification quality. Use when user asks to evaluate metric reliability, calculate correlations between metrics, assess clustering stability, measure classification quality, find the optimal number of clusters, or visualize metric distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/evaluomeR.html
 ---
+
 
 # bioconductor-evaluomer
 

@@ -1,9 +1,9 @@
 # ucsc-autosql CWL Generation Report
 
-## ucsc-autosql
+## ucsc-autosql_autoSql
 
 ### Tool Description
-The provided text does not contain help information; it is an error log indicating a failure to build or run the container due to insufficient disk space. Based on the tool name hint, this tool (autoSql) is typically used to create C code and SQL commands from an autoSql specification file.
+create SQL and C code for permanently storing a structure in database and loading it back into memory based on a specification file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-autosql:482--h0b57e2e_0
@@ -18,14 +18,24 @@ The provided text does not contain help information; it is an error log indicati
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-autosql:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0ebdb9c8f6de48d1f12dedd8a4f755515d3cc0e92bd8eb30211e9c35c238ed9b: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-2224382951/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+autoSql - create SQL and C code for permanently storing
+a structure in database and loading it back into memory
+based on a specification file
+usage:
+    autoSql specFile outRoot {optional: -dbLink -withNull -json} 
+This will create outRoot.sql outRoot.c and outRoot.h based
+on the contents of specFile. 
+
+options:
+  -dbLink - optionally generates code to execute queries and
+            updates of the table.
+  -addBin - Add an initial bin field and index it as (chrom,bin)
+  -withNull - optionally generates code and .sql to enable
+              applications to accept and load data into objects
+              with potential 'missing data' (NULL in SQL)
+              situations.
+  -defaultZeros - will put zero and or empty string as default value
+  -django - generate method to output object as django model Python code
+  -json - generate method to output the object in JSON (JavaScript) format.
 ```
 
-
-## Metadata
-- **Skill**: generated

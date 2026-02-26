@@ -1,8 +1,9 @@
 ---
 name: suitename
-description: The `suitename` tool is a specialized utility for RNA structural biology that classifies the conformation of each suite in an RNA backbone.
+description: Suitename classifies RNA backbone suite conformations by mapping dihedral angle data to predefined clusters and calculating a suiteness score. Use when user asks to classify RNA backbone suites, calculate suiteness scores, or identify structural outliers in RNA models.
 homepage: https://github.com/rlabduke/suitename
 ---
+
 
 # suitename
 

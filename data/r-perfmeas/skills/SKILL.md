@@ -1,8 +1,9 @@
 ---
 name: r-perfmeas
-description: R package perfmeas (documentation from project home).
+description: This R package calculates performance metrics for ranking and classification tasks, including AUROC, AUPRC, and F-scores. Use when user asks to calculate area under the curve metrics, determine precision at specific recall levels, or compute F-scores for single or multiple classes.
 homepage: https://cran.r-project.org/web/packages/perfmeas/index.html
 ---
+
 
 # r-perfmeas
 

@@ -3,10 +3,10 @@
 ## oncofuse
 
 ### Tool Description
-Oncofuse is a tool designed to predict the oncogenic potential of gene fusions found in cancer cell genomes.
+Oncofuse.jar is a tool for analyzing fusion genes. It takes an input file, its type, and optionally a tissue type, and produces an output file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/oncofuse:1.1.1--1
+- **Docker Image**: quay.io/biocontainers/oncofuse:1.1.1--0
 - **Homepage**: https://github.com/mikessh/oncofuse
 - **Package**: https://anaconda.org/channels/bioconda/packages/oncofuse/overview
 - **Validation**: PASS
@@ -18,29 +18,15 @@ Oncofuse is a tool designed to predict the oncogenic potential of gene fusions f
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/oncofuse:1.1.1--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3118223100: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## oncofuse_Oncofuse.jar
-
-### Tool Description
-Oncofuse is a tool designed to predict the oncogenic potential of gene fusions identified by next-generation sequencing.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/oncofuse:1.1.1--1
-- **Homepage**: https://github.com/mikessh/oncofuse
-- **Package**: https://anaconda.org/channels/bioconda/packages/oncofuse/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/oncofuse:1.1.1--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3901257749: no space left on device
+usage: Oncofuse.jar [options] input_file input_type [tissue_type or -] output_file
+                    Supported input types: coord, fcatcher, fcatcher-N-M, tophat, tophat-N-M,
+                    tophat-post, rnastar, rnastar-N-M, starfusion, starfusion-N-M
+                    Running with input type args: replace N by number of spanning reads and M by
+                    number of total supporting read pairs
+                    Supported tissue types: EPI, HEM, MES, AVG or -
+                    Version 1.0.9b2, 6May2015
+ -a <hgXX>      Genome assembly version, default is hg19. Allowed values: hg18, hg19, hg38
+ -h             display help message
+ -p <integer>   Number of threads, uses all available processors by default
 ```
 

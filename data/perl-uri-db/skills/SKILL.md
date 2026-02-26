@@ -1,8 +1,9 @@
 ---
 name: perl-uri-db
-description: This skill provides a specialized interface for handling database-specific URIs.
+description: This tool parses, normalizes, and converts database-specific URIs into driver-compatible connection strings. Use when user asks to parse database connection strings, convert URIs to DBI DSNs, or handle database-specific URI metadata for engines like PostgreSQL and SQLite.
 homepage: https://search.cpan.org/dist/URI-db/
 ---
+
 
 # perl-uri-db
 

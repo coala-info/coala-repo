@@ -1,8 +1,9 @@
 ---
 name: zerone
-description: Zerone is a specialized tool designed for ChIP-seq analysis that transforms continuous read counts into discrete states—specifically background signal (0) and enriched windows (1).
+description: Zerone is a ChIP-seq analysis tool that discretizes continuous read counts into background and enriched genomic regions across multiple replicates. Use when user asks to discretize ChIP-seq read counts, identify enriched genomic regions, resolve conflicts between ChIP-seq replicates, get quality control scores for ChIP-seq analysis, or analyze ChIP-seq data with a custom window size.
 homepage: https://github.com/nanakiksc/zerone
 ---
+
 
 # zerone
 

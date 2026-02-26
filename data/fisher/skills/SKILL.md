@@ -1,8 +1,9 @@
 ---
 name: fisher
-description: Fisher is a lightweight, concurrent plugin manager for the Fish shell.
+description: Fisher is a lightweight plugin manager for the Fish shell that installs and manages functions, completions, and themes. Use when user asks to install, update, list, or remove Fish shell plugins and manage shell configurations declaratively.
 homepage: https://github.com/jorgebucaran/fisher
 ---
+
 
 # fisher
 

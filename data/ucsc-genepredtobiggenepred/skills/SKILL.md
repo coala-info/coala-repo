@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredtobiggenepred
-description: The `genePredToBigGenePred` utility is a specialized converter within the UCSC Kent toolset.
+description: This tool converts gene prediction files from genePred or genePredExt format into bigGenePred format. Use when user asks to convert gene prediction files, transform gene models, or prepare data for bigGenePred tracks in the UCSC Genome Browser.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-genepredtobiggenepred
 

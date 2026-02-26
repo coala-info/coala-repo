@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bigmelon
-description: the package is available on all platforms; click for details.
+description: This tool performs memory-efficient analysis of large-scale Illumina DNA methylation data using the Genomic Data Structure format. Use when user asks to convert IDAT files to GDS, perform disk-based normalization, filter high-dimensional microarray data, or predict epigenetic age.
 homepage: https://bioconductor.org/packages/release/bioc/html/bigmelon.html
 ---
+
 
 # bioconductor-bigmelon
 

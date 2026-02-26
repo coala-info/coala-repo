@@ -1,8 +1,9 @@
 ---
 name: r-qlcmatrix
-description: R package qlcmatrix (documentation from project home).
+description: The r-qlcmatrix tool provides optimized utility functions for handling and analyzing sparse matrices in R, specifically tailored for quantitative language comparison. Use when user asks to calculate sparse matrix similarities, transform linguistic data into sparse formats, or perform memory-efficient row and column operations on high-dimensional datasets.
 homepage: https://cran.r-project.org/web/packages/qlcmatrix/index.html
 ---
+
 
 # r-qlcmatrix
 

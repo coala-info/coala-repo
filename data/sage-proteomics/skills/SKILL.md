@@ -1,8 +1,9 @@
 ---
 name: sage-proteomics
-description: Sage is a high-speed proteomics search engine designed to transform raw mass spectrometry data into peptide identifications.
+description: Sage is a high-speed proteomics search engine that identifies peptides from mass spectrometry data while performing quantification and FDR estimation. Use when user asks to identify peptides, perform label-free or isobaric quantification, configure search parameters, or manage fragment indexing for large-scale proteomics data.
 homepage: https://github.com/lazear/sage
 ---
+
 
 # sage-proteomics
 

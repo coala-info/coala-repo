@@ -1,8 +1,9 @@
 ---
 name: pygtftk
-description: The Python GTF toolkit (`pygtftk`) is a high-performance suite designed to streamline the handling of Gene Transfer Format (GTF) files.
+description: pygtftk is a high-performance toolkit for manipulating Gene Transfer Format files and performing genomic overlap statistics. Use when user asks to handle GTF files, extract transcript sequences, convert genomic formats, or perform Monte Carlo simulations for overlap analysis.
 homepage: http://github.com/dputhier/pygtftk
 ---
+
 
 # pygtftk
 

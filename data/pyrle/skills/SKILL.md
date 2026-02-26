@@ -1,8 +1,9 @@
 ---
 name: pyrle
-description: The `pyrle` library provides a Cython-optimized implementation of Run Length Encoding (RLE) for Python, inspired by R's S4Vectors.
+description: Pyrle provides a Cython-optimized implementation of Run Length Encoding for memory-efficient storage and arithmetic of genomic data. Use when user asks to perform arithmetic on genomic tracks, store sparse data using Run Length Encoding, or manage memory-intensive vector operations.
 homepage: https://github.com/endrebak/pyrle
 ---
+
 
 # pyrle
 

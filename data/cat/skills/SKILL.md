@@ -1,8 +1,9 @@
 ---
 name: cat
-description: The Contig Annotation Tool (CAT) and Bin Annotation Tool (BAT) provide a framework for assigning taxonomy to metagenomic data.
+description: The Contig Annotation Tool (CAT) assigns taxonomic classifications to metagenomic contigs and bins using a consensus-based voting algorithm. Use when user asks to classify metagenomic sequences, assign taxonomy to bins or MAGs, or generate taxonomic profiles for contigs.
 homepage: https://github.com/dutilh/CAT
 ---
+
 
 # cat
 

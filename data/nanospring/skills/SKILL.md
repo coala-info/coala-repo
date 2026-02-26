@@ -1,8 +1,9 @@
 ---
 name: nanospring
-description: NanoSpring is a specialized compression tool tailored for Oxford Nanopore Technologies (ONT) sequencing data.
+description: NanoSpring is a specialized tool for the reference-free compression of Oxford Nanopore Technologies sequencing data. Use when user asks to compress ONT FASTQ files, decompress NanoSpring archives, or archive genomic sequences without quality scores.
 homepage: https://github.com/qm2/NanoSpring
 ---
+
 
 # nanospring
 

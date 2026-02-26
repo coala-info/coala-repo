@@ -1,9 +1,9 @@
 # ucsc-chaintoaxt CWL Generation Report
 
-## ucsc-chaintoaxt
+## ucsc-chaintoaxt_chainToAxt
 
 ### Tool Description
-Convert chain files to axt format. (Note: The provided help text contained only container runtime logs and an error message; no usage information was available in the input text.)
+Convert from chain to axt file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chaintoaxt:482--h0b57e2e_0
@@ -18,13 +18,14 @@ Convert chain files to axt format. (Note: The provided help text contained only 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chaintoaxt:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+chainToAxt - Convert from chain to axt file
+usage:
+   chainToAxt in.chain tNibDirOr2bit qNibDirOr2bit out.axt
+options:
+   -maxGap=maximum gap sized allowed without breaking, default 100
+   -maxChain=maximum chain size allowed without breaking, default 2147483647
+   -minScore=minimum score of chain
+   -minId=minimum percentage ID within blocks
+   -bed  Output bed instead of axt
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bctools
-description: bctools is a specialized suite of Python and Perl scripts designed to handle the complexities of barcode-aware NGS workflows.
+description: bctools is a suite of scripts designed for barcode extraction and UMI-based deduplication in barcode-aware NGS workflows. Use when user asks to extract barcodes from FASTQ files, merge PCR duplicates, filter spurious UMIs, or clean up paired-end read-through sequences.
 homepage: https://github.com/dmaticzka/bctools
 ---
+
 
 # bctools
 

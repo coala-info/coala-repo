@@ -1,8 +1,9 @@
 ---
 name: pycoverm
-description: `pycoverm` provides high-performance Python bindings for the CoverM engine, a tool designed for rapid coverage estimation of metagenomic contigs.
+description: pycoverm provides high-performance Python bindings for calculating metagenomic contig coverage from BAM files using a Rust-based engine. Use when user asks to estimate contig coverage, calculate mean coverage across multiple BAM files, or validate if BAM files are coordinate-sorted.
 homepage: https://github.com/apcamargo/pycoverm
 ---
+
 
 # pycoverm
 

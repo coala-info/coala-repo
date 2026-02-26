@@ -1,8 +1,9 @@
 ---
 name: checkqc
-description: The `checkqc` tool is a specialized utility for the rapid quality assessment of Illumina sequencing runs.
+description: checkqc automates the quality assessment of Illumina sequencing runs by checking runfolders against predefined thresholds. Use when user asks to perform a quality check on a sequencing run, validate runfolder metrics against custom thresholds, or generate a JSON report for automated QC monitoring.
 homepage: https://www.github.com/Molmed/checkQC
 ---
+
 
 # checkqc
 

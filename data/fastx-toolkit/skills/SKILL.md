@@ -1,8 +1,9 @@
 ---
 name: fastx-toolkit
-description: The FASTX-Toolkit is a collection of command-line utilities designed for the initial processing of Next-Generation Sequencing (NGS) reads.
+description: The FASTX-Toolkit provides command-line utilities for processing and manipulating FASTA and FASTQ files from Next-Generation Sequencing data. Use when user asks to filter reads by quality, trim sequences, clip adapters, convert FASTQ to FASTA, or generate quality statistics.
 homepage: https://github.com/agordon/fastx_toolkit
 ---
+
 
 # fastx-toolkit
 

@@ -1,8 +1,9 @@
 ---
 name: scenicplus
-description: SCENIC+ is a comprehensive Python-based framework designed to decode the regulatory logic of cells by linking chromatin accessibility with gene expression at the single-cell level.
+description: SCENIC+ is a Python framework that decodes cellular regulatory logic by linking chromatin accessibility with gene expression to identify enhancer-driven gene regulatory networks. Use when user asks to infer eRegulons, link transcription factors to target genes and enhancers, or simulate the effects of transcription factor perturbations on gene expression.
 homepage: https://github.com/aertslab/scenicplus
 ---
+
 
 # scenicplus
 

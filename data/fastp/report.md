@@ -3,7 +3,7 @@
 ## fastp
 
 ### Tool Description
-The provided text does not contain help documentation for fastp; it contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the fastp image due to lack of disk space.
+fastp is a fast all-in-one FASTQ preprocessor.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastp:1.1.0--heae3180_0
@@ -12,17 +12,19 @@ The provided text does not contain help documentation for fastp; it contains sys
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastp/overview
-- **Total Downloads**: 610.6K
+- **Total Downloads**: 611.7K
 - **Last updated**: 2026-01-24
 - **GitHub**: https://github.com/OpenGene/fastp
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastp:1.1.0--heae3180_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1662912161: no space left on device
+Unable to find image 'quay.io/biocontainers/fastp:1.1.0--heae3180_0' locally
+1.1.0--heae3180_0: Pulling from biocontainers/fastp
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+e25690046289: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2475122622: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

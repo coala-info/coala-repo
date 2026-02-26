@@ -1,8 +1,9 @@
 ---
 name: bioconductor-edirquery
-description: the package is available on all platforms; click for details.
+description: This tool queries the Exome Database of Interspersed Repeats to identify pairwise repeat structures within or flanking human exons. Use when user asks to identify regions of homology flanking coding sequences, search for repetitive structures in specific genes using HGNC symbols or Ensembl IDs, or analyze intragenic exonic deletions.
 homepage: https://bioconductor.org/packages/release/bioc/html/EDIRquery.html
 ---
+
 
 # bioconductor-edirquery
 

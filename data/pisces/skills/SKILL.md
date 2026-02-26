@@ -1,8 +1,9 @@
 ---
 name: pisces
-description: Pisces is a specialized variant calling suite optimized for amplicon and enrichment panels.
+description: Pisces is a variant calling suite optimized for detecting low-frequency somatic variants in amplicon and enrichment panels. Use when user asks to call variants from BAM files, detect somatic mutations without a matched normal, or phase complex variants.
 homepage: https://github.com/Illumina/Pisces
 ---
+
 
 # pisces
 

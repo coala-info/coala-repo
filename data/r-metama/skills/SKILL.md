@@ -1,8 +1,9 @@
 ---
 name: r-metama
-description: R package metama (documentation from project home).
+description: This tool performs meta-analysis of transcriptomic data to identify differentially expressed genes across multiple studies. Use when user asks to combine p-values from independent experiments, integrate moderated effect sizes, or find common differentially expressed genes across heterogeneous datasets.
 homepage: https://cran.r-project.org/web/packages/metama/index.html
 ---
+
 
 # r-metama
 

@@ -1,8 +1,9 @@
 ---
 name: amulety
-description: amulety (Adaptive imMUne receptor Language model Embedding tool for TCR and antibodY) is a specialized CLI tool within the Immcantation framework.
+description: "amulety generates high-dimensional embeddings for BCR and TCR sequences using pre-trained immunological language models. Use when user asks to convert immune receptor sequences into embeddings, apply models like AntiBERTa2 or AbLang to AIRR data, or translate nucleotide sequences to amino acids using IgBlast."
 homepage: https://github.com/immcantation/amulety
 ---
+
 
 # amulety
 

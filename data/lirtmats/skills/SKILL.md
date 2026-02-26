@@ -1,8 +1,9 @@
 ---
 name: lirtmats
-description: The `lirtmats` (Liverpool Retention Time Matching Software) skill enables the identification of metabolites by comparing experimental liquid chromatography-mass spectrometry (LC-MS) data against established retention time libraries.
+description: "lirtmats identifies metabolites by matching experimental LC-MS data against retention time libraries. Use when user asks to identify metabolites, match retention times, or process LC-MS data using a CLI or GUI."
 homepage: https://pypi.org/project/lirtmats/
 ---
+
 
 # lirtmats
 

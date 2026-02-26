@@ -1,8 +1,9 @@
 ---
 name: perl-carp-clan
-description: `Carp::Clan` is a specialized Perl module designed to improve error reporting in complex, multi-module systems.
+description: This Perl module reports errors from the perspective of the caller of a group of related modules rather than the immediate internal caller. Use when user asks to improve error reporting in multi-module systems, hide internal module complexity in stack traces, or treat a namespace of modules as a single entity for debugging.
 homepage: http://metacpan.org/pod/Carp::Clan
 ---
+
 
 # perl-carp-clan
 

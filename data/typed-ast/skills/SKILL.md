@@ -1,8 +1,9 @@
 ---
 name: typed-ast
-description: The `typed-ast` skill (utilizing the `officeParser` engine) provides a robust way to transform unstructured office files into a clean, strictly-typed hierarchical AST.
+description: The typed-ast tool transforms unstructured office files into a strictly-typed hierarchical Abstract Syntax Tree (AST), preserving their logical structure and metadata. Use when user asks to extract AST or plain text from office files, extract embedded attachments, perform OCR on document images, parse PDF or Excel files, handle PowerPoint speaker notes, or customize text output.
 homepage: https://github.com/harshankur/officeParser
 ---
+
 
 # typed-ast
 

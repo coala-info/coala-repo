@@ -1,8 +1,9 @@
 ---
 name: selene-sdk
-description: Selene is a specialized framework designed to streamline the development of sequence-level deep learning models in genomics.
+description: Selene is a framework for developing and training sequence-level deep learning models in genomics using PyTorch. Use when user asks to train models on genomic datasets, perform variant effect prediction, conduct in silico mutagenesis, or sample sequences from FASTA and BED files.
 homepage: https://github.com/FunctionLab/selene
 ---
+
 
 # selene-sdk
 

@@ -1,8 +1,9 @@
 ---
 name: sylph-tax
-description: The `sylph-tax` skill enables the transformation of raw metagenomic profiling data from `sylph` into taxonomically annotated formats.
+description: This tool transforms raw metagenomic profiling data from sylph into taxonomically annotated formats and merged sample tables. Use when user asks to generate taxonomic profiles, convert sylph outputs to Pavian-compatible formats, merge multiple sample results, or assign taxonomy using GTDB or fungal databases.
 homepage: https://github.com/bluenote-1577/sylph-tax
 ---
+
 
 # sylph-tax
 

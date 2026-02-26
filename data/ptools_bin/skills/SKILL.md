@@ -1,8 +1,9 @@
 ---
 name: ptools_bin
-description: ptools_bin is a suite of command-line utilities developed by the ENCODE-DCC for specialized genomic data processing.
+description: ptools_bin is a suite of command-line utilities for converting specialized ENCODE genomic data formats and processing transcriptomic mappings. Use when user asks to convert PBAM to BAM, generate FASTQ files from alignments, or process transcriptome-mapped reads.
 homepage: https://github.com/ENCODE-DCC/ptools_bin
 ---
+
 
 # ptools_bin
 

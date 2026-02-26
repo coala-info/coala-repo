@@ -3,7 +3,7 @@
 ## yamllint
 
 ### Tool Description
-A linter for YAML files.
+A linter for YAML files. yamllint does not only check for syntax validity, but for weirdnesses like key repetition and cosmetic problems such as lines length, trailing spaces, indentation, etc.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/yamllint:1.2.1--py35_0
@@ -18,13 +18,25 @@ A linter for YAML files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/yamllint:1.2.1--py35_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: yamllint [-h] [-c CONFIG_FILE] [-d CONFIG_DATA]
+                [-f {parsable,standard}] [-v]
+                FILE_OR_DIR [FILE_OR_DIR ...]
+
+A linter for YAML files. yamllint does not only check for syntax validity, but
+for weirdnesses like key repetition and cosmetic problems such as lines
+length, trailing spaces, indentation, etc.
+
+positional arguments:
+  FILE_OR_DIR           files to check
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG_FILE, --config-file CONFIG_FILE
+                        path to a custom configuration
+  -d CONFIG_DATA, --config-data CONFIG_DATA
+                        custom configuration (as YAML source)
+  -f {parsable,standard}, --format {parsable,standard}
+                        format for parsing output
+  -v, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

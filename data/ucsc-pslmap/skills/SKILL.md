@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslmap
-description: The `ucsc-pslmap` utility is a specialized tool from the UCSC Genome Browser "kent" suite used to transitive-map alignments.
+description: ucsc-pslmap projects alignments from one genomic coordinate system to another. Use when user asks to map alignments, lift alignments, project alignments, or map alignments across different genomic backgrounds or species.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslmap
 

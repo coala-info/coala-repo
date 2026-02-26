@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fastreer
-description: the package is available on all platforms; click for details.
+description: This tool calculates distance matrices, builds phylogenetic trees, and performs hierarchical clustering from VCF or FASTA files. Use when user asks to calculate genomic distances, generate ultrametric trees, perform bootstrap analysis, or cluster samples based on genetic variation.
 homepage: https://bioconductor.org/packages/release/bioc/html/fastreeR.html
 ---
+
 
 # bioconductor-fastreer
 

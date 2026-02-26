@@ -1,8 +1,9 @@
 ---
 name: read2tree
-description: `read2tree` is a phylogenomic tool designed to bypass the traditional assembly-first pipeline.
+description: read2tree performs phylogenomic inference by mapping raw sequencing reads directly to reference orthologous groups to build species trees. Use when user asks to infer phylogenetic trees from raw reads, map reads to marker genes, or perform phylogenomics without assembly.
 homepage: https://github.com/DessimozLab/read2tree
 ---
+
 
 # read2tree
 

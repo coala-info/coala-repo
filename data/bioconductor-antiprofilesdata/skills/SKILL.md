@@ -1,8 +1,9 @@
 ---
 name: bioconductor-antiprofilesdata
-description: the package is available on all platforms; click for details.
+description: This package provides curated gene expression z-scores from normal and cancerous colon tissue samples for developing anti-profile signatures. Use when user asks to access the apColonData ExpressionSet, analyze gene expression variability in colon cancer, or retrieve frma-normalized data from hypomethylation blocks.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/antiProfilesData.html
 ---
+
 
 # bioconductor-antiprofilesdata
 

@@ -1,8 +1,9 @@
 ---
 name: consan
-description: Consan is a specialized bioinformatics tool for aligning two RNA sequences by considering both primary sequence and secondary structure.
+description: Consan performs pairwise structural alignment of RNA sequences using a stochastic context-free grammar that accounts for both sequence and secondary structure. Use when user asks to align two RNA sequences based on structural models, train custom SCFG parameters from Stockholm files, or compare structural alignments against a reference.
 homepage: http://eddylab.org/software/consan/
 ---
+
 
 # consan
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simulatorz
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: simulatorZ simulates phenotype data from high-dimensional genomic features for benchmarking and methodology testing. Use when user asks to simulate survival data from gene expression, generate synthetic phenotypes, or evaluate genomic prediction models.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/simulatorZ.html
 ---
+
 
 # bioconductor-simulatorz
 

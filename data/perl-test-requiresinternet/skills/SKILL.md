@@ -1,8 +1,9 @@
 ---
 name: perl-test-requiresinternet
-description: The `perl-test-requiresinternet` skill focuses on the `Test::RequiresInternet` Perl module, a utility used to verify network connectivity before executing test suites.
+description: This tool verifies network connectivity in Perl test suites to skip tests when internet access is unavailable. Use when user asks to check for internet access in Perl scripts, skip tests if the network is down, or verify connectivity to specific hosts and ports during testing.
 homepage: https://metacpan.org/dist/Test-RequiresInternet
 ---
+
 
 # perl-test-requiresinternet
 

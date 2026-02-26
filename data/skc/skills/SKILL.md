@@ -1,8 +1,9 @@
 ---
 name: skc
-description: skc (Shared K-mer Content) is a specialized bioinformatics tool used to find exact k-mer matches between two genomes.
+description: "skc finds exact k-mer matches between two genomes and provides their frequencies and genomic coordinates. Use when user asks to find shared k-mers between genomes, identify exact sequence matches, or analyze k-mer content across two FASTA files."
 homepage: https://github.com/mbhall88/skc
 ---
+
 
 # skc
 

@@ -1,8 +1,9 @@
 ---
 name: gsort
-description: gsort is a high-performance utility designed to reorder genomic data based on a custom sequence of chromosomes rather than standard alphanumeric sorting.
+description: "gsort reorders genomic data files based on a custom sequence of chromosomes while preserving file headers. Use when user asks to sort genomic files by a specific chromosome order, manage memory during large file sorts, or ensure parent-child record ordering in GFF files."
 homepage: https://github.com/brentp/gsort
 ---
+
 
 # gsort
 

@@ -1,8 +1,9 @@
 ---
 name: snakemake-interface-executor-plugins
-description: The `snakemake-interface-executor-plugins` package provides the stable API necessary for Snakemake to interact with external execution environments.
+description: This package provides the stable API and interface definitions for developing Snakemake executor plugins that interact with external cluster managers or cloud services. Use when user asks to implement a new Snakemake executor, define custom executor settings, or manage job lifecycles in external execution environments.
 homepage: https://github.com/snakemake/snakemake-interface-executor-plugins
 ---
+
 
 # snakemake-interface-executor-plugins
 

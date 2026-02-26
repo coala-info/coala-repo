@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene11stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides functional and genomic annotations for the Affymetrix Human Gene 1.1 ST array at the probeset level. Use when user asks to map probe identifiers to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene11stprobeset.db.html
 ---
+
 
 # bioconductor-hugene11stprobeset.db
 

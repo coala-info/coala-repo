@@ -1,8 +1,9 @@
 ---
 name: mpra-data-access-portal
-description: This skill provides a structured interface for working with the Saturation Mutagenesis MPRA data portal.
+description: This tool provides a structured interface for retrieving and analyzing single-nucleotide variant and single-base deletion data from the Saturation Mutagenesis MPRA data portal. Use when user asks to access functional data for regulatory elements, retrieve log2 expression effects for non-coding variants, or download saturation mutagenesis datasets for specific promoters and enhancers.
 homepage: https://mpra.gs.washington.edu/satMutMPRA
 ---
+
 
 # mpra-data-access-portal
 

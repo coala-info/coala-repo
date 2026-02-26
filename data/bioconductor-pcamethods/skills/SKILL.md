@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pcamethods
-description: the package is available on all platforms; click for details.
+description: This R package provides a collection of principal component analysis methods specifically designed to handle datasets with missing values. Use when user asks to perform PCA on incomplete data, impute missing values using PCA-based algorithms, or analyze high-dimensional biological datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/pcaMethods.html
 ---
+
 
 # bioconductor-pcamethods
 

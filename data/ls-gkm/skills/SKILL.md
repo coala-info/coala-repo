@@ -1,8 +1,9 @@
 ---
 name: ls-gkm
-description: ls-gkm (Large-Scale Gapped K-mer SVM) is a high-performance tool designed to identify functional regulatory elements in DNA sequences.
+description: ls-gkm is a high-performance tool that identifies functional regulatory elements in DNA sequences by training SVM classifiers on gapped k-mer features. Use when user asks to train a sequence-based SVM model, score DNA sequences for regulatory potential, or perform cross-validation on genomic datasets.
 homepage: https://github.com/Dongwon-Lee/lsgkm
 ---
+
 
 # ls-gkm
 

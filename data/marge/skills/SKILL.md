@@ -1,8 +1,9 @@
 ---
 name: marge
-description: MARGE (Model-based Analysis of Regulation of Gene Expression) is a framework that leverages a comprehensive library of H3K27ac ChIP-seq profiles to interpret the cis-regulation of gene expression.
+description: MARGE is a framework that leverages a library of H3K27ac ChIP-seq profiles to predict regulatory potentials and cis-regulatory elements from gene expression data. Use when user asks to calculate gene regulatory potentials, identify relevant regulatory environments through regression, or predict specific cis-regulatory elements.
 homepage: http://cistrome.org/MARGE
 ---
+
 
 # marge
 

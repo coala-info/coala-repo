@@ -1,8 +1,9 @@
 ---
 name: r-tsne
-description: A "pure R" implementation of the t-SNE algorithm.</p>
+description: This tool performs t-Distributed Stochastic Neighbor Embedding in R to reduce the dimensionality of high-dimensional datasets. Use when user asks to visualize clusters in complex data, perform non-linear dimensionality reduction, or project data into a two-dimensional or three-dimensional space.
 homepage: https://cloud.r-project.org/web/packages/tsne/index.html
 ---
+
 
 # r-tsne
 

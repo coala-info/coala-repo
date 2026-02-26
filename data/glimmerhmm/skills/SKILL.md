@@ -1,8 +1,9 @@
 ---
 name: glimmerhmm
-description: GlimmerHMM is a gene-finding system based on a Generalized Hidden Markov Model (GHMM) designed for eukaryotic genomes.
+description: GlimmerHMM is a gene-finding system that predicts protein-coding genes and exon-intron boundaries in eukaryotic genomic sequences using a Generalized Hidden Markov Model. Use when user asks to predict genes in eukaryotic genomes, annotate genomic FASTA sequences, or identify splice sites and start/stop codons.
 homepage: https://github.com/kblin/glimmerhmm
 ---
+
 
 # glimmerhmm
 

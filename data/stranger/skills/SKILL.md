@@ -1,8 +1,9 @@
 ---
 name: stranger
-description: The `stranger` tool bridges the gap between raw STR calls and clinical interpretation.
+description: Stranger annotates short tandem repeat calls with clinical information and pathogenicity classifications based on a curated catalog. Use when user asks to annotate STR variants with clinical status, classify repeat expansions, or process TRGT output files for clinical interpretation.
 homepage: https://github.com/moonso/stranger
 ---
+
 
 # stranger
 

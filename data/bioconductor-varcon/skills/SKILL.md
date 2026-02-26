@@ -1,8 +1,9 @@
 ---
 name: bioconductor-varcon
-description: the package is available on all platforms; click for details.
+description: VarCon converts genomic variant coordinates between different genome assemblies. Use when user asks to convert variant coordinates, perform liftover on genomic data, or map variants between genome builds.
 homepage: https://bioconductor.org/packages/release/bioc/html/VarCon.html
 ---
+
 
 # bioconductor-varcon
 

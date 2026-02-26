@@ -3,28 +3,32 @@
 ## pylca
 
 ### Tool Description
-A tool for Lowest Common Ancestor (LCA) analysis, typically used in taxonomic classification.
+FAIL to generate CWL: pylca not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pylca:1.0.0--py_0
 - **Homepage**: https://github.com/pirovc/pylca
 - **Package**: https://anaconda.org/channels/bioconda/packages/pylca/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pylca/overview
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pirovc/pylca
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pylca not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pylca not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pylca:1.0.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

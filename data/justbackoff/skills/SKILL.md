@@ -1,8 +1,9 @@
 ---
 name: justbackoff
-description: The `justbackoff` skill provides a streamlined way to implement retry strategies in Python applications.
+description: The justbackoff tool implements exponential backoff and retry strategies to manage wait times between failed operations in Python applications. Use when user asks to implement retry logic, manage exponential backoff, handle transient failures, or add jitter to network requests.
 homepage: https://github.com/admiralobvious/justbackoff
 ---
+
 
 # justbackoff
 

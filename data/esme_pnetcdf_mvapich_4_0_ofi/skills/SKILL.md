@@ -1,8 +1,9 @@
 ---
 name: esme_pnetcdf_mvapich_4_0_ofi
-description: PnetCDF (Parallel netCDF) is a high-performance I/O library designed to allow MPI-based applications to access netCDF files in parallel.
+description: PnetCDF is a high-performance parallel I/O library that enables MPI-based applications to access netCDF files simultaneously using the MVAPICH stack. Use when user asks to perform parallel I/O on netCDF files, validate file integrity, compare large datasets, or optimize I/O throughput in HPC environments.
 homepage: https://parallel-netcdf.github.io/
 ---
+
 
 # esme_pnetcdf_mvapich_4_0_ofi
 

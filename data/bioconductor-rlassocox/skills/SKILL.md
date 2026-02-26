@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rlassocox
-description: the package is available on all platforms; click for details.
+description: "RLassoCox is a Bioconductor package for variable selection in high-dimensional survival data using a randomized Lasso Cox model. Use when user asks to perform variable selection for survival analysis, fit penalized Cox proportional hazards models, or identify prognostic biomarkers in high-dimensional datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/RLassoCox.html
 ---
+
 
 # bioconductor-rlassocox
 

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tandem
 label: tandem
-doc: "X! Tandem is a software for protein identification by tandem mass spectrometry.
-  (Note: The provided text was an error log and did not contain usage instructions
-  or argument definitions).\n\nTool homepage: https://github.com/tum-vision/tandem"
-inputs: []
+doc: "TANDEM Alanine (2017.2.1.4)\n\nTool homepage: https://github.com/tum-vision/tandem"
+inputs:
+  - id: filename
+    type: File
+    doc: any valid path to an XML input file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-soybeanprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Soybean Genome Array. Use when user asks to access probe sequences, perform probe-level analysis, or map microarray probes to genomic locations for soybean research.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/soybeanprobe.html
 ---
+
 
 # bioconductor-soybeanprobe
 

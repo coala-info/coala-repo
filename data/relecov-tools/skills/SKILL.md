@@ -1,8 +1,9 @@
 ---
 name: relecov-tools
-description: The `relecov-tools` suite is a specialized collection of utilities designed to automate the data lifecycle for the Spanish Network for Genomic Surveillance of SARS-CoV-2 (RELECOV).
+description: relecov-tools automates the data lifecycle for the Spanish Network for Genomic Surveillance of SARS-CoV-2 by managing metadata extraction, validation, and database submission. Use when user asks to download files from SFTP, process laboratory metadata, validate JSON schemas, map data to ENA or GISAID formats, or update the RELECOV database.
 homepage: https://github.com/BU-ISCIII/relecov-tools
 ---
+
 
 # relecov-tools
 

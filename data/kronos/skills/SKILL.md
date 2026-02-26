@@ -1,8 +1,9 @@
 ---
 name: kronos
-description: Kronos is a specialized Python-based workflow assembler tailored for cancer genome analytics and informatics.
+description: Kronos is a Python-based workflow assembler that automates the creation and execution of modular bioinformatics pipelines for cancer genome analytics. Use when user asks to assemble genomic workflows, manage task dependencies, execute pipelines on HPC clusters, or perform implicit file merging and data chunking.
 homepage: https://github.com/jtaghiyar/kronos
 ---
+
 
 # kronos
 

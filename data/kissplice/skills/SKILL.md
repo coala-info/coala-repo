@@ -1,8 +1,9 @@
 ---
 name: kissplice
-description: KisSplice is a specialized tool designed for "assembly-first" transcriptomics.
+description: KisSplice performs local assembly of RNA-seq data to identify and quantify alternative splicing events and polymorphisms without requiring a reference genome. Use when user asks to discover novel splicing variants, perform assembly-first transcriptomics, or quantify bubbles in a De Bruijn graph across multiple conditions.
 homepage: http://kissplice.prabi.fr
 ---
+
 
 # kissplice
 

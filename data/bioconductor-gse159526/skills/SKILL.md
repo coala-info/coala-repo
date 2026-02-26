@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gse159526
-description: the package is available on all platforms; click for details.
+description: This tool provides access to human placental methylome DNA methylation data from the GSE159526 dataset via ExperimentHub. Use when user asks to retrieve raw rgset objects, access processed methylation matrices, or analyze cell-specific placental epigenetic data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE159526.html
 ---
+
 
 # bioconductor-gse159526
 

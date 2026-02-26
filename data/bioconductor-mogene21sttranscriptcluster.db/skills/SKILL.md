@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mogene21sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Mouse Gene 2.1 ST transcript cluster identifiers. Use when user asks to map MoGene 2.1 ST transcript cluster IDs to gene symbols, retrieve Entrez Gene identifiers, or perform functional annotation for mouse gene expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene21sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-mogene21sttranscriptcluster.db
 

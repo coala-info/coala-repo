@@ -1,8 +1,9 @@
 ---
 name: bioconductor-proteodisco
-description: the package is available on all platforms; click for details.
+description: ProteoDisco generates customized protein databases from genomic variants for proteogenomic analysis. Use when user asks to create custom protein sequences from genomic variants, integrate transcriptomic and proteomic data, or identify novel peptides using mass spectrometry.
 homepage: https://bioconductor.org/packages/release/bioc/html/ProteoDisco.html
 ---
+
 
 # bioconductor-proteodisco
 

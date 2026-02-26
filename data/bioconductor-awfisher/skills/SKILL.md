@@ -1,8 +1,9 @@
 ---
 name: bioconductor-awfisher
-description: the package is available on all platforms; click for details.
+description: This tool performs adaptively weighted Fisher's meta-analysis on p-values from multiple independent studies to identify biomarkers and their study-specific contributions. Use when user asks to combine summary statistics from genomic or clinical studies, identify differentially expressed biomarkers across multiple datasets, or characterize study-specific contributions via optimal weights.
 homepage: https://bioconductor.org/packages/release/bioc/html/AWFisher.html
 ---
+
 
 # bioconductor-awfisher
 

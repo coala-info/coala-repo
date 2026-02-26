@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsseqdata
-description: the package is available on all platforms; click for details.
+description: This package provides example whole-genome bisulfite sequencing data from colon cancer patients for testing and benchmarking methylation analysis workflows. Use when user asks to access example BSseq objects, load smoothed methylation values, or explore t-statistics for differential methylation analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/bsseqData.html
 ---
+
 
 # bioconductor-bsseqdata
 

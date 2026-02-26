@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hcadata
-description: the package is available on all platforms; click for details.
+description: This tool accesses and downloads Human Cell Atlas datasets as SingleCellExperiment objects for analysis in R. Use when user asks to retrieve large-scale single-cell RNA-seq data, list available HCA datasets, or load immune cell census data from bone marrow or umbilical cord blood.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HCAData.html
 ---
+
 
 # bioconductor-hcadata
 

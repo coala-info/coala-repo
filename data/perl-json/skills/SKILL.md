@@ -1,8 +1,9 @@
 ---
 name: perl-json
-description: The `perl-json` skill facilitates the conversion between Perl data structures and JSON strings.
+description: This tool converts between Perl data structures and JSON strings using functional or object-oriented interfaces. Use when user asks to encode Perl references to JSON, decode JSON strings into Perl, or format JSON output with specific configurations like pretty-printing.
 homepage: http://metacpan.org/pod/JSON
 ---
+
 
 # perl-json
 

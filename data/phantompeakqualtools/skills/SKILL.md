@@ -1,8 +1,9 @@
 ---
 name: phantompeakqualtools
-description: phantompeakqualtools is a specialized suite of tools designed to evaluate the quality of enrichment-based sequencing experiments.
+description: phantompeakqualtools evaluates the quality of enrichment-based sequencing experiments by calculating strand cross-correlation metrics and identifying fragment lengths. Use when user asks to assess ChIP-seq library quality, calculate NSC and RSC coefficients, or call peaks using the SPP algorithm.
 homepage: https://github.com/kundajelab/phantompeakqualtools
 ---
+
 
 # phantompeakqualtools
 

@@ -1,8 +1,9 @@
 ---
 name: flexidot
-description: FlexiDot is a specialized suite for creating high-quality, ambiguity-aware dotplots to visualize discrete biological sequences.
+description: "FlexiDot creates high-quality, ambiguity-aware dotplots to visualize and compare discrete biological sequences. Use when user asks to visualize sequence structural features, find internal repeats or inversions, perform pairwise or all-to-all sequence comparisons, or overlay GFF annotations onto dotplots."
 homepage: https://github.com/flexidot-bio/flexidot
 ---
+
 
 # flexidot
 

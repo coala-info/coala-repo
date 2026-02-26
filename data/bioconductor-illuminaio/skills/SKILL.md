@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminaio
-description: the package is available on all platforms; click for details.
+description: This tool provides low-level parsing of Illumina IDAT files from expression and genotyping microarrays to extract raw intensity data and metadata. Use when user asks to read IDAT files, extract bead summaries, or parse raw data from Illumina microarrays without proprietary software.
 homepage: https://bioconductor.org/packages/release/bioc/html/illuminaio.html
 ---
+
 
 # bioconductor-illuminaio
 

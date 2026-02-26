@@ -3,7 +3,7 @@
 ## metatree
 
 ### Tool Description
-Metatree is a tool for phylogenetic tree analysis (Note: The provided text contains system error logs rather than help documentation, so specific arguments could not be extracted).
+Visualisation of polyphyletic groups between phylogenetic trees to a reference tree.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metatree:0.0.1--py_0
@@ -18,11 +18,21 @@ Metatree is a tool for phylogenetic tree analysis (Note: The provided text conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metatree:0.0.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4212942517: no space left on device
+metatree v0.0.1
+usage: metatree [-h] batchfile out_dir taxonomy_file outgroup cpus
+
+Visualisation of polyphyletic groups between phylogenetic trees to a reference
+tree.
+
+positional arguments:
+  batchfile      First tree must be the reference tree, format:
+                 id<tab>path_to_tree
+  out_dir        path to the output directory
+  taxonomy_file  path to taxonomy file, format: gid<tab>taxonomy
+  outgroup       outgroup for rooting
+  cpus           number of CPUs to use
+
+optional arguments:
+  -h, --help     show this help message and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

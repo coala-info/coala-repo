@@ -3,7 +3,7 @@
 ## lamassemble
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system log messages and a fatal error regarding a container build failure (no space left on device).
+Merge DNA sequences into a consensus sequence.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lamassemble:1.7.2--pyh7cba7a3_0
@@ -18,11 +18,34 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lamassemble:1.7.2--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2470148409: no space left on device
+Usage: lamassemble [options] last-train.out sequences.fx > consensus.fa
+
+Merge DNA sequences into a consensus sequence.
+
+Options:
+  -h, --help            show this help message and exit
+  -a, --alignment       print an alignment, not a consensus
+  -c, --consensus       just make a consensus, of already-aligned sequences
+  -f FMT, --format=FMT  output format: fasta/fa or fastq/fq (default=fasta)
+  -g G, --gap-max=G     use alignment columns with <= G% gaps (default=50)
+  --end                 ... including gaps past the ends of the sequences
+  -s S, --seq-min=S     omit consensus flanks with < S sequences (default=1)
+  -n NAME, --name=NAME  name of the consensus sequence (default=lamassembled)
+  -o BASE, --out=BASE   just write MAFFT input files, named BASE.xxx
+  -p P, --prob=P        use pairwise restrictions with error probability <= P
+                        (default=0.002)
+  -d D, --diagonal-max=D
+                        max change in alignment diagonal between pairwise
+                        alignments (default=1000)
+  -v, --verbose         show progress messages
+  --all                 use all of each sequence, not just aligning part
+  --mafft=ARGS          additional arguments for MAFFT
+
+  LAST options:
+    -P P                number of parallel threads (default=1)
+    -u RY               use ~1 per this many initial matches
+    -W W                use minimum positions in length-W windows (default=19)
+    -m M                max initial matches per query position (default=5)
+    -z Z                max gap length (default=30)
 ```
 
-
-## Metadata
-- **Skill**: generated

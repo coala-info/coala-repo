@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hmyrib36
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides HapMap Phase II YRI genotype and GENEVAR expression data mapped to Genome Build 36 for integrative genomic analysis. Use when user asks to load smlSet objects for eQTL mapping, perform genetic association studies on Yoruba population data, or analyze SNP-expression relationships using the GGtools ecosystem.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/hmyriB36.html
 ---
+
 
 # bioconductor-hmyrib36
 

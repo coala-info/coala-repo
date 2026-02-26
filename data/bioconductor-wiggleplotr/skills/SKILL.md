@@ -1,8 +1,9 @@
 ---
 name: bioconductor-wiggleplotr
-description: the package is available on all platforms; click for details.
+description: Bioconductor-wiggleplotr visualizes genomic read coverage data integrated with gene models. Use when user asks to plot RNA-seq coverage, visualize transcript isoforms, or generate wiggle plots for genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/wiggleplotr.html
 ---
+
 
 # bioconductor-wiggleplotr
 

@@ -1,8 +1,9 @@
 ---
 name: r-caroline
-description: "The caroline R library contains dozens of functions useful  for: database migration (dbWriteTable2), database style joins &amp;  aggregation (nerge, groupBy, &amp; bestBy), data structure  conversion (nv, tab2df), legend table making (sstable &amp; leghead),  automatic legend positioning for scatter and box plots (),    plot annotation (labsegs &amp; mvlabs), data visualization   (pies, sparge, confound.grid &amp; raPlot), character string manipulation (m &amp; pad),  file I/O (write.delim), batch scripting, data exploration, and more.  The package's greatest contributions lie in the database style merge,   aggregation and interface functions as well as in it's extensive  use and propagation of row, column and vector names in most functions.</p>"
+description: The caroline R package provides a collection of utilities for database-style data manipulation, specialized visualizations, and general data handling. Use when user asks to merge data by row names, aggregate data with groupBy, select best-hit records, create RA plots, or place pie charts on maps.
 homepage: https://cloud.r-project.org/web/packages/caroline/index.html
 ---
+
 
 # r-caroline
 

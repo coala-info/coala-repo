@@ -1,8 +1,9 @@
 ---
 name: r-rttf2pt1
-description: "Contains the program 'ttf2pt1', for use with the     'extrafont' package. This product includes software developed by the 'TTF2PT1'     Project and its contributors.</p>"
+description: This package provides the ttf2pt1 utility to convert TrueType fonts into PostScript Type 1 format for use in R graphics. Use when user asks to convert fonts for the extrafont package, embed fonts in PDF or PostScript files, or manage system fonts for R graphics devices.
 homepage: https://cloud.r-project.org/web/packages/Rttf2pt1/index.html
 ---
+
 
 # r-rttf2pt1
 

@@ -1,8 +1,9 @@
 ---
 name: icfree-ml
-description: The `icfree-ml` tool provides a specialized suite for the iCFree project to bridge the gap between experimental design and laboratory execution.
+description: The icfree-ml tool automates experimental design, plate mapping, and liquid handling instructions while using active learning to iteratively optimize biochemical experiments. Use when user asks to generate sampling points, design plate layouts, create robot transfer instructions, or train models to predict new experimental candidates.
 homepage: https://github.com/brsynth/icfree-ml
 ---
+
 
 # icfree-ml
 

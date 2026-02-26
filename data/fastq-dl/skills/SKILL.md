@@ -1,8 +1,9 @@
 ---
 name: fastq-dl
-description: `fastq-dl` is a specialized command-line utility designed to streamline the retrieval of sequencing data from the ENA and SRA.
+description: "fastq-dl downloads sequencing data and associated metadata from the ENA and SRA databases using accession numbers. Use when user asks to download FASTQ files from ENA or SRA, fetch sequencing runs by BioProject or BioSample accession, or merge multiple sequencing runs into single files."
 homepage: https://github.com/rpetit3/fastq-dl
 ---
+
 
 # fastq-dl
 

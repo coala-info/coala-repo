@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowq
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs automated quality assessment and outlier detection for flow cytometry data. Use when user asks to perform quality control on flowSets, detect cell count anomalies or instrument drifts, and generate interactive HTML quality assessment reports.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/flowQ.html
 ---
+
 
 # bioconductor-flowq
 

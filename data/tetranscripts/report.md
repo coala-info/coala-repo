@@ -1,9 +1,9 @@
 # tetranscripts CWL Generation Report
 
-## tetranscripts
+## tetranscripts_TEtranscripts
 
 ### Tool Description
-TEtranscripts is a software package for including transposable elements (TEs) in differential expression analysis of RNA-seq data.
+Identifying differential transcription of gene and transposable elements.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tetranscripts:2.2.3--pyh7cba7a3_0
@@ -18,13 +18,71 @@ TEtranscripts is a software package for including transposable elements (TEs) in
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tetranscripts:2.2.3--pyh7cba7a3_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: TEtranscripts [-h] -t treatment sample [treatment sample ...] -c
+                     control sample [control sample ...] --GTF genic-GTF-file
+                     --TE TE-GTF-file [--format [input file format]]
+                     [--stranded [option]] [--mode [TE counting mode]]
+                     [--project [name]] [--outdir [directory]] [-p [pvalue]]
+                     [-f [foldchange]] [--minread [min_read]] [--DESeq]
+                     [-n [normalization]] [--sortByPos] [-i [iteration]]
+                     [--maxL [maxL]] [--minL [minL]] [-L [fragLength]]
+                     [--verbose [verbose]] [--version]
+
+Identifying differential transcription of gene and transposable elements.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t treatment sample [treatment sample ...], --treatment treatment sample [treatment sample ...]
+                        Sample files in group 1 (e.g. treatment/mutant)
+  -c control sample [control sample ...], --control control sample [control sample ...]
+                        Sample files in group 2 (e.g. control/wildtype)
+  --GTF genic-GTF-file  GTF file for gene annotations
+  --TE TE-GTF-file      GTF file for transposable element annotations
+  --format [input file format]
+                        Input file format: BAM or SAM. DEFAULT: BAM
+  --stranded [option]   Is this a stranded library? (no, forward, or reverse).
+                        For "first-strand" cDNA libraries (e.g. TruSeq
+                        stranded), choose reverse. For "second-strand" cDNA
+                        libraries (e.g. QIAseq stranded), choose forward.
+                        DEFAULT: no.
+  --mode [TE counting mode]
+                        How to count TE: uniq (unique mappers only), or multi
+                        (distribute among all alignments). DEFAULT: multi
+  --project [name]      Name of this project. DEFAULT: TEtranscripts_out
+  --outdir [directory]  Directory for output files. DEFAULT: current directory
+  -p [pvalue], --padj [pvalue]
+                        FDR cutoff for significance. DEFAULT: 0.05
+  -f [foldchange], --foldchange [foldchange]
+                        Fold-change ratio (absolute) cutoff for differential
+                        expression. DEFAULT: 1
+  --minread [min_read]  read count cutoff. genes/TEs with reads less than the
+                        cutoff will not be considered. DEFAULT: 1
+  --DESeq               Use DESeq (instead of DESeq2) for differential
+                        analysis.
+  -n [normalization], --norm [normalization]
+                        Normalization method : DESeq_default (DESeq default
+                        normalization method), TC (total annotated counts),
+                        quant (quantile normalization). Only applicable if
+                        DESeq is used instead of DESeq2. DEFAULT:
+                        DESeq_default
+  --sortByPos           Alignment files are sorted by chromosome position.
+  -i [iteration], --iteration [iteration]
+                        number of iteration to run the optimization. DEFAULT:
+                        100
+  --maxL [maxL]         maximum fragment length. DEFAULT:500
+  --minL [minL]         minimum fragment length. DEFAULT:0
+  -L [fragLength], --fragmentLength [fragLength]
+                        average fragment length for single end reads. For
+                        paired-end, estimated from the input alignment file.
+                        DEFAULT: for paired-end, estimate from the input
+                        alignment file; for single-end, ignored by default.
+  --verbose [verbose]   Set verbose level. 0: only show critical message, 1:
+                        show additional warning message, 2: show process
+                        information, 3: show debug messages. DEFAULT:2
+  --version             show program's version number and exit
+
+Example: TEtranscripts -t RNAseq1.bam RNAseq2.bam -c control_RNAseq1.bam
+control_RNAseq2.bam --GTF gene_annotation.gtf --TE TE_annotation.gtf
+--sortByPos --mode multi
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: perl-test-file
-description: The `Test::File` module (distributed as `perl-test-file` in Bioconda) provides a suite of convenience functions for validating file attributes within a standard Perl testing framework.
+description: The perl-test-file module provides a suite of functions for validating file attributes and permissions within Perl testing frameworks. Use when user asks to verify file existence, check file permissions, or validate file sizes and ownership in Perl test scripts.
 homepage: https://github.com/briandfoy/test-file
 ---
+
 
 # perl-test-file
 

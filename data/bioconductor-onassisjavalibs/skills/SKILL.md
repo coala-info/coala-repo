@@ -1,8 +1,9 @@
 ---
 name: bioconductor-onassisjavalibs
-description: the package is available on all platforms; click for details.
+description: This package provides the Java libraries required for the Onassis framework to perform biomedical concept mapping and annotation. Use when user asks to provide Java dependencies for Onassis, perform concept mapping, or annotate biomedical text using ontologies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/OnassisJavaLibs.html
 ---
+
 
 # bioconductor-onassisjavalibs
 

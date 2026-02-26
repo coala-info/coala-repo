@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsean
-description: the package is available on all platforms; click for details.
+description: This tool performs Gene Set Enrichment Analysis integrated with biological network topology to weight gene importance. Use when user asks to perform network-based functional enrichment analysis, identify significant pathways using gene centrality, or incorporate label propagation into GSEA.
 homepage: https://bioconductor.org/packages/release/bioc/html/gsean.html
 ---
+
 
 # bioconductor-gsean
 

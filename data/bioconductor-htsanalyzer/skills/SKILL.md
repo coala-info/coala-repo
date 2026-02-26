@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htsanalyzer
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs integrated gene set enrichment and network analysis for high-throughput screening data. Use when user asks to perform hypergeometric tests, conduct Gene Set Enrichment Analysis, identify enriched subnetworks from protein-protein interaction data, or generate comprehensive HTML reports for screen results.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/HTSanalyzeR.html
 ---
+
 
 # bioconductor-htsanalyzer
 

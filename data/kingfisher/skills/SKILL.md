@@ -1,8 +1,9 @@
 ---
 name: kingfisher
-description: Kingfisher is a specialized utility designed to simplify the procurement of genomic read data.
+description: "Kingfisher downloads and extracts genomic read data and metadata from various public repositories using a unified interface. Use when user asks to download sequence data by accession number, extract SRA files to FASTQ format, or retrieve metadata for BioProjects and runs."
 homepage: https://github.com/wwood/kingfisher-download
 ---
+
 
 # kingfisher
 

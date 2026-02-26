@@ -1,8 +1,9 @@
 ---
 name: megapath
-description: MegaPath is a high-performance bioinformatics pipeline designed for the rapid and sensitive identification of pathogens within metagenomic Next-Generation Sequencing (NGS) datasets.
+description: MegaPath is a high-performance bioinformatics pipeline for the rapid and sensitive identification of pathogens within metagenomic Next-Generation Sequencing datasets. Use when user asks to identify viral or bacterial agents in metagenomic samples, perform amplicon filtering, or detect low-abundance pathogens using assembly-based alignment.
 homepage: https://github.com/edwwlui/MegaPath
 ---
+
 
 # megapath
 

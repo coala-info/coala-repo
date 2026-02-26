@@ -1,8 +1,9 @@
 ---
 name: nerpa
-description: Nerpa facilitates the discovery of nonribosomal peptides by bridging the gap between genomic data and chemical structures.
+description: Nerpa identifies nonribosomal peptides by linking biosynthetic gene clusters in genomic data to known chemical structures. Use when user asks to discover nonribosomal peptides, link BGC predictions to chemical structures, or identify known compounds within microbial genomes.
 homepage: https://cab.spbu.ru/software/nerpa/
 ---
+
 
 # nerpa
 

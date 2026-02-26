@@ -3,26 +3,32 @@
 ## embassy-domainatrix
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages regarding container image conversion and disk space.
+FAIL to generate CWL: embassy-domainatrix not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/embassy-domainatrix:v0.1.660-3-deb_cv1
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/embassy-domainatrix/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: embassy-domainatrix not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: embassy-domainatrix not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/embassy-domainatrix:v0.1.660-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3105814658: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

@@ -1,8 +1,9 @@
 ---
 name: minipileup
-description: `minipileup` is a lightweight C-based tool designed for rapid variant calling and allele counting directly from BAM files.
+description: minipileup is a lightweight tool for rapid variant calling and allele counting directly from BAM files. Use when user asks to call variants, count alleles across multiple samples, or generate a multi-sample VCF from alignment data.
 homepage: https://github.com/lh3/minipileup
 ---
+
 
 # minipileup
 

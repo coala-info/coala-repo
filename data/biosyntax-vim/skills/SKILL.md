@@ -1,8 +1,9 @@
 ---
 name: biosyntax-vim
-description: bioSyntax-vim is a specialized plugin that brings intuitive color schemes to standard bioinformatics file formats.
+description: biosyntax-vim provides syntax highlighting and intuitive color schemes for common bioinformatics file formats within the Vim editor. Use when user asks to view genomic data with color-coded patterns, highlight biological file formats like SAM or VCF in Vim, or visually inspect sequence alignments and quality scores.
 homepage: https://github.com/bioSyntax/bioSyntax-vim
 ---
+
 
 # biosyntax-vim
 

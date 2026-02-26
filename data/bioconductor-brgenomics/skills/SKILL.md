@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brgenomics
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: BRGenomics provides tools for the efficient analysis and visualization of basepair-resolution genomics data in R. Use when user asks to import BAM or bigWig files into basepair-resolution GRanges, calculate signal counts over genomic regions, manipulate gene body annotations, or perform differential expression analysis using DESeq2.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/BRGenomics.html
 ---
+
 
 # bioconductor-brgenomics
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.ath1.121501
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix ATH1-121501 Arabidopsis microarray. Use when user asks to process raw Affymetrix ATH1-121501 microarray data, analyze Arabidopsis thaliana gene expression, or map probes for the ATH1-121501 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ath1.121501.html
 ---
+
 
 # bioconductor-pd.ath1.121501
 

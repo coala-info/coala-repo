@@ -1,8 +1,10 @@
 ---
 name: tmb
-description: The `tmb` tool (specifically `pyTMB.py`) provides a flexible framework for calculating the number of mutations per megabase (Mb) of the genome.
+description: The tmb tool calculates Tumor Mutational Burden (TMB) from VCF files. Use when user asks to calculate tumor mutational burden, filter variants for TMB calculation, define genomic space for TMB, debug TMB filters, or export variants used for TMB.
 homepage: https://github.com/bioinfo-pf-curie/TMB
 ---
+
+
 
 # tmb
 

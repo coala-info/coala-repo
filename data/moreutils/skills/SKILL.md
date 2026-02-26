@@ -1,8 +1,9 @@
 ---
 name: moreutils
-description: The `moreutils` collection provides a set of specialized tools that fill gaps in the traditional Unix/GNU coreutils.
+description: The moreutils collection provides a set of specialized Unix utilities designed to fill gaps in standard coreutils for more efficient shell pipelines. Use when user asks to soak up input before writing to the same file, edit data mid-pipeline, run commands only if input is not empty, perform set operations on files, or add timestamps to output.
 homepage: https://github.com/madx/moreutils
 ---
+
 
 # moreutils
 

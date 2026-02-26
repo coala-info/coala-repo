@@ -1,9 +1,9 @@
 # deltamsi CWL Generation Report
 
-## deltamsi
+## deltamsi_DeltaMSI
 
 ### Tool Description
-The provided text does not contain a description of the tool or its usage information, as it appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+DeltaMSI Copyright 2022 Koen Swaerts, AZ Delta This program comes with ABSOLUTELY NO WARRANTY; for details see the GPLv3 LICENCE This is free software, and you are welcome to redistribute it under certain conditions
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/deltamsi:1.0.1--pyh7cba7a3_0
@@ -18,11 +18,20 @@ The provided text does not contain a description of the tool or its usage inform
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deltamsi:1.0.1--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4014358469: no space left on device
+usage: DeltaMSI [-h] {train,predict,evaluate} ...
+
+DeltaMSI Copyright 2022 Koen Swaerts, AZ Delta This program comes with
+ABSOLUTELY NO WARRANTY; for details see the GPLv3 LICENCE This is free
+software, and you are welcome to redistribute it under certain conditions;
+
+positional arguments:
+  {train,predict,evaluate}
+                        The core command to execute
+    train               Train a new model
+    predict             Predict one or multiple samples
+    evaluate            Evaluate the model with known data
+
+options:
+  -h, --help            show this help message and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

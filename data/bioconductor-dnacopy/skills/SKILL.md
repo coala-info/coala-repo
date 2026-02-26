@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnacopy
-description: the package is available on all platforms; click for details.
+description: This package implements the Circular Binary Segmentation algorithm to identify genomic regions with copy number changes from array CGH or similar data. Use when user asks to perform DNA copy number segmentation, identify genomic change-points, smooth copy number outliers, or visualize segmented genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAcopy.html
 ---
+
 
 # bioconductor-dnacopy
 

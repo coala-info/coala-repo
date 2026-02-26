@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95av2
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Affymetrix Human Genome U95av2 chip probe identifiers to biological metadata in R. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene IDs, find chromosomal locations, or access GO and KEGG functional annotations for this specific microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95av2.html
 ---
+
 
 # bioconductor-hgu95av2
 

@@ -1,8 +1,9 @@
 ---
 name: r-misctools
-description: R package misctools (documentation from project home).
+description: The r-misctools package provides a collection of utility functions for matrix manipulation, econometric analysis, and calculating statistical properties like geometric means and semidefiniteness. Use when user asks to insert rows or columns into matrices, extract unique elements from symmetric matrices, check matrix semidefiniteness, or calculate geometric means and standard errors.
 homepage: https://cran.r-project.org/web/packages/misctools/index.html
 ---
+
 
 # r-misctools
 

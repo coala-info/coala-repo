@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cand
-description: the package is available on all platforms; click for details.
+description: This tool detects heterogeneity in population structure across chromosomes or chromosomal regions using local ancestry estimates. Use when user asks to perform the Chromosomal Ancestry Difference test, identify significant differences in ancestral contributions to specific chromosomes, or compare ancestry proportions across the genome.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/CAnD.html
 ---
+
 
 # bioconductor-cand
 

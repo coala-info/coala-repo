@@ -1,9 +1,9 @@
 # cdhit-reader CWL Generation Report
 
-## cdhit-reader
+## cdhit-reader_cdhit-compare
 
 ### Tool Description
-A tool for reading CD-HIT output files. (Note: The provided text contains system error logs regarding a container build failure and does not include the actual help documentation for the tool's arguments.)
+Compare FASTA files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0
@@ -18,55 +18,22 @@ A tool for reading CD-HIT output files. (Note: The provided text contains system
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8f57d832d99c092b4daa59dcc7b2845d393850514d65de5ce36650d80e7baccb: unpack entry: usr/local/bin/python3.8: unpack to regular file: short write: write /tmp/build-temp-3372768875/rootfs/usr/local/bin/python3.8: no space left on device
-```
+Usage: cdhit-compare [OPTIONS] FASTA1 FASTA2
 
+  Compare FASTA files
 
-## Metadata
-- **Skill**: generated
+  Warning
+  -------
+  The commad line interface is in EXPERIMENTAL stage.
 
-## cdhit-reader_cdhit-compare
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error logs related to a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/telatin/cdhit-parser
-- **Package**: https://anaconda.org/channels/bioconda/packages/cdhit-reader/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8f57d832d99c092b4daa59dcc7b2845d393850514d65de5ce36650d80e7baccb: unpack entry: usr/local/bin/python3.8: unpack to regular file: short write: write /tmp/build-temp-2017616926/rootfs/usr/local/bin/python3.8: no space left on device
-```
-
-## cdhit-reader_cdhit-reader.py
-
-### Tool Description
-A tool for reading CD-HIT output files. (Note: The provided help text contains system error logs regarding a container build failure and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/telatin/cdhit-parser
-- **Package**: https://anaconda.org/channels/bioconda/packages/cdhit-reader/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cdhit-reader:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8f57d832d99c092b4daa59dcc7b2845d393850514d65de5ce36650d80e7baccb: unpack entry: usr/local/bin/python3.8: unpack to regular file: short write: write /tmp/build-temp-1561361465/rootfs/usr/local/bin/python3.8: no space left on device
+Options:
+  --version       Show the version and exit.
+  --tag1 TEXT     Name of the first dataset
+  --tag2 TEXT     Name of the second dataset
+  --id FLOAT      Identity threshold [default: 0.9]
+  --type TEXT     Type of the sequences (nucl or prot)
+  --tempdir PATH  Temporary directory for intermediate files
+  --verbose       Show verbose information
+  -h, --help      Show this message and exit.
 ```
 

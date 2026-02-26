@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jaspar2022
-description: the package TFBSTools (>= 1.31.2).
+description: This tool provides access to the JASPAR 2022 database for retrieving transcription factor binding profiles and position frequency matrices. Use when user asks to fetch motif matrices by ID or name, filter the JASPAR database by species or collection, or retrieve transcription factor binding profiles for motif analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2022.html
 ---
+
 
 # bioconductor-jaspar2022
 

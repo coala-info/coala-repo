@@ -1,8 +1,9 @@
 ---
 name: lamassemble
-description: lamassemble is a bioinformatics tool designed to produce a single, accurate consensus sequence from a set of overlapping "long" DNA reads.
+description: lamassemble produces a high-accuracy consensus sequence from a set of overlapping long DNA reads using a probabilistic framework. Use when user asks to generate a consensus sequence from long reads, perform multiple sequence alignment for error correction, or merge overlapping sequences into a single accurate sequence.
 homepage: https://gitlab.com/mcfrith/lamassemble
 ---
+
 
 # lamassemble
 

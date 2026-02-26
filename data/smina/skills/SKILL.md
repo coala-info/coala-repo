@@ -1,8 +1,9 @@
 ---
 name: smina
-description: smina is a specialized tool for computational chemistry used to predict how small molecules (ligands) bind to receptors (proteins).
+description: "smina is a computational chemistry tool used to predict ligand-receptor binding poses and evaluate binding affinities through docking and energy minimization. Use when user asks to dock ligands to a receptor, perform energy minimization on molecular poses, evaluate binding affinity with scoring functions, or define binding sites using autoboxing."
 homepage: https://sourceforge.net/projects/smina/
 ---
+
 
 # smina
 

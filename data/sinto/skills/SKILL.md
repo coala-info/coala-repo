@@ -1,8 +1,9 @@
 ---
 name: sinto
-description: Sinto is a specialized toolkit designed to handle the "plumbing" of single-cell data processing.
+description: Sinto is a toolkit for processing single-cell data that handles barcode manipulation, BAM file filtering, and fragment file generation. Use when user asks to generate scATAC-seq fragment files, filter BAM files by cell barcode, or move barcodes from FASTQ files into read names.
 homepage: https://timoast.github.io/sinto/
 ---
+
 
 # sinto
 

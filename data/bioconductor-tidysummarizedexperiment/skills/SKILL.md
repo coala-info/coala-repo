@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tidysummarizedexperiment
-description: the package is available on all platforms; click for details.
+description: This package provides a tidyverse-compatible interface for manipulating and visualizing SummarizedExperiment objects in R. Use when user asks to manipulate SummarizedExperiment data using tidyverse verbs, visualize genomic data with ggplot2, or perform data wrangling on Bioconductor objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/tidySummarizedExperiment.html
 ---
+
 
 # bioconductor-tidysummarizedexperiment
 

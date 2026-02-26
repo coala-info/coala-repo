@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graphpac
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies clusters of mutated amino acids in protein tertiary structures by reordering 3D coordinates into a 1D space using graph theory and the Traveling Salesman Problem. Use when user asks to find non-random mutational clusters in 3D protein structures, map protein coordinates to a 1D sequence using graph-based reordering, or identify statistically significant mutation clusters in multi-domain proteins.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GraphPAC.html
 ---
+
 
 # bioconductor-graphpac
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-blimatestingdata
-description: the package blima.
+description: This package provides example Illumina bead-level microarray data for testing and demonstrating the blima package. Use when user asks to access sample bead-level datasets, test quantile normalization across multiple arrays, or demonstrate differential expression workflows for Illumina data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/blimaTestingData.html
 ---
+
 
 # bioconductor-blimatestingdata
 

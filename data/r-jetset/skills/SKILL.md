@@ -1,8 +1,9 @@
 ---
 name: r-jetset
-description: Skill for using the CRAN R package r-jetset.
+description: The r-jetset tool identifies the optimal Affymetrix probe set for a specific gene by scoring them based on specificity, coverage, and robustness. Use when user asks to map genes to probe sets, select the best probe set for a gene symbol or Entrez ID, or resolve many-to-one mappings for Affymetrix expression microarrays.
 homepage: https://cran.r-project.org/web/packages/jetset/index.html
 ---
+
 
 # r-jetset
 

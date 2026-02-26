@@ -1,9 +1,9 @@
 # ucsc-farc CWL Generation Report
 
-## ucsc-farc
+## ucsc-farc_faRc
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a log of a container execution failure. No arguments or usage information could be extracted.
+Reverse complement a FA file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-farc:482--h0b57e2e_0
@@ -18,13 +18,16 @@ The provided text does not contain help information for the tool; it is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-farc:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+faRc - Reverse complement a FA file
+usage:
+   faRc in.fa out.fa
+In.fa and out.fa may be the same file.
+options:
+   -keepName - keep name identical (don't prepend RC)
+   -keepCase - works well for ACGTUN in either case. bizarre for other letters.
+               without it bases are turned to lower, all else to n's
+   -justReverse - prepends R unless asked to keep name
+   -justComplement - prepends C unless asked to keep name
+                     (cannot appear together with -justReverse)
 ```
 
-
-## Metadata
-- **Skill**: generated

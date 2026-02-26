@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lemur
-description: the package is available on all platforms; click for details.
+description: This tool analyzes multi-condition single-cell RNA-seq data using geodesic regression to disentangle global effects from latent cell states. Use when user asks to predict cell-specific gene expression changes, identify differential expression neighborhoods, or integrate latent spaces across multi-condition single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/lemur.html
 ---
+
 
 # bioconductor-lemur
 

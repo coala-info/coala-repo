@@ -1,9 +1,9 @@
 # smartmap CWL Generation Report
 
-## smartmap
+## smartmap_SmartMapPrep
 
 ### Tool Description
-A tool for mapping and analyzing genomic data (Note: The provided text is an error log and does not contain usage instructions or argument definitions).
+SmartMapPrep prepares input files for SmartMap.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/smartmap:1.0.0--h077b44d_4
@@ -18,52 +18,83 @@ A tool for mapping and analyzing genomic data (Note: The provided text is an err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/smartmap:1.0.0--h077b44d_4 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SmartMapPrep [options] -x [Bowtie2 index] -o [output prefix] -1 [R1 fastq] -2 [R2 fastq]
+
+Inputs (required):
+-x Path to basename of Bowtie2 index for alignment
+-o Output prefix prepended to the output files
+-1 Fastq file for read mate 1 (can be gzipped)
+-2 Fastq file for read mate 2 (can be gzipped)
+
+Options:
+-p Number of CPU threads to be used for multithreaded alignment (default: 1)
+-I Minimum insert length (default: 100)
+-L Maximum insert length (default: 250)
+-k Maximum number of alignments reported (default: 51)
+-s String to be removed from read names
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## smartmap_SmartMapPrep
-
-### Tool Description
-A tool for SmartMap preparation. (Note: The provided text contains only system logs and error messages regarding a container build failure and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/smartmap:1.0.0--h077b44d_4
-- **Homepage**: http://shah-rohan.github.io/SmartMap
-- **Package**: https://anaconda.org/channels/bioconda/packages/smartmap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/smartmap:1.0.0--h077b44d_4 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## smartmap_SmartMapRNAPrep
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container image build failure.
+SmartMapRNAPrep [options] -x [Bowtie2 index] -o [output prefix] -1 [R1 fastq] -2 [R2 fastq]
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/smartmap:1.0.0--h077b44d_4
 - **Homepage**: http://shah-rohan.github.io/SmartMap
 - **Package**: https://anaconda.org/channels/bioconda/packages/smartmap/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/smartmap:1.0.0--h077b44d_4 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SmartMapPrep [options] -x [Bowtie2 index] -o [output prefix] -1 [R1 fastq] -2 [R2 fastq]
+
+Inputs (required):
+-x Path to basename of Bowtie2 index for alignment
+-o Output prefix prepended to the output files
+-1 Fastq file for read mate 1 (can be gzipped)
+-2 Fastq file for read mate 2 (can be gzipped)
+
+Options:
+-p Number of CPU threads to be used for multithreaded alignment (default: 1)
+-k Maximum number of alignments reported (default: 51)
+-s String to be removed from read names
+```
+
+
+## smartmap_SmartMap
+
+### Tool Description
+SmartMap for analysis of ambiguously mapping reads in next-generation sequencing.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/smartmap:1.0.0--h077b44d_4
+- **Homepage**: http://shah-rohan.github.io/SmartMap
+- **Package**: https://anaconda.org/channels/bioconda/packages/smartmap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+SmartMap for analysis of ambiguously mapping reads in next-generation sequencing. Version 1.0.0.
+
+Usage: SmartMap [options] [bed or bed.gz file input(s)]
+
+Required options:
+-g : Genome length file listing all chromosomes and lengths. Chromosomes will appear in this order in output file.
+-o : Output prefix used for output bedgraph and log files.
+
+Non-required options:
+-i : Number of iterations. Default 1.
+-m : Maximum number of alignments for a read to be processed. Default 50.
+-s : Minimum score for Bowtie2 display. Default 0 (unscored).
+-v : N for N-fold cross-validation. Default 1 (no cross-validation).
+-c : Flag for continuous output bedgraphs. Default off.
+-S : Flag for strand-specific mode. Default off.
+-r : Flag for read output mode with weights. Default off.
+-l : Rate of fitting in reweighting. Default 1.
+-h : Display help message.
+
+Developed by Rohan Shah (rohanshah@uchicago.edu).
 ```
 

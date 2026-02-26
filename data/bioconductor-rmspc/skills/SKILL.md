@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmspc
-description: the package is available on all platforms; click for details.
+description: This package implements the Multiple Sample Peak Calling algorithm to analyze ChIP-seq data across multiple replicates. Use when user asks to perform multiple sample peak calling, combine ChIP-seq replicates, or identify consistent peaks across biological samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/rmspc.html
 ---
+
 
 # bioconductor-rmspc
 

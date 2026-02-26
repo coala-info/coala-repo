@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interactionset
-description: the package is available on all platforms; click for details.
+description: The bioconductor-interactionset package provides a framework for representing and manipulating genomic interaction data like Hi-C and ChIA-PET within the Bioconductor ecosystem. Use when user asks to create GInteractions or InteractionSet objects, perform 2D overlaps, calculate genomic distances between anchors, link promoters to enhancers, or convert between interaction formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/InteractionSet.html
 ---
+
 
 # bioconductor-interactionset
 

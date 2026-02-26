@@ -1,8 +1,9 @@
 ---
 name: ucsc-mrnatogene
-description: The `mrnaToGene` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to bridge the gap between raw sequence alignments and gene structure definitions.
+description: The ucsc-mrnatogene tool converts mRNA-to-genome alignments from PSL format into gene structure definitions in GenePred format. Use when user asks to convert mRNA alignments to gene structures, build custom gene sets, validate transcript models, or convert PSL files to GenePred format.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-mrnatogene
 

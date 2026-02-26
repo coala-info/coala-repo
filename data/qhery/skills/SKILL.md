@@ -1,8 +1,9 @@
 ---
 name: qhery
-description: qhery is a bioinformatics pipeline developed by the Queensland Health Q-PHIRE Genomics team.
+description: qhery identifies amino acid changes in SARS-CoV-2 samples and cross-references them against the Stanford resistance database to assess antiviral and monoclonal antibody effectiveness. Use when user asks to identify resistance mutations, list amino acid changes, check supported treatments, or analyze variant data for drug resistance.
 homepage: http://github.com/mjsull/qhery/
 ---
+
 
 # qhery
 

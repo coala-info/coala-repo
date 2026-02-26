@@ -3,33 +3,32 @@
 ## perl-test-builder-tester
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be an error log indicating that the executable was not found in the environment.
+FAIL to generate CWL: perl-test-builder-tester not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-test-builder-tester:1.23_002--pl526_1
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-test-builder-tester/overview
 - **Total Downloads**: 15.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: perl-test-builder-tester not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: perl-test-builder-tester not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 18:49:57  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "perl-test-builder-tester": executable file not found in $PATH
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

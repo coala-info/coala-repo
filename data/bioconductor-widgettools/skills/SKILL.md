@@ -1,8 +1,9 @@
 ---
 name: bioconductor-widgettools
-description: the package is available on all platforms; click for details.
+description: This package provides functions for creating and managing interactive widgets in R. Use when user asks to create interactive widgets, manage GUI elements, or build interactive tools in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/widgetTools.html
 ---
+
 
 # bioconductor-widgettools
 

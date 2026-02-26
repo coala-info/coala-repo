@@ -1,8 +1,9 @@
 ---
 name: ndex-python
-description: The `ndex-python` skill provides a programmatic interface for managing biological networks on NDEx servers.
+description: The ndex-python tool provides a programmatic interface for managing, retrieving, and uploading biological networks on NDEx servers using the CX data format. Use when user asks to retrieve network summaries, stream large CX data, manage network collections, or update existing networks on an NDEx server.
 homepage: https://github.com/ndexbio/ndex-python
 ---
+
 
 # ndex-python
 

@@ -1,8 +1,9 @@
 ---
 name: r-base64
-description: "Compatibility wrapper to replace the orphaned package. New      applications should use base64 encoders from 'jsonlite' or 'openssl' or     'base64enc'.</p>"
+description: This tool encodes and decodes data to and from base64 format in R. Use when user asks to encode files to base64 strings, decode base64 data back to binary files, or embed images into HTML and Markdown documents.
 homepage: https://cloud.r-project.org/web/packages/base64/index.html
 ---
+
 
 # r-base64
 

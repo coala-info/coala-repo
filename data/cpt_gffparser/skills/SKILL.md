@@ -1,8 +1,9 @@
 ---
 name: cpt_gffparser
-description: cpt_gffparser is a specialized Biopython extension designed to handle the complexities of the GFF3 format.
+description: cpt_gffparser parses and writes GFF3 files while preserving hierarchical parent-child feature relationships through a specialized Biopython extension. Use when user asks to parse GFF3 data into SeqRecord objects, export genomic features to GFF3 format, or manage nested sub-features in bioinformatics workflows.
 homepage: https://pypi.org/project/CPT-GFFParser/
 ---
+
 
 # cpt_gffparser
 

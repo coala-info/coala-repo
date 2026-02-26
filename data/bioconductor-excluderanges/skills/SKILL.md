@@ -1,8 +1,9 @@
 ---
 name: bioconductor-excluderanges
-description: the package is available on all platforms; click for details.
+description: This tool provides access to genomic exclusion sets and blacklists for various genome assemblies via AnnotationHub in R. Use when user asks to identify problematic genomic regions, filter out artifacts from sequencing data, or retrieve centromere and telomere coordinates.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/excluderanges.html
 ---
+
 
 # bioconductor-excluderanges
 

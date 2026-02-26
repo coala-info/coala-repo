@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spotlight
-description: the package is available on all platforms; click for details.
+description: SPOTlight deconvolves spatial transcriptomics data to estimate cell-type proportions by integrating single-cell RNA-seq reference data. Use when user asks to deconvolve spatial transcriptomics spots, estimate cell-type composition, or integrate single-cell and spatial transcriptomics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPOTlight.html
 ---
+
 
 # bioconductor-spotlight
 

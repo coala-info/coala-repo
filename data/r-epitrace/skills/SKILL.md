@@ -1,8 +1,9 @@
 ---
 name: r-epitrace
-description: R package epitrace (documentation from project home).
+description: epitrace is an R package that infers the relative mitotic age of cells by measuring chromatin accessibility at specific clock-like genomic loci. Use when user asks to estimate cell age from ATAC-seq data, identify peaks associated with mitotic age, or reconstruct cell phylogenies based on replicative history.
 homepage: https://cran.r-project.org/web/packages/epitrace/index.html
 ---
+
 
 # r-epitrace
 

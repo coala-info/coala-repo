@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jaspar2014
-description: the package TFBSTools.
+description: This package provides the 2014 release of the JASPAR database containing transcription factor binding profiles and site sequences for use in R. Use when user asks to access JASPAR 2014 motifs, retrieve position frequency matrices, or fetch transcription factor binding site sequences.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/JASPAR2014.html
 ---
+
 
 # bioconductor-jaspar2014
 

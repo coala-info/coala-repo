@@ -1,8 +1,9 @@
 ---
 name: r-dplyr
-description: "A fast, consistent tool for working with data frame like     objects, both in memory and out of memory.</p>"
+description: The dplyr package provides a grammar for fast and consistent data manipulation of data frame-like objects in R. Use when user asks to filter rows, select or rename columns, create new variables, group and summarize data, or join multiple datasets together.
 homepage: https://cloud.r-project.org/web/packages/dplyr/index.html
 ---
+
 
 # r-dplyr
 

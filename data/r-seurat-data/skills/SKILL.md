@@ -1,8 +1,9 @@
 ---
 name: r-seurat-data
-description: R package seurat-data (documentation from project home).
+description: This tool provides access to the SeuratData R package for loading curated single-cell datasets pre-packaged as Seurat objects. Use when user asks to list available datasets, install specific single-cell data, or load standard datasets like pbmc3k or ifnb for Seurat analysis workflows.
 homepage: https://cran.r-project.org/web/packages/seurat-data/index.html
 ---
+
 
 # r-seurat-data
 

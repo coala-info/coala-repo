@@ -1,8 +1,9 @@
 ---
 name: cyordereddict
-description: The `cyordereddict` library is a Cython implementation of the Python standard library's `OrderedDict`.
+description: cyordereddict is a high-performance Cython implementation of OrderedDict designed as a drop-in replacement for the Python standard library version. Use when user asks to improve the performance of ordered dictionaries in legacy Python environments, run benchmarks on dictionary operations, or reduce memory overhead for ordered mappings.
 homepage: https://github.com/shoyer/cyordereddict
 ---
+
 
 # cyordereddict
 

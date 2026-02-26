@@ -3,10 +3,10 @@
 ## bed2gtf
 
 ### Tool Description
-A tool to convert BED files to GTF format. Note: The provided help text appears to be an error log regarding a failed container build ('no space left on device') and does not contain usage instructions or argument definitions.
+A fast and memory efficient BED to GTF converter
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bed2gtf:1.9.3--h4ac6f70_0
+- **Docker Image**: quay.io/biocontainers/bed2gtf:1.9.3--h9948957_2
 - **Homepage**: https://github.com/alejandrogzi/bed2gtf
 - **Package**: https://anaconda.org/channels/bioconda/packages/bed2gtf/overview
 - **Validation**: PASS
@@ -18,14 +18,18 @@ A tool to convert BED files to GTF format. Note: The provided help text appears 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bed2gtf:1.9.3--h4ac6f70_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:d86290acc83ad2970eac3e0dbd2efcd5535647ead6da7a54e2f79da8b9b5a6ae: unpack entry: usr/local/lib/libstdc++.so.6.0.33: unpack to regular file: short write: write /scratch/21813747/build-temp-1982832194/rootfs/usr/local/lib/libstdc++.so.6.0.33: no space left on device
+A fast and memory efficient BED to GTF converter
+
+Usage: bed2gtf [OPTIONS] --bed <BED> --output <OUTPUT>
+
+Options:
+  -b, --bed <BED>            Path to BED file
+  -o, --output <OUTPUT>      Path to output file
+  -t, --threads <THREADS>    Number of threads [default: 20]
+  -g, --gz[=<FLAG>]          Compress output file [default: false] [possible values: true, false]
+  -n, --no-gene[=<FLAG>]     Flag to disable gene_id feature [default: false] [possible values: true, false]
+  -i, --isoforms <ISOFORMS>  Path to isoforms file [gene -> transcript1, transcript2, ...]
+  -h, --help                 Print help
+  -V, --version              Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

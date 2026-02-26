@@ -1,8 +1,9 @@
 ---
 name: bioconductor-meat
-description: the package is available on all platforms; click for details.
+description: MEAT estimates epigenetic age from human skeletal muscle DNA methylation data. Use when user asks to estimate epigenetic age, calculate DNA methylation age, or analyze skeletal muscle methylation profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/MEAT.html
 ---
+
 
 # bioconductor-meat
 

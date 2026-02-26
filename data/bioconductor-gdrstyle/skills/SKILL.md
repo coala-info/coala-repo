@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdrstyle
-description: the package is available on all platforms; click for details.
+description: The gDRstyle package provides a standardized development environment and style guide enforcement for the gDR platform. Use when user asks to lint package directories, run standardized package quality checks, or manage dependencies for Docker-based deployments.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRstyle.html
 ---
+
 
 # bioconductor-gdrstyle
 

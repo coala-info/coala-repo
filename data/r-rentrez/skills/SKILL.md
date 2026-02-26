@@ -1,8 +1,9 @@
 ---
 name: r-rentrez
-description: Skill for using the CRAN R package r-rentrez.
+description: This tool provides an R interface to the NCBI Entrez Utilities API for searching and retrieving data from biological databases like PubMed and GenBank. Use when user asks to search NCBI databases, fetch genetic or bibliographic records, find cross-references between databases, or manage large datasets via the NCBI Web History feature.
 homepage: https://cloud.r-project.org/web/packages/rentrez/index.html
 ---
+
 
 # r-rentrez
 

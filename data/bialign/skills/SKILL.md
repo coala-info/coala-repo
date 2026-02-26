@@ -1,8 +1,9 @@
 ---
 name: bialign
-description: `bialign` is a specialized bioinformatics tool designed to handle "bi-alignments" of RNAs and proteins.
+description: Bialign performs bi-alignments of RNAs and proteins by modeling evolutionary shifts between sequence and structure. Use when user asks to align molecules with structural displacements, identify structural homologs with incongruent evolution, or perform RNA and protein alignments using affine gap costs.
 homepage: https://github.com/s-will/BiAlign
 ---
+
 
 # bialign
 

@@ -1,8 +1,9 @@
 ---
 name: mutyper
-description: `mutyper` is a specialized bioinformatics tool used to polarize and annotate biallelic SNPs with their ancestral k-mer context.
+description: mutyper polarizes and annotates biallelic SNPs with their ancestral k-mer context. Use when user asks to create ancestral sequences, annotate variants with mutation types, calculate mutation spectra, determine genomic targets, or generate k-mer site frequency spectra.
 homepage: https://github.com/harrispopgen/mutyper
 ---
+
 
 # mutyper
 

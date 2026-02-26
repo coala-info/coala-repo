@@ -1,8 +1,9 @@
 ---
 name: agrvate
-description: Rapid identification of Staphylococcus aureus agr type and agr locus variants from assemblies.
+description: AgrVATE characterizes the accessory gene regulator locus in *Staphylococcus aureus* by performing kmer-based typing and identifying frameshift mutations. Use when user asks to assign agr groups, extract the agr operon, or detect mutations that lead to loss of function in genomic assemblies.
 homepage: https://github.com/VishnuRaghuram94/AgrVATE
 ---
+
 
 # agrvate
 

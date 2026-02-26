@@ -1,8 +1,9 @@
 ---
 name: r-pophelper
-description: R package pophelper (documentation from project home).
+description: The r-pophelper package processes and visualizes population genetic admixture data from programs like STRUCTURE and ADMIXTURE. Use when user asks to read admixture output files, align and merge clusters across runs, or create customized genetic barplots.
 homepage: https://cran.r-project.org/web/packages/pophelper/index.html
 ---
+
 
 # r-pophelper
 

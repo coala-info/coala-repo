@@ -1,8 +1,9 @@
 ---
 name: geno2phenotb
-description: The `geno2phenotb` skill enables the automated prediction of drug resistance profiles for *Mycobacterium tuberculosis* (MTB) directly from genomic data.
+description: geno2phenotb predicts drug resistance profiles for *Mycobacterium tuberculosis* from genomic sequencing data using machine learning models. Use when user asks to predict antibiotic resistance, analyze MTB genomic data, or identify resistance to first-line and second-line tuberculosis drugs.
 homepage: https://github.com/msmdev/geno2phenoTB
 ---
+
 
 # geno2phenotb
 

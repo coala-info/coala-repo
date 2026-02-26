@@ -1,9 +1,9 @@
 # tmhg CWL Generation Report
 
-## tmhg
+## tmhg_tmhgf
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the 'tmhg' tool. It consists of system logs and a fatal error message related to a container build process.
+tMHG-Finder: Guide-Tree Based Homology Group Finder
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tmhg:1.0.3--pyhdfd78af_0
@@ -18,33 +18,16 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tmhg:1.0.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: tmhgf [-h] {find,add} ...
 
+tMHG-Finder: Guide-Tree Based Homology Group Finder
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  {find,add}  tMHG-Finder mode
+    find      Run tMHG-Finder on set of genomes
+    add       Add genome to existing tMHG-Finder run
 
-## tmhg_tmhgf
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tmhg:1.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/yongze-yin/tMHG-Finder/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tmhg/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tmhg:1.0.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help  show this help message and exit
 ```
 

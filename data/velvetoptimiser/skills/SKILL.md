@@ -1,8 +1,9 @@
 ---
 name: velvetoptimiser
-description: VelvetOptimiser is a Perl-based wrapper script designed to streamline the use of the Velvet assembler.
+description: VelvetOptimiser automates the optimization of Velvet genome assembly by iterating through k-mer lengths and coverage thresholds. Use when user asks to optimize genome assembly, find optimal k-mer lengths, estimate memory for assembly, or improve assembly quality.
 homepage: https://github.com/tseemann/VelvetOptimiser
 ---
+
 
 # velvetoptimiser
 

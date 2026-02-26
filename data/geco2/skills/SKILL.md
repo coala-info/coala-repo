@@ -1,8 +1,9 @@
 ---
 name: geco2
-description: GeCo2 (Genomic Compression 2) is a specialized tool designed for the lossless compression and information-theoretic analysis of DNA sequences.
+description: GeCo2 is a specialized tool for the lossless compression and information-theoretic analysis of DNA sequences. Use when user asks to compress DNA sequences, perform referential compression using a known sequence, or analyze genomic information content and patterns.
 homepage: https://github.com/cobilab/geco2
 ---
+
 
 # geco2
 

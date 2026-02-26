@@ -1,8 +1,9 @@
 ---
 name: bioconductor-madseq
-description: the package is available on all platforms; click for details.
+description: MADSEQ detects mosaic aneuploidy and estimates the fraction of aneuploid cells from whole exome or whole genome sequencing data. Use when user asks to detect mosaic chromosomal abnormalities, estimate the cellular fraction of aneuploidy, or identify mosaicism in sequencing datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/MADSEQ.html
 ---
+
 
 # bioconductor-madseq
 

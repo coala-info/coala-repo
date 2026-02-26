@@ -3,7 +3,7 @@
 ## noise2read
 
 ### Tool Description
-A tool for noise reduction in sequencing reads. (Note: The provided text contains a system error message rather than help documentation; therefore, no arguments could be extracted.)
+Noise2Read is a tool for denoising sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/noise2read:0.3.0--pyhdfd78af_0
@@ -18,11 +18,25 @@ A tool for noise reduction in sequencing reads. (Note: The provided text contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/noise2read:0.3.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3277946014: no space left on device
+noise2read Usage:
+   Mandatory:
+     -m|--module                   module selection
+   Modules: [correction, amplicon_correction, umi_correction, mimic_umi, real_umi, evaluation, simulation]
+1. Using config file
+     noise2read -m|--module <module_name> -c <path_configuration_file>
+   Mandatory:
+     -c|--config                   input configuration file
+2. Using command line with the default parameters
+     noise2read -m|--module <module_name> -i <path_raw_data.fastq|fasta|fa|fq>
+   Mandatory:
+     -i|--input                    input raw data to be corrected
+   Options:
+     -d|--directory                set output directory
+     -a|--high_ambiguous           predict high ambiguous errors using machine learning when set true, defaut true
+     -t|--true                     input ground truth data if you have
+     -r|--rectification            input corrected data when using module evaluation
+     -p|--parallel                 use multiple cpu cores, default total cpu cores - 2
+     -g|--tree_method              use gpu for training and prediction, default auto, (options gpu_hist, hist, auto)
+     -h|--help                     show this help
 ```
 
-
-## Metadata
-- **Skill**: generated

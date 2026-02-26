@@ -3,7 +3,7 @@
 ## abruijn
 
 ### Tool Description
-The provided text does not contain help information for the tool 'abruijn'. It contains error logs related to a failed container build (no space left on device).
+ABruijn: assembly of long and error-prone reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/abruijn:2.1b--py27_0
@@ -18,37 +18,37 @@ The provided text does not contain help information for the tool 'abruijn'. It c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 12:01:53  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/abruijn:2.1b--py27_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0b0dec5e9ee4bae6f5a5b8ca1890fb4b307f53566183a256fac617121a28880: unpack entry: usr/local/lib/tk8.5/demos/goldberg.tcl: unpack to regular file: short write: write /tmp/build-temp-4004277076/rootfs/usr/local/lib/tk8.5/demos/goldberg.tcl: no space left on device
-```
+usage: abruijn [-h] [--debug] [--resume] [-t THREADS] [-i NUM_ITERS]
+               [-p {pacbio,nano,pacbio_hi_err}] [-k KMER_SIZE]
+               [-o MIN_OVERLAP] [-m MIN_KMER_COUNT] [-x MAX_KMER_COUNT]
+               [--version]
+               reads out_dir coverage integer
 
+ABruijn: assembly of long and error-prone reads
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  reads                 path to reads file (FASTA format)
+  out_dir               output directory
+  coverage (integer)    estimated assembly coverage
 
-## abruijn_flye
-
-### Tool Description
-The provided text is an error log from a container runtime (Singularity/Apptainer) indicating a failure to build or extract the image due to insufficient disk space. It does not contain the help text or usage information for the tool 'abruijn'.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/abruijn:2.1b--py27_0
-- **Homepage**: https://github.com/fenderglass/ABruijn/
-- **Package**: https://anaconda.org/channels/bioconda/packages/abruijn/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 12:03:10  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/abruijn:2.1b--py27_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0b0dec5e9ee4bae6f5a5b8ca1890fb4b307f53566183a256fac617121a28880: unpack entry: usr/local/lib/tcl8.5/msgs/es_hn.msg: unpack to regular file: short write: write /tmp/build-temp-2512118008/rootfs/usr/local/lib/tcl8.5/msgs/es_hn.msg: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --debug               enable debug output
+  --resume              try to resume previous assembly
+  -t THREADS, --threads THREADS
+                        number of parallel threads (default: 1)
+  -i NUM_ITERS, --iterations NUM_ITERS
+                        number of polishing iterations (default: 1)
+  -p {pacbio,nano,pacbio_hi_err}, --platform {pacbio,nano,pacbio_hi_err}
+                        sequencing platform (default: pacbio)
+  -k KMER_SIZE, --kmer-size KMER_SIZE
+                        kmer size (default: auto)
+  -o MIN_OVERLAP, --min-overlap MIN_OVERLAP
+                        minimum overlap between reads (default: 5000)
+  -m MIN_KMER_COUNT, --min-coverage MIN_KMER_COUNT
+                        minimum kmer coverage (default: auto)
+  -x MAX_KMER_COUNT, --max-coverage MAX_KMER_COUNT
+                        maximum kmer coverage (default: auto)
+  --version             show program's version number and exit
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: srnapipe
-description: sRNAPipe is a specialized pipeline for the bioinformatic exploration of small RNA-seq datasets.
+description: sRNAPipe is a pipeline for the bioinformatic exploration and profiling of small RNA-seq datasets. Use when user asks to align small RNA reads to a reference genome, categorize reads by size and genomic origin, or identify ping-pong signatures.
 homepage: https://github.com/GReD-Clermont/sRNAPipe-cli
 ---
+
 
 # srnapipe
 

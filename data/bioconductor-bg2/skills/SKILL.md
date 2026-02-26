@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bg2
-description: the package is available on all platforms; click for details.
+description: This tool performs Bayesian variable selection for Genome-Wide Association Studies involving non-Gaussian phenotypes like Poisson or binary data. Use when user asks to perform GWAS on count or binary traits, account for population structure using kinship matrices, or apply Bayesian two-step procedures to identify causal SNPs while controlling false discovery rates.
 homepage: https://bioconductor.org/packages/release/bioc/html/BG2.html
 ---
+
 
 # bioconductor-bg2
 

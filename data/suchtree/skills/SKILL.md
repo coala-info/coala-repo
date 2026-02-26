@@ -1,8 +1,9 @@
 ---
 name: suchtree
-description: SuchTree is a specialized Python library designed for fast, thread-safe computations on phylogenetic trees.
+description: SuchTree is a Python library for performing fast, memory-efficient computations and distance calculations on large phylogenetic trees. Use when user asks to calculate distances between taxa, analyze co-evolutionary interactions between linked trees, or process massive phylogenies that require thread-safe performance.
 homepage: https://github.com/ryneches/SuchTree/
 ---
+
 
 # suchtree
 

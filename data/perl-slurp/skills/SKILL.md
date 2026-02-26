@@ -1,8 +1,9 @@
 ---
 name: perl-slurp
-description: The `perl-slurp` skill provides guidance on using the `Slurp` Perl module to efficiently load file contents into variables.
+description: This tool provides guidance on using the Slurp Perl module to efficiently load entire file contents into variables. Use when user asks to read a file into a single string, load file lines into an array, or simplify file reading in Perl scripts and one-liners.
 homepage: http://metacpan.org/pod/Slurp
 ---
+
 
 # perl-slurp
 

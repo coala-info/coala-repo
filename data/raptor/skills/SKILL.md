@@ -1,8 +1,9 @@
 ---
 name: raptor
-description: Raptor is a high-performance bioinformatics tool designed to handle the "needle in a haystack" problem for genomic data.
+description: Raptor is a high-performance bioinformatics tool that uses compressed index structures to query nucleotide sequences against large collections of reference data. Use when user asks to build a Hierarchical Interleaved Bloom Filter index, search query sequences against reference bins, or perform fast approximate membership queries across thousands of genomes.
 homepage: https://github.com/seqan/raptor
 ---
+
 
 # raptor
 

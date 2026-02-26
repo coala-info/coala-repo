@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bridge
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs robust Bayesian testing for differential gene expression in microarray data using a t-distribution based hierarchical model. Use when user asks to perform robust differential expression analysis, identify differentially expressed genes in microarray data, or compare two or three biological samples while accounting for outliers.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/bridge.html
 ---
+
 
 # bioconductor-bridge
 

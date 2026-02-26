@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metmashr
-description: the package is available on all platforms; click for details.
+description: MetMashR is a Bioconductor package for consolidating and annotating metabolomics data from multiple sources. Use when user asks to consolidate metabolite annotations, map metabolite identifiers across databases, or merge metabolomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/MetMashR.html
 ---
+
 
 # bioconductor-metmashr
 

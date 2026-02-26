@@ -1,8 +1,9 @@
 ---
 name: bioconductor-massir
-description: the package is available on all platforms; click for details.
+description: This R package predicts the sex of samples in gene expression datasets based on Y chromosome transcript levels. Use when user asks to predict sample sex, identify gender from gene expression data, or classify samples by sex using transcriptomic information.
 homepage: https://bioconductor.org/packages/release/bioc/html/massiR.html
 ---
+
 
 # bioconductor-massir
 

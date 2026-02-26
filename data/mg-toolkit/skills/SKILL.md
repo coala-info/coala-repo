@@ -1,8 +1,9 @@
 ---
 name: mg-toolkit
-description: The `mg-toolkit` is a specialized command-line interface and Python library for interacting with the MGnify platform.
+description: The mg-toolkit is a command-line interface and Python library for interacting with the MGnify platform to retrieve metagenomic datasets and analysis results. Use when user asks to download original sample metadata, perform bulk downloads of functional or taxonomic analysis files, or search non-redundant protein databases.
 homepage: https://github.com/EBI-metagenomics/emg-toolkit
 ---
+
 
 # mg-toolkit
 

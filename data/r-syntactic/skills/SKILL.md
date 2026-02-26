@@ -1,8 +1,9 @@
 ---
 name: r-syntactic
-description: R package syntactic (documentation from project home).
+description: This tool transforms character vectors into syntactically valid R identifiers and handles case conversions. Use when user asks to clean column names, create valid R variable names, or convert strings to camelCase or snake_case.
 homepage: https://cran.r-project.org/web/packages/syntactic/index.html
 ---
+
 
 # r-syntactic
 

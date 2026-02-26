@@ -1,8 +1,9 @@
 ---
 name: aviary
-description: Aviary is a comprehensive bioinformatics wrapper for Snakemake-based metagenomics workflows.
+description: Aviary is a bioinformatics wrapper for Snakemake-based metagenomics workflows that processes raw sequencing reads into annotated metagenome-assembled genomes. Use when user asks to assemble metagenomes, recover bins, annotate genomes, cluster MAGs, or run an end-to-end hybrid sequencing pipeline.
 homepage: https://github.com/rhysnewell/aviary/
 ---
+
 
 # aviary
 

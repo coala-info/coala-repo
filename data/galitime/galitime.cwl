@@ -2,10 +2,38 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: galitime
 label: galitime
-doc: "The provided help text contains only system error messages related to container
-  image building and does not include usage information or a description of the tool's
-  functionality.\n\nTool homepage: https://github.com/karel-brinda/galitime"
-inputs: []
+doc: "benchmarking of computational experiments using GNU time\n\nTool homepage: https://github.com/karel-brinda/galitime"
+inputs:
+  - id: command
+    type: string
+    doc: the command to be benchmarked
+    inputBinding:
+      position: 1
+  - id: gtime
+    type:
+      - 'null'
+      - boolean
+    doc: call gtime instead of time
+    inputBinding:
+      position: 102
+      prefix: --gtime
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: output (filename/stderr/stdout)
+    default: stderr
+    inputBinding:
+      position: 102
+      prefix: --log
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: name of the experiment
+    inputBinding:
+      position: 102
+      prefix: --name
 outputs:
   - id: stdout
     type: stdout

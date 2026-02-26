@@ -1,8 +1,9 @@
 ---
 name: merge-gbk-records
-description: The `merge-gbk-records` utility is a specialized tool for unifying fragmented genomic data.
+description: This tool concatenates multiple GenBank records into a single continuous record with customizable spacer sequences. Use when user asks to merge fragmented genomic data, create scaffolds from contigs, or unify multi-record GenBank files.
 homepage: http://github.com/kblin/merge-gbk-records
 ---
+
 
 # merge-gbk-records
 

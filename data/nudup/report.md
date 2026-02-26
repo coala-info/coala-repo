@@ -1,9 +1,9 @@
 # nudup CWL Generation Report
 
-## nudup
+## nudup_nudup.py
 
 ### Tool Description
-The provided text is a system error message regarding a container build failure and does not contain help or usage information for the tool 'nudup'.
+Marks/removes PCR introduced duplicate molecules based on the molecular tagging technology used in NuGEN products.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nudup:2.3.3--py27_0
@@ -18,29 +18,73 @@ The provided text is a system error message regarding a container build failure 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nudup:2.3.3--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3485811234: no space left on device
-```
+usage: nudup.py [-2] [-f INDEX.fq|READ.fq] [-o OUT_PREFIX] [-s START]
+                [-l LENGTH] [-T TEMP_DIR] [--old-samtools] [--rmdup-only] [-v]
+                [-h]
+                IN.sam|IN.bam
 
+Marks/removes PCR introduced duplicate molecules based on the molecular tagging
+technology used in NuGEN products.
 
-## Metadata
-- **Skill**: generated
+For SINGLE END reads, duplicates are marked if they fulfill the following
+criteria: a) start at the same genomic coordinate b) have the same strand
+orientation c) have the same molecular tag sequence. The read with the
+highest mapping quality is kept as the non-duplicate read.
 
-## nudup_nudup.py
+For PAIRED END reads, duplicates are marked if they fulfill the following
+criteria: a) start at the same genomic coordinate b) have the same template
+length c) have the same molecular tag sequence. The read pair with the highest
+mapping quality is kept as the non-duplicate read.
 
-### Tool Description
-The provided text is an error message indicating a system failure (no space left on device) while attempting to run the tool via a container. No help text or argument information was available in the input to parse.
+Here are the two cases for running this tool:
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nudup:2.3.3--py27_0
-- **Homepage**: http://nugentechnologies.github.io/nudup/
-- **Package**: https://anaconda.org/channels/bioconda/packages/nudup/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nudup:2.3.3--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2203040214: no space left on device
+- CASE 1 (Standard): User supplies two input files,
+ 1) SAM/BAM file that a) ends with .sam or .bam extension b) contains unique
+    alignments only
+ 2) FASTQ file (ie: the Index FASTQ) that contains the molecular tag sequence
+    for each read name in the corresponding SAM/BAM file as either a) the read
+    sequence or b) in the FASTQ entry header name. If the index FASTQ read
+    length is 6, 8, 12, 14, or 16nt long as expected for NuGEN products, the
+    molecular tag sequence to be extracted from the read according to -s and -l
+    parameters, otherwise the molecular tag will be extracted from the header
+    of the FASTQ entry.
+
+- CASE 2 (Runtime Optimized): User supplies only one input file,
+ 1) SAM/BAM file that a) ends with .sam or .bam extension b) contains unique
+    alignments only c) is sorted d) has a fixed length sequence containing the
+    molecular tag appended to each read name.
+
+Author: Anand Patel
+Contact: NuGEN Technologies Inc., techserv@nugen.com
+
+Input:
+  IN.sam|IN.bam         input sorted/unsorted SAM/BAM containing only unique
+                        alignments (sorted required for case 2 detailed above)
+
+Options:
+  -2, --paired-end      use paired end deduping with template. SAM/BAM
+                        alignment must contain paired end reads. Degenerate
+                        read pairs (alignments for one read of pair) will be
+                        discarded.
+  -f INDEX.fq|READ.fq   FASTQ file containing the molecular tag sequence for
+                        each read name in the corresponding SAM/BAM file
+                        (required only for CASE 1 detailed above)
+  -o OUT_PREFIX, --out OUT_PREFIX
+                        prefix of output file paths for sorted BAMs (default
+                        will create prefix.sorted.markdup.bam,
+                        prefix.sorted.dedup.bam, prefix_dup_log.txt)
+  -s START, --start START
+                        position in index read where molecular tag sequence
+                        begins. This should be a 1-based value that counts in
+                        from the 3' END of the read. (default = 6)
+  -l LENGTH, --length LENGTH
+                        length of molecular tag sequence (default = 6)
+  -T TEMP_DIR           directory for reading and writing to temporary files
+                        and named pipes (default: /tmp)
+  --old-samtools        required for compatibility with samtools sort style in
+                        samtools versions <=0.1.19
+  --rmdup-only          required for only outputting duplicates removed file
+  -v, --version         show program's version number and exit
+  -h, --help            show this help message and exit
 ```
 

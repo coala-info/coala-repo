@@ -1,8 +1,9 @@
 ---
 name: shiba
-description: Shiba is a versatile computational framework designed to systematically identify differential RNA splicing across various sequencing platforms.
+description: Shiba is a computational framework designed to systematically identify differential RNA splicing across bulk, single-cell, and long-read sequencing platforms. Use when user asks to quantify alternative mRNA splicing events, analyze single-cell RNA-seq data for differential splicing, process long-read RNA-seq data, or perform lightweight splicing analysis.
 homepage: https://github.com/Sika-Zheng-Lab/Shiba
 ---
+
 
 # shiba
 

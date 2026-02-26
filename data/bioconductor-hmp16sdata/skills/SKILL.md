@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hmp16sdata
-description: the package as downloaded from the HMP Data Analysis and Coordination Center. Processed data is provided as SummarizedExperiment class objects via ExperimentHub.
+description: This package provides access to Human Microbiome Project 16S rRNA sequencing data as SummarizedExperiment objects for analysis in R. Use when user asks to download HMP 16S data, generate demographic summary tables, subset microbiome samples by body site, or integrate HMP datasets with phyloseq for diversity analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HMP16SData.html
 ---
+
 
 # bioconductor-hmp16sdata
 

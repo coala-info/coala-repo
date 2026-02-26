@@ -1,8 +1,9 @@
 ---
 name: mtb-snp-it
-description: The `mtb-snp-it` tool (also known as SNP-IT) provides a high-speed method for classifying isolates within the *Mycobacterium tuberculosis* complex.
+description: "mtb-snp-it classifies Mycobacterium tuberculosis complex isolates into specific species and lineages by analyzing single nucleotide polymorphisms. Use when user asks to identify MTBC species, determine lineage from VCF or FASTA files, or perform high-speed speciation of tuberculosis samples."
 homepage: https://github.com/samlipworth/snpit
 ---
+
 
 # mtb-snp-it
 

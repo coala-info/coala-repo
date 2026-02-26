@@ -1,8 +1,9 @@
 ---
 name: vcf2maf-umccr
-description: The `vcf2maf-umccr` tool is a specialized utility designed to transform Variant Call Format (VCF) files into Mutation Annotation Format (MAF).
+description: The vcf2maf-umccr tool transforms Variant Call Format (VCF) files into Mutation Annotation Format (MAF). Use when user asks to convert VCF files to MAF or re-annotate existing MAF files.
 homepage: https://github.com/umccr/vcf2maf/
 ---
+
 
 # vcf2maf-umccr
 

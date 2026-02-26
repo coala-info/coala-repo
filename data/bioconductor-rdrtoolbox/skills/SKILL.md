@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rdrtoolbox
-description: the package is available on all platforms; click for details.
+description: RDRToolbox provides functions for non-linear dimensionality reduction using Isomap and Locally Linear Embedding. Use when user asks to perform non-linear dimensionality reduction, compute Isomap, or apply Locally Linear Embedding to high-dimensional data.
 homepage: https://bioconductor.org/packages/release/bioc/html/RDRToolbox.html
 ---
+
 
 # bioconductor-rdrtoolbox
 

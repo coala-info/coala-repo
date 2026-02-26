@@ -1,8 +1,9 @@
 ---
 name: cured
-description: CURED (Classification Using Restriction Enzyme Diagnostics) is a bioinformatics pipeline designed to bridge the gap between high-cost whole genome sequencing and field-deployable diagnostics.
+description: CURED identifies unique sequence biomarkers and restriction enzyme sites to design diagnostic tests for distinguishing specific strains from background diversity. Use when user asks to identify unique k-mers, find restriction enzyme sites for diagnostics, or download and compare genomes from NCBI to find clonal biomarkers.
 homepage: https://github.com/microbialARC/CURED
 ---
+
 
 # cured
 

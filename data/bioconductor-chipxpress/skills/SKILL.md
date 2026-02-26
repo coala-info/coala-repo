@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipxpress
-description: the package is available on all platforms; click for details.
+description: ChIPXpress identifies functional transcription factor target genes by integrating ChIP-seq or ChIP-chip data with large-scale public gene expression databases. Use when user asks to rank TF-bound genes, prioritize functional targets from ChIPx experiments, or integrate ChIP-seq data with public expression databases to identify responsive genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPXpress.html
 ---
+
 
 # bioconductor-chipxpress
 

@@ -1,8 +1,9 @@
 ---
 name: deepsignal-plant
-description: The deepsignal-plant tool is a deep-learning framework designed to identify DNA methylation patterns in plant genomes using Oxford Nanopore Technologies (ONT) reads.
+description: Deepsignal-plant is a deep-learning framework designed to identify DNA methylation patterns in plant genomes using Oxford Nanopore sequencing data. Use when user asks to call methylation modifications, calculate methylation frequencies, or identify 5mC motifs in plant genomic reads.
 homepage: https://github.com/PengNi/deepsignal-plant
 ---
+
 
 # deepsignal-plant
 

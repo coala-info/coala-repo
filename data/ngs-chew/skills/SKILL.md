@@ -1,8 +1,9 @@
 ---
 name: ngs-chew
-description: `ngs-chew` is a specialized Python-based toolbox designed for the rapid validation of germline NGS datasets.
+description: ngs-chew is a Python-based toolbox for validating germline NGS datasets by generating and comparing compact genetic fingerprints. Use when user asks to generate sample fingerprints, detect sample swaps, verify pedigrees, or check for DNA contamination.
 homepage: https://github.com/bihealth/ngs-chew
 ---
+
 
 # ngs-chew
 

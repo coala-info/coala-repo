@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rjpgene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix rjpgene.1.1.st microarray. Use when user asks to analyze Affymetrix rjpgene.1.1.st microarray data, map probes to genomic features, or perform gene-level expression analysis for this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rjpgene.1.1.st.html
 ---
+
 
 # bioconductor-pd.rjpgene.1.1.st
 

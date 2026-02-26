@@ -3,7 +3,7 @@
 ## n50
 
 ### Tool Description
-A tool for calculating N50 and other assembly statistics. (Note: The provided help text contains only system error messages and no usage information.)
+Calculate sequence statistics (N50, GC%, length stats) for FASTA/FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/n50:1.9.3--h577a1d6_0
@@ -18,11 +18,23 @@ A tool for calculating N50 and other assembly statistics. (Note: The provided he
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/n50:1.9.3--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1682832829: no space left on device
+Usage: n50 [options] FILES...
+
+Calculate sequence statistics (N50, GC%, length stats) for FASTA/FASTQ files.
+
+Arguments:
+  FILES           One or more FASTA/FASTQ files, gzipped or not. '-' for STDIN.
+
+Options:
+  -a, --abs       Print file paths as absolute paths
+  -b, --basename  Print file paths as basename only (e.g., file.fq.gz)
+  -j, --json      Output results in JSON format
+  -c, --csv       Output results in CSV format (default is TSV)
+  -n, --nice      Output results in a visually aligned ASCII table
+  -h, --help      Show this help message and exit
+  -v, --version   Show version number and exit
+
+Output Columns (TSV/CSV):
+  Filepath, TotSeqs, TotLen, N50, N75, N90, I50, GC, Avg, Min, Max, AuN
 ```
 
-
-## Metadata
-- **Skill**: generated

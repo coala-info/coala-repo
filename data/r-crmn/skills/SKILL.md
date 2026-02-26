@@ -1,8 +1,9 @@
 ---
 name: r-crmn
-description: "Implements the Cross-contribution Compensating Multiple     standard Normalization (CCMN) method described in Redestig et     al."
+description: The r-crmn package implements the Cross-contribution Robust Multiple standard Normalization method to correct for technical variation in metabolomics data using internal standards. Use when user asks to normalize metabolomics datasets, correct for systematic error using internal standards, or apply the CRMN and NOMIS algorithms.
 homepage: https://cran.r-project.org/web/packages/crmn/index.html
 ---
+
 
 # r-crmn
 

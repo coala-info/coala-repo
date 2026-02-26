@@ -3,7 +3,7 @@
 ## marti
 
 ### Tool Description
-MARTi (Metagenomics Analysis in Real-Time)
+Metagenomic Analysis in Real TIme (MARTi) Engine
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/marti:0.9.29--hdfd78af_0
@@ -18,11 +18,26 @@ MARTi (Metagenomics Analysis in Real-Time)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/marti:0.9.29--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3792990311: no space left on device
+Metagenomic Analysis in Real TIme (MARTi) Engine v0.9.29
+Comments/bugs to: richard.leggett@earlham.ac.uk
+
+To run a MARTi analysis:
+
+    marti -config <file> [options]
+
+Options:
+-init to enter initialisation mode and output version information.
+-options <filename> to specify the location of a marti_engine_options.txt file to use.
+-loglevel <int> to set the level of logging to logs/engine.txt from 0 (none) to 5 (maximum) (default 1)
+-fixrandom <long> to fix the random number seed used for debugging
+-queue <name> to set default SLURM partition
+
+To generate a new config file
+
+    marti -writeconfig <file> [options]
+
+To generate a new options file
+
+    marti -writeoptions <file>
 ```
 
-
-## Metadata
-- **Skill**: generated

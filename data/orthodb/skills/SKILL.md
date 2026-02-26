@@ -1,8 +1,9 @@
 ---
 name: orthodb
-description: The `orthodb` skill provides a programmatic interface to the OrthoDB REST API, allowing for high-throughput evolutionary analysis.
+description: The orthodb tool provides a programmatic interface to the OrthoDB REST API for mapping genes to orthologous groups and performing evolutionary analysis across taxonomic levels. Use when user asks to find orthologs, search for genes by sequence or keyword, retrieve protein sequences in FASTA format, or analyze gene conservation and functional annotations across species.
 homepage: https://www.ezlab.org/orthodb_v12_userguide.html
 ---
+
 
 # orthodb
 

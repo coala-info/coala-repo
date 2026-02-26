@@ -1,8 +1,9 @@
 ---
 name: lorma
-description: LoRMA (Long Read Multiple Alignment) is a specialized tool designed to improve the accuracy of long-read sequencing data.
+description: LoRMA corrects errors in long-read sequencing data using iterative de Bruijn graphs and multiple sequence alignment. Use when user asks to correct long-read sequencing data, improve read accuracy, or execute the LoRMA correction pipeline.
 homepage: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/
 ---
+
 
 # lorma
 

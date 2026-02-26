@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.clariom.s.mouse.ht
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Clariom S Mouse HT microarray. Use when user asks to process Clariom S Mouse HT microarray data, analyze mouse gene expression profiles, or load annotation data for high-throughput mouse arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.mouse.ht.html
 ---
+
 
 # bioconductor-pd.clariom.s.mouse.ht
 

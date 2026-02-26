@@ -1,8 +1,9 @@
 ---
 name: perl-devel-globaldestruction
-description: This tool provides a reliable way to determine if the Perl interpreter is currently shutting down and destroying global objects.
+description: This tool provides a reliable way to detect if the Perl interpreter is in the global destruction phase. Use when user asks to detect global destruction in Perl, prevent segmentation faults in DESTROY methods, or safely manage object cleanup during interpreter shutdown.
 homepage: https://metacpan.org/release/Devel-GlobalDestruction
 ---
+
 
 # perl-devel-globaldestruction
 

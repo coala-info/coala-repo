@@ -1,8 +1,9 @@
 ---
 name: pairtools
-description: pairtools is a high-performance command-line suite designed to process mapped sequencing reads from Hi-C experiments.
+description: pairtools is a command-line suite for processing Hi-C sequencing alignments into structured DNA contact lists. Use when user asks to parse alignments into .pairs format, sort contact lists, remove PCR duplicates, filter pairs by genomic distance, or generate Hi-C library statistics.
 homepage: https://github.com/mirnylab/pairtools
 ---
+
 
 # pairtools
 

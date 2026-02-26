@@ -1,8 +1,9 @@
 ---
 name: sistr_cmd
-description: The Salmonella In Silico Typing Resource (SISTR) command-line tool is a bioinformatics utility designed to replace or augment traditional phenotypic serotyping.
+description: The SISTR command-line tool predicts Salmonella serovars and performs high-resolution subtyping from draft genome assemblies. Use when user asks to predict serotypes from Salmonella genomes, perform cgMLST subtyping, or identify antigen gene alleles.
 homepage: https://github.com/phac-nml/sistr_cmd/
 ---
+
 
 # sistr_cmd
 

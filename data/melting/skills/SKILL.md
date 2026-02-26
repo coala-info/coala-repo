@@ -1,8 +1,9 @@
 ---
 name: melting
-description: Melting Pot is a specialized suite of test scenarios designed by Google DeepMind to assess how AI agents navigate complex social interactions.
+description: Melting Pot provides a suite of test scenarios for evaluating the social interaction and cooperation capabilities of AI agents. Use when user asks to install the dm-meltingpot library, interactively explore substrates using human player scripts, or train agents using RLlib examples.
 homepage: https://github.com/google-deepmind/meltingpot
 ---
+
 
 # melting
 

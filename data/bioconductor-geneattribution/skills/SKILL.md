@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneattribution
-description: the package is available on all platforms; click for details.
+description: This tool identifies candidate genes associated with noncoding genetic variation by calculating posterior probabilities based on genomic distance and functional data. Use when user asks to prioritize genes at GWAS loci, calculate gene attribution probabilities, or incorporate eQTL and Hi-C data into gene mapping.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneAttribution.html
 ---
+
 
 # bioconductor-geneattribution
 

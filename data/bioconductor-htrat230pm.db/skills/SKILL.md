@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htrat230pm.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Genome 230 PM array. Use when user asks to map probe identifiers to gene symbols, Entrez IDs, or functional annotations like GO terms and KEGG pathways for rat genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htrat230pm.db.html
 ---
+
 
 # bioconductor-htrat230pm.db
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-saser
-description: the package is available on all platforms; click for details.
+description: saseR identifies stable reference genes for the normalization of alternative splicing analysis. Use when user asks to find reference genes for splicing studies, normalize RNA-seq splicing data, or select stable transcripts for comparative analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/saseR.html
 ---
+
 
 # bioconductor-saser
 

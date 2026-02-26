@@ -1,8 +1,9 @@
 ---
 name: intarna
-description: IntaRNA is a specialized bioinformatics tool designed to predict the interaction between two RNA molecules, such as a small regulatory RNA (sRNA) and its target mRNA.
+description: IntaRNA predicts the interaction between two RNA molecules by calculating the energy balance between intermolecular base pairing and the cost of site accessibility. Use when user asks to predict sRNA-target interactions, calculate RNA hybridization energy with accessibility constraints, or identify seed-based binding sites between RNA sequences.
 homepage: https://github.com/BackofenLab/IntaRNA
 ---
+
 
 # intarna
 

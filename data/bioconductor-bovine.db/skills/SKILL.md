@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bovine.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for mapping between various bovine-specific gene identifiers, functional annotations, and chromosomal locations. Use when user asks to map bovine probe IDs to gene symbols, retrieve Gene Ontology terms for Bos taurus genes, or find KEGG pathways and genomic coordinates for bovine sequences.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovine.db.html
 ---
+
 
 # bioconductor-bovine.db
 

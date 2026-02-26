@@ -1,8 +1,9 @@
 ---
 name: illumina-utils
-description: The `illumina-utils` suite is a specialized collection of Python scripts designed to handle the initial processing of Illumina paired-end data.
+description: "illumina-utils is a suite of Python scripts designed for demultiplexing, merging, and quality filtering Illumina paired-end sequencing data. Use when user asks to demultiplex raw runs, generate configuration files, merge overlapping paired-end reads, or perform quality trimming on FASTQ files."
 homepage: https://github.com/meren/illumina-utils
 ---
+
 
 # illumina-utils
 

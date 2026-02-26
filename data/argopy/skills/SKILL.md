@@ -1,8 +1,9 @@
 ---
 name: argopy
-description: The `argopy` library is a specialized Python tool designed to streamline the retrieval and analysis of Argo float data.
+description: argopy is a Python library designed to retrieve, process, and visualize oceanographic data from Argo floats. Use when user asks to fetch Argo data by region, float WMO, or profile, filter by quality control flags, or visualize float trajectories and topography.
 homepage: https://github.com/euroargodev/argopy
 ---
+
 
 # argopy
 

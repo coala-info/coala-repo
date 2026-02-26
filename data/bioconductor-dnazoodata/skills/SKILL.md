@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnazoodata
-description: the package is available on all platforms; click for details.
+description: This package provides programmatic access to the DNA Zoo Consortium's repository of refined genome assemblies and Hi-C contact data. Use when user asks to browse available species, download Hi-C files, or retrieve URLs for corrected genome assemblies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DNAZooData.html
 ---
+
 
 # bioconductor-dnazoodata
 

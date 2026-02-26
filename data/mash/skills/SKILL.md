@@ -1,8 +1,9 @@
 ---
 name: mash
-description: Mash is a high-performance bioinformatics tool designed for the rapid comparison of large genomic and metagenomic datasets.
+description: Mash performs rapid genomic and metagenomic distance estimation and sequence comparison using the MinHash algorithm. Use when user asks to sketch sequences, estimate Jaccard distances between genomes, create distance matrices for clustering, or screen metagenomic reads against reference databases.
 homepage: https://github.com/marbl/Mash
 ---
+
 
 # mash
 

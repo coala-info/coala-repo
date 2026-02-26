@@ -1,8 +1,9 @@
 ---
 name: serotypefinder
-description: SerotypeFinder is a specialized bioinformatic tool designed to identify the serotype of *Escherichia coli* isolates.
+description: SerotypeFinder identifies the serotype of *Escherichia coli* isolates by searching genomic assemblies or raw reads against a database of O and H antigen genes. Use when user asks to identify E. coli serotypes, characterize O-antigen and H-antigen genes, or classify E. coli strains from sequencing data.
 homepage: https://bitbucket.org/genomicepidemiology/serotypefinder
 ---
+
 
 # serotypefinder
 

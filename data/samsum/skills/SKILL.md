@@ -1,8 +1,9 @@
 ---
 name: samsum
-description: samsum is a high-performance, lightweight bioinformatics tool that bridges Python and C++ to provide rapid summarization of sequence alignment data.
+description: samsum processes SAM or BAM files to quantify read distribution and calculate normalized abundance values like FPKM and TPM across a reference genome. Use when user asks to summarize sequence alignment data, calculate genomic abundances, or filter mapping results by coverage breadth and quality.
 homepage: https://github.com/hallamlab/samsum
 ---
+
 
 # samsum
 

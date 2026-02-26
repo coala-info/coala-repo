@@ -1,9 +1,9 @@
 # calcs CWL Generation Report
 
-## calcs_build
+## calcs
 
 ### Tool Description
-The provided text appears to be a log of a failed container build process rather than a help menu. No command-line arguments, flags, or tool descriptions were found in the input.
+Calculate consensus sequences from BAM/SAM files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/calcs:0.0.0.9999--pyh5e36f6f_0
@@ -18,14 +18,22 @@ The provided text appears to be a log of a failed container build process rather
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calcs:0.0.0.9999--pyh5e36f6f_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:54fa82310f28edf24912b723ef86deff9a98d3c63046a9c4ea8c88db44ab66d8: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-3161532734/rootfs/usr/local/bin/python3.9: no space left on device
+usage: calcs [-h] -r <in.fasta> [-l] [-p] [-t threads] [-v] [<in.sam>]
+
+positional arguments:
+  <in.sam>              Give the full path to a SAM file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r <in.fasta>, --reference <in.fasta>
+                        Give the full path to a reference FASTA file
+  -l, --long            Output the cs tag in the long form
+  -p, --paf             Output PAF
+  -t threads, --threads threads
+                        Number of threads [default: 1]
+  -v, --version         show program's version number and exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

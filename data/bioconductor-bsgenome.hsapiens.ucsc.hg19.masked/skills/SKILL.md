@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg19.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked human genome sequences for the hg19 assembly as Biostrings objects for genomic analysis. Use when user asks to access hg19 sequences with assembly gaps, ambiguities, or repeats masked, perform motif searching in non-repetitive regions, or manage genomic sequence masks.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg19.masked.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg19.masked
 

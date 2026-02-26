@@ -2,10 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: igda-script_est_depth_dir
 label: igda-script_est_depth_dir
-doc: "A tool to estimate depth for a directory. (Note: The provided help text contains
-  only container runtime error messages and does not list specific arguments or usage
-  instructions.)\n\nTool homepage: https://github.com/zhixingfeng/shell"
-inputs: []
+doc: "only work for single chromosome data\n\nTool homepage: https://github.com/zhixingfeng/shell"
+inputs:
+  - id: indir
+    type: Directory
+    doc: input directory (has bamfiles)
+    inputBinding:
+      position: 1
+  - id: genome_size
+    type: int
+    doc: genome size
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

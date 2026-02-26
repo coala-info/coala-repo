@@ -1,8 +1,9 @@
 ---
 name: perl-file-share
-description: The `perl-file-share` tool (provided by the `File::Share` module) is an enhanced version of the standard `File::ShareDir` module.
+description: This tool provides a development-aware way to locate and access non-code data files associated with Perl distributions. Use when user asks to locate shared distribution directories, access data files in a Perl project, or manage file paths during Perl module development.
 homepage: https://github.com/ingydotnet/file-share-pm
 ---
+
 
 # perl-file-share
 

@@ -1,9 +1,9 @@
 # ucsc-autoxml CWL Generation Report
 
-## ucsc-autoxml
+## ucsc-autoxml_autoXml
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error logs related to a failed container build (no space left on device).
+Generate structures code and parser for XML file from DTD-like spec
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-autoxml:482--h0b57e2e_0
@@ -18,35 +18,16 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-autoxml:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98bad9580cf138a7731f3ebaabd4b074e6c248393db47116593d983326eb21b8: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-1824645186/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-autoxml_autoXml
-
-### Tool Description
-The provided text does not contain help information for the tool. It is a system error log indicating a failure to build or extract the container image (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-autoxml:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-autoxml/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-autoxml:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98bad9580cf138a7731f3ebaabd4b074e6c248393db47116593d983326eb21b8: unpack entry: usr/local/lib/libquadmath.so.0.0.0: unpack to regular file: short write: write /tmp/build-temp-3293513015/rootfs/usr/local/lib/libquadmath.so.0.0.0: no space left on device
+autoXml - Generate structures code and parser for XML file from DTD-like spec
+usage:
+   autoXml file.dtdx root
+This will generate root.c, root.h
+options:
+   -textField=xxx what to name text between start/end tags. Default 'text'
+   -comment=xxx Comment to appear at top of generated code files
+   -picky  Generate parser that rejects stuff it doesn't understand
+   -main   Put in a main routine that's a test harness
+   -prefix=xxx Prefix to add to structure names. By default same as root
+   -positive Don't write out optional attributes with negative values
 ```
 

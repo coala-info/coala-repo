@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytokernel
-description: the package is available on all platforms; click for details.
+description: This tool performs nonlinear differential expression analysis on high-dimensional biological data using kernel-based score tests. Use when user asks to identify differentially expressed features, calculate shrunken effect sizes, or generate heatmaps of significant features in datasets like CyTOF or RNA-seq.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytoKernel.html
 ---
+
 
 # bioconductor-cytokernel
 

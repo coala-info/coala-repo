@@ -1,8 +1,9 @@
 ---
 name: density-fitness
-description: `density-fitness` is a structural biology tool designed to quantify the "fitness" of individual residues within a molecular model (PDB or mmCIF) relative to the experimental electron density.
+description: This tool quantifies the fitness of molecular model residues against experimental electron density by calculating metrics like RSR, RSCC, and EDIAm. Use when user asks to calculate real-space fit statistics, evaluate model quality against density maps or MTZ files, or generate EDIA and OPIA scores for structural models.
 homepage: https://github.com/PDB-REDO/density-fitness
 ---
+
 
 # density-fitness
 

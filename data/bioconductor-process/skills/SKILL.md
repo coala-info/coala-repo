@@ -1,8 +1,9 @@
 ---
 name: bioconductor-process
-description: the package is available on all platforms; click for details.
+description: The PROcess package provides tools for processing protein mass spectrometry data including baseline subtraction and peak detection. Use when user asks to process SELDI-TOF or MALDI-TOF spectra, detect peaks, or normalize protein mass spectrometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/PROcess.html
 ---
+
 
 # bioconductor-process
 

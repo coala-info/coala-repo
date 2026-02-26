@@ -1,8 +1,9 @@
 ---
 name: snpick
-description: snpick is a high-performance, Rust-based utility designed to identify and extract variable sites from genomic alignments.
+description: snpick is a high-performance utility designed to identify and extract variable sites from genomic alignments. Use when user asks to extract SNPs from FASTA alignments, generate VCF files from sequence data, or prepare SNP-only datasets for phylogenetic analysis.
 homepage: https://github.com/PathoGenOmics-Lab/snpick
 ---
+
 
 # snpick
 

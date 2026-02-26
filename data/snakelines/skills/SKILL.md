@@ -1,8 +1,9 @@
 ---
 name: snakelines
-description: SnakeLines is a specialized extension of the Snakemake workflow management system tailored for high-throughput sequencing analysis.
+description: SnakeLines is a Snakemake-based workflow management tool designed to automate high-throughput sequencing analysis and software dependency management. Use when user asks to process Illumina or Nanopore reads, generate genomic reports, run bioinformatics pipelines, or perform dry runs of sequencing workflows.
 homepage: https://snakelines.readthedocs.io/en/latest/
 ---
+
 
 # snakelines
 

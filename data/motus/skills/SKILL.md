@@ -1,8 +1,9 @@
 ---
 name: motus
-description: The `motus` tool provides a high-resolution method for taxonomic profiling by mapping metagenomic reads against a database of 10 universal marker genes (MGs).
+description: The motus tool performs high-resolution taxonomic profiling of metagenomic reads by mapping them against a database of universal marker genes. Use when user asks to profile microbial communities, quantify known and uncharacterized species, or merge multiple taxonomic profiles into a single abundance table.
 homepage: http://motu-tool.org/
 ---
+
 
 # motus
 

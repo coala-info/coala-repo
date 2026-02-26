@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm10
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the Mus musculus (Mouse) UCSC mm10 assembly for use in R. Use when user asks to retrieve mouse DNA sequences, calculate sequence statistics, or perform genome-wide motif searching for the mm10 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.html
 ---
+
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm10
 

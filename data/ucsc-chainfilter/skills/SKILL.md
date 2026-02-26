@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainfilter
-description: The `chainFilter` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to process `.chain` files.
+description: `ucsc-chainfilter` filters pairwise genomic alignments stored in `.chain` files. Use when user asks to filter alignments by score, isolate alignments for specific chromosomes, filter alignments by their span on target or query sequences, or filter alignments by strand.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainfilter
 

@@ -1,8 +1,9 @@
 ---
 name: cannoli
-description: Cannoli provides a distributed execution layer for standard bioinformatics command-line tools by wrapping them for use within the Apache Spark framework.
+description: Cannoli provides a distributed execution layer for standard bioinformatics command-line tools by wrapping them for use within the Apache Spark framework. Use when user asks to parallelize sequence alignment, perform distributed variant calling, or execute genomic annotation and normalization tasks across a cluster.
 homepage: https://github.com/bigdatagenomics/cannoli
 ---
+
 
 # cannoli
 

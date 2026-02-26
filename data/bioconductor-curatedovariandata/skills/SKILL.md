@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedovariandata
-description: the package is available on all platforms; click for details.
+description: This package provides a curated collection of gene expression datasets and clinical metadata for ovarian cancer meta-analysis. Use when user asks to load harmonized transcriptomic data, perform survival analysis across multiple studies, or apply batch correction to ovarian cancer microarray data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedOvarianData.html
 ---
+
 
 # bioconductor-curatedovariandata
 

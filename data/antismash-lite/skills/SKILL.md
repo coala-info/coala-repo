@@ -1,8 +1,9 @@
 ---
 name: antismash-lite
-description: The `antismash-lite` skill enables the automated discovery and characterization of secondary metabolite biosynthesis gene clusters.
+description: "antiSMASH-lite identifies and annotates secondary metabolite biosynthesis gene clusters in genomic sequences. Use when user asks to discover biosynthetic gene clusters, characterize specialized metabolism, or identify genetic architecture for bioactive compounds."
 homepage: https://docs.antismash.secondarymetabolites.org/intro/
 ---
+
 
 # antismash-lite
 

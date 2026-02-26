@@ -1,8 +1,9 @@
 ---
 name: r-gwpcr
-description: R package gwpcr (documentation from project home).
+description: The gwpcr package provides an R implementation of a mechanistic model to correct for molecule loss and PCR artifacts in quantitative NGS data. Use when user asks to estimate original molecule counts from UMI data, correct for PCR chimeras, or adjust for UMI collisions and sequencing errors.
 homepage: https://cran.r-project.org/web/packages/gwpcr/index.html
 ---
+
 
 # r-gwpcr
 

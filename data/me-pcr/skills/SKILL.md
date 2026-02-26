@@ -1,8 +1,9 @@
 ---
 name: me-pcr
-description: The `me-pcr` tool is a multithreaded implementation of the NCBI Electronic PCR (e-PCR) algorithm.
+description: The me-pcr tool performs multithreaded electronic PCR to simulate PCR reactions by searching DNA databases for primer pair matches. Use when user asks to simulate PCR reactions, search for primer matches in a DNA database, or perform electronic PCR analysis.
 homepage: https://web.archive.org/web/20100708193215/http://genome.chop.edu/mePCR/
 ---
+
 
 # me-pcr
 

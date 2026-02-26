@@ -3,10 +3,10 @@
 ## sistr_cmd
 
 ### Tool Description
-SISTR (Salmonella In Silico Typing Resource) command line tool
+Salmonella In Silico Typing Resource (SISTR) command line tool for serovar prediction from whole-genome sequence data.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_1
+- **Docker Image**: quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_2
 - **Homepage**: https://github.com/phac-nml/sistr_cmd/
 - **Package**: https://anaconda.org/channels/bioconda/packages/sistr_cmd/overview
 - **Validation**: PASS
@@ -18,33 +18,13 @@ SISTR (Salmonella In Silico Typing Resource) command line tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_2' locally
+1.1.3--pyhdc42f0e_2: Pulling from biocontainers/sistr_cmd
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cba0299bae32: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1692448469: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## sistr_cmd_sistr
-
-### Tool Description
-Salmonella In Silico Typing Resource (SISTR) command line tool
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_1
-- **Homepage**: https://github.com/phac-nml/sistr_cmd/
-- **Package**: https://anaconda.org/channels/bioconda/packages/sistr_cmd/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sistr_cmd:1.1.3--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

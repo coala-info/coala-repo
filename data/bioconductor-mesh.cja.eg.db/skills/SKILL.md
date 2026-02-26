@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.cja.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Entrez Gene identifiers and Medical Subject Headings for Callithrix jacchus. Use when user asks to map marmoset genes to MeSH terms, perform MeSH enrichment analysis, or retrieve functional annotations for Callithrix jacchus.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Cja.eg.db.html
 ---
+
 
 # bioconductor-mesh.cja.eg.db
 

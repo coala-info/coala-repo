@@ -1,11 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: nanosim_read_analysis.py
+baseCommand: read_analysis.py
 label: nanosim_read_analysis.py
-doc: "A tool for analyzing nanopore reads as part of the NanoSim simulation pipeline.
-  Note: The provided text contains container runtime error messages rather than help
-  documentation, so no arguments could be extracted.\n\nTool homepage: https://github.com/bcgsc/NanoSim"
-inputs: []
+doc: "Read characterization step\nGiven raw ONT reads, reference genome, metagenome,
+  and/or\ntranscriptome, learn read features and output error profiles\n\nTool homepage:
+  https://github.com/bcgsc/NanoSim"
+inputs:
+  - id: mode
+    type: string
+    doc: Subcommand for read analysis mode
+    inputBinding:
+      position: 1
+  - id: mode_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the selected mode
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

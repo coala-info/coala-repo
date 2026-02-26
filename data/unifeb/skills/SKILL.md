@@ -1,8 +1,9 @@
 ---
 name: unifeb
-description: The `unifeb` tool implements a highly scalable embedding algorithm that combines UniFrac distances with Approximate Nearest Neighbor (ANN) graphs.
+description: `unifeb` embeds ecological datasets into low-dimensional space using UniFrac distances and Approximate Nearest Neighbor graphs. Use when user asks to embed ecological datasets, visualize ecological data, perform UniFrac analysis, or perform hierarchical embedding.
 homepage: https://github.com/jianshu93/unifeb.git
 ---
+
 
 # unifeb
 

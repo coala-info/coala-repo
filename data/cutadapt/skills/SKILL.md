@@ -1,8 +1,9 @@
 ---
 name: cutadapt
-description: Cutadapt is a specialized bioinformatics tool designed to clean raw sequencing data.
+description: Cutadapt identifies and removes adapter sequences, primers, and low-quality bases from high-throughput sequencing reads. Use when user asks to trim adapters, filter reads by quality or length, remove poly-A tails, or demultiplex sequencing data.
 homepage: https://cutadapt.readthedocs.io/
 ---
+
 
 # cutadapt
 

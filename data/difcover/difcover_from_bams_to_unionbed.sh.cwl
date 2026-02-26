@@ -1,11 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: difcover_from_bams_to_unionbed.sh
+baseCommand: from_bams_to_unionbed.sh
 label: difcover_from_bams_to_unionbed.sh
-doc: "A script from the DifCover package to convert BAM files to unionbed format.
-  (Note: The provided help text contains only system error messages and no usage information.)\n
-  \nTool homepage: https://github.com/timnat/DifCover"
-inputs: []
+doc: "Calculates coverage for BAM files using BEDTOOLS and SAMTOOLS. The main output
+  reports coverage for input samples in corresponding columns for each bed interval.
+  Additional files report coverage for each sample separately.\n\nTool homepage: https://github.com/timnat/DifCover"
+inputs:
+  - id: sample1_bam
+    type: File
+    doc: First input coordinate-sorted BAM file.
+    inputBinding:
+      position: 1
+  - id: sample2_bam
+    type: File
+    doc: Second input coordinate-sorted BAM file.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

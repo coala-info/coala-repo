@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-lsf
-description: The LSF executor plugin enables Snakemake to submit jobs to IBM Spectrum LSF clusters.
+description: This plugin enables Snakemake to submit and manage jobs on IBM Spectrum LSF clusters by translating resource definitions into bsub parameters. Use when user asks to run Snakemake workflows on LSF, map resources like memory and walltime to bsub flags, or configure MPI jobs and custom LSF arguments.
 homepage: https://github.com/befh/snakemake-executor-plugin-lsf
 ---
+
 
 # snakemake-executor-plugin-lsf
 

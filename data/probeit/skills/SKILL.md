@@ -1,8 +1,9 @@
 ---
 name: probeit
-description: `probeit` is a bioinformatics tool used to generate specialized probe sets for pathogen analysis, typically for use in assays like cRASL-seq.
+description: "probeit generates specialized ligation and capture probe sets for pathogen detection and genotyping assays. Use when user asks to design probes for pathogen detection, identify sequences present in a target genome but absent in a background, or target specific nucleotide and amino acid mutations for genotyping."
 homepage: https://github.com/steineggerlab/probeit
 ---
+
 
 # probeit
 

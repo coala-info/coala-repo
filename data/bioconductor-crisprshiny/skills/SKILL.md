@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprshiny
-description: the package is available on all platforms; click for details.
+description: This tool provides an interactive Shiny-based interface for visualizing and exploring CRISPR guide RNA annotations and genomic contexts. Use when user asks to launch a graphical interface for GuideSet objects, filter gRNAs based on on-target or off-target scores, or integrate CRISPR exploration modules into R/Shiny applications.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprShiny.html
 ---
+
 
 # bioconductor-crisprshiny
 

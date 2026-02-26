@@ -1,8 +1,9 @@
 ---
 name: reapr
-description: Streamline Bridge (reaprime) is a cross-platform connectivity layer that translates Decent Espresso machine (DE1/Bengle) hardware communication into standardized web technologies.
+description: Reapr translates Decent Espresso machine hardware communication into standardized web technologies to enable custom skins, plugins, and real-time telemetry. Use when user asks to set up the bridge environment, build for ARM64 targets, manage espresso profiles, develop JavaScript plugins, or troubleshoot machine connectivity.
 homepage: https://github.com/tadelv/reaprime
 ---
+
 
 # reapr
 

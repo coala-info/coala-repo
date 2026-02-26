@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aseb
-description: the package is available on all platforms; click for details.
+description: This tool predicts lysine-acetyl-transferase specific acetylation sites using the Acetylation Set Enrichment Based method. Use when user asks to predict KAT-specific acetylation sites, identify KAT families responsible for acetylating specific lysines, or visualize enrichment results for protein sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASEB.html
 ---
+
 
 # bioconductor-aseb
 

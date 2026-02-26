@@ -1,8 +1,9 @@
 ---
 name: r-autospill
-description: R package autospill (documentation from project home).
+description: The r-autospill package calculates spillover coefficients for flow cytometry data using the AutoSpill algorithm to automate compensation and unmixing. Use when user asks to calculate spillover matrices, refine compensation accuracy, or estimate signal leakage between fluorescence channels using single-color controls.
 homepage: https://cran.r-project.org/web/packages/autospill/index.html
 ---
+
 
 # r-autospill
 

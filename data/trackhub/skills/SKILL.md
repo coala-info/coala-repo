@@ -1,8 +1,9 @@
 ---
 name: trackhub
-description: The `trackhub` Python package provides a programmatic interface for building UCSC track hubs, replacing the tedious and error-prone process of manual text file configuration.
+description: The `trackhub` Python package programmatically creates and manages UCSC track hubs. Use when user asks to create a UCSC track hub, define tracks, add tracks to a hub, or deploy a track hub.
 homepage: http://github.com/daler/trackhub
 ---
+
 
 # trackhub
 

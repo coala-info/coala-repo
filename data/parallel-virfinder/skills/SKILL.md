@@ -1,8 +1,9 @@
 ---
 name: parallel-virfinder
-description: parallel-virfinder is a performance-optimized wrapper for the VirFinder tool, which uses k-mer signatures to distinguish viral contigs from bacterial ones in metagenomic data.
+description: parallel-virfinder is a performance-optimized wrapper that uses k-mer signatures to identify viral contigs in metagenomic datasets across multiple CPU cores. Use when user asks to identify viral sequences in metagenomic assemblies, run VirFinder in parallel, or filter viral candidates based on p-values and prediction scores.
 homepage: https://github.com/quadram-institute-bioscience/parallel-virfinder
 ---
+
 
 # parallel-virfinder
 

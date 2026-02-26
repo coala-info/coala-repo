@@ -3,10 +3,10 @@
 ## mpra-data-access-portal
 
 ### Tool Description
-A tool for accessing MPRA (Massively Parallel Reporter Assay) data.
+Shiny app is started when called without options.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mpra-data-access-portal:0.1.10--hdfd78af_0
+- **Docker Image**: quay.io/biocontainers/mpra-data-access-portal:0.1.11--hdfd78af_0
 - **Homepage**: https://mpra.gs.washington.edu/satMutMPRA
 - **Package**: https://anaconda.org/channels/bioconda/packages/mpra-data-access-portal/overview
 - **Validation**: PASS
@@ -18,11 +18,13 @@ A tool for accessing MPRA (Massively Parallel Reporter Assay) data.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mpra-data-access-portal:0.1.10--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2761611414: no space left on device
+USAGE: mpra-data-access-portal [OPTIONS]
+
+OPTIONS:
+
+--help       This help screen
+--self-test  Run self-check and tests
+
+Shiny app is started when called without options.
 ```
 
-
-## Metadata
-- **Skill**: generated

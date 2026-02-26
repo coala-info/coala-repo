@@ -1,8 +1,9 @@
 ---
 name: bioconductor-distinct
-description: the package is available on all platforms; click for details.
+description: Bioconductor-distinct performs differential state analysis in single-cell data by comparing full cumulative distribution functions between groups using hierarchical non-parametric permutation tests. Use when user asks to perform differential state analysis, compare expression distributions within cell clusters, or identify changes in distribution shape such as unimodal versus bimodal shifts.
 homepage: https://bioconductor.org/packages/release/bioc/html/distinct.html
 ---
+
 
 # bioconductor-distinct
 

@@ -1,8 +1,9 @@
 ---
 name: markov_clustering
-description: This skill facilitates the use of the `markov_clustering` Python library to implement the Markov Clustering (MCL) algorithm.
+description: This tool implements the Markov Clustering algorithm to identify clusters in graphs by simulating stochastic flow. Use when user asks to perform graph clustering, run the MCL algorithm, extract clusters from an adjacency matrix, or tune clustering granularity using inflation parameters.
 homepage: https://github.com/GuyAllard/markov_clustering
 ---
+
 
 # markov_clustering
 

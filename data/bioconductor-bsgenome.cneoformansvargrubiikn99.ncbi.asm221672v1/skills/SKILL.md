@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.cneoformansvargrubiikn99.ncbi.asm221672v1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence and metadata for Cryptococcus neoformans var. grubii KN99 based on the NCBI ASM221672v1 assembly. Use when user asks to access full genome sequences, retrieve chromosome lengths, extract DNA sequences from coordinates, or perform genome-wide motif searching for this specific fungal strain in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1.html
 ---
+
 
 # bioconductor-bsgenome.cneoformansvargrubiikn99.ncbi.asm221672v1
 

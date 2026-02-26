@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human1mv1ccrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides data annotation and calibration metadata for processing Illumina 1M arrays using the CRLMM algorithm. Use when user asks to perform genotyping or copy number analysis on Illumina 1M platform data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human1mv1cCrlmm.html
 ---
+
 
 # bioconductor-human1mv1ccrlmm
 

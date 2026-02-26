@@ -1,8 +1,9 @@
 ---
 name: nextstrain-cli
-description: The `nextstrain-cli` is a unified wrapper for the Nextstrain software suite, primarily Augur (for analysis) and Auspice (for visualization).
+description: The Nextstrain CLI provides a unified interface to run pathogen genomic analyses and visualize results across different computing environments. Use when user asks to initialize pathogen workflows, execute Snakemake-based builds, visualize genomic data locally, or manage remote datasets on AWS S3 and Nextstrain Groups.
 homepage: https://docs.nextstrain.org/projects/cli/
 ---
+
 
 # nextstrain-cli
 

@@ -1,8 +1,9 @@
 ---
 name: r-calibrate
-description: "Package for drawing calibrated scales with tick marks on (non-orthogonal)               variable vectors in scatterplots and biplots. Also provides some functions for biplot creation and 	     for multivariate analysis such as principal coordinate analysis.</p>"
+description: This tool provides expert guidance for the R package 'calibrate' to create calibrated axes with tick marks and labels in scatterplots and biplots. Use when user asks to add oblique variable axes to scatterplots, perform multivariate analysis with calibrated biplot axes, or customize plot annotations with non-orthogonal scales.
 homepage: https://cloud.r-project.org/web/packages/calibrate/index.html
 ---
+
 
 # r-calibrate
 

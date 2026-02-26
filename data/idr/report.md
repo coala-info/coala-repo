@@ -3,7 +3,7 @@
 ## idr
 
 ### Tool Description
-The IDR (Irreproducible Discovery Rate) framework is a unified approach to measure the reproducibility of findings identified from replicate experiments and provide confidence scores.
+The IDR (Irreproducible Discovery Rate) framework is a unified approach to measure the reproducibility of findings identified from replicate experiments and provide confident biological predictions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/idr:2.0.4.2--py39h031d066_12
@@ -18,11 +18,13 @@ The IDR (Irreproducible Discovery Rate) framework is a unified approach to measu
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/idr:2.0.4.2--py39h031d066_12 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1697699166: no space left on device
+Unable to find image 'quay.io/biocontainers/idr:2.0.4.2--py39h031d066_12' locally
+2.0.4.2--py39h031d066_12: Pulling from biocontainers/idr
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+10ad4d1fec1c: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3895979884: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

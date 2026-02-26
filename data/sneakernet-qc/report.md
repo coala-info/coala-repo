@@ -1,9 +1,9 @@
 # sneakernet-qc CWL Generation Report
 
-## sneakernet-qc
+## sneakernet-qc_SneakerNet.roRun.pl
 
 ### Tool Description
-A quality control tool for the SneakerNet pipeline. Note: The provided text contains container build logs rather than CLI help documentation, so specific arguments could not be extracted.
+Parses an unaltered Illumina run and formats it into something usable for SneakerNet. Fastq files must be in the format of _R1_ and _R2_ instead of _1 and _2 for this particular script.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0
@@ -18,52 +18,49 @@ A quality control tool for the SneakerNet pipeline. Note: The provided text cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+'SneakerNet-read-only': Parses an unaltered Illumina run and formats it
+  into something usable for SneakerNet. Fastq files must be in the format of
+  _R1_ and _R2_ instead of _1 and _2 for this particular script.
+
+  Usage: SneakerNet.roRun.pl illuminaDirectory [illuminaDirectory2...]
+  
+  --numcpus             1
+  --outdir             ''
+  --tempdir            ''
+  --createsamplesheet     Also create a SampleSheet.csv or samples.tsv as fallback
+   at /usr/local/bin/SneakerNet.roRun.pl line 35.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## sneakernet-qc_SneakerNet.roRun.pl
-
-### Tool Description
-A tool within the SneakerNet pipeline. Note: The provided help text contains only container environment logs and build errors, and does not list specific usage instructions or arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0
-- **Homepage**: https://github.com/lskatz/sneakernet
-- **Package**: https://anaconda.org/channels/bioconda/packages/sneakernet-qc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## sneakernet-qc_SneakerNetPlugins.pl
 
 ### Tool Description
-SneakerNet QC Plugins. (Note: The provided text contains container runtime logs and a fatal error message rather than tool help text; therefore, no arguments could be extracted.)
+runs all SneakerNet plugins on a run directory
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0
 - **Homepage**: https://github.com/lskatz/sneakernet
 - **Package**: https://anaconda.org/channels/bioconda/packages/sneakernet-qc/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sneakernet-qc:0.27.2--pl5321hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SneakerNetPlugins.pl: runs all SneakerNet plugins on a run directory
+  Usage: SneakerNetPlugins.pl dir [dir2...]
+  --noemail     Do not send an email at the end.
+  --no      ''  Specify a regex of which plugins to skip.
+                Can provide multiple instances.  E.g.,
+                --no email --no transfer --no save
+                Case insensitive.
+  --dry-run     Just print the plugin commands that would have been run
+  --keep-going  If a plugin has an error, move onto the next anyway
+  --numcpus 1
+  --tempdir ''  Force a temporary directory path to each plugin
+  --force
+  --version     Print SneakerNet version and exit
+  --workflow    Which workflow under plugins.conf should we follow?
+                If not specified, will look at snok.txt.
+                If not snok.txt, will use 'default'
+   at /usr/local/bin/SneakerNetPlugins.pl line 36.
 ```
 

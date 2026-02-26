@@ -18,29 +18,13 @@ FastTree infers approximately-maximum-likelihood phylogenetic trees from alignme
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3967131402: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1' locally
+2.2.0--h7b50bb2_1: Pulling from biocontainers/fasttree
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+1818c702bea2: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1447418313: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## fasttree_FastTreeMP
-
-### Tool Description
-FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide or protein sequences. (Note: The provided help text contains only system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1
-- **Homepage**: https://morgannprice.github.io/fasttree
-- **Package**: https://anaconda.org/channels/bioconda/packages/fasttree/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasttree:2.2.0--h7b50bb2_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3948550523: no space left on device
+Run 'docker run --help' for more information
 ```
 

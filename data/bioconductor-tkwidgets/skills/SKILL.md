@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tkwidgets
-description: the package is available on all platforms; click for details.
+description: This package provides Tcl/Tk based graphical user interface widgets for R and Bioconductor. Use when user asks to create interactive widgets, build graphical user interfaces for R packages, or use file and list selection dialogs.
 homepage: https://bioconductor.org/packages/release/bioc/html/tkWidgets.html
 ---
+
 
 # bioconductor-tkwidgets
 

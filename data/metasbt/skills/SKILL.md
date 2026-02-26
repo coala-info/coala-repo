@@ -1,8 +1,9 @@
 ---
 name: metasbt
-description: MetaSBT is a scalable bioinformatics framework designed to index microbial genomes and characterize metagenome-assembled genomes (MAGs) using Sequence Bloom Trees (SBTs).
+description: MetaSBT is a scalable bioinformatics framework for indexing microbial genomes and characterizing metagenome-assembled genomes using Sequence Bloom Trees. Use when user asks to manage genomic databases, sketch and index sequences, profile query genomes for taxonomic identity, or retrieve reference data from NCBI.
 homepage: https://github.com/cumbof/MetaSBT
 ---
+
 
 # metasbt
 

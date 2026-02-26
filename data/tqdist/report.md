@@ -1,9 +1,9 @@
 # tqdist CWL Generation Report
 
-## tqdist
+## tqdist_triplet_dist
 
 ### Tool Description
-A tool for computing triplet and quartet distances between trees. Note: The provided input text contains error logs from a container runtime and does not include the actual help text or argument definitions.
+Calculate the triplet distance between two trees in Newick format. The triplet distance between the two trees will be printed to stdout.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
@@ -18,128 +18,183 @@ A tool for computing triplet and quartet distances between trees. Note: The prov
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: triplet_dist [-v] <filename1> <filename2>
+
+Where <filename1> and <filename2> point to two files each containing one
+tree in Newick format. In both trees all leaves should be labeled and the
+two trees should have the same set of leaf labels.
+The triplet distance between the two trees will be printed to stdout.
+If the -v option is used, the following numbers will be reported (in this
+order):
+	 - The number of leaves in the trees (should be the same for both).
+	 - The number of triplets in the two trees (n choose 3).
+	 - The triplet distance between the two trees.
+	 - The normalized triplet distance between the two trees.
+	 - The number of resolved triplets that agree in the two trees.
+	 - The normalized number of resolved triplets that agree in the two trees.
+	 - The number triplets that are unresolved in both trees.
+	 - The normalized number triplets that are unresolved in both trees.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## tqdist_triplet_dist
-
-### Tool Description
-A tool for computing the triplet distance between phylogenetic trees. (Note: The provided help text contains only system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
-- **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
-- **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## tqdist_quartet_dist
 
 ### Tool Description
-A tool for computing the quartet distance between trees. (Note: The provided help text contains container execution errors and does not list usage or arguments.)
+Calculates the quartet distance between two trees in Newick format. The quartet distance is printed to stdout.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
 - **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
 - **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: quartet_dist [-v] <filename1> <filename2>
+
+Where: <filename1> and <filename2> point to two files each containing
+one tree in Newick format. In both trees all leaves should be labeled
+and the two trees should have the same set of leaf labels.
+The quartet distance between the two trees will be printed to stdout.
+If the -v option is used, the following numbers will be reported (in this
+order):
+	 - The number of leaves in the trees (should be the same for both).
+	 - The number of quartets in the two trees (n choose 3).
+	 - The quartet distance between the two trees.
+	 - The normalized quartet distance between the two trees.
+	 - The number of resolved quartets that agree in the two trees.
+	 - The normalized number of resolved quartets that agree in the two trees.
+	 - The number of quartets that are unresolved in both trees.
+	 - The normalized number of quartets that are unresolved in both trees.
 ```
+
 
 ## tqdist_pairs_triplet_dist
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system logs and a fatal error message regarding a container build failure (Apptainer/Singularity) while attempting to fetch the tqdist image from a Docker registry.
+Calculates the triplet distance between pairs of trees in two files. The files must contain the same number of trees in Newick format, and trees on the same line must have the same set of leaf labels.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
 - **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
 - **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: pairs_triplet_dist [-v] <filename1> <filename2> [<output filename>]
+
+Where: <filename1> and <filename2> point to two files each containing
+the same number of trees in Newick format. The two trees on line i in
+the two files must have the same set of leaf labels.
+The output is a list of numbers, where the i'th number is the triplet
+distance between the two trees on line i in the two files.
+If [output filename] is specified the output is written to the file
+pointed to (if the file already exists the current content is deleted
+first), otherwise the output is written to stdout.
+If the -v option is used, the following numbers will be reported for
+each pair of trees (in this order):
+	 - The number of leaves in the trees (should be the same for both).
+	 - The number of triplets in the two trees (n choose 3).
+	 - The triplet distance between the two trees.
+	 - The normalized triplet distance between the two trees.
+	 - The number of resolved triplets that agree in the two trees.
+	 - The normalized number of resolved triplets that agree in the two trees.
+	 - The number of triplets that are unresolved in both trees.
+	 - The normalized number of triplets that are unresolved in both trees.
 ```
+
 
 ## tqdist_pairs_quartet_dist
 
 ### Tool Description
-The provided help text contains container build errors and does not provide usage information for the tool. tqdist_pairs_quartet_dist is typically used for computing quartet distances between pairs of phylogenetic trees.
+Calculates the quartet distance between pairs of trees in two files. The files must contain the same number of trees in Newick format, and corresponding trees must have the same set of leaf labels.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
 - **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
 - **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: pairs_quartet_dist [-v] <filename1> <filename2> [<output filename>]
+
+Where: <filename1> and <filename2> point to two files each containing
+the same number of trees in Newick format. The two trees on line i in
+the two files must have the same set of leaf labels.
+The output is a list of numbers, where the i'th number is the quartet
+distance between the two trees on line i in the two files.
+If [output filename] is specified the output is written to the file
+pointed to (if the file already exists the current content is deleted
+first), otherwise the output is written to stdout.
+If the -v option is used, the following numbers will be reported for
+each pair of trees (in this order):
+	 - The number of leaves in the trees (should be the same for both).
+	 - The number of triplets in the two trees (n choose 3).
+	 - The triplet distance between the two trees.
+	 - The normalized triplet distance between the two trees.
+	 - The number of resolved triplets that agree in the two trees.
+	 - The normalized number of resolved triplets that agree in the two trees.
+	 - The number triplets that are unresolved in both trees.
+	 - The normalized number triplets that are unresolved in both trees.
 ```
+
 
 ## tqdist_all_pairs_triplet_dist
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains container engine logs and a fatal error during image retrieval.
+Calculates the pairwise triplet distance between all pairs of trees in a file. The output is a lower triangular matrix.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
 - **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
 - **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: all_pairs_triplet_dist <input filename> [output filename]
+
+Where:
+	<input filename> is the name of a file containing multiple trees in
+	Newick format. Each tree should be on a seperate line. In each tree
+	all leaves should be labeled and all trees should have the same set
+	of leaf labels.
+	If [output filename] is specified the output is written to the file
+	pointed to (if the file already exists the current content is deleted
+	first), otherwise the output is written to stdout.
+	The output is a lower triangular matrix in which the i, j'th entry
+	is the pairwise triplet distance between the tree on line i and the
+	tree on line j in <input filename>.
 ```
+
 
 ## tqdist_all_pairs_quartet_dist
 
 ### Tool Description
-The provided help text contains only container execution error messages and does not provide usage information or argument details for the tool.
+Calculates the pairwise quartet distance between all trees in a Newick file and outputs a lower triangular matrix.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1
 - **Homepage**: http://users-cs.au.dk/cstorm/software/tqdist/
 - **Package**: https://anaconda.org/channels/bioconda/packages/tqdist/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tqdist:1.0.0--hfc679d8_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: all_pairs_quartet_dist <input filename> [output filename]
+
+Where:
+	<input filename> is the name of a file containing multiple trees in
+	Newick format. Each tree should be on a seperate line. In each tree
+	all leaves should be labeled and all trees should have the same set
+	of leaf labels.
+	If [output filename] is specified the output is written to the file
+	pointed to (if the file already exists the current content is deleted
+	first), otherwise the output is written to stdout.
+	The output is a lower triangular matrix in which the i, j'th entry
+	is the pairwise quartet distance between the tree on line i and the
+	tree on line j in <input filename>.
 ```
 

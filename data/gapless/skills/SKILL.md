@@ -1,8 +1,9 @@
 ---
 name: gapless
-description: Gapless is a specialized bioinformatics tool used to bridge the gap between fragmented genome assemblies and high-quality finished genomes.
+description: Gapless bridges fragmented genome assemblies by using long-read data to scaffold contigs, fill gaps, and correct assembly errors. Use when user asks to scaffold contigs, fill assembly gaps, or improve a short-read assembly using PacBio or Nanopore reads.
 homepage: https://github.com/schmeing/gapless
 ---
+
 
 # gapless
 

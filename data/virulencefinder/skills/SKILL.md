@@ -1,8 +1,9 @@
 ---
 name: virulencefinder
-description: VirulenceFinder is a specialized bioinformatics tool designed to detect virulence-associated genes within bacterial sequence data.
+description: VirulenceFinder detects virulence-associated genes within bacterial sequence data. Use when user asks to detect virulence-associated genes, search bacterial genomes for virulence factors, interpret genomic profiles, or manage virulence gene databases.
 homepage: https://bitbucket.org/genomicepidemiology/virulencefinder
 ---
+
 
 # virulencefinder
 

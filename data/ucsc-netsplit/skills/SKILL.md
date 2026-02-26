@@ -1,8 +1,9 @@
 ---
 name: ucsc-netsplit
-description: ucsc-netsplit is a specialized utility from the UCSC Kent toolset used to manage large-scale genomic alignment data.
+description: UCSC-netsplit splits large whole-genome alignment net files into chromosome-specific files. Use when user asks to 'split whole-genome alignment net files by chromosome', 'prepare alignment data for chromosome-specific workflows', 'create manageable data chunks for the UCSC Genome Browser', or 'speed up alignment pipelines'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-netsplit
 

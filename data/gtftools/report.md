@@ -3,7 +3,7 @@
 ## gtftools
 
 ### Tool Description
-A tool for processing GTF files (Note: The provided help text contains only system error messages and no usage information).
+GTF file: only ENSEMBL or GENCODE GTF file accepted
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gtftools:0.9.0--pyh5e36f6f_0
@@ -18,11 +18,103 @@ A tool for processing GTF files (Note: The provided help text contains only syst
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gtftools:0.9.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3671314907: no space left on device
+usage: gtftools [-h] [-c chromosomes] [-m merged_exon] [-e exon] [-i intron]
+                [-d independent_intron] [-b intergenic_region]
+                [-l gene_length] [-r isoform_length] [-k masked_intron]
+                [-u UTR] [-s isoform] [-q splice_site] [-g gene] [-p SNP]
+                [-f cis] [-t TSS] [-w window_size] [-v]
+                GTFfile
+
+positional arguments:
+  GTFfile               GTF file: only ENSEMBL or GENCODE GTF file accepted
+
+options:
+  -h, --help            show this help message and exit
+  -c chromosomes, --chroms chromosomes
+                        chromosome list to analyze. Chromosomes can be
+                        separated by comma(,) or dash(-). For example, '-c
+                        1-5,X,Y' means chromosomes 1 to 5 plus X and Y.
+                        Default is: 1-22,X,Y
+  -m merged_exon, --merged_exon merged_exon
+                        output file name for outputing merged exons from all
+                        isoforms of a gene in bed format
+  -e exon, --exon exon  output file name for exon coordination of splice
+                        isoforms in bed format
+  -i intron, --intron intron
+                        output file name for outputing intron coordination of
+                        splice isoforms in bed format
+  -d independent_intron, --independent_intron independent_intron
+                        output file name for outputing independent intron
+                        coordination of genes. Independent introns refer to
+                        those introns that do not overlap with any exon of
+                        isoforms. It is calcualted by merging all exons of a
+                        chromosome followed by substracting them from gene
+                        regions.
+  -b intergenic_region, --intergenic_region intergenic_region
+                        output file name for coordinates of intergenic
+                        regions, which is calculated by subtracting gene
+                        regions from each chromosome.
+  -l gene_length, --gene_length gene_length
+                        output file name for gene length. Four types of gene
+                        lengths are calculated. The first three are the mean,
+                        median, and max length of the isoforms of a gene. The
+                        fourth is the length of the non-overlapping exons of
+                        all isoforms.
+  -r isoform_length, --isoform_length isoform_length
+                        output file name for isoform length file. Isoform
+                        length is calculated as the summed length of its exons
+  -k masked_intron, --masked_intron masked_intron
+                        output file name for the intron that overlaps with
+                        exons of other isoforms/genes
+  -u UTR, --UTR UTR     output file name for UTR regions
+  -s isoform, --isoform isoform
+                        output file name for isoform coordinates and names.
+  -q splice_site, --splice_site splice_site
+                        output file name for 5' or 3' splice site in bed
+                        format. The region is based on MaxEntScan: the 5'
+                        donor site is 9 bases long with 3 bases in exon and 6
+                        bases in intron, and the 3' acceptor site is 23 bases
+                        long with 20 bases in the intron and 3 bases in the
+                        exon.
+  -g gene, --gene gene  output file name for gene coordinates and names. If
+                        cis-range of the gene needs to be calculated, users
+                        can include the -f option to sepcify cis-range.
+  -p SNP, --snp SNP     An input file containing a list of SNPs with at least
+                        three columns, with the first being chromosome and the
+                        second being coordinate and the third being SNP names
+                        such as rs ID number. With this option, GTFtools will
+                        search for and output cis-SNPs for each gene annotated
+                        in the provided GTF file.
+  -f cis, --cis cis     -f specifies the upstream and downstream distance used
+                        to calculate cis-range of a gene. -f is specified in
+                        the format of 'distup-distdown', where distup
+                        represent the upstream distance from TSS and distdown
+                        means the downstream distance from the end of the
+                        gene. Note that this parameter takes effect only when
+                        the '-g' option is used. For example, using 'python
+                        gtftools.py -g gene.bed -f 2000-1000 demo.gtf' means
+                        that 2000 bases upstream and 1000 bases downstream of
+                        the gene will be clculated as the cis-range and the
+                        cis-range will be output to the gene.bed file. By
+                        default, -f is set to 0-0, indicating that cis-range
+                        will not be calculated when using -g to calculate gene
+                        information.
+  -t TSS, --TSS TSS     output file name for a region flanking transcription
+                        start site (TSS). It is calculated as (TSS-
+                        wup,TSS+wdown) where wup is a user-specified distance,
+                        say 1000bp, upstream of TSS, wdown is the distance
+                        downstream of TSS. wup and wdown is defined by the w
+                        parameter specified by '-w'.
+  -w window_size, --window window_size
+                        w specifies the upstream and downstream distance from
+                        TSS as described in '-t'. w is specified in the format
+                        of 'wup-wdown', where wup and wdown represent the
+                        upstream and downstream distance of TSS. Default w =
+                        1000-300 (that is, 1000 bases upstream of TSS and 300
+                        bases downstream of TSS). This range is based on
+                        promoter regions used in the dbSNP database based on
+                        ref: Genome-wide promoter extraction and analysis in
+                        human, mouse, and rat, Genome Biology, 2005.
+  -v, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

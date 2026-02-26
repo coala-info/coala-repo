@@ -1,8 +1,9 @@
 ---
 name: entrezpy
-description: entrezpy is a specialized Python library designed to interface with the NCBI Entrez Programming Utilities (E-utilities).
+description: entrezpy is a Python library for building complex, multi-step pipelines to interface with NCBI Entrez Programming Utilities. Use when user asks to retrieve data from NCBI databases, manage E-utility requests with multithreading, or process XML and JSON responses using custom analyzers.
 homepage: https://gitlab.com/ncbipy/entrezpy
 ---
+
 
 # entrezpy
 

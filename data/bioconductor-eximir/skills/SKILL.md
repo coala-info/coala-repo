@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eximir
-description: the package is available on all platforms; click for details.
+description: This tool normalizes miRNA expression data from Exiqon and Affymetrix platforms using spike-in control probes. Use when user asks to normalize miRNA arrays, perform spike-in based normalization, or process Exiqon miRCURY LNA and Affymetrix miRNA Genechip data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExiMiR.html
 ---
+
 
 # bioconductor-eximir
 

@@ -1,8 +1,9 @@
 ---
 name: cansnper2
-description: CanSNPer2 is a bioinformatics suite used for the high-resolution classification of bacterial pathogens based on single nucleotide polymorphisms (SNPs).
+description: CanSNPer2 classifies bacterial pathogens by identifying diagnostic single nucleotide polymorphisms in genomic assemblies. Use when user asks to classify bacterial pathogens, identify diagnostic SNPs, create custom SNP databases, or generate phylogenetic trees from genomic data.
 homepage: https://github.com/FOI-Bioinformatics/CanSNPer2
 ---
+
 
 # cansnper2
 

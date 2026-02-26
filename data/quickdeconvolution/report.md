@@ -1,9 +1,9 @@
 # quickdeconvolution CWL Generation Report
 
-## quickdeconvolution
+## quickdeconvolution_QuickDeconvolution
 
 ### Tool Description
-Quick deconvolution tool (Note: The provided text is a container build log and does not contain the tool's help documentation or argument list).
+QuickDeconvolution
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/quickdeconvolution:1.2--h9f5acd7_1
@@ -15,16 +15,37 @@ Quick deconvolution tool (Note: The provided text is a container build log and d
 - **Total Downloads**: 3.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/RolandFaure/QuickDeconvolution
-- **Stars**: 2
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/quickdeconvolution:1.2--h9f5acd7_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Could not parse the arguments
+SYNOPSIS
+        QuickDeconvolution -i [<i>] -o [<o>] [-k [<k>]] [-w [<w>]] [-d [<d>]] [-t [<t>]] [-a [<a>]]
+                           [-m]
+
+OPTIONS
+        -i, --input-file
+                    input file (mandatory)
+
+        -o, --output-file
+                    file to write the output (mandatory)
+
+        -k, --kmers-length
+                    size of kmers [default:20]
+
+        -w, --window-size
+                    size of window guaranteed to contain at least one minimizing kmer [default:40]
+
+        -d, --density
+                    on average 1/2^d kmers are sparse kmers [default:3]
+
+        -t, --threads
+                    number of threads [default:1]
+
+        -a, --dropout
+                    QD does not try to deconvolve clouds smaller than this value [default:0]
+
+        -m, --metagenome
+                    Use this option on metagenomic samples
 ```
 
-
-## Metadata
-- **Skill**: generated

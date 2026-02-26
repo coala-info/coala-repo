@@ -1,9 +1,9 @@
 # perl-bio-monophylizer CWL Generation Report
 
-## perl-bio-monophylizer
+## perl-bio-monophylizer_monophylizer.pl
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a log of a failed Apptainer/Singularity image build process due to insufficient disk space. No command-line arguments or tool descriptions could be extracted from this input.
+A tool to analyze monophyly in phylogenetic trees, supporting various formats and metadata integration.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-monophylizer:1.0.0--hdfd78af_0
@@ -18,41 +18,61 @@ The provided text does not contain help information for the tool. It is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-monophylizer:1.0.0--hdfd78af_0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
+Usage:
+        # to get help on the command line
+        $ perl monophylizer.pl --help
+    
+        # example run
+        $ perl monophylizer.pl \
+            -infile tree.nwk \
+            -format newick \
+            -astsv \
+            -verbose \ 
+                > outfile.tsv
 
+Options and Arguments:
+    -infile <file>
+        A tree file, usually in Newick format. Required.
 
-## Metadata
-- **Skill**: generated
+    -format <newick|nexus|nexml|phyloxml>
+        Optional argument to specify the tree file format. By default the
+        Newick format is used.
 
-## perl-bio-monophylizer_monophylizer.pl
+    -metadata <file>
+        Optional argument to provide the location of a tab-separated
+        spreadsheet with per-taxon metadata.
 
-### Tool Description
-A tool for monophyly analysis (Note: The provided text contains container build logs and error messages rather than the tool's help documentation, so no arguments could be extracted).
+    -separator <character>
+        Optional argument to specific the character that separates the taxon
+        name from any additional metdata (such as sequence IDs) in leaf
+        labels. By default this is the pipe symbol: '|'.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-monophylizer:1.0.0--hdfd78af_0
-- **Homepage**: https://metacpan.org/pod/Bio::Monophylizer
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-monophylizer/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-monophylizer:1.0.0--hdfd78af_0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+    -comments
+        Optional flag to treat square brackets as opaque strings, not
+        comments, default: true.
+
+    -quotes
+        Optional flag to treat quotes as opaque strings, default: true.
+
+    -whitespace
+        Optional flag to treat whitespace as opaque strings, default: true.
+
+    -trinomials
+        Optional flag to include subspecific epithets in taxa, default:
+        false.
+
+    -astsv
+        Optional flag to set output as TSV regardless whether running as
+        CGI, default: false. This is only available when running under CGI.
+
+    -verbose
+        Influences how verbose the script is. By default, only warning
+        messages are emitted. When this flag is used once, also
+        informational messages are emitted. When used twice, also debugging
+        messages.
+
+    -help
+        Prints usage message and quits, only available when running on
+        command line.
 ```
 

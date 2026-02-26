@@ -1,8 +1,9 @@
 ---
 name: repeatmodeler
-description: RepeatModeler is a comprehensive pipeline for the automated discovery of repetitive elements in genomic data.
+description: RepeatModeler is an automated pipeline for the discovery and de novo identification of repetitive element families in genomic sequences. Use when user asks to identify repetitive elements, generate consensus sequences for repeat families, or build a custom repeat library for a new genome assembly.
 homepage: https://www.repeatmasker.org/RepeatModeler
 ---
+
 
 # repeatmodeler
 

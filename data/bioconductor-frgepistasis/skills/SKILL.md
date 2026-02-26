@@ -1,8 +1,9 @@
 ---
 name: bioconductor-frgepistasis
-description: the package is available on all platforms; click for details.
+description: This package detects epistasis between genes or genomic regions using functional regression and Fourier expansion for large-scale sequencing data. Use when user asks to detect gene-gene interactions, perform rare variant analysis, or run functional regression models on genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/FRGEpistasis.html
 ---
+
 
 # bioconductor-frgepistasis
 

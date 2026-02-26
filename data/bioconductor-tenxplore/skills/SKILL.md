@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tenxplore
-description: the package is available on all platforms; click for details.
+description: This package provides tools for exploring and visualizing 10x Genomics single-cell RNA-seq data. Use when user asks to explore 10x Genomics datasets, visualize single-cell RNA-seq data, or access example 10x data.
 homepage: https://bioconductor.org/packages/release/bioc/html/tenXplore.html
 ---
+
 
 # bioconductor-tenxplore
 

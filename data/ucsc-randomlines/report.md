@@ -3,7 +3,7 @@
 ## ucsc-randomlines
 
 ### Tool Description
-The provided text contains error logs from a container runtime failure and does not include the help documentation for the tool. As a result, no arguments could be extracted.
+Get a random set of lines from a file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-randomlines:482--h0b57e2e_0
@@ -18,13 +18,13 @@ The provided text contains error logs from a container runtime failure and does 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-randomlines:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-randomlines:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-randomlines
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+53229d58a60c: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2415438868: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

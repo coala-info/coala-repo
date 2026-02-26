@@ -1,8 +1,9 @@
 ---
 name: graph_embed
-description: The `graph_embed` tool transforms complex data matrices into 2D visualizations by constructing a graph where nodes represent instances.
+description: This tool transforms data matrices into 2D visualizations by constructing a supervised force-directed graph embedding. Use when user asks to generate 2D embeddings, visualize class separation in datasets, or create graph-based data visualizations.
 homepage: https://github.com/fabriziocosta/GraphEmbed
 ---
+
 
 # graph_embed
 

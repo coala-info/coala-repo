@@ -1,8 +1,9 @@
 ---
 name: merfishtools
-description: This skill enables the processing of raw MERFISH readouts into accurate expression estimates.
+description: "merfishtools processes raw MERFISH readouts into expression estimates and performs Bayesian differential expression analysis. Use when user asks to estimate gene expression probabilities from spatial transcriptomics data, calculate differential expression between two conditions, or analyze expression variation across multiple experimental groups."
 homepage: https://merfishtools.github.io
 ---
+
 
 # merfishtools
 

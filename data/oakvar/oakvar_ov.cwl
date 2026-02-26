@@ -1,18 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - oakvar
-  - ov
+baseCommand: ov
 label: oakvar_ov
-doc: "OakVar genomic variant analysis platform. (Note: The provided text consists
-  of system error logs regarding a container runtime failure and does not contain
-  CLI help documentation or argument definitions.)\n\nTool homepage: http://www.oakvar.com"
-inputs: []
+doc: "OakVar. Genomic variant analysis platform.\n\nTool homepage: http://www.oakvar.com"
+inputs:
+  - id: command
+    type: string
+    doc: Subcommand to execute
+    inputBinding:
+      position: 1
+  - id: command_args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the subcommand
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/oakvar:2.12.24--pyhdfd78af_0
+    dockerPull: quay.io/biocontainers/oakvar:2.12.25--pyhdfd78af_0
 stdout: oakvar_ov.out

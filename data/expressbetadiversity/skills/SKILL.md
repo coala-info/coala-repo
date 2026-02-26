@@ -1,8 +1,9 @@
 ---
 name: expressbetadiversity
-description: The `expressbetadiversity` (EBD) tool is a high-performance C++ command-line utility designed to handle large-scale ecological datasets.
+description: ExpressBetaDiversity calculates various beta diversity metrics and phylogenetic dissimilarities for large-scale ecological datasets. Use when user asks to calculate taxon-based or phylogeny-aware beta diversity, perform jackknife resampling, or generate UPGMA trees from OTU tables.
 homepage: https://github.com/dparks1134/ExpressBetaDiversity
 ---
+
 
 # expressbetadiversity
 

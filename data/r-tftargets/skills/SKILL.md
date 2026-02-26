@@ -1,8 +1,9 @@
 ---
 name: r-tftargets
-description: R package tftargets (documentation from project home).
+description: The r-tftargets package provides access to human transcription factor target gene sets from six major databases within the R environment. Use when user asks to identify downstream targets of human transcription factors, perform gene regulatory network analysis, or query TF-target interactions from databases like TRRUST, ENCODE, and TRED.
 homepage: https://cran.r-project.org/web/packages/tftargets/index.html
 ---
+
 
 # r-tftargets
 

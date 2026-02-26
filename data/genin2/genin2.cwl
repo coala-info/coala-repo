@@ -2,16 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genin2
 label: genin2
-doc: "The provided text does not contain help documentation or usage instructions.
-  It appears to be a fatal error log from a container runtime (Apptainer/Singularity)
-  indicating a failure to build the SIF format due to insufficient disk space.\n\n
-  Tool homepage: https://github.com/izsvenezie-virology/genin2"
-inputs: []
+doc: "Genin2: A tool for gene identification and annotation\n\nTool homepage: https://github.com/izsvenezie-virology/genin2"
+inputs:
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Input file
+    inputBinding:
+      position: 1
+  - id: loglevel
+    type:
+      - 'null'
+      - string
+    doc: Verbosity of the logging messages
+    default: wrn
+    inputBinding:
+      position: 102
+      prefix: --loglevel
+  - id: min_seq_cov
+    type:
+      - 'null'
+      - float
+    doc: The minimum accepted sequence coverage for each gene segment
+    default: 0.7
+    inputBinding:
+      position: 102
+      prefix: --min-seq-cov
+  - id: model_info
+    type:
+      - 'null'
+      - boolean
+    doc: Show information about models and exit
+    inputBinding:
+      position: 102
+      prefix: --model-info
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output TSV
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/genin2:2.1.5--pyhdfd78af_0
-stdout: genin2.out

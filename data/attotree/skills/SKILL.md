@@ -1,8 +1,9 @@
 ---
 name: attotree
-description: `attotree` is a bioinformatics tool designed for the high-speed construction of phylogenetic trees directly from genomic sequences.
+description: attotree rapidly constructs phylogenetic trees from genomic sequences using sketching to estimate genetic distances. Use when user asks to generate a phylogenetic tree from FASTA files, perform rapid genomic surveillance, or estimate genetic distances between large sets of genomes.
 homepage: https://github.com/karel-brinda/attotree
 ---
+
 
 # attotree
 

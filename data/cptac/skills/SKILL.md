@@ -1,8 +1,9 @@
 ---
 name: cptac
-description: The `cptac` skill provides a streamlined interface for interacting with the Clinical Proteomic Tumor Analysis Consortium (CPTAC) datasets.
+description: The cptac tool provides a streamlined interface for downloading, managing, and analyzing multi-omics and clinical data from the Clinical Proteomic Tumor Analysis Consortium. Use when user asks to list available cancer datasets, download specific CPTAC data, retrieve proteomics or clinical DataFrames, and perform multi-omics integration or mutation effect analysis.
 homepage: http://github.com/PayneLab/cptac
 ---
+
 
 # cptac
 

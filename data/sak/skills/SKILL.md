@@ -1,8 +1,9 @@
 ---
 name: sak
-description: The `sak` tool is a versatile utility for sequence file manipulation.
+description: The sak tool manipulates and extracts specific data from genomic sequence files. Use when user asks to extract sequences by index, trim sequences to specific coordinate ranges, or convert between sequence formats.
 homepage: https://github.com/seqan/seqan/tree/master/apps/sak
 ---
+
 
 # sak
 

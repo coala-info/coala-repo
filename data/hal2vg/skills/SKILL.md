@@ -1,8 +1,9 @@
 ---
 name: hal2vg
-description: hal2vg is a specialized utility for bridging the gap between hierarchical alignments and sequence graphs.
+description: hal2vg converts HAL hierarchical alignment files into sequence graph formats like PackedGraph for use in the vg toolkit. Use when user asks to transform HAL files into sequence graphs, convert alignments for pangenomics workflows, or generate PackedGraph, HashGraph, or ODGI files.
 homepage: https://github.com/ComparativeGenomicsToolkit/hal2vg
 ---
+
 
 # hal2vg
 

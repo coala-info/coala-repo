@@ -1,8 +1,9 @@
 ---
 name: subread
-description: The Subread suite is a collection of high-performance bioinformatics tools designed for the analysis of next-generation sequencing (NGS) data.
+description: Subread is a high-performance bioinformatics suite used for mapping next-generation sequencing reads and quantifying genomic features. Use when user asks to build a genome index, align DNA or RNA-seq reads, detect splice junctions, count reads mapping to features, or call SNPs.
 homepage: https://subread.sourceforge.net
 ---
+
 
 # subread
 

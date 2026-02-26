@@ -1,8 +1,9 @@
 ---
 name: curves
-description: Curves+ is the standard tool for the numerical analysis of nucleic acid geometry.
+description: Curves+ analyzes the numerical geometry of nucleic acid structures by calculating helical parameters and backbone descriptors from atomic coordinates. Use when user asks to analyze DNA or RNA structural parameters, process molecular dynamics trajectories for nucleic acid geometry, or calculate helical features from PDB files.
 homepage: https://bisi.ibcp.fr/tools/curves_plus/index.html
 ---
+
 
 # curves
 

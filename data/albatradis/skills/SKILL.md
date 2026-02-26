@@ -1,8 +1,9 @@
 ---
 name: albatradis
-description: The provided text does not contain help information or a description of the tool. It contains error logs related to a container build failure (no space left on device).
+description: AlbaTraDIS performs comparative analysis of TraDIS data to identify genomic regions with significant differences in transposon insertion patterns between conditions. Use when user asks to identify genes involved in fitness or survival, compare insert site plot files against a reference genome, or detect regulatory shifts and gene essentiality changes.
 homepage: https://github.com/quadram-institute-bioscience/albatradis
 ---
+
 
 # albatradis
 

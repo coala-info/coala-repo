@@ -1,8 +1,9 @@
 ---
 name: bioconductor-watermelon
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides tools for the quality control and normalization of Illumina DNA methylation array data. Use when user asks to normalize Illumina 450K or EPIC methylation arrays, perform quality control on methylation data, or calculate DNA methylation beta values.
 homepage: https://bioconductor.org/packages/release/bioc/html/wateRmelon.html
 ---
+
 
 # bioconductor-watermelon
 

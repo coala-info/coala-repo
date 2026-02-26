@@ -1,15 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: leviathan_LRez
+baseCommand: LRez
 label: leviathan_LRez
-doc: "Large-scale read mapping tool (Note: The provided help text contains only container
-  runtime error messages and no usage information).\n\nTool homepage: https://github.com/morispi/LEVIATHAN"
-inputs: []
+doc: "LRez allows to work with barcoded Linked-Reads, and offers various barcode management
+  functionalities.\n\nTool homepage: https://github.com/morispi/LEVIATHAN"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'The subcommand to run. Available subcommands: compare, extract, stats, index
+      bam, query bam, index fastq, query fastq'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/leviathan:1.0.2--h9f5acd7_0
+    dockerPull: quay.io/biocontainers/leviathan:1.0.2--h9948957_4
 stdout: leviathan_LRez.out

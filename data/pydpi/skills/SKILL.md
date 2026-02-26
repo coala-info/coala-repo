@@ -1,8 +1,9 @@
 ---
 name: pydpi
-description: The `pydpi` library is designed to bridge the gap between chemical and biological data.
+description: pydpi calculates structural and physicochemical descriptors for small molecules and proteins to facilitate drug-protein interaction modeling. Use when user asks to calculate molecular descriptors from SMILES, extract features from protein sequences, or generate integrated feature vectors for chemogenomics and machine learning.
 homepage: http://cbdd.csu.edu.cn/index
 ---
+
 
 # pydpi
 

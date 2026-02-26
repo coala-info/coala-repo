@@ -1,8 +1,9 @@
 ---
 name: cvbio
-description: cvbio is a suite of Scala-based bioinformatics tools designed to streamline specific genomic workflows.
+description: cvbio is a suite of bioinformatics tools for multi-species read disambiguation, remote control of the Integrative Genomics Viewer, and genomic file contig renaming. Use when user asks to disambiguate reads from multiple species, control IGV from the command line, or update contig names in genomic data files.
 homepage: https://github.com/clintval/cvbio
 ---
+
 
 # cvbio
 

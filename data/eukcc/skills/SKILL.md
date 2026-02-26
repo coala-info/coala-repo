@@ -1,8 +1,9 @@
 ---
 name: eukcc
-description: EukCC is a specialized tool for assessing the quality of microbial eukaryotic genomic data.
+description: EukCC assesses the quality of microbial eukaryotic genomes by estimating completeness and contamination using phylogenetically aware marker genes. Use when user asks to evaluate eukaryotic bin quality, estimate genome completeness and contamination, or analyze eukaryotic genomic data using conserved marker sets.
 homepage: https://github.com/Finn-Lab/EukCC/
 ---
+
 
 # eukcc
 

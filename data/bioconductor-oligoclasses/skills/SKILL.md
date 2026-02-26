@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oligoclasses
-description: the package is available on all platforms; click for details.
+description: This package provides infrastructure and class definitions for oligonucleotide array data. Use when user asks to define data structures for SNP arrays, manage high-throughput genomic data, or handle infrastructure for oligonucleotide-based assays.
 homepage: https://bioconductor.org/packages/release/bioc/html/oligoClasses.html
 ---
+
 
 # bioconductor-oligoclasses
 

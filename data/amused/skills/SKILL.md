@@ -1,8 +1,9 @@
 ---
 name: amused
-description: AMUSED (Auditing Motifs Using Statistical Enrichment & Depletion) is a specialized tool for discovering DNA motifs by analyzing the frequency of k-mers within sequence data.
+description: AMUSED discovers enriched and depleted DNA motifs by performing statistical analysis on k-mer frequencies within sequence data. Use when user asks to identify transcription factor binding sites, analyze regulatory elements, or perform background-corrected k-mer enrichment analysis.
 homepage: https://github.com/Carldeboer/AMUSED
 ---
+
 
 # amused
 

@@ -1,8 +1,9 @@
 ---
 name: r-acidgsea
-description: R package acidgsea (documentation from project home).
+description: This tool performs parameterized gene set enrichment analysis across multiple differential expression contrasts using the acidgsea R package. Use when user asks to run GSEA on multiple contrasts simultaneously, extend fgsea functionality, or visualize gene set enrichment results.
 homepage: https://cran.r-project.org/web/packages/acidgsea/index.html
 ---
+
 
 # r-acidgsea
 

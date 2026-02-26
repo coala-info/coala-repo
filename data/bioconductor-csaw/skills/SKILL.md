@@ -1,8 +1,9 @@
 ---
 name: bioconductor-csaw
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package detects differentially bound regions in ChIP-seq data using a sliding window approach. Use when user asks to detect differential binding, perform sliding window analysis on ChIP-seq data, or normalize enrichment across multiple libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/csaw.html
 ---
+
 
 # bioconductor-csaw
 

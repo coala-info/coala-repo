@@ -1,8 +1,9 @@
 ---
 name: bioconductor-derfinderhelper
-description: the package is available on all platforms; click for details.
+description: This tool calculates F-statistics for genomic features using nested models to identify differential expression. Use when user asks to calculate F-statistics for genomic data, perform differential expression analysis within the derfinder framework, or optimize memory usage during parallel RNA-seq data processing.
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinderHelper.html
 ---
+
 
 # bioconductor-derfinderhelper
 

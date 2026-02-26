@@ -1,8 +1,9 @@
 ---
 name: gambit
-description: GAMBIT (Genomic Approximation Method for Bacterial Identification and Tracking) is a high-performance bioinformatics tool designed for the rapid classification of bacterial pathogens.
+description: GAMBIT rapidly classifies bacterial pathogens by comparing genomic assemblies against a reference database using an efficient distance metric. Use when user asks to identify bacterial species from genome assemblies, perform rapid taxonomic classification, or compare unknown isolates against the RefSeq database.
 homepage: https://github.com/jlumpe/gambit
 ---
+
 
 # gambit
 

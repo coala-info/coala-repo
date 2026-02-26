@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanomni25quadv1bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides metadata and calibration data for performing genotype calling and copy number analysis on Illumina Omni2.5 Quad arrays using the crlmm algorithm. Use when user asks to perform genotyping, conduct copy number analysis, or process raw intensity data from Illumina Omni2.5 Quad platforms.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomni25quadv1bCrlmm.html
 ---
+
 
 # bioconductor-humanomni25quadv1bcrlmm
 

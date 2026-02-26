@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mitch
-description: the package is available on all platforms; click for details.
+description: Bioconductor-mitch performs multi-contrast gene set enrichment analysis to integrate multiple types of high-throughput biological data. Use when user asks to perform multi-dimensional gene set enrichment analysis, integrate different omics datasets, or identify enriched pathways across multiple experimental comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/mitch.html
 ---
+
 
 # bioconductor-mitch
 

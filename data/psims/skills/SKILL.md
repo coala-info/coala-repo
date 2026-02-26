@@ -1,8 +1,9 @@
 ---
 name: psims
-description: psims is a declarative Python API designed for writing XML documents that follow the Proteomics Standards Initiative (PSI) specifications.
+description: psims is a Python API for programmatically creating XML documents that follow Proteomics Standards Initiative specifications. Use when user asks to write mzML files, generate mzIdentML documents, or create HDF5-optimized mzMLb files for mass spectrometry data.
 homepage: https://github.com/mobiusklein/psims
 ---
+
 
 # psims
 

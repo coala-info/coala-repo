@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgoslin
-description: the package is available on all platforms; click for details.
+description: The rgoslin package parses, validates, and normalizes lipid names according to standardized nomenclatures. Use when user asks to parse lipid names, validate lipid nomenclature, or normalize lipid shorthand strings.
 homepage: https://bioconductor.org/packages/release/bioc/html/rgoslin.html
 ---
+
 
 # bioconductor-rgoslin
 

@@ -1,8 +1,9 @@
 ---
 name: reviewer
-description: REViewer (Repeat Expansion Viewer) is a specialized tool for the manual inspection and validation of tandem repeat genotypes.
+description: REViewer generates haplotype-aware visualizations of tandem repeat genotypes using graph-realigned reads. Use when user asks to visualize repeat expansions, manually inspect tandem repeat genotypes, or validate ExpansionHunter results.
 homepage: https://github.com/Illumina/REViewer
 ---
+
 
 # reviewer
 

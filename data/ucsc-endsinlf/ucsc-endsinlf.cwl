@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: endsInLf
 label: ucsc-endsinlf
-doc: "A UCSC Genome Browser utility to check if a file ends in a line feed. (Note:
-  The provided help text contains only container runtime error messages and does not
-  list specific arguments.)\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
-inputs: []
+doc: "Check if a file ends in a line feed (newline). This is a utility from the UCSC
+  Genome Browser toolset.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+inputs:
+  - id: filename
+    type: File
+    doc: The file to check for a trailing line feed.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

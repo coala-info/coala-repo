@@ -1,8 +1,9 @@
 ---
 name: geofetch
-description: `geofetch` is a specialized utility that simplifies the process of acquiring public genomic data.
+description: geofetch is a utility that downloads and standardizes public genomic metadata and raw sequencing files from GEO and SRA into Portable Encapsulated Project format. Use when user asks to fetch metadata, download raw sequencing data from GEO or SRA, PEP-ify public datasets, or standardize repository metadata for downstream analysis.
 homepage: https://github.com/pepkit/geofetch/
 ---
+
 
 # geofetch
 

@@ -1,8 +1,9 @@
 ---
 name: unmerge
-description: The `unmerge` utility is a specialized C-based tool designed for bioinformatics workflows involving paired-end sequencing data.
+description: The unmerge tool splits interlaced FASTQ files containing paired-end sequencing data into separate forward and reverse read files. Use when user asks to 'split interlaced FASTQ files', 'de-interlace paired-end reads', 'separate R1 and R2 reads', or 'subsample interlaced FASTQ files'.
 homepage: https://github.com/andvides/unmerge.git
 ---
+
 
 # unmerge
 

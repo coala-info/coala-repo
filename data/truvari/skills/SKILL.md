@@ -1,8 +1,9 @@
 ---
 name: truvari
-description: Truvari is a specialized suite designed to address the challenges of structural variant (SV) comparison and manipulation.
+description: Truvari is a suite for comparing, manipulating, and benchmarking structural variants (SVs). Use when user asks to benchmark structural variants, compare SV callsets, collapse redundant variants, refine SV benchmarking results, convert VCFs to analysis-ready data, or annotate structural variants.
 homepage: https://github.com/spiralgenetics/truvari
 ---
+
 
 # truvari
 

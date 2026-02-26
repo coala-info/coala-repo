@@ -1,9 +1,9 @@
 # humanfilt CWL Generation Report
 
-## humanfilt
+## humanfilt_setup
 
 ### Tool Description
-A tool for filtering human sequences from sequencing data. (Note: The provided text is a container execution error log and does not contain specific CLI usage or argument details).
+Setup humanfilt references.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/humanfilt:1.0.0--pyhdfd78af_0
@@ -18,11 +18,49 @@ A tool for filtering human sequences from sequencing data. (Note: The provided t
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/humanfilt:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2058799437: no space left on device
+usage: humanfilt setup [-h] [--data-dir DATA_DIR] [--threads THREADS]
+                       [--force]
+
+options:
+  -h, --help           show this help message and exit
+  --data-dir DATA_DIR  Destination directory for references (default: user
+                       cache)
+  --threads THREADS
+  --force
 ```
 
 
-## Metadata
-- **Skill**: generated
+## humanfilt_run
+
+### Tool Description
+Run humanfilt
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/humanfilt:1.0.0--pyhdfd78af_0
+- **Homepage**: https://github.com/jprehn-lab/humanfilt
+- **Package**: https://anaconda.org/channels/bioconda/packages/humanfilt/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: humanfilt run [-h] --mode {wgs,rna-seq} --input INPUT --output OUTPUT
+                     --report REPORT [--threads THREADS]
+                     [--trim-quality TRIM_QUALITY] [--trim-length TRIM_LENGTH]
+                     [--data-dir DATA_DIR] [--kraken2-db KRAKEN2_DB]
+                     [--no-auto-setup] [--keep-temp]
+
+options:
+  -h, --help            show this help message and exit
+  --mode {wgs,rna-seq}
+  --input INPUT
+  --output OUTPUT
+  --report REPORT
+  --threads THREADS
+  --trim-quality TRIM_QUALITY
+  --trim-length TRIM_LENGTH
+  --data-dir DATA_DIR
+  --kraken2-db KRAKEN2_DB
+  --no-auto-setup
+  --keep-temp           Keep per-sample temp dirs for debugging
+```
+

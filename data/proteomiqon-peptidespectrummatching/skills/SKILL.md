@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-peptidespectrummatching
-description: The `proteomiqon-peptidespectrummatching` tool is the central identification engine of the ProteomIQon proteomics pipeline.
+description: This tool identifies peptide spectrum matches by comparing mass spectrometry scans against a pre-constructed peptide database to calculate similarity scores. Use when user asks to identify peptides from mass spectrometry runs, perform peptide spectrum matching, or process mzML files against a peptide database.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-peptidespectrummatching
 

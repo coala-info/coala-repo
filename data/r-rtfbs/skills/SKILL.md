@@ -1,8 +1,9 @@
 ---
 name: r-rtfbs
-description: Skill for using the CRAN R package r-rtfbs.
+description: The r-rtfbs tool identifies transcription factor binding sites in genomic sequences using the rtfbs R package. Use when user asks to identify transcription factor binding sites, score sequences against position weight matrices, calculate false discovery rates, or threshold identified sites.
 homepage: https://cran.r-project.org/web/packages/rtfbs/index.html
 ---
+
 
 # r-rtfbs
 

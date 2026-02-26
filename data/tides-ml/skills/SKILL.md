@@ -1,8 +1,11 @@
 ---
 name: tides-ml
-description: TIdeS (Transcript Identification and Selection) is a machine learning tool designed to extract the most likely protein-coding regions from noisy transcriptomes.
+description: tides-ml is a machine learning tool that identifies protein-coding regions and classifies sequences in transcriptomes. Use when user asks to 'predict ORFs', 'classify ORFs', 'decontaminate transcriptomes', or 'apply pre-trained models'.
 homepage: https://github.com/xxmalcala/TIdeS
 ---
+
+
+
 
 # tides-ml
 

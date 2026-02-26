@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cagefightr
-description: the package is available on all platforms; click for details.
+description: CAGEfightR is an R/Bioconductor package for analyzing 5'-end genomic data to identify and quantify transcription start sites and enhancers. Use when user asks to quantify CTSSs from BigWig files, identify unidirectional tag clusters or bidirectional enhancers, annotate clusters with transcript models, or perform spatial analysis like TSS-enhancer correlations and super-enhancer identification.
 homepage: https://bioconductor.org/packages/release/bioc/html/CAGEfightR.html
 ---
+
 
 # bioconductor-cagefightr
 

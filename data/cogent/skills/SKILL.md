@@ -1,8 +1,9 @@
 ---
 name: cogent
-description: The COmparative GENomics Toolkit (cogent) is a comprehensive library designed for the analysis of genomic data.
+description: Cogent is a comprehensive library for analyzing genomic data, performing sequence alignments, and building phylogenetic trees. Use when user asks to manipulate biological sequences, perform multiple sequence alignments, build phylogenetic trees, or apply evolutionary models to genomic datasets.
 homepage: http://www.pycogent.org
 ---
+
 
 # cogent
 

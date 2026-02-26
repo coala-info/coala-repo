@@ -1,8 +1,9 @@
 ---
 name: tadrep
-description: TaDReP (Targeted Detection and Reconstruction of Plasmids) is a specialized bioinformatics tool designed to bridge the gap between draft genome assemblies and complete plasmid sequences.
+description: TaDReP is a bioinformatics tool used to identify and reconstruct plasmid sequences from draft genome assemblies using a reference-based approach. Use when user asks to setup plasmid databases, extract reference sequences, characterize and cluster plasmids, detect plasmids in draft assemblies, or visualize plasmid reconstructions.
 homepage: https://github.com/oschwengers/tadrep
 ---
+
 
 # tadrep
 

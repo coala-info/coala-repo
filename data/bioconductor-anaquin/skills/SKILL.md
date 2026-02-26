@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anaquin
-description: the package is available on all platforms; click for details.
+description: Anaquin is a statistical framework for analyzing synthetic sequencing spike-ins to calibrate and validate NGS workflows. Use when user asks to analyze sequins, estimate limits of quantification or detection, validate differential expression, or evaluate transcriptome assembly performance.
 homepage: https://bioconductor.org/packages/release/bioc/html/Anaquin.html
 ---
+
 
 # bioconductor-anaquin
 

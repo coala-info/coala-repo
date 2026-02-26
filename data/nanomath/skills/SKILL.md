@@ -1,8 +1,9 @@
 ---
 name: nanomath
-description: nanomath is a specialized utility library providing mathematical and statistical functions tailored for Oxford Nanopore Technologies (ONT) sequencing data.
+description: nanomath provides mathematical and statistical functions specifically designed for processing Oxford Nanopore Technologies sequencing data. Use when user asks to calculate N50, compute average Phred quality scores, remove length outliers, or generate read statistics reports.
 homepage: https://github.com/wdecoster/nanomath
 ---
+
 
 # nanomath
 

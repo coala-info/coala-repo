@@ -1,8 +1,9 @@
 ---
 name: dingii
-description: The `dingii` tool provides a specialized framework for calculating evolutionary distances between genomes that do not follow simple permutation patterns.
+description: The dingii tool calculates evolutionary distances between genomes by modeling complex rearrangements and varying gene content. Use when user asks to calculate genomic rearrangement distances, generate ILP models for evolutionary analysis, or parse solver outputs to interpret evolutionary events.
 homepage: https://gitlab.ub.uni-bielefeld.de/gi/dingiiofficial
 ---
+
 
 # dingii
 

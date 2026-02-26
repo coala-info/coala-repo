@@ -1,8 +1,9 @@
 ---
 name: mzquality
-description: The `mzquality` skill enables AI agents to execute a complete quality control pipeline for metabolomics studies.
+description: The mzquality tool executes a comprehensive quality control pipeline for metabolomics data using the SummarizedExperiment framework. Use when user asks to perform batch correction, calculate internal standard ratios, identify statistical outliers, or generate quality control reports for metabolomics studies.
 homepage: https://github.com/hankemeierlab/mzQuality
 ---
+
 
 # mzquality
 

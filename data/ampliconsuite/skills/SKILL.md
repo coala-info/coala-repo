@@ -1,8 +1,9 @@
 ---
 name: ampliconsuite
-description: AmpliconSuite is a comprehensive bioinformatics framework designed to resolve the complex architecture of focal amplifications in cancer.
+description: AmpliconSuite is a bioinformatics framework that reconstructs the physical structure of focal genomic amplifications to identify extrachromosomal DNA and other complex rearrangements in cancer. Use when user asks to resolve focal amplification architectures, classify ecDNA or BFB cycles, and reconstruct breakpoint graphs from short-read or long-read sequencing data.
 homepage: https://github.com/AmpliconSuite
 ---
+
 
 # ampliconsuite
 

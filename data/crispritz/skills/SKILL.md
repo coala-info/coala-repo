@@ -1,8 +1,9 @@
 ---
 name: crispritz
-description: CRISPRitz is a specialized suite designed for the predictive analysis and assessment of CRISPR/Cas experiments.
+description: CRISPRitz is a software suite for the predictive analysis and assessment of CRISPR/Cas experiments, including variant-aware off-target searching. Use when user asks to integrate genomic variants, index genomes with specific PAM sequences, perform off-target searches with mismatches and bulges, or annotate and report on guide RNA behavior.
 homepage: https://github.com/InfOmics/CRISPRitz
 ---
+
 
 # crispritz
 

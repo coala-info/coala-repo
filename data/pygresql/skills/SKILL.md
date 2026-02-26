@@ -1,8 +1,9 @@
 ---
 name: pygresql
-description: PyGreSQL is a mature Python interface for the PostgreSQL database that wraps the C API library (libpq).
+description: PyGreSQL provides a Python interface for the PostgreSQL database through both a standard DB-API 2.0 module and a classic object-oriented wrapper. Use when user asks to connect to PostgreSQL, perform high-performance batch inserts, handle database conflicts, or execute CRUD operations using the classic DB wrapper.
 homepage: https://github.com/PyGreSQL/PyGreSQL
 ---
+
 
 # pygresql
 

@@ -1,8 +1,9 @@
 ---
 name: pgscatalog-utils
-description: This skill provides a specialized workflow for interacting with the Polygenic Score (PGS) Catalog and applying polygenic scores to genomic data.
+description: This tool retrieves, standardizes, and applies polygenic scores from the PGS Catalog to genomic data. Use when user asks to download scoring files, match variants between scores and target genotypes, calculate polygenic scores, or perform ancestry-based score normalization.
 homepage: https://github.com/PGScatalog/pygscatalog
 ---
+
 
 # pgscatalog-utils
 

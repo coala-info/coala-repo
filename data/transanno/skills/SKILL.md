@@ -1,8 +1,9 @@
 ---
 name: transanno
-description: transanno is a specialized bioinformatics tool designed for high-accuracy coordinate migration (LiftOver) between genome assemblies.
+description: transanno performs high-accuracy coordinate migration (LiftOver) between genome assemblies and generates custom chain files. Use when user asks to generate a chain file, lift over VCF files, or lift over gene annotations.
 homepage: https://github.com/informationsea/transanno
 ---
+
 
 # transanno
 

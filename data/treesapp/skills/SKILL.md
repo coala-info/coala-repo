@@ -1,8 +1,9 @@
 ---
 name: treesapp
-description: TreeSAPP (Tree-based Sensitive and Accurate Phylogenetic Profiler) is a bioinformatics toolset designed for high-resolution functional and taxonomic annotation.
+description: TreeSAPP performs high-resolution functional and taxonomic annotation of sequences using phylogenetic placement. Use when user asks to annotate sequences, classify sequences, identify metabolic markers, build or update reference packages, calculate relative abundance, or cluster sequences into phylogenetic OTUs.
 homepage: https://github.com/hallamlab/TreeSAPP
 ---
+
 
 # treesapp
 

@@ -3,7 +3,7 @@
 ## prottest
 
 ### Tool Description
-The provided text does not contain help information for prottest; it is a log of a failed container build/fetch process.
+ProtTest is a tool for selecting the best-fit model of amino-acid replacement for a given set of protein sequences.
 
 ### Metadata
 - **Docker Image**: biocontainers/prottest:v3.4.2dfsg-3-deb_cv1
@@ -15,55 +15,77 @@ The provided text does not contain help information for prottest; it is a log of
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/ddarriba/prottest3
-- **Stars**: 37
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/prottest:v3.4.2dfsg-3-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## prottest_prottest3
-
-### Tool Description
-ProtTest is a bioinformatic tool for the selection of best-fit models of aminoacid replacement. (Note: The provided text contained container runtime error messages rather than tool help text, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: biocontainers/prottest:v3.4.2dfsg-3-deb_cv1
-- **Homepage**: https://github.com/ddarriba/prottest3
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/prottest:v3.4.2dfsg-3-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## prottest_phyml
-
-### Tool Description
-ProtTest is a tool for selecting the best-fit model of protein evolution. (Note: The provided text contains container execution errors rather than help documentation, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: biocontainers/prottest:v3.4.2dfsg-3-deb_cv1
-- **Homepage**: https://github.com/ddarriba/prottest3
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/prottest:v3.4.2dfsg-3-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+-------------------------------------------------------------------------------------------------
+Basic usage: 
+ - Sequential version: 
+        java -jar prottest-3.4.2.jar -i align_file [OPTIONS]
+        ./prottest3 -i align_file [OPTIONS]
+ - Parallel version: 
+        mpjrun.sh -wdir $PWD/ -np [NUM_PROCS] -jar prottest-3.4.2.jar -i align_file [OPTIONS]
+OPTIONS:
+ -i alignment_filename
+            Alignment input file (required)
+ -t tree_filename
+            Tree file       (optional) [default: NJ tree]
+ -o output_filename
+            Output file     (optional) [default: standard output]
+ -log enabled/disabled
+            Enables / Disables PhyML logging into log directory (see prottest.properties)
+ -[matrix]
+            Include matrix (Amino-acid) = JTT LG DCMut MtREV MtMam MtArt Dayhoff WAG 
+	                                  RtREV CpREV Blosum62 VT HIVb HIVw FLU 
+                If you don't specify any matrix, all matrices displayed above will
+                be included.
+ -I
+            Include models with a proportion of invariable sites
+ -G
+            Include models with rate variation among sites and number of categories
+ -IG
+            include models with both +I and +G properties
+ -all-distributions
+            Include models with rate variation among sites, number of categories and both
+ -ncat number_of_categories
+            Define number of categories for +G and +I+G models [default: 4]
+ -F
+            Include models with empirical frequency estimation 
+ -AIC
+            Display models sorted by Akaike Information Criterion (AIC)
+ -BIC
+            Display models sorted by Bayesian Information Criterion (BIC)
+ -AICC
+            Display models sorted by Corrected Akaike Information Criterion (AICc)
+ -DT
+            Display models sorted by Decision Theory Criterion
+ -all
+            Displays a 7-framework comparison table
+ -S optimization_strategy
+            Optimization strategy mode: [default: 0]
+             		0: Fixed BIONJ JTT
+             		1: BIONJ Tree
+             		2: Maximum Likelihood tree
+             		3: User defined topology
+ -s moves
+            Tree search operation for ML search: 
+            NNI (fastest), SPR (slowest), BEST (best of NNI and SPR) [default: NNI]
+ -t1      				
+            Display best-model's newick tree [default: false]
+ -t2      				
+            Display best-model's ASCII tree  [default: false]
+ -tc consensus_threshold 
+            Display consensus tree with the specified threshold, between 0.5 and 1.0
+            [0.5 = majority rule consensus ; 1.0 = strict consensus]
+ -threads number_or_threads			
+            Number of threads requested to compute (only if MPJ is not used) [default: 1]
+ -verbose
+            Verbose mode [default: false]
+-------------------------------------------------------------------------------------------------
+Example: 
+- Sequential version:
+    java -jar prottest-3.4.2.jar -i align_file -t tree_file -S 0 -all-distributions -F -AIC -BIC -tc 0.5 > output
+- Parallel version:
+    mpjrun.sh -wdir $PWD/ -np 2 -jar prottest-3.4.2.jar -i align_file -t tree_file -S 0 -all-distributions -F -AIC -BIC -tc 0.5
 ```
 

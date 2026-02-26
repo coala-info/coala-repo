@@ -1,8 +1,9 @@
 ---
 name: amplicon_coverage_plot
-description: The `amplicov` tool (part of the `amplicon_coverage_plot` package) provides a specialized workflow for assessing sequencing performance across defined amplicons.
+description: This tool generates interactive coverage plots and summary reports to assess sequencing performance across defined amplicon regions. Use when user asks to visualize amplicon coverage, identify low-coverage regions, or generate a summary of ambiguous sites from BAM or BED files.
 homepage: https://github.com/chienchi/amplicon_coverage_plot
 ---
+
 
 # amplicon_coverage_plot
 

@@ -1,8 +1,9 @@
 ---
 name: r-acidexperiment
-description: R package acidexperiment (documentation from project home).
+description: This R package provides a toolkit for extending and enhancing the functionality of SummarizedExperiment objects within the Acid Genomics ecosystem. Use when user asks to manipulate metadata, perform data coercion between Bioconductor formats, filter low-quality genomic data, or aggregate replicates in SummarizedExperiment objects.
 homepage: https://cran.r-project.org/web/packages/acidexperiment/index.html
 ---
+
 
 # r-acidexperiment
 

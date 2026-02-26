@@ -1,8 +1,9 @@
 ---
 name: primalscheme
-description: `primalscheme` is a specialized bioinformatics tool that automates the design of primer sets for multiplex PCR, primarily used in viral surveillance and whole-genome sequencing.
+description: Primalscheme automates the design of tiled primer sets for multiplex PCR to enable whole-genome sequencing and viral surveillance. Use when user asks to design multiplex primer schemes, create tiled amplicons for viral sequencing, or generate conserved primers from a multi-sequence alignment.
 homepage: https://github.com/aresti/primalscheme
 ---
+
 
 # primalscheme
 

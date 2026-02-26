@@ -1,8 +1,9 @@
 ---
 name: r-plsgenomics
-description: "Routines for PLS-based genomic analyses,         implementing PLS methods for classification with         microarray data and prediction of transcription factor         activities from combined ChIP-chip analysis. The &gt;=1.2-1         versions include two new classification methods for microarray         data: GSIM and Ridge PLS. The &gt;=1.3 versions includes a         new classification method combining variable selection and         compression in logistic regression context: logit-SPLS; and         an adaptive version of the sparse PLS.</p>"
+description: The r-plsgenomics package provides partial least squares methods for classification and integration of high-dimensional genomic data. Use when user asks to perform PLS-based classification, predict transcription factor activities, or conduct variable selection on gene expression datasets.
 homepage: https://cran.r-project.org/web/packages/plsgenomics/index.html
 ---
+
 
 # r-plsgenomics
 

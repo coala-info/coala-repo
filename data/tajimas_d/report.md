@@ -3,7 +3,7 @@
 ## tajimas_d
 
 ### Tool Description
-A tool for calculating Tajima's D (Note: The provided help text contains only system error logs and no usage information).
+Compute Tajima's D, the Pi- or Watterson-Estimator for multiple sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tajimas_d:2.0.4--pyhdfd78af_0
@@ -18,13 +18,16 @@ A tool for calculating Tajima's D (Note: The provided help text contains only sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tajimas_d:2.0.4--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: tajimas_d [-h] -f PATH [-p] [-t] [-w]
+
+tajimas_d: Compute Tajima's D, the Pi- or Watterson-Estimator for multiple
+sequences.
+
+options:
+  -h, --help       show this help message and exit
+  -f, --file PATH  Path to fasta file with all sequences.
+  -p, --pi         Compute the Pi-Estimator score. (default)
+  -t, --tajima     Compute Tajima's D
+  -w, --watterson  Compute the Watterson-Estimator score.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: panfeed
-description: panfeed is a specialized k-mer counter designed for microbial pangenomics.
+description: panfeed is a k-mer counter that extracts gene-cluster-specific k-mer patterns from microbial pangenomes for association studies. Use when user asks to generate k-mer presence/absence matrices, perform fine-mapping of GWAS hits, or visualize k-mer positions relative to gene clusters.
 homepage: https://github.com/microbial-pangenomes-lab/panfeed
 ---
+
 
 # panfeed
 

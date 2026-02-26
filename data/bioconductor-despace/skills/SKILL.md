@@ -1,8 +1,9 @@
 ---
 name: bioconductor-despace
-description: the package is available on all platforms; click for details.
+description: DESpace identifies spatially variable genes and differential spatial variable patterns in spatial transcriptomics data using pre-annotated spatial clusters. Use when user asks to identify spatially variable genes, find differential spatial patterns across conditions, or perform individual cluster testing in SpatialExperiment or SingleCellExperiment objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/DESpace.html
 ---
+
 
 # bioconductor-despace
 

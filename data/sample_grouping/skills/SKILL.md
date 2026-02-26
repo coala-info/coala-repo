@@ -1,8 +1,9 @@
 ---
 name: sample_grouping
-description: The `sample_grouping` tool (also referred to as `fastq-groupmerge`) automates the process of concatenating sequencing reads from multiple FASTQ files into single, grouped files.
+description: The sample_grouping tool concatenates sequencing reads from multiple FASTQ files into single files based on experimental groups defined in a metadata file. Use when user asks to merge FASTQ files by sample group, concatenate sequencing reads from multiple lanes, or combine library preparations into a single biological unit.
 homepage: https://github.com/SantaMcCloud/Sample_grouping
 ---
+
 
 # sample_grouping
 

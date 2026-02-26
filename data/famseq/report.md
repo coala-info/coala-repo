@@ -1,12 +1,12 @@
 # famseq CWL Generation Report
 
-## famseq
+## famseq_FamSeq
 
 ### Tool Description
-A tool for family-based variant calling and filtering (Note: The provided help text contains only system error messages and no usage information).
+FamSeq is a tool for variant calling in family-based sequencing data, supporting VCF and likelihood-only formats using Bayesian networks, Elston-Stewart, or MCMC methods.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/famseq:1.0.3--h7d875b9_3
+- **Docker Image**: quay.io/biocontainers/famseq:1.0.3--h9948957_8
 - **Homepage**: http://bioinformatics.mdanderson.org/main/FamSeq
 - **Package**: https://anaconda.org/channels/bioconda/packages/famseq/overview
 - **Validation**: PASS
@@ -18,29 +18,41 @@ A tool for family-based variant calling and filtering (Note: The provided help t
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/famseq:1.0.3--h7d875b9_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1027830472: no space left on device
-```
+FamSeq: Version: 1.0.2
+Usage:	FamSeq <input type> [options]
 
+FamSeq accepts two kinds of input files: vcf file and likelihood only format file. If the input is vcf file, type 'FamSeq vcf [options]' in the command line. Type 'FamSeq LK [options]' if the input is likelihood only format. The user can only use only of them.
 
-## Metadata
-- **Skill**: generated
+Options:
 
-## famseq_FamSeqCuda
+-vcfFile	The name of input vcf file.
 
-### Tool Description
-FamSeq: A tool for variant calling in family sequencing data. (Note: The provided help text contains only system error messages regarding container image building and disk space; no specific command-line arguments could be extracted from the input.)
+-lkFile		The name of input likelihood only format file.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/famseq:1.0.3--h7d875b9_3
-- **Homepage**: http://bioinformatics.mdanderson.org/main/FamSeq
-- **Package**: https://anaconda.org/channels/bioconda/packages/famseq/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/famseq:1.0.3--h7d875b9_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3904723685: no space left on device
+-lkType	The likelihood type stored in the likelihood only format file. n:normal(default); log10: log10 scaled; ln: ln scaled; PS: phred scaled.
+
+-pedFile	The name of the file storing the pedigree information.
+
+-output		The name of output file
+
+-method		Choose the method used in variant calling. 1(default): Bayesian network; 2: Elston-Stewart algorithm; 3: MCMC.
+
+-mRate		Mutation rate. The default value is 1e-7
+
+-v		Only record the position at which the genotype is not RR in the output file. (R: reference allele, A: alternative allele).
+
+-a		Record all the position in the output file.
+
+-genoProbN	Genotype probability of three kinds of genotype for autosome in population (Pr(G)) when the variant is not in dbSNP. The default value is:  0.9985, 0.001 and 0.0005. The dbSNP position should be provided in column ID in input vcf file. 
+
+-genoProbK	Genotype probability of three kinds of genotype for autosome in population (Pr(G)) when the variant is in dbSNP. The default value is: 0.45, 0.1 and 0.45.
+
+-genoProbXN	Genotype probability of two kinds of genotype for chromosome X for male in population (Pr(G)) when the variant is not in dbSNP. The default value is: 0.999 and 0.001.
+
+-genoProbXK	Genotype probability of two kinds of genotype for chromosome X for male in population (Pr(G)) when the variant is in dbSNP. The default value is: 0.5 and 0.5.
+
+-numBurnIn	Number of burn in when the user chooses the MCMC method. The default value is 1,000n, where n is the number of individuals in the pedigree.
+
+-numRep		Number of iteration times when the user chooses MCMC method. The default value is 20,000n.
 ```
 

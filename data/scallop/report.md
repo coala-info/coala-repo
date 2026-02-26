@@ -3,7 +3,7 @@
 ## scallop
 
 ### Tool Description
-The provided text does not contain help information for the tool 'scallop'. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) attempting to fetch a Docker image.
+Scallop v0.10.5 (c) 2017 Mingfu Shao, Carl Kingsford, and Carnegie Mellon University
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scallop:0.10.5--hea69786_9
@@ -18,13 +18,37 @@ The provided text does not contain help information for the tool 'scallop'. It a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/scallop:0.10.5--hea69786_9 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Scallop v0.10.5 (c) 2017 Mingfu Shao, Carl Kingsford, and Carnegie Mellon University
+
+Usage: scallop -i <bam-file> -o <gtf-file> [options]
+
+Options:
+ --help                                      print usage of Scallop and exit
+ --version                                   print current version of Scallop and exit
+ --verbose <0, 1, 2>                         0: quiet; 1: one line for each graph; 2: with details, default: 1
+ --library_type <first, second, unstranded>  library type of the sample, default: unstranded
+ --min_transcript_coverage <float>           minimum coverage required for a multi-exon transcript, default: 1.01
+ --min_single_exon_coverage <float>          minimum coverage required for a single-exon transcript, default: 20
+ --min_transcript_length_increase <integer>  default: 50
+ --min_transcript_length_base <integer>      default: 150, minimum length of a transcript would be
+                                             --min_transcript_length_base + --min_transcript_length_increase * num-of-exons
+ --min_mapping_quality <integer>             ignore reads with mapping quality less than this value, default: 1
+ --max_num_cigar <integer>                   ignore reads with CIGAR size larger than this value, default: 7
+ --min_bundle_gap <integer>                  minimum distances required to start a new bundle, default: 50
+ --min_num_hits_in_bundle <integer>          minimum number of reads required in a bundle, default: 20
+ --min_flank_length <integer>                minimum match length in each side for a spliced read, default: 3
+ --min_splice_bundary_hits <integer>         minimum number of spliced reads required for a junction, default: 1
+
+      ___           ___           ___                                       ___           ___    
+     /  /\         /  /\         /  /\                                     /  /\         /  /\   
+    /  /:/_       /  /:/        /  /::\                                   /  /::\       /  /::\  
+   /  /:/ /\     /  /:/        /  /:/\:\    ___     ___   ___     ___    /  /:/\:\     /  /:/\:\ 
+  /  /:/ /::\   /  /:/  ___   /  /:/~/::\  /__/\   /  /\ /__/\   /  /\  /  /:/  \:\   /  /:/~/:/ 
+ /__/:/ /:/\:\ /__/:/  /  /\ /__/:/ /:/\:\ \  \:\ /  /:/ \  \:\ /  /:/ /__/:/ \__\:\ /__/:/ /:/  
+ \  \:\/:/~/:/ \  \:\ /  /:/ \  \:\/:/__\/  \  \:\  /:/   \  \:\  /:/  \  \:\ /  /:/ \  \:\/:/   
+  \  \::/ /:/   \  \:\  /:/   \  \::/        \  \:\/:/     \  \:\/:/    \  \:\  /:/   \  \::/    
+   \__\/ /:/     \  \:\/:/     \  \:\         \  \::/       \  \::/      \  \:\/:/     \  \:\    
+     /__/:/       \  \::/       \  \:\         \__\/         \__\/        \  \::/       \  \:\   
+     \__\/         \__\/         \__\/                                     \__\/         \__\/
 ```
 
-
-## Metadata
-- **Skill**: generated

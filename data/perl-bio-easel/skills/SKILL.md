@@ -1,8 +1,9 @@
 ---
 name: perl-bio-easel
-description: The `perl-bio-easel` package provides a Perl interface to Sean Eddy's Easel C library, which is the foundation for HMMER and Infernal.
+description: This tool provides a Perl interface to the Easel C library for high-performance biological sequence analysis and multiple sequence alignment manipulation. Use when user asks to manipulate multiple sequence alignments, generate consensus sequences, calculate relative entropy, or handle RNA secondary structure data in Stockholm format.
 homepage: https://github.com/nawrockie/Bio-Easel
 ---
+
 
 # perl-bio-easel
 

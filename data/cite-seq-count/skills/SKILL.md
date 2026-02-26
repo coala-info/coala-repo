@@ -1,8 +1,9 @@
 ---
 name: cite-seq-count
-description: The `cite-seq-count` skill enables the quantification of Antibody-Derived Tags (ADTs) or Hashtag Oligos (HTOs) from raw FASTQ files.
+description: "cite-seq-count quantifies Antibody-Derived Tags or Hashtag Oligos from raw FASTQ files to create UMI-based count matrices for multimodal single-cell analysis. Use when user asks to quantify ADTs or HTOs, configure barcode positions for different sequencing chemistries, or prepare tag count matrices for Seurat and Scanpy."
 homepage: https://hoohm.github.io/CITE-seq-Count/
 ---
+
 
 # cite-seq-count
 

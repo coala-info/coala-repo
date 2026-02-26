@@ -1,8 +1,9 @@
 ---
 name: isoncorrect
-description: isONcorrect is a specialized tool for error-correcting ONT cDNA reads.
+description: isONcorrect is a tool designed for error-correcting ONT cDNA reads by leveraging shared exon regions across isoforms. Use when user asks to error-correct transcriptomic reads, process gene-level clusters in batch, or improve the accuracy of low-abundance transcripts.
 homepage: https://github.com/ksahlin/isONcorrect
 ---
+
 
 # isoncorrect
 

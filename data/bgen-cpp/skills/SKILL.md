@@ -1,8 +1,9 @@
 ---
 name: bgen-cpp
-description: The `bgen-cpp` skill enables efficient manipulation of BGEN formatted genomic data.
+description: This tool provides C++ utilities for indexing, subsetting, merging, and converting BGEN formatted genomic data. Use when user asks to index BGEN files, extract variants by region or RSID, concatenate multiple BGEN files, modify file metadata, or convert BGEN to VCF format.
 homepage: https://enkre.net/cgi-bin/code/bgen/
 ---
+
 
 # bgen-cpp
 

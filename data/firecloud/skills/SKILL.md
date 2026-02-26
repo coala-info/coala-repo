@@ -1,8 +1,9 @@
 ---
 name: firecloud
-description: The `firecloud` skill (FISS) provides a programmatic and command-line interface for interacting with the FireCloud/Terra execution engine.
+description: The firecloud skill provides a programmatic and command-line interface for interacting with the FireCloud and Terra execution engines to automate workspace and workflow management. Use when user asks to manage workspaces, monitor workflows, perform batch operations on data entities, or clean up cloud storage costs using the mop utility.
 homepage: https://github.com/broadinstitute/fiss
 ---
+
 
 # firecloud
 

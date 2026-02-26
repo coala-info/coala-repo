@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beachmat.hdf5
-description: the package is available on all platforms; click for details.
+description: This package provides a C++ interface for efficient, native access to HDF5-backed matrices from the HDF5Array package within the beachmat framework. Use when user asks to interact natively with HDF5-backed matrices, eliminate R-level overhead for data extraction, or enable in-memory caching for file-backed data.
 homepage: https://bioconductor.org/packages/release/bioc/html/beachmat.hdf5.html
 ---
+
 
 # bioconductor-beachmat.hdf5
 

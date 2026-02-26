@@ -1,8 +1,9 @@
 ---
 name: busco
-description: BUSCO is a core bioinformatics tool used to provide a quantitative measure of biological sequence completeness.
+description: BUSCO provides a quantitative measure of biological sequence completeness by evaluating the presence of expected core genes. Use when user asks to assess assembly quality, check for missing or fragmented genes, or compare the completeness of different genome, transcriptome, or protein datasets.
 homepage: https://busco.ezlab.org
 ---
+
 
 # busco
 

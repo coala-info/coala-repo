@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htratfocusprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and metadata for the Affymetrix HT_Rat-Focus microarray. Use when user asks to access probe sequences, retrieve probe coordinates, or analyze interrogation positions for the htratfocus platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htratfocusprobe.html
 ---
+
 
 # bioconductor-htratfocusprobe
 

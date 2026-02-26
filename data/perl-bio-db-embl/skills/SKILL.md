@@ -1,8 +1,9 @@
 ---
 name: perl-bio-db-embl
-description: The `perl-bio-db-embl` tool provides a programmatic way to interact with the EMBL sequence database.
+description: This tool provides a programmatic interface for querying and retrieving sequence records from the EMBL database using Perl. Use when user asks to retrieve sequences by accession number, fetch genomic data from the European Nucleotide Archive, or perform batch sequence downloads within a Perl script.
 homepage: https://metacpan.org/release/Bio-DB-EMBL
 ---
+
 
 # perl-bio-db-embl
 

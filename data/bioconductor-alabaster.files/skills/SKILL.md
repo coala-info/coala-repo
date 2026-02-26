@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.files
-description: the package is available on all platforms; click for details.
+description: This tool saves and loads common bioinformatics file formats within the alabaster framework. Use when user asks to wrap files in reference classes, stage BAM or BigWig files for versioning, or embed external file references into Bioconductor data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.files.html
 ---
+
 
 # bioconductor-alabaster.files
 

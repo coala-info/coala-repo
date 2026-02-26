@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocio
-description: the package is available on all platforms; click for details.
+description: This tool provides standardized input and output operations for Bioconductor objects using the BiocIO framework. Use when user asks to import or export data, handle compressed file formats, or define new file-backed classes using the BiocFile hierarchy.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocIO.html
 ---
+
 
 # bioconductor-biocio
 

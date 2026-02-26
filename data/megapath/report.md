@@ -1,9 +1,9 @@
 # megapath CWL Generation Report
 
-## megapath
+## megapath_runMegaPath.sh
 
 ### Tool Description
-The provided text does not contain help information for megapath; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to pull the image due to insufficient disk space.
+Runs the MegaPath pipeline for sequence analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/megapath:2--h43eeafb_4
@@ -18,63 +18,79 @@ The provided text does not contain help information for megapath; it contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/megapath:2--h43eeafb_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3734421495: no space left on device
+Usage: /usr/local/bin/runMegaPath.sh -1 <read1.fq> -2 <read2.fq> [options]
+    -p  output prefix [megapath]
+    -t  number of threads [24]
+    -c  NT alignment score cutoff [40]
+    -s  SPIKE filter number of stdev [60]
+    -o  SPIKE overlap [0.5]
+    -L  max read length [150]
+    -d  database directory [/usr/local/MegaPath/db]
+    -S  Perform ribosome filtering
+    -H  skip human filtering
+    -A  Perform assembly & protein alignment
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## megapath_runMegaPath.sh
-
-### Tool Description
-MegaPath is a tool for pathogen detection. (Note: The provided help text contains only system error messages regarding container image conversion and disk space, and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/megapath:2--h43eeafb_4
-- **Homepage**: https://github.com/edwwlui/MegaPath
-- **Package**: https://anaconda.org/channels/bioconda/packages/megapath/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/megapath:2--h43eeafb_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1329393394: no space left on device
-```
 
 ## megapath_runMegaPath-Amplicon.sh
 
 ### Tool Description
-MegaPath-Amplicon analysis script (Note: The provided help text contains only system error messages and no usage information).
+Run MegaPath for amplicon sequencing.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/megapath:2--h43eeafb_4
 - **Homepage**: https://github.com/edwwlui/MegaPath
 - **Package**: https://anaconda.org/channels/bioconda/packages/megapath/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/megapath:2--h43eeafb_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1153301628: no space left on device
+Usage: /usr/local/bin/runMegaPath-Amplicon.sh -1 <read1.fq> -2 <read2.fq> [options]
+    -p  output prefix [megapath-amplicon]
+    -t  number of threads [45]
+    -L  max read length [250]
+    -d  database directory [/usr/local/MegaPath/db]
 ```
+
 
 ## megapath_bwa
 
 ### Tool Description
-Metagenomic pathogen detection pipeline (Note: The provided help text contains only system error messages and no usage information).
+alignment via Burrows-Wheeler transformation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/megapath:2--h43eeafb_4
 - **Homepage**: https://github.com/edwwlui/MegaPath
 - **Package**: https://anaconda.org/channels/bioconda/packages/megapath/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/megapath:2--h43eeafb_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2014972729: no space left on device
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.12-r1039
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage:   bwa <command> [options]
+
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries
+
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
 ```
 

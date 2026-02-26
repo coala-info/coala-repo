@@ -1,11 +1,59 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: deepmedic
+baseCommand: deepMedicRun
 label: deepmedic
-doc: "DeepMedic is a tool for 3D segmentation of medical images, typically using deep
-  learning (CNNs). Note: The provided text contains container runtime error messages
-  rather than tool usage instructions.\n\nTool homepage: https://github.com/Kamnitsask/deepmedic"
-inputs: []
+doc: "DeepMedic: A 3D multi-scale convolutional neural network framework for medical
+  image segmentation.\n\nTool homepage: https://github.com/Kamnitsask/deepmedic"
+inputs:
+  - id: device
+    type:
+      - 'null'
+      - string
+    doc: The device to run on (e.g., 'cpu', 'gpu', 'gpu0').
+    default: cpu
+    inputBinding:
+      position: 101
+      prefix: -dev
+  - id: load_saved_model
+    type:
+      - 'null'
+      - File
+    doc: Path to a saved model to load for training or testing.
+    inputBinding:
+      position: 101
+      prefix: -load
+  - id: model_config
+    type:
+      - 'null'
+      - File
+    doc: Path to the model configuration file.
+    inputBinding:
+      position: 101
+      prefix: -model
+  - id: reset_optimizer
+    type:
+      - 'null'
+      - boolean
+    doc: Reset the optimizer's state when loading a model.
+    inputBinding:
+      position: 101
+      prefix: -reset_opt
+  - id: test_config
+    type:
+      - 'null'
+      - File
+    doc: Path to the testing/inference configuration file.
+    inputBinding:
+      position: 101
+      prefix: -test
+  - id: train_config
+    type:
+      - 'null'
+      - File
+    doc: Path to the training configuration file.
+    inputBinding:
+      position: 101
+      prefix: -train
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-cppguess
-description: `ExtUtils::CppGuess` is a specialized Perl utility designed to bridge the gap between Perl's `ExtUtils::MakeMaker` or `Module::Build` and C++ code.
+description: "ExtUtils::CppGuess automates the detection of C++ compiler and linker flags for building Perl extensions. Use when user asks to integrate C++ code into Perl modules, configure build flags for ExtUtils::MakeMaker or Module::Build, and detect compiler environments across different operating systems."
 homepage: http://metacpan.org/pod/ExtUtils::CppGuess
 ---
+
 
 # perl-extutils-cppguess
 

@@ -1,8 +1,9 @@
 ---
 name: doubletdetection
-description: DoubletDetection is a Python-based tool designed to identify and enable the removal of doublets from scRNA-seq data.
+description: "DoubletDetection identifies and removes doublets from scRNA-seq data by training a classifier on synthetic doublets. Use when user asks to detect doublets in single-cell data, remove artifacts from count matrices, or filter out hybrid transcriptomes."
 homepage: https://github.com/JonathanShor/DoubletDetection
 ---
+
 
 # doubletdetection
 

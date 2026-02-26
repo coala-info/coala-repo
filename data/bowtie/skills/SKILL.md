@@ -1,8 +1,9 @@
 ---
 name: bowtie
-description: Bowtie is an ultrafast, memory-efficient short read aligner designed to map DNA sequences to large genomes.
+description: Bowtie is an ultrafast, memory-efficient short read aligner designed to map DNA sequences to large genomes using a Burrows-Wheeler index. Use when user asks to build a reference index, align short DNA reads to a genome, or perform exact and low-mismatch sequence mapping.
 homepage: https://github.com/BenLangmead/bowtie
 ---
+
 
 # bowtie
 

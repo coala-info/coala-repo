@@ -1,8 +1,9 @@
 ---
 name: rmap
-description: The `rmap` (rmapi) skill enables command-line interaction with the reMarkable Cloud.
+description: rmap provides a command-line interface for interacting with the reMarkable Cloud to manage files and directories. Use when user asks to list cloud contents, upload or download files, synchronize directories, and manage tablet metadata from the terminal.
 homepage: https://github.com/juruen/rmapi
 ---
+
 
 # rmap
 

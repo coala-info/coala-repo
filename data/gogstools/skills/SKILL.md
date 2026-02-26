@@ -1,8 +1,9 @@
 ---
 name: gogstools
-description: gogstools is a specialized suite of bioinformatics utilities designed to manage and refine Official Gene Sets.
+description: gogstools is a bioinformatics suite used to manage, merge, and refine Official Gene Sets by synchronizing automated annotations with manual curation results. Use when user asks to merge Apollo manual curations with base annotations, preserve and version gene identifiers, or convert GFF3 files to EMBL format for ENA submission.
 homepage: https://github.com/genouest/ogs-tools
 ---
+
 
 # gogstools
 

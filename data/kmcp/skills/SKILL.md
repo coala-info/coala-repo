@@ -1,8 +1,9 @@
 ---
 name: kmcp
-description: KMCP is a high-performance tool for metagenomic analysis that utilizes "pseudo-mapping" to align reads against reference genomes.
+description: KMCP is a high-performance metagenomic analysis tool that performs taxonomic profiling, sequence searching, and genome similarity estimation using k-mer-based pseudo-mapping. Use when user asks to perform metagenomic profiling, search reads against reference databases, estimate genome similarity via sketching, or detect pathogens in low-depth samples.
 homepage: https://github.com/shenwei356/kmcp
 ---
+
 
 # kmcp
 

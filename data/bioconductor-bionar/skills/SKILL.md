@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bionar
-description: the package is available on all platforms; click for details.
+description: This tool performs comprehensive biological network analysis and topological characterization of protein-protein interaction networks in R. Use when user asks to build networks, annotate vertices with functional or disease data, calculate centrality measures, perform community detection, or identify bridge proteins.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioNAR.html
 ---
+
 
 # bioconductor-bionar
 

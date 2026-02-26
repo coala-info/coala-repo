@@ -1,8 +1,9 @@
 ---
 name: perl-experimental
-description: The `experimental` pragma simplifies the use of Perl's evolving feature set.
+description: The experimental pragma enables or disables experimental Perl features and their associated warnings with a single declaration. Use when user asks to enable subroutine signatures, use native try/catch syntax, implement the new class syntax, or manage other evolving Perl features.
 homepage: http://metacpan.org/pod/experimental
 ---
+
 
 # perl-experimental
 

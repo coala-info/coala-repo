@@ -1,8 +1,9 @@
 ---
 name: hmftools-cider
-description: The `hmftools-cider` skill enables the extraction and identification of Complementary Determining Region 3 (CDR3) sequences from sequencing data.
+description: hmftools-cider extracts and identifies Complementary Determining Region 3 (CDR3) sequences from IG and TCR loci in sequencing data. Use when user asks to extract CDR3 sequences, identify immune repertoire diversity, or analyze clonal expansion from RNA or DNA samples.
 homepage: https://github.com/hartwigmedical/hmftools/blob/master/cider/README.md
 ---
+
 
 # hmftools-cider
 

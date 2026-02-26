@@ -1,8 +1,9 @@
 ---
 name: b2b-utils
-description: The `b2b-utils` suite is a specialized collection of bioinformatics tools developed by BASE2BIO, primarily written in Perl.
+description: The b2b-utils suite provides specialized bioinformatics utilities for iterative genomic assembly, viral sequence polishing, and efficient sequence file manipulation. Use when user asks to perform iterative assembly, polish viral genome terminals, interleave FASTQ files, generate consensus sequences from BAM files, or shrink bedgraph files.
 homepage: https://github.com/jvolkening/b2b-utils
 ---
+
 
 # b2b-utils
 

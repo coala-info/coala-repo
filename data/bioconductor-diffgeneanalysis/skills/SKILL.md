@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffgeneanalysis
-description: the package is available on all platforms; click for details.
+description: This tool performs differential gene expression analysis on microarray data using the associative T-test method. Use when user asks to normalize microarray intensities, adjust for multiplicative bias, or classify genes into expression groups based on background levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/diffGeneAnalysis.html
 ---
+
 
 # bioconductor-diffgeneanalysis
 

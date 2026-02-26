@@ -1,8 +1,9 @@
 ---
 name: google-sparsehash
-description: The `google-sparsehash` library provides several C++ hash-table implementations with distinct performance profiles.
+description: The google-sparsehash library provides memory-efficient and high-speed C++ hash-table implementations including sparse and dense maps and sets. Use when user asks to optimize memory usage with sparse hash tables, achieve high-speed lookups with dense hash tables, or serialize hash-table data to disk.
 homepage: https://github.com/benvanik/sparsehash
 ---
+
 
 # google-sparsehash
 

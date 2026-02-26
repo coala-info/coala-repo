@@ -1,8 +1,9 @@
 ---
 name: perl-integer
-description: The perl-integer (ngrams) tool is a C++ implementation designed for efficient character and word n-gram analysis.
+description: The perl-integer tool performs efficient character, word, and byte n-gram analysis using a Ternary Search Tree for frequency counting. Use when user asks to analyze word sequences, perform character-level pattern matching, or identify recurring byte sequences in binary files.
 homepage: https://github.com/jerry2yu/ngrams
 ---
+
 
 # perl-integer
 

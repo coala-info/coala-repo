@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spectra
-description: the package is available on all platforms; click for details.
+description: The bioconductor-spectra package provides a standardized infrastructure for representing and processing mass spectrometry data in R. Use when user asks to process mass spectrometry data, manipulate MS spectra, or manage large-scale proteomics and metabolomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/Spectra.html
 ---
+
 
 # bioconductor-spectra
 

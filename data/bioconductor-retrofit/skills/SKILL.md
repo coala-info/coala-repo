@@ -1,8 +1,9 @@
 ---
 name: bioconductor-retrofit
-description: the package is available on all platforms; click for details.
+description: Retrofit performs reference-free deconvolution of spatial transcriptomics data to estimate cell type compositions. Use when user asks to deconvolve spatial transcriptomics data, estimate cell type proportions without a reference, or analyze cell type distributions in spatial datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/retrofit.html
 ---
+
 
 # bioconductor-retrofit
 

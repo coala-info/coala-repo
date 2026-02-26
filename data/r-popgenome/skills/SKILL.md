@@ -1,8 +1,9 @@
 ---
 name: r-popgenome
-description: R package popgenome (documentation from project home).
+description: PopGenome is an R package for efficient population genetics and evolutionary genomics analysis of large-scale datasets. Use when user asks to calculate neutrality tests, diversity statistics, linkage disequilibrium, FST, or perform sliding window genomic scans.
 homepage: https://cran.r-project.org/web/packages/popgenome/index.html
 ---
+
 
 # r-popgenome
 

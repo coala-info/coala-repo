@@ -1,8 +1,9 @@
 ---
 name: itol-config
-description: The `itol-config` tool simplifies the process of creating annotation files for iTOL.
+description: This tool generates iTOL annotation files by mapping CSV metadata to specific visual styles like color strips, text labels, and matrices. Use when user asks to create iTOL configuration files, map metadata to phylogenetic trees, or generate tree annotation templates from CSV data.
 homepage: https://github.com/jodyphelan/itol-config
 ---
+
 
 # itol-config
 

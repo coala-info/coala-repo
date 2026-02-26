@@ -2,10 +2,38 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: assembly-scan
 label: assembly-scan
-doc: "The provided text is a system error log regarding a container build failure
-  ('no space left on device') and does not contain the help documentation for the
-  tool. Consequently, no arguments could be extracted.\n\nTool homepage: https://github.com/rpetit3/assembly-scan"
-inputs: []
+doc: "Generate statistics for a given assembly.\n\nTool homepage: https://github.com/rpetit3/assembly-scan"
+inputs:
+  - id: assembly
+    type: File
+    doc: FASTA file to read (gzip or uncompressed)
+    inputBinding:
+      position: 1
+  - id: json
+    type:
+      - 'null'
+      - boolean
+    doc: Print output in a JSON format
+    inputBinding:
+      position: 102
+      prefix: --json
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: ID to use for output
+    default: basename of assembly
+    inputBinding:
+      position: 102
+      prefix: --prefix
+  - id: transpose
+    type:
+      - 'null'
+      - boolean
+    doc: Print output in a transposed tab-delimited format
+    inputBinding:
+      position: 102
+      prefix: --transpose
 outputs:
   - id: stdout
     type: stdout

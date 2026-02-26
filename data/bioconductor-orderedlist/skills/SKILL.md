@@ -1,8 +1,9 @@
 ---
 name: bioconductor-orderedlist
-description: the package is available on all platforms; click for details.
+description: This tool compares and combines ordered gene lists from different studies to detect similarity. Use when user asks to compare ranked gene lists, calculate similarity scores between experiments, or identify overlapping elements in ordered data.
 homepage: https://bioconductor.org/packages/release/bioc/html/OrderedList.html
 ---
+
 
 # bioconductor-orderedlist
 

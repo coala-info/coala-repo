@@ -1,8 +1,9 @@
 ---
 name: bioconductor-poma
-description: the package is available on all platforms; click for details.
+description: "POMA is a Bioconductor package for the statistical analysis and visualization of metabolomics data. Use when user asks to preprocess metabolomics datasets, perform normalization, or conduct exploratory data analysis and statistical modeling."
 homepage: https://bioconductor.org/packages/release/bioc/html/POMA.html
 ---
+
 
 # bioconductor-poma
 

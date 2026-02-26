@@ -1,8 +1,9 @@
 ---
 name: r-samr
-description: Significance Analysis of Microarrays for differential expression analysis, RNAseq data and related problems.</p>
+description: The r-samr tool performs Significance Analysis of Microarrays to identify differentially expressed genes in microarray and sequencing data while controlling the False Discovery Rate. Use when user asks to identify significant features in genomic data, perform differential expression analysis, calculate False Discovery Rates via permutations, or analyze two-class, multiclass, quantitative, and survival outcomes.
 homepage: https://cran.r-project.org/web/packages/samr/index.html
 ---
+
 
 # r-samr
 

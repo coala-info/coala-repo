@@ -1,8 +1,9 @@
 ---
 name: fido
-description: Fido is a specialized PowerShell utility designed to streamline access to official Microsoft retail ISOs.
+description: Fido is a PowerShell utility that retrieves direct download links for official Microsoft Windows retail ISOs. Use when user asks to download Windows ISOs, retrieve official Microsoft download URLs, or list available Windows releases and architectures.
 homepage: https://github.com/pbatard/Fido
 ---
+
 
 # fido
 

@@ -1,8 +1,9 @@
 ---
 name: pypairs
-description: `pypairs` is a Python-based implementation of the Pairs algorithm, specifically optimized for single-cell transcriptomics.
+description: pypairs is a Python-based tool for classifying single-cell transcriptomics data using gene expression pairs. Use when user asks to identify marker gene pairs, predict cell cycle phases, or classify cells using the Pairs algorithm within the Scanpy ecosystem.
 homepage: https://github.com/rfechtner/pypairs
 ---
+
 
 # pypairs
 

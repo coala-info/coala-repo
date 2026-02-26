@@ -1,9 +1,9 @@
 # mantis_pfa CWL Generation Report
 
-## mantis_pfa
+## mantis_pfa_mantis
 
 ### Tool Description
-Mantis: Protein Function Annotation. (Note: The provided text is an error log and does not contain usage information or argument definitions.)
+Mantis is a k-mer based sequence analysis tool.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
@@ -18,11 +18,89 @@ Mantis: Protein Function Annotation. (Note: The provided text is an error log an
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mantis:0.2--h4a1dfb3_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2304084573: no space left on device
+There is no command "--help"
+        mantis build [-e] -s <log-slots> -i <input_list> -o <build_output>
+        mantis mst -p <index_prefix> [-t <num_threads>] (-k|-d)
+        mantis validatemst -p <index_prefix> -n <num_experiments>
+        mantis query [-1] [-j] [-k <kmer>] -p <query_prefix> [-o <output_file>] <query>
+        mantis validate -i <input_list> -p <dbg_prefix> <query>
+        mantis stats -p <index_prefix> -n <number_of_samples> [-t <type>] [-j <size-of-jmer>]
+        mantis help
+        mantis -v
 ```
 
 
-## Metadata
-- **Skill**: generated
+## mantis_pfa_mantis setup
+
+### Tool Description
+Mantis is a k-mer based sequence analysis tool.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
+- **Homepage**: https://github.com/PedroMTQ/Mantis
+- **Package**: https://anaconda.org/channels/bioconda/packages/mantis_pfa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+There is no command "setup"
+        mantis build [-e] -s <log-slots> -i <input_list> -o <build_output>
+        mantis mst -p <index_prefix> [-t <num_threads>] (-k|-d)
+        mantis validatemst -p <index_prefix> -n <num_experiments>
+        mantis query [-1] [-j] [-k <kmer>] -p <query_prefix> [-o <output_file>] <query>
+        mantis validate -i <input_list> -p <dbg_prefix> <query>
+        mantis stats -p <index_prefix> -n <number_of_samples> [-t <type>] [-j <size-of-jmer>]
+        mantis help
+        mantis -v
+```
+
+
+## mantis_pfa_mantis check
+
+### Tool Description
+Mantis is a k-mer based sequence analysis tool.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
+- **Homepage**: https://github.com/PedroMTQ/Mantis
+- **Package**: https://anaconda.org/channels/bioconda/packages/mantis_pfa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+There is no command "check"
+        mantis build [-e] -s <log-slots> -i <input_list> -o <build_output>
+        mantis mst -p <index_prefix> [-t <num_threads>] (-k|-d)
+        mantis validatemst -p <index_prefix> -n <num_experiments>
+        mantis query [-1] [-j] [-k <kmer>] -p <query_prefix> [-o <output_file>] <query>
+        mantis validate -i <input_list> -p <dbg_prefix> <query>
+        mantis stats -p <index_prefix> -n <number_of_samples> [-t <type>] [-j <size-of-jmer>]
+        mantis help
+        mantis -v
+```
+
+
+## mantis_pfa_mantis check_sql
+
+### Tool Description
+Mantis is a k-mer based sequence analysis tool.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mantis:0.2--h4a1dfb3_4
+- **Homepage**: https://github.com/PedroMTQ/Mantis
+- **Package**: https://anaconda.org/channels/bioconda/packages/mantis_pfa/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+There is no command "check_sql"
+        mantis build [-e] -s <log-slots> -i <input_list> -o <build_output>
+        mantis mst -p <index_prefix> [-t <num_threads>] (-k|-d)
+        mantis validatemst -p <index_prefix> -n <num_experiments>
+        mantis query [-1] [-j] [-k <kmer>] -p <query_prefix> [-o <output_file>] <query>
+        mantis validate -i <input_list> -p <dbg_prefix> <query>
+        mantis stats -p <index_prefix> -n <number_of_samples> [-t <type>] [-j <size-of-jmer>]
+        mantis help
+        mantis -v
+```
+

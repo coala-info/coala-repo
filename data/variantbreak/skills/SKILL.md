@@ -1,8 +1,9 @@
 ---
 name: variantbreak
-description: variantbreak is a structural variant analyzer designed to consolidate SV data from multiple samples into a unified format.
+description: variantbreak consolidates, intersects, merges, annotates, and filters structural variant data from multiple samples into a unified format. Use when user asks to consolidate structural variant data, merge structural variant breakends, annotate structural variants, filter structural variants, analyze structural variants, or prepare structural variant data for visualization.
 homepage: https://github.com/cytham/variantbreak
 ---
+
 
 # variantbreak
 

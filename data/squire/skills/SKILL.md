@@ -1,8 +1,9 @@
 ---
 name: squire
-description: SQuIRE (Software for Quantifying Interspersed Repeat Expression) is a comprehensive pipeline designed to provide a locus-specific view of transposable element expression.
+description: SQuIRE is a comprehensive pipeline for the locus-specific quantification and differential expression analysis of transposable element expression from RNA-seq data. Use when user asks to download genome-specific repeat data, clean repeat annotations, align reads to transposable elements, quantify specific repeat loci, or perform differential expression analysis of repeats.
 homepage: https://github.com/wyang17/SQuIRE
 ---
+
 
 # squire
 

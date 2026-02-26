@@ -1,8 +1,9 @@
 ---
 name: pangolin
-description: Pangolin (Phylogenetic Assignment of Named Global Outbreak LINeages) is the standard bioinformatics tool for identifying SARS-CoV-2 lineages from genomic data.
+description: Pangolin identifies SARS-CoV-2 lineages from genomic sequences using phylogenetic assignment models. Use when user asks to assign Pango lineages to viral sequences, update lineage data, or analyze SARS-CoV-2 FASTA files.
 homepage: https://github.com/hCoV-2019/pangolin
 ---
+
 
 # pangolin
 

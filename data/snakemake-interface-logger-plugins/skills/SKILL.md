@@ -1,8 +1,9 @@
 ---
 name: snakemake-interface-logger-plugins
-description: The `snakemake-interface-logger-plugins` package provides the foundational Python interface for building Snakemake logger plugins.
+description: This package provides the Python interface for developing custom Snakemake logger plugins to capture and redirect execution events. Use when user asks to create a custom log handler, migrate legacy log handler scripts to the modern plugin architecture, or implement specialized logging for Snakemake events.
 homepage: https://github.com/snakemake/snakemake-interface-logger-plugins
 ---
+
 
 # snakemake-interface-logger-plugins
 

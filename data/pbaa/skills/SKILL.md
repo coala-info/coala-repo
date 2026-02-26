@@ -1,8 +1,9 @@
 ---
 name: pbaa
-description: The PacBio Amplicon Analysis (pbaa) tool is a specialized suite for processing HiFi (High Fidelity) amplicon data.
+description: The PacBio Amplicon Analysis tool processes HiFi amplicon data to separate complex sequence mixtures into high-quality consensus alleles. Use when user asks to cluster amplicon reads, resolve alleles in polymorphic regions, or visualize clustering results with BAM painting.
 homepage: https://github.com/PacificBiosciences/pbAA
 ---
+
 
 # pbaa
 

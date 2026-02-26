@@ -3,7 +3,7 @@
 ## marvel
 
 ### Tool Description
-A tool for phylogenetic analysis (Note: The provided help text contains only container execution errors and no usage information).
+Predict phage draft genomes in metagenomic bins.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/marvel:0.2--py39hdfd78af_4
@@ -18,29 +18,32 @@ A tool for phylogenetic analysis (Note: The provided help text contains only con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/marvel:0.2--py39hdfd78af_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2139756983: no space left on device
-```
+usage: marvel [-h] [-i INPUT_FOLDER] [-t THREADS] [-o OUTDIR] [-m CTGMINLEN]
+              [-c CONFIDENCE] [-d DATABASEDIR] [-f] [-v] [--debug] [--keep]
+              [--cite]
 
+Predic phage draft genomes in metagenomic bins.
 
-## Metadata
-- **Skill**: generated
-
-## marvel_download_and_set_models.py
-
-### Tool Description
-Download and set models for MARVEL
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/marvel:0.2--py39hdfd78af_4
-- **Homepage**: http://github.com/quadram-institute-bioscience/marvel/
-- **Package**: https://anaconda.org/channels/bioconda/packages/marvel/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/marvel:0.2--py39hdfd78af_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3633081117: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT_FOLDER, --input-dir INPUT_FOLDER
+                        Path to a folder containing metagenomic bins in .fa or
+                        .fasta format
+  -t THREADS, --threads THREADS
+                        Number of CPU threads to be used by Prokka and hmmscan
+                        (default=1)
+  -o OUTDIR, --output-dir OUTDIR
+                        Output directory
+  -m CTGMINLEN, --min-len CTGMINLEN
+                        Bin minimum size
+  -c CONFIDENCE, --confidence CONFIDENCE
+                        Confidence threshold
+  -d DATABASEDIR, --db DATABASEDIR
+                        Database directory
+  -f, --force           Force overwrite
+  -v, --verbose         Print verbose output
+  --debug               Enable debug mode
+  --keep                Keep all intermediate files
+  --cite                Show citations
 ```
 

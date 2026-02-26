@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mfascicularis.ncbi.5.0
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the Macaca fascicularis (long-tailed macaque) based on the NCBI 5.0 assembly. Use when user asks to access macaque genomic sequences, extract specific chromosome data, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mfascicularis.NCBI.5.0.html
 ---
+
 
 # bioconductor-bsgenome.mfascicularis.ncbi.5.0
 

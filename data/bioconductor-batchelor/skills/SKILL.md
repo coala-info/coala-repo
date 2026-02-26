@@ -1,8 +1,9 @@
 ---
 name: bioconductor-batchelor
-description: the package is available on all platforms; click for details.
+description: The batchelor package provides methods for correcting batch effects in single-cell RNA sequencing data using mutual nearest neighbors and other integration techniques. Use when user asks to correct batch effects, integrate single-cell datasets, perform multi-batch normalization, or run fastMNN.
 homepage: https://bioconductor.org/packages/release/bioc/html/batchelor.html
 ---
+
 
 # bioconductor-batchelor
 

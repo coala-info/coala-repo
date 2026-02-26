@@ -1,8 +1,9 @@
 ---
 name: constellations
-description: The constellations skill provides the procedural knowledge required to work with the standardized SARS-CoV-2 mutation definition sets maintained by the cov-lineages group.
+description: This tool provides standardized SARS-CoV-2 mutation definitions and classification rules for the scorpio engine. Use when user asks to define mutation nomenclature, set lineage classification rules, or manage hierarchical relationships between viral variants.
 homepage: https://github.com/cov-lineages/constellations
 ---
+
 
 # constellations
 

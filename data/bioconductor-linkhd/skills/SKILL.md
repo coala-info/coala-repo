@@ -1,8 +1,9 @@
 ---
 name: bioconductor-linkhd
-description: the package is available on all platforms; click for details.
+description: LinkHD integrates multiple heterogeneous datasets sharing common observations using the STATIS-ACT framework to find a consensus structure. Use when user asks to integrate multi-omics data, perform sample clustering across multiple tables, identify key variables through biplot regression, or detect differentially abundant features.
 homepage: https://bioconductor.org/packages/release/bioc/html/LinkHD.html
 ---
+
 
 # bioconductor-linkhd
 

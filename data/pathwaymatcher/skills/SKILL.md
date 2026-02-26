@@ -1,8 +1,9 @@
 ---
 name: pathwaymatcher
-description: PathwayMatcher is a Java-based command-line tool designed to bridge the gap between raw omics data and functional biological pathways.
+description: PathwayMatcher maps omics data, including genes, proteins, and proteoforms, to functional biological pathways and reactions in the Reactome database. Use when user asks to map identifiers to pathways, perform proteoform-specific analysis, or generate biological interaction networks.
 homepage: https://github.com/LuisFranciscoHS/PathwayMatcher
 ---
+
 
 # pathwaymatcher
 

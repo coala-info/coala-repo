@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtcga.clinical
-description: the package is available on all platforms; click for details.
+description: This R package provides clinical data from The Cancer Genome Atlas (TCGA) for bioinformatic analysis. Use when user asks to download TCGA clinical datasets, access patient metadata, or retrieve survival information for cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.clinical.html
 ---
+
 
 # bioconductor-rtcga.clinical
 

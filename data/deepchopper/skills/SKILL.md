@@ -1,8 +1,9 @@
 ---
 name: deepchopper
-description: DeepChopper is a specialized tool for bioinformaticians working with Nanopore Direct RNA-seq.
+description: DeepChopper identifies and splits chimeric artifact sequences in Nanopore Direct RNA-seq data using a genomic language model. Use when user asks to detect chimera junctions, chop reads into constituent parts, or predict artifacts in FASTQ files.
 homepage: https://github.com/ylab-hi/DeepChopper
 ---
+
 
 # deepchopper
 

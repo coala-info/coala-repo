@@ -1,8 +1,9 @@
 ---
 name: barcodeforge
-description: barcodeforge is a specialized command-line utility designed to extend the capabilities of Freyja, a tool used for recovering lineage abundances from mixed genomic samples (primarily wastewater).
+description: "barcodeforge generates custom lineage-defining mutation barcodes from phylogenetic trees for use with the Freyja genomic deconvolution tool. Use when user asks to create custom barcodes from mutation-annotated trees, identify lineage-defining mutations, or adapt Freyja for specific pathogens."
 homepage: https://github.com/andersen-lab/BarcodeForge
 ---
+
 
 # barcodeforge
 

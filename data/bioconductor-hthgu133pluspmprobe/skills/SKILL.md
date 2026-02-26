@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133pluspmprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and location information for the Affymetrix HT_HG-U133_Plus_PM microarray platform. Use when user asks to access nucleotide sequences, map probe coordinates to probe set names, or perform GC-content based normalization for HT-HG-U133 Plus PM arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133pluspmprobe.html
 ---
+
 
 # bioconductor-hthgu133pluspmprobe
 

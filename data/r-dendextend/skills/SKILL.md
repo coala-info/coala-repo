@@ -1,8 +1,9 @@
 ---
 name: r-dendextend
-description: "Offers a set of functions for extending     'dendrogram' objects in R, letting you visualize and compare trees of     'hierarchical clusterings'. You can (1) Adjust a tree's graphical parameters     - the color, size, type, etc of its branches, nodes and labels. (2)     Visually and statistically compare different 'dendrograms' to one another.</p>"
+description: The r-dendextend package provides a comprehensive set of tools for manipulating, visualizing, and comparing dendrogram objects in R. Use when user asks to modify dendrogram aesthetics, compare multiple trees using tanglegrams, calculate tree correlations, or integrate hierarchical clustering with ggplot2 and heatmaps.
 homepage: https://cloud.r-project.org/web/packages/dendextend/index.html
 ---
+
 
 # r-dendextend
 

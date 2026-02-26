@@ -1,8 +1,9 @@
 ---
 name: consent
-description: CONSENT (Scalable long read self-correction and assembly polishing) is a tool designed to handle the high error rates associated with long-read sequencing technologies.
+description: CONSENT performs self-correction of long-read sequencing data and assembly polishing using a combination of multiple sequence alignment and local de Bruijn graphs. Use when user asks to correct errors in PacBio or Oxford Nanopore reads, improve the base-level accuracy of draft assemblies, or perform assembly polishing.
 homepage: https://github.com/morispi/CONSENT
 ---
+
 
 # consent
 

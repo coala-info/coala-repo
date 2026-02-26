@@ -1,8 +1,9 @@
 ---
 name: ascat
-description: The `ascat` skill provides a specialized workflow for the Allele-Specific Copy number Analysis of Tumors.
+description: The ascat tool performs allele-specific copy number analysis of tumor samples to estimate purity, ploidy, and discrete copy number states from genomic signals. Use when user asks to load tumor and germline data, perform allele-specific segmentation, estimate tumor purity and ploidy, or process high-throughput sequencing data for copy number profiling.
 homepage: https://www.crick.ac.uk/research/a-z-researchers/researchers-v-y/peter-van-loo/software/
 ---
+
 
 # ascat
 

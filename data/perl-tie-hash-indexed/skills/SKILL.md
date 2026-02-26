@@ -1,8 +1,9 @@
 ---
 name: perl-tie-hash-indexed
-description: This skill facilitates the management of ordered associative arrays in Perl using the `Tie::Hash::Indexed` module.
+description: This tool manages ordered associative arrays in Perl using the high-performance Tie::Hash::Indexed XS module. Use when user asks to maintain key-value sequence in hashes, perform optimized in-place arithmetic on hash elements, or iterate through data structures in a specific order.
 homepage: https://metacpan.org/pod/Tie::Hash::Indexed
 ---
+
 
 # perl-tie-hash-indexed
 

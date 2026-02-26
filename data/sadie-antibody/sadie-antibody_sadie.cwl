@@ -2,9 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: sadie
 label: sadie-antibody_sadie
-doc: "The provided text does not contain help information or usage instructions. It
-  appears to be a container runtime error log.\n\nTool homepage: https://sadie.jordanrwillis.com"
-inputs: []
+doc: "SADIE Antibody Analysis\n\nTool homepage: https://sadie.jordanrwillis.com"
+inputs:
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Vebosity level, ex. -vvvvv for debug level logging
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

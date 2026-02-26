@@ -1,8 +1,9 @@
 ---
 name: ucsc-farc
-description: "The `faRc` (ucsc-farc) utility is a specialized tool from the UCSC Genome Browser \"kent\" source tree designed for a single, high-performance task: generating the reverse complement of DNA sequences stored in FASTA format."
+description: The ucsc-farc tool generates the reverse complement of DNA sequences in FASTA format. Use when user asks to 'reverse complement DNA sequences'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-farc
 

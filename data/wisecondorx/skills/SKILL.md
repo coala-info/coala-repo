@@ -1,8 +1,9 @@
 ---
 name: wisecondorx
-description: WisecondorX is an advanced tool for detecting copy number aberrations, optimized for low-coverage sequencing (0.1x - 1x).
+description: WisecondorX detects copy number aberrations from low-coverage sequencing data. Use when user asks to convert alignment files, build a reference model, predict copy number aberrations, analyze NIPT data, or visualize CNV results.
 homepage: https://github.com/CenterForMedicalGeneticsGhent/wisecondorX
 ---
+
 
 # wisecondorx
 

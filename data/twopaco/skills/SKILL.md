@@ -1,8 +1,9 @@
 ---
 name: twopaco
-description: TwoPaCo (Two-Pass Compacted de Bruijn graph constructor) is a high-performance tool designed to build compacted de Bruijn graphs from large sets of complete genomes.
+description: TwoPaCo builds compacted de Bruijn graphs from large sets of complete genomes. Use when user asks to build de Bruijn graphs, convert graphs to GFA or DOT format, or visualize graphs.
 homepage: https://github.com/medvedevgroup/TwoPaCo
 ---
+
 
 # twopaco
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-piano
-description: the package is available on all platforms; click for details.
+description: This package performs integrated gene set analysis using various statistical methods and consensus scoring. Use when user asks to perform gene set enrichment analysis, run multiple GSA methods, calculate consensus scores, or visualize enrichment results.
 homepage: https://bioconductor.org/packages/release/bioc/html/piano.html
 ---
+
 
 # bioconductor-piano
 

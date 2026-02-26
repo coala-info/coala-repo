@@ -1,8 +1,9 @@
 ---
 name: r-qqman
-description: Create Q-Q and manhattan plots for GWAS data from PLINK results.</p>
+description: The r-qqman package provides functions for visualizing genome-wide association study results through Manhattan and Quantile-Quantile plots. Use when user asks to create Manhattan plots, generate Q-Q plots for p-value distributions, or visualize genomic coordinates against significance levels.
 homepage: https://cloud.r-project.org/web/packages/qqman/index.html
 ---
+
 
 # r-qqman
 

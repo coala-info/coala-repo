@@ -1,8 +1,9 @@
 ---
 name: pb-falcon
-description: The `pb-falcon` skill provides guidance on using the FALCON/Unzip suite, a set of tools designed for the assembly of long-read data into highly accurate, contiguous, and phased diploid genome assemblies.
+description: The pb-falcon tool assembles long-read genomic data into phased diploid genome assemblies using the pypeFLOW workflow engine. Use when user asks to assemble long-read data, manage genomic pipelines with pypeFLOW, or configure resource allocation for large-scale genome assembly.
 homepage: https://github.com/PacificBiosciences/pypeFLOW
 ---
+
 
 # pb-falcon
 

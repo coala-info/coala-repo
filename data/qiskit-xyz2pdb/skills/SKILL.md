@@ -1,8 +1,9 @@
 ---
 name: qiskit-xyz2pdb
-description: The `qiskit-xyz2pdb` tool is a specialized utility designed to transform raw XYZ coordinate outputs from quantum protein folding simulations into the standard Protein Data Bank (PDB) format.
+description: This tool converts XYZ coordinate outputs from quantum protein folding simulations into the standard Protein Data Bank (PDB) format. Use when user asks to transform simulation results for visualization, convert alpha carbon coordinates to PDB files, or prepare quantum folding data for structural biology workflows.
 homepage: https://github.com/thepineapplepirate/qiskit-xyz2pdb
 ---
+
 
 # qiskit-xyz2pdb
 

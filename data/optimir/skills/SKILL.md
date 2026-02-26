@@ -1,8 +1,9 @@
 ---
 name: optimir
-description: OptimiR is a specialized alignment workflow designed for small RNA-seq data that integrates individual genetic information.
+description: "OptimiR is a specialized alignment workflow for small RNA-seq data that integrates genetic variants to create personalized miRNA reference libraries. Use when user asks to align small RNA-seq reads with personalized genotypes, quantify allele-specific expression, or characterize isomiR modifications."
 homepage: https://github.com/FlorianThibord/OptimiR
 ---
+
 
 # optimir
 

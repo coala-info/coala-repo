@@ -1,8 +1,9 @@
 ---
 name: comut
-description: The `comut` skill provides guidance on using the CoMut Python library to generate publication-quality comutation plots.
+description: The comut tool provides guidance on using the CoMut Python library to create publication-quality comutation plots for visualizing genomic and clinical data. Use when user asks to generate comutation plots, visualize mutation distributions across cohorts, or integrate clinical metadata with genomic data layers.
 homepage: https://github.com/vanallenlab/comut
 ---
+
 
 # comut
 

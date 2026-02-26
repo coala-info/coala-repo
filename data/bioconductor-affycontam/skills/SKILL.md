@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affycontam
-description: the package is available on all platforms; click for details.
+description: This tool simulates quality issues in Affymetrix microarray data by injecting artificial defects into AffyBatch objects. Use when user asks to evaluate microarray quality metrics, simulate circular or rectangular artifacts, or perform sensitivity analysis on outlier detection algorithms.
 homepage: https://bioconductor.org/packages/release/bioc/html/affyContam.html
 ---
+
 
 # bioconductor-affycontam
 

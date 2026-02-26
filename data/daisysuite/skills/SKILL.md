@@ -1,8 +1,9 @@
 ---
 name: daisysuite
-description: DaisySuite is a specialized bioinformatics pipeline designed for the identification of Horizontal Gene Transfer (HGT) through a mapping-based approach.
+description: DaisySuite is a bioinformatics pipeline that identifies horizontal gene transfer events using a mapping-based approach. Use when user asks to identify horizontal gene transfer, process sequencing data to find genetic breakpoints, or simulate synthetic transfer events.
 homepage: https://gitlab.com/eseiler/DaisySuite
 ---
+
 
 # daisysuite
 

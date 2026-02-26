@@ -1,8 +1,9 @@
 ---
 name: mtbls-factors-viz
-description: The `mtbls-factors-viz` tool provides a specialized R-based visualization for metabolomics study metadata.
+description: This tool generates Parallel Sets Hammock plots to visualize relationships and distributions between experimental factors in metabolomics study metadata. Use when user asks to visualize study design factors, identify metadata redundancies, or check for experimental imbalances in MetaboLights studies.
 homepage: https://github.com/phnmnl/container-mtbls-factors-viz
 ---
+
 
 # mtbls-factors-viz
 

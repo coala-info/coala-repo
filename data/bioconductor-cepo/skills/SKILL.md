@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cepo
-description: the package is available on all platforms; click for details.
+description: "Cepo identifies genes that define cell identity by calculating differential stability across cell types in single-cell transcriptomic data. Use when user asks to identify cell-type-specific marker genes, calculate differential stability metrics, or find genes with stable expression patterns in large single-cell atlases."
 homepage: https://bioconductor.org/packages/release/bioc/html/Cepo.html
 ---
+
 
 # bioconductor-cepo
 

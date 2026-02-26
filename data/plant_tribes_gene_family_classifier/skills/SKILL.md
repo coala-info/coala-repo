@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_gene_family_classifier
-description: The `GeneFamilyClassifier` is a specialized pipeline within the PlantTribes2 suite designed to categorize protein sequences into objective classifications.
+description: This tool classifies protein sequences into established orthologous groups using curated plant genome scaffolds. Use when user asks to categorize protein sequences into gene families, assign sequences to orthologous groups, or prepare data for phylogenomic analysis.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_gene_family_classifier
 

@@ -1,8 +1,9 @@
 ---
 name: pondus
-description: Pondus is a lightweight personal weight management tool designed for speed and simplicity.
+description: Pondus is a lightweight personal weight management tool for logging body metrics and visualizing trends. Use when user asks to track body weight, manage composition data, import CSV files, or generate weight plots.
 homepage: https://github.com/enicklas/pondus
 ---
+
 
 # pondus
 

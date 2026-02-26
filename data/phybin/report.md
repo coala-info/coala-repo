@@ -3,7 +3,7 @@
 ## phybin
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'phybin'. It contains system error messages related to a container runtime (Singularity/Apptainer) failing to pull a Docker image due to insufficient disk space.
+A tool for binning phylogenetic trees by topology using Robinson-Foulds distance.
 
 ### Metadata
 - **Docker Image**: biocontainers/phybin:v0.3-3-deb_cv1
@@ -18,9 +18,17 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/a5a1041873096fd1f53d376e7150c4db96427b86b1764f4f2f936643bde56930: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/phybin:v0.3-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3667962046: no space left on device
+Unable to find image 'biocontainers/phybin:v0.3-3-deb_cv1' locally
+v0.3-3-deb_cv1: Pulling from biocontainers/phybin
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+f9d93fde3837: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3161387353: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: snakedeploy
-description: Snakedeploy is a specialized tool designed to bridge the gap between a published Snakemake workflow and its local execution.
+description: Snakedeploy automates the deployment and configuration of Snakemake workflows from remote repositories to local environments. Use when user asks to deploy a workflow, pin conda environments, collect files into a tabular format, or scaffold new Snakemake plugins.
 homepage: https://github.com/snakemake/snakedeploy
 ---
+
 
 # snakedeploy
 

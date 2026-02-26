@@ -1,8 +1,9 @@
 ---
 name: ncbimeta
-description: `ncbimeta` is a command-line suite designed to streamline the acquisition of metadata from the National Centre for Biotechnology Information (NCBI).
+description: ncbimeta is a command-line suite that automates the retrieval and organization of metadata from NCBI into local searchable databases. Use when user asks to fetch metadata from NCBI, create a local SQLite database of biological records, annotate databases with custom metadata, join disparate NCBI tables, or export metadata to text files.
 homepage: https://github.com/ktmeaton/NCBImeta
 ---
+
 
 # ncbimeta
 

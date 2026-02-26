@@ -1,8 +1,9 @@
 ---
 name: bamsnap
-description: Bamsnap is a specialized command-line utility designed to convert genomic data from BAM format into static PNG images.
+description: Bamsnap converts genomic data from BAM format into static PNG images for visual inspection and reporting. Use when user asks to generate snapshots of specific genomic coordinates, visualize variants in BAM files, or create images of sequencing reads with gene annotations.
 homepage: https://github.com/danielmsk/bamsnap
 ---
+
 
 # bamsnap
 

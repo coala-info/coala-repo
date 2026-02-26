@@ -1,8 +1,9 @@
 ---
 name: bioconductor-peca
-description: the package is available on all platforms; click for details.
+description: PECA performs differential expression analysis by averaging probe-level expression changes to determine gene-level significance. Use when user asks to perform differential expression analysis, calculate gene-level significance from probe-level data, or identify differentially expressed genes in microarray and RNA-seq studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/PECA.html
 ---
+
 
 # bioconductor-peca
 

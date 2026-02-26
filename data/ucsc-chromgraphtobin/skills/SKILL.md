@@ -1,8 +1,9 @@
 ---
 name: ucsc-chromgraphtobin
-description: The `chromGraphToBin` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: The tool converts human-readable chromosome graph data into a binary format. Use when user asks to 'convert chromosome graph data to binary', 'transform chromosome graph data', 'prepare genomic data for visualization', or 'compress genomic signal data'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chromgraphtobin
 

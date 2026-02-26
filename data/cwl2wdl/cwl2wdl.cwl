@@ -2,9 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cwl2wdl
 label: cwl2wdl
-doc: "A tool for converting Common Workflow Language (CWL) to Workflow Description
-  Language (WDL).\n\nTool homepage: https://github.com/adamstruck/cwl2wdl"
-inputs: []
+doc: "Convert CWL files to WDL or AST.\n\nTool homepage: https://github.com/adamstruck/cwl2wdl"
+inputs:
+  - id: file
+    type: File
+    doc: CWL file.
+    inputBinding:
+      position: 1
+  - id: format
+    type:
+      - 'null'
+      - string
+    doc: specify the output format
+    default: wdl
+    inputBinding:
+      position: 102
+      prefix: --format
+  - id: validate
+    type:
+      - 'null'
+      - boolean
+    doc: validate the resulting WDL code with PyWDL
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --validate
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: dropletutils-scripts
-description: The `dropletutils-scripts` package provides a suite of R-based command-line wrappers for the Bioconductor package `DropletUtils`.
+description: This tool provides command-line wrappers for the DropletUtils R package to perform early-stage single-cell RNA-seq data processing. Use when user asks to read 10x Genomics counts, identify empty droplets, calculate barcode ranks, or downsample count matrices.
 homepage: https://github.com/ebi-gene-expression-group/dropletutils-scripts
 ---
+
 
 # dropletutils-scripts
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-myvariant
-description: the package is available on all platforms; click for details.
+description: This R package provides an interface to the MyVariant.info API for retrieving variant annotation data. Use when user asks to query genetic variant information, retrieve variant annotations, or search for variants using MyVariant.info web services.
 homepage: https://bioconductor.org/packages/release/bioc/html/myvariant.html
 ---
+
 
 # bioconductor-myvariant
 

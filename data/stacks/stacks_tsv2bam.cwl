@@ -2,10 +2,47 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tsv2bam
 label: stacks_tsv2bam
-doc: "The provided text does not contain help information for stacks_tsv2bam; it contains
-  container runtime error logs. No arguments could be extracted.\n\nTool homepage:
-  https://catchenlab.life.illinois.edu/stacks/"
-inputs: []
+doc: "Converts STACKS tsv files to BAM format.\n\nTool homepage: https://catchenlab.life.illinois.edu/stacks/"
+inputs:
+  - id: in_dir
+    type: Directory
+    doc: input directory.
+    inputBinding:
+      position: 101
+      prefix: --in-dir
+  - id: pe_reads_dir
+    type:
+      - 'null'
+      - Directory
+    doc: directory where to find the paired-end reads files (in fastq/fasta/bam 
+      (gz) format).
+    inputBinding:
+      position: 101
+      prefix: --pe-reads-dir
+  - id: popmap
+    type: File
+    doc: population map.
+    inputBinding:
+      position: 101
+      prefix: --popmap
+  - id: sample
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: name of one sample.
+    inputBinding:
+      position: 101
+      prefix: --sample
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads to use
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

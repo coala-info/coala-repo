@@ -1,8 +1,9 @@
 ---
 name: r-geneexpressionfromgeo
-description: R package geneexpressionfromgeo (documentation from project home).
+description: This tool retrieves gene expression data and gene symbols from the NCBI Gene Expression Omnibus and converts them into R data frames. Use when user asks to download GEO datasets, map probeset IDs to gene symbols, or fetch gene expression data using accession codes.
 homepage: https://cran.r-project.org/web/packages/geneexpressionfromgeo/index.html
 ---
+
 
 # r-geneexpressionfromgeo
 

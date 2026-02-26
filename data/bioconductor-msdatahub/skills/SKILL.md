@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msdatahub
-description: the package is available on all platforms; click for details.
+description: MsDataHub provides a collection of mass spectrometry data files and datasets for Bioconductor analysis. Use when user asks to access example mass spectrometry datasets, download MS data files for testing, or retrieve benchmark data for proteomics and metabolomics workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsDataHub.html
 ---
+
 
 # bioconductor-msdatahub
 

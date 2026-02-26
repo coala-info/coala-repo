@@ -1,8 +1,9 @@
 ---
 name: bioconductor-setools
-description: the package is available on all platforms; click for details.
+description: SEtools provides a collection of convenience functions for the manipulation and visualization of SummarizedExperiment objects. Use when user asks to plot heatmaps, merge multiple experiments, or perform common data transformations on Bioconductor containers.
 homepage: https://bioconductor.org/packages/release/bioc/html/SEtools.html
 ---
+
 
 # bioconductor-setools
 

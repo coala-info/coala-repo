@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellmapper
-description: the package is available on all platforms; click for details.
+description: This tool infers cell type-specific gene expression from heterogeneous microarray data by identifying genes co-expressed with known cell-type markers. Use when user asks to identify genes sharing expression profiles with specific markers, find candidate genes for rare cell types, or perform cell type-specific meta-analyses across large datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellMapper.html
 ---
+
 
 # bioconductor-cellmapper
 

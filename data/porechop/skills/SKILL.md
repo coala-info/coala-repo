@@ -1,8 +1,9 @@
 ---
 name: porechop
-description: Porechop is a specialized tool designed for the "cleaning" phase of Oxford Nanopore Technologies (ONT) data processing.
+description: Porechop trims adapters, identifies chimeric reads, and demultiplexes barcodes from Oxford Nanopore sequencing data. Use when user asks to trim adapters from reads, split chimeric sequences, or demultiplex Nanopore data based on barcodes.
 homepage: https://github.com/rrwick/Porechop
 ---
+
 
 # porechop
 

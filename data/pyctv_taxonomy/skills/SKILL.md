@@ -1,8 +1,9 @@
 ---
 name: pyctv_taxonomy
-description: The `pyctv_taxonomy` tool provides a streamlined interface for the ICTV Virus Metadata Resource (VMR), which is the authoritative source for viral classification.
+description: "pyctv_taxonomy interfaces with the ICTV Virus Metadata Resource to download, parse, and retrieve viral taxonomic hierarchies and genomic accession mappings. Use when user asks to download the VMR dataset, list viral species with taxonomic prefixes, or map GenBank and RefSeq accessions to official viral classifications."
 homepage: https://github.com/linsalrob/pyctv
 ---
+
 
 # pyctv_taxonomy
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lisaclust
-description: the package is available on all platforms; click for details.
+description: This tool identifies and visualizes regions of cell type colocalization in multiplexed imaging data using Local Indicators of Spatial Association curves. Use when user asks to identify tissue compartments, cluster spatial microenvironments, or visualize cell type associations in spatial proteomics and transcriptomics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/lisaClust.html
 ---
+
 
 # bioconductor-lisaclust
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ruvseq
-description: the package is available on all platforms; click for details.
+description: RUVSeq removes unwanted variation from RNA-Seq data using factor analysis methods. Use when user asks to normalize RNA-Seq count data, remove batch effects, or account for technical noise in differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVSeq.html
 ---
+
 
 # bioconductor-ruvseq
 

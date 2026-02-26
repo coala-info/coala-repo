@@ -1,8 +1,9 @@
 ---
 name: tbtamr
-description: tbtamr is a specialized bioinformatics tool designed for clinical and public health laboratories to infer AMR profiles for *M.
+description: tbtamr infers antimicrobial resistance profiles and generates genomic drug susceptibility testing reports for Mycobacterium tuberculosis from annotated VCF files. Use when user asks to predict AMR profiles for M. tuberculosis, generate genomic DST reports for LIMS integration, or apply custom mutational catalogues to variant data.
 homepage: https://github.com/MDU-PHL/tbtamr
 ---
+
 
 # tbtamr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moexexonprobesetlocation
-description: the package is available on all platforms; click for details.
+description: This package provides genomic location information for probesets on the Mouse Exon array. Use when user asks to find probeset locations for Mouse Exon arrays or map probesets to genomic coordinates.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MoExExonProbesetLocation.html
 ---
+
 
 # bioconductor-moexexonprobesetlocation
 

@@ -2,15 +2,96 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: KatGC
 label: merquryfk_KatGC
-doc: "The provided text does not contain help information for the tool; it is an error
-  log indicating a failure to build a container image due to insufficient disk space.
-  No arguments could be extracted.\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
-inputs: []
+doc: "Plots KatGC results\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
+inputs:
+  - id: source_file
+    type: File
+    doc: Source file (optionally with .ktab extension)
+    inputBinding:
+      position: 1
+  - id: draw_contour_map
+    type:
+      - 'null'
+      - boolean
+    doc: draw a contour map
+    inputBinding:
+      position: 102
+      prefix: -l
+  - id: draw_heat_map
+    type:
+      - 'null'
+      - boolean
+    doc: draw a heat map
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: draw_heat_map_with_contour_overlay
+    type:
+      - 'null'
+      - boolean
+    doc: draw a heat map with contour overlay
+    inputBinding:
+      position: 102
+      prefix: -s
+  - id: height
+    type:
+      - 'null'
+      - float
+    doc: height in inches of plots
+    default: 4.5
+    inputBinding:
+      position: 102
+      prefix: -h
+  - id: max_x_absolute
+    type:
+      - 'null'
+      - int
+    doc: max x as an int value in absolute terms
+    inputBinding:
+      position: 102
+      prefix: -X
+  - id: max_x_multiple
+    type:
+      - 'null'
+      - float
+    doc: max x as a real-valued multiple of x* with max count 'peak' away from 
+      the origin
+    default: x2.1
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: output_pdf
+    type:
+      - 'null'
+      - boolean
+    doc: output .pdf (default is .png)
+    inputBinding:
+      position: 102
+      prefix: -pdf
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads to use
+    default: 4
+    inputBinding:
+      position: 102
+      prefix: -T
+  - id: width
+    type:
+      - 'null'
+      - float
+    doc: width in inches of plots
+    default: 6.0
+    inputBinding:
+      position: 102
+      prefix: -w
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: Output file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/merquryfk:1.2--h71df26d_1
-stdout: merquryfk_KatGC.out

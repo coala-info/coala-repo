@@ -1,8 +1,9 @@
 ---
 name: pycov3
-description: pycov3 is a specialized bioinformatics tool designed to process sequence alignment data and binned contigs into a format compatible with the DEMIC R package.
+description: pycov3 processes sequence alignment data and binned contigs to generate coverage files for estimating bacterial growth rates via the DEMIC R package. Use when user asks to process SAM and FASTA files into cov3 format, calculate coverage for Peak-to-Trough Ratio estimation, or prepare genomic data for microbial growth rate analysis.
 homepage: https://github.com/Ulthran/pycov3
 ---
+
 
 # pycov3
 

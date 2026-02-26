@@ -1,8 +1,9 @@
 ---
 name: bronko
-description: bronko is a specialized bioinformatic tool designed for the rapid detection of viral variants without the computational overhead of traditional read alignment.
+description: bronko is a kmer-based bioinformatic tool used for rapid, alignment-free viral variant calling and iSNV detection from raw sequencing reads. Use when user asks to detect viral variants, identify intrahost single nucleotide variants, or generate VCF files without performing traditional read alignment.
 homepage: https://github.com/treangenlab/bronko
 ---
+
 
 # bronko
 

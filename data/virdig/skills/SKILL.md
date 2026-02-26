@@ -1,8 +1,9 @@
 ---
 name: virdig
-description: VirDiG (Viral Discovery and Generation) is a specialized de novo assembler tailored for coronavirus transcriptomes.
+description: virdig performs de novo assembly of coronavirus transcriptomes from RNA-Seq data. Use when user asks to 'assemble coronavirus transcriptomes', 'generate candidate transcripts', 'study viral variants', or 'study non-canonical transcripts'.
 homepage: https://github.com/Limh616/VirDiG
 ---
+
 
 # virdig
 

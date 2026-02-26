@@ -1,8 +1,9 @@
 ---
 name: seq2c
-description: Seq2C is a gene-centric CNV discovery tool that identifies genomic amplifications and deletions by normalizing read coverage into log2 ratios.
+description: Seq2C identifies gene-centric copy number variations and intragenic breakpoints by normalizing read coverage into log2 ratios. Use when user asks to identify genomic amplifications or deletions, calculate log2 ratios from BAM files, or perform cohort-level CNV analysis.
 homepage: https://github.com/AstraZeneca-NGS/Seq2C
 ---
+
 
 # seq2c
 

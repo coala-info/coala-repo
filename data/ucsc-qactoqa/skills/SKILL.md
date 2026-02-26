@@ -1,8 +1,9 @@
 ---
 name: ucsc-qactoqa
-description: The `qacToQa` utility is a specialized tool from the UCSC Genome Browser "kent" source tree.
+description: ucsc-qactoqa decompresses sequence quality data from `.qac` files to `.qa` format. Use when user asks to decompress sequence quality data, convert .qac files to .qa files, or prepare quality data for analysis.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-qactoqa
 

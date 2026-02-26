@@ -1,12 +1,12 @@
 # vargeno CWL Generation Report
 
-## vargeno
+## vargeno_index
 
 ### Tool Description
-A tool for SNP and indel calling from whole genome sequencing data (Note: Help text provided was a container pull error log, so arguments could not be parsed).
+vargeno
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/vargeno:1.0.3--h9f5acd7_3
+- **Docker Image**: quay.io/biocontainers/vargeno:1.0.3--h9948957_6
 - **Homepage**: https://github.com/medvedevgroup/vargeno
 - **Package**: https://anaconda.org/channels/bioconda/packages/vargeno/overview
 - **Validation**: PASS
@@ -18,13 +18,31 @@ A tool for SNP and indel calling from whole genome sequencing data (Note: Help t
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vargeno:1.0.3--h9f5acd7_3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: vargeno <option> [option parameters ...]
+Option  Description                   Parameters
+------  -----------                   ----------
+index   Generate index            <input FASTA> <input SNPs in VCF> <index_prefix>
+geno    Perform genotyping        <index_prefix> <input FASTQ> <input SNPs in VCF> <output file in VCF>
 ```
 
 
-## Metadata
-- **Skill**: generated
+## vargeno_geno
+
+### Tool Description
+vargeno <option> [option parameters ...]
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/vargeno:1.0.3--h9948957_6
+- **Homepage**: https://github.com/medvedevgroup/vargeno
+- **Package**: https://anaconda.org/channels/bioconda/packages/vargeno/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: vargeno <option> [option parameters ...]
+Option  Description                   Parameters
+------  -----------                   ----------
+index   Generate index            <input FASTA> <input SNPs in VCF> <index_prefix>
+geno    Perform genotyping        <index_prefix> <input FASTQ> <input SNPs in VCF> <output file in VCF>
+```
+

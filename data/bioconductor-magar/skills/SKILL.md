@@ -1,8 +1,9 @@
 ---
 name: bioconductor-magar
-description: the package is available on all platforms; click for details.
+description: MAGAR identifies methylation quantitative trait loci (mQTLs) by associating genotype data with DNA methylation levels. Use when user asks to identify mQTLs, perform genotype-methylation association analysis, or analyze the relationship between SNPs and DNA methylation.
 homepage: https://bioconductor.org/packages/release/bioc/html/MAGAR.html
 ---
+
 
 # bioconductor-magar
 

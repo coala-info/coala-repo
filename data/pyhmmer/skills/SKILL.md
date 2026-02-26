@@ -1,8 +1,9 @@
 ---
 name: pyhmmer
-description: pyhmmer provides Cython bindings to the HMMER3 software suite, allowing for seamless integration of profile HMM searches into Python workflows.
+description: pyhmmer provides Python bindings to the HMMER3 software suite for high-performance profile HMM searches and sequence analysis. Use when user asks to perform sequence homology searches, annotate protein domains, build HMM profiles from alignments, or run hmmsearch and phmmer within Python workflows.
 homepage: https://github.com/althonos/pyhmmer
 ---
+
 
 # pyhmmer
 

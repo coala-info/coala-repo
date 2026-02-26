@@ -1,8 +1,9 @@
 ---
 name: gdc-client
-description: The `gdc-client` is a specialized command-line interface (CLI) designed for robust data transfer between local environments and the NCI Genomic Data Commons.
+description: The gdc-client provides a command-line interface for transferring large-scale genomic data between local environments and the NCI Genomic Data Commons. Use when user asks to download files by UUID, retrieve data using a manifest, upload files to the GDC, or manage controlled-access data transfers with authentication tokens.
 homepage: https://gdc.cancer.gov/access-data/gdc-data-transfer-tool
 ---
+
 
 # gdc-client
 

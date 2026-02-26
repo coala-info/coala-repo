@@ -1,8 +1,9 @@
 ---
 name: rmlst_api
-description: The `rmlst_api` tool provides a streamlined Python-based interface to the PubMLST species identification engine.
+description: This tool identifies bacterial species by analyzing ribosomal protein genes through the PubMLST API. Use when user asks to identify bacterial isolates, perform taxonomic assignment, or detect contamination in genomic samples.
 homepage: pypi.org/project/rmlst-api
 ---
+
 
 # rmlst_api
 

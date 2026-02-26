@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanv1.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and re-annotation quality grades for the Illumina Humanv1 BeadChip platform. Use when user asks to map Illumina probe identifiers to biological identifiers like Gene Symbols or Entrez IDs, filter probes by quality, or retrieve functional annotations for Humanv1 data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html
 ---
+
 
 # bioconductor-illuminahumanv1.db
 

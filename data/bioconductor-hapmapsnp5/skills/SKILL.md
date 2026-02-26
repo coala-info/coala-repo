@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmapsnp5
-description: the package is available on all platforms; click for details.
+description: This package provides sample Affymetrix SNP 5.0 HapMap data for testing and demonstrating Bioconductor tools. Use when user asks to load sample SNP 5.0 data, locate CEL files for demonstration, or benchmark oligonucleotide array analysis packages like oligo.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmapsnp5.html
 ---
+
 
 # bioconductor-hapmapsnp5
 

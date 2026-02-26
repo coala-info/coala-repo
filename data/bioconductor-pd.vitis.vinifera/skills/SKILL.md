@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.vitis.vinifera
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Vitis vinifera genome array. Use when user asks to process grapevine microarray data, access platform design information for Vitis vinifera, or analyze Affymetrix grape genome arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.vitis.vinifera.html
 ---
+
 
 # bioconductor-pd.vitis.vinifera
 

@@ -1,8 +1,9 @@
 ---
 name: perl-mailtools
-description: This skill facilitates the use of the `perl-mailtools` distribution, a collection of classic Perl modules for email handling.
+description: This tool provides a collection of Perl modules for parsing, manipulating, and sending RFC822 compliant email messages. Use when user asks to parse email addresses, manage email headers, filter message content, or send mail through backends like SMTP and sendmail.
 homepage: https://metacpan.org/pod/MailTools
 ---
+
 
 # perl-mailtools
 

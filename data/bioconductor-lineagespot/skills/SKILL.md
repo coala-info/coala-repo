@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lineagespot
-description: the package is available on all platforms; click for details.
+description: This tool identifies SARS-CoV-2 lineages and mutations from VCF files by cross-referencing variants against lineage-defining mutation reports. Use when user asks to identify SARS-CoV-2 lineages in wastewater samples, calculate allele frequency metrics for variants, or compare VCF data against known lineage-defining rules.
 homepage: https://bioconductor.org/packages/release/bioc/html/lineagespot.html
 ---
+
 
 # bioconductor-lineagespot
 

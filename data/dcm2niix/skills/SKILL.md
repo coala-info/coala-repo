@@ -1,8 +1,9 @@
 ---
 name: dcm2niix
-description: dcm2niix is a specialized command-line utility designed to bridge the gap between complex medical imaging storage (DICOM) and scientific analysis formats (NIfTI).
+description: dcm2niix converts medical imaging files from the DICOM format to the NIfTI format while generating BIDS-compliant metadata. Use when user asks to convert DICOM images to NIfTI, generate BIDS JSON sidecars, extract diffusion gradients, or organize neuroimaging data for research analysis.
 homepage: https://github.com/rordenlab/dcm2niix
 ---
+
 
 # dcm2niix
 

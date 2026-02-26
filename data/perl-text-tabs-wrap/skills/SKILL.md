@@ -1,8 +1,9 @@
 ---
 name: perl-text-tabs-wrap
-description: This skill provides methods for text transformation focusing on tab expansion and paragraph wrapping.
+description: This tool performs tab expansion, tab unexpansion, and paragraph wrapping for text formatting. Use when user asks to expand tabs to spaces, unexpand spaces to tabs, wrap long strings into readable blocks, or set custom indentation for text lines.
 homepage: http://metacpan.org/pod/Text::Tabs+Wrap
 ---
+
 
 # perl-text-tabs-wrap
 

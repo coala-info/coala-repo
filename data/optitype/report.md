@@ -1,9 +1,9 @@
 # optitype CWL Generation Report
 
-## optitype
+## optitype_razers3
 
 ### Tool Description
-OptiType is a HLA typing tool. (Note: The provided text is a system error log and does not contain help documentation or argument definitions).
+RazerS 3 is a versatile full-sensitive read mapper based on k-mer counting and seeding filters. It supports single and paired-end mapping, shared-memory parallelism, and optimally parametrizes the filter based on a user-defined minimal sensitivity.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3
@@ -18,63 +18,338 @@ OptiType is a HLA typing tool. (Note: The provided text is a system error log an
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/optitype:1.3.5--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1053146699: no space left on device
+razers3 - Faster, fully sensitive read mapping
+==============================================
+
+SYNOPSIS
+    razers3 [OPTIONS] <GENOME FILE> <READS FILE>
+    razers3 [OPTIONS] <GENOME FILE> <PE-READS FILE1> <PE-READS FILE2>
+
+DESCRIPTION
+    RazerS 3 is a versatile full-sensitive read mapper based on k-mer counting
+    and seeding filters. It supports single and paired-end mapping,
+    shared-memory parallelism, and optimally parametrizes the filter based on
+    a user-defined minimal sensitivity. See
+    http://www.seqan.de/projects/razers for more information.
+
+    Input to RazerS 3 is a reference genome file and either one file with
+    single-end reads or two files containing left or right mates of paired-end
+    reads. Use - to read single-end reads from stdin.
+
+    (c) Copyright 2009-2014 by David Weese.
+
+REQUIRED ARGUMENTS
+    ARGUMENT 0 INPUT_FILE
+          A reference genome file. Valid filetypes are: .sam[.*], .raw[.*],
+          .gbk[.*], .frn[.*], .fq[.*], .fna[.*], .ffn[.*], .fastq[.*],
+          .fasta[.*], .faa[.*], .fa[.*], .embl[.*], and .bam, where * is any
+          of the following extensions: gz, bz2, and bgzf for transparent
+          (de)compression.
+    READS List of INPUT_FILE's
+          Either one (single-end) or two (paired-end) read files. Valid
+          filetypes are: .sam[.*], .raw[.*], .gbk[.*], .frn[.*], .fq[.*],
+          .fna[.*], .ffn[.*], .fastq[.*], .fasta[.*], .faa[.*], .fa[.*],
+          .embl[.*], and .bam, where * is any of the following extensions: gz,
+          bz2, and bgzf for transparent (de)compression.
+
+OPTIONS
+    -h, --help
+          Display the help message.
+    --version-check BOOL
+          Turn this option off to disable version update notifications of the
+          application. One of 1, ON, TRUE, T, YES, 0, OFF, FALSE, F, and NO.
+          Default: 1.
+    --version
+          Display version information.
+
+  Main Options:
+    -i, --percent-identity DOUBLE
+          Percent identity threshold. In range [50..100]. Default: 95.
+    -rr, --recognition-rate DOUBLE
+          Percent recognition rate. In range [80..100]. Default: 100.
+    -ng, --no-gaps
+          Allow only mismatches, no indels. Default: allow both.
+    -f, --forward
+          Map reads only to forward strands.
+    -r, --reverse
+          Map reads only to reverse strands.
+    -m, --max-hits INTEGER
+          Output only <NUM> of the best hits. In range [1..inf]. Default: 100.
+    --unique
+          Output only unique best matches (-m 1 -dr 0 -pa).
+    -tr, --trim-reads INTEGER
+          Trim reads to given length. Default: off. In range [14..inf].
+    -o, --output OUTPUT_FILE
+          Mapping result filename (use - to dump to stdout in razers format).
+          Default: <READS FILE>.razers. Valid filetypes are: .sam, .razers,
+          .gff, .fasta, .fa, .eland, .bam, and .afg.
+    -v, --verbose
+          Verbose mode.
+    -vv, --vverbose
+          Very verbose mode.
+
+  Paired-end Options:
+    -ll, --library-length INTEGER
+          Paired-end library length. In range [1..inf]. Default: 220.
+    -le, --library-error INTEGER
+          Paired-end library length tolerance. In range [0..inf]. Default: 50.
+
+  Output Format Options:
+    -a, --alignment
+          Dump the alignment for each match (only razer or fasta format).
+    -pa, --purge-ambiguous
+          Purge reads with more than <max-hits> best matches.
+    -dr, --distance-range INTEGER
+          Only consider matches with at most NUM more errors compared to the
+          best. Default: output all.
+    -gn, --genome-naming INTEGER
+          Select how genomes are named (see Naming section below). In range
+          [0..1]. Default: 0.
+    -rn, --read-naming INTEGER
+          Select how reads are named (see Naming section below). In range
+          [0..3]. Default: 0.
+    --full-readid
+          Use the whole read id (don't clip after whitespace).
+    -so, --sort-order INTEGER
+          Select how matches are sorted (see Sorting section below). In range
+          [0..1]. Default: 0.
+    -pf, --position-format INTEGER
+          Select begin/end position numbering (see Coordinate section below).
+          In range [0..1]. Default: 0.
+    -ds, --dont-shrink-alignments
+          Disable alignment shrinking in SAM. This is required for generating
+          a gold mapping for Rabema.
+
+  Filtration Options:
+    -fl, --filter STRING
+          Select k-mer filter. One of pigeonhole and swift. Default:
+          pigeonhole.
+    -mr, --mutation-rate DOUBLE
+          Set the percent mutation rate (pigeonhole). In range [0..20].
+          Default: 5.
+    -ol, --overlap-length INTEGER
+          Manually set the overlap length of adjacent k-mers (pigeonhole). In
+          range [0..inf].
+    -pd, --param-dir STRING
+          Read user-computed parameter files in the directory <DIR> (swift).
+    -t, --threshold INTEGER
+          Manually set minimum k-mer count threshold (swift). In range
+          [1..inf].
+    -tl, --taboo-length INTEGER
+          Set taboo length (swift). In range [1..inf]. Default: 1.
+    -s, --shape STRING
+          Manually set k-mer shape.
+    -oc, --overabundance-cut INTEGER
+          Set k-mer overabundance cut ratio. In range [0..1]. Default: 1.
+    -rl, --repeat-length INTEGER
+          Skip simple-repeats of length <NUM>. In range [1..inf]. Default:
+          1000.
+    -lf, --load-factor DOUBLE
+          Set the load factor for the open addressing k-mer index. In range
+          [1..inf]. Default: 1.6.
+
+  Verification Options:
+    -mN, --match-N
+          N matches all other characters. Default: N matches nothing.
+    -ed, --error-distr STRING
+          Write error distribution to FILE.
+    -mf, --mismatch-file STRING
+          Write mismatch patterns to FILE.
+
+  Misc Options:
+    -cm, --compact-mult DOUBLE
+          Multiply compaction threshold by this value after reaching and
+          compacting. In range [0..inf]. Default: 2.2.
+    -ncf, --no-compact-frac DOUBLE
+          Don't compact if in this last fraction of genome. In range [0..1].
+          Default: 0.05.
+
+  Parallelism Options:
+    -tc, --thread-count INTEGER
+          Set the number of threads to use (0 to force sequential mode). In
+          range [0..inf]. Default: 1.
+    -pws, --parallel-window-size INTEGER
+          Collect candidates in windows of this length. In range [1..inf].
+          Default: 500000.
+    -pvs, --parallel-verification-size INTEGER
+          Verify candidates in packages of this size. In range [1..inf].
+          Default: 100.
+    -pvmpc, --parallel-verification-max-package-count INTEGER
+          Largest number of packages to create for verification per thread-1.
+          In range [1..inf]. Default: 100.
+    -amms, --available-matches-memory-size INTEGER
+          Bytes of main memory available for storing matches. In range
+          [-1..inf]. Default: 0.
+    -mhst, --match-histo-start-threshold INTEGER
+          When to start histogram. In range [1..inf]. Default: 5.
+
+FORMATS, NAMING, SORTING, AND COORDINATE SCHEMES
+    RazerS 3 supports various output formats. The output format is detected
+    automatically from the file name suffix.
+
+    .razers
+          Razer format
+    .fa, .fasta
+          Enhanced Fasta format
+    .eland
+          Eland format
+    .gff  GFF format
+    .sam  SAM format
+    .bam  BAM format
+    .afg  Amos AFG format
+    By default, reads and contigs are referred by their Fasta ids given in the
+    input files. With the -gn and -rn options this behaviour can be changed:
+
+    0     Use Fasta id.
+    1     Enumerate beginning with 1.
+    2     Use the read sequence (only for short reads!).
+    3     Use the Fasta id, do NOT append /L or /R for mate pairs.
+    
+    The way matches are sorted in the output file can be changed with the -so
+    option for the following formats: razers, fasta, sam, and afg. Primary and
+    secondary sort keys are:
+
+    0     1. read number, 2. genome position
+    1     1. genome position, 2. read number
+    
+    The coordinate space used for begin and end positions can be changed with
+    the -pf option for the razer and fasta formats:
+
+    0     Gap space. Gaps between characters are counted from 0.
+    1     Position space. Characters are counted from 1.
+
+EXAMPLES
+    razers3 -i 96 -tc 12 -o mapped.razers hg18.fa reads.fq
+          Map single-end reads with 4% error rate using 12 threads.
+    razers3 -i 95 -no-gaps -o mapped.razers hg18.fa reads.fq.gz
+          Map single-end gzipped reads with 5% error rate and no indels.
+    razers3 -i 94 -rr 95 -tc 12 -ll 280 --le 80 -o mapped.razers hg18.fa reads_1.fq reads_2.fq
+          Map paired-end reads with up to 6% errors, 95% sensitivity, 12
+          threads, and only output aligned pairs with an outer distance of
+          200-360bp.
+
+VERSION
+    Last update: 
+    razers3 version: 3.5.8 [tarball]
+    SeqAn version: 2.4.0
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## optitype_razers3
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding container image conversion and disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3
-- **Homepage**: https://github.com/FRED-2/OptiType
-- **Package**: https://anaconda.org/channels/bioconda/packages/optitype/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/optitype:1.3.5--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4226332227: no space left on device
-```
 
 ## optitype_samtools
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it is an error log reporting a failure to build a Singularity/Apptainer image due to insufficient disk space.
+Tools for alignments in the SAM format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3
 - **Homepage**: https://github.com/FRED-2/OptiType
 - **Package**: https://anaconda.org/channels/bioconda/packages/optitype/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/optitype:1.3.5--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3413463241: no space left on device
+Program: samtools (Tools for alignments in the SAM format)
+Version: 1.23 (using htslib 1.23)
+
+Usage:   samtools <command> [options]
+
+Commands:
+  -- Indexing
+     dict           create a sequence dictionary file
+     faidx          index/extract FASTA
+     fqidx          index/extract FASTQ
+     index          index alignment
+
+  -- Editing
+     calmd          recalculate MD/NM tags and '=' bases
+     fixmate        fix mate information
+     reheader       replace BAM header
+     targetcut      cut fosmid regions (for fosmid pool only)
+     addreplacerg   adds or replaces RG tags
+     markdup        mark duplicates
+     ampliconclip   clip oligos from the end of reads
+
+  -- File operations
+     collate        shuffle and group alignments by name
+     cat            concatenate BAMs
+     consensus      produce a consensus Pileup/FASTA/FASTQ
+     merge          merge sorted alignments
+     mpileup        multi-way pileup
+     sort           sort alignment file
+     split          splits a file by read group
+     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
+     fastq          converts a BAM to a FASTQ
+     fasta          converts a BAM to a FASTA
+     import         Converts FASTA or FASTQ files to SAM/BAM/CRAM
+     reference      Generates a reference from aligned data
+     reset          Reverts aligner changes in reads
+
+  -- Statistics
+     bedcov         read depth per BED region
+     coverage       alignment depth and percent coverage
+     depth          compute the depth
+     flagstat       simple stats
+     idxstats       BAM index stats
+     cram-size      list CRAM Content-ID and Data-Series sizes
+     phase          phase heterozygotes
+     stats          generate stats (former bamcheck)
+     ampliconstats  generate amplicon specific stats
+     checksum       produce order-agnostic checksums of sequence content
+
+  -- Viewing
+     flags          explain BAM flags
+     head           header viewer
+     tview          text alignment viewer
+     view           SAM<->BAM<->CRAM conversion
+     depad          convert padded BAM to unpadded BAM
+     samples        list the samples in a set of SAM/BAM/CRAM files
+
+  -- Misc
+     help [cmd]     display this help message or help for [cmd]
+     version        detailed version information
 ```
+
 
 ## optitype_OptiTypePipeline.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a system error log related to a Singularity/Apptainer container execution failure (no space left on device).
+4-digit HLA typer
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/optitype:1.3.5--hdfd78af_3
 - **Homepage**: https://github.com/FRED-2/OptiType
 - **Package**: https://anaconda.org/channels/bioconda/packages/optitype/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/optitype:1.3.5--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4293803286: no space left on device
+usage: OptiType [-h] --input FQ [FQ ...] (--rna | --dna) [--beta B]
+                [--enumerate N] --outdir OUTDIR [--prefix PREFIX] [--verbose]
+                [--config CONFIG]
+
+OptiType: 4-digit HLA typer
+
+options:
+  -h, --help            show this help message and exit
+  --input FQ [FQ ...], -i FQ [FQ ...]
+                        .fastq file(s) (fished or raw) or .bam files stored
+                        for re-use, generated by an earlier OptiType run. One
+                        file: single-end mode, two files: paired-end mode.
+  --rna, -r             Use with RNA sequencing data.
+  --dna, -d             Use with DNA sequencing data.
+  --beta B, -b B        The beta value for for homozygosity detection (see
+                        paper). Default: 0.009. Handle with care.
+  --enumerate N, -e N   Number of enumerations. OptiType will output the
+                        optimal solution and the top N-1 suboptimal solutions
+                        in the results CSV. Default: 1
+  --outdir OUTDIR, -o OUTDIR
+                        Specifies the out directory to which all files should
+                        be written.
+  --prefix PREFIX, -p PREFIX
+                        Specifies prefix of output files
+  --verbose, -v         Set verbose mode on.
+  --config CONFIG, -c CONFIG
+                        Path to config file. Default: config.ini in the same
+                        directory as this script
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splicewiz
-description: the package is available on all platforms; click for details.
+description: SpliceWiz is an R package for the efficient quantification and analysis of alternative splicing and intron retention in RNA-seq data. Use when user asks to quantify splice junctions, analyze alternative splicing, or visualize intron retention events.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpliceWiz.html
 ---
+
 
 # bioconductor-splicewiz
 

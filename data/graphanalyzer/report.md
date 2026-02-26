@@ -1,9 +1,9 @@
 # graphanalyzer CWL Generation Report
 
-## graphanalyzer
+## graphanalyzer_graphanalyzer.py
 
 ### Tool Description
-A tool for graph analysis (Note: The provided help text contains only container runtime error messages and no usage information).
+This script automatically parse vConTACT2 outputs when using INPHARED as database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/graphanalyzer:1.6.0--hdfd78af_0
@@ -18,29 +18,41 @@ A tool for graph analysis (Note: The provided help text contains only container 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphanalyzer:1.6.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3961853666: no space left on device
-```
+usage: graphanalyzer.py --graph FILEPATH --csv FILEPATH --metas FILEPATH
+                        [-o PATH] [-p STRING] [-s STRING] [-t INT]
+                        [-l FILEPATH] [-w STRING] [-v] [-h]
 
+This script automatically parse vConTACT2 outputs when using INPHARED as
+database.
 
-## Metadata
-- **Skill**: generated
+Required named arguments:
+  --graph FILEPATH      The c1.ntw output file from vConTACT2.
+  --csv FILEPATH        The genome_by_genome_overview.csv output file from
+                        vConTACT2.
+  --metas FILEPATH      The data_excluding_refseq.tsv file from INPHARED.
 
-## graphanalyzer_graphanalyzer.py
+Optional named arguments:
+  -o PATH, --output PATH
+                        Path to the output directory (default: "./").
+  -p STRING, --prefix STRING
+                        Prefix of the header of each conting representing a
+                        vOTU (default: "vOTU").
+  -s STRING, --suffix STRING
+                        Suffix to append to every file produced in the output
+                        directory (default: "assemblerX").
+  -t INT, --threads INT
+                        Define how many threads to use for the generation of
+                        the interactive subgraphs (default: 4).
+  -l FILEPATH, --pickle FILEPATH
+                        Filepath to the pickle object, needed to enter
+                        directly to the interactive plots generation step
+                        (default: None).
+  -w STRING, --view STRING
+                        Whether to produce interactive subgraphs in 2 ('2d')
+                        or 3 dimensions ('3d') (default: '2d').
 
-### Tool Description
-A tool for graph analysis. (Note: The provided input text contains container runtime error messages rather than the tool's help documentation, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/graphanalyzer:1.6.0--hdfd78af_0
-- **Homepage**: https://github.com/lazzarigioele/graphanalyzer
-- **Package**: https://anaconda.org/channels/bioconda/packages/graphanalyzer/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphanalyzer:1.6.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1529324787: no space left on device
+Conventional arguments:
+  -v, --version         Show program's version number and exit.
+  -h, --help            Show this help message and exit.
 ```
 

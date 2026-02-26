@@ -1,8 +1,9 @@
 ---
 name: straindesign
-description: The `straindesign` tool is a command-line interface designed for metabolic engineering workflows.
+description: The straindesign tool identifies optimal gene knockouts and heterologous pathway integrations to maximize metabolite production in metabolic models. Use when user asks to predict gene deletions for metabolic engineering, reduce models based on specific yield strategies, or perform Pareto analysis to visualize growth and production trade-offs.
 homepage: https://github.com/brsynth/straindesign
 ---
+
 
 # straindesign
 

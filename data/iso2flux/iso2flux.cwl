@@ -1,12 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: iso2flux
+baseCommand: create_and_solve_iso2flux_model.py
 label: iso2flux
-doc: "The provided text does not contain help information or usage instructions for
-  iso2flux. It contains system error messages related to a container runtime (Apptainer/Singularity)
-  failing to pull a Docker image due to insufficient disk space.\n\nTool homepage:
-  https://github.com/cfoguet/iso2flux"
-inputs: []
+doc: "Creates and solves an iso2flux model.\n\nTool homepage: https://github.com/cfoguet/iso2flux"
+inputs:
+  - id: experimental_data_file
+    type: File
+    doc: Path to the experimental data file.
+    inputBinding:
+      position: 101
+      prefix: --experimental_data_file
 outputs:
   - id: stdout
     type: stdout

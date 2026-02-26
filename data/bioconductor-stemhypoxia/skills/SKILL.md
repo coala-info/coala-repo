@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stemhypoxia
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides transcriptomic data from human embryonic stem cells cultured under hypoxic conditions. Use when user asks to access gene expression data for stem cells in hypoxia, analyze transcriptomic profiles of hESCs, or download the stemHypoxia dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/stemHypoxia.html
 ---
+
 
 # bioconductor-stemhypoxia
 

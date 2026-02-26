@@ -1,8 +1,9 @@
 ---
 name: contignet
-description: ContigNet is a deep learning tool that utilizes a convolutional neural network (CNN) to predict the likelihood of interaction between phage and bacterial contigs.
+description: ContigNet uses a convolutional neural network to predict the likelihood of interactions between phage and bacterial contigs. Use when user asks to predict phage-host interactions, analyze viral ecology, or identify potential hosts for viral sequences in fragmented genomic data.
 homepage: https://github.com/tianqitang1/ContigNet
 ---
+
 
 # contignet
 

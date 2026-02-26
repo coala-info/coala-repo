@@ -1,8 +1,9 @@
 ---
 name: tetranscripts
-description: TEtranscripts (part of the TEToolkit) addresses the challenge of multi-mapping reads in repetitive regions of the genome.
+description: TEtranscripts quantifies transposable element and gene expression by using an expectation-maximization algorithm to optimally distribute multi-mapping RNA-seq reads. Use when user asks to quantify transposable element expression, handle multi-mapping reads in repetitive regions, or perform differential expression analysis of TE families.
 homepage: http://hammelllab.labsites.cshl.edu/software#TEToolkit
 ---
+
 
 # tetranscripts
 

@@ -1,8 +1,9 @@
 ---
 name: rnachipintegrator
-description: RnaChipIntegrator is a bioinformatics utility that automates the process of linking transcriptomic data with epigenomic regions.
+description: RnaChipIntegrator is a bioinformatics tool that automates the analysis of genomic proximity between two sets of features, such as linking transcriptomic data with epigenomic regions. Use when user asks to find genes near peaks, find peaks near genes, or perform proximity analysis between genomic features.
 homepage: https://github.com/fls-bioinformatics-core/RnaChipIntegrator
 ---
+
 
 # rnachipintegrator
 

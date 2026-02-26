@@ -1,8 +1,9 @@
 ---
 name: perl-test-sys-info
-description: This skill provides guidance for utilizing the `Test::Sys::Info` suite.
+description: This tool validates that the Perl Sys::Info module correctly interfaces with and parses data from the host system. Use when user asks to verify system information drivers, perform cross-platform hardware verification, or troubleshoot system metric retrieval in Perl.
 homepage: http://metacpan.org/pod/Test::Sys::Info
 ---
+
 
 # perl-test-sys-info
 

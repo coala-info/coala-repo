@@ -1,8 +1,9 @@
 ---
 name: bioconductor-surfaltr
-description: the package is available on all platforms; click for details.
+description: Bioconductor-surfaltr analyzes and visualizes the impact of alternative splicing on the topological features of cell surface proteins. Use when user asks to compare protein isoforms, predict changes in transmembrane domains, or visualize how alternative splicing affects cell surface protein topology.
 homepage: https://bioconductor.org/packages/release/bioc/html/surfaltr.html
 ---
+
 
 # bioconductor-surfaltr
 

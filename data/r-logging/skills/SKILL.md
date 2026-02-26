@@ -1,8 +1,9 @@
 ---
 name: r-logging
-description: "Pure R implementation of the ubiquitous log4j package. It offers hierarchic    loggers, multiple handlers per logger, level based filtering, space handling in messages    and custom formatting.</p>"
+description: This tool provides a hierarchical logging system for R based on the log4j and Python logging frameworks. Use when user asks to implement loggers, manage multiple log handlers, set log levels, or customize log formatting in R scripts and packages.
 homepage: https://cloud.r-project.org/web/packages/logging/index.html
 ---
+
 
 # r-logging
 

@@ -1,8 +1,9 @@
 ---
 name: perl-sub-attribute
-description: This skill facilitates the implementation of custom subroutine attributes in Perl using the `Sub::Attribute` module.
+description: This tool implements custom subroutine attributes in Perl using the Sub::Attribute module to intercept definitions and apply logic at compile time. Use when user asks to define custom Perl attributes, create attribute handlers that work with runtime eval, or tag subroutines with metadata and specific behaviors.
 homepage: http://metacpan.org/pod/Sub::Attribute
 ---
+
 
 # perl-sub-attribute
 

@@ -1,8 +1,9 @@
 ---
 name: kitsune
-description: Kitsune (K-mer-length Iterative Selection for UNbiased Ecophylogenomics) is a specialized toolkit designed to solve the "k-mer selection problem" in alignment-free genomics.
+description: Kitsune identifies the optimal k-mer length for alignment-free genomic analysis and calculates distance matrices for phylogenomics. Use when user asks to determine the most informative k-mer size, calculate cumulative relative entropy, or generate distance matrices using various metrics.
 homepage: https://github.com/natapol/kitsune
 ---
+
 
 # kitsune
 

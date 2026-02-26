@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flames
-description: the package is available on all platforms; click for details.
+description: FLAMES is an integrated pipeline for analyzing long-read RNA-seq data to identify and quantify isoforms in single-cell or bulk experiments. Use when user asks to perform full-length isoform analysis, demultiplex long-read single-cell data, or generate isoform-level expression matrices from raw fastq files.
 homepage: https://bioconductor.org/packages/release/bioc/html/FLAMES.html
 ---
+
 
 # bioconductor-flames
 

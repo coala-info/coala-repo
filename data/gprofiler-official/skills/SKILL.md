@@ -1,8 +1,9 @@
 ---
 name: gprofiler-official
-description: The `gprofiler-official` skill provides a programmatic interface to the g:Profiler service, a gold-standard tool for biological data interpretation.
+description: The gprofiler-official tool performs functional enrichment analysis, gene identifier conversion, and orthology mapping for biological data interpretation. Use when user asks to find enriched biological pathways, convert gene identifiers, or map orthologs between species.
 homepage: http://biit.cs.ut.ee/gprofiler
 ---
+
 
 # gprofiler-official
 

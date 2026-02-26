@@ -1,8 +1,9 @@
 ---
 name: copernicusmarine
-description: The `copernicusmarine` skill provides a streamlined interface for accessing the Copernicus Marine Service (CMEMS) data repository without the need for external Python dependencies.
+description: The copernicusmarine tool provides a streamlined interface for accessing, subsetting, and visualizing oceanographic data from the Copernicus Marine Service repository. Use when user asks to download marine datasets, subset data by spatial or temporal constraints, list native files, or integrate marine layers into interactive maps.
 homepage: https://github.com/pepijn-devries/CopernicusMarine
 ---
+
 
 # copernicusmarine
 

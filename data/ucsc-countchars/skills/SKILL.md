@@ -1,8 +1,9 @@
 ---
 name: ucsc-countchars
-description: The `ucsc-countchars` skill provides access to a specialized, high-performance utility from the UCSC Genome Browser "Kent" source tree.
+description: The ucsc-countchars tool scans a file and reports the total frequency of a single specified character. Use when user asks to 'count characters', 'count newlines', 'count tabs', 'count specific nucleotides', 'verify file integrity', 'check for expected delimiters', or 'perform basic sequence composition analysis'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-countchars
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-doppelgangr
-description: the package is available on all platforms; click for details.
+description: This tool identifies duplicate genomic profiles or technical replicates within and between transcriptome datasets. Use when user asks to identify doppelgängers, detect sample overlaps across ExpressionSet objects, or compare expression and phenotype similarity to find mislabeled specimens.
 homepage: https://bioconductor.org/packages/release/bioc/html/doppelgangR.html
 ---
+
 
 # bioconductor-doppelgangr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dirichletmultinomial
-description: the package is available on all platforms; click for details.
+description: This package implements Dirichlet-Multinomial models for analyzing high-dimensional count data through clustering and classification. Use when user asks to identify the optimal number of clusters in taxonomic profiles, assign samples to phenotypic groups using generative classifiers, or compare model fits using Laplace approximation.
 homepage: https://bioconductor.org/packages/release/bioc/html/DirichletMultinomial.html
 ---
+
 
 # bioconductor-dirichletmultinomial
 

@@ -1,8 +1,9 @@
 ---
 name: datafunk
-description: `datafunk` is a specialized suite of command-line utilities designed for the manipulation and curation of genomic data, primarily focusing on FASTA and SAM file formats.
+description: Datafunk is a suite of command-line utilities designed for the manipulation, curation, and standardization of genomic data in FASTA and SAM formats. Use when user asks to clean sequence headers, merge or filter FASTA files, remove low-coverage sequences, convert SAM files to FASTA, or process GISAID data.
 homepage: https://github.com/cov-ert/datafunk
 ---
+
 
 # datafunk
 

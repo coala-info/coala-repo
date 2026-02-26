@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.gmax.ncbi.gmv40
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Glycine max (soybean) based on the NCBI Gmv40 assembly for use in R. Use when user asks to extract soybean DNA sequences, perform motif searching, or analyze nucleotide composition using the BSgenome framework.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gmax.NCBI.Gmv40.html
 ---
+
 
 # bioconductor-bsgenome.gmax.ncbi.gmv40
 

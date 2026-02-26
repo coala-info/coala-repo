@@ -3,7 +3,7 @@
 ## mitohifi
 
 ### Tool Description
-MitoHiFi is a pipeline for mitochondrial genome assembly from PacBio HiFi reads.
+MitoHiFi is a tool for assembling mitochondrial genomes.
 
 ### Metadata
 - **Docker Image**: biocontainers/mitohifi:2.2_cv1
@@ -18,46 +18,22 @@ MitoHiFi is a pipeline for mitochondrial genome assembly from PacBio HiFi reads.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mitohifi:2.2_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1077802887: no space left on device
-```
+Unable to find image 'biocontainers/mitohifi:2.2_cv1' locally
+2.2_cv1: Pulling from biocontainers/mitohifi
+40dd5be53814: Pulling fs layer
+48692d1840f8: Pulling fs layer
+150090f0c7d1: Pulling fs layer
+227583650264: Pulling fs layer
+42f5ad1c3242: Pulling fs layer
+dcc606f075b0: Pulling fs layer
+333e05b47719: Pulling fs layer
+227583650264: Waiting
+42f5ad1c3242: Waiting
+dcc606f075b0: Waiting
+333e05b47719: Waiting
+150090f0c7d1: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob2334987223: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## mitohifi_findMitoReference.py
-
-### Tool Description
-A tool to find mitochondrial reference sequences. (Note: The provided input text contains container runtime error messages rather than the tool's help documentation, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: biocontainers/mitohifi:2.2_cv1
-- **Homepage**: https://github.com/marcelauliano/MitoHiFi
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mitohifi:2.2_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2155624177: no space left on device
-```
-
-## mitohifi_mitohifi.py
-
-### Tool Description
-The provided text does not contain help information for the tool; it is an error message regarding a lack of disk space during a container build process.
-
-### Metadata
-- **Docker Image**: biocontainers/mitohifi:2.2_cv1
-- **Homepage**: https://github.com/marcelauliano/MitoHiFi
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/mitohifi:2.2_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1957143163: no space left on device
+Run 'docker run --help' for more information
 ```
 

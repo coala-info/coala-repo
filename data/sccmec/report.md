@@ -3,7 +3,7 @@
 ## sccmec
 
 ### Tool Description
-A tool for Staphylococcal Cassette Chromosome mec (SCCmec) typing. (Note: The provided help text contains only system error messages and no usage information.)
+typing SCCmec cassettes in assemblies
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sccmec:1.2.0--hdfd78af_0
@@ -18,9 +18,52 @@ A tool for Staphylococcal Cassette Chromosome mec (SCCmec) typing. (Note: The pr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/6b8f6b25bd125bbc9b5997fbea9a2a61c56659594af65c47c3790b34d4c34a76: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/sccmec:1.2.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1936882019: no space left on device
+Usage: sccmec-main [OPTIONS]                                                   
+                                                                                
+ sccmec - typing SCCmec cassettes in assemblies                                 
+                                                                                
+╭─ Required Options ───────────────────────────────────────────────────────────╮
+│ *  --input         -i   TEXT  Input file in FASTA format to classify         │
+│                               [required]                                     │
+│ *  --yaml-targets  -yt  TEXT  YAML file documenting the targets and types    │
+│                               [default:                                      │
+│                               /usr/local/bin/../share/sccmec/sccmec-targets… │
+│                               [required]                                     │
+│ *  --yaml-regions  -yr  TEXT  YAML file documenting the regions and types    │
+│                               [default:                                      │
+│                               /usr/local/bin/../share/sccmec/sccmec-regions… │
+│                               [required]                                     │
+│ *  --targets       -t   TEXT  Query targets in FASTA format                  │
+│                               [default:                                      │
+│                               /usr/local/bin/../share/sccmec/sccmec-targets… │
+│                               [required]                                     │
+│ *  --regions       -r   TEXT  Query regions in FASTA format                  │
+│                               [default:                                      │
+│                               /usr/local/bin/../share/sccmec/sccmec-regions… │
+│                               [required]                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Filtering Options ──────────────────────────────────────────────────────────╮
+│ --min-targets-pident      INTEGER  Minimum percent identity of targets to    │
+│                                    count a hit                               │
+│                                    [default: 90]                             │
+│ --min-targets-coverage    INTEGER  Minimum percent coverage of targets to    │
+│                                    count a hit                               │
+│                                    [default: 80]                             │
+│ --min-regions-pident      INTEGER  Minimum percent identity of regions to    │
+│                                    count a hit                               │
+│                                    [default: 85]                             │
+│ --min-regions-coverage    INTEGER  Minimum percent coverage of regions to    │
+│                                    count a hit                               │
+│                                    [default: 83]                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Additional Options ─────────────────────────────────────────────────────────╮
+│ --prefix   -p  TEXT  Prefix to use for output files [default: sccmec]        │
+│ --outdir   -o  PATH  Directory to write output [default: ./]                 │
+│ --force              Overwrite existing reports                              │
+│ --verbose            Increase the verbosity of output                        │
+│ --silent             Only critical errors will be printed                    │
+│ --version            Print schema and camlhmp version                        │
+│ --help               Show this message and exit.                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

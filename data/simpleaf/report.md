@@ -3,28 +3,32 @@
 ## simpleaf
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of container build logs and a fatal error message regarding a SIF format conversion failure.
+FAIL to generate CWL: simpleaf not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/simpleaf:0.19.5--ha6fb395_0
 - **Homepage**: https://github.com/COMBINE-lab/simpleaf
 - **Package**: https://anaconda.org/channels/bioconda/packages/simpleaf/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/simpleaf/overview
-- **Total Downloads**: 51.0K
-- **Last updated**: 2025-04-30
+- **Total Downloads**: 51.1K
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/COMBINE-lab/simpleaf
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: simpleaf not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: simpleaf not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/simpleaf:0.19.5--ha6fb395_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

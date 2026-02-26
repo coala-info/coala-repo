@@ -1,8 +1,9 @@
 ---
 name: mnnpy
-description: mnnpy is a high-performance Python implementation of the Mutual Nearest Neighbors (MNN) batch correction method.
+description: mnnpy is a high-performance Python implementation of the Mutual Nearest Neighbors method for correcting batch effects in single-cell RNA sequencing data. Use when user asks to perform batch correction, integrate multiple single-cell datasets, or remove technical noise while preserving biological signals.
 homepage: http://github.com/chriscainx/mnnpy
 ---
+
 
 # mnnpy
 

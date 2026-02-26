@@ -1,8 +1,9 @@
 ---
 name: augustus-data
-description: AUGUSTUS is a specialized gene prediction tool designed for eukaryotic genomic sequences.
+description: AUGUSTUS predicts gene structures in eukaryotic genomic sequences using ab initio methods or external evidence. Use when user asks to predict genes, annotate eukaryotic genomes, or incorporate extrinsic evidence like RNA-Seq and protein alignments into gene models.
 homepage: http://bioinf.uni-greifswald.de/augustus/
 ---
+
 
 # augustus-data
 

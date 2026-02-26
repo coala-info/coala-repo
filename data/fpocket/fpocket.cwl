@@ -2,10 +2,76 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fpocket
 label: fpocket
-doc: "The provided text does not contain help information for fpocket; it is an error
-  log indicating a failure to build or pull a container image due to insufficient
-  disk space.\n\nTool homepage: https://github.com/Discngine/fpocket"
-inputs: []
+doc: "fpocket is a very fast open source protein pocket detection algorithm based
+  on Voronoi tessellation.\n\nTool homepage: https://github.com/Discngine/fpocket"
+inputs:
+  - id: clustering_distance
+    type:
+      - 'null'
+      - float
+    doc: The distance threshold for clustering alpha spheres
+    default: 1.73
+    inputBinding:
+      position: 101
+      prefix: -D
+  - id: clustering_method
+    type:
+      - 'null'
+      - string
+    doc: The clustering method to use (single, complete, average, centroid, 
+      ward)
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: extract_pockets
+    type:
+      - 'null'
+      - boolean
+    doc: Extract pockets as separate PDB files
+    inputBinding:
+      position: 101
+      prefix: -e
+  - id: input_pdb
+    type: File
+    doc: Input PDB file
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: max_sphere_radius
+    type:
+      - 'null'
+      - float
+    doc: The maximum radius of an alpha sphere
+    default: 6.0
+    inputBinding:
+      position: 101
+      prefix: -M
+  - id: min_alpha_spheres
+    type:
+      - 'null'
+      - int
+    doc: The minimum number of alpha spheres per pocket
+    default: 35
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: min_sphere_radius
+    type:
+      - 'null'
+      - float
+    doc: The minimum radius of an alpha sphere
+    default: 3.0
+    inputBinding:
+      position: 101
+      prefix: -m
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose mode
+    inputBinding:
+      position: 101
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

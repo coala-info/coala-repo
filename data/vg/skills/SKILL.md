@@ -1,8 +1,9 @@
 ---
 name: vg
-description: The `vg` (variation graph) toolset is a comprehensive suite for working with genomic pangenomes.
+description: The vg toolset works with genomic pangenomes. Use when user asks to construct graphs, generate indexes, map reads, call variants, convert graph formats, or visualize graphs.
 homepage: https://github.com/vgteam/vg
 ---
+
 
 # vg
 

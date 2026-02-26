@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mumosa
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the integrated analysis and scaling of multi-modal single-cell genomics data. Use when user asks to integrate multi-modal single-cell datasets, perform joint dimensionality reduction, or rescale data from different modalities.
 homepage: https://bioconductor.org/packages/release/bioc/html/mumosa.html
 ---
+
 
 # bioconductor-mumosa
 

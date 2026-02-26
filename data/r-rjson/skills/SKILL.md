@@ -1,8 +1,9 @@
 ---
 name: r-rjson
-description: Converts R object into JSON objects and vice-versa.</p>
+description: This tool converts R objects to JSON strings and parses JSON data into R structures using the rjson package. Use when user asks to convert R objects to JSON, parse JSON files or strings, or set up a JSON-RPC server for inter-process communication.
 homepage: https://cloud.r-project.org/web/packages/rjson/index.html
 ---
+
 
 # r-rjson
 

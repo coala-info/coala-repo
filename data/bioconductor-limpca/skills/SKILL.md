@@ -1,8 +1,9 @@
 ---
 name: bioconductor-limpca
-description: the package is available on all platforms; click for details.
+description: bioconductor-limpca performs statistical analysis of multivariate data from multifactorial designs by combining general linear models with principal component analysis. Use when user asks to decompose variance into specific model effects, perform ASCA or APCA on -omics data, or visualize factor-specific patterns in complex experimental designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/limpca.html
 ---
+
 
 # bioconductor-limpca
 

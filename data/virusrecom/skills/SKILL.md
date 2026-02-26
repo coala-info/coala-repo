@@ -1,8 +1,9 @@
 ---
 name: virusrecom
-description: virusrecom is a bioinformatics tool that utilizes information theory to detect recombination within viral lineages.
+description: virusrecom detects recombination within viral lineages using information theory. Use when user asks to validate potential recombinants, find specific recombination breakpoints, or perform a systematic scan for recombination.
 homepage: https://github.com/ZhijianZhou01/virusrecom
 ---
+
 
 # virusrecom
 

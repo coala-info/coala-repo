@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chetah
-description: the package is available on all platforms; click for details.
+description: CHETAH performs hierarchical cell type identification for single-cell RNA-seq data by correlating input cells against a reference dataset. Use when user asks to classify scRNA-seq data, assign cells to a reference hierarchy, identify intermediate cell types, or visualize classification results using a Shiny interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/CHETAH.html
 ---
+
 
 # bioconductor-chetah
 

@@ -1,8 +1,9 @@
 ---
 name: eigenstratdatabasetools
-description: The `eigenstratdatabasetools` suite provides a set of Python-based utilities for managing EigenStrat format genomic data.
+description: This suite provides Python-based utilities for managing, subsetting, and analyzing genomic data in EigenStrat format. Use when user asks to extract or remove specific individuals, check for duplicate samples between databases, calculate SNP coverage statistics, or rename SNPs based on reference coordinates.
 homepage: https://github.com/TCLamnidis/EigenStratDatabaseTools
 ---
+
 
 # eigenstratdatabasetools
 

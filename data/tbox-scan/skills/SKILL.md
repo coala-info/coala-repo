@@ -1,8 +1,9 @@
 ---
 name: tbox-scan
-description: tbox-scan is a specialized bioinformatics tool designed to automate the identification and characterization of T-box riboswitches within genomic data.
+description: tbox-scan automates the identification and characterization of T-box riboswitches within genomic data by integrating structural prediction, motif extraction, and thermodynamic analysis. Use when user asks to identify T-box riboswitches, predict T-box secondary structures, classify transcriptional or translational T-boxes, or analyze T-box regulatory logic.
 homepage: https://tbdb.io/
 ---
+
 
 # tbox-scan
 

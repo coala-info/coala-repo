@@ -1,8 +1,9 @@
 ---
 name: bioconductor-risa
-description: The package is extendable and efforts are undergoing to support metadata associated to proteomics assays.
+description: This tool processes and manages experimental metadata stored in the ISA-Tab format. Use when user asks to read ISA-Tab files, handle experimental metadata, or manage proteomics assay information.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Risa.html
 ---
+
 
 # bioconductor-risa
 

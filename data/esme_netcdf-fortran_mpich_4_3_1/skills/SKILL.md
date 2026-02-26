@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_mpich_4_3_1
-description: This skill provides guidance for utilizing the NetCDF-Fortran interface as packaged in the `esme_netcdf-fortran_mpich_4_3_1` distribution.
+description: This tool provides the NetCDF-Fortran interface built with MPICH 4.3.1 for managing and accessing multidimensional scientific data in parallel Fortran applications. Use when user asks to integrate NetCDF libraries into Fortran source code, retrieve compiler and linker flags via nf-config, or perform parallel-aware data operations using MPICH.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_mpich_4_3_1
 

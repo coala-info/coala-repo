@@ -1,8 +1,9 @@
 ---
 name: perl-text-template-simple
-description: This skill provides guidance on using the `Text::Template::Simple` engine to bridge static text with dynamic Perl logic.
+description: This tool provides a high-performance templating engine that embeds native Perl logic and expressions into static text files. Use when user asks to generate dynamic reports, automate boilerplate code creation, or process text templates using Perl flow control.
 homepage: http://metacpan.org/pod/Text::Template::Simple
 ---
+
 
 # perl-text-template-simple
 

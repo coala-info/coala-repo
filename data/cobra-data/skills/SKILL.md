@@ -1,8 +1,9 @@
 ---
 name: cobra-data
-description: The `cobra-data` skill provides a specialized workflow for using COBRApy, the standard Python library for constraint-based reconstruction and analysis.
+description: This tool performs constraint-based reconstruction and analysis of metabolic networks using COBRApy. Use when user asks to load genome-scale models, perform flux balance analysis, simulate gene knockouts, or analyze metabolic flux variability.
 homepage: https://opencobra.github.io/cobrapy
 ---
+
 
 # cobra-data
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fastliquidassociation
-description: the package is available on all platforms; click for details.
+description: This tool performs genome-wide liquid association analysis to identify gene triplets where the co-expression of two genes is mediated by a third gene. Use when user asks to identify mediated co-expression dynamics, pre-screen gene triplets with fastMLA, perform significance testing using conditional normal models, or run robust bootstrapping for liquid association values.
 homepage: https://bioconductor.org/packages/release/bioc/html/fastLiquidAssociation.html
 ---
+
 
 # bioconductor-fastliquidassociation
 

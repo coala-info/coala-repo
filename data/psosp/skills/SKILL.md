@@ -1,8 +1,9 @@
 ---
 name: psosp
-description: "PSOSP (Prophage SOS-dependency Predictor) is a specialized bioinformatics tool used to classify prophages into three categories: SOS-dependent (SdPs), SOS-independent (SiPs), and SOS-uncertain (SuP)."
+description: PSOSP classifies prophages into SOS-dependent, SOS-independent, or SOS-uncertain categories by identifying LexA binding sites and calculating heterology indices. Use when user asks to predict prophage induction mechanisms, identify SOS-dependent phages, or determine appropriate induction agents for Gammaproteobacteria.
 homepage: https://github.com/mujiezhang/PSOSP
 ---
+
 
 # psosp
 

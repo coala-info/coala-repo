@@ -1,8 +1,9 @@
 ---
 name: phynder
-description: phynder is a high-performance tool designed to assign samples to specific branches within a phylogeny.
+description: "phynder assigns samples to specific branches within a phylogeny by calculating genotype likelihoods across a reference tree. Use when user asks to place query samples into a reference tree, map SNPs to specific branches, or identify the most likely phylogenetic position for degraded DNA sequences."
 homepage: https://github.com/richarddurbin/phynder
 ---
+
 
 # phynder
 

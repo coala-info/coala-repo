@@ -1,8 +1,9 @@
 ---
 name: x-mapper
-description: x-mapper is a high-performance genomic sequence aligner designed for speed and accuracy.
+description: x-mapper aligns genomic sequences to reference genomes and performs integrated variant calling. Use when user asks to 'map reads to a reference', 'call variants', 'generate SAM files', 'generate VCF files', 'generate mutation lists', 'summarize map counts', 'infer ancestors', or 'handle long reads'.
 homepage: https://github.com/mathjeff/mapper
 ---
+
 
 # x-mapper
 

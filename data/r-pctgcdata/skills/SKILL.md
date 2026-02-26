@@ -1,8 +1,9 @@
 ---
 name: r-pctgcdata
-description: R package pctgcdata (documentation from project home).
+description: This package provides GC percentage data for human and mouse genomes to support GC normalization of tumor-normal log-ratios. Use when user asks to perform genomic copy number analysis with the facets package, normalize sequencing data for GC content, or access GC datasets for specific human and mouse genome builds.
 homepage: https://cran.r-project.org/web/packages/pctgcdata/index.html
 ---
+
 
 # r-pctgcdata
 

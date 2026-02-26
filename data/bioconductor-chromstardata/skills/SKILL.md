@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromstardata
-description: the package is available on all platforms; click for details.
+description: This package provides curated ChIP-seq and expression datasets from the EURATRANS project for demonstrating chromstaR package functionality. Use when user asks to access example ChIP-seq BED files, load rat genomic information, or retrieve experiment tables and expression data for chromatin state analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/chromstaRData.html
 ---
+
 
 # bioconductor-chromstardata
 

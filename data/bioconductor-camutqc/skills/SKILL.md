@@ -1,8 +1,9 @@
 ---
 name: bioconductor-camutqc
-description: the package is available on all platforms; click for details.
+description: CaMutQC performs integrative quality control and filtration of cancer somatic mutations by converting VEP-annotated VCF files into MAF format. Use when user asks to convert VCF to MAF, filter technical artifacts, select high-confidence driver mutations, or calculate tumor mutational burden.
 homepage: https://bioconductor.org/packages/release/bioc/html/CaMutQC.html
 ---
+
 
 # bioconductor-camutqc
 

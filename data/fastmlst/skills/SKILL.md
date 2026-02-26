@@ -1,8 +1,9 @@
 ---
 name: fastmlst
-description: FastMLST is a high-speed tool designed for the rapid identification of bacterial sequence types from draft genome assemblies.
+description: FastMLST rapidly identifies bacterial sequence types from draft genome assemblies and prepares allele sequences for phylogenetic analysis. Use when user asks to identify sequence types from assemblies, list supported PubMLST schemes, or generate concatenated allele sequences for evolutionary studies.
 homepage: https://github.com/EnzoAndree/FastMLST
 ---
+
 
 # fastmlst
 

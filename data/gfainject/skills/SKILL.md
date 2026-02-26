@@ -1,8 +1,9 @@
 ---
 name: gfainject
-description: gfainject is a specialized tool for "injecting" standard genomic alignments into pangenome graphs.
+description: "gfainject projects linear genomic alignments from SAM, BAM, or PAF files onto pangenome graph paths to produce GAF output. Use when user asks to inject alignments into a GFA graph, convert SAM or BAM files to GAF, or map linear coordinates to graph steps."
 homepage: https://github.com/AndreaGuarracino/gfainject
 ---
+
 
 # gfainject
 

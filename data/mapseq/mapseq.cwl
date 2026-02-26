@@ -2,10 +2,129 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mapseq
 label: mapseq
-doc: "The provided text does not contain help information for mapseq; it contains
-  system error messages related to a container runtime (Apptainer/Singularity) failing
-  to pull the image due to insufficient disk space.\n\nTool homepage: https://github.com/jfmrod/MAPseq"
-inputs: []
+doc: "Classify a fasta file containing sequence reads to the default NCBI taxonomy
+  and OTU classifications.\n\nTool homepage: https://github.com/jfmrod/MAPseq"
+inputs:
+  - id: input_fa
+    type: File
+    doc: Input fasta file
+    inputBinding:
+      position: 1
+  - id: db
+    type:
+      - 'null'
+      - string
+    doc: Database for classification
+    inputBinding:
+      position: 2
+  - id: tax1
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Taxonomy files
+    inputBinding:
+      position: 3
+  - id: minid1
+    type:
+      - 'null'
+      - int
+    doc: minimum number of shared kmers to consider hit in second phase kmer 
+      search
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -minid1
+  - id: minid2
+    type:
+      - 'null'
+      - int
+    doc: minimum number of shared kmers to consider hit in alignment phase
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -minid2
+  - id: minscore
+    type:
+      - 'null'
+      - int
+    doc: 'minimum score cutoff to consider for a classification, should be reduced
+      when searching very small sequences, i.e.: primer search'
+    default: 30
+    inputBinding:
+      position: 104
+      prefix: -minscore
+  - id: nthreads
+    type:
+      - 'null'
+      - int
+    doc: number of threads to use
+    default: 4
+    inputBinding:
+      position: 104
+      prefix: -nthreads
+  - id: otucounts
+    type:
+      - 'null'
+      - File
+    doc: computes summary of classification counts from the classification 
+      output file
+    inputBinding:
+      position: 104
+      prefix: -otucounts
+  - id: otulim
+    type:
+      - 'null'
+      - int
+    doc: number of sequences per internal cluster to include in alignment phase
+    default: 50
+    inputBinding:
+      position: 104
+      prefix: -otulim
+  - id: otutable
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: generates a tsv file with taxonomic labels as rows and samples as 
+      columns from classification output files
+    inputBinding:
+      position: 104
+      prefix: -otutable
+  - id: print_align
+    type:
+      - 'null'
+      - boolean
+    doc: outputs alignments
+    inputBinding:
+      position: 104
+      prefix: -print_align
+  - id: print_hits
+    type:
+      - 'null'
+      - boolean
+    doc: outputs list of top hits for each input sequence
+    inputBinding:
+      position: 104
+      prefix: -print_hits
+  - id: tophits
+    type:
+      - 'null'
+      - int
+    doc: number of reference sequences to include in alignment phase
+    default: 20
+    inputBinding:
+      position: 104
+      prefix: -tophits
+  - id: topotus
+    type:
+      - 'null'
+      - int
+    doc: number of internal reference otus to include in alignment phase
+    default: 10
+    inputBinding:
+      position: 104
+      prefix: -topotus
 outputs:
   - id: stdout
     type: stdout

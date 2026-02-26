@@ -1,8 +1,9 @@
 ---
 name: purge_haplotigs
-description: The `purge_haplotigs` pipeline automates the identification of "haplotigs"—redundant genomic segments where both maternal and paternal alleles have been assembled as separate primary contigs.
+description: The purge_haplotigs pipeline identifies and removes redundant genomic segments from a diploid assembly to create a cleaner haploid representation. Use when user asks to generate read depth histograms, analyze contig coverage, or purge redundant haplotigs from a genome assembly.
 homepage: https://bitbucket.org/mroachawri/purge_haplotigs/
 ---
+
 
 # purge_haplotigs
 

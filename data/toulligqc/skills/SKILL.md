@@ -1,8 +1,9 @@
 ---
 name: toulligqc
-description: ToulligQC is a specialized post-sequencing quality control tool tailored for the Oxford Nanopore ecosystem.
+description: ToulligQC performs post-sequencing quality control for Oxford Nanopore data, generating detailed HTML reports. Use when user asks to perform quality control on Oxford Nanopore sequencing data, validate run success, identify sequencing artifacts, analyze barcoded runs, analyze 1D² runs, or filter reads by Q-score.
 homepage: https://github.com/GenomicParisCentre/toulligQC
 ---
+
 
 # toulligqc
 

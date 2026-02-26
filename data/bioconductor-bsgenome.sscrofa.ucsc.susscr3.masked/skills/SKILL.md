@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.sscrofa.ucsc.susscr3.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for Sus scrofa based on the UCSC susScr3 assembly. Use when user asks to access pig genome sequences, perform genomic analysis with masked repeats or assembly gaps, or search for motifs in the Sus scrofa genome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Sscrofa.UCSC.susScr3.masked.html
 ---
+
 
 # bioconductor-bsgenome.sscrofa.ucsc.susscr3.masked
 

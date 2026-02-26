@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genextender
-description: the package is available on all platforms; click for details.
+description: bioconductor-genextender performs functional annotation of ChIP-seq peaks by mapping genomic coordinates to genes using optimized upstream and downstream extensions. Use when user asks to map peaks to genes, optimize genomic extension distances for regulatory elements, or perform gene-centric functional summaries of epigenetic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneXtendeR.html
 ---
+
 
 # bioconductor-genextender
 

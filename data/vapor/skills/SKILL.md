@@ -1,8 +1,9 @@
 ---
 name: vapor
-description: VAPOR (Viral Assessment of Proximal Organic Reads) is a specialized tool for the classification of viral samples, particularly Influenza, using short-read sequencing data.
+description: VAPOR classifies viral samples from short-read sequencing data by comparing reads against a reference database to find the best matching strain. Use when user asks to classify viral samples, find the best matching viral reference strain, or retrieve matching reference sequences.
 homepage: https://github.com/connor-lab/vapor
 ---
+
 
 # vapor
 

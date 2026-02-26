@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsreg
-description: the package is available on all platforms; click for details.
+description: This tool analyzes gene set expression variability and dysregulation between phenotypes using DIRAC and EVA algorithms. Use when user asks to identify dysregulated pathways, analyze gene set expression variation, or perform alternative splicing analysis using SEVA.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSReg.html
 ---
+
 
 # bioconductor-gsreg
 

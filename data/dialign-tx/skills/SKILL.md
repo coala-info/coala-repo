@@ -1,8 +1,9 @@
 ---
 name: dialign-tx
-description: DIALIGN-TX is an advanced version of the DIALIGN alignment program that combines greedy and progressive alignment strategies.
+description: DIALIGN-TX performs multiple sequence alignment by combining greedy and progressive strategies to identify and align highly conserved local segments. Use when user asks to align sequences with isolated regions of similarity, perform local multiple sequence alignment, or handle sequences with significant rearrangements and large insertions.
 homepage: https://dialign-tx.gobics.de
 ---
+
 
 # dialign-tx
 

@@ -3,7 +3,7 @@
 ## idemux
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container runtime failure (no space left on device).
+A tool to demultiplex fastq files based on Lexogen i7,i5,i1 barcodes.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/idemux:0.1.6--pyhdfd78af_0
@@ -18,11 +18,26 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/idemux:0.1.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1129098716: no space left on device
+usage: idemux [-h] --r1 READ1 --r2 READ2 --sample-sheet SAMPLE_SHEET --out
+              OUTPUT_DIR [--i5-rc] [--i1-start I1_START] [-v]
+
+A tool to demultiplex fastq files based on Lexogen i7,i5,i1 barcodes.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --i5-rc               when the i5 barcode has been sequenced as reverse
+                        complement. make sure to enter non-reverse complement
+                        sequences in the barcode file
+  --i1-start I1_START   start position of the i1 index (1-based) on read 2
+                        (default: 11)
+  -v, --version         show program's version number and exit
+
+required arguments:
+  --r1 READ1            gzipped read 1 fastq file
+  --r2 READ2            path to gzipped read 2 fastq file
+  --sample-sheet SAMPLE_SHEET
+                        csv file describing sample names, and barcode
+                        combinations
+  --out OUTPUT_DIR      where to write the output files
 ```
 
-
-## Metadata
-- **Skill**: generated

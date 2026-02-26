@@ -1,8 +1,9 @@
 ---
 name: vidjil-algo
-description: This skill provides specialized guidance for using `vidjil-algo`, the core computational engine of the Vidjil platform.
+description: Vidjil-algo processes high-throughput sequencing data to identify and quantify V(D)J recombinations in B and T cells. Use when user asks to identify V(D)J recombinations, quantify V(D)J recombinations, process sequencing data, identify clones, merge paired-end reads, or analyze multiple genomes.
 homepage: https://gitlab.inria.fr/vidjil/vidjil
 ---
+
 
 # vidjil-algo
 

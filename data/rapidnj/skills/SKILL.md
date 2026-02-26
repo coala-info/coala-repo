@@ -1,8 +1,9 @@
 ---
 name: rapidnj
-description: RapidNJ is an optimized implementation of the canonical Neighbor-Joining method designed for speed and memory efficiency.
+description: RapidNJ performs fast and memory-efficient phylogenetic tree reconstruction using the Neighbor-Joining method. Use when user asks to infer a phylogenetic tree from a multiple sequence alignment, process a distance matrix, or perform large-scale phylogenetic analysis on desktop hardware.
 homepage: http://birc.au.dk/software/rapidnj/
 ---
+
 
 # rapidnj
 

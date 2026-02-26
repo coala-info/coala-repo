@@ -1,8 +1,9 @@
 ---
 name: dia-umpire
-description: DIA-Umpire is a Java-based computational framework designed for the untargeted analysis of DIA mass spectrometry proteomics data.
+description: DIA-Umpire is a computational framework that extracts pseudo-DDA spectra from DIA mass spectrometry data for untargeted proteomics analysis. Use when user asks to extract signals from mzXML files, generate pseudo-MS/MS spectra, perform library searches, or quantify proteins and peptides.
 homepage: https://github.com/cctsou/DIA-Umpire
 ---
+
 
 # dia-umpire
 

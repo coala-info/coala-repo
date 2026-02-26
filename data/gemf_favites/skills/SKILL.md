@@ -1,8 +1,9 @@
 ---
 name: gemf_favites
-description: The `gemf_favites` skill provides a streamlined interface for running the Generalized Epidemic Modeling Framework (GEMF) within the FAVITES ecosystem.
+description: This tool simulates stochastic epidemic processes on contact networks using the Generalized Epidemic Modeling Framework. Use when user asks to simulate disease spread, model state transitions in a contact network, or run GEMF simulations within the FAVITES ecosystem.
 homepage: https://github.com/niemasd/GEMF
 ---
+
 
 # gemf_favites
 

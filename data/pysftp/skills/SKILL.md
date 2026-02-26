@@ -1,8 +1,9 @@
 ---
 name: pysftp
-description: This tool provides a robust wrapper for OpenSSH SFTP, allowing for fine-grained control over how SFTP requests are handled on a server.
+description: pysftp provides a wrapper for OpenSSH SFTP to manage secure file transfers through jailing, proxying, or custom storage backends. Use when user asks to jail users in a chroot environment, proxy SFTP traffic to a remote server, or implement custom SFTP storage handlers.
 homepage: https://github.com/unbit/pysftpserver
 ---
+
 
 # pysftp
 

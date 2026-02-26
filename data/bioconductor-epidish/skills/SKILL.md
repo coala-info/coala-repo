@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epidish
-description: the package can be used on DNAm data of blood-tissue of any age, from birth to old-age, generic epithelial tissue and breast tissue. Besides, the package provides a function that allows the identification of differentially methylated cell-types and their directionality of change in Epigenome-Wide Association Studies.
+description: EpiDISH performs epigenetic dissection of intra-sample heterogeneity to infer cell-type proportions and identify differentially methylated cell types in DNA methylation data. Use when user asks to estimate cell fractions in blood or solid tissue, perform hierarchical deconvolution, or identify differentially methylated cell types using the CellDMC algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiDISH.html
 ---
+
 
 # bioconductor-epidish
 

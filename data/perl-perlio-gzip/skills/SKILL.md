@@ -1,8 +1,9 @@
 ---
 name: perl-perlio-gzip
-description: This skill provides guidance on using the `PerlIO::gzip` module to handle compressed data streams in Perl.
+description: This tool provides a Perl IO layer for reading and writing gzipped files directly through the open function. Use when user asks to read or write compressed data streams, handle gzipped files in Perl scripts, or push a gzip layer onto an existing filehandle.
 homepage: http://metacpan.org/pod/PerlIO-gzip
 ---
+
 
 # perl-perlio-gzip
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-joda
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-joda quantifies gene deregulation between two cell populations by integrating regulator knockdown data with signaling pathway models. Use when user asks to calculate deregulation scores, quantify changes in gene regulation between conditions, or integrate knockdown expression data with pathway knowledge to analyze regulatory influences.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/joda.html
 ---
+
 
 # bioconductor-joda
 

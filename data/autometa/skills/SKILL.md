@@ -1,8 +1,9 @@
 ---
 name: autometa
-description: Autometa is a bioinformatics pipeline designed to recover high-quality microbial genomes from metagenomic datasets.
+description: Autometa is a bioinformatics pipeline that recovers high-quality microbial genomes from metagenomic datasets by integrating sequence composition, abundance, and phylogeny. Use when user asks to bin metagenomic contigs, recover metagenome-assembled genomes, or perform kingdom-specific clustering of microbial sequences.
 homepage: https://github.com/KwanLab/Autometa
 ---
+
 
 # autometa
 

@@ -1,8 +1,9 @@
 ---
 name: rhinotype
-description: rhinotype is a specialized bioinformatic tool designed to streamline the classification of Rhinovirus samples.
+description: rhinotype is a bioinformatic tool used to classify and genotype Rhinovirus sequences. Use when user asks to classify Rhinovirus samples, genotype viral sequences, or process FASTA files for Rhinovirus identification.
 homepage: https://github.com/omicscodeathon/rhinotype
 ---
+
 
 # rhinotype
 

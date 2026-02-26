@@ -1,8 +1,9 @@
 ---
 name: centrifuge-core
-description: Centrifuge is a specialized metagenomic classifier designed for speed and memory efficiency.
+description: Centrifuge-core is a metagenomic classifier that performs rapid taxonomic assignment of high-throughput sequencing reads using a memory-efficient indexing scheme. Use when user asks to build genomic indices, classify single-end or paired-end reads, download NCBI reference data, or generate taxonomic reports.
 homepage: https://github.com/infphilo/centrifuge
 ---
+
 
 # centrifuge-core
 

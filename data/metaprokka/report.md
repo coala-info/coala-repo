@@ -3,7 +3,7 @@
 ## metaprokka
 
 ### Tool Description
-Prokaryotic genome annotation for metagenomes. (Note: The provided text contains container runtime error logs rather than tool help text, so specific arguments could not be extracted from the input.)
+rapid bacterial genome annotation, adapted for large datasets
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0
@@ -18,46 +18,47 @@ Prokaryotic genome annotation for metagenomes. (Note: The provided text contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2365873577: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## metaprokka_prokka-gv
-
-### Tool Description
-Prokaryotic genome annotation tool (Note: The provided help text contains only system error logs and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0
-- **Homepage**: https://github.com/telatin/metaprokka
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaprokka/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2088489430: no space left on device
-```
-
-## metaprokka_get-phrogs
-
-### Tool Description
-A tool to retrieve PHROGs (Prokaryotic Virus Remote Homologous Groups) data for MetaProkka. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0
-- **Homepage**: https://github.com/telatin/metaprokka
-- **Package**: https://anaconda.org/channels/bioconda/packages/metaprokka/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metaprokka:1.15.0--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3149363293: no space left on device
+Option h is ambiguous (help, hmms)
+Name:
+  Metaprokka 1.15.0
+Synopsis:
+  rapid bacterial genome annotation, adapted for large datasets
+Usage:
+  metaprokka [options] <contigs.fasta>
+General:
+  --help             This help
+  --version          Print version and exit
+  --citation         Print citation for referencing Prokka
+  --quiet            No screen output (default OFF)
+  --debug            Debug mode: keep all temporary files (default OFF)
+Setup:
+  --dbdir [X]        Prokka database root folders (default '/usr/local/db')
+  --listdb           List all configured databases
+Outputs:
+  --outdir [X]       Output folder [auto] (default '')
+  --force            Force overwriting existing output folder (default OFF)
+  --prefix [X]       Filename output prefix [auto] (default '')
+  --locustag [X]     Locus tag prefix [auto] (default '')
+  --increment [N]    Locus tag counter increment (default '1')
+  --gffver [N]       GFF version (default '3')
+Annotations:
+  --prodigaltf [X]   Prodigal training file (default '')
+  --proteins [X]     FASTA or GBK file to use as 1st priority (default '')
+  --hmms [X]         Trusted HMM to first annotate from (default '')
+  --rawproduct       Do not clean up /product annotation (default OFF)
+  --cdsrnaolap       Allow [tr]RNA to overlap CDS (default OFF)
+Matching:
+  --evalue [n.n]     Similarity e-value cut-off (default '1e-09')
+  --coverage [n.n]   Minimum coverage on query protein (default '80')
+Computation:
+  --cpus [N]         Number of CPUs to use [0=all] (default '8')
+  --fast             Fast mode - only use basic BLASTP databases (default OFF)
+  --noanno           For CDS just set /product="unannotated protein" (default OFF)
+  --mincontiglen [N] Minimum contig size [NCBI needs 200] (default '1')
+  --rfam             Enable searching for ncRNAs with Infernal+Rfam (SLOW!) (default '0')
+  --norrna           Don't run rRNA search (default OFF)
+  --dotrna           Run tRNA search (default OFF)
+  --rnammer          Prefer RNAmmer over Barrnap for rRNA prediction (default OFF)
+  --dotbl2asn        Run tbl2asn (default OFF)
 ```
 

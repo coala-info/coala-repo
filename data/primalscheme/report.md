@@ -1,9 +1,9 @@
 # primalscheme CWL Generation Report
 
-## primalscheme
+## primalscheme_multiplex
 
 ### Tool Description
-A tool for multiplex primer design for whole genome sequencing
+Design a multiplex PCR scheme.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/primalscheme:1.4.1--pyh7cba7a3_0
@@ -12,19 +12,31 @@ A tool for multiplex primer design for whole genome sequencing
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/primalscheme/overview
-- **Total Downloads**: 6.8K
+- **Total Downloads**: 6.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aresti/primalscheme
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/primalscheme:1.4.1--pyh7cba7a3_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: primalscheme multiplex [OPTIONS] FASTA
+
+  Design a multiplex PCR scheme.
+
+Options:
+  -a, --amplicon-size <int>     Amplicon size target. Pass twice to set an
+                                exact range, otherwise expect +/- 5.0%.
+                                [default: 380, 420; x>=90]
+  -o, --outpath <dir>           Path to output directory.  [default: ./output]
+  -n, --name <str>              Prefix name for your outputs.  [default:
+                                scheme]
+  -t, --target-overlap <int>    Target insert overlap size.  [default: 0;
+                                x>=0]
+  -d, --debug / --no-debug      Set log level DEBUG.
+  -f, --force / --no-force      Force output to an existing directory,
+                                overwrite files.
+  -p, --pinned / --no-pinned    Only consider primers from the first
+                                reference.
+  -g, --high-gc / --no-high-hc  Use config suitable for high-GC sequences.
+  -h, --help                    Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

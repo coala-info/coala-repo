@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwiginfo
-description: The `bigWigInfo` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to provide a snapshot of the contents of a bigWig file.
+description: The ucsc-bigwiginfo tool inspects bigWig files to extract header and summary information. Use when user asks to view bigWig file metadata, get detailed statistics for individual chromosomes, inspect remote bigWig files, validate bigWig file contents, or check bigWig file zoom levels.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwiginfo
 

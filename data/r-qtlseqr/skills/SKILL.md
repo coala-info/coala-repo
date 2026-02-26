@@ -1,8 +1,9 @@
 ---
 name: r-qtlseqr
-description: R package qtlseqr (documentation from project home).
+description: "QTLseqr identifies quantitative trait loci in bulked populations using next-generation sequencing data through QTL-seq and G' statistical frameworks. Use when user asks to import SNP data from GATK, filter variants, perform G' or QTL-seq analysis, visualize genomic statistics, or extract significant QTL regions."
 homepage: https://cran.r-project.org/web/packages/qtlseqr/index.html
 ---
+
 
 # r-qtlseqr
 

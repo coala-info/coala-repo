@@ -1,8 +1,9 @@
 ---
 name: bioconductor-knowyourcg
-description: the package is available on all platforms; click for details.
+description: This tool performs functional interpretation of DNA methylation data by testing CpG sets for enrichment against curated knowledgebases. Use when user asks to analyze CpG sets for enrichment, perform set enrichment analysis on methylation data, link CpGs to genes, or test for genomic proximity and co-regulation.
 homepage: https://bioconductor.org/packages/release/bioc/html/knowYourCG.html
 ---
+
 
 # bioconductor-knowyourcg
 

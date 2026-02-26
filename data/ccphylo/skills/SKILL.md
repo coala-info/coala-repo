@@ -1,8 +1,9 @@
 ---
 name: ccphylo
-description: CCPhylo is a specialized tool designed for rapid phylogenetic inference.
+description: CCPhylo calculates genetic distances and reconstructs phylogenetic trees from nucleotide overlap data. Use when user asks to compute distance matrices from KMA results, generate Newick-formatted trees, or perform rapid phylogenetic inference.
 homepage: https://bitbucket.org/genomicepidemiology/ccphylo
 ---
+
 
 # ccphylo
 

@@ -1,8 +1,9 @@
 ---
 name: r-reshape
-description: "Flexibly restructure and aggregate data using    just two functions: melt and cast.</p>"
+description: The r-reshape package provides a framework for transforming data between wide and long formats using melting and casting operations. Use when user asks to melt data into a long format, cast data into a wide or aggregated format, or restructure data frames for visualization and analysis.
 homepage: https://cloud.r-project.org/web/packages/reshape/index.html
 ---
+
 
 # r-reshape
 

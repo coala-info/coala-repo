@@ -1,8 +1,9 @@
 ---
 name: rnasamba
-description: RNAsamba is a deep-learning-based tool designed to classify RNA transcripts as either protein-coding or non-coding.
+description: RNAsamba is a deep-learning tool that classifies RNA transcripts as protein-coding or non-coding based on their sequence. Use when user asks to classify transcripts, annotate a transcriptome, filter non-coding RNAs, extract translated protein sequences, or train custom coding potential models.
 homepage: https://github.com/apcamargo/RNAsamba
 ---
+
 
 # rnasamba
 

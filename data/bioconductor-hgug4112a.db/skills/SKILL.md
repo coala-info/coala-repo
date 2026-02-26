@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgug4112a.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation data for mapping Agilent Human Genome G4112A microarray probe identifiers to various biological annotations and genomic locations. Use when user asks to map Agilent G4112A probe IDs to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosome positions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4112a.db.html
 ---
+
 
 # bioconductor-hgug4112a.db
 

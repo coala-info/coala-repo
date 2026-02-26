@@ -1,8 +1,9 @@
 ---
 name: gadma
-description: GADMA (Genetic Algorithm for Demographic Model Analysis) is a command-line tool designed to infer the joint demographic history of multiple populations from genetic data, specifically Allele Frequency Spectrum (AFS) data.
+description: "GADMA automatically infers the joint demographic history of multiple populations from genetic data using global and local search algorithms. Use when user asks to infer demographic models from allele frequency spectrum data, automate the discovery of population histories, or perform demographic inference using engines like dadi, moments, or momi2."
 homepage: https://github.com/ctlab/GADMA
 ---
+
 
 # gadma
 

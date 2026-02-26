@@ -1,8 +1,9 @@
 ---
 name: r-rmarkdown
-description: Convert R Markdown documents into a variety of formats.</p>
+description: The r-rmarkdown package converts R Markdown files into high-quality documents by combining code, results, and prose. Use when user asks to render documents to various formats, manage output configurations, or apply advanced customizations like Lua filters and LaTeX environments.
 homepage: https://cloud.r-project.org/web/packages/rmarkdown/index.html
 ---
+
 
 # r-rmarkdown
 

@@ -3,7 +3,7 @@
 ## svclone
 
 ### Tool Description
-Structural variant clonal reconstruction tool (Note: The provided text is a container build log and does not contain help documentation or argument definitions).
+SVclone: A tool for clonal analysis of structural variants
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svclone:1.1.4--pyr44hdfd78af_0
@@ -18,13 +18,15 @@ Structural variant clonal reconstruction tool (Note: The provided text is a cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svclone:1.1.4--pyr44hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+/usr/local/lib/python3.11/site-packages/SVclone/cli.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/usr/local/bin/svclone", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/SVclone/cli.py", line 188, in main
+    args.func(args)
+    ^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'func'
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-a4preproc
-description: the package is available on all platforms; click for details.
+description: This tool adds standardized gene annotation and metadata to ExpressionSet objects within the Automated Affymetrix Array Analysis suite. Use when user asks to add gene information to an ExpressionSet, map probe IDs to standardized identifiers, or pre-process data for the a4 pipeline.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Preproc.html
 ---
+
 
 # bioconductor-a4preproc
 

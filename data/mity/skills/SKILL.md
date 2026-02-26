@@ -1,8 +1,9 @@
 ---
 name: mity
-description: Mity is a specialized bioinformatics pipeline tailored for the unique challenges of mitochondrial DNA (mtDNA) analysis.
+description: Mity is a bioinformatics pipeline designed to call, normalize, and report mitochondrial DNA variants with high sensitivity for low-level heteroplasmy. Use when user asks to call mitochondrial variants, normalize mitochondrial VCFs, generate annotated clinical reports, or merge mitochondrial calls into nuclear DNA VCFs.
 homepage: https://github.com/KCCG/mity
 ---
+
 
 # mity
 

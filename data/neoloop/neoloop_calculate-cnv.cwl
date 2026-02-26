@@ -1,16 +1,66 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neoloop_calculate-cnv
+baseCommand: calculate-cnv
 label: neoloop_calculate-cnv
-doc: "The provided text is an error message regarding a container runtime failure
-  and does not contain help documentation or argument definitions for the tool.\n\n
-  Tool homepage: https://github.com/XiaoTaoWang/NeoLoopFinder"
-inputs: []
+doc: "Calculate the copy number variation profile from Hi-C map using a generalized
+  additive model with the Poisson link function\n\nTool homepage: https://github.com/XiaoTaoWang/NeoLoopFinder"
+inputs:
+  - id: cachefolder
+    type:
+      - 'null'
+      - Directory
+    doc: Cache folder. We suggest keep this setting the same between different 
+      runs.
+    default: .
+    inputBinding:
+      position: 101
+      prefix: --cachefolder
+  - id: enzyme
+    type:
+      - 'null'
+      - string
+    doc: The restriction enzyme name used in the Hi-C experiment. If the genome 
+      was cutted using a sequence-independent/uniform-cutting enzyme, please 
+      consider setting this parameter to "uniform".
+    default: MboI
+    inputBinding:
+      position: 101
+      prefix: --enzyme
+  - id: genome
+    type:
+      - 'null'
+      - string
+    doc: Reference genome name.
+    default: hg38
+    inputBinding:
+      position: 101
+      prefix: --genome
+  - id: hic_map
+    type:
+      - 'null'
+      - string
+    doc: Cool URI.
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --hic
+  - id: log_file
+    type:
+      - 'null'
+      - File
+    doc: Logging file name.
+    default: cnv-calculation.log
+    inputBinding:
+      position: 101
+      prefix: --logFile
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: Output file path.
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/neoloop:0.4.3.post2--pyhdfd78af_0
-stdout: neoloop_calculate-cnv.out

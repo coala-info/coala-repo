@@ -1,8 +1,9 @@
 ---
 name: bioconductor-screpertoire
-description: the package is available on all platforms; click for details.
+description: scRepertoire is an R package designed to process and analyze single-cell immune receptor profiling data. Use when user asks to analyze T-cell or B-cell receptor repertoires, integrate clonotype information with single-cell transcriptomic data, or visualize clonal expansion and diversity.
 homepage: https://bioconductor.org/packages/release/bioc/html/scRepertoire.html
 ---
+
 
 # bioconductor-screpertoire
 

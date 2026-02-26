@@ -1,8 +1,9 @@
 ---
 name: hyphy-pt
-description: HyPhy (Hypothesis Testing using Phylogenies) is a comprehensive software suite for comparative sequence analysis.
+description: HyPhy is a comprehensive software suite for comparative sequence analysis used to infer the strength of natural selection by calculating dN/dS ratios across protein-coding alignments. Use when user asks to detect recombination, identify site-specific pervasive or episodic selection, test for branch-specific or gene-wide selection, or compare selection pressure between groups of branches.
 homepage: http://hyphy.org/
 ---
+
 
 # hyphy-pt
 

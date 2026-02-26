@@ -1,8 +1,9 @@
 ---
 name: sprinkles
-description: Sprinkle is a lightweight software provisioning tool that uses a Ruby-based Domain Specific Language (DSL) to define how servers should be configured.
+description: Sprinkle is a lightweight software provisioning tool that uses a Ruby-based DSL to define and automate server configurations. Use when user asks to define software packages, map policies to server roles, or deploy infrastructure using a programmatic Ruby-centric workflow.
 homepage: https://github.com/sprinkle-tool/sprinkle
 ---
+
 
 # sprinkles
 

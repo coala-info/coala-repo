@@ -1,8 +1,9 @@
 ---
 name: bioconductor-consensus
-description: the package is available on all platforms; click for details.
+description: This R package provides methods for finding a consensus partition from a set of clusterings. Use when user asks to perform consensus clustering, aggregate multiple clustering results, or find agreement between different partitions.
 homepage: https://bioconductor.org/packages/release/bioc/html/consensus.html
 ---
+
 
 # bioconductor-consensus
 

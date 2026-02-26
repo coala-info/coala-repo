@@ -1,8 +1,9 @@
 ---
 name: r-treesim
-description: R package treesim (documentation from project home).
+description: The TreeSim package simulates phylogenetic trees under various birth-death models, including constant-rate, density-dependent, and rate-shifting processes. Use when user asks to simulate trees with a fixed number of taxa or age, model mass extinction events, or generate serially sampled heterochronous trees.
 homepage: https://cran.r-project.org/web/packages/treesim/index.html
 ---
+
 
 # r-treesim
 

@@ -1,8 +1,9 @@
 ---
 name: ceas
-description: Ceaser Easing is a Compass extension that brings classic Penner easing equations to CSS3.
+description: Ceaser Easing is a Compass extension that provides Penner easing equations for CSS3 transitions and animations. Use when user asks to apply sophisticated easing functions, generate cubic-bezier values, or use the ceaser-transition mixin in SCSS.
 homepage: https://github.com/jhardy/compass-ceaser-easing
 ---
+
 
 # ceas
 

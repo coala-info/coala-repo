@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cghbase
-description: the package is available on all platforms; click for details.
+description: This package provides fundamental S4 classes and methods for handling, manipulating, and visualizing array Comparative Genomic Hybridization data. Use when user asks to create cghRaw objects, access genomic coordinates and assay data, or generate frequency and profile plots for copy number analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/CGHbase.html
 ---
+
 
 # bioconductor-cghbase
 

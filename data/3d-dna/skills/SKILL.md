@@ -1,8 +1,9 @@
 ---
 name: 3d-dna
-description: This is a script to assemble draft assemblies (represented in input by draft fasta and deduplicated list of alignments of Hi-C reads to this fasta as produced by the Juicer pipeline) into chromosome-length scaffolds. The script will produce an output fasta file, a Hi-C map of the final assembly, and a few supplementary annotation files to help review the result in Juicebox.
+description: 3D-DNA is a pipeline that scales draft genome assemblies to chromosome-length scaffolds using Hi-C proximity ligation data. Use when user asks to scaffold a genome assembly, detect and correct misjoins, or generate files for manual curation in Juicebox.
 homepage: https://github.com/aidenlab/3d-dna/tree/201008
 ---
+
 
 # 3d-dna
 

@@ -1,8 +1,9 @@
 ---
 name: paladin
-description: PALADIN (Protein ALignment And Detection INterface) is a specialized alignment tool designed for metagenomic functional analysis.
+description: PALADIN is a specialized alignment tool that maps nucleotide reads to protein references in protein space for metagenomic functional analysis. Use when user asks to index protein databases, align reads to a reference, or generate functional annotation reports.
 homepage: https://github.com/ToniWestbrook/paladin
 ---
+
 
 # paladin
 

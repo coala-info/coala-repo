@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirlab
-description: the package is available on all platforms; click for details.
+description: miRLAB is a Bioconductor package for exploring miRNA-mRNA regulatory relationships and identifying miRNA targets. Use when user asks to explore miRNA-mRNA regulatory relationships, predict miRNA targets, or identify miRNA-mRNA regulatory modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/miRLAB.html
 ---
+
 
 # bioconductor-mirlab
 

@@ -1,8 +1,10 @@
 ---
 name: tissuumaps
-description: TissUUmaps is a lightweight, browser-based tool designed for the interactive exploration of massive biological datasets.
+description: TissUUmaps is a browser-based tool for interactive exploration and visualization of spatial biological data. Use when user asks to explore spatial datasets, overlay point data on images, prepare data for visualization, launch the viewer, open a project, convert images, save configurations, or share interactive slides.
 homepage: https://tissuumaps.research.it.uu.se/
 ---
+
+
 
 # tissuumaps
 

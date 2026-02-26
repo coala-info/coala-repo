@@ -1,8 +1,9 @@
 ---
 name: ctat-mutations
-description: The CTAT-Mutations pipeline is a specialized bioinformatics workflow designed to extract high-confidence variants from transcriptomic data.
+description: The CTAT-Mutations pipeline extracts high-confidence variants from transcriptomic data by integrating RNA-Seq variant calling with specialized filtering and annotation. Use when user asks to identify somatic-like mutations from RNA-Seq data, analyze long-read transcriptomics for variants, or apply machine learning-based boosting to filter RNA-editing artifacts.
 homepage: https://github.com/NCIP/ctat-mutations
 ---
+
 
 # ctat-mutations
 

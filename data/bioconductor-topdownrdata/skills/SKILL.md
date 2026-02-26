@@ -1,8 +1,9 @@
 ---
 name: bioconductor-topdownrdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for top-down proteomics analysis using the topdownr package. Use when user asks to access example mass spectrometry data, run topdownr tutorials, or test top-down protein identification workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/topdownrdata.html
 ---
+
 
 # bioconductor-topdownrdata
 

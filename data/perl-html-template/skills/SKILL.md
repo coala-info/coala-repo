@@ -1,8 +1,9 @@
 ---
 name: perl-html-template
-description: HTML::Template is a lightweight Perl module designed to separate application logic from presentation.
+description: "perl-html-template is a Perl module that separates application logic from presentation by populating HTML templates with data. Use when user asks to generate dynamic HTML, create templates with placeholders and loops, or separate Perl code from web design."
 homepage: https://metacpan.org/pod/HTML::Template
 ---
+
 
 # perl-html-template
 

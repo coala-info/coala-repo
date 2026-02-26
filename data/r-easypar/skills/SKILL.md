@@ -1,8 +1,9 @@
 ---
 name: r-easypar
-description: R package easypar (documentation from project home).
+description: This tool enables parallel execution of R functions on local multi-core systems or generates submission scripts for HPC cluster schedulers. Use when user asks to run R functions in parallel, generate LSF or PBSpro array job scripts, or toggle between serial and parallel execution for debugging.
 homepage: https://cran.r-project.org/web/packages/easypar/index.html
 ---
+
 
 # r-easypar
 

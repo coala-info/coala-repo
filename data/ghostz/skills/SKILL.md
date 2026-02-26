@@ -1,8 +1,9 @@
 ---
 name: ghostz
-description: GHOSTZ is a specialized bioinformatics tool designed for rapid sequence homology searching.
+description: GHOSTZ is a sequence homology search tool that uses a clustering-based algorithm for rapid protein and DNA alignments. Use when user asks to prepare sequence databases, perform high-throughput homology searches, or execute fast sequence alignments.
 homepage: http://www.bi.cs.titech.ac.jp/ghostz/
 ---
+
 
 # ghostz
 

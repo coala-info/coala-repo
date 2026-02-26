@@ -1,8 +1,9 @@
 ---
 name: nanovar
-description: NanoVar is a specialized pipeline designed for rapid and accurate structural variant (SV) detection using shallow long-read sequencing data.
+description: NanoVar is a specialized pipeline for rapid and accurate structural variant detection using shallow long-read sequencing data. Use when user asks to detect structural variants from low-depth long-read data, annotate mobile element insertions, or filter variants using neural networks.
 homepage: https://github.com/cytham/nanovar
 ---
+
 
 # nanovar
 

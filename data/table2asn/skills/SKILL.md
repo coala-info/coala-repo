@@ -1,8 +1,9 @@
 ---
 name: table2asn
-description: table2asn is the standard utility for converting raw genomic data into submission-ready records.
+description: table2asn converts genomic sequences and feature tables into validated submission files for NCBI databases. Use when user asks to generate .sqn files, convert FASTA and feature tables into submission records, or prepare genomic data for GenBank.
 homepage: https://www.ncbi.nlm.nih.gov/genbank/table2asn/
 ---
+
 
 # table2asn
 

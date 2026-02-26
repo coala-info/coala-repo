@@ -1,8 +1,9 @@
 ---
 name: bioconductor-empiricalbrownsmethod
-description: the package is available on all platforms; click for details.
+description: This package combines p-values from non-independent tests by using an empirical adaptation of Brown’s Method to account for dependencies in the underlying data. Use when user asks to combine dependent p-values, aggregate p-values from biological pathways, or apply Kost's Method for analytical approximation of p-value combination.
 homepage: https://bioconductor.org/packages/release/bioc/html/EmpiricalBrownsMethod.html
 ---
+
 
 # bioconductor-empiricalbrownsmethod
 

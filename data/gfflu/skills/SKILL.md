@@ -1,8 +1,9 @@
 ---
 name: gfflu
-description: The `gfflu` tool is a specialized Python CLI application designed for the rapid annotation of Influenza A virus (IAV) gene segments.
+description: gfflu rapidly annotates Influenza A virus gene segments and generates SnpEff-compatible GFF3 files using BLASTX and Miniprot. Use when user asks to annotate IAV segments, generate GFF3 files for SnpEff, or convert influenza nucleotide sequences to protein and GenBank formats.
 homepage: https://github.com/CFIA-NCFAD/gfflu
 ---
+
 
 # gfflu
 

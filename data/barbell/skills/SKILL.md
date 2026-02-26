@@ -1,8 +1,9 @@
 ---
 name: barbell
-description: Barbell is a specialized tool for Oxford Nanopore Technologies (ONT) demultiplexing that focuses on "pattern-aware" processing.
+description: Barbell is a specialized tool for Oxford Nanopore Technologies demultiplexing that uses pattern-aware processing to identify barcodes and remove chimeric artifacts. Use when user asks to demultiplex Nanopore reads, annotate barcode patterns, or filter and trim reads for high-quality assembly.
 homepage: https://github.com/rickbeeloo/barbell
 ---
+
 
 # barbell
 

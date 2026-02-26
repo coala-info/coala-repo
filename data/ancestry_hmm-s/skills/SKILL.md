@@ -1,8 +1,9 @@
 ---
 name: ancestry_hmm-s
-description: Ancestry_HMM-S (AHMMS) is a specialized tool for detecting selection in admixed populations.
+description: Ancestry_HMM-S detects selection in admixed populations by using a Hidden Markov Model to distinguish between neutral ancestry fluctuations and adaptive introgression. Use when user asks to identify loci under selection, quantify selective pressure in hybrid zones, or calculate likelihood ratios for specific selection coefficients.
 homepage: https://github.com/jesvedberg/Ancestry_HMM-S
 ---
+
 
 # ancestry_hmm-s
 

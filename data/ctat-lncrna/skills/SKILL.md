@@ -1,8 +1,9 @@
 ---
 name: ctat-lncrna
-description: CTAT-lncRNA is a specialized utility within the Trinity Cancer Transcriptome Analysis Toolkit (CTAT) ecosystem.
+description: CTAT-lncRNA automates the identification and annotation of novel long non-coding RNAs from RNA-Seq transcriptomes. Use when user asks to identify novel lncRNAs, filter transcripts for protein-coding potential, or execute the slncky-based discovery workflow.
 homepage: https://github.com/NCIP/ctat-lncrna
 ---
+
 
 # ctat-lncrna
 

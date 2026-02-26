@@ -1,8 +1,9 @@
 ---
 name: outrigger
-description: Outrigger is a specialized bioinformatics tool that transforms raw RNA-seq junction data into a quantifiable splicing annotation.
+description: "Outrigger identifies and quantifies novel and known alternative splicing events from RNA-seq data using a graph-database approach. Use when user asks to index splice junctions, validate de novo splicing events against a genome, or calculate Percent Spliced-In scores."
 homepage: https://yeolab.github.io/outrigger
 ---
+
 
 # outrigger
 

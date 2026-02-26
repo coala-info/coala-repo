@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslreps
-description: The `ucsc-pslreps` skill provides guidance on using the `pslReps` utility, a core component of the UCSC Genome Browser "Kent" toolset.
+description: ucsc-pslreps filters local alignments in PSL format to identify the best genomic hits and analyze repetitive sequences. Use when user asks to filter PSL alignments, find the best genomic hits for query sequences, identify repetitive elements, analyze repeats, or set alignment filtering thresholds.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslreps
 

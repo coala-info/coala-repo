@@ -1,8 +1,9 @@
 ---
 name: umitools
-description: umitools is a specialized suite designed to handle the complexities of Unique Molecular Identifiers (UMIs) in sequencing pipelines.
+description: umitools processes Unique Molecular Identifiers (UMIs) in sequencing data to identify and remove PCR duplicates. Use when user asks to process small RNA-seq, reformat FASTQ files for UMI extraction, mark or remove PCR duplicates, customize UMI patterns, or simulate UMI-based library protocols.
 homepage: https://github.com/weng-lab/umitools
 ---
+
 
 # umitools
 

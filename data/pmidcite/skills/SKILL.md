@@ -1,8 +1,9 @@
 ---
 name: pmidcite
-description: The `pmidcite` skill provides a command-line interface to the National Institutes of Health (NIH) Open Citation Collection.
+description: The pmidcite tool retrieves citation data, reference lists, and NIH performance metrics for biomedical papers using the National Institutes of Health Open Citation Collection. Use when user asks to perform forward or backward citation snowballing, analyze NIH percentile rankings for PMIDs, or batch process literature for bibliometric summaries.
 homepage: http://github.com/dvklopfenstein/pmidcite
 ---
+
 
 # pmidcite
 

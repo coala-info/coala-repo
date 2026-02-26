@@ -3,7 +3,7 @@
 ## isatab-validator
 
 ### Tool Description
-A tool for validating ISA-Tab files.
+Validates ISA-Tab files.
 
 ### Metadata
 - **Docker Image**: biocontainers/isatab-validator:phenomenal-v0.10.0_cv0.7.1.42
@@ -18,11 +18,31 @@ A tool for validating ISA-Tab files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/isatab-validator:phenomenal-v0.10.0_cv0.7.1.42 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2245574138: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/isatab_validator.py", line 11, in <module>
+    html_output_path = sys.argv[3]
+IndexError: list index out of range
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## isatab-validator
+
+### Tool Description
+Validates ISA-Tab files.
+
+### Metadata
+- **Docker Image**: biocontainers/isatab-validator:phenomenal-v0.10.0_cv0.7.1.42
+- **Homepage**: https://github.com/ISA-tools/ISAValidatorWS
+- **Package**: Not found
+- **Validation**: PASS
+### Original Help Text
+```text
+Traceback (most recent call last):
+  File "/usr/local/bin/isatab_validator.py", line 11, in <module>
+    html_output_path = sys.argv[3]
+IndexError: list index out of range
+```
+

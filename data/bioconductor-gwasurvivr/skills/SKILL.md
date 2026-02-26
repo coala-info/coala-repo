@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwasurvivr
-description: the package is available on all platforms; click for details.
+description: This tool performs genome-wide survival analysis on large-scale genetic data using Cox Proportional Hazard models. Use when user asks to perform survival analysis on genetic variants, fit Cox Proportional Hazard models to SNPs, or analyze time-to-event data from VCF, IMPUTE2, or PLINK files.
 homepage: https://bioconductor.org/packages/release/bioc/html/gwasurvivr.html
 ---
+
 
 # bioconductor-gwasurvivr
 

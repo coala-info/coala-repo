@@ -1,11 +1,190 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pomoxis_subsample_bam
+baseCommand: subsample_bam
 label: pomoxis_subsample_bam
-doc: "Subsample BAM files. (Note: The provided text appears to be a container runtime
-  error log rather than help text, so no arguments could be extracted.)\n\nTool homepage:
-  https://github.com/nanoporetech/pomoxis"
-inputs: []
+doc: "Subsample a bam to uniform or proportional depth\n\nTool homepage: https://github.com/nanoporetech/pomoxis"
+inputs:
+  - id: bam
+    type: File
+    doc: input bam file.
+    inputBinding:
+      position: 1
+  - id: depth
+    type:
+      type: array
+      items: int
+    doc: Target depth.
+    inputBinding:
+      position: 2
+  - id: accuracy
+    type:
+      - 'null'
+      - float
+    doc: Filter reads by accuracy.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --accuracy
+  - id: all_fail
+    type:
+      - 'null'
+      - boolean
+    doc: Exit with an error if all regions have insufficient coverage.
+    default: false
+    inputBinding:
+      position: 103
+  - id: any_fail
+    type:
+      - 'null'
+      - boolean
+    doc: Exit with an error if any region has insufficient coverage.
+    default: false
+    inputBinding:
+      position: 103
+  - id: coverage
+    type:
+      - 'null'
+      - float
+    doc: Filter reads by coverage (what fraction of the read aligns).
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --coverage
+  - id: force_low_depth
+    type:
+      - 'null'
+      - boolean
+    doc: Force saving reads mapped to a sequence with coverage below the 
+      expected value.
+    default: false
+    inputBinding:
+      position: 103
+  - id: keep_supplementary
+    type:
+      - 'null'
+      - boolean
+    doc: Include supplementary alignments.
+    default: false
+    inputBinding:
+      position: 103
+  - id: keep_unmapped
+    type:
+      - 'null'
+      - boolean
+    doc: Include unmapped reads.
+    default: false
+    inputBinding:
+      position: 103
+  - id: length
+    type:
+      - 'null'
+      - int
+    doc: Filter reads by read length.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --length
+  - id: orientation
+    type:
+      - 'null'
+      - string
+    doc: Sample only forward or reverse reads.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --orientation
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: Output prefix
+    default: sub_sampled
+    inputBinding:
+      position: 103
+      prefix: --output_prefix
+  - id: patience
+    type:
+      - 'null'
+      - int
+    doc: Maximum iterations with no change in median coverage before aborting.
+    default: 5
+    inputBinding:
+      position: 103
+      prefix: --patience
+  - id: primary_only
+    type:
+      - 'null'
+      - boolean
+    doc: Use only primary reads.
+    default: true
+    inputBinding:
+      position: 103
+  - id: profile
+    type:
+      - 'null'
+      - int
+    doc: Stride in genomic coordinates for depth profile.
+    default: 1000
+    inputBinding:
+      position: 103
+      prefix: --profile
+  - id: proportional
+    type:
+      - 'null'
+      - boolean
+    doc: Activate proportional sampling, thus keeping depth variations of the 
+      pileup.
+    default: false
+    inputBinding:
+      position: 103
+      prefix: --proportional
+  - id: quality
+    type:
+      - 'null'
+      - int
+    doc: Filter reads by mean qscore.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --quality
+  - id: regions
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Only process given regions.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --regions
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Random seed for proportional downsampling of reads.
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --seed
+  - id: stride
+    type:
+      - 'null'
+      - int
+    doc: Stride in genomic coordinates when searching for new reads. Smaller can
+      lead to more compact pileup.
+    default: 1000
+    inputBinding:
+      position: 103
+      prefix: --stride
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use.
+    default: -1
+    inputBinding:
+      position: 103
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

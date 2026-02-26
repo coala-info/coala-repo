@@ -1,8 +1,9 @@
 ---
 name: deepdirect
-description: Deepdirect is a specialized framework for protein complex optimization.
+description: Deepdirect is a framework for protein complex optimization that suggests amino acid substitutions to strengthen or weaken binding affinity between ligands and receptors. Use when user asks to optimize protein complexes, suggest amino acid mutations for affinity changes, or perform directed mutagenesis for vaccine development.
 homepage: https://github.com/Jappy0/deepdirect
 ---
+
 
 # deepdirect
 

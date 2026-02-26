@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gse62944
-description: the package is available on all platforms; click for details.
+description: This package provides access to uniformly re-processed TCGA RNA-Seq data for tumor and normal samples via ExperimentHub. Use when user asks to retrieve TCGA expression datasets, access cancer-specific RNA-Seq counts, or perform differential expression analysis on TCGA cohorts.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GSE62944.html
 ---
+
 
 # bioconductor-gse62944
 

@@ -1,8 +1,9 @@
 ---
 name: blue-crab
-description: blue-crab is a specialized data conversion utility that facilitates the transition between POD5 and S/BLOW5 formats for nanopore sequencing data.
+description: blue-crab is a data conversion utility that facilitates the transition between POD5 and S/BLOW5 formats for nanopore sequencing data. Use when user asks to convert POD5 files to SLOW5 or BLOW5 format, or convert SLOW5 or BLOW5 files back to POD5 format.
 homepage: https://github.com/Psy-Fer/blue-crab
 ---
+
 
 # blue-crab
 

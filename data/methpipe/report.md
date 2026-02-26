@@ -1,9 +1,9 @@
 # methpipe CWL Generation Report
 
-## methpipe
+## methpipe_format_reads
 
 ### Tool Description
-The provided text does not contain help information for the tool, but rather an error message indicating a failure to build the container image due to insufficient disk space.
+convert SAM/BAM mapped bs-seq reads to standard methpipe format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
@@ -18,165 +18,206 @@ The provided text does not contain help information for the tool, but rather an 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3625537271: no space left on device
+Usage: format_reads [OPTIONS] <sam/bam-file>
+
+Options:
+  -f, -format    input format (abismal, bsmap, bismark)  
+  -o, -output    output file name  
+  -s, -suff      read name suffix length (default: 1) [1] 
+  -L, -max-frag  maximum allowed insert size [10000] 
+  -B, -buf-size  maximum buffer size [10000] 
+  -v, -verbose   print more information  
+
+Help options:
+  -?, -help      print this help message  
+      -about     print about message  
+
+PROGRAM: format_reads
+convert SAM/BAM mapped bs-seq reads to standard methpipe format
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## methpipe_format_reads
-
-### Tool Description
-The provided text is an error log indicating a failure to build the container image (no space left on device) and does not contain help information or argument definitions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
-- **Homepage**: https://github.com/smithlabcode/methpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3677226517: no space left on device
-```
-
-## methpipe_duplicate_remover
-
-### Tool Description
-The provided text contains container runtime error messages and does not include the help documentation for the tool. Based on the tool name hint, this tool is part of the Methpipe suite and is used to remove PCR duplicates from mapped bisulfite sequencing reads.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
-- **Homepage**: https://github.com/smithlabcode/methpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2555757842: no space left on device
-```
 
 ## methpipe_methcounts
 
 ### Tool Description
-The provided text is an error message regarding a container environment failure and does not contain help documentation for the tool. No arguments could be extracted.
+get methylation levels from mapped WGBS reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
 - **Homepage**: https://github.com/smithlabcode/methpipe
 - **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3451214640: no space left on device
+Usage: methcounts [OPTIONS] -c <chroms> <mapped-reads>
+
+Options:
+  -o, -output    Name of output file (default: stdout) 
+  -c, -chrom     file or dir of chroms (FASTA format; .fa suffix) 
+                 [required] 
+  -s, -suffix    suffix of FASTA files (assumes -c specifies dir) 
+  -n, -cpg-only  print only CpG context cytosines 
+  -v, -verbose   print more run info 
+
+Help options:
+  -?, -help      print this help message 
+      -about     print about message 
+
+PROGRAM: methcounts
+get methylation levels from mapped WGBS reads
 ```
 
-## methpipe_HMR
+
+## methpipe_hmr
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages related to a container runtime failure (no space left on device).
+Identify HMRs in methylomes. Methylation must be provided in the methcounts format (chrom, position, strand, context, methylation, reads). This program assumes only data at CpG sites and that strands are collapsed so only the positive site appears in the file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
 - **Homepage**: https://github.com/smithlabcode/methpipe
 - **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3700147296: no space left on device
+Usage: hmr [OPTIONS] <methylation-file>
+
+Options:
+  -o, -out         output file (default: stdout)  
+  -d, -desert      max dist btwn covered cpgs in HMR [1000] 
+  -i, -itr         max iterations [10] 
+  -v, -verbose     print more run info  
+      -partial     identify PMRs instead of HMRs  
+      -post-hypo   output file for single-CpG posterior hypomethylation 
+                   probability (default: none)  
+      -post-meth   output file for single-CpG posteiror methylation 
+                   probability (default: none)  
+  -P, -params-in   HMM parameter file (override training)  
+  -p, -params-out  write HMM parameters to this file (default: none)  
+  -s, -seed        specify random seed [408] 
+
+Help options:
+  -?, -help        print this help message  
+      -about       print about message  
+
+PROGRAM: hmr
+Identify HMRs in methylomes. Methylation must be provided in the
+methcounts format (chrom, position, strand, context, methylation,
+reads). See the methcounts documentation for details. This program
+assumes only data at CpG sites and that strands are collapsed so only
+the positive site appears in the file.
 ```
 
-## methpipe_PMD
+
+## methpipe_pmd
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull a Docker image due to insufficient disk space.
+Identify PMDs in methylomes. Methylation must be provided in the methcounts file format (chrom, position, strand, context, methylation, reads). This program assumes only data at CpG sites and that strands are collapsed so only the positive site appears in the file, but reads counts are from both strands.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
 - **Homepage**: https://github.com/smithlabcode/methpipe
 - **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2698648737: no space left on device
+Usage: pmd [OPTIONS] <methcount-files>
+
+Options:
+  -o, -out             output file (default: stdout) 
+  -d, -desert          max dist between bins with data in PMD 
+  -f, -fixedbin        Fixed bin size 
+  -b, -bin             Starting bin size 
+  -a, -arraymode       All samples are array 
+  -i, -itr             max iterations 
+  -v, -verbose         print more run info 
+  -D, -debug           print more run info 
+  -P, -params-in       HMM parameter files for individual methylomes 
+                       (separated with comma) 
+  -r, -posteriors-out  write out posterior probabilities in methcounts 
+                       format 
+  -p, -params-out      write HMM parameters to this file 
+  -s, -seed            specify random seed 
+
+Help options:
+  -?, -help            print this help message 
+      -about           print about message 
+
+PROGRAM: pmd
+Identify PMDs in methylomes. Methylation must be provided in the
+methcounts file format (chrom, position, strand, context, methylation,
+reads). See the methcounts documentation for details. This program
+assumes only data at CpG sites and that strands are collapsed so only
+the positive site appears in the file, but reads counts are from both
+strands.
 ```
 
-## methpipe_AMR
+
+## methpipe_hypermr
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to insufficient disk space.
+A program for segmenting DNA methylation data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
 - **Homepage**: https://github.com/smithlabcode/methpipe
 - **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3459092024: no space left on device
+Usage: hypermr [OPTIONS]
+
+Options:
+  -o, -out         output file (BED format)  
+  -s, -scores      output file for posterior scores  
+  -t, -tolerance   Tolerance [0.000000] 
+  -d, -desert      desert size [1000] 
+  -i, -itr         max iterations [10] 
+  -V, -viterbi     Use Viterbi decoding  
+  -M, -min-meth    min cumulative methylation level in HypeMR 
+                   [4.000000] 
+  -v, -verbose     print more run info  
+  -P, -params-in   HMM parameters file  
+  -p, -params-out  HMM parameters file  
+
+Help options:
+  -?, -help        print this help message  
+      -about       print about message  
+
+PROGRAM: hypermr
+A program for segmenting DNA methylation data<cpg-BED-file>
 ```
 
-## methpipe_HyperMR
-
-### Tool Description
-The provided text is an error log indicating a failure to pull or convert the Methpipe container image due to lack of disk space. It does not contain the help text or usage information for the hypermr tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
-- **Homepage**: https://github.com/smithlabcode/methpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3326279109: no space left on device
-```
 
 ## methpipe_radmeth
 
 ### Tool Description
-The provided text does not contain help information for methpipe_radmeth. It contains system error logs regarding a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+calculate differential methylation scores
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
 - **Homepage**: https://github.com/smithlabcode/methpipe
 - **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1781360767: no space left on device
-```
+Usage: radmeth [OPTIONS] <design-matrix> <data-matrix>
 
-## methpipe_to-mr
+Options:
+  -o, -out      output file (default: stdout)  
+  -v, -verbose  print more run info  
+  -f, -factor   a factor to test [required] 
 
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log regarding container execution and disk space.
+Help options:
+  -?, -help     print this help message  
+      -about    print about message  
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6
-- **Homepage**: https://github.com/smithlabcode/methpipe
-- **Package**: https://anaconda.org/channels/bioconda/packages/methpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/methpipe:5.0.1--h76b9af2_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3781187377: no space left on device
+PROGRAM: radmeth
+calculate differential methylation scores
 ```
 

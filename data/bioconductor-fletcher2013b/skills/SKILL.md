@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fletcher2013b
-description: the package is available on all platforms; click for details.
+description: This package provides tools and datasets to reproduce transcriptional network inferences and master regulator analysis of FGFR2 signaling in breast cancer. Use when user asks to perform master regulator analysis, reproduce transcriptional network inferences, generate gene expression signatures, or visualize enrichment maps for METABRIC and T-ALL datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Fletcher2013b.html
 ---
+
 
 # bioconductor-fletcher2013b
 

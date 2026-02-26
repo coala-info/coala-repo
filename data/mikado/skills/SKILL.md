@@ -1,8 +1,9 @@
 ---
 name: mikado
-description: Mikado is a transcriptomic meta-assembler and filtering pipeline designed to resolve the complexity of multiple RNA-Seq assemblies.
+description: Mikado is a transcriptomic meta-assembler and filtering pipeline that integrates multiple RNA-Seq assemblies to select the most biologically plausible gene models. Use when user asks to consolidate multiple transcriptomes, score gene models based on external evidence, or pick the best representative transcripts for a locus.
 homepage: https://github.com/lucventurini/mikado
 ---
+
 
 # mikado
 

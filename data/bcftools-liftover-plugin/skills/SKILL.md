@@ -1,8 +1,9 @@
 ---
 name: bcftools-liftover-plugin
-description: The `bcftools-liftover-plugin` is a specialized extension for BCFtools designed to accurately translate genetic variants across different genome builds.
+description: The bcftools-liftover-plugin translates genetic variants in VCF or BCF format across different genome assemblies while preserving metadata and genotypes. Use when user asks to liftover VCF files between genome builds, migrate coordinates for GWAS summary statistics, or convert genetic data using chain files and reference sequences.
 homepage: https://github.com/freeseek/score
 ---
+
 
 # bcftools-liftover-plugin
 

@@ -1,8 +1,9 @@
 ---
 name: bcalm
-description: BCALM 2 is a high-efficiency bioinformatics tool used to generate unitigs—sequences representing non-branching paths in a de Bruijn graph—from raw sequencing reads.
+description: BCALM 2 is a high-efficiency bioinformatics tool used to generate unitigs from raw sequencing reads by compacting de Bruijn graphs. Use when user asks to generate unitigs, process large-scale genomic data into non-branching paths, or convert sequencing reads into a compacted graph representation.
 homepage: https://github.com/GATB/bcalm
 ---
+
 
 # bcalm
 

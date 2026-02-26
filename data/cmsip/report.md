@@ -3,7 +3,7 @@
 ## cmsip
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'cmsip'. It appears to be a system error log related to a container runtime (Apptainer/Singularity) failing due to insufficient disk space.
+CMS-IP sequencing analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmsip:0.0.3.0--py_0
@@ -18,11 +18,22 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmsip:0.0.3.0--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4095116954: no space left on device
+usage: cmsip [-h] -c CONFIG [-D D [D ...]] [-v]
+
+CMS-IP sequencing analysis
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG, --config CONFIG
+                        Configuration file in YAML format.
+  -D D [D ...]          Define variable=value to suppress configuration file.
+                        e.g. "-D dhmrinfo.verbose=False"
+  -v, --version         show program's version number and exit
+
+Example:
+  cmsip -c cms.yaml
+
+Date: 2020/06/10
+Authors: Jin Li <lijin.abc@gmail.com>
 ```
 
-
-## Metadata
-- **Skill**: generated

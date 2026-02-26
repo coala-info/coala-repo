@@ -3,7 +3,7 @@
 ## staphopia-sccmec
 
 ### Tool Description
-A tool for SCCmec typing of Staphylococcus aureus (Note: The provided text is a container build error log and does not contain usage information or argument definitions).
+Determine SCCmec Type/SubType
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/staphopia-sccmec:1.0.0--hdfd78af_0
@@ -18,13 +18,33 @@ A tool for SCCmec typing of Staphylococcus aureus (Note: The provided text is a 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/staphopia-sccmec:1.0.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: staphopia-sccmec [-h] [--assembly ASSEMBLY|ASSEMBLY_DIR|STAPHOPIA_DIR]
+                        [--staphopia STAPHOPIA_DIR] [--sccmec SCCMEC_DATA]
+                        [--ext STR] [--hamming] [--json] [--debug] [--depends]
+                        [--test] [--citation] [--version]
+
+Determine SCCmec Type/SubType
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+Options:
+
+  --assembly ASSEMBLY|ASSEMBLY_DIR|STAPHOPIA_DIR
+                        Input assembly (FASTA format), directory of assemblies
+                        to predict SCCmec. (Cannot be used with --staphopia)
+  --staphopia STAPHOPIA_DIR
+                        Input directory of samples processed by Staphopia.
+                        (Cannot be used with --assembly)
+  --sccmec SCCMEC_DATA  Directory where SCCmec reference data is stored
+                        (Default: /usr/local/share/staphopia-sccmec/data).
+  --ext STR             Extension used by assemblies. (Default: fna)
+  --hamming             Report the hamming distance of each type.
+  --json                Report the output as JSON (Default: tab-delimited)
+  --debug               Print debug related text.
+  --depends             Verify dependencies are installed/found.
+  --test                Run with example test data.
+  --citation            Print citation information for using Staphopia SCCmec
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

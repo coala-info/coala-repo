@@ -1,8 +1,9 @@
 ---
 name: fade
-description: `fade` (Fragmentase Artifact Detection and Elimination) is a specialized bioinformatics tool designed to clean up DNA sequencing data.
+description: Fade identifies and removes or trims sequencing artifacts introduced during enzymatic DNA fragmentation. Use when user asks to detect fragmentase artifacts, annotate soft-clipped regions, or filter biased reads from BAM files.
 homepage: https://github.com/blachlylab/fade
 ---
+
 
 # fade
 

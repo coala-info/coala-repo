@@ -1,8 +1,9 @@
 ---
 name: fiona
-description: Fiona is a high-performance Python library and command-line toolset designed for the efficient handling of vector spatial data.
+description: Fiona is a Python library and command-line toolset for reading, writing, and managing vector spatial data as GeoJSON-like dictionaries. Use when user asks to inspect spatial metadata, stream geographic features, convert between vector data formats, or perform spatial filtering using bounding boxes.
 homepage: https://github.com/Toblerity/Fiona
 ---
+
 
 # fiona
 

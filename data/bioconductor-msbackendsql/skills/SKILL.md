@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msbackendsql
-description: the package is available on all platforms; click for details.
+description: This package provides a SQL-based backend for storing and retrieving mass spectrometry data using the Spectra framework. Use when user asks to store mass spectrometry data in a SQL database, manage large MS datasets, or access spectra from an SQL backend.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendSql.html
 ---
+
 
 # bioconductor-msbackendsql
 

@@ -1,8 +1,9 @@
 ---
 name: scallop
-description: Scallop is a reference-based transcriptome assembler that processes RNA-seq alignments to reconstruct a complete set of transcripts.
+description: Scallop is a reference-based transcriptome assembler that reconstructs transcripts from RNA-seq alignments. Use when user asks to assemble transcripts from BAM files, reconstruct a transcriptome, or detect rare multi-exon transcripts.
 homepage: https://github.com/Kingsford-Group/scallop
 ---
+
 
 # scallop
 

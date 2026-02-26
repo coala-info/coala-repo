@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deeptarget
-description: the package is available on all platforms; click for details.
+description: This tool integrates drug sensitivity profiles with genetic knockout screens to characterize drug mechanisms of action and identify molecular targets. Use when user asks to predict primary or secondary drug targets, assess mutant versus wild-type specificity, or analyze drug-gene interactions using DepMap-style datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/DeepTarget.html
 ---
+
 
 # bioconductor-deeptarget
 

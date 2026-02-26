@@ -1,8 +1,9 @@
 ---
 name: perl-escape-houdini
-description: The `perl-escape-houdini` skill provides procedural knowledge for using the `Escape::Houdini` Perl module.
+description: This tool provides high-speed web escaping and unescaping for HTML, URI, XML, and JavaScript using the Houdini C library. Use when user asks to sanitize text for web reports, encode URLs, escape JavaScript strings, or process high-throughput text data in Perl scripts.
 homepage: https://github.com/yanick/Escape-Houdini
 ---
+
 
 # perl-escape-houdini
 

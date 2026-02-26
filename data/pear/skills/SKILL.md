@@ -1,8 +1,9 @@
 ---
 name: pear
-description: Pear (formerly YouTube Music Desktop) is a cross-platform desktop application that enhances the music listening experience with a native look and feel.
+description: Pear is a cross-platform desktop application that provides an enhanced native interface for YouTube Music with support for custom plugins and themes. Use when user asks to install the desktop player, set up a local development environment, or create custom plugins and CSS themes.
 homepage: https://github.com/pear-devs/pear-desktop
 ---
+
 
 # pear
 

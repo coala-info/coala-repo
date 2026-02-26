@@ -3,7 +3,7 @@
 ## rustynuc
 
 ### Tool Description
-The provided text does not contain help documentation for rustynuc; it is an error log from a container runtime (Apptainer/Singularity) failing to fetch the tool's image.
+Investigate alignments for possible 8-oxoG damage
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rustynuc:0.3.1--h577a1d6_3
@@ -18,13 +18,40 @@ The provided text does not contain help documentation for rustynuc; it is an err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rustynuc:0.3.1--h577a1d6_3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+rustynuc 0.3.1
+
+USAGE:
+    rustynuc [FLAGS] [OPTIONS] <bam>
+
+FLAGS:
+    -a, --all                Whether to process and print information for every position in the BAM file
+    -h, --help               Prints help information
+        --no-overlapping     Do not count overlapping mates when calculating total depth
+    -n, --no-qval            Skip calculating qvalue
+    -p, --pseudocount        Whether to use pseudocounts (increments all counts by 1) when calculating statistics
+        --skip-fishers       Skip applying Fisher's Exact Filter on VCF
+    -V, --version            Prints version information
+    -v, --verbosity          Determines verbosity of the processing, can be specified multiple times -vvv
+    -w, --with-track-line    Include track line (for correct visualization with IGV)
+
+OPTIONS:
+        --af-both-pass <af-both-pass>        AF on both the ff and fr at which point a call in the VCF will excluded
+                                             from the OxoAF filter [default: 0.1]
+        --af-either-pass <af-either-pass>    AF above this cutoff in EITHER read orientation will be excluded from OxoAF
+                                             filter [default: 0.25]
+        --alpha <alpha>                      FDR threshold [default: 0.2]
+    -b, --bcf <bcf>                          BCF/VCF for variants called on the supplied alignment file
+        --bed <bed>                          A BED file to restrict analysis to specific regions
+        --fishers-sig <fishers-sig>          Significance threshold for Fisher's test [default: 0.05]
+        --max-depth <max-depth>              Maximum pileup depth to use [default: 1000]
+    -m, --min-reads <min-reads>              Minimum number of aligned reads in ff or fr orientation for a position to
+                                             be considered [default: 4]
+    -q, --quality <quality>                  Minimum base quality to consider [default: 20]
+    -r, --reference <reference>              Optional reference which will be used to determine sequence context and
+                                             type of change
+    -t, --threads <threads>                  Number of threads [default: 4]
+
+ARGS:
+    <bam>    Alignments to investigate for possible 8-oxoG damage
 ```
 
-
-## Metadata
-- **Skill**: generated

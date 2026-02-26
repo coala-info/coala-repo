@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredtobed
-description: The `ucsc-genepredtobed` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed for format interoperability.
+description: `ucsc-genepredtobed` converts gene models from the `genePred` format into standard BED files. Use when user asks to convert gene prediction files to BED format, transform gene models, or prepare genePred data for downstream analysis.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-genepredtobed
 

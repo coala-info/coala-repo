@@ -1,8 +1,9 @@
 ---
 name: pandora
-description: Pandora is a specialized tool for bacterial genomics that utilizes reference graphs to represent genetic diversity.
+description: Pandora is a tool for bacterial genomics that uses reference graphs to identify genetic diversity and variation within orthologous regions. Use when user asks to index reference graphs, map reads to infer gene content, call variants, or perform multi-sample pangenome comparisons.
 homepage: https://github.com/rmcolq/pandora
 ---
+
 
 # pandora
 

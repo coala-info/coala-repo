@@ -1,8 +1,9 @@
 ---
 name: colorid_bv
-description: `colorid_bv` is a high-performance tool utilizing a BIGSI (Bloom Filter Index) implementation to facilitate metagenomic analysis and quality control.
+description: "colorid_bv builds and queries BIGSI indexes to facilitate rapid k-mer similarity searching and read classification across large genomic datasets. Use when user asks to build a Bloom filter index, search for gene presence in unassembled data, or classify and filter metagenomic reads."
 homepage: https://github.com/hcdenbakker/colorid_bv
 ---
+
 
 # colorid_bv
 

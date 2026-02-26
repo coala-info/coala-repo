@@ -1,8 +1,9 @@
 ---
 name: r-scatterplot3d
-description: Plots a three dimensional (3D) point cloud.</p>
+description: This R package generates 3D scatter plots and point clouds using parallel projection. Use when user asks to visualize three-dimensional data, add regression planes to 3D space, or create 3D barplots.
 homepage: https://cloud.r-project.org/web/packages/scatterplot3d/index.html
 ---
+
 
 # r-scatterplot3d
 

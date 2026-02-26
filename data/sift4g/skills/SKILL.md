@@ -1,8 +1,9 @@
 ---
 name: sift4g
-description: SIFT 4G (SIFT For Genomes) is an optimized, high-speed version of the SIFT algorithm designed for large-scale genomic annotation.
+description: SIFT 4G predicts whether an amino acid substitution affects protein function based on sequence homology and physical properties. Use when user asks to annotate VCF files with SIFT scores, predict the functional impact of genomic variants, or determine if a mutation is deleterious or tolerated.
 homepage: http://sift.bii.a-star.edu.sg/sift4g/
 ---
+
 
 # sift4g
 

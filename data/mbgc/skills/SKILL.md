@@ -1,8 +1,9 @@
 ---
 name: mbgc
-description: MBGC (Multiple Bacteria Genome Compressor) is a high-performance utility specifically optimized for the storage and retrieval of bacterial genome collections.
+description: MBGC is a high-performance utility designed for the extreme compression and retrieval of large bacterial genome collections. Use when user asks to compress FASTA files, decompress specific genomes from an archive, append new sequences to existing archives, or repack archives using different compression modes.
 homepage: https://github.com/kowallus/mbgc
 ---
+
 
 # mbgc
 

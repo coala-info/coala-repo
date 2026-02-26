@@ -1,8 +1,9 @@
 ---
 name: rapifilt
-description: rapifilt (RAPId FILTer) is a high-performance C-based utility designed for the preprocessing of DNA sequences.
+description: rapifilt is a high-performance utility used for quality filtering and trimming DNA sequences in FASTQ files. Use when user asks to filter low-quality sequences, trim bases based on quality thresholds, or remove reads that do not meet minimum length requirements.
 homepage: https://github.com/andvides/RAPIFILT.git
 ---
+
 
 # rapifilt
 

@@ -1,8 +1,9 @@
 ---
 name: protal
-description: Protal is a computational tool designed for high-resolution taxonomic profiling of bacterial communities.
+description: Protal performs high-resolution taxonomic profiling and strain-resolved analysis of bacterial communities using universal marker genes. Use when user asks to perform taxonomic profiling, analyze shotgun metagenomic reads, or identify strains within bacterial communities.
 homepage: https://github.com/4less/protal
 ---
+
 
 # protal
 

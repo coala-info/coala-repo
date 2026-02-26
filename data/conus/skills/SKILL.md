@@ -1,8 +1,9 @@
 ---
 name: conus
-description: CONUS is a specialized toolkit for exploring and implementing lightweight Stochastic Context-Free Grammars (SCFG) for RNA secondary structure prediction.
+description: CONUS is a toolkit for implementing and evaluating lightweight Stochastic Context-Free Grammars for RNA secondary structure prediction. Use when user asks to train RNA models from Stockholm files, predict secondary structures via CYK folding, or benchmark grammar performance against known datasets.
 homepage: http://eddylab.org/software/conus/
 ---
+
 
 # conus
 

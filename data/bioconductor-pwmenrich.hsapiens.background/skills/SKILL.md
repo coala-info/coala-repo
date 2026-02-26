@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pwmenrich.hsapiens.background
-description: the package is available on all platforms; click for details.
+description: This package provides pre-compiled background distributions for motif enrichment analysis in human genomic sequences. Use when user asks to perform PWM enrichment analysis for human data, calculate the significance of motif hits, or load human-specific background models.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Hsapiens.background.html
 ---
+
 
 # bioconductor-pwmenrich.hsapiens.background
 

@@ -1,8 +1,9 @@
 ---
 name: repeatafterme
-description: RepeatAfterMe (specifically the `RAMExtend` tool) is a specialized utility for recovering the full length of repetitive DNA families from partial fragments.
+description: RepeatAfterMe recovers the full length of repetitive DNA families by extending partial fragments using flanking genomic sequences and local alignment. Use when user asks to extend repeat consensus sequences, recover full-length repetitive elements from fragments, or perform local alignment extensions on multiple sequence alignments.
 homepage: https://github.com/Dfam-consortium/RepeatAfterMe
 ---
+
 
 # repeatafterme
 

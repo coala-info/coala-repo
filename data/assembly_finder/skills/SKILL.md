@@ -1,8 +1,9 @@
 ---
 name: assembly_finder
-description: assembly_finder is a command-line utility that simplifies the retrieval of genomic data from NCBI by wrapping the NCBI Datasets API within a Snakemake workflow.
+description: assembly_finder automates the retrieval and organization of genomic assemblies and metadata from NCBI based on taxonomic identifiers. Use when user asks to download genome assemblies, fetch reference genomes, or filter NCBI datasets by assembly quality and annotation status.
 homepage: https://github.com/metagenlab/assembly_finder
 ---
+
 
 # assembly_finder
 

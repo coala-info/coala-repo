@@ -1,8 +1,9 @@
 ---
 name: perl-math-matrixreal
-description: The `Math::MatrixReal` module is a powerful tool for handling NxN matrices of real numbers in Perl.
+description: The Math::MatrixReal module provides a comprehensive suite of linear algebra operations for handling NxN matrices of real numbers in Perl. Use when user asks to create matrices from strings or arrays, perform matrix arithmetic and inversion, calculate determinants, or manipulate rows and columns.
 homepage: http://metacpan.org/pod/Math::MatrixReal
 ---
+
 
 # perl-math-matrixreal
 

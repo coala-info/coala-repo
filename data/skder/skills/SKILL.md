@@ -1,8 +1,9 @@
 ---
 name: skder
-description: skder (and its companion CiDDER) provides an efficient way to select representative microbial genomes from large input sets.
+description: skder selects representative microbial genomes from large datasets by calculating average nucleotide identity and assembly quality. Use when user asks to dereplicate genomes, select representative strains, or filter mobile genetic elements from genomic datasets.
 homepage: https://github.com/raufs/skDER
 ---
+
 
 # skder
 

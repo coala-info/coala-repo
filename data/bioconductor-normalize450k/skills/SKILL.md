@@ -1,8 +1,9 @@
 ---
 name: bioconductor-normalize450k
-description: the package is available on all platforms; click for details.
+description: This R package performs normalization of Illumina Infinium HumanMethylation450 BeadChip data. Use when user asks to normalize 450k methylation data, perform dye bias correction, or process Illumina Infinium HumanMethylation450 BeadChip arrays.
 homepage: https://bioconductor.org/packages/release/bioc/html/normalize450K.html
 ---
+
 
 # bioconductor-normalize450k
 

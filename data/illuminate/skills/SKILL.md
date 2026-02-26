@@ -1,8 +1,9 @@
 ---
 name: illuminate
-description: The illuminate skill provides procedural knowledge for managing the vim-illuminate plugin, which automatically highlights all occurrences of the word under the cursor.
+description: The illuminate skill provides instructions for managing the vim-illuminate plugin to automatically highlight and navigate occurrences of the word under the cursor. Use when user asks to configure highlighting providers, toggle the plugin on specific buffers, customize visual styles, or set up keymaps for jumping between references.
 homepage: https://github.com/RRethy/vim-illuminate
 ---
+
 
 # illuminate
 

@@ -1,8 +1,9 @@
 ---
 name: r-music
-description: An aid for learning and using music theory. You can build chords, scales, and chord progressions using 12-note equal temperament tuning (12-ET) or user-defined tuning. Includes functions to visualize notes on a piano using ASCII plots in the console and to plot waveforms using base graphics. It allows simple playback of notes and chords using the 'audio' package.</p>
+description: The r-music tool provides functions for music theory experimentation in R, including building chords and scales, visualizing notes, and playing audio. Use when user asks to build musical structures, visualize notes on an ASCII piano, plot waveforms, or perform audio playback and frequency conversions.
 homepage: https://cloud.r-project.org/web/packages/music/index.html
 ---
+
 
 # r-music
 

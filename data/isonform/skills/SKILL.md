@@ -1,8 +1,9 @@
 ---
 name: isonform
-description: isONform is a specialized tool for reconstructing transcript isoforms directly from long-read sequencing data without the need for a reference genome.
+description: isONform reconstructs transcript isoforms from long-read sequencing data without requiring a reference genome. Use when user asks to reconstruct transcript isoforms, generate consensus sequences from clustered reads, or perform de novo transcriptome assembly.
 homepage: https://github.com/aljpetri/isONform
 ---
+
 
 # isonform
 

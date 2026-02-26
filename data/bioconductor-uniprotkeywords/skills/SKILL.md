@@ -1,8 +1,9 @@
 ---
 name: bioconductor-uniprotkeywords
-description: the package is available on all platforms; click for details.
+description: This package provides access to UniProt keywords and their hierarchical classifications. Use when user asks to retrieve UniProt keyword data, explore keyword hierarchies, or perform functional analysis using UniProt keywords.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/UniProtKeywords.html
 ---
+
 
 # bioconductor-uniprotkeywords
 

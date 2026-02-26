@@ -1,8 +1,9 @@
 ---
 name: mmvc
-description: mmvc (Multinomial Mixture Variant Caller) is a bioinformatics tool designed to identify genetic variants by applying a Bayesian multinomial mixture model.
+description: mmvc is a bioinformatics tool that identifies genetic variants using a Bayesian multinomial mixture model. Use when user asks to call genetic variants, distinguish biological variations from sequencing noise, or perform probabilistic variant calling on FASTA files.
 homepage: https://github.com/veg/mmvc
 ---
+
 
 # mmvc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellity
-description: the package is available on all platforms; click for details.
+description: The cellity package identifies low-quality cells in scRNA-seq data by extracting biological and technical features for outlier detection or classification. Use when user asks to extract quality features from gene expression matrices, identify low-quality cells using PCA-based outlier detection, or classify cell quality using SVM models.
 homepage: https://bioconductor.org/packages/release/bioc/html/cellity.html
 ---
+
 
 # bioconductor-cellity
 

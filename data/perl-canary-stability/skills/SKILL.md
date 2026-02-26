@@ -1,8 +1,9 @@
 ---
 name: perl-canary-stability
-description: This skill provides guidance on managing `Canary::Stability`, a specialized utility used by "Schmorp" modules to perform pre-installation sanity checks.
+description: This tool manages pre-installation sanity checks and stability requirements for specific Perl modules. Use when user asks to bypass interactive installation prompts, disable stability checks, or configure environment variables for non-interactive builds.
 homepage: http://metacpan.org/pod/Canary::Stability
 ---
+
 
 # perl-canary-stability
 

@@ -1,8 +1,9 @@
 ---
 name: consplice
-description: ConSplice is a Python-based framework designed to improve the interpretation of alternative splicing variants, particularly those located outside of traditional exon-intron junctions.
+description: ConSplice is a framework that identifies pathogenic alternative splicing variants by combining population-level constraint data with per-nucleotide splicing predictions. Use when user asks to interpret the pathogenicity of splicing variants, identify cryptic splice sites, or calculate splicing constraint scores for genomic regions.
 homepage: https://github.com/mikecormier/ConSplice
 ---
+
 
 # consplice
 

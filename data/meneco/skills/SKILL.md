@@ -1,8 +1,9 @@
 ---
 name: meneco
-description: Meneco is a qualitative, topology-based tool used to address incompleteness in genome-scale metabolic reconstructions.
+description: Meneco is a topological tool that identifies the minimal set of reactions needed to complete a metabolic network and restore the production of target metabolites. Use when user asks to identify gaps in metabolic reconstructions, find minimal reaction sets to restore network functionality, or enumerate alternative network completions from a reference database.
 homepage: http://bioasp.github.io/meneco/
 ---
+
 
 # meneco
 

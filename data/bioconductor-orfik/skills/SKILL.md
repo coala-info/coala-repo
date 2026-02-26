@@ -1,8 +1,9 @@
 ---
 name: bioconductor-orfik
-description: the package is available on all platforms; click for details.
+description: ORFik is an R package for the analysis and visualization of ribosome profiling and transcriptomics data. Use when user asks to find open reading frames, analyze Ribo-seq data, or perform transcriptomic feature quantification.
 homepage: https://bioconductor.org/packages/release/bioc/html/ORFik.html
 ---
+
 
 # bioconductor-orfik
 

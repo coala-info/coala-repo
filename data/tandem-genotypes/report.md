@@ -3,7 +3,7 @@
 ## tandem-genotypes
 
 ### Tool Description
-The provided text does not contain help information for the tool, as it appears to be a log of a failed container build process.
+Try to indicate genotypes of tandem repeats.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0
@@ -18,71 +18,28 @@ The provided text does not contain help information for the tool, as it appears 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: tandem-genotypes [options] microsat.txt alignments.maf
 
+Try to indicate genotypes of tandem repeats.
 
-## Metadata
-- **Skill**: generated
-
-## tandem-genotypes_tandem-genotypes-merge
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains Apptainer/Singularity runtime logs and a fatal error message regarding image fetching.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0
-- **Homepage**: https://github.com/mcfrith/tandem-genotypes
-- **Package**: https://anaconda.org/channels/bioconda/packages/tandem-genotypes/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## tandem-genotypes_tandem-genotypes-join
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be a container execution error log. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0
-- **Homepage**: https://github.com/mcfrith/tandem-genotypes
-- **Package**: https://anaconda.org/channels/bioconda/packages/tandem-genotypes/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## tandem-genotypes_tandem-genotypes-plot
-
-### Tool Description
-Plot results from tandem-genotypes. (Note: The provided help text contains only container execution logs and error messages, and does not list specific arguments or usage instructions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0
-- **Homepage**: https://github.com/mcfrith/tandem-genotypes
-- **Package**: https://anaconda.org/channels/bioconda/packages/tandem-genotypes/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tandem-genotypes:1.9.2--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+  -h, --help            show this help message and exit
+  -g FILE, --genes=FILE
+                        read genes from a genePred or BED file
+  -o NUM, --output=NUM  output format: 1=original, 2=alleles (default=1)
+  -m PROB, --mismap=PROB
+                        ignore any alignment with mismap probability > PROB
+                        (default=1e-06)
+  --postmask=NUMBER     ignore mostly-lowercase alignments (default=1)
+  -p BP, --promoter=BP  promoter length (default=300)
+  -s N, --select=N      select: all repeats (0), non-intergenic repeats (1),
+                        non-intergenic non-intronic repeats (2) (default=0)
+  -u BP, --min-unit=BP  ignore repeats with unit shorter than BP (default=2)
+  -f BP, --far=BP       require alignment >= BP beyond both sides of a repeat
+                        (default=100)
+  -n BP, --near=BP      count insertions <= BP beyond a repeat (default=60)
+  --mode=LETTER         L=lenient, S=strict (default=L)
+  --scores=FILE         importance scores for gene parts
+  -v, --verbose         show more details
 ```
 

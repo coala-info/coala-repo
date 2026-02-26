@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dep
-description: the package also contains wrapper functions that entail the complete analysis workflow and generate a report. Even easier to use are the interactive Shiny apps that are provided by the package.
+description: The bioconductor-dep package provides an integrated workflow for the differential enrichment analysis of quantitative proteomics data. Use when user asks to analyze quantitative proteomics datasets, impute missing values in protein data, perform differential expression testing, or generate visualizations like volcano plots and heatmaps for proteomics results.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEP.html
 ---
+
 
 # bioconductor-dep
 

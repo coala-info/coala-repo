@@ -1,8 +1,9 @@
 ---
 name: coverm
-description: CoverM is a fast and configurable tool designed to estimate the abundance of genomic entities in metagenomic samples.
+description: CoverM estimates the abundance and coverage of genomes or contigs in metagenomic samples by mapping reads to references. Use when user asks to calculate mean coverage, determine relative abundance of MAGs, or generate coverage statistics from BAM files.
 homepage: https://github.com/wwood/coverm
 ---
+
 
 # coverm
 

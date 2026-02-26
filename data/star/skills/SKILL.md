@@ -1,8 +1,9 @@
 ---
 name: star
-description: STAR (Spliced Transcripts Alignment to a Reference) is a high-performance bioinformatics tool designed for mapping RNA-seq reads to a reference genome.
+description: STAR maps RNA-seq reads to a reference genome and identifies splice junctions with high speed and accuracy. Use when user asks to generate a genome index, align RNA-seq reads, perform two-pass mapping, or process single-cell RNA-seq data.
 homepage: https://github.com/alexdobin/STAR
 ---
+
 
 # star
 

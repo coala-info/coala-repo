@@ -3,7 +3,7 @@
 ## pychopper
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a log of a container execution failure.
+A tool to identify, orient and rescue full-length Nanopore cDNA reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pychopper:2.7.10--pyhdfd78af_0
@@ -18,11 +18,14 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pychopper:2.7.10--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/pychopper:2.7.10--pyhdfd78af_0' locally
+2.7.10--pyhdfd78af_0: Pulling from biocontainers/pychopper
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+be04d788e7a3: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3322528907: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

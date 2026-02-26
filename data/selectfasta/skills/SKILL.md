@@ -1,8 +1,9 @@
 ---
 name: selectfasta
-description: The `selectfasta` tool is a C++ based utility designed for the efficient retrieval of biological sequences.
+description: The selectfasta tool efficiently retrieves specific biological sequences from FASTA or FASTQ files based on a list of provided identifiers. Use when user asks to filter sequence files, extract specific headers, or select sequences from large genomic datasets.
 homepage: https://github.com/andvides/selectFasta/
 ---
+
 
 # selectfasta
 

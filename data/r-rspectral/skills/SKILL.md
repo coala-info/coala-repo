@@ -1,8 +1,9 @@
 ---
 name: r-rspectral
-description: R package rspectral (documentation from project home).
+description: The r-rspectral package implements the Spectral Modularity graph clustering method to identify community structures in networks. Use when user asks to detect communities in igraph or GraphNEL objects, perform spectral clustering on networks, or find modularity-based clusters in R.
 homepage: https://cran.r-project.org/web/packages/rspectral/index.html
 ---
+
 
 # r-rspectral
 

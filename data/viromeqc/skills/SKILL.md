@@ -1,8 +1,9 @@
 ---
 name: viromeqc
-description: ViromeQC is a quality control tool designed to benchmark the enrichment of viral metagenomes.
+description: ViromeQC is a quality control tool for benchmarking and quantifying the enrichment of viral metagenomes. Use when user asks to analyze viral metagenome enrichment, quantify contamination, calculate enrichment scores, filter reads by quality or length, or adjust processing parameters.
 homepage: https://github.com/SegataLab/viromeqc
 ---
+
 
 # viromeqc
 

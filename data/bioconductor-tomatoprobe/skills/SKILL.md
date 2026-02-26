@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tomatoprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Tomato Genome Array. Use when user asks to retrieve probe sequences for tomato microarrays or perform sequence-level analysis on tomato genome chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/tomatoprobe.html
 ---
+
 
 # bioconductor-tomatoprobe
 

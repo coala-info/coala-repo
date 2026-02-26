@@ -3,26 +3,32 @@
 ## murasaki-mpi
 
 ### Tool Description
-Murasaki is a multiple genome alignment tool. (Note: The provided input text contains container runtime error messages rather than the tool's help documentation, so no arguments could be extracted.)
+[Errno 2] No such file or directory: 'murasaki-mpi'; fallback failed: [Errno 2] No such file or directory: 'murasaki-mpi'
 
 ### Metadata
-- **Docker Image**: biocontainers/murasaki-mpi:v1.68.6-6b4-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/murasaki-mpi/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'murasaki-mpi'; fallback failed: [Errno 2] No such file or directory: 'murasaki-mpi'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'murasaki-mpi'; fallback failed: [Errno 2] No such file or directory: 'murasaki-mpi'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/murasaki-mpi:v1.68.6-6b4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2835108408: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

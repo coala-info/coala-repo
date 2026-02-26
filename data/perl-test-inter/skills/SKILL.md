@@ -1,8 +1,9 @@
 ---
 name: perl-test-inter
-description: perl-test-inter (implemented via the `Test::Inter` module) provides a streamlined framework for Perl testing that prioritizes readability and maintainability.
+description: perl-test-inter provides a framework for Perl testing that allows developers to define test cases as data structures for streamlined comparison and reporting. Use when user asks to write table-driven tests, automate function output verification, or run specific test cases interactively in Perl.
 homepage: https://metacpan.org/pod/Test::Inter
 ---
+
 
 # perl-test-inter
 

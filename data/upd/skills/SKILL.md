@@ -1,8 +1,9 @@
 ---
 name: upd
-description: The `upd` tool is a specialized utility designed to detect Uniparental Disomy by analyzing genomic data from a trio (proband, mother, and father).
+description: The `upd` tool detects Uniparental Disomy by analyzing trio genomic data to identify regions of single-parental inheritance. Use when user asks to call Uniparental Disomy regions, or extract informative sites.
 homepage: https://github.com/bjhall/upd
 ---
+
 
 # upd
 

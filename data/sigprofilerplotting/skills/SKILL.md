@@ -1,8 +1,9 @@
 ---
 name: sigprofilerplotting
-description: The `sigprofilerplotting` skill provides a standardized framework for visualizing the diverse landscape of somatic mutations.
+description: SigProfilerPlotting visualizes somatic mutational matrices by creating standardized bar charts and sample portraits for various mutational contexts. Use when user asks to plot single base substitutions, visualize doublet base substitutions, generate indel profiles, or create comprehensive sample portraits from mutational data.
 homepage: https://github.com/alexandrovlab/SigProfilerPlotting
 ---
+
 
 # sigprofilerplotting
 

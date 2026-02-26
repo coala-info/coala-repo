@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celarefdata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-processed differential expression reference datasets for automated cell type annotation. Use when user asks to load reference profiles for celaref, access pre-computed DE results from ExperimentHub, or retrieve cell-type-specific gene expression data for 10X PBMCs and mouse tissues.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/celarefData.html
 ---
+
 
 # bioconductor-celarefdata
 

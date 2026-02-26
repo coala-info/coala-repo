@@ -1,8 +1,9 @@
 ---
 name: dig2
-description: The `dig2` tool is a lightweight, flexible command-line utility designed for the theoretical digestion of proteins.
+description: The dig2 tool performs theoretical protein digestion and simulates gas-phase fragmentation patterns to predict peptide masses and fragment ions. Use when user asks to digest protein sequences into peptide fragments, simulate MS/MS fragmentation patterns, or predict fragment ions for mass spectrometry workflows.
 homepage: http://www.ms-utils.org/dig2/dig2.html
 ---
+
 
 # dig2
 

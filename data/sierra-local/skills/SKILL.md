@@ -1,8 +1,9 @@
 ---
 name: sierra-local
-description: The `sierra-local` tool is a Python-based implementation of the Stanford HIVdb Sierra web service.
+description: The sierra-local tool runs the Stanford HIVdb drug resistance prediction algorithm on local hardware to process genomic sequences. Use when user asks to run HIV drug resistance predictions, update local algorithm rules, or process HIV-1 sequences for resistance reports while maintaining data privacy.
 homepage: https://github.com/PoonLab/sierra-local
 ---
+
 
 # sierra-local
 

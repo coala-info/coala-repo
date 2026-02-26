@@ -1,8 +1,9 @@
 ---
 name: ntm-profiler
-description: The ntm-profiler tool is a specialized bioinformatic pipeline designed to characterize Non-Tuberculous Mycobacteria from genomic data.
+description: ntm-profiler identifies Non-Tuberculous Mycobacteria species and predicts drug resistance from genomic data. Use when user asks to identify NTM species, predict drug resistance from reads or assemblies, or collate multiple profiling results into a summary.
 homepage: https://github.com/jodyphelan/NTM-Profiler
 ---
+
 
 # ntm-profiler
 

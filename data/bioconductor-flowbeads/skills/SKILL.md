@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowbeads
-description: the package is available on all platforms; click for details.
+description: This tool performs bead-based normalization for flow cytometry data to ensure consistency across different instruments or time points. Use when user asks to load bead data, gate bead populations, perform absolute MEF or MESF normalization, or apply relative normalization to flow cytometry samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowBeads.html
 ---
+
 
 # bioconductor-flowbeads
 

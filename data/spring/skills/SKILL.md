@@ -1,8 +1,9 @@
 ---
 name: spring
-description: Spring is a high-performance compression tool specifically engineered for FASTQ files containing up to 4.29 billion reads.
+description: Spring is a high-performance compression tool designed to provide near-optimal, genomic-aware compression for FASTQ and FASTA files. Use when user asks to compress sequencing reads, decompress spring files, perform lossy quality score binning, or extract specific read ranges using random access.
 homepage: https://github.com/shubhamchandak94/Spring
 ---
+
 
 # spring
 

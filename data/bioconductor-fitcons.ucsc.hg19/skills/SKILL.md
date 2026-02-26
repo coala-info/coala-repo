@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fitcons.ucsc.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides fitness consequence scores for the human genome assembly hg19. Use when user asks to retrieve fitCons scores, evaluate the functional impact of genomic variants, or access evolutionary fitness data for hg19.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/fitCons.UCSC.hg19.html
 ---
+
 
 # bioconductor-fitcons.ucsc.hg19
 

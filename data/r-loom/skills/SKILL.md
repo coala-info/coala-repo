@@ -1,8 +1,9 @@
 ---
 name: r-loom
-description: R package loom (documentation from project home).
+description: This R package provides an interface for creating, reading, and manipulating HDF5-based loom files for large-scale single-cell genomics data. Use when user asks to connect to loom files, add layers or attributes, perform memory-efficient batch processing, or subset large datasets in R.
 homepage: https://cran.r-project.org/web/packages/loom/index.html
 ---
+
 
 # r-loom
 

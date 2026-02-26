@@ -1,8 +1,9 @@
 ---
 name: sicer
-description: SICER (Spatial Clustering for Identification of Enriched Regions) is a specialized tool for analyzing ChIP-Seq data, particularly for histone modifications that cover broad genomic regions rather than narrow transcription factor binding sites.
+description: SICER identifies significant domains of enrichment in ChIP-Seq data, specifically targeting broad histone modifications through a spatial clustering approach. Use when user asks to call broad peaks, identify enriched genomic regions, or analyze histone modification data.
 homepage: http://home.gwu.edu/~wpeng/Software.htm
 ---
+
 
 # sicer
 

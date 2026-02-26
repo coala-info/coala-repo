@@ -1,8 +1,9 @@
 ---
 name: r-r.utils
-description: Utility functions useful when programming and developing R packages.</p>
+description: The R.utils package provides a collection of utility functions that extend the base R environment for programming, package development, and system interactions. Use when user asks to validate function arguments, perform advanced file system operations, compress files, use string interpolation, or manage command-line arguments.
 homepage: https://cloud.r-project.org/web/packages/R.utils/index.html
 ---
+
 
 # r-r.utils
 

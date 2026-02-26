@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgsa
-description: The package mgsa implements MGSA and tools to use MGSA together with the Gene Ontology.
+description: This package implements Model-based Gene Set Analysis to identify enriched functional categories in gene sets. Use when user asks to perform model-based gene set analysis, identify enriched Gene Ontology terms, or analyze gene sets using a Bayesian approach.
 homepage: https://bioconductor.org/packages/release/bioc/html/mgsa.html
 ---
+
 
 # bioconductor-mgsa
 

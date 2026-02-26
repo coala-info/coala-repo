@@ -1,8 +1,9 @@
 ---
 name: r-numbat
-description: "A computational method that infers copy number variations (CNVs) in cancer scRNA-seq data and reconstructs the tumor phylogeny. 'numbat' integrates signals from gene expression, allelic ratio, and population haplotype structures to accurately infer allele-specific CNVs in single cells and reconstruct their lineage relationship. 'numbat' can be used to: 1. detect allele-specific copy number variations from single-cells; 2. differentiate tumor versus normal cells in the tumor microenvironment; 3. infer the clonal architecture and evolutionary history of profiled tumors. 'numbat' does not require tumor/normal-paired DNA or genotype data, but operates solely on the donor scRNA-data data (for example, 10x Cell Ranger output)."
+description: r-numbat performs haplotype-aware copy number variation analysis and clonal phylogeny reconstruction from single-cell RNA-seq or spatial transcriptomics data. Use when user asks to infer allele-specific CNVs, differentiate tumor from normal cells, or reconstruct tumor clonal architecture.
 homepage: https://cran.r-project.org/web/packages/numbat/index.html
 ---
+
 
 # r-numbat
 

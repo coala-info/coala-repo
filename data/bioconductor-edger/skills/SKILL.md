@@ -1,8 +1,9 @@
 ---
 name: bioconductor-edger
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis of digital gene expression data using negative binomial models. Use when user asks to perform differential expression analysis, normalize read counts using TMM, estimate dispersions, or conduct statistical testing for RNA-seq, ChIP-seq, or CRISPR screen data.
 homepage: https://bioconductor.org/packages/release/bioc/html/edgeR.html
 ---
+
 
 # bioconductor-edger
 

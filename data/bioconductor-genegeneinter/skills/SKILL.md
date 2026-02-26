@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genegeneinter
-description: The package also proposes tools for a graphic display of the results.
+description: This tool performs statistical analysis of gene-gene interactions in case-control association studies using biallelic SNP data. Use when user asks to test interactions between pairs of genes, import and filter SNP data, or visualize gene interaction networks.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GeneGeneInteR.html
 ---
+
 
 # bioconductor-genegeneinter
 

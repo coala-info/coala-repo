@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stjoincount
-description: the package is available on all platforms; click for details.
+description: This R package implements join count statistics to quantify spatial correlation and clustering in spatial transcriptomics data. Use when user asks to calculate join count statistics, analyze spatial patterns of cell types, or assess spatial clustering in transcriptomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/stJoincount.html
 ---
+
 
 # bioconductor-stjoincount
 

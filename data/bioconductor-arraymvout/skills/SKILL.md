@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arraymvout
-description: the package is available on all platforms; click for details.
+description: This tool identifies outlying Affymetrix microarrays by applying multivariate outlier detection to principal components of quality control metrics. Use when user asks to detect problematic arrays in Affymetrix datasets, perform automated quality control using PCA, or identify outliers based on RLE, NUSE, and RNA degradation features.
 homepage: https://bioconductor.org/packages/release/bioc/html/arrayMvout.html
 ---
+
 
 # bioconductor-arraymvout
 

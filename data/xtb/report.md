@@ -3,7 +3,7 @@
 ## xtb
 
 ### Tool Description
-The provided text is a container engine (Apptainer/Singularity) error log and does not contain CLI help information or usage instructions for the xtb tool.
+xtb is a fast semi-empirical quantum chemistry method for the calculation of molecular geometries, single-point energies, vibrational frequencies and molecular dynamics.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/xtb:6.6.1
@@ -12,19 +12,221 @@ The provided text is a container engine (Apptainer/Singularity) error log and do
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/xtb/overview
-- **Total Downloads**: 282.6K
+- **Total Downloads**: 283.6K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/grimme-lab/xtb
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/xtb:6.6.1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: xtb [options] <geometry> [options]
+
+<geometry> may be provided as valid TM coordinate file (*coord in Bohr),
+in xmol format (*.xyz in Ångström), sdf or mol file format, PDB format
+genFormat input or Vasp's POSCAR format.
+
+For a full list visit: https://grimme-lab.github.io/mctc-lib/page/index.html
+
+Options:
+
+-c, --chrg INT
+    specify molecular charge as INT, overrides .CHRG file and xcontrol option
+
+-u, --uhf INT
+    specify number of unpaired electrons as INT, overrides .UHF file and xcontrol option
+
+--gfn INT
+    specify parametrisation of GFN-xTB (default = 2)
+
+--gfnff, --gff
+    specify parametrisation of GFN-FF
+
+--tblite,
+    use tblite library as implementation for xTB
+
+--spinpol,
+    enables spin-polarization for xTB methods (tblite required)
+
+--oniom METHOD LIST
+    use subtractive embedding via ONIOM method. 'METHOD' is given as 'inner:outer'
+    where 'inner' can be 'orca', 'turbomole', 'gfn2', 'gfn1', or 'gfnff' and
+    'outer' can be 'gfn2', 'gfn1', or 'gfnff'.
+    The inner region is given as a comma separated indices directly in the commandline
+    or in a file with each index on a separate line.
+
+--etemp REAL
+    electronic temperature (default = 300K)
+
+--esp
+    calculate electrostatic potential on VdW-grid
+
+--stm
+    calculate STM image
+
+-a, --acc REAL
+    accuracy for SCC calculation, lower is better (default = 1.0)
+
+--vparam FILE
+    Parameter file for vTB calculation
+
+--xparam FILE
+    Parameter file for xTB calculation (not used)
+
+--alpb SOLVENT [STATE]
+    analytical linearized Poisson-Boltzmann (ALPB) model,
+    available solvents are acetone, acetonitrile, aniline, benzaldehyde,
+    benzene, ch2cl2, chcl3, cs2, dioxane, dmf, dmso, ether, ethylacetate, furane,
+    hexandecane, hexane, methanol, nitromethane, octanol, woctanol, phenol, toluene,
+    thf, water.
+    The solvent input is not case-sensitive. The Gsolv
+    reference state can be chosen as reference or bar1M (default).
+
+-g, --gbsa SOLVENT [STATE]
+    generalized born (GB) model with solvent accessable surface (SASA) model,
+    available solvents are acetone, acetonitrile, benzene (only GFN1-xTB), CH2Cl2,
+    CHCl3, CS2, DMF (only GFN2-xTB), DMSO, ether, H2O, methanol,
+    n-hexane (only GFN2-xTB), THF and toluene.
+    The solvent input is not case-sensitive.
+    The Gsolv reference state can be chosen as reference or bar1M (default).
+
+--cma
+    shifts molecule to center of mass and transforms cartesian coordinates into the
+    coordinate system of the principle axis (not affected by ‘isotopes’-file).
+
+--pop
+    requests printout of Mulliken population analysis
+
+--molden
+    requests printout of molden file
+
+--dipole
+    requests dipole printout
+
+--wbo
+    requests Wiberg bond order printout
+
+--lmo
+    requests localization of orbitals
+
+--fod
+    requests FOD calculation
+
+--scc, --sp
+    performs a single point calculation
+
+--vip
+    performs calculation of ionisation potential. This needs the param_ipea-xtb.txt
+    parameters and a GFN1 Hamiltonian.
+
+--vea
+    performs calculation of electron affinity. This needs the param_ipea-xtb.txt
+    parameters and a GFN1 Hamiltonian.
+
+--vipea
+    performs calculation of electron affinity and ionisation potential.
+    This needs the param_ipea-xtb.txt parameters and a GFN1 Hamiltonian.
+
+--vfukui
+    performs calculation of Fukui indices.
+
+--vomega
+    performs calculation of electrophilicity index. This needs the param_ipea-xtb.txt
+    parameters and a GFN1 Hamiltonian.
+
+--grad
+    performs a gradient calculation
+
+-o, --opt [LEVEL]
+    call ancopt(3) to perform a geometry optimization, levels from crude, sloppy,
+    loose, normal (default), tight, verytight to extreme can be chosen
+
+--hess
+    perform a numerical hessian calculation on input geometry
+
+--ohess [LEVEL]
+    perform a numerical hessian calculation on an ancopt(3) optimized geometry
+
+--bhess [LEVEL]
+    perform a biased numerical hessian calculation on an ancopt(3) optimized geometry
+
+--md
+    molecular dynamics simulation on start geometry
+
+--metadyn [int]
+    meta dynamics simulation on start geometry, saving int snapshots of the
+    trajectory to bias the simulation
+
+--omd
+    molecular dynamics simulation on ancopt(3) optimized geometry,
+    a loose optimization level will be chosen
+
+--metaopt [LEVEL]
+    call ancopt(3) to perform a geometry optimization, then try to find other
+    minimas by meta dynamics
+
+--path [FILE]
+    use meta dynamics to calculate a path from the input geometry to the given
+    product structure
+
+--modef INT
+    modefollowing algorithm. INT specifies the mode that should be used for the
+    modefollowing.
+
+-I, --input FILE
+    use FILE as input source for xcontrol(7) instructions
+
+--namespace STRING
+    give this xtb(1) run a namespace. All files, even temporary ones, will be named
+    according to STRING (might not work everywhere).
+
+--[no]copy
+    copies the xcontrol file at startup (default = true)
+
+--[no]restart
+    restarts calculation from xtbrestart (default = true)
+
+-P, --parallel INT
+    number of parallel processes
+
+--define
+    performs automatic check of input and terminate
+
+--json
+    write xtbout.json file
+
+--citation
+    print citation and terminate
+
+--license
+    print license and terminate
+
+-v, --verbose
+    be more verbose (not supported in every unit)
+
+-s, --silent
+    clutter the screen less (not supported in every unit)
+
+--ceasefiles
+    reduce the amount of output and files written
+
+--strict
+    turns all warnings into hard errors
+
+-h, --help
+    show help page
+
+Useful Maschine Settings:
+
+export MKL_NUM_THREADS=<NCORE>
+export OMP_NUM_THREADS=<NCORE>,1
+export OMP_STACKSIZE=4G
+ulimit -s unlimited
+
+Output Conventions:
+
+total energies are given in atomic units (Eh)
+gaps/HL energies are given in eV
+
+More information can be obtained by `man 1 xtb` and `man 7 xcontrol`
+or at https://xtb-docs.readthedocs.io/en/latest/contents.html
 ```
 
-
-## Metadata
-- **Skill**: generated

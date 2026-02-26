@@ -2,14 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: sc3-sc3-calc-dists.R
 label: sc3-scripts_sc3-sc3-calc-dists.R
-doc: "The provided text is a container engine error log and does not contain help
-  information or argument definitions for the tool.\n\nTool homepage: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts"
-inputs: []
+doc: "Calculates distances between cells.\n\nTool homepage: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts"
+inputs:
+  - id: input_object_file
+    type: File
+    doc: File name in which a serialized R SingleCellExperiment object where 
+      object matrix found
+    inputBinding:
+      position: 101
+      prefix: --input-object-file
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_object_file
+    type: File
+    doc: File name in which to store serialized R object of type 
+      'SingleCellExperiment'.
+    outputBinding:
+      glob: $(inputs.output_object_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/sc3-scripts:0.0.6--r351_0
-stdout: sc3-scripts_sc3-sc3-calc-dists.R.out

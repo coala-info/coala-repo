@@ -1,9 +1,9 @@
 # ucsc-htmlcheck CWL Generation Report
 
-## ucsc-htmlcheck
+## ucsc-htmlcheck_htmlCheck
 
 ### Tool Description
-Check HTML files for errors. (Note: The provided text contains container execution errors and does not list specific command-line arguments.)
+Do a little reading and verification of html file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-htmlcheck:482--h0b57e2e_0
@@ -18,13 +18,32 @@ Check HTML files for errors. (Note: The provided text contains container executi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-htmlcheck:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+htmlCheck - Do a little reading and verification of html file
+usage:
+   htmlCheck how url
+where how is:
+   ok - just check for 200 return.  Print error message and exit -1 if no 200
+   getAll - read the url (header and html) and print to stdout
+   getHeader - read the header and print to stdout
+   getCookies - print list of cookies
+   getHtml - print the html, but not the header to stdout
+   getForms - print the form structure to stdout
+   getVars - print the form variables to stdout
+   getLinks - print links
+   getTags - print out just the tags
+   checkLinks - check links in page
+   checkLinks2 - check links in page and all subpages in same host
+             (Just one level of recursion)
+   checkLocalLinks - check local links in page
+   checkLocalLinks2 - check local links in page and connected local pages
+             (Just one level of recursion)
+   submit - submit first form in page if any using 'GET' method
+   validate - do some basic validations including TABLE/TR/TD nesting
+   strictTagNestCheck - check tags are correctly nested
+options:
+   cookies=cookie.txt - Cookies is a two column file
+           containing <cookieName><space><value><newLine>
+   withSrc - causes the get and checkLinks commands to also include SRC= links.
+note: url will need to be in quotes if it contains an ampersand or question mark.
 ```
 
-
-## Metadata
-- **Skill**: generated

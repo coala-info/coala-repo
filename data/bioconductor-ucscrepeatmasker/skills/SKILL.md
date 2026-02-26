@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ucscrepeatmasker
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides access to RepeatMasker annotation data from the UCSC Genome Browser. Use when user asks to retrieve repeat element annotations, access UCSC genomic repeat data, or analyze repetitive sequences in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/UCSCRepeatMasker.html
 ---
+
 
 # bioconductor-ucscrepeatmasker
 

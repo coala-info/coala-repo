@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbecs
-description: the package is available on all platforms; click for details.
+description: MBECS provides a comprehensive suite of tools for identifying and correcting batch effects in microbiome data. Use when user asks to evaluate batch effects, correct technical variation in microbiome datasets, or compare different batch correction methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/MBECS.html
 ---
+
 
 # bioconductor-mbecs
 

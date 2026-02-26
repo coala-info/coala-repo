@@ -1,9 +1,9 @@
 # lukasa CWL Generation Report
 
-## lukasa
+## lukasa_lukasa.py
 
 ### Tool Description
-Lukasa is a tool for RNA-seq analysis and genomic data processing (Note: The provided text is an error log and does not contain usage information).
+Wrapper to simplify running the lukasa protein evidence mapping workflow on the command line
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lukasa:0.15.0--py310hdfd78af_0
@@ -18,29 +18,34 @@ Lukasa is a tool for RNA-seq analysis and genomic data processing (Note: The pro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lukasa:0.15.0--py310hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2349575353: no space left on device
-```
+usage: lukasa.py [-h] [--output_filename OUTPUT_FILENAME]
+                 [--workflow_dir WORKFLOW_DIR] [--max_intron MAX_INTRON]
+                 [--min_intron MIN_INTRON] [--min_coverage MIN_COVERAGE]
+                 [--eval EVAL] [--debug] [--leave_outputs]
+                 [--species_table SPECIES_TABLE]
+                 contigs_filename proteins_filename
 
+Wrapper to simplify running the lukasa protein evidence mapping workflow on
+the command line
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  contigs_filename      File with genomic contigs
+  proteins_filename     File with proteins to map
 
-## lukasa_lukasa.py
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system log messages and a fatal error regarding disk space during a container build.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lukasa:0.15.0--py310hdfd78af_0
-- **Homepage**: https://github.com/pvanheus/lukasa
-- **Package**: https://anaconda.org/channels/bioconda/packages/lukasa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lukasa:0.15.0--py310hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1897404760: no space left on device
+options:
+  -h, --help            show this help message and exit
+  --output_filename OUTPUT_FILENAME
+  --workflow_dir WORKFLOW_DIR
+  --max_intron MAX_INTRON
+                        Maximum intron length
+  --min_intron MIN_INTRON
+                        Minimum intron length
+  --min_coverage MIN_COVERAGE
+                        Minimum proportion of a gene that is exons
+  --eval EVAL           Maximum E-value for MetaEuk
+  --debug               Enable debug for cwltool
+  --leave_outputs       Leave intermediate outputs
+  --species_table SPECIES_TABLE
+                        spaln species table to use
 ```
 

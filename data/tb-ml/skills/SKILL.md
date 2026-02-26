@@ -1,8 +1,9 @@
 ---
 name: tb-ml
-description: The `tb-ml` tool provides a unified framework for predicting antimicrobial resistance in *M.
+description: The tb-ml tool provides a unified framework for predicting antimicrobial resistance in M. tuberculosis by executing standardized Docker containers for genomic pre-processing and machine learning inference. Use when user asks to predict drug resistance from WGS data, chain genomic processing containers, or perform systematic comparisons of TB machine learning models.
 homepage: https://github.com/jodyphelan/tb-ml
 ---
+
 
 # tb-ml
 

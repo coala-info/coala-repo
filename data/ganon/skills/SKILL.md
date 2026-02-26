@@ -1,8 +1,9 @@
 ---
 name: ganon
-description: Ganon (v2+) is a high-performance genomic sequence classifier designed to handle massive reference sets.
+description: Ganon is a high-performance genomic sequence classifier that uses k-mer based indexing and Bloom filters for fast taxonomic assignment of metagenomic reads. Use when user asks to build taxonomic databases, classify sequencing reads, generate abundance reports with genome size correction, or create contingency tables for multiple samples.
 homepage: https://github.com/pirovc/ganon
 ---
+
 
 # ganon
 

@@ -1,8 +1,9 @@
 ---
 name: velvet
-description: Velvet is a suite of algorithms designed to manipulate de Bruijn graphs for genomic assembly.
+description: Velvet is a suite of algorithms for genomic assembly, optimized for short-read sequencing data. Use when user asks to perform genomic assembly, prepare sequencing data for assembly, or generate contigs.
 homepage: https://github.com/dzerbino/velvet
 ---
+
 
 # velvet
 

@@ -1,8 +1,9 @@
 ---
 name: mhcgnomes
-description: The `mhcgnomes` skill provides a robust framework for handling the often inconsistent naming conventions found in immunological databases like IEDB, IMGT/HLA, and IPD/MHC.
+description: "mhcgnomes parses and normalizes MHC nomenclature into structured objects to ensure consistency across immunological datasets. Use when user asks to parse MHC strings, normalize allele names, identify serotypes or supertypes, and handle complex MHC entities like heterodimers or mutants."
 homepage: https://github.com/til-unc/mhcgnomes
 ---
+
 
 # mhcgnomes
 

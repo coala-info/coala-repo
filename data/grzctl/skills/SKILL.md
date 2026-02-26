@@ -1,8 +1,9 @@
 ---
 name: grzctl
-description: grzctl is the primary administrative tool for the Genome Resource Center (GRZ).
+description: grzctl is an administrative tool used to manage the Genome Resource Center submission pipeline, database, and reporting. Use when user asks to list submissions, manage the internal database, generate compliance reports, or redact sensitive archival information.
 homepage: https://github.com/BfArM-MVH/grz-tools
 ---
+
 
 # grzctl
 

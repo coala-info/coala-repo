@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nullrangesdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and experiment data for the nullranges Bioconductor package. Use when user asks to access example genomic data for null range generation, load datasets for nullranges tutorials, or explore experiment data for genomic interval matching.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/nullrangesData.html
 ---
+
 
 # bioconductor-nullrangesdata
 

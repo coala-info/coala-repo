@@ -1,8 +1,9 @@
 ---
 name: kyber
-description: Kyber is a high-performance tool designed to create standardized 600x600 pixel heatmap images visualizing the correlation between read length and sequencing accuracy.
+description: Kyber creates standardized heatmap images visualizing the correlation between read length and sequencing accuracy for genomic data. Use when user asks to generate quality control heatmaps, compare sequencing runs, or visualize read length versus accuracy from BAM or CRAM files.
 homepage: https://github.com/wdecoster/kyber
 ---
+
 
 # kyber
 

@@ -1,8 +1,9 @@
 ---
 name: intermine
-description: InterMine is an open-source data warehouse system that integrates diverse biological data sources, making them searchable through a unified interface.
+description: InterMine is an open-source data warehouse system that integrates and queries diverse biological data through a unified Python interface. Use when user asks to perform complex genomic queries across biological databases, retrieve data from specific Mines, or manage lists of biological identifiers.
 homepage: http://www.intermine.org
 ---
+
 
 # intermine
 

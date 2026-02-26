@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vplotr
-description: the package is available on all platforms; click for details.
+description: VplotR generates V-plots and footprinting profiles to visualize protein-DNA interactions from high-throughput sequencing data. Use when user asks to create V-plots, generate genomic footprinting profiles, or visualize fragment size distributions around genomic features.
 homepage: https://bioconductor.org/packages/release/bioc/html/VplotR.html
 ---
+
 
 # bioconductor-vplotr
 

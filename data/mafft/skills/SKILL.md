@@ -1,8 +1,9 @@
 ---
 name: mafft
-description: MAFFT (Multiple Alignment using Fast Fourier Transform) is a high-performance bioinformatics tool designed to handle sequence datasets ranging from a few dozen to tens of thousands of sequences.
+description: "MAFFT is a high-performance bioinformatics tool used to perform multiple sequence alignments for DNA, RNA, or protein datasets. Use when user asks to align multiple sequences, add new sequences or fragments to an existing alignment, or perform structural RNA alignments."
 homepage: http://mafft.cbrc.jp/alignment/software/
 ---
+
 
 # mafft
 

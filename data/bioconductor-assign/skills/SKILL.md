@@ -1,8 +1,9 @@
 ---
 name: bioconductor-assign
-description: the package is available on all platforms; click for details.
+description: ASSIGN quantifies pathway activity in genomic data using a Bayesian factor analysis approach to adapt signatures to specific biological contexts. Use when user asks to evaluate pathway activation status, adapt gene signatures to specific tissue types, or perform Bayesian factor analysis for pathway deregulation scoring.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASSIGN.html
 ---
+
 
 # bioconductor-assign
 

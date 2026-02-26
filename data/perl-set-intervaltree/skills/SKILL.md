@@ -1,8 +1,9 @@
 ---
 name: perl-set-intervaltree
-description: The `Set::IntervalTree` module provides an optimized data structure for storing and querying intervals.
+description: This tool provides an optimized data structure for storing and querying genomic intervals to identify overlaps or nearest neighbors. Use when user asks to store interval data, find overlapping genomic regions, or retrieve nearest neighbor intervals using Perl.
 homepage: https://metacpan.org/pod/Set::IntervalTree
 ---
+
 
 # perl-set-intervaltree
 

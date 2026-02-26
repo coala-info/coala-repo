@@ -1,8 +1,9 @@
 ---
 name: vcfexpress
-description: vcfexpress is a Rust-powered utility designed for rapid manipulation of genomic variant files.
+description: vcfexpress rapidly manipulates genomic variant files using Lua expressions for advanced filtering, custom output, and on-the-fly modifications. Use when user asks to filter variants, create custom output formats, modify VCF headers, add or modify INFO fields, parse complex INFO fields, or perform sample-level filtering.
 homepage: https://github.com/brentp/vcfexpress/
 ---
+
 
 # vcfexpress
 

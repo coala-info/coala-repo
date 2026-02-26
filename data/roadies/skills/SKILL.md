@@ -1,8 +1,9 @@
 ---
 name: roadies
-description: ROADIES (Reference-free Orthology-free Alignment-free DIscordance aware Estimation of Species tree) is an end-to-end automated pipeline designed to reconstruct species trees from raw genomic data.
+description: ROADIES is an end-to-end automated pipeline that reconstructs species trees from raw genomic data using a reference-free and alignment-free approach. Use when user asks to reconstruct species trees from assemblies, perform discordance-aware phylogenetic estimation, or reroot unrooted Newick trees.
 homepage: https://github.com/TurakhiaLab/ROADIES
 ---
+
 
 # roadies
 

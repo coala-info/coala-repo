@@ -1,8 +1,9 @@
 ---
 name: ucsc-psltochain
-description: `pslToChain` is a specialized utility from the UCSC Kent toolkit that transforms alignment data.
+description: `ucsc-psltochain` converts alignment data from PSL format to Chain format. Use when user asks to create liftOver files, generate syntenic nets, or visualize synteny.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-psltochain
 

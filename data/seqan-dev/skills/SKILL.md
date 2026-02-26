@@ -1,8 +1,9 @@
 ---
 name: seqan-dev
-description: This skill provides specialized knowledge for working with SeqAn, a high-performance C++ library designed for biological sequence analysis.
+description: This tool provides specialized knowledge for developing high-performance biological sequence analysis applications using the SeqAn C++ library. Use when user asks to implement efficient genomic algorithms, perform SIMD-accelerated sequence alignments, manage high-throughput sequencing I/O, or build tools within the Bioconda ecosystem.
 homepage: http://www.seqan.de/
 ---
+
 
 # seqan-dev
 

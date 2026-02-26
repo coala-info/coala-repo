@@ -1,8 +1,9 @@
 ---
 name: floria
-description: Floria is a high-performance tool designed to resolve genomic variations within metagenomic samples, allowing for the differentiation of closely related microbial strains.
+description: Floria resolves genomic variations in metagenomic samples to differentiate closely related microbial strains through haplotype phasing. Use when user asks to resolve strains in metagenomes, perform haplotype phasing on mapped reads, or cluster variants into strain-level haplotypes.
 homepage: https://github.com/bluenote-1577/floria
 ---
+
 
 # floria
 

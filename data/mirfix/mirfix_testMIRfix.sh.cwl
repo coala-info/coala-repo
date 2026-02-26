@@ -2,10 +2,24 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mirfix_testMIRfix.sh
 label: mirfix_testMIRfix.sh
-doc: "A script for testing MIRfix. (Note: The provided input text contains container
-  runtime error messages and does not include usage instructions or argument definitions.)\n
-  \nTool homepage: https://github.com/Bierinformatik/MIRfix"
-inputs: []
+doc: "Running MIRfix with 1 cores, 10nt extension\n\nTool homepage: https://github.com/Bierinformatik/MIRfix"
+inputs:
+  - id: cores
+    type:
+      - 'null'
+      - int
+    doc: number of cores
+    default: 1
+    inputBinding:
+      position: 101
+  - id: extension
+    type:
+      - 'null'
+      - int
+    doc: extension length in nt
+    default: 10
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

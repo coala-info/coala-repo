@@ -1,8 +1,9 @@
 ---
 name: perl-term-encoding
-description: The `perl-term-encoding` skill focuses on the `Term::Encoding` module, a utility designed to resolve the character encoding expected by the user's terminal.
+description: This tool detects the character encoding of the user's terminal to ensure correct text rendering. Use when user asks to detect terminal encoding, configure standard output for internationalization, or prevent text corruption in command-line interfaces.
 homepage: http://metacpan.org/pod/Term::Encoding
 ---
+
 
 # perl-term-encoding
 

@@ -1,8 +1,9 @@
 ---
 name: calitas
-description: CALITAS (CRISPR-Cas-aware ALigner for In silico off-TArget Search) is a specialized bioinformatics tool designed to identify potential off-target sites for CRISPR guide sequences.
+description: CALITAS identifies potential CRISPR off-target sites by performing gapped alignments that respect protospacer and PAM constraints. Use when user asks to search a reference genome for candidate off-target sites, align guides to specific genomic locations, or perform variant-aware CRISPR target searches.
 homepage: https://github.com/editasmedicine/calitas
 ---
+
 
 # calitas
 

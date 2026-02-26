@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpar
-description: the package is available on all platforms; click for details.
+description: This tool provides an interface to the Human Protein Atlas for exploring protein expression and localization data across human tissues and cell lines. Use when user asks to query protein expression in normal or cancer tissues, retrieve subcellular localization data, access RNA-seq datasets, or open gene-specific atlas web pages.
 homepage: https://bioconductor.org/packages/release/bioc/html/hpar.html
 ---
+
 
 # bioconductor-hpar
 

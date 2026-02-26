@@ -1,8 +1,9 @@
 ---
 name: prosampler
-description: ProSampler is a high-performance motif-finding tool designed to handle the massive sequence sets typical of modern ChIP-seq experiments.
+description: ProSampler is a high-performance motif-finding tool that identifies overrepresented DNA sequences and position-specific weight matrices in large-scale genomic datasets. Use when user asks to find motifs in ChIP-seq data, predict transcription factor binding sites, or generate MEME-compatible weight matrices from sequence sets.
 homepage: https://github.com/zhengchangsulab/ProSampler
 ---
+
 
 # prosampler
 

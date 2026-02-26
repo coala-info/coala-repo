@@ -3,7 +3,7 @@
 ## filtlong
 
 ### Tool Description
-The provided text does not contain help information for filtlong; it contains error messages related to a container runtime (Apptainer/Singularity) failure due to lack of disk space.
+A tool for filtering long reads by quality
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/filtlong:0.3.1--h077b44d_0
@@ -18,11 +18,13 @@ The provided text does not contain help information for filtlong; it contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/filtlong:0.3.1--h077b44d_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1352279855: no space left on device
+Unable to find image 'quay.io/biocontainers/filtlong:0.3.1--h077b44d_0' locally
+0.3.1--h077b44d_0: Pulling from biocontainers/filtlong
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+2b4a04725507: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4131049805: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

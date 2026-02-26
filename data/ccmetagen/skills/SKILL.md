@@ -1,8 +1,9 @@
 ---
 name: ccmetagen
-description: CCMetagen is a microbiome classification pipeline designed for high-accuracy identification of organisms across all domains of life.
+description: CCMetagen is a microbiome classification pipeline that processes KMA alignment data to provide high-accuracy taxonomic identification across all domains of life. Use when user asks to classify metagenomic reads, perform taxonomic profiling, or generate abundance summaries from KMA results.
 homepage: https://github.com/vrmarcelino/CCMetagen
 ---
+
 
 # ccmetagen
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-meebodata
-description: the package is available on all platforms; click for details.
+description: This package provides data for the Mouse Exonic Evidence Based Oligonucleotide (MEEBO) set. Use when user asks to access MEEBO set annotation data, load mouse exonic oligonucleotide data, or use example datasets for microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MEEBOdata.html
 ---
+
 
 # bioconductor-meebodata
 

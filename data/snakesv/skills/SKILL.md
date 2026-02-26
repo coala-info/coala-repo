@@ -1,8 +1,9 @@
 ---
 name: snakesv
-description: snakeSV is a specialized framework designed to streamline the identification and interpretation of structural variants across large genomic datasets.
+description: snakeSV is a Snakemake workflow that automates the identification and interpretation of structural variants across large genomic datasets. Use when user asks to identify structural variants, run SV discovery tools like Manta or Delly, annotate VCF files, or submit genomic pipelines to HPC clusters.
 homepage: https://github.com/RajLabMSSM/snakeSV/
 ---
+
 
 # snakesv
 

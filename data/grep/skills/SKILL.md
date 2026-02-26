@@ -1,8 +1,9 @@
 ---
 name: grep
-description: Grep (Global Regular Expression Print) is a fundamental command-line utility used to search one or more input files for lines that match a specific pattern.
+description: Grep searches input files for lines that match specific patterns using regular expressions. Use when user asks to search for text, filter log files, find patterns recursively in directories, or extract specific data from files.
 homepage: https://www.gnu.org/software/grep/
 ---
+
 
 # grep
 

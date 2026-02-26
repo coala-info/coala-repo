@@ -1,8 +1,9 @@
 ---
 name: sat-bsa
-description: Sat-BSA (Satellite-Based Structural variant Analysis) is a specialized bioinformatics toolkit designed for targeted genomic analysis.
+description: Sat-BSA is a bioinformatics toolkit for extracting reads, performing local de novo assembly, and detecting structural variants in targeted genomic regions. Use when user asks to extract local reads, perform de novo assembly, align long reads to a reference, detect structural variants, or visualize genomic comparison results.
 homepage: https://github.com/SegawaTenta/Sat-BSA
 ---
+
 
 # sat-bsa
 

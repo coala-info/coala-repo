@@ -1,8 +1,9 @@
 ---
 name: staramr
-description: The `staramr` tool is a command-line utility that simplifies the detection of antimicrobial resistance in bacterial genome assemblies.
+description: staramr scans bacterial genome assemblies against ResFinder, PointFinder, and PlasmidFinder databases to detect antimicrobial resistance genes and plasmid replicons. Use when user asks to scan contigs for resistance genes, identify point mutations in specific organisms, detect plasmid types, or update resistance databases.
 homepage: https://github.com/phac-nml/staramr
 ---
+
 
 # staramr
 

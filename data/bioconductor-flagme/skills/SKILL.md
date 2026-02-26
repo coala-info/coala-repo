@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flagme
-description: the package is available on all platforms; click for details.
+description: This tool processes, visualizes, and aligns GC-MS metabolomics data with a focus on fragment-level analysis. Use when user asks to import GC-MS data, perform peak detection, align peaks across multiple samples using dynamic programming, visualize chromatograms, or extract abundance matrices for statistical analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/flagme.html
 ---
+
 
 # bioconductor-flagme
 

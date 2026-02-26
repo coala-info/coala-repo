@@ -1,8 +1,9 @@
 ---
 name: qualrepair
-description: `qualrepair` is a specialized bioinformatics utility designed to synchronize quality scores between a primary source FASTQ file and a derived subsequence FASTQ file.
+description: qualrepair synchronizes quality scores between a primary source FASTQ file and a derived subsequence FASTQ file to ensure data integrity. Use when user asks to repair corrupted quality scores, restore quality information after using splitcode, or synchronize quality metrics between original and extracted sequences.
 homepage: https://github.com/clintval/qualrepair
 ---
+
 
 # qualrepair
 

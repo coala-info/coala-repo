@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msbackendmsp
-description: the package is available on all platforms; click for details.
+description: MsBackendMsp provides a backend for the Spectra package to handle mass spectrometry data in MSP format. Use when user asks to import MSP files, export mass spectrometry data to MSP format, or process NIST-style spectral data.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendMsp.html
 ---
+
 
 # bioconductor-msbackendmsp
 

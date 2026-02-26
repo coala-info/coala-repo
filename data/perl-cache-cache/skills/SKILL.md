@@ -1,8 +1,9 @@
 ---
 name: perl-cache-cache
-description: The `perl-cache-cache` skill enables efficient data persistence within Perl environments.
+description: This tool provides a standardized interface for persistent and volatile data caching within Perl environments. Use when user asks to store data across script invocations, manage object expiration, or implement file-based and memory-based caching in Perl.
 homepage: http://metacpan.org/pod/Cache::Cache
 ---
+
 
 # perl-cache-cache
 

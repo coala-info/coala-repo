@@ -1,8 +1,9 @@
 ---
 name: strainge
-description: The `strainge` tool suite is designed for high-resolution analysis of microbial strains within complex metagenomic samples.
+description: Strainge performs high-resolution identification and genomic variation analysis of microbial strains within metagenomic samples. Use when user asks to identify reference strains, profile genomic variation, call SNPs, or create k-mer databases for strain analysis.
 homepage: The package home page
 ---
+
 
 # strainge
 

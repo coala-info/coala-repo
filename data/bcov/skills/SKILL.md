@@ -1,8 +1,9 @@
 ---
 name: bcov
-description: The bcov skill enables the prediction of beta-sheet topology, a critical component of protein tertiary structure.
+description: bcov predicts beta-sheet topology and strand organization from amino acid sequences. Use when user asks to predict beta-sheet topology, identify strand adjacency, or determine the directionality of beta-strands in a protein.
 homepage: http://biocomp.unibo.it/savojard/bcov/index.html
 ---
+
 
 # bcov
 

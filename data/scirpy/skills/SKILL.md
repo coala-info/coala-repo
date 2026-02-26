@@ -1,8 +1,9 @@
 ---
 name: scirpy
-description: Scirpy provides a specialized toolkit for single-cell adaptive immune receptor repertoire (AIRR) analysis.
+description: Scirpy is a toolkit for analyzing single-cell T-cell and B-cell receptor repertoire data within the scverse ecosystem. Use when user asks to load AIRR data, define clonotypes, calculate repertoire diversity, or visualize clonal expansion alongside gene expression data.
 homepage: https://icbi-lab.github.io/scirpy
 ---
+
 
 # scirpy
 

@@ -1,8 +1,9 @@
 ---
 name: bandwagon
-description: BandWagon is a Python-based tool designed to predict and visualize DNA migration patterns from restriction enzyme digestions.
+description: "BandWagon predicts and visualizes DNA migration patterns from restriction enzyme digestions to simulate agarose gel electrophoresis. Use when user asks to compute digestion fragments, simulate gel patterns, or generate digestion reports for linear and circular DNA constructs."
 homepage: https://github.com/Edinburgh-Genome-Foundry/bandwagon
 ---
+
 
 # bandwagon
 

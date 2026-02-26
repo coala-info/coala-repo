@@ -1,8 +1,9 @@
 ---
 name: bioconductor-barley1probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and spatial coordinates for the Affymetrix Barley1 microarray. Use when user asks to retrieve probe sequences, map probes to coordinates, or identify probe set information for barley genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/barley1probe.html
 ---
+
 
 # bioconductor-barley1probe
 

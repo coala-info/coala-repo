@@ -1,8 +1,9 @@
 ---
 name: wgs-assembler
-description: The `fermi` assembler is a specialized tool for processing short-read Illumina data.
+description: The wgs-assembler tool assembles short-read Illumina data, preserving maximum information including heterozygous events. Use when user asks to assemble short reads, assemble paired-end reads, correct sequencing errors, or identify mutations and structural variations.
 homepage: https://github.com/lh3/fermi
 ---
+
 
 # wgs-assembler
 

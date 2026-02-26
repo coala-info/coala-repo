@@ -1,8 +1,9 @@
 ---
 name: ucsc-para
-description: The `ucsc-para` skill provides procedural knowledge for working with Parasol, a lightweight job-scheduling system developed by the UCSC Genome Browser team.
+description: The ucsc-para skill manages the Parasol job-scheduling system for genomic pipelines. Use when user asks to submit jobs, monitor job status, recover failed jobs, wait for jobs to complete, manage worker nodes, manage the job scheduler hub, check node status, download data in parallel, or synchronize data across nodes.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-para
 

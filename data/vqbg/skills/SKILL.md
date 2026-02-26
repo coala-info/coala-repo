@@ -1,8 +1,9 @@
 ---
 name: vqbg
-description: VQBG (Viral Quasispecies from Bubble Graph) is a specialized genomic assembly tool focused on the recovery of intra-host viral diversity.
+description: VQBG reconstructs distinct genetic variants within a viral population by navigating ambiguities in assembly graphs. Use when user asks to recover intra-host viral diversity, reconstruct distinct viral genetic variants, resolve strain-specific paths, or reconstruct viral quasispecies.
 homepage: https://github.com/qdu-bioinfo/VQBG
 ---
+
 
 # vqbg
 

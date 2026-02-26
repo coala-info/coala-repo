@@ -1,8 +1,9 @@
 ---
 name: vcfx
-description: VCFX is a high-performance suite of modular C++ tools designed for genomic variant analysis.
+description: VCFX is a high-performance suite of modular tools designed for genomic variant analysis and pipeline integration. Use when user asks to validate VCFs, filter variants, calculate allele frequencies, normalize indels, classify variants, compare VCFs, or sort VCFs.
 homepage: https://github.com/ieeta-pt/VCFX
 ---
+
 
 # vcfx
 

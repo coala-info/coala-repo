@@ -1,8 +1,9 @@
 ---
 name: bioconductor-leebamviews
-description: the package is available on all platforms; click for details.
+description: This package provides infrastructure for managing and interrogating collections of BAM files using the BamViews class. Use when user asks to manage multiple NGS samples, extract genomic coverage, tabulate read counts across regions, or integrate BAM data with edgeR for differential expression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/leeBamViews.html
 ---
+
 
 # bioconductor-leebamviews
 

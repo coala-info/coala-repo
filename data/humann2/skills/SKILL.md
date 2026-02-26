@@ -1,8 +1,9 @@
 ---
 name: humann2
-description: HUMAnN2 (HMP Unified Metabolic Analysis Network 2) is a pipeline for efficiently and accurately profiling the presence and abundance of microbial pathways in a community.
+description: HUMAnN2 profiles the presence and abundance of microbial pathways in metagenomic or metatranscriptomic communities. Use when user asks to profile microbial pathways, normalize abundance tables, join multiple sample outputs, or regroup gene families into functional categories.
 homepage: http://huttenhower.sph.harvard.edu/humann2
 ---
+
 
 # humann2
 

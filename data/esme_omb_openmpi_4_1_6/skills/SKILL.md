@@ -1,8 +1,9 @@
 ---
 name: esme_omb_openmpi_4_1_6
-description: The `esme_omb_openmpi_4_1_6` skill provides a standardized way to execute the OSU Micro Benchmarks (OMB) to evaluate the communication performance of an MPI implementation.
+description: This tool executes the OSU Micro Benchmarks to evaluate the communication performance of an MPI implementation. Use when user asks to measure network latency, test MPI bandwidth, or evaluate the performance of collective and one-sided RMA operations.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_openmpi_4_1_6
 

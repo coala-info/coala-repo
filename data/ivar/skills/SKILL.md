@@ -1,8 +1,9 @@
 ---
 name: ivar
-description: The `ivar` skill provides procedural knowledge for analyzing viral genomic data, specifically optimized for amplicon-based sequencing (like PrimalSeq).
+description: iVar analyzes viral genomic data from amplicon-based sequencing to perform primer trimming, variant calling, and consensus sequence generation. Use when user asks to trim primers from alignments, identify SNVs and indels, or generate a consensus genome from viral sequencing data.
 homepage: https://andersen-lab.github.io/ivar/html/
 ---
+
 
 # ivar
 

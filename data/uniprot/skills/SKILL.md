@@ -1,8 +1,9 @@
 ---
 name: uniprot
-description: The `uniprot` skill provides a specialized workflow for interacting with the Universal Protein Resource (UniProt) through the UniprotR R package.
+description: The uniprot skill processes protein accession numbers to retrieve comprehensive functional data from UniProt. Use when user asks to retrieve protein metadata, get taxonomic information, perform Gene Ontology analysis, identify biological pathways, analyze protein-protein interactions, map diseases, download protein sequences, or visualize protein data.
 homepage: https://github.com/Proteomicslab57357/UniprotR
 ---
+
 
 # uniprot
 

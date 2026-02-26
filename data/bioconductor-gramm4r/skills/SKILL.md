@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gramm4r
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: bioconductor-gramm4r discovers linear and nonlinear relationships between metabolomic and microbial datasets while accounting for sparsity and compositionality. Use when user asks to perform generalized correlation analysis, adjust for covariates in multi-omics data, or fit regression models to metabolite-microbe pairs.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/gramm4R.html
 ---
+
 
 # bioconductor-gramm4r
 

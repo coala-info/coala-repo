@@ -1,8 +1,9 @@
 ---
 name: linearfold
-description: LinearFold is the first RNA secondary structure prediction tool to achieve linear-time complexity, making it the preferred choice for analyzing long RNA sequences such as viral genomes or long non-coding RNAs.
+description: "LinearFold predicts RNA secondary structures in linear time using beam search heuristics. Use when user asks to predict RNA secondary structures, analyze long RNA sequences, incorporate SHAPE reactivity data, or perform constrained folding."
 homepage: https://github.com/LinearFold/LinearFold
 ---
+
 
 # linearfold
 

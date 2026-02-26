@@ -1,8 +1,9 @@
 ---
 name: perl-test-differences
-description: This skill facilitates the use of `Test::Differences`, a Perl module designed to provide intelligent "diffing" capabilities within a testing environment.
+description: This tool provides visual diffing capabilities for Perl testing to highlight discrepancies between complex data structures or multi-line strings. Use when user asks to compare nested hashes or arrays, perform deep data comparisons with visual output, or identify specific differences in long text blocks during testing.
 homepage: http://metacpan.org/pod/Test-Differences
 ---
+
 
 # perl-test-differences
 

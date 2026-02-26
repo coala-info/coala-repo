@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easyrnaseq
-description: the package is available on all platforms; click for details.
+description: This tool quantifies RNA-Seq data by summarizing BAM files into gene or exon count tables using genomic annotations. Use when user asks to generate count matrices from BAM files, create synthetic transcripts to handle overlapping features, or automate RNA-Seq quantification workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/easyRNASeq.html
 ---
+
 
 # bioconductor-easyrnaseq
 

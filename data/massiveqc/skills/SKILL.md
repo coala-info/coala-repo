@@ -1,8 +1,9 @@
 ---
 name: massiveqc
-description: MassiveQC is a specialized Python-based pipeline designed to handle the computational challenges of processing thousands of RNA-seq samples simultaneously.
+description: MassiveQC is a Python-based pipeline that automates quality control, alignment, and outlier detection for large-scale RNA-seq datasets. Use when user asks to process thousands of RNA-seq samples, identify outlier samples using Isolation Forests, or perform automated trimming, screening, and quantification.
 homepage: https://github.com/shimw6828/MassiveQC
 ---
+
 
 # massiveqc
 

@@ -1,8 +1,9 @@
 ---
 name: r-abind
-description: "Combine multidimensional arrays into a single array.   This is a generalization of 'cbind' and 'rbind'.  Works with   vectors, matrices, and higher-dimensional arrays (aka tensors).   Also provides functions 'adrop', 'asub', and 'afill' for   manipulating, extracting and replacing data in arrays.</p>"
+description: The r-abind tool combines multidimensional arrays into a single array and provides functions for advanced array manipulation. Use when user asks to combine arrays along any dimension, stack matrices into higher-dimensional tensors, programmatically subset arrays, or drop dimensions of length one.
 homepage: https://cloud.r-project.org/web/packages/abind/index.html
 ---
+
 
 # r-abind
 

@@ -1,8 +1,9 @@
 ---
 name: bedparse
-description: bedparse is a specialized CLI tool and Python library designed to simplify the manipulation of BED files, particularly those representing transcript structures (BED12).
+description: bedparse is a command-line tool and Python library for manipulating and performing feature extraction on BED files. Use when user asks to extract genomic features like promoters, introns, or UTRs, convert GTF files to BED format, rename chromosomes, or validate BED file structures.
 homepage: https://github.com/tleonardi/bedparse
 ---
+
 
 # bedparse
 

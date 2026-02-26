@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huexexonprobesetlocationhg18
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides genomic location mapping for probesets on the Affymetrix Human Exon 1.0 ST Array using the hg18 assembly. Use when user asks to retrieve chromosomal coordinates for exon-level or gene-level probesets, filter probesets by genomic region, or map Affymetrix IDs to the hg18 genome build.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocationHg18.html
 ---
+
 
 # bioconductor-huexexonprobesetlocationhg18
 

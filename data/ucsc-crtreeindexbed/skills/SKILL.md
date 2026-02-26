@@ -1,8 +1,9 @@
 ---
 name: ucsc-crtreeindexbed
-description: The `crTreeIndexBed` utility is part of the UCSC Genome Browser "Kent" toolset.
+description: The ucsc-crtreeindexbed tool transforms a standard BED file into a specialized CR-Tree index format. Use when user asks to 'create a CR-Tree index from a BED file', or 'index a BED file for fast retrieval of genomic features'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-crtreeindexbed
 

@@ -1,8 +1,9 @@
 ---
 name: cuna
-description: CUNA (Cytosine Uracil Neural Algorithm) is a specialized deep learning framework designed to identify chemical damage in ancient DNA.
+description: CUNA is a deep learning framework that identifies cytosine-to-uracil deamination damage in ancient DNA using nanopore signals and aligned sequences. Use when user asks to extract signal features from POD5 files, train BiLSTM or Transformer models on DNA damage data, or detect chemical damage in ancient genomic samples.
 homepage: https://github.com/iris1901/CUNA
 ---
+
 
 # cuna
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huexexonprobesetlocationhg19
-description: the package is available on all platforms; click for details.
+description: This package provides exon-level chromosome location data for Affymetrix Human Exon microarrays mapped to the hg19 genome build. Use when user asks to map HuEx probeset IDs to genomic coordinates, identify gene-level associations, or filter probesets by annotation level for genomic analysis in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuExExonProbesetLocationHg19.html
 ---
+
 
 # bioconductor-huexexonprobesetlocationhg19
 

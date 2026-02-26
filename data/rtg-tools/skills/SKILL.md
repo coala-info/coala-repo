@@ -1,8 +1,9 @@
 ---
 name: rtg-tools
-description: RTG Tools is a high-performance suite designed for the accurate analysis and comparison of genomic variants.
+description: RTG Tools is a high-performance suite for the accurate analysis, comparison, and benchmarking of genomic variants using haplotype-level matching. Use when user asks to format reference genomes into SDF, compare VCF files against truth sets, generate precision-recall metrics, or filter variants.
 homepage: https://github.com/RealTimeGenomics/rtg-tools
 ---
+
 
 # rtg-tools
 

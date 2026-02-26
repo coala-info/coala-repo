@@ -1,8 +1,9 @@
 ---
 name: coatran
-description: CoaTran (Coalescent Transmission) is a high-performance tool designed to simulate evolutionary trees that are consistent with a specific transmission history.
+description: CoaTran simulates evolutionary trees that are consistent with a specific transmission history and respect host bottleneck constraints. Use when user asks to simulate coalescent trees within a transmission network, generate phylogenies for epidemiological modeling, or model lineage evolution across transmission events.
 homepage: https://github.com/niemasd/CoaTran
 ---
+
 
 # coatran
 

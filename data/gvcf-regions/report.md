@@ -1,46 +1,56 @@
 # gvcf-regions CWL Generation Report
 
-## gvcf-regions
+## gvcf-regions_gvcf_regions.py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system logs and a fatal error message regarding container image building (no space left on device).
+Output the called regions of a gvcf file to stdout in bed format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gvcf-regions:2016.06.23--py35_0
-- **Homepage**: https://github.com/lijiayong/gvcf_regions
+- **Homepage**: Not found
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gvcf-regions/overview
 - **Total Downloads**: 40.6K
 - **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/lijiayong/gvcf_regions
+- **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gvcf-regions:2016.06.23--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2547210380: no space left on device
-```
+usage: gvcf_regions.py [-h] [--unreported_is_called]
+                       [--ignore_phrases IGNORE_PHRASES [IGNORE_PHRASES ...]]
+                       [--min_GQ MIN_GQ] [--min_QUAL MIN_QUAL]
+                       [--pass_phrases PASS_PHRASES [PASS_PHRASES ...]]
+                       [--gvcf_type {complete_genomics,freebayes,gatk,platypus}]
+                       GVCF
 
+Output the called regions of a gvcf file to stdout in bed format.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  GVCF                  input gvcf file
 
-## gvcf-regions_gvcf_regions.py
-
-### Tool Description
-A tool for processing gVCF regions (Note: The provided help text contains only system error messages regarding container execution and does not list specific arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gvcf-regions:2016.06.23--py35_0
-- **Homepage**: https://github.com/lijiayong/gvcf_regions
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gvcf-regions:2016.06.23--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2500383175: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --unreported_is_called
+                        use this flag to treat unreported sites as called
+  --ignore_phrases IGNORE_PHRASES [IGNORE_PHRASES ...]
+                        list of phrases considered as discarded, e.g., CNV,
+                        ME. A line that contains any of the ignore phrases is
+                        discarded.
+  --min_GQ MIN_GQ       minimum GQ (Genotype Quality) considered as called
+  --min_QUAL MIN_QUAL   minimum QUAL considered as called
+  --pass_phrases PASS_PHRASES [PASS_PHRASES ...]
+                        list of phrases considered as called, e.g., PASS,
+                        REFCALL. A line must contain any of the pass phrases
+                        to be considered as called.
+  --gvcf_type {complete_genomics,freebayes,gatk,platypus}
+                        type of gvcf output. [unreported_is_called,
+                        ignore_phrases, min_GQ, min_QUAL, pass_phrases]
+                        presets: complete_genomics: [True, ['CNV', 'INS:ME'],
+                        None, None, ['PASS']]. freebayes: [False, None, None,
+                        None, ['PASS']]. gatk: [False, None, 5, None, None].
+                        platypus: [False, None, None, None, ['PASS',
+                        'REFCALL']].
 ```
 

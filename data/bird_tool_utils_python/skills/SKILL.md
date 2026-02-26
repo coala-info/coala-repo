@@ -1,8 +1,9 @@
 ---
 name: bird_tool_utils_python
-description: The `bird_tool_utils_python` library is a collection of opinionated utilities designed to standardize the user interface and internal logic of bioinformatic tools.
+description: This library provides standardized utilities for developing bioinformatic command-line tools with consistent argument parsing, logging, and sequence processing. Use when user asks to implement professional CLI interfaces, parse FASTA or FASTQ files efficiently, manage temporary directories, or generate ROFF-formatted documentation.
 homepage: https://github.com/wwood/bird_tool_utils-python
 ---
+
 
 # bird_tool_utils_python
 

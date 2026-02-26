@@ -1,8 +1,9 @@
 ---
 name: hulk
-description: HULK is a specialized bioinformatics tool designed to generate fixed-size "histosketches" from microbiome sequencing data.
+description: HULK generates fixed-size histosketches from microbiome sequencing data for rapid similarity analysis and k-mer spectra approximation. Use when user asks to sketch sequencing samples, compare sketches to generate a distance matrix, or perform real-time dissimilarity analysis on metagenomic datasets.
 homepage: https://github.com/will-rowe/hulk
 ---
+
 
 # hulk
 

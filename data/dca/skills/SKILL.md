@@ -1,8 +1,9 @@
 ---
 name: dca
-description: The Deep Count Autoencoder (DCA) is a specialized tool for the denoising and imputation of scRNA-seq data.
+description: DCA denoises and imputes scRNA-seq data by modeling the statistical properties of single-cell count matrices. Use when user asks to denoise single-cell counts, impute missing values, or generate a reduced-dimensional representation of scRNA-seq data.
 homepage: https://github.com/theislab/dca
 ---
+
 
 # dca
 

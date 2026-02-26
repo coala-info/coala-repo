@@ -1,8 +1,9 @@
 ---
 name: goldrush
-description: GoldRush is a specialized bioinformatics tool designed for the memory-efficient assembly of long-read sequencing data (such as Oxford Nanopore).
+description: GoldRush is a bioinformatics tool for the memory-efficient assembly of long-read sequencing data using a linear-time algorithm. Use when user asks to assemble long-read sequencing data, run the GoldRush pipeline, generate a golden path of reads, or perform polishing and scaffolding on genomic assemblies.
 homepage: https://github.com/bcgsc/goldrush
 ---
+
 
 # goldrush
 

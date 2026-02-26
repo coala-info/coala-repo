@@ -1,9 +1,9 @@
 # hesslab-gambit CWL Generation Report
 
-## hesslab-gambit
+## hesslab-gambit_gambit
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error messages related to a container runtime failure (no space left on device).
+Tool for rapid taxonomic identification of microbial pathogens from genomic data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hesslab-gambit:0.5.1--py39hbcbf7aa_1
@@ -18,29 +18,19 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hesslab-gambit:0.5.1--py39hbcbf7aa_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2113308787: no space left on device
-```
+Usage: gambit [OPTIONS] COMMAND [ARGS]...
 
+  Tool for rapid taxonomic identification of microbial pathogens from genomic
+  data.
 
-## Metadata
-- **Skill**: generated
+Options:
+  -d, --db DIRECTORY  Directory containing GAMBIT database files.
+  --version           Show the version and exit.
+  --help              Show this message and exit.
 
-## hesslab-gambit_gambit
-
-### Tool Description
-Gambit (Genomic Approximation Map-Based Identification Tool) is a tool for rapid taxonomic identification of microbial whole-genome sequencing reads or assemblies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hesslab-gambit:0.5.1--py39hbcbf7aa_1
-- **Homepage**: https://github.com/hesslab-gambit/gambit
-- **Package**: https://anaconda.org/channels/bioconda/packages/hesslab-gambit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hesslab-gambit:0.5.1--py39hbcbf7aa_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3612483908: no space left on device
+Commands:
+  dist        Calculate the GAMBIT distances between a set of query...
+  query       Predict taxonomy of microbial samples from genome sequences.
+  signatures  Create and inspect GAMBIT signature files.
 ```
 

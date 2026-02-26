@@ -1,8 +1,9 @@
 ---
 name: perl-spreadsheet-parseexcel
-description: The `perl-spreadsheet-parseexcel` skill provides the procedural knowledge required to read and process older Excel binary formats (BIFF).
+description: "This tool reads and extracts data from legacy Excel binary files in the .xls format. Use when user asks to parse Excel BIFF files, extract cell values from spreadsheets, or convert .xls data into machine-readable formats."
 homepage: http://github.com/runrig/spreadsheet-parseexcel/
 ---
+
 
 # perl-spreadsheet-parseexcel
 

@@ -1,8 +1,9 @@
 ---
 name: perl-config-general
-description: The `perl-config-general` skill enables efficient management of configuration files that utilize the classic Apache-style syntax (e.g., `<Block> ...
+description: This tool manages Perl configuration files using the Apache-style syntax for hierarchical data structures. Use when user asks to parse configuration files, load Apache-style configs into Perl hashes, or save configuration data back to a file.
 homepage: http://metacpan.org/pod/Config-General
 ---
+
 
 # perl-config-general
 

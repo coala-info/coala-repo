@@ -1,8 +1,9 @@
 ---
 name: bioconductor-decontx
-description: the package is available on all platforms; click for details.
+description: bioconductor-decontx identifies and removes ambient RNA and background protein contamination from single-cell sequencing datasets. Use when user asks to decontaminate scRNA-seq or CITE-seq data, estimate contamination scores, or remove background noise from count matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/decontX.html
 ---
+
 
 # bioconductor-decontx
 

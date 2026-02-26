@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mpra
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for the statistical analysis of Massively Parallel Reporter Assay (MPRA) data. Use when user asks to analyze MPRA data, compare activity between sequences, or perform differential analysis of reporter assays.
 homepage: https://bioconductor.org/packages/release/bioc/html/mpra.html
 ---
+
 
 # bioconductor-mpra
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.dr.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This Bioconductor package provides orthology and paralogy mappings for Zebrafish using Inparanoid data. Use when user asks to identify orthologous genes between Zebrafish and other species, perform cross-species gene ID conversions, or map Zebrafish protein IDs to predicted paralogs.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Dr.inp.db.html
 ---
+
 
 # bioconductor-hom.dr.inp.db
 

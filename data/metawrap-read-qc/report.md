@@ -1,9 +1,9 @@
 # metawrap-read-qc CWL Generation Report
 
-## metawrap-read-qc
+## metawrap-read-qc_metawrap read_qc
 
 ### Tool Description
-A tool for read quality control (QC) as part of the metaWRAP pipeline.
+Performs quality control on raw sequencing reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-read-qc:1.3.0--hdfd78af_3
@@ -18,29 +18,21 @@ A tool for read quality control (QC) as part of the metaWRAP pipeline.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-read-qc:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3508561833: no space left on device
-```
+metawrap read_qc --help
 
+Usage: metaWRAP read_qc [options] -1 reads_1.fastq -2 reads_2.fastq -o output_dir
+Note: the read files have to be named in the name_1.fastq/name_2.fastq convention.
+Options:
 
-## Metadata
-- **Skill**: generated
+	-1 STR          forward fastq reads
+	-2 STR          reverse fastq reads
+	-o STR          output directory
+	-t INT          number of threads (default=1)
+	-x STR		prefix of host index in bmtagger database folder (default=hg38)
 
-## metawrap-read-qc_metawrap
-
-### Tool Description
-The provided text is an error message indicating a failure to build or run the container image (no space left on device) and does not contain the help documentation for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-read-qc:1.3.0--hdfd78af_3
-- **Homepage**: https://github.com/bxlab/metaWRAP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-read-qc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-read-qc:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3225312358: no space left on device
+	--skip-bmtagger		dont remove human sequences with bmtagger
+	--skip-trimming		dont trim sequences with trimgalore
+	--skip-pre-qc-report	dont make FastQC report of input sequences
+	--skip-post-qc-report	dont make FastQC report of final sequences
 ```
 

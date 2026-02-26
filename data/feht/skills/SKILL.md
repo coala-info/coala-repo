@@ -1,8 +1,9 @@
 ---
 name: feht
-description: `feht` (pronounced "fate") is a command-line tool designed for predictive marker discovery.
+description: feht is a command-line tool for predictive marker discovery that identifies features significantly associated with specific metadata groups through pairwise comparisons. Use when user asks to find discriminatory markers, perform association testing between features and metadata, or identify genes and SNPs that distinguish between sample groups.
 homepage: https://github.com/chadlaing/feht/
 ---
+
 
 # feht
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rabgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Rabbit Gene 1.0 ST microarray. Use when user asks to process raw data from Rabbit Gene 1.0 ST arrays, analyze rabbit gene expression microarrays, or load annotation data for this specific Affymetrix platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rabgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.rabgene.1.0.st
 

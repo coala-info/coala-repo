@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htseqgenie
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: HTSeqGenie provides an integrated pipeline for the end-to-end analysis of high-throughput sequencing data such as RNA-Seq and Exome-Seq. Use when user asks to perform read preprocessing, align reads using GSNAP, count genomic features, or generate coverage reports and RPKM values.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/HTSeqGenie.html
 ---
+
 
 # bioconductor-htseqgenie
 

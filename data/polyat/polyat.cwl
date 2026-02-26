@@ -2,15 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: polyat
 label: polyat
-doc: "The provided text contains container build logs and error messages rather than
-  CLI help text. As a result, no arguments or tool descriptions could be extracted.\n
-  \nTool homepage: https://github.com/DaanJansen94/polyat"
-inputs: []
+doc: "Quantify poly-A/T stretches (>=10/15/20 nt) across FASTQ reads and summarize
+  counts per sample.\n\nTool homepage: https://github.com/DaanJansen94/polyat"
+inputs:
+  - id: input_dir
+    type: Directory
+    doc: Directory containing .fastq/.fastq.gz/.fq/.fq.gz files.
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of worker threads
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: Directory where the summary table will be written.
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/polyat:0.1.2--pyhdfd78af_0
-stdout: polyat.out

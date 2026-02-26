@@ -1,9 +1,9 @@
 # bamaligncleaner CWL Generation Report
 
-## bamaligncleaner
+## bamaligncleaner_bamAlignCleaner
 
 ### Tool Description
-A tool for cleaning BAM alignments (Note: The provided help text contains only system error logs and no usage information).
+removes unaligned references in BAM/CRAM alignment files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bamaligncleaner:0.3--pyhdfd78af_0
@@ -18,14 +18,22 @@ A tool for cleaning BAM alignments (Note: The provided help text contains only s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bamaligncleaner:0.3--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c2860662423669a89fc78de37916bcd503dc3eab5c84ac8188fd7aa8e4d8bd01: unpack entry: usr/local/lib/libpython3.12.so.1.0: unpack to regular file: short write: write /scratch/21813747/build-temp-2883923339/rootfs/usr/local/lib/libpython3.12.so.1.0: no space left on device
+Usage: bamAlignCleaner [OPTIONS] BAM
+
+  bamAlignCleaner: removes unaligned references in BAM/CRAM alignment files
+  * Homepage: https://github.com/maxibor/bamAlignCleaner
+  * Author: Maxime Borry
+
+  BAM: BAM alignment file (sorted, and optionally indexed)
+
+Options:
+  --version                       Show the version and exit.
+  -m, --method [parse|index_stat]
+                                  unaligned reference removal method
+                                  [default: parse]
+  -r, --reflist PATH              File listing references to keep in output
+                                  bam
+  -o, --output FILE               filtered bam file [default: STDOUT]
+  --help                          Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

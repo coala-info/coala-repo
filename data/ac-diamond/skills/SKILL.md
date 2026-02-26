@@ -1,8 +1,9 @@
 ---
 name: ac-diamond
-description: The provided text does not contain help information for ac-diamond; it is a log of a failed container image build due to insufficient disk space.
+description: AC-DIAMOND is a high-performance DNA-protein alignment tool that uses SIMD parallelization to accelerate sequence searches against protein databases. Use when user asks to build reference databases, align DNA queries to protein sequences, or convert alignment results into tabular and SAM formats.
 homepage: https://github.com/Maihj/AC-DIAMOND
 ---
+
 
 # ac-diamond
 

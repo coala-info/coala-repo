@@ -1,8 +1,9 @@
 ---
 name: r-agricolae
-description: Original idea was presented in the thesis "A statistical analysis tool for agricultural research" to obtain the degree of Master on science, National Engineering University (UNI), Lima-Peru. Some experimental data for the examples come from the CIP and others research. Agricolae offers extensive functionality on experimental design especially for agricultural and plant breeding experiments, which can also be useful for other purposes. It supports planning of lattice, Alpha, Cyclic, Complete Block, Latin Square, Graeco-Latin Squares, augmented block, factorial, split and strip plot designs. There are also various analysis facilities for experimental data, e.g. treatment comparison procedures and several non-parametric tests comparison, biodiversity indexes and consensus cluster.</p>
+description: The r-agricolae package provides statistical procedures for agricultural research, including experimental design, treatment comparisons, and stability analysis. Use when user asks to design agricultural experiments, generate randomized field books, perform post-hoc tests like LSD or Tukey, or conduct AMMI stability analysis.
 homepage: https://cloud.r-project.org/web/packages/agricolae/index.html
 ---
+
 
 # r-agricolae
 

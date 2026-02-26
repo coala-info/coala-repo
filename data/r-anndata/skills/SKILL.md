@@ -1,8 +1,9 @@
 ---
 name: r-anndata
-description: "A 'reticulate' wrapper for the Python package 'anndata'.     Provides a scalable way of keeping track of data and learned     annotations.  Used to read from and write to the h5ad file format.</p>"
+description: The r-anndata package provides an R interface to the Python anndata library for managing large-scale annotated data matrices. Use when user asks to create, read, write, or manipulate AnnData objects in R, handle H5AD files, or integrate R workflows with Python-based single-cell tools like Scanpy.
 homepage: https://cloud.r-project.org/web/packages/anndata/index.html
 ---
+
 
 # r-anndata
 

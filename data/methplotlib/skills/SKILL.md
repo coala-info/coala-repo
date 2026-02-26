@@ -1,8 +1,9 @@
 ---
 name: methplotlib
-description: methplotlib is a command-line utility designed to create interactive or static visualizations of DNA methylation data.
+description: "methplotlib creates interactive or static visualizations of DNA methylation data across specific genomic regions. Use when user asks to plot methylation calls, compare modification patterns across multiple samples, visualize phased methylation, or align methylation data with gene models."
 homepage: https://github.com/wdecoster/methplotlib
 ---
+
 
 # methplotlib
 

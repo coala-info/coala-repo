@@ -1,8 +1,9 @@
 ---
 name: ggplot
-description: The `ggplot2` skill enables the creation of professional, complex data visualizations in R.
+description: The ggplot tool creates professional, layered data visualizations in R by mapping data variables to visual aesthetics. Use when user asks to create publication-quality graphics, perform exploratory data analysis, generate scatter plots, histograms, or bar charts, and apply custom themes or facets to datasets.
 homepage: https://github.com/tidyverse/ggplot2
 ---
+
 
 # ggplot
 

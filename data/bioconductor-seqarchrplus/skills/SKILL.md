@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqarchrplus
-description: the package is available on all platforms; click for details.
+description: seqArchRplus performs de novo discovery and characterization of sequence architectures in genomic data. Use when user asks to identify promoter architectures, cluster genomic sequences based on motif patterns, or perform de novo sequence discovery.
 homepage: https://bioconductor.org/packages/release/bioc/html/seqArchRplus.html
 ---
+
 
 # bioconductor-seqarchrplus
 

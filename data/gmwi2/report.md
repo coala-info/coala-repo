@@ -3,7 +3,7 @@
 ## gmwi2
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it contains system log messages and a fatal error regarding container image creation.
+GMWI2 (Gut Microbiome Wellness Index 2) is a a robust and biologically interpretable predictor of health status based on the gut microbiome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gmwi2:1.6--pyhdfd78af_0
@@ -18,29 +18,59 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gmwi2:1.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3007508410: no space left on device
-```
+usage: gmwi2 [-h] -n NUM_THREADS -f FORWARD -r REVERSE -o OUTPUT_PREFIX [-v]
 
+ ██████╗ ███╗   ███╗██╗    ██╗██╗██████╗ 
+██╔════╝ ████╗ ████║██║    ██║██║╚════██╗
+██║  ███╗██╔████╔██║██║ █╗ ██║██║ █████╔╝
+██║   ██║██║╚██╔╝██║██║███╗██║██║██╔═══╝ 
+╚██████╔╝██║ ╚═╝ ██║╚███╔███╔╝██║███████╗
+ ╚═════╝ ╚═╝     ╚═╝ ╚══╝╚══╝ ╚═╝╚══════╝
 
-## Metadata
-- **Skill**: generated
+DESCRIPTION:
+GMWI2 version 1.6 
+GMWI2 (Gut Microbiome Wellness Index 2) is a a robust and biologically interpretable predictor of health status based on the gut microbiome.
 
-## gmwi2_gmwi2_metaphlan_output.py
+AUTHORS: 
+Daniel Chang, Vinod Gupta, Jaeyun Sung
 
-### Tool Description
-A script for processing MetaPhlAn output within the GMWI2 (Gut Microbiome Health Index 2) workflow. Note: The provided text contains container runtime error messages rather than tool help documentation.
+USAGE: 
+GMWI2 takes as input raw fastq (or fastq.gz) files generated from a paired-end stool metagenome, performs quality control, estimates microbial abundances, and using these microbial estimates, returns as output the GMWI2 score. 
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gmwi2:1.6--pyhdfd78af_0
-- **Homepage**: https://github.com/danielchang2002/GMWI2
-- **Package**: https://anaconda.org/channels/bioconda/packages/gmwi2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gmwi2:1.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3892111894: no space left on device
+* Example usage:
+
+$ ls
+.
+├── forward.fastq
+└── reverse.fastq
+
+$ gmwi2 -f forward.fastq -r reverse.fastq -n 8 -o output_prefix
+
+$ ls
+.
+├── forward.fastq
+├── reverse.fastq
+├── output_prefix_GMWI2.txt
+├── output_prefix_GMWI2_taxa.txt
+└── output_prefix_metaphlan.txt
+
+The three output files are: 
+(i) output_prefix_GMWI2.txt: GMWI2 score
+(ii) output_prefix_GMWI2_taxa.txt: A list of the taxa present in the sample used to compute GMWI2
+(iii) output_prefix_metaphlan.txt: Raw MetaPhlAn3 taxonomic profiling output
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+required named arguments:
+  -n NUM_THREADS, --num_threads NUM_THREADS
+                        number of threads
+  -f FORWARD, --forward FORWARD
+                        forward-read of metagenome (.fastq/.fastq.gz)
+  -r REVERSE, --reverse REVERSE
+                        reverse-read of metagenome (.fastq/.fastq.gz)
+  -o OUTPUT_PREFIX, --output_prefix OUTPUT_PREFIX
+                        prefix to designate output file names
 ```
 

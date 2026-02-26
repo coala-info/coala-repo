@@ -1,8 +1,9 @@
 ---
 name: wfmash
-description: wfmash is a high-performance DNA sequence aligner designed for large-scale genomic datasets.
+description: wfmash is a high-performance DNA sequence aligner designed for large-scale genomic datasets. Use when user asks to align DNA sequences to a reference, perform all-vs-all sequence alignment, conduct approximate mapping, build pangenome graphs, or perform synteny-aware scaffolding.
 homepage: https://github.com/ekg/wfmash
 ---
+
 
 # wfmash
 

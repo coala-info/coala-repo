@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lefser
-description: the package is available on all platforms; click for details.
+description: The bioconductor-lefser package identifies metagenomic biomarkers by combining statistical significance tests with linear discriminant analysis effect size estimation. Use when user asks to find differentially abundant features in microbiome data, perform LEfSe analysis, or visualize taxonomic biomarkers with LDA scores.
 homepage: https://bioconductor.org/packages/release/bioc/html/lefser.html
 ---
+
 
 # bioconductor-lefser
 

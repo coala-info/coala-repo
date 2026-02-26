@@ -1,8 +1,9 @@
 ---
 name: t1dgrs2
-description: The `t1dgrs2` tool is a specialized Python-based utility for generating Type 1 Diabetes Genetic Risk Scores.
+description: The t1dgrs2 tool calculates Type 1 Diabetes Genetic Risk Scores by integrating non-HLA variants and HLA haplotype interactions from genomic data. Use when user asks to generate genetic risk scores for Type 1 Diabetes, discriminate between diabetes types, or analyze HLA and non-HLA risk components in PLINK datasets.
 homepage: https://github.com/t2diabetesgenes/t1dgrs2
 ---
+
 
 # t1dgrs2
 

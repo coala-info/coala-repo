@@ -1,8 +1,9 @@
 ---
 name: spoa
-description: Spoa (SIMD Partial Order Alignment) is a high-performance C++ library and CLI tool designed to generate consensus sequences and multiple sequence alignments using the POA algorithm.
+description: Spoa is a high-performance library and tool that generates consensus sequences and multiple sequence alignments using the SIMD-accelerated partial order alignment algorithm. Use when user asks to generate a consensus sequence, create a multiple sequence alignment, or construct a partial order graph from genomic sequences.
 homepage: https://github.com/rvaser/spoa
 ---
+
 
 # spoa
 

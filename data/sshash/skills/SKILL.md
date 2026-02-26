@@ -1,8 +1,9 @@
 ---
 name: sshash
-description: sshash is a high-performance tool designed to store and query large sets of k-mers (DNA strings of length k) with extreme space efficiency.
+description: sshash is a high-performance tool for building space-efficient associative dictionaries to store and query large sets of k-mers. Use when user asks to index genomic unitigs, perform fast sequence membership lookups, or extract k-mer frequency counts from a dataset.
 homepage: https://github.com/jermp/sshash
 ---
+
 
 # sshash
 

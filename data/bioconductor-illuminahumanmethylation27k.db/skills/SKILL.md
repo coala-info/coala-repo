@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation27k.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Illumina Human Methylation 27k platform. Use when user asks to map Illumina 27k probe identifiers to gene symbols, Entrez IDs, genomic coordinates, CpG island status, or functional annotations like GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27k.db.html
 ---
+
 
 # bioconductor-illuminahumanmethylation27k.db
 

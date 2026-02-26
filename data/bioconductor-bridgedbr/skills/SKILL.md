@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bridgedbr
-description: the package is available on all platforms; click for details.
+description: BridgeDbR provides an R interface to the BridgeDb framework for mapping biological identifiers across various databases. Use when user asks to map gene, protein, or metabolite identifiers between different data sources, download mapping databases, or resolve secondary identifiers.
 homepage: https://bioconductor.org/packages/release/bioc/html/BridgeDbR.html
 ---
+
 
 # bioconductor-bridgedbr
 

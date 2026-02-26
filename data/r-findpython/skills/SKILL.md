@@ -1,8 +1,9 @@
 ---
 name: r-findpython
-description: Package designed to find an acceptable python binary.</p>
+description: The findpython package locates a Python binary on a system that meets specific version and module requirements. Use when user asks to find a Python executable, check if a Python path is sufficient, or verify the availability of specific Python modules from R.
 homepage: https://cloud.r-project.org/web/packages/findpython/index.html
 ---
+
 
 # r-findpython
 

@@ -3,7 +3,7 @@
 ## happer
 
 ### Tool Description
-Happer is a tool for processing genomic data (description not available in provided text).
+Write haplotype sequences to the specified file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/happer:0.1.1--py_0
@@ -18,11 +18,16 @@ Happer is a tool for processing genomic data (description not available in provi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/happer:0.1.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1156733529: no space left on device
+usage: happer [-h] [-v] [-o FILE] seqfile bed
+
+positional arguments:
+  seqfile              input sequences in Fasta format
+  bed                  haplotypes annotated in BED format
+
+optional arguments:
+  -h, --help           show this help message and exit
+  -v, --version        show program's version number and exit
+  -o FILE, --out FILE  write haplotype sequences to the specified file;
+                       default is the terminal (stdout)
 ```
 
-
-## Metadata
-- **Skill**: generated

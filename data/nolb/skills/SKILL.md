@@ -1,8 +1,9 @@
 ---
 name: nolb
-description: The `nolb` skill enables the execution of the NOn-Linear rigid Block NMA approach, a computationally efficient method for analyzing the dynamic motions of molecular structures.
+description: The nolb tool performs non-linear rigid block normal mode analysis to model the dynamic motions and large-amplitude deformations of molecular structures. Use when user asks to compute normal modes, generate non-linear trajectories of conformational changes, or create structural ensembles for flexible docking.
 homepage: https://team.inria.fr/nano-d/software/nolb-normal-modes/
 ---
+
 
 # nolb
 

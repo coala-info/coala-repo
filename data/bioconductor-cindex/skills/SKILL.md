@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cindex
-description: the package is available on all platforms; click for details.
+description: This tool calculates Chromosome Instability (CIN) indices from DNA copy number data to quantify genomic imbalances. Use when user asks to calculate chromosome-level or genome-wide instability scores, identify regions of high CIN, or compare CIN scores across different sample groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/CINdex.html
 ---
+
 
 # bioconductor-cindex
 

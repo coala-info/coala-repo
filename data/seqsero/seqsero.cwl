@@ -2,11 +2,42 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: seqsero
 label: seqsero
-doc: "The provided text does not contain help information for the 'seqsero' tool;
-  it is an error log describing a failure to build or extract a Singularity/Apptainer
-  container image due to insufficient disk space ('no space left on device').\n\n
-  Tool homepage: https://github.com/denglab/SeqSero2"
-inputs: []
+doc: "SeqSero: a bioinformatics tool for serotype prediction of Salmonella enterica\n\
+  \nTool homepage: https://github.com/denglab/SeqSero2"
+inputs:
+  - id: bwa_algorithm
+    type:
+      - 'null'
+      - string
+    doc: "'sam'(bwa samse/sampe), 'mem'(bwa mem)"
+    default: sam
+    inputBinding:
+      position: 101
+      prefix: -b
+  - id: data_type
+    type: int
+    doc: "'1'(pair-end reads, interleaved),'2'(pair-end reads, seperated),'3'(single-end
+      reads), '4'(assembly)"
+    inputBinding:
+      position: 101
+      prefix: -m
+  - id: input_data
+    type:
+      type: array
+      items: string
+    doc: path/to/input_data
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: output_directory
+    type:
+      - 'null'
+      - string
+    doc: output directory name, if not set, the output directory would be 
+      'SeqSero_result_'+time stamp+one random number
+    inputBinding:
+      position: 101
+      prefix: -d
 outputs:
   - id: stdout
     type: stdout

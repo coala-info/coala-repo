@@ -1,8 +1,9 @@
 ---
 name: refinem
-description: RefineM is a specialized suite of tools designed to improve the quality of population genomes recovered from metagenomes.
+description: RefineM is a suite of tools designed to improve the quality of metagenome-assembled genomes by identifying and removing contaminating scaffolds. Use when user asks to refine genomic bins, filter scaffolds based on genomic properties or taxonomic consistency, and remove outliers from population genomes.
 homepage: http://pypi.python.org/pypi/refinem/
 ---
+
 
 # refinem
 

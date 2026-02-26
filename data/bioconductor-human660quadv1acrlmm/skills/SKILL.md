@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human660quadv1acrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for Illumina 660kQuad arrays required by the crlmm package. Use when user asks to perform genotype calling, estimate copy number, or process Illumina 660kQuad platform data using the crlmm algorithm.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human660quadv1aCrlmm.html
 ---
+
 
 # bioconductor-human660quadv1acrlmm
 

@@ -1,8 +1,9 @@
 ---
 name: picrust
-description: This skill enables the prediction of functional gene content (such as KEGG Orthologs or COGs) from taxonomic profiles derived from 1s rRNA sequencing.
+description: This tool predicts functional gene content from 16S rRNA taxonomic profiles by leveraging evolutionary relationships. Use when user asks to predict metagenome functions, normalize OTU tables by copy number, or infer KEGG Orthologs from taxonomic data.
 homepage: http://picrust.github.com
 ---
+
 
 # picrust
 

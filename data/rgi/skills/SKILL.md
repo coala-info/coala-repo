@@ -1,8 +1,9 @@
 ---
 name: rgi
-description: The Resistance Gene Identifier (RGI) is the primary computational tool for predicting antibiotic resistance genes and mutations from molecular data.
+description: The Resistance Gene Identifier (RGI) predicts antibiotic resistance genes and mutations from genomic assemblies or raw sequencing reads using the Antibiotic Resistance Ontology. Use when user asks to identify AMR genes in contigs, map reads to resistance databases, or predict the pathogen-of-origin for resistance determinants.
 homepage: https://card.mcmaster.ca
 ---
+
 
 # rgi
 

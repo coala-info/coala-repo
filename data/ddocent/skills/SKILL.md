@@ -1,8 +1,9 @@
 ---
 name: ddocent
-description: dDocent is an interactive bash-based pipeline that streamlines the complex process of turning raw RADseq reads into high-quality SNP calls.
+description: dDocent is an interactive pipeline that processes raw RADseq data into high-quality SNP calls by integrating trimming, mapping, and variant calling tools. Use when user asks to process RADseq reads, perform de novo assembly of RAD data, or call SNPs using FreeBayes.
 homepage: https://ddocent.com
 ---
+
 
 # ddocent
 

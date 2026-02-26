@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bubbletree
-description: the package is available on all platforms; click for details.
+description: bioconductor-bubbletree analyzes and visualizes tumor purity, clonality, and somatic copy number alterations using next-generation sequencing data. Use when user asks to estimate tumor fraction, model clonal architecture, or generate bubble plots for genomic segments from B-allele frequencies and log-ratios.
 homepage: https://bioconductor.org/packages/release/bioc/html/BubbleTree.html
 ---
+
 
 # bioconductor-bubbletree
 

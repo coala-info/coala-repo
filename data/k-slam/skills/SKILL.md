@@ -1,8 +1,9 @@
 ---
 name: k-slam
-description: k-SLAM (k-mer based Smith-Waterman Local Alignment for Metagenomics) is a high-performance tool designed to bridge the gap between fast k-mer classifiers and sensitive sequence aligners.
+description: k-SLAM is a high-performance metagenomic tool that performs rapid k-mer based alignment and taxonomic classification using the Smith-Waterman algorithm. Use when user asks to perform taxonomic profiling, align metagenomic reads to a reference database, generate SAM files, or identify gene overlaps.
 homepage: https://github.com/aindj/k-SLAM
 ---
+
 
 # k-slam
 

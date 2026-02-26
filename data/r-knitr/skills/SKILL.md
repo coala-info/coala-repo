@@ -1,8 +1,9 @@
 ---
 name: r-knitr
-description: "Provides a general-purpose tool for dynamic report generation in R     using Literate Programming techniques.</p>"
+description: The knitr package provides a general-purpose engine for dynamic report generation by integrating R code into various document formats. Use when user asks to generate reports from R Markdown, execute code chunks within documents, extract R code from source files, or customize how R objects are rendered in final outputs.
 homepage: https://cloud.r-project.org/web/packages/knitr/index.html
 ---
+
 
 # r-knitr
 

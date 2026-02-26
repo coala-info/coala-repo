@@ -1,8 +1,9 @@
 ---
 name: r-cobrar
-description: R package cobrar (documentation from project home).
+description: This tool performs constraint-based metabolic network analysis and modeling in R. Use when user asks to perform flux balance analysis, read or write SBML files, or manage and manipulate metabolic models.
 homepage: https://cran.r-project.org/web/packages/cobrar/index.html
 ---
+
 
 # r-cobrar
 

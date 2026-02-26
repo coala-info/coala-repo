@@ -1,8 +1,9 @@
 ---
 name: bioconductor-canine.db0
-description: the package is available on all platforms; click for details.
+description: This package provides a base annotation database for the canine genome used primarily as a data source for building custom annotation packages. Use when user asks to install the underlying database for sqlForge, create custom canine chip packages, or build organism-specific annotation packages for dogs.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine.db0.html
 ---
+
 
 # bioconductor-canine.db0
 

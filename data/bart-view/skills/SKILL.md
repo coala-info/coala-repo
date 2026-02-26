@@ -1,8 +1,9 @@
 ---
 name: bart-view
-description: The `bart-view` skill enables efficient bacterial characterization from raw genomic data.
+description: bart-view performs rapid bacterial characterization including species identification, MLST assignment, and AMR gene detection from raw genomic data. Use when user asks to identify bacterial species, perform MLST typing, screen for antimicrobial resistance genes, or look up MLST profiles.
 homepage: https://github.com/tomdstanton/bart
 ---
+
 
 # bart-view
 

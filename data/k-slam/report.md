@@ -1,9 +1,9 @@
 # k-slam CWL Generation Report
 
-## k-slam
+## k-slam_SLAM
 
 ### Tool Description
-K-SLAM is a tool for metagenomic sequence classification. (Note: The provided help text contains system error messages and does not list specific arguments or usage instructions).
+Align paired reads from R1FILE and R2FILE against DATABASE and perform metagenomic analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
@@ -18,46 +18,36 @@ K-SLAM is a tool for metagenomic sequence classification. (Note: The provided he
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/k-slam:1.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2557531545: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## k-slam_install_slam_new_db.sh
-
-### Tool Description
-Install a new database for K-SLAM (Note: The provided text contains only system error logs and no usage information or arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
-- **Homepage**: https://github.com/aindj/k-SLAM
-- **Package**: https://anaconda.org/channels/bioconda/packages/k-slam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/k-slam:1.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1788730404: no space left on device
-```
-
-## k-slam_SLAM
-
-### Tool Description
-The provided text contains system error messages related to a container environment (Apptainer/Singularity) and does not contain the help documentation for the tool. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/k-slam:1.0--1
-- **Homepage**: https://github.com/aindj/k-SLAM
-- **Package**: https://anaconda.org/channels/bioconda/packages/k-slam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/k-slam:1.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1387356464: no space left on device
+Usage	SLAM [option] --db=DATABASE R1FILE R2FILE
+	Align paired reads from R1FILE and R2FILE against DATABASE and perform metagenomic analysis
+or	SLAM [option] --db=DATABASE R1FILE
+	Align reads from R1FILE against DATABASE and perform metagenomic analysis
+Allowed options:
+  --help                                produce help message
+  --db arg                              SLAM database file which reads will be 
+                                        aligned against
+  --min-alignment-score arg (=0)        alignment score cutoff
+  --score-fraction-threshold arg (=0.94999999999999996)
+                                        screen alignments with scores < 
+                                        this*top score
+  --match-score arg (=2)                match score
+  --mismatch-penalty arg (=3)           mismatch penalty (positive)
+  --gap-open arg (=5)                   gap opening penalty (positive)
+  --gap-extend arg (=2)                 gap extend penalty (positive)
+  --num-reads arg (=4294967295)         Number of reads from R1/R2 File to 
+                                        align
+  --num-reads-at-once arg (=10000000)   Reduce RAM usage by only analysing 
+                                        "arg" reads at once, this will increase
+                                        execution time
+  --output-file arg                     write to this file instead of stdout
+  --sam-file arg                        write SAM output to this file
+  --num-alignments arg (=10)            Number of alignments to report in SAM 
+                                        file
+  --sam-xa                              only output primary alignment lines, 
+                                        use XA field for secondary alignments
+  --version                             print version number
+  --just-align                          only perform alignments, not 
+                                        metagenomics
+  --no-pseudo-assembly                  do not link alignments together
 ```
 

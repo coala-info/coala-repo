@@ -1,8 +1,9 @@
 ---
 name: mgnify-pipelines-toolkit
-description: The mgnify-pipelines-toolkit is a curated collection of Python-based utilities designed to support the EBI-Metagenomics (MGnify) production pipelines.
+description: The mgnify-pipelines-toolkit provides a collection of Python-based utilities and scripts designed to support MGnify production pipelines and metagenomic data processing. Use when user asks to extract ribosomal subunits, generate GenBank files, sort contig-gene-coordinate FASTA files, or normalize taxonomic data according to NCBI standards.
 homepage: https://github.com/EBI-Metagenomics/mgnify-pipelines-toolkit
 ---
+
 
 # mgnify-pipelines-toolkit
 

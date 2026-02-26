@@ -1,9 +1,9 @@
 # ucsc-chainprenet CWL Generation Report
 
-## ucsc-chainprenet
+## ucsc-chainprenet_chainPreNet
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it contains container environment logs and a fatal error message regarding image retrieval.
+Remove chains that don't have a chance of being netted
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chainprenet:482--h0b57e2e_0
@@ -18,13 +18,15 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chainprenet:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+chainPreNet - Remove chains that don't have a chance of being netted
+usage:
+   chainPreNet in.chain target.sizes query.sizes out.chain
+options:
+   -dots=N - output a dot every so often
+   -pad=N - extra to pad around blocks to decrease trash
+            (default 1)
+   -inclHap - include query sequences name in the form *_hap*|*_alt*.
+              Normally these are excluded from nets as being haplotype
+              pseudochromosomes
 ```
 
-
-## Metadata
-- **Skill**: generated

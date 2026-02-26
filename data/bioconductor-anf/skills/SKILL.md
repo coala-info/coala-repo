@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anf
-description: the package is available on all platforms; click for details.
+description: This tool performs Affinity Network Fusion to integrate multi-view data and identify sample clusters through spectral clustering. Use when user asks to integrate multi-omic data, construct affinity matrices, fuse heterogeneous data sources, or perform patient subtyping.
 homepage: https://bioconductor.org/packages/release/bioc/html/ANF.html
 ---
+
 
 # bioconductor-anf
 

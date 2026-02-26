@@ -1,8 +1,9 @@
 ---
 name: slimfastq
-description: The `slimfastq` tool is a specialized utility designed for the efficient, lossless compression of FASTQ files.
+description: "slimfastq is a specialized utility for the efficient, lossless compression and decompression of FASTQ files. Use when user asks to compress FASTQ files into sfq format, decompress sfq files, or stream genomic data through pipes for storage and analysis."
 homepage: https://github.com/Infinidat/slimfastq
 ---
+
 
 # slimfastq
 

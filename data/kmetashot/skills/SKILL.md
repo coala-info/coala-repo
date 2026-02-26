@@ -1,8 +1,9 @@
 ---
 name: kmetashot
-description: kMetaShot is a specialized tool designed for the rapid taxonomic assignment of microbial genomes recovered from metagenomic datasets.
+description: kMetaShot performs rapid taxonomic assignment of microbial genomes and metagenome-assembled bins using an alignment-free minimizer approach. Use when user asks to classify microbial bins, assign taxonomy to metagenome-assembled genomes, or perform rapid taxonomic profiling of genomic datasets.
 homepage: https://github.com/gdefazio/kMetaShot
 ---
+
 
 # kmetashot
 

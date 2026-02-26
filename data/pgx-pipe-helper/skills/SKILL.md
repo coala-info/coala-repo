@@ -1,8 +1,9 @@
 ---
 name: pgx-pipe-helper
-description: The `pgx-pipe-helper` is a specialized Python utility designed to provide a unified interface for common operations within the Pharmacogenomics (PGx) pipeline developed by LUMC.
+description: The pgx-pipe-helper provides a unified interface for standardizing sample barcode handling and genomic loci management within pharmacogenomics pipelines. Use when user asks to validate sample identifiers, ensure consistent barcode naming conventions, or parse and translate genomic coordinate strings.
 homepage: https://github.com/lumc/pgx-pipe-helper
 ---
+
 
 # pgx-pipe-helper
 

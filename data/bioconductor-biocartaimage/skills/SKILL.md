@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocartaimage
-description: the package is to provide coordinates of genes on the BioCarta pathway images and to provide methods to add self-defined graphics to the genes of interest.
+description: This tool visualizes and annotates BioCarta pathway images in R by mapping Entrez gene IDs to specific image coordinates. Use when user asks to list available BioCarta pathways, highlight genes of interest on pathway maps, or create customized pathway diagrams with graphical overlays.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioCartaImage.html
 ---
+
 
 # bioconductor-biocartaimage
 

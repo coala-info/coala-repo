@@ -1,8 +1,9 @@
 ---
 name: emerald
-description: EMERALD is a specialized protein sequence aligner designed to find "safety windows"—segments of an alignment that remain consistent across a specified proportion ($\alpha$) of all possible suboptimal alignments.
+description: EMERALD is a protein sequence aligner that identifies safety windows to quantify alignment reliability across suboptimal paths. Use when user asks to find conserved alignment segments, identify structural cores in protein families, or calculate safety windows for protein clusters.
 homepage: https://github.com/algbio/emerald
 ---
+
 
 # emerald
 

@@ -3,7 +3,7 @@
 ## augustus
 
 ### Tool Description
-Augustus is a gene prediction tool for eukaryotic genomic sequences. (Note: The provided text contains system error messages regarding container execution and does not include the standard help documentation or argument list.)
+AUGUSTUS (3.5.0) is a gene prediction tool.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/augustus:3.5.0--pl5321h9716f88_9
@@ -12,15 +12,70 @@ Augustus is a gene prediction tool for eukaryotic genomic sequences. (Note: The 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/augustus/overview
-- **Total Downloads**: 606.7K
+- **Total Downloads**: 607.8K
 - **Last updated**: 2025-08-20
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/e3654ffeea9a5e95e8148cd6f153e6581bd119bc8b4edc9963d41bef427ba905: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/augustus:3.5.0--pl5321h9716f88_9 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2536922161: no space left on device
+AUGUSTUS (3.5.0) is a gene prediction tool.
+Sources and documentation at https://github.com/Gaius-Augustus/Augustus
+
+usage:
+augustus [parameters] --species=SPECIES queryfilename
+
+'queryfilename' is the filename (including relative path) to the file containing the query sequence(s)
+in fasta format.
+
+SPECIES is an identifier for the species. Use --species=help to see a list.
+
+parameters:
+--strand=both, --strand=forward or --strand=backward
+--genemodel=partial, --genemodel=intronless, --genemodel=complete, --genemodel=atleastone or --genemodel=exactlyone
+  partial      : allow prediction of incomplete genes at the sequence boundaries (default)
+  intronless   : only predict single-exon genes like in prokaryotes and some eukaryotes
+  complete     : only predict complete genes
+  atleastone   : predict at least one complete gene
+  exactlyone   : predict exactly one complete gene
+--singlestrand=true
+  predict genes independently on each strand, allow overlapping genes on opposite strands
+  This option is turned off by default.
+--hintsfile=hintsfilename
+  When this option is used the prediction considering hints (extrinsic information) is turned on.
+  hintsfilename contains the hints in gff format.
+--AUGUSTUS_CONFIG_PATH=path
+  path to config directory (if not specified as environment variable)
+--alternatives-from-evidence=true/false
+  report alternative transcripts when they are suggested by hints
+--alternatives-from-sampling=true/false
+  report alternative transcripts generated through probabilistic sampling
+--sample=n
+--minexonintronprob=p
+--minmeanexonintronprob=p
+--maxtracks=n
+  For a description of these parameters see section 2 of RUNNING-AUGUSTUS.md.
+--proteinprofile=filename
+  When this option is used the prediction will consider the protein profile provided as parameter.
+  The protein profile extension is described in section 5 of RUNNING-AUGUSTUS.md.
+--progress=true
+  show a progressmeter
+--gff3=on/off
+  output in gff3 format
+--predictionStart=A, --predictionEnd=B
+  A and B define the range of the sequence for which predictions should be found.
+--UTR=on/off
+  predict the untranslated regions in addition to the coding sequence. This currently works only for a subset of species.
+--noInFrameStop=true/false
+  Do not report transcripts with in-frame stop codons. Otherwise, intron-spanning stop codons could occur. Default: false
+--noprediction=true/false
+  If true and input is in genbank format, no prediction is made. Useful for getting the annotated protein sequences.
+--uniqueGeneId=true/false
+  If true, output gene identifyers like this: seqname.gN
+--/Testing/testMode=prepare, --/Testing/testMode=run, (disabled by default)
+  prepare      : prepare a new minimal data set to test comparative Augustus
+  intronless   : run prediction over some given minimal data set
+  (*) a minimal data set is one retaining only the information need in prediction, usually very small (order of Mb) compared to full sequence data sets (ordet of Gb)
+
+For a complete list of parameters, type "augustus --paramlist". A description of the important ones can be found in the file RUNNING-AUGUSTUS.md.
 ```
 

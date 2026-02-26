@@ -1,8 +1,9 @@
 ---
 name: metadmg
-description: metaDMG-cpp is a high-performance tool optimized for ancient metagenomics.
+description: metaDMG-cpp quantifies DNA damage patterns in ancient metagenomic datasets by analyzing C-to-T and G-to-A transitions in alignment files. Use when user asks to estimate DNA damage profiles, perform taxonomic LCA analysis for metagenomics, or generate damage statistics for specific organisms and contigs.
 homepage: https://github.com/metaDMG-dev/metaDMG-cpp
 ---
+
 
 # metadmg
 

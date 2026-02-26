@@ -1,8 +1,9 @@
 ---
 name: perl-tie-log4perl
-description: This skill provides guidance on using the `Tie::Log4perl` module to intercept data written to Perl filehandles and route it through `Log4perl`.
+description: This module intercepts data written to Perl filehandles and routes it through the Log4perl logging system. Use when user asks to redirect STDOUT or STDERR to a logger, capture output from legacy code, or specify log levels for filehandle data.
 homepage: http://metacpan.org/pod/Tie::Log4perl
 ---
+
 
 # perl-tie-log4perl
 

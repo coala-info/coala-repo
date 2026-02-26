@@ -1,8 +1,9 @@
 ---
 name: sequenticon
-description: Sequenticon is a specialized utility designed to transform DNA sequences into unique, colorful icons (identicons).
+description: Sequenticon transforms DNA sequences into unique, colorful identicons for visual identification and verification. Use when user asks to generate sequence icons, create visual checksums for DNA, batch process sequences into images, or produce printable labels for biological samples.
 homepage: https://github.com/Edinburgh-Genome-Foundry/sequenticon
 ---
+
 
 # sequenticon
 

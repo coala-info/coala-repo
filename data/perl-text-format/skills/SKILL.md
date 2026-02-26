@@ -1,8 +1,9 @@
 ---
 name: perl-text-format
-description: The `perl-text-format` tool provides a robust interface for manipulating the layout of plain text.
+description: The perl-text-format tool provides advanced layout control for wrapping and indenting plain text. Use when user asks to format text files, set custom margins and indentations, or clean up the layout of plain text reports and README files.
 homepage: http://www.shlomifish.org/open-source/projects/Text-Format
 ---
+
 
 # perl-text-format
 

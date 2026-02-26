@@ -3,7 +3,7 @@
 ## ibdmix
 
 ### Tool Description
-The provided text is a system error message indicating a failure to build the container image due to insufficient disk space; it does not contain tool help information or argument definitions.
+ibdmix is a tool for admixture analysis of diploid populations.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2
@@ -18,46 +18,13 @@ The provided text is a system error message indicating a failure to build the co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3741789435: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2' locally
+1.0.1--h4ac6f70_2: Pulling from biocontainers/ibdmix
+c1a16a04cedd: Pulling fs layer
+4ca545ee6d5d: Pulling fs layer
+e7158ccd5a89: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3280541436: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ibdmix_generate_gt
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It contains system logs and a fatal error indicating a failure to build the container image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2
-- **Homepage**: https://github.com/PrincetonUniversity/IBDmix
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibdmix/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1171320689: no space left on device
-```
-
-## ibdmix_summary.sh
-
-### Tool Description
-A script to summarize ibdmix results. (Note: The provided text contains system error logs and does not include usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2
-- **Homepage**: https://github.com/PrincetonUniversity/IBDmix
-- **Package**: https://anaconda.org/channels/bioconda/packages/ibdmix/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ibdmix:1.0.1--h4ac6f70_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1092599464: no space left on device
+Run 'docker run --help' for more information
 ```
 

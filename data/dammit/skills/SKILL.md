@@ -1,8 +1,9 @@
 ---
 name: dammit
-description: `dammit` is a streamlined de novo transcriptome annotator that automates the integration of several standard biological databases and software tools.
+description: dammit is a de novo transcriptome annotator that integrates multiple biological databases and software tools to assign functional information to transcript sequences. Use when user asks to install or manage reference databases, configure annotation environments, or execute the annotation pipeline on transcriptome FASTA files.
 homepage: http://dib-lab.github.io/dammit/
 ---
+
 
 # dammit
 

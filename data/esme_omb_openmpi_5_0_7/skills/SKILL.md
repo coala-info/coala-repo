@@ -1,8 +1,9 @@
 ---
 name: esme_omb_openmpi_5_0_7
-description: The `esme_omb_openmpi_5_0_7` skill provides procedural knowledge for using the OSU Micro Benchmarks (OMB) to evaluate the performance of MPI implementations and underlying network interconnects (e.g., InfiniBand, RoCE, Omni-Path).
+description: This tool executes OSU Micro Benchmarks to evaluate the performance of MPI implementations and network interconnects. Use when user asks to measure MPI latency, bandwidth, or collective communication performance using OpenMPI 5.0.7.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_openmpi_5_0_7
 

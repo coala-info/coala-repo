@@ -1,8 +1,9 @@
 ---
 name: r-plotrix
-description: Lots of plots, various labeling, axis and color scaling functions. The author/maintainer died in September 2023.</p>
+description: The plotrix package provides a wide array of specialized functions for creating non-standard axes, scientific diagrams, and enhanced annotations in R. Use when user asks to create plots with axis breaks, generate Taylor diagrams, plot dual-scale graphs, or add tables and boxed labels to R graphics.
 homepage: https://cloud.r-project.org/web/packages/plotrix/index.html
 ---
+
 
 # r-plotrix
 

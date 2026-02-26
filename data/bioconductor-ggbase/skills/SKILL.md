@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggbase
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides infrastructure and data structures for managing integrative genetics of gene expression (eQTL) datasets. Use when user asks to create smlSet objects, manage genotype and expression data, or visualize gene-SNP relationships.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GGBase.html
 ---
+
 
 # bioconductor-ggbase
 

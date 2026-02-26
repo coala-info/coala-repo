@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dexmadata
-description: the package is available on all platforms; click for details.
+description: This package provides essential data objects, gene ID mapping tables, and example datasets for performing gene expression meta-analysis with the DExMA package. Use when user asks to convert gene identifiers between Entrez, Ensembl, and Symbol formats, access supported organism lists, or load synthetic datasets for testing meta-analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DExMAdata.html
 ---
+
 
 # bioconductor-dexmadata
 

@@ -3,48 +3,32 @@
 ## pyabpoa
 
 ### Tool Description
-The provided text does not contain help information for the tool. It consists of container runtime (Singularity/Apptainer) error logs indicating a failure to fetch or build the OCI image.
+FAIL to generate CWL: pyabpoa not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/pyabpoa:1.5.5--py311h384fd50_0
+- **Docker Image**: quay.io/biocontainers/pyabpoa:1.5.6--py311hbd8efe9_0
 - **Homepage**: https://github.com/yangao07/abPOA
 - **Package**: https://anaconda.org/channels/bioconda/packages/pyabpoa/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/pyabpoa/overview
-- **Total Downloads**: 48.3K
-- **Last updated**: 2025-10-12
+- **Total Downloads**: 48.7K
+- **Last updated**: 2026-02-23
 - **GitHub**: https://github.com/yangao07/abPOA
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pyabpoa not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pyabpoa not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyabpoa:1.5.5--py311h384fd50_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
-
-## Metadata
-- **Skill**: generated
-
-## pyabpoa_abpoa
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It consists of system logs and a fatal error message regarding a failed container build/fetch process for the pyabpoa image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyabpoa:1.5.5--py311h384fd50_0
-- **Homepage**: https://github.com/yangao07/abPOA
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyabpoa/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyabpoa:1.5.5--py311h384fd50_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
 ```
 

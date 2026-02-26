@@ -1,8 +1,9 @@
 ---
 name: xpclr
-description: The `xpclr` tool implements the Cross-Population Composite Likelihood Ratio method to infer natural selection.
+description: xpclr infers natural selection by identifying genomic regions with selective sweeps in one population compared to another. Use when user asks to infer natural selection, identify selective sweeps, or compare populations for selection signatures.
 homepage: https://github.com/hardingnj/xpclr
 ---
+
 
 # xpclr
 

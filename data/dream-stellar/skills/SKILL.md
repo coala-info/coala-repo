@@ -1,8 +1,9 @@
 ---
 name: dream-stellar
-description: DREAM-Stellar is a high-performance pairwise local aligner designed to compare large genomic datasets.
+description: DREAM-Stellar is a high-performance pairwise local aligner designed to find conserved regions between large genomic datasets. Use when user asks to build an index from reference sequences, search query sequences for local alignments, or identify conserved regions with a specific error tolerance.
 homepage: https://github.com/seqan/dream-stellar
 ---
+
 
 # dream-stellar
 

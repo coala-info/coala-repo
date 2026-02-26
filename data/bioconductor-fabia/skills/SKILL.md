@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fabia
-description: the package is available on all platforms; click for details.
+description: This tool extracts biclusters from high-dimensional data using sparse matrix factorization. Use when user asks to perform biclustering on microarrays, identify overlapping gene sets and sample sets, or rank biclusters by information content.
 homepage: https://bioconductor.org/packages/release/bioc/html/fabia.html
 ---
+
 
 # bioconductor-fabia
 

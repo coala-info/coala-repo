@@ -1,8 +1,9 @@
 ---
 name: start-asap
-description: The `start-asap` tool is a specialized pre-processing utility for the ASA³P (Automated Scalable Assembly, Annotation and Phenotyping) pipeline.
+description: The start-asap tool automates the creation of structured project directories and configuration files for the ASA³P bacterial genomics pipeline. Use when user asks to initialize an ASA³P project, generate a config.xls file from raw sequencing reads, or set up a structured directory for genomic analysis.
 homepage: http://github.com/quadram-institute-bioscience/start-asap/
 ---
+
 
 # start-asap
 

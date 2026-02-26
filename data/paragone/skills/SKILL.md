@@ -1,8 +1,9 @@
 ---
 name: paragone
-description: ParaGone is a specialized bioinformatics pipeline designed for "paralogy resolution"—the process of inferring orthologs from gene families containing multiple paralogous copies.
+description: ParaGone is a bioinformatics pipeline that resolves paralogs and extracts orthologous sequences from gene families for phylogenetic analysis. Use when user asks to resolve paralogy, infer orthologs from target capture datasets, or process HybPiper outputs into aligned fasta files.
 homepage: https://github.com/chrisjackson-pellicle/ParaGone
 ---
+
 
 # paragone
 

@@ -2,9 +2,60 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tw
 label: tower-cli_tw
-doc: "The provided text does not contain help information or a description of the
-  tool; it is an error log from a container build process.\n\nTool homepage: https://github.com/seqeralabs/tower-cli"
-inputs: []
+doc: "Seqera Platform CLI\n\nTool homepage: https://github.com/seqeralabs/tower-cli"
+inputs:
+  - id: command
+    type:
+      - 'null'
+      - string
+    doc: The command to execute (actions, collaborators, compute-envs, 
+      credentials, data-links, studios, datasets, generate-completion, info, 
+      labels, launch, members, organizations, participants, pipelines, runs, 
+      teams, workspaces, secrets)
+    inputBinding:
+      position: 1
+  - id: access_token
+    type:
+      - 'null'
+      - string
+    doc: Seqera Platform personal access token (TOWER_ACCESS_TOKEN)
+    inputBinding:
+      position: 102
+      prefix: --access-token
+  - id: insecure
+    type:
+      - 'null'
+      - boolean
+    doc: Explicitly allow to connect to a non-SSL secured Seqera Platform server
+      (not recommended)
+    inputBinding:
+      position: 102
+      prefix: --insecure
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Show output in defined format (currently supports 'json')
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: url
+    type:
+      - 'null'
+      - string
+    doc: Seqera Platform API endpoint URL (TOWER_API_ENDPOINT)
+    default: api.cloud.seqera.io
+    inputBinding:
+      position: 102
+      prefix: --url
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Show HTTP request/response logs at stderr.
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: emptydrops
-description: The `emptydrops` skill provides a specialized workflow for filtering droplet-based single-cell data.
+description: Emptydrops identifies and filters true cells from ambient RNA background noise in droplet-based single-cell sequencing data. Use when user asks to filter empty droplets, distinguish cells from background noise, or process raw gene-barcode matrices.
 homepage: https://pypi.org/project/emptydrops/
 ---
+
 
 # emptydrops
 

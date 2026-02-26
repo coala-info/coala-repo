@@ -1,8 +1,9 @@
 ---
 name: hlaprofiler
-description: HLAProfiler is a k-mer based computational tool for high-resolution HLA typing from RNA-seq data.
+description: "HLAProfiler is a k-mer based computational tool for high-resolution HLA typing from RNA-seq data. Use when user asks to build a custom HLA reference database or predict HLA alleles from paired-end sequencing reads."
 homepage: https://github.com/ExpressionAnalysis/HLAProfiler
 ---
+
 
 # hlaprofiler
 

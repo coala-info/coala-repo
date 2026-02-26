@@ -1,8 +1,9 @@
 ---
 name: libpdb-redo
-description: The `libpdb-redo` skill provides a specialized interface for macromolecular structure model optimization.
+description: libpdb-redo provides tools for the automated refinement, rebuilding, and validation of macromolecular structure models. Use when user asks to download optimized PDB entries, calculate Ramachandran Z-scores with Tortoize, assign secondary structures using DSSP, or retrieve model validation metrics.
 homepage: https://pdb-redo.eu
 ---
+
 
 # libpdb-redo
 

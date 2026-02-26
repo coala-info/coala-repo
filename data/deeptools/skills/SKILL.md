@@ -1,8 +1,9 @@
 ---
 name: deeptools
-description: deeptools is a specialized suite of Python-based tools designed to transform mapped sequencing reads (BAM files) into interpretable biological insights.
+description: "deeptools is a suite of Python tools designed to process, normalize, and visualize high-throughput sequencing data from BAM files. Use when user asks to generate normalized coverage tracks, compare treatment and control samples, perform quality control on sequencing libraries, or create heatmaps and profile plots of genomic signal enrichment."
 homepage: https://github.com/deeptools/deepTools
 ---
+
 
 # deeptools
 

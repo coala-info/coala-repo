@@ -1,8 +1,9 @@
 ---
 name: fcp
-description: `fcp` (Fast Copy) is a Rust-based utility designed to significantly reduce the time required to copy data compared to the traditional Unix `cp` tool.
+description: fcp is a high-performance, multi-threaded utility designed to copy files and directories significantly faster than the traditional cp command. Use when user asks to copy large datasets, perform fast recursive directory copies, or leverage copy-on-write capabilities on macOS.
 homepage: https://github.com/Svetlitski/fcp
 ---
+
 
 # fcp
 

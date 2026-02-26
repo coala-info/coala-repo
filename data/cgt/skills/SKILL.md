@@ -1,8 +1,9 @@
 ---
 name: cgt
-description: The `cgt` (Core Genome Threshold) tool provides a robust statistical framework for labeling genes as core, rare, or accessory.
+description: The cgt tool calculates statistically robust thresholds for labeling genes as core, rare, or accessory by accounting for genome completeness. Use when user asks to determine core genome thresholds, classify genes based on presence-absence matrices, or account for missing genes in metagenome-assembled genomes.
 homepage: https://github.com/bacpop/cgt
 ---
+
 
 # cgt
 

@@ -1,8 +1,9 @@
 ---
 name: rdrpcatch
-description: RdRpCATCH (RNA-dependent RNA polymerase Collaborative Analysis Tool with Collections of pHMMs) is a specialized bioinformatic pipeline for the discovery and annotation of RNA viruses.
+description: RdRpCATCH is a bioinformatic pipeline designed to discover and annotate RNA viruses by searching sequences against consolidated RNA-dependent RNA polymerase profile HMM databases. Use when user asks to identify divergent viral sequences in metagenomic datasets, scan nucleotide or protein sequences for RdRp motifs, or perform taxonomic classification of RNA viruses.
 homepage: https://github.com/dimitris-karapliafis/RdRpCATCH
 ---
+
 
 # rdrpcatch
 

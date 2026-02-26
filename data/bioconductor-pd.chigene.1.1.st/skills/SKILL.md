@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.chigene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix ChiGene 1.1 ST expression array. Use when user asks to process Affymetrix ChiGene 1.1 ST microarray data, access platform design information, or perform low-level analysis of these specific gene expression arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.chigene.1.1.st.html
 ---
+
 
 # bioconductor-pd.chigene.1.1.st
 

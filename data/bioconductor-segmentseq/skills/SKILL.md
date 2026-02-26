@@ -1,8 +1,9 @@
 ---
 name: bioconductor-segmentseq
-description: the package is available on all platforms; click for details.
+description: This package identifies genomic segments from high-throughput sequencing data using a Bayesian approach. Use when user asks to identify small RNA loci, segment sequencing data, or perform differential expression analysis on discovered segments.
 homepage: https://bioconductor.org/packages/release/bioc/html/segmentSeq.html
 ---
+
 
 # bioconductor-segmentseq
 

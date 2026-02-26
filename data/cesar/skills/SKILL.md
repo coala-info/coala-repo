@@ -1,8 +1,9 @@
 ---
 name: cesar
-description: CESAR 2.0 (Coding Exon Structure Aware Realigner) is a specialized tool for comparative genomics that maps known coding sequences from a reference genome onto target genomes.
+description: CESAR maps known coding sequences from a reference genome onto target genomes while preserving splice site logic and codon structure. Use when user asks to map coding exons across species, identify gene structures in related genomes, or perform structure-aware genomic realignment.
 homepage: https://github.com/hillerlab/CESAR2.0
 ---
+
 
 # cesar
 

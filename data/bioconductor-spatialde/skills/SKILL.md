@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spatialde
-description: the package is available on all platforms; click for details.
+description: SpatialDE identifies spatially variable genes from spatially resolved transcriptomics data. Use when user asks to identify spatially variable genes, find genes with spatial expression patterns, or perform spatial transcriptomics analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/spatialDE.html
 ---
+
 
 # bioconductor-spatialde
 

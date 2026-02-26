@@ -1,8 +1,9 @@
 ---
 name: gbintk
-description: `gbintk` (GraphBin-Tk) is a comprehensive suite designed for assembly graph-based metagenomic binning.
+description: gbintk is a metagenomic binning suite that utilizes assembly graph topology to refine or generate contig assignments. Use when user asks to refine existing metagenomic bins, perform de novo binning with MetaCoAG, or visualize binning results on an assembly graph.
 homepage: https://github.com/metagentools/gbintk
 ---
+
 
 # gbintk
 

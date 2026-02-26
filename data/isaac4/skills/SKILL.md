@@ -1,8 +1,9 @@
 ---
 name: isaac4
-description: Isaac4 is a high-performance genomic alignment tool optimized for Illumina sequencing platforms.
+description: Isaac4 is a high-performance genomic alignment tool optimized for mapping Illumina sequencing data to a reference genome. Use when user asks to align FASTQ files, perform whole-genome sequencing alignment, or configure hardware-aware genomic mapping.
 homepage: https://github.com/Illumina/Isaac4
 ---
+
 
 # isaac4
 

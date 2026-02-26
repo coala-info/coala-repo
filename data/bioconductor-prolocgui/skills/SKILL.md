@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prolocgui
-description: The package pRolocGUI comprises functions to interactively visualise spatial proteomics data on the basis of pRoloc, pRolocdata and shiny.
+description: This tool provides an interactive interface for visualizing and exploring spatial proteomics data. Use when user asks to interactively visualize spatial proteomics data, explore protein localization, or analyze pRoloc datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/pRolocGUI.html
 ---
+
 
 # bioconductor-prolocgui
 

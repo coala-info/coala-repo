@@ -1,8 +1,9 @@
 ---
 name: bioconductor-etec16s
-description: the package is available on all platforms; click for details.
+description: This package provides a 16S rRNA microbiome dataset from a human enterotoxigenic Escherichia coli challenge study stored as an MRexperiment object. Use when user asks to load ETEC challenge data, access microbiome clinical metadata, or analyze gut microbiota response to infection and antibiotics using metagenomeSeq.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/etec16s.html
 ---
+
 
 # bioconductor-etec16s
 

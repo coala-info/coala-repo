@@ -1,8 +1,9 @@
 ---
 name: perl-io-html
-description: The `perl-io-html` skill provides a reliable way to handle the complexities of HTML character encoding in Perl.
+description: This tool automatically detects and handles HTML character encoding in Perl using the HTML5 algorithm. Use when user asks to open HTML files with automatic charset detection, find the encoding of an HTML string, or handle character sets via meta tags and BOMs.
 homepage: http://metacpan.org/pod/IO-HTML
 ---
+
 
 # perl-io-html
 

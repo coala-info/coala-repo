@@ -1,8 +1,9 @@
 ---
 name: cryfa
-description: Cryfa is a specialized security tool for genomic data that combines AES encryption with sequence compaction.
+description: Cryfa secures genomic data by combining AES encryption with sequence compaction for FASTA and FASTQ formats. Use when user asks to encrypt or decrypt genomic files, compact sequence data, or generate secure encryption keys.
 homepage: https://github.com/smortezah/cryfa
 ---
+
 
 # cryfa
 

@@ -1,8 +1,9 @@
 ---
 name: bismark
-description: Bismark is a specialized toolset designed to map bisulfite-converted sequencing reads to a reference genome and determine the methylation state of cytosines.
+description: Bismark maps bisulfite-converted sequencing reads to a reference genome and determines the methylation state of cytosines. Use when user asks to prepare a bisulfite-converted reference genome, align bisulfite-treated reads, deduplicate alignment files, or extract methylation calls.
 homepage: https://github.com/FelixKrueger/Bismark/
 ---
+
 
 # bismark
 

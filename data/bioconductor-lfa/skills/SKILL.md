@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lfa
-description: the package is available on all platforms; click for details.
+description: The lfa package implements Logistic Factor Analysis to model population structure and estimate individual-specific allele frequencies in genomic datasets. Use when user asks to estimate logistic factors, calculate individual-specific allele frequencies, or model population structure in genotype data.
 homepage: https://bioconductor.org/packages/release/bioc/html/lfa.html
 ---
+
 
 # bioconductor-lfa
 

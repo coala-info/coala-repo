@@ -1,8 +1,9 @@
 ---
 name: perl-bio-db-hts
-description: The `perl-bio-db-hts` skill focuses on the programmatic use of the `Bio::DB::HTS` Perl module.
+description: This tool provides a high-performance Perl interface to the HTSlib library for rapid access to BAM, CRAM, and VCF files. Use when user asks to write or debug Perl scripts for sequence alignment retrieval, variant file processing, or region-based genomic data analysis.
 homepage: https://metacpan.org/pod/Bio::DB::HTS
 ---
+
 
 # perl-bio-db-hts
 

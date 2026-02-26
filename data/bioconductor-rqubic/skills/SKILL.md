@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rqubic
-description: the package is available on all platforms; click for details.
+description: This package implements the qualitative biclustering algorithm for the analysis of gene expression data. Use when user asks to perform biclustering, identify co-expressed gene sets across specific conditions, or apply the QUBIC algorithm to transcriptomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/rqubic.html
 ---
+
 
 # bioconductor-rqubic
 

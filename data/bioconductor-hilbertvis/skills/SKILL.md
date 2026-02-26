@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hilbertvis
-description: the package is available on all platforms; click for details.
+description: This tool visualizes long genomic data vectors by mapping them onto 2D Hilbert space-filling curves to preserve local structures. Use when user asks to transform 1D sequence data into 2D images, visualize large datasets like ChIP-Seq or wiggle tracks, or identify spatial inhomogeneities in genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/HilbertVis.html
 ---
+
 
 # bioconductor-hilbertvis
 

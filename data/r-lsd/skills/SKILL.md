@@ -1,8 +1,9 @@
 ---
 name: r-lsd
-description: R package lsd (documentation from project home).
+description: This tool creates high-density visualizations and colorful heatscatter plots in R to represent data density. Use when user asks to visualize large datasets, create heatscatter plots, prevent overplotting, or explore specialized color palettes for scientific figures.
 homepage: https://cran.r-project.org/web/packages/lsd/index.html
 ---
+
 
 # r-lsd
 

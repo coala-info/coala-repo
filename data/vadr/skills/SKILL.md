@@ -1,8 +1,9 @@
 ---
 name: vadr
-description: VADR (Viral Annotation DefineR) is a specialized suite of tools designed for the high-throughput classification and annotation of viral sequences.
+description: VADR classifies and annotates viral sequences. Use when user asks to trim ambiguous nucleotides, annotate viral sequences, or perform virus-specific annotation for SARS-CoV-2, influenza, Mpox virus, or RSV.
 homepage: https://github.com/ncbi/vadr
 ---
+
 
 # vadr
 

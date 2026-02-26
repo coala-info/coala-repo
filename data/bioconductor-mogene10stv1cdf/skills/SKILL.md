@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mogene10stv1cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File for the Affymetrix Mouse Gene 1.0 ST v1 microarray. Use when user asks to map probes to probe sets or analyze expression data from Mouse Gene 1.0 ST v1 arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mogene10stv1cdf.html
 ---
+
 
 # bioconductor-mogene10stv1cdf
 

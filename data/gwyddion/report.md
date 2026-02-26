@@ -3,7 +3,7 @@
 ## gwyddion
 
 ### Tool Description
-Gwyddion is a modular program for SPM (scanning probe microscopy) data visualization and analysis.
+An SPM data visualization and analysis tool, written with Gtk+.
 
 ### Metadata
 - **Docker Image**: biocontainers/gwyddion:v2.52-1-deb_cv1
@@ -18,11 +18,40 @@ Gwyddion is a modular program for SPM (scanning probe microscopy) data visualiza
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/gwyddion:v2.52-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2821900418: no space left on device
+Usage: gwyddion [OPTIONS...] FILES...
+An SPM data visualization and analysis tool, written with Gtk+.
+
+Gwyddion options:
+ -h, --help                 Print this help and terminate.
+ -v, --version              Print version info and terminate.
+     --no-splash            Don't show splash screen.
+     --remote-query         Check if a Gwyddion instance is already running.
+     --remote-new           Load FILES to a running instance or run a new one.
+     --remote-existing      Load FILES to a running instance or fail.
+     --check                Check FILES, print problems and terminate.
+     --disable-gl           Disable OpenGL, including any availability checks.
+     --log-to-file          Write messages to file set in GWYDDION_LOGFILE.
+     --no-log-to-file       Do not write messages to any file.
+     --log-to-console       Print messages to console
+     --no-log-to-console    Do not print messages to console.
+     --disable-modules=MODNAME1,MODNAME2,...
+                            Prevent registration of given modules.
+     --debug-objects        Catch leaking objects (devel only).
+     --startup-time         Measure time of startup tasks.
+
+Gtk+ and Gdk options:
+     --display=DISPLAY      Set X display to use.
+     --screen=SCREEN        Set X screen to use.
+     --sync                 Make X calls synchronous.
+     --name=NAME            Set program name as used by the window manager.
+     --class=CLASS          Set program class as used by the window manager.
+     --gtk-module=MODULE    Load an additional Gtk module MODULE.
+They may be other Gtk+, Gdk, and GtkGLExt options, depending on platform, on
+how it was compiled, and on loaded modules.  Please see Gtk+ documentation.
+
+Please report bugs to <klapetek@gwyddion.net>.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

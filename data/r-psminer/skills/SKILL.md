@@ -1,8 +1,9 @@
 ---
 name: r-psminer
-description: R package psminer (documentation from project home).
+description: This tool analyzes, visualizes, and manipulates data produced by the nf-core/pathogensurveillance pipeline. Use when user asks to read pipeline outputs, parse phylogenetic trees, generate ANI heatmaps, or plot taxonomic distributions.
 homepage: https://cran.r-project.org/web/packages/psminer/index.html
 ---
+
 
 # r-psminer
 

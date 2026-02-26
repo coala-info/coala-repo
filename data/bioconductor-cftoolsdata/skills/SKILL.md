@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cftoolsdata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-trained deep learning models and methylation marker parameters for liquid biopsy and cell-free DNA analysis. Use when user asks to perform cell-free DNA deconvolution, detect cancer from methylation markers, or access fragment-based sorting models.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cfToolsData.html
 ---
+
 
 # bioconductor-cftoolsdata
 

@@ -1,8 +1,9 @@
 ---
 name: pyrodigal-gv
-description: `pyrodigal-gv` is a specialized extension of the Pyrodigal library designed to improve gene-calling accuracy within the virosphere.
+description: pyrodigal-gv is a gene-calling tool optimized for identifying genes in viruses, phages, and giant viruses using specialized metagenomic models. Use when user asks to predict genes in viral sequences, identify open reading frames in giant viruses, or handle alternative genetic codes in viral metagenomes.
 homepage: https://github.com/althonos/pyrodigal-gv
 ---
+
 
 # pyrodigal-gv
 

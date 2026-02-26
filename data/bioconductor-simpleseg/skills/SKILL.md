@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simpleseg
-description: the package is available on all platforms; click for details.
+description: simpleSeg provides a streamlined framework for cell segmentation in multiplexed imaging data. Use when user asks to segment cells in tissue images, perform nuclear or whole-cell segmentation, or process multiplexed imaging data.
 homepage: https://bioconductor.org/packages/release/bioc/html/simpleSeg.html
 ---
+
 
 # bioconductor-simpleseg
 

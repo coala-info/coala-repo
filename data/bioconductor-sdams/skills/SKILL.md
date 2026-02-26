@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sdams
-description: the package is available on all platforms; click for details.
+description: SDAMS performs differential abundance analysis for metabolomics and proteomics data using a semi-parametric model. Use when user asks to perform differential abundance analysis on metabolomics or proteomics data, handle datasets with many zero values, or apply semi-parametric models to mass spectrometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SDAMS.html
 ---
+
 
 # bioconductor-sdams
 

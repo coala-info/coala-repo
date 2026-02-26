@@ -1,8 +1,9 @@
 ---
 name: cellrank
-description: CellRank is a modular framework designed to study cellular dynamics by combining the robustness of trajectory inference with the directionality of RNA velocity or other biological priors.
+description: CellRank is a modular framework for studying cellular dynamics by combining trajectory inference with directional biological priors like RNA velocity or pseudotime. Use when user asks to compute transition matrices, identify terminal states, calculate fate probabilities, or find lineage driver genes.
 homepage: https://github.com/theislab/cellrank
 ---
+
 
 # cellrank
 

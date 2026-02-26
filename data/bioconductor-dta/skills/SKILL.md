@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dta
-description: The package implements the underlying kinetic modeling approach capable of the precise determination of synthesis- and decay rates from individual microarray or RNAseq measurements.
+description: This tool performs kinetic modeling to estimate RNA synthesis and decay rates from Dynamic Transcriptome Analysis experiments. Use when user asks to estimate mRNA half-lives, calculate synthesis rates from labeled RNA fractions, or model transcriptomic kinetics in steady-state and dynamic conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/DTA.html
 ---
+
 
 # bioconductor-dta
 

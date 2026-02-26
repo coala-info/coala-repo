@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bus
-description: the package is available on all platforms; click for details.
+description: This tool computes similarities using correlation or mutual information to identify molecular interactions or associations with external traits. Use when user asks to reconstruct gene regulatory networks, identify gene-gene interactions, or correlate molecular activity with clinical and phenotypic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/BUS.html
 ---
+
 
 # bioconductor-bus
 

@@ -1,8 +1,9 @@
 ---
 name: dx-cwl
-description: The `dx-cwl` tool acts as a bridge between the Common Workflow Language (CWL) standard and the DNAnexus platform.
+description: The dx-cwl tool compiles Common Workflow Language definitions into native DNAnexus workflow objects for execution on the platform. Use when user asks to compile CWL workflows into DNAnexus objects or run compiled CWL workflows on the cloud.
 homepage: https://github.com/dnanexus/dx-cwl
 ---
+
 
 # dx-cwl
 

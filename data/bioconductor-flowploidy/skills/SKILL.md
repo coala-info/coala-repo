@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowploidy
-description: the package is available on all platforms; click for details.
+description: The flowPloidy package provides automated analysis of DNA flow cytometry data using non-linear regression to model cell populations and account for debris. Use when user asks to analyze genome size, estimate ploidy from flow cytometry histograms, or calculate DNA content using internal standards.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPloidy.html
 ---
+
 
 # bioconductor-flowploidy
 

@@ -1,8 +1,9 @@
 ---
 name: pyfba
-description: PyFBA is a Python-based platform designed to transform genomic annotations into functional metabolic models.
+description: PyFBA is a Python platform that transforms genomic annotations into functional metabolic models using the ModelSEED biochemistry database. Use when user asks to convert functional roles into biochemical reactions, gapfill metabolic models to simulate growth on specific media, or run flux balance analysis from SBML files.
 homepage: https://linsalrob.github.io/PyFBA/
 ---
+
 
 # pyfba
 

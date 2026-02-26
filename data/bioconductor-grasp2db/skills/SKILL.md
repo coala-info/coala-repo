@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grasp2db
-description: the package is available on all platforms; click for details.
+description: This package provides a high-performance SQLite interface to the GRASP v2.0 database for querying millions of genetic associations from GWAS studies. Use when user asks to access GRASP database records, filter genetic variants by P-value or phenotype, or join SNP-level data with study metadata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/grasp2db.html
 ---
+
 
 # bioconductor-grasp2db
 

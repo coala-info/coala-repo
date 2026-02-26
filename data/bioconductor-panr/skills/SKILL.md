@@ -1,8 +1,9 @@
 ---
 name: bioconductor-panr
-description: the package is available on all platforms; click for details.
+description: PANR infers functional association networks from high-throughput genetic screens using a Bayesian framework. Use when user asks to infer functional networks from screening data, analyze gene associations, or reconstruct biological pathways from phenotypic profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/PANR.html
 ---
+
 
 # bioconductor-panr
 

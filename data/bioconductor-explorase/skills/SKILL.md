@@ -1,8 +1,9 @@
 ---
 name: bioconductor-explorase
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides a framework for the exploratory analysis, visualization, and linear modeling of high-throughput systems biology data. Use when user asks to perform multivariate exploratory data analysis, integrate experimental data with metadata, identify biological patterns, or perform linear modeling with limma.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/explorase.html
 ---
+
 
 # bioconductor-explorase
 

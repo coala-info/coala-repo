@@ -1,8 +1,9 @@
 ---
 name: probabel
-description: ProbABEL is a specialized suite of tools designed for high-throughput genetic association studies using imputed data.
+description: ProbABEL is a suite of tools designed for high-throughput genetic association analysis using imputed dosage or genotype probability data. Use when user asks to perform linear regression for continuous traits, logistic regression for binary traits, or Cox proportional hazards regression for survival analysis.
 homepage: https://github.com/GenABEL-Project/ProbABEL
 ---
+
 
 # probabel
 

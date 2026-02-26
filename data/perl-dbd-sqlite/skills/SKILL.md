@@ -1,8 +1,9 @@
 ---
 name: perl-dbd-sqlite
-description: `perl-dbd-sqlite` is the Perl Database Interface (DBI) driver for SQLite.
+description: perl-dbd-sqlite is a Perl DBI driver that embeds the SQLite database engine directly into applications for local relational storage. Use when user asks to manage local SQLite databases, create in-memory databases for testing, or implement SQL queries on Perl data structures using virtual tables.
 homepage: https://metacpan.org/pod/DBD::SQLite
 ---
+
 
 # perl-dbd-sqlite
 

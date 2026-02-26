@@ -1,11 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mirge
+baseCommand: miRge2.0
 label: mirge_miRge2.0
-doc: "miRge2.0 is a tool for comprehensive analysis of miRNA-seq data. (Note: The
-  provided text is an error log and does not contain help documentation; therefore,
-  no arguments could be extracted.)\n\nTool homepage: https://github.com/mhalushka/miRge"
-inputs: []
+doc: "Comprehensive analysis of miRNA sequencing Data\n\nTool homepage: https://github.com/mhalushka/miRge"
+inputs:
+  - id: command
+    type: string
+    doc: sub-command help
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bio_hansel
-description: The `bio_hansel` tool provides a fast, k-mer based approach to subtyping microbial pathogens without the need for full genome alignment.
+description: "bio_hansel performs fast, k-mer based subtyping of microbial pathogens from genomic assemblies or raw sequencing reads. Use when user asks to subtype Salmonella or Mycobacterium tuberculosis, identify specific sub-lineages for outbreak investigation, or process batch genomic data for public health surveillance."
 homepage: https://github.com/phac-nml/bio_hansel
 ---
+
 
 # bio_hansel
 

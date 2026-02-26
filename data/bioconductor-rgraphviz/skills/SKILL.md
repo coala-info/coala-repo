@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgraphviz
-description: the package is available on all platforms; click for details.
+description: Rgraphviz provides an interface to the Graphviz library for the visualization and layout of graphs and networks in R. Use when user asks to plot graphs, visualize biological networks, or customize graph layouts.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rgraphviz.html
 ---
+
 
 # bioconductor-rgraphviz
 

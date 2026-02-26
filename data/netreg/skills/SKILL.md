@@ -1,8 +1,9 @@
 ---
 name: netreg
-description: The `netreg` skill enables the application of network-regularized linear models within R.
+description: The netreg tool fits network-regularized linear models by incorporating graph-based penalties into generalized linear models. Use when user asks to apply network-regularized regression, fit models with graph-based penalties, or incorporate interaction information into high-dimensional data analysis.
 homepage: https://github.com/dirmeier/netReg
 ---
+
 
 # netreg
 

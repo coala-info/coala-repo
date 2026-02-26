@@ -1,8 +1,9 @@
 ---
 name: bifidoannotator
-description: The `bifidoannotator` tool is a specialized bioinformatics pipeline designed to provide fine-grained, hierarchical annotation of bifidobacterial glycoside hydrolases (GHs).
+description: Bifidoannotator provides hierarchical functional annotation and classification of glycoside hydrolases specifically for bifidobacterial genomes. Use when user asks to annotate protein sequences, classify enzymes into functional clusters, or generate comparative heatmaps of bifidobacterial metabolic capabilities.
 homepage: https://github.com/nicholaspucci/bifidoAnnotator
 ---
+
 
 # bifidoannotator
 

@@ -1,8 +1,9 @@
 ---
 name: kaiju
-description: Kaiju is a taxonomic classifier that translates metagenomic DNA reads into amino acid sequences and searches them against a reference database of protein sequences (e.g., NCBI nr, proGenomes).
+description: Kaiju is a taxonomic classifier that translates metagenomic DNA reads into amino acid sequences to search against protein reference databases. Use when user asks to classify metagenomic reads, perform taxonomic assignment, or generate abundance reports for microbial communities.
 homepage: https://kaiju.binf.ku.dk/
 ---
+
 
 # kaiju
 

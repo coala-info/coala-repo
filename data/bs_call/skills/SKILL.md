@@ -1,8 +1,9 @@
 ---
 name: bs_call
-description: bs_call is a specialized bioinformatics tool designed for the simultaneous calling of DNA methylation states and genetic variants from bisulfite-treated sequencing data.
+description: bs_call simultaneously calls DNA methylation states and genetic variants from bisulfite-treated sequencing data. Use when user asks to call methylation states, perform genotyping on bisulfite-seq data, or identify SNPs in the context of epigenetic modifications.
 homepage: https://github.com/heathsc/bs_call
 ---
+
 
 # bs_call
 

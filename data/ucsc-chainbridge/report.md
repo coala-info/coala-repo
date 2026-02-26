@@ -1,9 +1,9 @@
 # ucsc-chainbridge CWL Generation Report
 
-## ucsc-chainbridge
+## ucsc-chainbridge_chainBridge
 
 ### Tool Description
-Bridge gaps in chains. (Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.)
+Attempt to extend alignments through double-sided gaps of similar size
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chainbridge:377--h199ee4e_0
@@ -18,13 +18,17 @@ Bridge gaps in chains. (Note: The provided text appears to be a container build 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chainbridge:377--h199ee4e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+chainBridge - Attempt to extend alignments through double-sided gaps of similar size
+usage:
+   chainBridge in.chain target.2bit query.2bit out.chain
+options:
+   -maxGap=N  Maximum size of double-sided gap to try to bridge (default: 6000)
+              Note: there is no size limit for exact sequence matches
+   -scoreScheme=fileName Read the scoring matrix from a blastz-format file
+   -linearGap=<medium|loose|filename> Specify type of linearGap to use.
+              loose is chicken/human linear gap costs.
+              medium is mouse/human linear gap costs.
+              Or specify a piecewise linearGap tab delimited file.
+              (default: loose)
 ```
 
-
-## Metadata
-- **Skill**: generated

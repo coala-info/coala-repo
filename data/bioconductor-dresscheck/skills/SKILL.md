@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dresscheck
-description: the package is available on all platforms; click for details.
+description: This tool provides datasets and code to explore and reproduce the Dressman et al. ovarian cancer study and its subsequent reproducibility critique. Use when user asks to access corrected RMA expression data, analyze batch effects by array run date, or reconstruct survival curves based on pathway activation scores.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dressCheck.html
 ---
+
 
 # bioconductor-dresscheck
 

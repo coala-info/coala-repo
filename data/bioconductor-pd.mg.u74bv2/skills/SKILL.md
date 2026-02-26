@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mg.u74bv2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Murine Genome U74v2 microarray. Use when user asks to process Affymetrix MG-U74v2 microarray data, analyze mouse genome expression arrays, or retrieve platform metadata for this specific chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mg.u74bv2.html
 ---
+
 
 # bioconductor-pd.mg.u74bv2
 

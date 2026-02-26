@@ -1,8 +1,9 @@
 ---
 name: mrbayes-mpi
-description: This skill provides guidance for executing MrBayes in parallel environments to reconstruct evolutionary relationships.
+description: MrBayes-MPI performs Bayesian inference of phylogeny using Markov chain Monte Carlo methods in parallel computing environments. Use when user asks to reconstruct evolutionary relationships, perform phylogenetic analysis on large datasets, or run parallel MCMC chains.
 homepage: http://mrbayes.sourceforge.net
 ---
+
 
 # mrbayes-mpi
 

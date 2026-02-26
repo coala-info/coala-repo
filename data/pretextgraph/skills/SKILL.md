@@ -1,8 +1,9 @@
 ---
 name: pretextgraph
-description: The `pretextgraph` tool allows you to overlay quantitative genomic information onto existing Hi-C contact maps.
+description: This tool overlays quantitative genomic data from bedGraph files onto Hi-C contact maps in Pretext format. Use when user asks to add genomic tracks to a Pretext file, visualize bedGraph data on a contact map, or convert BigWig files for Pretext visualization.
 homepage: https://github.com/wtsi-hpag/PretextGraph
 ---
+
 
 # pretextgraph
 

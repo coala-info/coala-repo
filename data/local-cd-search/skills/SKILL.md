@@ -1,8 +1,9 @@
 ---
 name: local-cd-search
-description: `local-cd-search` is a command-line utility designed for high-throughput protein annotation.
+description: local-cd-search automates high-throughput protein annotation by running the RPS-BLAST/rpsbproc workflow against NCBI Conserved Domain Database PSSMs. Use when user asks to annotate protein sequences, download CDD database subsets, identify functional sites, or perform local conserved domain searches.
 homepage: https://github.com/apcamargo/local-cd-search
 ---
+
 
 # local-cd-search
 

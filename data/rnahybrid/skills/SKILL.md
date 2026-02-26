@@ -1,8 +1,9 @@
 ---
 name: rnahybrid
-description: RNAhybrid is a specialized bioinformatics tool designed to find the energetically most favorable binding sites between two RNA molecules.
+description: RNAhybrid identifies the most energetically favorable hybridization sites between a target RNA sequence and a query RNA molecule. Use when user asks to predict microRNA targets, find binding sites in 3' UTRs, or calculate the minimum free energy of RNA-RNA interactions.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/rnahybrid
 ---
+
 
 # rnahybrid
 

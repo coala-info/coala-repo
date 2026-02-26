@@ -1,8 +1,9 @@
 ---
 name: perl-lwp-mediatypes
-description: The `perl-lwp-mediatypes` skill provides methods for handling media types and encodings based on file extensions.
+description: This tool maps file extensions and URIs to their corresponding MIME types and encodings using the LWP::MediaTypes Perl module. Use when user asks to guess media types from filenames, find file extensions for specific MIME types, or manage custom media type mappings.
 homepage: http://metacpan.org/pod/LWP::MediaTypes
 ---
+
 
 # perl-lwp-mediatypes
 

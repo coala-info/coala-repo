@@ -1,8 +1,9 @@
 ---
 name: argnorm
-description: argnorm is a specialized bioinformatic tool designed to solve the "vocabulary problem" in antibiotic resistance gene (ARG) annotation.
+description: argnorm normalizes antibiotic resistance gene identifiers from various databases into standardized ARO accession numbers and provides functional drug categorization. Use when user asks to normalize ARG annotations, map gene identifiers to ARO terms, or categorize antibiotic resistance genes by drug class.
 homepage: https://github.com/BigDataBiology/argNorm
 ---
+
 
 # argnorm
 

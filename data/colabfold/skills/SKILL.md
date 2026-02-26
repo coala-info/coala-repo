@@ -1,8 +1,9 @@
 ---
 name: colabfold
-description: ColabFold is a high-performance framework designed to make protein structure and complex prediction accessible and efficient.
+description: ColabFold predicts protein structures and complexes by combining MMseqs2 for fast sequence alignment with AlphaFold2 models. Use when user asks to predict protein structures, generate multiple sequence alignments locally, or perform high-throughput structural biology workflows.
 homepage: https://github.com/sokrypton/ColabFold
 ---
+
 
 # colabfold
 

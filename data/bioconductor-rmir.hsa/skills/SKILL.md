@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmir.hsa
-description: the package is available on all platforms; click for details.
+description: This package provides human miRNA-target prediction data for integrated miRNA and mRNA analysis. Use when user asks to retrieve human miRNA-target predictions, perform miRNA-mRNA integration analysis, or access miRNA target databases for Homo sapiens.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RmiR.hsa.html
 ---
+
 
 # bioconductor-rmir.hsa
 

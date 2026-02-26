@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95ccdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate conversion utilities for the Affymetrix Human Genome U95 chip. Use when user asks to map probes to probe sets, convert between chip coordinates and indices, or access annotation data for the hgu95ccdf platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95ccdf.html
 ---
+
 
 # bioconductor-hgu95ccdf
 

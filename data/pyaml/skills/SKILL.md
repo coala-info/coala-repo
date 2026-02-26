@@ -1,8 +1,9 @@
 ---
 name: pyaml
-description: This skill provides procedural knowledge for using the `pyamlboot` utility to communicate with Amlogic System-on-Chips (SoCs) over USB.
+description: This tool communicates with Amlogic System-on-Chips over USB for low-level recovery, development, and booting. Use when user asks to boot U-Boot binaries, load Linux kernels, or push initial RAM disks to Amlogic devices in USB boot mode.
 homepage: https://github.com/superna9999/pyamlboot
 ---
+
 
 # pyaml
 

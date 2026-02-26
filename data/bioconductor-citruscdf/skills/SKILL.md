@@ -1,8 +1,9 @@
 ---
 name: bioconductor-citruscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Description File (CDF) annotation data and coordinate mapping for the Citrus Affymetrix genome array. Use when user asks to map probe coordinates to indices, access chip dimensions, or process raw CEL files from Citrus microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/citruscdf.html
 ---
+
 
 # bioconductor-citruscdf
 

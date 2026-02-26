@@ -1,8 +1,9 @@
 ---
 name: sampei
-description: SAMPEI (Spectral Alignment-based Modified PEptide Identification) is a computational method for "open" modification searching in high-resolution mass spectrometry data.
+description: SAMPEI performs open modification searching in high-resolution mass spectrometry data using spectral alignment to identify mass-shifted peptides. Use when user asks to identify unknown protein modifications, perform open modification searches, or find similar target spectra using high-confidence query spectra.
 homepage: https://github.com/FenyoLab/SAMPEI
 ---
+
 
 # sampei
 

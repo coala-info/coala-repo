@@ -1,16 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-fatrans
+baseCommand: faTrans
 label: ucsc-fatrans
-doc: "The provided text does not contain help information for the tool. It contains
-  container runtime logs and a fatal error message indicating a failure to fetch or
-  build the image.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Translate DNA sequences in a FASTA file to protein sequences.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_fasta
+    type: File
+    doc: Input DNA FASTA file
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_fasta
+    type: File
+    doc: Output protein FASTA file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-fatrans:482--h0b57e2e_0
-stdout: ucsc-fatrans.out

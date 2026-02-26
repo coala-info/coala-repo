@@ -1,8 +1,9 @@
 ---
 name: cawlign
-description: `cawlign` is a high-performance C++ tool designed for aligning FASTA sequences to a reference.
+description: cawlign is a high-performance tool designed for codon-aware alignment of FASTA sequences to a reference genome. Use when user asks to align sequences to a reference, perform codon-aware mapping, handle out-of-frame indels, or use the HXB2 pol reference.
 homepage: https://github.com/veg/cawlign
 ---
+
 
 # cawlign
 

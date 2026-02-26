@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvgears
-description: The package is best suited for studies in human family-based cohorts.
+description: "CNVgears integrates, filters, and analyzes copy number variants within human family-based cohorts. Use when user asks to integrate CNV calling results, filter variants in family-based studies, or perform inheritance analysis of copy number variations."
 homepage: https://bioconductor.org/packages/3.13/bioc/html/CNVgears.html
 ---
+
 
 # bioconductor-cnvgears
 

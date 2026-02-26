@@ -1,8 +1,9 @@
 ---
 name: emboss-data
-description: EMBOSS is a comprehensive collection of over 200 open-source tools designed for molecular biology.
+description: EMBOSS manages molecular biology sequence data and executes specialized bioinformatics tasks like alignment and restriction mapping. Use when user asks to manage sequence formats, configure database settings, or retrieve data from local and remote servers.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # emboss-data
 

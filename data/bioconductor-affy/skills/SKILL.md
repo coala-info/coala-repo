@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affy
-description: The package contains functions for exploratory oligonucleotide array analysis. The dependence on tkWidgets only concerns few convenience functions. 'affy' is fully functional without it.
+description: This tool analyzes and explores Affymetrix oligonucleotide array probe-level data. Use when user asks to load CEL files, perform preprocessing using RMA or MAS 5.0, conduct quality control on microarray data, or access specific PM/MM probe intensities.
 homepage: https://bioconductor.org/packages/release/bioc/html/affy.html
 ---
+
 
 # bioconductor-affy
 

@@ -1,8 +1,9 @@
 ---
 name: metafx
-description: MetaFX (METAgenomic Feature eXtraction) is a specialized toolkit designed to bridge the gap between raw metagenomic short-read data and biological interpretation.
+description: MetaFX extracts biological features from metagenomic short-read data by identifying specific components in a de Bruijn graph. Use when user asks to extract features from raw reads, visualize sample proximity via PCA, perform statistical analysis, or train and apply machine learning models for sample classification.
 homepage: https://github.com/ctlab/metafx
 ---
+
 
 # metafx
 

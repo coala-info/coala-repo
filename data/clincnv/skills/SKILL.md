@@ -1,8 +1,9 @@
 ---
 name: clincnv
-description: ClinCNV is a specialized tool for identifying copy number changes across various clinical sequencing contexts.
+description: ClinCNV identifies copy number changes and somatic copy number alterations across germline, somatic, and trio clinical sequencing contexts. Use when user asks to call germline CNVs, detect somatic CNAs in tumor-normal pairs, or perform trio-based CNV analysis.
 homepage: https://github.com/imgag/ClinCNV
 ---
+
 
 # clincnv
 

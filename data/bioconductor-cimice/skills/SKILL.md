@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cimice
-description: the package is available on all platforms; click for details.
+description: bioconductor-cimice models cancer evolution by constructing Markov chains from mutational data to identify tumor progression paths. Use when user asks to infer cancer progression models, build directed acyclic graphs of genotypes, or visualize evolutionary trajectories from single-cell DNA mutational matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/CIMICE.html
 ---
+
 
 # bioconductor-cimice
 

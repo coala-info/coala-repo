@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdrutils
-description: the package is available on all platforms; click for details.
+description: This package provides utility functions and infrastructure for managing, validating, and converting drug response data within the gDR platform. Use when user asks to manipulate MultiAssayExperiment objects, convert assays to data tables, manage environment-wide identifiers, validate data structures, or prettify column names for reporting.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRutils.html
 ---
+
 
 # bioconductor-gdrutils
 

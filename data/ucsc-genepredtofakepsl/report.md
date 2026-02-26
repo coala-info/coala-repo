@@ -3,7 +3,7 @@
 ## ucsc-genepredtofakepsl
 
 ### Tool Description
-The provided text does not contain help information for the tool, but rather a fatal error from the Apptainer/Singularity container runtime while attempting to fetch the image. No arguments could be parsed from the input.
+Create a fake PSL from a genePred file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-genepredtofakepsl:482--h0b57e2e_1
@@ -18,11 +18,15 @@ The provided text does not contain help information for the tool, but rather a f
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-genepredtofakepsl:482--h0b57e2e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-genepredtofakepsl:482--h0b57e2e_1' locally
+482--h0b57e2e_1: Pulling from biocontainers/ucsc-genepredtofakepsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+4b1691d8529d: Pulling fs layer
+4b1691d8529d: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob1706624510: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

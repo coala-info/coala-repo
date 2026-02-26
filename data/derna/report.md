@@ -3,7 +3,7 @@
 ## derna
 
 ### Tool Description
-The provided text does not contain help information for the tool 'derna'. It contains system log messages and a fatal error regarding container image conversion and disk space.
+RNA secondary structure prediction and evaluation tool.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/derna:1.0.4--h503566f_1
@@ -18,11 +18,20 @@ The provided text does not contain help information for the tool 'derna'. It con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/derna:1.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2001722621: no space left on device
+Usage:
+ -i -- input file path
+ -o -- output file path
+ -m -- model <0,1,-1> , 0 for Nussinov-based model, 1 for Zuker-based model, -1 for Evaluation
+ -s -- mode <1,2,3>, 1 for MFE only, 2 for balancing MFE and CAI at fixed lambda, 3 for lambda sweep
+ -l -- lambda <[0,1]>
+ -a -- sweep increment <(0,1]>
+ -r -- input rna file path
+ -O -- sweep output csv file name
+ -g -- minimum gap allowed in Nussinov <[0,inf)>
+ -t -- threshold tau1 <(0,1)>
+ -p -- threshold tau2 <(0,1)>
+ -c -- codon usage table file path
+ -d -- directory to energy parameters
+ ...
 ```
 
-
-## Metadata
-- **Skill**: generated

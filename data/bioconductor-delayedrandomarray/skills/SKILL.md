@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delayedrandomarray
-description: the package is available on all platforms; click for details.
+description: The DelayedRandomArray package implements DelayedArray subclasses that generate random values on-the-fly to enable the creation of massive arrays without high memory consumption. Use when user asks to create large-scale random matrices, simulate data from various probability distributions, or generate memory-efficient arrays for Bioconductor workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedRandomArray.html
 ---
+
 
 # bioconductor-delayedrandomarray
 

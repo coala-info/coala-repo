@@ -1,8 +1,9 @@
 ---
 name: r-saccharis
-description: R package saccharis (documentation from project home).
+description: The r-saccharis tool visualizes and analyzes phylogenetic trees generated from SACCHARIS 2 outputs by mapping CAZy metadata onto the trees. Use when user asks to load SACCHARIS data, generate phylogenetic plots, or manage CAZy metadata in R.
 homepage: https://cran.r-project.org/web/packages/saccharis/index.html
 ---
+
 
 # r-saccharis
 

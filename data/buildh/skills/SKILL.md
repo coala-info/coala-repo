@@ -1,8 +1,9 @@
 ---
 name: buildh
-description: The `buildh` tool is designed for researchers working with united-atom lipid models who need to recover atomic-level detail for hydrogen positions.
+description: The buildh tool reconstructs hydrogen atoms from united-atom lipid simulations and calculates carbon-deuterium order parameters. Use when user asks to recover atomic-level detail for hydrogen positions, calculate Scd order parameters, or convert united-atom trajectories to all-atom representations.
 homepage: https://github.com/patrickfuchs/buildH
 ---
+
 
 # buildh
 

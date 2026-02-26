@@ -1,8 +1,9 @@
 ---
 name: medicc2
-description: MEDICC2 is a specialized tool for reconstructing the evolutionary history of cancer cells using copy number variation (CNV) data.
+description: MEDICC2 reconstructs the evolutionary history and phylogenetic trees of cancer cells using copy number variation data. Use when user asks to reconstruct cancer phylogenies from copy number profiles, identify whole-genome doubling events, or infer ancestral genomic states.
 homepage: https://bitbucket.org/schwarzlab/medicc2
 ---
+
 
 # medicc2
 

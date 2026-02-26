@@ -3,7 +3,7 @@
 ## ragout
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a fatal error log from a container runtime (Singularity/Apptainer) failing to fetch the tool's image.
+Chromosome assembly with multiple references
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ragout:2.3--py36hc9558a2_0
@@ -18,13 +18,35 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ragout:2.3--py36hc9558a2_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: ragout [-h] [-o output_dir] [-s {sibelia,maf,hal}] [--refine]
+              [--solid-scaffolds] [--overwrite] [--repeats] [--debug]
+              [-t THREADS] [--version]
+              recipe_file
+
+Chromosome assembly with multiple references
+
+positional arguments:
+  recipe_file           path to recipe file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o output_dir, --outdir output_dir
+                        output directory (default: ragout-out)
+  -s {sibelia,maf,hal}, --synteny {sibelia,maf,hal}
+                        backend for synteny block decomposition (default:
+                        sibelia)
+  --refine              enable refinement with assembly graph (default: False)
+  --solid-scaffolds     do not break input sequences - disables chimera
+                        detection module (default: False)
+  --overwrite           overwrite results from the previous run (default:
+                        False)
+  --repeats             enable repeat resolution algorithm (default: False)
+  --debug               enable debug output (default: False)
+  -t THREADS, --threads THREADS
+                        number of threads for synteny backend (default: 1)
+  --version             show program's version number and exit
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

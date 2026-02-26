@@ -1,8 +1,9 @@
 ---
 name: locus_processing
-description: The `locus_processing` tool provides a suite of utilities for managing and validating locus definition files.
+description: The locus_processing tool manages and validates locus definition files to ensure they conform to standardized JSON schemas. Use when user asks to validate locus metadata, manage SNP identifiers, process HGVS notations, or select preferred transcripts.
 homepage: https://github.com/LUMC/locus_processing
 ---
+
 
 # locus_processing
 

@@ -1,8 +1,9 @@
 ---
 name: mmft
-description: `mmft` (Max's Minimal Fasta Toolkit) is a collection of self-contained, high-performance Rust utilities for FASTA file processing.
+description: mmft is a collection of high-performance Rust utilities for processing and manipulating FASTA files. Use when user asks to calculate sequence statistics, transform sequences, filter records by ID or regex, extract subsequences, or sample and split FASTA files.
 homepage: https://github.com/ARU-life-sciences/mmft
 ---
+
 
 # mmft
 

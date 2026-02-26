@@ -1,8 +1,9 @@
 ---
 name: hhsuite
-description: HH-suite3 is a specialized bioinformatics toolkit designed for sensitive protein sequence analysis using pairwise alignment of Hidden Markov Models (HMMs).
+description: HH-suite is a bioinformatics toolkit for sensitive protein sequence analysis and remote homology detection using pairwise alignment of Hidden Markov Models. Use when user asks to perform iterative sequence searches, identify structural templates, build multiple sequence alignments, or detect distant evolutionary relationships between proteins.
 homepage: https://github.com/soedinglab/hh-suite
 ---
+
 
 # hhsuite
 

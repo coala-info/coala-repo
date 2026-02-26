@@ -1,9 +1,9 @@
 # psosp CWL Generation Report
 
-## psosp
+## psosp_test
 
 ### Tool Description
-The provided text does not contain help information for the tool 'psosp'. It appears to be a log of a failed container build attempt using Apptainer/Singularity.
+A tool for host-virus sequence analysis (psosp)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2
@@ -12,39 +12,47 @@ The provided text does not contain help information for the tool 'psosp'. It app
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/psosp/overview
-- **Total Downloads**: 875
+- **Total Downloads**: 881
 - **Last updated**: 2025-07-07
 - **GitHub**: https://github.com/mujiezhang/PSOSP
-- **Stars**: 5
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: psosp [-h] [-hf HOST_FASTA] [-vf VIRUS_FASTA] [-wd WORKING_DIR]
+             [-hfaa HOST_FAA] [-db CHECKV_DB] [-v]
+             {test,predict} ...
+psosp: error: ambiguous option: --h could match --help, --host_fasta, --host_faa
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## psosp_checkv
+## psosp_predict
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container build process.
+Predict virus-host interactions using psosp
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2
 - **Homepage**: https://github.com/mujiezhang/PSOSP
 - **Package**: https://anaconda.org/channels/bioconda/packages/psosp/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/psosp:1.1.2--pyhdfd78af_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: psosp predict [-h] -hf HOST_FASTA -vf VIRUS_FASTA -wd WORKING_DIR
+                     [-hfaa HOST_FAA] [-db CHECKV_DB]
+
+options:
+  -h, --help            show this help message and exit
+  -hf HOST_FASTA, --host_fasta HOST_FASTA
+                        Host genome fasta file
+  -vf VIRUS_FASTA, --virus_fasta VIRUS_FASTA
+                        Virus genome fasta file (can contain multiple viruses)
+  -wd WORKING_DIR, --working_dir WORKING_DIR
+                        Output directory path
+  -hfaa HOST_FAA, --host_faa HOST_FAA
+                        Host faa file path (optional, will run prodigal if not
+                        provided)
+  -db CHECKV_DB, --checkv_db CHECKV_DB
+                        checkv reference database path (optional)
 ```
 

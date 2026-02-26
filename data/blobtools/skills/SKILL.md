@@ -1,8 +1,9 @@
 ---
 name: blobtools
-description: BlobTools is a specialized suite for assessing the quality of genome assemblies by integrating assembly statistics (GC content and length), read coverage, and taxonomic information into a unified database (BlobDB).
+description: BlobTools visualizes and analyzes genome assemblies by integrating coverage, GC content, and taxonomic data to identify and filter contaminants. Use when user asks to assess assembly quality, visualize taxonomic distribution, identify contamination, or filter scaffolds based on coverage and taxonomy.
 homepage: https://blobtools.readme.io/docs/what-is-blobtools
 ---
+
 
 # blobtools
 

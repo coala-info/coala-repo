@@ -1,8 +1,9 @@
 ---
 name: dinopy
-description: dinopy is a specialized library designed for bioinformatics workflows that require efficient sequence I/O and k-mer manipulation.
+description: "dinopy is a bioinformatics library for efficient sequence I/O and high-performance k-mer manipulation using Cython. Use when user asks to read FASTA or FASTQ files, perform random access on indexed genomic regions, or generate solid and gapped q-grams."
 homepage: https://bitbucket.org/HenningTimm/dinopy
 ---
+
 
 # dinopy
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sparsematrixstats
-description: the package is available on all platforms; click for details.
+description: This R package provides high-performance functions for calculating row and column statistics on sparse matrices. Use when user asks to calculate summary statistics, compute row or column means, or perform efficient matrix operations on sparse data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/sparseMatrixStats.html
 ---
+
 
 # bioconductor-sparsematrixstats
 

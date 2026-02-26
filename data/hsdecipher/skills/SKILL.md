@@ -1,8 +1,9 @@
 ---
 name: hsdecipher
-description: HSDecipher is a specialized bioinformatics pipeline designed for the downstream analysis of gene duplicates that exhibit high sequence similarity.
+description: HSDecipher is a bioinformatics pipeline for the downstream analysis, statistical quantification, and visualization of highly similar gene duplicates. Use when user asks to calculate HSD metrics, categorize gene copy distributions, merge datasets across similarity thresholds, or generate functional heatmaps for gene duplication patterns.
 homepage: https://github.com/zx0223winner/HSDecipher
 ---
+
 
 # hsdecipher
 

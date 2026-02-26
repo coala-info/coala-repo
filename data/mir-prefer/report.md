@@ -1,12 +1,12 @@
 # mir-prefer CWL Generation Report
 
-## mir-prefer
+## mir-prefer_miR_PREFeR.py
 
 ### Tool Description
-mir-prefer: A tool for miRNA prediction (Note: The provided text contains only system error messages and no help documentation to parse arguments from).
+miR-PREFeR is a tool for predicting miRNAs.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mir-prefer:0.24--py27_2
+- **Docker Image**: quay.io/biocontainers/mir-prefer:0.24--py27_0
 - **Homepage**: https://github.com/hangelwen/miR-PREFeR
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,29 +18,24 @@ mir-prefer: A tool for miRNA prediction (Note: The provided text contains only s
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mir-prefer:0.24--py27_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2286337438: no space left on device
-```
+Usage: python mir_PREFeR.py [options] command configfile
 
+    command could be one of the following:
+    check = Check the dependency and the config file only (default).
+    prepare = Prepare data.
+    candidate = Generate candidate regions.
+    fold = Fold the candidate regions.
+    predict = Predict miRNAs.
+    pipeline = Run the whole pipeline. This is the same as running 'check', 'prepare', 'candidate', 'fold', and 'predict' sequentially.
+    recover = Recover a unfinished job. By default, miR-PREFeR makes checkpoint of the results of each stage. Thus, an unfinished job can be started from where it was checkpointed to save time.
 
-## Metadata
-- **Skill**: generated
+configfile: configuration file
 
-## mir-prefer_miR_PREFeR.py
-
-### Tool Description
-miR_PREFeR (miRNA PREdiction From small RNA-Seq data). Note: The provided text contains environment error messages rather than help documentation; therefore, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mir-prefer:0.24--py27_2
-- **Homepage**: https://github.com/hangelwen/miR-PREFeR
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mir-prefer:0.24--py27_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4009803457: no space left on device
+Options:
+  -h, --help            show this help message and exit
+  -L, --log             Generate a log file.
+  -k, --keep-tmp        After finish the whole pipeline, do not remove the
+                        temporary folder that contains the intermidate files.
+  -d, --output-detail-for-debug
 ```
 

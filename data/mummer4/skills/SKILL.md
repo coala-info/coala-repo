@@ -1,8 +1,9 @@
 ---
 name: mummer4
-description: MUMmer4 is a high-performance system for aligning large DNA sequences.
+description: MUMmer4 is a high-performance system for aligning large DNA and protein sequences to identify similarities and structural variations. Use when user asks to align genomes, find maximal exact matches, identify SNPs and indels, or generate dot plots for sequence comparisons.
 homepage: https://mummer4.github.io/
 ---
+
 
 # mummer4
 

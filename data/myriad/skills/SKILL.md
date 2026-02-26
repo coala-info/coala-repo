@@ -1,8 +1,9 @@
 ---
 name: myriad
-description: Myriad is a lightweight distributed computing library designed as a drop-in replacement for Python's built-in `map` and `itertools.imap` functions.
+description: Myriad is a lightweight distributed computing library that provides a drop-in replacement for Python's map functions to scale tasks across a master-worker cluster. Use when user asks to distribute Python processing tasks, scale map operations across multiple machines, or manage simple task queues without the overhead of complex frameworks.
 homepage: https://github.com/cjw85/myriad
 ---
+
 
 # myriad
 

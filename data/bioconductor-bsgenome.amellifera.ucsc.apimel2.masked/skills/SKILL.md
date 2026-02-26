@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.amellifera.ucsc.apimel2.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genome sequences for the Apis mellifera (Honey Bee) based on the UCSC apiMel2 assembly. Use when user asks to access honey bee genomic sequences with assembly gap, ambiguity, or repeat masks, perform motif searching in masked regions, or analyze the apiMel2 genome assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.UCSC.apiMel2.masked.html
 ---
+
 
 # bioconductor-bsgenome.amellifera.ucsc.apimel2.masked
 

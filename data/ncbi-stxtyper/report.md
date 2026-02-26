@@ -1,9 +1,9 @@
 # ncbi-stxtyper CWL Generation Report
 
-## ncbi-stxtyper
+## ncbi-stxtyper_stxtyper
 
 ### Tool Description
-Note: The provided text is an error log indicating a failure to build the container image due to insufficient disk space ('no space left on device') and does not contain the actual help text or argument definitions for the tool.
+Determine stx type(s) of a genome, print .tsv-file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0
@@ -18,29 +18,37 @@ Note: The provided text is an error log indicating a failure to build the contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3090955761: no space left on device
-```
+Determine stx type(s) of a genome, print .tsv-file
 
+USAGE:   stxtyper [--nucleotide NUC_FASTA] [--name NAME] [--output OUTPUT_FILE] [--blast_bin BLAST_DIR] [--amrfinder] [--print_node] [--nucleotide_output NUC_FASTA_OUT] [--threads THREADS] [--debug] [--log LOG] [--quiet]
+HELP:    stxtyper --help or stxtyper -h
+VERSION: stxtyper --version or stxtyper -v
 
-## Metadata
-- **Skill**: generated
+NAMED PARAMETERS
+-n NUC_FASTA, --nucleotide NUC_FASTA
+    Input nucleotide FASTA file (can be gzipped)
+--name NAME
+    Text to be added as the first column "name" to all rows of the report, for example it can be an assembly name
+-o OUTPUT_FILE, --output OUTPUT_FILE
+    Write output to OUTPUT_FILE instead of STDOUT
+--blast_bin BLAST_DIR
+    Directory for BLAST. Deafult: $BLAST_BIN
+--amrfinder
+    Print output in the nucleotide AMRFinderPlus format
+--print_node
+    Print AMRFinderPlus hierarchy node
+--nucleotide_output NUC_FASTA_OUT
+    Output nucleotide FASTA file of reported nucleotide sequences
+--threads THREADS
+    Max. number of threads
+    Default: 1
+--debug
+    Integrity checks
+--log LOG
+    Error log file, appended, opened on application start
+-q, --quiet
+    Suppress messages to STDERR
 
-## ncbi-stxtyper_stxtyper
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages regarding container image conversion and disk space issues.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0
-- **Homepage**: https://github.com/ncbi/stxtyper
-- **Package**: https://anaconda.org/channels/bioconda/packages/ncbi-stxtyper/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ncbi-stxtyper:1.0.45--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2822920744: no space left on device
+Temporary directory used is $TMPDIR or "/tmp"
 ```
 

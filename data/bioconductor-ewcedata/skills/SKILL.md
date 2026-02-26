@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ewcedata
-description: The package provides tools for testing enrichments within simple gene lists (such as human disease associated genes) and those resulting from differential expression studies. The package does not depend upon any particular Single Cell Transcriptome dataset and user defined datasets can be loaded in and used in the analyses.
+description: This package provides reference datasets, ortholog mappings, and example gene lists for use with the Expression Weighted Celltype Enrichment (EWCE) analysis framework. Use when user asks to access mouse brain single-cell RNA-seq data, retrieve human-mouse ortholog tables, or load example gene sets for neurological disorder enrichment testing.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ewceData.html
 ---
+
 
 # bioconductor-ewcedata
 

@@ -1,8 +1,9 @@
 ---
 name: perl-test-output
-description: The `perl-test-output` skill focuses on the `Test::Output` Perl module, a specialized utility for validating data printed to standard output streams.
+description: This tool validates data printed to standard output and error streams within Perl applications. Use when user asks to test STDOUT or STDERR, verify terminal output with regular expressions, or capture output from Perl subroutines and external commands.
 homepage: https://github.com/briandfoy/test-output
 ---
+
 
 # perl-test-output
 

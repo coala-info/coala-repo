@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pwalign
-description: the package are pairwiseAlignment() and stringDist(). The former solves (Needleman-Wunsch) global alignment, (Smith-Waterman) local alignment, and (ends-free) overlap alignment problems. The latter computes the Levenshtein edit distance or pairwise alignment score matrix for a set of strings.
+description: "The bioconductor-pwalign package performs global, local, and overlap pairwise sequence alignments and computes string distances. Use when user asks to perform pairwise sequence alignment, calculate Levenshtein edit distances, or generate alignment score matrices."
 homepage: https://bioconductor.org/packages/release/bioc/html/pwalign.html
 ---
+
 
 # bioconductor-pwalign
 

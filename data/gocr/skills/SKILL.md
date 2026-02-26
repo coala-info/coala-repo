@@ -1,8 +1,9 @@
 ---
 name: gocr
-description: GOCR (also known as JOCR) is an open-source OCR engine that excels at processing simple, clean scans and specific image formats like the Netpbm family.
+description: GOCR is an open-source engine that extracts text and barcodes from images using a lightweight command-line interface. Use when user asks to extract text from images, decode barcodes, convert scans to XML or HTML formats, or perform OCR on Netpbm files.
 homepage: https://jocr.sourceforge.net
 ---
+
 
 # gocr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-wrench
-description: the package is available on all platforms; click for details.
+description: Wrench normalizes sparse count data from metagenomic and microbiome studies to account for compositional bias. Use when user asks to normalize metagenomic data, correct for compositional bias, or process sparse count matrices for differential abundance testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/Wrench.html
 ---
+
 
 # bioconductor-wrench
 

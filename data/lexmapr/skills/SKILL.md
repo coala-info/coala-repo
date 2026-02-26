@@ -1,8 +1,9 @@
 ---
 name: lexmapr
-description: LexMapr is designed to bridge the gap between informal specimen descriptions and formal semantic ontologies.
+description: LexMapr maps informal specimen descriptions from tabular data to formal semantic ontologies. Use when user asks to map specimen descriptions to ontologies, standardize metadata, or clean and tokenize specimen provenance data.
 homepage: https://github.com/LexMapr/lexmapr
 ---
+
 
 # lexmapr
 

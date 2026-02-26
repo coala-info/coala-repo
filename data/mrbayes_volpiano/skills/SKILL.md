@@ -1,8 +1,9 @@
 ---
 name: mrbayes_volpiano
-description: The `mrbayes_volpiano` skill provides guidance for using a specialized version of MrBayes (v3.2.7a) tailored for musicological research.
+description: This tool performs Bayesian inference of phylogenetic trees for Gregorian chants using Volpiano melody strings. Use when user asks to estimate melodic evolution, study chant transmission, or perform phylogenetic analysis on musical notation in NEXUS format.
 homepage: https://github.com/gaballench/mrbayes_volpiano
 ---
+
 
 # mrbayes_volpiano
 

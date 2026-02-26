@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicdatacommons
-description: the package is available on all platforms; click for details.
+description: The GenomicDataCommons package provides an R interface for searching, retrieving metadata, and downloading data from the NCI Genomic Data Commons API. Use when user asks to query cancer genomics metadata, download TCGA or TARGET datasets, retrieve clinical information, or perform genomic BAM slicing.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicDataCommons.html
 ---
+
 
 # bioconductor-genomicdatacommons
 

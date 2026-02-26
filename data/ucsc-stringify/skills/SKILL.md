@@ -1,8 +1,9 @@
 ---
 name: ucsc-stringify
-description: The `stringify` utility is a specialized tool from the UCSC Genome Browser "kent" source tree.
+description: This tool transforms a file's contents into a formatted C string constant. Use when user asks to convert a file to a C string, embed a file's content into C code, or bundle external assets into an executable.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-stringify
 

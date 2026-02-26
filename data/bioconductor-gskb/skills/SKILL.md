@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gskb
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides a comprehensive gene set knowledgebase for mouse pathway analysis and functional genomics. Use when user asks to access mouse-specific gene sets, perform gene set enrichment analysis for Mus musculus, or integrate curated pathways into functional genomics workflows.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/gskb.html
 ---
+
 
 # bioconductor-gskb
 

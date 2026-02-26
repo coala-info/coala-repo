@@ -1,8 +1,9 @@
 ---
 name: soapdenovo
-description: SOAPdenovo2 is a short-read assembly tool optimized for large-scale genome projects.
+description: SOAPdenovo is a short-read assembly tool that uses de Bruijn graph algorithms to construct contigs and scaffolds for large-scale genome projects. Use when user asks to perform de novo genome assembly, build reference sequences from Illumina reads, or construct scaffolds from short-read data.
 homepage: https://github.com/aquaskyline/SOAPdenovo2
 ---
+
 
 # soapdenovo
 

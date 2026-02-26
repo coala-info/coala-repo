@@ -1,8 +1,9 @@
 ---
 name: metamdbg
-description: MetaMDBG is a lightweight, memory-efficient assembler tailored for long-read metagenomics.
+description: MetaMDBG is a memory-efficient assembler designed for large-scale long-read metagenomics using a minimizer de-Bruijn graph framework. Use when user asks to assemble PacBio HiFi or Nanopore metagenomic reads, perform multi-sample co-assembly, or generate assembly graphs in GFA format.
 homepage: https://github.com/GaetanBenoitDev/metaMDBG
 ---
+
 
 # metamdbg
 

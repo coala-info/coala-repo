@@ -1,8 +1,9 @@
 ---
 name: hmnfusion
-description: HmnFusion is a specialized bioinformatics utility designed to streamline the downstream analysis of gene fusions detected in DNA genomics.
+description: HmnFusion aggregates and quantifies gene fusions detected in DNA genomics data while analyzing MMEJ signatures at breakpoints. Use when user asks to extract and merge fusion calls, calculate fusion allelic frequency, or analyze microhomology-mediated end joining signatures.
 homepage: https://github.com/guillaume-gricourt/HmnFusion
 ---
+
 
 # hmnfusion
 

@@ -3,26 +3,29 @@
 ## duphist
 
 ### Tool Description
-A tool for generating duplicate histograms. (Note: The provided input text contains system error messages regarding a container runtime failure and does not include the actual help documentation for the tool.)
+Create DIRECTORY
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/duphist:1.0.9--hdfd78af_0
+- **Docker Image**: quay.io/biocontainers/duphist:1.1.0--hdfd78af_1
 - **Homepage**: https://github.com/minjeongjj/DupHIST
 - **Package**: https://anaconda.org/channels/bioconda/packages/duphist/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/duphist/overview
 - **Total Downloads**: 2.1K
-- **Last updated**: 2026-02-19
+- **Last updated**: 2026-02-23
 - **GitHub**: https://github.com/minjeongjj/DupHIST
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/duphist:1.0.9--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4065528434: no space left on device
+BusyBox v1.36.1 (2024-06-02 11:42:27 UTC) multi-call binary.
+
+Usage: mkdir [-m MODE] [-p] DIRECTORY...
+
+Create DIRECTORY
+
+	-m MODE	Mode
+	-p	No error if exists; make parent directories as needed
+Illegal division by zero at /usr/local/bin/scripts/main_pipeline_ver_perl.pl line 105.
 ```
 
-
-## Metadata
-- **Skill**: generated

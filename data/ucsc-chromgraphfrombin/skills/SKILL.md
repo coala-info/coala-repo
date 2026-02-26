@@ -1,8 +1,9 @@
 ---
 name: ucsc-chromgraphfrombin
-description: The `ucsc-chromgraphfrombin` utility is a specialized tool within the UCSC Kent command-line suite used to decode binary chromGraph files.
+description: `ucsc-chromgraphfrombin` converts binary chromGraph files into an ASCII text representation. Use when user asks to decode binary chromGraph files, convert binary chromGraph to text, inspect binary track data, or debug genomic visualization issues.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chromgraphfrombin
 

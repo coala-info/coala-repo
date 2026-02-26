@@ -1,8 +1,9 @@
 ---
 name: bioconductor-keggorthology
-description: the package is available on all platforms; click for details.
+description: This tool provides a representation of the KEGG Orthology hierarchy as a graph object in R for biological pathway exploration. Use when user asks to navigate pathway relationships, retrieve KEGG tags by keyword, or map pathways to gene and probe identifiers for filtering expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/keggorthology.html
 ---
+
 
 # bioconductor-keggorthology
 

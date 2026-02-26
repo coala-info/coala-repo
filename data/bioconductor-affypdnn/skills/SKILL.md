@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affypdnn
-description: The package contains functions to perform the PDNN method described by Li Zhang et al.
+description: This package implements the Position-Dependent Nearest Neighbor method to process Affymetrix GeneChip data using physical models of hybridization. Use when user asks to calculate gene expression indices, perform PM correction using energy parameters, or apply the PDNN model to AffyBatch objects.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/affypdnn.html
 ---
+
 
 # bioconductor-affypdnn
 

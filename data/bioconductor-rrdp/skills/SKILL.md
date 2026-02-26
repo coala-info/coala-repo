@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rrdp
-description: the package is available on all platforms; click for details.
+description: This package provides an interface to the Ribosomal Database Project Classifier for taxonomic classification of DNA sequences. Use when user asks to classify ribosomal RNA sequences, perform taxonomic assignment, or run the RDP Classifier within R.
 homepage: https://bioconductor.org/packages/release/bioc/html/rRDP.html
 ---
+
 
 # bioconductor-rrdp
 

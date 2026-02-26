@@ -1,8 +1,9 @@
 ---
 name: perl-xml-sax-writer
-description: The `perl-xml-sax-writer` tool provides a SAX2-compliant XML writer for the Perl programming language.
+description: This tool provides a SAX2-compliant XML writer for Perl that translates SAX events into well-formed XML. Use when user asks to generate XML from SAX events, stream large XML datasets, or serialize Perl SAX pipelines to files or strings.
 homepage: https://github.com/perigrin/xml-sax-writer
 ---
+
 
 # perl-xml-sax-writer
 

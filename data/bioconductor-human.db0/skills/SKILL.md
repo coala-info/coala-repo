@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite databases required by AnnotationDbi to build custom human-specific annotation packages. Use when user asks to build custom human annotation packages, use sqlForge to create ChipDb or OrgDb packages, or install the underlying data source for human genomic annotations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human.db0.html
 ---
+
 
 # bioconductor-human.db0
 

@@ -3,7 +3,7 @@
 ## brooklyn_plot
 
 ### Tool Description
-Brooklyn plot tool (No help text provided in input)
+Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/brooklyn_plot:0.0.4--pyhdfd78af_0
@@ -18,12 +18,26 @@ Brooklyn plot tool (No help text provided in input)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/8b4dd74b3e39569fee5161d58fd390e05c3d909adb36a88e15eb936a0f006453: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/brooklyn_plot:0.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2048811154: no space left on device
+usage: brooklyn_plot [options]
+
+Brooklyn (Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data)
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
+
+Options:
+  
+  -h5,   --h5ad               input file in .h5ad format (accepts .h5ad) 
+  -ba,   --biomart            the reference gene annotations (in .csv format) 
+  -od,   --outDir             the directory of the outputs (Default: brooklyn-date-hh-mm-ss) 
+  -of,   --outFile            the name of summarized brooklyn file as CSV file and a brooklyn plot in PDF (Default: brooklyn)
+  -ql,   --query              the list of genes to be queried upon (one gene per line and in .csv format)
+  -sl,   --subject            the list of genes to be compared with (one gene per line and in .csv format)
+  -cm,   --corMethod          the statistical approach for correlation measures (options: [pr, kt, bc] for pearsonr, kendalltau and bayesian correlation respectively. Default: pr) 
+  -cpu,  --threads            the number of processors to use for trimming, qc, and alignment (Default: 1)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

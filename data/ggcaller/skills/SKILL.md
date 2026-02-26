@@ -1,8 +1,9 @@
 ---
 name: ggcaller
-description: ggCaller is a specialized tool for bacterial genomics that combines graph-based gene calling with pangenome analysis.
+description: ggCaller performs graph-based gene calling and pangenome analysis for bacterial genomics by traversing population-level de Bruijn graphs. Use when user asks to call genes across multiple bacterial strains, perform pangenome clustering, or identify open reading frames using a graph-based approach.
 homepage: https://github.com/samhorsfield96/ggCaller
 ---
+
 
 # ggcaller
 

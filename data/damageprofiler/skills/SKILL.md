@@ -1,8 +1,9 @@
 ---
 name: damageprofiler
-description: DamageProfiler is a specialized tool for paleogenomics used to authenticate ancient DNA sequences.
+description: DamageProfiler quantifies and visualizes chemical degradation patterns in ancient DNA sequences to authenticate paleogenomic data. Use when user asks to calculate C-to-T substitution frequencies, generate damage plots, or validate the authenticity of ancient DNA samples.
 homepage: https://github.com/Integrative-Transcriptomics/dedup
 ---
+
 
 # damageprofiler
 

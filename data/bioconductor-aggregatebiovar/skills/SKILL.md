@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aggregatebiovar
-description: the package is available on all platforms; click for details.
+description: This tool performs pseudo-bulk aggregation of single-cell RNA sequencing data by summing gene counts across subjects and cell types. Use when user asks to aggregate SingleCellExperiment objects into SummarizedExperiment objects, perform pseudo-bulk analysis for multi-subject studies, or prepare single-cell data for differential expression analysis using bulk RNA-seq tools.
 homepage: https://bioconductor.org/packages/release/bioc/html/aggregateBioVar.html
 ---
+
 
 # bioconductor-aggregatebiovar
 

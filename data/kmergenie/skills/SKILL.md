@@ -1,8 +1,9 @@
 ---
 name: kmergenie
-description: KmerGenie is a tool that automates the selection of the best k-mer length for genome assembly.
+description: KmerGenie estimates the optimal k-mer length for genome assembly by analyzing k-mer abundance histograms across a range of values. Use when user asks to determine the best k-mer size, predict the number of distinct genomic k-mers, or generate k-mer frequency reports for sequencing data.
 homepage: http://kmergenie.bx.psu.edu
 ---
+
 
 # kmergenie
 

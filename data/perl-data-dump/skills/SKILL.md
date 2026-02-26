@@ -1,8 +1,9 @@
 ---
 name: perl-data-dump
-description: The `Data::Dump` suite provides a more readable and concise alternative to the standard `Data::Dumper` module.
+description: "This tool provides a readable and concise way to pretty-print Perl data structures as valid code. Use when user asks to pretty-print variables, debug complex data structures, or generate string representations of Perl memory objects."
 homepage: https://metacpan.org/pod/Data::Dump
 ---
+
 
 # perl-data-dump
 

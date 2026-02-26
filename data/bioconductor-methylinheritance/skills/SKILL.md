@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylinheritance
-description: the package is available on all platforms; click for details.
+description: This tool performs permutation analysis to evaluate the inheritance of DNA methylation patterns across multiple generations. Use when user asks to analyze multi-generational epigenetic inheritance, perform permutation tests on methylation data, or assess the significance of conserved differentially methylated elements.
 homepage: https://bioconductor.org/packages/release/bioc/html/methylInheritance.html
 ---
+
 
 # bioconductor-methylinheritance
 

@@ -1,8 +1,9 @@
 ---
 name: ngseqbasic
-description: The `ngseqbasic` tool simplifies the transition from raw sequencing reads to interpretable genomic tracks.
+description: This tool automates the standard bioinformatics workflow for processing raw sequencing reads into interpretable genomic tracks. Use when user asks to process ChIP, DNase, or ATAC data, align reads to a reference genome, filter duplicates, or generate normalized BigWig tracks.
 homepage: http://userweb.molbiol.ox.ac.uk/public/telenius/NGseqBasicManual/external/instructionsBioconda.html
 ---
+
 
 # ngseqbasic
 

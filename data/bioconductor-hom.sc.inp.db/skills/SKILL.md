@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.sc.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides orthology and paralogy mappings for Saccharomyces cerevisiae using Inparanoid data. Use when user asks to map yeast genes to orthologs in other species, perform reverse mappings from other organisms back to yeast, or access the underlying SQLite database for custom orthology queries.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Sc.inp.db.html
 ---
+
 
 # bioconductor-hom.sc.inp.db
 

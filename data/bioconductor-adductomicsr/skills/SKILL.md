@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adductomicsr
-description: the package is available on all platforms; click for details.
+description: bioconductor-adductomicsr provides a computational pipeline for the untargeted screening, identification, and quantification of protein adducts using LC-MS/MS data. Use when user asks to model retention time drift, identify adducts via spectral similarity, generate target tables, or quantify adduct peak areas in mass spectrometry datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/adductomicsR.html
 ---
+
 
 # bioconductor-adductomicsr
 

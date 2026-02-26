@@ -1,8 +1,9 @@
 ---
 name: piler-cr
-description: PILER-CR is a specialized tool designed for the rapid identification of CRISPR arrays.
+description: PILER-CR is a specialized tool designed for the rapid identification and mapping of CRISPR arrays in genomic sequences. Use when user asks to identify CRISPR repeats, find CRISPR arrays in bacterial or archaeal genomes, or analyze the structure of spacers and repeats.
 homepage: http://www.drive5.com/pilercr/
 ---
+
 
 # piler-cr
 

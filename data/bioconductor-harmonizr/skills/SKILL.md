@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harmonizr
-description: the package is available on all platforms; click for details.
+description: HarmonizR performs batch effect correction on biological datasets containing missing values using ComBat or limma algorithms. Use when user asks to harmonize datasets from different batches, correct batch effects in proteomics or genomics data with NAs, or apply batch adjustment to data without prior imputation.
 homepage: https://bioconductor.org/packages/release/bioc/html/HarmonizR.html
 ---
+
 
 # bioconductor-harmonizr
 

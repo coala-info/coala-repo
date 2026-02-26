@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsseq
-description: the package is available on all platforms; click for details.
+description: This tool analyzes whole-genome bisulfite sequencing data using the BSmooth algorithm to estimate methylation profiles. Use when user asks to create BSseq objects, perform smoothing, compute t-statistics, identify differentially methylated regions, or visualize methylation data.
 homepage: https://bioconductor.org/packages/release/bioc/html/bsseq.html
 ---
+
 
 # bioconductor-bsseq
 

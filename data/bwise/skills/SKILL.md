@@ -1,8 +1,9 @@
 ---
 name: bwise
-description: BWISE (de Bruijn assembly Workflow using Integral information of Short paired-End reads) is a specialized assembler designed to maximize the utility of paired-end information.
+description: BWISE is a de Bruijn graph assembler that integrates paired-end information into the graph construction and cleaning phases to improve assembly quality. Use when user asks to perform de novo assembly of short paired-end reads, interleave fastq files for assembly, or optimize k-mer and solidity thresholds for Illumina datasets.
 homepage: https://github.com/Malfoy/BWISE
 ---
+
 
 # bwise
 

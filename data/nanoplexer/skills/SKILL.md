@@ -1,8 +1,9 @@
 ---
 name: nanoplexer
-description: nanoplexer is a high-performance utility designed to sort Nanopore long-read data into distinct bins based on barcode identity.
+description: nanoplexer demultiplexes Nanopore long-read data by sorting sequences into bins based on barcode identity. Use when user asks to demultiplex FASTQ files, sort reads by barcode, or process dual-barcoded Nanopore data.
 homepage: https://github.com/hanyue36/nanoplexer
 ---
+
 
 # nanoplexer
 

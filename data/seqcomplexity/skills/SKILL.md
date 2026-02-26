@@ -1,8 +1,9 @@
 ---
 name: seqcomplexity
-description: The `seqcomplexity` skill provides a streamlined interface for analyzing the information density of nucleotide sequences.
+description: This tool analyzes the information density and sequence complexity of nucleotide sequences in FASTQ files. Use when user asks to calculate sequence diversity, generate per-read complexity metrics, or identify low-entropy reads for quality control.
 homepage: https://github.com/stevenweaver/seqcomplexity
 ---
+
 
 # seqcomplexity
 

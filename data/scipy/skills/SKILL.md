@@ -1,8 +1,9 @@
 ---
 name: scipy
-description: SciPy is the fundamental Python library for scientific computing, built to work seamlessly with NumPy arrays.
+description: "SciPy provides efficient numerical routines for scientific computing tasks including optimization, statistics, signal processing, and linear algebra. Use when user asks to perform numerical integration, solve differential equations, optimize functions, analyze signals, or manipulate sparse matrices."
 homepage: https://github.com/scipy/scipy
 ---
+
 
 # scipy
 

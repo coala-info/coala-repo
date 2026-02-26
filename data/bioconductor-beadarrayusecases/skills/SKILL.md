@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beadarrayusecases
-description: the package is available on all platforms; click for details.
+description: This package provides workflows and example datasets for the analysis of Illumina BeadArray gene expression data. Use when user asks to process raw bead-level data, perform spatial quality assessment, normalize summarized BeadStudio output, or conduct differential expression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/BeadArrayUseCases.html
 ---
+
 
 # bioconductor-beadarrayusecases
 

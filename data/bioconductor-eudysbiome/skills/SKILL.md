@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eudysbiome
-description: the package statistically measures the eubiotic (harmless genera increase or harmful genera decrease) or dysbiotic(harmless genera decrease or harmful genera increase) impact of a given treatment or environmental change on the (gut-intestinal, GI) microbiome in comparison to the microbiome of the reference condition.
+description: This tool measures the eubiotic and dysbiotic impacts of microbiome taxonomic shifts between different conditions. Use when user asks to annotate microbes by pathogenic potential, visualize abundance variations on a Cartesian plane, or statistically test for significant eubiotic or dysbiotic changes in microbiome data.
 homepage: https://bioconductor.org/packages/release/bioc/html/eudysbiome.html
 ---
+
 
 # bioconductor-eudysbiome
 

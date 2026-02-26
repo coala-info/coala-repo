@@ -1,9 +1,9 @@
 # kmetashot CWL Generation Report
 
-## kmetashot
+## kmetashot_kMetaShot_test.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log indicating a failure to build a container image due to insufficient disk space.
+kMetaShot installation test
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1
@@ -12,52 +12,62 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
-- **Total Downloads**: 305
+- **Total Downloads**: 306
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/gdefazio/kMetaShot
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2108241413: no space left on device
+usage: kMetaShot_test.py [-h] -r REFERENCE
+
+kMetaShot installation test
+
+options:
+  -h, --help            show this help message and exit
+  -r, --reference REFERENCE
+                        Path to HDF5 file containing reference
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## kmetashot_kMetaShot_test.py
-
-### Tool Description
-The provided text contains system logs and error messages related to a container environment failure (no space left on device) rather than help documentation for the tool. No arguments or usage information could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1
-- **Homepage**: https://github.com/gdefazio/kMetaShot
-- **Package**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3388808803: no space left on device
-```
 
 ## kmetashot_kMetaShot_classifier_NV.py
 
 ### Tool Description
-kMetaShot classifier (Note: The provided text contains system log and error messages rather than tool help documentation; no arguments could be extracted.)
+kMetaShot is able to taxonomically classiy bins/MAGs and long reads by using an alignment free and k-mer/minimizer based approach.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1
 - **Homepage**: https://github.com/gdefazio/kMetaShot
 - **Package**: https://anaconda.org/channels/bioconda/packages/kmetashot/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kmetashot:2.0--pyh7e72e81_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2978335023: no space left on device
+################################################
+                           #        kMetaShot Classifier Algorithm        #
+                           #                  Version 2.0                 #
+                           #               Defazio G. et al.              #
+                           ################################################
+
+usage: kMetaShot_classifier_NV.py [-h] -b BINS_DIR -r REFERENCE [-a ASS2REF]
+                                  -p PROCESSES [-o OUT_DIR]
+
+kMetaShot is able to taxonomically classiy bins/MAGs and long reads by using
+an alignment free and k-mer/minimizer based approach.
+
+options:
+  -h, --help            show this help message and exit
+  -b, --bins_dir BINS_DIR
+                        Path to directory containing bins or path to multi-
+                        fasta file
+  -r, --reference REFERENCE
+                        Path to HDF5 file containing reference
+  -a, --ass2ref ASS2REF
+                        Classification filtering based on ass2ref parameter
+                        ranging between 0 and 1. Default 0.
+  -p, --processes PROCESSES
+                        Multiprocess parallelism. Warning: high parallelism
+                        <==> high RAM usage
+  -o, --out_dir OUT_DIR
+                        Output file path name
 ```
 

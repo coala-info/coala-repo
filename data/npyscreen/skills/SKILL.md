@@ -1,8 +1,9 @@
 ---
 name: npyscreen
-description: npyscreen is a high-level framework designed to simplify the creation of complex terminal-based applications.
+description: npyscreen is a high-level framework for building complex terminal-based user interfaces using an object-oriented approach. Use when user asks to create terminal applications, build interactive forms and widgets, or develop command-line data-entry tools.
 homepage: http://www.npcole.com/npyscreen/
 ---
+
 
 # npyscreen
 

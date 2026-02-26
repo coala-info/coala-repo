@@ -1,8 +1,9 @@
 ---
 name: dockq
-description: DockQ is a computational tool designed to provide a single continuous quality measure for docking models.
+description: DockQ calculates a continuous quality score to compare predicted protein docking models against a reference structure. Use when user asks to evaluate docking model quality, compare predicted structures to a native reference, or calculate DockQ scores for protein, peptide, or small molecule complexes.
 homepage: https://github.com/bjornwallner/DockQ
 ---
+
 
 # dockq
 

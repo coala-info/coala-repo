@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dama
-description: the package is available on all platforms; click for details.
+description: This package facilitates the design and statistical analysis of factorial two-colour microarray experiments. Use when user asks to evaluate experimental design efficiency, construct contrast matrices, or perform spot-wise t-tests and F-tests on microarray data.
 homepage: https://bioconductor.org/packages/release/bioc/html/daMA.html
 ---
+
 
 # bioconductor-dama
 

@@ -1,8 +1,9 @@
 ---
 name: lightstringgraph
-description: LightStringGraph (LSG) is a specialized toolset designed for large-scale genome assembly tasks where memory efficiency is critical.
+description: LightStringGraph is a memory-efficient toolset used to construct and simplify string graphs from large-scale sequencing data using external memory structures. Use when user asks to build string graphs, perform transitive reduction on overlap graphs, or convert genomic graphs to ASQG format.
 homepage: http://lsg.algolab.eu
 ---
+
 
 # lightstringgraph
 

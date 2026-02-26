@@ -1,8 +1,9 @@
 ---
 name: msisensor2
-description: MSIsensor2 is a machine learning-based algorithm designed for MSI detection in tumor-only sequencing workflows.
+description: "MSIsensor2 is a machine learning-based algorithm designed for microsatellite instability detection in tumor-only sequencing workflows. Use when user asks to detect MSI status in tumor-only samples, calculate MSI scores for liquid biopsies, or identify somatic microsatellite sites without a matched normal sample."
 homepage: https://github.com/niu-lab/msisensor2
 ---
+
 
 # msisensor2
 

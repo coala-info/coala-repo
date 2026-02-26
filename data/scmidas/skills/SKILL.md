@@ -1,8 +1,9 @@
 ---
 name: scmidas
-description: scmidas is a PyTorch-based implementation of the MIDAS algorithm, a deep generative model for the mosaic integration and knowledge transfer of single-cell multimodal data.
+description: scmidas is a deep generative model for the mosaic integration and imputation of single-cell multimodal data. Use when user asks to integrate fragmented single-cell datasets, perform cross-modality knowledge transfer, or impute missing data across RNA, ADT, and ATAC modalities.
 homepage: https://github.com/labomics/midas
 ---
+
 
 # scmidas
 

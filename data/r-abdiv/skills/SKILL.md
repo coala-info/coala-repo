@@ -1,8 +1,9 @@
 ---
 name: r-abdiv
-description: "A collection of measures for measuring ecological diversity.   Ecological diversity comes in two flavors: alpha diversity measures the   diversity within a single site or sample, and beta diversity measures the   diversity across two sites or samples. This package overlaps considerably   with other R packages such as 'vegan', 'gUniFrac', 'betapart', and 'fossil'.   We also include a wide range of functions that are implemented in software   outside the R ecosystem, such as 'scipy', 'Mothur', and 'scikit-bio'.  The   implementations here are designed to be basic and clear to the reader.</p>"
+description: This tool provides functions to calculate alpha, beta, and phylogenetic ecological diversity measures using the R package abdiv. Use when user asks to calculate richness, Shannon index, or Simpson index, compute Bray-Curtis or Jaccard dissimilarities, and perform phylogenetic diversity analysis like Faith's PD or UniFrac.
 homepage: https://cran.r-project.org/web/packages/abdiv/index.html
 ---
+
 
 # r-abdiv
 

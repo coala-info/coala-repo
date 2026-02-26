@@ -1,8 +1,9 @@
 ---
 name: newick_utils
-description: The `newick_utils` skill enables efficient command-line manipulation of phylogenetic data.
+description: Newick Utilities is a suite of command-line tools for processing, manipulating, and visualizing phylogenetic trees. Use when user asks to visualize trees in ASCII or SVG format, reroot trees, prune taxa, extract clades, or condense nodes based on support values.
 homepage: http://cegg.unige.ch/newick_utils
 ---
+
 
 # newick_utils
 

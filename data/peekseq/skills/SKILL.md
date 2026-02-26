@@ -1,8 +1,9 @@
 ---
 name: peekseq
-description: peekseq is a Perl-based tool that utilizes a k-mer approach to calculate the protein-coding potential of nucleotide sequences.
+description: peekseq uses a k-mer approach to calculate the protein-coding potential of nucleotide sequences and identify likely peptide-encoding regions. Use when user asks to predict coding regions in intronless sequences, evaluate the coding potential of bacterial or viral genomes, or translate nucleotide sequences into proteins using specific genetic code tables.
 homepage: https://github.com/bcgsc/peekseq
 ---
+
 
 # peekseq
 

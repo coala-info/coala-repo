@@ -1,8 +1,9 @@
 ---
 name: r-mclust
-description: "Gaussian finite mixture models fitted via EM algorithm for   model-based clustering, classification, and density estimation,    including Bayesian regularization, dimension reduction for    visualisation, and resampling-based inference.</p>"
+description: The r-mclust package performs Gaussian mixture modeling for automated clustering, classification, and density estimation. Use when user asks to perform model-based clustering, conduct discriminant analysis, estimate probability densities, or visualize high-dimensional clusters.
 homepage: https://cloud.r-project.org/web/packages/mclust/index.html
 ---
+
 
 # r-mclust
 

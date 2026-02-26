@@ -1,8 +1,9 @@
 ---
 name: modeltest-ng
-description: ModelTest-NG is a high-performance tool designed to identify the most appropriate model of sequence evolution for a given multiple sequence alignment (MSA).
+description: ModelTest-NG identifies the most appropriate model of sequence evolution for DNA or protein multiple sequence alignments. Use when user asks to select a substitution model, evaluate phylogenetic models using AIC or BIC, or determine the best-fit evolutionary parameters for a dataset.
 homepage: https://github.com/ddarriba/modeltest
 ---
+
 
 # modeltest-ng
 

@@ -1,8 +1,9 @@
 ---
 name: ariba
-description: ARIBA (Antimicrobial Resistance Identification By Assembly) is a bioinformatics pipeline that identifies antibiotic resistance genes by performing local assemblies of sequencing reads.
+description: ARIBA identifies antimicrobial resistance genes and performs multi-locus sequence typing by executing local assemblies of sequencing reads against reference databases. Use when user asks to identify antibiotic resistance genes, perform local assembly of sequencing reads, run MLST calling, or summarize resistance gene reports across multiple samples.
 homepage: https://github.com/sanger-pathogens/ariba
 ---
+
 
 # ariba
 

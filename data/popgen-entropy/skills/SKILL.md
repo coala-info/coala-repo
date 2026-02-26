@@ -1,8 +1,9 @@
 ---
 name: popgen-entropy
-description: The `entropy` program addresses the challenges of polyploid genetics by utilizing genotype likelihoods rather than hard-called genotypes.
+description: Popgen-entropy estimates ancestry coefficients and ancestral allele frequencies for polyploid populations using genotype likelihoods. Use when user asks to estimate ancestry coefficients, calculate ancestral allele frequencies, or analyze population structure in mixed-ploidy populations.
 homepage: https://bitbucket.org/buerklelab/mixedploidy-entropy/src/master/
 ---
+
 
 # popgen-entropy
 

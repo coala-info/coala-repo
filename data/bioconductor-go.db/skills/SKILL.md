@@ -1,8 +1,9 @@
 ---
 name: bioconductor-go.db
-description: the package is available on all platforms; click for details.
+description: This tool provides access to the Gene Ontology (GO) annotation database and its structural relationships. Use when user asks to retrieve GO term metadata, navigate the GO hierarchy, or map relationships between biological process, molecular function, and cellular component domains.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/GO.db.html
 ---
+
 
 # bioconductor-go.db
 

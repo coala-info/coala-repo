@@ -1,13 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fraposa-pgsc
-  - fraposa_plot
+baseCommand: fraposa_plot
 label: fraposa-pgsc_fraposa_plot
-doc: "The provided text does not contain help information for the tool. It contains
-  container runtime error logs (Apptainer/Singularity) indicating a failure to build
-  the SIF image due to lack of disk space.\n\nTool homepage: https://github.com/PGScatalog/fraposa_pgsc"
-inputs: []
+doc: "Plots the results of FRA-POSA.\n\nTool homepage: https://github.com/PGScatalog/fraposa_pgsc"
+inputs:
+  - id: ref_filepref
+    type: string
+    doc: Prefix of binary PLINK file for the reference data.
+    inputBinding:
+      position: 1
+  - id: stu_filepref
+    type: string
+    doc: Prefix of binary PLINK file for the study data.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

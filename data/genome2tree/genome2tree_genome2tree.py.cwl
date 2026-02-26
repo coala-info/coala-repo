@@ -1,10 +1,57 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: genome2tree_genome2tree.py
+baseCommand: genome2tree.py
 label: genome2tree_genome2tree.py
-doc: "A tool for genome-to-tree analysis (Note: The provided help text contains only
-  system error messages and no usage information).\n\nTool homepage: https://github.com/RicoLeiser/Genome2Tree"
-inputs: []
+doc: "Pipeline to create a supermatrix from FASTA files\n\nTool homepage: https://github.com/RicoLeiser/Genome2Tree"
+inputs:
+  - id: dna_input
+    type:
+      - 'null'
+      - boolean
+    doc: Input files are DNA (.fna); will be translated with Prodigal
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --dna
+  - id: force_rerun
+    type:
+      - 'null'
+      - boolean
+    doc: Force rerun of OrthoFinder even if results exist
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --force
+  - id: input_dir
+    type: Directory
+    doc: Directory containing input FASTA files (.faa or .fna)
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: output_dir
+    type: Directory
+    doc: Output directory for all results
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix for output supermatrix files
+    default: supermatrix
+    inputBinding:
+      position: 101
+      prefix: --prefix
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

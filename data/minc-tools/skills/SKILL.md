@@ -1,8 +1,9 @@
 ---
 name: minc-tools
-description: The MINC (Medical Image NetCDF) toolkit is a specialized suite for managing N-dimensional medical imaging data.
+description: The MINC toolkit provides a suite of command-line utilities for managing, processing, and performing mathematical operations on N-dimensional medical imaging data. Use when user asks to resample volumes, calculate voxel-wise statistics, convert between world and voxel coordinates, or manipulate MINC file headers and formats.
 homepage: https://github.com/BIC-MNI/minc
 ---
+
 
 # minc-tools
 

@@ -3,26 +3,32 @@
 ## gtfparse
 
 ### Tool Description
-A tool for parsing GTF (Gene Transfer Format) files into Pandas DataFrames or other structured formats.
+FAIL to generate CWL: gtfparse not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gtfparse:2.5.0--pyh7cba7a3_0
 - **Homepage**: https://github.com/openvax/gtfparse
 - **Package**: https://anaconda.org/channels/bioconda/packages/gtfparse/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gtfparse/overview
-- **Total Downloads**: 42.0K
+- **Total Downloads**: 42.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/openvax/gtfparse
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: gtfparse not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: gtfparse not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gtfparse:2.5.0--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3585041116: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

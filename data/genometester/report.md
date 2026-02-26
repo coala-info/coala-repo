@@ -1,9 +1,9 @@
 # genometester CWL Generation Report
 
-## genometester
+## genometester_gmer_counter
 
 ### Tool Description
-A suite of tools for genomic analysis. (Note: The provided help text contains only system error messages and does not list specific command-line arguments or descriptions.)
+Nothing to do!
 
 ### Metadata
 - **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
@@ -18,114 +18,127 @@ A suite of tools for genomic analysis. (Note: The provided help text contains on
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1006187869: no space left on device
+Nothing to do!
+Usage:
+  gmer_counter ARGUMENTS SEQUENCES...
+Arguments:
+    -db DATABASE     - SNP/KMER database file
+    -dbb DBBINARY    - binary database file
+    -w FILENAME      - write binary database to file
+    -32              - use 32-bit integeres for counts (default 16-bit)
+    --max_kmers NUM  - maximum number of kmers per node
+    --silent         - do not output kmer counts (useful if only compiling db or index is needed
+    --header         - print header row
+    --total          - print the total number of kmers per node
+    --unique         - print the number of nonzero kmers per node
+    --kmers          - print individual kmer counts (default if no other output)
+    --compile_index FILENAME - Add read index to database and write it to file
+    --distribution NUM  - print kmer distribution (up to given number)
+    --num_threads    - number of worker threads (default 24)
+    --prefetch       - prefetch memory mapped files (faster on high-memory systems)
+    -D               - increase debug level
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## genometester_gmer_counter
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system error messages related to a container runtime (Apptainer/Singularity) failing due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2077342998: no space left on device
-```
 
 ## genometester_glistcompare
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error logs regarding a container execution failure (no space left on device).
+Compares lists of genomic elements.
 
 ### Metadata
 - **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1608641626: no space left on device
+Usage: glistcompare INPUTLIST1 [INPUTLIST2...] METHOD [OPTIONS]
+Options:
+    -v, --version            - print version information and exit
+    -h, --help               - print this usage screen and exit
+    -u, --union              - union of input lists
+    -i, --intersection       - intersection of input lists
+    -d, --difference         - difference of input lists
+    -dd, --double_difference - double difference of input lists
+    -du, --diff_union        - subtract first list from the second and finds difference
+    -mm, --mismatch   NUMBER - specify number of mismatches (default 0, can be used with -diff and -ddiff)
+    -c, --cutoff NUMBER      - specify frequency cut-off (default 1)
+    -o, --outputname STRING  - specify output name (default "out")
+    -r, --rule STRING        - specify rule how final frequencies are calculated (default, add, subtract, min, max, first, second, 1, 2)
+                               NOTE: rules min, subtract, first and second can only be used with finding the intersection.
+    -ss, --subset METHOD SIZE - make subset with given method (rand, rand_unique)
+    --count_only             - output count of k-mers instead of k-mers themself
+    --disable_scouts         - disable list read-ahead in background thread
+    -D                       - increase debug level
 ```
+
 
 ## genometester_glistquery
 
 ### Tool Description
-A tool from the GenomeTester4 package for querying k-mer lists.
+Query a list file generated by glistmaker.
 
 ### Metadata
 - **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4141061081: no space left on device
+Error: No list file specified!
+Usage: glistquery <INPUTLIST> [OPTIONS]
+Options:
+    -v, --version             - print version information and exit
+    -h, --help                - print this usage screen and exit
+    -stat                     - print statistics of the list file and exit
+    -median                   - print min/max/median/average and exit
+    -distribution MAX         - print distribution up to MAX
+    -gc                       - print average GC content of all words
+    -q, --query               - single query word
+    -f, --queryfile           - list of query words in a file
+    -s, --seqfile             - FastA/FastQ file
+    -l, --listfile            - list file made by glistmaker
+    -mm, --mismatch NUMBER    - specify number of mismatches (default 0)
+    -p, --perfectmatch NUMBER - specify number of 3' perfect matches (default 0)
+    -min, --minfreq NUMBER    - minimum frequency of the printed words (default 0)
+    -max, --maxfreq NUMBER    - maximum frequency of the printed words (default MAX_UINT)
+    -all                      - in case of mismatches prints all found words
+    -D                        - increase debug level
 ```
 
-## genometester_gassembler
-
-### Tool Description
-A tool for genome assembly and k-mer analysis. (Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4038435518: no space left on device
-```
 
 ## genometester_gmer_caller
 
 ### Tool Description
-The provided help text contains only system error messages related to a container runtime failure (no space left on device) and does not contain usage information for the tool.
+No input file specified
 
 ### Metadata
 - **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
 - **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1554610734: no space left on device
-```
-
-## genometester_katk2vcf.pl
-
-### Tool Description
-A tool to convert KAT (K-mer Analysis Toolkit) k-mer counts or similar output to VCF format.
-
-### Metadata
-- **Docker Image**: biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1
-- **Homepage**: https://github.com/bioinfo-ut/GenomeTester4
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/genometester:v4.0git20180508.a9c14a6dfsg-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2128196504: no space left on device
+No input file specified
+Usage:
+  gmer_caller ARGUMENTS COUNTS_FILE
+Arguments:
+    --training_size NUM - Use NUM markers for training (default 100000)
+    --runs NUMBER       - Perfom NUMBER runs of model training (use 0 for no training)
+    --num_threads NUM   - Use NUM threads (min 1, max 32, default 16)
+    --header            - Print table header
+    --non_canonical     - Output non-canonical genotypes
+    --prob_cutoff       - probability cutoff for calling genotype (default 0)
+    --alternatives      - Print probabilities of all alternative genotypes
+    --info              - Print information about individual
+    --no_genotypes      - Print only summary information, not actual genotypes
+    --model TYPE        - Model type (full, diploid, haploid)
+    --params PARAMS     - Model parameters (error, p0, p1, p2, coverage, size, size2)
+    --coverage NUM      - Average coverage of reads
+    -D                  - increase debug level
+Cannot read (null)
 ```
 

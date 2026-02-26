@@ -1,8 +1,9 @@
 ---
 name: biocode
-description: The biocode library is a specialized collection of bioinformatics utility scripts and Python modules designed to simplify the handling of genomic data.
+description: Biocode is a collection of bioinformatics scripts and Python modules designed for genomic data manipulation, format conversion, and coordinate-based analysis. Use when user asks to generate sequence statistics, convert between genomic formats like GFF3 and GTF, filter FASTA files, or interact with biological entities via a Python API.
 homepage: http://github.com/jorvis/biocode
 ---
+
 
 # biocode
 

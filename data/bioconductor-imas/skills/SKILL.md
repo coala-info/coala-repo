@@ -1,8 +1,9 @@
 ---
 name: bioconductor-imas
-description: the package is available on all platforms; click for details.
+description: IMAS performs integrative analysis of multi-omics data to interpret alternative splicing by linking transcriptomic data with genomic variants. Use when user asks to detect differential alternative splicing events, identify splicing quantitative trait loci, or evaluate the functional impact of splicing variations.
 homepage: https://bioconductor.org/packages/release/bioc/html/IMAS.html
 ---
+
 
 # bioconductor-imas
 

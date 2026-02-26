@@ -1,8 +1,9 @@
 ---
 name: spyboat
-description: SpyBOAT (Spatial pyBOAT) is a framework designed to apply wavelet transform analysis to spatially extended oscillatory systems.
+description: SpyBOAT applies wavelet transform analysis to spatially extended oscillatory systems to quantify phase, period, amplitude, and power across image stacks. Use when user asks to analyze spatial oscillations in movies, generate wavelet-based phase or period maps, or quantify synchronization in 3D image data.
 homepage: https://github.com/tensionhead/SpyBOAT
 ---
+
 
 # spyboat
 

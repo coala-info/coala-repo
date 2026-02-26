@@ -1,8 +1,9 @@
 ---
 name: perl-compress-raw-zlib
-description: The `perl-compress-raw-zlib` skill provides procedural knowledge for interacting with the `Compress::Raw::Zlib` Perl module.
+description: This tool provides a low-level Perl interface to the zlib and zlib-ng libraries for manual management of compressed data streams. Use when user asks to compress or decompress raw data, handle gzip headers, or tune performance parameters for zlib-based data processing in Perl.
 homepage: http://metacpan.org/pod/Compress::Raw::Zlib
 ---
+
 
 # perl-compress-raw-zlib
 

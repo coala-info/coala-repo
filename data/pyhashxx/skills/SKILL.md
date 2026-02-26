@@ -1,8 +1,9 @@
 ---
 name: pyhashxx
-description: pyhashxx is a Python wrapper for the xxHash algorithm, designed to be faster than traditional algorithms like MD5 or SHA-1 while maintaining high collision resistance.
+description: pyhashxx provides a Python wrapper for the high-speed xxHash algorithm to perform fast, thread-safe data hashing. Use when user asks to hash bytes or nested tuples, compute digests for large data streams incrementally, or generate non-cryptographic hashes with custom seeds.
 homepage: https://github.com/ewencp/pyhashxx
 ---
+
 
 # pyhashxx
 

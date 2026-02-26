@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xlaevis.db
-description: the package is available on all platforms; click for details.
+description: This package provides genome-wide annotation data for the Xenopus laevis organism. Use when user asks to map gene identifiers, retrieve functional annotations, or access genomic metadata for Xenopus laevis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xlaevis.db.html
 ---
+
 
 # bioconductor-xlaevis.db
 

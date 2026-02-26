@@ -1,8 +1,9 @@
 ---
 name: bioconductor-acme
-description: the package is available on all platforms; click for details.
+description: ACME identifies regions of enrichment in high-density oligonucleotide tiling array data using a sliding window algorithm. Use when user asks to process tiling array data, calculate enrichment p-values, identify genomic regions of interest, or export results to SGR and bedGraph formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/ACME.html
 ---
+
 
 # bioconductor-acme
 

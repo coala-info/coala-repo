@@ -1,8 +1,9 @@
 ---
 name: odgi
-description: odgi (Optimized Dynamic Genome/Graph Implementation) is a high-performance toolkit for pangenomics.
+description: "odgi is a high-performance toolkit for transforming, analyzing, and visualizing pangenome graphs in optimized binary formats. Use when user asks to build graphs from GFA files, generate pangenome visualizations, compute graph statistics, or extract path-based genomic data."
 homepage: https://github.com/vgteam/odgi
 ---
+
 
 # odgi
 

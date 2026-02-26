@@ -1,9 +1,9 @@
 # metagraph CWL Generation Report
 
-## metagraph
+## metagraph_files
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error logs related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
+metagraph is a tool for working with sequence graphs.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metagraph:0.5.0--haea4672_0
@@ -12,52 +12,136 @@ The provided text does not contain help information for the tool. It contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metagraph/overview
-- **Total Downloads**: 23.7K
+- **Total Downloads**: 23.8K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/ratschlab/metagraph
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metagraph:0.5.0--haea4672_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2569125585: no space left on device
+Usage: metagraph <command> [command specific options]
+
+Available commands:
+	build		construct a graph object from input sequence
+			files in fast[a|q] formats into a given graph
+
+	clean		clean an existing graph and extract sequences from it
+			in fast[a|q] formats
+
+	transform	given a graph, transform it to other formats
+
+	align		align sequences provided in fast[a|q] files to graph
+
+	annotate	given a graph and a fast[a|q] file, annotate
+			the respective kmers
+
+	relax_brwt	optimize the tree structure in brwt annotator
+
+	transform_anno	change representation of the graph annotation
+
+	assemble	given a graph, extract sequences from it
+
+	query		annotate sequences from fast[a|q] files
+
+	server_query	annotate received sequences and send annotations back
+
+	stats		print graph statistics for given graph(s) or annotation
+
+General options:
+	--advanced 	show other advanced and legacy options [off]
+	--version 	print version
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## metagraph_metagraph_DNA5
+## metagraph_in
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain CLI help information or argument definitions.
+metagraph is a tool for working with graphs constructed from sequence data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metagraph:0.5.0--haea4672_0
 - **Homepage**: https://github.com/ratschlab/metagraph
 - **Package**: https://anaconda.org/channels/bioconda/packages/metagraph/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metagraph:0.5.0--haea4672_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1463548501: no space left on device
+Usage: metagraph <command> [command specific options]
+
+Available commands:
+	build		construct a graph object from input sequence
+			files in fast[a|q] formats into a given graph
+
+	clean		clean an existing graph and extract sequences from it
+			in fast[a|q] formats
+
+	transform	given a graph, transform it to other formats
+
+	align		align sequences provided in fast[a|q] files to graph
+
+	annotate	given a graph and a fast[a|q] file, annotate
+			the respective kmers
+
+	relax_brwt	optimize the tree structure in brwt annotator
+
+	transform_anno	change representation of the graph annotation
+
+	assemble	given a graph, extract sequences from it
+
+	query		annotate sequences from fast[a|q] files
+
+	server_query	annotate received sequences and send annotations back
+
+	stats		print graph statistics for given graph(s) or annotation
+
+General options:
+	--advanced 	show other advanced and legacy options [off]
+	--version 	print version
 ```
 
-## metagraph_metagraph_Protein
+
+## metagraph_the
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container due to insufficient disk space, rather than the help text for the tool itself.
+metagraph is a tool for constructing, manipulating, and querying sequence graphs.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metagraph:0.5.0--haea4672_0
 - **Homepage**: https://github.com/ratschlab/metagraph
 - **Package**: https://anaconda.org/channels/bioconda/packages/metagraph/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metagraph:0.5.0--haea4672_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3848016949: no space left on device
+Usage: metagraph <command> [command specific options]
+
+Available commands:
+	build		construct a graph object from input sequence
+			files in fast[a|q] formats into a given graph
+
+	clean		clean an existing graph and extract sequences from it
+			in fast[a|q] formats
+
+	transform	given a graph, transform it to other formats
+
+	align		align sequences provided in fast[a|q] files to graph
+
+	annotate	given a graph and a fast[a|q] file, annotate
+			the respective kmers
+
+	relax_brwt	optimize the tree structure in brwt annotator
+
+	transform_anno	change representation of the graph annotation
+
+	assemble	given a graph, extract sequences from it
+
+	query		annotate sequences from fast[a|q] files
+
+	server_query	annotate received sequences and send annotations back
+
+	stats		print graph statistics for given graph(s) or annotation
+
+General options:
+	--advanced 	show other advanced and legacy options [off]
+	--version 	print version
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylationepicanno.ilm10b4.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina Human Methylation EPIC microarray based on the B4 manifest and hg19 genome build. Use when user asks to map CpG probes to genomic locations, identify associated genes or CpG islands, and check for SNP overlaps in EPIC array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICanno.ilm10b4.hg19.html
 ---
+
 
 # bioconductor-illuminahumanmethylationepicanno.ilm10b4.hg19
 

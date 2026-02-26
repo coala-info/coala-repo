@@ -2,16 +2,113 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ccne-fast
 label: ccne_ccne-fast
-doc: "The provided text does not contain help information for the tool, but appears
-  to be an error log from a container runtime (Apptainer/Singularity) indicating a
-  failure to build or extract the image due to lack of disk space.\n\nTool homepage:
+doc: "Carbapenemase-encoding gene copy number estimator (fast screener)\n\nTool homepage:
   https://github.com/biojiang/ccne"
-inputs: []
+inputs:
+  - id: amr
+    type: string
+    doc: AMR gene name, such as KPC-2, NDM-1, etc or AMR ID. Please refer to 
+      --listdb
+    inputBinding:
+      position: 101
+      prefix: --amr
+  - id: cpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs to use
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --cpus
+  - id: dbdir
+    type:
+      - 'null'
+      - Directory
+    doc: CCNE database root folders
+    default: /usr/local/db
+    inputBinding:
+      position: 101
+      prefix: --dbdir
+  - id: flank
+    type:
+      - 'null'
+      - int
+    doc: The flanking length of sequence to be excluded
+    default: 0
+    inputBinding:
+      position: 101
+      prefix: --flank
+  - id: fmtdb
+    type:
+      - 'null'
+      - boolean
+    doc: Format all the bwa index
+    inputBinding:
+      position: 101
+      prefix: --fmtdb
+  - id: in
+    type: File
+    doc: Input file name
+    inputBinding:
+      position: 101
+      prefix: --in
+  - id: listdb
+    type:
+      - 'null'
+      - boolean
+    doc: List all configured AMRs
+    inputBinding:
+      position: 101
+      prefix: --listdb
+  - id: listsp
+    type:
+      - 'null'
+      - boolean
+    doc: List all configured species and housekeeping genes
+    inputBinding:
+      position: 101
+      prefix: --listsp
+  - id: multiref
+    type:
+      - 'null'
+      - boolean
+    doc: Use the reads depth of all the available sequences
+    inputBinding:
+      position: 101
+      prefix: --multiref
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: No screen output
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: ref
+    type:
+      - 'null'
+      - string
+    doc: 'Reference gene defalut(Kp:rpoB Ab:rpoB Ec:polB Pa:ppsA), please refer to
+      --listsp.Note: When --sp is set to Pls, this parameter should be set to replicon
+      type.'
+    default: Kp:rpoB Ab:rpoB Ec:polB Pa:ppsA
+    inputBinding:
+      position: 101
+      prefix: --ref
+  - id: sp
+    type: string
+    doc: Species name[Kp|Ec|Ab|Pa|Pls]
+    inputBinding:
+      position: 101
+      prefix: --sp
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out
+    type: File
+    doc: Output file name
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ccne:1.1.2--hdfd78af_0
-stdout: ccne_ccne-fast.out

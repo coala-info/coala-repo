@@ -1,9 +1,9 @@
 # bio-ting CWL Generation Report
 
-## bio-ting
+## bio-ting_ting
 
 ### Tool Description
-The provided text does not contain help information or a description for the tool; it is a log of a failed container build process.
+TCR analysis tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bio-ting:1.1.0--py_0
@@ -18,37 +18,35 @@ The provided text does not contain help information or a description for the too
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 06:24:23  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bio-ting:1.1.0--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9cf7ada9fa21fd7b11c380426a6cdc42ee6ca0c8070e8d2bbd7995edcdd5087e: unpack entry: usr/local/bin/python3.8: unpack to regular file: short write: write /scratch/21813747/build-temp-2692354149/rootfs/usr/local/bin/python3.8: no space left on device
-```
+usage: ting [-h] -t TCR_SEQUENCES -r REFERENCE -k KMER_FILE -o OUTPUT [-b]
+            [-ng] [-nl] [-p MAX_P_VALUE] [--gliph_minp GLIPH_MINP] [-f] [-g]
 
-
-## Metadata
-- **Skill**: generated
-
-## bio-ting_ting
-
-### Tool Description
-Taxonomic Identification of Next-generation sequencing data (Note: The provided text is an error log and does not contain usage instructions or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bio-ting:1.1.0--py_0
-- **Homepage**: https://github.com/FelixMoelder/ting
-- **Package**: https://anaconda.org/channels/bioconda/packages/bio-ting/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 06:25:17  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bio-ting:1.1.0--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9cf7ada9fa21fd7b11c380426a6cdc42ee6ca0c8070e8d2bbd7995edcdd5087e: unpack entry: usr/local/bin/python3.8: unpack to regular file: short write: write /scratch/21813747/build-temp-2712279544/rootfs/usr/local/bin/python3.8: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TCR_SEQUENCES, --tcr_sequences TCR_SEQUENCES
+                        File holding TCRs
+  -r REFERENCE, --reference REFERENCE
+                        Reference fasta file of naive CDR3 amino acid
+                        sequences used for estimation of significant k-mers.
+  -k KMER_FILE, --kmer_file KMER_FILE
+                        tab separated file holding kmers in first row
+  -o OUTPUT, --output OUTPUT
+                        path of output-file
+  -b, --use_structural_boundaries
+                        First and last three amino acids are included in
+                        processing
+  -ng, --no_global      If set global clustering is excluded
+  -nl, --no_local       If set local clustering is excluded
+  -p MAX_P_VALUE, --max_p_value MAX_P_VALUE
+                        p-value threshold for identifying significant k-mers
+                        by fisher exact test
+  --gliph_minp GLIPH_MINP
+                        probability threshold for identifying significant
+                        k-mers by gliph test
+  -f, --stringent_filtering
+                        If used only TCRs starting with a cystein and ending
+                        with phenylalanine will be used
+  -g, --kmers_gliph     If set kmers are identified by the non-deterministic
+                        approach as implemented by gliph
 ```
 

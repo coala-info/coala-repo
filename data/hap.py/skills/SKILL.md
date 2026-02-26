@@ -1,8 +1,9 @@
 ---
 name: hap.py
-description: The `hap.py` suite provides specialized tools for comparing VCF files by resolving representational differences through graph-based haplotype matching.
+description: hap.py compares VCF files by resolving representational differences through graph-based haplotype matching to benchmark variant calling performance. Use when user asks to evaluate variant caller accuracy against a truth set, compare diploid or somatic callsets, or normalize and atomize variants for consistent counting.
 homepage: https://github.com/Illumina/hap.py
 ---
+
 
 # hap.py
 

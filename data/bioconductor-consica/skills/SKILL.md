@@ -1,8 +1,9 @@
 ---
 name: bioconductor-consica
-description: the package ensures efficient analysis of modern multicore systems.
+description: This tool performs consensus Independent Component Analysis to identify stable features in high-dimensional biological datasets. Use when user asks to run consensus ICA, extract robust independent components, or analyze transcriptomic data using multicore systems.
 homepage: https://bioconductor.org/packages/release/bioc/html/consICA.html
 ---
+
 
 # bioconductor-consica
 

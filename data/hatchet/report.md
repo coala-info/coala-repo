@@ -25,4 +25,40 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/hatchet:2.1.2--py310h18
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## hatchet
+
+### Tool Description
+HATCHet v2.1.0
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hatchet:2.1.2--py310h184ae93_0
+- **Homepage**: https://github.com/raphael-group/hatchet
+- **Package**: https://anaconda.org/channels/bioconda/packages/hatchet/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+HATCHet v2.1.0
+Usage: hatchet <command> <arguments ..>
+
+The following commands are supported:
+ count-reads
+ count-reads-fw
+ genotype-snps
+ count-alleles
+ combine-counts
+ combine-counts-fw
+ cluster-bins
+ plot-bins
+ compute-cn
+ plot-cn
+ run
+ check
+ download-panel
+ phase-snps
+ cluster-bins-gmm
+ plot-cn-1d2d
+ plot-bins-1d2d
+```
+

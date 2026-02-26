@@ -1,8 +1,9 @@
 ---
 name: bioconductor-apcomplex
-description: the package is available on all platforms; click for details.
+description: This tool estimates protein complex membership from affinity-purification/mass-spectrometry data using a statistical framework. Use when user asks to identify protein complexes from AP-MS data, estimate complex membership using bait-hit matrices, or generate bipartite protein-complex membership graphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/apComplex.html
 ---
+
 
 # bioconductor-apcomplex
 

@@ -1,8 +1,9 @@
 ---
 name: variantbam
-description: `variantbam` is a specialized tool for high-performance filtering of next-generation sequencing data.
+description: variantbam filters next-generation sequencing data based on complex, region-specific rules to extract relevant reads and reduce file sizes. Use when user asks to filter sequencing data, extract reads from specific genomic regions, identify reads supporting structural variants, remove reads from blacklisted regions, subsample sequencing coverage, or apply complex filtering rules to different genomic regions.
 homepage: https://github.com/jwalabroad/VariantBam
 ---
+
 
 # variantbam
 

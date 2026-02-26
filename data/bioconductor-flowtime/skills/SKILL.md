@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowtime
-description: the package is available on all platforms; click for details.
+description: The flowTime package analyzes flow cytometry data from budding yeast by providing tools for automated gating, metadata annotation, and fluorescence summarization. Use when user asks to annotate flowSet objects with metadata, implement automated gating for yeast cells and singlets, or calculate summary statistics for time-course and steady-state experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowTime.html
 ---
+
 
 # bioconductor-flowtime
 

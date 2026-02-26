@@ -1,8 +1,9 @@
 ---
 name: scib
-description: `scib` (Single-cell Integration Benchmarking) is a specialized toolkit for assessing the performance of data integration methods in single-cell genomics.
+description: "scib benchmarks single-cell data integration methods by evaluating batch effect removal and biological conservation. Use when user asks to assess integration performance, calculate batch correction metrics, evaluate biological conservation, or run integration algorithm wrappers."
 homepage: https://github.com/theislab/scib
 ---
+
 
 # scib
 

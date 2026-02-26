@@ -1,8 +1,9 @@
 ---
 name: parsinsert
-description: ParsInsert is a C++ tool designed for the efficient placement of microbial sequences into established phylogenetic frameworks.
+description: ParsInsert places microbial sequences into established phylogenetic frameworks to provide taxonomic assignments and updated tree structures. Use when user asks to insert sequences into a reference tree, classify microbial reads, or perform parsimonious phylogenetic placement.
 homepage: https://github.com/dark2dark/parsinsert
 ---
+
 
 # parsinsert
 

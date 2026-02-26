@@ -1,8 +1,9 @@
 ---
 name: svaba
-description: SvABA is a specialized bioinformatic tool that detects structural variants and indels by performing local assembly across the genome.
+description: SvABA detects structural variants and indels by performing local assembly across the genome using a string graph assembler. Use when user asks to identify somatic or germline structural variants, detect complex genomic rearrangements, or perform targeted local assembly from BAM files.
 homepage: https://github.com/walaj/svaba
 ---
+
 
 # svaba
 

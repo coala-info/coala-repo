@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ibbig
-description: the package is available on all platforms; click for details.
+description: iBBiG is a bi-clustering algorithm optimized for identifying overlapping modules within sparse binary datasets. Use when user asks to perform bi-clustering on binary matrices, identify overlapping gene sets in meta-analyses, or visualize and validate discovered clusters using Jaccard Index distances.
 homepage: https://bioconductor.org/packages/release/bioc/html/iBBiG.html
 ---
+
 
 # bioconductor-ibbig
 

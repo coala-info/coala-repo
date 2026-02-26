@@ -1,8 +1,9 @@
 ---
 name: perl-list-someutils
-description: This skill assists in utilizing the `List::SomeUtils` Perl module, which serves as a comprehensive bridge for list processing tasks not covered by the standard library.
+description: This Perl module provides a comprehensive set of list processing utilities for functional programming tasks. Use when user asks to test list conditions with junctions, count elements matching a predicate, extract unique values, or partition and transform data sets.
 homepage: http://metacpan.org/release/List-SomeUtils
 ---
+
 
 # perl-list-someutils
 

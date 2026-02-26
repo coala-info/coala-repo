@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmapsnp6
-description: the package is available on all platforms; click for details.
+description: This package provides sample Affymetrix SNP 6.0 HapMap data for testing and demonstrating Bioconductor SNP analysis tools. Use when user asks to access example CEL files, load pre-computed genotyping results, or benchmark SNP 6.0 array workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmapsnp6.html
 ---
+
 
 # bioconductor-hapmapsnp6
 

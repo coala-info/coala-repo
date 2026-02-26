@@ -3,7 +3,7 @@
 ## aligncov
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It consists of system logs and a fatal error message indicating a failure to build or extract the container image due to insufficient disk space ('no space left on device').
+Parse a sorted BAM file to generate two tables: a table of alignment summary statistics ('_stats.tsv'), including fold-coverages (fold_cov) and proportions of target lengths covered by mapped reads (prop_cov), and a table of read depths ('_depth.tsv') for each bp position of each target.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/aligncov:0.0.2--pyh7cba7a3_0
@@ -15,17 +15,27 @@ The provided text does not contain help information or usage instructions. It co
 - **Total Downloads**: 1.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/pcrxn/aligncov
-- **Stars**: 0
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/aligncov:0.0.2--pyh7cba7a3_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:642efca944a099a40fb3c07af9503df633650ab4299bba89f04e2106bfe2d85e: unpack entry: lib/x86_64-linux-gnu/libm-2.28.so: unpack to regular file: short write: write /tmp/build-temp-1847044175/rootfs/lib/x86_64-linux-gnu/libm-2.28.so: no space left on device
+usage: aligncov [-h] -i INPUT [-o OUTPUT]
+
+Parse a sorted BAM file to generate two tables: a table of alignment summary
+statistics ('_stats.tsv'), including fold-coverages (fold_cov) and proportions
+of target lengths covered by mapped reads (prop_cov), and a table of read
+depths ('_depth.tsv') for each bp position of each target.
+
+options:
+  -h, --help            show this help message and exit
+
+Required:
+  -i INPUT, --input INPUT
+                        Path to sorted BAM file to process.
+
+Optional:
+  -o OUTPUT, --output OUTPUT
+                        Path and base name of files to save as tab-separated
+                        tables ('[output]_stats.tsv', '[output]_depth.tsv').
+                        Default: 'sample'
 ```
 
-
-## Metadata
-- **Skill**: generated

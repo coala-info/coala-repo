@@ -3,26 +3,32 @@
 ## galaxy-rna-seq-training
 
 ### Tool Description
-A tool for RNA-seq training, specifically focused on sRNA-seq tutorials as indicated by the container image metadata.
+FAIL to generate CWL: galaxy-rna-seq-training not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/galaxy-rna-seq-training:sRNA-seq-tutorial
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-rna-seq-training/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: galaxy-rna-seq-training not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: galaxy-rna-seq-training not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/galaxy-rna-seq-training:sRNA-seq-tutorial uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2101571812: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sevenbridges
-description: the package is available on all platforms; click for details.
+description: The bioconductor-sevenbridges package provides an R interface to interact with the Seven Bridges API for cloud-based bioinformatics analysis. Use when user asks to manage projects, upload data, run workflows, or monitor tasks on the Seven Bridges platform.
 homepage: https://bioconductor.org/packages/release/bioc/html/sevenbridges.html
 ---
+
 
 # bioconductor-sevenbridges
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedrestricttopositions
-description: `bedRestrictToPositions` is a specialized filtering utility from the UCSC Genome Browser "kent" toolset.
+description: This tool filters a BED file to retain only records that exactly match genomic intervals specified in a restriction BED file. Use when user asks to filter a BED file by exact genomic coordinates, extract specific features based on precise locations, or retrieve full feature information for known exact coordinates.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedrestricttopositions
 

@@ -1,8 +1,9 @@
 ---
 name: rbpbench
-description: rbpbench is a comprehensive toolkit designed to evaluate genomic regions—typically CLIP-seq peaks—by identifying and analyzing RBP binding motifs.
+description: rbpbench is a comprehensive toolkit designed to evaluate genomic regions by identifying and analyzing RNA-binding protein motifs. Use when user asks to search for RBP binding motifs, analyze CLIP-seq peaks, calculate motif enrichment statistics, or generate interactive genomic annotation reports.
 homepage: https://github.com/michauhl/RBPBench
 ---
+
 
 # rbpbench
 

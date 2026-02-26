@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cbnplot
-description: the package is available on all platforms; click for details.
+description: CBNplot infers and visualizes Bayesian networks for genes or pathways by integrating expression data with enrichment analysis results. Use when user asks to infer gene-level networks within a pathway, visualize relationships between multiple enriched pathways, or perform network inference based on clusterProfiler results.
 homepage: https://bioconductor.org/packages/release/bioc/html/CBNplot.html
 ---
+
 
 # bioconductor-cbnplot
 

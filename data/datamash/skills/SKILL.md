@@ -1,8 +1,9 @@
 ---
 name: datamash
-description: GNU Datamash is a command-line utility designed to perform basic numeric, textual, and statistical operations on input text files.
+description: GNU Datamash is a command-line utility that performs numeric, textual, and statistical operations such as grouping, aggregating, and summarizing data from text files. Use when user asks to perform group-by operations, calculate summary statistics on columns, transpose matrices, create pivot tables, or remove duplicate entries in datasets.
 homepage: https://github.com/agordon/datamash
 ---
+
 
 # datamash
 

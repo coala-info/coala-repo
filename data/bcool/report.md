@@ -3,10 +3,10 @@
 ## bcool
 
 ### Tool Description
-A tool for short read correction using de Bruijn graphs. (Note: The provided text contains only system error logs and no help documentation; arguments could not be extracted from the input.)
+De Bruijn graph based read corrector
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bcool:1.0.0--hdfd78af_2
+- **Docker Image**: quay.io/biocontainers/bcool:1.0.0--py35_0
 - **Homepage**: https://github.com/Malfoy/BCOOL
 - **Package**: https://anaconda.org/channels/bioconda/packages/bcool/overview
 - **Validation**: PASS
@@ -15,38 +15,35 @@ A tool for short read correction using de Bruijn graphs. (Note: The provided tex
 - **Total Downloads**: 6.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Malfoy/BCOOL
-- **Stars**: 11
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcool:1.0.0--hdfd78af_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:54e49be8f0362fd29fecdc90adca558da4281e90939b4d47508157077d4ee75f: unpack entry: usr/local/bin/bcalm: unpack to regular file: short write: write /scratch/21813747/build-temp-2890368850/rootfs/usr/local/bin/bcalm: no space left on device
-```
+*** This is Bcool - de Bruin graph based corrector  ***
 
+The command line was: /usr/local/bin/bcool
+[Warning] / directory already exists, BCOOL will use it.
+Results will be stored in:  //
+usage: bcool [-h] [-u SINGLE_READFILES] [-o OUT_DIR] [-t NB_CORES] [-k KSIZE]
+             [-s MIN_COV] [-S UNITIG_COVERAGE] [-m MISSMATCH_ALLOWED]
+             [-i SUBSAMBLE_ANCHOR] [-n MAXIMUM_OCCURENCE] [-d DEBUG]
 
-## Metadata
-- **Skill**: generated
+BCOOL - De Bruijn graph based read corrector 
 
-## bcool_Bcool.py
-
-### Tool Description
-Bcool is a tool for short read correction (based on the provided tool name hint and container metadata). Note: The provided text appears to be a system error log rather than help text, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bcool:1.0.0--hdfd78af_2
-- **Homepage**: https://github.com/Malfoy/BCOOL
-- **Package**: https://anaconda.org/channels/bioconda/packages/bcool/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcool:1.0.0--hdfd78af_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:54e49be8f0362fd29fecdc90adca558da4281e90939b4d47508157077d4ee75f: unpack entry: usr/local/bin/bcalm: unpack to regular file: short write: write /scratch/21813747/build-temp-1341438183/rootfs/usr/local/bin/bcalm: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -u SINGLE_READFILES   (MANDATORY) input fasta read files. Several read files must be concatenated
+  -o OUT_DIR            Path to store the results (Default = current directory)
+  -t NB_CORES           Number of cores used (Default = 1)
+                         
+  -k KSIZE              k-mer size (Default = AUTO)
+  -s MIN_COV            k-mers present strictly less than this number of times in the dataset will be discarded (Default = 2)
+  -S UNITIG_COVERAGE    Unitig Coverage for cleaning (Default = AUTO)
+                         
+  -m MISSMATCH_ALLOWED  (ADVANCED) Maximum number of corrected bases (Default = 10)
+  -i SUBSAMBLE_ANCHOR   (ADVANCED) index one out of i anchors to reduce memory consumption (Default = 1)
+  -n MAXIMUM_OCCURENCE  (ADVANCED) Maximum occurence of an anchor (Default = 1), better correction for repetitive genome but slower
+  -d DEBUG              (ADVANCED) Print command lines
+                         
+Bcool need a need file to correct...
 ```
 

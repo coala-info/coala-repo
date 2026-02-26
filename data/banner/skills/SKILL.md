@@ -1,8 +1,9 @@
 ---
 name: banner
-description: BANNER is a machine learning tool designed to interpret HULK (Histosketching Using Little K-mers) sketches.
+description: BANNER is a machine learning tool that classifies microbiome samples by interpreting HULK sketches using Random Forest models. Use when user asks to train a classifier on labeled sketches or predict labels for microbiome samples in real-time.
 homepage: https://www.github.com/will-rowe/banner
 ---
+
 
 # banner
 

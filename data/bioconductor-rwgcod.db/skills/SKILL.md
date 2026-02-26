@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rwgcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Codelink Rat Whole Genome Bioarray. Use when user asks to map Codelink probe identifiers to gene symbols, Entrez Gene identifiers, or other genomic metadata for rat samples.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rwgcod.db.html
 ---
+
 
 # bioconductor-rwgcod.db
 

@@ -1,8 +1,9 @@
 ---
 name: pubmlst_client
-description: The `pubmlst_client` is a specialized command-line tool designed to interface with the pubMLST database and other BIGSDB-compatible servers.
+description: The pubmlst_client tool programmatically interfaces with pubMLST and BIGSDB-compatible servers to identify and retrieve MLST schemes. Use when user asks to list available MLST schemes, filter schemes by organism name, or download sequence data and profiles for bacterial strain characterization.
 homepage: https://github.com/Public-Health-Bioinformatics/pubmlst_client
 ---
+
 
 # pubmlst_client
 

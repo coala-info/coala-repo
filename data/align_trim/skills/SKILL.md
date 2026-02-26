@@ -1,8 +1,9 @@
 ---
 name: align_trim
-description: The provided text does not contain help information or usage instructions for the tool; it is a log of a container build failure (no space left on device).
+description: This tool soft-clips primer sequences from aligned reads and performs coverage normalization for amplicon-based sequencing data. Use when user asks to trim primers from BAM files, normalize read depth per amplicon, or generate amplicon performance reports.
 homepage: https://github.com/artic-network/align_trim
 ---
+
 
 # align_trim
 

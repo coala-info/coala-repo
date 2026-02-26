@@ -1,8 +1,9 @@
 ---
 name: cell2cell
-description: cell2cell is a specialized bioinformatics tool for decoding the "social network" of cells.
+description: cell2cell is a bioinformatics tool for inferring and analyzing cell-cell communication by mapping gene expression data onto ligand-receptor pairs. Use when user asks to estimate communication strength between cell types, perform tensor factorization across multiple samples, integrate spatial transcriptomics data, or troubleshoot memory issues in large-scale datasets.
 homepage: https://github.com/earmingol/cell2cell
 ---
+
 
 # cell2cell
 

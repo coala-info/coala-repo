@@ -1,8 +1,9 @@
 ---
 name: bioconductor-osat
-description: the package is available on all platforms; click for details.
+description: OSAT facilitates optimal sample assignment to batches to minimize batch effects in genomics experiments. Use when user asks to assign samples to batches, minimize batch effects, or optimize experimental design for high-throughput studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/OSAT.html
 ---
+
 
 # bioconductor-osat
 

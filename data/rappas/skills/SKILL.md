@@ -1,8 +1,9 @@
 ---
 name: rappas
-description: RAPPAS (Rapid Alignment-free Phylogenetic Placement via Ancestral Sequences) is a specialized tool for placing genomic reads onto a pre-defined phylogenetic tree.
+description: "RAPPAS performs alignment-free phylogenetic placement of genomic reads onto a reference tree using a phylo-kmer database. Use when user asks to build a phylo-kmer database from a reference alignment or place metagenomic reads onto a phylogenetic tree without alignment."
 homepage: https://github.com/blinard-BIOINFO/RAPPAS
 ---
+
 
 # rappas
 

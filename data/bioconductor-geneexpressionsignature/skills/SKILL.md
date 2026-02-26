@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneexpressionsignature
-description: the package is available on all platforms; click for details.
+description: This package compares biological states by converting gene expression profiles into ranked lists and calculating similarity distances between them. Use when user asks to rank gene expression data, merge replicates into prototype ranked lists, or calculate distance matrices for drug repositioning and mode of action studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneExpressionSignature.html
 ---
+
 
 # bioconductor-geneexpressionsignature
 

@@ -1,8 +1,9 @@
 ---
 name: search_ncbi
-description: The search_ncbi skill provides a specialized interface for interacting with the National Center for Biotechnology Information (NCBI) PubMed database.
+description: This tool searches the NCBI PubMed database to retrieve biomedical literature, metadata, and citation data. Use when user asks to search for biomedical articles, fetch publication metadata, track citation history, or visualize research trends.
 homepage: https://github.com/cyanheads/pubmed-mcp-server
 ---
+
 
 # search_ncbi
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rheumaticconditionwollbold
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides normalized gene expression data from a study on rheumatic conditions. Use when user asks to access gene expression datasets for rheumatoid arthritis, analyze synovial tissue transcriptomics, or load the Wollbold rheumatic condition dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/rheumaticConditionWOLLBOLD.html
 ---
+
 
 # bioconductor-rheumaticconditionwollbold
 

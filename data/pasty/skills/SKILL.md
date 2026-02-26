@@ -1,8 +1,9 @@
 ---
 name: pasty
-description: pasty is a command-line utility designed for the rapid serogrouping of Pseudomonas aeruginosa isolates from genomic data.
+description: pasty is a command-line utility for the rapid serogrouping of Pseudomonas aeruginosa isolates from genomic assembly data. Use when user asks to predict Pseudomonas aeruginosa serogroups, perform O-antigen typing, or automate serotyping for large batches of genomic assemblies.
 homepage: https://github.com/rpetit3/pasty
 ---
+
 
 # pasty
 

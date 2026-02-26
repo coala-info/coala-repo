@@ -1,8 +1,9 @@
 ---
 name: ucsc-maketablelist
-description: The `makeTableList` utility is a specialized database maintenance tool from the UCSC Kent toolkit.
+description: This tool creates or updates a table list cache in a MySQL database. Use when user asks to 'add new tracks', 'update table structures', 'set up a new genomic database', or 'synchronize the database cache'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-maketablelist
 

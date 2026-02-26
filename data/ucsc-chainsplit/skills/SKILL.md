@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainsplit
-description: The `chainSplit` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to manage large genomic alignment files.
+description: The `ucsc-chainsplit` tool partitions a single `.chain` file into multiple files based on sequence names. Use when user asks to split a chain file by target sequence, split a chain file by query sequence, or group sequences in a chain file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainsplit
 

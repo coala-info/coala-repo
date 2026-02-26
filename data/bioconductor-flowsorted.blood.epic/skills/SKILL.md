@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowsorted.blood.epic
-description: the package is available on all platforms; click for details.
+description: This package provides a reference dataset and tools for estimating cell-type composition in Illumina HumanMethylationEPIC blood samples. Use when user asks to estimate cell proportions in EPIC DNA methylation data, perform deconvolution using IDOL optimized probes, or access reference datasets for adult blood cell populations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FlowSorted.Blood.EPIC.html
 ---
+
 
 # bioconductor-flowsorted.blood.epic
 

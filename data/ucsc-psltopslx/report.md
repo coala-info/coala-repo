@@ -3,7 +3,7 @@
 ## ucsc-psltopslx
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains container runtime error messages indicating a failure to fetch or build the image.
+Convert PSL format (alignment without sequence) to PSLX format (alignment with sequence) by fetching sequences from FASTA files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-psltopslx:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-psltopslx:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/ucsc-psltopslx:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltopslx
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+fabc29e98aaa: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1494386511: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-psltopslx_pslCheck
-
-### Tool Description
-Check PSL files for validity. (Note: The provided help text contained container runtime errors and did not include usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-psltopslx:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-psltopslx/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-psltopslx:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

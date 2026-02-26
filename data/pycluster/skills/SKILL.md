@@ -1,8 +1,9 @@
 ---
 name: pycluster
-description: The `pycluster` skill enables high-performance clustering operations by interfacing Python with the C Clustering Library.
+description: Pycluster performs high-performance clustering operations on large-scale numerical datasets by interfacing Python with the C Clustering Library. Use when user asks to perform hierarchical clustering, run k-means or k-medians partitioning, or generate self-organizing maps.
 homepage: http://bonsai.hgc.jp/~mdehoon/software/cluster/software.htm#pycluster
 ---
+
 
 # pycluster
 

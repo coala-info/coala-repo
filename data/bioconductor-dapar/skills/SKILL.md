@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dapar
-description: The package DAPAR is a Bioconductor distributed R package which provides all the necessary functions to analyze quantitative data from label-free proteomics experiments. Contrarily to most other similar R packages, it is endowed with rich and user-friendly graphical interfaces, so that no programming skill is required (see `Prostar` package).
+description: This tool provides functions for the processing and statistical analysis of quantitative label-free proteomics data. Use when user asks to convert proteomics data to MSnSet, filter contaminants, normalize abundance values, impute missing values, aggregate peptides to proteins, or perform differential abundance testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/DAPAR.html
 ---
+
 
 # bioconductor-dapar
 

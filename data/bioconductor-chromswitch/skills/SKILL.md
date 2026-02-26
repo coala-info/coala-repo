@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromswitch
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool detects chromatin state switches in genomic regions between two biological conditions using epigenomic data such as ChIP-seq or DNase-seq. Use when user asks to identify differences in chromatin states, perform hierarchical clustering of samples based on peak features, or score the similarity between sample clusters and biological groups.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/chromswitch.html
 ---
+
 
 # bioconductor-chromswitch
 

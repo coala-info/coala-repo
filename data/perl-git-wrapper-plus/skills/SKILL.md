@@ -1,8 +1,9 @@
 ---
 name: perl-git-wrapper-plus
-description: `Git::Wrapper::Plus` is a comprehensive Perl toolkit that extends the functionality of `Git::Wrapper` by providing a consistent object-oriented API.
+description: This Perl toolkit provides an object-oriented API that extends Git::Wrapper to handle version-specific quirks and repository metadata. Use when user asks to manage Git branches, tags, and references or check for feature support across different Git versions.
 homepage: https://github.com/kentnl/Git-Wrapper-Plus
 ---
+
 
 # perl-git-wrapper-plus
 

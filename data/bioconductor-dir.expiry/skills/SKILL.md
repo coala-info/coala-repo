@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dir.expiry
-description: the package is available on all platforms; click for details.
+description: The dir.expiry package manages versioned cache directories by tracking usage and performing automated cleanup of stale files. Use when user asks to lock versioned directories, update cache access timestamps, or delete expired cache versions.
 homepage: https://bioconductor.org/packages/release/bioc/html/dir.expiry.html
 ---
+
 
 # bioconductor-dir.expiry
 

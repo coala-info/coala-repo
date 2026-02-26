@@ -1,8 +1,9 @@
 ---
 name: r-imputelcmd
-description: R package imputelcmd (documentation from project home).
+description: The r-imputelcmd package provides methods for imputing left-censored missing data in proteomics datasets where values are below the detection limit. Use when user asks to impute missing values using QRILC, handle MNAR or MAR data patterns, or perform hybrid imputation for mixed missingness scenarios.
 homepage: https://cran.r-project.org/web/packages/imputelcmd/index.html
 ---
+
 
 # r-imputelcmd
 

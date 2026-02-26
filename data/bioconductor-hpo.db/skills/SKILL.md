@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpo.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides a comprehensive annotation resource for navigating and querying the Human Phenotype Ontology (HPO) as a directed acyclic graph. Use when user asks to retrieve phenotype term information, find synonyms or aliases for HPO IDs, and traverse the ontology hierarchy to identify parents, children, ancestors, or offspring.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HPO.db.html
 ---
+
 
 # bioconductor-hpo.db
 

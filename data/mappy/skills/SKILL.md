@@ -1,8 +1,9 @@
 ---
 name: mappy
-description: `mappy` is the official Python binding for `minimap2`, a versatile and industry-standard pairwise aligner for genomic and spliced nucleotide sequences.
+description: Mappy provides a Python interface for the minimap2 aligner to perform rapid pairwise alignment of genomic and spliced nucleotide sequences. Use when user asks to map long noisy reads, perform splice-aware alignments, find sequence overlaps, or parse FASTA and FASTQ files within a Python pipeline.
 homepage: https://github.com/lh3/minimap2
 ---
+
 
 # mappy
 

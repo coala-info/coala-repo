@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aims
-description: the package is available on all platforms; click for details.
+description: This tool assigns breast cancer molecular subtypes to gene expression data using an absolute assignment method. Use when user asks to classify breast cancer samples into intrinsic subtypes, assign Basal, Her2, LumA, LumB, or Normal labels, or perform subtyping on single samples without gene-centering.
 homepage: https://bioconductor.org/packages/release/bioc/html/AIMS.html
 ---
+
 
 # bioconductor-aims
 

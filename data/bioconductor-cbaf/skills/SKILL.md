@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cbaf
-description: the package is available on all platforms; click for details.
+description: The bioconductor-cbaf package automates the retrieval, statistical analysis, and visualization of genomic data from cBioPortal across multiple cancer studies. Use when user asks to identify available cancer studies, compare gene groups across clinical subgroups, perform cross-cancer genomic comparisons, or generate heatmaps and Excel reports from cBioPortal data.
 homepage: https://bioconductor.org/packages/release/bioc/html/cbaf.html
 ---
+
 
 # bioconductor-cbaf
 

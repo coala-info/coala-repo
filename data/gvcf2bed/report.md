@@ -3,7 +3,7 @@
 ## gvcf2bed
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It is an error message from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to lack of disk space.
+Create a BED file from a gVCF. Regions are based on a minimum genotype quality. The gVCF file must contain a GQ field in its FORMAT fields. GQ scores of non-variants records have a different distribution from the GQ score distribution of variant records. Hence, an option is provided to set a different threshold for non-variant positions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gvcf2bed:0.3.1--py_0
@@ -18,11 +18,29 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gvcf2bed:0.3.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2512996858: no space left on device
+usage: gvcf2bed [-h] -I INPUT -O OUTPUT [-s SAMPLE] [-q QUALITY]
+                [-nq NON_VARIANT_QUALITY] [-b]
+
+Create a BED file from a gVCF. Regions are based on a minimum genotype
+quality. The gVCF file must contain a GQ field in its FORMAT fields. GQ scores
+of non-variants records have a different distribution from the GQ score
+distribution of variant records. Hence, an option is provided to set a
+different threshold for non-variant positions.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -I INPUT, --input INPUT
+                        Input gVCF
+  -O OUTPUT, --output OUTPUT
+                        Output bed file
+  -s SAMPLE, --sample SAMPLE
+                        Sample name in VCF file to use. Will default to first
+                        sample (alphabetically) if not supplied
+  -q QUALITY, --quality QUALITY
+                        Minimum genotype quality (default 20)
+  -nq NON_VARIANT_QUALITY, --non-variant-quality NON_VARIANT_QUALITY
+                        Minimum genotype quality for non-variant records
+                        (default 20)
+  -b, --bedgraph        Output in bedgraph mode
 ```
 
-
-## Metadata
-- **Skill**: generated

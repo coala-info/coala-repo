@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tigre
-description: The package can be used for inferring unobserved transcription factor (TF) protein concentrations from expression measurements of known target genes, or for ranking candidate targets of a TF.
+description: This tool infers transcription factor protein concentrations and ranks candidate targets from gene expression measurements. Use when user asks to infer unobserved transcription factor protein concentrations or rank candidate targets of a transcription factor.
 homepage: https://bioconductor.org/packages/release/bioc/html/tigre.html
 ---
+
 
 # bioconductor-tigre
 

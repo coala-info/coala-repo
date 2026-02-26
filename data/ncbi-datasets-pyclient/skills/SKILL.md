@@ -1,8 +1,9 @@
 ---
 name: ncbi-datasets-pyclient
-description: The `ncbi-datasets-pyclient` provides a Python-based interface to the NCBI Datasets API, allowing for automated retrieval of large-scale biological datasets.
+description: The ncbi-datasets-pyclient provides a Python interface to the NCBI Datasets API for automated retrieval of genomic sequences, annotations, and metadata. Use when user asks to download genome dataset packages, fetch assembly metadata by accession, or retrieve gene information by symbol and taxon.
 homepage: https://www.ncbi.nlm.nih.gov/datasets
 ---
+
 
 # ncbi-datasets-pyclient
 

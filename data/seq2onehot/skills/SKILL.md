@@ -1,8 +1,9 @@
 ---
 name: seq2onehot
-description: The `seq2onehot` tool provides a streamlined way to transform biological sequence data into a format compatible with deep learning frameworks like TensorFlow or PyTorch.
+description: "seq2onehot converts biological sequences from FASTA files into one-hot encoded NumPy arrays for use in deep learning models. Use when user asks to transform DNA, RNA, or protein sequences into 3D arrays, encode sequences for TensorFlow or PyTorch, or convert FASTA files to one-hot format."
 homepage: https://github.com/akikuno/seq2onehot
 ---
+
 
 # seq2onehot
 

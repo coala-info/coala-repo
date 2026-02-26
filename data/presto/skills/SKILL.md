@@ -1,8 +1,9 @@
 ---
 name: presto
-description: The REpertoire Sequencing TOolkit (pRESTO) provides a standardized pipeline for the pre-processing of Adaptive Immune Receptor Repertoire sequencing (AIRR-seq) data.
+description: pRESTO provides a standardized pipeline for the pre-processing and quality control of Adaptive Immune Receptor Repertoire sequencing data. Use when user asks to filter sequences by quality, mask primers, extract molecular barcodes, assemble paired-end reads, or generate UMI consensus sequences.
 homepage: http://presto.readthedocs.io
 ---
+
 
 # presto
 

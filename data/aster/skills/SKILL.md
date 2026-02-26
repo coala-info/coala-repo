@@ -1,8 +1,9 @@
 ---
 name: aster
-description: ASTER (Accurate Species Tree EstimatoR) is a high-performance suite of C++ optimization algorithms designed for phylogenomic inference.
+description: ASTER is a suite of optimization algorithms designed to infer accurate species trees from diverse biological data types including gene trees, alignments, and raw sequencing reads. Use when user asks to estimate species trees from unrooted gene trees, handle multi-copy gene families, analyze SNP supermatrices, or infer phylogenies directly from raw short reads.
 homepage: https://github.com/chaoszhang/ASTER
 ---
+
 
 # aster
 

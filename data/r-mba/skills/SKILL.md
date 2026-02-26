@@ -1,8 +1,9 @@
 ---
 name: r-mba
-description: R package mba (documentation from project home).
+description: This tool performs fast multilevel B-spline interpolation for scattered 2D data. Use when user asks to interpolate irregularly spaced data, create smooth surfaces from scattered points, or estimate values at specific coordinates using B-splines.
 homepage: https://cran.r-project.org/web/packages/mba/index.html
 ---
+
 
 # r-mba
 

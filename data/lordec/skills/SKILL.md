@@ -1,8 +1,9 @@
 ---
 name: lordec
-description: LoRDEC (Long Read Error Correction) is a hybrid tool designed to fix high error rates in 3rd generation sequencing data.
+description: "LoRDEC is a hybrid error-correction tool that uses short-read de Bruijn graphs to fix errors in long-read sequencing data. Use when user asks to correct errors in long reads, build a de Bruijn graph from short reads, or trim and split corrected reads."
 homepage: http://www.atgc-montpellier.fr/lordec/
 ---
+
 
 # lordec
 

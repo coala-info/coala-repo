@@ -1,8 +1,9 @@
 ---
 name: assemblerflow
-description: Assemblerflow (now primarily known as FlowCraft) is a pipeline composer that simplifies the creation of genomics workflows.
+description: Assemblerflow is a pipeline composer that builds functional Nextflow genomics workflows by assembling modular bioinformatics components. Use when user asks to build a genomics pipeline, assemble bioinformatics modules into a workflow, or generate Nextflow scripts for reproducible data analysis.
 homepage: https://github.com/ODiogoSilva/assemblerflow
 ---
+
 
 # assemblerflow
 

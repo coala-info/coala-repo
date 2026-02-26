@@ -1,8 +1,9 @@
 ---
 name: ppx
-description: The `ppx` skill provides a streamlined Python interface for accessing public proteomics data.
+description: "ppx provides a Python interface for automated discovery and retrieval of public proteomics data from repositories like PRIDE and MassIVE. Use when user asks to find proteomics projects, download mass spectrometry data files, or manage local and cloud-based proteomics data caches."
 homepage: https://github.com/wfondrie/ppx
 ---
+
 
 # ppx
 

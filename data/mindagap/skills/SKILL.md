@@ -1,8 +1,9 @@
 ---
 name: mindagap
-description: MindaGap is a specialized image processing utility designed to rectify artifacts in tiled panoramas.
+description: MindaGap fills empty grid lines and gaps in tiled panoramas using a neighbor-weighted averaging algorithm. Use when user asks to fill gaps in stitched images, create RGB composites from grayscale tiles, or identify duplicate reads along gridline edges.
 homepage: https://github.com/ViriatoII/MindaGap
 ---
+
 
 # mindagap
 

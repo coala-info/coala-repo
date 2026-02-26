@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdsfmt
-description: the package parallel.
+description: This tool provides a high-level R interface for managing large-scale genomic data using the hierarchical CoreArray Genomic Data Structure format. Use when user asks to create, read, or write GDS files, manage datasets that exceed system memory, perform bit-level data compression, or access genomic data using efficient random access and marginal application.
 homepage: https://bioconductor.org/packages/release/bioc/html/gdsfmt.html
 ---
+
 
 # bioconductor-gdsfmt
 

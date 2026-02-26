@@ -3,7 +3,7 @@
 ## pyhmmsearch
 
 ### Tool Description
-The provided text does not contain help information for pyhmmsearch. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to fetch or build the container image.
+Running: pyhmmsearch v2025.10.23.post1 via Python v3.12.12 | /usr/local/bin/python3.12
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
@@ -18,52 +18,46 @@ The provided text does not contain help information for pyhmmsearch. It contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pyhmmsearch -i <proteins.fasta> -o <output.tsv> -d 
 
+    Running: pyhmmsearch v2025.10.23.post1 via Python v3.12.12 | /usr/local/bin/python3.12
 
-## Metadata
-- **Skill**: generated
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
 
-## pyhmmsearch_serialize_hmm_models
+I/O arguments:
+  -i PROTEINS, --proteins PROTEINS
+                        path/to/proteins.fasta. stdin does not stream and loads everything into memory. [Default: stdin]
+  -o OUTPUT, --output OUTPUT
+                        path/to/output.tsv [Default: stdout]
+  --no_header           No header
+  --tblout TBLOUT       path/to/output.tblout
+  --domtblout DOMTBLOUT
+                        path/to/output.domtblout
 
-### Tool Description
-Serialize HMM models using pyhmmsearch. (Note: The provided help text contains only container build logs and no usage information.)
+Utility arguments:
+  -p N_JOBS, --n_jobs N_JOBS
+                        Number of threads to use [Default: 1]
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
-- **Homepage**: https://github.com/new-atlantis-labs/pyhmmsearch-stable
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyhmmsearch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+HMMSearch arguments:
+  -s SCORES_CUTOFF, --scores_cutoff SCORES_CUTOFF
+                        path/to/scores_cutoff.tsv[.gz] [id_hmm]<tab>[score_threshold], No header.
+  -f {accession,name}, --hmm_marker_field {accession,name}
+                        HMM reference type (accession, name) [Default: accession]
+  -t {full,domain}, --score_type {full,domain}
+                        {full, domain} [Default: full]
+  -m {e,noise,gathering,trusted}, --threshold_method {e,noise,gathering,trusted}
+                        Cutoff threshold method [Default:  e]
+  -e EVALUE, --evalue EVALUE
+                        E-value threshold [Default: 10.0]
 
-## pyhmmsearch_reformat_pyhmmsearch
+Database arguments:
+  -d HMM_DATABASE, --hmm_database HMM_DATABASE
+                        path/to/database.hmm cannot be used with -b/-serialized_database.  Expects a (concatenated) HMM file and not a directory. You can build a database from a directory using `serialize_hmm_models.py`
+  -b SERIALIZED_DATABASE, --serialized_database SERIALIZED_DATABASE
+                        path/to/database.pkl cannot be used with -d/--database_directory.  Database should be pickled dictionary {name:hmm}
 
-### Tool Description
-Reformat pyhmmsearch output (Note: The provided help text contains only container runtime logs and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0
-- **Homepage**: https://github.com/new-atlantis-labs/pyhmmsearch-stable
-- **Package**: https://anaconda.org/channels/bioconda/packages/pyhmmsearch/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pyhmmsearch:2025.10.23.post1--pyh7e72e81_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+https://github.com/jolespin/pyhmmsearch
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bamkit
-description: The `bamkit` suite provides a collection of Python-based utilities designed for common yet specific BAM file transformations.
+description: Bamkit provides a suite of Python utilities for specialized BAM file transformations such as header sanitization, read group management, and flag correction. Use when user asks to sanitize BAM headers, filter reads by read group, fix bitwise flags, convert secondary alignments to supplementary, or convert BAM files to FASTQ.
 homepage: https://github.com/hall-lab/bamkit
 ---
+
 
 # bamkit
 

@@ -1,8 +1,9 @@
 ---
 name: igv-notebook
-description: The `igv-notebook` skill enables interactive genomic visualization within Python-based notebooks.
+description: igv-notebook provides interactive genomic visualization within Python-based notebooks by wrapping the igv.js library. Use when user asks to initialize a genome browser, load genomic tracks from local or remote files, and navigate to specific loci in Jupyter or Colab environments.
 homepage: https://github.com/igvteam/igv-notebook
 ---
+
 
 # igv-notebook
 

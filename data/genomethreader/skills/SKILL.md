@@ -1,8 +1,9 @@
 ---
 name: genomethreader
-description: GenomeThreader is a specialized tool for similarity-based gene prediction.
+description: GenomeThreader performs similarity-based gene prediction by mapping transcriptomic or proteomic sequences onto genomic templates. Use when user asks to predict gene structures, align cDNA or protein sequences to a genome, or generate consensus gene models using splice site models.
 homepage: http://genomethreader.org/
 ---
+
 
 # genomethreader
 

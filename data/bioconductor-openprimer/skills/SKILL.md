@@ -1,8 +1,9 @@
 ---
 name: bioconductor-openprimer
-description: the package is available on all platforms; click for details.
+description: openPrimeR is an R package used for the design, evaluation, and comparison of multiplex PCR primer sets. Use when user asks to design multiplex PCR primers, evaluate primer physicochemical properties, or optimize primer sets for specific target sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/openPrimeR.html
 ---
+
 
 # bioconductor-openprimer
 

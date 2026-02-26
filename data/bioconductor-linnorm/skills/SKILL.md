@@ -1,8 +1,9 @@
 ---
 name: bioconductor-linnorm
-description: the package is available on all platforms; click for details.
+description: Linnorm performs normalization, transformation, and downstream analysis for scRNA-seq, RNA-seq, and ChIP-seq count data. Use when user asks to normalize count data, perform differential expression analysis, identify highly variable genes, or cluster cell subpopulations using t-SNE and PCA.
 homepage: https://bioconductor.org/packages/release/bioc/html/Linnorm.html
 ---
+
 
 # bioconductor-linnorm
 

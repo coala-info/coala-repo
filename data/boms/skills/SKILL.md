@@ -1,8 +1,9 @@
 ---
 name: boms
-description: BOMS is a specialized tool for segmenting cells in imaging-based spatial transcriptomics datasets.
+description: BOMS segments cells in imaging-based spatial transcriptomics datasets by clustering mRNA spots based on the similarity of local gene expression neighborhoods. Use when user asks to segment cells from mRNA spot coordinates, generate a cell-by-gene count matrix, or identify cell boundaries without relying solely on image stains.
 homepage: https://github.com/ocimakamboj/boms
 ---
+
 
 # boms
 

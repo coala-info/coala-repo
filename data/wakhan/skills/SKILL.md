@@ -1,8 +1,9 @@
 ---
 name: wakhan
-description: Wakhan is a specialized tool for somatic copy number profiling using long-read alignments and phased heterozygous variants.
+description: Wakhan profiles somatic copy numbers using long-read alignments and phased heterozygous variants. Use when user asks to profile somatic copy numbers, estimate purity and ploidy, correct phase-switch errors, integrate phased structural variants, or visualize the genomic landscape.
 homepage: https://github.com/KolmogorovLab/Wakhan
 ---
+
 
 # wakhan
 

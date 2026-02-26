@@ -1,8 +1,9 @@
 ---
 name: bioconductor-demand
-description: the package is available on all platforms; click for details.
+description: DeMAND identifies the mechanism of action of a compound by detecting dysregulated interactions within a tissue-specific regulatory network. Use when user asks to predict drug targets, identify mechanism of action genes, or analyze network dysregulation from gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/DeMAND.html
 ---
+
 
 # bioconductor-demand
 

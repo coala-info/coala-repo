@@ -3,7 +3,7 @@
 ## get_fasta_info
 
 ### Tool Description
-A tool to extract information from FASTA files (Note: The provided help text contains only system error messages and no usage information).
+Get basic summary info about fasta formatted files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
@@ -18,46 +18,29 @@ A tool to extract information from FASTA files (Note: The provided help text con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2292235791: no space left on device
-```
+Error: Need input fasta file(s) to process.
 
+get_fasta_info v2.5.0
 
-## Metadata
-- **Skill**: generated
+Get basic summary info about fasta formatted files.
 
-## get_fasta_info_get_fastq_info
+Usage:
 
-### Tool Description
-A tool to extract information from FASTA or FASTQ files. (Note: The provided help text contains only system error messages and does not list specific arguments or usage instructions.)
+ get_fasta_info [options] infile(s).
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
-- **Homepage**: https://github.com/nylander/get_fasta_info
-- **Package**: https://anaconda.org/channels/bioconda/packages/get_fasta_info/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1187597195: no space left on device
-```
+Options:
 
-## get_fasta_info_get_fasta_details.pl
+ -h        help
+ -V        version
+ -n        noverbose
+ -g        count gaps, i.e. missing data symbols. Default: Nn?Xx-
+ -C chars  use char(s) as missing symbols and use -g
+ -N        -C N -g
+ -X        -C X -g
+ -Q        -C ? -g
+ -G        -C - -g
+ -p        print full path to file
 
-### Tool Description
-A tool to extract information and details from FASTA files. Note: The provided help text contains only system error messages and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0
-- **Homepage**: https://github.com/nylander/get_fasta_info
-- **Package**: https://anaconda.org/channels/bioconda/packages/get_fasta_info/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/get_fasta_info:2.5.0--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1901556138: no space left on device
+ infile should be in fasta format.
 ```
 

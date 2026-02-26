@@ -1,8 +1,9 @@
 ---
 name: perl-metabolomics-fragment-annotation
-description: This skill provides guidance on using the `perl-metabolomics-fragment-annotation` tool to interpret mass spectrometry fragmentation patterns.
+description: This tool annotates mass spectrometry fragmentation patterns by matching experimental peaks against theoretical chemical masses. Use when user asks to interpret MS/MS spectra, calculate exact masses for fragments, or automate the identification of chemical substructures in metabolomics datasets.
 homepage: https://metacpan.org/pod/Metabolomics::Fragment::Annotation
 ---
+
 
 # perl-metabolomics-fragment-annotation
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcrisprtools
-description: the package is available on all platforms; click for details.
+description: This tool analyzes pooled CRISPR screening data to perform quality control, normalization, and gene-level target prioritization. Use when user asks to perform quality control on CRISPR screens, normalize guide counts, prioritize gene targets using RRA, or visualize screen results and contrasts.
 homepage: https://bioconductor.org/packages/release/bioc/html/gCrisprTools.html
 ---
+
 
 # bioconductor-gcrisprtools
 

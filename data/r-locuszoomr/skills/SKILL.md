@@ -1,8 +1,9 @@
 ---
 name: r-locuszoomr
-description: Skill for using the CRAN R package r-locuszoomr.
+description: The r-locuszoomr package creates publication-ready gene locus plots with gene annotations, linkage disequilibrium overlays, and recombination rates in R. Use when user asks to visualize GWAS results, create regional locus plots, overlay LD information, or plot eQTL data with Ensembl gene tracks.
 homepage: https://cran.r-project.org/web/packages/locuszoomr/index.html
 ---
+
 
 # r-locuszoomr
 

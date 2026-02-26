@@ -1,8 +1,9 @@
 ---
 name: pileuppy
-description: pileuppy is a high-performance bioinformatics utility designed to render sequencing alignments in a visually intuitive, color-coded format within a terminal environment.
+description: "pileuppy renders sequencing alignments in a color-coded format directly within the terminal for rapid inspection of read distributions. Use when user asks to visualize BAM or CRAM pileups, inspect specific genomic regions, validate variants, or debug mapping issues on remote servers."
 homepage: https://gitlab.com/tprodanov/pileuppy
 ---
+
 
 # pileuppy
 

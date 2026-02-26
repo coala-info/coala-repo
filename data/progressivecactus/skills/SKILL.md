@@ -1,8 +1,9 @@
 ---
 name: progressivecactus
-description: Progressive Cactus is a high-performance genome alignment package that uses a phylogenetic tree to guide the alignment of multiple genomes.
+description: Progressive Cactus is a genome alignment package that uses a phylogenetic tree to guide the alignment of multiple genomes. Use when user asks to align multiple genomes, create a hierarchical alignment in HAL format, or manage the setup and execution of the Cactus alignment pipeline.
 homepage: https://github.com/glennhickey/progressiveCactus
 ---
+
 
 # progressivecactus
 

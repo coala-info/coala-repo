@@ -1,8 +1,9 @@
 ---
 name: r-aroma.apd
-description: DEPRECATED. Do not start building new projects based on this package. (The (in-house) APD file format was initially developed to store Affymetrix probe-level data, e.g. normalized CEL intensities.  Chip types can be added to APD file and similar to methods in the affxparser package, this package provides methods to read APDs organized by units (probesets).  In addition, the probe elements can be arranged optimally such that the elements are guaranteed to be read in order when, for instance, data is read unit by unit.  This speeds up the read substantially.  This package is supporting the Aroma framework and should not be used elsewhere.)</p>
+description: The aroma.apd package provides tools for managing Affymetrix Probe-Level Data (APD) files, including high-performance reading and writing of probe intensities. Use when user asks to convert CEL files to APD format, read probe-level data by units or spatial rectangles, or update APD files within legacy aroma projects.
 homepage: https://cran.r-project.org/web/packages/aroma.apd/index.html
 ---
+
 
 # r-aroma.apd
 

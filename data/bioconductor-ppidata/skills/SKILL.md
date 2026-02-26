@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ppidata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides curated protein-protein interaction datasets for analysis in R. Use when user asks to access protein-protein interaction data, retrieve experimental PPI datasets, or analyze curated interaction networks.
 homepage: https://bioconductor.org/packages/3.6/data/experiment/html/ppiData.html
 ---
+
 
 # bioconductor-ppidata
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-funchip
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs functional data analysis to cluster ChIP-Seq peaks based on their morphological shapes. Use when user asks to estimate fragment length, compute base-level coverage pileup, smooth peaks with splines, or perform k-means clustering and alignment of genomic regions.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/FunChIP.html
 ---
+
 
 # bioconductor-funchip
 

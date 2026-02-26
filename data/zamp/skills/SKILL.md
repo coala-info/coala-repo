@@ -1,8 +1,9 @@
 ---
 name: zamp
-description: zAMP is a bioinformatic pipeline built on Snakemake designed for the analysis of amplicon-based metagenomic data.
+description: zAMP is a bioinformatics pipeline for analyzing amplicon-based metagenomic data. Use when user asks to prepare a taxonomic database, run a metagenomics pipeline, process metagenomic samples, filter or trim reads, or generate citations.
 homepage: https://github.com/metagenlab/zAMP/
 ---
+
 
 # zamp
 

@@ -1,8 +1,9 @@
 ---
 name: mapseq
-description: MAPseq is a highly efficient k-mer based classifier designed for ribosomal RNA (rRNA) sequence analysis.
+description: "MAPseq is a k-mer based classifier that assigns taxonomic labels to ribosomal RNA sequences. Use when user asks to classify metagenomic reads, assign taxonomy to rRNA sequences, or generate OTU tables from multiple samples."
 homepage: https://github.com/jfmrod/MAPseq
 ---
+
 
 # mapseq
 

@@ -2,15 +2,166 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: VcfAnnotateFromVcf
 label: ngs-bits_VcfAnnotateFromVcf
-doc: "Note: The provided text is an error message indicating a system failure (no
-  space left on device) and does not contain the actual help text or usage information
-  for the tool.\n\nTool homepage: https://github.com/imgag/ngs-bits"
-inputs: []
+doc: "Annotates a VCF file with data from one or more source VCF files.\n\nTool homepage:
+  https://github.com/imgag/ngs-bits"
+inputs:
+  - id: allow_missing_header
+    type:
+      - 'null'
+      - boolean
+    doc: If set the execution is not aborted if a INFO header is missing in the 
+      source file.
+    default: 'false'
+    inputBinding:
+      position: 101
+      prefix: -allow_missing_header
+  - id: block_size
+    type:
+      - 'null'
+      - int
+    doc: Number of lines processed in one chunk.
+    default: '10000'
+    inputBinding:
+      position: 101
+      prefix: -block_size
+  - id: config_file
+    type:
+      - 'null'
+      - File
+    doc: 'TSV file for annotation from multiple source files. For each source file,
+      these tab-separated columns have to be given: source file name, prefix, INFO
+      keys, ID column.'
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -config_file
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Enables debug output (use only with one thread).
+    default: 'false'
+    inputBinding:
+      position: 101
+      prefix: -debug
+  - id: existence_key_name
+    type:
+      - 'null'
+      - string
+    doc: Defines the INFO key name.
+    default: EXISTS_IN_SOURCE
+    inputBinding:
+      position: 101
+      prefix: -existence_key_name
+  - id: existence_only
+    type:
+      - 'null'
+      - boolean
+    doc: Only annotate if variant exists in source.
+    default: 'false'
+    inputBinding:
+      position: 101
+      prefix: -existence_only
+  - id: hts_version
+    type:
+      - 'null'
+      - boolean
+    doc: Prints used htlib version and exits.
+    default: 'false'
+    inputBinding:
+      position: 101
+      prefix: -hts_version
+  - id: id_column
+    type:
+      - 'null'
+      - string
+    doc: ID column in 'source' (must be 'ID'). If unset, the ID column is not 
+      annotated. Alternative output name can be specified by using 
+      'ID=new_name'.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -id_column
+  - id: info_keys
+    type:
+      - 'null'
+      - string
+    doc: "INFO key(s) in 'source' that should be annotated (Multiple keys are be separated
+      by ',', optional keys can be renamed using this syntax: 'original_key=new_key')."
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -info_keys
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Input VCF(.GZ) file that is annotated. If unset, reads from STDIN.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -in
+  - id: prefetch
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of chunks that may be pre-fetched into memory.
+    default: '64'
+    inputBinding:
+      position: 101
+      prefix: -prefetch
+  - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix added to all annotations in the output VCF file.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -prefix
+  - id: settings
+    type:
+      - 'null'
+      - File
+    doc: Settings override file (no other settings files are used).
+    inputBinding:
+      position: 101
+      prefix: --settings
+  - id: source
+    type:
+      - 'null'
+      - File
+    doc: Tabix indexed VCF.GZ file that is the source of the annotated data.
+    default: ''
+    inputBinding:
+      position: 101
+      prefix: -source
+  - id: tdx
+    type:
+      - 'null'
+      - boolean
+    doc: Writes a Tool Definition Xml file. The file name is the application 
+      name with the suffix '.tdx'.
+    inputBinding:
+      position: 101
+      prefix: --tdx
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: The number of threads used to process VCF lines.
+    default: '1'
+    inputBinding:
+      position: 101
+      prefix: -threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output VCF file. If unset, writes to STDOUT.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ngs-bits:2025_09--py313h572c47f_0
-stdout: ngs-bits_VcfAnnotateFromVcf.out
+    dockerPull: quay.io/biocontainers/ngs-bits:2025_12--py314h40a1aea_0

@@ -3,7 +3,7 @@
 ## kakscalculator2
 
 ### Tool Description
-KaKs_Calculator2 calculates non-synonymous (Ka) and synonymous (Ks) substitution rates for gene pairs.
+KaKs_Calculator adopts model selection and model averaging to calculate nonsynonymous (Ka) and synonymous (Ks) substitution rates.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kakscalculator2:2.0.1--h9948957_6
@@ -18,29 +18,13 @@ KaKs_Calculator2 calculates non-synonymous (Ka) and synonymous (Ks) substitution
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kakscalculator2:2.0.1--h9948957_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2879490417: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/kakscalculator2:2.0.1--h9948957_6' locally
+2.0.1--h9948957_6: Pulling from biocontainers/kakscalculator2
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+5a7156279432: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1684801902: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## kakscalculator2_KaKs_Calculator
-
-### Tool Description
-KaKs_Calculator is a tool for calculating nonsynonymous (Ka) and synonymous (Ks) substitution rates. Note: The provided help text contains system error messages and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kakscalculator2:2.0.1--h9948957_6
-- **Homepage**: https://github.com/kullrich/kakscalculator2
-- **Package**: https://anaconda.org/channels/bioconda/packages/kakscalculator2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kakscalculator2:2.0.1--h9948957_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2285562947: no space left on device
+Run 'docker run --help' for more information
 ```
 

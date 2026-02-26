@@ -1,9 +1,9 @@
 # ucsc-hgloadchain CWL Generation Report
 
-## ucsc-hgloadchain
+## ucsc-hgloadchain_hgLoadChain
 
 ### Tool Description
-Load a chain file into the database. (Note: The provided help text appears to be a container runtime error log and does not contain usage information. Arguments listed are based on standard tool documentation.)
+Load a generic Chain file into database
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-hgloadchain:482--h0b57e2e_0
@@ -18,13 +18,18 @@ Load a chain file into the database. (Note: The provided help text appears to be
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgloadchain:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+hgLoadChain - Load a generic Chain file into database
+usage:
+   hgLoadChain database chrN_track chrN.chain
+options:
+   -tIndex  Include tName in indexes (for non-split chain tables)
+   -noBin   suppress bin field, default: bin field is added
+   -noSort  Don't sort by target (memory-intensive) -- input *must* be
+            sorted by target already if this option is used.
+   -oldTable add to existing table, default: create new table
+   -sqlTable=table.sql Create table from .sql file
+   -normScore add normalized score column to table, default: not added
+   -qPrefix=xxx   prepend "xxx" to query name
+   -test    suppress loading to database
 ```
 
-
-## Metadata
-- **Skill**: generated

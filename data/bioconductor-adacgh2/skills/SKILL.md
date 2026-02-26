@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adacgh2
-description: the package is available on all platforms; click for details.
+description: ADaCGH2 provides parallelized implementations of segmentation algorithms for the analysis of large-scale array Comparative Genomic Hybridization data. Use when user asks to perform parallel segmentation of aCGH data, analyze genomic datasets that exceed available RAM using ff objects, or visualize copy number profiles across the genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/ADaCGH2.html
 ---
+
 
 # bioconductor-adacgh2
 

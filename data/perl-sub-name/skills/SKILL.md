@@ -1,8 +1,9 @@
 ---
 name: perl-sub-name
-description: The `perl-sub-name` skill focuses on the application of the `Sub::Name` module to enhance the introspective capabilities of Perl code.
+description: This tool programmatically assigns names to anonymous Perl subroutines to improve debugging and performance profiling. Use when user asks to name a code reference, identify anonymous closures in stack traces, or track dynamic subroutines in profiling tools.
 homepage: https://github.com/gfx/Perl-Sub-Name
 ---
+
 
 # perl-sub-name
 

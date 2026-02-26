@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cottonprobe
-description: the package is available on all platforms; click for details.
+description: This R package analyzes DNA methylation data from the Illumina Infinium Cotton Methylation BeadChip. Use when user asks to analyze cotton DNA methylation data or process results from the Infinium Cotton Methylation BeadChip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cottonprobe.html
 ---
+
 
 # bioconductor-cottonprobe
 

@@ -1,8 +1,9 @@
 ---
 name: staphb_toolkit
-description: The StaPH-B ToolKit (staphb-tk) is a wrapper for a suite of open-source bioinformatics tools and workflows maintained by the State Public Health Bioinformatics (StaPH-B) consortium.
+description: The StaPH-B ToolKit is a wrapper that simplifies running bioinformatics tools and workflows by automatically managing container execution and file system paths. Use when user asks to run containerized bioinformatics applications, execute curated genomic workflows, or manage environment-specific configurations for public health bioinformatics.
 homepage: https://staphb.org/staphb_toolkit/
 ---
+
 
 # staphb_toolkit
 

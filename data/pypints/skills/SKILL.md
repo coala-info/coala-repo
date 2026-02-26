@@ -1,8 +1,9 @@
 ---
 name: pypints
-description: pypints (Peak Identifier for Nascent Transcripts Starts) is a bioinformatics tool designed to identify Transcriptional Regulatory Elements (TREs) by pinpointing Transcription Start Sites (TSSs) at high resolution.
+description: pypints identifies Transcriptional Regulatory Elements by pinpointing Transcription Start Sites at high resolution from nascent transcript sequencing data. Use when user asks to identify Transcription Start Sites, call peaks from BAM or bigWig files, distinguish between divergent and unidirectional transcription, or generate visualization tracks for genome browsers.
 homepage: https://pints.yulab.org
 ---
+
 
 # pypints
 

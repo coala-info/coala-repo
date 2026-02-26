@@ -1,8 +1,9 @@
 ---
 name: picard-slim
-description: The `picard-slim` package is a streamlined version of the Picard toolkit, specifically designed to reduce the installation footprint by removing R dependencies.
+description: The picard-slim tool provides a streamlined version of the Picard toolkit for performing high-throughput sequencing data manipulation tasks like marking duplicates and sorting BAM files. Use when user asks to mark duplicates, sort SAM or BAM files, validate alignment files, or add and replace read groups.
 homepage: http://broadinstitute.github.io/picard/
 ---
+
 
 # picard-slim
 

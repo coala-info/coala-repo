@@ -1,9 +1,9 @@
 # digestiflow-cli CWL Generation Report
 
-## digestiflow-cli
+## digestiflow-cli_ingest
 
 ### Tool Description
-Digestiflow CLI tool (Note: The provided text contains system error logs regarding a container build failure and does not contain help documentation; therefore, no arguments could be extracted.)
+Analyze an Illumina flow cell directory
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/digestiflow-cli:0.5.8--hc234bb7_7
@@ -18,11 +18,36 @@ Digestiflow CLI tool (Note: The provided text contains system error logs regardi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/digestiflow-cli:0.5.8--hc234bb7_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1155325916: no space left on device
+digestiflow-cli-ingest 0.5.7
+Analyze an Illumina flow cell directory
+
+USAGE:
+    digestiflow-cli ingest [FLAGS] [OPTIONS] <FLOWCELL_DIR>...
+
+FLAGS:
+        --analyze-adapters          Read adapters from binary base call files
+    -n, --dry-run                   Do not perform any modifying operations
+        --force-analyze-adapters    Force analysis of adapters even if adapter histogram information is present for all
+                                    index reads.
+    -h, --help                      Prints help information
+        --log-token                 Print authentation token to log file (useful for debugging, possible leaking
+                                    security issue)
+        --no-register               Whether or not to register flow cell via the API.
+        --no-update                 Whether or not to update the flow cell via the API
+    -q, --quiet                     Decrease verbosity
+        --update-if-state-final     Update flow cell information sequencing is in a final state (e.g., completed or
+                                    failed).  Updating index histograms is separate from this.
+    -V, --version                   Prints version information
+    -v, --verbose                   Increase verbosity
+
+OPTIONS:
+        --min-index-fraction <FRAC>        Minimal fraction of reads that must show index for index histogram to be
+                                           computed
+        --project-uuid <PROJECT_UUID>      The UUID of the project to write to.
+        --sample-reads-per-tile <COUNT>    Number of reads to sample per tile
+    -t, --threads <COUNT>                  Number of additional threads to use for (de)compression in I/O. [default: 0]
+
+ARGS:
+    <FLOWCELL_DIR>...    Path flow cell directory.
 ```
 
-
-## Metadata
-- **Skill**: generated

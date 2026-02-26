@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bindingsitefinder
-description: The package provides functions for binding site definition and result visualization. For details please see the vignette.
+description: BindingSiteFinder defines, filters, and visualizes RNA-binding protein binding sites from iCLIP crosslink data. Use when user asks to define equally sized binding sites, perform replicate reproducibility filtering, assign sites to genomic features, or conduct differential binding analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/BindingSiteFinder.html
 ---
+
 
 # bioconductor-bindingsitefinder
 

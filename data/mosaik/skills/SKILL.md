@@ -1,8 +1,9 @@
 ---
 name: mosaik
-description: MOSAIKS is a generalizable and accessible approach to machine learning with satellite imagery.
+description: MOSAIKS transforms raw satellite imagery into feature matrices for use with linear models to predict ground-level observations. Use when user asks to extract features from satellite image tiles, create labels for ground-truth data, or train ridge regression models to predict variables like population density and income.
 homepage: https://github.com/Global-Policy-Lab/mosaiks-paper
 ---
+
 
 # mosaik
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-consensusde
-description: the package is available on all platforms; click for details.
+description: This tool performs consensus differential expression analysis by integrating results from multiple statistical methods. Use when user asks to perform consensus differential expression analysis, integrate results from multiple DE methods, or identify robustly expressed genes across different algorithms.
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusDE.html
 ---
+
 
 # bioconductor-consensusde
 

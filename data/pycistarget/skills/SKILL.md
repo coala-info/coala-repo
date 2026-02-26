@@ -1,8 +1,9 @@
 ---
 name: pycistarget
-description: pycistarget is a Python-based computational tool designed to identify enriched transcription factor motifs within specific genomic regions.
+description: pycistarget identifies enriched transcription factor motifs within genomic regions using motif rankings or differential enrichment analysis. Use when user asks to identify enriched motifs, perform cisTarget analysis, or find differentially enriched motifs between foreground and background region sets.
 homepage: https://github.com/aertslab/pycistarget
 ---
+
 
 # pycistarget
 

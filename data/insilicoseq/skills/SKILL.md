@@ -1,8 +1,9 @@
 ---
 name: insilicoseq
-description: InSilicoSeq is a Python-based sequencing simulator that produces realistic Illumina reads by utilizing kernel density estimators to model the quality of real sequencing data.
+description: InSilicoSeq is a sequencing simulator that generates realistic Illumina reads by modeling error profiles from real sequencing data. Use when user asks to simulate Illumina sequencing reads, generate metagenomic datasets, or create custom error models from alignment files.
 homepage: https://github.com/HadrienG/InSilicoSeq
 ---
+
 
 # insilicoseq
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-mafgene
-description: The `ucsc-mafgene` skill provides a specialized interface for the `mafGene` utility, part of the UCSC Genome Browser "kent" toolset.
+description: The `ucsc-mafgene` tool converts genomic DNA alignments into protein alignments based on gene structures. Use when user asks to convert genomic MAF alignments to protein alignments, extract protein alignments for specific genes, analyze protein conservation across species, or translate genomic DNA to protein sequences.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-mafgene
 

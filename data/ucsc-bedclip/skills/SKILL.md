@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedclip
-description: The `ucsc-bedclip` utility is a specialized tool from the UCSC Genome Browser "Kent" suite used to ensure genomic data integrity.
+description: ucsc-bedclip validates and corrects genomic coordinates in BED files by clipping or removing entries that exceed chromosome boundaries. Use when user asks to validate BED file coordinates, correct invalid genomic coordinates, prepare BED files for BigBed conversion, or ensure genomic data integrity.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedclip
 

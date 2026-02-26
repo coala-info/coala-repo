@@ -1,8 +1,9 @@
 ---
 name: ucsc-faonerecord
-description: The `faOneRecord` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed for high-efficiency extraction of a single sequence from a FASTA file.
+description: This tool extracts a single sequence record from a FASTA file. Use when user asks to extract a single sequence record from a FASTA file, extract a specific chromosome, or extract a scaffold.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-faonerecord
 

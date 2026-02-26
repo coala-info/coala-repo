@@ -1,13 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - enhjoerning
-  - unicorn
+baseCommand: unicorn
 label: enhjoerning_unicorn
-doc: "The provided text contains error logs and environment information rather than
-  the tool's help documentation. As a result, no arguments could be extracted from
-  the input.\n\nTool homepage: https://github.com/GeoGenetics/unicorn"
-inputs: []
+doc: "Compute per reference statistics.\n\nTool homepage: https://github.com/GeoGenetics/unicorn"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (refstats, bamstats, taxstats, reassign, alnfilt)
+    inputBinding:
+      position: 1
+  - id: input_bam_sam
+    type: File
+    doc: Input BAM or SAM file
+    inputBinding:
+      position: 102
+      prefix: -b
 outputs:
   - id: stdout
     type: stdout

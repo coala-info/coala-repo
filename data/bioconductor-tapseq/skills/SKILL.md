@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tapseq
-description: the package is available on all platforms; click for details.
+description: "TAPseq provides tools for designing and evaluating primers for targeted single-cell RNA sequencing. Use when user asks to design primers for targeted scRNA-seq, create custom gene panels for sequencing, or optimize primer selection for targeted transcriptomics."
 homepage: https://bioconductor.org/packages/release/bioc/html/TAPseq.html
 ---
+
 
 # bioconductor-tapseq
 

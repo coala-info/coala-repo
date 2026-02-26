@@ -1,28 +1,260 @@
 # nf-test CWL Generation Report
 
-## nf-test
+## nf-test_clean
 
 ### Tool Description
-A simple-to-use testing framework for Nextflow pipelines. (Note: The provided text appears to be a container runtime error log rather than help text, so no arguments could be extracted.)
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/nf-test:0.9.3--h2a3209d_0
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Total Downloads**: 56.9K
+- **Last updated**: 2026-02-12
+- **GitHub**: N/A
+- **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[31mWorking Directory '/.nf-test' could not be deleted.[0m
+```
+
+
+## nf-test_init
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[32mProject configured.[0m Configuration is stored in nf-test.config
+```
+
+
+## nf-test_test
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[33mWarning: This pipeline has no nf-test config file.[0m
+[33mNo tests to execute.[0m
+```
+
+
+## nf-test_coverage
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[33mWarning: This pipeline has no nf-test config file.[0m
+
+Files:
+
+Status: 0 of 0 modules and workflows are covered with at least one testcase (NaN%)
+```
+
+
+## nf-test_list
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[33mWarning: This pipeline has no nf-test config file.[0m
+[31mError: No tests provided and no test directory set.[0m
+```
+
+
+## nf-test_ls
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[33mWarning: This pipeline has no nf-test config file.[0m
+[31mError: No tests provided and no test directory set.[0m
+```
+
+
+## nf-test_generate
+
+### Tool Description
+Generate nf-test code for different components.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
 - **Homepage**: https://code.askimed.com/nf-test/
 - **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
-- **Total Downloads**: 56.7K
-- **Last updated**: 2026-02-12
-- **GitHub**: N/A
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nf-test:0.9.3--h2a3209d_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3269536171: no space left on device
+Unknown option: '--help'
+Usage: nf-test generate [COMMAND]
+Commands:
+  function
+  pipeline
+  process
+  workflow
 ```
 
 
-## Metadata
-- **Skill**: generated
+## nf-test_update-plugins
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/nf-test:0.9.4--h2a3209d_0
+- **Homepage**: https://code.askimed.com/nf-test/
+- **Package**: https://anaconda.org/channels/bioconda/packages/nf-test/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+🚀[1m nf-test 0.9.4[0m
+https://www.nf-test.com
+(c) 2021 - 2024 Lukas Forer and Sebastian Schoenherr
+
+[31mError: This pipeline has no nf-test config file.[0m
+```
+

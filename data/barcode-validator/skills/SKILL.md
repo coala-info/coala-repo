@@ -1,8 +1,9 @@
 ---
 name: barcode-validator
-description: The `barcode-validator` skill provides a specialized workflow for the quality control of DNA barcode data.
+description: The barcode-validator tool performs quality control and taxonomic verification of DNA barcode sequences using structural analysis and external database comparisons. Use when user asks to validate sequence integrity, check for stop codons, verify taxonomic assignments via BOLD or BLAST, or triage multiple assembly attempts for biodiversity genomics.
 homepage: https://github.com/naturalis/barcode_validator
 ---
+
 
 # barcode-validator
 

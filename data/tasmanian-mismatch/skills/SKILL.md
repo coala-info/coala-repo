@@ -1,8 +1,9 @@
 ---
 name: tasmanian-mismatch
-description: Tasmanian is a specialized diagnostic toolset designed to identify and categorize reference mismatches in DNA sequencing data.
+description: Tasmanian-mismatch identifies and categorizes systematic reference mismatches and sequencing artifacts in DNA sequencing data. Use when user asks to identify systematic artifacts, evaluate mismatch rates in specific genomic regions, or perform positional analysis of sequencing errors across reads.
 homepage: https://github.com/nebiolabs/tasmanian-mismatch
 ---
+
 
 # tasmanian-mismatch
 

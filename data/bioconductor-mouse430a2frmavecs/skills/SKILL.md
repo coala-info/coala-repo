@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mouse430a2frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors for the Frozen Robust Multi-array Analysis (fRMA) of Affymetrix Mouse Genome 430A 2.0 arrays. Use when user asks to perform fRMA preprocessing, normalize mouse 430A 2.0 microarray data, or access pre-calculated vectors for robust multi-array analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mouse430a2frmavecs.html
 ---
+
 
 # bioconductor-mouse430a2frmavecs
 

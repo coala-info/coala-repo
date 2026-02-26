@@ -1,8 +1,9 @@
 ---
 name: mirtop
-description: mirtop is a command-line utility designed to provide a unified naming convention for miRNAs and their variants (isomiRs).
+description: mirtop is a command-line utility that provides a unified naming convention for miRNAs and their variants by converting alignment data into standardized GFF3 files. Use when user asks to annotate miRNA sequence variations, convert BAM files to mirGFF3 format, or export miRNA annotations to FASTA and text tables.
 homepage: http://github.com/mirtop/mirtop
 ---
+
 
 # mirtop
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-canine2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence and coordinate information for the Affymetrix Canine Genome 2.0 Array. Use when user asks to retrieve probe-level sequences, map probe coordinates to probe sets, or perform low-level canine microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine2probe.html
 ---
+
 
 # bioconductor-canine2probe
 

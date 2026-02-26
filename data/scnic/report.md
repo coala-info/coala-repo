@@ -1,9 +1,9 @@
 # scnic CWL Generation Report
 
-## scnic
+## scnic_SCNIC_analysis.py
 
 ### Tool Description
-SCNIC (Sparse Co-occurrence Network Investigation for Compositional data) is a tool for finding correlations between variables in numeric data and summarizing highly correlated variables.
+SCNIC analysis tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scnic:0.6.6--pyhdfd78af_0
@@ -18,9 +18,15 @@ SCNIC (Sparse Co-occurrence Network Investigation for Compositional data) is a t
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/21913756d94b4c15d328075d56ffa2c1d9138d078d3b204f711d89398ccaed47: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scnic:0.6.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1426772755: no space left on device
+usage: SCNIC_analysis.py [-h] {within,modules,between} ...
+
+positional arguments:
+  {within,modules,between}
+    within              Find pairwise correlations within a table
+    modules             Make modules on a network
+    between             Find correlations between two tables
+
+options:
+  -h, --help            show this help message and exit
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plasmodiumanophelescdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File for the Plasmodium/Anopheles genome microarray. Use when user asks to map Affymetrix probe identifiers to genomic locations or process Plasmodium and Anopheles microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/plasmodiumanophelescdf.html
 ---
+
 
 # bioconductor-plasmodiumanophelescdf
 

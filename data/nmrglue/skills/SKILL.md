@@ -1,8 +1,9 @@
 ---
 name: nmrglue
-description: The `nmrglue` skill enables the programmatic handling of Nuclear Magnetic Resonance (NMR) data within a Python environment.
+description: nmrglue provides a Python-based framework for loading, processing, and analyzing Nuclear Magnetic Resonance (NMR) data from various proprietary formats. Use when user asks to read or convert NMR data files, process spectral data using Fourier transforms and phase correction, or perform peak picking and integration.
 homepage: http://www.nmrglue.com
 ---
+
 
 # nmrglue
 

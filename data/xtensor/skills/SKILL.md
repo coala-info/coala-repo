@@ -1,8 +1,9 @@
 ---
 name: xtensor
-description: xtensor is a powerful C++ library designed for numerical analysis using multi-dimensional array expressions.
+description: xtensor is a C++ library for numerical analysis using multi-dimensional array expressions with a NumPy-style API. Use when user asks to perform tensor algebra, reshape multi-dimensional arrays, evaluate complex mathematical expressions, initialize arrays, index or slice data, or apply vectorized functions.
 homepage: https://github.com/xtensor-stack/xtensor
 ---
+
 
 # xtensor
 

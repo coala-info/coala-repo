@@ -1,8 +1,9 @@
 ---
 name: ghost-tree
-description: ghost-tree is a bioinformatics tool designed to solve the problem of missing phylogenetic information in high-resolution genetic markers like the fungal Internal Transcribed Spacer (ITS) region.
+description: ghost-tree creates hybrid phylogenetic trees by grafting high-resolution genetic marker data onto a broad-scale foundation tree. Use when user asks to build a phylogenetic tree for fungal ITS data, graft taxonomic data onto a foundation tree, or prepare trees for phylogenetically-informed diversity analyses.
 homepage: https://github.com/JTFouquier/ghost-tree
 ---
+
 
 # ghost-tree
 

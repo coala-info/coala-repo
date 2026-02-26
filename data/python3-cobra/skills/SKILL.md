@@ -1,8 +1,9 @@
 ---
 name: python3-cobra
-description: Cobra is a high-performance, realtime messaging server built with Python 3, WebSockets, and Redis.
+description: python3-cobra is a high-performance realtime messaging server that provides PubSub and key-value store functionality using WebSockets and Redis. Use when user asks to initialize the server, manage authentication, publish or subscribe to channels, and read or write data using keys.
 homepage: https://github.com/machinezone/cobra
 ---
+
 
 # python3-cobra
 

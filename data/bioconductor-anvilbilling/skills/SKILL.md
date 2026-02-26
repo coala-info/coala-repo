@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilbilling
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and reckons cloud billing costs for the AnVIL/Terra platform using Google BigQuery data. Use when user asks to retrieve billing data, calculate costs for Terra submissions or Cromwell workflows, and analyze resource usage like RAM or CPU for cloud projects.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILBilling.html
 ---
+
 
 # bioconductor-anvilbilling
 

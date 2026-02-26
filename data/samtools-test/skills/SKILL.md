@@ -1,8 +1,9 @@
 ---
 name: samtools-test
-description: Samtools is the foundational C-library and toolset for handling Next-Generation Sequencing (NGS) alignments.
+description: Samtools provides a comprehensive suite of utilities for manipulating, filtering, and summarizing high-throughput sequencing alignment files. Use when user asks to convert between SAM, BAM, and CRAM formats, sort and index alignments, calculate depth of coverage, or generate alignment statistics.
 homepage: https://github.com/samtools/samtools
 ---
+
 
 # samtools-test
 

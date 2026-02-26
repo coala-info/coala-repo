@@ -1,8 +1,9 @@
 ---
 name: bioconductor-asics
-description: the package is available on all platforms; click for details.
+description: The ASICS package provides a complete pipeline for the automatic identification and quantification of metabolites in NMR spectra using a reference library. Use when user asks to import NMR data, preprocess spectra, quantify compounds in complex biological mixtures, or perform statistical analyses like PCA and OPLS-DA.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASICS.html
 ---
+
 
 # bioconductor-asics
 

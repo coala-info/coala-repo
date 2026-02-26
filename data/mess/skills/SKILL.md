@@ -1,8 +1,9 @@
 ---
 name: mess
-description: MeSS (Metagenomic Sequence Simulator) is a Snakemake-based pipeline designed to generate realistic metagenomic mock communities.
+description: MeSS is a Snakemake-based pipeline that generates realistic metagenomic mock communities by fetching reference genomes and simulating reads with technology-specific error profiles. Use when user asks to simulate metagenomic datasets, generate mock communities from TaxIDs or accessions, or create ground truth reads for testing bioinformatics tools.
 homepage: https://github.com/metagenlab/MeSS
 ---
+
 
 # mess
 

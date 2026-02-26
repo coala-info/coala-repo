@@ -1,8 +1,9 @@
 ---
 name: hmnrandomread
-description: `hmnrandomread` is a high-performance sequence-read simulator designed to produce synthetic NGS data.
+description: hmnrandomread is a high-performance sequence-read simulator that generates synthetic paired-end NGS data from reference genomes. Use when user asks to simulate sequencing reads, create synthetic datasets with specific error profiles, or model biological variation and library geometry.
 homepage: https://github.com/guillaume-gricourt/HmnRandomRead
 ---
+
 
 # hmnrandomread
 

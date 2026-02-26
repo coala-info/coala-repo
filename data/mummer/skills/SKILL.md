@@ -1,8 +1,9 @@
 ---
 name: mummer
-description: MUMmer is a high-performance system for the rapid alignment of large-scale DNA and protein sequences.
+description: MUMmer is a high-performance system for the rapid alignment of large-scale DNA and protein sequences, including entire genomes. Use when user asks to align DNA sequences with nucmer, perform translated protein alignments with promer, or process delta files to show coordinates and structural differences.
 homepage: https://github.com/mummer4/mummer
 ---
+
 
 # mummer
 

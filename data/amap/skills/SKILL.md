@@ -1,8 +1,9 @@
 ---
 name: amap
-description: AMAP (Alignment by Sequence Annealing) is a specialized tool for multiple sequence alignment that utilizes a sequence annealing algorithm.
+description: AMAP performs multiple sequence alignment using a sequence annealing algorithm to provide high-accuracy results. Use when user asks to perform multiple sequence alignment, align sequences using sequence annealing, or generate high-accuracy alignments for divergent sequences.
 homepage: https://web.archive.org/web/20060902044446/http://bio.math.berkeley.edu/amap/
 ---
+
 
 # amap
 

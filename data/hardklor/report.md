@@ -3,7 +3,7 @@
 ## hardklor
 
 ### Tool Description
-Hardklor is a tool for identifying peptide features in high-resolution mass spectrometry data. (Note: The provided text appears to be a container runtime error log rather than help text, so no arguments could be extracted.)
+Hardklor is a tool for processing mass spectrometry data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hardklor:2.3.2--h503566f_6
@@ -18,11 +18,13 @@ Hardklor is a tool for identifying peptide features in high-resolution mass spec
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hardklor:2.3.2--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2740104278: no space left on device
+Hardklor v2.3.2, November 11 2019
+Mike Hoopmann, Mike MacCoss
+Copyright 2007-2019
+University of Washington
+Usage:		hardklor <config file>
+		hardklor -cmd [options] <input file> <output file>
+
+See documentation for instructions to modify and use config files.
 ```
 
-
-## Metadata
-- **Skill**: generated

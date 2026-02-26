@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spikeinsubset
-description: the package is available on all platforms; click for details.
+description: This package provides a subset of Affymetrix spike-in data for testing and demonstrating expression analysis methods. Use when user asks to access sample spike-in datasets, test microarray analysis algorithms, or demonstrate Bioconductor expression tools.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SpikeInSubset.html
 ---
+
 
 # bioconductor-spikeinsubset
 

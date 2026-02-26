@@ -1,8 +1,9 @@
 ---
 name: ipo
-description: Ipopt (Interior Point Optimizer) is a professional-grade software package designed for large-scale nonlinear optimization.
+description: Ipopt is a software package designed for large-scale nonlinear optimization to find local solutions for mathematical problems with nonlinear objective functions and constraints. Use when user asks to solve nonlinear optimization problems, build or install Ipopt using coinbrew or manual configuration, and link linear solvers like MUMPS or HSL for high-performance computing.
 homepage: https://github.com/coin-or/Ipopt
 ---
+
 
 # ipo
 

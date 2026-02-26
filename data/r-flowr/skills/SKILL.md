@@ -1,8 +1,9 @@
 ---
 name: r-flowr
-description: Skill for using the CRAN R package r-flowr.
+description: The r-flowr tool designs, manages, and executes complex, reproducible workflows and pipelines within the R environment. Use when user asks to create task dependencies, define pipeline structures, or submit jobs to computing clusters like SLURM, SGE, and LSF.
 homepage: https://cran.r-project.org/web/packages/flowr/index.html
 ---
+
 
 # r-flowr
 

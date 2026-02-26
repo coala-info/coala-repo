@@ -1,8 +1,9 @@
 ---
 name: ega-cryptor
-description: The `ega-cryptor` skill facilitates the preparation of sensitive genomic data for secure archival.
+description: The ega-cryptor tool encrypts genomic data files and generates required MD5 checksums for secure submission to the European Genome-phenome Archive. Use when user asks to encrypt files for EGA submission, generate encrypted and unencrypted MD5 sums, or prepare sensitive data for archival.
 homepage: https://ega-archive.org/submission/data/file-preparation/egacryptor/
 ---
+
 
 # ega-cryptor
 

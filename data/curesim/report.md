@@ -3,7 +3,7 @@
 ## curesim
 
 ### Tool Description
-A tool for simulating genomic reads (Note: The provided help text contains system error logs and does not list specific command-line arguments).
+CuReSim version 1.3
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/curesim:1.3--0
@@ -18,15 +18,28 @@ A tool for simulating genomic reads (Note: The provided help text contains syste
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 16:09:28  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/curesim:1.3--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a6bd6a98b3298e2f0c405bf95c41666036ee8e7645b303a3df29c57f63b9489d: unpack entry: usr/local/bin/chcon: unpack to regular file: short write: write /tmp/build-temp-2420205356/rootfs/usr/local/bin/chcon: no space left on device
+ERROR: you have to give an input file in fasta or fastq format
+
+CuReSim version 1.3
+Usage: java -jar simulator.jar [options] -f <input_file> [options]
+-f file_name 	 [mandatory] genome fasta file or reads fastq file
+-o file_name 	 [facultative] name of output fastq file [output.fastq]
+-n int 	 [facultative] number of reads to generate [50000]
+-m int 	 [facultative] read mean size [200]
+-sd double 	 [facultative] standard deviation for read size [20.0]
+-r int 	 [facultative] number of random reads [0]
+-d double 	 [facultative] deletion rate [0.01]
+-i double 	 [facultative] insertion rate [0.005]
+-s double 	 [facultative] substitution rate [0.005]
+-ui 	 [facultative] uniform distribution for indels [homopolymers]
+-us 	 [facultative] uniform distribution for substitutions [exponential]
+-q char 	 [facultative] quality encoding character ['5']
+-N int 	 [facultative] maximum number of Ns allowed per read [0]
+-v 	 [facultative] verbose mode, you need R software in this mode [false]
+-skip 	 [facultative] skip the correction step [false]
+-h 	 print this help
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

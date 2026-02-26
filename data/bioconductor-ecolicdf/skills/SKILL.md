@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecolicdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping for the Affymetrix E. coli antisense genome array. Use when user asks to map between chip coordinates and CEL file indices, process E. coli GeneChip data in R, or provide the CDF environment for AffyBatch objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecolicdf.html
 ---
+
 
 # bioconductor-ecolicdf
 

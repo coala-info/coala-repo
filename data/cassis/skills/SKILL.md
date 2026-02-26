@@ -1,8 +1,9 @@
 ---
 name: cassis
-description: Cassis is a specialized bioinformatics tool designed to refine the boundaries of genomic rearrangements.
+description: Cassis refines the boundaries of genomic rearrangements by pinpointing the precise locations of breakpoints between syntenic blocks. Use when user asks to refine genomic breakpoint regions, identify precise rearrangement locations, or achieve base-pair resolution for synteny boundaries.
 homepage: http://pbil.univ-lyon1.fr/software/Cassis/
 ---
+
 
 # cassis
 

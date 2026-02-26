@@ -1,8 +1,9 @@
 ---
 name: chromap
-description: Chromap is a high-performance alignment tool specifically optimized for chromatin biology data.
+description: Chromap is a high-performance alignment tool optimized for mapping and processing chromatin biology data such as ATAC-seq, ChIP-seq, and Hi-C. Use when user asks to index a reference genome, align sequencing reads, remove duplicates, or perform barcode correction for single-cell ATAC-seq.
 homepage: https://github.com/haowenz/chromap
 ---
+
 
 # chromap
 

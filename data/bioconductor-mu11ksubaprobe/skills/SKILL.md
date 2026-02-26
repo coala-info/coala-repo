@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu11ksubaprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix mu11ksuba chip. Use when user asks to retrieve probe sequences for the mu11ksuba microarray, analyze probe-level data for this chip, or load the mu11ksubaprobe annotation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubaprobe.html
 ---
+
 
 # bioconductor-mu11ksubaprobe
 

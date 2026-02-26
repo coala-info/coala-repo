@@ -1,8 +1,9 @@
 ---
 name: malva
-description: MALVA (Mapping-free ALternate-allele detection of known VAriants) is a specialized tool for genotyping individuals using a k-mer based approach.
+description: "MALVA performs mapping-free genotyping of known variants using a k-mer based approach. Use when user asks to genotype individuals from sequencing reads, detect known variants without alignment, or perform k-mer based variant calling."
 homepage: https://algolab.github.io/malva/
 ---
+
 
 # malva
 

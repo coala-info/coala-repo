@@ -1,8 +1,9 @@
 ---
 name: req
-description: The `req` tool provides a fast, non-parametric alternative to bootstrapping for assessing the confidence of internal branches in a phylogenetic tree.
+description: The req tool calculates confidence values for internal branches of a phylogenetic tree using a distance-based quartet approach. Use when user asks to assess branch support for distance-based trees, evaluate phylogenetic confidence without bootstrapping, or analyze large phylogenies where character-based resampling is computationally prohibitive.
 homepage: https://research.pasteur.fr/fr/tool/r%CE%B5q-assessing-branch-supports-o%C6%92-a-distance-based-phylogenetic-tree-with-the-rate-o%C6%92-elementary-quartets/
 ---
+
 
 # req
 

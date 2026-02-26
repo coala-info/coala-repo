@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vectrapolarisdata
-description: the package is available on all platforms; click for details.
+description: This package provides multiplexed imaging data from the Vectra Polaris platform for spatial proteomics analysis. Use when user asks to access example Vectra Polaris datasets, analyze multiplexed immunofluorescence data, or explore spatial proteomics experiments.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/VectraPolarisData.html
 ---
+
 
 # bioconductor-vectrapolarisdata
 

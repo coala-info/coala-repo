@@ -1,8 +1,9 @@
 ---
 name: panoct
-description: PanOCT (Pan-genome Ortholog Clustering Tool) is a specialized Perl-based utility for bacterial genomics.
+description: PanOCT clusters orthologous genes across multiple bacterial genomes by combining BLAST sequence similarity with conserved gene neighborhood information. Use when user asks to identify orthologs, perform pan-genome clustering, or distinguish between orthologs and paralogs using synteny data.
 homepage: https://panoct.sourceforge.io/
 ---
+
 
 # panoct
 

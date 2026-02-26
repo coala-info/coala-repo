@@ -1,8 +1,9 @@
 ---
 name: r-fail
-description: "More comfortable interface to work with R data or source files     in a key-value fashion.</p>"
+description: The fail package provides a file abstraction interface layer that treats a directory of RData files as a key-value store. Use when user asks to manage RData files as a key-value store, perform memory-efficient batch processing on saved objects, or cache simulation results and model checkpoints.
 homepage: https://cloud.r-project.org/web/packages/fail/index.html
 ---
+
 
 # r-fail
 

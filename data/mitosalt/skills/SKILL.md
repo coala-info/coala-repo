@@ -1,8 +1,9 @@
 ---
 name: mitosalt
-description: MitoSAlt is a specialized bioinformatics pipeline for detecting large-scale mitochondrial structural alterations.
+description: MitoSAlt is a bioinformatics pipeline for detecting large-scale mitochondrial structural alterations like deletions and duplications from sequencing data. Use when user asks to identify mitochondrial breakpoints, detect structural variants in circular genomes, or analyze mitochondrial heteroplasmy levels.
 homepage: https://sourceforge.net/projects/mitosalt/
 ---
+
 
 # mitosalt
 

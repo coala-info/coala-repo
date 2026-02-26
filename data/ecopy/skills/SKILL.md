@@ -1,8 +1,9 @@
 ---
 name: ecopy
-description: The `ecopy` library provides a suite of tools tailored for community ecologists working with multivariate data.
+description: The ecopy library provides specialized tools for multivariate ecological data analysis and ordination. Use when user asks to transform site-by-species matrices, calculate dissimilarity measures, perform PCA or CCA, or conduct Bio-Env analysis.
 homepage: https://github.com/Auerilas/ecopy
 ---
+
 
 # ecopy
 

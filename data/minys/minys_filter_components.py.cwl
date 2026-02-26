@@ -1,16 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: minys_filter_components.py
+baseCommand: filter_components.py
 label: minys_filter_components.py
-doc: "Filter components in MinYS. (Note: The provided text contains container runtime
-  error messages and does not include usage instructions or argument definitions.)\n
-  \nTool homepage: https://github.com/cguyomar/MinYS"
-inputs: []
+doc: "Filters components based on minimum length.\n\nTool homepage: https://github.com/cguyomar/MinYS"
+inputs:
+  - id: infile
+    type: File
+    doc: Input file
+    inputBinding:
+      position: 1
+  - id: minlength
+    type: int
+    doc: Minimum length of components to keep
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outfile
+    type: File
+    doc: Output file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/minys:1.1--h9948957_6
-stdout: minys_filter_components.py.out
+    dockerPull: quay.io/biocontainers/minys:1.1--hc9558a2_1

@@ -1,9 +1,9 @@
 # ucsc-twobitdup CWL Generation Report
 
-## ucsc-twobitdup
+## ucsc-twobitdup_twoBitDup
 
 ### Tool Description
-Check for duplicate sequences in a 2bit file
+check to see if a twobit file has any identical sequences in it
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0
@@ -18,33 +18,14 @@ Check for duplicate sequences in a 2bit file
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+twoBitDup - check to see if a twobit file has any identical sequences in it
+usage:
+   twoBitDup file.2bit
+options:
+  -keyList=file - file to write a key list, two columns: md5sum and sequenceName
+  -udcDir=/dir/to/cache - place to put cache for remote bigBed/bigWigs
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-twobitdup_twoBitDup
-
-### Tool Description
-Check for duplicate sequences in a .2bit file. (Note: The provided help text contains only system error messages and no usage information; arguments could not be extracted from the source text.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-twobitdup/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-twobitdup:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+example: twoBitDup -keyList=stdout db.2bit \
+          | grep -v 'are identical' | sort > db.idKeys.txt
 ```
 

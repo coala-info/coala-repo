@@ -1,8 +1,9 @@
 ---
 name: bioconductor-encodexplorer
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an interface to query ENCODE project metadata and download genomic data files for analysis in R. Use when user asks to search for ENCODE experiments, download specific datasets, or generate consensus peaks and expression summaries.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ENCODExplorer.html
 ---
+
 
 # bioconductor-encodexplorer
 

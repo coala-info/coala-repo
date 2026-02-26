@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gypsum
-description: the package is available on all platforms; click for details.
+description: The gypsum package provides an R client for interacting with the gypsum REST API to store and retrieve Bioconductor data assets. Use when user asks to list, download, or read files from the backend, upload new data assets, manage project permissions, or validate metadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/gypsum.html
 ---
+
 
 # bioconductor-gypsum
 

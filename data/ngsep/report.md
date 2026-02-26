@@ -1,46 +1,174 @@
 # ngsep CWL Generation Report
 
-## ngsep
+## ngsep_Builds
 
 ### Tool Description
-Next Generation Sequencing Experience Platform (NGSEP). Note: The provided text contains system error messages regarding container execution and does not include usage instructions or argument definitions.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
 - **Homepage**: https://github.com/NGSEP/NGSEPcore
 - **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
 - **Total Downloads**: 3.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/NGSEP/NGSEPcore
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ngsep:4.0.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1870760552: no space left on device
+ERROR: Unrecognized command Builds
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## ngsep_NGSEPcore.jar
+## ngsep_Extract
 
 ### Tool Description
-Next Generation Sequencing Experience Platform (NGSEP) core analysis tool.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
 - **Homepage**: https://github.com/NGSEP/NGSEPcore
 - **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ngsep:4.0.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2255712108: no space left on device
+ERROR: Unrecognized command Extract
+```
+
+
+## ngsep_Corrects
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
+- **Homepage**: https://github.com/NGSEP/NGSEPcore
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unrecognized command Corrects
+```
+
+
+## ngsep_De
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
+- **Homepage**: https://github.com/NGSEP/NGSEPcore
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unrecognized command De
+```
+
+
+## ngsep_Creates
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
+- **Homepage**: https://github.com/NGSEP/NGSEPcore
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unrecognized command Creates
+```
+
+
+## ngsep_Aligns
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ngsep:4.0.1--0
+- **Homepage**: https://github.com/NGSEP/NGSEPcore
+- **Package**: https://anaconda.org/channels/bioconda/packages/ngsep/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+ERROR: Unrecognized command Aligns
 ```
 

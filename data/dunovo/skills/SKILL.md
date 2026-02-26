@@ -1,8 +1,9 @@
 ---
 name: dunovo
-description: Du Novo is a specialized bioinformatics pipeline designed to extract high-fidelity genetic information from duplex sequencing libraries.
+description: Du Novo extracts high-fidelity consensus sequences from duplex sequencing libraries by grouping reads into families based on barcodes to filter out PCR and sequencing errors. Use when user asks to process duplex sequencing data, generate duplex consensus sequences, or perform reference-free error correction for low-frequency variant detection.
 homepage: https://github.com/galaxyproject/dunovo
 ---
+
 
 # dunovo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.aml.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides MeSH annotation maps for Anolis carolinensis using Entrez Gene identifiers. Use when user asks to map MeSH terms to Entrez Gene IDs for Anolis carolinensis, perform MeSH enrichment analysis, or retrieve lizard-specific medical subject heading annotations.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Aml.eg.db.html
 ---
+
 
 # bioconductor-mesh.aml.eg.db
 

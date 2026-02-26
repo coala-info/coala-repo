@@ -1,9 +1,9 @@
 # dajin2 CWL Generation Report
 
-## dajin2
+## dajin2_DAJIN2
 
 ### Tool Description
-DAJIN2: A tool for Nanopore sequencing analysis of genome editing (Note: The provided text was an error log and did not contain help documentation).
+DAJIN2 batch mode or DAJIN2 GUI mode
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dajin2:0.8.0--pyhdfd78af_0
@@ -12,20 +12,38 @@ DAJIN2: A tool for Nanopore sequencing analysis of genome editing (Note: The pro
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dajin2/overview
-- **Total Downloads**: 21.8K
+- **Total Downloads**: 21.9K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/akikuno/DAJIN2
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/dajin2:0.8.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-2955564101/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+usage: DAJIN2 [-h] [-s SAMPLE] [-c CONTROL] [-a ALLELE] [-n NAME] [-g GENOME]
+              [-b GENOME_COORDINATE] [-t THREADS] [--no-filter] [-v]
+              {batch,gui} ...
+
+positional arguments:
+  {batch,gui}
+    batch               DAIJN2 batch mode
+    gui                 DAIJN2 GUI mode
+
+options:
+  -h, --help            show this help message and exit
+  -s SAMPLE, --sample SAMPLE
+                        Path to a sample directory including FASTQ file
+  -c CONTROL, --control CONTROL
+                        Path to a control directory including FASTQ file
+  -a ALLELE, --allele ALLELE
+                        Path to a FASTA file
+  -n NAME, --name NAME  Output directory name
+  -g GENOME, --genome GENOME
+                        Reference genome ID (e.g hg38, mm39) [default: '']
+  -b GENOME_COORDINATE, --bed GENOME_COORDINATE
+                        Path to BED6 file containing genomic coordinates
+                        [default: '']
+  -t THREADS, --threads THREADS
+                        Number of threads [default: 1]
+  --no-filter           Disable minor allele filtering (keep alleles <0.5%)
+  -v, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

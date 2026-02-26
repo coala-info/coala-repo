@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fission
-description: the package is available on all platforms; click for details.
+description: The bioconductor-fission package provides a RangedSummarizedExperiment object containing RNA-seq data from a fission yeast osmotic stress time course experiment. Use when user asks to access fission yeast transcriptomic data, analyze time-course RNA-seq datasets, or demonstrate differential expression workflows using strain and time interactions.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fission.html
 ---
+
 
 # bioconductor-fission
 

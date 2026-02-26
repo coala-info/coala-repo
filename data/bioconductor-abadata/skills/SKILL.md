@@ -1,8 +1,9 @@
 ---
 name: bioconductor-abadata
-description: "the package 'ABAEnrichment'. The package includes three datasets which are derived from the Allen Brain Atlas: (1) Gene expression data from Human Brain (adults) averaged across donors, (2) Gene expression data from the Developing Human Brain pooled into five age categories and averaged across donors and (3) a developmental effect score based on the Developing Human Brain expression data. All datasets are restricted to protein coding genes."
+description: This package provides gene expression data from the Allen Human Brain Atlas and BrainSpan Atlas for various brain regions and developmental stages. Use when user asks to load adult or developing human brain expression datasets, access developmental effect scores, or retrieve brain-specific gene expression values for protein-coding genes.
 homepage: https://bioconductor.org/packages/3.6/data/experiment/html/ABAData.html
 ---
+
 
 # bioconductor-abadata
 

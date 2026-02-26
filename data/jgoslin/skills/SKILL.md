@@ -1,8 +1,9 @@
 ---
 name: jgoslin
-description: jgoslin is a specialized tool designed to resolve the ambiguity in lipid shorthand notation.
+description: "jgoslin parses and normalizes lipid shorthand notation into a consistent structural format. Use when user asks to parse lipid names, normalize lipid nomenclature, or extract structural metadata from lipid shorthand strings."
 homepage: https://github.com/lifs-tools/jgoslin
 ---
+
 
 # jgoslin
 

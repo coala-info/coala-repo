@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dstruct
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially reactive regions in RNA molecules by comparing structurome profiling data across two conditions. Use when user asks to identify structural changes between RNA samples, perform de novo discovery of differentially reactive regions, or test pre-defined regions for structural differences.
 homepage: https://bioconductor.org/packages/release/bioc/html/dStruct.html
 ---
+
 
 # bioconductor-dstruct
 

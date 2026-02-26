@@ -3,10 +3,10 @@
 ## fastqmetrics
 
 ### Tool Description
-A tool for calculating metrics from FASTQ files (Note: The provided input text contains container runtime error messages rather than the tool's help documentation, so no arguments could be extracted).
+Extract metrics from a fastq file, streaming
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastqmetrics:0.1.0--py35_0
+- **Docker Image**: quay.io/biocontainers/fastqmetrics:0.1.0--py36_1
 - **Homepage**: https://github.com/wdecoster/fastqmetrics
 - **Package**: https://anaconda.org/channels/bioconda/packages/fastqmetrics/overview
 - **Validation**: PASS
@@ -18,11 +18,19 @@ A tool for calculating metrics from FASTQ files (Note: The provided input text c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastqmetrics:0.1.0--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2958558880: no space left on device
+usage: fastqmetrics [-h] [-v] [-t THREADS] fastq
+
+Extract metrics from a fastq file, streaming
+
+positional arguments:
+  fastq                 Fastq file to extract features from.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         Print version and exit.
+  -t THREADS, --threads THREADS
+                        Set the allowed number of threads to be used by the
+                        script. This only applies to bam and fastq format as
+                        data source
 ```
 
-
-## Metadata
-- **Skill**: generated

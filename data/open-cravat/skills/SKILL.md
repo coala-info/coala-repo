@@ -1,8 +1,9 @@
 ---
 name: open-cravat
-description: OpenCRAVAT (Open Custom Ranked Analysis of Variant Tools) is a modular framework designed to transform raw genomic variant data into annotated, interpretable results.
+description: OpenCRAVAT is a modular framework for annotating and analyzing genomic variant data using functional and clinical databases. Use when user asks to initialize the environment, install or update annotation modules, run variant analysis on VCF files, generate reports, or visualize results in the interactive GUI.
 homepage: http://www.opencravat.org
 ---
+
 
 # open-cravat
 

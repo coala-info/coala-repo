@@ -1,8 +1,9 @@
 ---
 name: matchms
-description: matchms is a specialized Python library designed for the fuzzy comparison and processing of mass spectrometry data.
+description: matchms is a Python library for the processing, filtering, and fuzzy comparison of mass spectrometry data. Use when user asks to clean spectral metadata, filter peaks, or compute similarity scores between MS/MS spectra using algorithms like CosineGreedy or Spec2Vec.
 homepage: https://github.com/matchms/matchms
 ---
+
 
 # matchms
 

@@ -1,8 +1,9 @@
 ---
 name: secedo
-description: SECEDO (SinglE CEll Data tumOr clusterer) is a specialized bioinformatics tool designed to cluster tumor cells based on Single Nucleotide Variants (SNVs) from single-cell sequencing.
+description: SECEDO clusters tumor cells using single nucleotide variants from single-cell sequencing data, specifically for ultra-low coverage datasets. Use when user asks to cluster tumor cells based on SNVs, generate binary pileups from aligned BAM files, or perform variant calling on identified cell clusters.
 homepage: https://github.com/ratschlab/secedo
 ---
+
 
 # secedo
 

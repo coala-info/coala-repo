@@ -1,8 +1,9 @@
 ---
 name: bioconductor-homo.sapiens
-description: the package is available on all platforms; click for details.
+description: This tool provides integrated genomic annotations for human data by combining gene metadata, genomic coordinates, and functional annotations into a single interface. Use when user asks to map between database identifiers, retrieve genomic coordinates for genes or exons, or link gene-level data with GO terms.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Homo.sapiens.html
 ---
+
 
 # bioconductor-homo.sapiens
 

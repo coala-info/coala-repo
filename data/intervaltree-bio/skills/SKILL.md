@@ -1,8 +1,9 @@
 ---
 name: intervaltree-bio
-description: The `intervaltree-bio` library provides a high-level interface for handling genomic data that is typically partitioned by chromosome.
+description: The intervaltree-bio library provides a high-level interface for managing and querying genomic intervals partitioned by chromosome. Use when user asks to load genomic features from UCSC tables, manage chromosome-specific interval trees, or perform efficient range-based searches on genomic data.
 homepage: https://github.com/konstantint/intervaltree-bio
 ---
+
 
 # intervaltree-bio
 

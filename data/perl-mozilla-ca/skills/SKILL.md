@@ -1,8 +1,9 @@
 ---
 name: perl-mozilla-ca
-description: The `perl-mozilla-ca` skill provides the procedural knowledge to integrate Mozilla's trusted CA certificate bundle into Perl environments.
+description: This module provides Mozilla's trusted CA certificate bundle for use in Perl environments to verify the identity of remote servers. Use when user asks to integrate trusted root certificates into Perl scripts, verify HTTPS connections using IO::Socket::SSL or LWP::UserAgent, or configure certificate paths in isolated environments.
 homepage: https://metacpan.org/pod/Mozilla::CA
 ---
+
 
 # perl-mozilla-ca
 

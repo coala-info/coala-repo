@@ -1,8 +1,9 @@
 ---
 name: bioconductor-agilp
-description: the package is available on all platforms; click for details.
+description: This tool provides a low-level analysis pipeline for processing and normalizing Agilent gene expression microarray data. Use when user asks to extract raw signal data from scanner files, average replicate probes, generate normalization baselines, perform Loess normalization, or merge array data into expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/agilp.html
 ---
+
 
 # bioconductor-agilp
 

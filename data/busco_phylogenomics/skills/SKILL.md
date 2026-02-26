@@ -1,8 +1,9 @@
 ---
 name: busco_phylogenomics
-description: The `busco_phylogenomics` tool streamlines the transition from genomic quality assessment to evolutionary analysis.
+description: The busco_phylogenomics tool automates the identification of orthologous markers from BUSCO results to generate sequence alignments and phylogenetic trees. Use when user asks to extract single-copy orthologs, assess marker occupancy across samples, create a supermatrix, or perform phylogenomic inference.
 homepage: https://github.com/jamiemcg/BUSCO_phylogenomics
 ---
+
 
 # busco_phylogenomics
 

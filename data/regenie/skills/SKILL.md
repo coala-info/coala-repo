@@ -1,8 +1,9 @@
 ---
 name: regenie
-description: REGENIE is a highly efficient tool designed for large-scale genetic association studies.
+description: REGENIE performs large-scale genetic association studies using a two-step whole-genome regression approach to account for population structure and relatedness. Use when user asks to perform genome-wide association studies, fit whole-genome regression models, or conduct association testing for quantitative and binary traits in large cohorts.
 homepage: https://rgcgithub.github.io/regenie/
 ---
+
 
 # regenie
 

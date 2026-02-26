@@ -1,8 +1,9 @@
 ---
 name: mhg
-description: MHG (Maximal Homologous Groups) is a graph-based bioinformatics tool designed to merge and partition homologous groups across multiple genomes without the need for prior gene annotations.
+description: MHG is a graph-based bioinformatics tool that merges and partitions homologous groups across multiple genomes without requiring prior gene annotations. Use when user asks to identify homologous blocks, partition sequences into maximal homologous groups, or analyze evolutionary histories across unannotated genomes.
 homepage: https://github.com/NakhlehLab/Maximal-Homologous-Groups
 ---
+
 
 # mhg
 

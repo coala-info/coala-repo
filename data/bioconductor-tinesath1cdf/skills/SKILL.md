@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tinesath1cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the TinesAth1 microarray. Use when user asks to process TinesAth1 microarray data, map probes to locations, or access chip definition information.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/tinesath1cdf.html
 ---
+
 
 # bioconductor-tinesath1cdf
 

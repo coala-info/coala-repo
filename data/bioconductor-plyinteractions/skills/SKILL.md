@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plyinteractions
-description: the package is available on all platforms; click for details.
+description: This package provides a tidyverse-like grammar for manipulating and analyzing genomic interaction data. Use when user asks to filter, mutate, summarize, or join genomic interactions stored as GInteractions objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/plyinteractions.html
 ---
+
 
 # bioconductor-plyinteractions
 

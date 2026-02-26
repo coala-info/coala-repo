@@ -1,8 +1,9 @@
 ---
 name: reseek
-description: Reseek is a specialized tool for protein structure comparison that utilizes a "mega-alphabet" of structural states to achieve high sensitivity.
+description: Reseek performs protein structure comparison and alignment using a structural state alphabet to detect remote homologs with high sensitivity. Use when user asks to search structure databases, perform all-vs-all structural comparisons, generate pairwise alignments and superpositions, or convert protein structures into binary database formats.
 homepage: https://github.com/rcedgar/reseek
 ---
+
 
 # reseek
 

@@ -1,8 +1,9 @@
 ---
 name: r-spacexr
-description: R package spacexr (documentation from project home).
+description: This R package performs cell type deconvolution and cell type-specific differential expression analysis for spatial transcriptomics data. Use when user asks to deconvolute spatial pixels into cell type proportions, run Robust Cell Type Decomposition, or identify cell type-specific differential expression across spatial covariates.
 homepage: https://cran.r-project.org/web/packages/spacexr/index.html
 ---
+
 
 # r-spacexr
 

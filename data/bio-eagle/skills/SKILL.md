@@ -1,8 +1,9 @@
 ---
 name: bio-eagle
-description: The bio-eagle skill leverages the `bio` command-line toolkit to make bioinformatics tasks more intuitive and efficient.
+description: The bio-eagle skill leverages the bio command-line toolkit to fetch genomic records, extract biological features, and perform sequence alignments. Use when user asks to download NCBI records, convert sequences to FASTA format, extract specific genes or proteins, perform alignments, explore taxonomic lineages, or define biological ontology terms.
 homepage: https://github.com/ialbert/bio
 ---
+
 
 # bio-eagle
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aucell
-description: the package is available on all platforms; click for details.
+description: AUCell identifies cells with active gene signatures in single-cell RNA-seq data using a ranking-based Area Under the Curve method. Use when user asks to score gene sets, identify active gene modules, or determine cell-type assignments based on expression rankings.
 homepage: https://bioconductor.org/packages/release/bioc/html/AUCell.html
 ---
+
 
 # bioconductor-aucell
 

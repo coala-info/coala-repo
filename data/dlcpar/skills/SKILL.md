@@ -1,8 +1,9 @@
 ---
 name: dlcpar
-description: DLCpar is a specialized phylogenetic toolset used to infer the most parsimonious reconciliation between a gene tree and a species tree.
+description: DLCpar is a phylogenetic toolset used to infer the most parsimonious reconciliation between gene trees and species trees while accounting for deep coalescence. Use when user asks to reconcile gene and species trees, perform ILP-based reconciliation, analyze cost landscapes, or sample multiple optimal reconciliations.
 homepage: https://github.com/wutron/dlcpar
 ---
+
 
 # dlcpar
 

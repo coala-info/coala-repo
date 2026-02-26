@@ -1,8 +1,9 @@
 ---
 name: export2graphlan
-description: export2graphlan is a preprocessing utility designed to bridge the gap between microbial community profiling tools and GraPhlAn visualization.
+description: "export2graphlan is a preprocessing utility that converts microbial abundance tables and biomarker results into input files for GraPhlAn visualization. Use when user asks to generate phylogenetic tree and annotation files, convert MetaPhlAn or HUMAnN tables for visualization, or integrate LEfSe results into circular cladograms."
 homepage: https://github.com/segatalab/export2graphlan
 ---
+
 
 # export2graphlan
 

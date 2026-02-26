@@ -1,8 +1,9 @@
 ---
 name: pb-cpg-tools
-description: The `pb-cpg-tools` package is a specialized suite designed to process PacBio HiFi sequencing data to identify CpG methylation patterns.
+description: pb-cpg-tools processes PacBio HiFi sequencing data to identify CpG methylation patterns and generate site-level scores. Use when user asks to extract 5mC base modifications from BAM or CRAM files, generate haplotype-specific methylation tracks, or create BigWig and BED files for methylation visualization.
 homepage: https://github.com/PacificBiosciences/pb-CpG-tools
 ---
+
 
 # pb-cpg-tools
 

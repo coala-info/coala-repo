@@ -1,8 +1,9 @@
 ---
 name: constax
-description: CONSTAX (CONSensus TAXonomy) is a specialized tool designed to improve the taxonomic resolution of environmental DNA sequences.
+description: CONSTAX improves the taxonomic resolution of environmental DNA sequences by generating a consensus classification from multiple alignment tools. Use when user asks to assign taxonomy to OTUs, run consensus taxonomic classification, or train classifiers on reference databases like SILVA or UNITE.
 homepage: https://github.com/liberjul/CONSTAXv2
 ---
+
 
 # constax
 

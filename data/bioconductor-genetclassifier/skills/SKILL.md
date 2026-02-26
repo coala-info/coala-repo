@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genetclassifier
-description: the package is available on all platforms; click for details.
+description: This tool builds multi-class SVM classifiers and associated gene networks from gene expression data to identify class-specific gene signatures. Use when user asks to build SVM classifiers, rank genes by differential expression, select gene signatures, estimate generalization error, visualize gene networks, or predict the class of new transcriptomic samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/geNetClassifier.html
 ---
+
 
 # bioconductor-genetclassifier
 

@@ -1,9 +1,9 @@
 # ucsc-hggcpercent CWL Generation Report
 
-## ucsc-hggcpercent
+## ucsc-hggcpercent_hgGcPercent
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the image.
+Calculate GC Percentage in 20kb windows
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-hggcpercent:482--h0b57e2e_0
@@ -18,33 +18,30 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hggcpercent:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+hgGcPercent - Calculate GC Percentage in 20kb windows
+usage:
+   hgGcPercent [options] database nibDir
+     nibDir can be a .2bit file, a directory that contains a
+     database.2bit file, or a directory that contains *.nib files.
+     Loads gcPercent table with counts from sequence.
+options:
+   -win=<size> - change windows size (default 20000)
+   -noLoad - do not load mysql table - create bed file
+   -file=<filename> - output to <filename> (stdout OK) (implies -noLoad)
+   -chr=<chrN> - process only chrN from the nibDir
+   -noRandom - ignore randome chromosomes from the nibDir
+   -noDots - do not display ... progress during processing
+   -doGaps - process gaps correctly (default: gaps are not counted as GC)
+   -wigOut - output wiggle ascii data ready to pipe to wigEncode
+   -overlap=N - overlap windows by N bases (default 0)
+   -verbose=N - display details to stderr during processing
+   -bedRegionIn=input.bed   Read in a bed file for GC content in specific regions and write to bedRegionsOut
+   -bedRegionOut=output.bed Write a bed file of GC content in specific regions from bedRegionIn
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-hggcpercent
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-hggcpercent:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-hggcpercent/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hggcpercent:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+example:
+  calculate GC percent in 5 base windows using a 2bit assembly (dp2):
+    hgGcPercent -wigOut -doGaps -win=5 -file=stdout -verbose=0 \
+      dp2 /cluster/data/dp2 \
+    | wigEncode stdin gc5Base.wig gc5Base.wib
 ```
 

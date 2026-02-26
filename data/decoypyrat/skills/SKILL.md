@@ -1,8 +1,9 @@
 ---
 name: decoypyrat
-description: DecoyPYrat is a high-speed tool used in proteomics to create "decoy" protein databases.
+description: DecoyPYrat generates decoy protein databases for estimating false discovery rates in proteomics experiments. Use when user asks to create decoy protein sequences, generate a target-decoy database, or perform sequence shuffling and reversal for mass spectrometry analysis.
 homepage: https://github.com/tdido/DecoyPYrat
 ---
+
 
 # decoypyrat
 

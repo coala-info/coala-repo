@@ -1,8 +1,9 @@
 ---
 name: munkres
-description: The `munkres` skill provides a Python-based implementation of the Hungarian algorithm (also known as the Kuhn-Munkres algorithm).
+description: The munkres tool implements the Hungarian algorithm to solve the assignment problem by finding the optimal pairings that minimize total cost in a matrix. Use when user asks to solve the assignment problem, minimize total cost, maximize profit, or find optimal pairings between two sets of items.
 homepage: https://github.com/bmc/munkres
 ---
+
 
 # munkres
 

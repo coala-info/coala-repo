@@ -1,8 +1,9 @@
 ---
 name: peddy
-description: Peddy is a high-performance tool for validating the integrity of human genomic datasets.
+description: Peddy validates the integrity of human genomic datasets by comparing reported familial relationships and sex against actual genotypes. Use when user asks to check for sample swaps, verify pedigree information, predict ancestry, or perform sex-check quality control on VCF files.
 homepage: https://github.com/brentp/peddy
 ---
+
 
 # peddy
 

@@ -1,8 +1,9 @@
 ---
 name: r-metadig
-description: R package metadig (documentation from project home).
+description: The r-metadig package provides tools to author, test, and run metadata quality checks in R that are compatible with the MetaDIG quality engine. Use when user asks to create metadata quality metrics, validate metadata documents like EML, or test XML-defined quality checks against metadata files.
 homepage: https://cran.r-project.org/web/packages/metadig/index.html
 ---
+
 
 # r-metadig
 

@@ -1,9 +1,9 @@
 # ucsc-chainsplit CWL Generation Report
 
-## ucsc-chainsplit
+## ucsc-chainsplit_chainSplit
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime logs indicating a failure to fetch or build the OCI image.
+Split chains by target or query sequence
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chainsplit:482--h0b57e2e_0
@@ -18,13 +18,11 @@ The provided text does not contain help information for the tool. It contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chainsplit:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+chainSplit - Split chains up by target or query sequence
+usage:
+   chainSplit outDir inChain(s)
+options:
+   -q  - Split on query (default is on target)
+   -lump=N  Lump together so have only N split files.
 ```
 
-
-## Metadata
-- **Skill**: generated

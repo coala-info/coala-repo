@@ -1,8 +1,9 @@
 ---
 name: jaffa
-description: JAFFA (Joined Assembly of Fusion Transcripts) is a specialized pipeline designed to identify gene fusions by comparing a sample's transcriptome against a reference transcriptome.
+description: JAFFA is a transcript-centric pipeline designed to identify gene fusions and provide their breakpoint cDNA sequences from short-read or long-read transcriptome data. Use when user asks to detect gene fusions, analyze RNA-seq data for chimeric transcripts, or identify fusion breakpoints in long-read sequencing.
 homepage: https://github.com/Oshlack/JAFFA
 ---
+
 
 # jaffa
 

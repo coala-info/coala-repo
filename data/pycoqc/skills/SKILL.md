@@ -1,8 +1,9 @@
 ---
 name: pycoqc
-description: pycoqc is a specialized tool designed for the post-sequencing analysis of Oxford Nanopore data.
+description: pycoqc generates interactive quality control reports and visualizations for Oxford Nanopore sequencing data. Use when user asks to evaluate sequencing yield, generate HTML quality reports from summary files, or analyze alignment-based metrics.
 homepage: https://github.com/EnrightLab/pycoQC
 ---
+
 
 # pycoqc
 

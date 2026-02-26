@@ -1,8 +1,9 @@
 ---
 name: cofold
-description: CoFold is a specialized RNA secondary structure prediction tool derived from the ViennaRNA package.
+description: CoFold predicts RNA secondary structures by incorporating a distance-based model to simulate the kinetic effects of co-transcriptional folding. Use when user asks to predict RNA structures with co-transcriptional folding effects, adjust alpha and tau distance parameters, or calculate maximum expected accuracy structures.
 homepage: https://github.com/jujubix/cofold
 ---
+
 
 # cofold
 

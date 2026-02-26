@@ -1,8 +1,9 @@
 ---
 name: randfold
-description: The `randfold` skill enables the statistical evaluation of RNA secondary structure stability.
+description: Randfold evaluates the statistical significance of RNA secondary structure stability by comparing the minimum free energy of a sequence to that of its shuffled counterparts. Use when user asks to calculate p-values for RNA folding stability, perform dinucleotide shuffling on sequences, or assess if a sequence has a significantly stable structure characteristic of a microRNA.
 homepage: https://github.com/erbon7/randfold
 ---
+
 
 # randfold
 

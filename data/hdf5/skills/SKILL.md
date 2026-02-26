@@ -1,8 +1,9 @@
 ---
 name: hdf5
-description: HDF5 is a high-performance data management framework used to store and organize massive amounts of data in a hierarchical structure, similar to a filesystem within a single file.
+description: HDF5 is a high-performance data management framework used to store, organize, and manipulate massive amounts of data in a hierarchical structure. Use when user asks to explore file metadata, extract specific datasets, compare data between files, optimize storage through compression, or compile HDF5 applications.
 homepage: https://github.com/HDFGroup/hdf5
 ---
+
 
 # hdf5
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fabiadata
-description: the package is available on all platforms; click for details.
+description: This package provides gene expression datasets for demonstrating and testing biclustering algorithms. Use when user asks to load breast cancer, lymphoma, or multiple tissue microarray data for FABIA analysis or biclustering validation.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fabiaData.html
 ---
+
 
 # bioconductor-fabiadata
 

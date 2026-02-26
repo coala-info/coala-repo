@@ -1,8 +1,9 @@
 ---
 name: bioconductor-exomepeak
-description: "The package is developed for the analysis of affinity-based epitranscriptome shortgun sequencing data from MeRIP-seq (maA-seq). It was built on the basis of the exomePeak MATLAB package (Meng, Jia, et al. \"Exome-based analysis for RNA epigenome sequencing data.\" Bioinformatics 29.12 (2013): 1565-1567.) with new functions for differential analysis of two experimental conditions to unveil the dynamics in post-transcriptional regulation of the RNA methylome. The exomePeak R-package accepts and statistically supports multiple biological replicates, internally removes PCR artifacts and multi-mapping reads, outputs exome-based binding sites (RNA methylation sites) and detects differential post-transcriptional RNA modification sites between two experimental conditions in term of percentage rather the absolute amount. The package is still under active development, and we welcome all biology and computation scientist for all kinds of collaborations and communications. Please feel free to contact Dr."
+description: This tool analyzes MeRIP-seq and m6A-seq data to identify RNA methylation sites and detect differential modification levels between experimental conditions. Use when user asks to call peaks for RNA methylation, identify m6A sites, or perform differential methylation analysis on epitranscriptome shotgun sequencing data.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/exomePeak.html
 ---
+
 
 # bioconductor-exomepeak
 

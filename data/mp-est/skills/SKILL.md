@@ -1,8 +1,9 @@
 ---
 name: mp-est
-description: MP-EST (Maximum Pseudo-likelihood Estimation of Species Trees) is a specialized phylogenetic tool that reconstructs species-level relationships from a set of independent gene trees.
+description: MP-EST reconstructs species trees from a collection of rooted gene trees by maximizing a pseudo-likelihood function based on triplet frequencies. Use when user asks to estimate species tree topology and branch lengths in coalescent units, calculate triplet or quartet distances, or evaluate species-tree-gene-tree concordance.
 homepage: https://github.com/lliu1871/mp-est
 ---
+
 
 # mp-est
 

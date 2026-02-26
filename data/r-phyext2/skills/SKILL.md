@@ -1,8 +1,9 @@
 ---
 name: r-phyext2
-description: Based on (but not identical to) the no-longer-maintained package 'phyext', provides enhancements to 'phylobase' classes, specifically for use by package 'SigTree'; provides classes and methods which help users manipulate branch-annotated trees (as in 'SigTree'); also provides support for a few other extra features.</p>
+description: The r-phyext2 package provides specialized classes and methods for handling and manipulating branch-annotated phylogenetic trees. Use when user asks to manage tree objects with branch-level metadata, manipulate node identifiers, or provide the underlying architecture for SigTree analysis.
 homepage: https://cran.r-project.org/web/packages/phyext2/index.html
 ---
+
 
 # r-phyext2
 

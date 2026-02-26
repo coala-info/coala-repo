@@ -3,7 +3,7 @@
 ## scelestial
 
 ### Tool Description
-A tool for single-cell lineage tree reconstruction (Note: The provided text contains error logs rather than help documentation, so specific arguments could not be extracted).
+Scelestial considers all k-subsets of samples for min-k <= k <= max-k.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scelestial:1.2--h9948957_4
@@ -18,9 +18,16 @@ A tool for single-cell lineage tree reconstruction (Note: The provided text cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/7657ebf9ee2954bd8e5fd06b78d127dc480325cba45f76778cd4c9fda500a65c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scelestial:1.2--h9948957_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1673200486: no space left on device
+usage: scelestial [options] <input >output
+  -min-k arg             Sets min-k to arg. Default=3. 
+                         Scelestial considers all k-subsets of samples for min-k <= k <= max-k.
+  -max-k arg             Sets max-k to arg. Default=4. 
+                         Scelestial considers all k-subsets of samples for min-k <= k <= max-k.
+  -include-root arg      Adds a sample with all sites equal to arg as root of the tree.
+  -root root-index       Zero-based index of the new root.
+                         After inferring the tree, tree edges are directed toward new root.
+                         In the output line "u v w" u is the parent and v is the child node.
+  -no-internal-sample    Move all samples to leaf nodes.
+                         If -root is also present, a neighbor of root-index is chosen as the root.
 ```
 

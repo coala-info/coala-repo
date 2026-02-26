@@ -1,8 +1,9 @@
 ---
 name: pbbarcode
-description: pbbarcode is a specialized toolset for managing barcode information within PacBio sequencing datasets.
+description: pbbarcode manages and demultiplexes barcode information within PacBio sequencing datasets. Use when user asks to label ZMWs, annotate alignments with barcode scores, emit demultiplexed FASTQ or FASTA files, or generate barcode-specific consensus sequences.
 homepage: https://github.com/mlbendall/pbbarcode
 ---
+
 
 # pbbarcode
 

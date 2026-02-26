@@ -1,8 +1,9 @@
 ---
 name: chisel
-description: CHISEL (Copy-number Haplotype Inference in Single-cell by Evolutionary Links) is a computational framework designed to extract high-resolution genomic information from ultra-low coverage (<0.05X per cell) single-cell DNA sequencing.
+description: CHISEL infers haplotype-specific copy numbers and clusters cells into clones from low-coverage single-cell DNA sequencing data. Use when user asks to call copy numbers, identify genomic alterations in single cells, or perform cell clustering based on haplotype profiles.
 homepage: https://github.com/raphael-group/chisel
 ---
+
 
 # chisel
 

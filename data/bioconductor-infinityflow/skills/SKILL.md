@@ -1,8 +1,9 @@
 ---
 name: bioconductor-infinityflow
-description: the package is available on all platforms; click for details.
+description: This package uses machine learning to impute high-dimensional protein expression data from massively parallel flow cytometry experiments. Use when user asks to augment flow cytometry datasets, predict exploratory marker expression from backbone channels, or create high-dimensional single-cell protein expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/infinityFlow.html
 ---
+
 
 # bioconductor-infinityflow
 

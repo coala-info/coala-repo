@@ -1,9 +1,9 @@
 # nanolyse CWL Generation Report
 
-## nanolyse
+## nanolyse_NanoLyse
 
 ### Tool Description
-A tool for removing DNA contaminant reads (e.g., lambda phage) from Nanopore sequencing data.
+Remove reads mapping to DNA CS. Reads fastq on stdin and writes to stdout.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanolyse:1.2.1--pyhdfd78af_0
@@ -12,17 +12,33 @@ A tool for removing DNA contaminant reads (e.g., lambda phage) from Nanopore seq
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nanolyse/overview
-- **Total Downloads**: 45.0K
+- **Total Downloads**: 45.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/wdecoster/NanoLyse
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanolyse:1.2.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3804457418: no space left on device
+usage: NanoLyse [-h] [-v] [--summary_in SUMMARY_IN]
+                [--summary_out SUMMARY_OUT] [-r REFERENCE] [--logfile LOGFILE]
+
+Remove reads mapping to DNA CS. Reads fastq on stdin and writes to stdout.
+
+options:
+  --summary_in SUMMARY_IN
+                        Summary file to filter
+  --summary_out SUMMARY_OUT
+                        with --summary_in: name of output file.
+  -r, --reference REFERENCE
+                        Specify a fasta file against which to filter. Standard is DNA CS.
+  --logfile LOGFILE     Specify the path and filename for the log file.
+
+General options:
+  -h, --help            show the help and exit
+  -v, --version         Print version and exit.
+
+EXAMPLES:
+    gunzip -c reads.fastq.gz | NanoLyse | gzip > reads_without_lambda.fastq.gz
+    gunzip -c reads.fastq.gz | NanoLyse | NanoFilt -q 12 | gzip > filt_reads_without_lambda.fastq.gz
+    gunzip -c reads.fastq.gz | NanoLyse --reference mydb.fa.gz | gzip > reads_without_mydb.fastq.gz
 ```
 
-
-## Metadata
-- **Skill**: generated

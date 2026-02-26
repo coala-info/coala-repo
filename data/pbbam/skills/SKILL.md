@@ -1,8 +1,9 @@
 ---
 name: pbbam
-description: pbbam is a specialized C++ library and toolset designed specifically for PacBio's version of the BAM format.
+description: pbbam is a specialized C++ library and toolset designed to process and validate BAM files adhering to the PacBio-specific format. Use when user asks to handle PacBio-specific BAM metadata, manage .bam.pbi index files, or resolve unsupported sequencing chemistry errors.
 homepage: https://github.com/PacificBiosciences/pbbam
 ---
+
 
 # pbbam
 

@@ -1,8 +1,9 @@
 ---
 name: cressent
-description: cressent (CRESSdna Extended aNnotation Toolkit) is a modular bioinformatic suite tailored for the study of Circular Rep-Encoding Single-Stranded DNA viruses.
+description: cressent is a bioinformatic suite designed to process, annotate, and analyze Circular Rep-Encoding Single-Stranded DNA viral sequences from metagenomic data. Use when user asks to build taxonomic databases, cluster sequences, detect kitome contamination, reorient sequences to conserved motifs, or perform phylogenetic alignments.
 homepage: https://github.com/ricrocha82/cressent
 ---
+
 
 # cressent
 

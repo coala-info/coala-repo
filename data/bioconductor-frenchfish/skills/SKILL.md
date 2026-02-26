@@ -1,8 +1,9 @@
 ---
 name: bioconductor-frenchfish
-description: the package is available on all platforms; click for details.
+description: This tool provides statistical correction of FISH probe counts in tissue sections to account for nuclear volume effects and overlapping nuclei. Use when user asks to correct DNA copy-number estimates from FISH imaging, adjust automated spot counts from FISHalyseR, or estimate true biological copy numbers from manual counts in solid tumor samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/frenchFISH.html
 ---
+
 
 # bioconductor-frenchfish
 

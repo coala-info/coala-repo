@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hi16cod.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation data for mapping manufacturer probe identifiers from the hi16cod platform to biological metadata. Use when user asks to map probes to Gene Symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hi16cod.db.html
 ---
+
 
 # bioconductor-hi16cod.db
 

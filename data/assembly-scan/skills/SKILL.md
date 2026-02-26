@@ -1,8 +1,9 @@
 ---
 name: assembly-scan
-description: `assembly-scan` is a lightweight utility designed to provide immediate insights into the quality and composition of genomic assemblies.
+description: "assembly-scan generates quality metrics and composition summaries for genomic assemblies from FASTA files. Use when user asks to calculate N50, determine assembly length, or extract nucleotide percentages from assembly files."
 homepage: https://github.com/rpetit3/assembly-scan
 ---
+
 
 # assembly-scan
 

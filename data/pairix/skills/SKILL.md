@@ -1,8 +1,9 @@
 ---
 name: pairix
-description: Pairix is a specialized indexing tool designed to handle 2D genomic coordinates.
+description: Pairix indexes and queries 2D genomic coordinate data to enable rapid retrieval of genomic interactions. Use when user asks to index 2D genomic files, query specific genomic interaction rectangles, or retrieve data from bgzipped pairs files.
 homepage: https://github.com/4dn-dcic/pairix
 ---
+
 
 # pairix
 

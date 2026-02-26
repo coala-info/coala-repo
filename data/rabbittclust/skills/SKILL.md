@@ -1,8 +1,9 @@
 ---
 name: rabbittclust
-description: RabbitTClust is a specialized toolkit designed for the rapid clustering of massive bacterial genome collections.
+description: RabbitTClust is a toolkit designed for the rapid clustering of massive bacterial genome collections using dimensionality reduction and various clustering algorithms. Use when user asks to perform hierarchical clustering, execute greedy incremental clustering, or apply graph-based community detection to large genomic datasets.
 homepage: https://github.com/RabbitBio/RabbitTClust
 ---
+
 
 # rabbittclust
 

@@ -1,8 +1,9 @@
 ---
 name: repenrich
-description: RepEnrich is a specialized bioinformatics tool designed to overcome the challenges of mapping sequencing reads to repetitive regions of the genome.
+description: RepEnrich quantifies the activity of repetitive elements by fractionally assigning multi-mapping sequencing reads to specific repeat subfamilies. Use when user asks to prepare repetitive element annotations, perform two-stage alignment for multi-mapping reads, or calculate enrichment for genomic repeats.
 homepage: https://github.com/nskvir/RepEnrich
 ---
+
 
 # repenrich
 

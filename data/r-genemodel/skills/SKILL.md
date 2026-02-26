@@ -1,8 +1,9 @@
 ---
 name: r-genemodel
-description: Using simple input, this package creates plots of gene models. Users can create plots of alternatively spliced gene variants and the positions of mutations and other gene features.</p>
+description: The r-genemodel package creates publication-quality visualizations of gene models and genomic features based on coordinate data. Use when user asks to plot gene architecture, visualize alternative splicing variants, or overlay mutations and haplotypes onto genomic models.
 homepage: https://cloud.r-project.org/web/packages/genemodel/index.html
 ---
+
 
 # r-genemodel
 

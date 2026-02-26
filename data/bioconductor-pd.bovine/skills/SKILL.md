@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.bovine
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Bovine genome array. Use when user asks to process raw Affymetrix Bovine microarray data, map probes to genomic features, or perform gene expression analysis for bovine samples using the oligo package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.bovine.html
 ---
+
 
 # bioconductor-pd.bovine
 

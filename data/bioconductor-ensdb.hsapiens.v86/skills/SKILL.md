@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ensdb.hsapiens.v86
-description: the package is available on all platforms; click for details.
+description: This package provides Ensembl release 86 genome annotations for Homo sapiens via a local SQLite database. Use when user asks to retrieve human gene models, fetch genomic coordinates for transcripts or exons, filter annotations by biotype or chromosome, or map coordinates between genome and protein features.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Hsapiens.v86.html
 ---
+
 
 # bioconductor-ensdb.hsapiens.v86
 

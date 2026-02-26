@@ -1,8 +1,9 @@
 ---
 name: lambda
-description: Lambda (Local Aligner for Massive Biological DatA) is a specialized sequence alignment tool designed to bridge the gap between the sensitivity of BLAST and the speed required for modern "big data" genomics.
+description: Lambda is a high-speed sequence alignment tool designed for searching large biological datasets with BLAST-like sensitivity. Use when user asks to index sequence databases, perform local alignments, conduct taxonomic classification, or manage memory-efficient parallel searches.
 homepage: http://seqan.github.io/lambda/
 ---
+
 
 # lambda
 

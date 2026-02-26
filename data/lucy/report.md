@@ -3,7 +3,7 @@
 ## lucy
 
 ### Tool Description
-A tool for DNA sequence quality trimming and vector removal.
+Less Useful Chunks Yank (lucy)
 
 ### Metadata
 - **Docker Image**: biocontainers/lucy:v1.20-1-deb_cv1
@@ -18,11 +18,23 @@ A tool for DNA sequence quality trimming and vector removal.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/lucy:v1.20-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1096490981: no space left on device
+Less Useful Chunks Yank (lucy) 1.20p, by Hui-Hsien Chou and Michael Holmes,
+  with help from Granger, Anna, John and Terry Shea.
+lucy: no input sequence file
+usage: lucy
+   [-pass_along min_value max_value med_value]
+   [-range area1 area2 area3] [-alignment area1 area2 area3]
+   [-vector vector_sequence_file splice_site_file]
+   [-cdna [minimum_span maximum_error initial_search_range]] [-keep]
+   [-size vector_tag_size] [-threshold vector_cutoff]
+   [-minimum good_sequence_length] [-debug [filename]]
+   [-output sequence_filename quality_filename]
+   [-error max_avg_error max_error_at_ends]
+   [-window window_size max_avg_error [window_size max_avg_error ...]]
+   [-bracket window_size max_avg_error]
+   [-quiet] [-inform_me] [-xtra cpu_threads]
+   sequence_file quality_file [2nd_sequence_file]
+
+For more information try 'man -F lucy'.
 ```
 
-
-## Metadata
-- **Skill**: generated

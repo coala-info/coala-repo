@@ -1,8 +1,9 @@
 ---
 name: pyclone
-description: PyClone is a statistical framework designed to identify and cluster subclonal populations within cancer samples.
+description: PyClone is a statistical framework used to identify and cluster subclonal populations in cancer samples by estimating the cellular prevalence of mutations. Use when user asks to cluster subclonal populations, estimate cellular prevalence, or run a Bayesian clonal inference pipeline on mutation read counts and copy number data.
 homepage: https://github.com/Roth-Lab/pyclone/
 ---
+
 
 # pyclone
 

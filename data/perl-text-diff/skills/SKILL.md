@@ -1,8 +1,9 @@
 ---
 name: perl-text-diff
-description: The `perl-text-diff` tool provides a robust interface for comparing text sources.
+description: The perl-text-diff tool compares text sources such as files, arrays, and scalars to generate configurable diff outputs. Use when user asks to compare text data, generate patch-compatible unified diffs, or format differences between in-memory strings and arrays.
 homepage: http://metacpan.org/pod/Text-Diff
 ---
+
 
 # perl-text-diff
 

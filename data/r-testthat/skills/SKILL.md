@@ -1,8 +1,9 @@
 ---
 name: r-testthat
-description: "Software testing is important, but, in part because it is     frustrating and boring, many of us avoid it. 'testthat' is a testing     framework for R that is easy to learn and use, and integrates with     your existing 'workflow'.</p>"
+description: The testthat package provides a structured framework for performing unit testing in the R programming language. Use when user asks to write unit tests, verify code expectations, run package test suites, or implement snapshot testing.
 homepage: https://cloud.r-project.org/web/packages/testthat/index.html
 ---
+
 
 # r-testthat
 

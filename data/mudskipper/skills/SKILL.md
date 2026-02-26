@@ -1,8 +1,9 @@
 ---
 name: mudskipper
-description: `mudskipper` is a specialized bioinformatics tool designed to project genomic read alignments onto transcriptomic coordinates.
+description: "Mudskipper projects genomic read alignments onto transcriptomic coordinates using a GTF annotation file. Use when user asks to convert genomic BAM files to transcriptomic alignments, project genomic reads to transcripts for quantification, or generate RAD files for single-cell RNA-seq workflows."
 homepage: https://github.com/OceanGenomics/mudskipper
 ---
+
 
 # mudskipper
 

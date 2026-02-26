@@ -1,8 +1,9 @@
 ---
 name: perl-tree-dag_node
-description: The `perl-tree-dag_node` skill provides a framework for managing Directed Acyclic Graphs (DAG) where nodes are organized in an N-ary tree structure.
+description: This tool provides a framework for managing and manipulating N-ary tree structures within Directed Acyclic Graphs. Use when user asks to represent complex hierarchies, perform tree traversals, or generate ASCII visualizations of nested data structures.
 homepage: http://metacpan.org/pod/Tree-DAG_Node
 ---
+
 
 # perl-tree-dag_node
 

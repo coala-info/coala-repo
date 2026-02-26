@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmassbank
-description: the package is available on all platforms; click for details.
+description: "RMassBank processes tandem mass spectrometry data to create high-quality mass spectral libraries. Use when user asks to recalibrate MS/MS spectra, perform peak picking, or generate MassBank records for small molecules."
 homepage: https://bioconductor.org/packages/release/bioc/html/RMassBank.html
 ---
+
 
 # bioconductor-rmassbank
 

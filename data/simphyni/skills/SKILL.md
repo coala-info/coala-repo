@@ -1,8 +1,9 @@
 ---
 name: simphyni
-description: SimPhyNI (Simulation-based Phylogenetic iNteraction Inference) is a specialized tool for evolutionary biology that detects associations between binary traits while accounting for the underlying phylogenetic structure of the samples.
+description: SimPhyNI detects associations between binary traits by accounting for phylogenetic structure through evolutionary simulations. Use when user asks to infer trait associations, detect genotype-phenotype relationships, or perform phylogenetically-corrected trait analysis.
 homepage: https://github.com/jpeyemi/SimPhyNI
 ---
+
 
 # simphyni
 

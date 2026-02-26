@@ -3,26 +3,32 @@
 ## gffutils
 
 ### Tool Description
-The provided text does not contain help information for gffutils. It contains system error messages related to a container runtime (Apptainer/Singularity) failing due to insufficient disk space.
+FAIL to generate CWL: gffutils not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gffutils:0.13--pyh7cba7a3_0
 - **Homepage**: https://github.com/daler/gffutils
 - **Package**: https://anaconda.org/channels/bioconda/packages/gffutils/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gffutils/overview
-- **Total Downloads**: 233.6K
+- **Total Downloads**: 234.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/daler/gffutils
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: gffutils not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: gffutils not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gffutils:0.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3225362552: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

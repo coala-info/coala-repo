@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-alignmentbasedquantification
-description: The `proteomiqon-alignmentbasedquantification` tool is a specialized module within the ProteomIQon ecosystem designed to increase the number of quantified peptides across multiple MS runs.
+description: This tool quantifies peptides across multiple MS runs by transferring identities from reference runs to target runs using alignment data. Use when user asks to perform alignment-based quantification, address missing values in DDA data, or extract ion chromatograms for peptides without MS/MS identifications.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-alignmentbasedquantification
 

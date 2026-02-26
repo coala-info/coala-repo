@@ -3,7 +3,7 @@
 ## tssv
 
 ### Tool Description
-Targeted Short Sequence Variation (TSSV) analysis tool. Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.
+Targeted characterisation of short structural variation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tssv:1.1.2--py312h0fa9677_6
@@ -18,14 +18,28 @@ Targeted Short Sequence Variation (TSSV) analysis tool. Note: The provided text 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tssv:1.1.2--py312h0fa9677_6 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:786fa8e4764f1b1f21dc4474679d0134d536374319489aa6d5fa29debbad8e26: unpack entry: usr/local/include/openssl/rand.h: unpack to regular file: short write: write /tmp/build-temp-3607366707/rootfs/usr/local/include/openssl/rand.h: no space left on device
+usage: tssv [-h] [-m THRESHOLD] [-M MISMATCHES] [-n INDEL_SCORE]
+            [-r REPORT_HANDLE] [-j] [-d PATH] [-a MINIMUM] [-v]
+            INPUT LIBRARY
+
+Targeted characterisation of short structural variation.
+
+positional arguments:
+  INPUT             a FASTA/FASTQ file
+  LIBRARY           library of flanking sequences
+
+options:
+  -h, --help        show this help message and exit
+  -m THRESHOLD      mismatches per nucleotide (default=0.08)
+  -M MISMATCHES     fixed number of mismatches, overrides -m (default=None)
+  -n INDEL_SCORE    insertions and deletions are penalised this number of
+                    times more heavily than mismatches (default=1)
+  -r REPORT_HANDLE  name of the report file
+  -j                use json format for the output file
+  -d PATH           output directory
+  -a MINIMUM        minimum count per allele (default=0)
+  -v                show program's version number and exit
+
+Copyright (c) Jeroen F.J. Laros <J.F.J.Laros@lumc.nl>
 ```
 
-
-## Metadata
-- **Skill**: generated

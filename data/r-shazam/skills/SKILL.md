@@ -1,8 +1,9 @@
 ---
 name: r-shazam
-description: "Provides a computational framework for analyzing mutations in     immunoglobulin (Ig) sequences. Includes methods for Bayesian estimation of     antigen-driven selection pressure, mutational load quantification, building of     somatic hypermutation (SHM) models, and model-dependent distance calculations.     Also includes empirically derived models of SHM for both mice and humans."
+description: The r-shazam tool analyzes somatic hypermutation in immunoglobulin sequences using advanced statistical methods. Use when user asks to quantify selection pressure, calculate mutation loads, determine clonal assignment thresholds, build targeting models, or simulate mutated sequences.
 homepage: https://cran.r-project.org/web/packages/shazam/index.html
 ---
+
 
 # r-shazam
 

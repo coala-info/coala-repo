@@ -1,8 +1,9 @@
 ---
 name: biocontainers
-description: BioContainers is a community-driven project that provides a standardized infrastructure for distributing bioinformatics software.
+description: BioContainers provides a standardized infrastructure for distributing pre-built, tested bioinformatics software containers to ensure research reproducibility. Use when user asks to find container tags, run bioinformatics tools via Docker or Singularity, or resolve software dependency issues.
 homepage: https://github.com/BioContainers/containers
 ---
+
 
 # biocontainers
 

@@ -1,8 +1,9 @@
 ---
 name: seqkit
-description: SeqKit is an ultrafast, cross-platform toolkit designed for the efficient manipulation of FASTA and FASTQ files.
+description: SeqKit is a cross-platform toolkit for the efficient manipulation and processing of FASTA and FASTQ files. Use when user asks to generate sequence statistics, filter sequences by length, convert file formats, extract subsets by ID or region, search for motifs, remove duplicates, or split large genomic datasets.
 homepage: https://github.com/shenwei356/seqkit
 ---
+
 
 # seqkit
 

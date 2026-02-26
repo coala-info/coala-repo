@@ -3,7 +3,7 @@
 ## snp-mutator
 
 ### Tool Description
-The provided text is a system error log regarding a container build failure and does not contain help information or usage instructions for the tool.
+Generate a mutated genome by adding substitutions, insertions, and deletions to a reference FASTA file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0
@@ -18,13 +18,60 @@ The provided text is a system error log regarding a container build failure and 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0' locally
+1.2.0--pyh24bf2e0_0: Pulling from biocontainers/snp-mutator
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+bbe994197920: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1020366433: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## snp-mutator_snpmutator
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0
+- **Homepage**: https://github.com/CFSAN-Biostatistics/snp-mutator
+- **Package**: https://anaconda.org/channels/bioconda/packages/snp-mutator/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/snp-mutator:1.2.0--pyh24bf2e0_0' locally
+1.2.0--pyh24bf2e0_0: Pulling from biocontainers/snp-mutator
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+bbe994197920: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1523206702: no space left on device
+
+Run 'docker run --help' for more information
+```
+

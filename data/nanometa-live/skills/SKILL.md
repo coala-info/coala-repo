@@ -1,8 +1,9 @@
 ---
 name: nanometa-live
-description: Nanometa-live is a specialized bioinformatics suite designed to process nanopore sequence reads as they are generated.
+description: Nanometa-live is a bioinformatics suite that processes nanopore sequence reads in real time to provide taxonomic insights and live visualizations. Use when user asks to initialize a project, prepare resources, start live metagenomic analysis, or simulate sequencing runs.
 homepage: https://github.com/FOI-Bioinformatics/nanometa_live
 ---
+
 
 # nanometa-live
 

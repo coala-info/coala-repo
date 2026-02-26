@@ -1,8 +1,9 @@
 ---
 name: blast-legacy
-description: The `blast-legacy` skill provides guidance for using the original NCBI BLAST software suite (version 2.2.x).
+description: This tool provides guidance for using the original NCBI BLAST software suite to index databases and execute sequence searches. Use when user asks to format databases with formatdb, perform sequence searches using blastall, or utilize legacy megablast commands.
 homepage: http://blast.ncbi.nlm.nih.gov
 ---
+
 
 # blast-legacy
 

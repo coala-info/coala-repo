@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chimphumanbraindata
-description: the package is available on all platforms; click for details.
+description: This package provides raw Affymetrix gene expression data and workflows for comparing human and chimpanzee brain regions. Use when user asks to load ChimpHumanBrainData CEL files, preprocess brain expression datasets with RMA, or perform split-plot differential expression analysis using limma.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChimpHumanBrainData.html
 ---
+
 
 # bioconductor-chimphumanbraindata
 

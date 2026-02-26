@@ -1,8 +1,9 @@
 ---
 name: r-ggthemes
-description: "Some extra themes, geoms, and scales for 'ggplot2'.     Provides 'ggplot2' themes and scales that replicate the look of plots     by Edward Tufte, Stephen Few, 'Fivethirtyeight', 'The Economist', 'Stata',     'Excel', and 'The Wall Street Journal', among others.     Provides 'geoms' for Tufte's box plot and range frame.</p>"
+description: The r-ggthemes package provides additional themes, scales, and geoms for ggplot2 that emulate the visual styles of famous publications and software. Use when user asks to apply specialized themes like FiveThirtyEight or The Economist, use colorblind-safe scales, or create minimalist Tufte-style charts.
 homepage: https://cloud.r-project.org/web/packages/ggthemes/index.html
 ---
+
 
 # r-ggthemes
 

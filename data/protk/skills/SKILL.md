@@ -1,8 +1,9 @@
 ---
 name: protk
-description: Protk (Proteomics Toolkit) is a suite of Ruby-based command-line tools designed to provide a unified interface for disparate third-party proteomics software.
+description: Protk is a suite of command-line tools that provides a unified interface for proteomics software to streamline mass spectrometry data analysis pipelines. Use when user asks to manage protein databases, execute MS/MS searches, perform statistical inference, or convert proteomics data into tabular and genomic formats.
 homepage: https://github.com/iracooke/protk
 ---
+
 
 # protk
 

@@ -1,8 +1,9 @@
 ---
 name: microbiomeutil
-description: The `microbiomeutil` skill provides a streamlined interface for the `microbiomeutilities` R package, which serves as a utility wrapper for `phyloseq` and `microbiome` objects.
+description: Microbiomeutil provides a streamlined interface for the microbiomeutilities R package to simplify the processing, cleaning, and visualization of phyloseq data containers. Use when user asks to clean taxonomic names, generate publication-quality visualizations like heatmaps or rarefaction curves, and analyze longitudinal or paired microbiome data.
 homepage: https://github.com/microsud/microbiomeutilities
 ---
+
 
 # microbiomeutil
 

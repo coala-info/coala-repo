@@ -1,8 +1,9 @@
 ---
 name: sidr
-description: SIDR (Sequence Identification with Decision Trees) is a bioinformatics tool used to clean and filter sequence data before assembly.
+description: SIDR uses machine learning to identify and filter target sequences from assembly data based on taxonomic classifications. Use when user asks to clean sequence data before assembly, filter contigs by target phylum, or generate lists of sequence IDs to keep or remove.
 homepage: https://github.com/damurdock/SIDR
 ---
+
 
 # sidr
 

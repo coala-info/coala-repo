@@ -1,8 +1,9 @@
 ---
 name: bio-rainbow
-description: The `bio-rainbow` skill (based on the `bio` package) provides a suite of modular, stream-oriented command-line utilities designed to make bioinformatics tasks more intuitive.
+description: Bio-rainbow provides a suite of modular, stream-oriented command-line utilities for fetching, processing, and analyzing genomic data. Use when user asks to fetch GenBank records, convert sequences to FASTA, translate proteins, align sequences, generate VCF files, or query taxonomic and metadata information.
 homepage: https://github.com/ialbert/bio
 ---
+
 
 # bio-rainbow
 

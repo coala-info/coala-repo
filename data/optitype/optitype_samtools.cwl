@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: optitype_samtools
+baseCommand: samtools
 label: optitype_samtools
-doc: "The provided text does not contain help information or usage instructions; it
-  is an error log reporting a failure to build a Singularity/Apptainer image due to
-  insufficient disk space.\n\nTool homepage: https://github.com/FRED-2/OptiType"
-inputs: []
+doc: "Tools for alignments in the SAM format\n\nTool homepage: https://github.com/FRED-2/OptiType"
+inputs:
+  - id: command
+    type: string
+    doc: samtools command
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: command specific options
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

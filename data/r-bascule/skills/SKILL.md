@@ -1,8 +1,9 @@
 ---
 name: r-bascule
-description: R package bascule (documentation from project home).
+description: r-bascule performs Bayesian inference and clustering of somatic mutational signatures across patient cohorts. Use when user asks to fit known COSMIC signatures, discover de novo signatures, or perform joint tensor clustering of multiple mutation types.
 homepage: https://cran.r-project.org/web/packages/bascule/index.html
 ---
+
 
 # r-bascule
 

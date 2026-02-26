@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.chicken
-description: the package is available on all platforms; click for details.
+description: This package provides annotation and platform design data for the Affymetrix Chicken Genome Array. Use when user asks to analyze Affymetrix chicken microarray data, map probes to genomic locations, or perform gene expression studies for Gallus gallus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.chicken.html
 ---
+
 
 # bioconductor-pd.chicken
 

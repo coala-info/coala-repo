@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahensdbs
-description: the package is available on all platforms; click for details.
+description: This package provides metadata for discovering and retrieving Ensembl annotation databases from AnnotationHub for use with the ensembldb framework. Use when user asks to query available EnsDb resources, retrieve genomic features like genes and transcripts for specific species, or generate custom SQLite databases from Ensembl MySQL dumps.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHEnsDbs.html
 ---
+
 
 # bioconductor-ahensdbs
 

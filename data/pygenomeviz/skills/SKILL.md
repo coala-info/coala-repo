@@ -1,8 +1,9 @@
 ---
 name: pygenomeviz
-description: pygenomeviz is a Python-based visualization tool built on Matplotlib specifically for comparative genomics.
+description: "pygenomeviz is a Python-based visualization tool for creating comparative genomics maps and synteny plots using Matplotlib. Use when user asks to visualize genomic features, draw synteny links between multiple genomes, or generate publication-quality comparative genomics figures."
 homepage: https://github.com/moshi4/pyGenomeViz/
 ---
+
 
 # pygenomeviz
 

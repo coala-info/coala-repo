@@ -1,8 +1,9 @@
 ---
 name: r-amap
-description: "Tools for Clustering and Principal Component Analysis         (With robust methods, and parallelized functions).</p>"
+description: This tool provides optimized and parallelized implementations for hierarchical clustering, k-means, and robust principal component analysis in R. Use when user asks to perform parallelized clustering, apply non-Euclidean distance metrics to datasets, or conduct robust PCA for outlier detection.
 homepage: https://cloud.r-project.org/web/packages/amap/index.html
 ---
+
 
 # r-amap
 

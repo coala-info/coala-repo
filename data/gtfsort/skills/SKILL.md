@@ -1,8 +1,9 @@
 ---
 name: gtfsort
-description: `gtfsort` is a high-performance tool written in Rust designed specifically for the lexicographical and coordinate-based sorting of GTF and GFF3 files.
+description: gtfsort is a high-performance tool for the lexicographical and coordinate-based sorting of GTF and GFF3 files while maintaining feature hierarchy. Use when user asks to sort genomic annotation files, organize parent-child feature relationships, or prepare GTF and GFF3 files for downstream analysis.
 homepage: https://github.com/alejandrogzi/gtfsort
 ---
+
 
 # gtfsort
 

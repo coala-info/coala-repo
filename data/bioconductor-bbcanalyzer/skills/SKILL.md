@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bbcanalyzer
-description: the package is available on all platforms; click for details.
+description: BBCAnalyzer visualizes base counts, deletions, and insertions from BAM files at specific genomic positions. Use when user asks to analyze sequencing alignment data, visualize base distributions at targeted regions, compare samples, or validate variants using barplots.
 homepage: https://bioconductor.org/packages/release/bioc/html/BBCAnalyzer.html
 ---
+
 
 # bioconductor-bbcanalyzer
 

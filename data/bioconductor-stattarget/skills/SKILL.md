@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stattarget
-description: the package is available on all platforms; click for details.
+description: statTarget is an R package for quality control, signal correction, and statistical analysis of metabolomics and proteomics data. Use when user asks to perform multi-batch signal correction, normalize metabolomics data, or conduct multivariate statistical analyses like PCA and PLS-DA.
 homepage: https://bioconductor.org/packages/release/bioc/html/statTarget.html
 ---
+
 
 # bioconductor-stattarget
 

@@ -1,10 +1,55 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: hicbrowser_runBrowser
+baseCommand: runBrowser
 label: hicbrowser_runBrowser
-doc: "A tool for browsing Hi-C data (Note: The provided help text contains only system
-  error logs and no usage information).\n\nTool homepage: https://github.com/maxplanck-ie/HiCBrowser"
-inputs: []
+doc: "Activate HiCBrowser using a given configuration file.\n\nTool homepage: https://github.com/maxplanck-ie/HiCBrowser"
+inputs:
+  - id: config
+    type: File
+    doc: Configuration file with genomic tracks.
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --config
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Set to run the server in debug mode which will print useful 
+      information.
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: html_folder
+    type:
+      - 'null'
+      - Directory
+    doc: File where the template index.html file is located. The default isfine 
+      unless the contents wants to be personalized. The full path has to be 
+      given.
+    default: None
+    inputBinding:
+      position: 101
+      prefix: --htmlFolder
+  - id: num_processors
+    type:
+      - 'null'
+      - int
+    doc: Number of processors to use.
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numProcessors
+  - id: port
+    type:
+      - 'null'
+      - int
+    doc: Local browser port to use.
+    default: 8000
+    inputBinding:
+      position: 101
+      prefix: --port
 outputs:
   - id: stdout
     type: stdout

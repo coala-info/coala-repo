@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nanostringqcpro
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: NanoStringQCPro provides quality control and normalization tools for NanoString nCounter data. Use when user asks to perform quality control on NanoString data, normalize gene expression counts, or generate QC reports for nCounter experiments.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NanoStringQCPro.html
 ---
+
 
 # bioconductor-nanostringqcpro
 

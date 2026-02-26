@@ -1,8 +1,9 @@
 ---
 name: r-rappdirs
-description: "An easy way to determine which directories on the users     computer you should use to save data, caches and logs."
+description: This tool determines standard, platform-specific system directories for saving application data, caches, and logs in R. Use when user asks to find cross-platform storage paths, determine where to save R package configuration files, or locate standard directories for application logs and caches.
 homepage: https://cloud.r-project.org/web/packages/rappdirs/index.html
 ---
+
 
 # r-rappdirs
 

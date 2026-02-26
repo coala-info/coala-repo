@@ -1,8 +1,9 @@
 ---
 name: bioconductor-reactomepa
-description: the package is available on all platforms; click for details.
+description: ReactomePA performs pathway enrichment analysis and visualization based on the Reactome database. Use when user asks to perform pathway enrichment analysis, visualize biological pathways, or map gene sets to the Reactome database.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReactomePA.html
 ---
+
 
 # bioconductor-reactomepa
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-experimenthub
-description: the package is available on all platforms; click for details.
+description: This tool accesses and manages large-scale curated biological datasets from the Bioconductor ExperimentHub web service. Use when user asks to search for, download, and cache experimental data such as single-cell RNA-seq, microarray, or proteomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExperimentHub.html
 ---
+
 
 # bioconductor-experimenthub
 

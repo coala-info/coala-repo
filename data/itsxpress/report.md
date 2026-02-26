@@ -3,7 +3,7 @@
 ## itsxpress
 
 ### Tool Description
-The provided text is an error message related to a container runtime (Apptainer/Singularity) and does not contain help information or argument definitions for the tool 'itsxpress'.
+ITSxpress: A tool to rapidly trim ITS regions from FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/itsxpress:2.1.4--pyhdfd78af_0
@@ -12,17 +12,19 @@ The provided text is an error message related to a container runtime (Apptainer/
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/itsxpress/overview
-- **Total Downloads**: 199.9K
+- **Total Downloads**: 200.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/usda-ars-gbru/itsxpress
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/itsxpress:2.1.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1237334352: no space left on device
+Unable to find image 'quay.io/biocontainers/itsxpress:2.1.4--pyhdfd78af_0' locally
+2.1.4--pyhdfd78af_0: Pulling from biocontainers/itsxpress
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+e562413a849f: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2076331446: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

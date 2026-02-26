@@ -1,8 +1,9 @@
 ---
 name: spec2vec
-description: Spec2Vec is a spectral similarity measure that treats mass spectrometry fragments and neutral losses as "words" within a "sentence" (the spectrum).
+description: Spec2Vec calculates spectral similarity by treating mass spectrometry fragments as words in a sentence using natural language processing algorithms. Use when user asks to calculate spectral similarity scores, train a Word2Vec model on mass spectrometry data, or identify chemically related molecules in metabolomics datasets.
 homepage: https://github.com/iomega/spec2vec
 ---
+
 
 # spec2vec
 

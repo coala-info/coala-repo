@@ -1,8 +1,9 @@
 ---
 name: gcta
-description: GCTA is a comprehensive software package designed to analyze complex trait variation using large-scale GWAS data.
+description: GCTA analyzes complex trait variation and estimates heritability using large-scale genome-wide association study data. Use when user asks to calculate genetic relationship matrices, estimate SNP-based heritability, perform mixed linear model association analysis, or conduct conditional and joint analysis of summary statistics.
 homepage: https://cnsgenomics.com/software/gcta/
 ---
+
 
 # gcta
 

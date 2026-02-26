@@ -1,8 +1,9 @@
 ---
 name: r-beanplot
-description: "Plots univariate comparison graphs, an alternative to         boxplot/stripchart/violin plot.</p>"
+description: This tool visualizes univariate data distributions by combining density traces, individual observation lines, and average markers into beanplots. Use when user asks to create beanplots, compare data distributions with an alternative to boxplots or violin plots, or visualize individual data points alongside density estimates.
 homepage: https://cloud.r-project.org/web/packages/beanplot/index.html
 ---
+
 
 # r-beanplot
 

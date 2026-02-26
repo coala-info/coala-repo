@@ -1,8 +1,9 @@
 ---
 name: perl-text-abbrev
-description: The `Text::Abbrev` module provides a mechanism to calculate all unambiguous abbreviations for a given list of strings.
+description: The perl-text-abbrev module calculates all unambiguous abbreviations for a list of strings to create a lookup table. Use when user asks to generate unique prefixes for a list, create a command abbreviation hash, or map shortened strings back to their original values.
 homepage: http://search.cpan.org/dist/Text-Abbrev
 ---
+
 
 # perl-text-abbrev
 

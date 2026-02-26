@@ -1,8 +1,9 @@
 ---
 name: jvarkit-bamstats04
-description: jvarkit-bamstats04 is a specialized utility for generating per-interval coverage metrics.
+description: "jvarkit-bamstats04 generates per-interval coverage statistics and summary metrics from BAM or CRAM files. Use when user asks to calculate median coverage per region, identify bases with zero coverage, or aggregate depth statistics across specific genomic intervals."
 homepage: http://lindenb.github.io/jvarkit/BamStats04.html
 ---
+
 
 # jvarkit-bamstats04
 

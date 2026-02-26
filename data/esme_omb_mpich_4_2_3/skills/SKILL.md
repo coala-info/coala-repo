@@ -1,8 +1,9 @@
 ---
 name: esme_omb_mpich_4_2_3
-description: The OSU Micro Benchmarks (OMB) suite is a collection of performance measurement tools designed to evaluate the latency, bandwidth, and message rate of MPI and PGAS (OpenSHMEM, UPC, UPC++) implementations.
+description: The OSU Micro Benchmarks suite measures the performance of MPI and PGAS implementations by evaluating latency, bandwidth, and message rates. Use when user asks to assess network interconnects, run point-to-point or collective benchmarks, and evaluate MPI library efficiency.
 homepage: https://mvapich.cse.ohio-state.edu/
 ---
+
 
 # esme_omb_mpich_4_2_3
 

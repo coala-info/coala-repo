@@ -1,8 +1,9 @@
 ---
 name: maxbin2
-description: MaxBin2 is a powerful automated binning tool that reconstructs individual genomes from complex microbial communities.
+description: MaxBin2 reconstructs individual microbial genomes from metagenomic assemblies by integrating genomic signatures and abundance patterns. Use when user asks to bin assembled contigs into genomes, perform metagenomic binning using reads or abundance profiles, or improve binning resolution through differential coverage.
 homepage: http://downloads.jbei.org/data/microbial_communities/MaxBin/MaxBin.html
 ---
+
 
 # maxbin2
 

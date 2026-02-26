@@ -1,8 +1,9 @@
 ---
 name: bcftools
-description: Index bgzip compressed VCF/BCF files for random access.
+description: BCFtools is a high-performance suite for calling, filtering, normalizing, and manipulating genomic variants in VCF and BCF formats. Use when user asks to call variants, filter records by quality or depth, normalize indels, merge datasets, or extract specific fields into text formats.
 homepage: https://github.com/samtools/bcftools
 ---
+
 
 # bcftools
 

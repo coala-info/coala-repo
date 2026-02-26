@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lpe
-description: the package is available on all platforms; click for details.
+description: The bioconductor-lpe package performs Local Pooled Error analysis to identify differentially expressed genes in microarray experiments with small sample sizes. Use when user asks to identify differentially expressed genes, perform LPE analysis, or analyze microarray data with limited replicates.
 homepage: https://bioconductor.org/packages/release/bioc/html/LPE.html
 ---
+
 
 # bioconductor-lpe
 

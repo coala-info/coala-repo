@@ -1,8 +1,9 @@
 ---
 name: shapeshifter
-description: Shapeshifter (interfaced via the `expressionable` command) is a high-performance utility designed to handle the "cacophony" of file formats found in functional genomics.
+description: Shapeshifter is a high-performance utility for converting, filtering, and manipulating functional genomics data across various file formats. Use when user asks to convert file formats, filter genomic data by specific criteria, transpose matrices, or export data to Jupyter notebooks.
 homepage: https://github.com/srp33/ShapeShifter
 ---
+
 
 # shapeshifter
 

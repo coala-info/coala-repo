@@ -1,8 +1,9 @@
 ---
 name: perl-params-coerce
-description: Params::Coerce is a Perl utility designed to facilitate "Do What I Mean" (DWIM) parameter handling.
+description: perl-params-coerce is a Perl utility that facilitates flexible parameter handling by automatically converting various input types into specific object classes. Use when user asks to handle flexible parameter types, convert inputs into specific Perl objects, or implement coercion methods in Perl classes.
 homepage: http://metacpan.org/pod/Params::Coerce
 ---
+
 
 # perl-params-coerce
 

@@ -1,8 +1,9 @@
 ---
 name: ena-upload-cli
-description: The `ena-upload-cli` is a specialized tool designed to streamline the submission of experimental data to the European Nucleotide Archive.
+description: The ena-upload-cli tool automates the submission of sequencing data and metadata to the European Nucleotide Archive. Use when user asks to submit experimental data to ENA, upload metadata via TSV or Excel templates, or manage ENA submissions through the command line.
 homepage: https://github.com/usegalaxy-eu/ena-upload-cli
 ---
+
 
 # ena-upload-cli
 

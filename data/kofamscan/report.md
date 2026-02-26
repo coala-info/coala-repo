@@ -3,10 +3,10 @@
 ## kofamscan
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a system error log related to a container execution failure (no space left on device).
+KofamScan is a tool for gene annotation using Kofam (KEGG Ortholog Hidden Markov Model profiles) and HMMER.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/kofamscan:1.3.0--1
+- **Docker Image**: quay.io/biocontainers/kofamscan:1.3.0--hdfd78af_2
 - **Homepage**: https://www.genome.jp/tools/kofamkoala/
 - **Package**: https://anaconda.org/channels/bioconda/packages/kofamscan/overview
 - **Validation**: PASS
@@ -18,29 +18,14 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kofamscan:1.3.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3434686660: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/kofamscan:1.3.0--hdfd78af_2' locally
+1.3.0--hdfd78af_2: Pulling from biocontainers/kofamscan
+cefc4d495539: Pulling fs layer
+4ca545ee6d5d: Pulling fs layer
+3bdcd1e20b4c: Pulling fs layer
+3bdcd1e20b4c: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob1177269020: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## kofamscan_exec_annotation
-
-### Tool Description
-KofamScan is a tool for gene function annotation by Kofam (KEGG Ortholog assignments). Note: The provided text contains error logs rather than help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kofamscan:1.3.0--1
-- **Homepage**: https://www.genome.jp/tools/kofamkoala/
-- **Package**: https://anaconda.org/channels/bioconda/packages/kofamscan/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kofamscan:1.3.0--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1107982093: no space left on device
+Run 'docker run --help' for more information
 ```
 

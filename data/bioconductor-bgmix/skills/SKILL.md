@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bgmix
-description: the package is available on all platforms; click for details.
+description: bioconductor-bgmix performs Bayesian mixture modeling to identify differentially expressed genes across various experimental designs. Use when user asks to identify over-expressed or under-expressed genes, perform MCMC-based estimation for gene expression, or calculate false discovery rates using posterior probabilities.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/BGmix.html
 ---
+
 
 # bioconductor-bgmix
 

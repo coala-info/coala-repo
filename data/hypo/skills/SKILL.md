@@ -1,8 +1,9 @@
 ---
 name: hypo
-description: HyPo (Hybrid Polisher) is a tool designed to improve the consensus accuracy of long-read genome assemblies.
+description: HyPo is a hybrid polishing tool that improves the consensus accuracy of long-read genome assemblies using high-accuracy short reads or PacBio HiFi reads. Use when user asks to polish a draft assembly, correct errors in genomic contigs, or improve assembly accuracy using hybrid or high-accuracy sequencing data.
 homepage: https://github.com/kensung-lab/hypo
 ---
+
 
 # hypo
 

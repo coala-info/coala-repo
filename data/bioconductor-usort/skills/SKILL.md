@@ -1,8 +1,9 @@
 ---
 name: bioconductor-usort
-description: the package is available on all platforms; click for details.
+description: uSORT provides a method for the universal sorting and ordering of single-cell transcriptomes to identify developmental trajectories. Use when user asks to order single-cell RNA-seq data, perform pseudotime analysis, or reconstruct cellular trajectories.
 homepage: https://bioconductor.org/packages/release/bioc/html/uSORT.html
 ---
+
 
 # bioconductor-usort
 

@@ -1,8 +1,9 @@
 ---
 name: bamsurgeon
-description: Bamsurgeon is a specialized toolkit for "surgerizing" existing sequence alignment files.
+description: Bamsurgeon modifies existing sequence alignment files to introduce known mutations such as SNVs, indels, and structural variants. Use when user asks to add synthetic mutations to BAM files, test variant callers with realistic sequencing data, or simulate genomic variants in existing alignments.
 homepage: https://github.com/adamewing/bamsurgeon
 ---
+
 
 # bamsurgeon
 

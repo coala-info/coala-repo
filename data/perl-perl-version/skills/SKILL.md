@@ -1,8 +1,9 @@
 ---
 name: perl-perl-version
-description: The `perl-perl-version` tool (providing the `Perl::Version` module) simplifies the complex task of handling Perl versions.
+description: This tool parses, normalizes, and compares different Perl version number formats. Use when user asks to normalize version strings, compare Perl versions, or increment version components.
 homepage: http://metacpan.org/pod/Perl::Version
 ---
+
 
 # perl-perl-version
 

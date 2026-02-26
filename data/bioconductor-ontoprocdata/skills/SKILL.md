@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ontoprocdata
-description: the package is available on all platforms; click for details.
+description: This package provides data resources and serialized ontology objects to support the ontoProc package for processing biological ontologies. Use when user asks to access ontology data, load serialized cell ontology objects, or provide data support for the ontoProc package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ontoProcData.html
 ---
+
 
 # bioconductor-ontoprocdata
 

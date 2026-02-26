@@ -3,7 +3,7 @@
 ## seqverify
 
 ### Tool Description
-A tool for sequence verification (Note: The provided text contains system error logs rather than help documentation, so specific arguments could not be extracted).
+Perform sequence verification and analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seqverify:1.3.0--hdfd78af_0
@@ -18,14 +18,52 @@ A tool for sequence verification (Note: The provided text contains system error 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seqverify:1.3.0--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:04434a199fcb24f0bf67a091f05f6c386445fe3221b49614b349fb906327584a: unpack entry: usr/local/bin/h5watch: unpack to regular file: short write: write /tmp/build-temp-1634584491/rootfs/usr/local/bin/h5watch: no space left on device
+usage: seqverify [-h] [--output OUTPUT] [--reads_1 READS_1]
+                 [--reads_2 READS_2]
+                 [--untargeted UNTARGETED [UNTARGETED ...]]
+                 [--targeted TARGETED] [--keepgoing] [--keep_temp]
+                 [--genome GENOME] [--gtf GTF] [--kraken]
+                 [--database DATABASE] [--granularity GRANULARITY]
+                 [--threads THREADS] [--max_mem MAX_MEM]
+                 [--min_matches MIN_MATCHES] [--start START] [--mitochondrial]
+                 [--stringency STRINGENCY]
+                 [--spurious_filtering_threshold SPURIOUS_FILTERING_THRESHOLD]
+                 [--manual_plots] [--bin_size BIN_SIZE]
+                 [--variant_calling VARIANT_CALLING VARIANT_CALLING]
+                 [--variant_intensity VARIANT_INTENSITY]
+                 [--variant_window_size VARIANT_WINDOW_SIZE]
+                 [--download_defaults] [--similarity SIMILARITY SIMILARITY]
+                 [--min_quality MIN_QUALITY] [--config CONFIG]
+
+options:
+  -h, --help            show this help message and exit
+  --output OUTPUT
+  --reads_1 READS_1
+  --reads_2 READS_2
+  --untargeted UNTARGETED [UNTARGETED ...]
+  --targeted TARGETED
+  --keepgoing
+  --keep_temp
+  --genome GENOME
+  --gtf GTF
+  --kraken
+  --database DATABASE
+  --granularity GRANULARITY
+  --threads THREADS
+  --max_mem MAX_MEM
+  --min_matches MIN_MATCHES
+  --start START
+  --mitochondrial
+  --stringency STRINGENCY
+  --spurious_filtering_threshold SPURIOUS_FILTERING_THRESHOLD
+  --manual_plots
+  --bin_size BIN_SIZE
+  --variant_calling VARIANT_CALLING VARIANT_CALLING
+  --variant_intensity VARIANT_INTENSITY
+  --variant_window_size VARIANT_WINDOW_SIZE
+  --download_defaults
+  --similarity SIMILARITY SIMILARITY
+  --min_quality MIN_QUALITY
+  --config CONFIG
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mpac
-description: the package is available on all platforms; click for details.
+description: MPAC calculates pathway activity scores from gene expression data using multiple scoring methods. Use when user asks to calculate pathway activity scores, perform pathway analysis on gene expression data, or evaluate biological pathway enrichment.
 homepage: https://bioconductor.org/packages/release/bioc/html/MPAC.html
 ---
+
 
 # bioconductor-mpac
 

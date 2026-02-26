@@ -1,8 +1,9 @@
 ---
 name: perl-file-pushd
-description: `perl-file-pushd` (File::pushd) is a Perl module that provides a scoped guard for directory changes.
+description: perl-file-pushd provides a scoped guard for directory changes that automatically reverts to the original directory when the guard object goes out of scope. Use when user asks to change directories temporarily within a script, create and enter temporary directories, or manage filesystem navigation safely using the guard pattern.
 homepage: https://github.com/dagolden/File-pushd
 ---
+
 
 # perl-file-pushd
 

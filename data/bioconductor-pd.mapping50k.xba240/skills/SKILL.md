@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mapping50k.xba240
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Mapping 50K Xba240 microarray. Use when user asks to process Affymetrix Mapping 50K Xba240 SNP array data, access probe sequences for the Xba240 chip, or perform genotyping analysis with this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mapping50k.xba240.html
 ---
+
 
 # bioconductor-pd.mapping50k.xba240
 

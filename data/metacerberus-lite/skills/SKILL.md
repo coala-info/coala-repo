@@ -1,8 +1,9 @@
 ---
 name: metacerberus-lite
-description: MetaCerberus-lite is a streamlined pipeline designed to transform raw sequencing data into functional knowledge.
+description: MetaCerberus-lite is a streamlined pipeline that transforms raw sequencing data into functional knowledge through quality control, gene prediction, and HMM-based metabolic profiling. Use when user asks to perform functional annotation of meta'omics data, identify genes in diverse ecosystems, or generate metabolic profiles from raw reads and contigs.
 homepage: https://github.com/raw-lab/metacerberus
 ---
+
 
 # metacerberus-lite
 

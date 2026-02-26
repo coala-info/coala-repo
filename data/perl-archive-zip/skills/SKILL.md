@@ -1,8 +1,9 @@
 ---
 name: perl-archive-zip
-description: The `perl-archive-zip` skill provides a specialized interface for handling ZIP archives through the Perl `Archive::Zip` module.
+description: This tool provides a Perl interface for creating, reading, and manipulating ZIP archive files. Use when user asks to create ZIP archives from files or strings, extract specific members, or modify existing archive contents programmatically.
 homepage: http://metacpan.org/pod/Archive::Zip
 ---
+
 
 # perl-archive-zip
 

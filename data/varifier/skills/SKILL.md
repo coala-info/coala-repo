@@ -1,8 +1,9 @@
 ---
 name: varifier
-description: `varifier` is a specialized bioinformatics tool used to evaluate the accuracy of variant calls.
+description: Varifier evaluates the accuracy of variant calls by comparing predicted variants against a truth genome. Use when user asks to evaluate variant call accuracy, compare variant calls to a truth assembly, or calculate variant call metrics.
 homepage: https://github.com/iqbal-lab-org/varifier
 ---
+
 
 # varifier
 

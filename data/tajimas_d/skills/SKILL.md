@@ -1,8 +1,9 @@
 ---
 name: tajimas_d
-description: The `tajimas_d` tool is a specialized bioinformatics utility used to test the neutrality of DNA sequence evolution.
+description: The tajimas_d tool calculates Tajima's D and other genetic diversity estimators to test the neutrality of DNA sequence evolution. Use when user asks to calculate Tajima's D, compute the Pi-Estimator, or determine the Watterson-Estimator from aligned DNA sequences.
 homepage: https://github.com/not-a-feature/tajimas_d
 ---
+
 
 # tajimas_d
 

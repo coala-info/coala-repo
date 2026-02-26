@@ -1,8 +1,9 @@
 ---
 name: pmmrcalculator
-description: The pmmrcalculator tool is a specialized utility for population genetics that computes the pairwise mismatch rate (pMMR) for all pairs of individuals within an EigenStrat dataset.
+description: The pmmrcalculator tool calculates the pairwise mismatch rate for individuals within an EigenStrat dataset. Use when user asks to calculate pairwise mismatch rates, identify sample duplicates, or assess genetic similarity between individuals.
 homepage: https://github.com/TCLamnidis/pMMRCalculator
 ---
+
 
 # pmmrcalculator
 

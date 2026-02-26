@@ -1,8 +1,9 @@
 ---
 name: bloocoo
-description: Bloocoo is a memory-efficient tool designed to correct errors in genomic reads using a k-mer spectrum approach.
+description: Bloocoo is a memory-efficient tool that corrects errors in genomic sequencing reads using a k-mer spectrum approach. Use when user asks to correct errors in short-read sequencing data, perform k-mer based error correction, or process large genomic datasets with limited memory resources.
 homepage: http://gatb.inria.fr/software/bloocoo/
 ---
+
 
 # bloocoo
 

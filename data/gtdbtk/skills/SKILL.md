@@ -1,8 +1,9 @@
 ---
 name: gtdbtk
-description: GTDB-Tk is a standardized software toolkit designed to provide phylogenetically consistent and rank-normalized taxonomic assignments.
+description: GTDB-Tk provides phylogenetically consistent and rank-normalized taxonomic assignments for microbial genomes by integrating marker gene identification, alignment, and phylogenetic placement. Use when user asks to classify genomes, assign taxonomy to metagenome-assembled genomes, or run the GTDB-Tk classification workflow.
 homepage: http://pypi.python.org/pypi/gtdbtk/
 ---
+
 
 # gtdbtk
 

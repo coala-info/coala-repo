@@ -3,7 +3,7 @@
 ## president
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a log of a failed container build process.
+Calculate pairwise nucleotide identity.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/president:0.6.8--pyhdfd78af_0
@@ -18,13 +18,37 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/president:0.6.8--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: president [-h] -r REFERENCE -q QUERY [QUERY ...] [-x ID_THRESHOLD]
+                 [-n N_THRESHOLD] [-t THREADS] -p PATH [-f PREFIX] [-a] [-v]
+                 [-e]
+
+Calculate pairwise nucleotide identity.
+
+options:
+  -h, --help            show this help message and exit
+  -r REFERENCE, --reference REFERENCE
+                        Reference genome.
+  -q QUERY [QUERY ...], --query QUERY [QUERY ...]
+                        Query genome(s).
+  -x ID_THRESHOLD, --id_threshold ID_THRESHOLD
+                        ACGT nucleotide identity threshold after alignment
+                        (percentage). A query sequence is reported as valid
+                        based on this threshold (def: 0.9)
+  -n N_THRESHOLD, --n_threshold N_THRESHOLD
+                        A query sequence is reported as valid, if the
+                        percentage of Ns is smaller or equal the threshold
+                        (def: 0.05)
+  -t THREADS, --threads THREADS
+                        Number of threads to use for pblat.
+  -p PATH, --path PATH  Path to be used to store results and FASTA files.
+  -f PREFIX, --prefix PREFIX
+                        Prefix to be used t store results in the path
+  -a, --store_alignment
+                        add query alignment columns (PSL format)
+  -v, --version         show program's version number and exit
+  -e, --quite           Print log messages also to the screen (False)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

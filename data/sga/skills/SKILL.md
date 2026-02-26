@@ -1,8 +1,9 @@
 ---
 name: sga
-description: SGA (String Graph Assembler) is a modular toolkit designed for the de novo assembly of genomic data.
+description: SGA is a modular toolkit for the de novo assembly of genomic data using a memory-efficient string graph formulation. Use when user asks to index reads, perform error correction, filter low-complexity sequences, compute overlaps, or assemble contigs from sequencing data.
 homepage: https://github.com/jts/sga
 ---
+
 
 # sga
 

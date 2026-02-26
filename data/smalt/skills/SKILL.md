@@ -1,8 +1,9 @@
 ---
 name: smalt
-description: Smalt (smalte) is a lightweight, high-performance template engine designed to bridge the gap between static configuration files and dynamic container environments.
+description: Smalt is a lightweight template engine that replaces environment variable placeholders in configuration files while providing regex-based scoping to avoid accidental substitutions. Use when user asks to generate configuration files from templates, substitute environment variables in files, or apply scoped variable replacement for container environments.
 homepage: https://github.com/roquie/smalte
 ---
+
 
 # smalt
 

@@ -1,8 +1,9 @@
 ---
 name: ciso8601
-description: ciso8601 is a C-based Python extension that provides ultra-fast parsing of ISO8601 strings into Python `datetime` objects.
+description: ciso8601 is a C-based Python extension that provides high-performance parsing of ISO8601 strings into datetime objects. Use when user asks to parse ISO8601 timestamps, convert date strings to Python datetime objects, or optimize timestamp parsing speed for large datasets.
 homepage: https://github.com/elasticsales/ciso8601
 ---
+
 
 # ciso8601
 

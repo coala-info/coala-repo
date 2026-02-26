@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xnastring
-description: the package is available on all platforms; click for details.
+description: XNAString is an R package designed for the analysis, manipulation, and physicochemical property prediction of xenonucleic acid sequences. Use when user asks to analyze XNA sequences, predict melting temperatures for modified oligonucleotides, or perform sequence analysis on chemically modified nucleic acids.
 homepage: https://bioconductor.org/packages/release/bioc/html/XNAString.html
 ---
+
 
 # bioconductor-xnastring
 

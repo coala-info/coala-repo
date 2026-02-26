@@ -1,9 +1,9 @@
 # setsimilaritysearch CWL Generation Report
 
-## setsimilaritysearch
+## setsimilaritysearch_all_pairs.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It is an error log indicating a failure to build or run a container image due to insufficient disk space.
+Find all pairs of sets with similarities over a given threshold.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/setsimilaritysearch:1.0.0
@@ -18,35 +18,30 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/setsimilaritysearch:1.0.0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c9db3843741fa96582d6335bc3cb23e0bcab41c3448cd3b9828b83d61f40a0d9: unpack entry: usr/local/bin/python3.10: unpack to regular file: short write: write /tmp/build-temp-2958154270/rootfs/usr/local/bin/python3.10: no space left on device
-```
+usage: all_pairs.py [-h] --input-sets INPUT_SETS [INPUT_SETS ...]
+                    --output-pairs OUTPUT_PAIRS
+                    [--similarity-func {jaccard,cosine,containment,containment_min}]
+                    [--similarity-threshold SIMILARITY_THRESHOLD]
+                    [--reversed-tuple REVERSED_TUPLE] [--sample-k SAMPLE_K]
 
+Find all pairs of sets with similarities over a given threshold.
 
-## Metadata
-- **Skill**: generated
-
-## setsimilaritysearch_all_pairs.py
-
-### Tool Description
-A tool for performing all-pairs set similarity search. (Note: The provided input text is a system error log regarding container build failure and does not contain help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/setsimilaritysearch:1.0.0
-- **Homepage**: https://github.com/ekzhu/SetSimilaritySearch
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/setsimilaritysearch:1.0.0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c9db3843741fa96582d6335bc3cb23e0bcab41c3448cd3b9828b83d61f40a0d9: unpack entry: usr/local/bin/python3.10: unpack to regular file: short write: write /tmp/build-temp-3101138927/rootfs/usr/local/bin/python3.10: no space left on device
+options:
+  -h, --help            show this help message and exit
+  --input-sets INPUT_SETS [INPUT_SETS ...]
+                        Input flattened set files with each line a (SetID
+                        Token) tuple: 1 file for finding self all pairs (self-
+                        join); 2 files for finding cross-collection all pairs
+                        (join).
+  --output-pairs OUTPUT_PAIRS
+                        Output file with each line a (SetID_X, SetID_Y,
+                        Size_X, Size_Y, Similarity) tuple.
+  --similarity-func {jaccard,cosine,containment,containment_min}
+  --similarity-threshold SIMILARITY_THRESHOLD
+  --reversed-tuple REVERSED_TUPLE
+                        Whether the input tuples are reversed i.e. (Token
+                        SetID).
+  --sample-k SAMPLE_K   The number of sampled sets from the second file to use
+                        as queries; default use all sets.
 ```
 

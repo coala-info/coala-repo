@@ -1,10 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: cami-amber_add_length_column.py
+baseCommand: add_length_column.py
 label: cami-amber_add_length_column.py
-doc: "The provided text does not contain help information as the execution failed
-  due to a system error (no space left on device).\n\nTool homepage: https://github.com/CAMI-challenge/AMBER"
-inputs: []
+doc: "Add length column _LENGTH to gold standard mapping and print mapping on the
+  standard output\n\nTool homepage: https://github.com/CAMI-challenge/AMBER"
+inputs:
+  - id: fasta_file
+    type: File
+    doc: FASTA or FASTQ file with sequences of gold standard
+    inputBinding:
+      position: 101
+      prefix: --fasta_file
+  - id: gold_standard_file
+    type: File
+    doc: Gold standard - ground truth - file
+    inputBinding:
+      position: 101
+      prefix: --gold_standard_file
 outputs:
   - id: stdout
     type: stdout

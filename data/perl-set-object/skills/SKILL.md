@@ -1,8 +1,9 @@
 ---
 name: perl-set-object
-description: The `Set::Object` module provides a specialized data structure for Perl that handles sets of objects or strings.
+description: This Perl module provides a high-performance data structure for managing sets of objects and strings with support for mathematical operations. Use when user asks to perform set logic operations, manage unique object collections, or implement membership testing in Perl.
 homepage: http://metacpan.org/pod/Set-Object
 ---
+
 
 # perl-set-object
 

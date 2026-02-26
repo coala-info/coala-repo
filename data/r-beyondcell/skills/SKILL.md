@@ -1,8 +1,9 @@
 ---
 name: r-beyondcell
-description: R package beyondcell (documentation from project home).
+description: Beyondcell is an R package that analyzes single-cell RNA-seq data to identify functional heterogeneity in drug response by calculating drug sensitivity scores. Use when user asks to calculate drug enrichment scores, identify therapeutic clusters, visualize drug sensitivity profiles, or perform differential drug response analysis.
 homepage: https://cran.r-project.org/web/packages/beyondcell/index.html
 ---
+
 
 # r-beyondcell
 

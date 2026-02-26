@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lumimouseidmapping
-description: the package is available on all platforms; click for details.
+description: This package provides mapping information between Illumina mouse probe identifiers and other gene identifiers. Use when user asks to map Illumina mouse probe IDs, convert mouse microarray identifiers, or annotate Illumina mouse expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiMouseIDMapping.html
 ---
+
 
 # bioconductor-lumimouseidmapping
 

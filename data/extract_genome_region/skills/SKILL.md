@@ -1,8 +1,9 @@
 ---
 name: extract_genome_region
-description: The `extract_genome_region` tool automates the retrieval of DNA sequences from large genomic datasets.
+description: This tool extracts specific DNA sequences from a FASTA file based on coordinates provided in a CSV file. Use when user asks to retrieve genomic regions, subset a genome, or extract sequences with specific buffers for downstream analysis.
 homepage: https://github.com/xguse/extract-genome-region
 ---
+
 
 # extract_genome_region
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqsqc
-description: the package is available on all platforms; click for details.
+description: SeqSQC is an R package for performing quality control on next-generation sequencing data to identify sample outliers and inconsistencies. Use when user asks to perform sample quality control, check for sex mismatches, identify sample relatedness, or detect population outliers in genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqSQC.html
 ---
+
 
 # bioconductor-seqsqc
 

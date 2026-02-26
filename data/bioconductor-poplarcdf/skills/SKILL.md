@@ -1,8 +1,9 @@
 ---
 name: bioconductor-poplarcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Poplar microarray platform. Use when user asks to access chip definition data for Poplar microarrays or process Affymetrix data using the Poplar CDF.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/poplarcdf.html
 ---
+
 
 # bioconductor-poplarcdf
 

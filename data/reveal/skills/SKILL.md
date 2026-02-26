@@ -1,8 +1,9 @@
 ---
 name: reveal
-description: The reveal.js skill enables the creation of professional, high-performance presentations using standard web technologies.
+description: The reveal.js skill creates professional, interactive presentations using HTML or Markdown with features like nested navigation and auto-animation. Use when user asks to create slides, set up a presentation development server, implement speaker notes, or export presentations to PDF.
 homepage: https://github.com/hakimel/reveal.js
 ---
+
 
 # reveal
 

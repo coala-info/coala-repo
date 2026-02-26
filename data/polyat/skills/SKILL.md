@@ -1,8 +1,9 @@
 ---
 name: polyat
-description: `polyat` is a command-line bioinformatics tool that identifies and counts poly-A/T homopolymer sequences in sequencing data.
+description: polyat identifies and counts poly-A/T homopolymer sequences in sequencing data and generates summary reports. Use when user asks to identify poly-A/T stretches, count homopolymer sequences in FASTQ files, or quantify carrier RNA artifacts.
 homepage: https://github.com/DaanJansen94/polyat
 ---
+
 
 # polyat
 

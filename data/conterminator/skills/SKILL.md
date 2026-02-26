@@ -1,8 +1,9 @@
 ---
 name: conterminator
-description: Conterminator is a specialized tool designed to identify sequences that have been assigned to the wrong taxonomic group.
+description: Conterminator identifies sequences assigned to incorrect taxonomic groups by performing efficient ungapped local alignments across large datasets. Use when user asks to detect cross-kingdom contamination, identify mislabeled sequences in FASTA files, or find bacterial sequences within eukaryotic datasets.
 homepage: https://github.com/martin-steinegger/conterminator
 ---
+
 
 # conterminator
 

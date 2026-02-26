@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gapgom
-description: The package contains two main algorithms; lncRNA2GOA and TopoICSim. lncRNA2GOA tries to annotate novel genes (in this specific case lncRNAs) by using various correlation/geometric scoring methods on correlated expression data. After correlating/scoring, the results are annotated and enriched. TopoICSim is a topologically based method, that compares gene similarity based on the topology of the GO DAG by information content (IC) between GO terms.
+description: This tool performs functional annotation prediction and semantic similarity analysis for genes using expression correlation and Gene Ontology topology. Use when user asks to predict GO annotations for unannotated genes, calculate semantic similarity between genes or gene sets, or process FANTOM5 expression data for functional genomics.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/GAPGOM.html
 ---
+
 
 # bioconductor-gapgom
 

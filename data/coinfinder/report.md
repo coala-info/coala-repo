@@ -3,7 +3,7 @@
 ## coinfinder
 
 ### Tool Description
-The provided text contains system error messages related to a container runtime failure (no space left on device) and does not include the help documentation for the tool. Coinfinder is generally used for detecting coincident genes and shared genomic regions in pangenomes.
+File input- specify either: The path to the gene_presence_absence.csv output from Roary -or- The path of the Gene-to-Genome file with (gene)(TAB)(genome)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coinfinder:1.2.1--py39hb8976ed_3
@@ -18,9 +18,41 @@ The provided text contains system error messages related to a container runtime 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/c652cf0e3d97e77015359c09909f235be8b871855236e5f35db36706665cd5e7: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coinfinder:1.2.1--py39hb8976ed_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2606363613: no space left on device
+./confinder [OPTIONS]
+File input- specify either: 
+    -i or --input          The path to the gene_presence_absence.csv output from Roary
+                           -or-
+                           The path of the Gene-to-Genome file with (gene)(TAB)(genome)
+    -I or --inputroary     Set if -i is in the gene_presence_absence.csv format from Roary
+    -p or --phylogeny      Phylogeny of Betas in Newick format (required)
+Max mode (mandatory for coincidence analysis):
+    -a or --associate      Overlap; identify groups that tend to associate/co-occur (default).
+    -d or --dissociate     Separation; identify groups that tend to dissociate/avoid.
+Significance- specify: 
+    -L or --level          Specify the significnace level cutoff (default: 0.05)
+Significance correction- specify: 
+    -m or --bonferroni     Bonferroni correction multiple correction (recommended & default)
+    -n or --nocorrection   No correction, use value as-is
+    -c or --fraction       (Connectivity analysis only) Use fraction rather than p-value
+Alternative hypothesis- specify: 
+    -g or --greater        Greater (recommended & default)
+    -l or --less           Less
+    -t or --twotailed      Two-tailed
+Miscellaneous:
+    -x or --num_cores      The number of cores to use (default: 2)
+    -v or --verbose        Verbose output.
+    -r or --filter         Permit filtering of saturated and low-abundance data.
+    -U or --upfilthreshold Upper filter threshold for high-abundance data filtering (default: 1.0 i.e. any gene in >=100/% of genomes.
+    -F or --filthreshold   Threshold for low-abundance data filtering (default: 0.05 i.e. any gene in <=5% of genomes.
+    -q or --query          The path to a file containing a list of genes to specificcally query, one per line (optional).
+    -T or --test           Runs the test cases and exits.
+    -E or --all            Outputs all results, regardless of significance.
+Output:
+    -o or --output         The prefix of all output files (default: coincident).
+
+
+If you use Coinfinder, please cite:
+
+FJ Whelan, M Rusilowicz, & JO McInerney. "Coinfinder: Detecting Significant Associations and Dissociations in Pangenomes." doi: https://doi.org/10.1101/859371
 ```
 

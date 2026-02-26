@@ -1,8 +1,9 @@
 ---
 name: perl-json-parse
-description: This skill provides guidance on using the `JSON::Parse` Perl module to convert JSON strings into native Perl data structures.
+description: This tool converts JSON strings and files into native Perl data structures using a fast and strict parser. Use when user asks to parse JSON strings, convert JSON files to Perl variables, or validate JSON syntax within Perl scripts.
 homepage: http://metacpan.org/pod/JSON::Parse
 ---
+
 
 # perl-json-parse
 

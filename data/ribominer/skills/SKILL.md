@@ -1,8 +1,9 @@
 ---
 name: ribominer
-description: RiboMiner is a Python-based toolset designed for the comprehensive analysis of the translatome using ribosome profiling data.
+description: RiboMiner is a Python-based toolset designed for the comprehensive analysis of the translatome using ribosome profiling data. Use when user asks to perform quality control, metagene analysis, feature analysis, or enrichment analysis on Ribo-seq data.
 homepage: https://github.com/xryanglab/RiboMiner
 ---
+
 
 # ribominer
 

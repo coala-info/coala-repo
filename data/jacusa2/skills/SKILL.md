@@ -1,8 +1,9 @@
 ---
 name: jacusa2
-description: JACUSA2 is a high-performance Java-based framework designed for the accurate assessment of variants in NGS data.
+description: JACUSA2 is a Java-based framework for detecting single nucleotide variants and reverse transcriptase-induced arrest events in NGS data. Use when user asks to call variants in single or comparative conditions, detect RT-arrest events, or generate pileup comparisons between two conditions.
 homepage: https://github.com/dieterich-lab/JACUSA2
 ---
+
 
 # jacusa2
 

@@ -1,8 +1,9 @@
 ---
 name: visceral-evaluatesegmentation
-description: The `EvaluateSegmentation` tool is a specialized utility designed for the medical imaging community to assess the quality of volumetric segmentations.
+description: The visceral-evaluatesegmentation tool assesses the quality of volumetric segmentations by comparing a test segmentation against a ground truth reference using various metrics. Use when user asks to evaluate segmentation quality, compare segmentations, save evaluation results to XML, select specific metrics, evaluate fuzzy segmentations, or specify distance units.
 homepage: https://github.com/Visceral-Project/EvaluateSegmentation
 ---
+
 
 # visceral-evaluatesegmentation
 

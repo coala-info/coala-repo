@@ -1,8 +1,9 @@
 ---
 name: needle
-description: Needle is a specialized bioinformatics tool designed for high-throughput sequence analysis.
+description: Needle is a bioinformatics tool that uses Interleaved Bloom Filters and minimizers to index large sequence collections and estimate gene expression levels. Use when user asks to build a sequence index, estimate expression levels, query transcripts across experiments, or insert new data into an existing index.
 homepage: https://github.com/seqan/needle
 ---
+
 
 # needle
 

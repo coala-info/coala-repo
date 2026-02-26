@@ -1,8 +1,9 @@
 ---
 name: mummer2circos
-description: mummer2circos is a specialized tool designed to bridge the gap between genome alignment and high-quality circular visualization.
+description: mummer2circos generates circular genomic visualizations by wrapping MUMmer and Circos to compare multiple query genomes against a reference. Use when user asks to create circular alignment plots, visualize sequencing depth tracks, or overlay functional annotations and protein labels onto genomic comparisons.
 homepage: https://github.com/metagenlab/mummer2circos
 ---
+
 
 # mummer2circos
 

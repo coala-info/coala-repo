@@ -1,8 +1,9 @@
 ---
 name: wham
-description: The wham suite is designed for the identification of structural variants (SVs) such as deletions, duplications, inversions, and insertions.
+description: whamg identifies structural variants like deletions, duplications, inversions, and insertions from aligned BAM files. Use when user asks to identify structural variants, perform joint calling on multiple samples, or analyze a specific genomic region.
 homepage: https://github.com/zeeev/wham
 ---
+
 
 # wham
 

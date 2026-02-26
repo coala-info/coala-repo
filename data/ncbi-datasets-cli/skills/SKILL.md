@@ -1,8 +1,9 @@
 ---
 name: ncbi-datasets-cli
-description: The `ncbi-datasets-cli` skill (powered by the `assembly_finder` utility) provides a streamlined interface for interacting with NCBI's vast genomic databases.
+description: The ncbi-datasets-cli tool automates the retrieval, filtering, and organization of genome assemblies and metadata from NCBI databases. Use when user asks to download reference genomes, filter assemblies by quality or annotation status, and retrieve taxonomic reports for specific organisms.
 homepage: https://github.com/metagenlab/assembly_finder
 ---
+
 
 # ncbi-datasets-cli
 

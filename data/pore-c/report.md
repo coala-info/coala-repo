@@ -1,9 +1,10 @@
 # pore-c CWL Generation Report
 
-## pore-c
+## pore-c_pore_c
 
 ### Tool Description
-A tool for Pore-C data analysis (Note: The provided text is a container build error log and does not contain help documentation or argument definitions).
+A suite of tools designed to analyse Oxford Nanopore reads with multiway
+  chromatin contacts.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pore-c:0.4.0--pyhdfd78af_0
@@ -18,33 +19,36 @@ A tool for Pore-C data analysis (Note: The provided text is a container build er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pore-c:0.4.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: pore_c [OPTIONS] COMMAND [ARGS]...
 
+  Pore-C tools
 
-## Metadata
-- **Skill**: generated
+  A suite of tools designed to analyse Oxford Nanopore reads with multiway
+  chromatin contacts.
 
-## pore-c_pore_c
+Options:
+  -v, --verbosity                 Increase level of logging information, eg.
+                                  -vvv
 
-### Tool Description
-Pore-C tool for chromosome conformation capture (Note: The provided text contains container build logs rather than CLI help documentation)
+  --quiet                         Turn off all logging  [default: False]
+  --dask-num-workers INTEGER      Number of dask workers
+  --dask-use-threads              Use threads instead of processes
+  --dask-threads-per-worker INTEGER
+                                  Number of threads per worker
+  --dask-scheduler-port INTEGER   The port to use for the dask scheduler, set
+                                  to 0 to use a random port
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pore-c:0.4.0--pyhdfd78af_0
-- **Homepage**: https://github.com/nanoporetech/pore-c
-- **Package**: https://anaconda.org/channels/bioconda/packages/pore-c/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pore-c:0.4.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+  --dask-dashboard-port INTEGER   The port to use for the dask dashboard, set
+                                  to 0 to use a random port
+
+  --dask-disable-dashboard        Disable the dask dashboard
+  --help                          Show this message and exit.
+
+Commands:
+  refgenome   Pre-process reference genome files.
+  reads       Analyse raw reads
+  alignments  Analyse aligned pore_c reads
+  contacts    Work the the contacts table
+  utils       Misc tools
 ```
 

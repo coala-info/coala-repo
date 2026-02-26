@@ -1,8 +1,9 @@
 ---
 name: r-diptest
-description: "Compute Hartigan's dip test statistic for unimodality /  multimodality and provide a test with simulation based p-values,  where  the original public code has been corrected.</p>"
+description: This tool computes Hartigan's dip test statistic to determine if a numeric dataset is unimodal or multimodal. Use when user asks to test for multimodality, compute the dip statistic, or perform a statistical test for the number of modes in a distribution.
 homepage: https://cloud.r-project.org/web/packages/diptest/index.html
 ---
+
 
 # r-diptest
 

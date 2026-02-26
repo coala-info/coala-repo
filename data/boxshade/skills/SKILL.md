@@ -1,8 +1,9 @@
 ---
 name: boxshade
-description: Boxshade (specifically the pyBoxshade implementation) is a specialized tool designed to transform raw multiple sequence alignments into visually informative figures.
+description: Boxshade transforms multiple sequence alignments into formatted figures with identity and similarity shading. Use when user asks to highlight conserved regions in an alignment, apply identity or similarity shading logic, configure consensus thresholds, or export alignments to formats like RTF and PostScript.
 homepage: https://github.com/mdbaron42/pyBoxshade
 ---
+
 
 # boxshade
 

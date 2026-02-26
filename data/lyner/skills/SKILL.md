@@ -1,8 +1,9 @@
 ---
 name: lyner
-description: `lyner` is a command-line "chaining" toolbox designed to streamline operations on dataframes.
+description: Lyner is a command-line toolbox designed for chaining operations like filtering, normalizing, and visualizing dataframes through a pipe-based workflow. Use when user asks to read and transform data, filter by variability or name, perform clustering, transpose matrices, or generate interactive heatmaps and scatterplots.
 homepage: https://github.com/tedil/lyner
 ---
+
 
 # lyner
 

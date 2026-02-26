@@ -1,8 +1,9 @@
 ---
 name: riboloco
-description: riboloco is a specialized tool designed for the precise analysis of Riboseq data.
+description: riboloco analyzes Riboseq data by calculating P-site offsets to map sequencing reads to specific codons for high-resolution monitoring of protein synthesis. Use when user asks to determine P-site offsets, map ribosome-protected fragments to a transcriptome, or analyze triplet periodicity in ribosome profiling datasets.
 homepage: https://github.com/Delayed-Gitification/riboloco.git
 ---
+
 
 # riboloco
 

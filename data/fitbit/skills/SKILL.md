@@ -1,8 +1,9 @@
 ---
 name: fitbit
-description: This skill provides procedural knowledge for deploying and maintaining the `fitbit-grafana` data pipeline.
+description: This tool deploys and maintains a data pipeline for retrieving health metrics from Fitbit servers and visualizing them in Grafana. Use when user asks to deploy the fitbit-grafana pipeline, configure OAuth 2.0 tokens, manage InfluxDB storage, or troubleshoot data visualization dashboards.
 homepage: https://github.com/arpanghosh8453/fitbit-grafana
 ---
+
 
 # fitbit
 

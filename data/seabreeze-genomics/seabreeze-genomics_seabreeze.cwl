@@ -2,10 +2,25 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: seabreeze
 label: seabreeze-genomics_seabreeze
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a log of a failed container build process due to insufficient disk space.\n
-  \nTool homepage: https://github.com/barricklab/seabreeze"
-inputs: []
+doc: "seabreeze is a tool for comprehensively analyzing genetic variation among\n\
+  bacterial genomes caused by structural mutations.\n\nTool homepage: https://github.com/barricklab/seabreeze"
+inputs:
+  - id: batch
+    type:
+      - 'null'
+      - boolean
+    doc: Run seabreeze in batch mode to process multiple samples at once
+    inputBinding:
+      position: 101
+      prefix: --batch
+  - id: run
+    type:
+      - 'null'
+      - boolean
+    doc: Run seabreeze for a single sample pair
+    inputBinding:
+      position: 101
+      prefix: --run
 outputs:
   - id: stdout
     type: stdout

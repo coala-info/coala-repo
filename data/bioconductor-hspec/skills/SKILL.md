@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hspec
-description: the package is available on all platforms; click for details.
+description: This package provides coordinate mapping and CDF environment information for Hspec-type Affymetrix microarrays. Use when user asks to convert between (x,y)-coordinates and probe indices, access Hspec chip dimensions, or work with the Hspec CDF environment.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Hspec.html
 ---
+
 
 # bioconductor-hspec
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scfa
-description: the package is available on all platforms; click for details.
+description: SCFA performs subtyping cluster fusion analysis to integrate single-cell multi-omics data and identify disease subtypes. Use when user asks to integrate single-cell multi-omics data, perform subtyping cluster fusion analysis, or identify disease subtypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/SCFA.html
 ---
+
 
 # bioconductor-scfa
 

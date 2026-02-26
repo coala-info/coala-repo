@@ -28,4 +28,21 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/sentieon:202503.02--h5c
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## sentieon
+
+### Tool Description
+Sentieon software package for genomic data analysis. Supported commands include tools for read alignment, variant calling, and utility functions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/sentieon:202503.02--h5ca1c30_0
+- **Homepage**: https://github.com/Sentieon/sentieon-scripts
+- **Package**: Not found
+- **Validation**: PASS
+### Original Help Text
+```text
+Thank you for using Sentieon software. Supported commands are:
+  LongReadUtil STAR bamslice bwa driver fqidx licclnt licsrvr minimap2 pgutil plot pyexec rcat umi util
+```
+

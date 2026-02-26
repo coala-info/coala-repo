@@ -3,7 +3,7 @@
 ## chopper
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help text or usage information for the tool 'chopper'. As a result, no arguments could be extracted.
+Filtering and trimming of fastq files. Reads on stdin and writes to stdout.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chopper:0.12.0--hcdda2d0_0
@@ -12,20 +12,86 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/chopper/overview
-- **Total Downloads**: 32.3K
+- **Total Downloads**: 32.5K
 - **Last updated**: 2025-11-13
 - **GitHub**: https://github.com/wdecoster/chopper
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/chopper:0.12.0--hcdda2d0_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3141362794/rootfs/usr/bin/bash: no space left on device
+Filtering and trimming of fastq files. Reads on stdin and writes to stdout.
+
+Usage: chopper [OPTIONS]
+
+Options:
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
+
+Filtering Options:
+  -q, --quality <MINQUAL>
+          Sets a minimum Phred average quality score
+          
+          [default: 0]
+
+      --maxqual <MAXQUAL>
+          Sets a maximum Phred average quality score
+          
+          [default: 1000]
+
+  -l, --minlength <MINLENGTH>
+          Sets a minimum read length
+          
+          [default: 1]
+
+      --maxlength <MAXLENGTH>
+          Sets a maximum read length
+          
+          [default: INF]
+
+      --mingc <MINGC>
+          Filter min GC content
+
+      --maxgc <MAXGC>
+          Filter max GC content
+
+  -c, --contam <CONTAM>
+          Filter contaminants against a fasta
+
+Trimming Options:
+      --trim-approach <TRIM_APPROACH>
+          Select the trimming strategy to apply to the reads
+
+          Possible values:
+          - fixed-crop:           Remove a fixed number of bases from both ends of the read. Requires setting both --headcrop and --tailcrop
+          - trim-by-quality:      Trim low-quality bases from the ends of the read until reaching a base with quality ≥ --cutoff
+          - best-read-segment:    Extract the highest-quality read segment based on --cutoff, trimming low-quality bases from both ends
+          - split-by-low-quality: Split reads by low-quality segments and output high-quality parts on the left and right, provided they pass the length filter
+
+      --cutoff <CUTOFF>
+          Set the minimum quality score (Q-score) threshold for trimming low-quality bases from read ends. Required when using the `trim-by-quality` or `best-read-segment` trimming approaches
+
+      --headcrop <HEADCROP>
+          Trim N bases from the start of each read. Required only when using the `fixed-crop` trimming approach
+          
+          [default: 0]
+
+      --tailcrop <TAILCROP>
+          Trim N bases from the end of each read. Required only when using the `fixed-crop` trimming approach
+          
+          [default: 0]
+
+Setup Options:
+  -t, --threads <THREADS>
+          Use N parallel threads
+          
+          [default: 4]
+
+  -i, --input <INPUT>
+          Input filename [default: read from stdin]
+
+      --inverse
+          Output the opposite of the normal results
 ```
 
-
-## Metadata
-- **Skill**: generated

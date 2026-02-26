@@ -1,8 +1,9 @@
 ---
 name: scmap-cli
-description: The `scmap-cli` toolset provides a command-line interface for the `scmap` Bioconductor package, enabling the projection of single-cell RNA-seq data across different experiments.
+description: "scmap-cli projects single-cell RNA-seq data across experiments by mapping query cells to reference clusters or individual cells. Use when user asks to preprocess SingleCellExperiment objects, select informative features, create reference indices, or project query datasets onto reference clusters and cells."
 homepage: https://github.com/ebi-gene-expression-group/scmap-cli
 ---
+
 
 # scmap-cli
 

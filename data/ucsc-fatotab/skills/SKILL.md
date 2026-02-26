@@ -1,8 +1,9 @@
 ---
 name: ucsc-fatotab
-description: The `ucsc-fatotab` skill provides instructions for using the `faToTab` utility, a specialized tool from the UCSC Genome Browser "kent" suite.
+description: The ucsc-fatotab tool converts biological sequences from FASTA format into a simple two-column table. Use when user asks to convert FASTA to a tab-separated table, transform FASTA sequences into a two-column format, or parse sequence data as structured text.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fatotab
 

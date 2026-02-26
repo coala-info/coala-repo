@@ -3,7 +3,7 @@
 ## aci
 
 ### Tool Description
-The provided text appears to be a system log or error message from a container runtime (Apptainer/Singularity) rather than the help text for the 'aci' tool itself. As a result, no command-line arguments, flags, or descriptions of the tool's functionality could be extracted from the input.
+Amplicon Coverage Inspector (aci) for analyzing coverage across amplicons using BAM and BED files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/aci:1.45.251125--pyhdfd78af_0
@@ -15,17 +15,34 @@ The provided text appears to be a system log or error message from a container r
 - **Total Downloads**: 2.5K
 - **Last updated**: 2025-11-27
 - **GitHub**: https://github.com/erinyoung/ACI
-- **Stars**: 3
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/aci:1.45.251125--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9ab09cf650a69e3af8d6f3886f299bd702584fae2ba82adb635aeb8a0c5f17fc: unpack entry: usr/local/lib/libicudata.so.75.1: unpack to regular file: short write: write /tmp/build-temp-1860915597/rootfs/usr/local/lib/libicudata.so.75.1: no space left on device
+usage: aci [-h] -b BAM [BAM ...] -d BED [-o OUT] [-t THREADS]
+           [--tmpdir TMPDIR] [--fail-threshold FAIL_THRESHOLD]
+           [--fail-percentage FAIL_PERCENTAGE] [-log LOGLEVEL] [-v]
+
+options:
+  -h, --help            show this help message and exit
+  -b, --bam BAM [BAM ...]
+                        (required) input bam file(s). Supports wildcards or
+                        space-separated lists.
+  -d, --bed BED         (required) amplicon bedfile (4-column format)
+  -o, --out OUT         directory for results (default: aci)
+  -t, --threads THREADS
+                        specifies number of threads to use for sorting and
+                        counting (default: 4)
+  --tmpdir TMPDIR       custom directory for temporary files (default: system
+                        tmp)
+  --fail-threshold FAIL_THRESHOLD
+                        Minimum depth to consider an amplicon 'passed'
+                        (default: 10)
+  --fail-percentage FAIL_PERCENTAGE
+                        Percentage of samples that must fail for an amplicon
+                        to be flagged (default: 50)
+  -log, --loglevel LOGLEVEL
+                        logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+                        (default: INFO)
+  -v, --version         print version and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

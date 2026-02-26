@@ -1,8 +1,9 @@
 ---
 name: lra
-description: lra (Long Read Aligner) is a specialized tool designed for the alignment of long reads from single-molecule sequencing (SMS) platforms and megabase-scale assembly contigs.
+description: lra aligns long reads from single-molecule sequencing platforms and megabase-scale assembly contigs to a reference genome using a two-tiered seeding strategy. Use when user asks to index a reference genome, align PacBio or Oxford Nanopore reads, or map assembly contigs to detect structural variations.
 homepage: https://github.com/ChaissonLab/LRA
 ---
+
 
 # lra
 

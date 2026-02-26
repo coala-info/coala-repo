@@ -1,8 +1,9 @@
 ---
 name: libgab
-description: libgab is a specialized C++ library providing a suite of subroutines tailored for bioinformatics data processing.
+description: "libgab is a C++ library providing optimized subroutines and classes for bioinformatics data processing and genomic file manipulation. Use when user asks to parse FastQ sequences, modify BAM headers, reconstruct reference sequences from alignments, or manage the library's compilation and bamtools dependencies."
 homepage: https://github.com/grenaud/libgab
 ---
+
 
 # libgab
 

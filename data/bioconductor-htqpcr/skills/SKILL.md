@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htqpcr
-description: the package is available on all platforms; click for details.
+description: This tool analyzes high-throughput quantitative real-time PCR (qPCR) data by processing cycle threshold (Ct) values. Use when user asks to import qPCR data from various platforms, perform quality control, normalize Ct values, or conduct differential expression testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/HTqPCR.html
 ---
+
 
 # bioconductor-htqpcr
 

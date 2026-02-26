@@ -1,11 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: prosextract
+baseCommand: emboss-explorer_prosextract
 label: emboss-explorer_prosextract
-doc: "Build the PROSITE motif database for use by pscan. Note: The provided help text
-  contains only system error messages regarding container execution and does not list
-  specific command-line arguments.\n\nTool homepage: http://emboss.open-bio.org/"
-inputs: []
+doc: "Process the PROSITE motif database for use by patmatmotifs\n\nTool homepage:
+  http://emboss.open-bio.org/"
+inputs:
+  - id: prositedir
+    type:
+      - 'null'
+      - Directory
+    doc: PROSITE database directory
+    inputBinding:
+      position: 101
+      prefix: -prositedir
 outputs:
   - id: stdout
     type: stdout

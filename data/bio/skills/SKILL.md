@@ -1,8 +1,9 @@
 ---
 name: bio
-description: The `bio` utility is a collection of streamlined command-line tools designed to simplify common bioinformatics workflows.
+description: The bio utility provides streamlined command-line tools for common bioinformatics workflows including data retrieval, sequence manipulation, and taxonomic queries. Use when user asks to fetch GenBank records, convert sequences to FASTA, extract genes or proteins, align sequences, look up ontology terms, or query taxonomic lineages.
 homepage: https://github.com/ialbert/bio
 ---
+
 
 # bio
 

@@ -1,9 +1,9 @@
 # chado-tools CWL Generation Report
 
-## chado-tools
+## chado-tools_chado
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for chado-tools. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to extract the tool's image due to lack of disk space.
+Tools to access CHADO databases
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/chado-tools:0.2.15--py_0
@@ -18,37 +18,32 @@ The provided text does not contain help information or usage instructions for ch
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 15:00:51  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/chado-tools:0.2.15--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-2612388693/rootfs/lib/libc-2.18.so: no space left on device
-```
+usage: chado [-h] [-v]
+             {connect,query,extract,insert,delete,import,export,execute,admin}
+             ...
 
+Tools to access CHADO databases
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  {connect,query,extract,insert,delete,import,export,execute,admin}
+    connect             connect to a CHADO database for an interactive session
+    query               query a CHADO database and export the result to a text
+                        file
+    extract             run a pre-compiled query against the CHADO database
+    insert              insert a new entity of a specified type into the CHADO
+                        database
+    delete              delete an entity of a specified type from the CHADO
+                        database
+    import              import data from file into the CHADO database
+    export              export data from the CHADO database to file
+    execute             execute a function defined in a CHADO database
+    admin               perform administrative tasks, such as creating or
+                        dumping a CHADO database
 
-## chado-tools_chado
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show the version of the software and exit
 
-### Tool Description
-Chado-tools command-line utility. (Note: The provided input text appears to be a container runtime error log rather than help text, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/chado-tools:0.2.15--py_0
-- **Homepage**: https://github.com/sanger-pathogens/chado-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/chado-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 15:01:59  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/chado-tools:0.2.15--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-1062614974/rootfs/lib/libc-2.18.so: no space left on device
+For detailed usage information type 'chado <command> -h'
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmap100kxba
-description: the package is available on all platforms; click for details.
+description: This package provides sample CEL files from the International HapMap Project for the Affymetrix 100K Xba platform. Use when user asks to access real-world SNP genotyping data for demonstration purposes, test Bioconductor microarray analysis tools, or load sample HapMap 100K Xba dataset files.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap100kxba.html
 ---
+
 
 # bioconductor-hapmap100kxba
 

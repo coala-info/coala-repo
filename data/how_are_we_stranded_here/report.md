@@ -1,9 +1,9 @@
 # how_are_we_stranded_here CWL Generation Report
 
-## how_are_we_stranded_here
+## how_are_we_stranded_here_check_strandedness
 
 ### Tool Description
-The provided text does not contain help information or documentation for the tool; it contains system log messages and a fatal error regarding disk space during a container build.
+Check if fastq files are stranded
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/how_are_we_stranded_here:1.0.1--pyhfa5458b_0
@@ -18,29 +18,25 @@ The provided text does not contain help information or documentation for the too
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/how_are_we_stranded_here:1.0.1--pyhfa5458b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2668878254: no space left on device
-```
+usage: check_strandedness [-h] -g GTF [-fa TRANSCRIPTS] [-n NREADS] -r1
+                          READS_1 -r2 READS_2 [-k KALLISTO_INDEX] [-p]
 
+Check if fastq files are stranded
 
-## Metadata
-- **Skill**: generated
-
-## how_are_we_stranded_here_check_strandedness
-
-### Tool Description
-A tool to check the strandedness of RNA-seq data.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/how_are_we_stranded_here:1.0.1--pyhfa5458b_0
-- **Homepage**: https://github.com/betsig/how_are_we_stranded_here
-- **Package**: https://anaconda.org/channels/bioconda/packages/how_are_we_stranded_here/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/how_are_we_stranded_here:1.0.1--pyhfa5458b_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3811431570: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GTF, --gtf GTF     Genome annotation GTF file
+  -fa TRANSCRIPTS, --transcripts TRANSCRIPTS
+                        .fasta file with transcript sequences
+  -n NREADS, --nreads NREADS
+                        number of reads to sample
+  -r1 READS_1, --reads_1 READS_1
+                        fastq.gz file (R1)
+  -r2 READS_2, --reads_2 READS_2
+                        fastq.gz file (R2)
+  -k KALLISTO_INDEX, --kallisto_index KALLISTO_INDEX
+                        name of kallisto index (will build under this name if
+                        file not found)
+  -p, --print_commands  Print bash commands as they occur?
 ```
 

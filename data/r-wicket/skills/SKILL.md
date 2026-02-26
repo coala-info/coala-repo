@@ -1,8 +1,9 @@
 ---
 name: r-wicket
-description: Skill for using the CRAN R package r-wicket.
+description: The r-wicket package provides high-performance R functions for validating, manipulating, and extracting information from Well-Known Text (WKT) geospatial data. Use when user asks to validate WKT strings, extract bounding boxes or centroids, convert coordinates to WKT, or transform sp objects into WKT format.
 homepage: https://cloud.r-project.org/web/packages/wicket/index.html
 ---
+
 
 # r-wicket
 

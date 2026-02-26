@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hta20probeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Affymetrix Human Transcriptome Array 2.0 probeset identifiers to biological and functional metadata. Use when user asks to map probeset IDs to gene symbols, Entrez IDs, GO terms, KEGG pathways, or genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hta20probeset.db.html
 ---
+
 
 # bioconductor-hta20probeset.db
 

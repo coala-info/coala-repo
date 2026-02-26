@@ -1,8 +1,9 @@
 ---
 name: bioconductor-diffloop
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The bioconductor-diffloop package provides tools for the identification, filtering, and visualization of differential chromatin loops from genomic interaction data. Use when user asks to identify differential looping between conditions, filter loops by genomic features, or annotate chromatin interactions with gene symbols.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/diffloop.html
 ---
+
 
 # bioconductor-diffloop
 

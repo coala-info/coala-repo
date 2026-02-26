@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-role-parameterized
-description: The `MooseX::Role::Parameterized` skill enables the creation of highly flexible Perl roles that go beyond static code sharing.
+description: This tool enables the creation of flexible Perl roles that act as templates by accepting arguments to customize attributes and methods during consumption. Use when user asks to create parameterized roles, define dynamic attributes or methods in Moose, or implement reusable role templates with custom configuration.
 homepage: https://github.com/moose/MooseX-Role-Parameterized
 ---
+
 
 # perl-moosex-role-parameterized
 

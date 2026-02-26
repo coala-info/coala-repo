@@ -1,8 +1,9 @@
 ---
 name: bwa-aln-interactive
-description: The `bwa-aln-interactive` tool is a specialized fork of the Burrows-Wheeler Aligner (BWA) designed for mapping DNA sequences against a large reference genome.
+description: This tool maps DNA sequences against a large reference genome using the Burrows-Wheeler Aligner algorithms. Use when user asks to index a reference genome, align short reads using the backtrack algorithm, or map long reads using the MEM algorithm.
 homepage: https://github.com/fulcrumgenomics/bwa-aln-interactive
 ---
+
 
 # bwa-aln-interactive
 

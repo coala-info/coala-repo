@@ -1,9 +1,9 @@
 # deepfplearn CWL Generation Report
 
-## deepfplearn
+## deepfplearn_dfpl
 
 ### Tool Description
-Deep learning for fingerprint prediction and molecular property prediction.
+Sub programs of deepFPlearn
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/deepfplearn:2.1--pyh42286b9_1
@@ -18,29 +18,18 @@ Deep learning for fingerprint prediction and molecular property prediction.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deepfplearn:2.1--pyh42286b9_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2926209481: no space left on device
-```
+usage: deepFPlearn [-h] {traingnn,predictgnn,train,predict,convert} ...
 
+positional arguments:
+  {traingnn,predictgnn,train,predict,convert}
+                        Sub programs of deepFPlearn
+    traingnn            Train new GNN models with your data
+    predictgnn          Predict with your GNN models
+    train               Train new models with your data
+    predict             Predict your data with existing models
+    convert             Convert known data files to pickle serialization files
 
-## Metadata
-- **Skill**: generated
-
-## deepfplearn_dfpl
-
-### Tool Description
-DeepFPlearn (dfpl) is a tool for deep learning on molecular fingerprints. Note: The provided help text contains only system error messages regarding container initialization and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/deepfplearn:2.1--pyh42286b9_1
-- **Homepage**: https://github.com/yigbt/deepFPlearn
-- **Package**: https://anaconda.org/channels/bioconda/packages/deepfplearn/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/deepfplearn:2.1--pyh42286b9_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3145482918: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
 ```
 

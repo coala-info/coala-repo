@@ -1,8 +1,9 @@
 ---
 name: perl-memoize
-description: The `perl-memoize` skill provides a mechanism to trade memory for speed in Perl scripts.
+description: This tool caches the results of Perl functions to improve performance by avoiding redundant computations. Use when user asks to speed up expensive functions, trade memory for speed, or implement function memoization in Perl scripts.
 homepage: http://metacpan.org/pod/Memoize
 ---
+
 
 # perl-memoize
 

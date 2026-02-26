@@ -1,8 +1,9 @@
 ---
 name: cenmap
-description: CenMAP is a specialized bioinformatics pipeline designed for the complex task of mapping and characterizing centromeres in Telomere-to-Telomere (T2T) genome assemblies.
+description: CenMAP maps and characterizes centromeres in Telomere-to-Telomere genome assemblies by identifying alpha-satellite structures and generating visualization plots. Use when user asks to map centromeres, identify alpha-satellite HOR structures, validate assemblies with HiFi reads, or detect centromere dip regions using ONT methylation data.
 homepage: https://github.com/logsdon-lab/CenMAP
 ---
+
 
 # cenmap
 

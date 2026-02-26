@@ -1,8 +1,9 @@
 ---
 name: perl-readonly
-description: The `perl-readonly` module provides a facility for creating non-modifiable scalars, arrays, and hashes in Perl.
+description: This module creates non-modifiable scalars, arrays, and hashes in Perl that support lexical scoping and deep immutability. Use when user asks to create read-only variables, define immutable nested data structures, or declare constants that retain standard sigils for string interpolation.
 homepage: https://github.com/sanko/readonly
 ---
+
 
 # perl-readonly
 

@@ -1,8 +1,9 @@
 ---
 name: tsumugi
-description: TSUMUGI (Trait-driven Surveillance for Mutation-based Gene module Identification) is a specialized bioinformatics tool designed to extract and visualize gene modules based on phenotypic similarity.
+description: TSUMUGI extracts and visualizes gene modules based on phenotypic similarity from knockout mouse data. Use when user asks to filter by phenotype terms, filter by biological context, filter by similarity score, filter by a list of genes, generate a network for Cytoscape, or generate a local web application.
 homepage: https://github.com/akikuno/TSUMUGI-dev
 ---
+
 
 # tsumugi
 

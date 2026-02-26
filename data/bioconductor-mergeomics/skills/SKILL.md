@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mergeomics
-description: the package is available on all platforms; click for details.
+description: Mergeomics integrates multidimensional omics data to identify biological pathways and key driver genes associated with diseases or traits. Use when user asks to perform marker set enrichment analysis, identify key drivers in molecular networks, or integrate genome-wide association studies with functional genomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/Mergeomics.html
 ---
+
 
 # bioconductor-mergeomics
 

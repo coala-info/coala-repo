@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delayedmatrixstats
-description: the package is available on all platforms; click for details.
+description: This tool provides high-performance row and column summary statistics for DelayedMatrix objects in R. Use when user asks to compute summary statistics on large out-of-memory datasets, perform matrix operations on HDF5-backed arrays, or apply matrixStats functions to DelayedArray objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedMatrixStats.html
 ---
+
 
 # bioconductor-delayedmatrixstats
 

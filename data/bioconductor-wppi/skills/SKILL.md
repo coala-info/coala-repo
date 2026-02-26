@@ -1,8 +1,9 @@
 ---
 name: bioconductor-wppi
-description: the package is available on all platforms; click for details.
+description: The bioconductor-wppi package prioritizes candidate genes by integrating protein-protein interaction networks with functional annotations. Use when user asks to prioritize genes for a phenotype, weight protein-protein interaction networks, or perform functional gene scoring.
 homepage: https://bioconductor.org/packages/release/bioc/html/wppi.html
 ---
+
 
 # bioconductor-wppi
 

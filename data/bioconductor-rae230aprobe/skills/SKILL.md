@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rae230aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Rat Expression 230A microarray. Use when user asks to retrieve probe sequences for the Rat Expression 230A chip or analyze Affymetrix rat microarray probe data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230aprobe.html
 ---
+
 
 # bioconductor-rae230aprobe
 

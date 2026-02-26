@@ -1,8 +1,9 @@
 ---
 name: jannovar-cli
-description: Jannovar is a high-performance Java suite for the functional annotation of VCF files.
+description: Jannovar-cli is a Java-based tool used for the functional annotation of VCF files and the prediction of variant effects using HGVS nomenclature. Use when user asks to annotate genomic variants, predict transcript-level effects, or build serialized transcript databases for variant interpretation.
 homepage: https://github.com/charite/jannovar
 ---
+
 
 # jannovar-cli
 

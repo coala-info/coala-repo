@@ -1,8 +1,9 @@
 ---
 name: galah
-description: Galah is a high-performance tool designed to de-duplicate and cluster microbial genomes.
+description: Galah is a high-performance tool designed to de-duplicate and cluster microbial genomes using a greedy algorithm and quality-aware representative selection. Use when user asks to cluster microbial genomes, de-duplicate genomic datasets, or perform contig-level clustering based on average nucleotide identity.
 homepage: https://github.com/wwood/galah
 ---
+
 
 # galah
 

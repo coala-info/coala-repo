@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.amellifera.ucsc.apimel2
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the honey bee (Apis mellifera) based on the UCSC apiMel2 assembly for use in R. Use when user asks to access honey bee genomic sequences, extract specific DNA sub-sequences, retrieve chromosome lengths, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Amellifera.UCSC.apiMel2.html
 ---
+
 
 # bioconductor-bsgenome.amellifera.ucsc.apimel2
 

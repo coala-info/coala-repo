@@ -1,9 +1,9 @@
 # verifyidintensity CWL Generation Report
 
-## verifyidintensity
+## verifyidintensity_verifyIDintensity
 
 ### Tool Description
-The provided text contains container runtime logs and a fatal error message rather than the tool's help documentation. As a result, no arguments or functional descriptions could be extracted.
+Command description message
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/verifyidintensity:0.0.1--h077b44d_6
@@ -18,13 +18,50 @@ The provided text contains container runtime logs and a fatal error message rath
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/verifyidintensity:0.0.1--h077b44d_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE: 
+
+   verifyIDintensity  [-t <float>] -m <int> -n <int> [-b <string>] [-s
+                      <string>] -i <string> [-v] [-p] [--] [--version]
+                      [-h]
+
+
+Where: 
+
+   -t <float>,  --threshold <float>
+     Minimum allele frequency for likelihood estimation, default is 0.01
+
+   -m <int>,  --marker <int>
+     (required)  Number of markers
+
+   -n <int>,  --number <int>
+     (required)  Number of samples
+
+   -b <string>,  --abf <string>
+     Allele frequency file (ABF), which is a plain text file with SNP_ID
+     and Allele_B frequency
+
+   -s <string>,  --stat <string>
+     Statistics file (created if not exist)
+
+   -i <string>,  --in <string>
+     (required)  Input intensity (.adpc.bin) file
+
+   -v,  --verbose
+     Turn on verbose mode
+
+   -p,  --persample
+     Do per-sample analysis, default is per-marker analysis
+
+   --,  --ignore_rest
+     Ignores the rest of the labeled arguments following this flag.
+
+   --version
+     Displays version information and exits.
+
+   -h,  --help
+     Displays usage information and exits.
+
+
+   Command description message
 ```
 
-
-## Metadata
-- **Skill**: generated

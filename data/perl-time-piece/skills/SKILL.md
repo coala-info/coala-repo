@@ -1,8 +1,9 @@
 ---
 name: perl-time-piece
-description: The `Date::Easy` module is a high-level wrapper for `Time::Piece` designed to make date handling in Perl more intuitive.
+description: This tool provides a high-level Perl wrapper for Time::Piece to simplify date and time handling through intuitive constructors and overloaded arithmetic. Use when user asks to parse date strings, perform date arithmetic using units like days or hours, or manage UTC and local time objects in Perl.
 homepage: https://github.com/barefootcoder/date-easy
 ---
+
 
 # perl-time-piece
 

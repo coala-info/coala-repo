@@ -1,16 +1,118 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mgkit_snp_parser
+baseCommand: snp_parser
 label: mgkit_snp_parser
-doc: "The provided text does not contain help information for mgkit_snp_parser; it
-  contains system error messages regarding a container runtime (Apptainer/Singularity)
-  failure due to lack of disk space.\n\nTool homepage: https://github.com/frubino/mgkit"
-inputs: []
+doc: "DEPRECATED, use `pnps-gen vcf` SNPs analysis, requires a vcf file\n\nTool homepage:
+  https://github.com/frubino/mgkit"
+inputs:
+  - id: bcftools_vcf
+    type:
+      - 'null'
+      - boolean
+    doc: bcftools call was used to produce the VCF file
+    inputBinding:
+      position: 101
+      prefix: --bcftools-vcf
+  - id: cite
+    type:
+      - 'null'
+      - boolean
+    doc: Show citation for the framework
+    inputBinding:
+      position: 101
+      prefix: --cite
+  - id: cov_suff
+    type:
+      - 'null'
+      - string
+    doc: Per sample coverage suffix in the GFF
+    default: _cov
+    inputBinding:
+      position: 101
+      prefix: --cov-suff
+  - id: gff_file
+    type: File
+    doc: GFF file with annotations
+    inputBinding:
+      position: 101
+      prefix: --gff-file
+  - id: manual
+    type:
+      - 'null'
+      - boolean
+    doc: Show the script manual
+    inputBinding:
+      position: 101
+      prefix: --manual
+  - id: min_freq
+    type:
+      - 'null'
+      - float
+    doc: Minimum allele frequency
+    default: 0.01
+    inputBinding:
+      position: 101
+      prefix: --min-freq
+  - id: min_qual
+    type:
+      - 'null'
+      - int
+    doc: Minimum SNP quality (Phred score)
+    default: 30
+    inputBinding:
+      position: 101
+      prefix: --min-qual
+  - id: min_reads
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of reads to accept the SNP
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --min-reads
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: less verbose - only error and critical messages
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: reference
+    type: File
+    doc: Fasta file with the GFF Reference
+    inputBinding:
+      position: 101
+      prefix: --reference
+  - id: samples_id
+    type: string
+    doc: the ids of the samples used in the analysis
+    inputBinding:
+      position: 101
+      prefix: --samples-id
+  - id: vcf_file
+    type: File
+    doc: Merged VCF file
+    inputBinding:
+      position: 101
+      prefix: --vcf-file
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: more verbose - includes debug messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Ouput file
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgkit:0.5.8--py39hbcbf7aa_4
-stdout: mgkit_snp_parser.out

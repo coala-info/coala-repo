@@ -1,9 +1,9 @@
 # rnahybrid CWL Generation Report
 
-## rnahybrid
+## rnahybrid_RNAhybrid
 
 ### Tool Description
-RNAhybrid is a tool for finding the minimum free energy hybridization of a long and a short RNA. (Note: The provided text contains system error messages from a container runtime and does not include command-line usage or argument descriptions.)
+RNAhybrid finds potential hybridization sites of a query RNA sequence in a target RNA sequence.
 
 ### Metadata
 - **Docker Image**: biocontainers/rnahybrid:v2.1.2-5-deb_cv1
@@ -18,13 +18,41 @@ RNAhybrid is a tool for finding the minimum free energy hybridization of a long 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/rnahybrid:v2.1.2-5-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: RNAhybrid [options] [target sequence] [query sequence].
+
+options:
+
+  -b <number of hits per target>
+  -c compact output
+  -d <xi>,<theta>
+  -f helix constraint
+  -h help
+  -m <max targetlength>
+  -n <max query length>
+  -u <max internal loop size (per side)>
+  -v <max bulge loop size>
+  -e <energy cut-off>
+  -p <p-value cut-off>
+  -s (3utr_fly|3utr_worm|3utr_human)
+  -g (ps|png|jpg|all)
+  -t <target file>
+  -q <query file>
+
+Either a target file has to be given (FASTA format)
+or one target sequence directly.
+
+Either a query file has to be given (FASTA format)
+or one query sequence directly.
+
+The helix constraint format is "from,to", eg. -f 2,7 forces
+structures to have a helix from position 2 to 7 with respect to the query.
+
+<xi> and <theta> are the position and shape parameters, respectively,
+of the extreme value distribution assumed for p-value calculation.
+If omitted, they are estimated from the maximal duplex energy of the query.
+In that case, a data set name has to be given with the -s flag.
+
+
+PNG and JPG graphical output not supported.
 ```
 
-
-## Metadata
-- **Skill**: generated

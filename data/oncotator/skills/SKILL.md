@@ -1,8 +1,9 @@
 ---
 name: oncotator
-description: Oncotator is a functional annotation tool designed to enrich genomic variant data with biological context from various cancer-related data sources.
+description: Oncotator is a functional annotation tool that enriches genomic variant data with biological context from cancer-related data sources. Use when user asks to annotate point mutations or indels, convert VCF files to TCGA-compliant MAF format, or initialize data sources for hg19 genomic annotations.
 homepage: https://github.com/broadinstitute/oncotator
 ---
+
 
 # oncotator
 

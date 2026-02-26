@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mslp
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package performs median-based signal leveling and peak-calling for mass spectrometry data. Use when user asks to level signals, call peaks, or preprocess mass spectrometry datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/mslp.html
 ---
+
 
 # bioconductor-mslp
 

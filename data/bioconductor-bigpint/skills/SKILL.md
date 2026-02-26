@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bigpint
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The bigPint package provides specialized static and interactive visualization methods for differential expression analysis. Use when user asks to visualize differentially expressed genes, identify normalization artifacts, create scatterplot matrices, generate parallel coordinate plots, or perform hierarchical clustering on transcriptomic data.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/bigPint.html
 ---
+
 
 # bioconductor-bigpint
 

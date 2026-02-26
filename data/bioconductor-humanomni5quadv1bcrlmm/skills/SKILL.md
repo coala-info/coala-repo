@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanomni5quadv1bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina HumanOmni5-Quad BeadChip to support the crlmm algorithm. Use when user asks to perform genotype calling, estimate copy number, or preprocess data from Illumina HumanOmni5-Quad v1.0 BeadChips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanomni5quadv1bCrlmm.html
 ---
+
 
 # bioconductor-humanomni5quadv1bcrlmm
 

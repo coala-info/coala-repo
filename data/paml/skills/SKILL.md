@@ -1,8 +1,9 @@
 ---
 name: paml
-description: PAML (Phylogenetic Analysis by Maximum Likelihood) is a specialized suite of programs for molecular evolution research.
+description: PAML is a suite of programs used for phylogenetic analysis of DNA or protein sequences using maximum likelihood. Use when user asks to detect positive selection, estimate synonymous and nonsynonymous substitution rates, or simulate sequences under evolutionary models.
 homepage: https://evomics.org/resources/software/molecular-evolution-software/paml
 ---
+
 
 # paml
 

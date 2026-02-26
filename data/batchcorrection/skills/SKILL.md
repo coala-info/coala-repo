@@ -1,8 +1,9 @@
 ---
 name: batchcorrection
-description: The batchcorrection skill provides a standardized framework for benchmarking and executing batch correction algorithms on image-based cell profiling data.
+description: The batchcorrection tool benchmarks and executes algorithms to remove technical artifacts from image-based cell profiling data. Use when user asks to remove batch effects from imaging data, execute multi-step Snakemake workflows for data integration, or compare the performance of different correction methods.
 homepage: https://github.com/carpenter-singh-lab/2023_Arevalo_NatComm_BatchCorrection
 ---
+
 
 # batchcorrection
 

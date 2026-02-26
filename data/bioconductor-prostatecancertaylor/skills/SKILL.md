@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prostatecancertaylor
-description: the package is available on all platforms; click for details.
+description: This package provides the prostate cancer gene expression dataset and clinical metadata from the Taylor et al. study. Use when user asks to access Taylor prostate cancer data, analyze prostate cancer expression profiles, or load the Taylor et al. (2010) dataset.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerTaylor.html
 ---
+
 
 # bioconductor-prostatecancertaylor
 

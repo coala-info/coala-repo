@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainprenet
-description: The `ucsc-chainprenet` tool (commonly executed as `chainPreNet`) is a utility from the UCSC Genome Browser "kent" suite designed to streamline whole-genome alignments.
+description: The `ucsc-chainprenet` tool filters alignment chains by removing those statistically unlikely to be part of the final whole-genome alignment. Use when user asks to filter alignment chains, prepare chains for whole-genome netting, or optimize whole-genome alignment computation.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainprenet
 

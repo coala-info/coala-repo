@@ -1,8 +1,9 @@
 ---
 name: ontime
-description: The `ontime` utility allows for the precise extraction of Nanopore reads by leveraging the `start_time` metadata found in read headers.
+description: The ontime utility extracts subsets of Nanopore reads from sequencing files based on specific time durations or absolute timestamps. Use when user asks to inspect file timeframes, subset reads by duration, filter data using absolute UTC timestamps, or extract reads relative to the end of a sequencing run.
 homepage: https://github.com/mbhall88/ontime
 ---
+
 
 # ontime
 

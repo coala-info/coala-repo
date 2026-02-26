@@ -1,8 +1,9 @@
 ---
 name: perl-yaml-libyaml
-description: The `perl-yaml-libyaml` package provides the `YAML::XS` module, a Perl XS binding to the `libyaml` C library.
+description: This tool provides a Perl interface to the libyaml C library for high-performance YAML parsing and serialization. Use when user asks to validate YAML syntax, convert YAML files into Perl data structures, or serialize Perl data into YAML format.
 homepage: https://github.com/ingydotnet/yaml-libyaml-pm
 ---
+
 
 # perl-yaml-libyaml
 

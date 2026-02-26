@@ -3,7 +3,7 @@
 ## dsk
 
 ### Tool Description
-DSK is a k-mer counter for NGS data. (Note: The provided text contains only system error logs and no help information; therefore, no arguments could be extracted.)
+DSK (Disruptive Sequence K-mer) is a tool for constructing k-mer sets from sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7
@@ -18,29 +18,37 @@ DSK is a k-mer counter for NGS data. (Note: The provided text contains only syst
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3915073148: no space left on device
-```
+ERROR: Unknown parameter '--help'
+ERROR: Option '-file' is mandatory
 
+[dsk options]
+       -nb-cores                               (1 arg) :    number of cores  [default '0']
+       -verbose                                (1 arg) :    verbosity level  [default '1']
+       -version                                (0 arg) :    version
+       -help                                   (0 arg) :    help
+       -file                                   (1 arg) :    reads file
+       -kmer-size                              (1 arg) :    size of a kmer  [default '31']
+       -abundance-min                          (1 arg) :    min abundance threshold for solid kmers  [default '2']
+       -abundance-max                          (1 arg) :    max abundance threshold for solid kmers  [default '2147483647']
+       -abundance-min-threshold                (1 arg) :    min abundance hard threshold (only used when min abundance is "auto")  [default '2']
+       -histo-max                              (1 arg) :    max number of values in kmers histogram  [default '10000']
+       -solidity-kind                          (1 arg) :    way to compute counts of several files (sum, min, max, one, all, custom)  [default 'sum']
+       -solidity-custom                        (1 arg) :    when solidity-kind is custom, specifies list of files where kmer must be present  [default '']
+       -max-memory                             (1 arg) :    max memory (in MBytes)  [default '5000']
+       -max-disk                               (1 arg) :    max disk   (in MBytes)  [default '0']
+       -solid-kmers-out                        (1 arg) :    output file for solid kmers (only when constructing a graph)  [default '']
+       -out                                    (1 arg) :    output file  [default '']
+       -out-dir                                (1 arg) :    output directory  [default '.']
+       -out-tmp                                (1 arg) :    output directory for temporary files  [default '.']
+       -out-compress                           (1 arg) :    h5 compression level (0:none, 9:best)  [default '0']
+       -storage-type                           (1 arg) :    storage type of kmer counts ('hdf5' or 'file')  [default 'hdf5']
+       -histo2D                                (1 arg) :    compute the 2D histogram (with first file = genome, remaining files = reads)  [default '0']
+       -histo                                  (1 arg) :    output the kmer abundance histogram  [default '0']
+       -kff                                    (0 arg) :    also output kmers in kff format
 
-## Metadata
-- **Skill**: generated
-
-## dsk_dsk2ascii
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains a fatal error log from a container runtime (Apptainer/Singularity) indicating a 'no space left on device' failure during image construction.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7
-- **Homepage**: https://github.com/GATB/dsk/
-- **Package**: https://anaconda.org/channels/bioconda/packages/dsk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dsk:2.3.3--h5ca1c30_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2396016116: no space left on device
+   [kmer count, advanced performance tweaks options]
+          -minimizer-type   (1 arg) :    minimizer type (0=lexi, 1=freq)  [default '0']
+          -minimizer-size   (1 arg) :    size of a minimizer  [default '10']
+          -repartition-type (1 arg) :    minimizer repartition (0=unordered, 1=ordered)  [default '0']
 ```
 

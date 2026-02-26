@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ath1121501frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides pre-computed parameter vectors for performing frozen Robust Multiarray Analysis (fRMA) on Affymetrix Arabidopsis ATH1 Genome Array data. Use when user asks to normalize Arabidopsis microarray data using fRMA, process ATH1-121501 CEL files individually, or perform meta-analysis on Arabidopsis gene expression datasets.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501frmavecs.html
 ---
+
 
 # bioconductor-ath1121501frmavecs
 

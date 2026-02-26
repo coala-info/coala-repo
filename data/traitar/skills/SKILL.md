@@ -1,8 +1,9 @@
 ---
 name: traitar
-description: Traitar (the microbial trait analyzer) is a specialized tool for predicting the metabolic and physiological traits of microorganisms based on their genomic content.
+description: Traitar predicts microbial metabolic and physiological traits from genomic content. Use when user asks to predict microbial traits, phenotype microorganisms from genomic data, annotate protein families, or inspect trait models.
 homepage: http://github.com/aweimann/traitar
 ---
+
 
 # traitar
 

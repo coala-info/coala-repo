@@ -1,8 +1,9 @@
 ---
 name: bubblegun
-description: BubbleGun is a specialized bioinformatics utility for navigating and analyzing the topology of Graphical Fragment Assembly (GFA) graphs.
+description: BubbleGun is a bioinformatics utility for analyzing and navigating the topology of Graphical Fragment Assembly graphs to identify bubble chains and structural variations. Use when user asks to detect bubble chains, compact graphs, isolate connected components, extract specific genomic regions, or generate paths for haplotyping.
 homepage: https://github.com/fawaz-dabbaghieh/bubble_gun
 ---
+
 
 # bubblegun
 

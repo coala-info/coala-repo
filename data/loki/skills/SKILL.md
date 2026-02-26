@@ -1,8 +1,9 @@
 ---
 name: loki
-description: Grafana Loki is a high-efficiency log aggregation system inspired by Prometheus.
+description: Grafana Loki is a high-efficiency log aggregation system that indexes metadata labels to optimize for cost and operational simplicity. Use when user asks to build the Loki binary, execute the service with a configuration file, query logs via LogCLI, or inspect data objects and streams.
 homepage: https://github.com/grafana/loki
 ---
+
 
 # loki
 

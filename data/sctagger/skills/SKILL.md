@@ -1,8 +1,9 @@
 ---
 name: sctagger
-description: The `sctagger` tool facilitates the integration of multi-modal single-cell sequencing data.
+description: sctagger integrates multi-modal single-cell sequencing data by matching cellular barcodes from long-read data to high-confidence short-read barcodes or whitelists. Use when user asks to extract long-read barcode segments, define a barcode whitelist from short-read or long-read data, or match barcodes using a trie-based approach.
 homepage: https://github.com/vpc-ccg/sctagger
 ---
+
 
 # sctagger
 

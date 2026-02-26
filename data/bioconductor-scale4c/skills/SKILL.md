@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scale4c
-description: the package is available on all platforms; click for details.
+description: Scale4C provides multi-scale visualization and analysis of 4C-seq data. Use when user asks to visualize 4C-seq data, analyze chromatin interactions across multiple scales, or compare 4C-seq profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/Scale4C.html
 ---
+
 
 # bioconductor-scale4c
 

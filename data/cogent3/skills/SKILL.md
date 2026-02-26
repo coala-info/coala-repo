@@ -1,8 +1,9 @@
 ---
 name: cogent3
-description: cogent3 is a high-performance Python library designed for the analysis of genomic sequence data.
+description: cogent3 is a high-performance Python library for analyzing genomic sequence data and modeling sequence evolution using advanced Markov models. Use when user asks to model sequence evolution, perform progressive alignments, analyze selective pressures with codon models, or build bioinformatics pipelines using the functional app interface.
 homepage: https://pypi.org/project/cogent3/
 ---
+
 
 # cogent3
 

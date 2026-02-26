@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mammaprintdata
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides gene expression data and clinical information for the MammaPrint breast cancer prognosis assay. Use when user asks to access MammaPrint validation datasets, analyze breast cancer genomic data, or load the mammaPrintData package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mammaPrintData.html
 ---
+
 
 # bioconductor-mammaprintdata
 

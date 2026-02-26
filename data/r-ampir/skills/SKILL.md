@@ -1,8 +1,9 @@
 ---
 name: r-ampir
-description: "A toolkit to predict antimicrobial peptides from protein sequences on a genome-wide scale.     It incorporates two support vector machine models (\"precursor\" and \"mature\") trained on publicly available antimicrobial peptide data using calculated     physico-chemical and compositional sequence properties described in Meher et al."
+description: The ampir package predicts antimicrobial peptides from protein sequences using supervised machine learning models. Use when user asks to predict antimicrobial peptides, calculate protein sequence features, or train custom SVM models for peptide classification.
 homepage: https://cran.r-project.org/web/packages/ampir/index.html
 ---
+
 
 # r-ampir
 

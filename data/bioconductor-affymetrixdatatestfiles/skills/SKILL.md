@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affymetrixdatatestfiles
-description: the package is available on all platforms; click for details.
+description: This package provides sample Affymetrix microarray data files in various formats for testing and development purposes. Use when user asks to access test CEL, CDF, or CHP files, verify Affymetrix file parsers, or benchmark microarray analysis workflows using Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/AffymetrixDataTestFiles.html
 ---
+
 
 # bioconductor-affymetrixdatatestfiles
 

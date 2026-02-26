@@ -1,8 +1,9 @@
 ---
 name: metacoag
-description: MetaCoAG (Metagenomic Contig binning via Composition, Coverage and Assembly Graphs) is a binning tool designed to reconstruct microbial genomes from metagenomic samples.
+description: MetaCoAG is a metagenomic binning tool that reconstructs microbial genomes by combining contig composition and coverage with assembly graph connectivity. Use when user asks to bin metagenomic contigs, reconstruct microbial genomes from assembly graphs, or refine binning results using single-copy marker genes.
 homepage: https://github.com/metagentools/MetaCoAG
 ---
+
 
 # metacoag
 

@@ -1,8 +1,9 @@
 ---
 name: transannot
-description: TransAnnot is a high-performance toolkit designed for the functional characterization of newly sequenced transcriptomes.
+description: TransAnnot performs functional characterization of newly sequenced transcriptomes by identifying homologs to infer protein functions, structural domains, and orthologous groups. Use when user asks to characterize newly sequenced transcriptomes, infer protein functions, identify structural domains, find orthologous groups, assemble sequencing reads, or download annotation databases.
 homepage: https://github.com/soedinglab/transannot
 ---
+
 
 # transannot
 

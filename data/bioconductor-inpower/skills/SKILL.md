@@ -1,8 +1,9 @@
 ---
 name: bioconductor-inpower
-description: the package is available on all platforms; click for details.
+description: This tool estimates the number of susceptibility loci and effect size distributions for complex traits using existing GWAS results. Use when user asks to predict the power of future GWAS, estimate the total number of underlying loci, or project the expected number of new discoveries for one-stage and multi-stage study designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/INPower.html
 ---
+
 
 # bioconductor-inpower
 

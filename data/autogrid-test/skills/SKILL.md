@@ -1,8 +1,9 @@
 ---
 name: autogrid-test
-description: AutoGrid is a specialized utility within the AutoDock suite used to generate grid maps.
+description: AutoGrid generates grid maps representing interaction energies between atom types and a target protein to accelerate molecular docking. Use when user asks to pre-calculate energy grids, define a docking search space, or prepare grid parameter files for AutoDock.
 homepage: http://autodock.scripps.edu/
 ---
+
 
 # autogrid-test
 

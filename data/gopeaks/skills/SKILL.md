@@ -1,8 +1,9 @@
 ---
 name: gopeaks
-description: GoPeaks is a high-performance peak caller specifically engineered for the unique signal-to-noise profiles of CUT&TAG and CUT&RUN assays.
+description: GoPeaks is a high-performance peak caller designed for identifying enrichment in CUT&TAG, CUT&RUN, and ATAC-Seq datasets. Use when user asks to call narrow or broad peaks from paired-end BAM files, normalize signal against a control sample, or identify chromatin accessibility regions.
 homepage: https://github.com/maxsonBraunLab/gopeaks
 ---
+
 
 # gopeaks
 

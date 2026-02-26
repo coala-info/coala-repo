@@ -1,8 +1,9 @@
 ---
 name: sortmerna
-description: SortMeRNA is a high-throughput tool used primarily to separate ribosomal RNA (rRNA) from other types of RNA in transcriptomic datasets.
+description: SortMeRNA is a high-throughput tool used to filter and sort ribosomal RNA from transcriptomic sequencing data. Use when user asks to filter rRNA from reads, separate non-rRNA sequences, or manage reference databases for transcriptomic datasets.
 homepage: http://bioinfo.lifl.fr/RNA/sortmerna
 ---
+
 
 # sortmerna
 

@@ -1,8 +1,9 @@
 ---
 name: verse
-description: The verse skill facilitates the orchestration of AgentVerse, a framework designed for multi-agent collaboration.
+description: The verse skill orchestrates AgentVerse, a framework for multi-agent collaboration, by deploying task-solving systems and simulation environments. Use when user asks to run a CLI simulation, launch a GUI simulation, execute a specific task, or run benchmarks.
 homepage: https://github.com/OpenBMB/AgentVerse
 ---
+
 
 # verse
 

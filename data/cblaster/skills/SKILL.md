@@ -1,8 +1,9 @@
 ---
 name: cblaster
-description: `cblaster` is a specialized tool designed to detect clusters of homologous sequences that are physically co-located on a genome.
+description: cblaster detects clusters of homologous sequences that are physically co-located on a genome. Use when user asks to identify gene clusters, perform remote or local searches for genomic neighborhoods, or generate presence/absence matrices of homologous sequences.
 homepage: https://github.com/gamcil/cblaster
 ---
+
 
 # cblaster
 

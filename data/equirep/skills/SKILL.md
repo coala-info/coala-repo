@@ -1,8 +1,9 @@
 ---
 name: equirep
-description: EquiRep is a high-performance tool specifically designed for the identification of tandem repeats in biological sequences.
+description: EquiRep identifies tandem repeats in biological sequences and outputs the discovered repeat units in FASTA format. Use when user asks to identify tandem repeats, find repetitive regions in DNA sequences, or extract repeat units from a FASTA file.
 homepage: https://github.com/Shao-Group/EquiRep
 ---
+
 
 # equirep
 

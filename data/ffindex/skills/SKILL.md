@@ -1,8 +1,9 @@
 ---
 name: ffindex
-description: ffindex is a specialized tool for creating and managing "flat-file indexes." It solves the problem of "too many small files" by concatenating them into a single large data file (`.ffdata`) and maintaining a separate, searchable text index (`.ffindex`) that stores the name, offset, and length of each entry.
+description: ffindex creates and manages flat-file indexes by concatenating many small files into a single searchable database. Use when user asks to build a flat-file database, retrieve entries by name or index, modify an existing index, or apply commands to database entries in serial or parallel.
 homepage: https://github.com/soedinglab/ffindex_soedinglab
 ---
+
 
 # ffindex
 

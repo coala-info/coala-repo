@@ -1,8 +1,9 @@
 ---
 name: perl-bio-tools-run-remoteblast
-description: This skill facilitates the programmatic execution of BLAST searches against remote NCBI servers.
+description: This tool executes BLAST searches against remote NCBI servers using the BioPerl RemoteBlast module. Use when user asks to run remote sequence alignments, submit sequences to NCBI BLAST servers, or programmatically retrieve BLAST results without local infrastructure.
 homepage: https://metacpan.org/release/Bio-Tools-Run-RemoteBlast
 ---
+
 
 # perl-bio-tools-run-remoteblast
 

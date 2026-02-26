@@ -1,8 +1,9 @@
 ---
 name: mapping-iterative-assembler
-description: "The Mapping Iterative Assembler (MIA) is a specialized tool for \"reference-assisted assembly.\" Unlike standard mappers, MIA operates iteratively: it aligns sequencing reads to a reference, calls a consensus sequence, and then uses that consensus as the reference for the next round of alignment."
+description: The Mapping Iterative Assembler performs reference-assisted assembly by iteratively aligning sequencing reads to a consensus sequence until convergence. Use when user asks to assemble ancient DNA, reconstruct mitochondrial genomes, or account for post-mortem chemical damage using substitution matrices.
 homepage: https://github.com/mpieva/mapping-iterative-assembler
 ---
+
 
 # mapping-iterative-assembler
 

@@ -1,8 +1,9 @@
 ---
 name: venndata
-description: The `venndata` skill enables the creation of Venn diagrams for an arbitrary number of sets, overcoming the common 3-set limitation found in many plotting libraries.
+description: The `venndata` tool creates Venn diagrams for an arbitrary number of sets, visualizing complex set relationships from pandas DataFrames. Use when user asks to create Venn diagrams, visualize set overlaps, or plot relationships between multiple sets.
 homepage: https://github.com/mandalsubhajit/venndata
 ---
+
 
 # venndata
 

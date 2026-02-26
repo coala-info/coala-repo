@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgfocusprobe
-description: the package is available on all platforms; click for details.
+description: This package provides sequence information and chip coordinates for probes on the Affymetrix HG-Focus human genome array. Use when user asks to retrieve probe sequences, map probes to coordinates, or perform sequence-specific analysis for HG-Focus microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgfocusprobe.html
 ---
+
 
 # bioconductor-hgfocusprobe
 

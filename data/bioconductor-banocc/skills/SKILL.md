@@ -1,8 +1,9 @@
 ---
 name: bioconductor-banocc
-description: the package is available on all platforms; click for details.
+description: BAnOCC infers correlation structures in compositional data using a Bayesian model to account for sum constraints. Use when user asks to estimate log-basis correlations, handle spurious correlations in microbiome data, or perform Bayesian Analysis of Compositional Covariance.
 homepage: https://bioconductor.org/packages/release/bioc/html/banocc.html
 ---
+
 
 # bioconductor-banocc
 

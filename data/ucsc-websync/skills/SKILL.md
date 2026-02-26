@@ -1,8 +1,9 @@
 ---
 name: ucsc-websync
-description: The `ucsc-websync` utility is a specialized synchronization tool designed to efficiently download data from the UCSC Genome Browser's HTTPS servers.
+description: ucsc-websync downloads and synchronizes data from UCSC Genome Browser HTTPS servers using a server-side manifest. Use when user asks to download data from UCSC Genome Browser, synchronize local directories with UCSC servers, or retrieve genomic tracks, assembly data, or utility binaries.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-websync
 

@@ -1,8 +1,9 @@
 ---
 name: rmath4
-description: The `rmath4` library is a Python port of the standalone R math library (version 4).
+description: The rmath4 library provides R-compatible statistical distributions and mathematical routines optimized for use within Numba-compiled Python code. Use when user asks to perform statistical calculations in Numba, generate random samples using R's algorithms, or compute probability densities and quantiles with high numerical precision.
 homepage: https://github.com/alex-wave/Rmath-python
 ---
+
 
 # rmath4
 

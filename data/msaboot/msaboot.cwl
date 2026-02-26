@@ -2,15 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: msaboot
 label: msaboot
-doc: "The provided text does not contain help information or a description of the
-  tool; it contains system error logs related to a container runtime failure (no space
-  left on device).\n\nTool homepage: https://github.com/phac-nml/msaboot"
-inputs: []
+doc: "This program bootstraps FASTA input data.\n\nTool homepage: https://github.com/phac-nml/msaboot"
+inputs:
+  - id: input_location
+    type: File
+    doc: The file name of the FASTA file to be used as input.
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: num_replicates
+    type: int
+    doc: The number of bootstrap replicates.
+    inputBinding:
+      position: 101
+      prefix: --number
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_location
+    type: File
+    doc: The file name of the bootstrapped alignment data output, stored in 
+      relaxed PHYLIP format.
+    outputBinding:
+      glob: $(inputs.out_location)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/msaboot:0.1.2--py_1
-stdout: msaboot.out

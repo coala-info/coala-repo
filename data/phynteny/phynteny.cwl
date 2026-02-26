@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: phynteny
 label: phynteny
-doc: "The provided text does not contain help information or a description of the
-  tool; it contains error messages related to a failed Singularity/Docker container
-  execution due to insufficient disk space.\n\nTool homepage: https://github.com/susiegriggo/Phynteny"
-inputs: []
+doc: "Phynteny predicts biosynthetic gene clusters in genomic sequences.\n\nTool homepage:
+  https://github.com/susiegriggo/Phynteny"
+inputs:
+  - id: infile
+    type: File
+    doc: Input file containing genomic sequences.
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - boolean
+    doc: Display help message and exit.
+    inputBinding:
+      position: 102
+      prefix: --options
 outputs:
   - id: stdout
     type: stdout

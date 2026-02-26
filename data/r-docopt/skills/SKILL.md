@@ -1,8 +1,9 @@
 ---
 name: r-docopt
-description: "Define a command-line interface by just giving it     a description in the specific format.</p>"
+description: The r-docopt tool creates command-line interfaces for R scripts by parsing a standardized help message. Use when user asks to define command-line arguments, parse usage patterns, or generate help messages for R scripts.
 homepage: https://cloud.r-project.org/web/packages/docopt/index.html
 ---
+
 
 # r-docopt
 

@@ -1,8 +1,9 @@
 ---
 name: rfmix
-description: RFMix (Version 2) is a powerful tool for local ancestry deconvolution, which identifies the specific ancestral background of every segment along a chromosome in an admixed individual.
+description: "RFMix performs local ancestry deconvolution to identify the ancestral background of genomic segments in admixed individuals. Use when user asks to infer local ancestry, perform ancestry deconvolution, or assign ancestral origins to chromosomal segments using phased VCF data."
 homepage: https://github.com/slowkoni/rfmix
 ---
+
 
 # rfmix
 

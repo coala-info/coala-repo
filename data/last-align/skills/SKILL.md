@@ -1,8 +1,9 @@
 ---
 name: last-align
-description: LAST is a high-performance sequence alignment suite designed for moderately large biological datasets.
+description: LAST is a high-performance sequence alignment suite designed to detect complex structural variations and sensitive DNA-to-protein relationships in biological datasets. Use when user asks to index a reference sequence, train alignment parameters, align DNA or protein sequences, or convert alignment formats.
 homepage: https://gitlab.com/mcfrith/last
 ---
+
 
 # last-align
 

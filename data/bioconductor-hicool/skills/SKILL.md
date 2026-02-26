@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicool
-description: the package is available on all platforms; click for details.
+description: HiCool processes, normalizes, and visualizes Hi-C data by interfacing with HiC-Pro outputs and Cooler files within the Bioconductor ecosystem. Use when user asks to import Hi-C contact maps, perform ICE normalization, calculate A/B compartments, or generate genomic heatmaps and tracks.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCool.html
 ---
+
 
 # bioconductor-hicool
 

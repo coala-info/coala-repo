@@ -1,8 +1,9 @@
 ---
 name: anglerfish
-description: Anglerfish is a specialized bioinformatics tool designed to identify and demultiplex Illumina-prepared libraries within Oxford Nanopore sequencing data.
+description: Anglerfish identifies and demultiplexes Illumina-prepared libraries within Oxford Nanopore sequencing data. Use when user asks to demultiplex Illumina libraries sequenced on ONT flowcells, assess pool balancing, or identify unknown barcodes in sequencing runs.
 homepage: https://github.com/remiolsen/anglerfish
 ---
+
 
 # anglerfish
 

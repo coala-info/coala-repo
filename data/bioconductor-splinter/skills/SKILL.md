@@ -1,8 +1,9 @@
 ---
 name: bioconductor-splinter
-description: the package is available on all platforms; click for details.
+description: SPLINTER provides tools for evaluating and visualizing the functional consequences of alternative splicing events on protein sequences. Use when user asks to analyze alternative splicing, predict protein sequence changes from splicing events, or visualize splice sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPLINTER.html
 ---
+
 
 # bioconductor-splinter
 

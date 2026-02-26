@@ -1,8 +1,9 @@
 ---
 name: pytransaln
-description: pytransaln is a specialized tool for translation-guided nucleotide alignment.
+description: pytransaln performs translation-guided nucleotide alignment to maintain codon structure and identifies putative pseudogenes through stop codon and HMM screening. Use when user asks to align nucleotide sequences based on protein translations, determine optimal reading frames, or filter sequences for frameshifts and low-quality matches.
 homepage: https://github.com/monagrland/pytransaln
 ---
+
 
 # pytransaln
 

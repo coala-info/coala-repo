@@ -1,8 +1,9 @@
 ---
 name: pass
-description: PASS (Protein Assembler with Short Sequences) is a specialized tool for the de novo assembly of peptide fragments.
+description: PASS performs de novo assembly of short and long peptide fragments into protein sequences. Use when user asks to assemble peptide reads, perform de novo protein assembly, or conduct targeted assembly using seed sequences.
 homepage: https://github.com/bcgsc/PASS
 ---
+
 
 # pass
 

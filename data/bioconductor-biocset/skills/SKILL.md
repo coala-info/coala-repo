@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocset
-description: the package is available on all platforms; click for details.
+description: BiocSet provides a tidyverse-compatible framework for managing and manipulating biological element sets through three related data tables. Use when user asks to represent gene sets in a tidy format, perform set operations like union or intersection, map between different biological ID types, or import and export .gmt and .obo files.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocSet.html
 ---
+
 
 # bioconductor-biocset
 

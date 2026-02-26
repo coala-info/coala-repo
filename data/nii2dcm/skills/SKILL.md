@@ -1,8 +1,9 @@
 ---
 name: nii2dcm
-description: nii2dcm is a Python-based utility that bridges the gap between research-friendly NIfTI files and the clinical DICOM standard.
+description: nii2dcm converts NIfTI image volumes into clinical DICOM series while preserving or transferring essential metadata. Use when user asks to convert NIfTI files to DICOM format, specify imaging modalities for DICOM output, or transfer patient attributes from a reference DICOM file.
 homepage: https://github.com/tomaroberts/nii2dcm
 ---
+
 
 # nii2dcm
 

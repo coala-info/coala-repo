@@ -1,8 +1,9 @@
 ---
 name: bioconductor-modstrings
-description: the package is available on all platforms; click for details.
+description: Modstrings provides infrastructure for representing and analyzing biological sequences containing modified nucleotides. Use when user asks to handle modified RNA or DNA sequences, work with non-standard nucleotide alphabets, or convert between modified and unmodified sequence representations.
 homepage: https://bioconductor.org/packages/release/bioc/html/Modstrings.html
 ---
+
 
 # bioconductor-modstrings
 

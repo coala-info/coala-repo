@@ -1,9 +1,9 @@
 # ucsc-paranode CWL Generation Report
 
-## ucsc-paranode
+## ucsc-paranode_paraNode
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error logs from a container runtime (Apptainer/Singularity) attempting to fetch the tool image.
+Parasol node server.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
@@ -18,128 +18,25 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-paranode_paraNodeStart
-
-### Tool Description
-UCSC paraNodeStart tool (Note: The provided help text contains only container runtime logs and a fatal error; no usage information or arguments were found.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-paranode_paraNodeStop
-
-### Tool Description
-A tool from the UCSC paraNode suite. (Note: The provided help text contains only container execution errors and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-paranode_paraNodeStatus
-
-### Tool Description
-A tool from the UCSC paraNode suite, likely used to check the status of nodes in a parallel processing environment. Note: The provided help text contains only container execution errors and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-paranode_paraTestJob
-
-### Tool Description
-A test job utility for the UCSC ParaNode system. (Note: The provided help text contains only container execution logs and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-paranode_paraFetch
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container engine logs (Singularity/Apptainer) indicating a failure to fetch or build the container image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-paranode_paraSync
-
-### Tool Description
-A tool from the ucsc-paranode package. (Note: The provided help text contains container execution errors and does not list usage or arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-paranode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranode:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+paraNode - version 12.19
+Parasol node server.
+usage:
+    paraNode start
+options:
+    -logFacility=facility  Log to the specified syslog facility - default local0.
+    -logMinPriority=pri minimum syslog priority to log, also filters file logging.
+     defaults to "warn"
+    -log=file  Log to file instead of syslog.
+    -debug  Don't daemonize
+    -hub=host  Restrict access to connections from hub.
+    -umask=000  Set umask to run under - default 002.
+    -userPath=bin:bin/i386  User dirs to add to path.
+    -sysPath=/sbin:/local/bin  System dirs to add to path.
+    -env=name=value - add environment variable to jobs.  Maybe repeated.
+    -randomDelay=N  Up to this many milliseconds of random delay before
+        starting a job.  This is mostly to avoid swamping NFS with
+        file opens when loading up an idle cluster.  Also it limits
+        the impact on the hub of very short jobs. Default 5000.
+    -cpu=N  Number of CPUs to use - default 1.
 ```
 

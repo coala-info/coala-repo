@@ -1,8 +1,9 @@
 ---
 name: dos2unix
-description: The `node-dos2unix` skill provides a programmatic way to handle line-ending conversions across multiple files.
+description: This tool converts text file line endings between Windows and Unix formats using Node.js with support for asynchronous processing and glob patterns. Use when user asks to convert line endings, handle bulk file conversions with globbing, or programmatically manage DOS to Unix text formatting.
 homepage: https://github.com/JamesMGreene/node-dos2unix
 ---
+
 
 # dos2unix
 

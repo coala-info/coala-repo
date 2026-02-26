@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aldex2
-description: the package is available on all platforms; click for details.
+description: ALDEx2 performs differential abundance analysis for high-throughput sequencing data using a compositional data analysis approach. Use when user asks to perform differential expression testing, account for technical variation via Dirichlet Monte-Carlo sampling, or estimate effect sizes for compositional datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ALDEx2.html
 ---
+
 
 # bioconductor-aldex2
 

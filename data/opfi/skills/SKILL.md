@@ -1,8 +1,9 @@
 ---
 name: opfi
-description: Opfi is a specialized bioinformatics toolkit designed to streamline the discovery of gene clusters.
+description: Opfi is a bioinformatics toolkit designed to discover and analyze gene clusters and operons using homology searches and rule-based filtering. Use when user asks to identify genomic regions of interest, find gene clusters using seed genes, or apply biological constraints to filter operon candidates.
 homepage: https://github.com/wilkelab/Opfi
 ---
+
 
 # opfi
 

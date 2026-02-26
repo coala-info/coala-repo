@@ -1,8 +1,9 @@
 ---
 name: longqc
-description: LongQC is a diagnostic tool specifically engineered for the unique error profiles and characteristics of third-generation sequencing (TGS).
+description: LongQC is a diagnostic tool that evaluates the quality and performance of third-generation sequencing data from PacBio and Oxford Nanopore platforms. Use when user asks to perform sample quality control, generate platform run statistics, or assess sequencing data without a reference genome.
 homepage: https://github.com/yfukasawa/LongQC
 ---
+
 
 # longqc
 

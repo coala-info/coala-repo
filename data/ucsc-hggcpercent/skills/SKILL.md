@@ -1,8 +1,9 @@
 ---
 name: ucsc-hggcpercent
-description: The `ucsc-hggcpercent` tool (often invoked as `hgGcPercent`) is a specialized utility from the UCSC Genome Browser "kent" source suite.
+description: The ucsc-hggcpercent tool calculates the percentage of Guanine and Cytosine bases in genomic sequence data. Use when user asks to 'calculate GC content', 'determine GC percentage', or 'analyze genomic sequence composition'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-hggcpercent
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beaddatapackr
-description: the package is available on all platforms; click for details.
+description: This tool compresses and decompresses raw Illumina BeadArray data files into a specialized binary format. Use when user asks to compress .txt and .locs files into .bab archives, restore original BeadArray files from compressed data, or extract specific bead intensities directly from .bab files.
 homepage: https://bioconductor.org/packages/release/bioc/html/BeadDataPackR.html
 ---
+
 
 # bioconductor-beaddatapackr
 

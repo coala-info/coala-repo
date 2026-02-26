@@ -3,7 +3,7 @@
 ## behst
 
 ### Tool Description
-BEHST (Binding Enrichment Heterogeneity Statistical Test) is a tool for identifying genomic regions with significant enrichment of chromatin interactions or transcription factor binding sites.
+Genomic set enrichment analysis enhanced through integration of chromatin long-range interactions
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/behst:3.8--0
@@ -18,15 +18,40 @@ BEHST (Binding Enrichment Heterogeneity Statistical Test) is a tool for identify
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 04:31:41  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/behst:3.8--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0968494055b213adbb2c1e9fadc339f6a480ed8353318a735825d64be6f03a9c: unpack entry: usr/local/bin/bedtools: unpack to regular file: short write: write /scratch/21813747/build-temp-2737069236/rootfs/usr/local/bin/bedtools: no space left on device
+usage: behst [-h] [-T BP] [-Q BP] [-d DATADIR] [-g FILE] [-t FILE] [-i FILE]
+             [--no-gprofiler] [-v]
+             BEDFILE
+
+positional arguments:
+  BEDFILE               path to query genomic region file (BED format) regions
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -T BP, --target-extension BP
+                        extend target regions by BP base pairs (default 9400)
+  -Q BP, --query-extension BP
+                        extend query regions by BP base pairs (default 24100)
+  -d DATADIR, --data DATADIR
+                        path to directory with reference data (default
+                        ~/.local/share/behst)
+  -g FILE, --gene-annotation-file FILE
+                        path of gene annotation file (GTF format, default
+                        DATADIR/gencode.v19.annotation_withproteinids.gtf).
+  -t FILE, --transcript-file FILE
+                        path to the principal transcript file (BED format,
+                        default DATADIR/appris_data_principal.bed)
+  -i FILE, --interaction-file FILE
+                        path to the chromatin interactions file (HICCUPS
+                        Format, default DATADIR/hic_8celltypes.hiccups).
+  --no-gprofiler        If activated, generate the gene list and do not call
+                        g:ProfileR)
+  -v, --version         print current BEHST version
+
+Citation: Chicco D, Bi HS, Reimand J, Hoffman MM. 2018. "BEHST: Genomic set
+enrichment analysis enhanced through integration of chromatin long-range
+interactions". In preparation.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

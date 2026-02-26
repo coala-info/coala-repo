@@ -1,16 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: phyloaln_root_tree.py
+baseCommand: root_tree.py
 label: phyloaln_root_tree.py
-doc: "A tool for rooting phylogenetic trees (Note: The provided help text contains
-  only container runtime logs and error messages, so specific arguments could not
-  be extracted).\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
-inputs: []
+doc: "Roots a phylogenetic tree.\n\nTool homepage: https://github.com/huangyh45/PhyloAln"
+inputs:
+  - id: input_nwk
+    type: File
+    doc: Input Newick format tree file
+    inputBinding:
+      position: 1
+  - id: outgroup
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Outgroup(s) to root the tree with, separated by comma. Defaults to the 
+      midpoint outgroup.
+    default: the midpoint outgroup
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_nwk
+    type: File
+    doc: Output Newick format tree file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phyloaln:1.1.0--hdfd78af_0
-stdout: phyloaln_root_tree.py.out

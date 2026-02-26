@@ -1,8 +1,9 @@
 ---
 name: r-shinybs
-description: Adds easy access to additional Twitter Bootstrap components to Shiny. </p>
+description: The shinyBS package integrates Bootstrap components such as tooltips, popovers, modals, and accordions into Shiny applications. Use when user asks to add tooltips or popovers, create modal windows, organize UI elements into collapsible panels, or generate status alerts.
 homepage: https://cloud.r-project.org/web/packages/shinyBS/index.html
 ---
+
 
 # r-shinybs
 

@@ -1,8 +1,9 @@
 ---
 name: breakseq2
-description: BreakSeq2 is a specialized bioinformatics tool designed for the rapid and accurate characterization of structural variants at nucleotide resolution.
+description: BreakSeq2 characterizes structural variants at nucleotide resolution by aligning genomic reads to a breakpoint library of junction sequences. Use when user asks to identify structural variants, map breakpoint coordinates, or validate deletions using a breakpoint library.
 homepage: http://bioinform.github.io/breakseq2
 ---
+
 
 # breakseq2
 

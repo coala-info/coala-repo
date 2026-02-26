@@ -3,7 +3,7 @@
 ## rpsbproc
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains error logs from a container runtime (Apptainer/Singularity) failing to fetch the image.
+This utility processes domain hit data produced by local RPS-BLAST and generates domain family and/or superfamily annotations on the query sequences. Instead of retrieving domain data from database, this program processes dumped datafiles to obtain required information. All data files are downloadable from NCBI ftp site. Read README file for details
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rpsbproc:0.5.1--hd6d6fdc_0
@@ -12,19 +12,73 @@ The provided text does not contain help information or usage instructions for th
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/rpsbproc/overview
-- **Total Downloads**: 249.7K
+- **Total Downloads**: 251.2K
 - **Last updated**: 2026-01-30
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rpsbproc:0.5.1--hd6d6fdc_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE
+  rpsbproc [-h] [-help] [-xmlhelp] [-i ] [-o ] [-e ] [-m ] [-t ] [-d ] [-f]
+    [-q] [-logfile File_Name] [-conffile File_Name] [-version] [-version-full]
+    [-version-full-xml] [-version-full-json] [-dryrun]
+
+DESCRIPTION
+   This utility processes domain hit data produced by local RPS-BLAST and
+   generates domain family and/or superfamily annotations on the query
+   sequences. Instead of retrieving domain data from database, this program
+   processes dumped datafiles to obtain required information. All data files
+   are downloadable from NCBI ftp site. Read README file for details
+
+OPTIONAL ARGUMENTS
+ -h
+   Print USAGE and DESCRIPTION;  ignore all other parameters
+ -help
+   Print USAGE, DESCRIPTION and ARGUMENTS; ignore all other parameters
+ -xmlhelp
+   Print USAGE, DESCRIPTION and ARGUMENTS in XML format; ignore all other
+   parameters
+ -i, --infile <String>
+   Input file(s) that holds asn data produced by rpsblast with "-outfmt 11"
+   switch. If omitted, default to stdin.
+ -o, --outfile <String>
+   Output file to write the processed result. If omitted, default to stdout.
+ -e, --evalue <Real>
+   EValue cut-off. Program will only process hits with evalues better than
+   this value.
+   Default = `0.01'
+ -m, --data-mode <String, `full', `rep', `std'>
+   Select redundancy level of domain hit data. Valid options are "rep"
+   (concise), "std"(standard) and "full" (all hits). Default to "rep"
+   Default = `rep'
+ -t, --target-data <String, `both', `doms', `feats'>
+   Target data: Select desired (target) data. Valid options are "doms",
+   "feats" or "both". . If omitted, default to "both"
+   Default = `both'
+ -d, --data-path <String>
+   Specify directory that contains data files. By default, the program will
+   look in 'data' directory in current directory and the directory where the
+   program is located
+ -f, --show-families
+   When specified, show corresponding superfamily information for domain hits.
+ -q, --quiet
+   Quiet mode -- do not display program information and progress on stderr
+ -logfile <File_Out>
+   File to which the program log should be redirected
+ -conffile <File_In>
+   Program's configuration (registry) data file
+ -version
+   Print version number;  ignore other arguments
+ -version-full
+   Print extended version data;  ignore other arguments
+ -version-full-xml
+   Print extended version data in XML format;  ignore other arguments
+ -version-full-json
+   Print extended version data in JSON format;  ignore other arguments
+ -dryrun
+   Dry run the application: do nothing, only test all preconditions
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

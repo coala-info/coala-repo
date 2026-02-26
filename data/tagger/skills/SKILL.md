@@ -1,8 +1,9 @@
 ---
 name: tagger
-description: The `tagger` tool is a high-performance utility for named entity recognition (NER) within large text datasets.
+description: The tagger tool performs high-performance named entity recognition by matching a dictionary of terms against a document corpus. Use when user asks to extract biological entities from text, perform dictionary-based string matching, or identify specific terms within large datasets.
 homepage: https://bitbucket.org/larsjuhljensen/tagger
 ---
+
 
 # tagger
 

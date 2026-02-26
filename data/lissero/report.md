@@ -3,26 +3,41 @@
 ## lissero
 
 ### Tool Description
-Lissero is a tool for Listeria serogrouping. (Note: The provided text is a system error log regarding a container build failure and does not contain the tool's help documentation or argument definitions).
+In silico serogroup prediction for L. monocytogenes. Alleles: lmo1118, lmo0737, ORF2819, ORF2110, Prs
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lissero:0.4.9--py_0
+- **Docker Image**: quay.io/biocontainers/lissero:0.4.10--pyhdfd78af_0
 - **Homepage**: https://github.com/MDU-PHL/lissero
 - **Package**: https://anaconda.org/channels/bioconda/packages/lissero/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/lissero/overview
 - **Total Downloads**: 9.4K
-- **Last updated**: 2025-04-22
+- **Last updated**: 2026-02-23
 - **GitHub**: https://github.com/MDU-PHL/lissero
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lissero:0.4.9--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3945814537: no space left on device
+Usage: lissero [OPTIONS] FASTA...
+
+  In silico serogroup prediction for L. monocytogenes. Alleles: lmo1118,
+  lmo0737, ORF2819, ORF2110, Prs
+
+  References:
+
+  * Doumith et al. Differentiation of the major Listeria monocytogenes
+  serovars by multiplex PCR. J Clin Microbiol, 2004; 42:8; 3819-22
+
+Options:
+  -h, --help              Show this message and exit.
+  -s, --serotype_db TEXT  [default: /usr/local/lib/python3.14/site-
+                          packages/lissero/db]
+  --min_id FLOAT          Minimum percent identity to accept a match. [0-100]
+                          [default: 95.0]
+  --min_cov FLOAT         Minimum coverage of the gene to accept a match.
+                          [0-100]  [default: 95.0]
+  --debug
+  --logfile TEXT          Save log to a file instead of printing to stderr
+  --version               Show Version Information
 ```
 
-
-## Metadata
-- **Skill**: generated

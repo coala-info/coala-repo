@@ -1,8 +1,9 @@
 ---
 name: bioconductor-prostatecancerstockholm
-description: the package is available on all platforms; click for details.
+description: This package provides gene expression data from a Stockholm-based prostate cancer study. Use when user asks to access the Stockholm prostate cancer dataset, analyze gene expression profiles from prostate cancer patients, or load the prostateCancerStockholm package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/prostateCancerStockholm.html
 ---
+
 
 # bioconductor-prostatecancerstockholm
 

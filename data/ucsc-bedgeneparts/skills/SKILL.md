@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedgeneparts
-description: The `bedGeneParts` utility is a specialized tool from the UCSC Genome Browser "kent" source suite designed to decompose gene models stored in BED format into their constituent parts.
+description: The ucsc-bedgeneparts tool decomposes gene models in BED format into their constituent parts. Use when user asks to extract promoter regions, extract first exons, or extract intronic regions.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedgeneparts
 

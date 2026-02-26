@@ -1,8 +1,9 @@
 ---
 name: r-facets
-description: R package facets (documentation from project home).
+description: r-facets performs allele-specific copy number analysis and clonal heterogeneity estimation from tumor-normal sequencing data. Use when user asks to preprocess SNP matrices, segment genomic data, estimate tumor purity and ploidy, or call allele-specific copy numbers.
 homepage: https://cran.r-project.org/web/packages/facets/index.html
 ---
+
 
 # r-facets
 

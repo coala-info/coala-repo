@@ -1,8 +1,9 @@
 ---
 name: vcf2maf
-description: `vcf2maf` is a specialized utility designed to standardize the conversion of Variant Call Format (VCF) files into Mutation Annotation Format (MAF).
+description: vcf2maf converts Variant Call Format (VCF) files into standardized Mutation Annotation Format (MAF) files, selecting a single effect per variant. Use when user asks to convert VCF files to MAF, re-annotate existing MAF files, map sample IDs, or perform VCF to MAF conversion with or without VEP annotation.
 homepage: https://github.com/mskcc/vcf2maf
 ---
+
 
 # vcf2maf
 

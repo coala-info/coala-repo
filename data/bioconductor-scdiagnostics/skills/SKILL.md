@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scdiagnostics
-description: The package also provides visualization capabilities for diagnostics purposes.
+description: "scDiagnostics provides visualization and diagnostic tools for single-cell sequencing data. Use when user asks to visualize single-cell diagnostics or perform diagnostic checks on single-cell datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/scDiagnostics.html
 ---
+
 
 # bioconductor-scdiagnostics
 

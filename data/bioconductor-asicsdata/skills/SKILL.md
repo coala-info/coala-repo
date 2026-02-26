@@ -1,8 +1,9 @@
 ---
 name: bioconductor-asicsdata
-description: the package is available on all platforms; click for details.
+description: This package provides a subset of 1D NMR spectra from human subjects for use with the ASICS metabolite identification and quantification pipeline. Use when user asks to access example NMR datasets, demonstrate metabolite identification workflows, or analyze sample spectra from Type 2 Diabetes Mellitus studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ASICSdata.html
 ---
+
 
 # bioconductor-asicsdata
 

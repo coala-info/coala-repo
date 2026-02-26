@@ -1,9 +1,9 @@
 # sprai CWL Generation Report
 
-## sprai
+## sprai_ezez_vx1.pl
 
 ### Tool Description
-Single-Pass Read Accuracy Improver (Note: The provided text is a container execution error log and does not contain help documentation or argument definitions).
+Error correction and assembly tool
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
@@ -18,109 +18,85 @@ Single-Pass Read Accuracy Improver (Note: The provided text is a container execu
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE: <this> <ec.spec> <asm.spec>
+	or: <this> <ec.spec> -ec_only
+	[-n: only shows parameters in ec.spec and exit.]
+	[-ec_only: does error correction and does NOT assemble]
+	[-now yyyymmdd_hhmmss: use a result_yyyymmdd_hhmmss directory, detect unfinished jobs and restart at the appropriate stage.]
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## sprai_ezez_vx1.pl
-
-### Tool Description
-A tool for single-pass read accuracy improvement (SPRAI). Note: The provided help text contains container execution errors and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
-- **Homepage**: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
-- **Package**: https://anaconda.org/channels/bioconda/packages/sprai/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## sprai_ezez4qsub_vx1.pl
 
 ### Tool Description
-The provided text is a container runtime error log and does not contain help information or argument definitions for the tool.
+Error correction and assembly pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
 - **Homepage**: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 - **Package**: https://anaconda.org/channels/bioconda/packages/sprai/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE: <this> <ec.spec> <asm.spec>
+	or: <this> <ec.spec> -ec_only
+	[-n: outputs qsub scripts and does NOT qsub]
+	[-now yyyymmdd_hhmmss: use a XXX_yyyymmdd_hhmmss directories, detect unfinished jobs and restart at the appropriate stage.]
+	[-ec_only: does error correction and does NOT assemble]
 ```
+
 
 ## sprai_runCA
 
 ### Tool Description
-A tool within the SPRAI (Single-Pass Read Accuracy Improvement) pipeline, likely used for running the Celera Assembler.
+CA formatted fragment file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
 - **Homepage**: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 - **Package**: https://anaconda.org/channels/bioconda/packages/sprai/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: runCA -d <dir> -p <prefix> [options] <frg> ...
+  -d <dir>          Use <dir> as the working directory.  Required
+  -p <prefix>       Use <prefix> as the output prefix.  Required
+
+  -s <specFile>     Read options from the specifications file <specfile>.
+                      <specfile> can also be one of the following key words:
+                      [no]OBT - run with[out] OBT
+                      noVec   - run with OBT but without Vector
+
+  -version          Version information
+  -help             This information
+  -options          Describe specFile options, and show default values
+
+  <frg>             CA formatted fragment file
+
+Complete documentation at http://wgs-assembler.sourceforge.net/
+
+File not found or invalid command line option '--help'
+Assembly name prefix not supplied with -p.
+Directory not supplied with -d.
 ```
 
-## sprai_blastn
-
-### Tool Description
-A tool within the SPRAI (Single Pass Read Accuracy Improver) suite, likely utilizing blastn for sequence alignment. Note: The provided text contains container runtime error logs rather than help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
-- **Homepage**: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
-- **Package**: https://anaconda.org/channels/bioconda/packages/sprai/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## sprai_check_circularity.pl
 
 ### Tool Description
-A tool to check the circularity of sequences, typically used in the SPRAI (Single Pass Read Accuracy Improver) pipeline for genome assembly.
+Check for circularity in a FASTA assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0
 - **Homepage**: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 - **Package**: https://anaconda.org/channels/bioconda/packages/sprai/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sprai:0.9.9.23--py27pl5.22.0_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unknown option: help
+Usage: check_circurarity.pl <input FASTA (assembly)> <temporary dir>
 ```
 

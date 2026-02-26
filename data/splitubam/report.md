@@ -3,7 +3,7 @@
 ## splitubam
 
 ### Tool Description
-The provided text does not contain help information for the tool 'splitubam'. It appears to be a log of a failed container build/fetch process.
+Tool to split one ubam file into multiple
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/splitubam:0.1.1--ha96b9cd_1
@@ -18,13 +18,18 @@ The provided text does not contain help information for the tool 'splitubam'. It
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/splitubam:0.1.1--ha96b9cd_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Tool to split one ubam file into multiple
+
+Usage: splitubam [OPTIONS] --split <SPLIT> <INPUT>
+
+Arguments:
+  <INPUT>  bam file to split
+
+Options:
+  -t, --threads <THREADS>          Number of parallel decompression & writer threads to use [default: 4]
+  -s, --split <SPLIT>              Number of files to split bam to
+  -c, --compression <COMPRESSION>  BAM output compression level [default: 6]
+  -h, --help                       Print help
+  -V, --version                    Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

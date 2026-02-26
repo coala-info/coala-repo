@@ -1,8 +1,9 @@
 ---
 name: ipcr
-description: The `ipcr` suite provides high-performance tools for simulating polymerase chain reaction (PCR) experiments on digital genomic data.
+description: The ipcr suite provides high-performance tools for simulating various PCR experiments, including standard, probe-based, nested, and multiplex assays, on digital genomic data. Use when user asks to simulate PCR experiments, validate primer pairs against circular or linear genomes, design qPCR or TaqMan assays, or screen multiplex primer panels.
 homepage: https://github.com/KPU-AGC/ipcr
 ---
+
 
 # ipcr
 

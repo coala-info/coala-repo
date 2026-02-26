@@ -1,8 +1,9 @@
 ---
 name: labrat
-description: LABRAT (Lightweight Alignment-Based Reckoning of Alternative Three-prime ends) provides a specialized workflow for measuring the relative abundance of alternative 3' UTR isoforms.
+description: LABRAT measures the relative abundance of alternative 3' UTR isoforms and calculates psi values to quantify alternative polyadenylation. Use when user asks to quantify alternative 3' UTR isoforms, calculate psi values for gene site usage, or perform differential alternative polyadenylation analysis between experimental conditions.
 homepage: https://github.com/TaliaferroLab/LABRAT
 ---
+
 
 # labrat
 

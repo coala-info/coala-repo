@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pviz
-description: the package is available on all platforms; click for details.
+description: Pviz provides interactive visualization of protein sequences and associated genomic features. Use when user asks to visualize protein sequences, display genomic annotations, or explore protein-related data interactively.
 homepage: https://bioconductor.org/packages/release/bioc/html/Pviz.html
 ---
+
 
 # bioconductor-pviz
 

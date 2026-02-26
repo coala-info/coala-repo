@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_mvapich_4_0_ofi
-description: This skill provides guidance for utilizing the NetCDF-Fortran interface within an MVAPICH-enabled environment.
+description: This tool provides a NetCDF-Fortran interface built with MVAPICH and OFI support for handling array-oriented scientific data in parallel computing environments. Use when user asks to read or write NetCDF files in Fortran, compile MPI-based Fortran applications with NetCDF, or perform parallel I/O using high-speed interconnects.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_mvapich_4_0_ofi
 

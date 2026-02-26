@@ -3,7 +3,7 @@
 ## snpsplit
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a failed container build/fetch process for the snpsplit image.
+SNPsplit is a tool to sort alignments (SAM/BAM files) into specific alleles based on SNP information.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0
@@ -18,33 +18,13 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0' locally
+0.6.0--hdfd78af_0: Pulling from biocontainers/snpsplit
+73349e34840e: Already exists
+acab339ca1e8: Already exists
+40025dce769c: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1376459251: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## snpsplit_SNPsplit_genome_preparation
-
-### Tool Description
-Genome preparation for SNPsplit. Note: The provided help text contains only container runtime logs and error messages, so no specific arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0
-- **Homepage**: https://www.bioinformatics.babraham.ac.uk/projects/SNPsplit/
-- **Package**: https://anaconda.org/channels/bioconda/packages/snpsplit/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snpsplit:0.6.0--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

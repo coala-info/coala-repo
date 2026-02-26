@@ -1,8 +1,9 @@
 ---
 name: r-ggrepel
-description: "Provides text and label geoms for 'ggplot2' that help to avoid     overlapping text labels. Labels repel away from each other and away from the     data points.</p>"
+description: The r-ggrepel tool provides ggplot2 geometries that automatically position text labels to prevent them from overlapping with each other or data points. Use when user asks to add non-overlapping text labels to R plots, prevent label collisions in ggplot2, or replace geom_text and geom_label with repelling versions.
 homepage: https://cloud.r-project.org/web/packages/ggrepel/index.html
 ---
+
 
 # r-ggrepel
 

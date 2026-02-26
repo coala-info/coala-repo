@@ -1,8 +1,9 @@
 ---
 name: bcbio-rnaseq
-description: bcbioRNASeq is an R package specifically designed to interface with the output of the bcbio-nextgen bioinformatics pipeline.
+description: bcbio-rnaseq processes bcbio-nextgen pipeline outputs into Bioconductor-compatible objects for downstream analysis in R. Use when user asks to load bcbio upload directories, construct a bcbioRNASeq object, or prepare RNA-seq data for differential expression analysis with DESeq2 or edgeR.
 homepage: https://github.com/hbc/bcbioRNASeq
 ---
+
 
 # bcbio-rnaseq
 

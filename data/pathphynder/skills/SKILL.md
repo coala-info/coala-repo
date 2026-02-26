@@ -1,8 +1,9 @@
 ---
 name: pathphynder
-description: pathPhynder is a specialized toolset designed to address the unique challenges of ancient DNA (aDNA) analysis, specifically deamination and low sequencing coverage.
+description: pathPhynder places low-coverage or ancient DNA samples into high-coverage reference phylogenies by evaluating informative markers. Use when user asks to assign ancient samples to branches of a tree, perform phylogenetic placement for haploid data, or mitigate deamination effects in aDNA analysis.
 homepage: https://github.com/ruidlpm/pathPhynder
 ---
+
 
 # pathphynder
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fcoex
-description: The package structure is based on the CEMiTool package.
+description: The fcoex package generates modular co-expression networks for single-cell data using discretization and the Fast Correlation-Based Filter algorithm. Use when user asks to identify header genes, build co-expression modules, perform pathway enrichment on modules, or re-cluster cells into populations based on module headers.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/fcoex.html
 ---
+
 
 # bioconductor-fcoex
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scanmirdata
-description: the package is available on all platforms; click for details.
+description: "This package provides pre-compiled models and data for miRNA binding site prediction. Use when user asks to access miRNA binding models, retrieve scanMiR data, or analyze miRNA-target interactions."
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scanMiRData.html
 ---
+
 
 # bioconductor-scanmirdata
 

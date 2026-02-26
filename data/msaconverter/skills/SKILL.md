@@ -1,8 +1,9 @@
 ---
 name: msaconverter
-description: msaconverter is a specialized utility designed to transform Multiple Sequence Alignment (MSA) files across a variety of standard bioinformatics formats.
+description: "msaconverter transforms Multiple Sequence Alignment files across various bioinformatics formats using the Biopython AlignIO engine. Use when user asks to convert MSA files between formats like FASTA, PHYLIP, or Nexus, reformat alignments for phylogenetic software, or handle relaxed naming conventions in sequence data."
 homepage: https://github.com/linzhi2013/msaconverter
 ---
+
 
 # msaconverter
 

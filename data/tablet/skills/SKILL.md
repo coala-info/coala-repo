@@ -1,8 +1,9 @@
 ---
 name: tablet
-description: Tablet is a high-performance graphical viewer designed for the visual exploration of next-generation sequencing data.
+description: Tablet is a high-performance graphical viewer for the visual exploration and navigation of next-generation sequencing data and genomic alignments. Use when user asks to visualize BAM or SAM files, convert Maq alignments to ACE format, or generate coverage statistics from assembly data.
 homepage: https://ics.hutton.ac.uk/tablet
 ---
+
 
 # tablet
 

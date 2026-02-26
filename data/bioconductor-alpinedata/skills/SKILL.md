@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alpinedata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The alpineData package provides subsetted RNA-seq alignment data from GEUVADIS samples for demonstrating bias modeling and abundance estimation. Use when user asks to access example RNA-seq alignments, retrieve GEUVADIS sample data, or provide demonstration data for the alpine package.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/alpineData.html
 ---
+
 
 # bioconductor-alpinedata
 

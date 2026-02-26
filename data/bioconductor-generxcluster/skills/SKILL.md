@@ -1,8 +1,9 @@
 ---
 name: bioconductor-generxcluster
-description: The package provides some functions for exploring genomic insertion sites originating from two different sources. Possibly, the two sources are two different gene therapy vectors.  Vectors are preferred that target sensitive regions less frequently, motivating the search for localized clusters of insertions and comparison of the clusters formed by integration of different vectors.  Scan statistics allow the discovery of spatial differences in clustering and calculation of False Discovery Rates (FDRs) providing statistical methods for comparing retroviral vectors. A scan statistic for comparing two vectors using multiple window widths to detect clustering differentials and compute FDRs is implemented here.
+description: This tool performs statistical analysis of genomic insertion sites to detect localized clusters and compare integration patterns between two sources. Use when user asks to identify spatial differences in clustering, calculate False Discovery Rates for genomic clumps, or perform scan statistics on integration site data.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneRxCluster.html
 ---
+
 
 # bioconductor-generxcluster
 

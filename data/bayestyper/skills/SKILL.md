@@ -1,8 +1,9 @@
 ---
 name: bayestyper
-description: BayesTyper is a specialized tool for genotyping a wide spectrum of genomic variations, ranging from single nucleotide polymorphisms (SNPs) to large structural variants (SVs).
+description: BayesTyper genotypes a wide range of genomic variations using a k-mer-based variant graph approach to reduce reference bias. Use when user asks to genotype SNPs and structural variants, cluster variants for genotyping, or estimate genotypes from k-mer counts.
 homepage: https://github.com/bioinformatics-centre/BayesTyper
 ---
+
 
 # bayestyper
 

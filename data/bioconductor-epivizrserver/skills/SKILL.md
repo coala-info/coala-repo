@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epivizrserver
-description: the package is available on all platforms; click for details.
+description: This package provides WebSocket infrastructure to manage communication between R and the Epiviz visualization ecosystem. Use when user asks to create a server object, register actions for JavaScript clients, or manage the server lifecycle for data visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/epivizrServer.html
 ---
+
 
 # bioconductor-epivizrserver
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.rnorvegicus.ucsc.rn5.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides transcript-centric annotations for the Rattus norvegicus genome based on the UCSC rn5 refGene track. Use when user asks to retrieve transcript locations, access gene models, or perform genomic coordinate mapping for the rn5 rat assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn5.refGene.html
 ---
+
 
 # bioconductor-txdb.rnorvegicus.ucsc.rn5.refgene
 

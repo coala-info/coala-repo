@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eegc
-description: "The package takes gene expression profiles as inputs from three types of samples: (i) somatic or stem cells to be (trans)differentiated (input of the engineering process), (ii) induced cells to be evaluated (output of the engineering process) and (iii) target primary cells (reference for the output). The package performs differential gene expression analysis for each pair-wise sample comparison to identify and evaluate the transcriptional differences among the 3 types of samples (input, output, reference). The ideal goal is to have induced and primary reference cell showing overlapping profiles, both very different from the original cells."
+description: bioconductor-eegc evaluates cellular engineering processes by comparing gene expression data across input, output, and target reference samples. Use when user asks to categorize gene induction status, evaluate cell fate conversion efficiency, or perform gene regulatory network analysis on engineered cells.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/eegc.html
 ---
+
 
 # bioconductor-eegc
 

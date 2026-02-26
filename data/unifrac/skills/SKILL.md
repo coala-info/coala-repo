@@ -1,8 +1,9 @@
 ---
 name: unifrac
-description: UniFrac is a specialized tool designed to compare microbiome samples based on their evolutionary history.
+description: UniFrac compares microbiome samples by calculating phylogenetic distances based on evolutionary history. Use when user asks to calculate UniFrac distances, or calculate Faith's Phylogenetic Diversity.
 homepage: https://github.com/biocore/unifrac
 ---
+
 
 # unifrac
 

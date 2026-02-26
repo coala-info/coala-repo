@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metaseqr2
-description: the package is available on all platforms; click for details.
+description: metaseqR2 is a Bioconductor package for the comprehensive analysis and reporting of differential expression in RNA-Seq data. Use when user asks to perform differential expression analysis, combine multiple statistical methods for transcriptomics, or generate integrated analysis reports.
 homepage: https://bioconductor.org/packages/release/bioc/html/metaseqR2.html
 ---
+
 
 # bioconductor-metaseqr2
 

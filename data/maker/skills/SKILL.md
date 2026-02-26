@@ -1,8 +1,9 @@
 ---
 name: maker
-description: MAKER is a comprehensive pipeline designed to automate the annotation of eukaryotic genomes.
+description: MAKER is an automated pipeline for eukaryotic genome annotation that integrates evidence from EST and protein alignments with gene prediction results. Use when user asks to initialize control files, execute the annotation workflow, run the pipeline in parallel using MPI, or resume a previous run.
 homepage: http://www.yandell-lab.org/software/maker.html
 ---
+
 
 # maker
 

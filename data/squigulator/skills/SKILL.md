@@ -1,8 +1,9 @@
 ---
 name: squigulator
-description: squigulator is a high-performance tool designed to simulate nanopore raw signal data using traditional pore models and Gaussian noise.
+description: "squigulator simulates nanopore raw signal data from reference sequences or basecalled reads. Use when user asks to simulate nanopore reads, generate synthetic BLOW5 signal data, or create mock datasets for testing nanopore bioinformatics tools."
 homepage: https://github.com/hasindu2008/squigulator
 ---
+
 
 # squigulator
 

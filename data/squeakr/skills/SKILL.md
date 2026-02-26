@@ -1,8 +1,9 @@
 ---
 name: squeakr
-description: Squeakr is a specialized bioinformatics tool designed for the efficient counting and representation of k-mer multisets.
+description: Squeakr is a memory-efficient bioinformatics tool that uses the Counting Quotient Filter data structure to count and represent k-mer multisets from sequencing reads. Use when user asks to count k-mers in FASTQ files, query k-mer frequencies, list k-mers from exact representations, or compute the inner product between genomic datasets.
 homepage: https://github.com/splatlab/squeakr
 ---
+
 
 # squeakr
 

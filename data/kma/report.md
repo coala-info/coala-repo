@@ -3,7 +3,7 @@
 ## kma
 
 ### Tool Description
-KMA is a mapping method designed to map raw reads directly against redundant databases, in an ultra-fast manner using seed-and-extend.
+KMA-1.6.8 maps and/or aligns raw reads to a template database.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kma:1.6.8--h577a1d6_0
@@ -12,35 +12,119 @@ KMA is a mapping method designed to map raw reads directly against redundant dat
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kma/overview
-- **Total Downloads**: 254.3K
+- **Total Downloads**: 254.7K
 - **Last updated**: 2025-11-19
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kma:1.6.8--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3008005478: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## kma_kma index
-
-### Tool Description
-No description available: The provided text is a container runtime error log, not help text.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kma:1.6.8--h577a1d6_0
-- **Homepage**: https://bitbucket.org/genomicepidemiology/kma
-- **Package**: https://anaconda.org/channels/bioconda/packages/kma/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kma:1.6.8--h577a1d6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2412457054: no space left on device
+# KMA-1.6.8 maps and/or aligns raw reads to a template database.
+#         Options:	Desc:                           	Default:
+#
+# Input:
+#               -i	Single end input(s)             	stdin
+#             -ipe	Paired end input(s)             	
+#             -int	Interleaved input(s)            	
+#
+# Output:
+#               -o	Output prefix                   	
+#              -ef	Output additional features      	False
+#             -vcf	Output vcf file, 2 to apply FT  	False
+#             -sam	Output sam, 4/2096 for mapped/aligned	False
+#              -nc	No consensus file               	False
+#              -na	No aln file                     	False
+#              -nf	No frag file                    	False
+#          -matrix	Output assembly matrix          	False
+#               -a	Output all template mappings    	False
+#             -and	Use both mrs and p-value on consensus	or
+#              -oa	Use neither mrs or p-value on consensus	False
+#             -tsv	Tsv flag                        	0
+#            -tsvh	Help on -tsv                    	
+#
+# Consensus:
+#        -reassign	Reassign consensus sequences    	False
+#              -bc	Minimum support to call bases   	0
+#          -bcNano	Altered indel calling for ONT data	False
+#             -bcd	Minimum depth to cal bases      	1
+#             -bcg	Maintain insignificant gaps     	False
+#              -ID	Minimum consensus ID            	1.0%
+#              -md	Minimum depth                   	0.0
+#           -dense	Skip insertion in consensus     	False
+#         -ref_fsa	Use n's on indels               	False
+#
+# General:
+#            -t_db	Template DB                     	
+#               -p	P-value                         	0.05
+#             -shm	Use DB in shared memory         	0
+#            -mmap	Memory map *.comp.b             	False
+#             -tmp	Set directory for temporary files	
+#              -mf	Max number of fragments to store in memory	1000000
+#               -t	Number of threads               	1
+#          -status	Extra status                    	False
+#         -verbose	Extra verbose                   	False
+#               -c	Citation                        	
+#               -v	Version                         	
+#               -h	Shows this help message         	
+#
+# Template mapping:
+#        -ConClave	ConClave version                	1
+#        -mem_mode	Base ConClave on template mappings	False
+#           -proxi	Proximity scoring (negative for soft)	False/1.0
+#         -ex_mode	Searh kmers exhaustively        	False
+#           -deCon	Remove contamination            	False
+#          -Sparse	Only count kmers                	False
+#              -ss	Sparse sorting (q,c,d,n)        	q
+#             -Mt1	Map everything to one template  	False/0
+#              -pm	Pairing method (p,u,f)          	u
+#             -1t1	One query to one template       	False
+#             -hmm	Use a HMM to assign template(s) 	False
+#              -ck	Count k-mers over pseudo alignment	False
+#       -localopen	Penalty for opening a local chain	6
+#             -mct	Max overlap between templates   	0.1
+#              -lc	Length corrected template chaining	False
+#
+# Chaining:
+#               -k	K-mersize                       	DB defined
+#              -ts	Trim front of seeds             	0
+#             -ssa	Seeds soround alignments        	False
+#         -ex_mode	Searh kmers exhaustively        	False
+#             -fpm	Pairing method (p,u,f)          	u
+#              -mq	Minimum mapping quality         	0
+#       -localopen	Penalty for local opening       	6
+#
+# Alignment:
+#              -ca	Circular alignments             	False
+#             -mrs	Minimum relative alignment score	0.5
+#             -mrc	Minimum query coverage          	0.0
+#              -ml	Minimum alignment length        	16
+#          -reward	Score for match                 	1
+#         -penalty	Penalty for mismatch            	2
+#         -gapopen	Penalty for gap opening         	3
+#       -gapextend	Penalty for gap extension       	1
+#             -per	Reward for pairing reads        	7
+#        -Npenalty	Penalty matching N              	0
+#      -transition	Penalty for transition          	2
+#    -transversion	Penalty for transversion        	2
+#            -sasm	Skip alignment                  	False
+#
+# Trimming:
+#              -mp	Minimum phred score             	20
+#              -mi	Minimum internal phred score    	0
+#              -eq	Minimum avg. quality score      	0
+#              -5p	Trim 5 prime                    	0
+#              -3p	Trim 3 prime                    	0
+#              -ml	Minimum length                  	16
+#              -xl	Maximum length on se            	2147483647
+#            -boot	Bootstrap sub-sequence          	False
+#
+# Presets:
+#             -apm	Sets both pm and fpm            	u
+#             -cge	Set CGE penalties and rewards   	False
+#           -mint2	Set 2nd gen Mintyper preset     	False
+#           -mint3	Set 3rd gen Mintyper preset     	False
+#             -ont	Set 3rd gen genefinding preset  	False
+#             -ill	Set 2nd gen genefinding preset  	False
+#             -asm	Set assembly genefinding preset 	False
+#
 ```
 

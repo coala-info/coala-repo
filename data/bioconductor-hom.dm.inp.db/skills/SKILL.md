@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.dm.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool extracts Inparanoid-based orthology mappings between Drosophila melanogaster and other species from the hom.Dm.inp.db Bioconductor package. Use when user asks to translate fruit fly gene identifiers to orthologs in other organisms, perform reverse mappings from foreign species back to fly IDs, or access high-confidence seed ortholog data.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.Dm.inp.db.html
 ---
+
 
 # bioconductor-hom.dm.inp.db
 

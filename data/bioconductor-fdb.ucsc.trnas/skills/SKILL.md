@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fdb.ucsc.trnas
-description: the package is available on all platforms; click for details.
+description: This package provides prefabricated FeatureDb objects for tRNA annotations from the UCSC Genome Browser for human, mouse, and rat genomes. Use when user asks to retrieve tRNA genomic coordinates, query tRNA metadata, or extract tRNA features for use with Bioconductor genomic interval tools.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/FDb.UCSC.tRNAs.html
 ---
+
 
 # bioconductor-fdb.ucsc.trnas
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-globaltest
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical testing of groups of covariates to determine their association with a response variable using the globaltest R package. Use when user asks to perform gene set enrichment analysis, conduct pathway analysis, test high-dimensional data for phenotype associations, or adjust for confounders in group-level regression models.
 homepage: https://bioconductor.org/packages/release/bioc/html/globaltest.html
 ---
+
 
 # bioconductor-globaltest
 

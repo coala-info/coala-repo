@@ -1,8 +1,9 @@
 ---
 name: xtb
-description: The `xtb` program is a specialized tool for semiempirical electronic structure theory, specifically implementing the Geometry, Frequency, Noncovalent, eXtended Tight-Binding (GFN-xTB) family of methods.
+description: The xtb program performs semiempirical electronic structure calculations using GFN-xTB methods. Use when user asks to optimize geometry, calculate frequencies, perform thermochemical analysis, perform molecular dynamics, calculate single point energy, or model solvation.
 homepage: https://github.com/grimme-lab/xtb
 ---
+
 
 # xtb
 

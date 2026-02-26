@@ -3,7 +3,7 @@
 ## merge-gbk-records
 
 ### Tool Description
-A tool to merge GenBank (GBK) records.
+Merge GenBank records with a defined spacer sequence
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/merge-gbk-records:0.2.0--pyhdfd78af_0
@@ -18,11 +18,24 @@ A tool to merge GenBank (GBK) records.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/merge-gbk-records:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2522205872: no space left on device
+usage: merge-gbk-records [-h] [-l LENGTH] [-s {n,stop}] [-o OUTFILE] [-V]
+                         records [records ...]
+
+Merge GenBank records with a defined spacer sequence
+
+positional arguments:
+  records               A GenBank file to merge
+
+options:
+  -h, --help            show this help message and exit
+  -l LENGTH, --length LENGTH
+                        Length of the spacer in kbp (default: 20).
+  -s {n,stop}, --spacer {n,stop}
+                        Spacer sequence to use, can be Ns or all-frame stop
+                        codons (default: n).
+  -o OUTFILE, --outfile OUTFILE
+                        Output file to write to, or 'stdout' to write to
+                        terminal (default: stdout).
+  -V, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

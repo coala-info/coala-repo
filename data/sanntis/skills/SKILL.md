@@ -1,8 +1,9 @@
 ---
 name: sanntis
-description: SanntiS (SMBGC Annotation using Neural Networks Trained on Interpro Signatures) is a machine-learning tool designed to detect Small Molecule Biosynthetic Gene Clusters.
+description: SanntiS is a machine-learning tool that detects and annotates Small Molecule Biosynthetic Gene Clusters using neural networks trained on protein domain signatures. Use when user asks to identify biosynthetic gene clusters in GenBank or protein FASTA files, annotate clusters using InterProScan results, or generate JSON outputs for antiSMASH integration.
 homepage: https://github.com/Finn-Lab/SanntiS
 ---
+
 
 # sanntis
 

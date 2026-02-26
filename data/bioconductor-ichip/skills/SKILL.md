@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ichip
-description: the package is available on all platforms; click for details.
+description: This tool performs Bayesian modeling of ChIP-chip data from multiple platforms using Ising models to account for spatial dependency between genomic probes. Use when user asks to calculate enrichment statistics, apply first-order or second-order Ising models to detect enriched genomic regions, or generate BED files for visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/iChip.html
 ---
+
 
 # bioconductor-ichip
 

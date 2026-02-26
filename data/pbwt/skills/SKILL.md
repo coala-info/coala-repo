@@ -1,8 +1,9 @@
 ---
 name: pbwt
-description: The `pbwt` tool provides a high-performance environment for the Positional Burrows-Wheeler Transform, a data structure specifically designed for aligned haplotype data.
+description: "pbwt provides a high-performance environment for managing and analyzing aligned haplotype data using the Positional Burrows-Wheeler Transform. Use when user asks to convert genetic formats to PBWT, find maximal haplotype matches, calculate site frequency spectra, or perform local ancestry inference through painting algorithms."
 homepage: https://github.com/richarddurbin/pbwt
 ---
+
 
 # pbwt
 

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: faPolyASizes
 label: ucsc-fapolyasizes
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container engine error log. Based on the tool name, this utility is typically
-  used to calculate polyA tail sizes from FASTA files.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Count polyA tail sizes in sequences of a fasta file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_fasta
+    type: File
+    doc: Input FASTA file to analyze
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

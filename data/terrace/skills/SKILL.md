@@ -1,8 +1,9 @@
 ---
 name: terrace
-description: TERRACE is a specialized bioinformatic assembler designed to reconstruct circular RNA (circRNA) transcripts from paired-end RNA-seq data.
+description: TERRACE reconstructs full-length circular RNA transcripts from paired-end RNA-seq data using a machine-learning framework. Use when user asks to assemble circular RNA sequences, assign confidence scores to circRNA transcripts, or identify back-splice junctions from sorted BAM files.
 homepage: https://github.com/Shao-Group/TERRACE
 ---
+
 
 # terrace
 

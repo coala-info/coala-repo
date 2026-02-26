@@ -1,8 +1,9 @@
 ---
 name: circle-map-cpp
-description: The `circle-map-cpp` skill enables the identification of thousands of eccDNA genomic features with high computational efficiency.
+description: circle-map-cpp identifies extrachromosomal circular DNA (eccDNA) genomic features by realigning discordant and soft-clipped reads to a reference genome. Use when user asks to extract circular read candidates, realign reads to define circular boundaries, or call eccDNA from deep sequencing data.
 homepage: https://github.com/BGI-Qingdao/Circle-Map-cpp
 ---
+
 
 # circle-map-cpp
 

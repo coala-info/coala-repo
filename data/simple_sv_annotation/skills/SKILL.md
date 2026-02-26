@@ -1,8 +1,9 @@
 ---
 name: simple_sv_annotation
-description: The `simple_sv_annotation` tool is a Python-based utility designed to streamline the interpretation of structural variants.
+description: This tool post-processes snpEff-annotated VCF files to provide a simplified and prioritized summary of structural variants. Use when user asks to simplify SV annotations, identify gene fusions or exon deletions, and prioritize variants based on custom gene lists or known fusion pairs.
 homepage: https://github.com/AstraZeneca-NGS/simple_sv_annotation
 ---
+
 
 # simple_sv_annotation
 

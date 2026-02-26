@@ -1,8 +1,9 @@
 ---
 name: r-dnet
-description: Skill for using the CRAN R package r-dnet.
+description: The r-dnet tool provides a comprehensive framework for integrative analysis of omics data using biological networks. Use when user asks to identify functional subnetworks, perform network propagation, conduct functional enrichment analysis, or visualize molecular networks.
 homepage: https://cran.r-project.org/web/packages/dnet/index.html
 ---
+
 
 # r-dnet
 

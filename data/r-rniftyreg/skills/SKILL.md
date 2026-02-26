@@ -1,8 +1,9 @@
 ---
 name: r-rniftyreg
-description: Skill for using the CRAN R package r-rniftyreg.
+description: This tool provides an R interface to the NiftyReg library for performing 2D and 3D image registration, transformation manipulation, and NIfTI image processing. Use when user asks to perform linear or nonlinear image registration, apply transformations to images or coordinates, compose multiple transforms, or resample medical images.
 homepage: https://cloud.r-project.org/web/packages/RNiftyReg/index.html
 ---
+
 
 # r-rniftyreg
 

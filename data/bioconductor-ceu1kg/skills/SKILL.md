@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ceu1kg
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides access to 1000 Genomes Project genotype data and expression sets for individuals of Central European ancestry. Use when user asks to load SnpMatrix objects for specific chromosomes, integrate genotype data with expression data for eQTL analysis, or explore SNP metadata for the CEU population.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ceu1kg.html
 ---
+
 
 # bioconductor-ceu1kg
 

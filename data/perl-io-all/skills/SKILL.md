@@ -1,8 +1,9 @@
 ---
 name: perl-io-all
-description: The `perl-io-all` (IO::All) module is a comprehensive "Swiss Army Knife" for Perl I/O operations.
+description: The perl-io-all module provides a unified, object-oriented interface for performing diverse Perl I/O operations including file, directory, socket, and pipe manipulation. Use when user asks to read or write file contents, navigate directory structures, handle temporary files, or simplify complex I/O tasks using method chaining and operator overloading.
 homepage: https://github.com/ingydotnet/io-all-pm
 ---
+
 
 # perl-io-all
 

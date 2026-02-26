@@ -1,8 +1,9 @@
 ---
 name: nucamino
-description: nucamino is a specialized alignment tool tailored for the unique requirements of viral genomics.
+description: Nucamino is a specialized alignment tool that maps viral nucleotide sequences to amino acids using pre-defined profiles. Use when user asks to align viral sequences against specific profiles, list genes within a profile, or validate sequence integrity.
 homepage: https://github.com/hivdb/nucamino
 ---
+
 
 # nucamino
 

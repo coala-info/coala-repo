@@ -1,8 +1,9 @@
 ---
 name: gvcf-regions
-description: The `gvcf-regions` skill provides a streamlined way to identify and export genomic regions that meet specific quality and calling criteria from a gVCF file.
+description: This tool identifies and exports genomic regions from gVCF files to produce a BED file representing the callable genome. Use when user asks to identify callable genomic regions, convert gVCF files to BED format, or filter genomic regions based on quality thresholds and caller-specific presets.
 homepage: https://github.com/lijiayong/gvcf_regions
 ---
+
 
 # gvcf-regions
 

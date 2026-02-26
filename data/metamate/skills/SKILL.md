@@ -1,8 +1,9 @@
 ---
 name: metamate
-description: metaMATE (metabarcoding Multiple Abundance Threshold Evaluator) is a specialized tool designed to clean NGS amplicon data, specifically targeting mitochondrial coding loci.
+description: metaMATE cleans NGS amplicon data by evaluating abundance thresholds within specific bins to optimize the removal of artifacts like NUMTs. Use when user asks to clean metabarcoding data, evaluate filtering thresholds for ASVs, identify authentic sequences using reference sets, or extract filtered sequences from an abundance analysis.
 homepage: https://github.com/tjcreedy/metamate
 ---
+
 
 # metamate
 

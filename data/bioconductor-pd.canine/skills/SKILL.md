@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.canine
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Canine Genome 2.0 Array. Use when user asks to analyze canine microarray data, access annotation for dog genome chips, or process Affymetrix canine expression arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.canine.html
 ---
+
 
 # bioconductor-pd.canine
 

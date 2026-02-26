@@ -1,8 +1,9 @@
 ---
 name: aletsch
-description: "Aletsch is a tool for transcript assembly (Note: The provided text is an error log and does not contain help information; description and arguments could not be extracted from the input)."
+description: Aletsch is a meta-assembler that reconstructs transcripts from multiple RNA-seq experiments by leveraging shared information across samples. Use when user asks to reconstruct transcripts from multiple samples, perform meta-assembly of RNA-seq data, or assemble low-abundance transcripts from short-read and long-read sequencing technologies.
 homepage: https://github.com/Shao-Group/aletsch
 ---
+
 
 # aletsch
 

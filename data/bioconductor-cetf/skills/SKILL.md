@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cetf
-description: the package is available on all platforms; click for details.
+description: This tool performs co-expression network analysis to identify key transcription factors using Regulatory Impact Factors and Partial Correlation and Information Theory. Use when user asks to identify critical transcription factors, reconstruct gene co-expression networks, calculate RIF scores, or perform PCIT analysis on transcriptomic data across two conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/CeTF.html
 ---
+
 
 # bioconductor-cetf
 

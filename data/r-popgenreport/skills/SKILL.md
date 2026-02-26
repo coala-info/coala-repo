@@ -1,8 +1,9 @@
 ---
 name: r-popgenreport
-description: "Provides beginner friendly framework to analyse population genetic     data. Based on 'adegenet' objects it uses 'knitr' to create comprehensive reports on spatial genetic data."
+description: PopGenReport is an R package for performing population and landscape genetic analyses and generating automated reports. Use when user asks to analyze population genetic data, calculate genetic distances, perform spatial autocorrelation, or conduct landscape genetic analysis using least-cost path modeling.
 homepage: https://cloud.r-project.org/web/packages/PopGenReport/index.html
 ---
+
 
 # r-popgenreport
 

@@ -1,8 +1,9 @@
 ---
 name: vartovcf
-description: `vartovcf` is a specialized Rust-based utility designed to replace the legacy Perl scripts (like `var2vcf_valid.pl`) bundled with the VarDict variant caller.
+description: vartovcf converts tabular VarDict output into a VCF compliant file. Use when user asks to convert VarDict output to VCF or filter non-variants from VarDict output.
 homepage: https://github.com/clintval/vartovcf
 ---
+
 
 # vartovcf
 

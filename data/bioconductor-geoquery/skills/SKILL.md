@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geoquery
-description: the package is available on all platforms; click for details.
+description: This tool downloads and parses data from the NCBI Gene Expression Omnibus (GEO) into Bioconductor-compatible R objects. Use when user asks to download GEO datasets, convert GEO records into ExpressionSet or SummarizedExperiment objects, retrieve pre-computed RNA-seq count matrices, or manage supplemental data files.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOquery.html
 ---
+
 
 # bioconductor-geoquery
 

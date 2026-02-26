@@ -1,8 +1,9 @@
 ---
 name: pycodestyle
-description: pycodestyle (formerly known as pep8) is a lightweight, single-file Python utility designed to check source code against the style conventions defined in PEP 8.
+description: "pycodestyle checks Python source code against the style conventions defined in PEP 8. Use when user asks to check code for style violations, audit formatting, or generate statistics on PEP 8 compliance."
 homepage: https://github.com/PyCQA/pycodestyle
 ---
+
 
 # pycodestyle
 

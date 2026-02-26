@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggtreedendro
-description: the package is available on all platforms; click for details.
+description: The bioconductor-ggtreedendro package extends ggtree to visualize and annotate hierarchical clustering objects using the ggplot2 framework. Use when user asks to visualize dendrograms from hclust or cluster objects, annotate trees with bootstrap values from pvclust, or apply custom layouts and scales to clustering results.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggtreeDendro.html
 ---
+
 
 # bioconductor-ggtreedendro
 

@@ -1,8 +1,9 @@
 ---
 name: tagbam
-description: `tagbam` is a specialized utility designed to append a specific tag and value to every read in a BAM file.
+description: "tagbam appends a specific tag and value to every read in a BAM file. Use when user asks to add metadata to alignment records, inject custom tags into BAM files, or label reads with specific values like haplotype assignments."
 homepage: https://github.com/fellen31/tagbam
 ---
+
 
 # tagbam
 

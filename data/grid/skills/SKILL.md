@@ -1,8 +1,9 @@
 ---
 name: grid
-description: The Growth Rate Index (GRiD) tool provides a method for estimating the in situ replication rates of bacteria.
+description: The Growth Rate Index (GRiD) tool estimates the in situ replication rates of bacteria by analyzing DNA coverage ratios between the origin and terminus of replication. Use when user asks to determine bacterial growth rates, perform single genome analysis, or conduct community-wide multiplexed growth analysis in metagenomic samples.
 homepage: https://github.com/ohlab/GRiD
 ---
+
 
 # grid
 

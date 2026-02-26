@@ -1,8 +1,9 @@
 ---
 name: patchwork
-description: Patchwork is a decentralized, peer-to-peer messaging and social sharing application built on the Secure Scuttlebutt (SSB) protocol.
+description: Patchwork is a decentralized peer-to-peer messaging and social sharing application built on the Secure Scuttlebutt protocol. Use when user asks to install the software, join a pub to discover peers, or troubleshoot technical issues within the legacy SSB environment.
 homepage: https://github.com/ssbc/patchwork
 ---
+
 
 # patchwork
 

@@ -1,58 +1,2838 @@
 # pgcgap CWL Generation Report
 
-## pgcgap
+## pgcgap_if
 
 ### Tool Description
-Could not get help from Singularity for: pgcgap
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
-- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
-- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
-- **Validation**: FAIL (generation failed)
-
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
-- **Total Downloads**: 91.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/liaochenlanruo/pgcgap
-- **Stars**: N/A
-### Generation Failed
-
-Could not get help from Singularity for: pgcgap
-
-
-### Validation Errors
-
-- Could not get help from Singularity for: pgcgap
-
-
-
-### Original Help Text
-```text
-
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## pgcgap
-
-### Tool Description
-The provided text is a system error log related to a container build failure (no space left on device) and does not contain CLI help information or argument definitions.
+The prokaryotic genomics and comparative genomics analysis pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
 - **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
 - **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
 - **Validation**: PASS
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Total Downloads**: 91.3K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/liaochenlanruo/pgcgap
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0e058c2e637e568da3573d6fe27805f81c4f60a5085a759f63c354f782378b24: unpack entry: usr/local/bin/diamond: unpack to regular file: short write: write /tmp/build-temp-2270487818/rootfs/usr/local/bin/diamond: no space left on device
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
+```
+
+
+## pgcgap_canu
+
+### Tool Description
+The prokaryotic genomics and comparative genomics analysis pipeline
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
+- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
+```
+
+
+## pgcgap_tries
+
+### Tool Description
+The prokaryotic genomics and comparative genomics analysis pipeline
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
+- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
+```
+
+
+## pgcgap_Default
+
+### Tool Description
+The prokaryotic genomics and comparative genomics analysis pipeline
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
+- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
+```
+
+
+## pgcgap_mash
+
+### Tool Description
+The prokaryotic genomics and comparative genomics analysis pipeline
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
+- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
+```
+
+
+## pgcgap_____
+
+### Tool Description
+The prokaryotic genomics and comparative genomics analysis pipeline
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/pgcgap:1.0.35--pl5321hdfd78af_1
+- **Homepage**: https://github.com/liaochenlanruo/pgcgap/blob/master/README.md
+- **Package**: https://anaconda.org/channels/bioconda/packages/pgcgap/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:
+      General usage: pgcgap [Modules] [Options]
+
+      Show parameters for each module: pgcgap [Assemble|Annotate|ANI|AntiRes|CoreTree|MASH|OrthoF|Pan|pCOG|VAR|STREE|ACC]
+
+      Show examples of each module: pgcgap Examples
+
+Options:
+    [--help]                      Print the help message and exit
+
+    [--version]                   Show version number of PGCGAP and exit
+
+    [--check-external-programs]   Check if all of the required external
+                                  programs can be found and are executable,
+                                  then exit
+
+    [--check-update]              Check if there is a new version of PGCGAP
+                                  that can be upgraded
+
+    [--setup-COGdb]               Setup COG database. Users should execute
+                                  "pgcgap --setup-COGdb" after the first
+                                  installation of pgcgap
+
+    [--setup-COGdb2]              Alternate method to setup COG database.
+                                  This option can be used to download and
+                                  setup the COG database when network access
+                                  is not available with 'setup-COGdb'
+
+  *********************************************** Modules ************************************************:
+
+    [--All]                       Perform Assemble, Annotate, CoreTree, Pan,
+                                  OrthoF, ANI, MASH, AntiRes and pCOG
+                                  functions with one command
+
+    [--Assemble]                  Assemble reads (short, long or hybrid)
+                                  into contigs
+
+    [--Annotate]                  Genome annotation
+
+    [--CoreTree]                  Construct single-copy core proteins tree
+                                  and core SNPs tree
+
+    [--Pan]                       Run "panaroo" pan genome pipeline with
+                                  gff3 files, and construct a phylogenetic
+                                  tree with the sing-copy core proteins
+                                  called by panaroo
+
+    [--OrthoF]                    Identify orthologous protein sequence
+                                  families
+
+    [--ANI]                       Compute whole-genome Average Nucleotide
+                                  Identity ( ANI )
+
+    [--MASH]                      Genome and metagenome similarity
+                                  estimation using MinHash
+
+    [--pCOG]                      Run COG annotation for each strain
+                                  (*.faa), and generate a table containing
+                                  the relative abundance of each flag for
+                                  all strains
+
+    [--VAR]                       Rapid haploid variant calling and core
+                                  genome alignment
+
+    [--AntiRes]                   Screening for antimicrobial and virulence
+                                  genes
+
+    [--STREE]                     Construct a phylogenetic tree based on
+                                  multiple sequences in one file
+
+    [--ACC]                       Other useful gadgets
+
+  *********************************************** Global Options *****************************************:
+
+    [--strain_num (INT)]          [Required by "All", "CoreTree", "Pan",
+                                  "VAR" and "pCOG"] The total number of
+                                  strains used for analysis, not including
+                                  the reference genome
+
+    [--ReadsPath (PATH)]          [Required by "All", "Assemble" and "VAR"]
+                                  Reads of all strains as file paths (
+                                  Default ./Reads/Illumina )
+
+    [--scafPath (PATH)]           [Required by "All", "Assess", "Annotate",
+                                  "MASH" and "AntiRes"] Path for
+                                  contigs/scaffolds ( Default
+                                  "Results/Assembles/Scaf/Illumina" )
+
+    [--AAsPath (PATH)]            [Required by "All", "CoreTree", "OrthoF"
+                                  and "pCOG"] Amino acids of all strains as
+                                  fasta file paths, ( Default
+                                  "./Results/Annotations/AAs" )
+
+    [--reads1 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 1 ( for example:
+                                  if the name of reads 1 is
+                                  "YBT-1520_L1_I050.R1.clean.fastq.gz",
+                                  "YBT-1520" is the strain same, so the
+                                  suffix name should be ".R1.clean.fastq.gz"
+                                  )
+
+    [--reads2 (STRING)]           [Required by "All", "Assemble" and "VAR"]
+                                  The suffix name of reads 2( for example:
+                                  if the name of reads 2 is "YBT-1520_2.fq",
+                                  the suffix name should be _2.fq" )
+
+    [--Scaf_suffix (STRING)]      The suffix of scaffolds or genome files
+                                  [Required by "All", "Assess", "Annotate",
+                                  "MASH", "ANI" and "AntiRes"]. This is an
+                                  important parameter that must be set (
+                                  Default .filtered.fas )
+
+    [--filter_length (INT)]       [Required] Sequences shorter than the
+                                  'filter_length' will be deleted from the
+                                  assembled genomes [Required by "All",
+                                  "Assemble" and "Assess"]. ( Default 200 )
+
+    [--codon (INT)]               [Required by "All", "Annotate", "CoreTree"
+                                  and "Pan"] Translation table ( Default 11
+                                  )
+
+                                  1   Universal code
+                                  2   Vertebrate mitochondrial code
+                                  3   Yeast mitochondrial code
+                                  4   Mold, Protozoan, and Coelenterate Mitochondrial code and Mycoplasma/Spiroplasma code
+                                  5   Invertebrate mitochondrial
+                                  6   Ciliate, Dasycladacean and Hexamita nuclear code
+                                  9   Echinoderm and Flatworm mitochondrial code
+                                  10  Euplotid nuclear code
+                                  11  Bacterial, archaeal and plant plastid code ( Default )
+                                  12  Alternative yeast nuclear code
+                                  13  Ascidian mitochondrial code
+                                  14  Alternative flatworm mitochondrial code
+                                  15  Blepharisma nuclear code
+                                  16  Chlorophycean mitochondrial code
+                                  21  Trematode mitochondrial code
+                                  22  Scenedesmus obliquus mitochondrial code
+                                  23  Thraustochytrium mitochondrial code
+    
+    [--suffix_len (INT)]          [Required by "All", "Assemble" and "VAR"]
+                                  (Strongly recommended) The suffix length
+                                  of the reads file, that is the length of
+                                  the reads name minus the length of the
+                                  strain name. For example the --suffix_len
+                                  of "YBT-1520_L1_I050.R1.clean.fastq.gz" is
+                                  26 ( "YBT-1520" is the strain name ) (
+                                  Default 0 )
+
+    [--logs (STRING)]             Name of the log file ( Default Logs.txt )
+
+    [--fasttree]                  [Can be used with "CoreTree", "Pan" and
+                                  "OrthoF"] Use FastTree to construct
+                                  phylogenetic tree quickly instead of
+                                  IQ-TREE.
+
+    [--bsnum (INT)]               [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  bootstrap of IQ-TREE. ( Default 500 )
+
+    [--fastboot (INT)]            [Required by "CoreTree", "Pan", "OrthoF",
+                                  "STREE", and "VAR"] Replicates for
+                                  ultrafast bootstrap of IQ-TREE. ( must >=
+                                  1000, Default 1000 )
+
+    [--threads (INT)]             Number of threads to be used ( Default 4 )
+
+  *********************************************** Local Options ******************************************:
+
+   =========================== Options of "--Assemble" for reads assembly ================================:
+
+    [--platform (STRING)]         [Required] Sequencing Platform,
+                                  "illumina", "pacbio", "oxford" and
+                                  "hybrid" available ( Default illumina )
+
+    [--assembler (STRING)]        [Required] Software used for illumina
+                                  reads assembly, "abyss", "spades" and
+                                  "auto" available ( Default auto )
+
+    [--kmmer (INT)]               [Required] k-mer size for genome assembly
+                                  of Illumina data with abyss( Default 81 )
+
+    [--genomeSize (STRING)]       [Required] An estimate of the size of the
+                                  genome. Common suffixes are allowed, for
+                                  example, 3.7m or 2.8g. Needed by PacBio
+                                  data and Oxford data ( Default Unset )
+
+    [--short1 (STRING)]           [Required] FASTQ file of first short reads
+                                  in each pair. Needed by hybrid assembly (
+                                  Default Unset )
+
+    [--short2 (STRING)]           [Required] FASTQ file of second short
+                                  reads in each pair. Needed by hybrid
+                                  assembly ( Default Unset )
+
+    [--long (STRING)]             [Required] FASTQ or FASTA file of long
+                                  reads. Needed by hybrid assembly ( Default
+                                  Unset )
+
+    [--hout (STRING)]             [Required] Output directory for hybrid
+                                  assembly ( Default
+                                  ../../Results/Assembles/Hybrid )
+
+   ========================== Options of "--Annotate" for genome annotation ==============================:
+
+    [--genus (STRING)]            Genus name of the strain ( Default "NA" )
+
+    [--species (STRING)]          Species name of the strain ( Default "NA"
+                                  )
+
+   ========================== Options for "--CoreTree" constructing ======================================:
+
+    [--CDsPath (PATH)]            [Required] CDs of all strains as fasta
+                                  file paths, ( Default
+                                  "./Results/Annotations/CDs" )
+
+    [-c (FLOAT)]                  Sequence identity threshold, ( Default
+                                  0.5)
+
+    [-n (INT)]                    Word_length, -n 2 for thresholds 0.4-0.5,
+                                  -n 3 for thresholds 0.5-0.6, -n 4 for
+                                  thresholds 0.6-0.7, -n 5 for thresholds
+                                  0.7-1.0 ( Default 2 )
+
+    [-G (INT)]                    Use global (set to 1) or local (set to 0)
+                                  sequence identity, ( Default 0 )
+
+    [-t (INT)]                    Tolerance for redundance ( Default 0 )
+
+    [-aL (FLOAT)]                 Alignment coverage for the longer
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.5 )
+
+    [-aS (FLOAT)]                 Alignment coverage for the shorter
+                                  sequence. If set to 0.9, the alignment
+                                  must covers 90% of the sequence ( Default
+                                  0.7 )
+
+    [-g (INT)]                    If set to 0, a sequence is clustered to
+                                  the first cluster that meets the threshold
+                                  (fast cluster). If set to 1, the program
+                                  will cluster it into the most similar
+                                  cluster that meets the threshold (accurate
+                                  but slow mode, Default 1)
+
+    [-d (INT)]                    length of description in .clstr file. if
+                                  set to 0, it takes the fasta defline and
+                                  stops at first space ( Default 0 )
+
+   ========================== Options for "--Pan" analysis ===============================================:
+
+    [--GffPath (PATH)]            [Required] Gff files of all strains as
+                                  paths ( Default
+                                  "./Results/Annotations/GFF" )
+
+    [--identi (FLOAT)]            Minimum percentage identity for blastp (
+                                  Default 0.95, 0 < identi < 1 )
+
+   ========================== Options for "--OrthoF" analysis ============================================:
+
+    [--Sprogram (STRING)]         Sequence search program, Options: blast,
+                                  mmseqs, blast_gz, diamond ( Default
+                                  diamond )
+
+   ========================== Options for "--ani" analysis ===============================================:
+
+    [--queryL (FILE)]             [Required] The file containing full paths
+                                  to query genomes, one per line ( Default
+                                  scaf.list )
+
+    [--refL (FILE)]               [Required] The file containing full paths
+                                  to reference genomes, one per line. (
+                                  Default scaf.list )
+
+   ========================== Options for "--var" analysis ===============================================:
+
+    [--refgbk (FILE)]             [Required] The full path and name of
+                                  reference genome in GENBANK format (
+                                  recommended ), fasta format is also OK.
+                                  For example: "/mnt/g/test/ref.gbk"
+
+    [--qualtype (STRING)]         [Required] Type of quality values (solexa
+                                  (CASAVA < 1.3), illumina (CASAVA 1.3 to
+                                  1.7), sanger (which is CASAVA >= 1.8)). (
+                                  Default sanger )
+
+    [--qual (INT)]                Threshold for trimming based on average
+                                  quality in a window. ( Default 20 )
+
+    [--length (INT)]              Threshold to keep a read based on length
+                                  after trimming. ( Default 20 )
+
+    [--mincov (INT)]              The minimum number of reads covering a
+                                  site to be considered ( Default 10 )
+
+    [--minfrac (FLOAT)]           The minimum proportion of those reads
+                                  which must differ from the reference (
+                                  Default 0.9 )
+
+    [--minqual (INT)]             The minimum VCF variant call "quality" (
+                                  Default 100 )
+
+    [--ram (INT)]                 Try and keep RAM under this many GB (
+                                  Default 8 )
+
+   ========================== Options for "--AntiRes" analysis ===========================================:
+    [--db (STRING)]               [Required] The database to use, options:
+                                  all, argannot, card, ecoh, ecoli_vf,
+                                  megares, ncbi, plasmidfinder, resfinder
+                                  and vfdb. ( Default all )
+
+    [--identity (INT)]            [Required] Minimum %identity to keep the
+                                  result, should be a number between 1 to
+                                  100. ( Default 75 )
+
+    [--coverage (INT)]            [Required] Minimum %coverage to keep the
+                                  result, should be a number between 0 to
+                                  100. ( Default 50 )
+
+   ========================== Options for "--Stree" ======================================================:
+    [--seqfile (STRING)]          Path of the sequence file for analysis.
+
+    [--seqtype (STRING)]          Type Of Sequence (p, d, c for Protein,
+                                  DNA, Codons, respectively). ( Default p )
+
+   ========================== Options for "--pcog" ======================================================:
+    [--evalue (FLOAT)]            [Required] maximum e-value to report
+                                  alignments, ( Default 1e-3 )
+
+    [--id (INT)]                  [Required] minimum identity% to report an
+                                  alignment, ( Default 40 )
+
+    [--query_cover (INT)]         [Required] minimum query cover% to report
+                                  an alignment, ( Default 70 )
+
+    [--subject_cover (INT)]       [Required] minimum subject cover% to
+                                  report an alignment, ( Default 50 )
+
+   ========================== Options for "--acc" ========================================================:
+    [--Assess (STRING)]           Filter short sequences in the genome and
+                                  assess the status of the genome.
+
+    [--id2seq (STRING)]           Extract the corresponding sequences from a
+                                  file to another file according to a number
+                                  of ids in one file.
+
+    [--ids (STRING)]              Parameter for id2seq, specify the file
+                                  containing the IDs of sequences, if the
+                                  file has multiple columns, space or tab
+                                  should be used to separate the columns.
+
+    [--seqin (STRING)]            Parameter for id2seq, specify the FASTA
+                                  format file that contains the sequence.
+
+    [--seqout (STRING)]           Parameter for id2seq, specify the name of
+                                  the output file that will be used to save
+                                  the extracted sequences according to the
+                                  user-supplied IDs.
+
+    [--getRepeats (STRING)]       Counts the number of repeats of the string
+                                  for the specified column in a given file.
+
+    [--filein (STRING)]           Parameter for getRepeats, specify the
+                                  input file.
+
+    [--column (INT)]              Parameter for getRepeats, specify which
+                                  column is used for the calculation
+                                  (default: 0 for the whole line).
+
+    [--sep (STRING)]              Parameter for getRepeats, specify the
+                                  separator (space, tab, comma, semicolon)
+                                  between columns (Default: tab).
+
+  *************************** Paths of external programs *************************************************:
+
+    Not needed if they were in the environment variables path. Users can
+    check with the "--check-external-programs" option for the essential
+    programs
+
+    [--abyss-bin (PATH)]          Path to abyss binary file. Default tries
+                                  if abyss is in PATH;
+
+    [--canu-bin (PATH)]           Path to canu binary file. Default tries if
+                                  canu is in PATH;
+
+    [--prodigal-bin (PATH)]       Path to prodigal binary file. Default
+                                  tries if prodigal is in PATH;
+
+    [--prokka-bin (PATH)]         Path to prokka binary file. Default tries
+                                  if prokka is in PATH;
+
+    [--cd-hit-bin (PATH)]         Path to cd-hit binary file. Default tries
+                                  if cd-hit is in PATH;
+
+    [--mafft-bin (PATH)]          Path to mafft binary file. Default tries
+                                  if mafft is in PATH;
+
+    [--pal2nal-bin (PATH)]        Path to the pal2nal.pl binary file.
+                                  Default tries if pal2nal.pl is in PATH;
+
+    [--snp-sites-bin (PATH)]      Path to the snp-sites binary file. Default
+                                  tries if snp-sites is in PATH;
+
+    [--panaroo-bin (PATH)]        Path to the Panaroo binary file. Default
+                                  tries if Panaroo is in PATH;
+
+    [--orthofinder-bin (PATH)]    Path to the orthofinder binary file.
+                                  Default tries if orthofinder is in PATH;
+
+    [--fastANI-bin (PATH)]        Path to the fastANI binary file. Default
+                                  tries if fastANI is in PATH;
+
+    [--snippy-bin (PATH)]         Path to the snippy binary file. Default
+                                  tries if snippy is in PATH;
+
+    [--sickle-bin (PATH)]         Path to the sickle-trim binary file.
+                                  Default tries if sickle is in PATH;
+
+    [--mash-bin (PATH)]           Path to mash binary file. Default tries if
+                                  mash is in PATH;
+
+    [--abricate-bin (PATH)]       Path to abricate binary file. Default
+                                  tries if abricate is in PATH;
+
+    [--unicycler-bin (PATH)]      Path to unicycler binary file. Default
+                                  tries if unicycler is in PATH;
+
+    [--muscle-bin (PATH)]         Path to nuscle binary file. Default tries
+                                  if muscle in PATH;
+
+    [--trimAL-bin (PATH)]         Path to trimAL binary file. Default tries
+                                  if trimAL is in PATH;
+
+    [--iqtree-bin (PATH)]         Path to iqtree binary file. Default tries
+                                  if iqtree is in PATH;
+
+  ################################### About The Software ###################################
+
+		  ____       ____      ____     ____       _        ____    
+		U|  _"\ u U /"___|u U /"___| U /"___|u U  /"\  u  U|  _"\ u 
+		\| |_) |/ \| |  _ / \| | u   \| |  _ /  \/ _ \/   \| |_) |/ 
+		 |  __/    | |_| |   | |/__   | |_| |   / ___ \    |  __/   
+		 |_|        \____|    \____|   \____|  /_/   \_\   |_|      
+		 ||>>_      _)(|_    _// \\    _)(|_    \\    >>   ||>>_    
+		(__)__)    (__)__)  (__)(__)  (__)__)  (__)  (__) (__)__)   
+
+
+  Software: PGCGAP - The prokaryotic genomics and comparative genomics analysis pipeline
+
+  Version 1.0.35  Documentation, support and updates available at https://liaochenlanruo.fun/pgcgap
+
+  Author: Hualin Liu
+
+  Contact: liaochenlanruo@webmail.hzau.edu.cn or raise issues at GitHub https://github.com/liaochenlanruo/pgcgap
+
+  Citation: Liu H, Xin B, Zheng J, Zhong H, Yu Y, Peng D, Sun M. Build a bioinformatic analysis platform and apply it to routine analysis of microbial genomics and comparative genomics. Protocol exchange, 2022. DOI: 10.21203/rs.2.21224/v6
 ```
 

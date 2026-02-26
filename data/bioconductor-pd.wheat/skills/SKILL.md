@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.wheat
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and platform design information for the Affymetrix Wheat Genome Array. Use when user asks to analyze wheat microarray data, map probes to genomic features, or install the wheat platform design package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.wheat.html
 ---
+
 
 # bioconductor-pd.wheat
 

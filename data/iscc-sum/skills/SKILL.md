@@ -1,8 +1,9 @@
 ---
 name: iscc-sum
-description: iscc-sum is a high-performance implementation of the ISCC hashing standard, written in Rust with Python bindings.
+description: "iscc-sum is a high-performance implementation of the ISCC hashing standard used for content identification and similarity detection. Use when user asks to generate ISCC codes, verify file integrity, find similar files based on content, or process large datasets for similarity matching."
 homepage: https://github.com/bio-codes/iscc-sum
 ---
+
 
 # iscc-sum
 

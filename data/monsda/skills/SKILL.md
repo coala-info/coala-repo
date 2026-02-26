@@ -1,8 +1,9 @@
 ---
 name: monsda
-description: MONSDA (Modular Organizer of Nextflow and Snakemake driven HTS Data Analysis) is a specialized wrapper designed to streamline complex bioinformatics workflows.
+description: MONSDA is a wrapper that orchestrates complex bioinformatics workflows by automating the generation and execution of Snakemake and Nextflow files from a single JSON configuration. Use when user asks to manage HTS data analysis, generate workflow configuration files, or run bioinformatics pipelines using Snakemake or Nextflow engines.
 homepage: https://github.com/jfallmann/MONSDA
 ---
+
 
 # monsda
 

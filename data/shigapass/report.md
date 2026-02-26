@@ -1,9 +1,9 @@
 # shigapass CWL Generation Report
 
-## shigapass
+## shigapass_ShigaPass.sh
 
 ### Tool Description
-The provided text is an error log from a container build process (Singularity/Apptainer) and does not contain the help text or usage instructions for the tool 'shigapass'. As a result, no arguments could be extracted.
+This tool is used to predict Shigella serotypes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shigapass:1.5.0--hdfd78af_0
@@ -18,35 +18,19 @@ The provided text is an error log from a container build process (Singularity/Ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shigapass:1.5.0--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:56fa854568f5e8560c6ea94f51d94ce11c92d0105af61c6042519d87b3cfc691: unpack entry: usr/local/bin/project_tree_builder: unpack to regular file: short write: write /tmp/build-temp-2240568129/rootfs/usr/local/bin/project_tree_builder: no space left on device
-```
+###### This tool is used to predict Shigella serotypes  #####
+Usage : ShigaPass.sh [options]
 
-
-## Metadata
-- **Skill**: generated
-
-## shigapass_ShigaPass.sh
-
-### Tool Description
-ShigaPass is a tool for the classification of Shiga toxin-producing Escherichia coli (STEC). (Note: The provided help text contains system error logs regarding a failed container build and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/shigapass:1.5.0--hdfd78af_0
-- **Homepage**: https://github.com/imanyass/ShigaPass/
-- **Package**: https://anaconda.org/channels/bioconda/packages/shigapass/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shigapass:1.5.0--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:56fa854568f5e8560c6ea94f51d94ce11c92d0105af61c6042519d87b3cfc691: unpack entry: usr/local/bin/project_tree_builder: unpack to regular file: short write: write /tmp/build-temp-2312415721/rootfs/usr/local/bin/project_tree_builder: no space left on device
+options :
+-l	List of input file(s) (FASTA) with their path(s) (mandatory)
+-o	Output directory (mandatory)
+-p	Path to databases directory (mandatory)
+-t	Number of threads (optional, default: 2)
+-u	Call the makeblastdb utility for databases initialisation (optional, but required when running the script for the first time)
+-k	Do not remove subdirectories (optional)
+-v	Display the version and exit
+-h	Display this help and exit
+Example: ShigaPass.sh -l list_of_fasta.txt -o ShigaPass_Results -p ShigaPass/ShigaPass_DataBases -t 4 -u -k
+Please note that the -u option should be used when running the script for the first time and after databases updates
 ```
 

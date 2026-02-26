@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chicago
-description: the package is available on all platforms; click for details.
+description: bioconductor-chicago performs statistical analysis of Capture Hi-C data to identify significant looping interactions between genomic regions. Use when user asks to detect significant interactions in CHi-C data, perform background modeling and normalization, or visualize promoter-other end interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/Chicago.html
 ---
+
 
 # bioconductor-chicago
 

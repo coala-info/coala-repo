@@ -1,8 +1,9 @@
 ---
 name: r-propr
-description: Skill for using the CRAN R package r-propr.
+description: The r-propr tool performs proportionality analysis to measure associations in compositional data such as RNA-seq or microbiome counts. Use when user asks to calculate proportionality coefficients like rho or phi, perform differential proportionality analysis between groups, or visualize compositional associations in R.
 homepage: https://cran.r-project.org/web/packages/propr/index.html
 ---
+
 
 # r-propr
 

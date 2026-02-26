@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.tguttata.ucsc.taegut1.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genome sequences for the Zebra finch based on the UCSC taeGut1 assembly. Use when user asks to access Zebra finch genomic sequences with assembly gaps and intra-contig ambiguities masked, perform motif searching on masked sequences, or manage genome-wide masks for Taeniopygia guttata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tguttata.UCSC.taeGut1.masked.html
 ---
+
 
 # bioconductor-bsgenome.tguttata.ucsc.taegut1.masked
 

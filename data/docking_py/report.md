@@ -3,26 +3,36 @@
 ## docking_py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It consists of system log messages and a fatal error regarding disk space during a container build process.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/docking_py:0.2.3--py_0
 - **Homepage**: https://github.com/samuelmurail/docking_py
 - **Package**: https://anaconda.org/channels/bioconda/packages/docking_py/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/docking_py/overview
 - **Total Downloads**: 3.0K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/samuelmurail/docking_py
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/docking_py:0.2.3--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2182267693: no space left on device
+Unable to find image 'quay.io/biocontainers/docking_py:0.2.3--py_0' locally
+0.2.3--py_0: Pulling from biocontainers/docking_py
+docker: failed to prepare extraction snapshot "extract-193688915-og9W sha256:85dcac8a86580e4ebccf96403245ffc150918d411878420af96fa052808c3fb3": failed to create prepare snapshot dir: failed to create temp dir: mkdir /var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/new-3317612232: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: not generated

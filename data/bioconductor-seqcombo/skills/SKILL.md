@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqcombo
-description: the package is available on all platforms; click for details.
+description: The bioconductor-seqcombo package provides tools for visualizing and combining sequence alignments with other biological data types. Use when user asks to visualize sequence alignments, combine sequence data with phylogenetic trees, or create comparative genomics plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/seqcombo.html
 ---
+
 
 # bioconductor-seqcombo
 

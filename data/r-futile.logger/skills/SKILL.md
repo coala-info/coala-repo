@@ -1,8 +1,9 @@
 ---
 name: r-futile.logger
-description: "Provides a simple yet powerful logging utility. Based loosely on     log4j, futile.logger takes advantage of R idioms to make logging a     convenient and easy to use replacement for cat and print statements.</p>"
+description: This tool provides a scoped logging utility for R based on the log4j framework. Use when user asks to implement structured logging, manage log levels, redirect output to files, or format log messages in R scripts and packages.
 homepage: https://cloud.r-project.org/web/packages/futile.logger/index.html
 ---
+
 
 # r-futile.logger
 

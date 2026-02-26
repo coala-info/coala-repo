@@ -1,8 +1,9 @@
 ---
 name: kestrel
-description: Kestrel is a bioinformatics tool that identifies variants in Illumina short-read data using a k-mer based approach rather than traditional sequence alignment.
+description: Kestrel identifies genetic variants in Illumina short-read data using a k-mer based approach and reference-guided local assembly. Use when user asks to call variants without traditional sequence alignment, detect patterns of variation using k-mers, or generate VCF files from FASTQ data.
 homepage: https://github.com/paudano/kestrel
 ---
+
 
 # kestrel
 

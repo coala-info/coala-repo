@@ -1,8 +1,9 @@
 ---
 name: hail
-description: Hail is a high-performance, Python-based framework designed for the exploration and analysis of massive genomic datasets.
+description: Hail is a high-performance Python framework for the scalable analysis and exploration of massive genomic datasets. Use when user asks to ingest genomic data, perform quality control, annotate variants, or run statistical analyses like GWAS and PCA.
 homepage: https://hail.is
 ---
+
 
 # hail
 

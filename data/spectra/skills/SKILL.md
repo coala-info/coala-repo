@@ -1,8 +1,9 @@
 ---
 name: spectra
-description: Spectral is a versatile linter designed to create and enforce automated style guides for JSON and YAML data.
+description: Spectral is a CLI linter for JSON and YAML files that enforces automated style guides for API descriptions. Use when user asks to lint API specifications, apply custom rulesets to data files, or generate formatted linting reports.
 homepage: https://github.com/stoplightio/spectral
 ---
+
 
 # spectra
 

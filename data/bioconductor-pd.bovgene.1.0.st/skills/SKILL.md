@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.bovgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Bovine Gene 1.0 ST expression microarray. Use when user asks to process Affymetrix Bovine Gene 1.0 ST array data, access platform design information, or analyze bovine gene expression microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.bovgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.bovgene.1.0.st
 

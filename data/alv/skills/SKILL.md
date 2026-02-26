@@ -1,8 +1,9 @@
 ---
 name: alv
-description: alv (Alignment Viewer) is a lightweight, console-based utility designed for rapid visualization of biological sequence alignments.
+description: alv is a console-based utility for rapid visualization and inspection of biological sequence alignments directly in the terminal. Use when user asks to view multiple sequence alignments, visualize coding DNA with codon translation, or subset alignments by columns and sequences.
 homepage: https://github.com/arvestad/alv
 ---
+
 
 # alv
 

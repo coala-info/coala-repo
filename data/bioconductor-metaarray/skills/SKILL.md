@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metaarray
-description: the package is available on all platforms; click for details.
+description: This R package provides methods for the meta-analysis of microarray data across multiple gene expression studies. Use when user asks to integrate microarray datasets, perform cross-study meta-analysis, or identify consistently differentially expressed genes across multiple experiments.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/metaArray.html
 ---
+
 
 # bioconductor-metaarray
 

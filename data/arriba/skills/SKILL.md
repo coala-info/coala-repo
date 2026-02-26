@@ -1,8 +1,9 @@
 ---
 name: arriba
-description: Arriba is a specialized command-line tool for discovering chimeric transcripts and structural rearrangements from RNA-Seq data.
+description: Arriba discovers chimeric transcripts and structural rearrangements from RNA-Seq data as a post-processor for the STAR aligner. Use when user asks to detect gene fusions, identify viral integration sites, or visualize structural rearrangements in transcriptomic data.
 homepage: https://github.com/suhrig/arriba
 ---
+
 
 # arriba
 

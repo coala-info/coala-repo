@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enrichdo
-description: The package includes various statistical models and visualization schemes for discovering the associations between genes and diseases from biological big data.
+description: This tool performs Disease Ontology enrichment analysis using a global weighted model to identify associations between gene sets and diseases. Use when user asks to perform disease ontology enrichment, identify disease associations for Entrez IDs, or visualize enriched disease terms using bar plots and DAG trees.
 homepage: https://bioconductor.org/packages/release/bioc/html/EnrichDO.html
 ---
+
 
 # bioconductor-enrichdo
 

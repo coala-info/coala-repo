@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedsort
-description: ucsc-bedsort (commonly invoked as `bedSort`) is a specialized utility from the UCSC Kent toolset designed to order BED files by chromosome and then by start position.
+description: ucsc-bedsort orders BED files by chromosome and then by start position. Use when user asks to order BED files, sort BED files, prepare BED files for BigBed conversion, or prepare BED files for UCSC Genome Browser visualization.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedsort
 

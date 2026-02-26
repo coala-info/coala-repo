@@ -1,8 +1,9 @@
 ---
 name: bppsuite
-description: The Bio++ Program Suite (bppsuite) is a collection of command-line tools designed for molecular evolution studies.
+description: The Bio++ Program Suite provides a collection of command-line tools for molecular evolution studies and phylogenetic analysis. Use when user asks to estimate model parameters, simulate sequences, reconstruct ancestral states, or calculate population genetics statistics.
 homepage: https://github.com/BioPP/bppsuite
 ---
+
 
 # bppsuite
 

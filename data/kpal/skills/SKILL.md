@@ -1,8 +1,9 @@
 ---
 name: kpal
-description: kPAL (k-mer profile analysis library) is a specialized toolkit for the creation and manipulation of k-mer frequency profiles from DNA sequences.
+description: kPAL creates and manipulates k-mer frequency profiles from DNA sequences for alignment-free genomic analysis. Use when user asks to count k-mers, generate k-mer profiles from FASTA files, merge multiple profile files, or create a k-mer matrix for statistical comparison.
 homepage: https://github.com/LUMC/kPAL
 ---
+
 
 # kpal
 

@@ -1,8 +1,9 @@
 ---
 name: macs3
-description: MACS3 is the latest iteration of the Model-based Analysis of ChIP-Seq algorithm, designed to identify protein-bound regions or open chromatin areas from high-throughput sequencing data.
+description: MACS3 identifies protein-bound regions and open chromatin areas from high-throughput sequencing data such as ChIP-seq and ATAC-seq. Use when user asks to call narrow or broad peaks, process ATAC-seq data, compare differential peaks, or generate signal tracks.
 homepage: https://pypi.org/project/MACS3/
 ---
+
 
 # macs3
 

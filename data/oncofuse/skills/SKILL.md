@@ -1,8 +1,9 @@
 ---
 name: oncofuse
-description: Oncofuse is a Bayesian classifier framework designed to distinguish between "driver" gene fusions (those contributing to oncogenesis) and "passenger" fusions.
+description: Oncofuse is a Bayesian classifier designed to distinguish between driver and passenger gene fusions in cancer genomics data. Use when user asks to prioritize gene fusions, predict the oncogenic potential of fusion candidates, or annotate fusion detection results from tools like TopHat, FusionCatcher, or STAR-Fusion.
 homepage: https://github.com/mikessh/oncofuse
 ---
+
 
 # oncofuse
 

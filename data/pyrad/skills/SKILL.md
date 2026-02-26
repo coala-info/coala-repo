@@ -1,8 +1,9 @@
 ---
 name: pyrad
-description: pyrad is a bioinformatics pipeline designed for the de novo or reference-based assembly of RADseq data.
+description: pyrad is a bioinformatics pipeline for the de novo or reference-based assembly of RADseq data into filtered datasets for phylogenetic and population genetic analysis. Use when user asks to assemble RADseq data, generate a template parameters file, or maintain legacy pyrad workflows.
 homepage: https://github.com/dereneaton/pyrad
 ---
+
 
 # pyrad
 

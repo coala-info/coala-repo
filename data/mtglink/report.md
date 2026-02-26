@@ -1,9 +1,9 @@
 # mtglink CWL Generation Report
 
-## mtglink
+## mtglink_bed2gfa.py
 
 ### Tool Description
-MTG-Link is a tool for linking genome assemblies using long reads. (Note: The provided help text contains only container runtime error messages and no usage information.)
+Convert a BED file containing the 'N's coordinates for each scaffold (or locus coordinates) to a GFA file (GFA 2.0) ('N's regions are treated as gaps). We can filter the 'N's regions by their size (e.g. gap lengths) and by the contigs' sizes on both sides (long enough for ex to get enough barcodes)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0
@@ -18,63 +18,77 @@ MTG-Link is a tool for linking genome assemblies using long reads. (Note: The pr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1445956018: no space left on device
+usage: bed2gfa.py -bed <bedFile.bed> -fa <fastaFile.fasta> -out <outputGFAFile> [options]
+
+Convert a BED file containing the 'N's coordinates for each scaffold (or locus coordinates) to a GFA file (GFA 2.0) ('N's regions are treated as gaps). We can filter the 'N's regions by their size (e.g. gap lengths) and by the contigs' sizes on both sides (long enough for ex to get enough barcodes)
+
+options:
+  -h, --help            show this help message and exit
+  -bed BED              BED file containing the 'Ns' coordinates for each scaffold (format: 'xxx.bed')
+  -fa FASTA             FASTA file containing the sequences of the scaffolds (reference genome) (format: 'xxx.fasta' or 'xxx.fa')
+  -min MIN              Minimum size of the 'Ns' region to treat as a gap
+  -max MAX              Maximum size of the 'Ns' region to treat as a gap
+  -contigs CONTIGS_SIZE
+                        Minimum size of the flanking contigs of the 'Ns' region to treat as a gap
+  -out OUTGFA           Name of the output GFA file
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## mtglink_bed2gfa.py
-
-### Tool Description
-A tool to convert BED files to GFA format (Note: The provided help text contains system error messages and does not list specific arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0
-- **Homepage**: https://github.com/anne-gcd/MTG-Link
-- **Package**: https://anaconda.org/channels/bioconda/packages/mtglink/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3519145741: no space left on device
-```
 
 ## mtglink_LRez
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system log messages and a fatal error regarding container image building.
+LRez allows to work with barcoded Linked-Reads, and offers various barcode management functionalities.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0
 - **Homepage**: https://github.com/anne-gcd/MTG-Link
 - **Package**: https://anaconda.org/channels/bioconda/packages/mtglink/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3819445093: no space left on device
+LRez v2.2.4
+Pierre Morisse <pierre.morisse@inria.fr>
+LRez allows to work with barcoded Linked-Reads, and offers various barcode management functionalities.
+
+USAGE:
+	LRez [SUBCOMMAND]
+
+SUBCOMMANDS:
+	compare		 Compute the number of common barcodes between pairs of regions, or between pairs of contigs' extremities
+	extract		 Extract the barcodes from a given region of a BAM file
+	stats		 Retrieve general stats from a BAM file
+	index bam	 Index the offsets or occurrences positions of the barcodes contained in a BAM file
+	query bam	 Query the barcodes index to retrieve alignments in a BAM file, given a barcode or list of barcodes
+	index fastq	 Index the offsets of the barcodes contained in a fastq file
+	query fastq	 Query the barcodes index to retrieve alignments in a fastq file, given a barcode or list of barcodes
 ```
+
 
 ## mtglink_mtglink.py
 
 ### Tool Description
-MTG-Link: A tool for linking and scaffolding assembly graphs using long reads.
+Local assembly with linked read data, using either a De Bruijn Graph (DBG) algorithm or an Iterative Read Overlap (IRO) algorithm
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0
 - **Homepage**: https://github.com/anne-gcd/MTG-Link
 - **Package**: https://anaconda.org/channels/bioconda/packages/mtglink/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtglink:2.4.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1775596507: no space left on device
+usage: mtglink.py [-h] [-v] {DBG,IRO} ...
+
+Local assembly with linked read data, using either a De Bruijn Graph (DBG) algorithm or an Iterative Read Overlap (IRO) algorithm
+
+positional arguments:
+  {DBG,IRO}   MTGLink module used for the Local Assembly step
+    DBG       Local assembly using a De Bruijn Graph (DBG) algorithm
+    IRO       Local assembly using an Iterative Read Overlap (IRO) algorithm
+
+options:
+  -h, --help  show this help message and exit
+  -v          show program's version number and exit
 ```
 

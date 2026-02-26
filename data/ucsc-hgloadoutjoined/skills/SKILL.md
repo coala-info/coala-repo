@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgloadoutjoined
-description: The `hgLoadOutJoined` utility is part of the UCSC Kent toolkit, designed to transform RepeatMasker output into a format suitable for genomic database queries.
+description: This tool transforms RepeatMasker output into a format suitable for genomic database queries and loads it into a UCSC database. Use when user asks to 'load RepeatMasker output into a UCSC database' or 'populate a database with repeat data'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgloadoutjoined
 

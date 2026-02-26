@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.barley1
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Barley Genome Array. Use when user asks to analyze Affymetrix Barley1 microarray data or access probe sequence and location information.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.barley1.html
 ---
+
 
 # bioconductor-pd.barley1
 

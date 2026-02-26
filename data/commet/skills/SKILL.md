@@ -1,8 +1,9 @@
 ---
 name: commet
-description: COMMET is a specialized tool designed for large-scale metagenomic projects where assembling every dataset is impractical.
+description: COMMET compares large-scale metagenomic datasets by indexing raw reads and using bit vectors to identify shared k-mers without the need for assembly. Use when user asks to generate a similarity matrix between multiple read sets, perform set operations like intersection or difference on datasets, or visualize metagenomic clustering through heatmaps and dendrograms.
 homepage: https://colibread.inria.fr/software/commet/
 ---
+
 
 # commet
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdrimport
-description: The package is a part of the gDR suite. It helps to prepare raw drug response data for downstream processing. It mainly contains helper functions for importing/loading/validating dose-response data provided in different file formats.
+description: The bioconductor-gdrimport package imports, validates, and prepares raw drug response data for the gDR ecosystem. Use when user asks to load drug response manifests and results, convert between gDR MultiAssayExperiment and PharmacoGx PharmacoSet objects, or process PRISM datasets into gDR-compatible formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRimport.html
 ---
+
 
 # bioconductor-gdrimport
 

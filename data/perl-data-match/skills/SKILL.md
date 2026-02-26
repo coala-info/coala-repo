@@ -1,8 +1,9 @@
 ---
 name: perl-data-match
-description: The `perl-data-match` tool (Data::Match) provides a declarative way to test if a complex Perl data structure matches a specific template or pattern.
+description: This tool provides a declarative way to test if complex Perl data structures match specific templates or patterns. Use when user asks to validate nested data structures, perform partial pattern matching, or use wildcards and regular expressions to check Perl variables.
 homepage: http://metacpan.org/pod/Data::Match
 ---
+
 
 # perl-data-match
 

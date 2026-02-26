@@ -1,8 +1,9 @@
 ---
 name: bioconductor-macorrplot
-description: the package is available on all platforms; click for details.
+description: This package visualizes the correlation between signal intensity and log-fold change in microarray data to identify systematic biases. Use when user asks to visualize MA-plot correlations, identify intensity-dependent biases in microarray experiments, or plot correlation between M and A values.
 homepage: https://bioconductor.org/packages/release/bioc/html/maCorrPlot.html
 ---
+
 
 # bioconductor-macorrplot
 

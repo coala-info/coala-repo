@@ -1,8 +1,9 @@
 ---
 name: pytwobit
-description: pytwobit is a high-performance Python interface for reading UCSC .2bit files.
+description: pytwobit is a high-performance Python interface for reading and querying genomic sequences from local or remote UCSC .2bit files. Use when user asks to fetch sequences from specific chromosomal regions, read .2bit files, or access remote reference genomes without downloading the full file.
 homepage: https://github.com/jrobinso/pytwobit
 ---
+
 
 # pytwobit
 

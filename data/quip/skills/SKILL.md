@@ -1,8 +1,9 @@
 ---
 name: quip
-description: Quip is a specialized tool designed for the highly efficient compression of biological sequence data.
+description: Quip is a specialized tool designed for the highly efficient compression and decompression of genomic sequence data in FASTQ, SAM, and BAM formats. Use when user asks to compress biological sequence files, decompress .qp files, or pipe decompressed genomic data into other bioinformatics tools.
 homepage: http://homes.cs.washington.edu/%7Edcjones/quip/
 ---
+
 
 # quip
 

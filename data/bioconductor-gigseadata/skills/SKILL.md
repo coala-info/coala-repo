@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gigseadata
-description: the package is available on all platforms; click for details.
+description: This package provides curated discrete and continuous gene set collections stored as sparse matrices for genotype imputed gene set enrichment analysis. Use when user asks to load Gene Ontology gene sets, access Fantom5 transcription factor target data, or provide weighted gene sets for GIGSEA workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GIGSEAdata.html
 ---
+
 
 # bioconductor-gigseadata
 

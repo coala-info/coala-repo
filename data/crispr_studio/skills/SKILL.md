@@ -1,8 +1,9 @@
 ---
 name: crispr_studio
-description: CRISPRStudio is a specialized tool for the comparative visualization of CRISPR arrays.
+description: CRISPRStudio generates color-coded SVG visualizations for the comparative analysis of CRISPR arrays and homologous spacers across different isolates. Use when user asks to visualize CRISPR arrays, compare spacers across bacterial or archaeal genomes, or identify shared evolutionary history in CRISPR-Cas systems.
 homepage: https://github.com/moineaulab/CRISPRStudio
 ---
+
 
 # crispr_studio
 

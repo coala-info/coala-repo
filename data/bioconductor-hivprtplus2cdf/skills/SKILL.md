@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hivprtplus2cdf
-description: the package is available on all platforms; click for details.
+description: This tool provides coordinate conversion and environment access for the HIVPRTPLUS2 Affymetrix chip annotation package. Use when user asks to map between (x,y) chip coordinates and single-number indices, access CDF environments, or process HIVPRTPLUS2 platform data in Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hivprtplus2cdf.html
 ---
+
 
 # bioconductor-hivprtplus2cdf
 

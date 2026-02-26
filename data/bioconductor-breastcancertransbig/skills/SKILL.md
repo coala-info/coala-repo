@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancertransbig
-description: the package is available on all platforms; click for details.
+description: This package provides access to the TRANSBIG breast cancer gene expression dataset containing microarray data and clinical metadata for 198 node-negative patients. Use when user asks to load the transbig ExpressionSet, perform survival analysis on breast cancer patients, or validate prognostic gene signatures.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerTRANSBIG.html
 ---
+
 
 # bioconductor-breastcancertransbig
 

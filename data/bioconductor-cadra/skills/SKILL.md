@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cadra
-description: the package is available on all platforms; click for details.
+description: Bioconductor-cadra identifies sets of genomic features whose union is maximally associated with a continuous functional outcome. Use when user asks to identify candidate drivers, perform forward or backward heuristic searches, run permutation-based significance testing, or find meta-features associated with continuous scores.
 homepage: https://bioconductor.org/packages/release/bioc/html/CaDrA.html
 ---
+
 
 # bioconductor-cadra
 

@@ -1,9 +1,9 @@
 # fusioncatcher-seqtk CWL Generation Report
 
-## fusioncatcher-seqtk
+## fusioncatcher-seqtk_seqtk
 
 ### Tool Description
-A tool for processing biological sequences (Note: The provided help text contains only container runtime error messages and no usage information).
+A toolkit for processing sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fusioncatcher-seqtk:1.2--h577a1d6_7
@@ -18,29 +18,26 @@ A tool for processing biological sequences (Note: The provided help text contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fusioncatcher-seqtk:1.2--h577a1d6_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2135575357: no space left on device
-```
+Usage:   seqtk <command> <arguments>
+Version: 1.2-r101c-dirty
 
+Command: seq       common transformation of FASTA/Q
+         comp      get the nucleotide composition of FASTA/Q
+         sample    subsample sequences
+         subseq    extract subsequences from FASTA/Q
+         fqchk     fastq QC (base/quality summary)
+         mergepe   interleave two PE FASTA/Q files
+         trimfq    trim FASTQ using the Phred algorithm
 
-## Metadata
-- **Skill**: generated
-
-## fusioncatcher-seqtk_seqtk
-
-### Tool Description
-The provided help text contains only system error messages related to a container runtime (Apptainer/Singularity) and does not contain usage information for the tool. Seqtk is generally used for processing sequences in FASTA/FASTQ format.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fusioncatcher-seqtk:1.2--h577a1d6_7
-- **Homepage**: https://github.com/ndaniel/seqtk
-- **Package**: https://anaconda.org/channels/bioconda/packages/fusioncatcher-seqtk/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fusioncatcher-seqtk:1.2--h577a1d6_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2857012593: no space left on device
+         hety      regional heterozygosity
+         gc        identify high- or low-GC regions
+         mutfa     point mutate FASTA at specified positions
+         mergefa   merge two FASTA/Q files
+         famask    apply a X-coded FASTA to a source FASTA
+         dropse    drop unpaired from interleaved PE FASTA/Q
+         rename    rename sequence names
+         randbase  choose a random base from hets
+         cutN      cut sequence at long N
+         listhet   extract the position of each het
 ```
 

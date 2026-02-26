@@ -1,8 +1,9 @@
 ---
 name: lmas
-description: LMAS (Last Metagenomic Assembler Standing) is an automated benchmarking workflow designed to evaluate the performance of various prokaryotic de novo assembly tools.
+description: LMAS is an automated benchmarking workflow that evaluates and compares the performance of various prokaryotic de novo assembly tools. Use when user asks to benchmark metagenomic assemblers, evaluate assembly performance metrics, or generate interactive reports comparing different assembly strategies.
 homepage: https://github.com/B-UMMI/LMAS
 ---
+
 
 # lmas
 

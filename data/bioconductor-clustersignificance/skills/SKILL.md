@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clustersignificance
-description: the package is available on all platforms; click for details.
+description: ClusterSignificance provides tools to assess the statistical significance of clusters in dimensionality reduction or classification results. Use when user asks to assess cluster separation, calculate p-values for clusters, or determine the significance of groupings in low-dimensional spaces.
 homepage: https://bioconductor.org/packages/release/bioc/html/ClusterSignificance.html
 ---
+
 
 # bioconductor-clustersignificance
 

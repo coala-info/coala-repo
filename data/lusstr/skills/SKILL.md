@@ -1,8 +1,9 @@
 ---
 name: lusstr
-description: lusstr is a specialized forensic bioinformatics tool that bridges the gap between raw NGS sequence strings and the structured allele designations required for downstream analysis.
+description: lusstr converts raw NGS sequence data into standardized forensic allele designations and prepares input files for probabilistic genotyping platforms. Use when user asks to analyze STR or SNP data, convert sequence strings to allele designations, apply forensic filters like stutter identification, or generate input files for STRmix and other genotyping software.
 homepage: https://www.github.com/bioforensics/lusSTR
 ---
+
 
 # lusstr
 

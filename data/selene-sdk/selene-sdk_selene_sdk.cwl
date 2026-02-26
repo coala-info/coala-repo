@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: selene_sdk
 label: selene-sdk_selene_sdk
-doc: "Selene is a framework for developing sequence-level deep learning models. (Note:
-  The provided help text contains only system error logs and does not list specific
-  command-line arguments.)\n\nTool homepage: https://github.com/FunctionLab/selene"
-inputs: []
+doc: "Selene SDK command-line tool\n\nTool homepage: https://github.com/FunctionLab/selene"
+inputs:
+  - id: path
+    type: File
+    doc: Path to the configuration file or directory
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

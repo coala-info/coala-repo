@@ -1,8 +1,9 @@
 ---
 name: hitea
-description: HiTea (Hi-C based Transposable Element Analyzer) is a specialized computational tool designed to detect non-reference transposable element insertions by leveraging the unique properties of Hi-C sequencing data.
+description: HiTea detects non-reference transposable element insertions using Hi-C sequencing data. Use when user asks to identify mobile element activity, detect transposable element insertions, or analyze genomic structural variations from proximity ligation assays.
 homepage: https://github.com/parklab/HiTea
 ---
+
 
 # hitea
 

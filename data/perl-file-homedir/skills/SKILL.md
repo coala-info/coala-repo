@@ -1,8 +1,9 @@
 ---
 name: perl-file-homedir
-description: `File::HomeDir` is a Perl module designed to solve the "where is my home directory" problem across different operating systems.
+description: perl-file-homedir is a Perl module that provides a platform-agnostic way to locate home directories and standard system folders. Use when user asks to find the current user's home directory, retrieve paths for special folders like desktop or documents, or locate application data directories across different operating systems.
 homepage: https://metacpan.org/release/File-HomeDir
 ---
+
 
 # perl-file-homedir
 

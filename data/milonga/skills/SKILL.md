@@ -1,8 +1,9 @@
 ---
 name: milonga
-description: MiLongA (Microbial Long-read Assembly) is a specialized Snakemake-based pipeline designed to automate the assembly of microbial genomes from long-read sequencing data.
+description: MiLongA is an automated Snakemake pipeline for assembling and polishing microbial genomes from long-read sequencing data. Use when user asks to assemble microbial genomes from Nanopore reads, perform hybrid or long-read-only assembly, or polish consensus sequences.
 homepage: https://gitlab.com/bfr_bioinformatics/milonga
 ---
+
 
 # milonga
 

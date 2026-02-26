@@ -1,8 +1,9 @@
 ---
 name: r-pracma
-description: "Provides a large number of functions from numerical analysis and     linear algebra, numerical optimization, differential equations,     time series, plus some well-known special mathematical functions.     Uses 'MATLAB' function names where appropriate to simplify porting.</p>"
+description: The r-pracma package provides advanced numerical analysis functions in R with MATLAB-like syntax for optimization, integration, and differential equations. Use when user asks to find roots, solve systems of nonlinear equations, perform numerical integration, solve ordinary differential equations, or identify peaks in signal data.
 homepage: https://cloud.r-project.org/web/packages/pracma/index.html
 ---
+
 
 # r-pracma
 

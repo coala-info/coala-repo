@@ -1,8 +1,9 @@
 ---
 name: jarvis3
-description: JARVIS3 is a high-efficiency encoder specifically optimized for genomic data.
+description: JARVIS3 is a high-efficiency encoder that compresses genomic sequences and estimates their information content using context models and neural networks. Use when user asks to compress genomic data, decompress .jc files, or estimate sequence complexity and information content.
 homepage: https://github.com/cobilab/jarvis3
 ---
+
 
 # jarvis3
 

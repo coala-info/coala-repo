@@ -1,8 +1,9 @@
 ---
 name: fastqmetrics
-description: `fastqmetrics` is a lightweight bioinformatics utility designed to generate detailed per-read statistics from sequencing data.
+description: fastqmetrics generates detailed per-read length and quality statistics from sequencing data. Use when user asks to extract read-level metrics, calculate average or median quality scores, or generate a tab-separated report of FASTQ statistics.
 homepage: https://github.com/wdecoster/fastqmetrics
 ---
+
 
 # fastqmetrics
 

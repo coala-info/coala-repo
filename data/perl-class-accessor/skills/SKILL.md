@@ -1,8 +1,9 @@
 ---
 name: perl-class-accessor
-description: This skill enables the rapid creation of Perl class attributes without manual method writing.
+description: This tool automates the generation of getter and setter methods for Perl class attributes. Use when user asks to create object accessors, implement read-only or write-only fields, or use a declarative syntax for object-oriented Perl development.
 homepage: http://metacpan.org/pod/Class::Accessor
 ---
+
 
 # perl-class-accessor
 

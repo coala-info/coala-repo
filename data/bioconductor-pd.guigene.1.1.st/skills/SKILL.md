@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.guigene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Gene 1.1 ST array. Use when user asks to process Affymetrix Gene 1.1 ST array data, access platform design information for Guigene arrays, or perform gene expression analysis with this annotation package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.guigene.1.1.st.html
 ---
+
 
 # bioconductor-pd.guigene.1.1.st
 

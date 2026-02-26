@@ -1,8 +1,9 @@
 ---
 name: grz-check
-description: The `grz-check` tool is a specialized validator designed for the German healthcare system's genomic medicine initiative.
+description: The grz-check tool validates the structural and syntactical correctness of genomic data submission packages for the German healthcare system. Use when user asks to validate submission files, troubleshoot schema errors, or install the tool via Bioconda.
 homepage: https://github.com/BfArM-MVH/grz-tools/packages/grz-check
 ---
+
 
 # grz-check
 

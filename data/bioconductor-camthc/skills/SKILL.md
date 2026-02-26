@@ -1,8 +1,9 @@
 ---
 name: bioconductor-camthc
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-camthc performs unsupervised, supervised, and semi-supervised deconvolution of heterogeneous biological samples to estimate subpopulation proportions and specific expression profiles. Use when user asks to deconvolve mixed tissue data, estimate cell type proportions, identify molecular markers from mixture data, or characterize tissue heterogeneity using Convex Analysis of Mixtures.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/CAMTHC.html
 ---
+
 
 # bioconductor-camthc
 

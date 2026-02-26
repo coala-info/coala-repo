@@ -1,8 +1,9 @@
 ---
 name: extract_vcf
-description: `extract_vcf` is a Python tool designed to standardize the extraction of information from VCF files, which often contain inconsistent or complex annotation formats.
+description: This tool standardizes the extraction of specific fields and annotations from VCF files using a configuration-based plugin system. Use when user asks to extract variant information, parse INFO field annotations, or convert VCF data into specific data types using custom rules.
 homepage: https://github.com/moonso/extract_vcf
 ---
+
 
 # extract_vcf
 

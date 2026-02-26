@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-gcs
-description: The snakemake-storage-plugin-gcs allows Snakemake to seamlessly interface with Google Cloud Storage.
+description: This plugin enables Snakemake to use Google Cloud Storage as a storage layer for workflow inputs and outputs. Use when user asks to interface Snakemake with GCS buckets, configure cloud storage URIs, or run workflows using Google Cloud Storage as the default storage provider.
 homepage: https://github.com/snakemake/snakemake-storage-plugin-gcs
 ---
+
 
 # snakemake-storage-plugin-gcs
 

@@ -1,8 +1,9 @@
 ---
 name: pybarrnap
-description: pybarrnap is a Python implementation of the Bacterial Ribosomal RNA Predictor (barrnap).
+description: "pybarrnap identifies the location of ribosomal RNA genes in genomic FASTA files using HMM profiles. Use when user asks to predict rRNA genes, find 16S or 23S sequences, or annotate ribosomal RNA in bacterial, archaeal, or eukaryotic genomes."
 homepage: https://github.com/moshi4/pybarrnap/
 ---
+
 
 # pybarrnap
 

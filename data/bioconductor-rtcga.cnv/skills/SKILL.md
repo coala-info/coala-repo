@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtcga.cnv
-description: the package is available on all platforms; click for details.
+description: This R package provides copy number variation data from The Cancer Genome Atlas (TCGA) for genomic analysis. Use when user asks to access TCGA copy number variation datasets, analyze cancer genomic profiles, or retrieve preprocessed CNV data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.CNV.html
 ---
+
 
 # bioconductor-rtcga.cnv
 

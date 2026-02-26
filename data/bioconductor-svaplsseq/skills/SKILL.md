@@ -1,8 +1,9 @@
 ---
 name: bioconductor-svaplsseq
-description: The package contains functions that are intended for extracting the signatures of latent variation in RNAseq data and using them to perform an improved differential expression analysis for a set of features (genes, transcripts) between two specified biological groups.
+description: SVAPLSseq extracts latent variation signatures from RNA-seq data to improve differential expression analysis between biological groups. Use when user asks to extract latent variation signatures, perform differential expression analysis, or identify differentially expressed genes and transcripts while accounting for hidden factors.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/SVAPLSseq.html
 ---
+
 
 # bioconductor-svaplsseq
 

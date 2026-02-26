@@ -25,4 +25,4 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/ogmapper:1.0.0--h077b44
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

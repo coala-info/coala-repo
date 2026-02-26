@@ -2,10 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bwa-plus
 label: hmftools-bwa-plus_bwa-plus
-doc: "The provided text is a container runtime error log (Apptainer/Singularity) and
-  does not contain help documentation or argument definitions for the tool.\n\nTool
-  homepage: https://github.com/hartwigmedical/bwa-plus"
-inputs: []
+doc: "bwa-plus is a tool for sequence alignment.\n\nTool homepage: https://github.com/hartwigmedical/bwa-plus"
+inputs:
+  - id: command
+    type: string
+    doc: The command to execute (index, mem, version)
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

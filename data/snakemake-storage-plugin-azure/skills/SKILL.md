@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-azure
-description: The `snakemake-storage-plugin-azure` is a specialized extension for Snakemake that allows the workflow management system to treat Azure Blob Storage as a native file system.
+description: This plugin enables Snakemake to use Azure Blob Storage as a native file system for managing workflow data. Use when user asks to use Azure Blob Storage for pipeline inputs or outputs, automate data transfers to the Azure cloud, or configure Snakemake storage providers.
 homepage: https://github.com/snakemake/snakemake-storage-plugin-azure
 ---
+
 
 # snakemake-storage-plugin-azure
 

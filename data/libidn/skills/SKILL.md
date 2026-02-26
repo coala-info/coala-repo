@@ -1,8 +1,9 @@
 ---
 name: libidn
-description: The `libidn` skill provides procedural knowledge for using the `idn2` command-line utility (from the Libidn2 library).
+description: The libidn tool converts internationalized domain names between Unicode and ASCII Punycode formats using the IDNA2008 and TR46 specifications. Use when user asks to convert Unicode domains to Punycode, decode Punycode to Unicode, or validate domain names for registration and lookup.
 homepage: https://github.com/libidn/libidn2
 ---
+
 
 # libidn
 

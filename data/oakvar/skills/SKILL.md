@@ -1,8 +1,9 @@
 ---
 name: oakvar
-description: OakVar is a modular genomic variant analysis platform designed to streamline the annotation and interpretation of genetic variations.
+description: OakVar is a modular genomic variant analysis platform used to annotate and interpret genetic variations through a customizable command-line interface. Use when user asks to search for or install modules, run variant annotation workflows, generate reports from analysis results, or launch the interactive GUI.
 homepage: http://www.oakvar.com
 ---
+
 
 # oakvar
 

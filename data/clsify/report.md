@@ -1,9 +1,9 @@
 # clsify CWL Generation Report
 
-## clsify
+## clsify_cli
 
 ### Tool Description
-A tool for taxonomic classification (Note: The provided text contains only container build error logs and no help documentation. No arguments could be extracted from the input.)
+Classify sequence files and extract sample information using regular expressions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clsify:0.1.1--py_0
@@ -18,37 +18,44 @@ A tool for taxonomic classification (Note: The provided text contains only conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 18:14:52  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/clsify:0.1.1--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-4166418954/rootfs/lib/libc-2.18.so: no space left on device
+usage: clsify cli [-h] [--sample-regex SAMPLE_REGEX] [-o OUTPUT]
+                  seq_files [seq_files ...]
+
+positional arguments:
+  seq_files
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --sample-regex SAMPLE_REGEX
+                        Regular expression to match file name to sample name.
+  -o OUTPUT, --output OUTPUT
+                        Path to output file
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## clsify_hlso
+## clsify_web
 
 ### Tool Description
-The provided text contains container build logs and a fatal error regarding disk space, but does not contain help text, usage instructions, or argument definitions for the tool.
+Start the clsify web server
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clsify:0.1.1--py_0
 - **Homepage**: https://github.com/holtgrewe/clsify
 - **Package**: https://anaconda.org/channels/bioconda/packages/clsify/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 18:15:43  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/clsify:0.1.1--py_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-3494039397/rootfs/lib/libc-2.18.so: no space left on device
+usage: clsify web [-h] [--host HOST] [--port PORT]
+                  [--public-url-prefix PUBLIC_URL_PREFIX] [--debug]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --host HOST           Server host
+  --port PORT           Server port
+  --public-url-prefix PUBLIC_URL_PREFIX
+                        The prefix that this app will be served under (e.g.,
+                        if behind a reverse proxy.)
+  --debug               Whether or not to enable debugging.
 ```
 

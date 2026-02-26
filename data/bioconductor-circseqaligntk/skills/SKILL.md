@@ -1,8 +1,9 @@
 ---
 name: bioconductor-circseqaligntk
-description: the package is available on all platforms; click for details.
+description: This tool performs end-to-end analysis of RNA-Seq data from circular genomes such as viroids. Use when user asks to align short reads to circular references, calculate genome-wide coverage, or generate synthetic circular RNA-Seq data for benchmarking.
 homepage: https://bioconductor.org/packages/release/bioc/html/CircSeqAlignTk.html
 ---
+
 
 # bioconductor-circseqaligntk
 

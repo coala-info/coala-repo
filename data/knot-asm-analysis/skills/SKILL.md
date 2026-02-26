@@ -1,8 +1,9 @@
 ---
 name: knot-asm-analysis
-description: KNOT (Knowledge Network Overlap exTraction) is a diagnostic tool designed to investigate and resolve fragmented long-read assemblies.
+description: knot-asm-analysis investigates and resolves fragmented long-read assemblies by identifying paths between contig extremities to produce an Augmented Assembly Graph. Use when user asks to resolve fragmented assemblies, identify connections between contigs using long reads, or generate an Augmented Assembly Graph report.
 homepage: https://github.com/natir/knot
 ---
+
 
 # knot-asm-analysis
 

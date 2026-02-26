@@ -1,8 +1,9 @@
 ---
 name: bioconductor-speckle
-description: the package will be updated with new functions.
+description: The bioconductor-speckle package performs differential abundance analysis of cell type proportions in single-cell data. Use when user asks to analyze cell type composition, test for differences in cell type proportions between groups, or run the propeller method.
 homepage: https://bioconductor.org/packages/release/bioc/html/speckle.html
 ---
+
 
 # bioconductor-speckle
 

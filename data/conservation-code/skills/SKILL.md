@@ -1,8 +1,9 @@
 ---
 name: conservation-code
-description: The `conservation-code` skill enables the analysis of evolutionary pressure by comparing Coding DNA Sequences (CDS) against defined protein domains (e.g., Pfam).
+description: This tool analyzes evolutionary pressure by comparing coding DNA sequences against protein domains to identify conserved residues. Use when user asks to analyze evolutionary conservation, calculate substitution frequencies, or identify functionally critical protein regions across species.
 homepage: https://github.com/hanjunlee21/conservation
 ---
+
 
 # conservation-code
 

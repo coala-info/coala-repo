@@ -1,8 +1,9 @@
 ---
 name: r-traminer
-description: R package traminer (documentation from project home).
+description: This tool provides expert guidance for the TraMineR R package to analyze, visualize, and mine longitudinal state or event sequence data. Use when user asks to perform sequence analysis, calculate sequence dissimilarities using Optimal Matching, visualize state distributions, or extract frequent subsequences in R.
 homepage: https://cran.r-project.org/web/packages/traminer/index.html
 ---
+
 
 # r-traminer
 

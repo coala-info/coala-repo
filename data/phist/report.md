@@ -3,7 +3,7 @@
 ## phist
 
 ### Tool Description
-PHIST (PHage-host Interaction Search Tool) is a tool for predicting phage-host interactions.
+CSV file with assignments of phages to their most probable hosts
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1
@@ -18,52 +18,15 @@ PHIST (PHage-host Interaction Search Tool) is a tool for predicting phage-host i
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+PHIST utility 1.0.0
+A.Zielezinski, S. Deorowicz, A. Gudys (c) 2021
 
+USAGE:
+phist <input> <output>
 
-## Metadata
-- **Skill**: generated
-
-## phist_phist.py
-
-### Tool Description
-PHage-host Interaction Search Tool (PHIST) - A tool for predicting phage-host interactions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1
-- **Homepage**: https://github.com/refresh-bio/PHIST
-- **Package**: https://anaconda.org/channels/bioconda/packages/phist/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## phist_matcher
-
-### Tool Description
-PHage-host Interaction Search Tool (Note: The provided text contains container build logs and error messages rather than the tool's help documentation).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1
-- **Homepage**: https://github.com/refresh-bio/PHIST
-- **Package**: https://anaconda.org/channels/bioconda/packages/phist/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phist:1.0.0--py311h2de2dd3_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Parameters:
+	input - CSV file in a sparse format with a number of common k-mers between phages and bacteria
+	        (result of running `kmer-db new2all -sparse phages.db bacteria.list`),
+	output - CSV file with assignments of phages to their most probable hosts
 ```
 

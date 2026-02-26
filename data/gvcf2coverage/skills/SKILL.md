@@ -1,8 +1,9 @@
 ---
 name: gvcf2coverage
-description: gvcf2coverage is a specialized tool designed to parse gVCF files and produce a streamlined, tabular representation of genomic coverage.
+description: "gvcf2coverage parses gVCF files to generate a tabular representation of genomic coverage and ploidy. Use when user asks to extract coverage from gVCF files, convert gVCF to TSV format, or prepare coverage data for Varda2."
 homepage: https://github.com/varda/varda2_preprocessing
 ---
+
 
 # gvcf2coverage
 

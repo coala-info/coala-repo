@@ -1,8 +1,9 @@
 ---
 name: aprfinder
-description: The `aprfinder` tool is a specialized utility for detecting A-phased repeats within FASTA or Multi-FASTA genomic files.
+description: The aprfinder tool detects A-phased repeats within FASTA or Multi-FASTA genomic files and outputs the results in GFF format. Use when user asks to identify A/T nucleotide tracts, find periodic genomic repeats, or locate specific spacer lengths between nucleotide tracks.
 homepage: https://github.com/jaroslav-kubin/aprfinder
 ---
+
 
 # aprfinder
 

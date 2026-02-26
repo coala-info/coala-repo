@@ -1,8 +1,9 @@
 ---
 name: pyscaf
-description: PyScaffold is a powerful project generator that automates the creation of high-quality Python packages.
+description: "PyScaffold automates the creation of high-quality Python packages by generating standardized project structures and boilerplate. Use when user asks to initialize a new Python project, set up a package with best practices, or generate a project scaffold using the putup tool."
 homepage: https://github.com/pyscaffold/pyscaffold
 ---
+
 
 # pyscaf
 

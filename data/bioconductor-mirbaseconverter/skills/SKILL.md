@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirbaseconverter
-description: the package is available on all platforms; click for details.
+description: miRBaseConverter converts miRNA names, accessions, and sequences between different versions of the miRBase database. Use when user asks to translate miRNA identifiers across database versions, convert between miRNA names and accessions, or retrieve mature and precursor miRNA sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/miRBaseConverter.html
 ---
+
 
 # bioconductor-mirbaseconverter
 

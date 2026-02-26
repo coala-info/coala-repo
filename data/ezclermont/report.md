@@ -3,7 +3,7 @@
 ## ezclermont
 
 ### Tool Description
-A tool for Clermont phylotyping of Escherichia coli. (Note: The provided text contains system error messages regarding container execution and does not include the tool's help documentation; therefore, no arguments could be extracted.)
+run a 'PCR' to get Clermont 2013 phylotypes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ezclermont:0.7.0--pyhdfd78af_0
@@ -18,11 +18,32 @@ A tool for Clermont phylotyping of Escherichia coli. (Note: The provided text co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ezclermont:0.7.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2377110224: no space left on device
+usage: ezclermont [-m MIN_LENGTH] [-e EXPERIMENT_NAME] [-n]
+                  [--logfile LOGFILE] [-h] [--version]
+                  contigs
+
+run a 'PCR' to get Clermont 2013 phylotypes; version 0.7.0
+
+positional arguments:
+  contigs               FASTA formatted genome or set of contigs. If reading
+                        from stdin, use '-'
+
+optional arguments:
+  -m MIN_LENGTH, --min_length MIN_LENGTH
+                        minimum contig length to consider.default: 500
+  -e EXPERIMENT_NAME, --experiment_name EXPERIMENT_NAME
+                        name of experiment; defaults to file name without
+                        extension. If reading from stdin, uses the first
+                        contig's ID
+  -n, --no_partial      If scanning contigs, breaks between contigs could
+                        potentially contain your sequence of interest. if
+                        --no_partial, these plausible partial matches will NOT
+                        be reported; default behaviour is to consider partial
+                        hits if the assembly has more than 4 sequnces(ie, no
+                        partial matches for complete genomes, allowing for 1
+                        chromosome and several plasmids)
+  --logfile LOGFILE     send log messages to logfile instead stderr
+  -h, --help            Displays this help message
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

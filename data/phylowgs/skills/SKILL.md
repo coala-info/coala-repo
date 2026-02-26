@@ -1,8 +1,9 @@
 ---
 name: phylowgs
-description: PhyloWGS is a computational tool designed to analyze the clonal structure of tumors.
+description: PhyloWGS is a computational tool that reconstructs the clonal evolution and subclonal structure of tumors by integrating point mutations and copy number variations. Use when user asks to estimate the number of subclones, determine cellular prevalence, or infer evolutionary relationships between tumor cell populations.
 homepage: https://github.com/morrislab/phylowgs
 ---
+
 
 # phylowgs
 

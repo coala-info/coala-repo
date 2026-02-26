@@ -1,8 +1,9 @@
 ---
 name: perl-sys-info-base
-description: This skill facilitates the use of `Sys::Info::Base`, the foundational class for the `Sys::Info` ecosystem.
+description: This tool provides a foundational base class for building cross-platform system information drivers in Perl. Use when user asks to inherit system abstraction methods, dynamically load OS-specific drivers, or perform basic system identification and file slurping.
 homepage: http://metacpan.org/pod/Sys::Info::Base
 ---
+
 
 # perl-sys-info-base
 

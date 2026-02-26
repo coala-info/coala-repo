@@ -3,7 +3,7 @@
 ## perl-json-xs
 
 ### Tool Description
-A command-line tool for converting to and from JSON format using the Perl JSON::XS module. (Note: The provided text contained only system error messages and no usage information; arguments could not be extracted from the input text.)
+The provided text is a Docker error message indicating a failure to pull the image due to lack of disk space. No help text or usage information was found in the input. Below is the standard structure for the 'json_xs' utility typically associated with this package.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-json-xs:4.04--pl5321h9948957_0
@@ -18,9 +18,13 @@ A command-line tool for converting to and from JSON format using the Perl JSON::
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/0fb7bc8ee2c5c252b451c0771e817164477ebb2a0c8d1439ce9c5b36b870c434: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-json-xs:4.04--pl5321h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1501678023: no space left on device
+Unable to find image 'quay.io/biocontainers/perl-json-xs:4.04--pl5321h9948957_0' locally
+4.04--pl5321h9948957_0: Pulling from biocontainers/perl-json-xs
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+7ab2963f8f36: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1124173874: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

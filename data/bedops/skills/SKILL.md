@@ -1,8 +1,9 @@
 ---
 name: bedops
-description: BEDOPS is a high-performance toolkit designed for the efficient manipulation of genomic features.
+description: BEDOPS is a high-performance toolkit for the efficient manipulation, integration, and statistical mapping of genomic features using a stream-based architecture. Use when user asks to perform set operations like union or intersection, merge overlapping regions, map signal data to reference coordinates, find nearest genomic features, or convert various genomic formats to BED.
 homepage: http://bedops.readthedocs.io
 ---
+
 
 # bedops
 

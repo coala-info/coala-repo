@@ -1,8 +1,9 @@
 ---
 name: mmtf-python
-description: The `mmtf-python` skill (utilizing the `atomium` library) provides a high-level, Pythonic interface for interacting with macromolecular structures.
+description: This tool provides a Pythonic interface for parsing, navigating, and analyzing macromolecular structures in MMTF, PDB, and CIF formats. Use when user asks to fetch structures from the RCSB PDB, navigate structural hierarchies, extract metadata, or perform complex residue selections and geometric queries.
 homepage: https://github.com/samirelanduk/atomium
 ---
+
 
 # mmtf-python
 

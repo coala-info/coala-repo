@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xlaevis2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment for the Xenopus laevis Affymetrix microarray. Use when user asks to process Xenopus laevis microarray data or access probe set definitions for this specific platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xlaevis2cdf.html
 ---
+
 
 # bioconductor-xlaevis2cdf
 

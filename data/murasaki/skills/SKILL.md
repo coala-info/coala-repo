@@ -1,8 +1,9 @@
 ---
 name: murasaki
-description: Murasaki is a minimalist, lightweight theme for the Hexo static site generator, inspired by the default Typecho theme and NexT.
+description: Murasaki is a minimalist and lightweight theme for the Hexo static site generator designed for content clarity and responsive design. Use when user asks to install a Hexo theme, configure dark mode for a blog, or integrate analytics and comments into a static site.
 homepage: https://github.com/prinsss/hexo-theme-murasaki
 ---
+
 
 # murasaki
 

@@ -3,26 +3,32 @@
 ## omssa
 
 ### Tool Description
-Open Mass Spectrometry Search Algorithm (OMSSA) is a search engine for identifying MS/MS peptide spectra by matching them to libraries of known protein sequences.
+FAIL to generate CWL: omssa not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/omssa:2.1.9--0
+- **Docker Image**: quay.io/biocontainers/omssa:2.1.9--h9ee0642_1
 - **Homepage**: ftp://ftp.ncbi.nlm.nih.gov/pub/lewisg/omssa/
 - **Package**: https://anaconda.org/channels/bioconda/packages/omssa/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/omssa/overview
 - **Total Downloads**: 26.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: omssa not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: omssa not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/omssa:2.1.9--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2212485393: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

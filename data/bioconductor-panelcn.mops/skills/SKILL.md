@@ -1,8 +1,9 @@
 ---
 name: bioconductor-panelcn.mops
-description: the package is available on all platforms; click for details.
+description: bioconductor-panelcn.mops detects copy number variations in targeted sequencing panel data. Use when user asks to detect copy number variations, analyze targeted sequencing panels, or identify CNVs in gene panels.
 homepage: https://bioconductor.org/packages/release/bioc/html/panelcn.mops.html
 ---
+
 
 # bioconductor-panelcn.mops
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dcgsa
-description: the package is available on all platforms; click for details.
+description: This tool performs distance-correlation based gene set analysis for longitudinal gene expression profiles. Use when user asks to analyze associations between gene sets and clinical outcomes in longitudinal studies, calculate longitudinal distance covariance, or perform gene set analysis on data with multiple measurements over time.
 homepage: https://bioconductor.org/packages/release/bioc/html/dcGSA.html
 ---
+
 
 # bioconductor-dcgsa
 

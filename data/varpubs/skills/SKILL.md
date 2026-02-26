@@ -1,8 +1,9 @@
 ---
 name: varpubs
-description: `varpubs` is a command-line utility designed to streamline the process of finding PubMed evidence for genetic variants.
+description: `varpubs` finds PubMed evidence for genetic variants and generates role-specific summaries. Use when user asks to deploy a local database for variants, generate literature summaries for genetic variants, update caches, prioritize articles, or change summary perspective.
 homepage: https://github.com/koesterlab/varpubs
 ---
+
 
 # varpubs
 

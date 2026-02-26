@@ -1,8 +1,9 @@
 ---
 name: bttoxin_scanner
-description: The `bttoxin_scanner` skill enables the automated discovery of insecticidal toxins within *Bacillus thuringiensis* datasets.
+description: The bttoxin_scanner tool automates the discovery and identification of insecticidal toxins within Bacillus thuringiensis genomic datasets. Use when user asks to identify toxin profiles in raw reads, assemble and mine Bt genomes, or scan protein sequences for insecticidal toxins.
 homepage: https://github.com/liaochenlanruo/BtToxin_scanner/blob/master/README.md
 ---
+
 
 # bttoxin_scanner
 

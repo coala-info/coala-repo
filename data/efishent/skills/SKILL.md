@@ -1,8 +1,9 @@
 ---
 name: efishent
-description: eFISHent is a command-line utility designed to streamline the creation of high-performance RNA FISH probes.
+description: eFISHent is a command-line utility that designs optimized RNA FISH probes by applying thermodynamic constraints and genomic specificity checks to target sequences. Use when user asks to build reference genome indices, design RNA FISH probes using gene names or Ensembl IDs, or generate optimized probe sets from local FASTA files.
 homepage: https://github.com/bbquercus/eFISHent/
 ---
+
 
 # efishent
 

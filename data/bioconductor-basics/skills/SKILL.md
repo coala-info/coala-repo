@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basics
-description: the package is available on all platforms; click for details.
+description: BASiCS performs Bayesian hierarchical modeling for normalization, technical noise quantification, and expression analysis of single-cell RNA sequencing data. Use when user asks to identify highly or lowly variable genes, perform differential expression analysis of mean and variability, or quantify technical noise in datasets with or without spike-ins.
 homepage: https://bioconductor.org/packages/release/bioc/html/BASiCS.html
 ---
+
 
 # bioconductor-basics
 

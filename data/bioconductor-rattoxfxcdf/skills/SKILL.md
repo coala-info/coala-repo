@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rattoxfxcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix Rat Tox FX microarray. Use when user asks to process Rat Tox FX microarray data, map probes to probe sets, or handle Affymetrix rat toxicology chip files.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rattoxfxcdf.html
 ---
+
 
 # bioconductor-rattoxfxcdf
 

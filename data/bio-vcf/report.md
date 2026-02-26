@@ -3,7 +3,7 @@
 ## bio-vcf
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation or usage instructions for bio-vcf. As a result, no arguments could be extracted.
+Vcf parser
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bio-vcf:0.9.5--hdfd78af_0
@@ -18,14 +18,40 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bio-vcf:0.9.5--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:11347aba6b766ccb9bfb1f05726751edda5e720e9bb3f4caccf6efeec5e2c1f8: unpack entry: usr/local/include/openssl/obj_mac.h: unpack to regular file: short write: write /scratch/21813747/build-temp-3032202920/rootfs/usr/local/include/openssl/obj_mac.h: no space left on device
+Usage: bio-vcf [options] filename
+e.g.  bio-vcf < test/data/input/somaticsniper.vcf
+    -i, --ignore-missing             Ignore missing data
+        --filter cmd                 Evaluate filter on each record
+        --sfilter cmd                Evaluate filter on each sample
+        --sfilter-samples list       Filter on selected samples (e.g., 0,1
+        --ifilter, --if cmd          Include filter
+        --ifilter-samples list       Include set - implicitely defines exclude set
+        --efilter, --ef cmd          Exclude filter
+        --efilter-samples list       Exclude set - overrides exclude set
+        --add-filter name            Set/add filter field to name
+        --bed bedfile                Filter on BED elements
+    -e, --eval cmd                   Evaluate command on each record
+        --eval-once cmd              Evaluate command once (usually for header info)
+        --seval cmd                  Evaluate command on each sample
+        --rewrite eval               Rewrite INFO
+        --samples list               Output selected samples
+        --rdf                        Generate Turtle RDF (also check out --template!)
+        --num-threads [num]          Multi-core version (default ALL)
+        --thread-lines num           Fork thread on num lines (default 40000)
+        --skip-header                Do not output VCF header info
+        --set-header list            Set a special tab delimited output header (#samples expands to sample names)
+    -t, --template erb               Use ERB template for output
+        --add-header-tag             Add bio-vcf status tag to header output
+        --timeout [num]              Timeout waiting for thread to complete (default 180)
+        --names                      Output sample names
+        --statistics                 Output statistics
+    -q, --quiet                      Run quietly
+    -v, --verbose                    Run verbosely
+        --debug                      Show debug messages and keep intermediate output
+
+        --id name                    Identifier
+        --tags list                  Add tags
+    -h, --help                       display this help and exit
+Vcf parser
 ```
 
-
-## Metadata
-- **Skill**: generated

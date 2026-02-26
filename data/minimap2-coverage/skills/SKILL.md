@@ -1,8 +1,9 @@
 ---
 name: minimap2-coverage
-description: minimap2-coverage is a modified version of the versatile minimap2 pairwise aligner, specifically optimized to work as a backend for the LongQC (Long-read Quality Control) tool.
+description: minimap2-coverage performs pairwise alignments of long-read sequencing data to facilitate coverage estimation and error profiling for quality control workflows. Use when user asks to estimate sequencing coverage, profile error rates in PacBio or ONT reads, or perform alignments for LongQC analysis.
 homepage: https://github.com/yfukasawa/LongQC
 ---
+
 
 # minimap2-coverage
 

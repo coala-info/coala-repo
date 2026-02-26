@@ -1,8 +1,9 @@
 ---
 name: ntsm
-description: ntsm (Nucleotide Sequence/Sample Matcher) is a specialized tool designed to detect sample swaps and verify sample identity by counting specific k-mers at known variant sites.
+description: "ntsm detects sample swaps and verifies sample identity by generating and comparing k-mer fingerprints from raw sequencing data. Use when user asks to detect sample swaps, verify sample identity, estimate sequencing error rates, or generate k-mer count fingerprints from FASTQ files."
 homepage: https://github.com/JustinChu/ntsm
 ---
+
 
 # ntsm
 

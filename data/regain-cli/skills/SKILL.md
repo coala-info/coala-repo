@@ -1,8 +1,9 @@
 ---
 name: regain-cli
-description: ReGAIN (Resistance Gene Association and Inference Network) is a specialized command-line toolset for analyzing how resistance and virulence genes move and co-occur within bacterial populations.
+description: regain-cli performs Bayesian network analysis to infer probabilistic dependencies and co-occurrence patterns between resistance and virulence genes in bacterial populations. Use when user asks to identify resistance genes, generate presence/absence matrices, infer gene network structures, or calculate conditional probability and relative risk metrics for multidrug resistance.
 homepage: https://github.com/ERBringHorvath/regain_CLI
 ---
+
 
 # regain-cli
 

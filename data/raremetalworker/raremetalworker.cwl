@@ -2,9 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: raremetalworker
 label: raremetalworker
-doc: The provided text does not contain help information or a description of the tool.
-  It appears to be a container execution error log.
-inputs: []
+doc: A Forerunner of RareMetal
+inputs:
+  - id: datafile
+    type: File
+    doc: The datafile to be opened
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

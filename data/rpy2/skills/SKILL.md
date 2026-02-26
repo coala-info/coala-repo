@@ -1,8 +1,9 @@
 ---
 name: rpy2
-description: The rpy2 library serves as a bridge between Python and R, allowing for the execution of R code and the use of R packages directly within a Python environment.
+description: rpy2 provides a bridge between Python and R to execute R code and use R packages within a Python environment. Use when user asks to run R code in Python, install rpy2, troubleshoot R shared library linking issues, or integrate R with Jupyter notebooks.
 homepage: https://github.com/rpy2/rpy2
 ---
+
 
 # rpy2
 

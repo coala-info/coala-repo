@@ -1,8 +1,9 @@
 ---
 name: r-gchromvar
-description: R package gchromvar (documentation from project home).
+description: The gchromvar package performs enrichment analyses of genome-wide chromatin accessibility data using GWAS summary statistics to identify cell-type-specific trait associations. Use when user asks to compute cell-type specific GWAS enrichments using weighted deviations, import GWAS posterior probabilities into RangedSummarizedExperiment objects, or analyze quantitative chromatin accessibility data in the context of genetic fine-mapping.
 homepage: https://cran.r-project.org/web/packages/gchromvar/index.html
 ---
+
 
 # r-gchromvar
 

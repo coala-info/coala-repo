@@ -1,9 +1,9 @@
 # debwt CWL Generation Report
 
-## debwt
+## debwt_deBWT
 
 ### Tool Description
-DeBWT: a parallel Burrows-Wheeler Transform construction algorithm. (Note: The provided text contains system error messages regarding container image conversion and does not include the tool's help documentation or usage instructions.)
+Please make sure your sequence don't contain any uncertain characters like 'N'
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/debwt:1.0.1--h577a1d6_8
@@ -18,29 +18,14 @@ DeBWT: a parallel Burrows-Wheeler Transform construction algorithm. (Note: The p
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/debwt:1.0.1--h577a1d6_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3511809985: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## debwt_transferN
-
-### Tool Description
-A tool for transferring Ns from original sequences to BWT-based representations (part of the debwt suite). Note: The provided help text contains only system logs and error messages, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/debwt:1.0.1--h577a1d6_8
-- **Homepage**: https://github.com/DixianZhu/deBWT
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/debwt:1.0.1--h577a1d6_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1771616984: no space left on device
+usage:
+deBWT [options] reference
+Please make sure your sequence don't contain any uncertain characters like 'N'
+options:
+-o: output bwt file(binary)
+-t (optional): maximum thread number(default 8)
+-k (optional): k-mer length (from 12 to 32, default 32)
+-j: jellyfish directory
+reference: sequence in fasta or fastq format
 ```
 

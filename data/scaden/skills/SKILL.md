@@ -1,8 +1,9 @@
 ---
 name: scaden
-description: Scaden (Single-cell assisted deconvolutional network) is a deep-learning framework designed to estimate the proportions of different cell types within bulk RNA-seq samples.
+description: Scaden is a deep-learning framework that estimates cell type proportions in bulk RNA-seq samples using single-cell RNA-seq data. Use when user asks to simulate artificial bulk samples, preprocess training data, train deconvolution models, or predict cell composition from bulk expression profiles.
 homepage: https://github.com/KevinMenden/scaden
 ---
+
 
 # scaden
 

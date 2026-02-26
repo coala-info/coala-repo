@@ -1,8 +1,9 @@
 ---
 name: bioconductor-interactivedisplaybase
-description: the package is available on all platforms; click for details.
+description: This tool provides a framework for launching interactive Shiny-based web applications to visualize and subset R and Bioconductor objects. Use when user asks to interactively explore data frames, launch a GUI for data visualization, or subset data objects through a browser-based interface.
 homepage: https://bioconductor.org/packages/release/bioc/html/interactiveDisplayBase.html
 ---
+
 
 # bioconductor-interactivedisplaybase
 

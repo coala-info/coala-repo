@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msstatsptm
-description: the package is available on all platforms; click for details.
+description: "MSstatsPTM provides statistical tools for analyzing post-translational modifications in quantitative mass spectrometry-based proteomics. Use when user asks to perform differential abundance analysis of PTMs, normalize PTM sites relative to protein levels, or integrate PTM and protein quantification data."
 homepage: https://bioconductor.org/packages/release/bioc/html/MSstatsPTM.html
 ---
+
 
 # bioconductor-msstatsptm
 

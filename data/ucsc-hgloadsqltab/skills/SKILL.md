@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgloadsqltab
-description: `ucsc-hgloadsqltab` (commonly executed as the command `hgLoadSqlTab`) is a specialized data-loading utility from the UCSC Genome Browser "kent" source tree.
+description: `ucsc-hgloadsqltab` creates a database table and loads data into it using a SQL schema and a tab-separated file. Use when user asks to create a database table, load data into a database table, import tab-separated data into a MySQL table, or create a custom track table for the UCSC Genome Browser.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-hgloadsqltab
 

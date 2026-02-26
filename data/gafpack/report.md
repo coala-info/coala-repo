@@ -3,7 +3,7 @@
 ## gafpack
 
 ### Tool Description
-A tool for processing GAF (Graph Alignment Format) files. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Project a GAF alignment file into coverage over GFA graph nodes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gafpack:0.1.3--h4349ce8_0
@@ -18,11 +18,17 @@ A tool for processing GAF (Graph Alignment Format) files. Note: The provided hel
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gafpack:0.1.3--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4116553576: no space left on device
+Project a GAF alignment file into coverage over GFA graph nodes
+
+Usage: gafpack [OPTIONS] --gfa <GFA> --gaf <GAF>
+
+Options:
+      --gfa <GFA>        Input GFA pangenome graph file (supports .gz/.bgz compression)
+  -g, --gaf <GAF>        Input GAF alignment file
+  -l, --len-scale        Scale coverage values by node length
+  -c, --coverage-column  Emit graph coverage vector in a single column
+  -w, --weight-queries   Weight coverage by query group occurrences
+  -h, --help             Print help
+  -V, --version          Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

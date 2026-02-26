@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneticsdesign
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs power calculations and experimental design for genetic association studies. Use when user asks to calculate statistical power for case-control studies, determine sample sizes for genetic markers, or account for linkage disequilibrium in association testing.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/GeneticsDesign.html
 ---
+
 
 # bioconductor-geneticsdesign
 

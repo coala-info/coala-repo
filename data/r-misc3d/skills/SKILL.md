@@ -1,8 +1,9 @@
 ---
 name: r-misc3d
-description: "A collection of miscellaneous 3d plots, including     isosurfaces.</p>"
+description: The r-misc3d package provides functions for creating 3D plots, isosurfaces, and interactive volumetric slices from 3D data. Use when user asks to render 3D contours, visualize volumetric data using the marching cubes algorithm, plot parametric surfaces, or interactively slice 3D and 4D arrays.
 homepage: https://cloud.r-project.org/web/packages/misc3d/index.html
 ---
+
 
 # r-misc3d
 

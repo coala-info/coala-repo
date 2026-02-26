@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.ovigene.1.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the OviGene 1.1 ST microarray. Use when user asks to process OviGene 1.1 ST microarray data, retrieve platform design metadata, or perform low-level analysis on these specific gene chips.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.ovigene.1.1.st.html
 ---
+
 
 # bioconductor-pd.ovigene.1.1.st
 

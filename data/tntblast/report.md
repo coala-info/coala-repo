@@ -3,7 +3,7 @@
 ## tntblast
 
 ### Tool Description
-The provided text does not contain help information for tntblast. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the tool's image.
+A tool for simulating PCR and DNA hybridization using thermodynamic parameters to predict melting temperatures and binding affinities.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tntblast:2.66--h6b557da_0
@@ -18,13 +18,6 @@ The provided text does not contain help information for tntblast. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tntblast:2.66--h6b557da_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Running on local machine [20 thread(s)]
 ```
 
-
-## Metadata
-- **Skill**: generated

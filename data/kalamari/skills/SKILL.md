@@ -1,8 +1,9 @@
 ---
 name: kalamari
-description: Kalamari is a specialized tool for managing a curated database of completed genomic assemblies and their associated taxonomies.
+description: Kalamari manages a curated database of high-quality genomic assemblies and generates optimized NCBI taxonomy files for downstream classification. Use when user asks to download reference genomes, build a modified taxonomy, or prepare databases for tools like Kraken2 and BLAST.
 homepage: https://github.com/lskatz/kalamari
 ---
+
 
 # kalamari
 

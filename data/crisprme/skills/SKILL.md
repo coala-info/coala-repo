@@ -1,8 +1,9 @@
 ---
 name: crisprme
-description: CRISPRme is a specialized bioinformatics suite for the thorough evaluation of off-target effects in CRISPR-Cas systems.
+description: CRISPRme evaluates CRISPR-Cas off-target effects by incorporating genetic variation and genomic annotations into the search pipeline. Use when user asks to perform variant-aware off-target discovery, integrate genomic annotations to prioritize sites, or generate personalized safety reports and interactive web dashboards.
 homepage: https://github.com/samuelecancellieri/CRISPRme
 ---
+
 
 # crisprme
 

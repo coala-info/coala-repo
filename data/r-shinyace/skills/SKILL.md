@@ -1,8 +1,9 @@
 ---
 name: r-shinyace
-description: R package shinyace (documentation from project home).
+description: The r-shinyace package provides R Shiny bindings for the Ace text editor to embed professional code editors into web applications. Use when user asks to integrate a code editor into a Shiny UI, programmatically update editor content, or handle code evaluation and custom autocompletion within an app.
 homepage: https://cran.r-project.org/web/packages/shinyace/index.html
 ---
+
 
 # r-shinyace
 

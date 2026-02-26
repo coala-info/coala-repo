@@ -1,8 +1,9 @@
 ---
 name: bioconductor-variancepartition
-description: the package is available on all platforms; click for details.
+description: This R package quantifies and partitions the sources of variation in gene expression data using linear mixed models. Use when user asks to partition variance in transcriptomic data, identify drivers of gene expression variation, or analyze the contribution of multiple metadata variables to expression profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/variancePartition.html
 ---
+
 
 # bioconductor-variancepartition
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isocorrector
-description: the package is available on all platforms; click for details.
+description: IsoCorrectoR corrects mass spectrometry data from stable isotope labeling experiments for natural isotope abundance and tracer impurity. Use when user asks to correct MS or MS/MS data, account for isotopic impurity, or process high-resolution multiple-tracer experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoCorrectoR.html
 ---
+
 
 # bioconductor-isocorrector
 

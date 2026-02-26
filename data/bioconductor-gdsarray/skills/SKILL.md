@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdsarray
-description: the package is available on all platforms; click for details.
+description: The GDSArray package represents Genomic Data Structure files as array-like objects for memory-efficient analysis within the Bioconductor ecosystem. Use when user asks to load GDS files as DelayedArray objects, explore GDS file nodes, perform subsetting on large genomic datasets, or integrate GDS data with SummarizedExperiment workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/GDSArray.html
 ---
+
 
 # bioconductor-gdsarray
 

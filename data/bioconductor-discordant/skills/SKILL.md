@@ -1,8 +1,9 @@
 ---
 name: bioconductor-discordant
-description: the package is available on all platforms; click for details.
+description: This tool identifies pairs of features that are differentially correlated between two phenotypic groups using a mixture model approach. Use when user asks to perform differential correlation analysis, identify discordant co-expression patterns, or integrate two different omics datasets to find feature pairs with changing correlations.
 homepage: https://bioconductor.org/packages/release/bioc/html/discordant.html
 ---
+
 
 # bioconductor-discordant
 

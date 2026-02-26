@@ -1,8 +1,9 @@
 ---
 name: trimnami
-description: Trimnami is a specialized Snaketool designed to automate the preprocessing of metagenomic sequencing data.
+description: Trimnami automates the preprocessing of metagenomic sequencing data, providing a unified interface for trimming and host-removal. Use when user asks to trim metagenomic sequencing reads, remove host contamination, process Nanopore long-read data, or perform viral metagenomics.
 homepage: https://github.com/beardymcjohnface/Trimnami
 ---
+
 
 # trimnami
 

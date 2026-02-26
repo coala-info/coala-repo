@@ -1,8 +1,9 @@
 ---
 name: easypqp
-description: EasyPQP is a specialized tool for generating peptide query parameter libraries used in OpenSWATH workflows.
+description: EasyPQP generates and calibrates high-quality peptide query parameter libraries for OpenSWATH workflows using search engine outputs or in-silico deep learning predictions. Use when user asks to generate spectral libraries, convert search engine results, perform retention time calibration, or create in-silico libraries from FASTA files.
 homepage: https://github.com/grosenberger/easypqp
 ---
+
 
 # easypqp
 

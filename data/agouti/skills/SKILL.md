@@ -1,8 +1,9 @@
 ---
 name: agouti
-description: The provided text does not contain help information or usage instructions for the tool 'agouti'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to extract the tool's image due to insufficient disk space.
+description: AGouTI assigns biological context to genomic or transcriptomic intervals by overlapping them with known features like genes and sub-genic regions. Use when user asks to annotate genomic coordinates, build a searchable feature database from GTF files, or determine the functional context of experimental data like binding sites and variants.
 homepage: https://github.com/zywicki-lab/agouti
 ---
+
 
 # agouti
 

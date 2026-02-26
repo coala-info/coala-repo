@@ -1,8 +1,9 @@
 ---
 name: ambertools
-description: This skill provides a streamlined workflow for setting up and analyzing molecular dynamics simulations.
+description: AmberTools provides a suite of programs for setting up, parameterizing, and analyzing molecular dynamics simulations. Use when user asks to parameterize small molecules with GAFF, generate topology and coordinate files, or calculate binding free energies using MMPBSA.py.
 homepage: https://github.com/quantaosun/Ambertools-OpenMM-MD
 ---
+
 
 # ambertools
 

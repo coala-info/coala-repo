@@ -1,10 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: snpgenie_within_group.pl
+baseCommand: snpgenie_snpgenie_within_group.pl
 label: snpgenie_snpgenie_within_group.pl
-doc: "SNPGenie: Estimating evolutionary parameters from pooled next-generation sequencing
-  (NGS) data within a single population or group.\n\nTool homepage: https://github.com/chasewnelson/SNPGenie"
-inputs: []
+doc: "SNPGenie terminated.\n\nTool homepage: https://github.com/chasewnelson/SNPGenie"
+inputs:
+  - id: fasta_file_name
+    type:
+      - 'null'
+      - File
+    doc: The --fasta_file_name option must be a file with a .fa or .fasta 
+      extension
+    inputBinding:
+      position: 101
+      prefix: --fasta_file_name
 outputs:
   - id: stdout
     type: stdout

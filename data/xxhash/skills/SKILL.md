@@ -1,8 +1,9 @@
 ---
 name: xxhash
-description: xxhash provides Python bindings for the xxHash library, a high-performance hashing algorithm that operates at RAM speed limits.
+description: xxhash provides high-performance, non-cryptographic hashing for data. Use when user asks to verify large file transfers, generate unique identifiers for data blocks, optimize cache lookups, perform high-speed hashing, hash streaming data, get integer digests, reuse hash objects, or branch hash calculations.
 homepage: https://github.com/ifduyue/python-xxhash
 ---
+
 
 # xxhash
 

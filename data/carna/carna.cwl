@@ -2,15 +2,260 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: carna
 label: carna
-doc: "CARNA is a tool for ensemble-based alignment of RNA structures. (Note: The provided
-  input text appears to be a container execution error log rather than help text,
-  so no arguments could be extracted.)\n\nTool homepage: https://github.com/Code52/carnac"
-inputs: []
+doc: "A tool for pairwise Alignment of RNA.\n\nTool homepage: https://github.com/Code52/carnac"
+inputs:
+  - id: file1
+    type: File
+    doc: First RNA sequence file
+    inputBinding:
+      position: 1
+  - id: file2
+    type: File
+    doc: Second RNA sequence file
+    inputBinding:
+      position: 2
+  - id: expected_prob
+    type:
+      - 'null'
+      - float
+    doc: Expected probability
+    inputBinding:
+      position: 103
+      prefix: --exp-prob
+  - id: ignore_constraints
+    type:
+      - 'null'
+      - boolean
+    doc: Ignore constraints in pp-file
+    inputBinding:
+      position: 103
+      prefix: --ignore-constraints
+  - id: indel_opening_score
+    type:
+      - 'null'
+      - int
+    doc: Indel opening score
+    default: -500
+    inputBinding:
+      position: 103
+      prefix: --indel-opening
+  - id: indel_score
+    type:
+      - 'null'
+      - int
+    doc: Indel score
+    default: -350
+    inputBinding:
+      position: 103
+      prefix: --indel
+  - id: lower_score_bound
+    type:
+      - 'null'
+      - float
+    doc: Lower score bound
+    inputBinding:
+      position: 103
+      prefix: --lb
+  - id: match_score
+    type:
+      - 'null'
+      - int
+    doc: Match score
+    default: 50
+    inputBinding:
+      position: 103
+      prefix: --match
+  - id: max_bp_span
+    type:
+      - 'null'
+      - int
+    doc: Limit maximum base pair span (default=off)
+    default: -1
+    inputBinding:
+      position: 103
+      prefix: --maxBPspan
+  - id: max_bps_length_ratio
+    type:
+      - 'null'
+      - float
+    doc: 'Maximal ratio of #base pairs divided by sequence length (default: no effect)'
+    default: 0.0
+    inputBinding:
+      position: 103
+      prefix: --max-bps-length-ratio
+  - id: max_diff
+    type:
+      - 'null'
+      - int
+    doc: Maximal difference for alignment cuts
+    default: -1
+    inputBinding:
+      position: 103
+      prefix: --max-diff
+  - id: max_diff_am
+    type:
+      - 'null'
+      - int
+    doc: Maximal difference for sizes of matched arcs
+    default: -1
+    inputBinding:
+      position: 103
+      prefix: --max-diff-am
+  - id: max_diff_at_am
+    type:
+      - 'null'
+      - int
+    doc: Maximal difference for alignment traces, only at arc match positions
+    default: -1
+    inputBinding:
+      position: 103
+      prefix: --max-diff-at-am
+  - id: min_prob
+    type:
+      - 'null'
+      - float
+    doc: Minimal probability
+    default: 0.01
+    inputBinding:
+      position: 103
+      prefix: --min-prob
+  - id: mismatch_score
+    type:
+      - 'null'
+      - int
+    doc: Mismatch score
+    default: 0
+    inputBinding:
+      position: 103
+      prefix: --mismatch
+  - id: no_lp
+    type:
+      - 'null'
+      - boolean
+    doc: No lonely pairs (only used when predicing ensemble porobabilities and 
+      for compatibility with locarna; otherwise no effect)
+    inputBinding:
+      position: 103
+      prefix: --noLP
+  - id: output_width
+    type:
+      - 'null'
+      - int
+    doc: Output width
+    default: 120
+    inputBinding:
+      position: 103
+      prefix: --width
+  - id: recomputation_distance
+    type:
+      - 'null'
+      - int
+    doc: Recomputation distance
+    default: 1
+    inputBinding:
+      position: 103
+      prefix: --c_d
+  - id: relaxed_anchors
+    type:
+      - 'null'
+      - boolean
+    doc: Relax anchor constraints (default=off)
+    inputBinding:
+      position: 103
+      prefix: --relaxed-anchors
+  - id: ribosum_file
+    type:
+      - 'null'
+      - File
+    doc: Ribosum file
+    default: RIBOSUM85_60
+    inputBinding:
+      position: 103
+      prefix: --ribosum-file
+  - id: struct_weight
+    type:
+      - 'null'
+      - int
+    doc: Maximal weight of 1/2 arc match
+    default: 200
+    inputBinding:
+      position: 103
+      prefix: --struct-weight
+  - id: tau_factor
+    type:
+      - 'null'
+      - float
+    doc: Tau factor in percent
+    default: 0
+    inputBinding:
+      position: 103
+      prefix: --tau
+  - id: time_limit_ms
+    type:
+      - 'null'
+      - int
+    doc: Time limit in ms (always search first solution; turn off by 0).
+    default: 300000
+    inputBinding:
+      position: 103
+      prefix: --time-limit
+  - id: upper_score_bound
+    type:
+      - 'null'
+      - float
+    doc: Upper score bound
+    inputBinding:
+      position: 103
+      prefix: --ub
+  - id: use_gist
+    type:
+      - 'null'
+      - boolean
+    doc: Use gist for graphical search (feature disabled, recompile to 
+      activate).
+    inputBinding:
+      position: 103
+      prefix: --gist
+  - id: use_ribosum
+    type:
+      - 'null'
+      - boolean
+    doc: Use ribosum scores
+    default: true
+    inputBinding:
+      position: 103
+      prefix: --use-ribosum
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose
+    inputBinding:
+      position: 103
+      prefix: --verbose
+  - id: write_structure
+    type:
+      - 'null'
+      - boolean
+    doc: Write guidance structure in output
+    inputBinding:
+      position: 103
+      prefix: --write-structure
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: clustal_output_file
+    type:
+      - 'null'
+      - File
+    doc: Clustal output
+    outputBinding:
+      glob: $(inputs.clustal_output_file)
+  - id: pp_output_file
+    type:
+      - 'null'
+      - File
+    doc: PP output
+    outputBinding:
+      glob: $(inputs.pp_output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/carna:1.3.3--1
-stdout: carna.out

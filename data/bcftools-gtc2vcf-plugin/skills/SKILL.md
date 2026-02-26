@@ -1,8 +1,9 @@
 ---
 name: bcftools-gtc2vcf-plugin
-description: The `bcftools-gtc2vcf-plugin` is a specialized extension for `bcftools` that enables the conversion of proprietary microarray data formats into standard genomic formats.
+description: This tool converts proprietary Illumina and Affymetrix microarray data formats into standard VCF files. Use when user asks to convert GTC or IDAT files to VCF, process Affymetrix CHP files, or generate BAF and LRR intensity metrics from array data.
 homepage: https://github.com/freeseek/gtc2vcf
 ---
+
 
 # bcftools-gtc2vcf-plugin
 

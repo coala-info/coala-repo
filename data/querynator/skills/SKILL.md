@@ -1,8 +1,9 @@
 ---
 name: querynator
-description: `querynator` is a specialized CLI tool designed for clinical bioinformatics.
+description: querynator automates the retrieval of clinical insights and annotations for cancer variants from the CGI and CIViC knowledgebases. Use when user asks to query cancer variant databases, annotate genomic alterations with clinical evidence, or generate reports on variant actionability and treatment options.
 homepage: https://github.com/qbic-pipelines/querynator
 ---
+
 
 # querynator
 

@@ -1,8 +1,9 @@
 ---
 name: rhocall
-description: The `rhocall` tool is a specialized suite for processing and annotating regions of homozygosity.
+description: "rhocall processes and annotates regions of homozygosity to facilitate uniparental disomy detection and visualization. Use when user asks to annotate VCF files with ROH information, tally chromosome-wide homozygosity statistics, or visualize zygosity patterns."
 homepage: https://github.com/dnil/rhocall
 ---
+
 
 # rhocall
 

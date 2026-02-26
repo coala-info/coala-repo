@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene11sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Affymetrix Human Gene 1.1 ST transcript cluster identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways, and when retrieving genomic locations for these transcript clusters.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene11sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-hugene11sttranscriptcluster.db
 

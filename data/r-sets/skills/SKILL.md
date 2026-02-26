@@ -1,8 +1,9 @@
 ---
 name: r-sets
-description: "Data structures and basic operations for ordinary sets,              generalizations such as fuzzy sets, multisets, and              fuzzy multisets, customizable sets, and intervals.</p>"
+description: The r-sets tool provides data structures and operations for finite sets, multisets, fuzzy sets, and intervals in R. Use when user asks to perform set operations like union and intersection, manage multisets with element multiplicities, work with fuzzy logic membership functions, or handle numerical intervals.
 homepage: https://cloud.r-project.org/web/packages/sets/index.html
 ---
+
 
 # r-sets
 

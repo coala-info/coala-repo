@@ -3,7 +3,7 @@
 ## ucsc-tolower
 
 ### Tool Description
-The provided text does not contain help information for the tool, but appears to be a container execution error log.
+A UCSC Genome Browser utility to convert sequences in a file to lowercase.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-tolower:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text does not contain help information for the tool, but appears to
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-tolower:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/ucsc-tolower:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-tolower
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+069225658921: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1163062575: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-tolower_toLower
-
-### Tool Description
-A tool to convert text to lowercase. (Note: The provided help text contains only system error messages and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-tolower:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-tolower/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-tolower:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

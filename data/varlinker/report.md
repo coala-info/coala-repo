@@ -1,9 +1,9 @@
 # varlinker CWL Generation Report
 
-## varlinker
+## varlinker_variant-linker
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container image retrieval.
+Links variants across different datasets.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/varlinker:0.1.0--h4349ce8_0
@@ -18,13 +18,64 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/varlinker:0.1.0--h4349ce8_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+error: unexpected argument '--h' found
+
+  tip: a similar argument exists: '--help'
+
+Usage: varlinker variant-linker --help <VCFILE>
+
+For more information, try '--help'.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## varlinker_variant-trefanno
+
+### Tool Description
+extract the annotation of the specific ref allele
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/varlinker:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/varlinker
+- **Package**: https://anaconda.org/channels/bioconda/packages/varlinker/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+extract the annotation of the specific ref allele
+
+Usage: varlinker variant-trefanno <VCFFILE> <REFALLELE>
+
+Arguments:
+  <VCFFILE>    variant VCF file
+  <REFALLELE>  ref allele
+
+Options:
+  -h, --help  Print help
+```
+
+
+## varlinker_variant-taltanno
+
+### Tool Description
+extract the annotation of the specific alt allele
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/varlinker:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/varlinker
+- **Package**: https://anaconda.org/channels/bioconda/packages/varlinker/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+extract the annotation of the specific alt allele
+
+Usage: varlinker variant-taltanno <VCFFILE> <ALTALLEL>
+
+Arguments:
+  <VCFFILE>   variant VCF file
+  <ALTALLEL>  alt allele
+
+Options:
+  -h, --help  Print help
+```
+

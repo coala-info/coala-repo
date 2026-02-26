@@ -1,8 +1,9 @@
 ---
 name: bioconductor-abseqr
-description: the package is available on all platforms; click for details.
+description: "bioconductor-abseqr generates interactive HTML reports and visualizations for antibody library sequencing datasets processed by abseqPy. Use when user asks to visualize antibody repertoires, generate interactive reports from abseqPy outputs, compare multiple B-cell or T-cell receptor datasets, and perform diversity or productivity analysis."
 homepage: https://bioconductor.org/packages/release/bioc/html/abseqR.html
 ---
+
 
 # bioconductor-abseqr
 

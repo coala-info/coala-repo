@@ -1,8 +1,9 @@
 ---
 name: samestr
-description: SameStr is a bioinformatic pipeline designed to detect shared microbial strains between pairs of metagenomic samples.
+description: SameStr is a bioinformatic pipeline that detects shared microbial strains between metagenomic samples by analyzing the full spectrum of single nucleotide variants within clade-specific markers. Use when user asks to detect shared strains, track strain transmission, generate SNV profiles from alignments or genomes, or construct strain co-occurrence networks.
 homepage: https://github.com/danielpodlesny/samestr/
 ---
+
 
 # samestr
 

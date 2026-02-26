@@ -1,8 +1,9 @@
 ---
 name: hmftools-bwa-plus
-description: `hmftools-bwa-plus` is a high-performance sequence alignment tool based on `bwa-mem2`.
+description: hmftools-bwa-plus is a high-performance sequence alignment tool based on bwa-mem2 that supports coordinate-sorted FASTQ files. Use when user asks to index a reference genome, align sequence reads to a reference, or process coordinate-sorted FASTQ data.
 homepage: https://github.com/hartwigmedical/bwa-plus
 ---
+
 
 # hmftools-bwa-plus
 

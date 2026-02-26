@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celaref
-description: the package is available on all platforms; click for details.
+description: The celaref package annotates single-cell RNA-seq clusters by comparing their gene expression rankings to characterized reference datasets. Use when user asks to annotate scRNA-seq clusters, compare query clusters to reference datasets, or identify cell types based on transcriptomic similarity.
 homepage: https://bioconductor.org/packages/release/bioc/html/celaref.html
 ---
+
 
 # bioconductor-celaref
 

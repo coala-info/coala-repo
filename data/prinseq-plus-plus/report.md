@@ -1,50 +1,170 @@
 # prinseq-plus-plus CWL Generation Report
 
-## prinseq-plus-plus
+## prinseq-plus-plus_prinseq++
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs from a container runtime (Apptainer/Singularity) failing to fetch the image.
+PRINSEQ++ is a C++ implementation of the prinseq-lite.pl program. It can be used to filter, reformat or trim genomic and metagenomic sequence data. It is 5X faster than prinseq-lite.pl and uses less RAM thanks to the use of multi-threading and the cboost libraries. It can read and write compressed (gzip) files, drastically reducing the use of hard drive.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/prinseq-plus-plus:1.2.4--h077b44d_8
+- **Docker Image**: quay.io/biocontainers/prinseq-plus-plus:1.2.4--h7ff8a90_1
 - **Homepage**: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
 - **Package**: https://anaconda.org/channels/bioconda/packages/prinseq-plus-plus/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/prinseq-plus-plus/overview
-- **Total Downloads**: 12.3K
+- **Total Downloads**: 12.4K
 - **Last updated**: 2025-09-26
 - **GitHub**: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/prinseq-plus-plus:1.2.4--h077b44d_8 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+PRINSEQ++ 1.2
+            
+PRINSEQ++ is a C++ implementation of the prinseq-lite.pl program. It can be used 
+to filter, reformat or trim genomic and metagenomic sequence data. It is 5X faster 
+than prinseq-lite.pl and uses less RAM thanks to the use of multi-threading 
+and the cboost libraries. It can read and write compressed (gzip) files, drastically 
+reducing the use of hard drive.
 
+        
+Option:
+    -h | -help
+        Print the help page; ignore other arguments.
+        
+    -v | -version
+        Print version; ignore other arguments.
+        
+    -threads 
+        Nuber of threads to use. Note that if more than one thread is used, output
+        sequences might not be in the same order as input sequences. (Default=1)
+    
+    -VERBOSE <int>
+        Format of the report of filtered reads, VERBOSE=1 prints information only
+        on the filters that removed sequences. VERBOSE=2 prints numbers for filters 
+        in order (min_len, max_len, min_cg, max_cg, min_qual_score, min_qual_mean,
+        ns_max_n, noiupac, derep, lc_entropy, lc_dust, trim_tail_left, trim_tail_right, 
+        trim_qual_left, trim_qual_right, trim_left, trim_right) to compare stats of diferent files.
+        VERBOSE=0 prints nothing.
+        (Default=1)
+    
+    ***** INPUT OPTIONS *****
+    
+    -fastq <file>
+        Input file in FASTQ format. Can also read a compressed (.gz) file.
+        
+    -fastq2 <file>
+        Input file in FASTQ format for pair-end reads. Can also read a 
+        compressed (.gz) file.
+        
+    -FASTA
+        Input is in fasta format (no quality). Note that the output format is 
+        still fastq by default. Quality will be treated as 31 (A) for all bases.
+        
+    -phred64
+        Input quality is in phred64 format. This is for older Illumina/Solexa reads.
 
-## Metadata
-- **Skill**: generated
+    ***** OUTPUT OPTION *****
+    
+    -out_format <int>
+        Set output format. 0 FASTQ, 1 FASTA. (Default=0)
+        
+    -out_name <string>
+        For pair-end sequences, the output files are <string>_good_out_R1 and
+        <string>_good_out_R2 for pairs where both reads pass quality control,
+        <string>_single_out_R1 and <string>_single_out_R2 for read that passed
+        quality control but mate didn't. <string>_bad_out_R1 and <string>_bad_out_R2  
+        for reads that fail quality controls. [Default = random size 6 string] 
+    
+    -rm_header
+        Remove the header in the 3rd line of the fastq (+header -> +). This does
+        not change the header in the 1st line (@header).
+        
+    -out_gz 
+        Write the output to a compressed file (WARNING this can be really SLOW)
+        
+    -out_good  , -out_single , -out_bad,
+    -out_good2 , -out_single2, -out_bad2
+        Rename the output files idividually, this overwrites the names given by
+        -out_name only for the selected files. File extension won't be added 
+        automatically. (TIP: if you don't need a file, set its name to /dev/null)
+        
+    ***** FILTER OPTION ******
+        
+    -min_len <int>
+        Filter sequence shorter than min_len.
+    
+    -max_len <int>
+        Filter sequence longer than max_len.
+        
+    -min_gc <float>
+        Filter sequence with GC percent content below min_gc.
+    
+    -max_gc <float>
+        Filter sequence with GC percent content above min_gc.
+    
+    -min_qual_score <int>
+        Filter sequence with at least one base with quality score below 
+        min_qual_score.
+        
+    -min_qual_mean <int>
+        Filter sequence with quality score mean below min_qual_mean.
+        
+    -ns_max_n <int>
+        Filter sequence with more than ns_max_n Ns.
+   
+    -noiupac         
+        Filter sequence with characters other than A, C, G, T or N.
 
-## prinseq-plus-plus_prinseq++
+    -derep
+        Filter duplicated sequences. This only remove exact duplicates.
+        
+    -lc_entropy=[float]
+        Filter sequences with entropy lower than [float]. [float] should be in
+        the 0-1 interval. (Default=0.5)
 
-### Tool Description
-PRINSEQ++ is a tool for filtering and trimming genomic sequences. (Note: The provided input text contains container build logs and a fatal error rather than the tool's help documentation.)
+    -lc_dust=[float]
+        Filter sequences with dust_score lower than [float]. [float] should be in
+        the 0-1 interval. (Default=0.5)
+        
+    ***** TRIM OPTIONS *****
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/prinseq-plus-plus:1.2.4--h077b44d_8
-- **Homepage**: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
-- **Package**: https://anaconda.org/channels/bioconda/packages/prinseq-plus-plus/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/prinseq-plus-plus:1.2.4--h077b44d_8 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+    -trim_left <integer>
+        Trim <integer> bases from the left (5'->3').
+        
+    -trim_right <integer>
+        Trim <integer> bases from the right (3'->5').
+    
+    -trim_tail_left <integer>
+        Trim poly-A/T tail with a minimum length of <integer> at the
+        5'-end.
+
+    -trim_tail_right <integer>
+        Trim poly-A/T tail with a minimum length of <integer> at the
+        3'-end.
+
+    -trim_qual_rule <string>
+        Rule to use to compare quality score to calculated value. Allowed
+        options are lt (less than), gt (greater than) and et (equal to).
+        [default: lt]
+
+    -trim_qual_left=[float]
+        Trim recursively from the 3'-end chunks of length -trim_qual_step if the
+        mean quality of the first -trim_qual_window bases is less than [float]. 
+        (Default=20)
+        
+    -trim_qual_right=[float]
+        Trim recursively from the 5'-end chunks of length -trim_qual_step if the
+        mean quality of the last -trim_qual_window bases is less than [float]. 
+        (Default=20)    
+
+    -trim_qual_window [int]
+        Size of the window used by trim_qual_left and trim_qual_right (Default=5)
+
+    -trim_qual_step [int]
+        Step size used by trim_qual_left and trim_qual_right (Default=2)
+    
+    -trim_qual_type <string>
+        Type of quality score calculation to use. Allowed options are min,
+        mean, max and sum. [default= min]
 ```
 

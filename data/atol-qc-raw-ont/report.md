@@ -3,7 +3,7 @@
 ## atol-qc-raw-ont
 
 ### Tool Description
-Quality control for raw Oxford Nanopore Technology (ONT) data (Note: The provided text contains system error logs rather than help documentation; no arguments could be extracted).
+Performs QC on raw Oxford Nanopore reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/atol-qc-raw-ont:0.1.12--pyhdfd78af_0
@@ -18,9 +18,34 @@ Quality control for raw Oxford Nanopore Technology (ONT) data (Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/650836424b8271bf388ad3510773871feb0f00a73f30600bf63d22bdce922359: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/atol-qc-raw-ont:0.1.12--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-385279239: no space left on device
+usage: atol-qc-raw-ont [-h] [--min-length MIN_LENGTH] [-t THREADS] [-m MEM_GB]
+                       [-n]
+                       (--tarfile READS_TARFILE | --fastqfiles READS [READS ...])
+                       --out READS_OUT --stats STATS [--logs LOGS_DIRECTORY]
+
+options:
+  -h, --help            show this help message and exit
+  --min-length MIN_LENGTH
+                        Minimum length read to output. Default is 1, i.e. keep
+                        all reads.
+  -t THREADS, --threads THREADS
+  -m MEM_GB, --mem MEM_GB
+                        Intended maximum RAM in GB. NOTE: some steps (e.g.
+                        filtlong) don't allow memory usage to be specified by
+                        the user.
+  -n                    Dry run
+
+Input:
+  --tarfile READS_TARFILE
+                        Reads in a single tarfile. Will be searched for
+                        filenames ending in fastq.gz.
+  --fastqfiles READS [READS ...]
+                        Reads in fastq.gz. Multiple files are accepted.
+
+Output:
+  --out READS_OUT       Combined output in fastq.gz
+  --stats STATS         Stats output (json)
+  --logs LOGS_DIRECTORY
+                        Log output directory. Default: logs are discarded.
 ```
 

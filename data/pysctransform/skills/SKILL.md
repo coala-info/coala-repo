@@ -1,8 +1,9 @@
 ---
 name: pysctransform
-description: pysctransform is a Python-native implementation of the SCTransform algorithm, providing a statistical framework for the normalization and variance stabilization of single-cell transcriptomic data.
+description: pysctransform provides a Python-native implementation of the SCTransform algorithm for normalization and variance stabilization of single-cell transcriptomic data. Use when user asks to normalize UMI counts, calculate Pearson residuals, stabilize variance in single-cell data, or identify highly variable genes using regularized negative binomial regression.
 homepage: https://github.com/saketkc/pySCTransform
 ---
+
 
 # pysctransform
 

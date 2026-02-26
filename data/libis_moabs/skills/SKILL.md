@@ -1,8 +1,9 @@
 ---
 name: libis_moabs
-description: LiBis (Low input Bisulfite sequencing) is a specialized alignment suite designed to address the low mapping ratios typically encountered when working with nanogram-scale, fragmented DNA.
+description: LiBis is a specialized alignment suite that uses dynamic clipping and remapping to process low-input bisulfite sequencing data into methylation calls. Use when user asks to align fragmented DNA reads, perform methylation calling, rescue unmapped reads, or generate visualization reports for bisulfite sequencing.
 homepage: https://github.com/Dangertrip/LiBis
 ---
+
 
 # libis_moabs
 

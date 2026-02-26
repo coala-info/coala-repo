@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enmcb
-description: the package is available on all platforms; click for details.
+description: This tool identifies Methylation Correlated Blocks (MCB) and builds ensemble survival models from Illumina 450K methylation data. Use when user asks to identify genomic regions with correlated methylation patterns, perform differential methylation analysis on blocks, or build stacked ensemble machine learning models for survival prediction.
 homepage: https://bioconductor.org/packages/release/bioc/html/EnMCB.html
 ---
+
 
 # bioconductor-enmcb
 

@@ -1,8 +1,9 @@
 ---
 name: esme_pio_psmpi_5_12_1
-description: The ParallelIO (PIO) library provides a high-level interface for C and Fortran applications to perform parallel netCDF I/O.
+description: The ParallelIO (PIO) library provides a high-level interface for C and Fortran applications to perform parallel netCDF I/O using designated I/O nodes. Use when user asks to install or configure PIO, build applications with Autotools or CMake, or manage parallel I/O workflows using Intracomm and Async modes.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_psmpi_5_12_1
 

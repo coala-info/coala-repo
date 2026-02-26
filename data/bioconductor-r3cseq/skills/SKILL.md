@@ -1,8 +1,9 @@
 ---
 name: bioconductor-r3cseq
-description: the package is available on all platforms; click for details.
+description: This R package analyzes 3C-seq data to identify long-range genomic interactions. Use when user asks to analyze 3C-seq data, identify interaction regions, or perform statistical analysis on chromosome conformation capture experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/r3Cseq.html
 ---
+
 
 # bioconductor-r3cseq
 

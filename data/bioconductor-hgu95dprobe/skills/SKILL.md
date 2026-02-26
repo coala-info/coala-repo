@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95dprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical coordinates for the Affymetrix Human Genome U95D microarray. Use when user asks to retrieve probe sequences, find genomic coordinates on the chip, or map probe set IDs to interrogation positions for the HGU95D platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95dprobe.html
 ---
+
 
 # bioconductor-hgu95dprobe
 

@@ -1,8 +1,9 @@
 ---
 name: pigz
-description: `pigz` (Parallel Implementation of GZip) is a high-performance, multi-threaded replacement for the standard `gzip` utility.
+description: pigz is a multi-threaded compression utility that provides a high-performance replacement for gzip by processing data across multiple processors. Use when user asks to compress or decompress files quickly, adjust compression levels, or manage gzip-compatible archives using parallel processing.
 homepage: https://github.com/madler/pigz
 ---
+
 
 # pigz
 

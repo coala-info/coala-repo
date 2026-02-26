@@ -1,8 +1,9 @@
 ---
 name: fmlrc2
-description: fmlrc2 is a high-performance Rust implementation of the Functional Multi-Loci Read Corrector (FMLRC).
+description: fmlrc2 is a high-performance tool that corrects errors in long-read sequences using an FM-index built from accurate short-read data. Use when user asks to correct long reads, perform hybrid read correction, or polish genome sequences using short-read BWTs.
 homepage: https://github.com/HudsonAlpha/rust-fmlrc
 ---
+
 
 # fmlrc2
 

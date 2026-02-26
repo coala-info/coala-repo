@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gemma.r
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to access and analyze curated genomics data and differential expression results from the Gemma database. Use when user asks to search for genomics datasets, download expression matrices, retrieve platform annotations, or access precomputed differential expression results for meta-analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/gemma.R.html
 ---
+
 
 # bioconductor-gemma.r
 

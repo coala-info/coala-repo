@@ -1,8 +1,9 @@
 ---
 name: perl-sanger-cgp-allelecount
-description: The `alleleCount` package is a specialized utility designed to generate coverage counts for each allele (A, C, G, and T) at specific genomic locations.
+description: This tool generates coverage counts for each allele at specific genomic locations from BAM or CRAM files. Use when user asks to count allele frequencies at specific loci, generate input for copy number algorithms like AscatNGS or Battenberg, or convert allele counts to JSON format.
 homepage: https://github.com/cancerit/alleleCount
 ---
+
 
 # perl-sanger-cgp-allelecount
 

@@ -1,8 +1,9 @@
 ---
 name: fastppm
-description: The `fastppm` (Fast Perfect Phylogeny Mixture) tool is a high-performance C++/Python library designed for the regression of tumor clone frequencies.
+description: fastppm estimates tumor clone frequencies by optimizing convex loss functions over a fixed phylogenetic tree. Use when user asks to regress subclonal frequencies, perform subclonal deconvolution, or fit variant read counts to a known evolutionary structure.
 homepage: https://github.com/elkebir-group/fastppm
 ---
+
 
 # fastppm
 

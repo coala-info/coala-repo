@@ -1,8 +1,9 @@
 ---
 name: bioconductor-snadata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of social network analysis datasets for R. Use when user asks to access social network data, load example network datasets, or analyze social network structures.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SNAData.html
 ---
+
 
 # bioconductor-snadata
 

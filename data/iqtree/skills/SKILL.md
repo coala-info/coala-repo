@@ -1,8 +1,9 @@
 ---
 name: iqtree
-description: IQ-TREE is a high-performance tool designed to infer evolutionary relationships from molecular sequences.
+description: IQ-TREE infers high-quality phylogenetic trees from molecular sequences using maximum likelihood. Use when user asks to construct phylogenetic trees, perform automatic model selection, or calculate branch support values.
 homepage: http://www.iqtree.org
 ---
+
 
 # iqtree
 

@@ -1,8 +1,9 @@
 ---
 name: pirs
-description: The pIRS (profile-based Illumina pair-end Reads Simulator) tool provides a framework for generating realistic synthetic sequencing data.
+description: pIRS simulates realistic Illumina paired-end sequencing reads and generates diploid genomes with user-defined variations. Use when user asks to simulate Illumina reads, generate a diploid genome from a haploid reference, or create custom sequencing error profiles.
 homepage: https://github.com/galaxy001/pirs
 ---
+
 
 # pirs
 

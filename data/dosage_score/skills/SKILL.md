@@ -1,8 +1,9 @@
 ---
 name: dosage_score
-description: The `dosage_score` tool is a specialized bioinformatics pipeline designed to estimate the dosage of genomic regions from NGS alignment (BAM) data.
+description: This tool estimates the dosage of genomic regions from NGS alignment data to analyze subgenome contributions in polyploid or hybrid organisms. Use when user asks to calculate dosage scores from BAM files, analyze genomic coverage across sliding windows, or visualize dosage metrics for specific chromosomes.
 homepage: https://github.com/SegawaTenta/Dosage-score
 ---
+
 
 # dosage_score
 

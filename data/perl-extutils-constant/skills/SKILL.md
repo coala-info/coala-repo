@@ -1,8 +1,9 @@
 ---
 name: perl-extutils-constant
-description: `ExtUtils::Constant` is a standard Perl toolset used to bridge the gap between C header file constants and Perl space.
+description: This tool automates the generation of C and XS code to make C header constants accessible within Perl modules. Use when user asks to bridge C macros to Perl space, generate constant-handling boilerplate, or integrate constant generators into a Perl distribution's build process.
 homepage: http://metacpan.org/pod/ExtUtils::Constant
 ---
+
 
 # perl-extutils-constant
 

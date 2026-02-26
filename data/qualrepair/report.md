@@ -3,7 +3,7 @@
 ## qualrepair
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build process.
+Update the FASTQ quality scores from a subsequence FASTQ.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/qualrepair:1.0.0--pyhdfd78af_0
@@ -15,16 +15,33 @@ The provided text does not contain help information or a description of the tool
 - **Total Downloads**: 137
 - **Last updated**: 2025-10-31
 - **GitHub**: https://github.com/clintval/qualrepair
-- **Stars**: 0
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/qualrepair:1.0.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: qualrepair [-h] --in-source IN_SOURCE --in-subseq IN_SUBSEQ
+                  [--output OUTPUT]
+
+Update the FASTQ quality scores from a subsequence FASTQ.
+
+This tool exists because splitcode is unable to retain quality scores when
+extracting subsequences from FASTQ files. This script takes a source FASTQ
+file and a subsequence FASTQ file (produced by splitcode) and updates the
+quality scores in the subsequence file based on the source file.
+
+Upstream issue:
+
+    - https://github.com/pachterlab/splitcode/issues/18
+
+───────
+
+options:
+  -h, --help            show this help message and exit
+  --in-source IN_SOURCE
+                        Source FASTQ file.
+  --in-subseq IN_SUBSEQ
+                        Subsequence FASTQ file.
+  --output OUTPUT       Output repaired FASTQ file.
+
+Copyright © Clint Valentine 2025
 ```
 
-
-## Metadata
-- **Skill**: generated

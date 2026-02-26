@@ -1,8 +1,9 @@
 ---
 name: r-tidygenomics
-description: Skill for using the CRAN R package r-tidygenomics.
+description: The r-tidygenomics tool performs genomic interval operations such as intersecting, joining, and clustering directly on R data frames using tidyverse-style verbs. Use when user asks to intersect genomic intervals, subtract overlapping regions, join data frames by genomic proximity, cluster nearby intervals, or find genomic complements within tibbles.
 homepage: https://cran.r-project.org/web/packages/tidygenomics/index.html
 ---
+
 
 # r-tidygenomics
 

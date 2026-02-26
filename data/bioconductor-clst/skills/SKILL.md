@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clst
-description: the package is available on all platforms; click for details.
+description: The clst package performs taxonomic classification of sequences based on local similarity thresholds. Use when user asks to classify sequences taxonomically, perform cross-validation for classification models, or determine local similarity thresholds.
 homepage: https://bioconductor.org/packages/release/bioc/html/clst.html
 ---
+
 
 # bioconductor-clst
 

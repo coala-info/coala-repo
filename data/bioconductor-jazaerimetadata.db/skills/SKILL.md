@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jazaerimetadata.db
-description: the package is available on all platforms; click for details.
+description: This tool provides comprehensive annotation data and mappings for the JazaeriMetaData platform. Use when user asks to map manufacturer probe identifiers to biological annotations such as Entrez Gene IDs, Gene Symbols, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JazaeriMetaData.db.html
 ---
+
 
 # bioconductor-jazaerimetadata.db
 

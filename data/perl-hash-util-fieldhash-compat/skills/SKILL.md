@@ -1,8 +1,9 @@
 ---
 name: perl-hash-util-fieldhash-compat
-description: `Hash::Util::FieldHash::Compat` is a compatibility layer for the Perl core module `Hash::Util::FieldHash`.
+description: This Perl module provides a compatibility layer for field hashes to ensure consistent behavior across different Perl versions. Use when user asks to implement field hashes, manage memory for inside-out objects, or associate metadata with object references without preventing garbage collection.
 homepage: https://github.com/karenetheridge/Hash-Util-FieldHash-Compat
 ---
+
 
 # perl-hash-util-fieldhash-compat
 

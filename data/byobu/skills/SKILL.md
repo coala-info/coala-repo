@@ -1,8 +1,9 @@
 ---
 name: byobu
-description: Byobu is a sophisticated enhancement layer for terminal multiplexers like Tmux and GNU Screen.
+description: Byobu is a terminal multiplexer enhancement that provides persistent remote sessions, window management, and real-time system status monitoring. Use when user asks to maintain persistent terminal sessions, manage multiple windows or panes, monitor system health, or configure terminal status notifications.
 homepage: https://github.com/dustinkirkland/byobu
 ---
+
 
 # byobu
 

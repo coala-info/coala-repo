@@ -3,7 +3,7 @@
 ## fastuniq
 
 ### Tool Description
-A tool for removing duplicate reads from paired-end or single-end FASTQ files.
+FastUniq is a fast de-duplication tool for short reads from Next-Generation Sequencing. It identifies and removes duplicate reads from paired-end or single-end FASTQ files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2
@@ -18,11 +18,13 @@ A tool for removing duplicate reads from paired-end or single-end FASTQ files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2219355758: no space left on device
+Unable to find image 'quay.io/biocontainers/fastuniq:1.1--h7b50bb2_2' locally
+1.1--h7b50bb2_2: Pulling from biocontainers/fastuniq
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+b45f1330386b: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2615784137: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

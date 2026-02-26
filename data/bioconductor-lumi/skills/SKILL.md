@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lumi
-description: the package is available on all platforms; click for details.
+description: The bioconductor-lumi package provides integrated tools for preprocessing and analyzing Illumina microarray data. Use when user asks to normalize Illumina expression data, perform quality control on BeadStudio output, or process Illumina methylation microarrays.
 homepage: https://bioconductor.org/packages/release/bioc/html/lumi.html
 ---
+
 
 # bioconductor-lumi
 

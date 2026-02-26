@@ -1,8 +1,9 @@
 ---
 name: cpgeneprofiler
-description: `cpgeneprofiler` is a specialized R package and command-line tool designed for genomic surveillance of antibiotic resistance.
+description: cpgeneprofiler is a genomic surveillance tool designed to scan bacterial genome assemblies for carbapenemase genes and analyze their distribution. Use when user asks to identify carbapenemase genes in bacterial isolates, generate cocarriage reports, or visualize antibiotic resistance profiles using heatmaps and intersection plots.
 homepage: https://github.com/ramadatta/CPgeneProfiler
 ---
+
 
 # cpgeneprofiler
 

@@ -1,8 +1,9 @@
 ---
 name: clinker
-description: Clinker is a specialized bioinformatics pipeline designed to bridge the gap between gene fusion detection and functional interpretation.
+description: Clinker is a bioinformatics pipeline that generates and visualizes superTranscripts to interpret the functional impact of gene fusions. Use when user asks to visualize fusion junctions, construct superTranscripts from fusion calls, or analyze protein domain disruptions in transcriptomic data.
 homepage: https://github.com/Oshlack/Clinker
 ---
+
 
 # clinker
 

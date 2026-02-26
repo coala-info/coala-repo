@@ -1,11 +1,16 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mtglink_LRez
+baseCommand: LRez
 label: mtglink_LRez
-doc: "The provided text does not contain help information or a description of the
-  tool. It contains system log messages and a fatal error regarding container image
-  building.\n\nTool homepage: https://github.com/anne-gcd/MTG-Link"
-inputs: []
+doc: "LRez allows to work with barcoded Linked-Reads, and offers various barcode management
+  functionalities.\n\nTool homepage: https://github.com/anne-gcd/MTG-Link"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'The subcommand to run. Available subcommands: compare, extract, stats, index
+      bam, query bam, index fastq, query fastq'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

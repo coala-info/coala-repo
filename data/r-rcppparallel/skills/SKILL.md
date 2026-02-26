@@ -1,8 +1,9 @@
 ---
 name: r-rcppparallel
-description: "High level functions for parallel programming with 'Rcpp'.     For example, the 'parallelFor()' function can be used to convert the work of     a standard serial \"for\" loop into a parallel one and the 'parallelReduce()'     function can be used for accumulating aggregate or other values.</p>"
+description: This tool provides high-level parallel programming patterns for Rcpp using Intel Threading Building Blocks. Use when user asks to convert serial C++ loops into parallel ones, perform parallel aggregations, or manage thread configurations for Rcpp-based packages.
 homepage: https://cloud.r-project.org/web/packages/RcppParallel/index.html
 ---
+
 
 # r-rcppparallel
 

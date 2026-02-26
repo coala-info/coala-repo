@@ -1,8 +1,9 @@
 ---
 name: perl-data-dumper
-description: The `perl-data-dumper` skill provides the procedural knowledge required to use the `Data::Dumper` module effectively.
+description: This tool converts Perl memory structures into stringified Perl syntax for debugging or data persistence. Use when user asks to stringify complex variables, print debug Perl data structures, or export data as valid Perl code.
 homepage: http://metacpan.org/pod/Data::Dumper
 ---
+
 
 # perl-data-dumper
 

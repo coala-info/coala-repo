@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: localtime
 label: ucsc-localtime
-doc: "A tool to convert a 32-bit integer time (Unix timestamp) to a local time string.
-  Note: The provided help text contains only container execution errors and no usage
-  information.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
-inputs: []
+doc: "Converts a Unix timestamp (seconds since Jan 1, 1970) to a human-readable local
+  time format.\n\nTool homepage: http://hgdownload.cse.ucsc.edu/admin/exe/"
+inputs:
+  - id: timestamp
+    type: int
+    doc: The Unix timestamp (seconds since epoch) to convert.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iggeneusage
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical analysis of immunoglobulin gene usage in immune receptor repertoires using Bayesian regression. Use when user asks to detect differential gene usage between biological conditions, identify over-dispersion in repertoire data, or perform leave-one-out robustness analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/IgGeneUsage.html
 ---
+
 
 # bioconductor-iggeneusage
 

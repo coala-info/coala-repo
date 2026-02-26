@@ -1,8 +1,9 @@
 ---
 name: amira
-description: Amira is a bioinformatics tool designed to identify AMR genes directly from long-read sequences.
+description: Amira identifies antimicrobial resistance genes and estimates gene copy numbers from long-read sequences or bacterial assemblies by leveraging genomic context. Use when user asks to identify AMR genes in long reads, analyze bacterial assemblies for resistance, or perform context-aware gene detection in metagenomic samples.
 homepage: https://github.com/Danderson123/Amira
 ---
+
 
 # amira
 

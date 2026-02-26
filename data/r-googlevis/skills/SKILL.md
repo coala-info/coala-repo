@@ -1,8 +1,9 @@
 ---
 name: r-googlevis
-description: R package googlevis (documentation from project home).
+description: "The googleVis package creates interactive web-based charts and maps from R data frames using the Google Visualization API. Use when user asks to create interactive motion charts, generate geo charts, visualize data in tree maps, or embed Google-style visualizations in R or Shiny."
 homepage: https://cran.r-project.org/web/packages/googlevis/index.html
 ---
+
 
 # r-googlevis
 

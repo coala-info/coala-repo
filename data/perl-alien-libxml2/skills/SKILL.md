@@ -1,8 +1,9 @@
 ---
 name: perl-alien-libxml2
-description: This skill provides guidance on using `Alien::Libxml2`, a Perl module designed to make the C-based `libxml2` library available to other Perl distributions.
+description: This tool manages the installation and configuration of the libxml2 C library for Perl modules. Use when user asks to install libxml2 dependencies, retrieve compiler or linker flags for XML processing, or force a source build of the libxml2 library.
 homepage: https://metacpan.org/pod/Alien::Libxml2
 ---
+
 
 # perl-alien-libxml2
 

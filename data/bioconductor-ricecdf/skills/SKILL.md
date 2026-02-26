@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ricecdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Affymetrix Rice Genome Array. Use when user asks to map probes to their physical locations on a rice microarray or process Affymetrix Rice Genome Array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ricecdf.html
 ---
+
 
 # bioconductor-ricecdf
 

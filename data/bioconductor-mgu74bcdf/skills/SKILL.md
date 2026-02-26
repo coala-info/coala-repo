@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgu74bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix MG-U74B microarray. Use when user asks to process Affymetrix MG-U74B microarray data or map probe identifiers to genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74bcdf.html
 ---
+
 
 # bioconductor-mgu74bcdf
 

@@ -1,8 +1,9 @@
 ---
 name: bigscape
-description: BiG-SCAPE (Biosynthetic Gene Similarity Clustering and Prospecting Engine) is a specialized bioinformatics tool used to organize and visualize the diversity of secondary metabolite biosynthetic pathways.
+description: BiG-SCAPE clusters and visualizes biosynthetic gene clusters into families by calculating pairwise distances based on protein domain content and sequence identity. Use when user asks to cluster BGCs into families, query sequences against a database, dereplicate redundant datasets, or benchmark clustering results.
 homepage: https://github.com/medema-group/BiG-SCAPE
 ---
+
 
 # bigscape
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioccasestudies
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides infrastructure, data, and utility functions to support the Bioconductor Case Studies monograph. Use when user asks to manage package dependencies for case studies, format R output for publication, use standardized color schemes for biological visualization, or perform resampling analysis on ExpressionSet objects.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BiocCaseStudies.html
 ---
+
 
 # bioconductor-bioccasestudies
 

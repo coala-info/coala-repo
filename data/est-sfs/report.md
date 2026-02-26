@@ -3,7 +3,7 @@
 ## est-sfs
 
 ### Tool Description
-Estimation of the site frequency spectrum (SFS) and ancestral states. (Note: The provided text contains container runtime errors and does not include usage instructions or argument definitions.)
+Estimate site frequency spectrum
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/est-sfs:2.04--h985cbd6_1
@@ -18,11 +18,10 @@ Estimation of the site frequency spectrum (SFS) and ancestral states. (Note: The
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/est-sfs:2.04--h985cbd6_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3533365093: no space left on device
+USAGE: $ est-sfs config_file_name input_file_name seedfile_name output_file_sfs output_file_p_anc <OPTIONAL verbose>
+ERROR argc =  2
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

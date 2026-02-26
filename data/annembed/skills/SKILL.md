@@ -1,8 +1,9 @@
 ---
 name: annembed
-description: `annembed` is a scalable, non-linear dimension reduction algorithm specifically optimized for large-scale biological data.
+description: annembed is a scalable, non-linear dimension reduction tool used to transform high-dimensional biological data into low-dimensional embeddings. Use when user asks to perform ultra-fast dimension reduction, generate UMAP-like visualizations for microbial genomes, or create embeddings from k-mer sketches.
 homepage: https://github.com/jean-pierreBoth/gsearch
 ---
+
 
 # annembed
 

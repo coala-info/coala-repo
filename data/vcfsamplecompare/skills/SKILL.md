@@ -1,8 +1,9 @@
 ---
 name: vcfsamplecompare
-description: The `vcfsamplecompare` tool performs a differential analysis of genetic variants, similar in concept to differential gene expression analysis but applied to VCF records.
+description: The vcfsamplecompare tool performs a differential analysis of genetic variants to rank them by how well they discriminate between samples or groups. Use when user asks to perform differential analysis of genetic variants, rank variants by their ability to discriminate between samples or groups, or calculate scores based on genotype calls, allelic frequencies, or read depth.
 homepage: https://github.com/hepcat72/vcfSampleCompare
 ---
+
 
 # vcfsamplecompare
 

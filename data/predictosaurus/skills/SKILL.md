@@ -1,8 +1,9 @@
 ---
 name: predictosaurus
-description: Predictosaurus is a command-line utility designed for haplotype-based genomic variant effect prediction that incorporates uncertainty.
+description: Predictosaurus is a command-line utility for haplotype-based genomic variant effect prediction that incorporates uncertainty using variant graphs. Use when user asks to build variant graphs from VCF files, calculate scores for haplotypes, or extract peptide sequences for neoantigen identification.
 homepage: https://github.com/fxwiegand/predictosaurus
 ---
+
 
 # predictosaurus
 

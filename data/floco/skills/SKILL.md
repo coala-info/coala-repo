@@ -1,8 +1,9 @@
 ---
 name: floco
-description: Floco (flow + copy) is a bioinformatics tool designed to call individual node copy numbers on (pan)genome graphs.
+description: Floco estimates individual node copy numbers on pangenome graphs by formulating sequence-to-graph alignment data as an integer linear programming problem. Use when user asks to call node copy numbers on genome graphs, estimate ploidy states from GAF alignments, or solve network flow problems for graph-based copy number determination.
 homepage: https://github.com/hugocarmaga/floco
 ---
+
 
 # floco
 

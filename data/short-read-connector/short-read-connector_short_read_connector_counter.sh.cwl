@@ -1,16 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: short-read-connector_short_read_connector_counter.sh
+baseCommand: short_read_connector_counter.sh
 label: short-read-connector_short_read_connector_counter.sh
-doc: "The provided text does not contain help information or usage instructions. It
-  appears to be a log of a failed container execution/build process.\n\nTool homepage:
-  https://github.com/GATB/short_read_connector"
-inputs: []
+doc: "Compare reads from two read sets (distinct or not)\n\nTool homepage: https://github.com/GATB/short_read_connector"
+inputs:
+  - id: index_query
+    type: string
+    doc: index/query
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/short-read-connector:1.2.0--h43eeafb_1
+    dockerPull: quay.io/biocontainers/short-read-connector:1.2.0--h5ca1c30_3
 stdout: short-read-connector_short_read_connector_counter.sh.out

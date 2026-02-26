@@ -1,8 +1,9 @@
 ---
 name: r-bbmle
-description: Methods and functions for fitting maximum likelihood models in R. This package modifies and extends the 'mle' classes in the 'stats4' package.</p>
+description: The r-bbmle package provides a flexible framework for performing general maximum likelihood estimation and model selection in R. Use when user asks to fit models using the mle2 function, calculate profile likelihood confidence intervals, or compare models using AIC and BIC tables.
 homepage: https://cloud.r-project.org/web/packages/bbmle/index.html
 ---
+
 
 # r-bbmle
 

@@ -1,11 +1,27 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: matam_index_default_ssu_rrna_db.py
+baseCommand: index_default_ssu_rrna_db.py
 label: matam_index_default_ssu_rrna_db.py
-doc: "Index the default SSU rRNA database for MATAM. (Note: The provided help text
-  contains only system error messages and no usage information.)\n\nTool homepage:
-  https://github.com/bonsai-team/matam"
-inputs: []
+doc: "Index default SSU rRNA DB\n\nTool homepage: https://github.com/bonsai-team/matam"
+inputs:
+  - id: max_memory
+    type:
+      - 'null'
+      - int
+    doc: Maximum memory to use (in MBi).
+    default: 10000 MBi
+    inputBinding:
+      position: 101
+      prefix: --max_memory
+  - id: ref_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Output dir.
+    default: $MATAM_DIR/db/
+    inputBinding:
+      position: 101
+      prefix: --ref_dir
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-erccdashboard
-description: the package is available on all platforms; click for details.
+description: This tool evaluates the technical performance of gene expression experiments using External RNA Controls Consortium (ERCC) spike-in controls. Use when user asks to assess dynamic range, estimate the limit of detection of ratios, or analyze RNA-Seq and microarray data using ERCC spike-ins.
 homepage: https://bioconductor.org/packages/release/bioc/html/erccdashboard.html
 ---
+
 
 # bioconductor-erccdashboard
 

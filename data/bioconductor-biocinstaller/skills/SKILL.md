@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocinstaller
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool manages the installation, update, and versioning of Bioconductor and CRAN packages. Use when user asks to install or update packages using biocLite, validate package consistency with biocValid, manage Bioconductor release or development versions, or install package groups from specific publications.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/BiocInstaller.html
 ---
+
 
 # bioconductor-biocinstaller
 

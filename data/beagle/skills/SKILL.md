@@ -1,8 +1,9 @@
 ---
 name: beagle
-description: Beagle is a specialized forensics tool designed to simplify incident investigation by converting flat log files into graph-based representations.
+description: Beagle transforms forensic log files and network captures into graph-based representations to visualize process activity and security incidents. Use when user asks to convert logs into graphs, identify lateral movement, analyze parent-child process relationships, or merge multiple data sources into a unified security visualization.
 homepage: https://github.com/yampelo/beagle
 ---
+
 
 # beagle
 

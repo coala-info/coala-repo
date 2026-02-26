@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanwgdaslv4.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Illumina Human Whole-Genome DASL v4 platform. Use when user asks to map Illumina probe identifiers to biological metadata, perform functional annotation with GO or KEGG terms, or filter probes based on quality grades and re-annotation data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanWGDASLv4.db.html
 ---
+
 
 # bioconductor-illuminahumanwgdaslv4.db
 

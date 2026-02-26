@@ -1,8 +1,9 @@
 ---
 name: r-gsubfn
-description: "The gsubfn function is like gsub but can take a replacement     function or certain other objects instead of the replacement string.    Matches and back references are input to the replacement function and     replaced by the function output.   gsubfn can be used to split strings     based on content rather than delimiters and for quasi-perl-style string     interpolation. The package also has facilities for translating formulas     to functions and allowing such formulas in function calls instead of     functions.  This can be used with R functions such as apply, sapply,    lapply, optim, integrate, xyplot, Filter and any other function that     expects another function as an input argument or functions like cat    or sql calls that may involve strings where substitution is desirable.    There is also a facility for returning multiple objects from functions    and a version of transform that allows the RHS to refer to LHS used in    the same transform.</p>"
+description: The r-gsubfn tool provides advanced string manipulation and functional programming utilities in R by allowing functions, formulas, or lists to be used for pattern replacement and argument specification. Use when user asks to perform complex string substitutions with dynamic logic, extract string components based on content, or use formula-based anonymous functions in standard R operations.
 homepage: https://cloud.r-project.org/web/packages/gsubfn/index.html
 ---
+
 
 # r-gsubfn
 

@@ -1,8 +1,9 @@
 ---
 name: krona
-description: Krona is a visualization suite designed to handle complex, hierarchical datasets through "Krona charts"—interactive, zoomable pie charts.
+description: "Krona creates interactive, zoomable pie charts to visualize hierarchical datasets and taxonomic compositions. Use when user asks to create Krona charts, visualize metagenomic data, import taxonomy IDs, or transform hierarchical text files into interactive HTML visualizations."
 homepage: https://github.com/marbl/Krona
 ---
+
 
 # krona
 

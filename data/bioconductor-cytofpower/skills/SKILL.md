@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytofpower
-description: "The package provides a shiny app with two options to predict the power of an experiment: i. generation of in-sicilico CyTOF data, using users input ii. browsing in a grid of parameters for which the power was already precomputed."
+description: This tool performs power analysis for CyTOF experiments to predict the experimental power of differential state tests. Use when user asks to determine sample sizes, predict experimental power, or run in-silico data simulations for mass spectrometry studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/CyTOFpower.html
 ---
+
 
 # bioconductor-cytofpower
 

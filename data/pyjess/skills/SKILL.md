@@ -1,8 +1,9 @@
 ---
 name: pyjess
-description: pyjess is a high-performance Python library providing Cython bindings for the JESS algorithm, a 3D template matching software for protein structures.
+description: pyjess is a high-performance Python library for identifying 3D structural motifs in proteins using the JESS template matching algorithm. Use when user asks to search for catalytic sites, perform 3D template matching on protein structures, or identify geometric arrangements of residues.
 homepage: https://github.com/althonos/pyjess
 ---
+
 
 # pyjess
 

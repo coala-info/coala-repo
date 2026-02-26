@@ -1,8 +1,9 @@
 ---
 name: bioconductor-copynumber
-description: the package is available on all platforms; click for details.
+description: This tool performs segmentation and visualization of copy number data from single or multiple samples. Use when user asks to segment copy number profiles, run piecewise constant fitting, or visualize genomic aberrations.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/copynumber.html
 ---
+
 
 # bioconductor-copynumber
 

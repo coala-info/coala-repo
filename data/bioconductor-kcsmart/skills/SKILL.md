@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kcsmart
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical analysis of multi-experiment aCGH data to identify recurrent genomic gains and losses using kernel convolution-based smoothing. Use when user asks to perform KC-SMART on copy number data, identify significant recurrent aberrations using permutation-based thresholds, or compare copy number profiles between sample groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/KCsmart.html
 ---
+
 
 # bioconductor-kcsmart
 

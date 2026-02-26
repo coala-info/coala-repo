@@ -1,8 +1,9 @@
 ---
 name: braker3
-description: BRAKER3 is the most advanced iteration of the BRAKER suite, designed to provide high-accuracy gene predictions by combining the strengths of GeneMark-ETP and AUGUSTUS.
+description: BRAKER3 is a gene prediction pipeline that combines RNA-seq and protein data to automate the training of GeneMark-ETP and AUGUSTUS for high-accuracy genome annotation. Use when user asks to predict genes in a genome, annotate a genome using RNA-seq and protein evidence, or run the BRAKER3 pipeline.
 homepage: https://github.com/Gaius-Augustus/BRAKER
 ---
+
 
 # braker3
 

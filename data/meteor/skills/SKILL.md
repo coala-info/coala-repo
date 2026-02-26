@@ -1,8 +1,9 @@
 ---
 name: meteor
-description: Meteor is a specialized platform designed for the quantitative analysis of metagenomic shotgun sequencing data.
+description: Meteor quantifies metagenomic shotgun sequencing data by mapping reads against curated gene catalogues for taxonomic and functional profiling. Use when user asks to download microbial gene catalogues, organize FASTQ files into sample directories, map reads to reference catalogues, or generate species and functional abundance profiles.
 homepage: https://github.com/metagenopolis/meteor
 ---
+
 
 # meteor
 

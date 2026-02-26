@@ -1,8 +1,9 @@
 ---
 name: args_oap
-description: The ARGs-OAP (Antibiotic Resistance Genes Online Analysis Pipeline) skill enables the identification and quantification of ARGs from metagenomic data.
+description: args_oap identifies and quantifies antibiotic resistance genes from metagenomic data using a standardized bioinformatics pipeline. Use when user asks to identify ARGs, normalize ARG abundance to 16S rRNA or cell counts, or compare resistance profiles across metagenomic samples.
 homepage: https://github.com/xinehc/args_oap
 ---
+
 
 # args_oap
 

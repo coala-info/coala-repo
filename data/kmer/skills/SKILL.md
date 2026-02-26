@@ -1,8 +1,9 @@
 ---
 name: kmer
-description: This skill provides guidance on using the `kmer-cnt` suite, a collection of high-performance k-mer counters designed for bioinformatics workflows.
+description: This tool calculates the frequency of canonical k-mers in genomic sequences using high-performance implementations optimized for speed and memory efficiency. Use when user asks to count k-mers, filter singleton k-mers with a Bloom filter, or perform k-mer analysis for genome assembly and metagenomics.
 homepage: https://github.com/lh3/kmer-cnt
 ---
+
 
 # kmer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-immunespacer
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: ImmuneSpaceR provides a programmatic interface to connect to the ImmuneSpace database for retrieving curated immunology datasets and gene expression matrices. Use when user asks to connect to ImmuneSpace studies, fetch tabular datasets or expression matrices, and visualize immunology data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ImmuneSpaceR.html
 ---
+
 
 # bioconductor-immunespacer
 

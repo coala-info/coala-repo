@@ -3,7 +3,7 @@
 ## datavzrd
 
 ### Tool Description
-A tool for creating visual reports from tabular data (Note: The provided text contains container runtime error logs rather than the tool's help documentation).
+A tool to create visual HTML reports from collections of CSV/TSV tables.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/datavzrd:2.23.2
@@ -13,19 +13,35 @@ A tool for creating visual reports from tabular data (Note: The provided text co
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/datavzrd/overview
 - **Total Downloads**: 1.0M
-- **Last updated**: 2026-02-03
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/datavzrd/datavzrd
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/datavzrd:2.23.2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade: unpack entry: sbin/ldconfig: unpack to regular file: short write: write /tmp/build-temp-2044768583/rootfs/sbin/ldconfig: no space left on device
+datavzrd 2.23.2
+A tool to create visual HTML reports from collections of CSV/TSV tables.
+
+USAGE:
+    datavzrd [FLAGS] [OPTIONS] <CONFIG> --output <output>
+
+FLAGS:
+        --debug               Activates debug mode. Javascript files are not minified
+    -h, --help                Prints help information
+        --overwrite-output    Overwrites the contents of the given output directory if it is not empty
+    -V, --version             Prints version information
+    -v, --verbose             Verbose mode (-v, -vv, -vvv, etc.)
+
+OPTIONS:
+    -o, --output <output>              Output file
+    -w, --webview-url <webview-url>    Sets the URL of the webview host. Note that when using the link the row data can
+                                       temporarily occur (in base64-encoded form) in the server logs of the given
+                                       webview host [env: DATAVZRD_WEBVIEW_URL=]  [default:
+                                       https://datavzrd.github.io/view/]
+
+ARGS:
+    <CONFIG>    Config file containing file paths and settings
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

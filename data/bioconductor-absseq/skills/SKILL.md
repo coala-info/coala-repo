@@ -1,8 +1,9 @@
 ---
 name: bioconductor-absseq
-description: the package is available on all platforms; click for details.
+description: "bioconductor-absseq performs differential expression analysis of RNA-Seq data by modeling absolute expression differences with a Negative Binomial distribution. Use when user asks to perform pairwise comparisons, conduct linear modeling for complex experimental designs, or apply variance stabilization for PCA using the ABSSeq R package."
 homepage: https://bioconductor.org/packages/release/bioc/html/ABSSeq.html
 ---
+
 
 # bioconductor-absseq
 

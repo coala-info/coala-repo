@@ -1,8 +1,9 @@
 ---
 name: acdc
-description: The provided text does not contain help information or a description of the tool. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+description: acdc performs automated contamination detection and quality control for single-cell genome data using sequence composition analysis and clustering. Use when user asks to detect contaminants in genomic assemblies, estimate confidence in single-cell data, or visualize species separation in a sample.
 homepage: https://github.com/mlux86/acdc
 ---
+
 
 # acdc
 

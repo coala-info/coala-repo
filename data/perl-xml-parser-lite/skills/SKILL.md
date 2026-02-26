@@ -1,8 +1,9 @@
 ---
 name: perl-xml-parser-lite
-description: The `XML::Parser::Lite` module provides a non-validating, lightweight XML parser implemented entirely in Perl.
+description: This module provides a lightweight, pure-Perl XML parser for event-based processing without external C library dependencies. Use when user asks to parse XML data using Perl, handle XML events with callbacks, or process XML in environments where libexpat is not available.
 homepage: http://metacpan.org/pod/XML-Parser-Lite
 ---
+
 
 # perl-xml-parser-lite
 

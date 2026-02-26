@@ -1,8 +1,9 @@
 ---
 name: perl-exporter-tiny
-description: `Exporter::Tiny` is a professional-grade alternative to the standard Perl `Exporter`.
+description: perl-exporter-tiny provides a lightweight and flexible mechanism for exporting functions in Perl modules with support for renaming and dynamic generation. Use when user asks to export functions from a module, rename imported functions, or create dynamic exports with a small dependency footprint.
 homepage: https://metacpan.org/release/Exporter-Tiny
 ---
+
 
 # perl-exporter-tiny
 

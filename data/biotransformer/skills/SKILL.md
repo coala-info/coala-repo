@@ -1,8 +1,9 @@
 ---
 name: biotransformer
-description: BioTransformer is a computational tool designed to predict the metabolic products of small molecules across various biological systems.
+description: BioTransformer predicts the metabolic products of small molecules across various biological and environmental systems using machine learning and rule-based models. Use when user asks to predict metabolic transformations, simulate human or microbial metabolism, or identify potential metabolites for drug discovery and toxicology.
 homepage: https://bitbucket.org/djoumbou/biotransformer
 ---
+
 
 # biotransformer
 

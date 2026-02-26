@@ -1,8 +1,9 @@
 ---
 name: ucsc-fatotwobit
-description: The `faToTwoBit` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed to compress FASTA files into a randomly accessible binary format (.2bit).
+description: This tool converts and compresses FASTA files into a randomly accessible .2bit binary format. Use when user asks to convert FASTA files to .2bit, compress genomic sequences, or combine multiple FASTA files into a single .2bit file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fatotwobit
 

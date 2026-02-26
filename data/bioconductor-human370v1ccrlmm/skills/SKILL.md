@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human370v1ccrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and metadata for the Illumina 370k array to support the CRLMM algorithm. Use when user asks to perform genotype calling, estimate copy numbers, or preprocess Illumina human370v1 chip data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human370v1cCrlmm.html
 ---
+
 
 # bioconductor-human370v1ccrlmm
 

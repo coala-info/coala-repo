@@ -1,8 +1,9 @@
 ---
 name: terminus
-description: Terminus is a tool designed to address the uncertainty inherent in transcript-level abundance estimation from RNA-seq data.
+description: Terminus is a tool designed to address the uncertainty inherent in transcript-level abundance estimation from RNA-seq data. Use when user asks to run terminus or use its main features.
 homepage: https://github.com/COMBINE-lab/terminus
 ---
+
 
 # terminus
 

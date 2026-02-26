@@ -1,8 +1,9 @@
 ---
 name: bioconductor-garfield
-description: the package is available on all platforms; click for details.
+description: GARFIELD evaluates the enrichment of GWAS association signals in functional annotations while correcting for linkage disequilibrium, minor allele frequency, and distance to transcription start sites. Use when user asks to perform functional enrichment analysis of GWAS data, identify regulatory features associated with genetic variants, or account for genomic confounders in enrichment testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/garfield.html
 ---
+
 
 # bioconductor-garfield
 

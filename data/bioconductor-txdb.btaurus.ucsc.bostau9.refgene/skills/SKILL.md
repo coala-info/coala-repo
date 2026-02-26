@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.btaurus.ucsc.bostau9.refgene
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides transcript-level annotations for the Bos taurus genome based on the UCSC bosTau9 refGene database. Use when user asks to retrieve genomic coordinates for cow genes, access transcript metadata for the bosTau9 assembly, or perform genomic range analysis on bovine refGene data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Btaurus.UCSC.bosTau9.refGene.html
 ---
+
 
 # bioconductor-txdb.btaurus.ucsc.bostau9.refgene
 

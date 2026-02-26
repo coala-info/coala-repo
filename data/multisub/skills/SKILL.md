@@ -1,8 +1,9 @@
 ---
 name: multisub
-description: The `multisub` tool is a specialized command-line utility designed to streamline the submission of SARS-CoV-2 genomic data.
+description: The multisub tool automates the preparation and submission of SARS-CoV-2 genomic data to major sequence databases like GISAID, NCBI, and ENA. Use when user asks to initialize submission configurations, convert FASTA and metadata files into repository-specific formats, or perform automated data uploads to genomic repositories.
 homepage: https://github.com/maximilianh/multiSub
 ---
+
 
 # multisub
 

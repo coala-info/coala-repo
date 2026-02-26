@@ -1,8 +1,9 @@
 ---
 name: clusterpicker
-description: The `clusterpicker` skill enables the automated identification of clusters within phylogenetic trees.
+description: Clusterpicker identifies sequence clusters within phylogenetic trees based on genetic distance and bootstrap support thresholds. Use when user asks to identify clusters in phylogenetic trees, group sequences based on evolutionary criteria, or filter clusters by genetic distance and bootstrap support.
 homepage: http://hiv.bio.ed.ac.uk/software.html
 ---
+
 
 # clusterpicker
 

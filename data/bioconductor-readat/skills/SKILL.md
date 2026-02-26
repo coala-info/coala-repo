@@ -1,8 +1,9 @@
 ---
 name: bioconductor-readat
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package reads and processes SomaLogic ADAT files for proteomic analysis. Use when user asks to read ADAT files, import SomaLogic data, or analyze protein expression levels in R.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/readat.html
 ---
+
 
 # bioconductor-readat
 

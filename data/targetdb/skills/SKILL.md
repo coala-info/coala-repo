@@ -1,8 +1,9 @@
 ---
 name: targetdb
-description: TargetDB is a bioinformatics tool designed to streamline the identification and prioritization of drug targets.
+description: TargetDB is a bioinformatics tool that integrates multi-source data to identify, prioritize, and visualize the druggability of potential drug targets. Use when user asks to generate druggability reports for single genes or lists, perform binding pocket analysis, or create spider plots for target prioritization.
 homepage: https://github.com/sdecesco/targetDB
 ---
+
 
 # targetdb
 

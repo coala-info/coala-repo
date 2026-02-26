@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drugtargetinteractions
-description: the package is available on all platforms; click for details.
+description: This tool identifies drug-target interactions and retrieves bioactivity data for small molecules and proteins using the ChEMBL database. Use when user asks to map gene identifiers to UniProt IDs, query drug-target annotations, or retrieve bioassay measurements for specific compounds and biological targets.
 homepage: https://bioconductor.org/packages/release/bioc/html/drugTargetInteractions.html
 ---
+
 
 # bioconductor-drugtargetinteractions
 

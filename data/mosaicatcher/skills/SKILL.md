@@ -1,8 +1,9 @@
 ---
 name: mosaicatcher
-description: Mosaicatcher is a computational tool designed for the processing of single-cell Strand-seq sequencing data.
+description: Mosaicatcher processes single-cell Strand-seq data to count reads in genomic bins and classify chromosomal strand states. Use when user asks to count reads in fixed or predefined bins, classify strand states using Hidden Markov Models, or simulate binned Strand-seq counts.
 homepage: https://github.com/friendsofstrandseq/mosaicatcher/
 ---
+
 
 # mosaicatcher
 

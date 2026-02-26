@@ -1,15 +1,28 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: unifrac_faithpd
+baseCommand: faithpd
 label: unifrac_faithpd
-doc: "The provided text does not contain help information for the tool; it is a log
-  of a failed container build attempt.\n\nTool homepage: https://github.com/biocore/unifrac"
-inputs: []
+doc: "Calculates Faith's Phylogenetic Diversity (PD) for each sample in a BIOM table
+  using a provided phylogeny.\n\nTool homepage: https://github.com/biocore/unifrac"
+inputs:
+  - id: biom_table
+    type: File
+    doc: The input BIOM table.
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: newick_tree
+    type: File
+    doc: The input phylogeny in newick format.
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: The output file path.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unifrac:1.5.1--py39hff726c5_0
-stdout: unifrac_faithpd.out

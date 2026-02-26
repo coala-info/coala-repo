@@ -1,8 +1,9 @@
 ---
 name: ucsc-chopfalines
-description: `ucsc-chopfalines` (commonly executed as the command `chopFaLines`) is a specialized utility from the UCSC Genome Browser "kent" tool suite.
+description: ucsc-chopfalines reformats FASTA files by wrapping long sequence lines to a specified width. Use when user asks to wrap FASTA sequences, reformat FASTA files, break FASTA sequence lines, set FASTA line length, or prepare FASTA for legacy applications.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chopfalines
 

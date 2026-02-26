@@ -1,8 +1,9 @@
 ---
 name: unitig-caller
-description: `unitig-caller` is a specialized tool for bacterial genomics that identifies specific sequence fragments (unitigs) across multiple genomes or read sets.
+description: unitig-caller identifies and calls specific sequence fragments (unitigs) across multiple genomic datasets. Use when user asks to extract unique unitigs, build a population graph, query for unitig presence in new datasets, or perform fast unitig presence/absence calling.
 homepage: https://github.com/johnlees/unitig-caller
 ---
+
 
 # unitig-caller
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tidyomics
-description: the package is available on all platforms; click for details.
+description: Tidyomics provides a unified framework for analyzing omics data using tidy data principles in R. Use when user asks to apply tidyverse-style workflows to Bioconductor objects, perform transcriptomics analysis, or manipulate genomic data using a consistent grammar.
 homepage: https://bioconductor.org/packages/release/bioc/html/tidyomics.html
 ---
+
 
 # bioconductor-tidyomics
 

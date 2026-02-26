@@ -1,30 +1,49 @@
 # phykit CWL Generation Report
 
-## phykit
+## phykit_an
 
 ### Tool Description
-A toolkit for phylogenetic analysis (Note: The provided text appears to be a container runtime error log rather than help text, so no arguments could be extracted).
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/phykit:2.1.2--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/phykit:2.1.5--pyhdfd78af_0
 - **Homepage**: https://github.com/jlsteenwyk/phykit
 - **Package**: https://anaconda.org/channels/bioconda/packages/phykit/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/phykit/overview
-- **Total Downloads**: 37.8K
-- **Last updated**: 2025-09-29
+- **Total Downloads**: 38.0K
+- **Last updated**: 2026-02-23
 - **GitHub**: https://github.com/jlsteenwyk/phykit
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/phykit:2.1.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+_____  _           _  _______ _______ 
+|  __ \| |         | |/ /_   _|__   __|
+| |__) | |__  _   _| ' /  | |    | |   
+|  ___/| '_ \| | | |  <   | |    | |   
+| |    | | | | |_| | . \ _| |_   | |   
+|_|    |_| |_|\__, |_|\_\_____|  |_|   
+               __/ |                   
+              |___/   
+
+Version: 2.1.5
+Citation: Steenwyk et al. 2021, Bioinformatics. doi: 10.1093/bioinformatics/btab096
+Documentation link: https://jlsteenwyk.com/PhyKIT
+Publication link: https://academic.oup.com/bioinformatics/article-abstract/37/16/2325/6131675
+
+
+Invalid command option. See help for a complete list of commands and aliases.
 ```
 
-
-## Metadata
-- **Skill**: not generated

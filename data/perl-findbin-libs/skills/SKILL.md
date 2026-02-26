@@ -1,8 +1,9 @@
 ---
 name: perl-findbin-libs
-description: The `FindBin::libs` module simplifies Perl library management by searching for and adding directories to `@INC` based on the location of the executing script.
+description: This tool automatically locates and adds Perl library directories to the include path based on the script's location. Use when user asks to manage Perl library paths, find local module directories, or avoid hardcoding library locations in scripts.
 homepage: http://metacpan.org/pod/FindBin::libs
 ---
+
 
 # perl-findbin-libs
 

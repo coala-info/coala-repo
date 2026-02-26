@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.creinhardtii.jgi.v5.6
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Chlamydomonas reinhardtii (v5.6) as a Bioconductor data object. Use when user asks to access the Chlamydomonas reinhardtii genome, extract DNA sequences from specific coordinates, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Creinhardtii.JGI.v5.6.html
 ---
+
 
 # bioconductor-bsgenome.creinhardtii.jgi.v5.6
 

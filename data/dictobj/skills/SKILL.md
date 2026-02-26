@@ -1,8 +1,9 @@
 ---
 name: dictobj
-description: The `dictobj` library provides specialized Python dictionary objects that allow for attribute-style lookup (`obj.key`) in addition to standard index-style lookup (`obj['key']`).
+description: The dictobj library provides Python dictionary objects that support attribute-style access and optional immutability. Use when user asks to access dictionary keys as attributes, prevent accidental data modification with immutable objects, or handle data serialization in multiprocessing environments.
 homepage: https://github.com/grimwm/py-dictobj
 ---
+
 
 # dictobj
 

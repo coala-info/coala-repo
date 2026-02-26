@@ -1,8 +1,9 @@
 ---
 name: hyplas
-description: HyPlAs (Hybrid Long-Short Plasmid Assembler) is a specialized pipeline designed to reconstruct plasmids from hybrid sequencing datasets.
+description: HyPlAs is a hybrid sequencing pipeline designed to reconstruct and assemble plasmid sequences from combined short-read and long-read datasets. Use when user asks to assemble plasmids from hybrid data, classify short-read contigs as plasmidic, or recover plasmid-specific long reads for refined assembly.
 homepage: https://github.com/cchauve/hyplas
 ---
+
 
 # hyplas
 

@@ -1,8 +1,9 @@
 ---
 name: perl-sub-exporter-progressive
-description: `Sub::Exporter::Progressive` is a specialized Perl tool designed for module authors who want to provide a sophisticated export interface without forcing a heavy dependency on `Sub::Exporter` for every user.
+description: This Perl tool provides a lightweight export interface that automatically upgrades to Sub::Exporter when advanced features are required. Use when user asks to implement progressive exporting, manage export dependencies, or define exportable subroutines and groups in a Perl module.
 homepage: http://search.cpan.org/dist/Sub-Exporter-Progressive/
 ---
+
 
 # perl-sub-exporter-progressive
 

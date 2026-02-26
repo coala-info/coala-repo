@@ -1,8 +1,9 @@
 ---
 name: bioconductor-targetdecoy
-description: the package is available on all platforms; click for details.
+description: TargetDecoy evaluates the quality of peptide-spectrum matches in proteomics data using the target-decoy approach. Use when user asks to evaluate peptide-spectrum matches, estimate false discovery rates, or create diagnostic plots for proteomics search results.
 homepage: https://bioconductor.org/packages/release/bioc/html/TargetDecoy.html
 ---
+
 
 # bioconductor-targetdecoy
 

@@ -1,8 +1,9 @@
 ---
 name: r-catools
-description: R package catools (documentation from project home).
+description: This package provides high-performance R utility functions for moving window statistics, machine learning evaluation, and binary file processing. Use when user asks to calculate running statistics, split data for model training, compute ROC AUC, or read and write GIF and ENVI files.
 homepage: https://cran.r-project.org/web/packages/catools/index.html
 ---
+
 
 # r-catools
 

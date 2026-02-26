@@ -1,8 +1,9 @@
 ---
 name: bioconductor-martini
-description: the package is available on all platforms; click for details.
+description: Martini performs network-guided genome-wide association studies to identify groups of SNPs associated with a phenotype. Use when user asks to perform GWAS feature selection, incorporate biological networks into association studies, or identify SNP modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/martini.html
 ---
+
 
 # bioconductor-martini
 

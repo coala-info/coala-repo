@@ -1,8 +1,9 @@
 ---
 name: bioconductor-path2ppi
-description: the package is available on all platforms; click for details.
+description: Path2PPI predicts protein-protein interaction networks for a target organism by integrating information from multiple reference species. Use when user asks to predict protein-protein interactions, identify pathway-specific networks, or transfer interaction data from reference organisms to a target species.
 homepage: https://bioconductor.org/packages/release/bioc/html/Path2PPI.html
 ---
+
 
 # bioconductor-path2ppi
 

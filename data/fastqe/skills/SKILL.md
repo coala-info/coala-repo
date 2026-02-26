@@ -1,8 +1,9 @@
 ---
 name: fastqe
-description: `fastqe` is a specialized bioinformatics utility that transforms sequence quality data into a readable emoji format.
+description: "fastqe visualizes FASTQ file quality scores by converting them into a sequence of emojis. Use when user asks to check sequence quality, visualize FASTQ data with emojis, or perform a quick quality triage of sequencing reads."
 homepage: https://github.com/lonsbio/fastqe
 ---
+
 
 # fastqe
 

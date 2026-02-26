@@ -1,8 +1,9 @@
 ---
 name: snp-sites
-description: snp-sites is a high-performance C utility designed to solve the scalability issues of extracting single nucleotide polymorphisms (SNPs) from massive whole-genome alignments.
+description: "snp-sites extracts single nucleotide polymorphisms from multi-FASTA alignment files and converts them into VCF, Phylip, or SNP-only FASTA formats. Use when user asks to extract SNPs from a whole-genome alignment, convert alignments to VCF or Phylip format, or filter alignments to include only variable sites."
 homepage: https://github.com/sanger-pathogens/snp-sites
 ---
+
 
 # snp-sites
 

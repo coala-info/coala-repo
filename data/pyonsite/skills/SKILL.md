@@ -1,8 +1,9 @@
 ---
 name: pyonsite
-description: The `pyonsite` skill enables the precise localization of post-translational modifications (primarily phosphorylation) on peptide sequences.
+description: pyonsite localizes post-translational modifications on peptide sequences using statistical validation and probability-based scoring algorithms. Use when user asks to localize phosphorylation sites, calculate site-specific probabilities, or perform false localization rate estimation for PTMs.
 homepage: https://www.github.com/bigbio/onsite
 ---
+
 
 # pyonsite
 

@@ -3,10 +3,10 @@
 ## mbgc
 
 ### Tool Description
-The provided text does not contain help information for the tool 'mbgc'. It contains error logs related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+Multiple Bacteria Genome Compressor (MBGC)
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mbgc:2.1--h9948957_0
+- **Docker Image**: quay.io/biocontainers/mbgc:2.1.1--hd63eeec_0
 - **Homepage**: https://github.com/kowallus/mbgc
 - **Package**: https://anaconda.org/channels/bioconda/packages/mbgc/overview
 - **Validation**: PASS
@@ -18,11 +18,28 @@ The provided text does not contain help information for the tool 'mbgc'. It cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mbgc:2.1--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2266223361: no space left on device
+Multiple Bacteria Genome Compressor (MBGC) v2.1.1 (c) Tomasz Kowalski, Szymon Grabowski, 2026-02-20
+
+Usage for partial file listing:
+	mbgc i [-H] [-e <pattern>] [-E <patternsFile>] <archiveFile>
+
+<archiveFile> mbgc archive filename
+	for standard input in decompression, set <archiveFile> to -
+<patternsFile> name of text file with list of patterns (in separate lines)
+	excludes files not matching any pattern (does not invalidate -e option)
+
+Basic options:
+	[-e <pattern>] exclude files with names not containing pattern
+	[-E <patternsFile>] exclude files not matching any pattern
+	[-H] list sequence headers (using convention: ">sequencename>filename")
+	[-t <noOfThreads>] set limit of used threads
+	[-I] ignore FASTA file paths (use only filenames)
+	[-2] redirect app output to stderr
+	[-h] print full command help and exit
+	[-v] print version number and exit
+
+The order of all selected options is arbitrary.
+
+Note: selected default command 'i'. Please use 'mbgc' to list all commands.
 ```
 
-
-## Metadata
-- **Skill**: generated

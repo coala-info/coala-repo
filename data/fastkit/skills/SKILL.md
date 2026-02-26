@@ -1,8 +1,9 @@
 ---
 name: fastkit
-description: FastKit is a specialized utility designed to handle the routine, often repetitive tasks required to prepare biological sequence files for downstream analysis.
+description: FastKit formats and validates biological sequence files to prepare them for downstream analysis. Use when user asks to format FASTA headers, normalize sequence case, validate DNA or protein sequences, or check sequence counts.
 homepage: https://github.com/neoformit/fastkit
 ---
+
 
 # fastkit
 

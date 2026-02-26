@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drawproteins
-description: the package is available on all platforms; click for details.
+description: This tool creates scale-drawn protein schematics by fetching and visualizing UniProt annotations as ggplot2 objects. Use when user asks to visualize protein architecture, fetch protein features from UniProt, or draw protein domains and post-translational modifications.
 homepage: https://bioconductor.org/packages/release/bioc/html/drawProteins.html
 ---
+
 
 # bioconductor-drawproteins
 

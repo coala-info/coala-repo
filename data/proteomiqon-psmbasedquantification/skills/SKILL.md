@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-psmbasedquantification
-description: The `proteomiqon-psmbasedquantification` tool is a specialized proteomics utility designed to estimate peptide ion abundance.
+description: This tool estimates peptide ion abundance by extracting ion chromatograms and fitting Gaussian models to detected peaks. Use when user asks to perform label-free quantification, quantify metabolic labeling, or calculate peptide peak areas from MS/MS data.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-psmbasedquantification
 

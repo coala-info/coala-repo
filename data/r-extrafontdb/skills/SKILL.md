@@ -1,8 +1,9 @@
 ---
 name: r-extrafontdb
-description: It is meant to be used with the 'extrafont' package. The 'extrafont' package contains the code to install and use fonts, while the 'extrafontdb' package contains the font database.</p>
+description: This package manages the persistent font database and metadata storage for the R 'extrafont' package. Use when user asks to store imported system fonts, maintain font configurations across package updates, or reset the font mapping database.
 homepage: https://cloud.r-project.org/web/packages/extrafontdb/index.html
 ---
+
 
 # r-extrafontdb
 

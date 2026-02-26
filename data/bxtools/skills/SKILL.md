@@ -1,8 +1,9 @@
 ---
 name: bxtools
-description: bxtools is a specialized suite of command-line utilities designed for "barcode-aware" processing of 10X Genomics data.
+description: bxtools is a suite of command-line utilities for barcode-aware processing and analysis of 10X Genomics data. Use when user asks to generate barcode statistics, split BAM files by barcode, calculate molecular footprints, or tile read counts across genomic windows.
 homepage: https://github.com/walaj/bxtools
 ---
+
 
 # bxtools
 

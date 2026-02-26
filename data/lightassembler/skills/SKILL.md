@@ -1,8 +1,9 @@
 ---
 name: lightassembler
-description: LightAssembler is a specialized tool designed for resource-constrained environments.
+description: LightAssembler is a memory-efficient genome assembly tool that generates contigs from sequencing reads using a dual Bloom filter architecture. Use when user asks to assemble contigs, perform genome assembly in resource-constrained environments, or filter sequencing errors during the assembly process.
 homepage: https://github.com/SaraEl-Metwally/LightAssembler
 ---
+
 
 # lightassembler
 

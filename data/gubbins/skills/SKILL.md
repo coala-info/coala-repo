@@ -1,8 +1,9 @@
 ---
 name: gubbins
-description: Gubbins (Genealogies Unbiased By recomBinations In Nucleotide Sequences) is an iterative algorithm designed to handle the high rates of horizontal gene transfer common in bacterial evolution.
+description: Gubbins identifies recombinant regions in bacterial genome alignments and constructs a phylogeny based on non-recombinant point mutations. Use when user asks to identify recombination events, mask horizontal gene transfer, or build a recombination-aware phylogenetic tree for bacterial sequences.
 homepage: https://github.com/nickjcroucher/gubbins
 ---
+
 
 # gubbins
 

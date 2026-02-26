@@ -1,8 +1,9 @@
 ---
 name: vpt-segmentation-packing
-description: This tool is a specialized utility for the Vizgen Post-processing Toolset (VPT).
+description: This tool packs cell segmentation boundaries into the `.vzg2` file format. Use when user asks to 'pack cell segmentation boundaries', 'integrate custom segmentation results', or 'convert segmentation data to .vzg2'.
 homepage: https://github.com/Vizgen/vpt-segmentation-packing
 ---
+
 
 # vpt-segmentation-packing
 

@@ -1,13 +1,46 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - ptgaul
-  - tr
+baseCommand: tr
 label: ptgaul_tr
-doc: "The provided text does not contain help information or a description of the
-  tool; it is an error log from a container runtime (Apptainer/Singularity) failing
-  to fetch the tool's image.\n\nTool homepage: https://github.com/Bean061/ptgaul"
-inputs: []
+doc: "Translate, squeeze, or delete characters from stdin, writing to stdout\n\nTool
+  homepage: https://github.com/Bean061/ptgaul"
+inputs:
+  - id: string1
+    type: string
+    doc: Characters to translate, delete, or complement
+    inputBinding:
+      position: 1
+  - id: string2
+    type:
+      - 'null'
+      - string
+    doc: Characters to translate to or squeeze
+    inputBinding:
+      position: 2
+  - id: complement
+    type:
+      - 'null'
+      - boolean
+    doc: Take complement of STRING1
+    inputBinding:
+      position: 103
+      prefix: -c
+  - id: delete
+    type:
+      - 'null'
+      - boolean
+    doc: Delete input characters coded STRING1
+    inputBinding:
+      position: 103
+      prefix: -d
+  - id: squeeze
+    type:
+      - 'null'
+      - boolean
+    doc: Squeeze multiple output characters of STRING2 into one character
+    inputBinding:
+      position: 103
+      prefix: -s
 outputs:
   - id: stdout
     type: stdout

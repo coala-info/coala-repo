@@ -1,8 +1,9 @@
 ---
 name: iso2flux
-description: iso2flux is a Python-based suite designed for steady-state 13C Metabolic Flux Analysis (13CMFA).
+description: iso2flux performs steady-state 13C metabolic flux analysis by integrating constraint-based models with experimental isotopic labeling data. Use when user asks to estimate internal metabolic fluxes, create 13C labeling models, solve flux distributions using mass isotopomer data, or integrate gene expression into flux analysis.
 homepage: https://github.com/cfoguet/iso2flux
 ---
+
 
 # iso2flux
 

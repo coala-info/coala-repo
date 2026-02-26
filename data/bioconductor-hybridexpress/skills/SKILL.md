@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hybridexpress
-description: The package features functions to perform exploratory analyses of sample grouping, identify differentially expressed genes in hybrids relative to their progenitors, classify genes in expression categories (N = 12) and classes (N = 5), and perform functional analyses. We also provide users with graphical functions for the seamless creation of publication-ready figures that are commonly used in the literature.
+description: HybridExpress is a Bioconductor package for analyzing RNA-Seq data from hybrid triplets to identify differentially expressed genes and classify expression patterns. Use when user asks to generate midparent expression values, perform spike-in normalization, categorize genes into expression classes like dominance or additivity, and visualize results using expression triangles.
 homepage: https://bioconductor.org/packages/release/bioc/html/HybridExpress.html
 ---
+
 
 # bioconductor-hybridexpress
 

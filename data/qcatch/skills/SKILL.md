@@ -1,8 +1,9 @@
 ---
 name: qcatch
-description: QCatch provides a specialized quality control pipeline designed specifically for the output of single-cell quantification tools like alevin-fry and simpleaf.
+description: QCatch provides a quality control pipeline for single-cell quantification data to identify valid cell barcodes and generate interactive metric reports. Use when user asks to perform quality control on single-cell data, model empty droplets, filter quantification files, or generate HTML reports for alevin-fry results.
 homepage: https://github.com/COMBINE-lab/QCatch
 ---
+
 
 # qcatch
 

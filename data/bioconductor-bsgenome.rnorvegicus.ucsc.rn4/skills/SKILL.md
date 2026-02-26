@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.rnorvegicus.ucsc.rn4
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Rattus norvegicus based on the UCSC rn4 assembly. Use when user asks to access genomic sequences, extract specific chromosome data, or perform genome-wide motif searching for the rn4 rat genome in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Rnorvegicus.UCSC.rn4.html
 ---
+
 
 # bioconductor-bsgenome.rnorvegicus.ucsc.rn4
 

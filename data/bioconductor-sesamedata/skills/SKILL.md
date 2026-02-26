@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sesamedata
-description: the package is available on all platforms; click for details.
+description: bioconductor-sesamedata provides supporting data and annotation files for the SeSAMe DNA methylation analysis suite. Use when user asks to access reference data for SeSAMe, download methylation chip annotations, or load example datasets for DNA methylation analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/sesameData.html
 ---
+
 
 # bioconductor-sesamedata
 

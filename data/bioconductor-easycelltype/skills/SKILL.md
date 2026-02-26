@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easycelltype
-description: the package is available on all platforms; click for details.
+description: This tool automates cell type annotation for single-cell RNA-seq data by comparing marker gene lists against curated databases like CellMarker, PanglaoDB, or ClusterMole. Use when user asks to annotate cell clusters from a Seurat object, perform cell type enrichment analysis using GSEA or Fisher's exact test, or visualize annotation results with dot plots and bar plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/EasyCellType.html
 ---
+
 
 # bioconductor-easycelltype
 

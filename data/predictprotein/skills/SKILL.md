@@ -1,8 +1,9 @@
 ---
 name: predictprotein
-description: PredictProtein is a comprehensive bioinformatics suite that integrates multiple methods to predict protein secondary structure, solvent accessibility, transmembrane helices, and functional sites from amino acid sequences.
+description: PredictProtein predicts protein secondary structure, solvent accessibility, transmembrane helices, and functional sites from amino acid sequences using a comprehensive bioinformatics suite. Use when user asks to predict protein structural features, manage a local results cache, or convert prediction outputs into XML format.
 homepage: https://github.com/Rostlab/predictprotein-docker
 ---
+
 
 # predictprotein
 

@@ -1,8 +1,9 @@
 ---
 name: microview
-description: MicroView is a reporting utility designed to bridge the gap between raw taxonomic classification data and interpretable insights.
+description: MicroView generates interactive HTML reports and dashboards from taxonomic classification data. Use when user asks to create a summary report from Kraken or Kaiju results, visualize taxonomic data, or perform grouped analysis using a metadata table.
 homepage: https://github.com/jvfe/microview
 ---
+
 
 # microview
 

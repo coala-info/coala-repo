@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chopsticks
-description: the package is available on all platforms; click for details.
+description: The chopsticks package provides high-performance classes and methods for large-scale SNP association studies using memory-efficient genotype storage. Use when user asks to perform single SNP association testing, calculate linkage disequilibrium, conduct quality control on genotype data, or visualize results with QQ plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/chopsticks.html
 ---
+
 
 # bioconductor-chopsticks
 

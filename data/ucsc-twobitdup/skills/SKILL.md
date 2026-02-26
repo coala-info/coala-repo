@@ -1,8 +1,9 @@
 ---
 name: ucsc-twobitdup
-description: The `ucsc-twobitdup` tool (often referred to as `twoBitDup` in the Kent source suite) is a specialized utility designed to scan .2bit files for redundant genomic sequences.
+description: ucsc-twobitdup identifies bit-for-bit identical genomic sequences within a .2bit file. Use when user asks to identify redundant genomic sequences, validate genome assemblies, or troubleshoot mapping issues caused by duplicate references.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-twobitdup
 

@@ -1,8 +1,9 @@
 ---
 name: lddt
-description: The `lddt` tool provides a robust alternative to RMSD for protein structure comparison.
+description: The lddt tool measures the local structural similarity between protein models and reference structures by analyzing the preservation of inter-atomic distances. Use when user asks to evaluate protein model accuracy, compare structures with domain shifts, or assess the local quality of specific regions like active sites.
 homepage: https://swissmodel.expasy.org/lddt
 ---
+
 
 # lddt
 

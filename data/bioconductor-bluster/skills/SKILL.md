@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bluster
-description: the package is available on all platforms; click for details.
+description: This tool provides a flexible and extensible framework for clustering matrix-like data within Bioconductor workflows. Use when user asks to perform clustering on PCA coordinates, switch between different clustering algorithms using a unified interface, or calculate clustering diagnostics like silhouette width and neighborhood purity.
 homepage: https://bioconductor.org/packages/release/bioc/html/bluster.html
 ---
+
 
 # bioconductor-bluster
 

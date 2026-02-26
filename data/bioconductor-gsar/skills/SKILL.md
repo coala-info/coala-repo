@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsar
-description: the package is available on all platforms; click for details.
+description: This tool performs multivariate nonparametric statistical tests for self-contained gene set analysis to identify biological differences between two conditions. Use when user asks to detect differential distribution, mean shifts, changes in variance, or net correlation structure rewiring in gene sets from microarray or normalized RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSAR.html
 ---
+
 
 # bioconductor-gsar
 

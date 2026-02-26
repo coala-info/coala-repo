@@ -1,8 +1,9 @@
 ---
 name: popscle
-description: The popscle suite provides a robust framework for demultiplexing pooled single-cell libraries by leveraging genetic variation.
+description: Popscle demultiplexes pooled single-cell libraries and identifies doublets by leveraging genetic variation. Use when user asks to demultiplex single-cell data, generate variant pileups, or perform genotype-free deconvolution of cell pools.
 homepage: https://github.com/statgen/popscle
 ---
+
 
 # popscle
 

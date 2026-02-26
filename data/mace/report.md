@@ -1,9 +1,9 @@
 # mace CWL Generation Report
 
-## mace
+## mace_preprocessor.py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'mace'. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or pull the container image due to insufficient disk space.
+Model based Analysis of ChIP Exo
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mace:1.2--py27h99da42f_0
@@ -18,46 +18,155 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mace:1.2--py27h99da42f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2447534478: no space left on device
+____    ____        _          ______   ________
+      |_   \  /   _|      / \       .' ___  | |_   __  |
+        |   \/   |       / _ \     / .'   \_|   | |_ \_|
+        | |\  /| |      / ___ \    | |          |  _| _ 
+       _| |_\/_| |_   _/ /   \ \_  \ `.___.'\  _| |__/ |
+      |_____||_____| |____| |____|  `.____ .' |________|
+       Model based    Analysis of     ChIP        Exo
+  _ __  _ __ ___ _ __  _ __ ___   ___ ___  ___ ___  ___  _ __ 
+ | '_ \| '__/ _ \ '_ \| '__/ _ \ / __/ _ \/ __/ __|/ _ \| '__|
+ | |_) | | |  __/ |_) | | | (_) | (_|  __/\__ \__ \ (_) | |   
+ | .__/|_|  \___| .__/|_|  \___/ \___\___||___/___/\___/|_|   
+ |_|            |_|                                           
+
+
+Usage: preprocessor.py [options]
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -i INPUT_FILE, --inputFile=INPUT_FILE
+                        Input file in BAM format. BAM file must be sorted and
+                        indexed using samTools. Replicates separated by
+                        comma(',') e.g. "-i rep1.bam,rep2.bam,rep3.bam"
+  -r CHROMSIZE, --chromSize=CHROMSIZE
+                        Chromosome size file. Tab or space separated text file
+                        with 2 columns: first column is chromosome name,
+                        second column is size of the chromosome.
+  -o OUTPUT_PREFIX, --outPrefix=OUTPUT_PREFIX
+                        Prefix of output wig files(s). "Prefix_Forward.wig"
+                        and "Prefix_Reverse.wig" will be generated
+  -w WORD_SIZE, --kmerSize=WORD_SIZE
+                        Kmer size [6,12] to correct nucleotide composition
+                        bias. kmerSize < 0.5*read_lenght. larger KmerSize
+                        might make program slower. Set kmerSize = 0 to turn
+                        off nucleotide compsition bias correction. default=6
+  -b BIN, --bin=BIN     Chromosome chunk size. Each chomosome will be cut into
+                        small chunks of this size. Decrease chunk size will
+                        save more RAM. default=100000 (bp)
+  -d REFREADN, --depth=REFREADN
+                        Reference reads count (default = 10 million).
+                        Sequencing depth will be normailzed to this number, so
+                        that wig files are comparable between replicates.
+  -q QUAL_CUT, --qCut=QUAL_CUT
+                        phred scaled mapping quality threshhold to determine
+                        "uniqueness" of alignments. default=30
+  -m NORM_METHOD, --method=NORM_METHOD
+                        methods ("EM", "AM", "GM", or "SNR") used to
+                        consolidate replicates and reduce noise. "EM" =
+                        Entropy weighted mean, "AM"=Arithmetic mean,
+                        "GM"=Geometric mean, "SNR"=Signal-to-noise ratio.
+                        default=EM
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## mace_preprocessor.py
+## mace_wigToBigWig
 
 ### Tool Description
-The provided text does not contain help information for mace_preprocessor.py; it contains system log messages and a fatal error regarding container image creation (no space left on device).
+Convert ascii format wig file (in fixedStep, variableStep or bedGraph format) to binary big wig format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mace:1.2--py27h99da42f_0
 - **Homepage**: http://chipexo.sourceforge.net
 - **Package**: https://anaconda.org/channels/bioconda/packages/mace/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mace:1.2--py27h99da42f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2711047982: no space left on device
+wigToBigWig v 4 - Convert ascii format wig file (in fixedStep, variableStep
+or bedGraph format) to binary big wig format.
+usage:
+   wigToBigWig in.wig chrom.sizes out.bw
+Where in.wig is in one of the ascii wiggle formats, but not including track lines
+and chrom.sizes is a two-column file/URL: <chromosome name> <size in bases>
+and out.bw is the output indexed big wig file.
+If the assembly <db> is hosted by UCSC, chrom.sizes can be a URL like
+  http://hgdownload.cse.ucsc.edu/goldenPath/<db>/bigZips/<db>.chrom.sizes
+or you may use the script fetchChromSizes to download the chrom.sizes file.
+If not hosted by UCSC, a chrom.sizes file can be generated by running
+twoBitInfo on the assembly .2bit file.
+options:
+   -blockSize=N - Number of items to bundle in r-tree.  Default 256
+   -itemsPerSlot=N - Number of data points bundled at lowest level. Default 1024
+   -clip - If set just issue warning messages rather than dying if wig
+                  file contains items off end of chromosome.
+   -unc - If set, do not use compression.
+   -fixedSummaries - If set, use a predefined sequence of summary levels.
+   -keepAllChromosomes - If set, store all chromosomes in b-tree.
 ```
+
 
 ## mace_mace.py
 
 ### Tool Description
-MACE (Model-based Analysis of ChIP-Exo). Note: The provided text contains system error logs regarding container execution and disk space rather than the tool's help documentation.
+Model based Analysis of ChIP Exo
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mace:1.2--py27h99da42f_0
 - **Homepage**: http://chipexo.sourceforge.net
 - **Package**: https://anaconda.org/channels/bioconda/packages/mace/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mace:1.2--py27h99da42f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1450011209: no space left on device
+____    ____        _          ______   ________
+  |_   \  /   _|      / \       .' ___  | |_   __  |
+    |   \/   |       / _ \     / .'   \_|   | |_ \_|
+    | |\  /| |      / ___ \    | |          |  _| _ 
+   _| |_\/_| |_   _/ /   \ \_  \ `.___.'\  _| |__/ |
+  |_____||_____| |____| |____|  `.____ .' |________|
+   Model based    Analysis of     ChIP        Exo
+
+
+Usage: mace.py [options]
+
+Options:
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+  -f FORWARD_BW, --forward=FORWARD_BW
+                        BigWig format file containing coverage calcualted from
+                        reads mapped to *forward* strand.
+  -r REVERSE_BW, --reverse=REVERSE_BW
+                        BigWig format file containing coverage calcualted from
+                        reads mapped to *reverse* strand.
+  -s CHROMSIZE, --chromSize=CHROMSIZE
+                        Chromosome size file. Tab or space separated text file
+                        with 2 columns: first column contains chromosome name,
+                        second column contains chromosome size. Example:chr1
+                        249250621 <NewLine> chr2        243199373 <NewLine>
+                        chr3        198022430 <NewLine> ...
+  -o OUTPUT_PREFIX, --out-prefix=OUTPUT_PREFIX
+                        Prefix of output files. NOTE: if 'prefix.border.bed'
+                        exists and was non-empty, peak calling step will be
+                        skipped! So if you want to rerun mace.py from scratch,
+                        use different 'prefix' or delete old
+                        'prefix.border.bed' before starting.
+  -p PVALUE_CUTOFF, --pvalue=PVALUE_CUTOFF
+                        Pvalue cutoff for border detection and subsequent
+                        border pairing. default=0.05
+  -m MAX_DISTANCE, --max-dist=MAX_DISTANCE
+                        Maximum distance allowed for border pairing.
+                        default=100
+  -e FUZZY_SIZE, --fz-window=FUZZY_SIZE
+                        Peaks located closely within this window will be
+                        merged. default=5 (bp)
+  -w WINDOW_SIZE, --bg-window=WINDOW_SIZE
+                        Background window size used to determine background
+                        signal level. default=100 (bp)
+  -n SIGNAL_FOLD, --fold=SIGNAL_FOLD
+                        Minmum coverage signal used to build model (i.e.
+                        estimate optimal peak pair size). default=2.0
 ```
 

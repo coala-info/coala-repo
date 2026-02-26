@@ -1,8 +1,9 @@
 ---
 name: quasirecomb
-description: QuasiRecomb is a specialized bioinformatics tool designed to infer the composition of viral quasispecies from aligned NGS data.
+description: QuasiRecomb infers the composition of viral quasispecies from aligned NGS data by accounting for recombination events and point mutations. Use when user asks to reconstruct viral haplotypes, estimate strain frequencies, or analyze viral recombination using a jumping Hidden Markov Model.
 homepage: https://github.com/cbg-ethz/QuasiRecomb
 ---
+
 
 # quasirecomb
 

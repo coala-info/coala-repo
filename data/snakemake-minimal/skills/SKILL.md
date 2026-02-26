@@ -1,8 +1,9 @@
 ---
 name: snakemake-minimal
-description: Snakemake-minimal provides the essential execution engine for the Snakemake workflow management system.
+description: Snakemake-minimal is a workflow management engine that executes scalable and reproducible data pipelines using a Python-based domain-specific language. Use when user asks to build data pipelines, perform dry runs, execute workflows with specific resource constraints, or lint Snakefiles for best practices.
 homepage: https://snakemake.readthedocs.io
 ---
+
 
 # snakemake-minimal
 

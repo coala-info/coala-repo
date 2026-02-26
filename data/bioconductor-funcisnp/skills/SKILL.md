@@ -1,8 +1,9 @@
 ---
 name: bioconductor-funcisnp
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: FunciSNP integrates GWAS association data with functional genomic features to identify candidate regulatory SNPs. Use when user asks to identify candidate regulatory SNPs from GWAS data, find SNPs in linkage disequilibrium with tagSNPs, intersect variants with functional genomic features, or annotate and visualize functional SNP results.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FunciSNP.html
 ---
+
 
 # bioconductor-funcisnp
 

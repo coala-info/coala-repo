@@ -1,8 +1,9 @@
 ---
 name: pbptyper
-description: pbptyper is a specialized bioinformatics tool used to identify the PBP types of Streptococcus pneumoniae.
+description: "pbptyper identifies the penicillin-binding protein (PBP) types of Streptococcus pneumoniae from genome assemblies. Use when user asks to predict PBP types, determine 1A:2B:2X allele profiles, or verify if an assembly is Streptococcus pneumoniae."
 homepage: https://github.com/rpetit3/pbptyper
 ---
+
 
 # pbptyper
 

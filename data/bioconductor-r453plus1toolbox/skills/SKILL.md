@@ -1,8 +1,9 @@
 ---
 name: bioconductor-r453plus1toolbox
-description: the package is available on all platforms; click for details.
+description: The R453Plus1Toolbox package provides tools for the analysis of high-throughput sequencing data from Roche 454 and Ion Torrent platforms. Use when user asks to detect single nucleotide variants, identify small insertions and deletions, or find structural variations in sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/R453Plus1Toolbox.html
 ---
+
 
 # bioconductor-r453plus1toolbox
 

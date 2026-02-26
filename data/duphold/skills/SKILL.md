@@ -1,8 +1,9 @@
 ---
 name: duphold
-description: `duphold` is a high-performance tool designed to add depth-based evidence to structural variant calls.
+description: "Duphold evaluates sequencing depth to provide fold-change metrics and SNP evidence for validating structural variant calls. Use when user asks to annotate structural variants with depth information, validate deletions and duplications, or filter SV calls based on coverage fold-change."
 homepage: https://github.com/brentp/duphold
 ---
+
 
 # duphold
 

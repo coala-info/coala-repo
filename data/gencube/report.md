@@ -3,7 +3,7 @@
 ## gencube
 
 ### Tool Description
-GenCube is a command-line tool for genomic data management. (Note: The provided text contains system error logs and does not include the tool's help documentation; therefore, no arguments could be extracted.)
+All gencube subcommands use NCBI's Entrez Utilities (E-Utilities), requiring an email.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gencube:1.11.0--pyh7e72e81_0
@@ -12,17 +12,26 @@ GenCube is a command-line tool for genomic data management. (Note: The provided 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gencube/overview
-- **Total Downloads**: 570
+- **Total Downloads**: 576
 - **Last updated**: 2025-07-14
 - **GitHub**: https://github.com/snu-cdrc/gencube
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gencube:1.11.0--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3433977475: no space left on device
+--------------------------------------------------------------------------------------
+All gencube subcommands use NCBI's Entrez Utilities (E-Utilities), requiring an email.
+Without an NCBI API key, you can make 3 requests per second; with an NCBI API key,
+this limit increases to 10 requests per second.
+If you submit your NCBI API key, you can perform tasks at more than three times 
+the speed when using the seqmeta subcommand, especially when fetching metadata.
+If possible, it is recommended to submit your API key.
+
+The submitted information is stored in the file at the path below for reuse.
+Path: /root/.gencube_entrez_info
+
+If you want to resubmit this information, run '$ gencube info'.
+--------------------------------------------------------------------------------------
+
+Email address:
 ```
 
-
-## Metadata
-- **Skill**: generated

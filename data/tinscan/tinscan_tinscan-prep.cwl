@@ -1,11 +1,47 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - tinscan-prep
+baseCommand: tinscan_tinscan-prep
 label: tinscan_tinscan-prep
-doc: "A tool for preparing data for the Tandem Integration Scanner (tinscan).\n\n
-  Tool homepage: https://github.com/Adamtaranto/TE-insertion-scanner"
-inputs: []
+doc: "Split multifasta genome files into directories for A and B genomes.\n\nTool
+  homepage: https://github.com/Adamtaranto/TE-insertion-scanner"
+inputs:
+  - id: adir
+    type:
+      - 'null'
+      - Directory
+    doc: A genome sub-directory within outdir
+    inputBinding:
+      position: 101
+      prefix: --adir
+  - id: bdir
+    type:
+      - 'null'
+      - Directory
+    doc: B genome sub-directory within outdir
+    inputBinding:
+      position: 101
+      prefix: --bdir
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Write split directories within this directory.
+    default: cwd
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: query
+    type: File
+    doc: Multifasta containing B genome.
+    inputBinding:
+      position: 101
+      prefix: --query
+  - id: target
+    type: File
+    doc: Multifasta containing A genome.
+    inputBinding:
+      position: 101
+      prefix: --target
 outputs:
   - id: stdout
     type: stdout

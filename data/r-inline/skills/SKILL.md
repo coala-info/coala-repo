@@ -1,8 +1,9 @@
 ---
 name: r-inline
-description: "Functionality to dynamically define R functions and S4 methods  with 'inlined' C, C++ or Fortran code supporting the .C and .Call calling  conventions.</p>"
+description: This tool dynamically defines R functions and S4 methods by compiling and linking inlined C, C++, or Fortran code snippets. Use when user asks to optimize R performance with compiled code, interface with C/C++/Fortran libraries without creating a package, or use the inline package to compile code on the fly.
 homepage: https://cloud.r-project.org/web/packages/inline/index.html
 ---
+
 
 # r-inline
 

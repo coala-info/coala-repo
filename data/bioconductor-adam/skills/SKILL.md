@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adam
-description: the package is available on all platforms; click for details.
+description: This tool performs functional enrichment analysis by grouping genes into Groups of Functionally Associated Genes based on activity and diversity metrics. Use when user asks to identify functionally associated gene groups, calculate gene activity and diversity, or perform GSEA-like enrichment analysis on gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ADAM.html
 ---
+
 
 # bioconductor-adam
 

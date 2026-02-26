@@ -1,8 +1,9 @@
 ---
 name: ucsc-endsinlf
-description: The `endsInLf` utility is a specialized validation tool from the UCSC Genome Browser "kent" source suite.
+description: ucsc-endsinlf verifies that a text file is properly terminated with a line feed character. Use when user asks to 'check if a file ends in a line feed', 'validate file line endings', or 'perform quality control on file line endings'.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-endsinlf
 

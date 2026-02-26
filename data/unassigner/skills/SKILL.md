@@ -1,8 +1,9 @@
 ---
 name: unassigner
-description: The `unassigner` tool provides a specialized approach to bacterial identification using 16S rRNA marker gene sequences.
+description: Unassigner identifies bacterial species by determining which designations are statistically inconsistent with 16S rRNA sequences. Use when user asks to perform species inconsistency analysis, rule out bacterial species designations, or trim 16S rRNA sequences.
 homepage: https://github.com/PennChopMicrobiomeProgram/unassigner
 ---
+
 
 # unassigner
 

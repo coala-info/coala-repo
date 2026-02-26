@@ -1,8 +1,9 @@
 ---
 name: vpt-cellpose2
-description: The `vpt-cellpose2` skill provides a specialized interface for applying Cellpose 2.0 deep-learning models to MERSCOPE transcriptomics datasets.
+description: `vpt-cellpose2` applies Cellpose 2.0 deep-learning models to MERSCOPE transcriptomics datasets for cell boundary detection. Use when user asks to segment cells, detect cell boundaries, or apply Cellpose models to MERSCOPE data.
 homepage: https://github.com/Vizgen/vpt-plugin-cellpose2
 ---
+
 
 # vpt-cellpose2
 

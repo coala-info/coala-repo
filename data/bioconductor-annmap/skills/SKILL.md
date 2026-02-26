@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annmap
-description: the package is available on all platforms; click for details.
+description: The annmap package provides an R interface to the Annmap database for cross-mapping genomic features and Affymetrix probeset annotations. Use when user asks to map between genomic coordinates and transcripts, filter probesets by genomic specificity, or retrieve Ensembl-based gene and exon details.
 homepage: https://bioconductor.org/packages/release/bioc/html/annmap.html
 ---
+
 
 # bioconductor-annmap
 

@@ -1,9 +1,11 @@
 # viralflye CWL Generation Report
 
-## viralflye
+## viralflye_viralFlye.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build process.
+Wrapper script for viralFlye pipeline 
+
+See readme for details
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0
@@ -18,52 +20,29 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: viralFlye.py [-h] --dir DIR --hmm HMM [--reads READS]
+                    [--min_viral_length MIN_VIRAL_LENGTH] [--ill1 ILL1]
+                    [--ill2 ILL2] [--outdir OUTDIR]
+                    [--completeness COMPLETENESS] [--threads THREADS]
+                    [--raven]
 
+Wrapper script for viralFlye pipeline 
+ 
+See readme for details
 
-## Metadata
-- **Skill**: generated
+required arguments:
+  --dir DIR             metaFlye output directory
+  --hmm HMM             Path to Pfam-A HMM database for viralVerify script
+  --reads READS         Path to long reads
 
-## viralflye_viralFlye.py
-
-### Tool Description
-viralFlye: a tool for viral genome assembly (Note: The provided help text contains only system log errors and no argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0
-- **Homepage**: https://github.com/Dmitry-Antipov/viralFlye/
-- **Package**: https://anaconda.org/channels/bioconda/packages/viralflye/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## viralflye_crispr_host_match.py
-
-### Tool Description
-A tool for CRISPR host matching within the viralFlye pipeline.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0
-- **Homepage**: https://github.com/Dmitry-Antipov/viralFlye/
-- **Package**: https://anaconda.org/channels/bioconda/packages/viralflye/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/viralflye:0.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  --min_viral_length MIN_VIRAL_LENGTH
+                        minimal limit on the viral length under study, default 5k
+  --ill1 ILL1           file with left illumina reads for polishing
+  --ill2 ILL2           file with right illumina reads for polishing
+  --outdir OUTDIR       output directory, default - the assembler's output dir
+  --completeness COMPLETENESS
+                        Completeness cutoff for viralComplete,  default - 0.5
+  --threads THREADS     Threads used, default - 10
 ```
 

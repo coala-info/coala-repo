@@ -3,10 +3,10 @@
 ## clove
 
 ### Tool Description
-CLOVE (Characterization of LOng-range Variant Evidence) is a tool for integrating structural variant calls from multiple algorithms.
+CLOVE: Structural variant classification tool
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/clove:0.17--py36_0
+- **Docker Image**: quay.io/biocontainers/clove:0.17--hdfd78af_2
 - **Homepage**: https://github.com/PapenfussLab/clove
 - **Package**: https://anaconda.org/channels/bioconda/packages/clove/overview
 - **Validation**: PASS
@@ -18,37 +18,13 @@ CLOVE (Characterization of LOng-range Variant Evidence) is a tool for integratin
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 18:12:35  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/clove:0.17--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-1758893704/rootfs/lib/libc-2.18.so: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## clove_clove.jar
-
-### Tool Description
-CLOVE (Characterization of LOw-frequency Variants in Evolution) is a tool for identifying and characterizing low-frequency variants.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/clove:0.17--py36_0
-- **Homepage**: https://github.com/PapenfussLab/clove
-- **Package**: https://anaconda.org/channels/bioconda/packages/clove/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 18:13:37  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/clove:0.17--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b0dc45cd432d14fb6df7d3239dc15d09c63906f8e7bfd373a4647b107fc3746c: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-3164916170/rootfs/lib/libc-2.18.so: no space left on device
+Options (all mandatory -- input can be specified more than once):
+	-i <list of breakpoints> <algorithm (Socrates/Delly/Delly2/Crest/Gustaf/BEDPE/GRIDSS)>
+	-b <BAM file> 
+	-c <mean coverage> <coverage>
+	-o <output filename> [default: CLOVE.vcf]
+	-r Do not perform read depth check. This option will lead all deletions and tandem 
+	   duplications to fail, but runs a lot faster. Use to get an idea about complex 
+	   variants only.
 ```
 

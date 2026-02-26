@@ -1,8 +1,9 @@
 ---
 name: clove
-description: Clove is a specialized post-processing tool designed to refine the output of genomic structural variation detection algorithms.
+description: Clove refines and classifies genomic structural variation calls by integrating multiple algorithm outputs and validating them against read depth information. Use when user asks to classify complex structural variations, merge calls from different SV detection algorithms, or validate fusion calls using BAM file read depth.
 homepage: https://github.com/PapenfussLab/clove
 ---
+
 
 # clove
 

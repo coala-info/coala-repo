@@ -1,8 +1,9 @@
 ---
 name: artex
-description: Artex (Artic pipeline extension) is a bioinformatics tool designed to salvage variants at low-coverage or low-quality sites that are typically missed or filtered out by the standard ARTIC pipeline.
+description: Artex salvages low-coverage or low-quality variants missed by the ARTIC pipeline by re-calling them using Clair3. Use when user asks to recover filtered variants, re-call variants from ARTIC FAIL files, or improve genomic profiles for low-quality sequencing sites.
 homepage: https://github.com/JMencius/Artex
 ---
+
 
 # artex
 

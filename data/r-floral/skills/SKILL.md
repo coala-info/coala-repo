@@ -1,8 +1,9 @@
 ---
 name: r-floral
-description: R package floral (documentation from project home).
+description: FLORAL performs log-ratio lasso regression for compositional data to predict continuous, binary, or survival outcomes. Use when user asks to fit penalized regression models on microbiome data, perform feature selection with zero-sum constraints, or analyze longitudinal compositional covariates.
 homepage: https://cran.r-project.org/web/packages/floral/index.html
 ---
+
 
 # r-floral
 

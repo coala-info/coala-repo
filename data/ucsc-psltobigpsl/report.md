@@ -3,7 +3,7 @@
 ## ucsc-psltobigpsl
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build or fetch the OCI image.
+Convert a PSL file to a bigPsl file, which can then be converted to bigBed format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0
@@ -18,13 +18,127 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltobigpsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cab2d3feae38: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1700081893: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## ucsc-psltobigpsl_bedSort
+
+### Tool Description
+Sort a BED file by chromosome and start position. This is a standard utility from the UCSC Genome Browser toolset, often used to prepare BED files for conversion to BigBed format.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-psltobigpsl/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltobigpsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cab2d3feae38: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1789619729: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+## ucsc-psltobigpsl_bedToBigBed
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-psltobigpsl/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltobigpsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cab2d3feae38: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4179494692: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+## ucsc-psltobigpsl_fetchChromSizes
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-psltobigpsl/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltobigpsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cab2d3feae38: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3997587488: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+## ucsc-psltobigpsl_twoBitInfo
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0
+- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
+- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-psltobigpsl/overview
+- **Validation**: FAIL (generation failed)
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+### Validation Errors
+- No inputs — do not generate CWL.
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/ucsc-psltobigpsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-psltobigpsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+cab2d3feae38: Pulling fs layer
+cab2d3feae38: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob4031175331: no space left on device
+
+Run 'docker run --help' for more information
+```
+

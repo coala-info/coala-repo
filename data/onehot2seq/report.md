@@ -3,7 +3,7 @@
 ## onehot2seq
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error logs related to a container environment (Singularity/Apptainer) failing to build an image due to insufficient disk space.
+Converts one-hot encoded sequences to biological sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/onehot2seq:0.0.2--pyh086e186_1
@@ -18,29 +18,20 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/onehot2seq:0.0.2--pyh086e186_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1412466749: no space left on device
-```
+usage: onehot2seq [-h] -i INPUT -o OUTPUT -t <dna/rna/protein> [-a]
+                  [-f {txt,fasta}] [-v]
 
-
-## Metadata
-- **Skill**: generated
-
-## onehot2seq_seq2onehot
-
-### Tool Description
-A tool for converting between one-hot encoded data and sequences. (Note: The provided text contained only system error logs and no help documentation; no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/onehot2seq:0.0.2--pyh086e186_1
-- **Homepage**: https://github.com/akikuno/onehot2seq
-- **Package**: https://anaconda.org/channels/bioconda/packages/onehot2seq/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/onehot2seq:0.0.2--pyh086e186_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2580087930: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Numpy npy file
+  -o OUTPUT, --output OUTPUT
+                        FASTA or text file
+  -t <dna/rna/protein>, --type <dna/rna/protein>
+                        Sequence type (DNA/RNA/Protein)
+  -a, --ambiguous       Accept ambiguous characters
+  -f {txt,fasta}, --format {txt,fasta}
+                        FASTA or text file (defalt:txt)
+  -v, --version         show program's version number and exit
 ```
 

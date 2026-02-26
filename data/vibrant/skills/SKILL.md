@@ -1,8 +1,9 @@
 ---
 name: vibrant
-description: VIBRANT (Virus Identification By iteRative ANnoTation) is a specialized bioinformatic tool designed for the high-throughput identification of viruses within genomic data.
+description: VIBRANT identifies viruses and integrated prophages in genomic data. Use when user asks to identify viruses, distinguish viral sequences from microbial backgrounds, annotate viral sequences, identify circular viral sequences, or extract prophages.
 homepage: https://github.com/AnantharamanLab/VIBRANT
 ---
+
 
 # vibrant
 

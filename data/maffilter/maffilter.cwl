@@ -2,10 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: maffilter
 label: maffilter
-doc: "The provided text does not contain help information for the tool. It contains
-  error messages related to a container runtime (Singularity/Apptainer) failing to
-  build an image due to insufficient disk space.\n\nTool homepage: https://github.com/jydu/maffilter"
-inputs: []
+doc: "MAF Filter\n\nTool homepage: https://github.com/jydu/maffilter"
+inputs:
+  - id: name1
+    type:
+      - 'null'
+      - string
+    doc: name1=value1
+    inputBinding:
+      position: 1
+  - id: name2
+    type:
+      - 'null'
+      - string
+    doc: name2=value2
+    inputBinding:
+      position: 2
+  - id: option_file
+    type:
+      - 'null'
+      - File
+    doc: param=option_file
+    inputBinding:
+      position: 3
 outputs:
   - id: stdout
     type: stdout

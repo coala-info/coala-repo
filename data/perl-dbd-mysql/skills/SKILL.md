@@ -1,8 +1,9 @@
 ---
 name: perl-dbd-mysql
-description: The `perl-dbd-mysql` skill provides procedural knowledge for implementing the MySQL driver for the Perl5 Database Interface (DBI).
+description: This tool provides the MySQL driver for the Perl5 Database Interface to enable communication between Perl scripts and MySQL databases. Use when user asks to establish database connections, execute SQL queries, handle results, or manage MySQL configurations within a Perl environment.
 homepage: https://dbi.perl.org
 ---
+
 
 # perl-dbd-mysql
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hguatlas13k.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings for the hguatlas13k microarray platform. Use when user asks to map hguatlas13k probe identifiers to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hguatlas13k.db.html
 ---
+
 
 # bioconductor-hguatlas13k.db
 

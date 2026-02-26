@@ -1,8 +1,9 @@
 ---
 name: bioconductor-medicagocdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Medicago truncatula genome used in Affymetrix microarray analysis. Use when user asks to map probes to probe sets for Medicago truncatula microarrays or process Affymetrix expression data for this species.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/medicagocdf.html
 ---
+
 
 # bioconductor-medicagocdf
 

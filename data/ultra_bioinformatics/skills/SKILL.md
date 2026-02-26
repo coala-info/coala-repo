@@ -1,8 +1,9 @@
 ---
 name: ultra_bioinformatics
-description: uLTRA (Universal Long-read Transcriptome Aligner) is a tool designed to align long RNA-seq reads to a genome using a database of exon annotations.
+description: uLTRA aligns long RNA-seq reads to a genome using exon annotations for superior accuracy. Use when user asks to index a genome, index GTF annotations, align long RNA-seq reads, align Oxford Nanopore reads, align PacBio Iso-Seq reads, or run an all-in-one alignment pipeline.
 homepage: https://github.com/ksahlin/uLTRA
 ---
+
 
 # ultra_bioinformatics
 

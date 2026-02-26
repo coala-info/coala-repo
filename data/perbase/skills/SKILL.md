@@ -1,8 +1,9 @@
 ---
 name: perbase
-description: perbase is a specialized bioinformatics utility written in Rust, designed to provide extremely fast and accurate per-base metrics from sequencing alignment files.
+description: "perbase provides high-speed per-base metrics and nucleotide counts from sequencing alignment files. Use when user asks to calculate base depth, generate per-base composition tables, or resolve overlapping mates in BAM or CRAM files."
 homepage: https://github.com/sstadick/perbase
 ---
+
 
 # perbase
 

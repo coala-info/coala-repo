@@ -1,8 +1,9 @@
 ---
 name: gnuvid
-description: GNUVID is a specialized bioinformatics tool designed for the rapid identification and classification of SARS-CoV-2 viral genomes.
+description: gnuvid identifies and classifies SARS-CoV-2 viral genomes by assigning them to Clonal Complexes using exact allele matching and machine learning. Use when user asks to classify SARS-CoV-2 sequences, assign genomes to Clonal Complexes, or identify viral variants from FASTA files.
 homepage: https://github.com/ahmedmagds/GNUVID
 ---
+
 
 # gnuvid
 

@@ -1,8 +1,9 @@
 ---
 name: watchdog-wms
-description: Watchdog is a Java-based Workflow Management System (WMS) designed specifically for high-throughput data analysis, such as next-generation sequencing.
+description: Watchdog-wms is a Java-based Workflow Management System designed for high-throughput data analysis. Use when user asks to process replicate data, resume a workflow, detach from or reattach to a workflow session, manage dependencies, implement custom scripts, generate module definitions or documentation, enable module versioning, configure error detection, execute workflows across distributed systems, or extend WMS functionality.
 homepage: https://www.bio.ifi.lmu.de/watchdog https://github.com/klugem/watchdog
 ---
+
 
 # watchdog-wms
 

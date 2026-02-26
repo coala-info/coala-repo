@@ -1,8 +1,9 @@
 ---
 name: plasnet
-description: Plasnet is a specialized tool for the comparative analysis of plasmids through network-based clustering.
+description: Plasnet performs comparative analysis of plasmids by transforming evolutionary distances into hierarchical network clusters. Use when user asks to partition plasmid graphs into communities, refine clusters into subcommunities using precise distance metrics, or map sample metadata onto plasmid networks.
 homepage: https://github.com/leoisl/plasnet
 ---
+
 
 # plasnet
 

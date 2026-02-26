@@ -1,8 +1,9 @@
 ---
 name: hsdfinder
-description: HSDFinder is a bioinformatics tool designed to identify gene duplicates with high sequence similarity in eukaryotic organisms.
+description: HSDFinder identifies gene duplicates with high sequence similarity in eukaryotic organisms by integrating sequence alignment data with functional domain annotations. Use when user asks to identify highly similar duplicates, categorize duplicated genes, or execute the HSD prediction pipeline.
 homepage: https://github.com/zx0223winner/HSDFinder
 ---
+
 
 # hsdfinder
 

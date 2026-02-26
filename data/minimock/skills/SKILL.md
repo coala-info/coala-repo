@@ -1,8 +1,9 @@
 ---
 name: minimock
-description: MiniMock is a minimalist Python library designed for creating mock objects with the least amount of ceremony possible.
+description: MiniMock is a minimalist Python library for creating simple mock objects that record calls and return predefined values. Use when user asks to create mock objects, replace functions in modules with mocks, or verify function calls and arguments in tests.
 homepage: http://pypi.python.org/pypi/MiniMock
 ---
+
 
 # minimock
 

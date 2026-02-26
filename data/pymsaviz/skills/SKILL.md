@@ -1,8 +1,9 @@
 ---
 name: pymsaviz
-description: `pymsaviz` is a Python-based visualization tool built on matplotlib specifically for Multiple Sequence Alignments.
+description: "pymsaviz generates customizable, publication-ready visualizations of multiple sequence alignments using matplotlib. Use when user asks to visualize sequence alignments, highlight conservation patterns, or add annotations to multiple sequence alignment plots."
 homepage: https://moshi4.github.io/pyMSAviz/
 ---
+
 
 # pymsaviz
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanstemcell
-description: the package is available on all platforms; click for details.
+description: This tool provides access to Affymetrix time-course expression data from human embryonic stem cells. Use when user asks to load the humanStemCell dataset, analyze H1 line expression data, or compare undifferentiated and differentiated stem cell states.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/humanStemCell.html
 ---
+
 
 # bioconductor-humanstemcell
 

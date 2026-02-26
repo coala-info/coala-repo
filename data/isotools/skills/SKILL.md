@@ -1,8 +1,9 @@
 ---
 name: isotools
-description: `isotools` is a specialized Python library designed to handle the unique challenges of long-read transcriptomics.
+description: Isotools is a Python library for the analysis, classification, and visualization of long-read transcriptomics data. Use when user asks to import long-read BAM files, classify novel transcripts against a reference, or perform differential splicing analysis.
 homepage: https://github.com/MatthiasLienhard/isotools
 ---
+
 
 # isotools
 

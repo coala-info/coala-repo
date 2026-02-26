@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.oni.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides Medical Subject Headings (MeSH) annotation for Oncorhynchus nerka (Sockeye salmon) mapped to Entrez Gene identifiers. Use when user asks to map MeSH terms to genes, perform functional annotation, or conduct enrichment analysis for sockeye salmon.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Oni.eg.db.html
 ---
+
 
 # bioconductor-mesh.oni.eg.db
 

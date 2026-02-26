@@ -1,8 +1,9 @@
 ---
 name: r-aod
-description: "Provides a set of functions to analyse         overdispersed counts or proportions. Most of the methods are         already available elsewhere but are scattered in different         packages. The proposed functions should be considered as         complements to more sophisticated methods such as generalized         estimating equations (GEE) or generalized linear mixed effect         models (GLMM).</p>"
+description: This tool analyzes overdispersed counts or proportions in R by fitting beta-binomial and negative-binomial models. Use when user asks to fit models for overdispersed data, calculate intraclass correlation coefficients, perform Donner's tests, or execute Wald tests for hypothesis testing on model parameters.
 homepage: https://cloud.r-project.org/web/packages/aod/index.html
 ---
+
 
 # r-aod
 

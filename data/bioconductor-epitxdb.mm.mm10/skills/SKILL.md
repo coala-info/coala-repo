@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epitxdb.mm.mm10
-description: the package is available on all platforms; click for details.
+description: This package provides an EpiTxDb object containing RNA modification data for the mouse genome (mm10) sourced from RMBase v2.0 and tRNAdb. Use when user asks to load mouse RNA modification data, retrieve epitranscriptomic annotations as GRanges, or integrate tRNA and RMBase modifications into Bioconductor workflows.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Mm.mm10.html
 ---
+
 
 # bioconductor-epitxdb.mm.mm10
 

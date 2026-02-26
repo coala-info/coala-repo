@@ -1,8 +1,9 @@
 ---
 name: dastk
-description: DAStk (Differential ATAC-seq Toolkit) is a command-line suite designed to identify transcription factor (TF) activity shifts between biological states.
+description: DAStk identifies transcription factor activity shifts between biological states by calculating motif displacement scores from ATAC-seq or similar chromatin accessibility data. Use when user asks to calculate MD-scores, identify differential transcription factor activity, or generate barcode and MA plots for motif displacement.
 homepage: https://github.com/Dowell-Lab/DAStk
 ---
+
 
 # dastk
 

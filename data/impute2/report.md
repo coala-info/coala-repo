@@ -3,7 +3,7 @@
 ## impute2
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system error messages related to a container runtime failure.
+IMPUTE version 2.3.2
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/impute2:2.3.2--1
@@ -18,29 +18,17 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/impute2:2.3.2--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3037260322: no space left on device
-```
+======================
+ IMPUTE version 2.3.2 
+======================
 
+Copyright 2008 Bryan Howie, Peter Donnelly, and Jonathan Marchini
+Please see the LICENCE file included with this program for conditions of use.
 
-## Metadata
-- **Skill**: generated
+The seed for the random number generator is 217657001.
 
-## impute2_impute_genome.pl
+Command-line input: impute2 -h
 
-### Tool Description
-A script for genome imputation using IMPUTE2. (Note: The provided text contains system error logs regarding container execution and does not include usage instructions or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/impute2:2.3.2--1
-- **Homepage**: https://github.com/johnlees/23andme-impute
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/impute2:2.3.2--1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3261106007: no space left on device
+ERROR: You must specify a valid interval for imputation using the -int argument.
 ```
 

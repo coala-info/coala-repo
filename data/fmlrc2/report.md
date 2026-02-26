@@ -3,7 +3,7 @@
 ## fmlrc2
 
 ### Tool Description
-FMLRC2: FM-index Long Read Corrector 2 (Note: The provided help text contains only system error messages and no usage information or arguments to parse).
+FM-index Long Read Corrector - Rust implementation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0
@@ -18,29 +18,33 @@ FMLRC2: FM-index Long Read Corrector 2 (Note: The provided help text contains on
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3359440120: no space left on device
-```
+FMLRC2 0.1.8
+J. Matthew Holt <jholt@hudsonalpha.org>
+FM-index Long Read Corrector - Rust implementation
 
+USAGE:
+    fmlrc2 [FLAGS] [OPTIONS] <COMP_MSBWT.NPY> <LONG_READS.FA> <CORRECTED_READS.FA>
 
-## Metadata
-- **Skill**: generated
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+    -v, --verbose    enable verbose output
 
-## fmlrc2_fmlrc2-convert
+OPTIONS:
+    -b, --begin_index <begin_id>           index of read to start with (default: 0)
+    -B, --branch_factor <branch_factor>    branching factor for correction, scaled by k (default: 4.0)
+    -C, --cache_size <cache_size>          the length of k-mer to precompute in cache (default: 8)
+    -e, --end_index <end_id>               index of read to end with (default: end of file)
+    -k, --K <kmer_sizes>...                k-mer sizes for correction, can be specified multiple times (default: "-k 21
+                                           59")
+    -m, --min_count <min_count>            absolute minimum k-mer count to consisder a path (default: 5)
+    -f, --min_dynamic_count <min_frac>     dynamic minimum k-mer count fraction of median to consider a path (default:
+                                           0.1)
+    -t, --threads <threads>                number of correction threads (default: 1)
 
-### Tool Description
-The provided text does not contain help information or a description of the tool; it appears to be a container runtime error log. Based on the tool name, this utility is typically used for converting BWT formats in the FMLRC2 suite.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0
-- **Homepage**: https://github.com/HudsonAlpha/rust-fmlrc
-- **Package**: https://anaconda.org/channels/bioconda/packages/fmlrc2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fmlrc2:0.1.8--h7f95895_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2674862570: no space left on device
+ARGS:
+    <COMP_MSBWT.NPY>        The compressed BWT file with high accuracy reads
+    <LONG_READS.FA>         The FASTX file with uncorrected reads
+    <CORRECTED_READS.FA>    The FASTA file to write corrected reads to
 ```
 

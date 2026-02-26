@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ggallus.ucsc.galgal6
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Gallus gallus (Chicken) based on the UCSC galGal6 assembly for use in R. Use when user asks to retrieve chicken chromosome sequences, calculate sequence lengths, perform genome-wide motif searching, or analyze GC content for the galGal6 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ggallus.UCSC.galGal6.html
 ---
+
 
 # bioconductor-bsgenome.ggallus.ucsc.galgal6
 

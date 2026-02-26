@@ -1,8 +1,9 @@
 ---
 name: ucsc-genepredtogtf
-description: The `genePredToGtf` utility is a specialized tool from the UCSC Kent toolkit used to transform gene models from the UCSC-specific `genePred` format into the standard GTF format.
+description: This tool converts gene models from UCSC genePred format to GTF format. Use when user asks to convert gene models from genePred format to GTF, transform gene annotation files, or convert gene tracks.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-genepredtogtf
 

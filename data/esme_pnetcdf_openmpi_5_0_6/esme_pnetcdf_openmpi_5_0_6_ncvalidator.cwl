@@ -2,15 +2,43 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ncvalidator
 label: esme_pnetcdf_openmpi_5_0_6_ncvalidator
-doc: "A tool for validating NetCDF files (Note: The provided help text contains only
-  system error messages regarding container execution and does not list specific command-line
-  arguments).\n\nTool homepage: https://parallel-netcdf.github.io/"
-inputs: []
+doc: "Validate netCDF files\n\nTool homepage: https://parallel-netcdf.github.io/"
+inputs:
+  - id: file
+    type: File
+    doc: Input netCDF file name
+    inputBinding:
+      position: 1
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet mode (exit 1 when fail, 0 success)
+    inputBinding:
+      position: 102
+      prefix: -q
+  - id: repair_header
+    type:
+      - 'null'
+      - boolean
+    doc: Repair in-place the null-byte padding in file header.
+    inputBinding:
+      position: 102
+      prefix: -x
+  - id: trace
+    type:
+      - 'null'
+      - boolean
+    doc: Turn on tracing mode, printing progress of validation
+    inputBinding:
+      position: 102
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
+    dockerPull: 
+      quay.io/biocontainers/esme_pnetcdf_openmpi_5_0_6:1.14.0--h1080dc9_0
 stdout: esme_pnetcdf_openmpi_5_0_6_ncvalidator.out

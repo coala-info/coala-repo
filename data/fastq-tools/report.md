@@ -1,12 +1,12 @@
 # fastq-tools CWL Generation Report
 
-## fastq-tools
+## fastq-tools_fastq-sample
 
 ### Tool Description
-The provided text does not contain help information for fastq-tools. It contains a fatal error message from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space.
+Sample random reads from a FASTQ file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
+- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h1104d80_7
 - **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
 - **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
 - **Validation**: PASS
@@ -18,114 +18,49 @@ The provided text does not contain help information for fastq-tools. It contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2716676895: no space left on device
+fastq-sample [OPTION]... FILE [FILE2]
+Sample random reads from a FASTQ file.Options:
+  -n N                    the number of reads to sample (default: 10000)
+  -p N                    the proportion of the total reads to sample
+  -o, --output=PREFIX     output file prefix
+ (Default: "sample")  -c, --complement-output=PREFIX
+                          output reads not included in the random sample to
+                          a file (or files) with the given prefix (by default,
+                          they are not output).
+  -r, --with-replacement  sample with replacement
+  -s, --seed=SEED         a manual seed to the random number generator
+  -h, --help              print this message
+  -V, --version           output version information and exit
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## fastq-tools_fastq-stats
-
-### Tool Description
-A tool to calculate statistics for FASTQ files. (Note: The provided help text contained only system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
-- **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1942816384: no space left on device
-```
-
-## fastq-tools_fastq-qual-filter
-
-### Tool Description
-The provided help text contains system error messages related to container execution and does not contain tool-specific usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
-- **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2316509499: no space left on device
-```
-
-## fastq-tools_fastq-trim
-
-### Tool Description
-A tool for trimming FASTQ files (Note: The provided help text contains only system error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
-- **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2914594397: no space left on device
-```
-
-## fastq-tools_fastq-to-fasta
-
-### Tool Description
-A tool to convert FASTQ files to FASTA format. (Note: The provided help text contains system error messages and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
-- **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3620148532: no space left on device
-```
-
-## fastq-tools_fastq-sample
-
-### Tool Description
-A tool from the fastq-tools suite. Note: The provided help text contains system error messages and does not list usage or arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
-- **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4017275140: no space left on device
-```
 
 ## fastq-tools_fastq-sort
 
 ### Tool Description
-Sort FASTQ files (Note: The provided help text contained only container execution errors and no usage information. No arguments could be extracted.)
+Concatenate and sort FASTQ files and write to standard output.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1
+- **Docker Image**: quay.io/biocontainers/fastq-tools:0.8.3--h1104d80_7
 - **Homepage**: http://homes.cs.washington.edu/~dcjones/fastq-tools/
 - **Package**: https://anaconda.org/channels/bioconda/packages/fastq-tools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastq-tools:0.8.3--h38613fd_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1407474807: no space left on device
+fastq-sort [OPTION]... [FILE]...
+Concatenate and sort FASTQ files and write to standard output.
+Options:
+  -r, --reverse      sort in reverse (i.e., descending) order
+  -i, --id           sort alphabetically by read identifier
+  -n, --idn          sort alphanumerically by read identifier according to "samtools sort -n"
+  -s, --seq          sort alphabetically by sequence
+  -R, --random       randomly shuffle the sequences
+      --seed[=SEED]  seed to use for random shuffle.
+  -G, --gc           sort by GC content
+  -M, --mean-qual    sort by median quality score
+  -S, --buffer-size=SIZE         amount of memory to use for sorting
+  -T, --temporary-directory=DIR  write temporary files here, instead of $TMPDIR, or /tmp
+  -h, --help         print this message
+  -V, --version      output version information and exit
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drugvsdiseasedata
-description: the package is available on all platforms; click for details.
+description: This package provides curated gene expression profiles, disease clusters, and annotation maps for the DrugVsDisease pipeline. Use when user asks to access ranked disease signatures, map Affymetrix probes to gene symbols, or retrieve network attributes for drug-disease repurposing analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DrugVsDiseasedata.html
 ---
+
 
 # bioconductor-drugvsdiseasedata
 

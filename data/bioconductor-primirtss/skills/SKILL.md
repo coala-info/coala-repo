@@ -1,8 +1,9 @@
 ---
 name: bioconductor-primirtss
-description: the package is available on all platforms; click for details.
+description: This R package predicts the transcription start sites of primary microRNAs by integrating various genomic features. Use when user asks to predict pri-miRNA transcription start sites, identify miRNA promoters, or locate the initiation points of microRNA transcription.
 homepage: https://bioconductor.org/packages/release/bioc/html/primirTSS.html
 ---
+
 
 # bioconductor-primirtss
 

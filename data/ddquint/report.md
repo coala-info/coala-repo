@@ -3,7 +3,7 @@
 ## ddquint
 
 ### Tool Description
-ddquint tool (Help text unavailable in provided input)
+ddQuint: Digital Droplet PCR Multiplex Analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ddquint:0.1.0--pyhdfd78af_0
@@ -18,11 +18,41 @@ ddquint tool (Help text unavailable in provided input)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddquint:0.1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4178063720: no space left on device
+usage: ddquint [-h] [--dir DIR] [--batch] [--output OUTPUT] [--verbose]
+               [--debug] [--config [CONFIG]] [--template [TEMPLATE]]
+               [--QXtemplate [QXTEMPLATE]] [--parameters]
+
+ddQuint: Digital Droplet PCR Multiplex Analysis
+
+options:
+  -h, --help            show this help message and exit
+  --dir DIR             Directory containing CSV files to process
+  --batch               Process multiple directories (allows selection of
+                        multiple folders)
+  --output OUTPUT       Output directory for results (defaults to input
+                        directory)
+  --verbose             Enable verbose output
+  --debug               Enable debug mode with detailed logging
+  --config [CONFIG]     Configuration file or command (display, template, or
+                        path to config file)
+  --template [TEMPLATE]
+                        Template file path for well names, or 'prompt' to
+                        select via GUI
+  --QXtemplate [QXTEMPLATE]
+                        Create a plate template from a sample list
+                        (CSV/Excel). Optionally provide a path or use 'prompt'
+                        for a GUI selector.
+  --parameters          Open parameter editor GUI for EXPECTED_CENTROIDS and
+                        HDBSCAN settings
+
+Examples:
+  ddquint                           # Interactive analysis mode with GUI
+  ddquint --dir /path/to/csv        # Process specific directory
+  ddquint --batch                   # Process multiple directories with GUI selection
+  ddquint --parameters              # Open parameter editor GUI
+  ddquint --QXtemplate              # Interactively create a plate template
+  ddquint --QXtemplate list.xlsx    # Create template from a specific file
+  ddquint --config                  # Display configuration
+  ddquint --config template         # Generate config template
 ```
 
-
-## Metadata
-- **Skill**: generated

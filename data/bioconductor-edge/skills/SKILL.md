@@ -1,8 +1,9 @@
 ---
 name: bioconductor-edge
-description: the package is available on all platforms; click for details.
+description: This tool performs differential gene expression analysis using the Optimal Discovery Procedure and Likelihood Ratio Test. Use when user asks to analyze genome-wide expression studies, perform static group comparisons, or model independent and longitudinal time course data.
 homepage: https://bioconductor.org/packages/release/bioc/html/edge.html
 ---
+
 
 # bioconductor-edge
 

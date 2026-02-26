@@ -1,8 +1,9 @@
 ---
 name: perl-pod-coverage
-description: The `perl-pod-coverage` tool (based on the `Pod::Coverage` module) provides a way to check if the public API of a Perl module is documented.
+description: This tool checks if the public API of a Perl module is documented by cross-referencing available subroutines with POD documentation. Use when user asks to check Perl module documentation coverage, identify undocumented subroutines, or verify that a library meets documentation standards.
 homepage: https://github.com/richardc/perl-pod-coverage
 ---
+
 
 # perl-pod-coverage
 

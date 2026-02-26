@@ -1,8 +1,9 @@
 ---
 name: hunspell-de-med
-description: This skill facilitates the deployment and use of a specialized German dictionary that combines standard German (frami) with medical terminology.
+description: This tool provides a German dictionary that combines standard vocabulary with medical terminology for spell-checking. Use when user asks to install a German medical dictionary, check medical documents for spelling, or replace the default German dictionary with medical terms.
 homepage: https://github.com/glutanimate/hunspell-de-med-workaround
 ---
+
 
 # hunspell-de-med
 

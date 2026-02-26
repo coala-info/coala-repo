@@ -3,7 +3,7 @@
 ## degenotate
 
 ### Tool Description
-A tool for degenotating sequences (Note: The provided help text contains only system error messages and no usage information).
+A tool to annotate degeneracy (0-fold, 2-fold, 3-fold, and 4-fold sites) in a genome given an annotation and a genome file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0
@@ -18,29 +18,13 @@ A tool for degenotating sequences (Note: The provided help text contains only sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1564812657: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0' locally
+1.3--pyhdfd78af_0: Pulling from biocontainers/degenotate
+ca7680d1025d: Already exists
+bd9ddc54bea9: Already exists
+bc7e986c5580: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2670122648: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## degenotate_degenotate.py
-
-### Tool Description
-A tool for characterizing the degeneracy of sites in a genome. (Note: The provided help text contained only system error messages regarding container execution and did not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0
-- **Homepage**: https://github.com/harvardinformatics/degenotate
-- **Package**: https://anaconda.org/channels/bioconda/packages/degenotate/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/degenotate:1.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3263902897: no space left on device
+Run 'docker run --help' for more information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dyndoc
-description: the package is available on all platforms; click for details.
+description: This tool manages and interacts with dynamic documents and Bioconductor vignettes by programmatically extracting, editing, and evaluating code chunks. Use when user asks to extract code from .Rnw or .Snw files, manage vignette metadata, or evaluate specific code chunks in controlled environments.
 homepage: https://bioconductor.org/packages/release/bioc/html/DynDoc.html
 ---
+
 
 # bioconductor-dyndoc
 

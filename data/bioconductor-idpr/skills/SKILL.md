@@ -1,8 +1,9 @@
 ---
 name: bioconductor-idpr
-description: the package is available on all platforms; click for details.
+description: This tool analyzes intrinsically disordered proteins and regions by calculating physicochemical properties and performing sequence alignments. Use when user asks to calculate protein charge and hydropathy, generate Uversky plots, identify disordered regions using sliding windows, or align sequences using specialized disorder-specific substitution matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/idpr.html
 ---
+
 
 # bioconductor-idpr
 

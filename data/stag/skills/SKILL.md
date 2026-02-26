@@ -1,8 +1,9 @@
 ---
 name: stag
-description: STAG (hierarchical Taxonomic Classifier) is a specialized tool for the taxonomic annotation of metagenomic sequences.
+description: STAG is a hierarchical taxonomic classifier that uses LASSO logistic regression to annotate metagenomic sequences, marker genes, and genomes. Use when user asks to classify gene sequences, perform taxonomic annotation of 16S amplicon data, or classify whole genomes.
 homepage: https://github.com/zellerlab/stag
 ---
+
 
 # stag
 

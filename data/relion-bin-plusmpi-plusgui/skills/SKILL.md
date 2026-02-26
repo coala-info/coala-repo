@@ -1,8 +1,9 @@
 ---
 name: relion-bin-plusmpi-plusgui
-description: RELION (REgularised LIkelihood OptimisatioN) is a specialized software package for the structural biology domain, specifically designed for the high-resolution reconstruction of macromolecules from cryo-electron microscopy images.
+description: RELION is a software package for high-resolution reconstruction of macromolecules from cryo-electron microscopy images using Bayesian optimization and MPI parallelization. Use when user asks to launch the RELION GUI, perform 2D or 3D classification, refine macromolecular structures, or execute motion correction and CTF estimation.
 homepage: https://github.com/3dem/relion
 ---
+
 
 # relion-bin-plusmpi-plusgui
 

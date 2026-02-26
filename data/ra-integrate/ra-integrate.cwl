@@ -1,11 +1,38 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ra-integrate
+baseCommand: /usr/local/bin/ra-integrate
 label: ra-integrate
-doc: "A tool for integrating genomic data (Note: The provided text is a container
-  runtime error log and does not contain usage information or argument definitions).\n
-  \nTool homepage: https://github.com/mediavrog/integrated-rating-request"
-inputs: []
+doc: "ra-integrate\n\nTool homepage: https://github.com/mediavrog/integrated-rating-request"
+inputs:
+  - id: fasta_reads
+    type: File
+    doc: fasta_reads
+    inputBinding:
+      position: 1
+  - id: directory
+    type:
+      - 'null'
+      - Directory
+    doc: Set given dirpath as working directory
+    inputBinding:
+      position: 102
+      prefix: --directory
+  - id: overlaps_file
+    type:
+      - 'null'
+      - File
+    doc: Skip overlap phase and use overlaps from given file
+    inputBinding:
+      position: 102
+      prefix: --overlaps
+  - id: spec_file
+    type:
+      - 'null'
+      - File
+    doc: Set given spec file
+    inputBinding:
+      position: 102
+      prefix: --spec
 outputs:
   - id: stdout
     type: stdout

@@ -3,7 +3,7 @@
 ## graphlan
 
 ### Tool Description
-GraPhlAn is a software tool for producing high-quality circular representations of taxonomic and phylogenetic trees. (Note: The provided text contains system error messages regarding container execution and does not list command-line arguments.)
+GraPhlAn 1.1.3 (5 June 2018) AUTHORS: Nicola Segata (nsegata@hsph.harvard.edu)
 
 ### Metadata
 - **Docker Image**: biocontainers/graphlan:v1.1.3-1-deb_cv1
@@ -18,46 +18,40 @@ GraPhlAn is a software tool for producing high-quality circular representations 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/graphlan:v1.1.3-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3490338731: no space left on device
-```
+usage: graphlan [-h] [--format ['output_image_format']] [--warnings WARNINGS]
+                [--positions POSITIONS] [--dpi image_dpi] [--size image_size]
+                [--pad pad_in] [--external_legends] [--avoid_reordering] [-v]
+                input_tree output_image
 
+GraPhlAn 1.1.3 (5 June 2018) AUTHORS: Nicola Segata (nsegata@hsph.harvard.edu)
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  input_tree            the input tree in PhyloXML format
+  output_image          the output image, the format is guessed from the
+                        extension unless --format is given. Available file
+                        formats are: png, pdf, ps, eps, svg
 
-## graphlan_graphlan_annotate.py
-
-### Tool Description
-GraPhlAn annotation tool (Note: The provided text contains container runtime error messages and does not include the tool's help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: biocontainers/graphlan:v1.1.3-1-deb_cv1
-- **Homepage**: https://bitbucket.org/nsegata/graphlan/wiki/Home
-- **Package**: https://anaconda.org/channels/bioconda/packages/graphlan/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/graphlan:v1.1.3-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3159130206: no space left on device
-```
-
-## graphlan_graphlan.py
-
-### Tool Description
-GraPhlAn is a software tool for producing high-quality circular representations of taxonomic and phylogenetic trees. (Note: The provided help text contained only system error messages regarding container execution and did not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: biocontainers/graphlan:v1.1.3-1-deb_cv1
-- **Homepage**: https://bitbucket.org/nsegata/graphlan/wiki/Home
-- **Package**: https://anaconda.org/channels/bioconda/packages/graphlan/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/graphlan:v1.1.3-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2845872805: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --format ['output_image_format']
+                        set the format of the output image (default none
+                        meaning that the format is guessed from the output
+                        file extension)
+  --warnings WARNINGS   set whether warning messages should be reported or not
+                        (default 1)
+  --positions POSITIONS
+                        set whether the absolute position of the points should
+                        be reported on the standard output. The two
+                        cohordinates are r and theta
+  --dpi image_dpi       the dpi of the output image for non vectorial formats
+  --size image_size     the size of the output image (in inches, default 7.0)
+  --pad pad_in          the distance between the most external graphical
+                        element and the border of the image
+  --external_legends    specify whether the two external legends should be put
+                        in separate file or keep them along with the image
+                        (default behavior)
+  --avoid_reordering    specify whether the tree will be reorder or not
+                        (default the tree will be reordered)
+  -v, --version         Prints the current GraPhlAn version and exit
 ```
 

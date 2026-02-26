@@ -1,8 +1,9 @@
 ---
 name: r-haplo.stats
-description: "Routines for the analysis of indirectly measured haplotypes. The statistical methods assume that all subjects are unrelated and that haplotypes are ambiguous (due to unknown linkage phase of the genetic markers). The main functions are: haplo.em(), haplo.glm(), haplo.score(), and haplo.power(); all of which have detailed examples in the vignette.</p>"
+description: This tool performs statistical analysis of haplotypes with traits and covariates when linkage phase is ambiguous. Use when user asks to estimate haplotype frequencies, test associations between haplotypes and traits using score statistics, perform haplotype-based regression, or calculate power and sample size for haplotype studies.
 homepage: https://cloud.r-project.org/web/packages/haplo.stats/index.html
 ---
+
 
 # r-haplo.stats
 

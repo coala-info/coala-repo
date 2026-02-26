@@ -1,9 +1,9 @@
 # plasann CWL Generation Report
 
-## plasann
+## plasann_PlasAnn
 
 ### Tool Description
-A tool for plasmid annotation (Note: The provided text is a container build error log and does not contain usage information or argument definitions).
+PlasAnn v1.1.6 - Comprehensive Plasmid Annotation Pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/plasann:1.1.6--pyhdfd78af_0
@@ -18,14 +18,73 @@ A tool for plasmid annotation (Note: The provided text is a container build erro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plasann:1.1.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:4da514a9e45419ac5a91b7c30d0399d60f989540a3edd49b56ecf5f48b705fff: unpack entry: usr/local/conda-meta/openssl-3.5.4-h26f9b46_0.json: unpack to regular file: short write: write /tmp/build-temp-4059325482/rootfs/usr/local/conda-meta/openssl-3.5.4-h26f9b46_0.json: no space left on device
+usage: PlasAnn [-h] [--version] [--check-deps] [-i INPUT] [-o OUTPUT]
+               [-t {fasta,genbank,auto}] [-n NAME] [--overwrite] [--retain]
+               [--uniprot-blast] [--uniprot-tsv UNIPROT_TSV]
+               [--min-identity MIN_IDENTITY]
+
+PlasAnn v1.1.6 - Comprehensive Plasmid Annotation Pipeline
+
+🧬 Features:
+  • Gene prediction (Prodigal) and functional annotation (BLAST)
+  • Mobile element detection (oriC, oriT, transposons, replicons)
+  • ncRNA detection (Infernal/Rfam) and intergenic gene discovery
+  • Optional UniProt BLAST enhancement for comprehensive annotation
+  • Beautiful circular plasmid visualizations
+  • Batch processing with auto-detection of mixed file types
+
+📖 For detailed documentation, visit: https://github.com/ajlopakin/PlasAnn
+        
+
+options:
+  -h, --help            show this help message and exit
+  --version             Show PlasAnn version and exit
+  --check-deps          Check external dependency status and exit
+  -i, --input INPUT     Input FASTA or GenBank file/folder
+  -o, --output OUTPUT   Output directory
+  -t, --type {fasta,genbank,auto}
+                        Input type: fasta, genbank, or auto (auto-detect from
+                        folder)
+  -n, --name NAME       Custom name for output subfolder (single files only -
+                        ignored for folders)
+  --overwrite           Use Prodigal on GenBank sequence (ignore existing
+                        annotations)
+  --retain              Use GenBank annotations with fallback to translation
+                        (default)
+  --uniprot-blast       Run optional UniProt BLAST annotation (slow but
+                        comprehensive)
+  --uniprot-tsv UNIPROT_TSV
+                        Path to UniProt TSV file (default:
+                        Database/uniprot_plasmids.tsv)
+  --min-identity MIN_IDENTITY
+                        Minimum identity percentage for UniProt BLAST hits
+                        (default: 50%)
+
+📚 Examples:
+
+  Basic Usage:
+    PlasAnn -i plasmid.fasta -o results -t fasta
+    PlasAnn -i plasmid.gb -o results -t genbank
+    PlasAnn -i mixed_folder/ -o results -t auto
+  
+  Enhanced Annotation:
+    PlasAnn -i plasmid.fasta -o results -t fasta --uniprot-blast
+  
+  GenBank Processing Modes:
+    PlasAnn -i plasmid.gb -o results -t genbank --retain   # Use original annotations
+    PlasAnn -i plasmid.gb -o results -t genbank --overwrite # Re-annotate with Prodigal
+  
+  Batch Processing:
+    PlasAnn -i fasta_folder/ -o results -t fasta
+    PlasAnn -i mixed_folder/ -o results -t auto --uniprot-blast
+  
+  System Check:
+    PlasAnn --check-deps
+    PlasAnn --version
+
+🔧 Dependencies: BLAST+, Prodigal, Infernal
+   Install with: conda install -c bioconda blast prodigal infernal
+
+💡 Tip: Use --uniprot-blast for comprehensive protein annotation (slower but thorough)
 ```
 
-
-## Metadata
-- **Skill**: generated

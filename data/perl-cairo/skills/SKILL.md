@@ -1,8 +1,9 @@
 ---
 name: perl-cairo
-description: The `perl-cairo` skill provides a Perlish interface to the powerful Cairo 2D graphics library.
+description: "This tool provides a Perl interface to the Cairo 2D graphics library for device-independent vector drawing. Use when user asks to render graphics to image buffers, create PDF or SVG files, draw vector paths, or handle typography within Perl scripts."
 homepage: http://gtk2-perl.sourceforge.net
 ---
+
 
 # perl-cairo
 

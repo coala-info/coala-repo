@@ -1,8 +1,9 @@
 ---
 name: r-ldrtools
-description: R package ldrtools (documentation from project home).
+description: This tool provides functions for working with linear dimension reduction subspaces by representing them as orthogonal projection matrices. Use when user asks to compute distances between subspaces, convert orthogonal matrices to projection matrices, or calculate average subspaces from multiple results.
 homepage: https://cran.r-project.org/web/packages/ldrtools/index.html
 ---
+
 
 # r-ldrtools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirsynergy
-description: the package is available on all platforms; click for details.
+description: Mirsynergy identifies synergistic miRNA regulatory modules by integrating expression profiles and target site information. Use when user asks to detect miRNA-target modules, analyze synergistic gene regulation, or integrate miRNA and mRNA expression data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Mirsynergy.html
 ---
+
 
 # bioconductor-mirsynergy
 

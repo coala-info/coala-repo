@@ -1,8 +1,9 @@
 ---
 name: genview
-description: genview (GEnView) is a specialized tool for gene-centric comparative genomics.
+description: genview automates the retrieval of genomic sequences and the alignment of gene-centric flanking regions to visualize synteny. Use when user asks to build a database of genetic environments, fetch genomes from NCBI by taxa or accession, or generate comparative maps of target genes.
 homepage: https://github.com/EbmeyerSt/GEnView.git
 ---
+
 
 # genview
 

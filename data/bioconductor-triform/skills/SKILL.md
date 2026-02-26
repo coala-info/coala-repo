@@ -1,8 +1,9 @@
 ---
 name: bioconductor-triform
-description: the package is available on all platforms; click for details.
+description: Triform identifies transcription factor binding sites from ChIP-seq data using a model-based peak calling approach. Use when user asks to call peaks, detect enriched regions in ChIP-seq data, or identify transcription factor binding sites.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/triform.html
 ---
+
 
 # bioconductor-triform
 

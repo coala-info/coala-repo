@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human370quadv3ccrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides data and annotation support for Illumina 370kQuad arrays to be used with the crlmm algorithm. Use when user asks to perform genotype calling, estimate copy number, or preprocess Illumina Human370-Quad BeadChip data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human370quadv3cCrlmm.html
 ---
+
 
 # bioconductor-human370quadv3ccrlmm
 

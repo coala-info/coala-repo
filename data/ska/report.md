@@ -1,9 +1,9 @@
 # ska CWL Generation Report
 
-## ska
+## ska_more
 
 ### Tool Description
-Split K-mer Analysis (SKA) toolkit for genomic data. Note: The provided text appears to be a container build error log rather than help text, so no arguments could be extracted.
+Split Kmer Analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ska:1.0--h077b44d_7
@@ -18,13 +18,32 @@ Split K-mer Analysis (SKA) toolkit for genomic data. Note: The provided text app
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ska:1.0--h077b44d_7 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SKA: Split Kmer Analysis
+Version: 1.0
+Citation: TBA
+
+Usage:
+ska <subcommand>
+
+Subcommands:
+align		Reference-free alignment from a set of split kmer files
+alleles		Create a merged split kmer file for all sequenes in one or
+		more multifasta files
+annotate	Locate/annotate split kmers in a reference fasta/gff file
+compare		Print comparison statistics for a query split kmer file
+		against a set of subject split kmer files
+distance	Pairwise distance calculation and clustering from split kmer
+		files
+fasta		Create a split kmer file from fasta file(s)
+fastq		Create a split kmer file from fastq file(s)
+humanise	Print kmers from a split kmer file in human readable format
+info		Print some information about one or more kmer files
+map		Align split kmer file(s) against a reference fasta file
+merge		Merge split kmer file(s) into one file
+summary		Print split kmer file summary statistics
+type		Type split kmer files using a set of allele files
+unique		Output kmers unique to a set of split kmer files
+version		Print the version and citation for ska
+weed		Weed kmers from a split kmer file
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: tclap
-description: TCLAP is a header-only C++ library designed to simplify the process of parsing command-line arguments.
+description: TCLAP is a header-only C++ library used for parsing command-line arguments in a type-safe and templatized manner. Use when user asks to parse command-line flags, define type-safe arguments, generate automatic help messages, or handle positional and mutually exclusive parameters in C++ applications.
 homepage: https://github.com/mirror/tclap
 ---
+
 
 # tclap
 

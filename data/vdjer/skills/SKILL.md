@@ -1,8 +1,9 @@
 ---
 name: vdjer
-description: V'DJer is a specialized tool for analyzing the BCR repertoire using standard mRNA-Seq data instead of dedicated long-read sequencing.
+description: V'DJer analyzes the B-cell receptor (BCR) repertoire from standard mRNA-Seq data by assembling and filtering reads to identify abundant heavy and light chain contigs. Use when user asks to analyze BCR repertoire, extract immunological insights from transcriptomic data, reconstruct BCR contigs, or perform standard or sensitive BCR reconstruction.
 homepage: https://github.com/mozack/vdjer
 ---
+
 
 # vdjer
 

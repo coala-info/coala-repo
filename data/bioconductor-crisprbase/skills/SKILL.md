@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprbase
-description: the package is available on all platforms; click for details.
+description: The bioconductor-crisprbase package provides fundamental classes and functions for representing and manipulating CRISPR guide RNA sequences and protospacer adjacent motifs. Use when user asks to define CRISPR nucleases, manage PAM sequences, or represent gRNA targets within the Bioconductor ecosystem.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprBase.html
 ---
+
 
 # bioconductor-crisprbase
 

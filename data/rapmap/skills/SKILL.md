@@ -1,8 +1,9 @@
 ---
 name: rapmap
-description: RapMap is a high-speed mapping tool designed for "quasi-mapping," a technique that determines the position and orientation of sequencing reads relative to a reference transcriptome without the computational overhead of full base-to-base alignment.
+description: RapMap performs high-speed quasi-mapping of sequencing reads to a reference transcriptome to determine their position and orientation. Use when user asks to index a reference transcriptome, map single-end or paired-end reads, or perform selective alignment for quantification workflows.
 homepage: https://github.com/COMBINE-lab/RapMap
 ---
+
 
 # rapmap
 

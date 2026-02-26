@@ -1,8 +1,9 @@
 ---
 name: ucsc-fatrans
-description: The `ucsc-fatrans` skill provides guidance on using the `faTrans` utility from the UCSC Genome Browser "kent" source tree.
+description: The ucsc-fatrans tool translates DNA sequences from FASTA format into amino acid sequences. Use when user asks to translate DNA sequences, generate protein products, translate in a specific reading frame, perform six-frame translation, or find open reading frames.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fatrans
 

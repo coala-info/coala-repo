@@ -1,8 +1,9 @@
 ---
 name: easel
-description: Easel is a foundational ANSI C library developed by the Eddy/Rivas laboratory for biological sequence analysis using probabilistic models.
+description: Easel is a library and suite of command-line utilities for biological sequence analysis and alignment manipulation. Use when user asks to convert sequence formats, calculate alignment statistics, translate DNA to protein, or shuffle sequences for null hypothesis testing.
 homepage: https://github.com/EddyRivasLab/easel
 ---
+
 
 # easel
 

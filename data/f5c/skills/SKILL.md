@@ -1,8 +1,9 @@
 ---
 name: f5c
-description: f5c is an ultra-fast, optimized re-implementation of specific modules from Nanopolish (index, call-methylation, and eventalign).
+description: f5c is an optimized re-implementation of Nanopolish modules that uses hardware acceleration to perform high-speed nanopore signal analysis. Use when user asks to index reads, call DNA methylation, calculate methylation frequencies, or perform event alignment.
 homepage: https://github.com/hasindu2008/f5c
 ---
+
 
 # f5c
 

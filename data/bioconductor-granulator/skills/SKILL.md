@@ -1,8 +1,9 @@
 ---
 name: bioconductor-granulator
-description: The package provides a unified testing interface to rapidly run and benchmark multiple state-of-the-art deconvolution methods. Data for the deconvolution of peripheral blood mononuclear cells (PBMCs) into individual immune cell types is provided as well.
+description: The granulator package provides a unified interface for estimating cell type abundances from bulk transcriptomics data using multiple deconvolution algorithms and signature matrices. Use when user asks to estimate cell type proportions, benchmark deconvolution methods, or compare results across different reference profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/granulator.html
 ---
+
 
 # bioconductor-granulator
 

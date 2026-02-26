@@ -1,8 +1,9 @@
 ---
 name: perl-test-eol
-description: `perl-test-eol` (provided via the `Test::EOL` Perl module) is a quality assurance tool designed to identify inconsistent line endings and unnecessary trailing whitespace.
+description: perl-test-eol identifies inconsistent line endings and trailing whitespace in Perl source files to ensure codebase uniformity. Use when user asks to check for Unix-style line endings, validate file encoding consistency, or remove trailing whitespace from scripts.
 homepage: http://metacpan.org/release/Test-EOL
 ---
+
 
 # perl-test-eol
 

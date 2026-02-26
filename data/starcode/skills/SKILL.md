@@ -1,8 +1,9 @@
 ---
 name: starcode
-description: Starcode is a high-performance DNA sequence clustering tool designed to handle sequencing errors by grouping similar sequences within a defined Levenshtein distance.
+description: Starcode is a high-performance DNA sequence clustering tool that groups similar sequences within a defined Levenshtein distance to correct sequencing errors. Use when user asks to cluster DNA barcodes or UMIs, recover original sequences from high-throughput data, or perform all-pairs search clustering using message passing, spheres, or connected components algorithms.
 homepage: https://github.com/gui11aume/starcode
 ---
+
 
 # starcode
 

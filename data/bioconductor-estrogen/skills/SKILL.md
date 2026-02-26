@@ -1,8 +1,9 @@
 ---
 name: bioconductor-estrogen
-description: the package is available on all platforms; click for details.
+description: This tool analyzes Affymetrix microarray data from a 2x2 factorial design experiment involving estrogen and time. Use when user asks to load CEL files, perform vsnrma normalization, visualize chip intensities, or conduct ANOVA-based differential expression analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/estrogen.html
 ---
+
 
 # bioconductor-estrogen
 

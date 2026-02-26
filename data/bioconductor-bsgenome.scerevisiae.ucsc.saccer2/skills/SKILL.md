@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.scerevisiae.ucsc.saccer2
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Saccharomyces cerevisiae based on the UCSC sacCer2 assembly for use in Bioconductor. Use when user asks to retrieve yeast chromosome sequences, calculate sequence statistics, perform genome-wide motif searching, or extract sequences from genomic coordinates.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Scerevisiae.UCSC.sacCer2.html
 ---
+
 
 # bioconductor-bsgenome.scerevisiae.ucsc.saccer2
 

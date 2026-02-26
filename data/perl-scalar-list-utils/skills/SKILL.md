@@ -1,8 +1,9 @@
 ---
 name: perl-scalar-list-utils
-description: The `Scalar::Util` and `List::Util` modules (bundled as `Scalar-List-Utils`) provide high-performance C-based implementations of common functional programming and scalar inspection routines.
+description: This tool provides high-performance C-based implementations for common functional programming routines and scalar variable introspection in Perl. Use when user asks to find elements in a list, calculate numeric sums or extremes, shuffle arrays, inspect variable types, or manage weak references to prevent memory leaks.
 homepage: http://metacpan.org/pod/Scalar-List-Utils
 ---
+
 
 # perl-scalar-list-utils
 

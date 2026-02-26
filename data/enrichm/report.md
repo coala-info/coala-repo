@@ -3,7 +3,7 @@
 ## enrichm
 
 ### Tool Description
-EnrichM is a toolbox for comparing the functional potential of microbial genomes and metagenomes. (Note: The provided text contains a system error log rather than help documentation; no arguments could be extracted.)
+Enrichment analysis of gene sets or pathways.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/enrichm:0.6.6--pyhdfd78af_0
@@ -18,11 +18,13 @@ EnrichM is a toolbox for comparing the functional potential of microbial genomes
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/enrichm:0.6.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3676112677: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/enrichm", line 22, in <module>
+    from enrichm.run import Run
+  File "/usr/local/lib/python3.6/site-packages/enrichm/run.py", line 10, in <module>
+    from enrichm.network_analyzer import NetworkAnalyser
+  File "/usr/local/lib/python3.6/site-packages/enrichm/network_analyzer.py", line 6, in <module>
+    from dataclasses import dataclass
+ModuleNotFoundError: No module named 'dataclasses'
 ```
 
-
-## Metadata
-- **Skill**: generated

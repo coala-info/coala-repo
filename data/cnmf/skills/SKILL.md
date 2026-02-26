@@ -1,8 +1,9 @@
 ---
 name: cnmf
-description: "Consensus Non-negative Matrix Factorization (cNMF) is a specialized pipeline for decomposing single-cell expression matrices into two components: a \"usage\" matrix (mapping cells to programs) and a \"spectra\" matrix (mapping programs to genes)."
+description: cNMF decomposes single-cell expression matrices into stable, reproducible gene expression programs and cell usage matrices through consensus non-negative matrix factorization. Use when user asks to decompose expression matrices, identify gene expression programs, perform consensus NMF, or determine the optimal number of biological programs for single-cell data.
 homepage: https://github.com/dylkot/cNMF
 ---
+
 
 # cnmf
 

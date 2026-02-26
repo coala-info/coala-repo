@@ -3,7 +3,7 @@
 ## fa-lint
 
 ### Tool Description
-A tool for linting FASTA files (Note: The provided text contains only system error messages and no usage information).
+FASTA file linter and validator
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fa-lint:1.2.0--he881be0_0
@@ -18,11 +18,18 @@ A tool for linting FASTA files (Note: The provided text contains only system err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fa-lint:1.2.0--he881be0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1825319189: no space left on device
+Usage of fa-lint:
+  -S	Allow stop-codon denoted by '*' as the last character in a sequence
+  -a	Allow stop-codons anywhere in the sequence. Use in combination with -s or -S
+  -fasta string
+    	Fasta[.gz] file to process
+  -s	Allow stop-codon denoted by '.' as the last character in a sequence
+  -threads int
+    	Number of threads to use (default 6)
+  -verbose
+    	Enable verbose logging
+  -version
+    	Show version
+  -w	Enable strict alphanumeric FASTA ID validation (A-Za-z0-9_ only)
 ```
 
-
-## Metadata
-- **Skill**: generated

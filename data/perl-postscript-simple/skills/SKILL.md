@@ -1,8 +1,9 @@
 ---
 name: perl-postscript-simple
-description: The `perl-postscript-simple` skill enables the programmatic creation of PostScript documents.
+description: This tool provides a high-level Perl interface for programmatically creating PostScript and EPS documents containing geometric shapes, colors, and text. Use when user asks to create PostScript files, draw vector graphics using Perl, generate automated reports, or produce EPS assets for LaTeX.
 homepage: https://metacpan.org/pod/PostScript::Simple
 ---
+
 
 # perl-postscript-simple
 

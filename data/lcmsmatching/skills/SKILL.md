@@ -1,8 +1,9 @@
 ---
 name: lcmsmatching
-description: The `lcmsmatching` tool is a specialized R-based utility developed for the Workflow4Metabolomics project.
+description: The lcmsmatching tool matches experimental mass spectrometry data against reference databases to facilitate metabolite identification. Use when user asks to match m/z and retention time values, query metabolite databases, or identify compounds using local or remote libraries.
 homepage: https://github.com/workflow4metabolomics/lcmsmatching
 ---
+
 
 # lcmsmatching
 

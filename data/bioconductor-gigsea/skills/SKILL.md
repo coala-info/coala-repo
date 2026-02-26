@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gigsea
-description: the package is available on all platforms; click for details.
+description: GIGSEA performs gene set enrichment analysis by integrating GWAS summary statistics with eQTL data through imputed differential gene expression. Use when user asks to perform gene set enrichment analysis on GWAS data, account for LD structure and gene size, or run single and multiple gene set enrichment models.
 homepage: https://bioconductor.org/packages/release/bioc/html/GIGSEA.html
 ---
+
 
 # bioconductor-gigsea
 

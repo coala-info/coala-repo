@@ -1,26 +1,46 @@
 # bubblegun CWL Generation Report
 
-## bubblegun
+## bubblegun_BubbleGun
 
 ### Tool Description
-No description available: The provided text is an error log and does not contain help information.
+Find Bubble Chains.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bubblegun:1.1.10--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/bubblegun:1.2.0--pyhdfd78af_0
 - **Homepage**: https://github.com/fawaz-dabbaghieh/bubble_gun
 - **Package**: https://anaconda.org/channels/bioconda/packages/bubblegun/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bubblegun/overview
-- **Total Downloads**: 568
+- **Total Downloads**: 571
 - **Last updated**: 2026-02-18
 - **GitHub**: https://github.com/fawaz-dabbaghieh/bubble_gun
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/76b4bb42d54fd8fe1de74e1a3b2489798c7599e922817d8562633f40d68c685a: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bubblegun:1.1.10--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3110230405: no space left on device
+usage: BubbleGun [-h] [-g GRAPH_PATH] [-v] [--log_file LOG_FILE]
+                 [--log LOG_LEVEL]
+                 {bchains,compact,biggestcomp,bfs,chainout} ...
+
+Find Bubble Chains.
+
+Subcommands:
+  {bchains,compact,biggestcomp,bfs,chainout}
+                        Available subcommands
+    bchains             Command for detecting bubble chains
+    compact             Command for compacting graphs
+    biggestcomp         Command for separating biggest component
+    bfs                 Command for separating neighborhood
+    chainout            Outputs certain chain(s) given by their id as a GFA
+                        file
+
+Global Arguments:
+  -h, --help            show this help message and exit
+  -g, --in_graph GRAPH_PATH
+                        graph file path (GFA or VG)
+  -v, --version         outputs version
+  --log_file LOG_FILE   The name/path of the log file. Default: log.log
+  --log LOG_LEVEL       The logging level [DEBUG, INFO, WARNING, ERROR,
+                        CRITICAL]
 ```
 

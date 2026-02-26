@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-cluster-generic
-description: The `cluster-generic` plugin is the standard bridge between Snakemake and cluster workload managers.
+description: This plugin enables Snakemake to execute workflows on cluster workload managers by passing job scripts to user-specified submission commands. Use when user asks to execute workflows on a cluster, configure job submission commands like qsub or sbatch, or manage job cancellation and resources on a scheduler.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-cluster-generic
 ---
+
 
 # snakemake-executor-plugin-cluster-generic
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genarise
-description: the package is available on all platforms; click for details.
+description: The genArise package provides a structured workflow for analyzing dual-channel microarray data to identify differentially expressed genes. Use when user asks to perform background correction, normalize intensity ratios, filter low-intensity spots, handle replicates, or calculate Z-scores for microarray data.
 homepage: https://bioconductor.org/packages/release/bioc/html/genArise.html
 ---
+
 
 # bioconductor-genarise
 

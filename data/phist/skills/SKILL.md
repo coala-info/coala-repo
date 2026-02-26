@@ -1,8 +1,9 @@
 ---
 name: phist
-description: PHIST (Phage-Host Interaction Search Tool) is a specialized bioinformatics tool designed to link viruses to their most likely bacterial hosts.
+description: PHIST predicts bacterial hosts for viral sequences by quantifying shared k-mers and calculating statistical significance. Use when user asks to link viruses to hosts, predict phage-host interactions, or identify shared genomic regions between phages and bacteria.
 homepage: https://github.com/refresh-bio/PHIST
 ---
+
 
 # phist
 

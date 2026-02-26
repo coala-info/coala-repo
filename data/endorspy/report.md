@@ -3,7 +3,7 @@
 ## endorspy
 
 ### Tool Description
-Endogenous Retrovirus (ERV) detection and analysis tool. (Note: The provided help text contains only system error logs and does not list specific command-line arguments.)
+endorS.py calculates percent on target (aka Endogenous DNA) from samtools flagstat files and print to screen. The percent on target reported will be different depending on the combination of samtools flagstat provided. This program also calculates clonality (aka cluster factor) and percent duplicates when the flagstat file after duplicate removal is provided Use --output flag to write results to a file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/endorspy:1.4--hdfd78af_0
@@ -18,29 +18,37 @@ Endogenous Retrovirus (ERV) detection and analysis tool. (Note: The provided hel
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/endorspy:1.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1721340015: no space left on device
-```
+usage: python endorS.py [-h] [--version] -r [<samplesfile>.stats] -qF [<samplesfile>.stats] -dedup [<samplesfile>.stats]
 
+author:
+Aida Andrades Valtueña (aida.andrades[at]gmail.com)
 
-## Metadata
-- **Skill**: generated
+description:
+endorS.py calculates percent on target (aka Endogenous DNA) from samtools flagstat files and print to screen.
+The percent on target reported will be different depending on the combination of samtools flagstat provided.
+This program also calculates clonality (aka cluster factor) and percent duplicates when the flagstat file after duplicate removal is provided
+Use --output flag to write results to a file
 
-## endorspy_endorS.py
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool; it contains system log messages and a fatal error regarding container image building.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/endorspy:1.4--hdfd78af_0
-- **Homepage**: https://github.com/aidaanva/endorS.py
-- **Package**: https://anaconda.org/channels/bioconda/packages/endorspy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/endorspy:1.4--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1752900815: no space left on device
+options:
+  -h, --help            show this help message and exit
+  --raw, -r [<samplefile>.stats]
+                        output of samtools flagstat in a txt file, assumes no
+                        quality filtering nor duplicate removal performed
+  --qualityfiltered, -q [<samplefile>.stats]
+                        output of samtools flagstat in a txt file, assumes
+                        some form of quality or length filtering has been
+                        performed, must be provided with at least one of the
+                        options -r or -dedup
+  --deduplicated, -d [<samplefile>.stats]
+                        output of samtools flagstat in a txt file, whereby
+                        duplicate removal has been performed on the input
+                        reads
+  -v, --version         show program's version number and exit
+  --output, -o [OUTPUT]
+                        specify a file format for an output file. Options:
+                        <json> for a MultiQC json output. Default: none
+  --name, -n [NAME]     specify name for the output file. Default: extracted
+                        from the first samtools flagstat file provided
+  --verbose, -e         increase output verbosity
 ```
 

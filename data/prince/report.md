@@ -3,7 +3,7 @@
 ## prince
 
 ### Tool Description
-Predicting Protein Complexes using Co-elution (PRiNCE)
+Prince Options.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/prince:2.3--py_0
@@ -18,13 +18,32 @@ Predicting Protein Complexes using Co-elution (PRiNCE)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/prince:2.3--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: prince [-h] [-bo BOOST_OUTPUT] [-to TARGET_OUTPUT] [-tmp TEMPLATES]
+              [-tf TARGET_FILE] [-bf BOOSTING_FILE] [-k K] [-cn COPYNUMBER]
+              [-p PRIMERS] [-np NUM_PROCS] [-v]
+
+Prince Options.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -bo BOOST_OUTPUT, --boost_output BOOST_OUTPUT
+                        output file for training data / training data used to
+                        predict copy numbers for queries
+  -to TARGET_OUTPUT, --target_output TARGET_OUTPUT
+                        output file for query copy number predictions
+  -tmp TEMPLATES, --templates TEMPLATES
+                        VNTR templates. Default is for M.TB
+  -tf TARGET_FILE, --target_file TARGET_FILE
+                        target genome names in a text file
+  -bf BOOSTING_FILE, --boosting_file BOOSTING_FILE
+                        training genome file names in a text file
+  -k K, --k K           Kmer size used during read recruitment.
+  -cn COPYNUMBER, --copynumber COPYNUMBER
+                        Copy number for training genome.
+  -p PRIMERS, --primers PRIMERS
+                        Flanking sequences used in coverage adjustments
+  -np NUM_PROCS, --num_procs NUM_PROCS
+                        Number of cores for parallel processing.
+  -v, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

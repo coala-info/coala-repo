@@ -1,8 +1,9 @@
 ---
 name: r-azimuth
-description: R package azimuth (documentation from project home).
+description: This tool performs automated cell type annotation and mapping of single-cell RNA-seq or ATAC-seq data onto curated reference datasets using the Azimuth R package. Use when user asks to map single-cell query datasets, perform automated cell type annotation, project data onto a reference UMAP, or launch the Azimuth Shiny application.
 homepage: https://cran.r-project.org/web/packages/azimuth/index.html
 ---
+
 
 # r-azimuth
 

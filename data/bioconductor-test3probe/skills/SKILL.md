@@ -1,8 +1,9 @@
 ---
 name: bioconductor-test3probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Test3 microarray chip. Use when user asks to retrieve probe sequences for the Test3 chip or analyze Affymetrix Test3 microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/test3probe.html
 ---
+
 
 # bioconductor-test3probe
 

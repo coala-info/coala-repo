@@ -1,13 +1,42 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - smallgenomeutilities
-  - mapper
+baseCommand: mapper
 label: smallgenomeutilities_mapper
-doc: "A utility for mapping in the smallgenomeutilities suite. (Note: The provided
-  text contains container build logs and error messages rather than the tool's help
-  documentation; therefore, no arguments could be extracted.)\n\nTool homepage: https://github.com/cbg-ethz/smallgenomeutilities"
-inputs: []
+doc: "Mapper tool\n\nTool homepage: https://github.com/cbg-ethz/smallgenomeutilities"
+inputs:
+  - id: msa_file
+    type: File
+    doc: file containing MSA
+    inputBinding:
+      position: 1
+  - id: dest
+    type: string
+    doc: Name of target contig
+    inputBinding:
+      position: 102
+      prefix: -t
+  - id: one_based_coordinates
+    type:
+      - 'null'
+      - boolean
+    doc: Whether coordinates should be treated 1-based
+    inputBinding:
+      position: 102
+      prefix: '-1'
+  - id: source
+    type: string
+    doc: Name and Coordinates of source contig, e.g. CONSENSUS:100-200
+    inputBinding:
+      position: 102
+      prefix: -f
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more information (such as subsequences in references)
+    inputBinding:
+      position: 102
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

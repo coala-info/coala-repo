@@ -1,8 +1,9 @@
 ---
 name: cojac
-description: cojac (CoOccurrence adJusted Analysis and Calling) is a specialized suite of command-line tools designed to identify viral variants by analyzing the co-occurrence of mutations within individual sequencing reads (amplicons).
+description: "cojac identifies viral variants by analyzing the co-occurrence of mutations within individual sequencing reads. Use when user asks to scan alignment files for variant signatures, generate mutation definitions from covSPECTRUM, or format co-occurrence results into tables for analysis."
 homepage: https://github.com/cbg-ethz/cojac
 ---
+
 
 # cojac
 

@@ -1,8 +1,9 @@
 ---
 name: irf
-description: Inverted Repeats Finder (IRF) is a specialized tool for identifying segments of DNA or RNA that are reversed and complemented relative to an adjacent sequence, separated by a spacer (loop).
+description: Inverted Repeats Finder identifies DNA or RNA segments that are reversed and complemented relative to an adjacent sequence. Use when user asks to identify structural motifs, find small RNA hairpins, or detect mirror repeats in genomic sequences.
 homepage: https://github.com/Benson-Genomics-Lab/IRF
 ---
+
 
 # irf
 

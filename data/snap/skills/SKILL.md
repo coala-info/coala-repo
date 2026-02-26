@@ -1,8 +1,9 @@
 ---
 name: snap
-description: SnapKit is a Domain Specific Language (DSL) designed to make Auto Layout management intuitive on Apple platforms.
+description: SnapKit is a domain-specific language that simplifies Auto Layout management on Apple platforms through a concise and declarative syntax. Use when user asks to generate layout code, troubleshoot constraint conflicts, update existing UI relationships, or migrate from manual constraint anchors.
 homepage: https://github.com/SnapKit/SnapKit
 ---
+
 
 # snap
 

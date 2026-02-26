@@ -1,9 +1,9 @@
 # combined-pvalues CWL Generation Report
 
-## combined-pvalues
+## combined-pvalues_comb-p
 
 ### Tool Description
-A tool for combining p-values (Note: The provided help text contains only system error messages regarding disk space and container image retrieval, so specific argument details could not be extracted).
+Tools for viewing and adjusting p-values in BED files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/combined-pvalues:0.50.6--pyhdfd78af_0
@@ -18,9 +18,24 @@ A tool for combining p-values (Note: The provided help text contains only system
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/808aa11a81910735d6a801123dd9ffd924aa19976866f0ca5492f0023cf9b50c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/combined-pvalues:0.50.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1197156382: no space left on device
+Tools for viewing and adjusting p-values in BED files.
+
+   Contact: Brent Pedersen - bpederse@gmail.com
+   License: BSD
+
+To run, indicate one of:
+
+   acf       - calculate autocorrelation within BED file
+   slk       - Stouffer-Liptak-Kechris correction of correlated p-values
+   fdr       - Benjamini-Hochberg correction of p-values
+   peaks     - find peaks in a BED file.
+   region_p  - generate SLK p-values for a region (of p-values)
+   filter    - filter region_p output on size and p and add coef/t
+   hist      - plot a histogram of a column and check for uniformity.
+   manhattan - a manhattan plot of values in a BED file.
+   pipeline  - run acf, slk, fdr, peaks, region_p in succesion
+
+NOTE: most of these assume *sorted* BED files.
+SEE: https://github.com/brentp/combined-pvalues for documentation
 ```
 

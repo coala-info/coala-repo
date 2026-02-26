@@ -1,8 +1,9 @@
 ---
 name: rapsearch
-description: RAPSearch2 (Reduced Alphabet based Protein similarity Search) is a specialized tool for identifying protein similarities at high speeds.
+description: "RAPSearch2 performs high-speed protein similarity searches using a reduced amino acid alphabet to align query sequences against a reference database. Use when user asks to index a protein database, perform a fast protein similarity search, or align translated nucleotide queries against a protein index."
 homepage: https://github.com/zhaoyanswill/RAPSearch2
 ---
+
 
 # rapsearch
 

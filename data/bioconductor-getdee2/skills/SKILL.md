@@ -1,8 +1,9 @@
 ---
 name: bioconductor-getdee2
-description: the package is available on all platforms; click for details.
+description: This package provides an R interface to retrieve pre-processed gene and transcript expression data from the Digital Expression Explorer 2 repository. Use when user asks to download RNA-seq count matrices, fetch metadata for SRA runs, or access processed expression datasets for specific species.
 homepage: https://bioconductor.org/packages/release/bioc/html/getDEE2.html
 ---
+
 
 # bioconductor-getdee2
 

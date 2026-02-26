@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtcgatoolbox
-description: the package is available on all platforms; click for details.
+description: RTCGAToolbox provides an interface to download and manage data from The Cancer Genome Atlas (TCGA) Firehose. Use when user asks to download TCGA data, process Firehose datasets, or analyze cancer genomics data in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/RTCGAToolbox.html
 ---
+
 
 # bioconductor-rtcgatoolbox
 

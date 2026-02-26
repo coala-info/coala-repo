@@ -1,8 +1,9 @@
 ---
 name: coregenebuilder
-description: CoreGeneBuilder is a specialized bioinformatics pipeline designed to identify the conserved genetic core of a bacterial species.
+description: CoreGeneBuilder identifies the conserved core genome of a bacterial species by comparing multiple genomic assemblies against a reference. Use when user asks to identify core genes, perform pangenome analysis, or extract conserved genetic sequences from bacterial assemblies.
 homepage: https://github.com/C3BI-pasteur-fr/CoreGeneBuilder
 ---
+
 
 # coregenebuilder
 

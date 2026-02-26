@@ -1,8 +1,9 @@
 ---
 name: vmd
-description: vmd is an Electron-based Markdown viewer that provides a high-fidelity preview of how Markdown files will appear on GitHub.
+description: vmd is an Electron-based Markdown viewer that provides a live, high-fidelity preview of Markdown files as they would appear on GitHub. Use when user asks to view a Markdown file, preview a README, render Markdown content from standard input, adjust display options, set styling and themes, configure front matter support, or search within a document.
 homepage: https://github.com/yoshuawuyts/vmd
 ---
+
 
 # vmd
 

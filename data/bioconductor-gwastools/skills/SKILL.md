@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwastools
-description: the package is available on all platforms; click for details.
+description: This tool provides infrastructure for quality control and analysis of genome-wide association study data using high-performance GDS and NetCDF formats. Use when user asks to prepare SNP and scan annotation objects, convert raw genotype data to GDS format, perform batch quality checks, verify sample sex, or estimate population structure.
 homepage: https://bioconductor.org/packages/release/bioc/html/GWASTools.html
 ---
+
 
 # bioconductor-gwastools
 

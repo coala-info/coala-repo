@@ -1,8 +1,9 @@
 ---
 name: chromosomer
-description: Chromosomer is a bioinformatics utility designed to produce draft chromosome-level assemblies by leveraging a closely related reference genome.
+description: Chromosomer is a bioinformatics tool used to create chromosome-level genome assemblies by ordering and orienting genomic fragments based on alignments to a reference genome. Use when user asks to assemble contigs into chromosomes, map genomic fragments to a reference, or transfer annotations to a new assembly coordinate system.
 homepage: https://github.com/gtamazian/chromosomer
 ---
+
 
 # chromosomer
 

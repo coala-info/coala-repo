@@ -1,8 +1,9 @@
 ---
 name: viguno
-description: Viguno (Versatile Interface for Genetics Utilization of Nice Ontologies) serves as a specialized bridge between genetic data and clinical ontologies.
+description: Viguno bridges genetic data with clinical ontologies, managing HPO phenotypes and disease relationships. Use when user asks to download HPO data, convert ontology files to binary format, deploy the Viguno server, perform phenotype lookups, or calculate phenotype similarity.
 homepage: https://github.com/bihealth/viguno
 ---
+
 
 # viguno
 

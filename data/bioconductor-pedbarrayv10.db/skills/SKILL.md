@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pedbarrayv10.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the PedBArrayV10 microarray platform. Use when user asks to map probe identifiers to gene symbols, retrieve genomic annotations for the PedBArrayV10 platform, or perform functional enrichment analysis using these chip-specific mappings.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pedbarrayv10.db.html
 ---
+
 
 # bioconductor-pedbarrayv10.db
 

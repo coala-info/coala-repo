@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rdisop
-description: the package is available on all platforms; click for details.
+description: Rdisop identifies molecular formulas and calculates isotopic distributions from mass spectrometry data. Use when user asks to determine molecular formulas, calculate exact masses, or simulate isotopic patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rdisop.html
 ---
+
 
 # bioconductor-rdisop
 

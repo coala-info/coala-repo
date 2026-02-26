@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delocal
-description: the package is available on all platforms; click for details.
+description: DELocal identifies differentially expressed genes by comparing their expression patterns to those of their chromosomal neighbors. Use when user asks to identify differentially expressed genes using genomic co-localization, analyze gene expression relative to neighboring genes, or detect subtle expression changes in datasets with small sample sizes.
 homepage: https://bioconductor.org/packages/release/bioc/html/DELocal.html
 ---
+
 
 # bioconductor-delocal
 

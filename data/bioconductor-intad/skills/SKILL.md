@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intad
-description: The package is focused on the detection of correlation between expressed genes and selected epigenomic signals (i.e. enhancers obtained from ChIP-seq data) either within topologically associated domains (TADs) or between chromatin contact loop anchors. Various parameters can be controlled to investigate the influence of external factors and visualization plots are available for each analysis step.
+description: The InTAD package integrates transcriptomic and epigenomic data within the context of 3D genome organization to identify correlations between gene expression and distal regulatory signals. Use when user asks to identify functional enhancers within TADs, correlate gene expression with chromatin signals, or analyze regulatory interactions via chromatin loops.
 homepage: https://bioconductor.org/packages/release/bioc/html/InTAD.html
 ---
+
 
 # bioconductor-intad
 

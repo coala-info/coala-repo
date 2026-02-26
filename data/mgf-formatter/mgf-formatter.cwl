@@ -2,15 +2,48 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mgf-formatter
 label: mgf-formatter
-doc: "A tool for formatting MGF (Mascot Generic Format) files. (Note: The provided
-  help text contains only container runtime error messages and does not list specific
-  command-line arguments.)\n\nTool homepage: https://github.com/rformassspectrometry/MsBackendMgf"
-inputs: []
+doc: "A tool for formatting MGF (Mascot Generic Format) files.\n\nTool homepage: https://github.com/rformassspectrometry/MsBackendMgf"
+inputs:
+  - id: input
+    type: File
+    doc: Input file to be formatted
+    inputBinding:
+      position: 1
+  - id: itraq_filter
+    type:
+      - 'null'
+      - boolean
+    doc: Apply iTRAQ filter
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --itraq_filter
+  - id: mgf_format
+    type:
+      - 'null'
+      - string
+    doc: Specify the MGF format style
+    default: DEFAULT
+    inputBinding:
+      position: 102
+      prefix: --mgf_format
+  - id: no_split_multiple_charge_states
+    type:
+      - 'null'
+      - boolean
+    doc: Do not split multiple charge states
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --no_split_multiple_charge_states
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output
+    type:
+      - 'null'
+      - File
+    doc: Output file
+    outputBinding:
+      glob: $(inputs.output)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mgf-formatter:1.0.0--py27_1
-stdout: mgf-formatter.out

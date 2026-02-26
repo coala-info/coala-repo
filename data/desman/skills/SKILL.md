@@ -1,8 +1,9 @@
 ---
 name: desman
-description: DESMAN (De novo Extraction of Strains from MetAgeNomes) is a specialized tool for identifying individual strains within a metagenomic assembly.
+description: DESMAN identifies individual strains and reconstructs their haplotypes from metagenomic assemblies by analyzing nucleotide variant frequencies across multiple samples. Use when user asks to filter high-quality variant positions, infer strain haplotypes and abundances, or perform de novo strain extraction from metagenomes.
 homepage: https://github.com/chrisquince/DESMAN
 ---
+
 
 # desman
 

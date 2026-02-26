@@ -1,9 +1,9 @@
 # perl-velvetoptimiser CWL Generation Report
 
-## perl-velvetoptimiser
+## perl-velvetoptimiser_VelvetOptimiser.pl
 
 ### Tool Description
-VelvetOptimiser is a script to automatically optimize the three primary parameter settings for the Velvet de novo assembler.
+Optimises Velvet assembly parameters.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-velvetoptimiser:2.2.6--pl526_0
@@ -12,21 +12,48 @@ VelvetOptimiser is a script to automatically optimize the three primary paramete
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-velvetoptimiser/overview
-- **Total Downloads**: 14.7K
-- **Last updated**: 2025-04-22
+- **Total Downloads**: N/A
+- **Last updated**: N/A
 - **GitHub**: https://github.com/tseemann/VelvetOptimiser
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 20:50:43  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-velvetoptimiser:2.2.6--pl526_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:9832ffe512d2b90bcea68acc7a7c861107935e58698c72c8dd10656cc6aebb42: unpack entry: usr/local/docs/gsg_txn/JAVA/BerkeleyDB-Core-JAVA-Txn.pdf: unpack to regular file: short write: write /tmp/build-temp-1368841236/rootfs/usr/local/docs/gsg_txn/JAVA/BerkeleyDB-Core-JAVA-Txn.pdf: no space left on device
+Usage: /usr/local/bin/VelvetOptimiser.pl [options] -f 'velveth input line'
+  --help          This help.
+  --version!      Print version to stdout and exit. (default '0').
+  --v|verbose+    Verbose logging, includes all velvet output in the logfile. (default '0').
+  --s|hashs=i     The starting (lower) hash value (default '19').
+  --e|hashe=i     The end (higher) hash value (default '191').
+  --x|step=i      The step in hash search..  min 2, no odd numbers (default '2').
+  --f|velvethfiles=s The file section of the velveth command line. (default '0').
+  --a|amosfile!   Turn on velvet's read tracking and amos file output. (default '0').
+  --o|velvetgoptions=s Extra velvetg options to pass through.  eg. -long_mult_cutoff -max_coverage etc (default '').
+  --t|threads=i   The maximum number of simulataneous velvet instances to run. (default '20').
+  --g|genomesize=f The approximate size of the genome to be assembled in megabases.
+			Only used in memory use estimation. If not specified, memory use estimation
+			will not occur. If memory use is estimated, the results are shown and then program exits. (default '0').
+  --k|optFuncKmer=s The optimisation function used for k-mer choice. (default 'n50').
+  --c|optFuncCov=s The optimisation function used for cov_cutoff optimisation. (default 'Lbp').
+  --m|minCovCutoff=f The minimum cov_cutoff to be used. (default '0').
+  --p|prefix=s    The prefix for the output filenames, the default is the date and time in the format DD-MM-YYYY-HH-MM_. (default 'auto').
+  --d|dir_final=s The name of the directory to put the final output into. (default '.').
+  --z|upperCovCutoff=f The maximum coverage cutoff to consider as a multiplier of the expected coverage. (default '0.8').
+
+Advanced!: Changing the optimisation function(s)
+
+Velvet optimiser assembly optimisation function can be built from the following variables.
+	LNbp = The total number of Ns in large contigs
+	Lbp = The total number of base pairs in large contigs
+	Lcon = The number of large contigs
+	max = The length of the longest contig
+	n50 = The n50
+	ncon = The total number of contigs
+	tbp = The total number of basepairs in contigs
+Examples are:
+	'Lbp' = Just the total basepairs in contigs longer than 1kb
+	'n50*Lcon' = The n50 times the number of long contigs.
+	'n50*Lcon/tbp+log(Lbp)' = The n50 times the number of long contigs divided
+		by the total bases in all contigs plus the log of the number of bases
+		in long contigs.
 ```
 
-
-## Metadata
-- **Skill**: generated

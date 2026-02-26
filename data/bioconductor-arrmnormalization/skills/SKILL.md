@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrmnormalization
-description: the package is available on all platforms; click for details.
+description: This tool performs adaptive robust regression normalization for Illumina Infinium HumanMethylation450 BeadChip data to correct for background intensity, dye bias, and spatial effects. Use when user asks to normalize DNA methylation Beta values, correct for technical variation in 450k arrays without assuming identical distributions, or perform robust regression-based normalization for tumor-normal comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/ARRmNormalization.html
 ---
+
 
 # bioconductor-arrmnormalization
 

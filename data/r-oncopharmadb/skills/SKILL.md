@@ -1,8 +1,9 @@
 ---
 name: r-oncopharmadb
-description: R package oncopharmadb (documentation from project home).
+description: This R package provides access to a comprehensive database of oncology drugs, their mechanisms of action, and genomic cancer biomarkers. Use when user asks to retrieve drug-target interactions, filter drugs by ATC classification, analyze actionable genomic aberrations, or access clinical trial and approval data for cancer therapies.
 homepage: https://cran.r-project.org/web/packages/oncopharmadb/index.html
 ---
+
 
 # r-oncopharmadb
 

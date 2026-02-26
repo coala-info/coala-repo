@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocviews
-description: the package is available on all platforms; click for details.
+description: biocViews manages Bioconductor package repositories by categorizing packages into a hierarchical vocabulary and generating web-based navigation interfaces. Use when user asks to categorize R packages, generate repository metadata files, explore the BiocViews vocabulary, or create HTML documentation for a package repository.
 homepage: https://bioconductor.org/packages/release/bioc/html/biocViews.html
 ---
+
 
 # bioconductor-biocviews
 

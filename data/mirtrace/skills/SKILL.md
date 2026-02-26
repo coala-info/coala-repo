@@ -1,8 +1,9 @@
 ---
 name: mirtrace
-description: miRTrace is a specialized quality control and taxonomic tracing tool designed specifically for small RNA sequencing (sRNA-Seq) data.
+description: miRTrace is a quality control and taxonomic tracing tool designed to profile miRNA complexity and identify the organismal origin of small RNA sequencing data. Use when user asks to perform quality control on sRNA-Seq data, detect cross-species contamination, or resolve the taxonomic origins of small RNA sequences.
 homepage: https://github.com/friedlanderlab/mirtrace
 ---
+
 
 # mirtrace
 

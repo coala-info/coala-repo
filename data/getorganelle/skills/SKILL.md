@@ -1,8 +1,9 @@
 ---
 name: getorganelle
-description: GetOrganelle is a specialized toolkit designed to extract and assemble organelle genomes from total genomic "skimming" data.
+description: GetOrganelle is a toolkit designed to extract and assemble organelle genomes from total genomic skimming data. Use when user asks to assemble chloroplast or mitochondrial genomes, extract organelle sequences from sequencing reads, or initialize organelle databases.
 homepage: http://github.com/Kinggerm/GetOrganelle
 ---
+
 
 # getorganelle
 

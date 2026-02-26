@@ -1,8 +1,9 @@
 ---
 name: r-ic10
-description: R package ic10 (documentation from project home).
+description: The r-ic10 tool classifies breast cancer samples into ten integrative clusters using gene expression or copy number data. Use when user asks to perform molecular subtyping of breast tumors, identify genomic and transcriptomic drivers, or assign samples to iC10 clusters.
 homepage: https://cran.r-project.org/web/packages/ic10/index.html
 ---
+
 
 # r-ic10
 

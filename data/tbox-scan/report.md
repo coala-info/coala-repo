@@ -3,7 +3,7 @@
 ## tbox-scan
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container execution environment.
+Scan a fasta sequence file for T-boxes and predict specifier & T-box sequence.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tbox-scan:1.0.2--hdfd78af_2
@@ -18,13 +18,29 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tbox-scan:1.0.2--hdfd78af_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+tbox-scan v1.0.2 (December 2020)
+
+  Usage: tbox-scan -f <Input FASTA file> [-options]
+
+  Scan a fasta sequence file for T-boxes and predict specifier & T-box sequence.
+            -- Default: Will use INFERNAL with RFAM00230 covariance model with basic output
+            -- Example: tbox-scan  -f input.fa -o output_file.csv -v -m 1 -c 100
+  Dependencies: INFERNAL, cmsearch, biopython, python3, pandas.
+
+            
+  Options
+    -f <file>  : input FASTA <file> (required)
+    -o <file>  : save final results in <file> as .csv
+                    default: out.csv
+    -i <file>  : save INFERNAL output predictions to .txt <file>
+                    default: INFERNAL.txt
+    -l <file>  : save a .txt log <file> of pipeline output
+    -m <model#> : search for T-boxes using different covariance models
+                    1: RFAM model (RFAM00230.cm), finds mostly class I transcriptional T-boxes (default)
+                    2: Translational Ile (TBDB001.cm), finds mostly class II translational T-boxes
+    -c <value> : score cutoff for INFERNAL model predictions (default = 15)
+    -v         : save verbose output
+    -s         : silence console output
+    -h         : print out summary of available options
 ```
 
-
-## Metadata
-- **Skill**: generated

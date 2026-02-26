@@ -1,8 +1,9 @@
 ---
 name: rs3
-description: The `rs3` tool is a specialized Python package developed by the Genetic Perturbation Platform (GPP) to predict the efficiency of CRISPR single guide RNAs (sgRNAs).
+description: The rs3 tool predicts the efficiency of CRISPR single guide RNAs using sequence-only or high-accuracy target-based models. Use when user asks to predict sgRNA potency, rank guide RNAs for experimental design, or score CRISPR libraries using Rule Set 3.
 homepage: https://github.com/gpp-rnd/rs3/tree/master/
 ---
+
 
 # rs3
 

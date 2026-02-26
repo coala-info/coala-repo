@@ -1,9 +1,9 @@
 # dx-cwl CWL Generation Report
 
-## dx-cwl
+## dx-cwl_compile-tool
 
 ### Tool Description
-A tool for running Common Workflow Language (CWL) workflows on the DNAnexus platform. (Note: The provided text is a system error log and does not contain usage instructions or argument definitions).
+Compile a CWL tool definition file into a DNAnexus applet.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0
@@ -18,29 +18,107 @@ A tool for running Common Workflow Language (CWL) workflows on the DNAnexus plat
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2561050041: no space left on device
+usage: dx-cwl compile-tool [-h] --token TOKEN --project PROJECT
+                           [--rootdir ROOTDIR] [--assets ASSETS [ASSETS ...]]
+                           [--bundled BUNDLED [BUNDLED ...]]
+                           [--extradisk EXTRADISK]
+                           [--instance-provider {aws,azure}]
+                           tool
+
+positional arguments:
+  tool                  CWL tool definition file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --token TOKEN         DNAnexus authentication token
+  --project PROJECT     DNAnexus project ID
+  --rootdir ROOTDIR     Root directory to place CWL workflow, tools, and
+                        resources
+  --assets ASSETS [ASSETS ...]
+                        One or more DNAnexus asset IDs to include in tool.
+  --bundled BUNDLED [BUNDLED ...]
+                        One or more DNAnexus bundledDepends file IDs to
+                        include in tool.
+  --extradisk EXTRADISK
+                        Additional disk space required for instance in
+                        mebibytes (2**20)
+  --instance-provider {aws,azure}
+                        VM instance provider (default: aws)
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## dx-cwl_get-cwltool.sh
+## dx-cwl_compile-workflow
 
 ### Tool Description
-A script to get or prepare cwltool for dx-cwl. Note: The provided text contains error logs regarding container image conversion and disk space issues rather than standard help documentation.
+Compile a CWL workflow to a DNAnexus workflow.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0
 - **Homepage**: https://github.com/dnanexus/dx-cwl
 - **Package**: https://anaconda.org/channels/bioconda/packages/dx-cwl/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3874024111: no space left on device
+usage: dx-cwl compile-workflow [-h] --token TOKEN --project PROJECT
+                               [--rootdir ROOTDIR]
+                               [--assets ASSETS [ASSETS ...]]
+                               [--bundled BUNDLED [BUNDLED ...]]
+                               [--instance-provider {aws,azure}]
+                               workflow
+
+positional arguments:
+  workflow              CWL workflow definition file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --token TOKEN         DNAnexus authentication token
+  --project PROJECT     DNAnexus project ID
+  --rootdir ROOTDIR     Root directory to place CWL workflow, tools, and
+                        resources
+  --assets ASSETS [ASSETS ...]
+                        One or more DNAnexus asset IDs to include in tools.
+  --bundled BUNDLED [BUNDLED ...]
+                        One or more DNAnexus bundledDepends file IDs to
+                        include in tool.
+  --instance-provider {aws,azure}
+                        VM instance provider (default: aws)
+```
+
+
+## dx-cwl_run-workflow
+
+### Tool Description
+Runs a CWL workflow on the DNAnexus platform.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/dx-cwl:0.1.0a20180820--py27_0
+- **Homepage**: https://github.com/dnanexus/dx-cwl
+- **Package**: https://anaconda.org/channels/bioconda/packages/dx-cwl/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: dx-cwl run-workflow [-h] --token TOKEN --project PROJECT
+                           [--rootdir ROOTDIR] [--wait]
+                           workflow inputs
+
+positional arguments:
+  workflow           Pointer to workflow/applet file or ID on the platform
+  inputs             Pointer to CWL input file on (JSON or YAML) the platform.
+                     All files referenced within this file should exist within
+                     the project on the platform. Relative paths are
+                     supported.
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --token TOKEN      DNAnexus authentication token
+  --project PROJECT  DNAnexus project ID
+  --rootdir ROOTDIR  Root directory to place CWL workflow, tools, and
+                     resources
+  --wait             Pointer to CWL input file on (JSON or YAML) the platform.
+                     All files referenced within this file should exist within
+                     the project on the platform. Relative paths are
+                     supported.
 ```
 

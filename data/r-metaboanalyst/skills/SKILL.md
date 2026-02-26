@@ -1,8 +1,9 @@
 ---
 name: r-metaboanalyst
-description: R package metaboanalyst (documentation from project home).
+description: MetaboAnalystR provides a comprehensive R-based workflow for metabolomics data processing, statistical analysis, and functional interpretation. Use when user asks to process LC-MS raw data, perform statistical tests like PCA or PLS-DA, conduct metabolite set enrichment analysis, or map peaks to biological pathways.
 homepage: https://cran.r-project.org/web/packages/metaboanalyst/index.html
 ---
+
 
 # r-metaboanalyst
 

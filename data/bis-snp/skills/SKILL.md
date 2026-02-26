@@ -1,8 +1,9 @@
 ---
 name: bis-snp
-description: Bis-SNP is a specialized genomic analysis tool built on the GATK map-reduce framework.
+description: Bis-SNP is a genomic analysis tool that simultaneously calls SNPs and quantifies DNA methylation levels from bisulfite sequencing data using a probability-based model. Use when user asks to identify variants in bisulfite-converted reads, calculate cytosine methylation levels, or perform genotyping on directional Illumina libraries.
 homepage: http://people.csail.mit.edu/dnaase/bissnp2011/
 ---
+
 
 # bis-snp
 

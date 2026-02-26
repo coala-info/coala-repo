@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbuniprot
-description: the package is available on all platforms; click for details.
+description: The bioconductor-biodbuniprot package provides a connector to the UniProt database for programmatic data retrieval, searching, and identifier mapping within the biodb framework. Use when user asks to retrieve UniProt entries by accession number, search the UniProt web service using complex queries, or map gene symbols to UniProt IDs.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbUniprot.html
 ---
+
 
 # bioconductor-biodbuniprot
 

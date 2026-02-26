@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cner
-description: the package is available on all platforms; click for details.
+description: CNEr is a Bioconductor package for identifying and analyzing conserved non-coding elements across multiple genomes. Use when user asks to identify conserved non-coding elements, visualize CNEs, or analyze large-scale genome alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNEr.html
 ---
+
 
 # bioconductor-cner
 

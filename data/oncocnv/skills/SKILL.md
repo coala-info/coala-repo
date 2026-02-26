@@ -1,8 +1,9 @@
 ---
 name: oncocnv
-description: ONCOCNV is a specialized tool designed to identify copy number changes in high-depth sequencing data, such as targeted panels and whole-exome sequencing.
+description: ONCOCNV identifies copy number changes in high-depth sequencing data such as targeted panels and whole-exome sequencing. Use when user asks to detect genomic gains and losses, identify copy number variations, or perform gene-level copy number assessment.
 homepage: https://github.com/BoevaLab/ONCOCNV/blob/master/README.md
 ---
+
 
 # oncocnv
 

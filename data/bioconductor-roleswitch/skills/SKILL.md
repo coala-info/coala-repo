@@ -1,8 +1,9 @@
 ---
 name: bioconductor-roleswitch
-description: the package is available on all platforms; click for details.
+description: Roleswitch predicts microRNA targets by modeling the competition between messenger RNA and microRNA for binding sites. Use when user asks to predict miRNA targets, infer miRNA-mRNA interactions, or model competitive binding between transcripts.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/Roleswitch.html
 ---
+
 
 # bioconductor-roleswitch
 

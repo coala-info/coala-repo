@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pipeframe
-description: the package is available on all platforms; click for details.
+description: Bioconductor-pipeframe is an R package designed to build and manage bioinformatics pipelines with automated dependency handling. Use when user asks to create automated workflows, manage pipeline dependencies, or track intermediate files in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/pipeFrame.html
 ---
+
 
 # bioconductor-pipeframe
 

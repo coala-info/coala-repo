@@ -1,8 +1,9 @@
 ---
 name: perl-file-copy-recursive-reduced
-description: This skill provides guidance on using the `File::Copy::Recursive::Reduced` Perl module.
+description: This Perl module provides functions for recursively copying files and directories with minimal dependencies. Use when user asks to recursively copy directories, copy files to a new destination, or perform recursive file operations in dependency-constrained environments.
 homepage: http://thenceforward.net/perl/modules/File-Copy-Recursive-Reduced/
 ---
+
 
 # perl-file-copy-recursive-reduced
 

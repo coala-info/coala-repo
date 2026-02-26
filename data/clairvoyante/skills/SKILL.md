@@ -1,8 +1,9 @@
 ---
 name: clairvoyante
-description: Clairvoyante is a multi-task convolutional neural network (CNN) designed for sensitive and accurate variant calling.
+description: Clairvoyante is a multi-task convolutional neural network designed for sensitive and accurate variant calling in genomic data. Use when user asks to call variants from BAM files, utilize pre-trained models for whole-genome sequencing, or optimize variant calling performance for single molecule sequencing data.
 homepage: https://github.com/aquaskyline/Clairvoyante
 ---
+
 
 # clairvoyante
 

@@ -1,8 +1,9 @@
 ---
 name: proksee
-description: Proksee is a specialized toolkit designed for the assembly and evaluation of microbial genomes.
+description: Proksee is a specialized toolkit for the assembly and evaluation of microbial genomes from sequencing data. Use when user asks to assemble microbial genomes, evaluate assembly quality metrics, or manage genomic reference databases.
 homepage: https://github.com/proksee-project/proksee-cmd
 ---
+
 
 # proksee
 

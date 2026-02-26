@@ -1,8 +1,9 @@
 ---
 name: seismic-rna
-description: SEISMIC-RNA (Structure Ensemble Inference by Sequencing, Mutation Identification, and Clustering of RNA) is a specialized bioinformatics toolkit developed by the Rouskin Lab.
+description: SEISMIC-RNA identifies multiple co-existing RNA structural conformations from DMS-MaPseq or SHAPE-MaP data by analyzing correlated mutation patterns. Use when user asks to identify RNA structural ensembles, perform DREEM-based clustering, or analyze and visualize correlated mutations in RNA sequences.
 homepage: https://github.com/rouskinlab/seismic-rna
 ---
+
 
 # seismic-rna
 

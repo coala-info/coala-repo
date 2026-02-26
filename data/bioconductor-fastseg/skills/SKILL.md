@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fastseg
-description: the package is available on all platforms; click for details.
+description: bioconductor-fastseg performs fast and efficient segmentation of genomic data to identify regions of constant value using a cyber t-test based Bayesian framework. Use when user asks to detect copy number variations, identify transcripts from tiling arrays, or find breakpoints in numeric vectors and matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/fastseg.html
 ---
+
 
 # bioconductor-fastseg
 

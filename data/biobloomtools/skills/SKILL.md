@@ -1,8 +1,9 @@
 ---
 name: biobloomtools
-description: BioBloom Tools (BBT) provides a high-performance workflow for sequence classification using Bloom filters.
+description: BioBloom Tools provides a high-performance workflow for sequence classification and filtering using Bloom filters. Use when user asks to create Bloom filters from reference genomes, classify sequencing reads, filter host DNA from metagenomic samples, or identify contaminants in datasets.
 homepage: https://github.com/bcgsc/biobloom
 ---
+
 
 # biobloomtools
 

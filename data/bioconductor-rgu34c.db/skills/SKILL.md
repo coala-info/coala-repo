@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgu34c.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Genome U34C array. Use when user asks to map probe identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for the rgu34c platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgu34c.db.html
 ---
+
 
 # bioconductor-rgu34c.db
 

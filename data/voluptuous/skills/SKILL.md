@@ -1,8 +1,9 @@
 ---
 name: voluptuous
-description: Voluptuous is a Python data validation library that prioritizes simplicity and support for complex, nested data structures.
+description: Voluptuous is a Python library for validating complex, nested data structures. Use when user asks to 'validate data', 'define validation schemas', 'enforce data structure and type constraints', 'coerce data types', or 'handle validation errors'.
 homepage: https://github.com/alecthomas/voluptuous
 ---
+
 
 # voluptuous
 

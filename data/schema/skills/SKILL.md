@@ -1,8 +1,9 @@
 ---
 name: schema
-description: The `schema` library offers a Pythonic approach to data validation, allowing you to describe the expected structure of your data using familiar Python objects.
+description: The schema library validates and transforms data structures using Pythonic objects and logic wrappers. Use when user asks to validate data, check data types, transform input values, or define dictionary and list schemas.
 homepage: https://github.com/keleshev/schema
 ---
+
 
 # schema
 

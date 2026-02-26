@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytoml
-description: the package is available on all platforms; click for details.
+description: CytoML facilitates the exchange of flow cytometry gating hierarchies and data between R and commercial platforms like FlowJo and Cytobank. Use when user asks to import FlowJo workspaces, convert Cytobank experiments to GatingSets, or export R gating hierarchies to FlowJo and Cytobank formats.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoML.html
 ---
+
 
 # bioconductor-cytoml
 

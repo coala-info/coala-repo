@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epicompare
-description: "The package outputs an HTML report consisting of three sections: (1. General metrics) Metrics on peaks (percentage of blacklisted and non-standard peaks, and peak widths) and fragments (duplication rate) of samples, (2. Peak overlap) Percentage and statistical significance of overlapping and non-overlapping peaks. Also includes upset plot and (3. Functional annotation) functional annotation (ChromHMM, ChIPseeker and enrichment analysis) of peaks. Also includes peak enrichment around TSS."
+description: EpiCompare is an R package for benchmarking and quality control of epigenomic peak datasets through automated comparison and HTML report generation. Use when user asks to compare epigenomic peak files, benchmark datasets against a gold standard, or perform functional annotation and quality control on ChIP-seq and CUT&Tag data.
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiCompare.html
 ---
+
 
 # bioconductor-epicompare
 

@@ -1,8 +1,9 @@
 ---
 name: seedme
-description: Seedme is a specialized Capture The Flag (CTF) challenge designed to demonstrate cryptographic vulnerabilities, specifically those involving predictable random number generation in PHP.
+description: Seedme manages a Capture The Flag challenge environment focused on demonstrating predictable random number generation vulnerabilities in PHP. Use when user asks to deploy the challenge, reset user accounts, modify administrative credentials, or analyze cryptographic flaws in the seeding logic.
 homepage: https://github.com/HackUCF/seedme
 ---
+
 
 # seedme
 

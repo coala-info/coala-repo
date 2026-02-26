@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylationepicv2manifest
-description: the package is available on all platforms; click for details.
+description: This package provides the manifest data required to process and annotate DNA methylation data from the Illumina EPIC v2.0 array. Use when user asks to load EPIC v2.0 manifest data, manually assign array versions to RGChannelSet objects, retrieve Illumina IDs, or handle duplicated probe sequences.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylationEPICv2manifest.html
 ---
+
 
 # bioconductor-illuminahumanmethylationepicv2manifest
 

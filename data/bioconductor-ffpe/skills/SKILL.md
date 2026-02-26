@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ffpe
-description: the package is available on all platforms; click for details.
+description: This tool provides quality control and visualization for gene expression data derived from Formalin-Fixed Paraffin-Embedded tissues. Use when user asks to identify low-quality samples using IQR or Spearman correlation metrics, perform feature-level quality control, or generate Concordance at the Top plots to assess reproducibility.
 homepage: https://bioconductor.org/packages/release/bioc/html/ffpe.html
 ---
+
 
 # bioconductor-ffpe
 

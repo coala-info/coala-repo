@@ -1,8 +1,9 @@
 ---
 name: lrphase
-description: `lrphase` (executed via the `HaplotagLR` command) is a tool designed to phase individual long reads by leveraging known haplotype information.
+description: lrphase phases individual long reads by mapping their variants to known haplotype information from a phased VCF. Use when user asks to phase long reads, haplotag BAM or FASTQ files, or classify reads into maternal and paternal categories.
 homepage: https://github.com/Boyle-Lab/LRphase.git
 ---
+
 
 # lrphase
 

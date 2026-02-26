@@ -1,8 +1,9 @@
 ---
 name: bioconductor-plotgardenerdata
-description: the package is available on all platforms; click for details.
+description: This package provides example genomic datasets for the plotgardener visualization tool. Use when user asks to access sample genomic data, load example tracks for plotgardener, or run package vignettes.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/plotgardenerData.html
 ---
+
 
 # bioconductor-plotgardenerdata
 

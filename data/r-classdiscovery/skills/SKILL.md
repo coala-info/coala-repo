@@ -1,8 +1,9 @@
 ---
 name: r-classdiscovery
-description: R package classdiscovery (documentation from project home).
+description: The r-classdiscovery tool provides R-based methods for clustering, dimensionality reduction, and pattern identification in high-throughput biological datasets. Use when user asks to perform principal component analysis, conduct hierarchical clustering, evaluate cluster stability, or generate heatmaps for microarray and proteomics data.
 homepage: https://cran.r-project.org/web/packages/classdiscovery/index.html
 ---
+
 
 # r-classdiscovery
 

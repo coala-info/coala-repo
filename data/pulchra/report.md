@@ -3,7 +3,7 @@
 ## pulchra
 
 ### Tool Description
-PULCHRA: Protein Reconstruction from Alpha-carbons. A tool for restoring full-atom protein models from reduced representations (C-alpha atoms).
+PULCHRA Protein Chain Restoration Algorithm. The program default input is a PDB file. Output file <pdb_file.rebuild.pdb> will be created as a result.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pulchra:3.06--h031d066_4
@@ -18,11 +18,32 @@ PULCHRA: Protein Reconstruction from Alpha-carbons. A tool for restoring full-at
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pulchra:3.06--h031d066_4 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+PULCHRA Protein Chain Restoration Algorithm version 3.06
+Usage: pulchra [options] <pdb_file>
+The program default input is a PDB file.
+Output file <pdb_file.rebuild.pdb> will be created as a result.
+Valid options are:
+
+  -v : verbose output (default: off)
+  -n : center chain (default: off)
+  -x : time-seed random number generator (default: off)
+  -g : use PDBSG as an input format (CA=C-alpha, SC or CM=side chain c.m.)
+
+  -c : skip C-alpha positions optimization (default: on)
+  -p : detect cis-prolins (default: off)
+  -r : start from a random chain (default: off)
+  -i pdbfile : read the initial C-alpha coordinates from a PDB file
+  -t : save chain optimization trajectory to file <pdb_file.pdb.trajectory>
+  -u value : maximum shift from the restraint coordinates (default: 0.5A)
+
+  -e : rearrange backbone atoms (C, O are output after side chain) (default: off)
+  -f : preserve initial coordinates (default: off, implies '-c' on and '-n' off)
+  -b : skip backbone reconstruction (default: on)
+  -q : optimize backbone hydrogen bonds pattern (default: off)
+  -h : outputs hydrogen atoms (default: off)
+  -s : skip side chains reconstruction (default: on)
+  -o : don't attempt to fix excluded volume conflicts (default: on)
+  -z : don't check amino acid chirality (default: on)
 ```
 
 

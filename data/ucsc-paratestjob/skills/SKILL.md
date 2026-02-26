@@ -1,8 +1,9 @@
 ---
 name: ucsc-paratestjob
-description: The `ucsc-paratestjob` utility is a component of the UCSC Genome Browser's Parasol batch system.
+description: ucsc-paratestjob verifies the functionality of a UCSC Parasol batch system cluster by submitting and tracking test jobs. Use when user asks to verify cluster functionality, test a Parasol cluster, ensure the cluster environment is ready for processing tasks, simulate a workload, or diagnose Parasol environment issues.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-paratestjob
 

@@ -1,8 +1,9 @@
 ---
 name: sprai
-description: Sprai (Single-Pass Read Accuracy Improver) is a specialized bioinformatics pipeline designed to correct sequencing errors in long, noisy reads.
+description: Sprai corrects sequencing errors in long, noisy reads to improve assembly continuity. Use when user asks to correct PacBio CLR reads, pre-process reads for the Celera Assembler, or improve N50 for long-read assemblies.
 homepage: http://zombie.cb.k.u-tokyo.ac.jp/sprai/
 ---
+
 
 # sprai
 

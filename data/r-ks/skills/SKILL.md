@@ -1,8 +1,9 @@
 ---
 name: r-ks
-description: Kernel smoothers for univariate and multivariate data, with comprehensive visualisation and bandwidth selection capabilities, including for densities, density derivatives, cumulative distributions, clustering, classification, density ridges, significant modal regions, and two-sample hypothesis tests.
+description: The ks package provides tools for multivariate kernel smoothing and density estimation with support for unconstrained bandwidth matrices. Use when user asks to compute kernel density estimates, perform bandwidth selection, conduct non-parametric two-sample tests, or implement kernel discriminant analysis and mean shift clustering.
 homepage: https://cloud.r-project.org/web/packages/ks/index.html
 ---
+
 
 # r-ks
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ragene21stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Gene 2.1 ST array. Use when user asks to map probeset identifiers to gene symbols, retrieve Entrez Gene IDs, or access genomic metadata for the Rat Gene 2.1 ST platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene21stprobeset.db.html
 ---
+
 
 # bioconductor-ragene21stprobeset.db
 

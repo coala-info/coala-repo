@@ -1,8 +1,9 @@
 ---
 name: chia-rep
-description: The `chia-rep` tool is a Python-based package designed to quantify the similarity between ChIA-PET datasets.
+description: The chia-rep tool quantifies the reproducibility and similarity between ChIA-PET datasets by comparing genomic loop and peak adjacency matrices. Use when user asks to calculate similarity scores between ChIA-PET samples, prepare sample configuration files, or assess the reproducibility of genomic interaction data.
 homepage: https://github.com/c0ver/chia_rep
 ---
+
 
 # chia-rep
 

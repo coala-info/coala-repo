@@ -1,8 +1,9 @@
 ---
 name: shotmap
-description: Shotmap is a specialized software workflow designed for the functional annotation and comparative analysis of shotgun metagenomes.
+description: Shotmap performs functional annotation and comparative analysis of shotgun metagenomic sequences. Use when user asks to build search databases, execute functional annotation on metagenomes, or perform statistical comparisons between multiple samples.
 homepage: https://github.com/sharpton/shotmap
 ---
+
 
 # shotmap
 

@@ -1,8 +1,9 @@
 ---
 name: plip
-description: The Protein-Ligand Interaction Profiler (PLIP) is a specialized tool for the automated detection and characterization of non-covalent interactions in molecular complexes.
+description: PLIP automatically detects and characterizes non-covalent interactions between proteins and ligands from 3D structural data. Use when user asks to identify chemical contacts in a PDB file, generate interaction reports, or create PyMOL visualization sessions for molecular complexes.
 homepage: https://github.com/pharmai/plip
 ---
+
 
 # plip
 

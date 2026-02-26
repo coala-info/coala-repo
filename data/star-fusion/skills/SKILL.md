@@ -1,8 +1,9 @@
 ---
 name: star-fusion
-description: STAR-Fusion is a specialized bioinformatic tool designed to identify candidate fusion transcripts from Illumina RNA-Seq reads.
+description: STAR-Fusion identifies candidate fusion transcripts from RNA-Seq reads by detecting chimeric sequences and mapping them against reference annotations. Use when user asks to identify fusion transcripts, detect oncogenic drivers, or analyze chimeric sequences from transcriptomic data.
 homepage: https://github.com/STAR-Fusion/STAR-Fusion
 ---
+
 
 # star-fusion
 

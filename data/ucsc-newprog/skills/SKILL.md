@@ -1,8 +1,9 @@
 ---
 name: ucsc-newprog
-description: The `ucsc-newprog` utility is a developer productivity tool from the UCSC Genome Browser "kent" source suite.
+description: The `ucsc-newprog` tool generates a C source file skeleton with standard boilerplate for new programs. Use when user asks to create a new C program skeleton or generate a C source file skeleton.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-newprog
 

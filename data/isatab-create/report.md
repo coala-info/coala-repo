@@ -3,7 +3,7 @@
 ## isatab-create
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it contains system error messages regarding a container build failure.
+Create ISA-Tab files from Galaxy JSON input.
 
 ### Metadata
 - **Docker Image**: biocontainers/isatab-create:v0.9.5_cv0.3.14
@@ -18,11 +18,13 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/isatab-create:v0.9.5_cv0.3.14 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1099553664: no space left on device
+Usage: cli.py [OPTIONS]
+
+Options:
+  --galaxy_parameters_file FILENAME
+                                  Path to JSON file containing input Galaxy
+                                  JSON
+  --target_dir PATH               Output path to write
+  --help                          Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

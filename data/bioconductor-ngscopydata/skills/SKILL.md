@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ngscopydata
-description: the package is available on all platforms; click for details.
+description: NGScopyData provides example datasets for the NGScopy package to facilitate copy number variation analysis. Use when user asks to access sample NGS data for copy number estimation, run NGScopy demonstrations, or test CNV analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/NGScopyData.html
 ---
+
 
 # bioconductor-ngscopydata
 

@@ -1,8 +1,9 @@
 ---
 name: tracegroomer
-description: TraceGroomer is a specialized preprocessing tool designed to transform raw or corrected tracer metabolomics data into a standardized format required by the DIMet differential analysis suite.
+description: TraceGroomer preprocesses tracer metabolomics data, transforming it into a standardized format and generating various quantification types for downstream analysis. Use when user asks to 'transform metabolomics data', 'normalize metabolomics data', 'generate total metabolite abundances', 'generate isotopologue proportions', 'generate mean enrichment', 'prepare data for DIMet analysis'.
 homepage: https://github.com/cbib/TraceGroomer
 ---
+
 
 # tracegroomer
 

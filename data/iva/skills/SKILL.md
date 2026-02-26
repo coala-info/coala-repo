@@ -1,8 +1,9 @@
 ---
 name: iva
-description: IVA (Iterative Virus Assembler) is a specialized tool designed for the de novo assembly of RNA virus genomes.
+description: IVA is a de novo assembler designed to reconstruct RNA virus genomes from sequencing data by iteratively extending seed sequences. Use when user asks to assemble viral genomes from RNA-seq reads, extend existing contigs, or perform quality control on viral assemblies.
 homepage: https://github.com/sanger-pathogens/iva
 ---
+
 
 # iva
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biobroom
-description: the package is available on all platforms; click for details.
+description: The biobroom package converts Bioconductor S4 objects into tidy data frames for easier analysis and visualization. Use when user asks to tidy differential expression results, flatten high-dimensional assay data, or convert genomic ranges into long-format tibbles.
 homepage: https://bioconductor.org/packages/release/bioc/html/biobroom.html
 ---
+
 
 # bioconductor-biobroom
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xcoredata
-description: the package is available on all platforms; click for details.
+description: This package provides data resources for transcriptional regulatory network modeling using the xcore framework. Use when user asks to access pre-processed promoter and enhancer regions, retrieve transcription factor binding site data, or load data for xcore analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/xcoredata.html
 ---
+
 
 # bioconductor-xcoredata
 

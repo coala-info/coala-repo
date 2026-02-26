@@ -3,7 +3,7 @@
 ## kin
 
 ### Tool Description
-A tool for kinship analysis (Note: The provided text is a system error message and does not contain help documentation or argument definitions).
+Relatedness and IBD estimates
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kin:3.1.4--pyhdfd78af_0
@@ -12,35 +12,33 @@ A tool for kinship analysis (Note: The provided text is a system error message a
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kin/overview
-- **Total Downloads**: 750
+- **Total Downloads**: 751
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/DivyaratanPopli/Kinship_Inference
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kin:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2600178413: no space left on device
-```
+usage: kin [-h] -I INPUT_LOCATION -O OUTPUT_LOCATION [-r ROH_FILE_LOCATION]
+           [-c CORES] [-t THRESHOLD] [-p p_0]
 
+Relatedness and IBD estimates
 
-## Metadata
-- **Skill**: generated
-
-## kin_KINgaroo
-
-### Tool Description
-A tool for kinship estimation (Note: The provided text contains container execution errors and does not include help documentation or argument details).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/kin:3.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/DivyaratanPopli/Kinship_Inference
-- **Package**: https://anaconda.org/channels/bioconda/packages/kin/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kin:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3739425287: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -I INPUT_LOCATION, --input_location INPUT_LOCATION
+                        input files location
+  -O OUTPUT_LOCATION, --output_location OUTPUT_LOCATION
+                        Output files location
+  -r ROH_FILE_LOCATION, --ROH_file_location ROH_FILE_LOCATION
+                        ROH files location
+  -c CORES, --cores CORES
+                        Number of cores available
+  -t THRESHOLD, --threshold THRESHOLD
+                        Minimum number of sites in a window for ROH
+                        implementation
+  -p p_0, --diversity_parameter_p_0 p_0
+                        Input p_0 parameter, if you do not want to calculate
+                        it from given samples (Keep it same as that for
+                        KINgaroo)
 ```
 

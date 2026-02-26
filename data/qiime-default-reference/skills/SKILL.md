@@ -1,8 +1,9 @@
 ---
 name: qiime-default-reference
-description: The qiime-default-reference package provides a standardized way to access the Greengenes 16S rRNA database (version 13_8) specifically curated for use with QIIME.
+description: This tool provides programmatic access to standardized Greengenes 16S rRNA reference data and file paths for QIIME-based analyses. Use when user asks to retrieve absolute paths for reference sequences, PyNAST template alignments, phylogenetic trees, or taxonomy mappings.
 homepage: https://github.com/biocore/qiime-default-reference
 ---
+
 
 # qiime-default-reference
 

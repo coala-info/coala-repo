@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneaccord
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies clonally exclusive gene or pathway pairs in cancer cohorts using phylogenetic tree inference data. Use when user asks to detect mutations occurring in different branches of a tumor phylogeny, identify potential synergies between co-existing clones, or perform statistical tests for clonal exclusivity across patient cohorts.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GeneAccord.html
 ---
+
 
 # bioconductor-geneaccord
 

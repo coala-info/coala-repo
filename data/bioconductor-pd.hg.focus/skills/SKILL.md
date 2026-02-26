@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.focus
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix HG-Focus microarray. Use when user asks to process HG-Focus microarray data, map probes for the HG-Focus chip, or install the HG-Focus platform design package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.focus.html
 ---
+
 
 # bioconductor-pd.hg.focus
 

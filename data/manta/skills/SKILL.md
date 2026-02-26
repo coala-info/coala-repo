@@ -1,8 +1,9 @@
 ---
 name: manta
-description: Manta is a specialized tool designed to identify structural variants and indels from paired-end sequencing reads.
+description: Manta identifies structural variants and indels from paired-end sequencing reads using an integrated discovery, assembly, and scoring workflow. Use when user asks to detect large-scale structural variants, call germline or somatic indels, or analyze genomic rearrangements in tumor-normal pairs.
 homepage: https://github.com/Illumina/manta
 ---
+
 
 # manta
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-idmappinganalysis
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool evaluates and compares bioinformatics identifier mapping resources using statistical methods and experimental data. Use when user asks to evaluate ID map quality, compare annotation services like DAVID or Ensembl, validate mappings with experimental data, or perform mixture modeling on correlation data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/IdMappingAnalysis.html
 ---
+
 
 # bioconductor-idmappinganalysis
 

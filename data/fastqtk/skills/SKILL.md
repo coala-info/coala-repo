@@ -1,8 +1,9 @@
 ---
 name: fastqtk
-description: fastqtk is a lightweight, C-based toolkit designed for the rapid manipulation of sequencing data.
+description: fastqtk is a lightweight C-based toolkit for the rapid manipulation and preprocessing of FASTQ sequencing data. Use when user asks to interleave or deinterleave paired-end reads, trim sequences, filter by length, count reads, or convert between FASTQ and FASTA formats.
 homepage: https://github.com/ndaniel/fastqtk
 ---
+
 
 # fastqtk
 

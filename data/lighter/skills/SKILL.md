@@ -1,8 +1,9 @@
 ---
 name: lighter
-description: Lighter is a specialized tool for correcting sequencing errors in genomic reads.
+description: "Lighter corrects sequencing errors in genomic reads using a memory-efficient k-mer sampling approach. Use when user asks to correct sequencing errors, improve read quality before assembly, or perform k-mer based error correction on genomic data."
 homepage: https://github.com/mourisl/Lighter
 ---
+
 
 # lighter
 

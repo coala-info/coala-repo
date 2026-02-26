@@ -1,8 +1,9 @@
 ---
 name: perl-util-properties
-description: The `perl-util-properties` skill enables seamless management of configuration data within Perl environments by mimicking the behavior of `java.util.Properties`.
+description: This tool manages configuration data in Perl by mimicking the behavior of Java's property files. Use when user asks to load, modify, store, or manage key-value configuration files using the Util::Properties module.
 homepage: http://metacpan.org/pod/Util::Properties
 ---
+
 
 # perl-util-properties
 

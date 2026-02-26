@@ -1,8 +1,9 @@
 ---
 name: geodl
-description: `geodl` is a specialized utility for bioinformaticians that automates the retrieval of raw sequencing data.
+description: geodl automates the retrieval and renaming of raw sequencing data from GEO or ENA using metadata to provide descriptive filenames. Use when user asks to download FASTQ files from GEO or ENA accessions, fetch sequencing data using specific sample IDs, or rename SRR files using experimental sample names.
 homepage: https://github.com/jduc/geoDL
 ---
+
 
 # geodl
 

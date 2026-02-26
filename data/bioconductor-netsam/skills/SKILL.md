@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netsam
-description: the package is available on all platforms; click for details.
+description: NetSAM performs network seriation and modularization to identify hierarchical structures and optimize node ordering in large-scale networks. Use when user asks to identify hierarchical modules in a network, perform network seriation, or organize network nodes for visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/NetSAM.html
 ---
+
 
 # bioconductor-netsam
 

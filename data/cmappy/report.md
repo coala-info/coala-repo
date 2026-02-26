@@ -1,9 +1,9 @@
 # cmappy CWL Generation Report
 
-## cmappy
+## cmappy_python -m cmapPy.pandasGEXpress.gct2gctx
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'cmappy'. It contains error logs related to a failed container image build (Apptainer/Singularity) due to insufficient disk space.
+Command-line script to convert a .gct file to .gctx. Main method takes in a .gct file path (and, optionally, an out path and/or name to which to save the equivalent .gctx) and saves the enclosed content to a .gctx file. Note: Only supports v1.3 .gct files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8
@@ -18,55 +18,55 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: linuxrc: unpack to regular file: short write: write /tmp/build-temp-2678936765/rootfs/linuxrc: no space left on device
+usage: gct2gctx.py [-h] -filename FILENAME [-output_filepath OUTPUT_FILEPATH]
+                   [-verbose] [-row_annot_path ROW_ANNOT_PATH]
+                   [-col_annot_path COL_ANNOT_PATH]
+
+Command-line script to convert a .gct file to .gctx. Main method takes in a
+.gct file path (and, optionally, an out path and/or name to which to save the
+equivalent .gctx) and saves the enclosed content to a .gctx file. Note: Only
+supports v1.3 .gct files.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -filename FILENAME, -f FILENAME
+                        .gct file that you would like to convert to .gctx
+                        (default: None)
+  -output_filepath OUTPUT_FILEPATH, -o OUTPUT_FILEPATH
+                        out path/name for output gctx file. Default is just to
+                        modify the extension (default: None)
+  -verbose, -v          Whether to print a bunch of output. (default: False)
+  -row_annot_path ROW_ANNOT_PATH
+                        Path to annotations file for rows (default: None)
+  -col_annot_path COL_ANNOT_PATH
+                        Path to annotations file for columns (default: None)
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## cmappy_gct2gctx
+## cmappy_python -m cmapPy.pandasGEXpress.subset_gct
 
 ### Tool Description
-Convert GCT files to GCTX format.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8
 - **Homepage**: https://github.com/cmap/cmapPy
 - **Package**: https://anaconda.org/channels/bioconda/packages/cmappy/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: linuxrc: unpack to regular file: short write: write /tmp/build-temp-4211765522/rootfs/linuxrc: no space left on device
-```
-
-## cmappy_subset_gct
-
-### Tool Description
-A tool to subset GCT files (Note: The provided help text contains only container execution errors and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8
-- **Homepage**: https://github.com/cmap/cmapPy
-- **Package**: https://anaconda.org/channels/bioconda/packages/cmappy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmappy:4.0.1--py39h2de1943_8 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: linuxrc: unpack to regular file: short write: write /tmp/build-temp-2131576020/rootfs/linuxrc: no space left on device
+/usr/local/bin/python: No module named cmapPy.pandasGEXpress.subset_gct
 ```
 

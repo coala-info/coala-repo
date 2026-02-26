@@ -1,8 +1,9 @@
 ---
 name: medaka
-description: Medaka is a suite of tools designed to create consensus sequences and identify variants from Nanopore sequencing data.
+description: Medaka creates consensus sequences and identifies variants from Nanopore sequencing data using neural networks applied to basecalled reads. Use when user asks to polish a draft assembly, generate consensus sequences, or call variants from Nanopore data.
 homepage: https://github.com/nanoporetech/medaka
 ---
+
 
 # medaka
 

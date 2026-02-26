@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu11ksubbprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix mu11ksubb microarray platform. Use when user asks to retrieve probe sequences for the Murine Genome 11K Sub B array, perform sequence-specific analysis on this platform, or access microarray probe metadata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu11ksubbprobe.html
 ---
+
 
 # bioconductor-mu11ksubbprobe
 

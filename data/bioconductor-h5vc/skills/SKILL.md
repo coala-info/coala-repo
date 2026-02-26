@@ -1,8 +1,9 @@
 ---
 name: bioconductor-h5vc
-description: the package is available on all platforms; click for details.
+description: The h5vc package provides a scalable framework for managing and analyzing large-scale nucleotide tallies from NGS experiments using the HDF5 file format. Use when user asks to create tally files from BAMs, perform variant calling on cohorts, generate mismatch plots, or analyze mutation spectra.
 homepage: https://bioconductor.org/packages/release/bioc/html/h5vc.html
 ---
+
 
 # bioconductor-h5vc
 

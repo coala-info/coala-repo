@@ -1,8 +1,9 @@
 ---
 name: pymethylation_utils
-description: pymethylation_utils is a Python wrapper for the high-performance Rust binary `epimetheus`.
+description: pymethylation_utils scores DNA methylation at specific motifs across a genome using a high-performance Rust backend. Use when user asks to score DNA methylation, process methylation pileups against a reference genome, or identify motif-specific modifications.
 homepage: https://github.com/SebastianDall/pymethylation_utils
 ---
+
 
 # pymethylation_utils
 

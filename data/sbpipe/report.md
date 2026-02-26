@@ -3,7 +3,7 @@
 ## sbpipe
 
 ### Tool Description
-Systems Biology Pipeline (Note: The provided text is a container build error log and does not contain usage instructions or argument definitions.)
+Pipelines for systems modelling of biological networks.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sbpipe:4.21.0--py_0
@@ -18,33 +18,39 @@ Systems Biology Pipeline (Note: The provided text is a container build error log
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sbpipe:4.21.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: sbpipe [-h] [-c NAME] [-s FILE] [-p FILE] [-d FILE] [-e FILE]
+              [--license] [--nocolor] [--logo] [-q]
+              [--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [-v] [-V]
 
+Pipelines for systems modelling of biological networks.
 
-## Metadata
-- **Skill**: generated
+optional arguments:
+  -h, --help            show this help message and exit
+  -c NAME, --create-project NAME
+                        create a project structure
+  -s FILE, --simulate FILE
+                        run time course simulations
+  -p FILE, --parameter-scan1 FILE
+                        run parameter scans for 1 model variable
+  -d FILE, --parameter-scan2 FILE
+                        run parameter scans for 2 model variables
+  -e FILE, --parameter-estimation FILE
+                        run parameter estimations
+  --license             show the license and exit
+  --nocolor             print logging messages without colors
+  --logo                show the logo and exit
+  -q, --quiet           do not print any log
+  --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        override the log level
+  -v, --verbose         print debugging output
+  -V, --version         show the version and exit
 
-## sbpipe_sbpipe_snake
+Exit status:
+0  if OK,
+1  if trouble (e.g. a pipeline did not execute correctly).
 
-### Tool Description
-A tool for Systems Biology pipeline simulation and analysis (Note: The provided help text contains only system logs and error messages, no argument information was available).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/sbpipe:4.21.0--py_0
-- **Homepage**: http://sbpipe.readthedocs.io
-- **Package**: https://anaconda.org/channels/bioconda/packages/sbpipe/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sbpipe:4.21.0--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Report bugs to sbpipe@googlegroups.com
+SBpipe home page: <https://github.com/pdp10/sbpipe>
+For complete documentation, see http://sbpipe.readthedocs.io .
 ```
 

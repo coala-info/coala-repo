@@ -1,8 +1,9 @@
 ---
 name: tandem-genotypes
-description: The `tandem-genotypes` suite provides a specialized workflow for detecting changes in the length of tandem repeats using "long" DNA reads aligned to a reference genome.
+description: tandem-genotypes detects changes in the length of tandem repeats by analyzing long DNA reads aligned to a reference genome. Use when user asks to identify repeat expansions or contractions, predict alleles from long-read alignments, compare repeat lengths across multiple samples, or visualize copy number changes.
 homepage: https://github.com/mcfrith/tandem-genotypes
 ---
+
 
 # tandem-genotypes
 

@@ -1,8 +1,9 @@
 ---
 name: advntr
-description: "adVNTR is a tool for genotyping Variable Number Tandem Repeats (VNTRs) from sequence data. (Note: The provided text appears to be a container runtime error log rather than help text; no arguments could be extracted from the input.)"
+description: "advntr genotypes Variable Number Tandem Repeats from sequencing data using Hidden Markov Models and neural networks. Use when user asks to genotype VNTRs, identify repeat counts in Illumina or PacBio reads, or detect frameshifts in tandem repeat regions."
 homepage: https://github.com/mehrdadbakhtiari/adVNTR
 ---
+
 
 # advntr
 

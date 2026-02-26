@@ -1,8 +1,9 @@
 ---
 name: atac
-description: `atac` (Arguably a Terminal API Client) is a high-performance, Rust-based TUI tool for API development and testing.
+description: ATAC is a high-performance terminal user interface for developing, testing, and managing API requests and collections. Use when user asks to test APIs from the terminal, import Postman or OpenAPI collections, manage environment variables, or perform authenticated requests using a TUI.
 homepage: https://github.com/Julien-cpsn/ATAC
 ---
+
 
 # atac
 

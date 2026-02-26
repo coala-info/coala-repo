@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccl4
-description: the package is available on all platforms; click for details.
+description: This package provides raw rat liver microarray data from carbon tetrachloride exposure experiments and demonstrates workflows for processing Genepix files. Use when user asks to access raw .gpr data files, convert microarray data into RGList objects, or construct NChannelSet objects for downstream analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CCl4.html
 ---
+
 
 # bioconductor-ccl4
 

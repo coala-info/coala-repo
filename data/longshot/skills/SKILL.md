@@ -1,8 +1,9 @@
 ---
 name: longshot
-description: Longshot is a specialized variant caller optimized for the unique error profiles of long-read sequencing technologies.
+description: Longshot is a variant caller and phaser optimized for identifying single nucleotide variants in long-read sequencing data. Use when user asks to call SNVs from long reads, phase variants into haplotypes, or generate haplotype-tagged BAM files.
 homepage: https://github.com/pjedge/longshot
 ---
+
 
 # longshot
 

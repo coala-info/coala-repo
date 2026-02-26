@@ -1,8 +1,9 @@
 ---
 name: r-mixkernel
-description: R package mixkernel (documentation from project home).
+description: mixKernel is an R package for integrating multiple datasets using kernel-based methods and performing exploratory analysis. Use when user asks to compute kernel matrices, combine multiple data sources into a meta-kernel, perform Kernel Principal Component Analysis, or identify influential variables through feature selection.
 homepage: https://cran.r-project.org/web/packages/mixkernel/index.html
 ---
+
 
 # r-mixkernel
 

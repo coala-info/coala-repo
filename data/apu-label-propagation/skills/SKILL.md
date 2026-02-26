@@ -1,8 +1,9 @@
 ---
 name: apu-label-propagation
-description: The `apu-label-propagation` tool (part of the NIAPU framework) implements a specialized machine learning workflow for bioinformatics.
+description: This tool implements a three-stage machine learning pipeline to identify disease-associated genes using network-diffusion features and adaptive positive-unlabelled label propagation. Use when user asks to calculate NeDBIT features from PPI networks, perform adaptive label propagation to identify reliable negatives, or train classifiers for disease gene discovery.
 homepage: https://github.com/AndMastro/NIAPU
 ---
+
 
 # apu-label-propagation
 

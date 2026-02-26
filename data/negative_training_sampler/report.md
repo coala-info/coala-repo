@@ -3,7 +3,9 @@
 ## negative_training_sampler
 
 ### Tool Description
-A tool for sampling negative training data. (Note: The provided text contains container execution logs and error messages rather than the tool's help documentation, so no arguments could be extracted.)
+A simple script that takes a tsv file with positive and negative labels
+  and a reference file. Generates negative samples with the same GC
+  distribution as the positive samples per chromosome.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/negative_training_sampler:0.3.1--py_0
@@ -18,11 +20,31 @@ A tool for sampling negative training data. (Note: The provided text contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/negative_training_sampler:0.3.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1705317489: no space left on device
+Usage: negative_training_sampler [OPTIONS]
+
+  A simple script that takes a tsv file with positive and negative labels
+  and a reference file. Generates negative samples with the same GC
+  distribution as the positive samples per chromosome.
+
+Options:
+  -i, --label-file PATH      Input bed file with labeled regions  [required]
+  -r, --reference-file PATH  Input genome reference in fasta format
+                             [required]
+
+  -g, --genome-file PATH     Input genome file of reference  [required]
+  -o, --output_file PATH     Path to output file.
+  -n, --label_num INTEGER    Number of separate label columns.
+  --precision INTEGER        Precision of decimals when computing the
+                             attributes like GC content.
+
+  -c, --bgzip                Output will be bgzipped.
+  --log PATH                 Write logging to this file.
+  --verbose                  Will print verbose messages.
+  --seed INTEGER             Sets the seed for sampling.
+  --cores INTEGER            number of used cores default: 1
+  --memory TEXT              amount of memory per core (e.g. 2 cores * 2GB =
+                             4GB) default: 2GB
+
+  --help                     Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

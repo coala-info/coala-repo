@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lpsymphony
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to the SYMPHONY solver for solving mixed-integer linear programming problems. Use when user asks to solve linear programs, perform mixed-integer programming, or optimize constrained mathematical models.
 homepage: https://bioconductor.org/packages/release/bioc/html/lpsymphony.html
 ---
+
 
 # bioconductor-lpsymphony
 

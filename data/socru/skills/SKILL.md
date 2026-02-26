@@ -1,8 +1,9 @@
 ---
 name: socru
-description: The `socru` tool provides a standardized way to describe and compare the macro-structure of bacterial genomes.
+description: socru describes and compares the macro-structure of bacterial genomes by using ribosomal operons as genomic landmarks to determine the order and orientation of intervening sequences. Use when user asks to characterize genomic rearrangements, determine the structural profile of a complete assembly, or identify novel chromosomal orientations.
 homepage: https://github.com/quadram-institute-bioscience/socru
 ---
+
 
 # socru
 

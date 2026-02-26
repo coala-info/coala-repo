@@ -1,8 +1,9 @@
 ---
 name: perl-digest-md5-file
-description: The `perl-digest-md5-file` tool extends the standard MD5 capabilities to handle file paths and URLs directly.
+description: This tool calculates MD5 checksums for local files and remote URLs. Use when user asks to calculate file digests, verify the integrity of remote data via URL, or generate MD5 hashes for large datasets.
 homepage: http://search.cpan.org/dist/Digest-MD5-File/
 ---
+
 
 # perl-digest-md5-file
 

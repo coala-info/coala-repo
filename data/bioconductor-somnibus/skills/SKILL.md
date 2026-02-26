@@ -1,8 +1,9 @@
 ---
 name: bioconductor-somnibus
-description: the package is available on all platforms; click for details.
+description: This tool identifies differentially methylated regions in DNA methylation data using a B-spline based modeling approach. Use when user asks to identify differentially methylated regions, analyze DNA methylation patterns, or account for spatial correlation in methylation data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SOMNiBUS.html
 ---
+
 
 # bioconductor-somnibus
 

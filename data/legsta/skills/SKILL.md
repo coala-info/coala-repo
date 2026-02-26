@@ -1,8 +1,9 @@
 ---
 name: legsta
-description: `legsta` is a specialized bioinformatics tool designed for the rapid epidemiological typing of *Legionella pneumophila*.
+description: legsta performs in silico Sequence Based Typing (SBT) for Legionella pneumophila isolates. Use when user asks to perform epidemiological typing of Legionella pneumophila, identify SBT alleles, or determine sequence types from genomic assemblies.
 homepage: https://github.com/tseemann/legsta
 ---
+
 
 # legsta
 

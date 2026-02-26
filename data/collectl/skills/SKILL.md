@@ -1,8 +1,9 @@
 ---
 name: collectl
-description: Collectl is a lightweight, high-performance monitoring tool for Linux that captures a broad range of system metrics with very low overhead.
+description: Collectl is a lightweight monitoring tool that captures a broad range of Linux system performance metrics with low overhead. Use when user asks to monitor real-time system performance, log telemetry data for playback, or troubleshoot hardware subsystems like CPU, disk, and network.
 homepage: https://github.com/sharkcz/collectl
 ---
+
 
 # collectl
 

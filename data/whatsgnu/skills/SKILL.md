@@ -1,8 +1,9 @@
 ---
 name: whatsgnu
-description: WhatsGNU (What's Gene Novelty Unit) is a specialized proteomic tool that ranks protein sequences based on their frequency of occurrence across thousands of public genomes.
+description: WhatsGNU ranks protein sequences based on their frequency across public genomes to identify novel proteins. Use when user asks to identify novel proteins, create custom protein databases, identify missing genes, download protein databases, or generate visual reports of proteomic novelty.
 homepage: https://github.com/ahmedmagds/WhatsGNU
 ---
+
 
 # whatsgnu
 

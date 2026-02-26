@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rbcbook1
-description: the package is available on all platforms; click for details.
+description: This package provides datasets and code examples for the Bioconductor Case Studies book. Use when user asks to access example data from the Bioconductor Case Studies book or reproduce its bioinformatics workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/RbcBook1.html
 ---
+
 
 # bioconductor-rbcbook1
 

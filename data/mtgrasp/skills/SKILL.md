@@ -1,8 +1,9 @@
 ---
 name: mtgrasp
-description: mtGrasp (Mitochondrial Genome Reference-grade Assembly and Standardization Pipeline) is a specialized utility designed to automate the assembly of animal mitochondrial genomes.
+description: mtGrasp automates the assembly and annotation of animal mitochondrial genomes from raw paired-end sequencing reads. Use when user asks to assemble mitochondrial genomes, annotate mitochondrial DNA, or generate standardized circular assemblies from sequencing data.
 homepage: https://github.com/bcgsc/mtGrasp
 ---
+
 
 # mtgrasp
 

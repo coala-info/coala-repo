@@ -1,8 +1,9 @@
 ---
 name: pyfasta
-description: `pyfasta` is a specialized tool designed for "pythonic" and high-performance access to FASTA sequence files.
+description: pyfasta provides fast, memory-efficient random access and manipulation of FASTA sequence files using indexing and memory-mapping. Use when user asks to extract sub-sequences, split FASTA files, flatten sequences, or retrieve sequence statistics and information.
 homepage: https://github.com/brentp/pyfasta
 ---
+
 
 # pyfasta
 

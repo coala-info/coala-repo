@@ -2,9 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mhca
 label: mhc-annotation_mhca
-doc: "MHC annotation tool (Note: The provided help text contains only container runtime
-  error messages and no usage information).\n\nTool homepage: https://github.com/DiltheyLab/MHC-annotation"
-inputs: []
+doc: "mhc-annotation_mhca\n\nTool homepage: https://github.com/DiltheyLab/MHC-annotation"
+inputs:
+  - id: subcommand
+    type: string
+    doc: sub-command help
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

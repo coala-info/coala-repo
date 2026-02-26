@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mcbiclust
-description: the package is available on all platforms; click for details.
+description: MCbiclust discovers large-scale biclusters in transcriptomic datasets to identify correlated gene expression patterns across sample subsets. Use when user asks to find biclusters in gene expression data, identify molecular subtypes, or detect co-expressed gene modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/MCbiclust.html
 ---
+
 
 # bioconductor-mcbiclust
 

@@ -1,8 +1,9 @@
 ---
 name: perl-biox-workflow-command
-description: BioX-Workflow-Command is an opinionated templating system designed to streamline the creation and execution of bioinformatics pipelines.
+description: BioX-Workflow-Command is a templating system designed to streamline the creation and execution of bioinformatics pipelines. Use when user asks to execute workflows, generate HPC dependencies, scaffold new pipeline files, add rules to existing workflows, or check the status of workflow files.
 homepage: https://github.com/biosails/BioX-Workflow-Command
 ---
+
 
 # perl-biox-workflow-command
 

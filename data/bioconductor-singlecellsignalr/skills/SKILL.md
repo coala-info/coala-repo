@@ -1,8 +1,9 @@
 ---
 name: bioconductor-singlecellsignalr
-description: the package is available on all platforms; click for details.
+description: SingleCellSignalR analyzes cell-cell interactions and signaling networks from single-cell RNA-seq data. Use when user asks to infer paracrine and autocrine signaling, identify ligand-receptor interactions, or visualize intercellular communication between cell clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleCellSignalR.html
 ---
+
 
 # bioconductor-singlecellsignalr
 

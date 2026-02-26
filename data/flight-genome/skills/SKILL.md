@@ -1,8 +1,9 @@
 ---
 name: flight-genome
-description: flight-genome is a Python-based bioinformatics tool designed for the automated recovery of genomes from metagenomic datasets.
+description: flight-genome is a bioinformatics tool that automates the recovery of genomes from metagenomic datasets by binning contigs based on sequence composition and coverage. Use when user asks to recover metagenome-assembled genomes, bin contigs from an assembly, or identify genomic clusters within complex microbial communities.
 homepage: https://github.com/rhysnewell/flight
 ---
+
 
 # flight-genome
 

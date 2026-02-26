@@ -1,8 +1,9 @@
 ---
 name: perl-parallel-forkmanager
-description: Parallel::ForkManager is a Perl module designed to simplify the management of forked child processes.
+description: perl-parallel-forkmanager is a Perl module that manages and limits the number of concurrent forked child processes. Use when user asks to parallelize loops in Perl, manage process forking, or limit concurrent worker processes.
 homepage: https://github.com/dluxhu/perl-parallel-forkmanager
 ---
+
 
 # perl-parallel-forkmanager
 

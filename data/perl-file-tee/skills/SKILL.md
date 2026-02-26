@@ -1,8 +1,9 @@
 ---
 name: perl-file-tee
-description: The `perl-file-tee` skill provides guidance on using the `File::Tee` Perl module to multiplex output streams.
+description: This tool multiplexes Perl output streams to send data to multiple destinations simultaneously. Use when user asks to replicate the Unix tee command in Perl, redirect output to multiple files or processes, or capture stream data into scalars.
 homepage: http://metacpan.org/pod/File::Tee
 ---
+
 
 # perl-file-tee
 

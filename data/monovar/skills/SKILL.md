@@ -1,8 +1,9 @@
 ---
 name: monovar
-description: Monovar is a specialized genomic tool designed specifically for the nuances of single-cell DNA sequencing.
+description: Monovar is a genomic tool that uses a Bayesian framework to detect single nucleotide variants and call genotypes from single-cell DNA sequencing data. Use when user asks to detect SNVs in single-cell datasets, perform joint genotyping across multiple cells, or identify variants in noisy genomic data.
 homepage: https://bitbucket.org/hamimzafar/monovar
 ---
+
 
 # monovar
 

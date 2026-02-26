@@ -3,7 +3,7 @@
 ## attotree
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it consists of system error messages related to a Singularity/Docker container execution failure (no space left on device).
+rapid estimation of phylogenetic trees using sketching
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/attotree:0.1.6--pyhdfd78af_0
@@ -18,9 +18,27 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/534a6483d1830c2b98b68aa60261afe0d96ec3253bf5b2b830b311620233dadd: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/attotree:0.1.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1414236689: no space left on device
+Program: attotree (rapid estimation of phylogenetic trees using sketching)
+Version: 0.1.6
+Author:  Karel Brinda <karel.brinda@inria.fr>
+
+usage: attotree [-k INT] [-s INT] [-t INT] [-o FILE] [-m STR] [-d DIR] [-L] [-D] [-V]
+                genome [genome ...]
+
+positional arguments:
+  genome      input genome file(s) (fasta / gzipped fasta / list of files when "-L")
+
+options:
+  -h          show this help message and exit
+  -v          show program's version number and exit
+  -k INT      kmer size [21]
+  -s INT      sketch size [10000]
+  -t INT      number of threads [#cores, 20]
+  -o FILE     newick output [-]
+  -m STR      tree construction method (nj/upgma) [nj]
+  -d DIR      tmp dir [default system, /tmp...]
+  -L          input files are list(s) of files
+  -D          debugging (don't remove tmp dir)
+  -V          verbose output
 ```
 

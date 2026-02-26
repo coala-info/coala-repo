@@ -1,8 +1,9 @@
 ---
 name: perl-findbin
-description: The `perl-findbin` skill provides the logic for anchoring a Perl script's environment to its own installation location.
+description: This tool locates the directory of the currently running Perl script to establish relative library paths. Use when user asks to find the script's installation location, add a sibling lib directory to the include path, or resolve the real path of a symlinked script.
 homepage: https://metacpan.org/pod/FindBin
 ---
+
 
 # perl-findbin
 

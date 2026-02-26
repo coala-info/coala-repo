@@ -1,8 +1,9 @@
 ---
 name: lorikeet
-description: Lorikeet is a specialized bioinformatics tool designed for the digital reconstruction of spoligotypes from MTB Illumina read data.
+description: Lorikeet performs digital spoligotyping of Mycobacterium tuberculosis strains using Illumina sequencing data. Use when user asks to reconstruct spoligotypes from read data, detect spacer sequences in the Direct Repeat region, or perform strain typing of tuberculosis isolates.
 homepage: https://github.com/AbeelLab/lorikeet
 ---
+
 
 # lorikeet
 

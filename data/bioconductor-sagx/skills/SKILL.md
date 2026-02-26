@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sagx
-description: the package is available on all platforms; click for details.
+description: SAGx provides a collection of statistical tools for the analysis of gene expression data. Use when user asks to perform meta-analysis of microarray studies, cluster gene expression data, or identify differentially expressed genes.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SAGx.html
 ---
+
 
 # bioconductor-sagx
 

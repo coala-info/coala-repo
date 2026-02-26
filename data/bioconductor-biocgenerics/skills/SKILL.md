@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocgenerics
-description: The package defines many S4 generic functions used in Bioconductor.
+description: BiocGenerics provides S4 generic functions and promotes base R functions to enable consistent method dispatch across the Bioconductor ecosystem. Use when user asks to define S4 methods for base functions, combine Bioconductor objects, access genomic metadata, or handle out-of-memory data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocGenerics.html
 ---
+
 
 # bioconductor-biocgenerics
 

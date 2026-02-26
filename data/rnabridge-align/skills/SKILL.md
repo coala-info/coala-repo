@@ -1,8 +1,9 @@
 ---
 name: rnabridge-align
-description: rnabridge-align is a specialized bioinformatics tool designed to determine the alignment of entire RNA fragments by bridging the gap between paired-end reads.
+description: rnabridge-align determines the alignment of entire RNA fragments by bridging the gap between paired-end reads. Use when user asks to bridge paired-end RNA reads, calculate the most probable path connecting reads, or perform reference-guided fragment alignment.
 homepage: https://github.com/Shao-Group/rnabridge-align
 ---
+
 
 # rnabridge-align
 

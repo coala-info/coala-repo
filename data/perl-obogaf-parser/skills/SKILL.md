@@ -1,8 +1,9 @@
 ---
 name: perl-obogaf-parser
-description: The `perl-obogaf-parser` skill provides a programmatic interface for handling complex hierarchical ontology data and its associated gene annotations.
+description: This tool parses OBO ontology files and GAF annotation files to enable object-oriented traversal of ontology graphs and gene mapping in Perl. Use when user asks to parse OBO or GAF files, navigate ontology hierarchies, retrieve term metadata, or extract gene-term associations.
 homepage: http://metacpan.org/pod/obogaf::parser
 ---
+
 
 # perl-obogaf-parser
 

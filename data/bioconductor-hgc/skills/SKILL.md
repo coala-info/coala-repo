@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgc
-description: the package is available on all platforms; click for details.
+description: HGC performs fast hierarchical clustering of large-scale single-cell RNA-seq data by building dendrograms from shared nearest neighbor graphs. Use when user asks to perform hierarchical clustering on scRNA-seq data, build a dendrogram from a cell graph, or scale clustering for large single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/HGC.html
 ---
+
 
 # bioconductor-hgc
 

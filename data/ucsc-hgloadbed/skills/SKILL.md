@@ -1,8 +1,9 @@
 ---
 name: ucsc-hgloadbed
-description: The `hgLoadBed` utility is a core component of the UCSC Genome Browser "kent" tool suite.
+description: The `ucsc-hgloadbed` tool transforms flat BED files into database tables for the UCSC Genome Browser. Use when user asks to load BED files into a database, upload genomic annotations, create database tables for genomic data, or load custom BED fields.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-hgloadbed
 

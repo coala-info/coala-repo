@@ -1,8 +1,9 @@
 ---
 name: cpc2
-description: CPC2 (Coding Potential Calculator 2) is a fast, species-neutral tool used to identify the coding capacity of RNA sequences.
+description: CPC2 predicts the coding potential of RNA sequences to distinguish between protein-coding and non-coding transcripts. Use when user asks to identify coding capacity, classify transcripts as coding or non-coding, or extract predicted peptide sequences.
 homepage: https://github.com/gao-lab/CPC2_standalone
 ---
+
 
 # cpc2
 

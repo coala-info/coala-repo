@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fobitools
-description: the package is available on all platforms; click for details.
+description: This tool analyzes dietary and metabolomics data using the Food Biomarker Ontology to link food intake with metabolic profiles. Use when user asks to annotate food items from text, convert chemical identifiers to FOBI IDs, or perform food-specific enrichment analyses like ORA and MSEA.
 homepage: https://bioconductor.org/packages/release/bioc/html/fobitools.html
 ---
+
 
 # bioconductor-fobitools
 

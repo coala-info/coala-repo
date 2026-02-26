@@ -1,8 +1,9 @@
 ---
 name: cava
-description: CAVA is a bar spectrum audio visualizer designed specifically for aesthetic and responsive music visualization rather than scientific analysis.
+description: CAVA is a bar spectrum audio visualizer that provides responsive music visualization in the terminal or via SDL. Use when user asks to install the visualizer, configure audio capture methods like Pipewire or PulseAudio, or customize visual output settings such as colors and smoothing.
 homepage: https://github.com/karlstav/cava
 ---
+
 
 # cava
 

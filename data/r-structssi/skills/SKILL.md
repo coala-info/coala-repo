@@ -1,8 +1,9 @@
 ---
 name: r-structssi
-description: R package structssi (documentation from project home).
+description: This tool performs multiple testing corrections for hypotheses with hierarchical or group structures using the structSSI R package. Use when user asks to perform Hierarchical FDR on tree-structured data, apply Group Benjamini-Hochberg procedures, or control false discovery rates in structured genomic and clinical datasets.
 homepage: https://cran.r-project.org/web/packages/structssi/index.html
 ---
+
 
 # r-structssi
 

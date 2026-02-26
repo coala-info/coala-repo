@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and metadata for the Affymetrix HT_MG-430A microarray. Use when user asks to access probe sequences, map probes to physical coordinates, or retrieve interrogation positions for the htmg430a platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430aprobe.html
 ---
+
 
 # bioconductor-htmg430aprobe
 

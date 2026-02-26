@@ -1,8 +1,9 @@
 ---
 name: famus
-description: FAMUS (Functional Annotation Method Using Supervised contrastive learning) is a specialized tool for protein function prediction.
+description: FAMUS is a specialized tool for protein function prediction that maps sequences into a high-dimensional vector space to identify functional categories. Use when user asks to download protein family models, convert model data for performance optimization, classify protein sequences, or train custom models for specific protein databases.
 homepage: https://github.com/burstein-lab/famus
 ---
+
 
 # famus
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cardelino
-description: the package is available on all platforms; click for details.
+description: This tool infers the clonal identity of single cells from scRNA-seq data by integrating somatic mutation information with clonal trees. Use when user asks to assign single cells to clones, perform de-novo clustering of cells based on mutations, or load variant count matrices from VCF files.
 homepage: https://bioconductor.org/packages/release/bioc/html/cardelino.html
 ---
+
 
 # bioconductor-cardelino
 

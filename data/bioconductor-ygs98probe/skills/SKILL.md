@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ygs98probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Yeast Genome S98 platform. Use when user asks to retrieve probe sequences for the YGS98 array or perform sequence-level analysis on Affymetrix yeast genome data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ygs98probe.html
 ---
+
 
 # bioconductor-ygs98probe
 

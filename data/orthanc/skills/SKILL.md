@@ -1,8 +1,9 @@
 ---
 name: orthanc
-description: Orthanc is an open-source DICOM server designed to provide a simple yet powerful standalone Vendor Neutral Archive.
+description: Orthanc is an open-source DICOM server that provides a standalone Vendor Neutral Archive with a RESTful API for managing medical imaging data. Use when user asks to deploy a DICOM server using Docker, manage medical images via a REST API, or configure Orthanc plugins like DICOMweb and PostgreSQL.
 homepage: https://github.com/jodogne/OrthancDocker
 ---
+
 
 # orthanc
 

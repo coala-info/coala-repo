@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bnbc
-description: the package is available on all platforms; click for details.
+description: This tool performs normalization and batch correction for Hi-C contact matrices across multiple samples. Use when user asks to normalize Hi-C data, remove batch effects from contact matrices, perform logCPM transformations, or smooth Hi-C replicates using the BNBC algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/bnbc.html
 ---
+
 
 # bioconductor-bnbc
 

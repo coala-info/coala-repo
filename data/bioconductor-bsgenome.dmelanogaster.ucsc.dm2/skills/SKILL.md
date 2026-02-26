@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm2
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Drosophila melanogaster (UCSC version dm2) as a Biostrings object for analysis in R. Use when user asks to retrieve DNA sequences, calculate chromosome lengths, or perform genome-wide motif searching and sequence extraction for the fruit fly dm2 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm2.html
 ---
+
 
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm2
 

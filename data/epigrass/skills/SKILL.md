@@ -1,8 +1,9 @@
 ---
 name: epigrass
-description: Epigrass is a Python-based Epidemiological Geo-referenced Analysis and Simulation system.
+description: Epigrass is a Python-based system for simulating and analyzing metapopulation epidemiological models across geo-referenced networks. Use when user asks to run disease spread simulations, create epidemiological models using a GUI, or execute metapopulation simulations from configuration files.
 homepage: https://github.com/fccoelho/epigrass
 ---
+
 
 # epigrass
 

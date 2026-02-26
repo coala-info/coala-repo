@@ -1,8 +1,9 @@
 ---
 name: bioconductor-merfishdata
-description: the package is to provide MERFISH data for benchmarking and analysis.
+description: This Bioconductor package provides MERFISH datasets for benchmarking and analysis. Use when user asks to access MERFISH data, download spatial transcriptomics datasets, or retrieve example data for benchmarking.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MerfishData.html
 ---
+
 
 # bioconductor-merfishdata
 

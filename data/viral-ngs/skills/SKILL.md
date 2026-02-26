@@ -1,8 +1,9 @@
 ---
 name: viral-ngs
-description: viral-ngs is a comprehensive suite of bioinformatics tools and wrappers designed specifically for viral genomics.
+description: viral-ngs is a comprehensive suite of bioinformatics tools designed for viral genomics, streamlining analysis from raw sequencing reads to polished assemblies and phylogenetic trees. Use when user asks to process reads, assemble viral genomes, perform metagenomic classification, or analyze phylogenetics and variation.
 homepage: https://github.com/broadinstitute/viral-ngs
 ---
+
 
 # viral-ngs
 

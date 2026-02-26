@@ -1,8 +1,9 @@
 ---
 name: r-bbmisc
-description: "Miscellaneous helper functions for and from B. Bischl and     some other guys, mainly for package development.</p>"
+description: The r-bbmisc package provides a collection of miscellaneous helper functions for R package development, data manipulation, and functional programming. Use when user asks to validate arguments, perform advanced list operations, manipulate strings, or use system utilities in R.
 homepage: https://cloud.r-project.org/web/packages/BBmisc/index.html
 ---
+
 
 # r-bbmisc
 

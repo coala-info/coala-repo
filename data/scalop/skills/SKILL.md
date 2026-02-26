@@ -1,8 +1,9 @@
 ---
 name: scalop
-description: SCALOP (Sequence-based antibody Canonical LOoP structure annotation) is a bioinformatics tool designed for the rapid structural annotation of antibody Complementarity Determining Regions (CDRs).
+description: SCALOP provides rapid structural annotation of antibody Complementarity Determining Regions by mapping sequences to known canonical loop clusters. Use when user asks to annotate antibody CDR structures, predict canonical loop clusters from sequences, or perform structural annotation for antibody engineering.
 homepage: https://github.com/oxpig/SCALOP
 ---
+
 
 # scalop
 

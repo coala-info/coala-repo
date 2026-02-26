@@ -1,8 +1,9 @@
 ---
 name: cogtriangles
-description: The `cogtriangles` tool is a specialized utility within the COGsoft suite designed to implement a low-polynomial algorithm for the assembly of Clusters of Orthologous Groups (COGs).
+description: The cogtriangles tool assembles Clusters of Orthologous Groups (COGs) by processing intergenomic symmetric best matches between protein sequences. Use when user asks to identify orthologous protein clusters, assemble COGs, or process reciprocal best hits for functional annotation and evolutionary analysis.
 homepage: https://ftp.ncbi.nih.gov/pub/wolf/COGs/COGsoft/
 ---
+
 
 # cogtriangles
 

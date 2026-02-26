@@ -1,8 +1,9 @@
 ---
 name: scater-scripts
-description: The `scater-scripts` package provides a suite of R-based command-line wrappers for the Bioconductor `Scater` package.
+description: The scater-scripts package provides command-line wrappers for the Bioconductor Scater package to perform single-cell RNA-seq quality control, normalization, and visualization. Use when user asks to ingest 10X Genomics data, calculate quality control metrics, filter low-quality cells, normalize expression values, or perform dimensionality reduction.
 homepage: https://github.com/ebi-gene-expression-group/bioconductor-scater-scripts
 ---
+
 
 # scater-scripts
 

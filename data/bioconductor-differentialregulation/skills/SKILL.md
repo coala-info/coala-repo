@@ -1,8 +1,9 @@
 ---
 name: bioconductor-differentialregulation
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package identifies genes or transcripts displaying differential regulation between conditions by analyzing the balance between spliced and unspliced mRNA. Use when user asks to detect differential regulation in single-cell or bulk RNA-seq data, account for mapping uncertainty using equivalence classes, or compare the proportions of unspliced and spliced transcripts across experimental groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/DifferentialRegulation.html
 ---
+
 
 # bioconductor-differentialregulation
 

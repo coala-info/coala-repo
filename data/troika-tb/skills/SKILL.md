@@ -1,8 +1,9 @@
 ---
 name: troika-tb
-description: troika-tb is a specialized bioinformatics pipeline designed to streamline the identification of drug resistance in *Mycobacterium tuberculosis*.
+description: troika-tb identifies drug resistance in *Mycobacterium tuberculosis* from raw sequencing data. Use when user asks to identify drug resistance in *Mycobacterium tuberculosis*, generate drug resistance reports, or process sequencing data for AMR markers.
 homepage: https://github.com/kristyhoran/troika
 ---
+
 
 # troika-tb
 

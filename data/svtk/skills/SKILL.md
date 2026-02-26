@@ -1,8 +1,9 @@
 ---
 name: svtk
-description: The Structural Variant ToolKit (svtk) is a suite of utilities designed to handle the complexities of structural variant discovery and refinement.
+description: The Structural Variant ToolKit (svtk) provides a suite of utilities for standardizing, clustering, and annotating structural variant calls from genomic data. Use when user asks to convert VCF files to BED format, cluster overlapping variants across samples, annotate variants with genomic features, or resolve complex structural events.
 homepage: https://github.com/talkowski-lab/svtk
 ---
+
 
 # svtk
 

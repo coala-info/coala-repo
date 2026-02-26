@@ -1,8 +1,9 @@
 ---
 name: perl-test-toolbox
-description: The `perl-test-toolbox` provides a streamlined set of utilities for Perl developers to conduct unit testing.
+description: This tool provides a collection of streamlined utilities for performing unit tests and data validation in Perl scripts. Use when user asks to run unit tests, perform deep comparisons of data structures, check for strings within lists, or validate regex matches in Perl.
 homepage: http://metacpan.org/pod/Test::Toolbox
 ---
+
 
 # perl-test-toolbox
 

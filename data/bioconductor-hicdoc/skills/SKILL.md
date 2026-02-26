@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicdoc
-description: the package is available on all platforms; click for details.
+description: HiCDOC performs comparative analysis of Hi-C data to detect significant A/B compartment changes across multiple experimental conditions with replicates. Use when user asks to normalize Hi-C interaction matrices, predict genomic compartments, or identify differential compartmentalization between samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCDOC.html
 ---
+
 
 # bioconductor-hicdoc
 

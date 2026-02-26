@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dune
-description: the package is available on all platforms; click for details.
+description: Dune improves the replicability of clustering results by iteratively merging clusters across different algorithms to increase their consensus. Use when user asks to reconcile multiple clustering results, improve cluster stability using the Adjusted Rand Index, or merge inconsistent clusters from different single-cell RNA-seq methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/Dune.html
 ---
+
 
 # bioconductor-dune
 

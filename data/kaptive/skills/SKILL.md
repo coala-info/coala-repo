@@ -1,8 +1,9 @@
 ---
 name: kaptive
-description: Kaptive is a specialized bioinformatic tool designed to automate the typing of surface polysaccharide loci from bacterial genome sequences.
+description: Kaptive automates the identification and typing of surface polysaccharide loci, such as K and O antigens, from bacterial genome assemblies. Use when user asks to identify capsule or lipopolysaccharide types, assess gene cluster completeness, or detect locus disruptions in Klebsiella or Acinetobacter sequences.
 homepage: https://kaptive.readthedocs.io/en/latest
 ---
+
 
 # kaptive
 

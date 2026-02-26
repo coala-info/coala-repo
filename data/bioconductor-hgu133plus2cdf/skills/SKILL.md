@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133plus2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping for the Affymetrix Human Genome U133 Plus 2.0 Array. Use when user asks to map (x,y)-coordinates to probe indices, access chip dimensions, or process CEL files for the HGU133 Plus 2.0 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133plus2cdf.html
 ---
+
 
 # bioconductor-hgu133plus2cdf
 

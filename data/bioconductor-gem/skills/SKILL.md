@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gem
-description: the package is available on all platforms; click for details.
+description: This tool performs fast Epigenome-Wide Association Studies to analyze associations between genetics, environmental factors, and DNA methylation. Use when user asks to perform methQTL analysis, identify environmental effects on methylation, or study GxE interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEM.html
 ---
+
 
 # bioconductor-gem
 

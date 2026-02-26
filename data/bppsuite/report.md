@@ -1,9 +1,9 @@
 # bppsuite CWL Generation Report
 
-## bppsuite
+## bppsuite_bppml
 
 ### Tool Description
-Bioinformatics Phylogenetics and Evolution suite (Note: The provided text contains system error messages regarding disk space and container image retrieval rather than tool help text).
+Bio++ Maximum Likelihood Computation
 
 ### Metadata
 - **Docker Image**: biocontainers/bppsuite:v2.4.1-1-deb_cv1
@@ -18,9 +18,79 @@ Bioinformatics Phylogenetics and Evolution suite (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/88f03a9268b46d2288337c5e29d6d4103b09ea9244c5f43711ef162ff688b186: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/bppsuite:v2.4.1-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2324988954: no space left on device
+******************************************************************
+*       Bio++ Maximum Likelihood Computation, version 2.4.0      *
+*                                                                *
+* Authors: J. Dutheil                       Last Modif. 19/02/18 *
+*          B. Boussau                                            *
+*          L. Guéguen                                            *
+*          M. Groussin                                           *
+******************************************************************
+
+__________________________________________________________________________
+bppml parameter1_name=parameter1_value parameter2_name=parameter2_value
+      ... param=option_file
+
+  Refer to the Bio++ Program Suite Manual for a list of available options.
+__________________________________________________________________________
+```
+
+
+## bppsuite_bppseqgen
+
+### Tool Description
+Bio++ Sequence Generator
+
+### Metadata
+- **Docker Image**: biocontainers/bppsuite:v2.4.1-1-deb_cv1
+- **Homepage**: https://github.com/BioPP/bppsuite
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+******************************************************************
+*            Bio++ Sequence Generator, version 2.4.0             *
+*                                                                *
+* Authors: J. Dutheil                                            *
+*          B. Boussau                       Last Modif. 19/02/18 *
+*          L. Gueguen                                            *
+*          M. Groussin                                           *
+******************************************************************
+
+__________________________________________________________________________
+bppseqgen parameter1_name=parameter1_value
+      parameter2_name=parameter2_value ... param=option_file
+
+  Refer to the Bio++ Program Suite Manual for a list of available options.
+__________________________________________________________________________
+```
+
+
+## bppsuite_bppancestor
+
+### Tool Description
+Bio++ Ancestral Sequence Reconstruction
+
+### Metadata
+- **Docker Image**: biocontainers/bppsuite:v2.4.1-1-deb_cv1
+- **Homepage**: https://github.com/BioPP/bppsuite
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+******************************************************************
+*     Bio++ Ancestral Sequence Reconstruction, version 2.4.0     *
+* Authors: J. Dutheil                       Created on: 10/09/08 *
+*          B. Boussau                       Last Modif: 19/02/18 *
+******************************************************************
+
+__________________________________________________________________________
+bppancestor parameter1_name=parameter1_value 
+      parameter2_name=parameter2_value ... param=option_file
+
+  Refer to the Bio++ Program Suite Manual for a list of available options.
+__________________________________________________________________________
 ```
 

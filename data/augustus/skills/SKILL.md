@@ -1,8 +1,9 @@
 ---
 name: augustus
-description: Augustus is a eukaryotic gene prediction tool that utilizes a Generalized Hidden Markov Model (GHMM) to identify genomic features.
+description: Augustus is a eukaryotic gene prediction tool that identifies genomic features using a Generalized Hidden Markov Model. Use when user asks to predict genes in a DNA sequence, incorporate extrinsic evidence for annotation, or identify alternative splicing isoforms.
 homepage: http://bioinf.uni-greifswald.de/augustus/
 ---
+
 
 # augustus
 

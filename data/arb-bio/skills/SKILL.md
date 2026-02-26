@@ -1,8 +1,9 @@
 ---
 name: arb-bio
-description: ARB is a graphically-oriented software suite designed for the handling and analysis of large sequence databases, specifically optimized for ribosomal RNA (rRNA) data.
+description: ARB is a graphical software suite for the integrated management and analysis of large ribosomal RNA sequence databases. Use when user asks to align sequences, construct phylogenetic trees, design taxon-specific probes, or manage large rRNA databases.
 homepage: http://www.arb-home.de
 ---
+
 
 # arb-bio
 

@@ -1,8 +1,9 @@
 ---
 name: bmtool
-description: BMTools is a framework designed to bridge Large Language Models with external functional tools.
+description: BMTools is a framework that connects Large Language Models to external APIs and local Python scripts to execute specialized tasks. Use when user asks to bridge models with external tools, host local tool servers, orchestrate multi-tool workflows, or develop custom tool plugins.
 homepage: https://github.com/OpenBMB/BMTools
 ---
+
 
 # bmtool
 

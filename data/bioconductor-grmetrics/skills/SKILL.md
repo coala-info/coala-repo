@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grmetrics
-description: the package is available on all platforms; click for details.
+description: The GRmetrics package calculates and visualizes growth rate inhibition metrics to account for cell proliferation rates in drug response assays. Use when user asks to calculate GR50 or IC50 values, fit dose-response curves, or visualize growth rate inhibition data using scatterplots and boxplots.
 homepage: https://bioconductor.org/packages/release/bioc/html/GRmetrics.html
 ---
+
 
 # bioconductor-grmetrics
 

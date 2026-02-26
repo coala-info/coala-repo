@@ -1,8 +1,9 @@
 ---
 name: refgenconf
-description: The `refgenconf` skill (interfaced via the `refgenie` CLI) provides a standardized way to manage genomic resources like FASTA files, Bowtie2 indexes, and BWA indexes.
+description: refgenconf manages genomic resources and asset paths through a standardized configuration-based system to ensure pipeline portability. Use when user asks to initialize a genome configuration, list or pull remote assets, retrieve local or remote asset paths, or build custom genomic indexes.
 homepage: https://refgenie.databio.org
 ---
+
 
 # refgenconf
 

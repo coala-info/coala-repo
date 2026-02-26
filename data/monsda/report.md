@@ -3,7 +3,7 @@
 ## monsda
 
 ### Tool Description
-Multi-Omics Network-based Single-cell Data Analysis. (Note: The provided text contains container runtime error logs rather than the tool's help documentation, so no arguments could be extracted.)
+Modular Organizer of Nextflow and Snakemake driven hts Data Analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/monsda:1.2.8--pyhdfd78af_0
@@ -12,35 +12,41 @@ Multi-Omics Network-based Single-cell Data Analysis. (Note: The provided text co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/monsda/overview
-- **Total Downloads**: 12.4K
+- **Total Downloads**: 12.5K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/jfallmann/MONSDA
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/monsda:1.2.8--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2422445230: no space left on device
-```
+usage: monsda [-h] [-c CONFIG [CONFIG ...]] [-d DIRECTORY] [-u] [-l]
+              [-j PROCS] [--save] [-s] [--snakemake] [--nextflow] [--clean]
+              [--loglevel {WARNING,ERROR,INFO,DEBUG}] [--version]
 
+Modular Organizer of Nextflow and Snakemake driven hts Data Analysis
 
-## Metadata
-- **Skill**: generated
-
-## monsda_monsda_configure
-
-### Tool Description
-Configure the monsda tool environment. (Note: The provided text contained only system error logs and no help documentation; no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/monsda:1.2.8--pyhdfd78af_0
-- **Homepage**: https://github.com/jfallmann/MONSDA
-- **Package**: https://anaconda.org/channels/bioconda/packages/monsda/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/monsda:1.2.8--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1550300205: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -c CONFIG [CONFIG ...], --config CONFIG [CONFIG ...], --configfile CONFIG [CONFIG ...]
+                        Configuration json to read and optional config for
+                        nextflow
+  -d DIRECTORY, --directory DIRECTORY
+                        Working Directory
+  -u, --use-conda       Should conda be used, default True
+  -l, --unlock          If Snakemake directory is locked you can unlock before
+                        processing
+  -j PROCS, --procs PROCS
+                        Number of parallel processes to start MONSDA with,
+                        capped by MAXTHREADS in config!
+  --save                Do not actually run jobs, create corresponding text
+                        file containing CLI-calls and arguments for manual
+                        running instead
+  -s, --skeleton        Just create the minimal directory hierarchy as needed
+  --snakemake           Wrap around Snakemake, default
+  --nextflow            Wrap around Nextflow
+  --clean               Cleanup workdir (Nextflow), append -n to see list of
+                        files to clean or -f to actually remove those files
+  --loglevel {WARNING,ERROR,INFO,DEBUG}
+                        Set log level
+  --version             Print version and exit
 ```
 

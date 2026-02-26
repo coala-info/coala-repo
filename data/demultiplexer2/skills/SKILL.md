@@ -1,8 +1,9 @@
 ---
 name: demultiplexer2
-description: The `demultiplexer2` tool is designed for bioinformatics workflows where Illumina reads must be sorted based on internal barcode sequences (inline tags) rather than standard Illumina indices.
+description: demultiplexer2 sorts Illumina sequencing reads based on internal barcode sequences using Excel-based configuration files. Use when user asks to initialize primer sets, create tagging schemes, or demultiplex FASTQ files using inline tags.
 homepage: https://github.com/DominikBuchner/demultiplexer2
 ---
+
 
 # demultiplexer2
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scarray
-description: the package is available on all platforms; click for details.
+description: SCArray provides memory-efficient storage and access for large-scale single-cell RNA-seq data using the Genomic Data Structure format. Use when user asks to manage massive single-cell datasets, perform out-of-memory data manipulation, or utilize GDS files for single-cell analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/SCArray.html
 ---
+
 
 # bioconductor-scarray
 

@@ -1,8 +1,9 @@
 ---
 name: r-phylosignal
-description: A collection of tools to explore the phylogenetic signal in univariate and multivariate data. The package provides functions to plot traits data against a phylogenetic tree, different measures and tests for the phylogenetic signal, methods to describe where the signal is located and a phylogenetic clustering method.</p>
+description: The r-phylosignal package provides tools to quantify, visualize, and localize phylogenetic signals in continuous trait data. Use when user asks to measure phylogenetic signal statistics, identify local indicators of phylogenetic association, or create specialized plots of traits on phylogenetic trees.
 homepage: https://cran.r-project.org/web/packages/phylosignal/index.html
 ---
+
 
 # r-phylosignal
 

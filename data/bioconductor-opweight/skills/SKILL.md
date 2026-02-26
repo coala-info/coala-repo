@@ -1,8 +1,9 @@
 ---
 name: bioconductor-opweight
-description: the package is available on all platforms; click for details.
+description: OPWeight performs optimal p-value weighting for multiple hypothesis testing to increase statistical power while controlling the false discovery rate. Use when user asks to weight p-values, perform multiple testing with external information, or increase power in large-scale genomic studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/OPWeight.html
 ---
+
 
 # bioconductor-opweight
 

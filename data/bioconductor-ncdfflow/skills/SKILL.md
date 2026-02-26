@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ncdfflow
-description: the package is available on all platforms; click for details.
+description: ncdfFlow provides a disk-based storage container for large flow cytometry datasets using the netCDF format. Use when user asks to manage large flow cytometry data, store flowSet objects on disk, or perform memory-efficient analysis of flow data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ncdfFlow.html
 ---
+
 
 # bioconductor-ncdfflow
 

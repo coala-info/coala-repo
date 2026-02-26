@@ -1,8 +1,9 @@
 ---
 name: calib
-description: Calib is a bioinformatics tool designed for clustering and error-correcting barcode-tagged paired-end reads.
+description: "Calib clusters and error-corrects barcode-tagged paired-end reads using Locality Sensitive Hashing and MinHashing. Use when user asks to cluster reads based on barcodes and sequence similarity, generate consensus sequences from read clusters, or eliminate PCR and sequencing errors in barcode-tagged data."
 homepage: https://github.com/vpc-ccg/calib
 ---
+
 
 # calib
 

@@ -1,8 +1,9 @@
 ---
 name: scrubby
-description: Scrubby is a specialized tool designed for the depletion of background DNA (such as host contamination) from metagenomic sequencing datasets.
+description: Scrubby depletes background DNA contamination and extracts specific taxa from metagenomic sequencing datasets. Use when user asks to filter raw FASTQ files, remove host reads, extract specific taxa, or clean reads based on classification and alignment results.
 homepage: https://github.com/esteinig/scrubby
 ---
+
 
 # scrubby
 

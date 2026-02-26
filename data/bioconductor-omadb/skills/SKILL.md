@@ -1,8 +1,9 @@
 ---
 name: bioconductor-omadb
-description: the package is available on all platforms; click for details.
+description: The bioconductor-omadb package provides an R interface to the Orthologous Matrix database for retrieving orthology and evolutionary data. Use when user asks to retrieve orthologs, identify gene evolutionary relationships, or access genomic data from the OMA database.
 homepage: https://bioconductor.org/packages/release/bioc/html/OmaDB.html
 ---
+
 
 # bioconductor-omadb
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocthis
-description: the package is available on all platforms; click for details.
+description: This tool automates the creation and maintenance of Bioconductor-friendly R packages by providing standardized templates and infrastructure. Use when user asks to initialize a new Bioconductor package, add Bioconductor-specific GitHub Actions and badges, style R code according to Bioconductor standards, or create compliant vignettes and documentation.
 homepage: https://bioconductor.org/packages/release/bioc/html/biocthis.html
 ---
+
 
 # bioconductor-biocthis
 

@@ -1,8 +1,9 @@
 ---
 name: openstructure
-description: OpenStructure (OST) is a modular, open-source framework designed for computational structural biology.
+description: OpenStructure is a modular framework for computational structural biology used to manipulate molecular structures, density maps, and sequences. Use when user asks to calculate lDDT scores, clean PDB files with Molck, perform structural superpositions, or automate structural analysis via its Python API.
 homepage: https://openstructure.org
 ---
+
 
 # openstructure
 

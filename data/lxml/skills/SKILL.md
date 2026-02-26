@@ -1,8 +1,9 @@
 ---
 name: lxml
-description: The `lxml` skill provides a robust interface for the `libxml2` and `libxslt` C libraries, offering a Pythonic API that balances ease of use with extreme performance.
+description: lxml provides a high-performance Pythonic interface for parsing, manipulating, and validating XML and HTML documents using the libxml2 and libxslt C libraries. Use when user asks to parse large XML files, perform XPath queries, execute XSLT transformations, sanitize HTML, or generate XML documents incrementally.
 homepage: https://github.com/lxml/lxml
 ---
+
 
 # lxml
 

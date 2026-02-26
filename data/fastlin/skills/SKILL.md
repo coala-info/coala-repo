@@ -1,8 +1,9 @@
 ---
 name: fastlin
-description: fastlin is a high-performance tool designed for rapid MTBC lineage classification.
+description: fastlin is a high-performance tool for rapid MTBC lineage classification and strain mixture identification using a split-kmer approach. Use when user asks to classify MTBC lineages, identify strain mixtures, or perform high-throughput genomic surveillance without traditional alignment.
 homepage: https://github.com/rderelle/fastlin
 ---
+
 
 # fastlin
 

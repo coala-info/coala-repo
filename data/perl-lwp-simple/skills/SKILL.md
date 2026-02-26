@@ -1,8 +1,9 @@
 ---
 name: perl-lwp-simple
-description: The `perl-lwp-simple` skill provides a streamlined way to interact with web resources via the libwww-perl library.
+description: This tool provides a procedural interface for fetching web resources and interacting with HTTP servers using Perl. Use when user asks to fetch web content, download and store remote files, mirror resources based on modification dates, or retrieve URL metadata via HEAD requests.
 homepage: https://metacpan.org/pod/LWP::Simple
 ---
+
 
 # perl-lwp-simple
 

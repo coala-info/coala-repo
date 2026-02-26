@@ -1,8 +1,9 @@
 ---
 name: qualifilter
-description: QualiFilter is a command-line utility that streamlines the post-processing of MultiQC data.
+description: QualiFilter processes MultiQC data into standardized quality control matrices by applying user-defined thresholds and filtering specific metrics. Use when user asks to filter MultiQC reports, apply quality gates to sequencing data, or generate clean QC summaries in TSV or CSV format.
 homepage: https://github.com/buhlentozini/QualiFilter
 ---
+
 
 # qualifilter
 

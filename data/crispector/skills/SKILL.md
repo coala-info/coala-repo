@@ -1,8 +1,9 @@
 ---
 name: crispector
-description: `crispector` is a specialized tool for the detection and quantification of genome editing activity, including NHEJ (Non-Homologous End Joining) and translocations.
+description: Crispector detects and quantifies genome editing activity and translocations by applying Bayesian inference to multiplex-PCR NGS data. Use when user asks to detect NHEJ activity, estimate editing rates from treatment and mock samples, or identify genomic rearrangements.
 homepage: https://github.com/YakhiniGroup/crispector
 ---
+
 
 # crispector
 

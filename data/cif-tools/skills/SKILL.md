@@ -1,8 +1,9 @@
 ---
 name: cif-tools
-description: The `cif-tools` suite is a collection of high-performance C++ utilities designed to handle the complexities of mmCIF and PDB data formats.
+description: The cif-tools suite provides high-performance utilities for validating, comparing, and querying structural data in mmCIF and PDB formats. Use when user asks to validate mmCIF files against dictionaries, identify differences between structural models, extract specific data using mmCQL, or reconstruct sequences from structural data.
 homepage: https://github.com/PDB-REDO/cif-tools
 ---
+
 
 # cif-tools
 

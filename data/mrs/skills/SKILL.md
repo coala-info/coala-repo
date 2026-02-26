@@ -1,8 +1,9 @@
 ---
 name: mrs
-description: The MRS UAV System is a specialized robotics framework developed by the Multi-robot Systems Group at CTU in Prague.
+description: The MRS UAV System provides a framework for the control, state estimation, and simulation of multi-rotor helicopters. Use when user asks to install the MRS environment, configure catkin workspaces, launch Gazebo simulations, or develop new UAV behaviors using the MRS ecosystem.
 homepage: https://github.com/ctu-mrs/mrs_uav_system
 ---
+
 
 # mrs
 

@@ -1,8 +1,9 @@
 ---
 name: cell-types-analysis
-description: The `cell-types-analysis` suite is a collection of R scripts designed to process the results of scRNA-seq cell type classifiers.
+description: This tool processes scRNA-seq cell type classification results to evaluate tool performance or generate consensus predictions using the Cell Ontology. Use when user asks to evaluate classification accuracy, map labels to ontology terms, or aggregate multiple tool predictions into a consensus.
 homepage: https://github.com/ebi-gene-expression-group/cell-types-analysis
 ---
+
 
 # cell-types-analysis
 

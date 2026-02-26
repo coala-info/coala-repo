@@ -1,8 +1,9 @@
 ---
 name: perl-test-mockmodule
-description: The `perl-test-mockmodule` skill facilitates the creation of isolated Perl unit tests by providing a mechanism to "mock" or override subroutines within specific packages.
+description: This tool allows developers to mock or override subroutines within Perl packages to create isolated unit tests. Use when user asks to mock subroutines, override package methods for testing, or simulate external module behavior in Perl.
 homepage: https://github.com/geofffranks/test-mockmodule
 ---
+
 
 # perl-test-mockmodule
 

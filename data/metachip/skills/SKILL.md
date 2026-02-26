@@ -1,8 +1,9 @@
 ---
 name: metachip
-description: MetaCHIP is a specialized bioinformatics pipeline for community-level horizontal gene transfer (HGT) identification.
+description: MetaCHIP is a bioinformatics pipeline for identifying community-level horizontal gene transfer events using a combination of heuristic searches and phylogenetic reconciliation. Use when user asks to identify horizontal gene transfer between prokaryotic genomes, map gene flow across taxonomic ranks, or analyze HGT between custom-defined groups.
 homepage: https://github.com/songweizhi/MetaCHIP
 ---
+
 
 # metachip
 

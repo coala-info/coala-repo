@@ -1,8 +1,9 @@
 ---
 name: hdmi
-description: HDMI (HGT Detection from MAGs in Individual) is a specialized bioinformatics pipeline for identifying genetic material exchange between microbial species within metagenomic samples.
+description: HDMI identifies and validates horizontal gene transfer events between microbial species within metagenomic samples using read-spanning analysis. Use when user asks to detect HGT candidates, index HGT sequences, validate transfer events with read profiling, or summarize and filter HGT results.
 homepage: https://github.com/HaoranPeng21/HDMI
 ---
+
 
 # hdmi
 

@@ -1,8 +1,9 @@
 ---
 name: perl-io-zlib
-description: The `perl-io-zlib` skill provides a streamlined way to manage compressed file I/O in Perl.
+description: "This tool provides an IO-style interface for reading and writing compressed files in Perl. Use when user asks to read or write gzipped files, manage compressed filehandles, or handle transparent decompression in Perl scripts."
 homepage: https://metacpan.org/pod/IO::Zlib
 ---
+
 
 # perl-io-zlib
 

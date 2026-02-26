@@ -1,8 +1,9 @@
 ---
 name: dysgu
-description: Dysgu is a high-performance toolkit designed for the detection and characterization of structural variants.
+description: Dysgu is a high-performance toolkit designed for the detection and characterization of structural variants from short and long-read sequencing data. Use when user asks to call structural variants, identify somatic rearrangements, or analyze genomic variants from PacBio and Oxford Nanopore reads.
 homepage: https://github.com/kcleal/dysgu
 ---
+
 
 # dysgu
 

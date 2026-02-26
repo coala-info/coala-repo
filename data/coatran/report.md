@@ -1,9 +1,9 @@
 # coatran CWL Generation Report
 
-## coatran
+## coatran_coatran_constant
 
 ### Tool Description
-The provided text does not contain help information for the tool 'coatran'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to pull the container image due to lack of disk space.
+CoaTran (constant effective population size)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coatran:0.0.4--h503566f_1
@@ -18,80 +18,61 @@ The provided text does not contain help information for the tool 'coatran'. It c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coatran:0.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4287893812: no space left on device
+CoaTran v0.0.4 (constant effective population size)
+USAGE: coatran_constant <trans_network> <sample_times> <eff_pop_size>
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## coatran_coatran_constant
-
-### Tool Description
-COdon-Aware TRANslation (coatran) constant subcommand. Note: The provided help text contains only system error logs and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coatran:0.0.4--h503566f_1
-- **Homepage**: https://github.com/niemasd/CoaTran
-- **Package**: https://anaconda.org/channels/bioconda/packages/coatran/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coatran:0.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1147789097: no space left on device
-```
 
 ## coatran_coatran_transtree
 
 ### Tool Description
-A tool within the coatran package (description unavailable due to error in provided help text).
+CoaTran (time of transmission) - tool for analyzing transmission networks and sample times
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coatran:0.0.4--h503566f_1
 - **Homepage**: https://github.com/niemasd/CoaTran
 - **Package**: https://anaconda.org/channels/bioconda/packages/coatran/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coatran:0.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2286851808: no space left on device
+CoaTran v0.0.4 (time of transmission)
+USAGE: coatran_transtree <trans_network> <sample_times>
 ```
+
 
 ## coatran_coatran_inftime
 
 ### Tool Description
-The provided text contains error logs from a container runtime (Apptainer/Singularity) and does not include the help documentation for the tool. No arguments could be extracted.
+CoaTran v0.0.4 (time of infection)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coatran:0.0.4--h503566f_1
 - **Homepage**: https://github.com/niemasd/CoaTran
 - **Package**: https://anaconda.org/channels/bioconda/packages/coatran/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coatran:0.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3191262426: no space left on device
+CoaTran v0.0.4 (time of infection)
+USAGE: coatran_inftime <trans_network> <sample_times>
 ```
+
 
 ## coatran_coatran_expgrowth
 
 ### Tool Description
-Comparative Transcriptomics Analysis (coatran) - exponential growth module. Note: The provided help text contains only system error logs regarding container image creation and does not list specific command-line arguments.
+CoaTran (exponential effective population size growth)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coatran:0.0.4--h503566f_1
 - **Homepage**: https://github.com/niemasd/CoaTran
 - **Package**: https://anaconda.org/channels/bioconda/packages/coatran/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coatran:0.0.4--h503566f_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4111974831: no space left on device
+CoaTran v0.0.4 (exponential effective population size growth)
+USAGE: coatran_expgrowth <trans_network> <sample_times> <init_eff_pop_size> <eff_pop_growth>
 ```
 

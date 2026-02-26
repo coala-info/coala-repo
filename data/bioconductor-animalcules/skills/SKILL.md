@@ -1,8 +1,9 @@
 ---
 name: bioconductor-animalcules
-description: the package is available on all platforms; click for details.
+description: This tool provides an interactive framework for microbiome data analysis, visualization, and biomarker discovery using MultiAssayExperiment objects. Use when user asks to perform alpha or beta diversity analysis, visualize taxonomic abundance, conduct differential abundance testing, or apply dimensionality reduction techniques like PCA and UMAP to microbiome datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/animalcules.html
 ---
+
 
 # bioconductor-animalcules
 

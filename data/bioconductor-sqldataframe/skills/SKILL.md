@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sqldataframe
-description: the package is available on all platforms; click for details.
+description: SQLDataFrame provides a Bioconductor-compatible interface for managing and querying large datasets stored in SQL databases using a DataFrame-like API. Use when user asks to store large genomic datasets in SQL databases, perform lazy loading of data, or manipulate disk-based data using R.
 homepage: https://bioconductor.org/packages/release/bioc/html/SQLDataFrame.html
 ---
+
 
 # bioconductor-sqldataframe
 

@@ -2,9 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bedCommonRegions
 label: ucsc-bedcommonregions
-doc: "Find regions common to all input BED files. Note: The provided help text contains
-  a system error and does not list specific arguments.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Find regions common to all input files.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: Input BED files to find common regions in
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-atacseqtfea
-description: the package is available on all platforms; click for details.
+description: This package identifies differential transcription factor activity between experimental conditions by analyzing TF footprints in ATAC-seq data. Use when user asks to identify transcription factor binding sites, calculate weighted binding scores, or perform transcription factor enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/ATACseqTFEA.html
 ---
+
 
 # bioconductor-atacseqtfea
 

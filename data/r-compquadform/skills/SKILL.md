@@ -1,8 +1,9 @@
 ---
 name: r-compquadform
-description: R package compquadform (documentation from project home).
+description: This tool computes the distribution function of quadratic forms in normal variables, specifically weighted sums of chi-square distributions. Use when user asks to calculate p-values for quadratic forms, compute the cumulative distribution function of linear combinations of chi-square variables, or evaluate statistical tests like goodness-of-fit and genomic association studies.
 homepage: https://cran.r-project.org/web/packages/compquadform/index.html
 ---
+
 
 # r-compquadform
 

@@ -1,8 +1,9 @@
 ---
 name: portello
-description: Portello is a bioinformatics tool designed to bridge the gap between de novo assembly and reference-based analysis.
+description: Portello projects HiFi read mappings from assembly contigs onto a standard reference genome to enable reference-based analysis of assembly-aligned data. Use when user asks to lift over read-to-contig mappings, project assembly-based methylation calls onto reference coordinates, or visualize assembly support in the context of a reference genome.
 homepage: https://github.com/PacificBiosciences/portello
 ---
+
 
 # portello
 

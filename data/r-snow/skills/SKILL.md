@@ -1,8 +1,9 @@
 ---
 name: r-snow
-description: Support for simple parallel computing in R.</p>
+description: The r-snow package provides a high-level interface for executing parallel computing tasks across a cluster of worker processes in R. Use when user asks to initialize a socket or MPI cluster, export variables to worker nodes, or execute functions in parallel using clusterApply or parLapply.
 homepage: https://cloud.r-project.org/web/packages/snow/index.html
 ---
+
 
 # r-snow
 

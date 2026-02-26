@@ -1,8 +1,9 @@
 ---
 name: nanocomp
-description: `nanocomp` is a specialized utility for the comparative analysis of long-read sequencing data, specifically optimized for Oxford Nanopore Technologies (ONT).
+description: Nanocomp compares and visualizes quality metrics across multiple long-read sequencing datasets. Use when user asks to compare read lengths and quality scores, analyze multiple FASTQ or BAM files, or generate comparative reports for Oxford Nanopore data.
 homepage: https://github.com/wdecoster/NanoComp
 ---
+
 
 # nanocomp
 

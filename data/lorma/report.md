@@ -1,9 +1,9 @@
 # lorma CWL Generation Report
 
-## lorma
+## lorma_lorma.sh
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system log messages and a fatal error regarding disk space during a container build process.
+Processes FASTA files with LoRDEC steps.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lorma:0.4--2
@@ -18,29 +18,38 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lorma:0.4--2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1734697179: no space left on device
+Usage: /usr/local/bin/lorma.sh [-s] [-n] [-start <19> -end <61> -step <21> -threads <6> -friends <7> -k <19>] *.fasta
+	-s saves the sequence data of intermediate LoRDEC steps
+	-n skips LoRDEC steps
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## lorma_lorma.sh
+## lorma_LoRMA
 
 ### Tool Description
-Long-read self-correction tool (Note: The provided text contains system error messages rather than help documentation).
+LoRMA options
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lorma:0.4--2
 - **Homepage**: https://www.cs.helsinki.fi/u/lmsalmel/LoRMA/
 - **Package**: https://anaconda.org/channels/bioconda/packages/lorma/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lorma:0.4--2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1911823909: no space left on device
+ERROR: Unknown parameter '--help'
+ERROR: Option '-discarded' is mandatory
+ERROR: Option '-output' is mandatory
+ERROR: Option '-reads' is mandatory
+
+[LoRMA options]
+       -bestfriends (1 arg) :    Number of best friends  [default '3']
+       -friends     (1 arg) :    Number of friends  [default '7']
+       -k           (1 arg) :    kmer length  [default '31']
+       -discarded   (1 arg) :    output file for discarded reads
+       -output      (1 arg) :    output file for corrected reads
+       -reads       (1 arg) :    file(s) of long reads
+       -nb-cores    (1 arg) :    number of cores  [default '1']
+       -verbose     (1 arg) :    verbosity level  [default '1']
 ```
 

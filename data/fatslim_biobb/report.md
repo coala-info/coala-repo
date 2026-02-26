@@ -1,9 +1,9 @@
 # fatslim_biobb CWL Generation Report
 
-## fatslim_biobb
+## fatslim_biobb_fatslim
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log indicating a failure to build or pull the container image due to lack of disk space.
+Fast Analysis Toolbox for Simulations of Lipid Membranes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fatslim_biobb:0.2.2--py39hbcbf7aa_1
@@ -12,35 +12,29 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fatslim_biobb/overview
-- **Total Downloads**: 3.9K
+- **Total Downloads**: 4.0K
 - **Last updated**: 2025-12-18
 - **GitHub**: https://github.com/FATSLiM/fatslim
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fatslim_biobb:0.2.2--py39hbcbf7aa_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2869446851: no space left on device
-```
+FATSLiM - Fast Analysis Toolbox for Simulations of Lipid Membranes
+version 0.2.2
+Copyright (c) 2013-2016 Sébastien Buchoux
 
+usage: fatslim [--help|-h] [--version] command [<args>]
+Available commands:
+  aggregates    Identifies and reports aggregates
+  apl           Retrieves area per lipid
+  benchmark     Benchmark internal routine (not intented to be a end user command!)
+  help          Displays help about FATSLiM's commands
+  membranes     Identifies and report membranes
+  self-test     Performs FATSLiM's sanity check up
+  thickness     Retrieves bilayer thickness
+  version       Displays FATSLiM version
 
-## Metadata
-- **Skill**: generated
-
-## fatslim_biobb_fatslim
-
-### Tool Description
-Fast Analysis Toolbox for Simulations of Lipid Membranes (Note: The provided text contains only system error logs and no CLI help information; therefore, no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fatslim_biobb:0.2.2--py39hbcbf7aa_1
-- **Homepage**: https://fatslim.github.io/
-- **Package**: https://anaconda.org/channels/bioconda/packages/fatslim_biobb/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fatslim_biobb:0.2.2--py39hbcbf7aa_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2392360164: no space left on device
+See 'fatslim help <command>' for more information on a specific command
+'help' command executed in 111.818 µs (CPU)
+Goodbye!
 ```
 

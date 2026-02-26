@@ -3,7 +3,9 @@
 ## camitk-imp
 
 ### Tool Description
-CamiTK Image Manipulation Program (Note: The provided help text contains only system error logs and no usage information. Arguments could not be extracted.)
+camitk-imp is a medical image analysis and modeling software. This is the flagship GUI application of a larger framework called CamiTK (Computer Assisted Medical Interventions Tool Kit) designed to ease the collaborative work of a research team.
+The targeted users are in R&D departments or laboratories. camitk-imp provides an easy and interactive access to all your data and algorithm parameters.
+camitk-imp can visualize medical images from a lot of different (standard) formats, offers image processing and segmentation algorithms to reconstruct a mesh geometry and run a biomechanical simulation.
 
 ### Metadata
 - **Docker Image**: biocontainers/camitk-imp:v4.1.2-3-deb_cv1
@@ -18,14 +20,40 @@ CamiTK Image Manipulation Program (Note: The provided help text contains only sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://biocontainers/camitk-imp:v4.1.2-3-deb_cv1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:478cd0aa93c0da2489a29b95d43a21a942cece28ecb0ba0f99770f52eb8ee3dc: unpack entry: usr/bin/localedef: unpack to regular file: short write: write /tmp/build-temp-3599866830/rootfs/usr/bin/localedef: no space left on device
+Please visit http://camitk.imag.fr for more information.
+(c) Univ. Grenoble Alpes, CNRS, TIMC-IMAG UMR 5525
+
+camitk-imp is a medical image analysis and modeling software.
+This is the flagship GUI application of a larger framework called CamiTK
+(Computer Assisted Medical Interventions Tool Kit) designed to ease the
+collaborative work of a research team.
+
+The targeted users are in R&D departments or laboratories.
+camitk-imp provides an easy and interactive access to all your data and
+algorithm parameters.
+
+camitk-imp can visualize medical images from a lot of different (standard)
+formats, offers image processing and segmentation algorithms to reconstruct a
+mesh geometry and run a biomechanical simulation.
+
+For a tutorial on camitk-imp, please visit the website:
+https://forge.imag.fr/plugins/mediawiki/wiki/camitk/index.php/Camitk-imp_tutorial
+
+CamiTK is highly modular and make an extensive use of extensions (plugins).
+
+CamiTK goals are to:
+- Gather knowledge & know-how from several fields
+- Avoid reinventing the wheel
+- Accelerate the integration/validation of new algorithms
+- Provide fast technological transfer between students (PhD and others), 
+  research scientists, clinicians and industrial partners
+- Rapidly provide a stable and usable prototype for clinicians
+- Support for lectures and dissemination
+
+Arguments:
+  <file>                Document(s) to open
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -3,7 +3,7 @@
 ## nanocaller
 
 ### Tool Description
-NanoCaller is a computational tool for somatic and germline variant calling (SNPs and indels) from Oxford Nanopore and PacBio long-read sequencing data.
+NanoCaller is a computational tool for variant calling (SNPs and Indels) from Oxford Nanopore and PacBio sequencing data using deep learning.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanocaller:3.6.2--h42286b9_0
@@ -18,11 +18,13 @@ NanoCaller is a computational tool for somatic and germline variant calling (SNP
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanocaller:3.6.2--h42286b9_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2252988200: no space left on device
+Unable to find image 'quay.io/biocontainers/nanocaller:3.6.2--h42286b9_0' locally
+3.6.2--h42286b9_0: Pulling from biocontainers/nanocaller
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+f323010f2273: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2365895130: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

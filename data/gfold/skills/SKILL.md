@@ -1,8 +1,9 @@
 ---
 name: gfold
-description: gfold is a high-performance CLI tool written in Rust that provides a bird's-eye view of your Git repositories.
+description: "gfold is a CLI tool that provides a concurrent, read-only status overview of multiple Git repositories. Use when user asks to scan directories for Git repository health, check for uncommitted changes across projects, or output repository status in JSON or classic formats."
 homepage: https://github.com/nickgerace/gfold
 ---
+
 
 # gfold
 

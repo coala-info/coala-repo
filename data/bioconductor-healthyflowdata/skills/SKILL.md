@@ -1,8 +1,9 @@
 ---
 name: bioconductor-healthyflowdata
-description: the package is available on all platforms; click for details.
+description: This package provides access to the healthyFlowData Bioconductor experiment data package containing a flowSet of 20 flow cytometry samples from healthy individuals. Use when user asks to load the hd dataset, inspect lymphocyte flow cytometry data, or access example PBMC samples for flowMatch analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/healthyFlowData.html
 ---
+
 
 # bioconductor-healthyflowdata
 

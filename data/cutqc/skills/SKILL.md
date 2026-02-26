@@ -1,8 +1,9 @@
 ---
 name: cutqc
-description: The `cutqc` tool is a Shell-based wrapper designed to simplify the preprocessing of FASTQ files.
+description: Cutqc automates adapter trimming and quality assessment for FASTQ files to generate comprehensive visual reports. Use when user asks to trim adapters from paired-end reads, perform quality control on sequencing data, or generate visual reports for FASTQ files.
 homepage: https://github.com/obenno/cutqc
 ---
+
 
 # cutqc
 

@@ -3,7 +3,7 @@
 ## telometer
 
 ### Tool Description
-A tool for telomere length estimation (Note: The provided text contains container build logs rather than command-line help documentation; therefore, no arguments could be extracted).
+Calculate telomere length from a BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/telometer:1.1--pyhdfd78af_0
@@ -18,13 +18,26 @@ A tool for telomere length estimation (Note: The provided text contains containe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/telometer:1.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: telometer [-h] -b BAM -o OUTPUT [-m MINREADLEN] [-g MAXGAPLEN]
+                 [-t THREADS] [-l MEMLIMIT]
+
+Calculate telomere length from a BAM file.
+
+options:
+  -h, --help            show this help message and exit
+  -b BAM, --bam BAM     The path to the sorted BAM file.
+  -o OUTPUT, --output OUTPUT
+                        The path to the output file.
+  -m MINREADLEN, --minreadlen MINREADLEN
+                        Minimum read length to consider (Default: 1000 for
+                        telomere capture, use 4000 for WGS). Optional
+  -g MAXGAPLEN, --maxgaplen MAXGAPLEN
+                        Maximum allowed gap length between telomere regions.
+                        Optional
+  -t THREADS, --threads THREADS
+                        Number of processing threads to use. Optional
+  -l MEMLIMIT, --memlimit MEMLIMIT
+                        Maximum amount of memory to commit per batch of reads
+                        while processing. Optional, default = 8 Gb
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: r-speaq
-description: Makes Nuclear Magnetic Resonance spectroscopy (NMR spectroscopy) data analysis as easy as possible by only requiring a small set of functions to perform an entire analysis. 'speaq' offers the possibility of raw spectra alignment and quantitation but also an analysis based on features whereby the spectra are converted to peaks which are then grouped and turned into features. These features can be processed with any number of statistical tools either included in 'speaq' or available elsewhere on CRAN. More details can be found in Vu et al.
+description: The r-speaq package provides a comprehensive suite for NMR spectral data analysis, including alignment and peak-based feature extraction. Use when user asks to align NMR spectra using CluPA, detect and group peaks, or perform quantitative analysis on spectral features.
 homepage: https://cran.r-project.org/web/packages/speaq/index.html
 ---
+
 
 # r-speaq
 

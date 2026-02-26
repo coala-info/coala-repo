@@ -1,8 +1,9 @@
 ---
 name: perl-exporter-tidy
-description: Exporter::Tidy provides a lightweight and flexible alternative to the standard Perl Exporter.
+description: Exporter::Tidy provides a lightweight and flexible way to export symbols from Perl modules without using inheritance or package globals. Use when user asks to define module exports, group symbols into tags, rename exported symbols, or apply prefixes to imported names to avoid namespace collisions.
 homepage: https://github.com/Juerd/Exporter-Tidy
 ---
+
 
 # perl-exporter-tidy
 

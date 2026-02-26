@@ -1,8 +1,9 @@
 ---
 name: pplacer
-description: The `pplacer` suite provides a high-performance workflow for placing fragments of DNA (query sequences) into a pre-established phylogenetic context.
+description: "pplacer places DNA fragments into a fixed phylogenetic reference tree to identify their origin. Use when user asks to place query sequences into a reference phylogeny, calculate phylogenetic diversity metrics, or perform taxonomic analysis on metagenomic reads."
 homepage: http://matsen.fredhutch.org/pplacer/
 ---
+
 
 # pplacer
 

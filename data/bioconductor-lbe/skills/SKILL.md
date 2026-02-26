@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lbe
-description: the package is available on all platforms; click for details.
+description: bioconductor-lbe estimates the false discovery rate and the proportion of true null hypotheses in genome-wide studies using a transformation of p-values. Use when user asks to estimate q-values, calculate the proportion of true null hypotheses, or control the false discovery rate in large-scale hypothesis testing.
 homepage: https://bioconductor.org/packages/release/bioc/html/LBE.html
 ---
+
 
 # bioconductor-lbe
 

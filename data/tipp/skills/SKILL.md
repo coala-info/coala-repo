@@ -1,8 +1,10 @@
 ---
 name: tipp
-description: TIPP (Telomere local assembly, Improved whole genome polish, and Plastid assembly) is a specialized bioinformatics suite designed to streamline the assembly of organellar genomes.
+description: TIPP assembles organellar genomes and telomeric regions from HiFi long-read data. Use when user asks to assemble organellar genomes, assemble chloroplast genomes, assemble mitochondrial genomes, assemble plastid genomes, or assemble telomeric regions.
 homepage: https://github.com/Wenfei-Xian/TIPP
 ---
+
+
 
 # tipp
 

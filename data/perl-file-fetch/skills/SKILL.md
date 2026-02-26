@@ -1,8 +1,9 @@
 ---
 name: perl-file-fetch
-description: File::Fetch provides a high-level abstraction for retrieving files without needing to know which specific download utilities are installed on the host system.
+description: Perl-file-fetch provides a high-level abstraction for retrieving files by automatically selecting the best available download utility on the system. Use when user asks to download files via various protocols, fetch remote content into variables, or create portable Perl-based download scripts.
 homepage: https://metacpan.org/pod/File::Fetch
 ---
+
 
 # perl-file-fetch
 

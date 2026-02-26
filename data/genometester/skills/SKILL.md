@@ -1,8 +1,9 @@
 ---
 name: genometester
-description: GenomeTester4 is a specialized toolkit designed for the rapid manipulation and analysis of k-mer lists.
+description: GenomeTester4 is a toolkit for the rapid manipulation and analysis of k-mer lists to perform alignment-free comparative genomics. Use when user asks to count k-mer frequencies, perform set operations like union or intersection on k-mer lists, query specific sequences in a k-mer database, or identify unique genomic sequences.
 homepage: https://github.com/bioinfo-ut/GenomeTester4
 ---
+
 
 # genometester
 

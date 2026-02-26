@@ -1,8 +1,9 @@
 ---
 name: spacepharer
-description: SpacePHARER (Space Phage-Host pAiRs findER) is a specialized toolkit designed to detect interactions between prokaryotes and phages.
+description: SpacePHARER detects interactions between prokaryotes and phages by performing sensitive homology searches between CRISPR spacers and viral genomes. Use when user asks to predict phage-host interactions, identify which phages infect specific hosts, or search CRISPR spacer databases against phage sequences.
 homepage: https://github.com/soedinglab/spacepharer
 ---
+
 
 # spacepharer
 

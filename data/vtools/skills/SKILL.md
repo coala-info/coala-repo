@@ -1,8 +1,9 @@
 ---
 name: vtools
-description: vtools is a high-performance suite of utilities designed for rapid VCF file manipulation.
+description: vtools is a high-performance suite of utilities designed for rapid VCF file manipulation. Use when user asks to filter variants, generate VCF statistics, calculate genomic coverage, or evaluate call sets.
 homepage: https://github.com/LUMC/vtools
 ---
+
 
 # vtools
 

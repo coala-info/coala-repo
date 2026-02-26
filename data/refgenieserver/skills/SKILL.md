@@ -1,8 +1,9 @@
 ---
 name: refgenieserver
-description: refgenieserver provides a web interface and RESTful API for the refgenie ecosystem, allowing for the centralized management and distribution of reference genome assets.
+description: refgenieserver provides a web interface and RESTful API for managing and distributing reference genome assets. Use when user asks to list available remote assets, download pre-built genomic indexes, or retrieve remote paths for genome data.
 homepage: https://refgenie.databio.org/
 ---
+
 
 # refgenieserver
 

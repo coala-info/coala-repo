@@ -1,8 +1,9 @@
 ---
 name: tango
-description: tango (executed via the `contigtax` command) is a specialized tool for assigning taxonomic identities to metagenomic sequences.
+description: "tango assigns taxonomic identities to metagenomic sequences by querying contig nucleotide sequences against a protein database. Use when user asks to assign taxonomy to contigs, perform metagenomic classification, or search sequences against a protein database using DIAMOND."
 homepage: https://github.com/johnne/tango
 ---
+
 
 # tango
 

@@ -3,7 +3,7 @@
 ## fml-asm
 
 ### Tool Description
-The provided text does not contain help information for fml-asm; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to pull the image due to lack of disk space.
+fml-asm is a de novo assembler for long reads.
 
 ### Metadata
 - **Docker Image**: biocontainers/fml-asm:v0.1-5-deb_cv1
@@ -18,11 +18,16 @@ The provided text does not contain help information for fml-asm; it contains err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/fml-asm:v0.1-5-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3851458732: no space left on device
+Usage: fml-asm [options] <in.fq>
+Options:
+  -e INT          k-mer length for error correction (0 for auto; -1 to disable) [0]
+  -c INT1[,INT2]  range of k-mer & read count thresholds for ec and graph cleaning [4,8]
+  -l INT          min overlap length during initial assembly [33]
+  -r FLOAT        drop an overlap if its length is below maxOvlpLen*FLOAT [0.7]
+  -t INT          number of threads (don't use multi-threading for small data sets) [1]
+  -A              discard heterozygotes (apply this to assemble bacterial genomes)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

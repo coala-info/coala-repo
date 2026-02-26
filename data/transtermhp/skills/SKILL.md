@@ -1,8 +1,9 @@
 ---
 name: transtermhp
-description: TransTermHP is a specialized computational tool for the rapid discovery of rho-independent transcription terminators in bacterial sequences.
+description: TransTermHP discovers rho-independent transcription terminators in bacterial sequences. Use when user asks to discover rho-independent transcription terminators or filter terminator results.
 homepage: http://transterm.cbcb.umd.edu/index.php
 ---
+
 
 # transtermhp
 

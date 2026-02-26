@@ -1,8 +1,9 @@
 ---
 name: primerclip
-description: Primerclip is a high-performance tool designed to trim primer sequences from aligned sequencing reads.
+description: Primerclip trims primer sequences from aligned sequencing reads using genomic coordinates. Use when user asks to trim primers from SAM files, process Swift Biosciences Accel-Amplicon panels, or remove primer sequences based on genomic intervals.
 homepage: https://github.com/swiftbiosciences/primerclip
 ---
+
 
 # primerclip
 

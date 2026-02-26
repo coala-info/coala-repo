@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicfiles
-description: the package is available on all platforms; click for details.
+description: The GenomicFiles package provides a framework for parallel Map-Reduce operations and distributed computing across multiple genomic files and ranges. Use when user asks to perform parallel data extraction across BAM or BigWig files, compute pileups or coverage across large datasets, or stream data from files that exceed memory capacity.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicFiles.html
 ---
+
 
 # bioconductor-genomicfiles
 

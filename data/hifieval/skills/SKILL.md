@@ -1,8 +1,9 @@
 ---
 name: hifieval
-description: hifieval is a specialized benchmarking tool designed to assess the accuracy of error correction algorithms in long-read sequencing workflows.
+description: hifieval benchmarks the accuracy of long-read error correction algorithms by analyzing alignment files to identify over-correction, under-correction, and correct-correction metrics. Use when user asks to evaluate error correction performance, calculate base-level correction metrics, or analyze error rates in homopolymer regions.
 homepage: https://github.com/magspho/hifieval
 ---
+
 
 # hifieval
 

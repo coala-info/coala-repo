@@ -1,8 +1,9 @@
 ---
 name: pygcap
-description: pygcap (Python Gene Cluster Annotation & Profiling) is a specialized bioinformatics tool for finding and analyzing gene clusters in microbial genome databases.
+description: "pygcap is a bioinformatics tool for identifying, analyzing, and visualizing gene clusters across microbial genomes. Use when user asks to find homologous gene clusters in taxonomic groups, download genomic data from NCBI, or analyze gene synteny and content."
 homepage: https://github.com/jrim42/pyGCAP
 ---
+
 
 # pygcap
 

@@ -1,9 +1,9 @@
 # ribocode CWL Generation Report
 
-## ribocode
+## ribocode_prepare_transcripts
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build/execution attempt.
+This script is designed for preparing transcripts annotation files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1
@@ -18,71 +18,181 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: prepare_transcripts [-h] -g GTFFILE -f GENOMEFASTA -o OUT_DIR [-V]
+
+This script is designed for preparing transcripts annotation files.
+
+options:
+  -h, --help            show this help message and exit
+  -g GTFFILE, --gtf GTFFILE
+                        Default, suitable for GENCODE and ENSEMBL GTF file,
+                        please refer: https://en.wikipedia.org/wiki/GENCODE,
+                        or using GTFupdate command to update your GTF file.
+  -f GENOMEFASTA, --fasta GENOMEFASTA
+                        The genome sequences file in fasta format.
+  -o OUT_DIR, --out_dir OUT_DIR
+                        annotation directory name.
+  -V, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## ribocode_prepare_transcripts
-
-### Tool Description
-The provided text is a container execution error log and does not contain CLI help information or argument definitions.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1
-- **Homepage**: https://github.com/xryanglab/RiboCode
-- **Package**: https://anaconda.org/channels/bioconda/packages/ribocode/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## ribocode_GTFupdate
 
 ### Tool Description
-Update GTF file for RiboCode. (Note: The provided help text contains system error logs and does not list specific arguments or usage instructions.)
+This script is designed for preparing the appropriate GTF file from custom GTF
+file (or those not from ENSEMBL/GENCODE database)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1
 - **Homepage**: https://github.com/xryanglab/RiboCode
 - **Package**: https://anaconda.org/channels/bioconda/packages/ribocode/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: GTFupdate [-h] gtfFile
+
+This script is designed for preparing the appropriate GTF file from custom GTF
+file (or those not from ENSEMBL/GENCODE database)
+
+positional arguments:
+  gtfFile
+
+options:
+  -h, --help  show this help message and exit
 ```
+
 
 ## ribocode_metaplots
 
 ### Tool Description
-A tool for generating metaplots to identify the P-site offset for Ribo-seq data. (Note: The provided text contains system error messages rather than the tool's help documentation; therefore, no arguments could be extracted.)
+This script create aggregate plots of distances from the 5'end of reads to start or stop codons, which help determine the length range of the PRF reads that are most likely originated from the translating ribosomes and identify the P-site locations for each reads lengths.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1
 - **Homepage**: https://github.com/xryanglab/RiboCode
 - **Package**: https://anaconda.org/channels/bioconda/packages/ribocode/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: metaplots [-h] -a ANNOT_DIR (-r RPF_MAPPING_FILE | -i RPF_MAPPING_FILE)
+                 [-s {yes,reverse,no}] [-m MINLENGTH] [-M MAXLENGTH]
+                 [-pv1 PVALUE1_CUTOFF] [-pv2 PVALUE2_CUTOFF]
+                 [-f0_percent FRAME0_PERCENT] [-o OUTNAME] [-V]
+
+This script create aggregate plots of distances from the 5'end of reads to
+start or stop codons, which help determine the length range of the PRF reads
+that are most likely originated from the translating ribosomes and identify
+the P-site locations for each reads lengths.
+
+options:
+  -h, --help            show this help message and exit
+  -a ANNOT_DIR, --annot_dir ANNOT_DIR
+                        transcripts annotation directory, generated by
+                        prepare_transcripts.
+  -r RPF_MAPPING_FILE, --rpf_mapping_file RPF_MAPPING_FILE
+                        ribo-seq BAM/SAM file aligned to the transcriptome.
+  -i RPF_MAPPING_FILE, --input_file RPF_MAPPING_FILE
+                        the file list the ribo-seq BAM/SAM files aligned to
+                        the transcriptome.
+  -s {yes,reverse,no}, --stranded {yes,reverse,no}
+                        whether the data is strand-specific, reverse means
+                        reversed strand interpretation.(default: yes)
+  -m MINLENGTH, --minimum-length MINLENGTH
+                        minimum length of read to output, default 24
+  -M MAXLENGTH, --maximum-length MAXLENGTH
+                        maximum length of read to output, default 36
+  -pv1 PVALUE1_CUTOFF, --pvalue1_cutoff PVALUE1_CUTOFF
+                        pvalue cutoff of frame0 > frame2 for automatically
+                        predicting P-site location, default 0.001
+  -pv2 PVALUE2_CUTOFF, --pvalue2_cutoff PVALUE2_CUTOFF
+                        pvalue cutoff of frame0 > frame2 for automatically
+                        predicting P-site location, default 0.001
+  -f0_percent FRAME0_PERCENT, --frame0_percent FRAME0_PERCENT
+                        proportion threshold of the number of reads in frame0,
+                        defined by f0/(f0+f1+f2), default 0.65
+  -o OUTNAME, --outname OUTNAME
+                        name of output pdf file(default: metaplots)
+  -V, --version         show program's version number and exit
+```
+
+
+## ribocode_RiboCode
+
+### Tool Description
+The main function designed for detecting ORF using ribosome-profiling data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ribocode:1.2.15--pyhdc42f0e_1
+- **Homepage**: https://github.com/xryanglab/RiboCode
+- **Package**: https://anaconda.org/channels/bioconda/packages/ribocode/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: RiboCode [-h] -a ANNOT_DIR -c CONFIG_FILE [-l {yes,no}]
+                [-s START_CODON] [-A ALTERNATIVE_START_CODONS] [-S STOP_CODON]
+                [-t TRANSL_TABLE] [-m MIN_AA_LENGTH]
+                [--dependence_test {none,mic,pcc}]
+                [--stouffer_adj {none,nyholt,liji,gao,galwey}]
+                [-p PVAL_CUTOFF]
+                [--pval_adj {fdr_bh,bonferroni,sidak,holm-sidak,holm,simes-hochberg,hommel,fdr_by,fdr_tsbh,fdr_tsbky}]
+                [-g] [-b] [-o OUTPUT_NAME] [-V]
+
+The main function designed for detecting ORF using ribosome-profiling data.
+
+options:
+  -h, --help            show this help message and exit
+  -a ANNOT_DIR, --annot_dir ANNOT_DIR
+                        transcripts annotation directory, generated by
+                        prepare_transcripts.
+  -c CONFIG_FILE, --config_file CONFIG_FILE
+                        list bam file and P-sites information in this file,
+                        please refer to the example file in data folder.
+  -l {yes,no}, --longest-orf {yes,no}
+                        Default: yes, the region from most distal AUG to stop
+                        was defined as an ORF. If set to no , the position of
+                        start codon will be automatically determined by
+                        program.
+  -s START_CODON, --start_codon START_CODON
+                        The canonical start codon. default: ATG
+  -A ALTERNATIVE_START_CODONS, --alt_start_codons ALTERNATIVE_START_CODONS
+                        The alternative start codon, such as CTG,GTG, default:
+                        None. Multiple codons should be separated by comma.
+  -S STOP_CODON, --stop_codon STOP_CODON
+                        Stop codon, default: TAA,TAG,TGA
+  -t TRANSL_TABLE, --transl_table TRANSL_TABLE
+                        ORF translation table(Default: 1). Assign the correct
+                        genetic code based on your organism, [please refer: ht
+                        tps://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
+                        ]
+  -m MIN_AA_LENGTH, --min-AA-length MIN_AA_LENGTH
+                        The minimal length of predicted peptides,default 5
+  --dependence_test {none,mic,pcc}
+                        the method for measuring the dependence between frame1
+                        and frame2. This test could help determine whether the
+                        combined p-values should be ajusted to account for the
+                        dependence between two test (i.e. F0 vs F1 and F0 vs
+                        F2). mic: Maximal Information Coefficient; pcc:
+                        Pearson Correlation Coefficient.
+  --stouffer_adj {none,nyholt,liji,gao,galwey}
+                        the method for adjustment the cominbed p-values to
+                        account for the dependence between two tests (i.e. F0
+                        vs F1 and F0 vs F2). see details at: https://search.r-
+                        project.org/CRAN/refmans/poolr/html/stouffer.html
+  -p PVAL_CUTOFF, --pval-cutoff PVAL_CUTOFF
+                        P-value cutoff for ORF filtering, default 0.05
+  --pval_adj {fdr_bh,bonferroni,sidak,holm-sidak,holm,simes-hochberg,hommel,fdr_by,fdr_tsbh,fdr_tsbky}
+                        the method used to correct p-values for multiple
+                        testing. default: Benjamini/Hochberg method. see
+                        details at: https://www.statsmodels.org/devel/generate
+                        d/statsmodels.stats.multitest.multipletests.html#stats
+                        models.stats.multitest.multipletests
+  -g, --output-gtf      output the gtf file of predicted ORFs
+  -b, --output-bed      output the bed file of predicted ORFs
+  -o OUTPUT_NAME, --output-name OUTPUT_NAME
+                        output file name, default: final_result
+  -V, --version         show program's version number and exit
 ```
 

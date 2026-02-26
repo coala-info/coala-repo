@@ -1,8 +1,9 @@
 ---
 name: crispresso
-description: CRISPResso is a specialized bioinformatics pipeline designed to transform raw sequencing data into actionable insights regarding genome editing efficiency.
+description: CRISPResso is a bioinformatics pipeline that analyzes deep sequencing data to quantify genome editing efficiency and outcomes. Use when user asks to quantify insertions and deletions, distinguish between NHEJ and HDR outcomes, analyze CRISPR editing in coding sequences, or compare editing efficiency between treated and control samples.
 homepage: https://github.com/lucapinello/CRISPResso
 ---
+
 
 # crispresso
 

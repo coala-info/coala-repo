@@ -1,8 +1,9 @@
 ---
 name: pauvre
-description: pauvre is a specialized suite of plotting tools designed for the unique characteristics of long-read sequencing data (Oxford Nanopore and PacBio).
+description: pauvre is a suite of plotting tools designed to visualize the length and quality distributions of long-read sequencing data. Use when user asks to create marginplots, generate redwood-style circular length plots, or perform quality control and comparative analysis on Nanopore and PacBio reads.
 homepage: https://github.com/conchoecia/gloTK
 ---
+
 
 # pauvre
 

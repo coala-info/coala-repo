@@ -1,8 +1,9 @@
 ---
 name: r-argparse
-description: "A command line parser to     be used with 'Rscript' to write \"#!\" shebang scripts that gracefully     accept positional and optional arguments and automatically generate usage.</p>"
+description: The r-argparse package provides a command-line argument parser for R scripts to handle flags, positional arguments, and help messages. Use when user asks to parse command-line arguments in R, create professional CLI tools with Rscript, or define script parameters like flags and default values.
 homepage: https://cloud.r-project.org/web/packages/argparse/index.html
 ---
+
 
 # r-argparse
 

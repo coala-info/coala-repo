@@ -1,8 +1,9 @@
 ---
 name: lemur
-description: Lemur is a command-line tool optimized for long-read metagenomics that provides rapid taxonomic profiling.
+description: Lemur is a command-line tool that performs rapid taxonomic profiling and abundance estimation for long-read metagenomics data using marker gene databases and an EM algorithm. Use when user asks to profile the taxonomic composition of metagenomic samples, estimate relative abundance of organisms from long reads, or map reads to marker gene databases.
 homepage: https://github.com/treangenlab/lemur
 ---
+
 
 # lemur
 

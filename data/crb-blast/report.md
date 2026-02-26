@@ -18,18 +18,24 @@ Conditional Reciprocal Best BLAST
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-/usr/local/lib/ruby/3.1.0/rubygems.rb:265:in `find_spec_for_exe': can't find gem crb-blast (>= 0.a) with executable crb-blast (Gem::GemNotFoundException)
-	from /usr/local/lib/ruby/3.1.0/rubygems.rb:284:in `activate_bin_path'
-	from /usr/local/bin/crb-blast:32:in `<main>'
+CRB-Blast v0.6.9 by Chris Boursnell <cmb211@cam.ac.uk>
+
+Conditional Reciprocal Best BLAST
+
+USAGE:
+crb-blast <options>
+
+OPTIONS:
+  -q, --query=<s>      query fasta file
+  -t, --target=<s>     target fasta file
+  -e, --evalue=<f>     e-value cut off for BLAST. Format 1e-5 (default:
+                       1.0e-05)
+  -h, --threads=<i>    number of threads to run BLAST with (default: 1)
+  -o, --output=<s>     output file as tsv
+  -s, --split          split the fasta files into chunks and run multiple blast
+                       jobs and then combine them.
+  -v, --verbose        be verbose
+  -r, --version        Print version and exit
+  -l, --help           Show this message
 ```
 
-
-## Metadata
-- **Skill**: generated

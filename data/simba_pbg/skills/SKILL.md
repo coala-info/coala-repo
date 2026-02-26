@@ -1,8 +1,9 @@
 ---
 name: simba_pbg
-description: The `simba_pbg` skill facilitates the use of a customized PyTorch-BigGraph (PBG) package specifically modified for the SIMBA analysis suite.
+description: "simba_pbg learns low-dimensional graph embeddings for massive biological datasets using a customized PyTorch-BigGraph implementation. Use when user asks to convert TSV files to partitioned binary format, train graph models on large-scale datasets, or generate feature vectors for SIMBA workflows."
 homepage: https://github.com/pinellolab/simba_pbg
 ---
+
 
 # simba_pbg
 

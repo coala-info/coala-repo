@@ -1,8 +1,9 @@
 ---
 name: r-fields
-description: "For curve, surface and function fitting with an emphasis  on splines, spatial data, geostatistics, and spatial statistics. The major  methods  include  Gaussian spatial process prediction (known as Kriging), cubic and thin plate splines, and compactly supported  covariance functions for large data sets. The spline and spatial process  methods are  supported by functions that can determine the smoothing parameter  (nugget and sill variance) and other covariance function parameters by cross  validation and also by  maximum likelihood. For spatial process prediction  there is an easy to use function that also estimates the correlation  scale (range parameter).  A major feature is that any covariance function  implemented in R and following a simple format can be used for  spatial prediction. As included are fast approximations for prediction  and conditional simulation for larger data sets.  There are also many useful functions for plotting  and working with spatial data as images. This package also contains  an implementation of sparse matrix methods for large spatial data  sets based the  R sparse matrix package spam. Use  help(fields) to get started and for an overview. All package graphics functions  focus on  extending base R graphics and are easy to interpret and modify.  The fields source  code is deliberately commented and provides useful explanations of  numerical details as a companion to the manual pages. The commented  source code can be viewed by expanding the source code version of this package  and looking in the R subdirectory."
+description: This tool provides functions for spatial statistics, including Kriging, thin plate splines, and spatial data visualization in R. Use when user asks to fit smooth surfaces to spatial data, perform Gaussian process prediction, estimate covariance parameters, or create spatial plots and images.
 homepage: https://cloud.r-project.org/web/packages/fields/index.html
 ---
+
 
 # r-fields
 

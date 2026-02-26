@@ -1,8 +1,9 @@
 ---
 name: bioconductor-atsnp
-description: the package is available on all platforms; click for details.
+description: Bioconductor-atsnp identifies SNPs that disrupt transcription factor binding by computing affinity scores and significance levels for allele-specific changes. Use when user asks to compute binding affinity scores for SNPs, calculate p-values for regulatory SNP detection, load motif libraries from ENCODE or JASPAR, and process SNP data from rsids or genomic coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/atSNP.html
 ---
+
 
 # bioconductor-atsnp
 

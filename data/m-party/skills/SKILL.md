@@ -1,8 +1,9 @@
 ---
 name: m-party
-description: M-PARTY (Mining Protein dAtasets foR Targeted EnzYmes) is a bioinformatics tool designed to detect enzymes capable of degrading plastics (such as polyethylene).
+description: M-PARTY detects plastic-degrading enzymes by performing structural annotations of protein sequences using specialized Hidden Markov Models. Use when user asks to annotate protein sequences for plastic-active enzymes, build custom HMM databases from FASTA files or KEGG and InterPro IDs, and validate annotation results to filter false positives.
 homepage: https://github.com/ozefreitas/M-PARTY
 ---
+
 
 # m-party
 

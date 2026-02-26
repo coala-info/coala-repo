@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowfitexampledata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides example flow cytometry datasets for testing and demonstrating the flowFit package. Use when user asks to access sample flowSet objects, practice cell proliferation analysis, or test fluorescence decay modeling in R.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/flowFitExampleData.html
 ---
+
 
 # bioconductor-flowfitexampledata
 

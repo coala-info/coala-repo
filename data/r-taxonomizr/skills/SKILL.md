@@ -1,8 +1,9 @@
 ---
 name: r-taxonomizr
-description: Functions for assigning taxonomy to NCBI accession numbers and taxon IDs based on NCBI's accession2taxid and taxdump files. This package allows the user to download NCBI data dumps and create a local database for fast and local taxonomic assignment.</p>
+description: The taxonomizr package maps NCBI accession numbers and taxonomic IDs to full taxonomic lineages using a local SQLite database. Use when user asks to convert accessions to taxon IDs, retrieve taxonomic lineages, find descendants of a taxon, or calculate the lowest common ancestor for genomic datasets.
 homepage: https://cran.r-project.org/web/packages/taxonomizr/index.html
 ---
+
 
 # r-taxonomizr
 

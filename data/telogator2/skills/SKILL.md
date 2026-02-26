@@ -1,8 +1,9 @@
 ---
 name: telogator2
-description: Telogator2 is a specialized bioinformatics tool designed to extract and analyze telomeric regions from long-read sequencing datasets.
+description: Telogator2 extracts and analyzes telomeric regions from long-read sequencing datasets to provide allele-specific measurements. Use when user asks to extract telomeric reads, characterize variant repeat patterns, or measure telomere length from PacBio or Nanopore data.
 homepage: https://github.com/zstephens/telogator2
 ---
+
 
 # telogator2
 

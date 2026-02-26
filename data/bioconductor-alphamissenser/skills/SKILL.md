@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alphamissenser
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to access, query, and integrate AlphaMissense pathogenicity predictions for missense variants using DuckDB and Bioconductor objects. Use when user asks to retrieve AlphaMissense data for hg19 or hg38, map predictions to AlphaFold protein structures, perform genomic range-based joins, or benchmark variant scores against ClinVar and ProteinGym.
 homepage: https://bioconductor.org/packages/release/bioc/html/AlphaMissenseR.html
 ---
+
 
 # bioconductor-alphamissenser
 

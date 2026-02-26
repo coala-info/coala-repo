@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gp53cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix gp53 platform to map probe coordinates to indices. Use when user asks to handle gp53 chip data, convert between (x,y) coordinates and probe indices, or access the CDF environment in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/gp53cdf.html
 ---
+
 
 # bioconductor-gp53cdf
 

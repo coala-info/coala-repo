@@ -1,8 +1,9 @@
 ---
 name: gatk-framework
-description: The Genome Analysis Toolkit (GATK) is the industry standard for identifying variants in high-throughput sequencing data.
+description: The Genome Analysis Toolkit identifies variants in high-throughput sequencing data and executes standardized genomic workflows. Use when user asks to identify germline or somatic variants, mark duplicates, recalibrate base quality scores, or perform joint genotyping.
 homepage: https://gatk.broadinstitute.org/
 ---
+
 
 # gatk-framework
 

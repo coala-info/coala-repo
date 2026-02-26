@@ -1,8 +1,9 @@
 ---
 name: r-eztune
-description: R package eztune (documentation from project home).
+description: The eztune package automates the tuning of hyperparameters for supervised learning models using optimization algorithms to maximize accuracy or minimize error. Use when user asks to tune models for gbm, svm, ada, or glmnet, optimize hyperparameters using genetic algorithms or Hooke-Jeeves, or compute cross-validated performance metrics for tuned models.
 homepage: https://cran.r-project.org/web/packages/eztune/index.html
 ---
+
 
 # r-eztune
 

@@ -1,8 +1,9 @@
 ---
 name: perl-path-tiny
-description: The `perl-path-tiny` skill provides guidance on using the `Path::Tiny` Perl module, a lightweight and fast utility for file path manipulation and file I/O.
+description: perl-path-tiny provides a lightweight and intuitive API for file path manipulation and file I/O operations in Perl. Use when user asks to read or write file contents, manage temporary directories, manipulate file paths, or perform filesystem operations like moving and removing files.
 homepage: https://github.com/dagolden/Path-Tiny
 ---
+
 
 # perl-path-tiny
 

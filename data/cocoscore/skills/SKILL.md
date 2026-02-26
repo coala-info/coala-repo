@@ -1,8 +1,9 @@
 ---
 name: cocoscore
-description: CoCoScore (Context-aware Co-occurrence Score) is a tool designed to enhance biomedical text mining by moving beyond simple co-occurrence counts.
+description: CoCoScore uses machine learning to assess the textual context of entity co-occurrences in biomedical text to determine the likelihood of meaningful relationships. Use when user asks to score sentence-level associations, improve the precision of entity-pair interaction datasets, or apply context-aware filtering to text mining results.
 homepage: https://github.com/JungeAlexander/cocoscore
 ---
+
 
 # cocoscore
 

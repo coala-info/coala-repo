@@ -1,8 +1,9 @@
 ---
 name: eider
-description: eider is a specialized command-line interface for DuckDB that facilitates high-performance data processing within a terminal environment.
+description: eider is a command-line interface for DuckDB that enables high-performance SQL query execution and data processing on files or persistent databases. Use when user asks to execute SQL queries on Parquet or CSV files, run parameterized SQL templates, or manage DuckDB databases from the terminal.
 homepage: https://github.com/heuermh/eider
 ---
+
 
 # eider
 

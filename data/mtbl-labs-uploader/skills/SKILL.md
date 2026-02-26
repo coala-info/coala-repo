@@ -1,8 +1,9 @@
 ---
 name: mtbl-labs-uploader
-description: The MetaboLights Labs Uploader is a specialized tool designed to streamline the deposition of metabolomics datasets.
+description: This tool uploads metabolomics datasets and experimental metadata to the MetaboLights Labs infrastructure. Use when user asks to upload individual metabolomics files, transfer a directory of study data, or submit ISA-Tab archives to MetaboLights Labs.
 homepage: https://github.com/phnmnl/container-mtbl-labs-uploader
 ---
+
 
 # mtbl-labs-uploader
 

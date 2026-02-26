@@ -1,8 +1,9 @@
 ---
 name: hunspell-en-med
-description: This skill provides guidance for utilizing the `hunspell-en-med-glut` dictionary, a specialized resource for the Hunspell spell-checker.
+description: This tool provides specialized medical spell-checking capabilities by integrating drug names, clinical codes, and anatomical terms into the Hunspell dictionary. Use when user asks to spell-check medical documents, validate clinical terminology, or install specialized medical dictionaries for Hunspell.
 homepage: https://github.com/glutanimate/hunspell-en-med-glut
 ---
+
 
 # hunspell-en-med
 

@@ -1,8 +1,9 @@
 ---
 name: wtdbg
-description: The `wtdbg2` toolset (also known as Redbean) is designed for rapid de novo assembly of long, noisy genomic reads.
+description: wtdbg performs rapid de novo assembly of long, noisy genomic reads. Use when user asks to assemble long reads, generate a contig layout, derive a consensus sequence, polish an assembly, or tune assembly parameters.
 homepage: https://github.com/ruanjue/wtdbg-1.2.8
 ---
+
 
 # wtdbg
 

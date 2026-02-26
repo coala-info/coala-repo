@@ -1,8 +1,9 @@
 ---
 name: canopy
-description: The `canopy` skill (based on the `canopy2` implementation) provides a high-performance, memory-efficient approach to the canopy clustering algorithm.
+description: Canopy performs high-performance, memory-efficient clustering of metagenomic gene catalogues based on co-abundance or sequence similarity. Use when user asks to cluster gene catalogues, organize metagenomic data by co-abundance, or perform memory-efficient canopy clustering.
 homepage: https://github.com/hildebra/canopy2/
 ---
+
 
 # canopy
 

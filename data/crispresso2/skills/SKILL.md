@@ -1,8 +1,9 @@
 ---
 name: crispresso2
-description: CRISPResso2 is a specialized bioinformatics pipeline designed to transform raw sequencing data into actionable insights regarding genome editing outcomes.
+description: CRISPResso2 is a bioinformatics pipeline that analyzes genome editing outcomes by quantifying insertions, deletions, and substitutions from sequencing data. Use when user asks to evaluate CRISPR-Cas9 editing frequency, analyze base editing or prime editing experiments, compare treated samples to controls, or process pooled amplicon sequencing data.
 homepage: https://github.com/pinellolab/CRISPResso2
 ---
+
 
 # crispresso2
 

@@ -1,8 +1,9 @@
 ---
 name: marbel
-description: Marbel (MetAtranscriptomic Reference Builder Evaluation Library) is a specialized simulation tool that generates synthetic metatranscriptomic datasets based on a library of over 600 bacterial transcriptomes.
+description: Marbel generates synthetic metatranscriptomic datasets by modeling functional redundancies and realistic read count matrices from a library of bacterial transcriptomes. Use when user asks to simulate metatranscriptomic data, evaluate assembly pipelines, or test differential expression detection with varying taxonomic and functional diversity.
 homepage: https://github.com/jlab/marbel
 ---
+
 
 # marbel
 

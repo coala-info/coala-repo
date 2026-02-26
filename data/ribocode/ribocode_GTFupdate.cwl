@@ -1,11 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ribocode_GTFupdate
+baseCommand: GTFupdate
 label: ribocode_GTFupdate
-doc: "Update GTF file for RiboCode. (Note: The provided help text contains system
-  error logs and does not list specific arguments or usage instructions.)\n\nTool
-  homepage: https://github.com/xryanglab/RiboCode"
-inputs: []
+doc: "This script is designed for preparing the appropriate GTF file from custom GTF\n\
+  file (or those not from ENSEMBL/GENCODE database)\n\nTool homepage: https://github.com/xryanglab/RiboCode"
+inputs:
+  - id: gtf_file
+    type: File
+    doc: GTF file to update
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

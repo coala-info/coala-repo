@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clustifyrdatahub
-description: the package is available on all platforms; click for details.
+description: This package provides reference datasets for automated cell type classification using the clustifyr R package. Use when user asks to access single-cell RNA sequencing reference data, download pre-built cell type profiles, or provide reference sets for clustifyr.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/clustifyrdatahub.html
 ---
+
 
 # bioconductor-clustifyrdatahub
 

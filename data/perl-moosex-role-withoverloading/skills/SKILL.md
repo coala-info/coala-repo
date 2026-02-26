@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-role-withoverloading
-description: `MooseX::Role::WithOverloading` is a Perl module designed to fix a limitation in older versions of Moose where operator overloading defined within a `Moose::Role` would be lost when that role was applied to a class or another role.
+description: This Perl module allows Moose roles to support operator overloading in legacy environments where this functionality is not natively available in the Moose core. Use when user asks to preserve overloaded operators in Moose roles, fix issues with role-based overloading in older Moose versions, or implement stringification and mathematical operations within a role.
 homepage: https://github.com/moose/MooseX-Role-WithOverloading
 ---
+
 
 # perl-moosex-role-withoverloading
 

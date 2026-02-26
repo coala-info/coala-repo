@@ -1,8 +1,9 @@
 ---
 name: scvi
-description: The `scvi` (single-cell Variational Inference) skill enables the application of probabilistic models to high-dimensional single-cell data.
+description: scvi applies probabilistic deep generative models to single-cell omics data for normalization and analysis. Use when user asks to integrate disparate datasets, reduce dimensionality for visualization, or perform differential expression analysis.
 homepage: https://github.com/YosefLab/scVI
 ---
+
 
 # scvi
 

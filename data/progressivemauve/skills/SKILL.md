@@ -1,8 +1,9 @@
 ---
 name: progressivemauve
-description: ProgressiveMauve is a specialized tool for comparative genomics designed to align genomes that are not necessarily collinear.
+description: ProgressiveMauve performs multiple genome alignments while accounting for large-scale evolutionary rearrangements such as inversions and translocations. Use when user asks to align non-collinear genomes, identify locally collinear blocks, generate phylogenetic guide trees, or extract backbone statistics from conserved genomic regions.
 homepage: http://darlinglab.org/mauve/user-guide/progressivemauve.html
 ---
+
 
 # progressivemauve
 

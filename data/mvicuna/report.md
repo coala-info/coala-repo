@@ -1,28 +1,122 @@
 # mvicuna CWL Generation Report
 
-## mvicuna
+## mvicuna_dupr
 
 ### Tool Description
-The provided text does not contain help information for mvicuna; it contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mvicuna:1.0--h9948957_11
+- **Docker Image**: quay.io/biocontainers/mvicuna:1.0--h9f5acd7_8
 - **Homepage**: https://github.com/broadinstitute/mvicuna
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mvicuna/overview
 - **Total Downloads**: 25.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/broadinstitute/mvicuna
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mvicuna:1.0--h9948957_11 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1527806693: no space left on device
+flag: dupr is unknown
+ type -h to get options
 ```
 
 
-## Metadata
-- **Skill**: generated
+## mvicuna_trim
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mvicuna:1.0--h9f5acd7_8
+- **Homepage**: https://github.com/broadinstitute/mvicuna
+- **Package**: Not found
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+flag: trim is unknown
+ type -h to get options
+```
+
+
+## mvicuna_pairedreadmerge
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mvicuna:1.0--h9f5acd7_8
+- **Homepage**: https://github.com/broadinstitute/mvicuna
+- **Package**: Not found
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+flag: pairedreadmerge is unknown
+ type -h to get options
+```
+
+
+## mvicuna_sfrqest
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/mvicuna:1.0--h9f5acd7_8
+- **Homepage**: https://github.com/broadinstitute/mvicuna
+- **Package**: Not found
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+flag: sfrqest is unknown
+ type -h to get options
+```
+

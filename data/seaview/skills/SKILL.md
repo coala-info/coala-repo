@@ -1,8 +1,9 @@
 ---
 name: seaview
-description: The seaview skill provides a specialized workflow for identifying road infrastructure issues using an ensemble of state-of-the-art object detection models.
+description: Seaview identifies and localizes road infrastructure issues using an ensemble of object detection models including YOLO and MMDetection variants. Use when user asks to detect road damage, train infrastructure inspection models, or ensemble multiple object detection results.
 homepage: https://github.com/berry-ding/ShiYu_SeaView_GRDDC2022
 ---
+
 
 # seaview
 

@@ -1,8 +1,9 @@
 ---
 name: r-tibble
-description: "Provides a 'tbl_df' class (the 'tibble') with stricter     checking and better formatting than the traditional data frame.</p>"
+description: The r-tibble tool provides specialized guidance for creating, manipulating, and displaying modern R data frames that prioritize stricter subsetting and enhanced printing. Use when user asks to create tibbles from scratch or row-wise, convert existing data structures using as_tibble, manage column display and number formatting, or understand behavioral differences between tibbles and base R data frames.
 homepage: https://cloud.r-project.org/web/packages/tibble/index.html
 ---
+
 
 # r-tibble
 

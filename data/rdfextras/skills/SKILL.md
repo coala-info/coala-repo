@@ -1,8 +1,9 @@
 ---
 name: rdfextras
-description: The `rdfextras` package is a legacy suite of tools designed to extend the functionality of RDFLib version 3.x.
+description: The rdfextras package provides a suite of legacy tools and a SPARQL 1.1 implementation to extend the functionality of RDFLib version 3.x. Use when user asks to perform SPARQL queries on legacy RDF stores, convert CSV files to RDF, generate Graphviz visualizations from RDF data, or translate between different RDF serializations.
 homepage: https://github.com/RDFLib/rdfextras
 ---
+
 
 # rdfextras
 

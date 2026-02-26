@@ -1,8 +1,9 @@
 ---
 name: r-sendmailr
-description: R package sendmailr (documentation from project home).
+description: The sendmailR package provides a portable SMTP client for sending emails and attachments directly from R. Use when user asks to send emails, include attachments in messages, or dispatch notifications via SMTP servers.
 homepage: https://cran.r-project.org/web/packages/sendmailr/index.html
 ---
+
 
 # r-sendmailr
 

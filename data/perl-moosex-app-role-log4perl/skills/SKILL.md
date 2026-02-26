@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-app-role-log4perl
-description: This skill enables the rapid integration of professional logging into Perl CLI applications.
+description: This tool integrates Log4perl logging into MooseX::App-based Perl command-line applications. Use when user asks to add logging to a Perl CLI application, configure command-line log levels, or output application logs to a file.
 homepage: https://github.com/gitpan/MooseX-App-Role-Log4perl
 ---
+
 
 # perl-moosex-app-role-log4perl
 

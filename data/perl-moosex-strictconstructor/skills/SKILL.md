@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-strictconstructor
-description: This skill provides guidance on implementing `MooseX::StrictConstructor` within Perl object-oriented programming.
+description: This tool makes Moose constructors throw an error when passed unknown attributes to help catch typos and bugs. Use when user asks to enforce strict constructor arguments, catch invalid attributes during object instantiation, or implement MooseX::StrictConstructor in Perl classes.
 homepage: http://metacpan.org/release/MooseX::StrictConstructor
 ---
+
 
 # perl-moosex-strictconstructor
 

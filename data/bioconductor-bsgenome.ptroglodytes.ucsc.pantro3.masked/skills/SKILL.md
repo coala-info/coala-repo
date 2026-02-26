@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ptroglodytes.ucsc.pantro3.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genome sequences for the Pan troglodytes (Chimp) UCSC panTro3 assembly. Use when user asks to access chimpanzee genomic sequences with masks for assembly gaps, ambiguities, or repeats.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ptroglodytes.UCSC.panTro3.masked.html
 ---
+
 
 # bioconductor-bsgenome.ptroglodytes.ucsc.pantro3.masked
 

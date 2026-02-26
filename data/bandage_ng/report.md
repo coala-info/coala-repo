@@ -1,52 +1,46 @@
 # bandage_ng CWL Generation Report
 
-## bandage_ng
+## bandage_ng_Bandage
 
 ### Tool Description
-Bandage (Bioinformatics Application for Navigating De novo Assembly Graphs Easily) - Next Generation. Note: The provided text contains container runtime error logs rather than tool help text, so no arguments could be extracted.
+Launch the Bandage GUI
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bandage_ng:2026.2.1--h3751afb_0
+- **Docker Image**: quay.io/biocontainers/bandage:0.9.0--h9948957_0
 - **Homepage**: https://github.com/asl/BandageNG
 - **Package**: https://anaconda.org/channels/bioconda/packages/bandage_ng/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bandage_ng/overview
-- **Total Downloads**: 6.8K
+- **Total Downloads**: 6.9K
 - **Last updated**: 2026-02-03
 - **GitHub**: https://github.com/asl/BandageNG
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bandage_ng:2026.2.1--h3751afb_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2cc3d3b08aaa900b79e78bbfb3fec41e987bad11b25ff964df842537a1180718: unpack entry: usr/lib/x86_64-linux-gnu/libcrypto.so.3: unpack to regular file: short write: write /scratch/21813747/build-temp-3286367615/rootfs/usr/lib/x86_64-linux-gnu/libcrypto.so.3: no space left on device
-```
+____                  _                  
+ |  _ \                | |                 
+ | |_) | __ _ _ __   __| | __ _  __ _  ___ 
+ |  _ < / _` | '_ \ / _` |/ _` |/ _` |/ _ \
+ | |_) | (_| | | | | (_| | (_| | (_| |  __/
+ |____/ \__,_|_| |_|\__,_|\__,_|\__, |\___|
+                                 __/ |     
+                                |___/      
+Version: 0.9.0
 
-
-## Metadata
-- **Skill**: generated
-
-## bandage_ng_Bandage
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log indicating a failure to build or extract a container image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bandage_ng:2026.2.1--h3751afb_0
-- **Homepage**: https://github.com/asl/BandageNG
-- **Package**: https://anaconda.org/channels/bioconda/packages/bandage_ng/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bandage_ng:2026.2.1--h3751afb_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2cc3d3b08aaa900b79e78bbfb3fec41e987bad11b25ff964df842537a1180718: unpack entry: usr/lib/x86_64-linux-gnu/libcrypto.so.3: unpack to regular file: short write: write /scratch/21813747/build-temp-3650223010/rootfs/usr/lib/x86_64-linux-gnu/libcrypto.so.3: no space left on device
+Usage:    Bandage <command> [options]
+          
+Commands: <blank>      Launch the Bandage GUI
+          load         Launch the Bandage GUI and load a graph file
+          info         Display information about a graph
+          image        Generate an image file of a graph
+          querypaths   Output graph paths for BLAST queries
+          reduce       Save a subgraph of a larger graph
+          
+Options:  --help       View this help message
+          --helpall    View all command line settings
+          --version    View Bandage version number
+          
+Online Bandage help: https://github.com/rrwick/Bandage/wiki
 ```
 

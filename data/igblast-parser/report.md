@@ -3,7 +3,7 @@
 ## igblast-parser
 
 ### Tool Description
-A tool for parsing IgBLAST output. (Note: The provided text contains system error messages regarding container execution and does not include the tool's help documentation or argument list.)
+Parses IGBLAST output.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/igblast-parser:0.0.4--py39hf95cd2a_6
@@ -18,11 +18,8 @@ A tool for parsing IgBLAST output. (Note: The provided text contains system erro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/igblast-parser:0.0.4--py39hf95cd2a_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1807017015: no space left on device
+igblast_output | python <this script> --out <out_filename_prefix>
+
+                    python <this script --in <igblast_output> --out <out_filename_prefix>
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: peakzilla
-description: Peakzilla is a self-learning peak caller optimized for identifying precise transcription factor binding sites.
+description: Peakzilla is a self-learning peak caller designed to identify high-resolution transcription factor binding sites from ChIP-seq data. Use when user asks to call peaks, identify point-source enrichment, or estimate peak size parameters from BED or BEDPE files.
 homepage: https://github.com/steinmann/peakzilla
 ---
+
 
 # peakzilla
 

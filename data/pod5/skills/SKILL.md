@@ -1,8 +1,9 @@
 ---
 name: pod5
-description: POD5 is a high-performance file format designed by Oxford Nanopore Technologies for storing raw signal data.
+description: POD5 is a high-performance file format and toolkit for managing and processing raw nanopore sequencing signal data. Use when user asks to inspect read metadata, subset reads by ID, merge multiple files, or convert legacy FAST5 files to the POD5 format.
 homepage: https://github.com/nanoporetech/pod5-file-format
 ---
+
 
 # pod5
 

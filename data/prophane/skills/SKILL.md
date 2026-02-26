@@ -1,8 +1,9 @@
 ---
 name: prophane
-description: Prophane is a specialized bioinformatics pipeline designed to automate the functional and taxonomic characterization of metaproteomes.
+description: Prophane automates the functional and taxonomic characterization of metaproteomes by mapping protein groups and quantification data against biological databases. Use when user asks to perform Lowest Common Ancestor determination, conduct functional enrichment analysis, or characterize the taxonomic composition of a microbial community.
 homepage: https://gitlab.com/s.fuchs/prophane/
 ---
+
 
 # prophane
 

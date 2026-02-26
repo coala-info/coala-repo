@@ -1,8 +1,9 @@
 ---
 name: micro_razers
-description: MicroRazerS is a high-performance alignment tool specifically engineered for the unique requirements of small RNA sequencing data.
+description: MicroRazerS is a high-performance alignment tool specifically engineered for mapping small RNA sequencing data to a reference genome. Use when user asks to align short reads, map small RNA sequences, or identify small RNA species with mismatches.
 homepage: https://github.com/seqan/seqan/tree/seqan-v2.1.1/apps/micro_razers
 ---
+
 
 # micro_razers
 

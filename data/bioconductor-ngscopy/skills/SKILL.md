@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ngscopy
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: NGScopy detects copy number variations from next-generation sequencing data using depth of coverage. Use when user asks to detect copy number variations, analyze NGS depth of coverage, or identify genomic alterations.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NGScopy.html
 ---
+
 
 # bioconductor-ngscopy
 

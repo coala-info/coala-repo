@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sevenc
-description: the package is available on all platforms; click for details.
+description: sevenC predicts chromatin loops by integrating genomic features such as CTCF motifs and ChIP-seq data. Use when user asks to predict chromatin loops, identify genomic interactions, or analyze CTCF-mediated looping.
 homepage: https://bioconductor.org/packages/release/bioc/html/sevenC.html
 ---
+
 
 # bioconductor-sevenc
 

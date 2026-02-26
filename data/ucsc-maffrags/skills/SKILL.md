@@ -1,8 +1,9 @@
 ---
 name: ucsc-maffrags
-description: The `mafFrags` utility is a specialized tool from the UCSC Genome Browser "Kent" suite designed for high-performance extraction of alignment data.
+description: ucsc-maffrags extracts alignment blocks from a MAF file based on genomic intervals defined in a BED file. Use when user asks to extract alignment blocks from a MAF file, retrieve alignments for specific genomic regions, or get exonic alignments.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-maffrags
 

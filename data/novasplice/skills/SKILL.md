@@ -1,8 +1,9 @@
 ---
 name: novasplice
-description: NovaSplice is a specialized bioinformatics tool that identifies potential novel intronic splice sites created by genomic variants.
+description: NovaSplice identifies novel intronic splice sites created by genomic variants by comparing their MaxEntScan scores to canonical sites. Use when user asks to identify novel splice sites, evaluate the impact of intronic variants, or perform comparative splice site scoring using VCF and BED files.
 homepage: https://github.com/aryakaul/novasplice
 ---
+
 
 # novasplice
 

@@ -1,8 +1,9 @@
 ---
 name: perl-datetime
-description: The `perl-datetime` skill provides a high-level, object-oriented approach to handling dates and times in Perl, far exceeding the capabilities of the built-in `localtime` and `gmtime` functions.
+description: The perl-datetime skill provides an object-oriented framework for complex date and time manipulation, arithmetic, and timezone handling in Perl. Use when user asks to create date objects, perform date arithmetic, format timestamps, or compare different time points.
 homepage: https://metacpan.org/dist/DateTime
 ---
+
 
 # perl-datetime
 

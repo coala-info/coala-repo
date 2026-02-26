@@ -1,8 +1,9 @@
 ---
 name: bioconductor-signaturesearch
-description: the package is available on all platforms; click for details.
+description: signatureSearch performs gene expression signature searching and functional enrichment analysis to identify small molecules that mimic or reverse specific transcriptional profiles. Use when user asks to perform gene expression signature searches, identify drug candidates for repurposing, or conduct functional enrichment analysis of gene sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/signatureSearch.html
 ---
+
 
 # bioconductor-signaturesearch
 

@@ -1,8 +1,9 @@
 ---
 name: phylopypruner
-description: PhyloPyPruner is a specialized tool for phylogenomic data refinement.
+description: "PhyloPyPruner refines phylogenomic data by identifying 1:1 orthologs and pruning gene trees to remove paralogs and contaminants. Use when user asks to identify 1:1 orthologs, prune gene trees, filter contaminants, or refine phylogenomic datasets."
 homepage: https://github.com/fethalen/phylopypruner
 ---
+
 
 # phylopypruner
 

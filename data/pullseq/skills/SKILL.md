@@ -1,8 +1,9 @@
 ---
 name: pullseq
-description: The `pullseq` suite provides high-performance C-based utilities for subsetting and comparing genomic sequence files.
+description: "pullseq extracts and filters sequences from FASTA or FASTQ files based on identifiers, regular expressions, or length constraints. Use when user asks to extract specific reads by ID, filter sequences by length or regex, exclude certain sequences, or identify differences between two sequence files."
 homepage: https://github.com/bcthomas/pullseq
 ---
+
 
 # pullseq
 

@@ -1,8 +1,9 @@
 ---
 name: gaas
-description: The GAAS (Genome Assembly Annotation Service) suite is a collection of specialized utilities developed by the National Bioinformatics Infrastructure Sweden (NBIS).
+description: GAAS is a suite of utilities designed to standardize genome project management and extract quality metrics from genomic sequences. Use when user asks to initialize a structured genome annotation project, calculate assembly statistics such as N50 and GC content, or manage project directory hierarchies.
 homepage: https://github.com/NBISweden/GAAS
 ---
+
 
 # gaas
 

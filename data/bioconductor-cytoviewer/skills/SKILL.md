@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytoviewer
-description: the package is available on all platforms; click for details.
+description: This tool provides an interactive Shiny-based interface for visualizing multi-channel images, segmentation masks, and single-cell metadata from multiplexed imaging technologies. Use when user asks to launch an interactive image viewer, overlay segmentation masks on images, or visualize single-cell metadata in a spatial context.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytoviewer.html
 ---
+
 
 # bioconductor-cytoviewer
 

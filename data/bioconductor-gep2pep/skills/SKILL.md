@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gep2pep
-description: the package is available on all platforms; click for details.
+description: The gep2pep package converts gene expression profiles into pathway expression profiles to perform enrichment analysis across multiple experimental conditions. Use when user asks to create pathway expression profiles, perform condition-set enrichment analysis, or identify conditions that dysregulate specific pathways.
 homepage: https://bioconductor.org/packages/release/bioc/html/gep2pep.html
 ---
+
 
 # bioconductor-gep2pep
 

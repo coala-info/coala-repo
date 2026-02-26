@@ -1,8 +1,9 @@
 ---
 name: slamdunk
-description: Slamdunk is a specialized bioinformatics pipeline designed to streamline the analysis of SLAMseq data.
+description: Slamdunk is a bioinformatics pipeline designed to analyze SLAMseq data by identifying T>C conversions to quantify metabolic RNA labeling. Use when user asks to analyze SLAMseq data, detect 4-thiouridine incorporation, map reads with T>C conversion awareness, or quantify RNA transcription and stability.
 homepage: http://t-neumann.github.io/slamdunk
 ---
+
 
 # slamdunk
 

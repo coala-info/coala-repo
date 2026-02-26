@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chicken.db0
-description: the package is available on all platforms; click for details.
+description: This package provides the base SQLite databases required to build custom chicken-specific annotation packages using AnnotationDbi's sqlForge. Use when user asks to create custom chip-level or organism-level annotation packages for Gallus gallus or manage raw genomic annotation data sources.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chicken.db0.html
 ---
+
 
 # bioconductor-chicken.db0
 

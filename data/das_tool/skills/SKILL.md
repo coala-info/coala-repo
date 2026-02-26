@@ -1,8 +1,9 @@
 ---
 name: das_tool
-description: DAS Tool (Dereplication, Aggregation, and Scoring) is an automated method used to recover high-quality genomes from metagenomes.
+description: DAS Tool recovers high-quality metagenome-assembled genomes by aggregating and scoring binning results from multiple individual tools. Use when user asks to refine metagenomic bins, aggregate contigs into complete sets, or resolve redundancies among different binning predictions.
 homepage: https://github.com/cmks/DAS_Tool
 ---
+
 
 # das_tool
 

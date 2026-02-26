@@ -1,8 +1,9 @@
 ---
 name: tf-comb
-description: tf-comb (Transcription Factor Co-Occurrence using Market Basket analysis) is a Python-based framework designed to discover and analyze TF-TF interactions within regulatory elements.
+description: tf-comb is a Python framework that identifies and analyzes transcription factor co-occurrence patterns within genomic regions using market basket analysis. Use when user asks to discover TF-TF interactions, perform market basket analysis on binding sites, analyze motif orientations, or visualize transcription factor co-binding networks.
 homepage: https://tf-comb.readthedocs.io/
 ---
+
 
 # tf-comb
 

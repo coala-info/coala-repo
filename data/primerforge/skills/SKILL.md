@@ -1,8 +1,9 @@
 ---
 name: primerforge
-description: The `primerforge` skill enables the automated identification of genomic primers tailored for specificity.
+description: "primerforge identifies specific genomic primer pairs by analyzing ingroup targets and excluding outgroup sequences. Use when user asks to design primers for specific amplification, identify shared primers across multiple genomes, or filter primers based on melting temperature and PCR product size."
 homepage: https://github.com/dr-joe-wirth/primerForge
 ---
+
 
 # primerforge
 

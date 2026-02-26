@@ -1,9 +1,9 @@
 # pftools CWL Generation Report
 
-## pftools
+## pftools_pfsearchV3
 
 ### Tool Description
-The provided text is a container build error log and does not contain help information or usage instructions for the tool.
+Scan a protein sequence library for profile matches
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0
@@ -18,55 +18,152 @@ The provided text is a container build error log and does not contain help infor
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:46bdc33b2899ff51f61036bf23608534e2c1f7acae320ca6394a06a87b9857a5: unpack entry: usr/local/bin/x86_64-conda-linux-gnu-strip: unpack to regular file: short write: write /tmp/build-temp-3067444319/rootfs/usr/local/bin/x86_64-conda-linux-gnu-strip: no space left on device
+Expected arguments after options
+Scan a protein sequence library for profile matches:
+ pfsearchV3 [options] [profile|regex{...}|pattern{...}] database
+
+ Options:
+  Profile
+   --level <int>                      [-L] : level to use for cutoff (default 0)
+   --mode <int>                            : mode to use for normalization (default 1)
+   --reverse-profile                       : reverse the profile
+   --unknown-symbol <character>            : change unknown symbol to given character
+
+  Sequence
+   --optimal                          [-a] : report optimal alignment for all sequences
+     --satisfy-cutoff                      : but satisfying cutoff
+   --reverse-sequence                      : read sequence backward
+   --complement                            : does a complementary sequence alignment.
+                                             note that --reverse is NOT automatic
+   --both                             [-b] : compute both forward and reverse complemented
+
+  Regular expressions
+   --max-regex-match <uint>                : maximum number of returned matches per sequence
+   --header-only                           : search in headers only
+
+  Database
+   --fasta                            [-f] : FASTA file database as input
+   --fastq                            [-q] : FASTQ file database as input
+   --database-index <file>            [-i] : use indices stored in given file (optional)
+
+  Heuristic
+   --no-heuristic                     [-n] : bypass heuristic
+   --heuristic-cutoff <uint>          [-H] : heuristic cutoff value
+   --dump-heuristic-scores                 : only print heuristic scores to stdout
+
+  Filter
+   --filter-cutoff <int>              [-C] : filter raw cutoff value
+   --filter-normalized-cutoff <float> [-N] : filter normalized cutoff value
+   --dump-filter-scores                    : only print filter scores to stdout
+   --dump-filter-sequences            [-d] : dump passed heuristic sequences
+
+  Alignment
+   --dump-alignment-sequences         [-D] : dump passed heuristic and filter
+                                             sequences
+
+  Optimizations
+   --sse2                                  : enforces SSE 2 only instruction set,
+                                             default to using SSE 4.1
+   --nthreads <uint>                  [-t] : max number of threads to use
+                                             default to all available cores
+   --max-heuristic-nthreads <uint>         : max number of threads to use for
+                                             heuristic phase only. (IO bounds)
+                                             default to all available cores
+
+  Printing output
+   --output-method <uint>  [-o] : printing output method (default 0)
+                                     == 0 replicates the pfsearch output without options
+                                     == 1 InterPro
+                                     == 2 IncMatch
+                                     == 3 PSMaker
+                                     == 4 Pfscan
+                                     == 5 Pfscan long
+                                     == 6 xPSA output
+                                     == 7 tsv output (single line tab delimited)
+                                     == 8 SAM output
+                                     == 9 Family classification (ONLY for pfsearch)
+                                     == 10 Turtle/RDF output for HAMAP as SPARQL style rules (pfsearch)
+   --output-length <uint>  [-W] : maximum number of column for sequence
+                                  output printing (default 60)
+  Other
+   --verbose               [-V] : verbose on stderr
+   --help                  [-h] : output command help
+
+ Version 3.2.12 built on Oct 13 2025 at 21:47:48.
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## pftools_pfsearchV3
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains error logs related to a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0
-- **Homepage**: https://web.expasy.org/pftools/
-- **Package**: https://anaconda.org/channels/bioconda/packages/pftools/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:46bdc33b2899ff51f61036bf23608534e2c1f7acae320ca6394a06a87b9857a5: unpack entry: usr/local/bin/x86_64-conda-linux-gnu-strip: unpack to regular file: short write: write /tmp/build-temp-1603826112/rootfs/usr/local/bin/x86_64-conda-linux-gnu-strip: no space left on device
-```
 
 ## pftools_pfscanV3
 
 ### Tool Description
-The provided text does not contain help information for pfscanV3; it contains error logs related to a failed container build (no space left on device).
+Scan a protein sequence with a profile library
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0
 - **Homepage**: https://web.expasy.org/pftools/
 - **Package**: https://anaconda.org/channels/bioconda/packages/pftools/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pftools:3.2.13--pl5321r44hcf78210_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:46bdc33b2899ff51f61036bf23608534e2c1f7acae320ca6394a06a87b9857a5: unpack entry: usr/local/bin/x86_64-conda-linux-gnu-strip: unpack to regular file: short write: write /tmp/build-temp-1405586217/rootfs/usr/local/bin/x86_64-conda-linux-gnu-strip: no space left on device
+Expected arguments after options
+Scan a protein sequence with a profile library:
+ pfscanV3 [options] profiles sequences
+
+ Options:
+  Profile
+   --level <int>                      [-L] : level to use for cutoff (default 0)
+   --mode <int>                            : mode to use for normalization (default 1)
+   --pattern-only                          : only pattern profile will be treated
+   --matrix-only                           : only matrix profile will be treated
+                                             default is to treat all
+   --unknown-synbol <character>            : change unknown symbol to given character
+
+  Regular expressions
+   --max-regex-match <uint>                : maximum number of returned matches per
+                                             sequence (default 16)
+
+ Heuristic
+   --no-heuristic                     [-n] : bypass heuristic
+
+ Filter
+   --filter-normalized-cutoff <float> [-N] : filter normalized cutoff value
+                                             heuritic cutoff will be adjusted
+                                             provided profiles data allows
+
+  Database
+   --fasta                            [-f] : FASTA file database as input
+   --fastq                            [-q] : FASTQ file database as input
+   --database-index <file>            [-i] : use indices stored in given file
+
+ Optimizations
+   --sse2                                  : enforces SSE 2 only instruction set,
+                                             default to using SSE 4.1
+   --nthreads <uint>                  [-t] : max number of threads to use,
+                                             default to all available cores
+   --max-heuristic-nthreads <uint>         : max number of threads to use for
+                                             heuristic phase only. (IO bounds)
+                                             default to all available cores
+
+  Printing output
+   --output-method <uint>     [-o] : printing output method (default 5)
+                                     == 0 replicates the pfsearch output without options
+                                     == 1 InterPro
+                                     == 2 IncMatch
+                                     == 3 PSMaker
+                                     == 4 Pfscan
+                                     == 5 Pfscan long
+                                     == 6 xPSA output
+                                     == 7 tsv output (single line tab delimited)
+                                     == 8 SAM output
+                                     == 9 Print a classification
+                                     == 10 Turtle/RDF output
+   --output-length <uint>     [-W] : maximum number of column for sequence
+                                     output printing (default 60)
+  Other
+   --verbose                  [-V] : verbose on stderr
+   --help                     [-h] : output command help
+
+ Version 3.2.12 built on Oct 13 2025 at 21:47:49.
 ```
 

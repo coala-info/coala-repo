@@ -2,10 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: tb-ml
 label: tb-ml
-doc: "A tool for machine learning analysis of Tuberculosis genomic data (Note: The
-  provided text contains container build logs rather than CLI help documentation,
-  so no arguments could be extracted).\n\nTool homepage: https://github.com/jodyphelan/tb-ml"
-inputs: []
+doc: "TB-ML: A framework for comparing AMR prediction in M. tuberculosis. Provide
+  Docker image names and arguments like so: --container CONTR_NAME_1 \"ARG_1 ARG_2\"\
+  \ --container CONTR_NAME_2 \"ARG_3\" --container CONTR_NAME_3 \"ARG_4 ARG_5\" ...\n\
+  \nTool homepage: https://github.com/jodyphelan/tb-ml"
+inputs:
+  - id: container
+    type:
+      type: array
+      items: string
+    doc: Name of Docker image and corresponding extra arguments
+    inputBinding:
+      position: 101
+      prefix: --container
 outputs:
   - id: stdout
     type: stdout

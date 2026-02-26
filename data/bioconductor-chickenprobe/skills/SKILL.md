@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chickenprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical array coordinates for Affymetrix Chicken genome microarrays. Use when user asks to map Affymetrix probe identifiers to sequences, retrieve probe coordinates on the array, or perform sequence-level analysis for Gallus gallus genomic studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chickenprobe.html
 ---
+
 
 # bioconductor-chickenprobe
 

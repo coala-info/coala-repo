@@ -1,8 +1,9 @@
 ---
 name: r-ncbit
-description: "Makes NCBI taxonomic data locally available and         searchable as an R object.</p>"
+description: This tool retrieves, builds, and searches NCBI taxonomic data locally using the ncbit R package. Use when user asks to download the NCBI taxonomy database, map scientific names to TaxIDs, retrieve names from IDs, or subset taxonomic trees for specific clades.
 homepage: https://cloud.r-project.org/web/packages/ncbit/index.html
 ---
+
 
 # r-ncbit
 

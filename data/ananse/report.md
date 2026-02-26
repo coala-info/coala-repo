@@ -1,9 +1,9 @@
 # ananse CWL Generation Report
 
-## ananse
+## ananse_ananse
 
 ### Tool Description
-ANalyse Networks of Active enhancers (Note: The provided text was a container build log and did not contain help documentation. No arguments could be extracted.)
+ananse: error: argument {binding,network,influence,view,plot}: invalid choice: 'ananse' (choose from 'binding', 'network', 'influence', 'view', 'plot')
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ananse:0.5.1--pyhdfd78af_0
@@ -15,12 +15,32 @@ ANalyse Networks of Active enhancers (Note: The provided text was a container bu
 - **Total Downloads**: 35.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/vanheeringen-lab/ANANSE
-- **Stars**: 89
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ananse:0.5.1--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/202fe0e5ea4d5e1a4d59ab324f089a8a8f0228704df86951d9686e1787eeab873609660477: no space left on device
+2026-02-24 22:09:56,457 - INFO - Creating new config.
+2026-02-24 22:09:56,457 - INFO - Using included version of AMD.
+2026-02-24 22:09:56,458 - INFO - Using included version of BioProspector.
+2026-02-24 22:09:56,458 - INFO - Using included version of ChIPMunk.
+2026-02-24 22:09:56,458 - WARNING - DiNAMO not found. To include it you will have to install it.
+2026-02-24 22:09:56,458 - WARNING - DREME not found. To include it you will have to install it.
+2026-02-24 22:09:56,458 - WARNING - GADEM not found. To include it you will have to install it.
+2026-02-24 22:09:56,458 - INFO - Using included version of HMS.
+2026-02-24 22:09:56,458 - WARNING - Homer not found. To include it you will have to install it.
+2026-02-24 22:09:56,458 - INFO - Using included version of Improbizer.
+2026-02-24 22:09:56,459 - INFO - Using included version of MDmodule.
+2026-02-24 22:09:56,459 - WARNING - MEME not found. To include it you will have to install it.
+2026-02-24 22:09:56,459 - WARNING - MEMEW not found. To include it you will have to install it.
+2026-02-24 22:09:56,459 - INFO - Using included version of MotifSampler.
+2026-02-24 22:09:56,459 - INFO - Using included version of Posmo.
+2026-02-24 22:09:56,459 - WARNING - ProSampler not found. To include it you will have to install it.
+2026-02-24 22:09:56,459 - WARNING - RPMCMC not found. To include it you will have to install it.
+2026-02-24 22:09:56,459 - WARNING - Trawler not found. To include it you will have to install it.
+2026-02-24 22:09:56,459 - WARNING - Weeder not found. To include it you will have to install it.
+2026-02-24 22:09:56,460 - WARNING - XXmotif not found. To include it you will have to install it.
+2026-02-24 22:09:56,460 - WARNING - Yamda not found. To include it you will have to install it.
+2026-02-24 22:09:56,460 - INFO - Configuration file: /root/.config/gimmemotifs/gimmemotifs.cfg
+usage: ananse [-h] <command> [options]
+ananse: error: argument {binding,network,influence,view,plot}: invalid choice: 'ananse' (choose from 'binding', 'network', 'influence', 'view', 'plot')
 ```
 

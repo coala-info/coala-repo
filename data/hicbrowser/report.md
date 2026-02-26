@@ -1,9 +1,9 @@
 # hicbrowser CWL Generation Report
 
-## hicbrowser
+## hicbrowser_runBrowser
 
 ### Tool Description
-A tool for visualizing Hi-C data. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Activate HiCBrowser using a given configuration file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hicbrowser:1.0--py27_1
@@ -18,29 +18,26 @@ A tool for visualizing Hi-C data. Note: The provided help text contains only sys
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hicbrowser:1.0--py27_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3663159368: no space left on device
-```
+usage: runBrowser [-h] --config CONFIG [--port PORT] [--htmlFolder HTMLFOLDER]
+                  [--numProcessors NUMPROCESSORS] [--debug] [--version]
 
+Activate HiCBrowser using a given configuration file.
 
-## Metadata
-- **Skill**: generated
-
-## hicbrowser_runBrowser
-
-### Tool Description
-A tool for browsing Hi-C data (Note: The provided help text contains only system error logs and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hicbrowser:1.0--py27_1
-- **Homepage**: https://github.com/maxplanck-ie/HiCBrowser
-- **Package**: https://anaconda.org/channels/bioconda/packages/hicbrowser/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hicbrowser:1.0--py27_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3974410291: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --config CONFIG, -c CONFIG
+                        Configuration file with genomic tracks. (default:
+                        None)
+  --port PORT, -p PORT  Local browser port to use. (default: 8000)
+  --htmlFolder HTMLFOLDER
+                        File where the template index.html file is located.
+                        The default isfine unless the contents wants to be
+                        personalized. The full path has to be given. (default:
+                        None)
+  --numProcessors NUMPROCESSORS, -np NUMPROCESSORS
+                        Number of processors to use. (default: 1)
+  --debug               Set to run the server in debug mode which will print
+                        useful information. (default: False)
+  --version             show program's version number and exit
 ```
 

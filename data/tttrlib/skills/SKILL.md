@@ -1,8 +1,9 @@
 ---
 name: tttrlib
-description: `tttrlib` is a high-performance library designed to handle the complexities of time-resolved imaging and spectroscopy.
+description: `tttrlib` is a high-performance library for processing time-resolved imaging and spectroscopy data using a vendor-independent API. Use when user asks to load and inspect time-resolved data, perform correlation analysis, generate FLIM or CLSM images, or perform multi-dimensional histogramming.
 homepage: https://github.com/fluorescence-tools/tttrlib
 ---
+
 
 # tttrlib
 

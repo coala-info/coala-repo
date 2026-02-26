@@ -1,8 +1,9 @@
 ---
 name: ncbi-util-legacy
-description: The `ncbi-util-legacy` package provides the foundational C-based programming libraries and applications developed by the National Center for Biotechnology Information.
+description: The ncbi-util-legacy package provides foundational C-based libraries and utilities for sequence manipulation and bioinformatics data processing. Use when user asks to process or validate ASN.1 data, convert NCBI Gene records to XML, or prepare sequence databases for legacy BLAST searches.
 homepage: ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/
 ---
+
 
 # ncbi-util-legacy
 

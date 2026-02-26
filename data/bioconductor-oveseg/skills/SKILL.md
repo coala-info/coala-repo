@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oveseg
-description: the package is available on all platforms; click for details.
+description: OVESEG identifies tissue-specific or subtype-specific genes from multi-group transcriptomics data. Use when user asks to identify marker genes, find tissue-specific expression patterns, or perform subtype-specific gene selection.
 homepage: https://bioconductor.org/packages/release/bioc/html/OVESEG.html
 ---
+
 
 # bioconductor-oveseg
 

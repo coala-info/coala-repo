@@ -1,8 +1,9 @@
 ---
 name: perl-test-harness
-description: The `perl-test-harness` skill enables the execution and interpretation of tests that communicate via the Test Anything Protocol (TAP).
+description: This tool executes and interprets tests that communicate via the Test Anything Protocol (TAP). Use when user asks to run tests with prove, execute tests in parallel, or interpret TAP-compliant test output.
 homepage: http://testanything.org/
 ---
+
 
 # perl-test-harness
 

@@ -1,8 +1,9 @@
 ---
 name: fastx_toolkit
-description: The FASTX-Toolkit is a collection of command-line utilities designed for the preprocessing of short-read sequencing data.
+description: The FASTX-Toolkit provides command-line utilities for preprocessing and manipulating FASTA and FASTQ sequencing data. Use when user asks to filter reads by quality, trim sequences, clip adapters, convert FASTQ to FASTA, or collapse identical sequences.
 homepage: https://github.com/agordon/fastx_toolkit
 ---
+
 
 # fastx_toolkit
 

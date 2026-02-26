@@ -1,8 +1,9 @@
 ---
 name: nda-tools
-description: The `nda-tools` package provides a command-line interface for interacting with NDA web services.
+description: The nda-tools package provides a command-line interface for validating, submitting, and downloading research data from the National Institute of Mental Health Data Archive. Use when user asks to validate data against NDA dictionaries, upload files for submission, or download datasets using S3 links.
 homepage: https://github.com/NDAR/nda-tools
 ---
+
 
 # nda-tools
 

@@ -1,9 +1,9 @@
 # haplotype-lso CWL Generation Report
 
-## haplotype-lso
+## haplotype-lso_hlso
 
 ### Tool Description
-A tool for haplotype-based local search optimization (Note: The provided help text contains only system error messages and no usage information).
+Classify Lso Sanger reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4
@@ -18,46 +18,15 @@ A tool for haplotype-based local search optimization (Note: The provided help te
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3200723344: no space left on device
-```
+usage: hlso [-h]
+            {convert,cli,web,paste,ref_download,ref_blast,ref_consensus} ...
 
+Classify Lso Sanger reads.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  {convert,cli,web,paste,ref_download,ref_blast,ref_consensus}
 
-## haplotype-lso_hlso
-
-### Tool Description
-Haplotype-LSO (Local Search Optimization) tool for haplotype assembly.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4
-- **Homepage**: https://github.com/holtgrewe/haplotype-lso
-- **Package**: https://anaconda.org/channels/bioconda/packages/haplotype-lso/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1344698292: no space left on device
-```
-
-## haplotype-lso_clsify
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4
-- **Homepage**: https://github.com/holtgrewe/haplotype-lso
-- **Package**: https://anaconda.org/channels/bioconda/packages/haplotype-lso/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/haplotype-lso:0.4.4--pyhdfd78af_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3581461257: no space left on device
+options:
+  -h, --help            show this help message and exit
 ```
 

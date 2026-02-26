@@ -1,8 +1,9 @@
 ---
 name: perl-devel-overloadinfo
-description: This skill provides a specialized interface for using the `Devel::OverloadInfo` Perl module.
+description: This tool provides introspection for Perl's operator overloading to identify which packages and methods implement specific behaviors. Use when user asks to check if an object is overloaded, retrieve metadata for a specific operator, or audit all overloaded operators within a class.
 homepage: http://metacpan.org/pod/Devel::OverloadInfo
 ---
+
 
 # perl-devel-overloadinfo
 

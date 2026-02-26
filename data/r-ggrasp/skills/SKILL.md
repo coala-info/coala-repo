@@ -1,8 +1,9 @@
 ---
 name: r-ggrasp
-description: Given a group of genomes and their relationship with each other, the package clusters the genomes and selects the most representative members of each cluster. Additional data can be provided to the prioritize certain genomes. The results can be printed out as a list or a new phylogeny with graphs of the trees and distance distributions also available.
+description: This tool clusters genomes and selects representative medoids based on genomic relationships to reduce redundancy in large datasets. Use when user asks to cluster genomes, select representative genomes, reduce genomic redundancy, or prioritize specific strains in a dataset.
 homepage: https://cran.r-project.org/web/packages/ggrasp/index.html
 ---
+
 
 # r-ggrasp
 

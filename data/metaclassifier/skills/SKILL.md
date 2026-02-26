@@ -1,8 +1,9 @@
 ---
 name: metaclassifier
-description: MetaClassifier is an integrated bioinformatics pipeline that automates the classification and quantification of DNA metabarcoding data.
+description: MetaClassifier automates the classification and quantification of DNA metabarcoding data to produce taxonomic lineage information and abundance metrics. Use when user asks to classify DNA metabarcoding reads, quantify taxonomic abundance, or search sequences against marker databases.
 homepage: https://github.com/ewafula/MetaClassifier
 ---
+
 
 # metaclassifier
 

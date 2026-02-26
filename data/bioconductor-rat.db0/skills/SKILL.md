@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rat.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base-level annotation data for the rat genome. Use when user asks to map rat gene identifiers, access genomic annotations for Rattus norvegicus, or build custom rat annotation objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rat.db0.html
 ---
+
 
 # bioconductor-rat.db0
 

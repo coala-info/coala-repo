@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biosvd
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs Singular Value Decomposition on high-throughput biological data to identify major modes of variation and reduce data complexity. Use when user asks to compute eigensystems, filter noise or steady-state signals, and visualize data dynamics through polar plots or heatmaps.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/biosvd.html
 ---
+
 
 # bioconductor-biosvd
 

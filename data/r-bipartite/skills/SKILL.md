@@ -1,8 +1,9 @@
 ---
 name: r-bipartite
-description: Functions to visualise webs and calculate a series of indices commonly used to describe pattern in (ecological) webs. It focuses on webs consisting of only two levels (bipartite), e.g. pollination webs or predator-prey-webs. Visualisation is important to get an idea of what we are actually looking at, while the indices summarise different aspects of the web's topology. </p>
+description: The r-bipartite tool visualizes bipartite networks and calculates ecological indices for two-level interaction systems. Use when user asks to create bipartite plots, calculate network-level indices like modularity or nestedness, and analyze plant-pollinator or predator-prey interaction matrices.
 homepage: https://cloud.r-project.org/web/packages/bipartite/index.html
 ---
+
 
 # r-bipartite
 

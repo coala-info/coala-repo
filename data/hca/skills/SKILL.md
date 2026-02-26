@@ -1,8 +1,9 @@
 ---
 name: hca
-description: The `hca` utility (also known as `dcp-cli`) is the official command-line interface and Python library for the Human Cell Atlas.
+description: The hca utility provides a command-line interface and Python library for managing and interacting with data in the Human Cell Atlas Data Storage Service. Use when user asks to download data bundles, upload biological files, search for metadata using Elasticsearch queries, or authenticate with the HCA platform.
 homepage: https://github.com/HumanCellAtlas/dcp-cli
 ---
+
 
 # hca
 

@@ -1,8 +1,9 @@
 ---
 name: r-mspbwt
-description: R package mspbwt (documentation from project home).
+description: The r-mspbwt package implements the Multi Symbol Positional Burrows Wheeler Transform for efficient sequence encoding, indexing, and searching. Use when user asks to encode multi-symbol sequences, create positional BWT indexes, or perform rapid pattern matching for genetic imputation workflows.
 homepage: https://cran.r-project.org/web/packages/mspbwt/index.html
 ---
+
 
 # r-mspbwt
 

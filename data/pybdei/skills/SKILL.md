@@ -1,8 +1,9 @@
 ---
 name: pybdei
-description: PyBDEI is a specialized tool for fast and accurate maximum likelihood estimation of Birth-Death Exposed-Infectious (BDEI) model parameters.
+description: PyBDEI performs maximum likelihood estimation of Birth-Death Exposed-Infectious model parameters from rooted phylogenetic trees. Use when user asks to infer transition rates between exposed and infectious states, estimate transmission and removal rates, or calculate epidemiological parameters like R0 and incubation periods from Newick trees.
 homepage: https://github.com/evolbioinfo/bdei
 ---
+
 
 # pybdei
 

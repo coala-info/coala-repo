@@ -1,8 +1,9 @@
 ---
 name: r-scbio
-description: R package scbio (documentation from project home).
+description: The scBio package performs computational deconvolution of bulk RNA-seq data using single-cell references to map cell population changes and trajectories. Use when user asks to identify cell population maps, perform cell-type deconvolution, or model cellular alterations across trajectories using the CPM method.
 homepage: https://cran.r-project.org/web/packages/scbio/index.html
 ---
+
 
 # r-scbio
 

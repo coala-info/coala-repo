@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oligo
-description: the package is available on all platforms; click for details.
+description: The bioconductor-oligo package provides tools for analyzing oligonucleotide microarrays from Affymetrix and NimbleGen platforms. Use when user asks to preprocess microarray data, normalize probe-level intensities, or perform background correction and summarization for expression or SNP arrays.
 homepage: https://bioconductor.org/packages/release/bioc/html/oligo.html
 ---
+
 
 # bioconductor-oligo
 

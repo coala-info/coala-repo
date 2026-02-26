@@ -1,8 +1,9 @@
 ---
 name: padloc
-description: PADLOC (Prokaryotic Antiviral Defence LOCator) is a specialized bioinformatics tool designed to detect and annotate antiviral defense systems within prokaryotic genomic data.
+description: PADLOC detects and annotates antiviral defense systems within prokaryotic genomic data by comparing sequences against a curated database of HMMs. Use when user asks to identify defense systems in genomes, update the PADLOC HMM database, or analyze protein and annotation files for immune system mapping.
 homepage: https://github.com/padlocbio/padloc
 ---
+
 
 # padloc
 

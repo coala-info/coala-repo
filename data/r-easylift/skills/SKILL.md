@@ -1,8 +1,9 @@
 ---
 name: r-easylift
-description: R package easylift (documentation from project home).
+description: This tool performs genomic coordinate liftover between different genome builds using the easylift R package. Use when user asks to convert GRanges objects or BED files between assembly versions like hg19, hg38, mm9, or mm10.
 homepage: https://cran.r-project.org/web/packages/easylift/index.html
 ---
+
 
 # r-easylift
 

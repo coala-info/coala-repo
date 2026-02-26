@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.schemas
-description: the package is available on all platforms; click for details.
+description: This tool provides access to JSON metadata schemas for validating and serializing Bioconductor objects within the alabaster framework. Use when user asks to list available schemas, locate specific schema file paths, or validate object metadata against ArtifactDB specifications.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.schemas.html
 ---
+
 
 # bioconductor-alabaster.schemas
 

@@ -1,8 +1,9 @@
 ---
 name: smartdenovo
-description: SMARTdenovo is a high-performance assembler tailored for the characteristics of long-read sequencing data.
+description: SMARTdenovo is a high-performance assembler that produces unitigs and consensus sequences directly from raw long-read sequencing data without a prior error-correction step. Use when user asks to assemble long reads into unitigs, generate a draft genome assembly, or create a Makefile for a multi-step assembly workflow.
 homepage: https://github.com/ruanjue/smartdenovo
 ---
+
 
 # smartdenovo
 

@@ -1,8 +1,9 @@
 ---
 name: ntlink
-description: ntLink is a lightweight, minimizer-based tool designed to scaffold genome assemblies using long-read data.
+description: ntLink is a lightweight, minimizer-based tool used to scaffold genome assemblies and fill gaps using long-read data. Use when user asks to scaffold a draft assembly, fill gaps with long reads, perform iterative scaffolding rounds, or generate read-to-contig mappings.
 homepage: https://github.com/bcgsc/ntLink
 ---
+
 
 # ntlink
 

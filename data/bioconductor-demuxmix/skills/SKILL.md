@@ -1,8 +1,9 @@
 ---
 name: bioconductor-demuxmix
-description: The package implements methods to fit regression mixture models for a probabilistic classification of cells, including multiplet detection. Demultiplexing error rates can be estimated, and methods for quality control are provided.
+description: demuxmix uses negative binomial regression mixture models to demultiplex single-cell RNA sequencing data labeled with hashtag oligonucleotides. Use when user asks to demultiplex HTO data, classify droplets as singlets or multiplets, or incorporate RNA content as a covariate to improve cell assignment accuracy.
 homepage: https://bioconductor.org/packages/release/bioc/html/demuxmix.html
 ---
+
 
 # bioconductor-demuxmix
 

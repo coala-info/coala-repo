@@ -1,8 +1,9 @@
 ---
 name: lzstring
-description: The `lzstring` skill (based on the lzstring4j implementation) provides a mechanism for high-efficiency string compression in Java.
+description: The lzstring tool provides high-efficiency string compression and decompression for Java applications. Use when user asks to compress strings for storage, exchange data between Java and JavaScript, or encode strings into UTF-16 and Base64 formats.
 homepage: https://github.com/diogoduailibe/lzstring4j
 ---
+
 
 # lzstring
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biosigner
-description: the package is available within the Workflow4metabolomics.org online infrastructure for computational metabolomics.
+description: The biosigner package implements a wrapper feature selection algorithm using PLS-DA, Random Forest, and SVM to identify stable molecular signatures from high-throughput omics data. Use when user asks to identify significant feature signatures, perform binary classification with feature selection, or rank omics variables into significance tiers.
 homepage: https://bioconductor.org/packages/release/bioc/html/biosigner.html
 ---
+
 
 # bioconductor-biosigner
 

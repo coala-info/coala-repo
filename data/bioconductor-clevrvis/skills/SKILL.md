@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clevrvis
-description: the package is available on all platforms; click for details.
+description: "clevRvis is a Bioconductor package designed for the visualization of clonal evolution in biological systems. Use when user asks to visualize clonal evolution, create shark plots, or generate dolphin plots for cancer cell populations."
 homepage: https://bioconductor.org/packages/release/bioc/html/clevRvis.html
 ---
+
 
 # bioconductor-clevrvis
 

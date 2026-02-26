@@ -2,11 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genomedata-histogram
 label: genomedata_genomedata-histogram
-doc: "The provided text contains system error messages regarding a container runtime
-  failure (no space left on device) and does not contain the help documentation or
-  usage instructions for the tool. As a result, no arguments could be extracted.\n
-  \nTool homepage: http://genomedata.hoffmanlab.org"
-inputs: []
+doc: "Print a histogram of values from a genomedata archive\n\nTool homepage: http://genomedata.hoffmanlab.org"
+inputs:
+  - id: gdarchive
+    type: string
+    doc: genomedata archive
+    inputBinding:
+      position: 1
+  - id: trackname
+    type: string
+    doc: track name
+    inputBinding:
+      position: 2
+  - id: include_coords
+    type:
+      - 'null'
+      - File
+    doc: limit summary to genomic coordinates in FILE
+    inputBinding:
+      position: 103
+      prefix: --include-coords
+  - id: num_bins
+    type:
+      - 'null'
+      - int
+    doc: use BINS bins
+    inputBinding:
+      position: 103
+      prefix: --num-bins
 outputs:
   - id: stdout
     type: stdout

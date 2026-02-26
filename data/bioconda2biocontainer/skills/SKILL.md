@@ -1,8 +1,9 @@
 ---
 name: bioconda2biocontainer
-description: bioconda2biocontainer is a specialized API client designed to bridge the gap between Bioconda packages and the BioContainers registry.
+description: bioconda2biocontainer retrieves container images and metadata for Bioconda packages from the BioContainers registry. Use when user asks to find Docker or Singularity URIs for specific tools, list available package versions, or search the registry for bioinformatics software.
 homepage: https://github.com/BioContainers/bioconda2biocontainer
 ---
+
 
 # bioconda2biocontainer
 

@@ -1,8 +1,9 @@
 ---
 name: kalign3
-description: Kalign3 is a high-performance multiple sequence alignment tool optimized for speed and efficiency.
+description: Kalign3 is a high-performance tool for fast and efficient multiple sequence alignment of protein, DNA, and RNA sequences. Use when user asks to align multiple biological sequences, perform large-scale sequence alignments, or convert sequence files into formats like Clustal, MSF, or Stockholm.
 homepage: https://github.com/TimoLassmann/kalign
 ---
+
 
 # kalign3
 

@@ -3,7 +3,7 @@
 ## tinysink
 
 ### Tool Description
-No description available (the provided text is a container build log and does not contain help information).
+Help documentation for tinysink.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tinysink:1.0--0
@@ -18,13 +18,19 @@ No description available (the provided text is a container build log and does no
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tinysink:1.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Option -- not allowed.
+
+Help documentation for tinysink.
+
+Basic usage: tinysink -s /path/to/reads/ -d /path/on/server/ -u joffrey 
+
+Command line switches are optional. The following switches are recognized.
+-s  --Directory to synchronise with server (SOURCE). [REQUIRED].
+-d  --Directory on the server where files will be synchronised to (DESTINATION). [REQUIRED].
+-u  --User name to log into the server with. [REQUIRED].
+-n  --Server name to transfer to. [REQUIRED].
+-h  --Displays this help message. No further functions are performed.
+
+Example: tinysink -s /path/to/reads/ -d /path/on/server/ -u joffrey
 ```
 
-
-## Metadata
-- **Skill**: generated

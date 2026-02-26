@@ -1,8 +1,9 @@
 ---
 name: bioconductor-microrna
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides tools and data structures for the analysis of microRNA sequences and their targets. Use when user asks to analyze microRNA data, identify microRNA targets, or manage microRNA sequence information in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/microRNA.html
 ---
+
 
 # bioconductor-microrna
 

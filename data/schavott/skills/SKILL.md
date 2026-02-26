@@ -1,8 +1,9 @@
 ---
 name: schavott
-description: Schavott is a specialized bioinformatics tool designed for the "live" processing of Nanopore sequencing data.
+description: Schavott performs real-time processing of Nanopore sequencing data to monitor genome assembly or scaffolding progress as reads are generated. Use when user asks to perform live de novo assembly, scaffold contigs in real-time, or visualize assembly progress from a streaming directory of FAST5 files.
 homepage: http://github.com/emilhaegglund/schavott
 ---
+
 
 # schavott
 

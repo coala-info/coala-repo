@@ -1,8 +1,9 @@
 ---
 name: lua
-description: This skill provides technical patterns and configuration workflows for Luanti (formerly Minetest), an open-source voxel game engine.
+description: This tool provides technical patterns and configuration workflows for the Luanti voxel game engine and its Lua API. Use when user asks to manage engine CLI arguments, locate platform-specific data paths, or implement security and performance best practices for Luanti Lua scripting.
 homepage: https://github.com/luanti-org/luanti
 ---
+
 
 # lua
 

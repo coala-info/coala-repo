@@ -1,8 +1,9 @@
 ---
 name: dnarrange
-description: The `dnarrange` suite provides a specialized pipeline for detecting structural variations that are often difficult to resolve with short-read data.
+description: The dnarrange suite detects and reconstructs complex structural variations by analyzing non-colinear long-read alignments. Use when user asks to identify genomic rearrangements, filter variants using control data, visualize rearrangements with dotplots, generate consensus sequences for read groups, or link breakpoints to reconstruct derivative chromosomes.
 homepage: https://github.com/mcfrith/dnarrange
 ---
+
 
 # dnarrange
 

@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: aliview
 label: aliview
-doc: "AliView is a graphical alignment viewer and editor. (Note: The provided text
-  contains system error logs regarding a container build failure and does not contain
-  CLI help documentation.)\n\nTool homepage: https://ormbunkar.se/aliview/"
-inputs: []
+doc: "AliView is a graphical alignment viewer and editor. It is primarily a GUI-based
+  application, but it can accept a file path as a positional argument to open an alignment
+  on startup.\n\nTool homepage: https://ormbunkar.se/aliview/"
+inputs:
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Alignment file to open (e.g., FASTA, Phylip, Clustal, MSF, Nexus).
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

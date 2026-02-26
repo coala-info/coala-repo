@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hubmapr
-description: the package is available on all platforms; click for details.
+description: The HuBMAPR package provides an R interface to explore and retrieve single-cell and spatial biology data from the Human BioMolecular Atlas Program portal. Use when user asks to search for HuBMAP datasets, retrieve donor or sample metadata, trace data provenance, or identify file transfer URLs for human atlas data.
 homepage: https://bioconductor.org/packages/release/bioc/html/HuBMAPR.html
 ---
+
 
 # bioconductor-hubmapr
 

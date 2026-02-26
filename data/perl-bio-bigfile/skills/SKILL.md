@@ -1,8 +1,9 @@
 ---
 name: perl-bio-bigfile
-description: The `perl-bio-bigfile` skill provides a specialized interface for high-performance access to UCSC BigWig and BigBed files.
+description: This tool provides a low-level Perl interface for high-performance random access and summary statistic generation from UCSC BigWig and BigBed files. Use when user asks to query genomic signal intervals, calculate binned summary statistics like mean or standard deviation, or extract metadata from local or remote bbi files.
 homepage: https://metacpan.org/pod/Bio::DB::BigFile
 ---
+
 
 # perl-bio-bigfile
 

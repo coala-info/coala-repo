@@ -1,8 +1,9 @@
 ---
 name: babappalign
-description: BABAPPAlign is a progressive multiple sequence alignment engine designed specifically for protein sequences.
+description: BABAPPAlign is a progressive multiple sequence alignment engine that uses protein language model embeddings and neural scoring to align protein sequences. Use when user asks to install the tool, set up neural scoring weights, perform protein sequence alignments, or configure alignment parameters like gap penalties and hardware acceleration.
 homepage: https://github.com/sinhakrishnendu/BABAPPAlign
 ---
+
 
 # babappalign
 

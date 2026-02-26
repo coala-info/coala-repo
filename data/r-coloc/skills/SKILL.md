@@ -1,8 +1,9 @@
 ---
 name: r-coloc
-description: Skill for using the CRAN R package r-coloc.
+description: This tool performs genetic colocalisation analysis to determine if two traits share a common causal variant in a genomic region. Use when user asks to prepare GWAS summary statistics for colocalisation, run Approximate Bayes Factor tests, perform multi-signal colocalisation using SuSiE, or conduct sensitivity analyses on prior probability assumptions.
 homepage: https://cloud.r-project.org/web/packages/coloc/index.html
 ---
+
 
 # r-coloc
 

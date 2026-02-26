@@ -1,8 +1,9 @@
 ---
 name: rich-msa
-description: `rich-msa` is a specialized tool designed to bring high-quality, colorful Multiple Sequence Alignment (MSA) visualization to the terminal.
+description: rich-msa provides colorful, high-quality Multiple Sequence Alignment visualization directly in the terminal. Use when user asks to visualize sequence alignments, identify conserved regions, or render color-coded MSA data in the command line.
 homepage: https://github.com/althonos/rich-msa
 ---
+
 
 # rich-msa
 

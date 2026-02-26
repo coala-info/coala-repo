@@ -1,8 +1,9 @@
 ---
 name: flask-sqlalchemy
-description: Flask-SQLAlchemy is an extension that simplifies the integration of SQLAlchemy into Flask applications.
+description: Flask-SQLAlchemy simplifies the integration of SQLAlchemy into Flask applications by managing database connections, sessions, and boilerplate configuration. Use when user asks to integrate a database into a Flask app, define models using SQLAlchemy 2.0 syntax, perform CRUD operations, or implement pagination.
 homepage: https://github.com/pallets-eco/flask-sqlalchemy
 ---
+
 
 # flask-sqlalchemy
 

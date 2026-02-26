@@ -1,8 +1,9 @@
 ---
 name: primer3-py
-description: The `primer3-py` skill provides a high-performance Pythonic interface to the Primer3 library, the industry standard for primer design.
+description: "primer3-py provides a Python interface for primer design and thermodynamic analysis of DNA sequences using the Primer3 library. Use when user asks to design primers, calculate melting temperatures, or analyze secondary structures like hairpins and dimers."
 homepage: https://github.com/libnano/primer3-py
 ---
+
 
 # primer3-py
 

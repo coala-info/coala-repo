@@ -1,8 +1,9 @@
 ---
 name: bioconductor-microbiomeprofiler
-description: the package is available on all platforms; click for details.
+description: MicrobiomeProfiler performs functional enrichment analysis for microbiome data across various biological databases. Use when user asks to perform functional profiling, conduct enrichment analysis, or visualize metabolic pathways in microbiome studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/MicrobiomeProfiler.html
 ---
+
 
 # bioconductor-microbiomeprofiler
 

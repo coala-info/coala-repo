@@ -1,8 +1,9 @@
 ---
 name: sevenbridges-python
-description: The `sevenbridges-python` skill provides a specialized interface for interacting with Seven Bridges genomics platforms.
+description: The sevenbridges-python tool provides a programmatic interface for managing resources and automating bioinformatics workflows on Seven Bridges genomics platforms. Use when user asks to manage project files, query datasets, initialize API connections, or monitor analysis tasks.
 homepage: https://github.com/sbg/sevenbridges-python
 ---
+
 
 # sevenbridges-python
 

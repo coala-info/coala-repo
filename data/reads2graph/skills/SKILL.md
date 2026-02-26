@@ -1,8 +1,9 @@
 ---
 name: reads2graph
-description: The `reads2graph` tool provides an efficient mechanism for building graphs where nodes represent unique sequencing reads and edges represent a defined edit distance (typically 1 or 2).
+description: reads2graph constructs graphs from sequencing reads where nodes represent unique sequences and edges represent a defined edit distance. Use when user asks to build a read graph, identify sequence relationships based on edit distance, or perform efficient pairwise read comparisons using minimizer bucketing.
 homepage: https://github.com/Jappy0/reads2graph
 ---
+
 
 # reads2graph
 

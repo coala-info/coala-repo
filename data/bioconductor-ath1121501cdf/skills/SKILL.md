@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ath1121501cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix ATH1-121501 Arabidopsis thaliana expression array. Use when user asks to process raw Affymetrix CEL files, map probe coordinates to probe sets, or work with AffyBatch objects for the ATH1 genome array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501cdf.html
 ---
+
 
 # bioconductor-ath1121501cdf
 

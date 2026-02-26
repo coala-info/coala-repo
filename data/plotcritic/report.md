@@ -3,7 +3,7 @@
 ## plotcritic
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log indicating a failure to build or extract the container image due to insufficient disk space.
+Deploy a website for image curation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/plotcritic:1.0.1--pyh5e36f6f_0
@@ -18,14 +18,44 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plotcritic:1.0.1--pyh5e36f6f_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f1320409aac3b1fc0aac021fb39113170db858c1606d062962099e6dc9169a8b: unpack entry: usr/local/lib/libstdc++.so.6.0.28: unpack to regular file: short write: write /tmp/build-temp-3226202677/rootfs/usr/local/lib/libstdc++.so.6.0.28: no space left on device
+usage: plotcritic [-h] -p PROJECT -i IMAGES_DIR [-s] -q CURATION_QUESTION -A
+                  CURATION_ANSWERS [CURATION_ANSWERS ...]
+                  [-R REPORT_FIELDS [REPORT_FIELDS ...]]
+                  [-S SUMMARY_FIELDS [SUMMARY_FIELDS ...]]
+
+Deploy a website for image curation
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PROJECT, --project PROJECT
+                        Unique name for the project (default: None)
+  -i IMAGES_DIR, --images_dir IMAGES_DIR
+                        directory of images and metadata files for curation
+                        (default: None)
+  -s, --use_samplot_defaults
+                        Use samplot-oriented default reporting_fields and
+                        summary_fields. Ignores `--summary_fields` and
+                        `--reporting_fields`. Default reporting fields: Image,
+                        chrom, start, end, sv_type, reference, bams, titles,
+                        output_file, transcript_file, window, max_depth
+                        Default summary fields: Image, chrom, start, end,
+                        sv_type (default: False)
+  -q CURATION_QUESTION, --curation_question CURATION_QUESTION
+                        The curation question to show in the PlotCritic
+                        website. (default: None)
+  -A CURATION_ANSWERS [CURATION_ANSWERS ...], --curation_answers CURATION_ANSWERS [CURATION_ANSWERS ...]
+                        colon-separated key,values pairs of 1-letter codes and
+                        associated curation answers for the curation question
+                        (i.e: 'key1','value1' 'key2','value2'). (default:
+                        None)
+  -R REPORT_FIELDS [REPORT_FIELDS ...], --report_fields REPORT_FIELDS [REPORT_FIELDS ...]
+                        space-separated list of info fields about the image.
+                        If omitted, only the image name will be included in
+                        report (default: None)
+  -S SUMMARY_FIELDS [SUMMARY_FIELDS ...], --summary_fields SUMMARY_FIELDS [SUMMARY_FIELDS ...]
+                        subset of the report fields that will be shown in the
+                        web report after scoring.Space-separated. If omitted,
+                        only the image name will be included in report
+                        (default: None)
 ```
 
-
-## Metadata
-- **Skill**: generated

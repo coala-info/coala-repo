@@ -3,7 +3,7 @@
 ## yanagiba
 
 ### Tool Description
-A tool for processing and filtering Oxford Nanopore sequencing data. (Note: The provided text contained container build logs rather than the tool's help output; no arguments could be extracted from the source text.)
+Filter and slice Nanopore reads which have been basecalled with Albacore. Takes fastq.gz and an Albacore summary file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/yanagiba:1.0.0--py36_1
@@ -18,13 +18,28 @@ A tool for processing and filtering Oxford Nanopore sequencing data. (Note: The 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/yanagiba:1.0.0--py36_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: yanagiba [-h] -i INFILE [-s SUMMARYFILE] [-o OUTFILE] [-l MINLEN]
+                [-q MINQUAL] [--headtrim HEADTRIM] [--tailtrim TAILTRIM] [-u]
+
+Filter and slice Nanopore reads which have been basecalled with Albacore.
+Takes fastq.gz and an Albacore summary file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INFILE, --infile INFILE
+                        Input fastq.gz file.
+  -s SUMMARYFILE, --summaryfile SUMMARYFILE
+                        Albacore summary file with header row.
+  -o OUTFILE, --outfile OUTFILE
+                        Write filtered reads to this file in .bgz format.
+  -l MINLEN, --minlen MINLEN
+                        Exclude reads shorter than this length. Default: 0
+  -q MINQUAL, --minqual MINQUAL
+                        Minimum quality score to retain a read. Default: 10
+  --headtrim HEADTRIM   Trim x bases from begining of each read. Default: 0
+  --tailtrim TAILTRIM   Trim x bases from end of each read. Default: None
+  -u, --forceunique     Enforce unique reads. Only store first instance of a
+                        read from fastq input where readID occurs multiple
+                        times.
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sagenhaft
-description: the package is available on all platforms; click for details.
+description: Sagenhaft provides functions for the analysis and statistical modeling of Serial Analysis of Gene Expression (SAGE) data. Use when user asks to analyze SAGE data, perform differential expression analysis on SAGE libraries, or normalize SAGE tag counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/sagenhaft.html
 ---
+
 
 # bioconductor-sagenhaft
 

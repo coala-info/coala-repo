@@ -1,8 +1,9 @@
 ---
 name: dnp-binstrings
-description: `dnp-binstrings` is a high-performance C++ utility designed for genomic sequence preprocessing.
+description: This tool transforms FASTA sequences into binary strings based on the presence or absence of specific dinucleotide pairs. Use when user asks to convert FASTA sequences to binary format, map specific dinucleotide occurrences, or preprocess genomic data for nucleosome positioning analysis.
 homepage: https://github.com/erinijapranckeviciene/dnpatterntools
 ---
+
 
 # dnp-binstrings
 

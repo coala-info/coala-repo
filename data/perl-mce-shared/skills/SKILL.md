@@ -1,8 +1,9 @@
 ---
 name: perl-mce-shared
-description: The Many-Core Engine (MCE) for Perl provides a high-performance parallel computing framework that utilizes a bank-queuing model.
+description: This tool provides a high-performance parallel computing framework for Perl that manages persistent worker pools and shared data structures. Use when user asks to parallelize log parsing, process data sequences in chunks, or implement cross-platform multi-core computations.
 homepage: https://github.com/marioroy/mce-perl
 ---
+
 
 # perl-mce-shared
 

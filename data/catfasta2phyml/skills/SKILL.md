@@ -1,8 +1,9 @@
 ---
 name: catfasta2phyml
-description: catfasta2phyml is a specialized utility for concatenating multiple FASTA alignments into a single matrix.
+description: "catfasta2phyml concatenates multiple FASTA alignments into a single matrix in PHYML, PHYLIP, or FASTA format. Use when user asks to merge multiple sequence alignments, handle missing taxa across alignments, or generate partition coordinates for phylogenetic analysis."
 homepage: https://github.com/nylander/catfasta2phyml
 ---
+
 
 # catfasta2phyml
 

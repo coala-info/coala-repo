@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xenopuslaevisprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Xenopus laevis Affymetrix genome array. Use when user asks to access probe sequences for Xenopus laevis microarrays or analyze Affymetrix probe-level data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/xenopuslaevisprobe.html
 ---
+
 
 # bioconductor-xenopuslaevisprobe
 

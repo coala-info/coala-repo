@@ -1,8 +1,9 @@
 ---
 name: ucsc-tolower
-description: ucsc-tolower is a specialized utility from the UCSC Genome Browser "kent" tool suite.
+description: The ucsc-tolower tool converts all uppercase letters in a text file to their lowercase equivalents. Use when user asks to convert text to lowercase, normalize FASTA sequences, or safely convert uppercase letters to lowercase.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-tolower
 

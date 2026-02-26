@@ -1,8 +1,9 @@
 ---
 name: mtbls-dwnld
-description: The `mtbls-dwnld` tool is a specialized utility for fetching and preparing metabolomics datasets from the MetaboLights database.
+description: This tool downloads metabolomics datasets from the MetaboLights database and converts metadata into formats compatible with the Workflow4Metabolomics platform. Use when user asks to download MetaboLights studies, fetch raw mass spectrometry files using Aspera or wget, or convert ISA-Tab metadata for metabolomics analysis.
 homepage: https://github.com/workflow4metabolomics/mtbls-dwnld
 ---
+
 
 # mtbls-dwnld
 

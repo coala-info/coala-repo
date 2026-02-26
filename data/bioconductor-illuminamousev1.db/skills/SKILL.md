@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminamousev1.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and identifier mappings for the Illumina Mousev1 microarray platform. Use when user asks to map Illumina probe identifiers to Gene Symbols, Entrez IDs, GO terms, or KEGG pathways, and when filtering probes by quality or genomic location for Mus musculus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaMousev1.db.html
 ---
+
 
 # bioconductor-illuminamousev1.db
 

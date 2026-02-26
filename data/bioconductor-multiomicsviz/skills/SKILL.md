@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multiomicsviz
-description: the package is available on all platforms; click for details.
+description: This tool visualizes the relationships and correlations between different types of omics data across the genome. Use when user asks to visualize multi-omics datasets, calculate correlations between omics layers, or plot genomic data across chromosomes.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/multiOmicsViz.html
 ---
+
 
 # bioconductor-multiomicsviz
 

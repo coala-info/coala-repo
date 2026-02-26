@@ -1,8 +1,9 @@
 ---
 name: kounta
-description: kounta is a bioinformatics tool designed to create a unified tab-separated matrix of k-mer counts across multiple genomic datasets.
+description: "kounta generates a unified matrix of k-mer counts from multiple genomic datasets using kmc and Unix utilities. Use when user asks to create a k-mer count matrix, identify shared genomic signatures across samples, or generate a presence-absence matrix from assemblies or reads."
 homepage: https://github.com/tseemann/kounta
 ---
+
 
 # kounta
 

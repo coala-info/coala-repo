@@ -1,8 +1,9 @@
 ---
 name: plassembler
-description: Plassembler is a specialized bioinformatic tool designed to accurately reconstruct plasmid sequences in bacterial isolates.
+description: Plassembler is a bioinformatic tool designed to accurately reconstruct and recover plasmid sequences from bacterial sequencing data. Use when user asks to generate high-quality plasmid assemblies, estimate plasmid copy numbers, or verify plasmid sequences against the PLSDB database.
 homepage: https://github.com/gbouras13/plassembler
 ---
+
 
 # plassembler
 

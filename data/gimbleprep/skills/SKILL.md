@@ -1,8 +1,9 @@
 ---
 name: gimbleprep
-description: gimbleprep is a specialized preprocessing tool designed to bridge the gap between raw bioinformatic outputs and the gIMble analysis suite.
+description: "gimbleprep preprocesses and filters VCF and BAM files to prepare genomic datasets for the gIMble analysis suite. Use when user asks to decompose MNPs, filter variants for site frequency spectrum analyses, or synchronize VCF and BED files for gIMble."
 homepage: https://github.com/LohseLab/gimbleprep
 ---
+
 
 # gimbleprep
 

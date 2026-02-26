@@ -1,8 +1,9 @@
 ---
 name: methphaser
-description: MethPhaser is a bioinformatics tool designed for methylation-based haplotype phasing of human genomes.
+description: MethPhaser performs methylation-based haplotype phasing to extend and connect existing genomic haplotype blocks using Oxford Nanopore reads. Use when user asks to phase human autosomes using methylation signals, bridge gaps between SNV-based haplotype blocks, or generate chromosomal-scale phasing from ONT data.
 homepage: https://github.com/treangenlab/methphaser
 ---
+
 
 # methphaser
 

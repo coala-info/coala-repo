@@ -1,8 +1,9 @@
 ---
 name: bioconductor-customcmpdb
-description: the package is available on all platforms; click for details.
+description: This package provides a unified interface to query small molecule annotations and structural data from multiple databases while allowing users to integrate custom compound collections. Use when user asks to query small molecule databases like DrugBank or LINCS, retrieve compound structures as SDF files, or side-load custom annotation data into a local SQLite database.
 homepage: https://bioconductor.org/packages/release/bioc/html/customCMPdb.html
 ---
+
 
 # bioconductor-customcmpdb
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scddboost
-description: the package is available on all platforms; click for details.
+description: scDDboost identifies differentially distributed genes in single-cell RNA-sequencing data using a gradient boosting framework. Use when user asks to identify differentially distributed genes, analyze single-cell RNA-seq data, or compare gene expression distributions between cell populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/scDDboost.html
 ---
+
 
 # bioconductor-scddboost
 

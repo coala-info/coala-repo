@@ -1,8 +1,9 @@
 ---
 name: pbsim2
-description: pbsim2 is a simulator designed for long-read sequencing technologies.
+description: pbsim2 simulates long-read sequencing data for PacBio and Nanopore technologies using generative models or sampling-based methods. Use when user asks to generate synthetic long reads, simulate specific sequencing chemistries, or mimic the error profiles of existing FASTQ datasets.
 homepage: https://github.com/yukiteruono/pbsim2
 ---
+
 
 # pbsim2
 

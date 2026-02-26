@@ -3,24 +3,32 @@
 ## scikit-image
 
 ### Tool Description
-The provided text does not contain CLI help information. It consists of system error messages (Singularity/Apptainer) indicating a failure to pull or build a container due to insufficient disk space ('no space left on device').
+FAIL to generate CWL: scikit-image not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/scikit-image:0.24.0
 - **Homepage**: https://github.com/scikit-image/scikit-image
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/scikit-image/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/main/packages/scikit-image/overview
+- **Total Downloads**: 25.0K
+- **Last updated**: 2026-01-14
 - **GitHub**: https://github.com/scikit-image/scikit-image
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: scikit-image not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: scikit-image not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/f7d94082f2e11f2aeb3de9ec71c6c17e10eaa0253475e0849df55c857b2983da: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/scikit-image:0.24.0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2550958025: no space left on device
+
 ```
 

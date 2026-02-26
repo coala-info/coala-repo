@@ -1,8 +1,9 @@
 ---
 name: blastbesties
-description: `blastbesties` is a specialized bioinformatics tool designed to automate the discovery of reciprocal best hits (RBH) from BLAST results.
+description: blastbesties automates the discovery of reciprocal best hits from bidirectional BLAST results to identify putative orthologs. Use when user asks to identify reciprocal best hits, find orthologous sequence pairs, or process bidirectional BLAST tabular files.
 homepage: https://github.com/Adamtaranto/blast-besties
 ---
+
 
 # blastbesties
 

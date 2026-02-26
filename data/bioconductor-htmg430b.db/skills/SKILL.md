@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430b.db
-description: the package is available on all platforms; click for details.
+description: This tool provides annotation data for the Affymetrix HT Mouse Genome 430B array to map probe identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene IDs, access GO terms, or find KEGG pathways for this specific mouse array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430b.db.html
 ---
+
 
 # bioconductor-htmg430b.db
 

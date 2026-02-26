@@ -1,112 +1,89 @@
 # shiba CWL Generation Report
 
-## shiba
+## shiba_shiba.py
 
 ### Tool Description
-Small RNA-seq High-throughput Interactive Browser and Analyzer (Note: The provided text was an error log and did not contain CLI help information).
+Shiba v0.8.1 - Pipeline for identification of differential RNA splicing
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0
+- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_1
 - **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
 - **Package**: https://anaconda.org/channels/bioconda/packages/shiba/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/shiba/overview
-- **Total Downloads**: 889
+- **Total Downloads**: 891
 - **Last updated**: 2026-02-21
 - **GitHub**: https://github.com/Sika-Zheng-Lab/Shiba
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f9b7e975fb9477c3b4fb41135cc5ba96b1e3b736181a79f2f89f9c69becaa685: unpack entry: usr/local/annotation/hg38_RefSeq_exon.txt: unpack to regular file: short write: write /tmp/build-temp-1243247494/rootfs/usr/local/annotation/hg38_RefSeq_exon.txt: no space left on device
+usage: shiba.py [-h] [-p PROCESS] [-s START_STEP] [--mame] [-v] config
+
+Shiba v0.8.1 - Pipeline for identification of differential RNA splicing
+
+Step 1: bam2gtf.py
+    - Assembles transcript structures based on mapped reads using StringTie2.
+Step 2: gtf2event.py
+    - Converts GTF files to event format.
+Step 3: bam2junc.py
+    - Extracts junction reads from BAM files.
+Step 4: psi.py
+    - Calculates PSI values and performs differential analysis.
+Step 5: expression.py
+    - Analyzes gene expression.
+Step 6: pca.py
+    - Performs PCA.
+Step 7: plots.py
+    - Generates plots from results.
+
+positional arguments:
+  config                Config file in yaml format
+
+options:
+  -h, --help            show this help message and exit
+  -p PROCESS, --process PROCESS
+                        Number of processors to use (default: 1)
+  -s START_STEP, --start-step START_STEP
+                        Start the pipeline from the specified step (default: 0, run all steps)
+  --mame                Execute MameShiba, a lightweight version of Shiba, for only splicing analysis. Steps 5-7 will be skipped.
+  -v, --verbose         Verbose mode
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## shiba_shiba.py
-
-### Tool Description
-The provided text does not contain help information or usage instructions for shiba_shiba.py. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0
-- **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
-- **Package**: https://anaconda.org/channels/bioconda/packages/shiba/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f9b7e975fb9477c3b4fb41135cc5ba96b1e3b736181a79f2f89f9c69becaa685: unpack entry: usr/local/annotation/hg38_RefSeq_exon.txt: unpack to regular file: short write: write /tmp/build-temp-2966126405/rootfs/usr/local/annotation/hg38_RefSeq_exon.txt: no space left on device
-```
 
 ## shiba_scshiba.py
 
 ### Tool Description
-No description available: The provided text contains system error logs rather than help documentation.
+scShiba v0.8.1 - Pipeline for identification of differential RNA splicing in single-cell RNA-seq data
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0
+- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_1
 - **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
 - **Package**: https://anaconda.org/channels/bioconda/packages/shiba/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f9b7e975fb9477c3b4fb41135cc5ba96b1e3b736181a79f2f89f9c69becaa685: unpack entry: usr/local/annotation/hg38_RefSeq_exon.txt: unpack to regular file: short write: write /tmp/build-temp-3790471231/rootfs/usr/local/annotation/hg38_RefSeq_exon.txt: no space left on device
-```
+usage: scshiba.py [-h] [-p PROCESS] [-s START_STEP] [-v] config
 
-## shiba_snakemake
+scShiba v0.8.1 - Pipeline for identification of differential RNA splicing in single-cell RNA-seq data
 
-### Tool Description
-The provided text does not contain help information or usage instructions; it consists of error logs from a failed container build process (Singularity/Apptainer).
+Step 1: gtf2event.py
+    - Converts GTF files to event format.
+Step 2: sc2junc.py
+    - Counts junction reads from STARsolo output files.
+Step 3: scpsi.py
+    - Calculates PSI values and perform differential analysis.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0
-- **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
-- **Package**: https://anaconda.org/channels/bioconda/packages/shiba/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f9b7e975fb9477c3b4fb41135cc5ba96b1e3b736181a79f2f89f9c69becaa685: unpack entry: usr/local/annotation/hg38_RefSeq_exon.txt: unpack to regular file: short write: write /tmp/build-temp-1183371213/rootfs/usr/local/annotation/hg38_RefSeq_exon.txt: no space left on device
-```
+positional arguments:
+  config                Config file in yaml format
 
-## shiba_shiba2sashimi
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log indicating a failure to build or extract the container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0
-- **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
-- **Package**: https://anaconda.org/channels/bioconda/packages/shiba/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shiba:0.8.1--py312hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:f9b7e975fb9477c3b4fb41135cc5ba96b1e3b736181a79f2f89f9c69becaa685: unpack entry: usr/local/annotation/hg38_RefSeq_exon.txt: unpack to regular file: short write: write /tmp/build-temp-2937691443/rootfs/usr/local/annotation/hg38_RefSeq_exon.txt: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -p PROCESS, --process PROCESS
+                        Number of processors to use (default: 1)
+  -s START_STEP, --start-step START_STEP
+                        Start the pipeline from the specified step (default: 0, run all steps)
+  -v, --verbose         Verbose mode
 ```
 

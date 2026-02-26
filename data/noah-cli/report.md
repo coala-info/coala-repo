@@ -1,9 +1,9 @@
 # noah-cli CWL Generation Report
 
-## noah-cli
+## noah-cli_noah
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the container image due to lack of disk space.
+A project management tool for reproducible, portable, and streamlined bioinformatics analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/noah-cli:0.2.0--pyhdfd78af_0
@@ -18,29 +18,28 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/noah-cli:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1494086409: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## noah-cli_noah
-
-### Tool Description
-The provided text does not contain help information or usage instructions; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build a SIF image due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/noah-cli:0.2.0--pyhdfd78af_0
-- **Homepage**: https://github.com/raymond-u/noah-cli
-- **Package**: https://anaconda.org/channels/bioconda/packages/noah-cli/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/noah-cli:0.2.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2410975411: no space left on device
+Usage: noah [OPTIONS] COMMAND [ARGS]...                                        
+                                                                                
+ A project management tool for reproducible, portable, and streamlined          
+ bioinformatics analysis.                                                       
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --version             -v        Show the version of the program and exit.    │
+│ --install-completion            Install completion for the current shell.    │
+│ --show-completion               Show completion for the current shell, to    │
+│                                 copy it or customize the installation.       │
+│ --help                -h        Show this message and exit.                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ add               Fetch and add data to the project.                         │
+│ check             Check if local files are up-to-date.                       │
+│ init              Create a new project.                                      │
+│ install           Install files for the project.                             │
+│ remove            Remove data from the project.                              │
+│ uninstall         Uninstall files for the project.                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Info ───────────────────────────────────────────────────────────────────────╮
+│ info      Manage the information about the project.                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
 ```
 

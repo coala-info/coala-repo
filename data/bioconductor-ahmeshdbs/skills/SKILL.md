@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahmeshdbs
-description: the package is available on all platforms; click for details.
+description: This tool provides access to MeSHDb SQLite files from AnnotationHub for species-specific gene mapping and functional annotation. Use when user asks to find MeSH databases, download MeSHDb records via AnnotationHub, or prepare MeSH data for enrichment analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHMeSHDbs.html
 ---
+
 
 # bioconductor-ahmeshdbs
 

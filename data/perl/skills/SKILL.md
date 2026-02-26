@@ -1,8 +1,9 @@
 ---
 name: perl
-description: MySQLTuner is a high-utility Perl script designed to provide a rapid overview of a database server's health.
+description: Perl is a high-level programming language used here to run the MySQLTuner script for auditing database health and performance. Use when user asks to analyze database configuration, optimize MySQL or MariaDB performance, and identify security vulnerabilities or memory allocation issues.
 homepage: https://github.com/major/MySQLTuner-perl
 ---
+
 
 # perl
 

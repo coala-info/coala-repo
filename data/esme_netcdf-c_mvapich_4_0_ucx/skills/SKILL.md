@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_mvapich_4_0_ucx
-description: This skill facilitates the use of the NetCDF-C interface within distributed computing environments.
+description: This tool provides the NetCDF-C interface for managing self-describing scientific data in distributed environments using MVAPICH and UCX. Use when user asks to inspect metadata, generate files from CDL, convert formats, apply compression, or perform parallel I/O operations on large datasets.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_mvapich_4_0_ucx
 

@@ -1,8 +1,9 @@
 ---
 name: perl-devel-stacktrace
-description: The `Devel::StackTrace` module provides an object-oriented interface to the Perl stack trace.
+description: The perl-devel-stacktrace tool provides an object-oriented interface to capture, filter, and inspect the Perl call stack. Use when user asks to capture a stack trace, filter internal library frames from an error report, or inspect subroutine arguments for debugging.
 homepage: http://metacpan.org/release/Devel-StackTrace
 ---
+
 
 # perl-devel-stacktrace
 

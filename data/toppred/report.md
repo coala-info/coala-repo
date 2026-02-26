@@ -3,7 +3,7 @@
 ## toppred
 
 ### Tool Description
-Topology prediction of membrane proteins. (Note: The provided text contains container runtime errors and does not list specific command-line arguments or usage instructions).
+Predicts transmembrane topology of proteins
 
 ### Metadata
 - **Docker Image**: biocontainers/toppred:v1.10-7-deb_cv1
@@ -18,11 +18,25 @@ Topology prediction of membrane proteins. (Note: The provided text contains cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/toppred:v1.10-7-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: toppred [options] <file>
+  -c <val>    ... Use <val> as certain cut-off.
+  -d <val>    ... Use <val> as critical distance between 2 transmembrane
+                  segments.
+  -e          ... For use with Eucaryotes.
+  -g <format> ... Display or produce Hydropphobic profile, in the specified
+                  <format> (ps, png, ppm, x11 and none).
+  -h          ... Print this message and exit.
+  -H <file>   ... Use Hydrophobycitie values from <file>.
+  -n <val>    ... Use <val> as core window length.
+  -o <file>   ... Place the output into <file>.
+  -O <format> ... Print output in the specified
+                  <format> (old, new (default), html).
+  -p <val>    ... Use <val> as putative cut-off.
+  -q <val>    ... Use <val> as wedge window length.
+  -s <val>    ... Use <val> as critical loop length.
+  -t <format> ... Produce images of the topologies in the specified
+                  <format> (png and none).
+  -v          ... Print version number and exit.
 ```
 
 

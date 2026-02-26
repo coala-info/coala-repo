@@ -1,8 +1,9 @@
 ---
 name: bioconductor-beat
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical modeling and quantification of DNA methylation and epimutations from bisulfite sequencing data. Use when user asks to model methylation states, adjust for bisulfite conversion biases, or identify epimutation rates between single-cell samples and a reference.
 homepage: https://bioconductor.org/packages/release/bioc/html/BEAT.html
 ---
+
 
 # bioconductor-beat
 

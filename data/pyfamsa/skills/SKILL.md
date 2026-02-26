@@ -1,8 +1,9 @@
 ---
 name: pyfamsa
-description: PyFAMSA is a high-performance Python interface to the FAMSA algorithm, designed for large-scale protein sequence alignments.
+description: PyFAMSA provides a high-performance Python interface for large-scale protein multiple sequence alignment using the FAMSA algorithm. Use when user asks to perform fast protein sequence alignments, align large protein families in memory, or generate guide trees for sequence sets.
 homepage: https://github.com/althonos/pyfamsa
 ---
+
 
 # pyfamsa
 

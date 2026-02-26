@@ -1,8 +1,9 @@
 ---
 name: proteomiqon-labelfreeproteinquantification
-description: The `proteomiqon-labelfreeproteinquantification` tool is the final aggregation component of the ProteomIQon label-free proteomics pipeline.
+description: This tool aggregates quantified peptide ion data into protein-level abundances using a multi-step hierarchical process. Use when user asks to perform label-free protein quantification, aggregate peptide intensities into protein groups, or convert peptide data into protein abundances.
 homepage: https://csbiology.github.io/ProteomIQon/
 ---
+
 
 # proteomiqon-labelfreeproteinquantification
 

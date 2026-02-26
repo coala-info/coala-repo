@@ -3,7 +3,7 @@
 ## mtnucratio
 
 ### Tool Description
-A tool for calculating the mitochondrial to nuclear DNA ratio. (Note: The provided help text contains only container runtime error messages and does not list specific command-line arguments.)
+Calculates the nucleotide ratio for mitochondrial DNA from a coordinate-sorted SAM/BAM file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtnucratio:0.7.1--hdfd78af_0
@@ -18,11 +18,12 @@ A tool for calculating the mitochondrial to nuclear DNA ratio. (Note: The provid
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtnucratio:0.7.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2055255529: no space left on device
+Version: 0.7.1
+Please provide the (coordinate) sorted input SAM File, as well as the MT identifier. No further parameters are necessary! 
+
+Make sure that your input file has an appropriate SAM/BAM file header, or the SAMRecords will be set to '*'!
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

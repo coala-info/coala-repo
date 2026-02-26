@@ -1,8 +1,9 @@
 ---
 name: perl-sql-statement
-description: The `perl-sql-statement` skill provides a powerful engine for handling SQL logic outside of traditional RDBMS environments.
+description: This tool provides a SQL engine for parsing and executing queries against flat files or in-memory data structures. Use when user asks to execute SQL on CSV files, parse SQL statements in Perl, or filter non-relational data using SQL syntax.
 homepage: https://metacpan.org/release/SQL-Statement
 ---
+
 
 # perl-sql-statement
 

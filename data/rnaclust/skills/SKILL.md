@@ -1,8 +1,9 @@
 ---
 name: rnaclust
-description: `rnaclust` is a specialized pipeline designed for structural RNA bioinformatics.
+description: rnaclust is a bioinformatic pipeline that clusters RNA sequences based on their secondary structure and sequence-structure alignments. Use when user asks to cluster RNA sequences by folding patterns, discover functional RNA families, or generate hierarchical trees from structural alignments.
 homepage: http://www.bioinf.uni-leipzig.de/~kristin/Software/RNAclust/
 ---
+
 
 # rnaclust
 

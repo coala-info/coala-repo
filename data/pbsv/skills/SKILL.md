@@ -1,8 +1,9 @@
 ---
 name: pbsv
-description: pbsv is a specialized suite for identifying structural variants in diploid genomes using PacBio long-read data.
+description: pbsv identifies structural variants in diploid genomes using PacBio long-read sequencing data. Use when user asks to discover structural variation signatures, call variants from aligned BAM files, or perform joint variant calling across multiple samples.
 homepage: https://github.com/PacificBiosciences/pbsv
 ---
+
 
 # pbsv
 

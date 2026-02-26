@@ -1,8 +1,9 @@
 ---
 name: perl-module-pluggable
-description: This skill facilitates the implementation of modular Perl applications by leveraging `Module::Pluggable`.
+description: This tool enables Perl classes to automatically discover and load plugin modules from specific namespaces or directories. Use when user asks to implement modular application architectures, automatically detect and instantiate plugins, or manage extensible command handlers and metadata parsers.
 homepage: http://metacpan.org/pod/Module::Pluggable
 ---
+
 
 # perl-module-pluggable
 

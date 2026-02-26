@@ -1,8 +1,9 @@
 ---
 name: extern
-description: The `extern` skill provides a streamlined interface for utilizing the `External-Attention-pytorch` library (also known as `fightingcv-attention`).
+description: The extern skill provides a streamlined interface for implementing pre-built attention mechanisms, backbones, and architectural modules from the External-Attention-pytorch library. Use when user asks to integrate state-of-the-art attention layers, build vision transformer backbones, or utilize specialized MLP and convolution modules in PyTorch.
 homepage: https://github.com/xmu-xiaoma666/External-Attention-pytorch
 ---
+
 
 # extern
 

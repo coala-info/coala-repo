@@ -1,8 +1,9 @@
 ---
 name: r-nabor
-description: "An R wrapper for 'libnabo', an exact or approximate k nearest     neighbour library which is optimised for low dimensional spaces (e.g. 3D).     'libnabo' has speed and space advantages over the 'ANN' library wrapped by     package 'RANN'. 'nabor' includes a knn function that is designed as a      drop-in replacement for 'RANN' function nn2. In addition, objects which      include the k-d tree search structure can be returned to speed up repeated      queries of the same set of target points.</p>"
+description: This R package provides fast K-nearest neighbor search functionality using an optimized library for low-dimensional spatial data. Use when user asks to perform K-nearest neighbor searches, find nearest neighbors in 3D point clouds, or replace RANN for faster spatial analysis.
 homepage: https://cloud.r-project.org/web/packages/nabor/index.html
 ---
+
 
 # r-nabor
 

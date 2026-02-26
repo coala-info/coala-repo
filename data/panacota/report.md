@@ -1,9 +1,9 @@
 # panacota CWL Generation Report
 
-## panacota
+## panacota_PanACoTA
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a Singularity/Apptainer container execution failure (no space left on device).
+Large scale comparative genomics tools
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/panacota:1.4.0--pyhdfd78af_0
@@ -18,9 +18,35 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/474fabc4d7715dfdc9e89206b87e34956369d360b05c8acee1e6ff050945f2a1: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/panacota:1.4.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2357563544: no space left on device
+usage: PanACoTA [-h] [-V]
+                {all,prepare,annotate,pangenome,corepers,align,tree} ...
+
+ ___                 _____  ___         _____  _____
+(  _`\              (  _  )(  _`\      (_   _)(  _  )
+| |_) )  _ _   ___  | (_) || ( (_)   _   | |  | (_) |
+| ,__/'/'_` )/' _ `\|  _  || |  _  /'_`\ | |  |  _  |
+| |   ( (_| || ( ) || | | || (_( )( (_) )| |  | | | |
+(_)   `\__,_)(_) (_)(_) (_)(____/'`\___/'(_)  (_) (_)
+
+       Large scale comparative genomics tools
+
+     -------------------------------------------
+
+positional arguments:
+  {all,prepare,annotate,pangenome,corepers,align,tree}
+    all                 Run all PanACoTA modules
+    prepare             Prepare draft dataset
+    annotate            Quality control and annotation of genomes
+    pangenome           Generate a pan-genome of your dataset
+    corepers            Compute a Core or Persistent genome of your dataset
+    align               Align Core/Persistent families
+    tree                Infer phylogenetic tree based on core/persistent
+                        genome
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -V, --version         Print the version number and exit
+
+For more details, see PanACoTA documentation.
 ```
 

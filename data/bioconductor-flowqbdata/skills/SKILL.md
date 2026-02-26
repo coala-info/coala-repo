@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowqbdata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides flow cytometry data files and metadata for testing and examples within the flowQB framework. Use when user asks to load sample datasets for flow cytometry quality benchmarks, access FCS files for instrument characterization, or run examples from the flowQB package.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/flowQBData.html
 ---
+
 
 # bioconductor-flowqbdata
 

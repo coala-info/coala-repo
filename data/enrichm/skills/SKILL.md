@@ -1,8 +1,9 @@
 ---
 name: enrichm
-description: EnrichM is a specialized toolbox designed for the functional analysis of large sets of population genomes.
+description: EnrichM is a toolbox for the functional annotation, metabolic classification, and comparative enrichment analysis of large sets of microbial genomes. Use when user asks to annotate sequences with protein families, determine KEGG module completeness, identify statistically significant functional differences between genome groups, or reconstruct metabolic networks.
 homepage: https://github.com/geronimp/enrichM
 ---
+
 
 # enrichm
 

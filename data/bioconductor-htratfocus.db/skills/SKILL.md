@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htratfocus.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Rat Focus genome array. Use when user asks to map manufacturer probe identifiers to biological identifiers like Gene Symbols or Entrez IDs, retrieve functional annotations, or access genomic metadata for the htratfocus platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htratfocus.db.html
 ---
+
 
 # bioconductor-htratfocus.db
 

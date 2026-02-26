@@ -1,8 +1,9 @@
 ---
 name: robust-bias-aware
-description: The ROBUST (Robust disease module mining) tool identifies disease-related modules by calculating multiple Steiner Trees and aggregating them to find stable, significant sub-networks.
+description: This tool identifies stable disease-related modules by aggregating multiple Steiner Trees while correcting for gene study bias. Use when user asks to identify disease modules, find significant sub-networks from seed genes, or perform bias-aware network mining.
 homepage: https://github.com/bionetslab/robust_bias_aware_pip_package
 ---
+
 
 # robust-bias-aware
 

@@ -1,8 +1,9 @@
 ---
 name: perl-namespace-autoclean
-description: The `namespace::autoclean` pragma is a tool for Perl developers to maintain clean package interfaces.
+description: This pragma automatically removes imported symbols from a Perl package's namespace at the end of compilation to keep the public API clean. Use when user asks to remove imported functions from a class interface, prevent imports from being called as methods, or clean up internal helper functions in Perl.
 homepage: https://github.com/moose/namespace-autoclean
 ---
+
 
 # perl-namespace-autoclean
 

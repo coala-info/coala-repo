@@ -1,8 +1,9 @@
 ---
 name: varscan
-description: VarScan is a platform-independent Java tool designed for robust variant calling across various genomic study designs.
+description: VarScan is a Java tool designed for robust variant calling across various genomic study designs. Use when user asks to call germline variants, discover somatic mutations, call copy number alterations, or identify de novo mutations in trios.
 homepage: http://dkoboldt.github.io/varscan/
 ---
+
 
 # varscan
 

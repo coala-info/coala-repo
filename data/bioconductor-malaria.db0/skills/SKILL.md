@@ -1,8 +1,9 @@
 ---
 name: bioconductor-malaria.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base annotation maps for the malaria parasite. Use when user asks to access base level annotation data for Plasmodium falciparum or build organism-specific annotation packages for malaria.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/malaria.db0.html
 ---
+
 
 # bioconductor-malaria.db0
 

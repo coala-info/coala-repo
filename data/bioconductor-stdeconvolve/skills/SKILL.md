@@ -1,8 +1,9 @@
 ---
 name: bioconductor-stdeconvolve
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: STdeconvolve performs reference-free deconvolution of spatial transcriptomics data to estimate cell-type proportions and gene expression profiles. Use when user asks to deconvolve spatial transcriptomics data, estimate cell-type composition without a single-cell reference, or identify cell-type specific gene expression patterns in spatial datasets.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/STdeconvolve.html
 ---
+
 
 # bioconductor-stdeconvolve
 

@@ -1,8 +1,9 @@
 ---
 name: bicseq2-seg
-description: BICseq2-seg is the segmentation module of the BIC-seq2 pipeline, designed to detect CNVs in high-throughput sequencing data.
+description: BICseq2-seg performs genomic segmentation to detect copy number variations in high-throughput sequencing data using a Bayesian Information Criterion. Use when user asks to identify CNVs, segment read depth data, or compare case and control genomes to filter germline variations.
 homepage: http://compbio.med.harvard.edu/BIC-seq/
 ---
+
 
 # bicseq2-seg
 

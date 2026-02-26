@@ -1,8 +1,9 @@
 ---
 name: addrg
-description: Adds a read-group to a BAM file and writes the result to stdout.
+description: The addrg tool generates Bitcoin and altcoin addresses along with their corresponding private keys using a minimal and auditable codebase. Use when user asks to generate a Bitcoin address, create keys for altcoin networks using specific version bytes, or derive addresses from a passphrase.
 homepage: https://github.com/weex/addrgen
 ---
+
 
 # addrg
 

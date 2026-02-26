@@ -3,7 +3,7 @@
 ## msaboot
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error logs related to a container runtime failure (no space left on device).
+This program bootstraps FASTA input data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/msaboot:0.1.2--py_1
@@ -18,11 +18,22 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/msaboot:0.1.2--py_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1659755797: no space left on device
+usage: msaboot -i IN_LOCATION -o OUT_LOCATION -n NUM_REPLICATES
+
+This program bootstraps FASTA input data.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+  -i INPUT, --input INPUT
+                        The file name of the FASTA file to be used as input.
+  -o OUTPUT, --output OUTPUT
+                        The file name of the bootstrapped alignment data
+                        output, stored in relaxed PHYLIP format.
+  -n NUMBER, --number NUMBER
+                        The number of bootstrap replicates.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: minnow
-description: Minnow is a principled framework designed to simulate droplet-based single-cell RNA-seq experiments at the sequence level.
+description: Minnow simulates droplet-based single-cell RNA-seq experiments at the sequence level by generating raw reads from a reference transcriptome or de-Bruijn graph. Use when user asks to simulate scRNA-seq data, generate raw reads for pipeline testing, or model sequence-level technical noise.
 homepage: https://github.com/COMBINE-lab/minnow
 ---
+
 
 # minnow
 

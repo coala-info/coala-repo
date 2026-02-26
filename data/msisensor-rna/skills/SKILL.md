@@ -1,8 +1,9 @@
 ---
 name: msisensor-rna
-description: MSIsensor-RNA is a specialized tool within the MSIsensor family designed to quantify Microsatellite Instability (MSI) by analyzing the expression of genes associated with the mismatch repair (MMR) system.
+description: MSIsensor-RNA quantifies Microsatellite Instability by analyzing the expression of mismatch repair genes in bulk or single-cell RNA-seq data. Use when user asks to identify informative genes for MSI detection, train machine learning models for MSI classification, or predict MSI status from transcriptomic expression values.
 homepage: https://github.com/xjtu-omics/msisensor-rna
 ---
+
 
 # msisensor-rna
 

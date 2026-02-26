@@ -1,8 +1,9 @@
 ---
 name: rrparser
-description: `rrparser` is a specialized utility designed to handle reaction rules used in synthetic biology and metabolic pathway design.
+description: "rrparser parses and filters synthetic biology reaction rules from local files or the RetroRules repository. Use when user asks to parse reaction rules, filter rules by diameter or directionality, or fetch data from RetroRules."
 homepage: https://github.com/brsynth/RRParser
 ---
+
 
 # rrparser
 

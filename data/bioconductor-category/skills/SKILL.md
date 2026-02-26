@@ -1,8 +1,9 @@
 ---
 name: bioconductor-category
-description: the package is available on all platforms; click for details.
+description: This tool performs category-based analysis of genomic data to identify coordinated changes in gene sets, pathways, or chromosome bands. Use when user asks to perform gene set enrichment analysis, conduct hypergeometric tests for GO or KEGG terms, or identify over-represented genomic regions in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/Category.html
 ---
+
 
 # bioconductor-category
 

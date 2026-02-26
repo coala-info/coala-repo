@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scshapes
-description: the package is available on all platforms; click for details.
+description: scShapes models and identifies differential gene expression distributions in single-cell RNA-sequencing data. Use when user asks to model gene expression distributions, identify differentially shaped distributions, or perform statistical testing on single-cell RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/scShapes.html
 ---
+
 
 # bioconductor-scshapes
 

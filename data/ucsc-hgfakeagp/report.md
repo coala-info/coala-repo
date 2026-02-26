@@ -1,9 +1,9 @@
 # ucsc-hgfakeagp CWL Generation Report
 
-## ucsc-hgfakeagp
+## ucsc-hgfakeagp_hgFakeAgp
 
 ### Tool Description
-Create a fake AGP file from a FASTA file (Note: The provided help text contains only system error messages and no usage information).
+Create fake AGP file by looking at N's
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-hgfakeagp:482--h0b57e2e_0
@@ -18,13 +18,13 @@ Create a fake AGP file from a FASTA file (Note: The provided help text contains 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgfakeagp:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+hgFakeAgp - Create fake AGP file by looking at N's
+usage:
+   hgFakeAgp input.fa output.agp
+options:
+   -minContigGap=N Minimum size for a gap between contigs.  Default 25
+   -minScaffoldGap=N Min size for a gap between scaffolds. Default 50000
+   -singleContigs - when a full sequence has no gaps, maintain contig
+	name without adding index extension.
 ```
 
-
-## Metadata
-- **Skill**: generated

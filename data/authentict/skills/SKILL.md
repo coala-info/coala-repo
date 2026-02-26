@@ -1,8 +1,9 @@
 ---
 name: authentict
-description: AuthentiCT is a specialized command-line tool designed for paleogenomics to estimate present-day DNA contamination in ancient DNA single-stranded libraries.
+description: AuthentiCT estimates modern DNA contamination in ancient DNA single-stranded libraries by modeling C-to-T deamination patterns. Use when user asks to estimate the proportion of modern DNA in an aDNA sample, analyze C-to-T substitution frequencies, or simulate ancient DNA sequences with specific damage parameters.
 homepage: https://github.com/StephanePeyregne/AuthentiCT
 ---
+
 
 # authentict
 

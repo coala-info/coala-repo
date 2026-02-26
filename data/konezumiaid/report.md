@@ -1,9 +1,9 @@
 # konezumiaid CWL Generation Report
 
-## konezumiaid
+## konezumiaid_preprocess
 
 ### Tool Description
-A tool for processing genomic data (description not provided in help text)
+Preprocesses data for konezumiaid.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/konezumiaid:0.3.6.1--pyhdfd78af_0
@@ -18,11 +18,35 @@ A tool for processing genomic data (description not provided in help text)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/konezumiaid:0.3.6.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2287507443: no space left on device
+usage: konezumiaid preprocess [-h] refflat_path chromosome_fasta_path
+
+positional arguments:
+  refflat_path          Path to the refFlat text file.
+  chromosome_fasta_path
+                        Path to the chromosome fasta file.(e.g. mm39.fa)
+
+options:
+  -h, --help            show this help message and exit
 ```
 
 
-## Metadata
-- **Skill**: generated
+## konezumiaid_batch
+
+### Tool Description
+N/A
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/konezumiaid:0.3.6.1--pyhdfd78af_0
+- **Homepage**: https://github.com/aki2274/KOnezumi-AID
+- **Package**: https://anaconda.org/channels/bioconda/packages/konezumiaid/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: konezumiaid batch [-h] -f FILE
+
+options:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE  Path to the gene CSV or Excel file
+```
+

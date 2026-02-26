@@ -1,8 +1,9 @@
 ---
 name: krepp
-description: `krepp` is a high-performance bioinformatics tool that utilizes k-mer-based maximum likelihood estimation to analyze metagenomic data.
+description: Krepp performs k-mer-based maximum likelihood estimation to analyze metagenomic data and perform phylogenetic placement. Use when user asks to build a reference index, estimate distances between reads and genomes, or place sequencing reads onto a phylogenetic tree.
 homepage: https://github.com/bo1929/krepp
 ---
+
 
 # krepp
 

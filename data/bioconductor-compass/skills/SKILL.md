@@ -1,8 +1,9 @@
 ---
 name: bioconductor-compass
-description: the package is available on all platforms; click for details.
+description: COMPASS is a statistical framework for analyzing polyfunctionality in single-cell flow and mass cytometry data. Use when user asks to analyze polyfunctional T-cell responses, model combinatorial cytokine expression, or identify cellular subsets associated with clinical outcomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/COMPASS.html
 ---
+
 
 # bioconductor-compass
 

@@ -1,8 +1,9 @@
 ---
 name: r-nleqslv
-description: "Solve a system of nonlinear equations using a Broyden or a Newton method              with a choice of global strategies such as line search and trust region.              There are options for using a numerical or user supplied Jacobian,              for specifying a banded numerical Jacobian and for allowing              a singular or ill-conditioned Jacobian.</p>"
+description: The nleqslv package provides a robust solver for systems of nonlinear equations using Newton or Broyden methods. Use when user asks to solve systems of nonlinear equations, find roots of multiple functions, or apply global strategies like line search and trust region methods to ensure convergence.
 homepage: https://cloud.r-project.org/web/packages/nleqslv/index.html
 ---
+
 
 # r-nleqslv
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rblast
-description: the package is available on all platforms; click for details.
+description: The rBLAST package provides an R interface for the Basic Local Alignment Search Tool to search and align DNA or protein sequences. Use when user asks to run BLAST searches, search sequence databases, or perform sequence alignments within the R environment.
 homepage: https://bioconductor.org/packages/release/bioc/html/rBLAST.html
 ---
+
 
 # bioconductor-rblast
 

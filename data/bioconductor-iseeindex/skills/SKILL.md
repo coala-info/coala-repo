@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseeindex
-description: the package is available on all platforms; click for details.
+description: This tool creates interactive landing pages for collections of Bioconductor datasets to facilitate data selection and visualization. Use when user asks to create a landing page for iSEE applications, manage dataset metadata with URI schemes, or configure custom branding for data portals.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEindex.html
 ---
+
 
 # bioconductor-iseeindex
 

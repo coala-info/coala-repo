@@ -1,8 +1,9 @@
 ---
 name: mi-pimento
-description: mi-pimento (PIMENTO) is a specialized toolkit for primer inference.
+description: mi-pimento is a toolkit for inferring and recovering missing primer information from sequencing reads using known libraries or base-conservation analysis. Use when user asks to recover missing primers, match reads against standard primer libraries, predict primer cutoffs, or verify the presence of primers in FASTQ files.
 homepage: https://github.com/EBI-Metagenomics/PIMENTO
 ---
+
 
 # mi-pimento
 

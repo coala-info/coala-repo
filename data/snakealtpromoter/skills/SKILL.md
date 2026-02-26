@@ -1,8 +1,9 @@
 ---
 name: snakealtpromoter
-description: SnakeAltPromoter is a Snakemake-powered bioinformatics pipeline designed to automate the complex workflow of alternative promoter analysis.
+description: SnakeAltPromoter is a Snakemake-powered pipeline that automates alternative promoter analysis from raw sequencing reads to differential usage identification. Use when user asks to set up genomic environments, run RNA-seq or CAGE promoter analysis pipelines, or launch the graphical configuration interface.
 homepage: https://github.com/YidanSunResearchLab/SnakeAltPromoter
 ---
+
 
 # snakealtpromoter
 

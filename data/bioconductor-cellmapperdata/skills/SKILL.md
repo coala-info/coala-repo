@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellmapperdata
-description: the package is available on all platforms; click for details.
+description: This tool provides access to pre-processed microarray expression compendia for cell-type specific gene expression prediction. Use when user asks to retrieve SVD-transformed CellMapperList objects from ExperimentHub or access specialized datasets for the CellMapper package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CellMapperData.html
 ---
+
 
 # bioconductor-cellmapperdata
 

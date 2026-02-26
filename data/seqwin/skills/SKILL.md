@@ -1,8 +1,9 @@
 ---
 name: seqwin
-description: Seqwin is a high-performance toolkit designed to discover signature sequences that distinguish target microbial genomes from non-target "neighbor" genomes.
+description: Seqwin identifies signature sequences that distinguish target microbial genomes from non-target genomes using a minimizer-based pan-genome graph. Use when user asks to discover diagnostic markers, identify unique genomic signatures using taxonomy names, or find specific sequences from local assembly files.
 homepage: https://github.com/treangenlab/seqwin
 ---
+
 
 # seqwin
 

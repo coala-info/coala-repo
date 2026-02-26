@@ -1,8 +1,9 @@
 ---
 name: degenotate
-description: degenotate is a specialized bioinformatics tool designed to characterize the evolutionary constraints on coding sites by calculating their degeneracy.
+description: "degenotate characterizes evolutionary constraints on coding sites by calculating their degeneracy from genome assemblies and structural annotations. Use when user asks to annotate site-by-site degeneracy, perform standard or imputed McDonald-Kreitman tests, or extract specific coding sequences and degenerate sites."
 homepage: https://github.com/harvardinformatics/degenotate
 ---
+
 
 # degenotate
 

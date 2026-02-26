@@ -1,8 +1,9 @@
 ---
 name: blobtoolkit
-description: BlobToolKit is a specialized suite for the interactive quality assessment of genome assemblies.
+description: BlobToolKit is a suite for the interactive quality assessment and visualization of genome assemblies to identify contaminants and evaluate completeness. Use when user asks to create or populate BlobDirs, add BUSCO or coverage data to an assembly, filter contigs based on metadata, or generate assembly plots and visualizations.
 homepage: https://github.com/blobtoolkit/blobtoolkit
 ---
+
 
 # blobtoolkit
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-netresponse
-description: the package is available on all platforms; click for details.
+description: Bioconductor-netresponse identifies differentially regulated subnetworks in high-throughput data using mixture modeling. Use when user asks to perform functional network analysis, identify local responses in biological networks, or detect subnetworks with differential activity across conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/netresponse.html
 ---
+
 
 # bioconductor-netresponse
 

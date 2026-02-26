@@ -1,9 +1,11 @@
 # jarvis3 CWL Generation Report
 
-## jarvis3
+## jarvis3_JARVIS3
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the tool's help documentation or argument definitions.
+Lossless compression and decompression of genomic
+      sequences for minimal storage and analysis purposes.
+      Measure an upper bound of the sequence complexity.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jarvis3:3.7--h7b50bb2_3
@@ -18,11 +20,90 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jarvis3:3.7--h7b50bb2_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3428247625: no space left on device
+██ ███████ ███████ ██    ██ ██ ███████ ███████          
+           ██ ██   ██ ██   ██ ██    ██ ██ ██           ██          
+           ██ ███████ ██████  ██    ██ ██ ███████ ███████          
+      ██   ██ ██   ██ ██  ███  ██  ██  ██      ██      ██          
+      ███████ ██   ██ ██   ███  ████   ██ ███████ ███████          
+                                                                   
+NAME                                                               
+      JARVIS3 v3.7,                                              
+      Efficient lossless encoding of genomic sequences             
+                                                                   
+SYNOPSIS                                                           
+      ./JARVIS3 [OPTION]... [FILE]                                 
+                                                                   
+SAMPLE                                                             
+      Run Compression   -> ./JARVIS3 -v -l 13 sequence.txt         
+      Run Decompression -> ./JARVIS3 -v -d sequence.txt.jc         
+                                                                   
+DESCRIPTION                                                        
+      Lossless compression and decompression of genomic            
+      sequences for minimal storage and analysis purposes.         
+      Measure an upper bound of the sequence complexity.           
+                                                                   
+      -h,  --help                                                  
+           Usage guide (help menu).                                
+                                                                   
+      -a,  --version                                               
+           Display program and version information.                
+                                                                   
+      -x,  --explanation                                           
+           Explanation of the context and repeat models.           
+                                                                   
+      -f,  --force                                                 
+           Force mode. Overwrites old files.                       
+                                                                   
+      -v,  --verbose                                               
+           Verbose mode (more information).                        
+                                                                   
+      -p,  --progress                                              
+           Show progress bar.                                      
+                                                                   
+      -P,  --progress-extended                                     
+           Show compression progress for each 5%.                 
+                                                                   
+      -d,  --decompress                                            
+           Decompression mode.                                     
+                                                                   
+      -e,  --estimate                                              
+           It creates a file with the extension ".iae" with the  
+           respective information content. If the file is FASTA or 
+           FASTQ it will only use the "ACGT" (genomic) sequence. 
+                                                                   
+      -s,  --show-levels                                           
+           Show pre-computed compression levels (configured).      
+                                                                   
+      -l [NUMBER],  --level [NUMBER]                               
+           Compression level (integer).                            
+           Default level: 7.                                      
+           It defines compressibility in balance with computational
+           resources (RAM & time). Use -s for levels perception.   
+                                                                   
+      -sd [NUMBER],  --seed [NUMBER]                               
+           Pseudo-random seed.                                     
+           Default value: 0.                                      
+                                                                   
+      -hs [NUMBER],  --hidden-size [NUMBER]                        
+           Hidden size of the neural network (integer).            
+           Default value: 40.                                      
+                                                                   
+      -lr [DOUBLE],  --learning-rate [DOUBLE]                      
+           Neural Network leaning rate (double).                   
+           The 0 value turns the Neural Network off.               
+           Default value: 0.03.                                   
+                                                                   
+      -o [FILENAME], --output [FILENAME]                           
+           Compressed/decompressed output filename.                
+                                                                   
+      [FILENAME]                                                   
+           Input sequence filename (to compress) -- MANDATORY.     
+           File to compress is the last argument.                  
+                                                                   
+COPYRIGHT                                                          
+      Copyright (C) 2014-2024.                                     
+      This is a Free software, under GPLv3. You may redistribute   
+      copies of it under the terms of the GNU - General Public     
+      License v3 <http://www.gnu.org/licenses/gpl.html>.
 ```
 
-
-## Metadata
-- **Skill**: generated

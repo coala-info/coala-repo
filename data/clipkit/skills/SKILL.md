@@ -1,8 +1,9 @@
 ---
 name: clipkit
-description: ClipKIT is a specialized alignment trimming tool designed to enhance phylogenomic inference.
+description: ClipKIT is an alignment trimming tool that identifies and preserves phylogenetically informative sites while removing noisy data to improve phylogenomic inference. Use when user asks to trim multiple sequence alignments, preserve evolutionary signal for phylogenetic tree construction, or compress alignment files using the ecomp format.
 homepage: https://github.com/jlsteenwyk/clipkit
 ---
+
 
 # clipkit
 

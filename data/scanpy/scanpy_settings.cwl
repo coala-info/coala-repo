@@ -1,0 +1,161 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand: scanpy_settings
+label: scanpy_settings
+doc: "Scanpy configuration settings.\n\nTool homepage: https://scanpy.readthedocs.io/en/latest/"
+inputs:
+  - id: autosave
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to automatically save the AnnData object.
+    default: false
+    inputBinding:
+      position: 101
+  - id: autoshow
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to automatically show plots.
+    default: true
+    inputBinding:
+      position: 101
+  - id: cache_compression
+    type:
+      - 'null'
+      - string
+    doc: Compression method for the cache.
+    default: lzf
+    inputBinding:
+      position: 101
+  - id: cachedir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for caching data.
+    default: cache
+    inputBinding:
+      position: 101
+  - id: categories_to_ignore
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: List of categories to ignore.
+    default:
+      - N/A
+      - dontknow
+      - no_gate
+      - '?'
+    inputBinding:
+      position: 101
+  - id: datasetdir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory where datasets are located.
+    default: /data
+    inputBinding:
+      position: 101
+  - id: figdir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for saving figures.
+    default: figures
+    inputBinding:
+      position: 101
+  - id: file_format_data
+    type:
+      - 'null'
+      - string
+    doc: Default file format for data files.
+    default: h5ad
+    inputBinding:
+      position: 101
+  - id: file_format_figs
+    type:
+      - 'null'
+      - string
+    doc: Default file format for figure files.
+    default: pdf
+    inputBinding:
+      position: 101
+  - id: logfile
+    type:
+      - 'null'
+      - File
+    doc: File object for logging.
+    default: <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>
+    inputBinding:
+      position: 101
+  - id: logpath
+    type:
+      - 'null'
+      - File
+    doc: Path to the log file.
+    inputBinding:
+      position: 101
+  - id: max_memory
+    type:
+      - 'null'
+      - int
+    doc: Maximum memory to use in GB.
+    default: 15
+    inputBinding:
+      position: 101
+  - id: n_jobs
+    type:
+      - 'null'
+      - int
+    doc: Number of parallel jobs to run.
+    default: 1
+    inputBinding:
+      position: 101
+  - id: n_pcs
+    type:
+      - 'null'
+      - int
+    doc: Number of principal components to compute.
+    default: 50
+    inputBinding:
+      position: 101
+  - id: plot_suffix
+    type:
+      - 'null'
+      - string
+    doc: Suffix to append to plot filenames.
+    default: ''
+    inputBinding:
+      position: 101
+  - id: set_figure_params
+    type:
+      - 'null'
+      - string
+    doc: Function to set figure parameters.
+    inputBinding:
+      position: 101
+  - id: verbosity
+    type:
+      - 'null'
+      - string
+    doc: Verbosity level for logging.
+    default: warn
+    inputBinding:
+      position: 101
+  - id: writedir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory for writing output files.
+    default: write
+    inputBinding:
+      position: 101
+outputs:
+  - id: stdout
+    type: stdout
+    doc: Standard output
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/scanpy:1.7.2--pyhdfd78af_0
+stdout: scanpy_settings.out

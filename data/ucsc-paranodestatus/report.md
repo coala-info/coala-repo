@@ -1,9 +1,9 @@
 # ucsc-paranodestatus CWL Generation Report
 
-## ucsc-paranodestatus
+## ucsc-paranodestatus_paraNodeStatus
 
 ### Tool Description
-A UCSC Genome Browser utility to check the status of nodes in a cluster. (Note: The provided text was a container build error log and did not contain usage information.)
+Check status of paraNode on a list of machines.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-paranodestatus:482--h0b57e2e_0
@@ -18,13 +18,16 @@ A UCSC Genome Browser utility to check the status of nodes in a cluster. (Note: 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-paranodestatus:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+paraNodeStatus - version 12.19
+Check status of paraNode on a list of machines.
+usage:
+    paraNodeStatus machineList
+options:
+    -retries=N  Number of retries to get in touch with machine.
+        The first retry is after 1/100th of a second. 
+        Each retry after that takes twice as long up to a maximum
+        of 1 second per retry.  Default is 7 retries and takes
+        about a second.
+    -long  List details of current and recent jobs.
 ```
 
-
-## Metadata
-- **Skill**: generated

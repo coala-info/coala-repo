@@ -1,8 +1,9 @@
 ---
 name: unfazed
-description: unfazed is a tool for phasing de novo variants by leveraging informative heterozygous sites in a trio.
+description: unfazed phases de novo variants and structural variations in trios using multiple methods. Use when user asks to phase de novo variants, phase structural variants and CNVs, or phase sex chromosomes.
 homepage: https://github.com/jbelyeu/unfazed
 ---
+
 
 # unfazed
 

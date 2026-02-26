@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fourcseq
-description: The package provides a pipeline to detect specific interactions between DNA elements and identify differential interactions between conditions. The statistical analysis in R starts with individual bam files for each sample as inputs. To obtain these files, the package contains a python script (extdata/python/demultiplex.py) to demultiplex libraries and trim off primer sequences. With a standard alignment software the required bam files can be then be generated.
+description: This tool analyzes 4C-seq data to identify chromatin interactions and detect differential interactions between experimental conditions. Use when user asks to analyze 4C-seq data, generate fragment libraries, count reads at fragment ends, calculate Z-scores for interaction detection, or perform differential interaction analysis.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/FourCSeq.html
 ---
+
 
 # bioconductor-fourcseq
 

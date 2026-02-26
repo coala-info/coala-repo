@@ -1,8 +1,9 @@
 ---
 name: cdskit
-description: cdskit is a specialized suite of command-line utilities designed for bioinformaticians working with protein-coding DNA.
+description: cdskit is a suite of command-line utilities designed for processing protein-coding DNA sequences while preserving the open reading frame. Use when user asks to pad sequences to frame, mask stop codons or ambiguities, split codon positions, aggregate sequences by length, or clean codon alignments.
 homepage: https://github.com/kfuku52/cdskit
 ---
+
 
 # cdskit
 

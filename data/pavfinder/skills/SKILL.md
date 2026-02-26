@@ -1,8 +1,9 @@
 ---
 name: pavfinder
-description: PAVFinder (Post-Assembly Variant Finder) is a bioinformatic tool designed to identify structural variations by analyzing the non-contiguous alignment of assembled contigs against a reference genome.
+description: PAVFinder identifies structural variations and gene fusions by analyzing the alignment of assembled contigs against a reference genome. Use when user asks to detect genomic structural variants, identify gene fusions, or characterize transcript splice variants.
 homepage: https://github.com/bcgsc/pavfinder
 ---
+
 
 # pavfinder
 

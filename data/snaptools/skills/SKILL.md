@@ -1,8 +1,9 @@
 ---
 name: snaptools
-description: The `snaptools` skill provides a procedural framework for handling the lifecycle of snATAC-seq data, from raw FASTQ reads to structured count matrices.
+description: Snaptools processes snATAC-seq data from raw FASTQ reads into structured count matrices using the snap file format. Use when user asks to index genomes, align paired-end reads, create snap files from BAM files, or add bin, peak, and gene matrices to existing snap files.
 homepage: https://github.com/r3fang/SnapTools.git
 ---
+
 
 # snaptools
 

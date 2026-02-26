@@ -1,8 +1,9 @@
 ---
 name: pyfish
-description: The `pyfish` tool is a specialized Python-based utility for generating Muller plots (also known as Fish plots).
+description: Pyfish is a Python-based utility for generating Muller plots to visualize evolutionary trajectories and clonal hierarchies over time. Use when user asks to create Muller plots, visualize clonal evolution, or plot population frequency data with phylogenetic relationships.
 homepage: https://bitbucket.org/schwarzlab/pyfish
 ---
+
 
 # pyfish
 

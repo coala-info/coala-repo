@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genphen
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool quantifies genotype-phenotype associations using a combination of machine learning and Bayesian hierarchical modeling. Use when user asks to analyze associations between genetic markers and phenotypes, control for phylogenetic bias, or perform data reduction for large-scale GWAS.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/genphen.html
 ---
+
 
 # bioconductor-genphen
 

@@ -1,8 +1,9 @@
 ---
 name: atol-qc-annotation
-description: The `atol-qc-annotation` tool provides a streamlined pipeline for evaluating the quality of genome annotations.
+description: This tool evaluates the quality of genome annotations by automating coding region extraction and assessment via BUSCO and OMArk. Use when user asks to assess annotation quality, generate a QC report for a predicted proteome, or run BUSCO and OMArk on a GFF file.
 homepage: https://github.com/TomHarrop/atol-qc-annotation
 ---
+
 
 # atol-qc-annotation
 

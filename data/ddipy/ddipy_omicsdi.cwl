@@ -1,11 +1,49 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ddipy_omicsdi
+baseCommand: omicsdi
 label: ddipy_omicsdi
-doc: "A Python tool for interacting with the Omics Discovery Index (OmicsDI). Note:
-  The provided help text contains only system error messages regarding container image
-  building and does not list specific command-line arguments.\n\nTool homepage: https://github.com/OmicsDI/ddipy"
-inputs: []
+doc: "Command Line Interface to fetch data from OmicsDi.\n\nTool homepage: https://github.com/OmicsDI/ddipy"
+inputs:
+  - id: acc_number
+    type: string
+    doc: Accession Number
+    inputBinding:
+      position: 1
+  - id: download
+    type:
+      - 'null'
+      - boolean
+    doc: Use this flag to download the files in the current directory or a 
+      specified output directory
+    inputBinding:
+      position: 102
+      prefix: --download
+  - id: input_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory when downloading files
+    default: CWD
+    inputBinding:
+      position: 102
+      prefix: --input
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory when downloading files
+    default: CWD
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Use this flag to display th extensions
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-raexexonprobesetlocation
-description: the package is available on all platforms; click for details.
+description: This package provides genomic location information for probesets on the Affymetrix Rat Exon 1.0 ST Array. Use when user asks to retrieve probeset locations for rat exon arrays, map probesets to genomic coordinates, or access annotation data for the RaExExonProbesetLocation package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/RaExExonProbesetLocation.html
 ---
+
 
 # bioconductor-raexexonprobesetlocation
 

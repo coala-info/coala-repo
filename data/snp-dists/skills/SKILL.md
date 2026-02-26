@@ -1,8 +1,9 @@
 ---
 name: snp-dists
-description: `snp-dists` is a high-performance tool written in C that transforms multiple sequence alignments (FASTA format) into pairwise SNP distance matrices.
+description: snp-dists transforms multiple sequence alignments into pairwise SNP distance matrices. Use when user asks to calculate pairwise SNP distances, generate a distance matrix from FASTA alignments, or compare genomic isolates for relatedness.
 homepage: https://github.com/tseemann/snp-dists
 ---
+
 
 # snp-dists
 

@@ -1,8 +1,9 @@
 ---
 name: r-scevan
-description: R package scevan (documentation from project home).
+description: SCEVAN performs unsupervised analysis of single-cell RNA-seq data to classify malignant cells and infer copy number profiles. Use when user asks to classify cells as malignant or non-malignant, infer copy number alterations, identify subclonal structures, or analyze clonal evolution in tumor samples.
 homepage: https://cran.r-project.org/web/packages/scevan/index.html
 ---
+
 
 # r-scevan
 

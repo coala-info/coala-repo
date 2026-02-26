@@ -1,8 +1,9 @@
 ---
 name: m6anet
-description: m6anet is a specialized tool designed to identify m6A RNA modifications by analyzing the raw ionic current signal from Nanopore direct RNA sequencing.
+description: m6anet identifies m6A RNA modifications from Nanopore direct RNA sequencing data using a multiple instance learning framework. Use when user asks to detect m6A modifications, preprocess eventalign data, or perform site-level and read-level modification inference.
 homepage: https://github.com/GoekeLab/m6anet
 ---
+
 
 # m6anet
 

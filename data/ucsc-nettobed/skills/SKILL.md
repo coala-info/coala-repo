@@ -1,8 +1,9 @@
 ---
 name: ucsc-nettobed
-description: The `netToBed` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed to extract target coverage information from alignment net files.
+description: ucsc-nettobed converts alignment net files into BED files to display target genome coverage. Use when user asks to convert alignment net files to BED, extract target genome coverage from alignment nets, or visualize alignment coverage.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-nettobed
 

@@ -1,8 +1,9 @@
 ---
 name: scpred-cli
-description: The `scpred-cli` toolset provides a modular command-line interface for the scPred R package, enabling automated cell-type annotation workflows.
+description: The scpred-cli toolset provides a command-line interface for the scPred R package to perform automated cell-type annotation of single-cell RNA-seq data. Use when user asks to identify informative principal components, train classification models on reference datasets, predict cell types in query datasets, or generate standardized annotation tables.
 homepage: https://github.com/ebi-gene-expression-group/scPred-cli
 ---
+
 
 # scpred-cli
 

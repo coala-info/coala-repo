@@ -1,8 +1,9 @@
 ---
 name: r-gplots
-description: "Various R programming tools for plotting data, including:   - calculating and plotting locally smoothed summary function as     ('bandplot', 'wapply'),   - enhanced versions of standard plots ('barplot2', 'boxplot2',     'heatmap.2', 'smartlegend'),   - manipulating colors ('col2hex', 'colorpanel', 'redgreen',     'greenred', 'bluered', 'redblue', 'rich.colors'),   - calculating and plotting two-dimensional data summaries ('ci2d',     'hist2d'),   - enhanced regression diagnostic plots ('lmplot2', 'residplot'),   - formula-enabled interface to 'stats::lowess' function ('lowess'),   - displaying textual data in plots ('textplot', 'sinkplot'),   - plotting dots whose size reflects the relative magnitude of the     elements ('balloonplot', 'bubbleplot'),   - plotting \"Venn\" diagrams ('venn'),   - displaying Open-Office style plots ('ooplot'),   - plotting multiple data on same region, with separate axes     ('overplot'),   - plotting means and confidence intervals ('plotCI', 'plotmeans'),   - spacing points in an x-y plot so they don't overlap ('space').</p>"
+description: The r-gplots package provides a collection of enhanced R programming tools for data visualization and statistical plotting. Use when user asks to create enhanced heatmaps, generate Venn diagrams, plot group means with confidence intervals, or visualize tabular data with balloon plots.
 homepage: https://cloud.r-project.org/web/packages/gplots/index.html
 ---
+
 
 # r-gplots
 

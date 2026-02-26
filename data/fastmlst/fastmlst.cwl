@@ -2,10 +2,18 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fastmlst
 label: fastmlst
-doc: "A tool for fast Multilocus Sequence Typing (MLST). Note: The provided help text
-  contains only system error messages regarding container execution and does not list
-  available command-line arguments.\n\nTool homepage: https://github.com/EnzoAndree/FastMLST"
-inputs: []
+doc: "fastMLST is a tool for rapid MLST typing of bacterial pathogens.\n\nTool homepage:
+  https://github.com/EnzoAndree/FastMLST"
+inputs:
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use for downloading schemes.
+    default: 20
+    inputBinding:
+      position: 101
+      prefix: --threads
 outputs:
   - id: stdout
     type: stdout

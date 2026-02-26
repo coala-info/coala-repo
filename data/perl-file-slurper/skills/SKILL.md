@@ -1,8 +1,9 @@
 ---
 name: perl-file-slurper
-description: File::Slurper is a minimalist and high-performance Perl module designed to replace the older, bug-prone File::Slurp.
+description: This Perl module provides a simple and efficient way to read or write entire files with proper encoding and line ending handling. Use when user asks to read a file into a string, load file lines into an array, or write text and binary data to a file.
 homepage: http://metacpan.org/pod/File-Slurper
 ---
+
 
 # perl-file-slurper
 

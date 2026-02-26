@@ -1,8 +1,9 @@
 ---
 name: awscli
-description: This skill streamlines local cloud development by utilizing the `awslocal` utility, a thin wrapper around the standard AWS CLI.
+description: This tool provides a wrapper for the AWS CLI to interact with LocalStack services without manually specifying local endpoint URLs. Use when user asks to run AWS commands against a local environment, simulate cloud services with LocalStack, or use the awslocal utility for local development.
 homepage: https://github.com/localstack/awscli-local
 ---
+
 
 # awscli
 

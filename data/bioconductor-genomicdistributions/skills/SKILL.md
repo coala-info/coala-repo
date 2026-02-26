@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicdistributions
-description: the package is available on all platforms; click for details.
+description: GenomicDistributions provides functions to summarize and visualize the properties of genomic range sets, including chromosome distribution, feature distance, and genomic partitions. Use when user asks to visualize genomic region distributions, calculate distances to transcription start sites, determine overlap with functional elements, or analyze sequence properties like GC content.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicDistributions.html
 ---
+
 
 # bioconductor-genomicdistributions
 

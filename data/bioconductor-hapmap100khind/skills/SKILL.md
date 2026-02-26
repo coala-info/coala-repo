@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmap100khind
-description: the package is available on all platforms; click for details.
+description: This package provides sample CEL files from the HapMap Project for the Affymetrix 100K Hind SNP array platform. Use when user asks to load demonstration data for oligonucleotide array analysis, test Bioconductor tools like oligo, or access sample HapMap CEL files.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap100khind.html
 ---
+
 
 # bioconductor-hapmap100khind
 

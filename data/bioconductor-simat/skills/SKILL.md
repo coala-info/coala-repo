@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simat
-description: the package is available on all platforms; click for details.
+description: SIMAT provides tools for the processing and analysis of Gas Chromatography-Mass Spectrometry (GC-MS) data. Use when user asks to process GC-MS data, perform peak detection, align chromatograms, or identify metabolites using mass spectral libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/SIMAT.html
 ---
+
 
 # bioconductor-simat
 

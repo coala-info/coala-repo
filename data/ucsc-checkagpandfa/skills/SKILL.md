@@ -1,8 +1,9 @@
 ---
 name: ucsc-checkagpandfa
-description: The `checkAgpAndFa` utility is a quality control tool from the UCSC Genome Browser "kent" source suite.
+description: This tool verifies the structural integrity of a genome assembly by cross-referencing AGP instructions with FASTA sequence data. Use when user asks to verify genome assembly integrity, cross-reference AGP and FASTA files, or check for synchronization errors between assembly instructions and sequence data.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-checkagpandfa
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dart
-description: the package is available on all platforms; click for details.
+description: This tool estimates pathway or perturbation gene signature activity scores in gene expression data using a denoising algorithm based on relevance network topology. Use when user asks to infer gene signature activity, denoise molecular signatures, or calculate robust pathway scores from expression matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/DART.html
 ---
+
 
 # bioconductor-dart
 

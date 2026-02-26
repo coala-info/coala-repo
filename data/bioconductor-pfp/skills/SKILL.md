@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pfp
-description: The package is helpful for researchers to find the biomarkers and its function.
+description: The bioconductor-pfp package identifies biomarkers and their biological functions. Use when user asks to find biomarkers or analyze biomarker functions.
 homepage: https://bioconductor.org/packages/3.13/bioc/html/PFP.html
 ---
+
 
 # bioconductor-pfp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-wheatcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Wheat Genome Array. Use when user asks to process Affymetrix Wheat Genome Array data, map probes to probe sets, or perform wheat microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/wheatcdf.html
 ---
+
 
 # bioconductor-wheatcdf
 

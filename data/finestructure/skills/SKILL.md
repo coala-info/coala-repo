@@ -1,8 +1,9 @@
 ---
 name: finestructure
-description: This skill enables the identification of population structure through high-resolution genetic clustering.
+description: This tool identifies high-resolution population structure and genetic clustering using haplotype data. Use when user asks to detect subtle ancestry differences, generate a co-ancestry matrix, or perform MCMC-based genetic clustering.
 homepage: https://people.maths.bris.ac.uk/~madjl/finestructure/finestructure.html
 ---
+
 
 # finestructure
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u133.plus.2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U133 Plus 2.0 Array. Use when user asks to process Affymetrix HG-U133 Plus 2.0 microarray data, analyze probe-level information, or use the oligo package with this specific array platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u133.plus.2.html
 ---
+
 
 # bioconductor-pd.hg.u133.plus.2
 

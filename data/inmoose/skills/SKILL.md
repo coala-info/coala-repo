@@ -1,8 +1,9 @@
 ---
 name: inmoose
-description: InMoose (Integrated Multi Omic Open Source Environment) is a specialized Python library designed to bring gold-standard bioinformatics workflows—traditionally found in R—into the Python ecosystem.
+description: InMoose is a Python library that provides bioinformatics workflows for batch effect correction, quality control, and differential expression analysis of transcriptomic data. Use when user asks to correct batch effects using ComBat, perform differential expression analysis with limma or DESeq2, evaluate cohort quality, or conduct consensus clustering.
 homepage: https://github.com/epigenelabs/inmoose
 ---
+
 
 # inmoose
 

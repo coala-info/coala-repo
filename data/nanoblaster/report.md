@@ -3,7 +3,7 @@
 ## nanoblaster
 
 ### Tool Description
-The provided text does not contain help information for nanoblaster; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+NanoBLASTer is a tool for rapid and accurate alignment of long sequencing reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanoblaster:0.16--h9948957_8
@@ -18,11 +18,18 @@ The provided text does not contain help information for nanoblaster; it contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoblaster:0.16--h9948957_8 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3790567514: no space left on device
+Use the following options to run NanoBLASTer:
+-C: To specify one of the Parameters: -C10, -C25, or -C50
+-r: To specify the name of Reference file
+-i: To specify the name of Reads file
+-o: To specify the prefix of Output file
+-k: To specify the size of KMER
+-a: To specify the size of ANCHOR
+-l: To specify the min number of Clusters
+-s: To run the program in high sensitive mode
+-n: To specify the Number of reads to be aligned
+-g: To specify the interval (or Gap) length between KMERs
+-X: To configure NanoBLASTer for less memory using Single index
+-h, or -?: To print this Help information.
 ```
 
-
-## Metadata
-- **Skill**: generated

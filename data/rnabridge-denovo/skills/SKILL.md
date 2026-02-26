@@ -1,8 +1,9 @@
 ---
 name: rnabridge-denovo
-description: rnabridge-denovo is a bioinformatics tool designed to solve the fragment reconstruction problem in RNA-seq analysis.
+description: rnabridge-denovo reconstructs the full sequences of RNA-seq fragments from paired-end reads using de Bruijn graphs. Use when user asks to reconstruct transcript fragments, bridge paired-end RNA-seq reads, or perform de novo fragment assembly.
 homepage: https://github.com/Shao-Group/rnabridge-denovo
 ---
+
 
 # rnabridge-denovo
 

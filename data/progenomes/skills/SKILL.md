@@ -1,8 +1,9 @@
 ---
 name: progenomes
-description: The `progenomes` command-line tool provides a streamlined interface for interacting with the proGenomes database, which contains over 2 million accurately annotated bacterial and archaeal genomes.
+description: The progenomes tool programmatically fetches genomic assemblies, functional annotations, and metadata from the proGenomes database. Use when user asks to download bacterial or archaeal genomes, fetch functional annotations, or inspect genomic metadata.
 homepage: https://github.com/BigDataBiology/progenomes-cli
 ---
+
 
 # progenomes
 

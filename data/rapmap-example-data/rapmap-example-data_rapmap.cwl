@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: rapmap
 label: rapmap-example-data_rapmap
-doc: "RapMap is a tool for rapid sensitive mapping of RNA-seq reads. (Note: The provided
-  text is a system error log and does not contain specific help documentation or argument
-  definitions.)\n\nTool homepage: https://github.com/COMBINE-lab/RapMap"
-inputs: []
+doc: "RapMap Transcriptome Aligner v0.6.0\n\nTool homepage: https://github.com/COMBINE-lab/RapMap"
+inputs:
+  - id: subcommand
+    type: string
+    doc: RapMap subcommand (quasiindex or quasimap)
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

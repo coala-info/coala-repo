@@ -1,8 +1,9 @@
 ---
 name: r-cdseq
-description: R package cdseq (documentation from project home).
+description: CDSeq deconvolutes bulk RNA-seq data to simultaneously estimate cell-type-specific gene expression profiles and sample-specific cell-type proportions. Use when user asks to perform bulk RNA-seq deconvolution, estimate the number of cell types in a mixture, or annotate estimated cell types using single-cell reference data.
 homepage: https://cran.r-project.org/web/packages/cdseq/index.html
 ---
+
 
 # r-cdseq
 

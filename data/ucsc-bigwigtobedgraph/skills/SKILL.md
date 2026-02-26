@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigtobedgraph
-description: The `ucsc-bigwigtobedgraph` skill provides a specialized workflow for decompressing and converting binary bigWig files into the ASCII-based bedGraph format.
+description: This tool converts binary bigWig files into the ASCII-based bedGraph format. Use when user asks to convert bigWig to bedGraph, extract raw signal values, or extract signal for a specific genomic region.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigtobedgraph
 

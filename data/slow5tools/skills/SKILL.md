@@ -1,8 +1,9 @@
 ---
 name: slow5tools
-description: slow5tools is a high-performance utility designed to manage the SLOW5 format, a streamlined alternative to the standard FAST5 format for ONT signal data.
+description: "slow5tools is a high-performance utility for managing, converting, and manipulating ONT signal data in the SLOW5 and BLOW5 formats. Use when user asks to convert FAST5 files to SLOW5 or BLOW5, index signal data for random access, merge or split datasets, and view or compress nanopore signal records."
 homepage: https://github.com/hasindu2008/slow5tools
 ---
+
 
 # slow5tools
 

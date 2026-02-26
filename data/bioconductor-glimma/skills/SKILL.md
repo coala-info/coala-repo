@@ -1,8 +1,9 @@
 ---
 name: bioconductor-glimma
-description: the package is available on all platforms; click for details.
+description: Glimma generates interactive HTML widgets for exploring differential expression analysis results from limma, edgeR, and DESeq2 workflows. Use when user asks to create interactive MDS plots, generate dynamic MA or volcano plots, or explore gene expression across samples through sortable tables and linked visualizations.
 homepage: https://bioconductor.org/packages/release/bioc/html/Glimma.html
 ---
+
 
 # bioconductor-glimma
 

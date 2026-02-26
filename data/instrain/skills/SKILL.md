@@ -1,8 +1,9 @@
 ---
 name: instrain
-description: inStrain is a specialized bioinformatics suite for the high-resolution analysis of co-occurring microbial populations.
+description: inStrain analyzes metagenomic read mappings to provide high-resolution insights into microbial microdiversity and strain-level population dynamics. Use when user asks to profile microbial samples, compare multiple populations using PopANI, call SNPs, or track strain evolution across longitudinal datasets.
 homepage: https://github.com/MrOlm/inStrain
 ---
+
 
 # instrain
 

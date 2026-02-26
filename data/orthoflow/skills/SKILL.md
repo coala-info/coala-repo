@@ -1,8 +1,9 @@
 ---
 name: orthoflow
-description: Orthoflow is a streamlined workflow for phylogenetic inference of genome-scale datasets.
+description: Orthoflow is a streamlined workflow that automates phylogenetic inference from raw genomic data to high-quality trees. Use when user asks to infer orthology, align sequences, reconstruct phylogenetic trees from GenBank or FASTA files, or generate diagnostic reports for genome-scale datasets.
 homepage: https://github.com/rbturnbull/orthoflow
 ---
+
 
 # orthoflow
 

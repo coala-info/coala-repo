@@ -1,8 +1,9 @@
 ---
 name: perl-perl4-corelibs
-description: This skill facilitates the maintenance and execution of legacy Perl codebases.
+description: This tool provides legacy Perl 4 standard libraries required to run historical scripts in modern Perl environments. Use when user asks to run legacy Perl scripts, resolve missing .pl library dependencies like flush.pl or ctime.pl, or maintain codebases transitioning from Perl 4 to Perl 5.
 homepage: http://metacpan.org/pod/Perl4-CoreLibs
 ---
+
 
 # perl-perl4-corelibs
 

@@ -1,8 +1,9 @@
 ---
 name: pango_aliasor
-description: `pango_aliasor` is a specialized utility for managing the complex nomenclature of SARS-CoV-2 Pango lineages.
+description: pango_aliasor manages SARS-CoV-2 Pango lineage nomenclature by converting between shortened aliases and full hierarchical strings. Use when user asks to uncompress aliases into full lineage names, compress full strings into standard aliases, or identify the parent of a specific lineage.
 homepage: https://github.com/corneliusroemer/pango_aliasor
 ---
+
 
 # pango_aliasor
 

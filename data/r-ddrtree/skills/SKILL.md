@@ -1,8 +1,9 @@
 ---
 name: r-ddrtree
-description: R package ddrtree (documentation from project home).
+description: This tool performs dimensionality reduction and principal graph learning using the Discriminative Dimensionality Reduction Tree algorithm. Use when user asks to perform manifold learning, infer cell trajectories in single-cell genomics, or reconstruct tree-structured latent variables from high-dimensional data.
 homepage: https://cran.r-project.org/web/packages/ddrtree/index.html
 ---
+
 
 # r-ddrtree
 

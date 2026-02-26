@@ -1,8 +1,9 @@
 ---
 name: stacks_summary
-description: The `stacks_summary` skill (utilizing the ResearchGPT framework) provides a specialized workflow for decomposing research papers into actionable technical data.
+description: This tool extracts technology stacks, summaries, and implementation challenges from research papers using a RAG-based architecture. Use when user asks to decompose research papers into technical data, extract technology stacks from PDFs, or summarize implementation challenges in academic documents.
 homepage: https://github.com/Jayrajsinh-Gohil/ResearchGPT
 ---
+
 
 # stacks_summary
 

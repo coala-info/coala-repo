@@ -1,8 +1,9 @@
 ---
 name: perl-b-debug
-description: The `perl-b-debug` tool provides a window into how the Perl interpreter compiles and structures code before execution.
+description: The perl-b-debug tool walks the Perl syntax tree to display the internal operations and structure of compiled code. Use when user asks to dump the operation tree, inspect how the Perl compiler interprets specific syntax, or debug the compilation phase of a script.
 homepage: http://metacpan.org/pod/B::Debug
 ---
+
 
 # perl-b-debug
 

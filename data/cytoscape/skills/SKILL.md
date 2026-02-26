@@ -1,8 +1,9 @@
 ---
 name: cytoscape
-description: Cytoscape is a premier open-source platform designed for the integration, analysis, and visualization of complex networks, such as molecular interactions, biological pathways, and social networks.
+description: Cytoscape is an open-source platform for integrating, analyzing, and visualizing complex networks and molecular interactions. Use when user asks to install Cytoscape via Bioconda, configure Java environment variables for performance, or implement automated network analysis workflows using headless mode and CyREST.
 homepage: https://cytoscape.org
 ---
+
 
 # cytoscape
 

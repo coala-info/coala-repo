@@ -1,8 +1,9 @@
 ---
 name: dazz_db
-description: The Dazzler Data Base (DAZZ_DB) is a specialized storage system designed to facilitate the multiple phases of the Dazzler assembler.
+description: The Dazzler Data Base organizes and manages PacBio read data and reference genomes in a compressed, indexed format for efficient assembly processing. Use when user asks to create a sequence database from FASTA files, partition datasets into blocks for parallel processing, manage metadata tracks, or convert between database and FASTA formats.
 homepage: https://github.com/thegenemyers/DAZZ_DB
 ---
+
 
 # dazz_db
 

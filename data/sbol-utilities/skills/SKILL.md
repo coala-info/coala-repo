@@ -1,8 +1,9 @@
 ---
 name: sbol-utilities
-description: The sbol-utilities skill provides a suite of tools for managing biological design data.
+description: The sbol-utilities tool provides a suite of utilities for managing, converting, and analyzing SBOL biological design data. Use when user asks to convert between SBOL and other formats like GenBank or FASTA, visualize design trees, compare document differences, calculate sequence complexity, or expand combinatorial designs.
 homepage: https://github.com/SynBioDex/SBOL-utilities
 ---
+
 
 # sbol-utilities
 

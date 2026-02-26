@@ -1,8 +1,9 @@
 ---
 name: whokaryote
-description: Whokaryote is a random forest classifier designed to distinguish between eukaryotic and prokaryotic contigs in metagenomic assemblies.
+description: Whokaryote classifies contigs from metagenomic assemblies as either eukaryotic or prokaryotic. Use when user asks to classify contigs by domain or generate separate fasta files for classified contigs.
 homepage: https://github.com/LottePronk/whokaryote
 ---
+
 
 # whokaryote
 

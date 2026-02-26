@@ -1,8 +1,9 @@
 ---
 name: r-fateid
-description: R package fateid (documentation from project home).
+description: This tool quantifies and visualizes cell fate bias in multi-lineage single-cell transcriptome data. Use when user asks to determine differentiation probabilities of progenitor cells, identify genes associated with fate decisions, or reconstruct differentiation trajectories.
 homepage: https://cran.r-project.org/web/packages/fateid/index.html
 ---
+
 
 # r-fateid
 

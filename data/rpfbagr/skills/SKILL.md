@@ -1,8 +1,9 @@
 ---
 name: rpfbagr
-description: The `rpfbagr` tool (also known as `straindesign`) is a specialized CLI for metabolic engineering.
+description: rpfbagr identifies optimal gene knockout strategies and simulates metabolic trade-offs to enhance metabolite production in metabolic models. Use when user asks to simulate gene deletions for strain design, reduce models by removing specific genes, or analyze metabolic trade-offs with Pareto plots.
 homepage: https://github.com/brsynth/rpfbagr
 ---
+
 
 # rpfbagr
 

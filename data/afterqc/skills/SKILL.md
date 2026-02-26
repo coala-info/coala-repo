@@ -1,8 +1,9 @@
 ---
 name: afterqc
-description: AfterQC is a specialized tool for the automated preprocessing of FASTQ files, primarily targeting Illumina sequencing data (1.8 or newer).
+description: AfterQC performs automated quality control, filtering, adapter trimming, and error correction for FASTQ sequencing data. Use when user asks to preprocess Illumina reads, detect bubble artifacts, correct mismatched bases in paired-end overlaps, or generate quality reports.
 homepage: https://github.com/OpenGene/AfterQC
 ---
+
 
 # afterqc
 

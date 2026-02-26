@@ -1,11 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: vgp-processcuration_split_agp
+baseCommand: split_agp
 label: vgp-processcuration_split_agp
-doc: "A tool from the vgp-processcuration suite. Note: The provided text contains
-  container execution logs and error messages rather than the tool's help documentation,
-  so specific arguments could not be extracted.\n\nTool homepage: https://github.com/vgl-hub/vgl-curation"
-inputs: []
+doc: "Correct AGP for sequence lengths, split the agp per haplotype, assign unlocs
+  and remove duplicated haplotigs\n\nTool homepage: https://github.com/vgl-hub/vgl-curation"
+inputs:
+  - id: agp_file
+    type: File
+    doc: Path to the curated AGP file
+    inputBinding:
+      position: 101
+      prefix: --agp
+  - id: fasta_file
+    type: File
+    doc: Path to the assembly fasta file
+    inputBinding:
+      position: 101
+      prefix: --fasta
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Path to the output directory
+    default: current directory
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bhc
-description: the package is available on all platforms; click for details.
+description: This tool performs bottom-up Bayesian Hierarchical Clustering to determine the optimal number of clusters and generate dendrograms for multinomial or time-course data. Use when user asks to perform model-based hierarchical clustering, cluster gene expression profiles, discretize continuous data for clustering, or analyze time-course datasets without pre-defining the number of clusters.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/BHC.html
 ---
+
 
 # bioconductor-bhc
 

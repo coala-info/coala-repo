@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maizeprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Maize Genome Array. Use when user asks to access probe sequences for maize microarrays or analyze Affymetrix maize genome data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/maizeprobe.html
 ---
+
 
 # bioconductor-maizeprobe
 

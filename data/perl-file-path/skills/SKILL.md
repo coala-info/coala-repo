@@ -1,8 +1,9 @@
 ---
 name: perl-file-path
-description: The `File::Path` module is the standard Perl utility for recursive directory management.
+description: The perl-file-path module provides functions for creating and removing directory trees recursively in Perl. Use when user asks to create nested directories, delete directory branches, or manage cross-platform filesystem paths.
 homepage: http://metacpan.org/pod/File::Path
 ---
+
 
 # perl-file-path
 

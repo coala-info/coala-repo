@@ -1,8 +1,9 @@
 ---
 name: jvarkit-wgscoverageplotter
-description: The `jvarkit-wgscoverageplotter` tool creates a visual representation of sequencing depth across an entire genome.
+description: This tool generates a visual representation of sequencing depth across an entire genome in SVG format from indexed BAM or CRAM files. Use when user asks to plot whole genome coverage, visualize sequencing depth, or identify large-scale genomic variations like aneuploidies and deletions.
 homepage: http://lindenb.github.io/jvarkit/WGSCoveragePlotter.html
 ---
+
 
 # jvarkit-wgscoverageplotter
 

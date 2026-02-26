@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mu6500subdcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file environment for the Affymetrix Mu6500SubD expression microarray. Use when user asks to process raw Mu6500SubD data, map probes to genes, or access chip definition information.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mu6500subdcdf.html
 ---
+
 
 # bioconductor-mu6500subdcdf
 

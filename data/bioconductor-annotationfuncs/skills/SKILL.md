@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationfuncs
-description: the package is available on all platforms; click for details.
+description: This tool provides high-level wrapper functions to simplify mapping and translation between different biological identifier types using Bioconductor annotation packages. Use when user asks to translate gene identifiers, find orthologs using INPARANOID data, or filter Gene Ontology and RefSeq results.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/AnnotationFuncs.html
 ---
+
 
 # bioconductor-annotationfuncs
 

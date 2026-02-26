@@ -1,8 +1,9 @@
 ---
 name: taxmapper
-description: Taxmapper is a specialized bioinformatics pipeline optimized for the identification and classification of microeukaryotes within metagenomic datasets.
+description: Taxmapper is a bioinformatics pipeline designed to identify and classify microeukaryotes in metagenomic datasets by mapping reads against reference databases. Use when user asks to identify microeukaryotes in metagenomic data, map reads against eukaryotic reference databases, or resolve complex eukaryotic community structures.
 homepage: https://bitbucket.org/dbeisser/taxmapper
 ---
+
 
 # taxmapper
 

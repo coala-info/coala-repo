@@ -1,8 +1,9 @@
 ---
 name: r-ic10trainingdata
-description: R package ic10trainingdata (documentation from project home).
+description: This package provides training datasets and genomic annotations for the iC10 breast cancer classifier. Use when user asks to access training data for iC10 group prediction, train the pamr classifier for breast cancer samples, or load copy number and expression profiles for integrated classification.
 homepage: https://cran.r-project.org/web/packages/ic10trainingdata/index.html
 ---
+
 
 # r-ic10trainingdata
 

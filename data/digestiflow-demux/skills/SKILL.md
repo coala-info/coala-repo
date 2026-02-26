@@ -1,8 +1,9 @@
 ---
 name: digestiflow-demux
-description: The `digestiflow-demux` tool acts as a command-line bridge between raw Illumina sequencing output and the Digestiflow web platform.
+description: Digestiflow-demux automates Illumina sequencing demultiplexing by integrating raw data processing with the Digestiflow web platform for metadata management and quality tracking. Use when user asks to execute demultiplexing runs, configure API access, perform dry runs, or push quality metrics to a Digestiflow server.
 homepage: https://github.com/bihealth/digestiflow-demux
 ---
+
 
 # digestiflow-demux
 

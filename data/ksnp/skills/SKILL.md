@@ -1,8 +1,9 @@
 ---
 name: ksnp
-description: The `ksnp` tool is a specialized utility for haplotype assembly using a k-mer based approach.
+description: The ksnp tool performs haplotype assembly and variant phasing using a k-mer based approach on aligned reads. Use when user asks to phase heterozygous variants, reconstruct individual haplotypes, or update a VCF file with phasing information.
 homepage: https://github.com/zhouqiansolab/KSNP
 ---
+
 
 # ksnp
 

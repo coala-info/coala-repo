@@ -1,8 +1,9 @@
 ---
 name: igv-reports
-description: The `igv-reports` tool is a Python-based utility designed to transform genomic site lists (VCF, BED, MAF) into interactive, standalone HTML documents.
+description: The igv-reports tool generates standalone, interactive HTML documents that allow for the visual inspection of genomic variants using an embedded IGV.js browser. Use when user asks to create portable variant reports, transform VCF or BED files into interactive HTML, or visualize genomic sites without a backend server.
 homepage: https://github.com/igvteam/igv-reports
 ---
+
 
 # igv-reports
 

@@ -1,8 +1,9 @@
 ---
 name: aragorn
-description: Aragorn is a specialized bioinformatic tool designed to identify tRNA and tmRNA genes within DNA sequences.
+description: Aragorn identifies tRNA and tmRNA genes within DNA sequences by searching for conserved secondary structures and sequence motifs. Use when user asks to detect tRNA or tmRNA genes, search circular genomes, specify alternative genetic codes, or output results in GFF format.
 homepage: http://www.ansikte.se/ARAGORN/
 ---
+
 
 # aragorn
 

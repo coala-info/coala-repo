@@ -1,8 +1,9 @@
 ---
 name: anndata2ri
-description: `anndata2ri` acts as a bridge between the two primary ecosystems for single-cell RNA sequencing analysis.
+description: "anndata2ri automates the conversion of data structures between Python's AnnData and R's SingleCellExperiment formats. Use when user asks to convert single-cell data between Scanpy and Bioconductor, transfer objects between Python and R in Jupyter notebooks, or bridge workflows between the two ecosystems without intermediate files."
 homepage: https://github.com/theislab/anndata2ri
 ---
+
 
 # anndata2ri
 

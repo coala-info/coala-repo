@@ -1,8 +1,9 @@
 ---
 name: sample-sheet
-description: The `sample-sheet` library provides a Pythonic interface for managing Illumina Sample Sheets, serving as a robust alternative to manual CSV manipulation or the Illumina Experiment Manager.
+description: The sample-sheet library provides a Pythonic interface for reading, editing, and generating Illumina Sample Sheets. Use when user asks to manage sample metadata, create or modify sample sheets programmatically, or convert sample sheets to JSON or Picard-compatible formats.
 homepage: https://github.com/clintval/sample-sheet
 ---
+
 
 # sample-sheet
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133afrmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors for performing Frozen Robust Multi-array Analysis on the Affymetrix Human Genome HT-U133A platform. Use when user asks to perform fRMA preprocessing, calculate gene-specific normalized unscaled standard error, or normalize hthgu133a microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133afrmavecs.html
 ---
+
 
 # bioconductor-hthgu133afrmavecs
 

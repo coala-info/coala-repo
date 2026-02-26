@@ -1,8 +1,9 @@
 ---
 name: lodei
-description: LoDEI (Local Differential Editing Index) is a specialized bioinformatics tool for identifying and quantifying differential RNA editing—specifically A-to-I transitions—between two sets of RNA-seq samples.
+description: LoDEI identifies and quantifies differential A-to-I RNA editing levels across genomic regions between two groups of RNA-seq samples. Use when user asks to detect differential editing, quantify regional editing indices, or compare epitranscriptomic landscapes between experimental conditions.
 homepage: https://github.com/rna-editing1/lodei
 ---
+
 
 # lodei
 

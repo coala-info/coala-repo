@@ -1,8 +1,9 @@
 ---
 name: r-ellipse
-description: Skill for using the CRAN R package r-ellipse.
+description: The r-ellipse package provides routines for computing and drawing ellipses and ellipse-like confidence regions for statistical models and correlation matrices. Use when user asks to visualize confidence regions for parameter estimates, plot correlation matrices as ellipses, or generate profile plots for non-linear regression models.
 homepage: https://cloud.r-project.org/web/packages/ellipse/index.html
 ---
+
 
 # r-ellipse
 

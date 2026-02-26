@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pwmenrich.mmusculus.background
-description: the package is available on all platforms; click for details.
+description: This package provides pre-compiled background distributions for motif enrichment analysis in mouse. Use when user asks to perform PWM enrichment analysis for Mus musculus, calculate motif significance, or access mouse-specific background DNA models.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Mmusculus.background.html
 ---
+
 
 # bioconductor-pwmenrich.mmusculus.background
 

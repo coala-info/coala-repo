@@ -1,8 +1,9 @@
 ---
 name: bioconductor-singlemoleculefootprinting
-description: the package is available on all platforms; click for details.
+description: SingleMoleculeFootprinting analyzes single-molecule footprinting data to study protein-DNA interactions and chromatin accessibility. Use when user asks to analyze single-molecule footprinting experiments, quantify DNA methylation at the single-molecule level, or map protein binding sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/SingleMoleculeFootprinting.html
 ---
+
 
 # bioconductor-singlemoleculefootprinting
 

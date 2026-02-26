@@ -1,8 +1,9 @@
 ---
 name: bioconductor-googlegenomics
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an R interface to the Google Genomics API for retrieving and processing genomic data using the GA4GH standard. Use when user asks to fetch genomic variants, retrieve sequence reads from Google Cloud, or convert GA4GH API data into Bioconductor objects like GRanges and GAlignments.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GoogleGenomics.html
 ---
+
 
 # bioconductor-googlegenomics
 

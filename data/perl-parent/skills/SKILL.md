@@ -1,8 +1,9 @@
 ---
 name: perl-parent
-description: The perl-parent skill provides procedural knowledge for interacting with Vipul's Razor v2, a collaborative network for identifying and filtering spam.
+description: This tool manages Vipul's Razor v2 to identify and filter spam using a collaborative network of statistical signatures. Use when user asks to check if a message is spam, report new spam, revoke false positives, register a reporter identity, or discover Razor servers.
 homepage: https://github.com/toddr/Razor2-Client-Agent
 ---
+
 
 # perl-parent
 

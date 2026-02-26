@@ -1,8 +1,9 @@
 ---
 name: r-mfassignr
-description: R package mfassignr (documentation from project home).
+description: MFAssignR provides expert guidance for assigning multi-element molecular formulas to ultrahigh resolution mass spectrometry data using the MFAssignR R package. Use when user asks to estimate noise levels, perform internal mass recalibration, filter isotopes, or assign molecular formulas to complex environmental mixtures.
 homepage: https://cran.r-project.org/web/packages/mfassignr/index.html
 ---
+
 
 # r-mfassignr
 

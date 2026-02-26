@@ -1,9 +1,9 @@
 # longqc CWL Generation Report
 
-## longqc
+## longqc_longQC.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log regarding a container runtime failure (no space left on device).
+longQC.py: A tool for quality control of long sequencing reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0
@@ -18,46 +18,22 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2164076380: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## longqc_longQC.py
-
-### Tool Description
-LongQC is a tool for quality control of long-read sequencing data. (Note: The provided help text contains only system error messages and no usage information; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0
-- **Homepage**: https://github.com/yfukasawa/LongQC
-- **Package**: https://anaconda.org/channels/bioconda/packages/longqc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1507649791: no space left on device
-```
-
-## longqc_minimap2-coverage
-
-### Tool Description
-LongQC minimap2-coverage tool (Note: The provided help text contains only system error logs and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0
-- **Homepage**: https://github.com/yfukasawa/LongQC
-- **Package**: https://anaconda.org/channels/bioconda/packages/longqc/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/longqc:1.2.0c--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3939661047: no space left on device
+/usr/local/bin/longQC.py: line 16: $'\n   Author: Yoshinori Fukasawa, Bioscience Core Lab @ KAUST, KSA\n\n   Project Name: longQC.py\n   Start Date: 2017-10-10\n\n   Usage:\n      longQC.py [options]\n\n      Try longQC.py': command not found
+/usr/local/bin/longQC.py: line 17: import: command not found
+/usr/local/bin/longQC.py: line 18: import: command not found
+/usr/local/bin/longQC.py: line 19: import: command not found
+/usr/local/bin/longQC.py: line 20: import: command not found
+/usr/local/bin/longQC.py: line 21: from: command not found
+/usr/local/bin/longQC.py: line 22: from: command not found
+/usr/local/bin/longQC.py: line 23: from: command not found
+/usr/local/bin/longQC.py: line 24: from: command not found
+/usr/local/bin/longQC.py: line 25: from: command not found
+/usr/local/bin/longQC.py: line 26: from: command not found
+/usr/local/bin/longQC.py: line 28: import: command not found
+/usr/local/bin/longQC.py: line 29: import: command not found
+/usr/local/bin/longQC.py: line 30: import: command not found
+/usr/local/bin/longQC.py: line 32: from: command not found
+/usr/local/bin/longQC.py: line 33: syntax error near unexpected token `('
+/usr/local/bin/longQC.py: line 33: `from lq_utils    import (eprint, open_seq_chunk, get_N50, subsample_from_chunk,'
 ```
 

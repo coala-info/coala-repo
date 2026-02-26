@@ -2,10 +2,63 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: wigeon
 label: wigeon
-doc: "The provided text does not contain help information or a description for the
-  tool 'wigeon'. It appears to be a log of a failed container build/fetch process.\n
-  \nTool homepage: https://github.com/alexmaybar/wigeonDB"
-inputs: []
+doc: "A tool for sequence alignment and database searching.\n\nTool homepage: https://github.com/alexmaybar/wigeonDB"
+inputs:
+  - id: db_fasta
+    type:
+      - 'null'
+      - File
+    doc: db in fasta format (megablast formatted)
+    inputBinding:
+      position: 101
+      prefix: --db_FASTA
+  - id: db_nast
+    type:
+      - 'null'
+      - File
+    doc: db in NAST format
+    inputBinding:
+      position: 101
+      prefix: --db_NAST
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Enable debug mode.
+    inputBinding:
+      position: 101
+      prefix: --DEBUG
+  - id: exec_dir
+    type:
+      - 'null'
+      - Directory
+    doc: cd to exec_dir before running
+    inputBinding:
+      position: 101
+      prefix: --exec_dir
+  - id: num_top_hits
+    type:
+      - 'null'
+      - int
+    doc: uses only the single best match.
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --num_top_hits
+  - id: plot
+    type:
+      - 'null'
+      - boolean
+    doc: Generate plots.
+    inputBinding:
+      position: 101
+      prefix: --plot
+  - id: query_nast
+    type: File
+    doc: multi-fasta file containing query sequences in alignment format
+    inputBinding:
+      position: 101
+      prefix: --query_NAST
 outputs:
   - id: stdout
     type: stdout

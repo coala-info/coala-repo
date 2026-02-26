@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biobtreer
-description: the package is available on all platforms; click for details.
+description: This tool provides an R interface to the biobtree utility for high-performance mapping and filtering of bioinformatics datasets using identifiers, keywords, and genomic coordinates. Use when user asks to perform chain mapping between biological databases, filter genomic features by attributes, or execute genomic range queries like overlaps and within.
 homepage: https://bioconductor.org/packages/release/bioc/html/biobtreeR.html
 ---
+
 
 # bioconductor-biobtreer
 

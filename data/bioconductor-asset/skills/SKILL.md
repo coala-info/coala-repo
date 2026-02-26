@@ -1,8 +1,9 @@
 ---
 name: bioconductor-asset
-description: The package allows the user to search through all possible subsets of z-scores to identify the subset of traits giving the best meta-analyzed z-score. Further, it returns a p-value adjusting for the multiple-testing involved in the search. It also allows for searching for the best combination of disease subtypes associated with each variant.
+description: ASSET performs subset-based meta-analysis to pool association signals across multiple studies, traits, or disease subtypes. Use when user asks to perform meta-analysis of summary-level data, analyze disease subtypes with individual-level data, or search for the strongest subset of association signals.
 homepage: https://bioconductor.org/packages/release/bioc/html/ASSET.html
 ---
+
 
 # bioconductor-asset
 

@@ -3,7 +3,7 @@
 ## cnv-phenopacket
 
 ### Tool Description
-A tool for converting CNV (Copy Number Variation) data to Phenopacket format. (Note: The provided text is a container runtime error log and does not contain the standard help documentation or argument list).
+Convert TSV metadata to Phenopacket JSON
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cnv-phenopacket:1.0.2
@@ -18,9 +18,17 @@ A tool for converting CNV (Copy Number Variation) data to Phenopacket format. (N
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cnv-phenopacket:1.0.2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2886968228: no space left on device
+usage: cnv-phenopacket [-h] -i INPUT [-o OUTPUT]
+
+Convert TSV metadata to Phenopacket JSON
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Input TSV metadata file name
+  -o OUTPUT, --output OUTPUT
+                        Output Phenopacket JSON file name (default:
+                        phenopacket.json)
 ```
 
 

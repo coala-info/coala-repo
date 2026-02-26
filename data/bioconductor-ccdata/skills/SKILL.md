@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ccdata
-description: the package is available on all platforms; click for details.
+description: This package provides processed gene expression data and pre-trained machine learning models from CMap and LINCS L1000 for drug discovery. Use when user asks to load moderated effect sizes, access drug perturbation variances, or retrieve pre-trained models for combination connectivity mapping.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ccdata.html
 ---
+
 
 # bioconductor-ccdata
 

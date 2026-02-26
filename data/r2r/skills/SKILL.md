@@ -1,8 +1,9 @@
 ---
 name: r2r
-description: The `r2r` tool is a specialized command-line utility designed to transform RNA secondary structure data into high-quality visual depictions.
+description: The r2r tool transforms RNA secondary structure data and multiple sequence alignments into high-quality consensus diagrams for scientific publication. Use when user asks to visualize RNA secondary structures, generate consensus diagrams from Stockholm files, or refine the aesthetic layout of RNA structural depictions.
 homepage: http://breaker.research.yale.edu/R2R/
 ---
+
 
 # r2r
 

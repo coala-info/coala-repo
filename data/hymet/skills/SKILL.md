@@ -1,8 +1,9 @@
 ---
 name: hymet
-description: HYMET (Hybrid Metagenomic Tool) is designed for high-accuracy taxonomic identification in metagenomic datasets.
+description: HYMET performs high-accuracy taxonomic identification and classification of metagenomic sequences using a multi-stage alignment and filtering pipeline. Use when user asks to classify long reads or assembled contigs, perform taxonomic identification in metagenomic datasets, or assign lineages to sequences using a weighted LCA resolver.
 homepage: https://github.com/inesbmartins02/HYMET
 ---
+
 
 # hymet
 

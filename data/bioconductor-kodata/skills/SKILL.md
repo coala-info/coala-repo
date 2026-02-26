@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kodata
-description: the package is available on all platforms; click for details.
+description: This package provides access to LINCS knock-out consensus genomic signatures and baseline gene expression data for various cell lines. Use when user asks to retrieve experimental gene knock-out signatures, access baseline RNA-seq or Affymetrix expression measurements, or identify genes impacted by specific knock-out perturbations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KOdata.html
 ---
+
 
 # bioconductor-kodata
 

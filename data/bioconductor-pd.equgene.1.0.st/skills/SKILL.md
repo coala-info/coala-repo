@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.equgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Equine Gene 1.0 ST Array. Use when user asks to analyze Affymetrix Equine Gene 1.0 ST Array data, access annotation information for equine microarrays, or process equine gene expression studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.equgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.equgene.1.0.st
 

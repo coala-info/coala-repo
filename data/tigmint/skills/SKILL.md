@@ -1,8 +1,10 @@
 ---
 name: tigmint
-description: Tigmint is a tool designed to improve the structural accuracy of genome assemblies.
+description: Tigmint improves genome assembly structural accuracy by identifying and cutting misassemblies based on read coverage drops. Use when user asks to correct genome assembly misassemblies, correct assembly with linked reads, correct assembly with long reads, or scaffold corrected assembly.
 homepage: https://bcgsc.github.io/tigmint/
 ---
+
+
 
 # tigmint
 

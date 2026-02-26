@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harman
-description: the package is available on all platforms; click for details.
+description: Harman removes batch effects from biological datasets using PCA and constrained optimization to preserve biological signal. Use when user asks to remove technical batch noise, perform PCA-based batch correction, visualize batch effects with arrow plots, or reconstruct corrected data matrices for downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/Harman.html
 ---
+
 
 # bioconductor-harman
 

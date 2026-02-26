@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bionero
-description: the package is available on all platforms; click for details.
+description: BioNERO performs comprehensive biological network analysis including gene coexpression and regulatory network inference, module detection, and network comparison. Use when user asks to preprocess expression data, infer gene coexpression or regulatory networks, identify hub genes, perform module-trait associations, or compare network preservation across species.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioNERO.html
 ---
+
 
 # bioconductor-bionero
 

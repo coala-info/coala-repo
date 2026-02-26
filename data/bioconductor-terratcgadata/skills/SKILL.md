@@ -1,8 +1,9 @@
 ---
 name: bioconductor-terratcgadata
-description: the package is available on all platforms; click for details.
+description: This package provides functions to access and manage The Cancer Genome Atlas (TCGA) data hosted on the Terra platform. Use when user asks to download TCGA datasets from Terra, access FireCloud data resources, or manage cancer genomics data in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/terraTCGAdata.html
 ---
+
 
 # bioconductor-terratcgadata
 

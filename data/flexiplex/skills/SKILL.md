@@ -1,8 +1,9 @@
 ---
 name: flexiplex
-description: Flexiplex is a high-performance, multithreaded C++ tool designed for the flexible demultiplexing and searching of sequencing reads.
+description: Flexiplex is a high-performance tool for the flexible demultiplexing and error-tolerant searching of sequencing reads. Use when user asks to demultiplex reads using known chemistries, discover unknown barcodes via flanking sequences, or search for specific sequences with allowed mismatches in long-read data.
 homepage: https://github.com/DavidsonGroup/flexiplex/
 ---
+
 
 # flexiplex
 

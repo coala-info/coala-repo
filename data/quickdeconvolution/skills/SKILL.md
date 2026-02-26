@@ -1,8 +1,9 @@
 ---
 name: quickdeconvolution
-description: QuickDeconvolution is a specialized tool designed for linked-reads bioinformatics.
+description: QuickDeconvolution identifies and separates distinct DNA fragments sharing the same barcode in linked-reads sequencing data without a reference genome. Use when user asks to deconvolve barcoded reads, assign reads to specific fragments, or append sub-barcode suffixes to linked-reads data.
 homepage: https://github.com/RolandFaure/QuickDeconvolution
 ---
+
 
 # quickdeconvolution
 

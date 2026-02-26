@@ -2,15 +2,19 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: msproteomicstools_tsv2spectrast.py
 label: msproteomicstools_tsv2spectrast.py
-doc: "A tool for converting TSV files to SpectraST format. (Note: The provided help
-  text contains system error messages regarding container execution and does not list
-  specific command-line arguments.)\n\nTool homepage: https://github.com/msproteomicstools/msproteomicstools"
-inputs: []
+doc: "Converts TSV files to Spectrast format.\n\nTool homepage: https://github.com/msproteomicstools/msproteomicstools"
+inputs:
+  - id: input_tsv
+    type: File
+    doc: Input TSV file
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_spectrast
+    type: File
+    doc: Output Spectrast file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/msproteomicstools:0.11.0--py27h8b767f7_4
-stdout: msproteomicstools_tsv2spectrast.py.out
+    dockerPull: quay.io/biocontainers/msproteomicstools:0.11.0--py27h6d73bfa_0

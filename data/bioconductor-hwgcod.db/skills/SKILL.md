@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hwgcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides SQLite-based annotation mappings between manufacturer identifiers for the hwgcod platform and various biological databases. Use when user asks to map probes to gene symbols, retrieve functional annotations like GO terms or KEGG pathways, or find chromosomal locations for the hwgcod platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hwgcod.db.html
 ---
+
 
 # bioconductor-hwgcod.db
 

@@ -1,8 +1,9 @@
 ---
 name: usalign
-description: US-align is a unified protocol for comparing 3D structures of diverse macromolecules.
+description: US-align compares and aligns 3D structures of diverse macromolecules to generate optimal structural alignments. Use when user asks to 'align 3D structures of macromolecules', 'align multiple structures', 'superimpose structures based on residue index', or 'superimpose structures based on sequence alignment'.
 homepage: https://zhanggroup.org/US-align
 ---
+
 
 # usalign
 

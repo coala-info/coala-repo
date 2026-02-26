@@ -1,8 +1,9 @@
 ---
 name: bacpage
-description: bacpage is a Snakemake-based bioinformatics pipeline designed to streamline the assembly and analysis of bacterial genomes.
+description: bacpage is a Snakemake-based bioinformatics pipeline for the assembly and analysis of bacterial genomes. Use when user asks to assemble bacterial genomes, perform variant calling, conduct phylogenetic inference, or identify antimicrobial resistance genes and virulence factors.
 homepage: https://github.com/CholGen/bacpage
 ---
+
 
 # bacpage
 

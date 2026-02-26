@@ -1,16 +1,60 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metabinner_run_metabinner.sh
+baseCommand: bash run_metabinner.sh
 label: metabinner_run_metabinner.sh
-doc: "A tool for binning metagenomic sequences. (Note: The provided text contains
-  container runtime error messages rather than command-line help documentation.)\n
-  \nTool homepage: https://github.com/ziyewang/MetaBinner"
-inputs: []
+doc: "Run the MetaBinner pipeline\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
+inputs:
+  - id: contig_file
+    type: File
+    doc: metagenomic assembly file
+    inputBinding:
+      position: 101
+      prefix: -a
+  - id: coverage_profile
+    type: File
+    doc: coverage_profile.tsv; The coverage profiles, containing a table where 
+      each row correspond to a contig, and each column correspond to a sample. 
+      All values are separated with tabs.
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: dataset_scale
+    type:
+      - 'null'
+      - string
+    doc: Dataset scale; eg. small,large,huge
+    inputBinding:
+      position: 101
+      prefix: -s
+  - id: kmer_profile
+    type: File
+    doc: kmer_profile.csv; The composition profiles, containing a table where 
+      each row correspond to a contig, and each column correspond to the kmer 
+      composition of particular kmer. All values are separated with comma.
+    inputBinding:
+      position: 101
+      prefix: -k
+  - id: path_to_metabinner
+    type: Directory
+    doc: path to MetaBinner; e.g. /home/wzy/MetaBinner
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_dir
+    type: Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.output_dir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
-stdout: metabinner_run_metabinner.sh.out

@@ -1,8 +1,9 @@
 ---
 name: oatk
-description: oatk (Organelle Assembly ToolKit) is a specialized suite designed to reconstruct complex plant organelle genomes.
+description: oatk is a specialized toolkit designed to reconstruct and annotate plant organelle genomes from high-fidelity sequencing reads or assembly graphs. Use when user asks to assemble mitochondrial or plastid genomes, extract organelle sequences from GFA files, or resolve circular genome structures using HMM profiles.
 homepage: https://github.com/c-zhou/oatk
 ---
+
 
 # oatk
 

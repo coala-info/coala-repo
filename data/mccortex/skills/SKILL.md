@@ -1,8 +1,9 @@
 ---
 name: mccortex
-description: McCortex is a powerful suite of modular tools designed for population-scale genomics.
+description: McCortex is a suite of tools that uses colored de Bruijn graphs for population-scale de novo assembly and variant calling. Use when user asks to build or clean genomic graphs, call variants in reference-guided or reference-free contexts, or generate automated pipelines for joint calling.
 homepage: https://github.com/mcveanlab/mccortex
 ---
+
 
 # mccortex
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enhancerhomologsearch
-description: the package is available on all platforms; click for details.
+description: This tool identifies orthologous regulatory elements across species by comparing histone marks and transcription factor binding pattern similarity. Use when user asks to identify enhancer homologs, search for orthologous regulatory elements using ENCODE data, or calculate transcription factor binding pattern similarity between species.
 homepage: https://bioconductor.org/packages/release/bioc/html/enhancerHomologSearch.html
 ---
+
 
 # bioconductor-enhancerhomologsearch
 

@@ -1,8 +1,9 @@
 ---
 name: bandage_ng
-description: Bandage-NG (Bioinformatics Application for Navigating De novo Assembly Graphs Easily - Next Generation) is a tool that transforms the abstract connectivity of assembly graphs into interpretable visual maps.
+description: "Bandage-NG visualizes and analyzes de novo assembly graphs to show the relationships between contigs. Use when user asks to visualize assembly graphs, generate images of GFA files, or extract assembly statistics like N50 and total length."
 homepage: https://github.com/asl/BandageNG
 ---
+
 
 # bandage_ng
 

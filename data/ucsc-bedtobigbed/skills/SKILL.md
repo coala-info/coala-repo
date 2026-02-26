@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedtobigbed
-description: The `bedToBigBed` utility is a core tool from the UCSC Genome Browser "kent" suite.
+description: The ucsc-bedtobigbed tool converts standard BED files into indexed bigBed files. Use when user asks to convert BED files to bigBed, define custom fields for bigBed, or create bigBed files searchable by name.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedtobigbed
 

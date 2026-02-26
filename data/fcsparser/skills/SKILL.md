@@ -1,8 +1,9 @@
 ---
 name: fcsparser
-description: fcsparser is a lightweight Python library dedicated to parsing FCS files, the standard data format in flow cytometry.
+description: fcsparser is a Python library designed to parse and extract metadata and event data from flow cytometry standard (FCS) files. Use when user asks to parse FCS files, extract cytometry metadata, or load flow cytometry data into a pandas DataFrame for analysis.
 homepage: https://github.com/eyurtsev/fcsparser
 ---
+
 
 # fcsparser
 

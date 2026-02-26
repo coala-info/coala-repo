@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowpeaks
-description: the package is available on all platforms; click for details.
+description: The bioconductor-flowpeaks package implements a fast, unsupervised clustering algorithm for flow cytometry data using K-means partitioning and density peak finding. Use when user asks to cluster flow cytometry data, identify cell populations based on density peaks, or visualize irregular cluster boundaries in multidimensional flow data.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowPeaks.html
 ---
+
 
 # bioconductor-flowpeaks
 

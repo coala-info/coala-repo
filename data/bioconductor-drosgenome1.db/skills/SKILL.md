@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosgenome1.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Drosophila Genome 1.0 Array to map probe identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, retrieve Entrez IDs, find genomic locations, or access functional annotations like GO terms and KEGG pathways for Drosophila microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1.db.html
 ---
+
 
 # bioconductor-drosgenome1.db
 

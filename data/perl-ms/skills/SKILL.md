@@ -1,8 +1,9 @@
 ---
 name: perl-ms
-description: The `perl-ms` suite provides a robust set of libraries for computational proteomics and mass spectrometry.
+description: The perl-ms suite provides libraries for computational proteomics and mass spectrometry data parsing, chemical calculations, and identification analysis. Use when user asks to parse mass spectrometry data files, calculate peptide masses or isotopic distributions, and process identification results from search engines.
 homepage: http://metacpan.org/pod/MS
 ---
+
 
 # perl-ms
 

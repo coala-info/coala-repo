@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.btaurus.ucsc.bostau8
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Bos taurus based on the UCSC bosTau8 assembly for use in R. Use when user asks to access cow genome sequences, extract DNA sub-sequences, perform genome-wide motif searching, or retrieve upstream promoter sequences.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Btaurus.UCSC.bosTau8.html
 ---
+
 
 # bioconductor-bsgenome.btaurus.ucsc.bostau8
 

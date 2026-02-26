@@ -1,8 +1,9 @@
 ---
 name: bioconductor-censcyt
-description: the package is available on all platforms; click for details.
+description: This tool performs differential abundance analysis in cytometry data when a covariate is subject to right censoring. Use when user asks to analyze cell population abundance associated with survival time, perform differential abundance testing with censored variables, or apply multiple imputation to cytometry datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/censcyt.html
 ---
+
 
 # bioconductor-censcyt
 

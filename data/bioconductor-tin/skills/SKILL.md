@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tin
-description: the package is available on all platforms; click for details.
+description: The bioconductor-tin package calculates the Transcriptome Instability Index to measure transcriptome instability from gene expression data. Use when user asks to calculate the Transcriptome Instability Index, analyze transcriptome instability, or evaluate exon-level expression profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/TIN.html
 ---
+
 
 # bioconductor-tin
 

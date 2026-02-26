@@ -1,8 +1,9 @@
 ---
 name: cliquesnv
-description: CliqueSNV is a specialized bioinformatic tool for the reconstruction of viral sub-populations (haplotypes) within a single host.
+description: CliqueSNV reconstructs viral haplotypes and identifies sub-populations from sequencing data using a graph-based approach to distinguish true biological variation from errors. Use when user asks to reconstruct viral haplotypes, perform variant calling for Illumina or PacBio reads, or determine the genetic diversity and frequency of viral strains in a sample.
 homepage: https://github.com/vtsyvina/CliqueSNV
 ---
+
 
 # cliquesnv
 

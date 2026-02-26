@@ -1,8 +1,9 @@
 ---
 name: r-geoaxe
-description: Skill for using the CRAN R package r-geoaxe.
+description: This R package subdivides large geospatial objects into smaller, more manageable pieces for easier processing or API compatibility. Use when user asks to chop spatial polygons, split WKT strings into smaller chunks, or subdivide GeoJSON objects.
 homepage: https://cran.r-project.org/web/packages/geoaxe/index.html
 ---
+
 
 # r-geoaxe
 

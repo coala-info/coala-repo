@@ -1,8 +1,9 @@
 ---
 name: r-recetox-aplcms
-description: R package recetox-aplcms (documentation from project home).
+description: This tool processes high-resolution mass spectrometry data for large-scale untargeted metabolomics studies through noise reduction, peak identification, and alignment. Use when user asks to extract peaks from LC-MS data, align features across multiple samples, or perform retention time correction.
 homepage: https://cran.r-project.org/web/packages/recetox-aplcms/index.html
 ---
+
 
 # r-recetox-aplcms
 

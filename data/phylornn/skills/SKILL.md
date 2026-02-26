@@ -1,8 +1,9 @@
 ---
 name: phylornn
-description: PhyloRNN is a specialized machine learning framework that applies Recurrent Neural Networks to the problem of evolutionary rate estimation.
+description: PhyloRNN is a machine learning framework that uses recurrent neural networks to estimate evolutionary rates from phylogenetic data. Use when user asks to simulate synthetic alignments, train RNN models on phylogenetic data, or predict evolutionary rates for empirical sequences.
 homepage: https://github.com/phyloRNN/phyloRNN
 ---
+
 
 # phylornn
 

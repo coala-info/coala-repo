@@ -1,8 +1,9 @@
 ---
 name: ezomero
-description: The `ezomero` library is a high-level Python wrapper designed to simplify interactions with OMERO servers.
+description: ezomero is a Python wrapper that simplifies bioimaging data management and interactions with OMERO servers. Use when user asks to connect to an OMERO server, manage image metadata, or perform bulk table operations between OMERO and Python environments.
 homepage: https://github.com/TheJacksonLaboratory/ezomero
 ---
+
 
 # ezomero
 

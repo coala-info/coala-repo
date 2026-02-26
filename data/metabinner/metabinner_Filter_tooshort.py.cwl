@@ -1,11 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metabinner_Filter_tooshort.py
+baseCommand: Filter_tooshort.py
 label: metabinner_Filter_tooshort.py
-doc: "A tool to filter sequences that are too short (Note: The provided help text
-  contains only system error messages and no usage information).\n\nTool homepage:
-  https://github.com/ziyewang/MetaBinner"
-inputs: []
+doc: "Filters out short sequences from a FASTA file.\n\nTool homepage: https://github.com/ziyewang/MetaBinner"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input FASTA file
+    inputBinding:
+      position: 1
+  - id: k
+    type: int
+    doc: Minimum sequence length to keep
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

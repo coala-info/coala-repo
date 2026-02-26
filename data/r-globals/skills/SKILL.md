@@ -1,8 +1,9 @@
 ---
 name: r-globals
-description: "Identifies global (\"unknown\" or \"free\") objects in R expressions     by code inspection using various strategies (ordered, liberal,     conservative, or deep-first search). The objective of this package is to     make it as simple as possible to identify global objects for the purpose     of exporting them in parallel, distributed compute environments.</p>"
+description: This tool identifies global objects and functions in R expressions through static code analysis. Use when user asks to identify free variables, find dependencies for parallel execution, or determine which objects must be exported to external R workers.
 homepage: https://cloud.r-project.org/web/packages/globals/index.html
 ---
+
 
 # r-globals
 

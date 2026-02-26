@@ -1,8 +1,9 @@
 ---
 name: downpore
-description: `downpore` is a specialized suite of tools optimized for the pre-processing and analysis phases of genome assembly.
+description: Downpore is a suite of tools for the pre-processing and analysis of long-read genomic data. Use when user asks to trim adapters, de-multiplex barcodes, map reads to a reference, or detect overlaps between reads.
 homepage: https://github.com/jteutenberg/downpore
 ---
+
 
 # downpore
 

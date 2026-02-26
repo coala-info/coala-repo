@@ -1,8 +1,9 @@
 ---
 name: bioconductor-desousa2013
-description: the package is available on all platforms; click for details.
+description: This package provides a pipeline for the molecular classification of colon cancer into three distinct subtypes using microarray data. Use when user asks to identify colon cancer subtypes, perform consensus clustering, build a PAM classifier, or conduct survival analysis on colorectal cancer datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DeSousa2013.html
 ---
+
 
 # bioconductor-desousa2013
 

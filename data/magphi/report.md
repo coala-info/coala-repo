@@ -1,9 +1,10 @@
 # magphi CWL Generation Report
 
-## magphi
+## magphi_Magphi
 
 ### Tool Description
-A tool for the extraction and analysis of prophages and other genomic islands from bacterial genomes.
+Welcome to Magphi! This program will extract sequences and possible
+annotations within a set of seed sequences given as input.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/magphi:2.0.2--pyhdfd78af_0
@@ -18,11 +19,47 @@ A tool for the extraction and analysis of prophages and other genomic islands fr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/magphi:2.0.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1319177052: no space left on device
+usage: Magphi [-h] -g .fa/.gff [.fa/.gff ...] -s multi_fasta_file.fa [-is]
+              [-md int] [-p] [-S] [-b | -n] [-o path/to/output] [-c int]
+              [-l | -q] [--check] [-v]
+
+Welcome to Magphi! This program will extract sequences and possible
+annotations within a set of seed sequences given as input.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g .fa/.gff [.fa/.gff ...], --input_genomes .fa/.gff [.fa/.gff ...]
+                        Give the fasta or gff3 files. (gff3 files should
+                        contain the genome fasta sequence)
+  -s multi_fasta_file.fa, --input_seeds multi_fasta_file.fa
+                        Give the multi fasta containing the seed sequences to
+                        be used for extracting sequnces
+  -is, --include_seeds  Argument to include the seeds in the
+                        sequence/annotations extracted [default: seeds are
+                        removed]
+  -md int, --max_seed_distance int
+                        The maximum distance with which seeds will be merged.
+                        This can often be set a bit higher than an expected
+                        size of a region If no maximum distance is wanted then
+                        set to 0 [default: 50,000bp]
+  -p, --protein_seed    to use tblastn instead of blastn when protein seeds
+                        are supplied - useful for hits across diverse genomes
+  -S, --stop_orientation
+                        Argument to NOT reorient output sequences and
+                        annotations by first seed in pair (Only for connected
+                        seed not contig breaks) [default: sequences and
+                        annotations are oriented]
+  -b, --print_breaks    Argument to print outputs when seeds are next to
+                        contig breaks [default: sequences are not printed]
+  -n, --no_sequences    Argument to not print outputs related to annotations
+                        or sequences found between seeds [default: sequences
+                        are printed]
+  -o path/to/output, --output_folder path/to/output
+                        Give path to output folder [default: current folder]
+  -c int, --cpu int     Give max number of CPUs [default: 1]
+  -l, --log             Record program progress in for debugging purpose
+  -q, --quiet           Only print warnings
+  --check               Check dependencies for Magphi and exit
+  -v, --version         show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

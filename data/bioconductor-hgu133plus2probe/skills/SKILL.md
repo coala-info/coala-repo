@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133plus2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and physical coordinates for the Affymetrix HG-U133 Plus 2.0 microarray. Use when user asks to access probe sequences, map probes to coordinates, or perform GC-content based normalization for hgu133plus2 arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133plus2probe.html
 ---
+
 
 # bioconductor-hgu133plus2probe
 

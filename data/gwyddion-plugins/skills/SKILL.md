@@ -1,8 +1,9 @@
 ---
 name: gwyddion-plugins
-description: This skill provides guidance on extending Gwyddion's capabilities using the `gwyddion-plugins` collection.
+description: This tool extends Gwyddion's capabilities for handling multi-channel scanning probe microscopy data through specialized Python plugins. Use when user asks to batch export all data channels to a structured directory or isolate a single channel into a new workspace while preserving metadata.
 homepage: https://github.com/tuxu/gwyddion-plugins
 ---
+
 
 # gwyddion-plugins
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwas.bayes
-description: the package is available on all platforms; click for details.
+description: This tool performs Bayesian iterative procedures for the statistical analysis of Gaussian genome-wide association study data. Use when user asks to identify causal SNPs, perform fine-mapping in related individuals, or control for population structure and kinship using BICOSS and GINA.
 homepage: https://bioconductor.org/packages/release/bioc/html/GWAS.BAYES.html
 ---
+
 
 # bioconductor-gwas.bayes
 

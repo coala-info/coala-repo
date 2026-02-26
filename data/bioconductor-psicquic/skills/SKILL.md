@@ -1,8 +1,9 @@
 ---
 name: bioconductor-psicquic
-description: the package is available on all platforms; click for details.
+description: This R package provides a programmatic interface to query and retrieve molecular interaction data from multiple PSICQUIC-compliant services. Use when user asks to retrieve protein-protein interactions, query molecular interaction databases, or access standardized interaction data from multiple providers.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/PSICQUIC.html
 ---
+
 
 # bioconductor-psicquic
 

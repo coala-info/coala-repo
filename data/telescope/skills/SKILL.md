@@ -1,8 +1,9 @@
 ---
 name: telescope
-description: Telescope provides a specialized workflow for estimating the expression of individual transposable element loci.
+description: Telescope estimates the expression of individual transposable element loci by reassigning multi-mapping RNA-seq reads using a Bayesian model. Use when user asks to quantify specific transposable element insertions, reassign multi-mapping reads, or analyze locus-specific TE expression.
 homepage: https://github.com/mlbendall/telescope
 ---
+
 
 # telescope
 

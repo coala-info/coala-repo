@@ -3,26 +3,44 @@
 ## openmg
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help text or usage information for the tool 'openmg'.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/openmg:0.1--0
 - **Homepage**: https://github.com/aristanetworks/openmgmt
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/openmg/overview
 - **Total Downloads**: 8.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/aristanetworks/openmgmt
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/openmg:0.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4204887850: no space left on device
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader.main(JarRsrcLoader.java:56)
+Caused by: java.lang.NullPointerException
+	at org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator.getMolecularFormula(MolecularFormulaManipulator.java:440)
+	at org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator.getMolecularFormula(MolecularFormulaManipulator.java:407)
+	at org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator.getMolecularFormula(MolecularFormulaManipulator.java:383)
+	at org.omg.OMG.initializeMolecule(OMG.java:152)
+	at org.omg.OMG.main(OMG.java:134)
+	... 5 more
 ```
 
-
-## Metadata
-- **Skill**: not generated

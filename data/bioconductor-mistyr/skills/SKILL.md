@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mistyr
-description: the package is available on all platforms; click for details.
+description: mistyR is a spatial modeling framework for analyzing intercellular communication and spatial dependencies in high-dimensional data. Use when user asks to model spatial interactions, analyze intercellular communication, or perform multiview spatial modeling on spatial transcriptomics or proteomics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mistyR.html
 ---
+
 
 # bioconductor-mistyr
 

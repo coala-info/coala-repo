@@ -1,8 +1,9 @@
 ---
 name: bioconductor-linc
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs co-expression analysis between long intergenic non-coding RNAs and protein-coding genes to predict biological functions. Use when user asks to compute co-expression networks, identify biological contexts for lincRNAs via guilty by association, perform functional enrichment analysis, or analyze specific lincRNA queries across multiple datasets.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/LINC.html
 ---
+
 
 # bioconductor-linc
 

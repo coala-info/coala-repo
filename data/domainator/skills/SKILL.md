@@ -1,8 +1,9 @@
 ---
 name: domainator
-description: Domainator is a modular bioinformatics suite designed for workflows centered on protein domains and their genomic contexts.
+description: Domainator is a modular bioinformatics suite for annotating protein domains and analyzing their genomic contexts using GenBank files. Use when user asks to annotate sequences with HMMs, extract genomic neighborhoods, deduplicate sequences, or perform comparative analysis of gene clusters.
 homepage: https://github.com/nebiolabs/domainator
 ---
+
 
 # domainator
 

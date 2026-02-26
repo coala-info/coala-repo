@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iloreg
-description: the package is available on all platforms; click for details.
+description: ILoReg identifies cell populations from single-cell RNA-seq data using a self-supervised learning algorithm called Iterative Clustering Projection. Use when user asks to perform high-resolution clustering, identify rare cell populations, extract probabilistic features via ICP, or conduct differential expression analysis in scRNA-seq workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/ILoReg.html
 ---
+
 
 # bioconductor-iloreg
 

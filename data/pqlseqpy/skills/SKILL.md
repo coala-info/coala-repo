@@ -1,8 +1,9 @@
 ---
 name: pqlseqpy
-description: pqlseqpy is a high-performance Python implementation of the Penalized Quasi-Likelihood method designed for binomial count data.
+description: pqlseqpy is a high-performance Python implementation of the Penalized Quasi-Likelihood method for modeling binomial count data in population genetics. Use when user asks to estimate fixed-effect coefficients, model allele frequencies with latent random effects, or account for population structure using relatedness matrices.
 homepage: https://github.com/mokar2001/PQLseqPy
 ---
+
 
 # pqlseqpy
 

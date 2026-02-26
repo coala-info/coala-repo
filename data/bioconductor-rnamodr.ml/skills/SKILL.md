@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnamodr.ml
-description: the package is available on all platforms; click for details.
+description: RNAmodR.ML provides machine learning methods for detecting RNA modifications from high-throughput sequencing data. Use when user asks to detect RNA modifications using machine learning, predict modification sites, or analyze sequencing data for chemical modifications.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAmodR.ML.html
 ---
+
 
 # bioconductor-rnamodr.ml
 

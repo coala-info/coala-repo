@@ -1,8 +1,9 @@
 ---
 name: pybda
-description: PyBDA (Python Big Data Analytics) is a specialized tool for processing massive biological data sets that exceed the capacity of standard single-node tools.
+description: PyBDA processes massive biological datasets using Apache Spark and Snakemake to perform parallelized analytical workflows. Use when user asks to perform large-scale dimension reduction, run K-means clustering on big data, or execute distributed machine learning pipelines.
 homepage: https://github.com/cbg-ethz/pybda
 ---
+
 
 # pybda
 

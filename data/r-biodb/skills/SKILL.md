@@ -1,8 +1,9 @@
 ---
 name: r-biodb
-description: R package biodb (documentation from project home).
+description: "r-biodb is an R package framework for accessing and querying biological and chemical databases through a unified interface. Use when user asks to retrieve database entries by accession number, search for compounds by name or mass, perform mass spectrometry searches, or develop new database connectors in R."
 homepage: https://cran.r-project.org/web/packages/biodb/index.html
 ---
+
 
 # r-biodb
 

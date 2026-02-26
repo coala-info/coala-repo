@@ -1,8 +1,9 @@
 ---
 name: artfastqgenerator
-description: ArtificialFastqGenerator is a specialized tool for creating artificial Next-Generation Sequencing (NGS) data.
+description: ArtificialFastqGenerator generates synthetic paired-end FASTQ files from a reference genome with customizable sequencing parameters and error profiles. Use when user asks to simulate NGS data, create ground truth datasets for pipeline validation, or replicate the quality score profiles of existing sequencing runs.
 homepage: 
 ---
+
 
 # artfastqgenerator
 

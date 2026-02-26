@@ -1,8 +1,9 @@
 ---
 name: r-fgwas
-description: R package fgwas (documentation from project home).
+description: The r-fgwas package performs genome-wide association analysis for longitudinal phenotypes using functional mapping models to identify relationships between genes and dynamic trait trajectories. Use when user asks to perform a longitudinal GWAS, scan SNPs for time-varying genetic effects, simulate synthetic growth curve data, or visualize genetic effect curves.
 homepage: https://cran.r-project.org/web/packages/fgwas/index.html
 ---
+
 
 # r-fgwas
 

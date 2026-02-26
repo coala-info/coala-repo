@@ -1,8 +1,9 @@
 ---
 name: genefuse
-description: GeneFuse is a high-performance tool designed to detect gene fusions directly from raw FASTQ files without requiring prior alignment (mapping) to the whole genome.
+description: GeneFuse detects gene fusions directly from raw FASTQ files without requiring prior alignment to a reference genome. Use when user asks to detect gene fusions, identify druggable or COSMIC-curated fusions, or generate visualizations of fusion breakpoints and supporting reads.
 homepage: https://github.com/OpenGene/genefuse
 ---
+
 
 # genefuse
 

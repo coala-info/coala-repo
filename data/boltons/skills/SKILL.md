@@ -1,8 +1,9 @@
 ---
 name: boltons
-description: Boltons is a comprehensive collection of over 250 pure-Python utilities designed to supplement the standard library.
+description: Boltons is a comprehensive collection of pure-Python utilities that provides specialized data structures, advanced iterators, and robust file helpers to supplement the standard library. Use when user asks to perform advanced iteration like chunking or windowing, manage nested data with recursive mapping, implement atomic file saving, or use specialized containers like ordered multi-dictionaries and LRU caches.
 homepage: https://github.com/mahmoud/boltons
 ---
+
 
 # boltons
 

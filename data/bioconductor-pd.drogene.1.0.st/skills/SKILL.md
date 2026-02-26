@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.drogene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Drosophila Gene 1.0 ST expression microarray. Use when user asks to process Drosophila Gene 1.0 ST array data, access microarray platform design information, or analyze Affymetrix expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.drogene.1.0.st.html
 ---
+
 
 # bioconductor-pd.drogene.1.0.st
 

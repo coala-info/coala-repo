@@ -1,8 +1,9 @@
 ---
 name: preface
-description: PREFACE (PREdict FetAl ComponEnt) is a specialized bioinformatics tool for estimating the "fetal fraction"—the proportion of fetal-derived cell-free DNA in maternal plasma.
+description: PREFACE estimates the fetal fraction from shallow-depth whole-genome sequencing data using supervised learning models. Use when user asks to estimate the proportion of fetal-derived cell-free DNA, train laboratory-specific models, or predict fetal fraction from copy number alteration files.
 homepage: https://github.com/CenterForMedicalGeneticsGhent/PREFACE
 ---
+
 
 # preface
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pharmacogx
-description: the package is available on all platforms; click for details.
+description: PharmacoGx is an R package for the integrated analysis of large-scale pharmacogenomic datasets. Use when user asks to analyze drug sensitivity data, calculate dose-response curves, or identify biomarkers from molecular and pharmacological profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/PharmacoGx.html
 ---
+
 
 # bioconductor-pharmacogx
 

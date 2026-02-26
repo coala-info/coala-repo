@@ -1,8 +1,9 @@
 ---
 name: maxalign-rs
-description: maxalign-rs is a high-performance Rust reimplementation of the MaxAlign algorithm.
+description: maxalign-rs optimizes multiple sequence alignments by removing sequences that introduce gaps to maximize the total alignment area. Use when user asks to optimize a multiple sequence alignment, remove gap-heavy sequences, maximize alignment area for phylogenetic inference, or clean up FASTA files while protecting specific reference sequences.
 homepage: https://github.com/apcamargo/maxalign-rs
 ---
+
 
 # maxalign-rs
 

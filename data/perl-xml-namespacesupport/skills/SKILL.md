@@ -1,8 +1,9 @@
 ---
 name: perl-xml-namespacesupport
-description: The `perl-xml-namespacesupport` skill centers on the `XML::NamespaceSupport` Perl module, a lightweight and generic class for processing namespaced XML names.
+description: This Perl module provides a generic class for managing and resolving XML namespaces within parsers or processing scripts. Use when user asks to implement namespace handling in Perl, manage prefix-to-URI mappings, or resolve qualified names during XML processing.
 homepage: https://github.com/perigrin/xml-namespacesupport
 ---
+
 
 # perl-xml-namespacesupport
 

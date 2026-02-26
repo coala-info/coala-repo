@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: themis
 label: themis
-doc: "The provided text does not contain help information for the tool 'themis'. It
-  appears to be a log output from a container runtime (Apptainer/Singularity) failure
-  during an image build process.\n\nTool homepage: https://github.com/xujialupaoli/Themis"
-inputs: []
+doc: "Themis: a robust and accurate species-level metagenomic profiler.\n\nTool homepage:
+  https://github.com/xujialupaoli/Themis"
+inputs:
+  - id: command
+    type: string
+    doc: 'The command to run. Available commands: build-custom, profile.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

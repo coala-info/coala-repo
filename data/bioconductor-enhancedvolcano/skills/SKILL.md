@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enhancedvolcano
-description: the package is available on all platforms; click for details.
+description: This tool creates highly-configurable, publication-ready volcano plots from differential expression results. Use when user asks to visualize gene expression data, create volcano plots, highlight specific genes of interest, or customize plot aesthetics like colors and labels.
 homepage: https://bioconductor.org/packages/release/bioc/html/EnhancedVolcano.html
 ---
+
 
 # bioconductor-enhancedvolcano
 

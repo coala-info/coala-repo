@@ -1,8 +1,9 @@
 ---
 name: bioconductor-singlecellmultimodal
-description: the package is is to provide data for benchmarking and analysis.
+description: This R package provides integrated multi-modal datasets for single-cell benchmarking and analysis. Use when user asks to access single-cell multimodal data, download benchmarking datasets, or retrieve integrated omics data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SingleCellMultiModal.html
 ---
+
 
 # bioconductor-singlecellmultimodal
 

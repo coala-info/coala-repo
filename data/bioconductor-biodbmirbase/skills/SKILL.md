@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbmirbase
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The biodbMirbase package provides a connector to the miRBase mature database for retrieving miRNA entry details and sequences within the biodb framework. Use when user asks to retrieve miRNA entry data, fetch miRBase accession IDs, or convert miRNA database entries into R data frames.
 homepage: https://bioconductor.org/packages/3.16/bioc/html/biodbMirbase.html
 ---
+
 
 # bioconductor-biodbmirbase
 

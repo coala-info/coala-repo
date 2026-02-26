@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tpsvg
-description: the package is available on all platforms; click for details.
+description: This tool identifies spatially variable genes in spatial transcriptomics data using a topology-preserving approach. Use when user asks to identify spatially variable genes, analyze spatial expression patterns, or perform spatial transcriptomics analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/tpSVG.html
 ---
+
 
 # bioconductor-tpsvg
 

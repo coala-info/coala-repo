@@ -1,8 +1,9 @@
 ---
 name: treeview
-description: The treeview skill provides a specialized workflow for implementing the Bootstrap Tree View plugin.
+description: The treeview tool transforms nested JavaScript objects into interactive, accessible tree structures for displaying complex data hierarchies in web applications. Use when user asks to display hierarchical data, navigate tree structures, select nodes, search tree nodes, expand or collapse tree nodes, customize tree appearance, or manage node states.
 homepage: https://github.com/jonmiles/bootstrap-treeview
 ---
+
 
 # treeview
 

@@ -1,8 +1,9 @@
 ---
 name: perl-tie-refhash
-description: The `Tie::RefHash` module provides the ability to use any Perl reference as an index into a hash.
+description: This Perl module enables the use of references as hash keys while maintaining their original identity. Use when user asks to use references as hash keys, map metadata to objects without modifying their class, or implement caches using complex data structures as keys.
 homepage: http://metacpan.org/pod/Tie::RefHash
 ---
+
 
 # perl-tie-refhash
 

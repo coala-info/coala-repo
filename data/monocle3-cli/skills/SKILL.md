@@ -1,8 +1,9 @@
 ---
 name: monocle3-cli
-description: The `monocle3-cli` tool provides a set of command-line wrappers for the Monocle3 R package.
+description: The monocle3-cli tool provides command-line wrappers for the Monocle3 R package to perform single-cell trajectory analysis. Use when user asks to create Monocle3 objects, preprocess expression data, perform dimensionality reduction, cluster cells, or learn developmental trajectories.
 homepage: https://github.com/ebi-gene-expression-group/monocle-scripts
 ---
+
 
 # monocle3-cli
 

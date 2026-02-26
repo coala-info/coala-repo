@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scope
-description: the package is available on all platforms; click for details.
+description: SCOPE performs normalization and copy number variation detection for single-cell DNA sequencing data. Use when user asks to normalize single-cell DNA sequencing data, detect copy number variations, or identify subclonal structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/SCOPE.html
 ---
+
 
 # bioconductor-scope
 

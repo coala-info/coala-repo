@@ -1,8 +1,9 @@
 ---
 name: scoring-matrices
-description: The `scoring-matrices` library provides a "batteries-included" collection of scoring matrices used to evaluate matches and mismatches in biological sequence alignments.
+description: The scoring-matrices library provides a collection of biological sequence alignment scoring matrices with high-performance Python and Cython interfaces. Use when user asks to load standard substitution matrices like BLOSUM or PAM, retrieve match scores between residues, or integrate matrix data into performance-critical bioinformatics workflows.
 homepage: https://github.com/althonos/scoring-matrices
 ---
+
 
 # scoring-matrices
 

@@ -1,8 +1,9 @@
 ---
 name: pypgx
-description: PyPGx is a specialized bioinformatics platform designed to provide a unified environment for pharmacogenomics analysis.
+description: PyPGx is a bioinformatics platform for pharmacogenomics analysis that translates genomic data into star-allele nomenclature and predicts clinical phenotypes. Use when user asks to call star alleles, detect structural variations in pharmacogenes, or predict metabolic phenotypes from genomic data.
 homepage: https://github.com/sbslee/pypgx
 ---
+
 
 # pypgx
 

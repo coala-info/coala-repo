@@ -1,8 +1,9 @@
 ---
 name: bioconductor-eventpointer
-description: the package is available on all platforms; click for details.
+description: Bioconductor-eventpointer identifies and analyzes alternative splicing events from junction arrays or RNA-Seq data using splicing graphs. Use when user asks to detect splicing events, perform statistical analysis for differential splicing, calculate Percent Spliced In, or generate visualization files for IGV.
 homepage: https://bioconductor.org/packages/release/bioc/html/EventPointer.html
 ---
+
 
 # bioconductor-eventpointer
 

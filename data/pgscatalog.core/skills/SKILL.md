@@ -1,8 +1,9 @@
 ---
 name: pgscatalog.core
-description: The `pgscatalog.core` package is the foundational library for the PGS Catalog utility suite.
+description: The pgscatalog.core package downloads, formats, and manages polygenic scoring files from the PGS Catalog. Use when user asks to download scoring files by ID or trait, standardize scoring file schemas, or relabel variant identifiers to match genotype data.
 homepage: https://github.com/PGScatalog/pygscatalog/
 ---
+
 
 # pgscatalog.core
 

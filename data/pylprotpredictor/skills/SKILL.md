@@ -1,8 +1,9 @@
 ---
 name: pylprotpredictor
-description: PylProtPredictor is a specialized bioinformatics pipeline designed to overcome the challenge of identifying proteins containing Pyrrolysine.
+description: PylProtPredictor identifies and validates pyrrolysine-containing proteins by extending sequences truncated at UAG codons and comparing them against reference databases. Use when user asks to predict coding sequences containing pyrrolysine, extend TAG-ending sequences, or validate potential PYL proteins using DIAMOND and UniRef90.
 homepage: http://bebatut.fr/PylProtPredictor/
 ---
+
 
 # pylprotpredictor
 

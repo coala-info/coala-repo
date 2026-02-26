@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancerunt
-description: the package is available on all platforms; click for details.
+description: This package provides access to the Sotiriou et al. (2007) breast cancer gene expression dataset as a Bioconductor ExpressionSet. Use when user asks to load the UNT dataset, access breast cancer microarray data with clinical metadata, or analyze gene expression profiles related to histologic grade and prognosis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerUNT.html
 ---
+
 
 # bioconductor-breastcancerunt
 

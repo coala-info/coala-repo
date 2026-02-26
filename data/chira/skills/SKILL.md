@@ -1,8 +1,9 @@
 ---
 name: chira
-description: ChiRA (Chimeric Read Annotator) is a specialized framework designed to process and analyze chimeric RNA reads generated from interactome mapping experiments.
+description: ChiRA is a framework for processing and analyzing chimeric RNA reads from interactome mapping experiments to identify RNA-RNA interactions. Use when user asks to deduplicate chimeric reads, map reads to a transcriptome, define read-concentrated loci, quantify chimeric abundance, or extract statistically supported RNA interactions.
 homepage: https://github.com/pavanvidem/chira/
 ---
+
 
 # chira
 

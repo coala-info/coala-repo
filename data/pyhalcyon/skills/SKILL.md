@@ -1,8 +1,9 @@
 ---
 name: pyhalcyon
-description: Pyhalcyon is a specialized basecalling tool that utilizes a deep learning architecture (encoder-decoder with monotonic attention) to translate raw electrical signals from nanopore sequencing into nucleotide sequences.
+description: Pyhalcyon is a deep learning basecaller that translates raw nanopore sequencing signals into nucleotide sequences. Use when user asks to basecall nanopore reads, convert fast5 signal data to FASTQ format, or perform sequence translation using an encoder-decoder model with monotonic attention.
 homepage: https://pypi.org/project/pyhalcyon
 ---
+
 
 # pyhalcyon
 

@@ -1,8 +1,9 @@
 ---
 name: haplink
-description: haplink is a bioinformatics toolset designed to identify genetic variants and reconstruct haplotypes in viral samples.
+description: haplink is a bioinformatics toolset used to identify genetic variants and reconstruct viral haplotypes using physical linkage information from sequencing reads. Use when user asks to identify single nucleotide variants, reconstruct viral haplotypes, or generate a consensus sequence for a dominant viral strain.
 homepage: https://ksumngs.github.io/HapLink.jl
 ---
+
 
 # haplink
 

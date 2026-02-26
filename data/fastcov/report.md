@@ -3,7 +3,7 @@
 ## fastcov
 
 ### Tool Description
-A parallelized gcov wrapper for generating intermediate coverage formats (Note: The provided text contains error logs from a container runtime and does not include specific help documentation or argument details).
+Plot the coverage based on some bam files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0
@@ -18,29 +18,32 @@ A parallelized gcov wrapper for generating intermediate coverage formats (Note: 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2944677983: no space left on device
-```
+usage: fastcov [-h] [-p POSITION] [-l] [-o OUTPUT_FILE] [-c CSV_OUT]
+               [--csv_no_header]
+               bamfile [bamfile ...]
 
+Plot the coverage based on some bam files.
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  bamfile               Alignment files to include in the coverage plot.
 
-## fastcov_fastcov.py
-
-### Tool Description
-A parallel gcov wrapper for generating intermediate coverage formats. (Note: The provided text appears to be a container runtime error log rather than help text, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0
-- **Homepage**: https://github.com/RaverJay/fastcov
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastcov/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastcov:0.1.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3022817086: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -p POSITION, --position POSITION
+                        Specify a genomic position to plot exclusively.
+                        Format: <ref_name>[:<start>-<stop>] Coordinates are
+                        1-based and inclusive. Start and/or stop are optional
+                        with fallbacks 1 and <length_of_ref> respectively
+                        (i.e. 'chr1', 'chr1:-200', 'chr1:100-' and
+                        'chr1:100-200 are legal)
+  -l, --logscale        Use logarithmic scale on y-axis.
+  -o OUTPUT_FILE, --output_file OUTPUT_FILE
+                        Specify plot output filename. File extension defines
+                        the format (default: fastcov_output.pdf)
+  -c CSV_OUT, --csv_out CSV_OUT
+                        Specify csv data output filename. Use '-' to write to
+                        stdout. Will disable plot output by default, specify
+                        --output_file to re-enable plot output.
+  --csv_no_header       Suppress column names in csv output.
 ```
 

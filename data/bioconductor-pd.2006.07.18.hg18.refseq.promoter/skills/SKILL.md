@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.2006.07.18.hg18.refseq.promoter
-description: the package is available on all platforms; click for details.
+description: This package provides annotation and platform design data for the NimbleGen hg18 RefSeq promoter microarray. Use when user asks to process NimbleGen promoter tiling array data, map probes to human hg18 RefSeq promoter regions, or load platform design information for this specific microarray.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.2006.07.18.hg18.refseq.promoter.html
 ---
+
 
 # bioconductor-pd.2006.07.18.hg18.refseq.promoter
 

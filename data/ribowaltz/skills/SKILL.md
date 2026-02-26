@@ -1,8 +1,9 @@
 ---
 name: ribowaltz
-description: riboWaltz is a specialized R package designed to identify the precise position of ribosomes (the P-site) within ribosome-protected fragments (RPFs).
+description: riboWaltz is an R package that identifies the precise position of ribosome P-sites within ribosome-protected fragments to provide nucleotide-resolution translation data. Use when user asks to calculate P-site offsets, convert RiboSeq BAM files into codon-occupancy data, or visualize ribosome periodicity and read length distributions.
 homepage: https://github.com/LabTranslationalArchitectomics/riboWaltz
 ---
+
 
 # ribowaltz
 

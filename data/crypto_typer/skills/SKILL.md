@@ -1,8 +1,9 @@
 ---
 name: crypto_typer
-description: The `crypto_typer` tool is a specialized bioinformatic pipeline designed to automate the identification and subtyping of *Cryptosporidium* species.
+description: The crypto_typer tool automates the identification and subtyping of Cryptosporidium species using 18S and gp60 genetic markers. Use when user asks to identify Cryptosporidium species, perform gp60 subtyping, or classify parasite sequence data.
 homepage: https://github.com/christineyanta/crypto_typer
 ---
+
 
 # crypto_typer
 

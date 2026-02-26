@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pwmenrich
-description: the package also implements high-level functions for PWM scanning and visualisation. The package does not perform "de novo" motif discovery, but is instead focused on using motifs that are either experimentally derived or computationally constructed by other tools.
+description: PWMEnrich performs motif enrichment analysis and scanning of DNA sequences using position weight matrices. Use when user asks to scan sequences for known motifs, perform motif enrichment analysis, or visualize PWM scanning results.
 homepage: https://bioconductor.org/packages/release/bioc/html/PWMEnrich.html
 ---
+
 
 # bioconductor-pwmenrich
 

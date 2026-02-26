@@ -1,8 +1,9 @@
 ---
 name: pypgatk
-description: The `pypgatk` (Python ProteoGenomics Analysis Toolkit) is a specialized framework designed to bridge the gap between genomics and proteomics.
+description: pypgatk is a Python framework for proteogenomics that generates customized protein sequence databases from genomic variants and non-canonical sources. Use when user asks to download reference data from Ensembl or COSMIC, translate genomic variants into protein databases, perform three-frame translations, generate decoy sequences for FDR estimation, or prepare input files for DeepLC and MSRescore.
 homepage: http://github.com/bigbio/py-pgatk
 ---
+
 
 # pypgatk
 

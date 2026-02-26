@@ -1,10 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: xmlvalid
+baseCommand: bftools_xmlvalid
 label: bftools_xmlvalid
-doc: "Bio-Formats XML validation tool (Note: The provided help text contains a system
-  error log and does not list command-line arguments).\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
-inputs: []
+doc: "Validates an XML file against a schema.\n\nTool homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html"
+inputs:
+  - id: schema_path
+    type: File
+    doc: Path to the XML schema file
+    inputBinding:
+      position: 1
+  - id: input_file
+    type: File
+    doc: Path to the XML file to validate
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

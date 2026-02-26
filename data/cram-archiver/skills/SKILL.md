@@ -1,8 +1,9 @@
 ---
 name: cram-archiver
-description: The `cram-archiver` tool is a specialized wrapper for `samtools` designed to simplify large-scale genomic data archival.
+description: This tool automates the recursive conversion of BAM files to CRAM format to reduce storage footprint while ensuring data integrity through checksum validation. Use when user asks to archive genomic data, convert BAM files to CRAM, batch process sequencing files based on age, or validate file integrity during compression.
 homepage: https://github.com/lumc/cram-archiver
 ---
+
 
 # cram-archiver
 

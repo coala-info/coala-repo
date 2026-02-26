@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rrho
-description: The package is aimed at inference on the amount of agreement in two sorted lists using the Rank-Rank Hypergeometric Overlap test.
+description: This tool performs Rank-Rank Hypergeometric Overlap tests to evaluate the agreement between two sorted lists. Use when user asks to compare ranked gene lists, perform RRHO analysis, or assess overlap between differential expression results.
 homepage: https://bioconductor.org/packages/release/bioc/html/RRHO.html
 ---
+
 
 # bioconductor-rrho
 

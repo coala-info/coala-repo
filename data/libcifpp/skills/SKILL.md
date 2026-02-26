@@ -1,8 +1,9 @@
 ---
 name: libcifpp
-description: libcifpp is a specialized C++17 library designed to treat mmCIF files as relational databases.
+description: libcifpp is a C++ library that treats mmCIF and PDB files as relational databases for reading, writing, and validating macromolecular structures. Use when user asks to parse structural biology files, perform relational queries on CIF data, validate files against dictionaries, or handle 3D coordinate transformations.
 homepage: https://github.com/PDB-REDO/libcifpp
 ---
+
 
 # libcifpp
 

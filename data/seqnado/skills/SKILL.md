@@ -1,8 +1,9 @@
 ---
 name: seqnado
-description: seqnado is a comprehensive bioinformatics wrapper designed to simplify the execution of various sequencing pipelines.
+description: Seqnado is a bioinformatics wrapper that simplifies the execution of diverse sequencing pipelines for epigenetic and transcriptomic data. Use when user asks to process RNA-seq, ATAC-seq, ChIP-seq, CUT&RUN, WGS, methylation, CRISPR, or Micro-Capture-C datasets.
 homepage: https://alsmith151.github.io/SeqNado/
 ---
+
 
 # seqnado
 

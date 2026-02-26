@@ -1,8 +1,9 @@
 ---
 name: hisat-3n
-description: HISAT-3N (Hierarchical Indexing for Spliced Alignment of Transcripts - 3 Nucleotides) is an extension of the HISAT2 aligner tailored for base-conversion sequencing.
+description: HISAT-3N is an alignment tool designed for mapping base-conversion sequencing data, such as BS-seq and SLAM-seq, to a reference genome. Use when user asks to build specialized indexes for converted genomes, align RNA or DNA reads with base conversions, or generate conversion summary tables.
 homepage: https://github.com/fulcrumgenomics/hisat-3n
 ---
+
 
 # hisat-3n
 

@@ -1,8 +1,9 @@
 ---
 name: singlecellnet-cli
-description: The `singlecellnet-cli` provides a command-line interface for the singleCellNet R package, enabling automated cell type classification workflows.
+description: This tool provides a command-line interface for automated cell type classification and cross-platform label transfer. Use when user asks to train a random forest classifier from a reference dataset, predict cell identities in query data, or transfer labels between SingleCellExperiment objects.
 homepage: https://github.com/ebi-gene-expression-group/singlecellnet-cli
 ---
+
 
 # singlecellnet-cli
 

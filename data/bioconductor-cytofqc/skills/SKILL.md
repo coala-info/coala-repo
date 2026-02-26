@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytofqc
-description: the package is available on all platforms; click for details.
+description: This tool provides a model-based approach to perform quality control and automated labeling of CyTOF data. Use when user asks to clean mass cytometry data, identify beads or doublets, and label events as cells, debris, or dead events.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytofQC.html
 ---
+
 
 # bioconductor-cytofqc
 

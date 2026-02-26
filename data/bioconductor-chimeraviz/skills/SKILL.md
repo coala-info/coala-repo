@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chimeraviz
-description: the package is available on all platforms; click for details.
+description: The chimeraviz package visualizes gene fusions by importing data from various discovery tools to create genome-wide, transcript-level, and protein-domain plots. Use when user asks to import fusion-finder results, visualize gene fusion breakpoints, create circular genomic plots, or generate interactive HTML fusion reports.
 homepage: https://bioconductor.org/packages/release/bioc/html/chimeraviz.html
 ---
+
 
 # bioconductor-chimeraviz
 

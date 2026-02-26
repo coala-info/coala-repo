@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430a.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Affymetrix HT Mouse Genome 430A array. Use when user asks to map manufacturer probe identifiers to biological metadata, translate microarray results into gene symbols, or identify associated GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430a.db.html
 ---
+
 
 # bioconductor-htmg430a.db
 

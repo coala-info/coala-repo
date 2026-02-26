@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95e.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Affymetrix Human Genome U95 Set (hgu95e) platform. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve Gene Symbols or Entrez IDs for hgu95e probes, or find GO terms and KEGG pathways associated with these identifiers.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95e.db.html
 ---
+
 
 # bioconductor-hgu95e.db
 

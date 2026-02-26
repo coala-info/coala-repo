@@ -1,8 +1,9 @@
 ---
 name: jccirc
-description: JCcirc is a Perl-based computational tool used to assemble the full-length sequences of circRNAs.
+description: JCcirc assembles full-length circular RNA sequences by integrating junction reads, reference genomes, and de novo assembled contigs. Use when user asks to reconstruct complete circRNA transcripts, assemble full-length sequences from RNA-seq data, or map genomic fragments to circular RNA candidates.
 homepage: https://github.com/cbbzhang/JCcirc
 ---
+
 
 # jccirc
 

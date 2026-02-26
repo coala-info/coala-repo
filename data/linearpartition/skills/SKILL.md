@@ -1,8 +1,9 @@
 ---
 name: linearpartition
-description: LinearPartition is the first linear-time algorithm for calculating RNA folding partition functions and base-pairing probabilities.
+description: LinearPartition is a linear-time algorithm for calculating RNA folding partition functions and base-pairing probabilities. Use when user asks to estimate ensemble free energy, predict MEA or ThreshKnot secondary structures, generate base-pairing probability matrices, or evaluate specific RNA structures.
 homepage: https://github.com/LinearFold/LinearPartition
 ---
+
 
 # linearpartition
 

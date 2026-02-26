@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tbsignatureprofiler
-description: the package is available on all platforms; click for details.
+description: TBSignatureProfiler evaluates and compares gene expression signatures for Tuberculosis in transcriptomic data. Use when user asks to profile tuberculosis gene signatures, calculate signature scores, or benchmark TB diagnostic biomarkers.
 homepage: https://bioconductor.org/packages/release/bioc/html/TBSignatureProfiler.html
 ---
+
 
 # bioconductor-tbsignatureprofiler
 

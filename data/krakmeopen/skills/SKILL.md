@@ -1,8 +1,9 @@
 ---
 name: krakmeopen
-description: krakmeopen is a specialized toolkit designed for the downstream analysis of Kraken 2 (or StringMeUp) read-by-read classifications.
+description: krakmeopen is a toolkit for calculating quality metrics and k-mer distribution statistics from Kraken 2 or StringMeUp taxonomic classifications. Use when user asks to analyze classification confidence, calculate lineage ratios, or aggregate k-mer tallies across multiple samples to identify false positive taxonomic assignments.
 homepage: https://github.com/danisven/KrakMeOpen
 ---
+
 
 # krakmeopen
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geofastq
-description: the package is available on all platforms; click for details.
+description: GEOfastq retrieves high-throughput sequencing data from GEO by identifying ENA accessions and downloading pre-converted FASTQ files directly. Use when user asks to retrieve metadata for a GEO series, extract GSM sample IDs, or download FASTQ files from GEO via ENA.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOfastq.html
 ---
+
 
 # bioconductor-geofastq
 

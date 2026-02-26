@@ -1,8 +1,9 @@
 ---
 name: remag
-description: REMAG (REcovery of eukaryotic genomes) is a specialized metagenomic binning pipeline designed to extract high-quality eukaryotic genomes from mixed prokaryotic-eukaryotic samples.
+description: REMAG is a metagenomic binning pipeline that uses Siamese neural networks and LLM-based classification to extract high-quality eukaryotic genomes from mixed samples. Use when user asks to recover eukaryotic bins from metagenomes, filter out bacterial sequences using HyenaDNA, or perform self-supervised contig embedding for binning.
 homepage: https://github.com/danielzmbp/remag
 ---
+
 
 # remag
 

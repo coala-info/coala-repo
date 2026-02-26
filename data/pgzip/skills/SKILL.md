@@ -1,8 +1,9 @@
 ---
 name: pgzip
-description: pgzip provides a parallelized implementation of the gzip format, significantly increasing throughput by distributing compression tasks across multiple CPU cores.
+description: pgzip is a parallelized gzip implementation that increases throughput by distributing compression and decompression tasks across multiple CPU cores. Use when user asks to compress data in parallel, decompress files with read-ahead optimization, or tune gzip performance using custom concurrency settings.
 homepage: https://github.com/klauspost/pgzip
 ---
+
 
 # pgzip
 

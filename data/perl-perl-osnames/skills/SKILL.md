@@ -1,8 +1,9 @@
 ---
 name: perl-perl-osnames
-description: The `Perl::osnames` module provides a comprehensive database of operating system names as recognized by the Perl interpreter.
+description: This tool provides a database of operating system names and descriptions as recognized by the Perl interpreter. Use when user asks to identify Perl OS strings, validate platform names, or retrieve metadata about operating system families.
 homepage: https://metacpan.org/release/Perl-osnames
 ---
+
 
 # perl-perl-osnames
 

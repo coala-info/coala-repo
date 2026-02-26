@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu95ecdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix HG-U95E microarray platform. Use when user asks to map probe coordinates to indices, access the HG-U95E CDF environment, or retrieve chip dimension information for custom probe-level analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu95ecdf.html
 ---
+
 
 # bioconductor-hgu95ecdf
 

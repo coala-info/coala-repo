@@ -1,8 +1,9 @@
 ---
 name: perl-ppi
-description: The `perl-ppi` (Parse::Perl::Isolated) skill enables the treatment of Perl source code as a structured document rather than executable code.
+description: Perl-ppi parses Perl source code into a structured document tree for static analysis and manipulation without executing the code. Use when user asks to extract metadata from Perl scripts, strip comments or POD documentation, find specific code tokens, or perform programmatic code cleaning.
 homepage: https://github.com/adamkennedy/PPI
 ---
+
 
 # perl-ppi
 

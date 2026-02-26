@@ -1,8 +1,9 @@
 ---
 name: lagan
-description: Lagan is a flexible, code-centric Content Management System designed for developers who want control over their data structures without building a backend from scratch.
+description: Lagan is a model-first Content Management System that automatically generates database tables and administration panels from PHP class definitions. Use when user asks to architect content objects, handle data persistence via the RedBean ORM, or develop front-end routes and templates.
 homepage: https://github.com/lutsen/lagan
 ---
+
 
 # lagan
 

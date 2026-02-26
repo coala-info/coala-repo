@@ -1,8 +1,9 @@
 ---
 name: ms2rescore-rs
-description: This skill facilitates the use of `ms2rescore-rs`, a high-performance Rust implementation of core components for the MS²Rescore framework.
+description: This tool rescores peptide identifications by integrating peak intensities and retention time predictions into the scoring process to improve identification reliability. Use when user asks to rescore proteomics datasets, improve peptide identification accuracy, or process large-scale mass spectrometry data efficiently.
 homepage: https://github.com/compomics/ms2rescore-rs
 ---
+
 
 # ms2rescore-rs
 

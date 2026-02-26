@@ -1,11 +1,51 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdb_to_taxdump_lineage2taxid.py
+baseCommand: lineage2taxid.py
 label: gtdb_to_taxdump_lineage2taxid.py
-doc: "A script to convert GTDB lineage information to TaxID format. (Note: The provided
-  help text contains system error messages regarding container execution and does
-  not list specific command-line arguments.)\n\nTool homepage: https://github.com/nick-youngblut/gtdb_to_taxdump"
-inputs: []
+doc: "Map taxonomic lineages to taxids\n\nTool homepage: https://github.com/nick-youngblut/gtdb_to_taxdump"
+inputs:
+  - id: table_file
+    type: File
+    doc: Tab-delim input table containing GTDB taxonomic lineages
+    inputBinding:
+      position: 1
+  - id: names_dmp
+    type: File
+    doc: NCBI names.dmp file. Only needed if providing NCBI taxids
+    inputBinding:
+      position: 2
+  - id: nodes_dmp
+    type: File
+    doc: NCBI nodes.dmp file. Only needed if providing NCBI taxids
+    inputBinding:
+      position: 3
+  - id: lineage_column
+    type:
+      - 'null'
+      - string
+    doc: Column name that contains the lineages
+    default: classification
+    inputBinding:
+      position: 104
+      prefix: --lineage-column
+  - id: taxid_column
+    type:
+      - 'null'
+      - string
+    doc: Name of taxid column that will be appended to the input table
+    default: taxid
+    inputBinding:
+      position: 104
+      prefix: --taxid-column
+  - id: taxid_rank_column
+    type:
+      - 'null'
+      - string
+    doc: Name of taxid-rank column that will be appended to the input table
+    default: taxid_rank
+    inputBinding:
+      position: 104
+      prefix: --taxid-rank-column
 outputs:
   - id: stdout
     type: stdout

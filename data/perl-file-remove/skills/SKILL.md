@@ -1,8 +1,9 @@
 ---
 name: perl-file-remove
-description: The `perl-file-remove` skill provides a reliable interface for deleting filesystem objects.
+description: This tool provides a reliable interface for recursively deleting files and directories and handling complex globbing patterns. Use when user asks to delete files or directories, clear directory contents, or remove files using wildcards and globs.
 homepage: http://metacpan.org/pod/File::Remove
 ---
+
 
 # perl-file-remove
 

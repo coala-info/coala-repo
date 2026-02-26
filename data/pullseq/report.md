@@ -3,7 +3,7 @@
 ## pullseq
 
 ### Tool Description
-A tool for extracting sequences from FASTA/FASTQ files.
+a bioinformatics tool for manipulating fasta and fastq files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pullseq:1.0.2--h1104d80_11
@@ -18,33 +18,38 @@ A tool for extracting sequences from FASTA/FASTQ files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pullseq:1.0.2--h1104d80_11 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+pullseq - a bioinformatics tool for manipulating fasta and fastq files
 
+Version: 1.0.2              Name lookup method: UTHASH
+(Written by bct - copyright 2012-2015)
 
-## Metadata
-- **Skill**: generated
+Usage:
+ pullseq -i <input fasta/fastq file> -n <header names to select>
 
-## pullseq_seqdiff
+ pullseq -i <input fasta/fastq file> -m <minimum sequence length>
 
-### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime error messages regarding a failed image build.
+ pullseq -i <input fasta/fastq file> -g <regex name to match>
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pullseq:1.0.2--h1104d80_11
-- **Homepage**: https://github.com/bcthomas/pullseq
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pullseq:1.0.2--h1104d80_11 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ pullseq -i <input fasta/fastq file> -m <minimum sequence length> -a <max sequence length>
+
+ pullseq -i <input fasta/fastq file> -t
+
+ cat <names to select from STDIN> | pullseq -i <input fasta/fastq file> -N
+
+  Options:
+    -i, --input,       Input fasta/fastq file (required)
+    -n, --names,       File of header id names to search for
+    -N, --names_stdin, Use STDIN for header id names
+    -g, --regex,       Regular expression to match (PERL compatible; always case-insensitive)
+    -m, --min,         Minimum sequence length
+    -a, --max,         Maximum sequence length
+    -l, --length,      Sequence characters per line (default 50)
+    -c, --convert,     Convert input to fastq/fasta (e.g. if input is fastq, output will be fasta)
+    -q, --quality,     ASCII code to use for fasta->fastq quality conversions
+    -e, --excluded,    Exclude the header id names in the list (-n)
+    -t, --count,       Just count the possible output, but don't write it
+    -h, --help,        Display this help and exit
+    -v, --verbose,     Print extra details during the run
+    --version,         Output version information and exit
 ```
 

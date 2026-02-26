@@ -1,8 +1,9 @@
 ---
 name: odil
-description: Odilia is a high-performance, open-source screen reader designed specifically for the *nix desktop environment.
+description: Odilia is a high-performance, open-source screen reader for *nix desktop environments. Use when user asks to install the screen reader from source, configure speech-dispatcher, or run the odilia service.
 homepage: https://github.com/odilia-app/odilia
 ---
+
 
 # odil
 

@@ -1,8 +1,9 @@
 ---
 name: longtr
-description: LongTR is a specialized tool designed to resolve tandem repeat genotypes from long-read datasets.
+description: LongTR resolves tandem repeat genotypes from long-read datasets such as PacBio and Nanopore. Use when user asks to genotype short tandem repeats, characterize variable number tandem repeats, or perform phased analysis of repeat regions.
 homepage: https://github.com/gymrek-lab/LongTR
 ---
+
 
 # longtr
 

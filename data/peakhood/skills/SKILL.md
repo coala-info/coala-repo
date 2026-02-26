@@ -1,8 +1,9 @@
 ---
 name: peakhood
-description: Peakhood is a specialized bioinformatics tool designed to resolve the ambiguity of CLIP-seq peak locations.
+description: Peakhood resolves the ambiguity of CLIP-seq peak locations by determining whether binding occurred on spliced transcripts or genomic DNA. Use when user asks to extract site contexts, resolve exon-intron boundary ambiguity, or merge transcript-context binding sites.
 homepage: https://github.com/BackofenLab/Peakhood
 ---
+
 
 # peakhood
 

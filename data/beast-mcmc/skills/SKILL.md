@@ -1,8 +1,9 @@
 ---
 name: beast-mcmc
-description: BEAST (Bayesian Evolutionary Analysis Sampling Trees) is a sophisticated framework for reconstructing rooted, time-scaled phylogenies and testing evolutionary hypotheses.
+description: BEAST performs Bayesian MCMC analysis to reconstruct time-scaled phylogenies and test evolutionary hypotheses from molecular sequences. Use when user asks to reconstruct rooted trees, sample from a posterior distribution of phylogenies, summarize trees with TreeAnnotator, or merge MCMC logs.
 homepage: https://beast.community
 ---
+
 
 # beast-mcmc
 

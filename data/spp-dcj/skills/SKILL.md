@@ -1,8 +1,9 @@
 ---
 name: spp-dcj
-description: The `spp-dcj` tool implements an Integer Linear Programming (ILP) approach to find gene orders at internal nodes of a phylogeny that minimize the total rearrangement distance.
+description: spp-dcj uses integer linear programming to reconstruct ancestral gene orders by minimizing rearrangement distances across a phylogeny. Use when user asks to find internal node gene orders, generate ILP formulations for genome rearrangements, or visualize ancestral adjacencies in natural genomes.
 homepage: https://github.com/codialab/spp-dcj
 ---
+
 
 # spp-dcj
 

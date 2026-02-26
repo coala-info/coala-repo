@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.yeast.2
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Yeast Genome 2.0 Array. Use when user asks to process Affymetrix Yeast 2.0 microarray data, map probes to genomic coordinates, or manage platform-specific metadata for yeast expression studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.yeast.2.html
 ---
+
 
 # bioconductor-pd.yeast.2
 

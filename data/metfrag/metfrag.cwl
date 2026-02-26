@@ -1,11 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: metfrag
+baseCommand:
+  - java
+  - -jar
+  - MetFragCL.jar
 label: metfrag
-doc: "MetFrag: In silico fragmentation for computer-assisted identification of metabolite
-  structures. (Note: The provided text is a system error log and does not contain
-  usage instructions or argument definitions.)\n\nTool homepage: http://c-ruttkies.github.io/MetFrag/"
-inputs: []
+doc: "MetFrag command line tool for metabolite identification using MS/MS data\n\n\
+  Tool homepage: http://c-ruttkies.github.io/MetFrag/"
+inputs:
+  - id: parameter_file
+    type:
+      - 'null'
+      - File
+    doc: Path to the MetFrag parameter file
+    inputBinding:
+      position: 101
+      prefix: ParameterFile
 outputs:
   - id: stdout
     type: stdout

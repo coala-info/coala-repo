@@ -1,8 +1,9 @@
 ---
 name: fast2q
-description: 2FAST2Q is a high-performance sequence counting tool designed for functional genomics workflows.
+description: 2FAST2Q is a high-performance sequence counting tool that maps FASTQ reads to a reference library or extracts novel sequences between known adapters. Use when user asks to count sgRNA occurrences in CRISPRi-Seq data, extract barcodes flanked by adapter sequences, or perform quality-filtered sequence mapping.
 homepage: https://github.com/afombravo/2FAST2Q
 ---
+
 
 # fast2q
 

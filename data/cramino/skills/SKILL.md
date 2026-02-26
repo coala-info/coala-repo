@@ -1,8 +1,9 @@
 ---
 name: cramino
-description: cramino is a high-performance tool written in Rust, specifically engineered for the fast quality assessment of long-read sequencing data.
+description: cramino is a high-performance tool for the fast quality assessment and metric calculation of long-read sequencing data in BAM or CRAM formats. Use when user asks to perform quality control, calculate N50 and yield, generate read length histograms, analyze phased or spliced data, or perform karyotyping.
 homepage: https://github.com/wdecoster/cramino
 ---
+
 
 # cramino
 

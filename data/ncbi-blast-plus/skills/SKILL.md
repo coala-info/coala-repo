@@ -1,8 +1,9 @@
 ---
 name: ncbi-blast-plus
-description: The Basic Local Alignment Search Tool (BLAST+) is a suite of command-line applications used to compare biological sequences.
+description: NCBI BLAST+ compares biological sequences to identify regions of local similarity and infer functional or evolutionary relationships. Use when user asks to retrieve sequences from NCBI, create custom BLAST databases, or perform sequence searches using tools like blastn and blastp.
 homepage: https://github.com/ncbi/blast_plus_docs
 ---
+
 
 # ncbi-blast-plus
 

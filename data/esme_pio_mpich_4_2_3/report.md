@@ -3,26 +3,32 @@
 ## esme_pio_mpich_4_2_3
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it contains error logs related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+FAIL to generate CWL: esme_pio_mpich_4_2_3 not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0
 - **Homepage**: https://github.com/NCAR/ParallelIO
 - **Package**: https://anaconda.org/channels/bioconda/packages/esme_pio_mpich_4_2_3/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/esme_pio_mpich_4_2_3/overview
 - **Total Downloads**: 303
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/NCAR/ParallelIO
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: esme_pio_mpich_4_2_3 not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: esme_pio_mpich_4_2_3 not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/esme_netcdf-fortran_mvapich_4_0_ofi:4.6.2--hb2a3317_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1462751192: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

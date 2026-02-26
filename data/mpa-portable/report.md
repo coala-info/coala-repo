@@ -3,61 +3,39 @@
 ## mpa-portable
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mpa-portable:2.0.0--0
 - **Homepage**: https://github.com/compomics/meta-proteome-analyzer
 - **Package**: https://anaconda.org/channels/bioconda/packages/mpa-portable/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mpa-portable/overview
-- **Total Downloads**: 15.5K
+- **Total Downloads**: 15.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/compomics/meta-proteome-analyzer
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mpa-portable:2.0.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2718080727: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## mpa-portable_de.mpa.cli.CmdLineInterface
-
-### Tool Description
-Metaproteomics Analysis (MPA) portable command-line interface. Note: The provided text contains system error logs regarding container execution and does not list specific tool arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mpa-portable:2.0.0--0
-- **Homepage**: https://github.com/compomics/meta-proteome-analyzer
-- **Package**: https://anaconda.org/channels/bioconda/packages/mpa-portable/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mpa-portable:2.0.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2247897070: no space left on device
-```
-
-## mpa-portable_MetaProteomeAnalyzerCLI
-
-### Tool Description
-MetaProteomeAnalyzer (MPA) is a tool for metaproteomics data analysis. (Note: The provided help text contains only system error messages regarding container execution and does not list available arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mpa-portable:2.0.0--0
-- **Homepage**: https://github.com/compomics/meta-proteome-analyzer
-- **Package**: https://anaconda.org/channels/bioconda/packages/mpa-portable/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mpa-portable:2.0.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2309663534: no space left on device
+Exception in thread "main" java.awt.HeadlessException: 
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+	at java.desktop/java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:208)
+	at java.desktop/java.awt.Window.<init>(Window.java:548)
+	at java.desktop/java.awt.Frame.<init>(Frame.java:423)
+	at java.desktop/javax.swing.JFrame.<init>(JFrame.java:224)
+	at de.mpa.main.SplashScreen.<init>(SplashScreen.java:30)
+	at de.mpa.main.Starter.main(Starter.java:164)
 ```
 

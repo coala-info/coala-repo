@@ -1,8 +1,9 @@
 ---
 name: picard
-description: Asserts the validity for specified Illumina basecalling data. This tool will check that the basecall directory and the internal files are available, exist, and are reasonably sized for every tile and cycle.
+description: Picard is a suite of Java-based command-line tools used to manipulate and analyze high-throughput sequencing data in formats such as SAM, BAM, and VCF. Use when user asks to mark duplicates, validate SAM or BAM file integrity, sort genomic files, or add read group information to sequencing data.
 homepage: http://broadinstitute.github.io/picard/
 ---
+
 
 # picard
 

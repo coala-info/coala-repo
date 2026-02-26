@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ctexplorer
-description: the package is available on all platforms; click for details.
+description: CTexploreR provides tools for exploring and visualizing Cancer-Testis (CT) gene expression data from various public databases. Use when user asks to explore Cancer-Testis gene expression, visualize CT gene data across different tissues, or identify potential cancer biomarkers.
 homepage: https://bioconductor.org/packages/release/bioc/html/CTexploreR.html
 ---
+
 
 # bioconductor-ctexplorer
 

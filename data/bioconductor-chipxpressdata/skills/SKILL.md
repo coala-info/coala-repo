@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipxpressdata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-built, large-scale gene expression databases for human and mouse samples to support ChIPXpress analysis. Use when user asks to load mouse or human expression compendia, retrieve fRMA-processed GEO data, or access summary statistics for integrative ChIP-seq and microarray analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ChIPXpressData.html
 ---
+
 
 # bioconductor-chipxpressdata
 

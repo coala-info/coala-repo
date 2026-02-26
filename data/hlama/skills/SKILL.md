@@ -1,8 +1,9 @@
 ---
 name: hlama
-description: HLA-MA (hlama) is a quality control tool that uses the Human Leukocyte Antigen (HLA) gene complex as a genetic fingerprint to verify sample relationships.
+description: hlama is a quality control tool that uses HLA gene complex polymorphism as a genetic fingerprint to verify sample relationships and pedigree consistency. Use when user asks to verify tumor/normal sample matching, validate family relationships in pedigrees, or predict HLA types from sequencing data to ensure sample identity.
 homepage: https://github.com/bihealth/hlama
 ---
+
 
 # hlama
 

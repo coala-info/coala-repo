@@ -1,8 +1,9 @@
 ---
 name: express
-description: Express is the standard minimalist web framework for Node.js, designed to provide a thin layer of fundamental web application features without obscuring Node.js features.
+description: Express is a minimalist web framework for Node.js used to build web applications and HTTP APIs. Use when user asks to create a web server, set up modular routing, integrate middleware, or build RESTful services.
 homepage: https://github.com/expressjs/express
 ---
+
 
 # express
 

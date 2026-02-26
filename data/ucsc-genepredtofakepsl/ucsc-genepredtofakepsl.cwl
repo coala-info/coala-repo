@@ -2,16 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: genePredToFakePsl
 label: ucsc-genepredtofakepsl
-doc: "The provided text does not contain help information for the tool, but rather
-  a fatal error from the Apptainer/Singularity container runtime while attempting
-  to fetch the image. No arguments could be parsed from the input.\n\nTool homepage:
-  https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Create a fake PSL from a genePred file.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: db
+    type: string
+    doc: Database name (e.g., hg19)
+    inputBinding:
+      position: 1
+  - id: gene_pred
+    type: File
+    doc: Input genePred file
+    inputBinding:
+      position: 2
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_psl
+    type: File
+    doc: Output PSL file
+    outputBinding:
+      glob: '*.out'
+  - id: out_cds
+    type: File
+    doc: Output CDS file
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ucsc-genepredtofakepsl:482--h0b57e2e_1
-stdout: ucsc-genepredtofakepsl.out

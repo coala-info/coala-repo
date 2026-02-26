@@ -3,7 +3,7 @@
 ## netcdf-metadata-info
 
 ### Tool Description
-A tool to extract and display metadata information from NetCDF files.
+Provides information on Netcdf metadata, including details about variables and dimensions, and summarizes it into an output tabular file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/netcdf-metadata-info:1.1.6--h7b50bb2_7
@@ -18,29 +18,22 @@ A tool to extract and display metadata information from NetCDF files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/netcdf-metadata-info:1.1.6--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2807863387: no space left on device
-```
+**** Information on Netcdf metadata ****
+
+- The netcdf-metadata-info tool needs a netcdf input file. It will give informations about every variable and dimension and summarize it into an output tabular file named : variable.tabular.
+
+- The file has the general structure : 
+
+  ******************************************************************************************
+  * Variable1    Var1_Number_of_Dim    Dim1    Dim1_size    ...    DimN    DimN_size       *
+  * VariableX    VarX_Number_of_Dim    DimX1   DimX1_size   ...    DimXN   DimXN_size      *
+  * ...                                                                                    *
+  ******************************************************************************************
 
 
-## Metadata
-- **Skill**: generated
+- This tool is necessary to execute the Galaxy tool Netcdf read : URL.
 
-## netcdf-metadata-info_nc_info
-
-### Tool Description
-A tool to extract metadata information from NetCDF files. Note: The provided help text contains a fatal system error regarding container execution and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/netcdf-metadata-info:1.1.6--h7b50bb2_7
-- **Homepage**: https://github.com/Alanamosse/Netcdf-Metadata-Info/
-- **Package**: https://anaconda.org/channels/bioconda/packages/netcdf-metadata-info/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/netcdf-metadata-info:1.1.6--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2298715507: no space left on device
+- Code is written in C and use the unidata Netcdf source functions : https://www.unidata.ucar.edu/software/netcdf/
+- For more complete and human readable informations you can use the ncdump command line from Netcdf package.
 ```
 

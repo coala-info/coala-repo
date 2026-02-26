@@ -1,8 +1,9 @@
 ---
 name: kanpig
-description: kanpig (Kmer ANalysis of PIleups for Genotyping) is a specialized tool for determining the genotypes of structural variants from long-read sequencing.
+description: kanpig genotypes structural variants from long-read sequencing data using k-mer analysis of local variant graphs. Use when user asks to genotype structural variants, create pileup files for efficient re-analysis, perform trio-based genotyping, or detect mosaic variants.
 homepage: https://github.com/ACEnglish/kanpig
 ---
+
 
 # kanpig
 

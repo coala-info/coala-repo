@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rcngene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Rat Gene 1.0 ST expression array. Use when user asks to process Rat Gene 1.0 ST microarray data, access platform design metadata, or perform probe-level analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rcngene.1.0.st.html
 ---
+
 
 # bioconductor-pd.rcngene.1.0.st
 

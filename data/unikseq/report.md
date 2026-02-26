@@ -1,9 +1,9 @@
 # unikseq CWL Generation Report
 
-## unikseq
+## unikseq_unikseq.pl
 
 ### Tool Description
-The provided text appears to be a container build log (Apptainer/Singularity) showing a fatal error during image retrieval, rather than the command-line help text for 'unikseq'. As a result, no arguments or usage descriptions could be extracted.
+v2.0.0
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0
@@ -18,71 +18,39 @@ The provided text appears to be a container build log (Apptainer/Singularity) sh
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: /usr/local/bin/unikseq.pl v2.0.0
+-----input files-----
+ -r reference FASTA (required)
+ -i ingroup FASTA (required)
+ -o outgroup FASTA (required)
+-----kmer uniqueness filters-----
+ -k length (option, default: -k 25)
+ -l [leniency] min. non-unique consecutive kmers allowed in outgroup (option, default: -l 0)
+ -m max. [% entries] in outgroup tolerated to have a reference kmer (option, default: -m 0 % [original behaviour])
+-----output filters-----
+ -t print only first t bases in tsv output (option, default: -t [k])
+ -c output conserved FASTA regions between reference and ingroup entries (option, -c 1==yes -c 0==no [default, original unikseq behaviour])
+ -s min. reference FASTA region [size] (bp) to output (option, default: -s 100 bp)
+ -p min. [-c 0:region average /-c 1: per position] proportion of ingroup entries (option, default: -p 0 %)
+ -u min. [% unique] kmers in regions (option, default: -u 90 %)
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## unikseq_unikseq.pl
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container runtime error log from Apptainer/Singularity while attempting to fetch the unikseq image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0
-- **Homepage**: https://github.com/bcgsc/unikseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/unikseq/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## unikseq_unikseq-Bloom
-
-### Tool Description
-A tool from the unikseq suite. (Note: The provided help text contains only system logs and error messages, and does not list specific command-line arguments or usage instructions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0
-- **Homepage**: https://github.com/bcgsc/unikseq
-- **Package**: https://anaconda.org/channels/bioconda/packages/unikseq/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## unikseq_writeBloom.pl
 
 ### Tool Description
-The provided text does not contain help information for the tool; it appears to be a container runtime error log.
+Writes a bloom filter from sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0
 - **Homepage**: https://github.com/bcgsc/unikseq
 - **Package**: https://anaconda.org/channels/bioconda/packages/unikseq/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/unikseq:2.0.1--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: /usr/local/bin/writeBloom.pl
+-f  sequences to scaffold (Multi-FASTA format, required)
+-k  k-mer value (default -k 25, optional)
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-timerquant
-description: the package is available on all platforms; click for details.
+description: TimerQuant is an R package for the automated analysis and quantification of protein turnover using tandem fluorescent protein timers. Use when user asks to quantify protein degradation kinetics, analyze tandem fluorescent protein timer data, or perform image analysis for protein stability studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TimerQuant.html
 ---
+
 
 # bioconductor-timerquant
 

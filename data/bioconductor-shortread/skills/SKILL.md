@@ -1,8 +1,9 @@
 ---
 name: bioconductor-shortread
-description: The package includes functions for filtering and trimming reads, and for generating a quality assessment report. Data are represented as DNAStringSet-derived objects, and easily manipulated for a diversity of purposes.  The package also contains legacy support for early single-end, ungapped alignment formats.
+description: ShortRead provides tools for processing, filtering, and quality assessment of high-throughput sequencing data in R. Use when user asks to filter or trim reads, generate quality assessment reports, or manipulate DNAStringSet-derived objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/ShortRead.html
 ---
+
 
 # bioconductor-shortread
 

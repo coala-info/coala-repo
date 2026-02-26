@@ -3,26 +3,32 @@
 ## ont-modkit
 
 ### Tool Description
-A tool for analyzing and manipulating DNA/RNA modification data from Oxford Nanopore Technologies (ONT) sequencing.
+FAIL to generate CWL: ont-modkit not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ont-modkit:0.6.1--hcdda2d0_0
 - **Homepage**: https://github.com/nanoporetech/modkit
 - **Package**: https://anaconda.org/channels/bioconda/packages/ont-modkit/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ont-modkit/overview
-- **Total Downloads**: 24.2K
+- **Total Downloads**: 24.4K
 - **Last updated**: 2026-01-22
 - **GitHub**: https://github.com/nanoporetech/modkit
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: ont-modkit not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: ont-modkit not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ont-modkit:0.6.1--hcdda2d0_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1258664106: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

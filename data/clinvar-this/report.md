@@ -1,9 +1,55 @@
 # clinvar-this CWL Generation Report
 
-## clinvar-this
+## clinvar-this_batch
 
 ### Tool Description
-ClinVar submission tool (Note: The provided text contains container build error logs rather than command-line help documentation; therefore, no arguments could be extracted).
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/clinvar-this:0.18.5--pyhdfd78af_0
+- **Homepage**: https://github.com/bihealth/clinvar-this
+- **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-this/overview
+- **Validation**: FAIL (generation failed)
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/clinvar-this/overview
+- **Total Downloads**: 31.4K
+- **Last updated**: 2025-04-22
+- **GitHub**: https://github.com/bihealth/clinvar-this
+- **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Usage: clinvar-this batch [OPTIONS] COMMAND [ARGS]...
+
+  Sub comment category ``batch ...``
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  export           Export batch data to a given file
+  import           Import data for a new or existing batch
+  list             List existing batches
+  retrieve         Submit the given batch to ClinVar
+  submit           Submit the given batch to ClinVar
+  update-metadata  Update batch metadata without importing files
+```
+
+
+## clinvar-this_config
+
+### Tool Description
+Sub command category `clinvar-this config ...`
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clinvar-this:0.18.5--pyhdfd78af_0
@@ -11,21 +57,58 @@ ClinVar submission tool (Note: The provided text contains container build error 
 - **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-this/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/clinvar-this/overview
-- **Total Downloads**: 31.3K
-- **Last updated**: 2025-04-22
-- **GitHub**: https://github.com/bihealth/clinvar-this
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clinvar-this:0.18.5--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-1110924414/rootfs/usr/bin/bash: no space left on device
+Usage: clinvar-this config [OPTIONS] COMMAND [ARGS]...
+
+  Sub command category ``clinvar-this config ...``
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  dump  Sub command ``clinvar-this config dump``
+  get   Sub command ``clinvar-this config get NAME``
+  set   Sub command ``clinvar-this config set NAME VALUE``
 ```
 
 
-## Metadata
-- **Skill**: not generated
+## clinvar-this_data
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/clinvar-this:0.18.5--pyhdfd78af_0
+- **Homepage**: https://github.com/bihealth/clinvar-this
+- **Package**: https://anaconda.org/channels/bioconda/packages/clinvar-this/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Usage: clinvar-this data [OPTIONS] COMMAND [ARGS]...
+
+  Sub command category "data".
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  acmg-class-by-freq    Create links between gene and phenotype.
+  extract-vars          Write out variants from RCV records.
+  gene-phenotype-links  Create links between gene and phenotype.
+  gene-variant-report   Create a gene variant summary report.
+  xml-to-jsonl          Convert XML to JSONL
+```
+

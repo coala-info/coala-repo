@@ -1,8 +1,9 @@
 ---
 name: r-annotables
-description: R package annotables (documentation from project home).
+description: The r-annotables package provides local lookup tables for converting and annotating Ensembl gene IDs across multiple model organisms in R. Use when user asks to join gene metadata to Ensembl IDs, map transcripts to genes, or annotate genomic results without querying external databases.
 homepage: https://cran.r-project.org/web/packages/annotables/index.html
 ---
+
 
 # r-annotables
 

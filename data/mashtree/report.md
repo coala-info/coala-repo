@@ -3,7 +3,7 @@
 ## mashtree
 
 ### Tool Description
-The provided text does not contain help information for mashtree, but rather an error message regarding a container runtime failure (no space left on device).
+use distances from Mash (min-hash algorithm) to make a NJ tree
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3
@@ -18,46 +18,51 @@ The provided text does not contain help information for mashtree, but rather an 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2610816405: no space left on device
-```
+mashtree: main::main: need more arguments
+mashtree: use distances from Mash (min-hash algorithm) to make a NJ tree
+  Usage: mashtree [options] *.fastq *.fasta *.gbk *.msh > tree.dnd
+  NOTE: fastq files are read as raw reads;
+        fasta, gbk, and embl files are read as assemblies;
+        Input files can be gzipped.
+  --tempdir            ''   If specified, this directory will not be
+                            removed at the end of the script and can
+                            be used to cache results for future
+                            analyses.
+                            If not specified, a dir will be made for you
+                            and then deleted at the end of this script.
+  --numcpus            1    This script uses Perl threads.
+  --outmatrix          ''   If specified, will write a distance matrix
+                            in tab-delimited format
+  --file-of-files           If specified, mashtree will try to read 
+                            filenames from each input file. The file of
+                            files format is one filename per line. This
+                            file of files cannot be compressed.
+  --outtree                 If specified, the tree will be written to 
+                            this file and not to stdout. Log messages
+                            will still go to stderr.
+  --version                 Display the version and exit
+  --citation                Display the preferred citation and exit
 
+  TREE OPTIONS
+  --truncLength        250  How many characters to keep in a filename
+  --sigfigs            10   How many decimal places to use in mash distances 
+  --sort-order         ABC  For neighbor-joining, the sort order can
+                            make a difference. Options include:
+                            ABC (alphabetical), random, input-order
 
-## Metadata
-- **Skill**: generated
-
-## mashtree_mashtree_bootstrap.pl
-
-### Tool Description
-The provided text does not contain help information for the tool, but rather a system error message indicating a failure to build a Singularity/Apptainer container due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3
-- **Homepage**: https://github.com/lskatz/mashtree
-- **Package**: https://anaconda.org/channels/bioconda/packages/mashtree/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2763682337: no space left on device
-```
-
-## mashtree_mashtree_jackknife.pl
-
-### Tool Description
-A tool for jackknifing with Mashtree. Note: The provided help text contains only system error messages regarding container execution and no usage information was available to parse.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3
-- **Homepage**: https://github.com/lskatz/mashtree
-- **Package**: https://anaconda.org/channels/bioconda/packages/mashtree/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mashtree:1.4.6--pl5321h7b50bb2_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3482240639: no space left on device
+  MASH SKETCH OPTIONS
+  --genomesize         5000000
+  --mindepth           5    If mindepth is zero, then it will be
+                            chosen in a smart but slower method,
+                            to discard lower-abundance kmers.
+  --kmerlength         21
+  --sketch-size        10000
+  --seed               42   Seed for mash sketch
+  --save-sketches      ''   If a directory is supplied, then sketches
+                            will be saved in it.
+                            If no directory is supplied, then sketches
+                            will be saved alongside source files.
+   
+Stopped at /usr/local/bin/mashtree line 75.
 ```
 

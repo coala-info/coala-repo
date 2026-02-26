@@ -1,8 +1,9 @@
 ---
 name: r-monocle3
-description: R package monocle3 (documentation from project home).
+description: This tool provides expert guidance for single-cell RNA-seq analysis using the monocle3 R package. Use when user asks to perform single-cell trajectory inference, conduct pseudotime analysis, cluster cells, or identify differential expression across developmental paths.
 homepage: https://cran.r-project.org/web/packages/monocle3/index.html
 ---
+
 
 # r-monocle3
 

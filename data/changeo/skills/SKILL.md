@@ -1,8 +1,9 @@
 ---
 name: changeo
-description: Change-O is a specialized bioinformatics suite designed for the post-alignment processing of B cell and T cell receptor repertoires.
+description: Change-O is a bioinformatics suite for processing and standardizing B cell and T cell receptor repertoire alignment data. Use when user asks to convert alignment outputs to AIRR databases, filter sequence records, assign sequences to clonal lineages, or reconstruct ancestral germline sequences.
 homepage: http://changeo.readthedocs.io
 ---
+
 
 # changeo
 

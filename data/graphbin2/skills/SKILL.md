@@ -1,8 +1,9 @@
 ---
 name: graphbin2
-description: GraphBin2 is a specialized tool for metagenomic bin-refinement.
+description: GraphBin2 refines metagenomic binning results by using assembly graph topology and coverage information to improve contig assignments. Use when user asks to refine metagenomic bins, resolve ambiguous contig assignments, or perform binning refinement using assembly graphs from SPAdes, MEGAHIT, or Flye.
 homepage: https://github.com/metagentools/GraphBin2
 ---
+
 
 # graphbin2
 

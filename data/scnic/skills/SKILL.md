@@ -1,8 +1,9 @@
 ---
 name: scnic
-description: SCNIC (Sparse Cooccurrence Network Investigation for Compositional data) is a specialized tool for building and analyzing positive correlation networks.
+description: "SCNIC builds and analyzes correlation networks for compositional data to identify functional modules and relationships between different data types. Use when user asks to calculate correlations within a dataset, group features into modules to reduce dimensionality, or identify correlations between two distinct data tables."
 homepage: https://github.com/shafferm/SCNIC
 ---
+
 
 # scnic
 

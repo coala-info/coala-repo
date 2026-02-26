@@ -2,10 +2,76 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: popera
 label: popera
-doc: "A tool for processing PCR-based enrichment assays (Note: The provided text contains
-  container build logs and error messages rather than CLI help text, so no arguments
-  could be extracted).\n\nTool homepage: https://github.com/forrestzhang/Popera"
-inputs: []
+doc: "DNase I hypersensitive site identification\n\nTool homepage: https://github.com/forrestzhang/Popera"
+inputs:
+  - id: bandwidth
+    type:
+      - 'null'
+      - int
+    doc: kernel smooth band width, should >1
+    default: 200
+    inputBinding:
+      position: 101
+      prefix: --bandwidth
+  - id: datafile
+    type: File
+    doc: data file, should be sorted bam format
+    inputBinding:
+      position: 101
+      prefix: --data
+  - id: exclude_chr
+    type:
+      - 'null'
+      - string
+    doc: Don't count those DHs, example='-x ChrM,ChrC'
+    inputBinding:
+      position: 101
+      prefix: --excludechr
+  - id: minlength
+    type:
+      - 'null'
+      - int
+    doc: minimum length of hot spots
+    default: 5
+    inputBinding:
+      position: 101
+      prefix: --minlength
+  - id: output_bigwig
+    type:
+      - 'null'
+      - boolean
+    doc: whether out put bigwig file
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --bigwig
+  - id: sample_name
+    type:
+      - 'null'
+      - string
+    doc: NH sample name
+    default: NH_sample
+    inputBinding:
+      position: 101
+      prefix: --name
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: threads number or cpu number
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: threshold
+    type:
+      - 'null'
+      - float
+    doc: Hot spots threshold
+    default: 4.0
+    inputBinding:
+      position: 101
+      prefix: --threshold
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: bracken
-description: Bracken (Bayesian Reestimation of Abundance with KrakEN) is a statistical tool designed to improve the accuracy of metagenomic abundance estimates.
+description: Bracken is a statistical tool that reestimates taxonomic abundance from Kraken classification results to provide more accurate quantification of species or other taxonomic levels. Use when user asks to estimate taxonomic abundance, redistribute reads from higher-level clades to species, or generate precise metagenomic quantification from Kraken reports.
 homepage: https://github.com/jenniferlu717/Bracken
 ---
+
 
 # bracken
 

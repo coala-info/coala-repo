@@ -1,8 +1,9 @@
 ---
 name: intervals
-description: Intervals (based on the CookieCloud protocol) provides a secure bridge for synchronizing browser session data between different clients or into automated environments.
+description: Intervals provides a secure bridge for synchronizing and programmatically retrieving encrypted browser session data via a self-hosted relay server. Use when user asks to deploy a synchronization backend, interact with the data API, or implement cryptographic procedures for decrypting cookies and local storage.
 homepage: https://github.com/easychen/CookieCloud
 ---
+
 
 # intervals
 

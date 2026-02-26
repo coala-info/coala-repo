@@ -1,8 +1,9 @@
 ---
 name: bioconductor-migsa
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: MIGSA performs massive and integrative gene set enrichment analysis across multiple genomic data sets. Use when user asks to perform integrative gene set analysis, analyze multiple omics data types simultaneously, or identify enriched biological pathways across different experiments.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/MIGSA.html
 ---
+
 
 # bioconductor-migsa
 

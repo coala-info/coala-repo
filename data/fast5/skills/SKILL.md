@@ -1,8 +1,9 @@
 ---
 name: fast5
-description: The `fast5` toolset provides a lightweight interface for interacting with Oxford Nanopore Fast5 files.
+description: The fast5 toolset provides a C++ library and command-line utilities for interacting with and managing Oxford Nanopore Fast5 files. Use when user asks to inspect the internal structure of Fast5 files, pack or unpack reads for storage optimization, or access Fast5 data using a C++ interface.
 homepage: https://github.com/mateidavid/fast5
 ---
+
 
 # fast5
 

@@ -1,8 +1,9 @@
 ---
 name: ataqv
-description: ataqv is a specialized toolkit designed for the rigorous quality control of ATAC-seq experiments.
+description: ataqv is a quality control toolkit for ATAC-seq data that quantifies metrics like fragment length distribution and TSS enrichment. Use when user asks to assess ATAC-seq library quality, extract QC metrics from BAM files, or generate an interactive visualization dashboard for experiment results.
 homepage: https://parkerlab.github.io/ataqv/
 ---
+
 
 # ataqv
 

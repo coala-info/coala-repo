@@ -1,8 +1,9 @@
 ---
 name: shapemapper
-description: ShapeMapper 2 is a specialized bioinformatics pipeline designed for Mutational Profiling (MaP) experiments.
+description: ShapeMapper automates the processing of raw sequencing data into RNA reactivity profiles by identifying chemical adducts through mutational profiling. Use when user asks to process SHAPE-MaP or DMS-MaP data, calculate RNA chemical probing reactivities, or align mutational profiling reads to a reference sequence.
 homepage: https://github.com/Weeks-UNC/shapemapper2
 ---
+
 
 # shapemapper
 

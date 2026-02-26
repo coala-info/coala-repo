@@ -1,8 +1,9 @@
 ---
 name: r-markdown
-description: "Render Markdown to full and lightweight HTML/LaTeX documents with     the 'commonmark' package. This package has been superseded by 'litedown'.</p>"
+description: This tool renders Markdown strings or files into HTML, LaTeX, and other formats in R using the commonmark engine. Use when user asks to convert Markdown to HTML or LaTeX, customize rendering options like Table of Contents or MathJax, or create lightweight documents without the overhead of R Markdown.
 homepage: https://cloud.r-project.org/web/packages/markdown/index.html
 ---
+
 
 # r-markdown
 

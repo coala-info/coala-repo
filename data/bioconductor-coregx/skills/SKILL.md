@@ -1,8 +1,9 @@
 ---
 name: bioconductor-coregx
-description: the package is available on all platforms; click for details.
+description: CoreGx provides a standardized framework for integrating and analyzing large-scale pharmacogenomic datasets. Use when user asks to manage pharmacogenomic data, analyze dose-response relationships, or integrate molecular profiles with drug sensitivity results.
 homepage: https://bioconductor.org/packages/release/bioc/html/CoreGx.html
 ---
+
 
 # bioconductor-coregx
 

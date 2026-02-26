@@ -1,8 +1,9 @@
 ---
 name: bioconductor-imcrtools
-description: the package is available on all platforms; click for details.
+description: This tool performs spatial analysis and processing of highly multiplexed imaging data such as Imaging Mass Cytometry. Use when user asks to read segmentation outputs, perform spillover correction, construct spatial graphs, detect cellular neighborhoods, or perform neighborhood permutation testing for cell-cell interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/imcRtools.html
 ---
+
 
 # bioconductor-imcrtools
 

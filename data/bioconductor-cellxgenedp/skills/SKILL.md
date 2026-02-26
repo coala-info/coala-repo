@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellxgenedp
-description: the package is available on all platforms; click for details.
+description: This tool provides an R-based interface to discover, filter, and retrieve single-cell RNA sequencing data from the CELLxGENE portal. Use when user asks to browse collections, filter datasets by ontology terms, download H5AD files, or integrate CELLxGENE data into Bioconductor workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/cellxgenedp.html
 ---
+
 
 # bioconductor-cellxgenedp
 

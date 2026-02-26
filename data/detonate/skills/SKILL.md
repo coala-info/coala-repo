@@ -1,8 +1,9 @@
 ---
 name: detonate
-description: DETONATE (DE novo TranscriptOme rNa-seq Assembly with or without the Truth Evaluation) is a computational framework for assessing the quality of transcriptome assemblies.
+description: DETONATE is a computational framework for assessing the quality of de novo transcriptome assemblies using both reference-free and reference-based evaluation methods. Use when user asks to evaluate transcriptome assembly quality, compare different assemblers, calculate RSEM-EVAL scores, or perform reference-based assembly validation.
 homepage: https://github.com/deweylab/detonate
 ---
+
 
 # detonate
 

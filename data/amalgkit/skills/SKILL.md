@@ -1,8 +1,9 @@
 ---
 name: amalgkit
-description: amalgkit is a specialized toolkit designed for "transcriptome amalgamation"—the process of combining disparate RNA-seq datasets into a unified, comparable format for evolutionary analysis.
+description: Amalgkit is a toolkit for integrating and normalizing disparate RNA-seq datasets to facilitate cross-species evolutionary transcriptomic analysis. Use when user asks to retrieve SRA metadata, quantify transcript abundance, perform cross-species TMM normalization, or curate expression matrices for comparative analysis.
 homepage: https://github.com/kfuku52/amalgkit
 ---
+
 
 # amalgkit
 

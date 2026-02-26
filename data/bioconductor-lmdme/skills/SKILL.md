@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lmdme
-description: the package is available on all platforms; click for details.
+description: This tool performs linear model decomposition and multivariate analysis on high-throughput biological data from experiments with multiple factors. Use when user asks to perform ANOVA-PCA, ANOVA-Simultaneous Component Analysis, or ANOVA-PLS to decompose variability sources and visualize interaction patterns in datasets like RNA-seq or metabolomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/lmdme.html
 ---
+
 
 # bioconductor-lmdme
 

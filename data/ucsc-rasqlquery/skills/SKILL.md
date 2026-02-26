@@ -1,8 +1,9 @@
 ---
 name: ucsc-rasqlquery
-description: The `raSqlQuery` utility treats RA (Record-Attribute) files as flat-file databases, allowing you to use SQL-like syntax to query text-based records.
+description: ucsc-rasqlquery queries Record-Attribute (RA) files using SQL-like syntax. Use when user asks to extract specific fields, filter records, join multiple RA files, or audit track configuration files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-rasqlquery
 

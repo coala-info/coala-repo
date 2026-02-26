@@ -1,8 +1,9 @@
 ---
 name: r-hdrcde
-description: Computation of highest density regions in one and two dimensions, kernel estimation of univariate density functions conditional on one covariate,and multimodal regression.</p>
+description: The r-hdrcde package provides tools for calculating and visualizing highest density regions and conditional density estimates for univariate and bivariate data. Use when user asks to calculate highest density regions, create HDR boxplots, perform conditional density estimation, or conduct multimodal regression.
 homepage: https://cloud.r-project.org/web/packages/hdrcde/index.html
 ---
+
 
 # r-hdrcde
 

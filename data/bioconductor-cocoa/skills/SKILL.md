@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cocoa
-description: the package is available on all platforms; click for details.
+description: COCOA quantifies the relationship between epigenetic data and sample-level variation to identify relevant genomic features. Use when user asks to perform coordinate covariation analysis, identify genomic regions associated with epigenetic variation, or link DNA methylation and chromatin accessibility to phenotypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/COCOA.html
 ---
+
 
 # bioconductor-cocoa
 

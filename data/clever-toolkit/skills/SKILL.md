@@ -1,8 +1,9 @@
 ---
 name: clever-toolkit
-description: The CLEVER Toolkit (CTK) is a specialized suite designed for the sensitive discovery and accurate genotyping of genomic insertions and deletions.
+description: The CLEVER Toolkit is a suite of tools designed for the discovery and genotyping of genomic insertions and deletions using paired-end sequencing data. Use when user asks to discover structural variants, genotype indels, or estimate library insert size distributions.
 homepage: https://bitbucket.org/tobiasmarschall/clever-toolkit
 ---
+
 
 # clever-toolkit
 

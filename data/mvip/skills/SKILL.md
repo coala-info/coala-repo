@@ -1,8 +1,9 @@
 ---
 name: mvip
-description: The Multi-tool Viromics Pipeline (MVP), executed via the `mvip` command, is a Python-based framework designed to standardize the processing of large-scale viral sequencing data.
+description: The mvip tool is a Python-based framework that automates the processing, identification, and annotation of large-scale viral sequencing data. Use when user asks to identify viral sequences, assess genome quality, cluster sequences into vOTUs, or perform functional annotation of viromics data.
 homepage: https://gitlab.com/ccoclet/mvp
 ---
+
 
 # mvip
 

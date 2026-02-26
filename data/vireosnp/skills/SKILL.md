@@ -1,8 +1,9 @@
 ---
 name: vireosnp
-description: The `vireosnp` skill provides a workflow for using Vireo (Variational Inference for Reconstructing Ensemble Origin), a Bayesian model designed to demultiplex single-cell RNA-seq data.
+description: VireoSNP demultiplexes single-cell RNA-seq data to assign cells to their individual donors using genetic variations. Use when user asks to demultiplex single-cell RNA-seq data, assign cells to their donors, or identify doublets.
 homepage: https://github.com/huangyh09/vireoSNP
 ---
+
 
 # vireosnp
 

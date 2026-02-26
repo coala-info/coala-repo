@@ -1,9 +1,9 @@
 # ucsc-mktime CWL Generation Report
 
-## ucsc-mktime
+## ucsc-mktime_mktime
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime error messages indicating a failure to fetch or build the OCI image.
+convert date string to unix timestamp
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-mktime:482--h0b57e2e_0
@@ -18,33 +18,8 @@ The provided text does not contain help information for the tool. It contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mktime:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-mktime
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime error messages indicating a failure to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-mktime:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-mktime/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mktime:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+mktime - convert date string to unix timestamp
+usage: mktime YYYY-MM-DD HH:MM:SS
+valid dates: 1970-01-01 00:00:00 to 2038-01-19 03:14:07
 ```
 

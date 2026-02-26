@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drugvsdisease
-description: the package is available on all platforms; click for details.
+description: This tool compares drug and disease gene expression profiles to identify therapeutic candidates and potential side effects. Use when user asks to compare gene expression signatures, perform drug repurposing analysis, identify side effects through profile correlation, or process microarray data from GEO and ArrayExpress for enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/DrugVsDisease.html
 ---
+
 
 # bioconductor-drugvsdisease
 

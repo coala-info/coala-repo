@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sift.hsapiens.dbsnp137
-description: the package is available on all platforms; click for details.
+description: This package provides SIFT predictions for human genetic variants based on dbSNP build 137. Use when user asks to predict the functional impact of amino acid substitutions, retrieve SIFT scores for human SNPs, or evaluate the effect of variants on protein function.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/SIFT.Hsapiens.dbSNP137.html
 ---
+
 
 # bioconductor-sift.hsapiens.dbsnp137
 

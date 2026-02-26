@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mouse4302barcodevecs
-description: the package is available on all platforms; click for details.
+description: This package provides barcode vectors for the Affymetrix Mouse Genome 430 2.0 Array. Use when user asks to perform gene expression barcoding or estimate the probability of gene expression for mouse 430 2.0 microarrays.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mouse4302barcodevecs.html
 ---
+
 
 # bioconductor-mouse4302barcodevecs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ampliqueso
-description: The package provides tools and reports for the analysis of amplicon sequencing panels, such as AmpliSeq
+description: This tool analyzes amplicon sequencing panels using coverage-based non-parametric tests and read counting. Use when user asks to perform coverage analysis, generate read counts from BAM files, call variants using samtools, or produce comprehensive experiment reports for RNA or DNA amplicon data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ampliQueso.html
 ---
+
 
 # bioconductor-ampliqueso
 

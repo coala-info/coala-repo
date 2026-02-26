@@ -3,7 +3,7 @@
 ## coral
 
 ### Tool Description
-The provided text is a runtime error log from a container build/execution process and does not contain help text or usage information. Consequently, no arguments could be extracted.
+Coral v1.0.0 (c) 2019 Mingfu Shao, The Pennsylvania State University
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coral:1.0.0--hf5e1fbb_1
@@ -18,11 +18,22 @@ The provided text is a runtime error log from a container build/execution proces
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/22 02:56:35  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/coral:1.0.0--hf5e1fbb_1 uri: while building SIF from layers: packer failed to pack: while unpacking tmpfs: while unpacking layer sha256:81d0f260b1f20a91c478c6fa0f7acfe52f7d48b47528f74af193fe0c664279c1: unpack entry: usr/local/include/boost/fusion/container/generation/detail/preprocessed/make_map50.hpp: unpack to regular file: short write: write /tmp/build-temp-1025492700/rootfs/usr/local/include/boost/fusion/container/generation/detail/preprocessed/make_map50.hpp: no space left on device
+Coral v1.0.0 (c) 2019 Mingfu Shao, The Pennsylvania State University
+
+Usage: coral -i <input-bam-file> -o <output-bam-file> [-r <refernece>] [options]
+
+Options:
+ --help                                      print usage of Coral and exit
+ --version                                   print current version of Coral and exit
+ --preview                                   determine fragment-length-range and library-type and exit
+ --library_type <first, second, unstranded>  library type of the sample, default: unstranded
+ --min_bridging_score <double>               the minimized bottleneck weight in bridging path, default: 0.5
+ --dp_solution_size <integer>                candidate number of bridgign paths, default: 10
+ --dp_stack_size <integer>                   number of weights maintained for each bridging path, default: 5
+ --max_clustring_flank <integer>             maximized basepair difference for being in an equivalent class, default: 30
+ --flank_tiny_length <integer>               maximized length for reconsidering error correction, default:  10
+ --flank_tiny_ratio <integer>                maximized ratio for reconsidering error correction, default:  0.4
+ --min_splice_bundary_hits <integer>         minimum number of spliced reads required for a junction, default: 1
+ --max_num_cigar <integer>                   ignore reads with CIGAR size larger than this value, default: 1000
 ```
 

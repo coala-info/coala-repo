@@ -1,8 +1,9 @@
 ---
 name: merlin
-description: The `merlin` skill provides a specialized workflow for analyzing genetic data within pedigrees.
+description: Merlin performs genetic analysis on pedigree data to calculate linkage and association statistics. Use when user asks to calculate LOD scores, identify genotyping errors, estimate IBD states, perform haplotyping, or conduct variance component analysis.
 homepage: http://csg.sph.umich.edu/abecasis/merlin
 ---
+
 
 # merlin
 

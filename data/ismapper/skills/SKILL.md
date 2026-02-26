@@ -1,8 +1,9 @@
 ---
 name: ismapper
-description: ISMapper is a specialized mapping-based tool designed to pinpoint where specific insertion sequences are located within a bacterial genome.
+description: ISMapper identifies the locations and orientations of insertion sequences within bacterial genomes using paired-end Illumina reads and a reference genome. Use when user asks to map insertion sequences, identify IS element coordinates, or track mobile genetic elements in bacterial populations.
 homepage: https://github.com/jhawkey/IS_mapper/
 ---
+
 
 # ismapper
 

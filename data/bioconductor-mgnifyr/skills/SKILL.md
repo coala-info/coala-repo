@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgnifyr
-description: The package can be used to import microbial data for instance into TreeSummarizedExperiment (TreeSE). In TreeSE format, the data is directly compatible with miaverse framework.
+description: MGnifyR imports microbial data from the MGnify database into R for analysis within the TreeSummarizedExperiment format. Use when user asks to fetch microbiome datasets from MGnify, import microbial data into TreeSummarizedExperiment objects, or integrate MGnify data with the miaverse framework.
 homepage: https://bioconductor.org/packages/release/bioc/html/MGnifyR.html
 ---
+
 
 # bioconductor-mgnifyr
 

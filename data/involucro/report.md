@@ -3,7 +3,7 @@
 ## involucro
 
 ### Tool Description
-Involucro is a tool used for orchestrating and wrapping Docker builds, often used in bioinformatics containerization workflows.
+v1.1.2
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/involucro:1.1.2--0
@@ -18,11 +18,29 @@ Involucro is a tool used for orchestrating and wrapping Docker builds, often use
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/involucro:1.1.2--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1333572875: no space left on device
+Usage of involucro v1.1.2:
+  -H string
+    	Set the URL of the Docker instance (default "unix:///var/run/docker.sock")
+  -T	Shorthand for --tasks
+  -e string
+    	Evaluate the given script directly, not evaluating the control file
+  -f string
+    	Set the control file (default "invfile.lua")
+  -host string
+    	Long form for -H (default "unix:///var/run/docker.sock")
+  -s value
+    	Shorthand for --set (default [])
+  -set value
+    	Used as KEY=VALUE, makes VAR[KEY] available with value VALUE in Lua script (default [])
+  -tasks
+    	Show available tasks and then exit
+  -v int
+    	Set verbosity, 3 logs everything, 2 shows standard output (default 1)
+  -version
+    	Show version and the exit
+  -w string
+    	Set working dir, being the base for all operations. Also settable via environment variable $INVOLUCRO_WORKDIR (default ".")
+  -wrap string
+    	Execute encoded wrap task
 ```
 
-
-## Metadata
-- **Skill**: generated

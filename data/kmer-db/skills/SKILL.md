@@ -1,8 +1,9 @@
 ---
 name: kmer-db
-description: kmer-db is a high-performance utility designed for processing massive sets of k-mers with minimal memory overhead.
+description: kmer-db is a high-performance utility for indexing genomic or proteomic data and calculating similarity metrics between massive sets of k-mers. Use when user asks to build k-mer databases, perform all-to-all comparisons, or calculate Jaccard distances to estimate evolutionary relationships.
 homepage: https://github.com/refresh-bio/kmer-db
 ---
+
 
 # kmer-db
 

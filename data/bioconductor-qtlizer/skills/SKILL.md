@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qtlizer
-description: the package is available on all platforms; click for details.
+description: Qtlizer queries a database of quantitative trait loci to find associations between genetic variants and molecular traits. Use when user asks to query QTL information, find expression quantitative trait loci, or link genetic variants to gene expression.
 homepage: https://bioconductor.org/packages/release/bioc/html/Qtlizer.html
 ---
+
 
 # bioconductor-qtlizer
 

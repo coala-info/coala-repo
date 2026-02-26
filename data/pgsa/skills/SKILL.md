@@ -1,8 +1,9 @@
 ---
 name: pgsa
-description: PgSA (Pseudogenome Suffix Array) is a specialized bioinformatics tool designed to create a compact, searchable index from high-throughput sequencing reads.
+description: PgSA creates a compact, searchable index from high-throughput sequencing reads using a pseudogenome suffix array approach. Use when user asks to build a searchable index from reads, query the presence of k-mers, or perform efficient sequence searches within a read set.
 homepage: http://sun.aei.polsl.pl/pgsa/
 ---
+
 
 # pgsa
 

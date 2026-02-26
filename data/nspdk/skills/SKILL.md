@@ -1,8 +1,9 @@
 ---
 name: nspdk
-description: NSPDK (Neighborhood Subgraph Pairwise Distance Kernel) is a specialized tool for extracting structural features from molecular graphs.
+description: NSPDK extracts structural features from molecular graphs by decomposing SMILES strings into high-dimensional numerical descriptors. Use when user asks to extract molecular features, configure feature complexity, or convert SMILES strings into bit-space descriptors.
 homepage: https://github.com/aigulkhkmv/nspdk-features
 ---
+
 
 # nspdk
 

@@ -2,9 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mtglink_mtglink.py
 label: mtglink_mtglink.py
-doc: "MTG-Link: A tool for linking and scaffolding assembly graphs using long reads.\n
-  \nTool homepage: https://github.com/anne-gcd/MTG-Link"
-inputs: []
+doc: "Local assembly with linked read data, using either a De Bruijn Graph (DBG) algorithm
+  or an Iterative Read Overlap (IRO) algorithm\n\nTool homepage: https://github.com/anne-gcd/MTG-Link"
+inputs:
+  - id: module
+    type: string
+    doc: MTGLink module used for the Local Assembly step
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

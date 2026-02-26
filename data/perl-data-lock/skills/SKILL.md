@@ -1,8 +1,9 @@
 ---
 name: perl-data-lock
-description: This skill provides guidance on using the `Data::Lock` Perl module to manage variable mutability.
+description: This tool manages Perl variable mutability by manipulating internal scalar value flags to lock and unlock data structures efficiently. Use when user asks to make variables immutable, lock scalars or references, or prevent modification of data structures without the performance overhead of tied variables.
 homepage: http://metacpan.org/pod/Data::Lock
 ---
+
 
 # perl-data-lock
 

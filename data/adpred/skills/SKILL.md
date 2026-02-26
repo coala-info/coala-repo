@@ -1,8 +1,9 @@
 ---
 name: adpred
-description: The provided text does not contain help information for the tool 'adpred'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+description: adpred identifies and analyzes transcription activation domains within protein sequences. Use when user asks to predict activation domains, perform in silico saturated mutagenesis, or analyze the impact of amino acid changes on activation domain function.
 homepage: https://github.com/FredHutch/adpred
 ---
+
 
 # adpred
 

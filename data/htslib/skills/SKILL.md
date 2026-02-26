@@ -1,8 +1,9 @@
 ---
 name: htslib
-description: HTSlib is the foundational C library used by Samtools and Bcftools for processing high-throughput sequencing data.
+description: HTSlib provides essential utilities for compressing, indexing, and identifying high-throughput sequencing data files. Use when user asks to compress files with bgzip, index tab-delimited genomic files with tabix, query specific genomic regions, or identify file formats.
 homepage: https://github.com/samtools/htslib
 ---
+
 
 # htslib
 

@@ -2,14 +2,49 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: kmer-counter
 label: kmer-counter
-doc: "A tool for counting k-mers (Note: The provided help text contains only container
-  runtime error messages and no usage information).\n\nTool homepage: https://github.com/CobiontID/kmer-counter"
-inputs: []
+doc: "Tally nucleotide counts in multi-entry fasta\n\nTool homepage: https://github.com/CobiontID/kmer-counter"
+inputs:
+  - id: collapse
+    type:
+      - 'null'
+      - boolean
+    doc: Canonicalize k-mers (default 1 = True
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --collapse
+  - id: file
+    type: File
+    doc: Fasta file to tally.
+    inputBinding:
+      position: 101
+      prefix: --file
+  - id: ids
+    type:
+      - 'null'
+      - File
+    doc: File to write identifiers to
+    default: ids.txt
+    inputBinding:
+      position: 101
+      prefix: --ids
+  - id: klength
+    type:
+      - 'null'
+      - int
+    doc: K-mer length
+    default: 4
+    inputBinding:
+      position: 101
+      prefix: --klength
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out
+    type:
+      - 'null'
+      - File
+    doc: Output file name.
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/kmer-counter:0.1.2--h4349ce8_0
-stdout: kmer-counter.out

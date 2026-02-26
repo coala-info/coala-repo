@@ -1,8 +1,9 @@
 ---
 name: ghmm
-description: ghmm is a specialized relay server designed to bridge GitHub and Mattermost.
+description: ghmm is a relay server that transforms GitHub webhook events into formatted messages for Mattermost channels. Use when user asks to bridge GitHub and Mattermost, receive real-time repository notifications in chat, or map specific GitHub events to different Mattermost channels.
 homepage: https://github.com/ulfsauer0815/ghmm
 ---
+
 
 # ghmm
 

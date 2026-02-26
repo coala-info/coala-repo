@@ -1,8 +1,9 @@
 ---
 name: r-ggsignif
-description: "Enrich your 'ggplots' with group-wise comparisons.     This package provides an easy way to indicate if two groups are     significantly different. Commonly this is shown by a bracket on top     connecting the groups of interest which itself is annotated with the     level of significance (NS, *, **, ***).  The package provides a single     layer (geom_signif()) that takes the groups for comparison and the     test (t.test(), wilcox.text() etc.) as arguments and adds the     annotation to the plot.</p>"
+description: This tool adds significance brackets and annotations to ggplot2 visualizations in R. Use when user asks to add p-values to plots, visualize statistical comparisons between groups, or draw significance brackets on boxplots and bar charts.
 homepage: https://cloud.r-project.org/web/packages/ggsignif/index.html
 ---
+
 
 # r-ggsignif
 

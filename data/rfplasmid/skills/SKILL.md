@@ -1,8 +1,9 @@
 ---
 name: rfplasmid
-description: RFPlasmid is a machine-learning tool that utilizes Random Forest models to classify genomic contigs.
+description: RFPlasmid uses Random Forest models to classify genomic contigs as either chromosomal or plasmid-derived based on kmer frequencies and marker genes. Use when user asks to predict plasmid sequences, classify genomic contigs, or separate mobile genetic elements from bacterial chromosomes.
 homepage: https://github.com/aldertzomer/RFPlasmid
 ---
+
 
 # rfplasmid
 

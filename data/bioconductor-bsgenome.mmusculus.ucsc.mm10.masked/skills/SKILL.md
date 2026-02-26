@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmusculus.ucsc.mm10.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the Mus musculus (mm10) genome sequence with built-in masks for assembly gaps and ambiguous regions. Use when user asks to load the masked mouse genome, perform motif searching in non-gap regions, or access chromosome sequences for the mm10 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmusculus.UCSC.mm10.masked.html
 ---
+
 
 # bioconductor-bsgenome.mmusculus.ucsc.mm10.masked
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtn
-description: the package is available on all platforms; click for details.
+description: This tool reconstructs and analyzes transcriptional regulatory networks using gene expression data. Use when user asks to reconstruct transcriptional networks, perform regulon analysis, or infer transcription factor activity.
 homepage: https://bioconductor.org/packages/release/bioc/html/RTN.html
 ---
+
 
 # bioconductor-rtn
 

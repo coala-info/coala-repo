@@ -1,8 +1,9 @@
 ---
 name: smartmap
-description: The `smartmap` tool addresses the challenge of multi-mapping reads by using an iterative Bayesian algorithm to distribute read weights based on local genomic context and alignment scores.
+description: SmartMap uses an iterative Bayesian algorithm to reweight multi-mapping reads for more accurate genome-wide coverage estimation. Use when user asks to distribute multi-mapping read weights, prepare DNA or RNA alignments for reweighting, or generate weighted BEDGRAPH files from sequencing data.
 homepage: http://shah-rohan.github.io/SmartMap
 ---
+
 
 # smartmap
 

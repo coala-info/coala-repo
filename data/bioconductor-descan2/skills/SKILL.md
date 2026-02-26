@@ -1,8 +1,9 @@
 ---
 name: bioconductor-descan2
-description: the package is available on all platforms; click for details.
+description: DEScan2 provides an integrated framework for identifying differentially enriched regions in epigenomic data using an adaptive window scan. Use when user asks to call peaks in individual samples, align peaks into consensus regions, or count reads for differential enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEScan2.html
 ---
+
 
 # bioconductor-descan2
 

@@ -1,8 +1,9 @@
 ---
 name: r-psych
-description: A general purpose toolbox developed originally for personality, psychometric theory and experimental psychology.  Functions are primarily for multivariate analysis and scale construction using factor analysis, principal component analysis, cluster analysis and reliability analysis, although others provide basic descriptive statistics. Item Response Theory is done using  factor analysis of tetrachoric and polychoric correlations. Functions for analyzing data at multiple levels include within and between group statistics, including correlations and factor analysis.  Validation and cross validation of scales developed using basic machine learning algorithms are provided, as are functions for simulating and testing particular item and test structures. Several functions  serve as a useful front end for structural equation modeling.  Graphical displays of path diagrams, including mediation models, factor analysis and structural equation models are created using basic graphics. Some of the functions are written to support a book on psychometric theory as well as publications in personality research.
+description: The r-psych package provides a comprehensive set of tools for multivariate analysis, scale construction, and reliability testing in psychological research. Use when user asks to perform exploratory factor analysis, calculate scale reliability like Cronbach's alpha or omega, score questionnaires, or conduct mediation analysis.
 homepage: https://cloud.r-project.org/web/packages/psych/index.html
 ---
+
 
 # r-psych
 

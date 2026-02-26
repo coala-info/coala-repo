@@ -3,7 +3,7 @@
 ## ncbi-genome-download
 
 ### Tool Description
-Download genome data from NCBI
+Download genome sequences from NCBI by taxid, genus, or assembly level.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ncbi-genome-download:0.3.3--pyh7cba7a3_0
@@ -12,17 +12,19 @@ Download genome data from NCBI
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-genome-download/overview
-- **Total Downloads**: 118.3K
+- **Total Downloads**: 118.4K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/kblin/ncbi-genome-download
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ncbi-genome-download:0.3.3--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1491757754: no space left on device
+Unable to find image 'quay.io/biocontainers/ncbi-genome-download:0.3.3--pyh7cba7a3_0' locally
+0.3.3--pyh7cba7a3_0: Pulling from biocontainers/ncbi-genome-download
+c1a16a04cedd: Already exists
+4ca545ee6d5d: Already exists
+129066654391: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2540708486: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

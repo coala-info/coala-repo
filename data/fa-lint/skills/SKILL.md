@@ -1,8 +1,9 @@
 ---
 name: fa-lint
-description: The `fa-lint` tool is a high-performance validator designed to ensure FASTA files are correctly formatted and biologically plausible.
+description: "fa-lint validates FASTA files for correct formatting, biological plausibility, and common structural issues. Use when user asks to validate FASTA files, check for duplicate sequence identifiers, identify invalid characters, or verify compressed genomic datasets."
 homepage: https://github.com/GallVp/fa-lint
 ---
+
 
 # fa-lint
 

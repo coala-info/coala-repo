@@ -1,8 +1,9 @@
 ---
 name: abricate
-description: ABRicate is a command-line tool designed for the rapid identification of acquired antibiotic resistance and virulence genes within DNA contigs.
+description: ABRicate identifies antibiotic resistance and virulence genes within DNA contigs by screening assembly files against integrated databases. Use when user asks to screen contigs for resistance genes, list available databases, or generate presence/absence matrices from screening results.
 homepage: https://github.com/tseemann/abricate
 ---
+
 
 # abricate
 

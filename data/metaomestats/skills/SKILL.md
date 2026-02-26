@@ -1,8 +1,9 @@
 ---
 name: metaomestats
-description: MetaomeStats is a Python-based statistical package tailored for evaluating the quality of metaome de novo assemblies.
+description: MetaomeStats calculates descriptive statistics for metaome de novo assemblies to evaluate fragmentation and assembly quality. Use when user asks to calculate assembly statistics, process a directory of FASTA files in batch, or perform reference-based assembly evaluation.
 homepage: https://github.com/raw-lab/metaome_stats
 ---
+
 
 # metaomestats
 

@@ -3,10 +3,10 @@
 ## hcluster_sg
 
 ### Tool Description
-Hierarchical clustering software for sparse graphs (Note: The provided help text contains only container runtime error messages and no usage information).
+Hierarchically clustering on a sparse graph
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/hcluster_sg:0.5.1--h9948957_9
+- **Docker Image**: quay.io/biocontainers/hcluster_sg:0.5.1--h7d875b9_4
 - **Homepage**: Not found
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,11 +18,30 @@ Hierarchical clustering software for sparse graphs (Note: The provided help text
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hcluster_sg:0.5.1--h9948957_9 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2730129473: no space left on device
+Program : hcluster_sg (Hierarchically clustering on a sparse graph)
+Version : 0.5.1, build 24Mar2021
+Contact : Douglas Scofield <douglasgscofield@gmail.com> (repository maintainer)
+          Written by and Copyright (c) 2006 Heng Li <lh3lh3@gmail.com>
+
+Usage   : hcluster_sg [options] [input_file]
+
+Options : -w NUM     minimum edge weight [20]
+          -s FNUM    minimum edge density between a join [0.50]
+          -m NUM     maximum size [500]
+          -o STRING  output file [stdout]
+          -c         only find single-linkage clusters (bypass h-cluster)
+          -v         verbose mode
+          -h         help
+
+Advanced Options:
+
+          -b FNUM    breaking edge density [0.10]
+          -O         the once-fail-inactive-forever mode
+          -r         weight resolution for '-O' [5]
+          -C FILE    category file
+          -L NUM     stringent level ('3' is the strictest) [2]
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

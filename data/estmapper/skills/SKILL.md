@@ -1,8 +1,9 @@
 ---
 name: estmapper
-description: The estmapper skill provides procedural knowledge for deploying and maintaining a specialized Django application designed for Automata Theory testing.
+description: The estmapper tool deploys and maintains a Django application designed for Automata Theory testing. Use when user asks to set up a local environment, manage database migrations, create a superuser, or launch the development server.
 homepage: https://github.com/estmapper/1234
 ---
+
 
 # estmapper
 

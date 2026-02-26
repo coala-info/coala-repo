@@ -1,9 +1,9 @@
 # srahunter CWL Generation Report
 
-## srahunter
+## srahunter_download
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container execution/build process.
+Download SRA data and convert it to FASTQ format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0
@@ -18,13 +18,82 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+_                 _            
+ ___ _ __ __ _| |__  _   _ _ __ | |_ ___ _ __ 
+/ __| '__/ _` | '_ \| | | | '_ \| __/ _ \ '__|
+\__ \ | | (_| | | | | |_| | | | | ||  __/ |   
+|___/_|  \__,_|_| |_|\__,_|_| |_|\__\___|_|   
+                                              
+
+usage: srahunter download [-h] --list LIST [-t T] [--path PATH]
+                          [--maxsize MAXSIZE] [--outdir OUTDIR]
+
+options:
+  -h, --help            show this help message and exit
+  --list, -i LIST       Accession list from SRA (file path)
+  -t T                  Number of threads (default: 6)
+  --path, -p PATH       Path to where to download .sra files (default: current
+                        directory/tmp_srahunter)
+  --maxsize, -ms MAXSIZE
+                        Max size of each sra file (default: 50G)
+  --outdir, -o OUTDIR   Path to where to download .fastq files (default:
+                        current directory)
 ```
 
 
-## Metadata
-- **Skill**: generated
+## srahunter_metadata
+
+### Tool Description
+Accession list from SRA (file path)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0
+- **Homepage**: https://github.com/GitEnricoNeko/srahunter
+- **Package**: https://anaconda.org/channels/bioconda/packages/srahunter/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+_                 _            
+ ___ _ __ __ _| |__  _   _ _ __ | |_ ___ _ __ 
+/ __| '__/ _` | '_ \| | | | '_ \| __/ _ \ '__|
+\__ \ | | (_| | | | | |_| | | | | ||  __/ |   
+|___/_|  \__,_|_| |_|\__,_|_| |_|\__\___|_|   
+                                              
+
+usage: srahunter metadata [-h] --list LIST [--no-html]
+
+options:
+  -h, --help       show this help message and exit
+  --list, -i LIST  Accession list from SRA (file path)
+  --no-html        Disable HTML table generation
+```
+
+
+## srahunter_fullmetadata
+
+### Tool Description
+Accession list from SRA (file path)
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/srahunter:0.0.9--pyhdfd78af_0
+- **Homepage**: https://github.com/GitEnricoNeko/srahunter
+- **Package**: https://anaconda.org/channels/bioconda/packages/srahunter/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+_                 _            
+ ___ _ __ __ _| |__  _   _ _ __ | |_ ___ _ __ 
+/ __| '__/ _` | '_ \| | | | '_ \| __/ _ \ '__|
+\__ \ | | (_| | | | | |_| | | | | ||  __/ |   
+|___/_|  \__,_|_| |_|\__,_|_| |_|\__\___|_|   
+                                              
+
+usage: srahunter fullmetadata [-h] --list LIST
+
+options:
+  -h, --help       show this help message and exit
+  --list, -i LIST  Accession list from SRA (file path)
+```
+

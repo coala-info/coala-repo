@@ -1,8 +1,9 @@
 ---
 name: crac
-description: The crac skill provides a streamlined workflow for auditing the security of WPA/WPA2 wireless networks.
+description: The crac tool provides a streamlined workflow for auditing WPA/WPA2 wireless network security by capturing handshakes and recovering passwords. Use when user asks to enable monitor mode, scan for wireless networks, capture a 4-way handshake, or crack WPA/WPA2 passwords using Aircrack-ng or Hashcat.
 homepage: https://github.com/brannondorsey/wifi-cracking
 ---
+
 
 # crac
 

@@ -1,8 +1,9 @@
 ---
 name: phonenumbers
-description: The `phonenumbers` skill provides a Python-based interface for handling international phone numbers, based on Google's libphonenumber library.
+description: The phonenumbers tool parses, validates, formats, and extracts metadata for international phone numbers. Use when user asks to parse raw strings into phone number objects, validate numbers against regional rules, format numbers for display or storage, extract geographic or carrier information, and find phone numbers within unstructured text.
 homepage: https://github.com/daviddrysdale/python-phonenumbers
 ---
+
 
 # phonenumbers
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-proper
-description: the package is available on all platforms; click for details.
+description: This tool performs power evaluation and sample size estimation for RNA-seq differential expression studies. Use when user asks to estimate power for RNA-seq experiments, determine required sample sizes, or design differential expression studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/PROPER.html
 ---
+
 
 # bioconductor-proper
 

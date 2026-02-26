@@ -1,8 +1,9 @@
 ---
 name: r-clinfun
-description: "Utilities to make your clinical collaborations easier if not           fun. It contains functions for designing studies such as Simon           2-stage and group sequential designs and for data analysis such           as Jonckheere-Terpstra test and estimating survival quantiles.</p>"
+description: The r-clinfun package provides specialized statistical utilities for designing and analyzing clinical trials, focusing on Phase II trial designs and exact power calculations. Use when user asks to determine optimal or minimax two-stage designs, calculate exact sample sizes for Fisher's exact test, or generate stopping boundaries for toxicity and futility monitoring.
 homepage: https://cloud.r-project.org/web/packages/clinfun/index.html
 ---
+
 
 # r-clinfun
 

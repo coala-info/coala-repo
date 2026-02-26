@@ -1,8 +1,9 @@
 ---
 name: psirc
-description: psirc (Pseudo-alignment identification of circular RNAs) is a specialized bioinformatics pipeline for the discovery and quantification of circular RNA isoforms.
+description: psirc is a bioinformatics pipeline for the discovery, reconstruction, and quantification of full-length circular RNA isoforms using pseudo-alignment. Use when user asks to identify back-splice junctions, reconstruct circular RNA sequences, or quantify the abundance of circular and linear transcripts.
 homepage: https://github.com/nictru/psirc
 ---
+
 
 # psirc
 

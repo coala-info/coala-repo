@@ -1,8 +1,9 @@
 ---
 name: ucsc-mktime
-description: The `ucsc-mktime` utility is a specialized command-line tool from the UCSC Genome Browser "kent" source tree.
+description: The `ucsc-mktime` utility transforms human-readable date strings into Unix timestamps. Use when user asks to convert date strings to timestamps, sort records by time, calculate time intervals, prepare time-based data for databases, or transform date columns in tabular files.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-mktime
 

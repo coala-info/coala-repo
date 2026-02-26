@@ -1,8 +1,9 @@
 ---
 name: mendelscan
-description: MendelScan is a Java-based bioinformatics tool designed to streamline the identification of disease-causing variants in exome data.
+description: MendelScan prioritizes disease-causing variants in exome data by integrating variant calls with pedigree information and functional annotations. Use when user asks to score variants based on Mendelian inheritance patterns, analyze shared identity by descent, or prioritize candidate genes using family structure and expression data.
 homepage: https://github.com/genome/mendelscan
 ---
+
 
 # mendelscan
 

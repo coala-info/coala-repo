@@ -1,8 +1,9 @@
 ---
 name: noise2read
-description: noise2read is a specialized tool for denoising sequencing data.
+description: noise2read is a machine learning-based tool designed to denoise and correct errors in short-read sequencing data. Use when user asks to correct sequencing reads, denoise FASTA or FASTQ files, or evaluate the accuracy of read correction results.
 homepage: https://github.com/Jappy0/noise2read
 ---
+
 
 # noise2read
 

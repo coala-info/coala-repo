@@ -1,8 +1,9 @@
 ---
 name: methylpy
-description: Methylpy is a high-performance Python pipeline designed for the end-to-end analysis of bisulfite sequencing data.
+description: Methylpy is a Python pipeline for analyzing bisulfite sequencing data to transform raw reads into methylation readouts and statistical comparisons. Use when user asks to build a reference genome, call methylation states from FASTQ or BAM files, or identify differentially methylated regions.
 homepage: https://github.com/yupenghe/methylpy
 ---
+
 
 # methylpy
 

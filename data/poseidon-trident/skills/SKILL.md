@@ -1,8 +1,9 @@
 ---
 name: poseidon-trident
-description: The `trident` CLI is the primary interface for interacting with Poseidon-formatted genetic data.
+description: Trident is a command-line interface for managing, validating, and manipulating Poseidon-formatted archaeogenetic datasets. Use when user asks to initialize new packages, validate data integrity, subset or merge datasets using the forge command, and fetch packages from remote archives.
 homepage: https://poseidon-framework.github.io/#/
 ---
+
 
 # poseidon-trident
 

@@ -3,7 +3,7 @@
 ## rapclust
 
 ### Tool Description
-RapClust is a tool for clustering transcript sequences based on their pseudo-mapping or alignment information. (Note: The provided text is a container engine error log and does not contain usage information or argument definitions.)
+A tool for clustering transcript sequences based on quantification results.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rapclust:0.1.2--py35_0
@@ -18,13 +18,20 @@ RapClust is a tool for clustering transcript sequences based on their pseudo-map
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rapclust:0.1.2--py35_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/rapclust:0.1.2--py35_0' locally
+0.1.2--py35_0: Pulling from biocontainers/rapclust
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+d3d0b4974b2c: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2510857541: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

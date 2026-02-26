@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scds
-description: the package is available on all platforms; click for details.
+description: This package provides computational methods for identifying and scoring doublets in single-cell RNA-sequencing data. Use when user asks to detect doublets in scRNA-seq data, score potential doublets, or perform in silico doublet annotation.
 homepage: https://bioconductor.org/packages/release/bioc/html/scds.html
 ---
+
 
 # bioconductor-scds
 

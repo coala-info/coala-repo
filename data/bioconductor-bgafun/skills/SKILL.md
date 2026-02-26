@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bgafun
-description: the package is available on all platforms; click for details.
+description: This tool identifies functional residues in protein alignments using Between Group Analysis to differentiate protein subfamilies. Use when user asks to identify residues that differentiate protein subfamilies, perform Between Group Analysis on multiple sequence alignments, or encode alignments using binary and amino acid properties.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/bgafun.html
 ---
+
 
 # bioconductor-bgafun
 

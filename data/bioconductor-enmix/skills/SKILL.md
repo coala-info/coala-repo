@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enmix
-description: the package is available on all platforms; click for details.
+description: This package provides a comprehensive toolset for the analysis and quality control of Illumina DNA methylation beadchip data. Use when user asks to perform quality control, background correction, dye-bias adjustment, probe-type bias adjustment, cell type estimation, methylation age calculation, or differentially methylated region analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/ENmix.html
 ---
+
 
 # bioconductor-enmix
 

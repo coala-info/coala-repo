@@ -1,8 +1,9 @@
 ---
 name: pstrain
-description: PStrain is an iterative profiling algorithm designed to resolve microbial strains within shotgun metagenomic datasets.
+description: PStrain is an iterative profiling algorithm that identifies the number, relative abundances, and genotypes of microbial strains in shotgun metagenomic datasets. Use when user asks to profile microbial strains, phase variants for a single species, or merge strain results from multiple metagenomic samples.
 homepage: https://github.com/wshuai294/PStrain
 ---
+
 
 # pstrain
 

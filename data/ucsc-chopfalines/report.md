@@ -3,7 +3,7 @@
 ## ucsc-chopfalines
 
 ### Tool Description
-The provided text contains error messages related to the container environment and image fetching rather than the tool's help documentation. As a result, no usage information or arguments could be extracted.
+Chops up lines in a fasta file to a specific length.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text contains error messages related to the container environment a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-chopfalines
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+edb036d811bb: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2052041164: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-chopfalines_chopFaLines
-
-### Tool Description
-A tool to chop FASTA lines to a specific length. Note: The provided help text contains only system error messages and does not list usage or arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-chopfalines/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chopfalines:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

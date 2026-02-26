@@ -1,8 +1,9 @@
 ---
 name: mindthegap
-description: MindTheGap is a specialized bioinformatics tool designed for the integrated detection and assembly of genomic insertion variants using Next-Generation Sequencing (NGS) data.
+description: MindTheGap detects and assembles genomic insertion variants or fills gaps between contigs using local de novo assembly of NGS data. Use when user asks to detect insertion breakpoints, assemble insertion sequences, or bridge gaps between genomic contigs.
 homepage: https://github.com/GATB/mindthegap
 ---
+
 
 # mindthegap
 

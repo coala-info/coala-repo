@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyhgu133aexpr
-description: the package is available on all platforms; click for details.
+description: This package provides a curated compendium of preprocessed and standardized human gene expression data from the Affymetrix hgu133a platform. Use when user asks to retrieve normalized expression profiles, access metadata for human GEO samples, or perform Gene Set Context Analysis using the Affyhgu133aExpr database.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affyhgu133aExpr.html
 ---
+
 
 # bioconductor-affyhgu133aexpr
 

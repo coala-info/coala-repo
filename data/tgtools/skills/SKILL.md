@@ -1,8 +1,9 @@
 ---
 name: tgtools
-description: tgtools is a command-line utility designed to facilitate the creation and manipulation of `transjson` (.trjson) files.
+description: tgtools is a command-line utility for creating and manipulating transjson files to represent transmission and relatedness networks in pathogen genomics. Use when user asks to import SNP distance matrices, convert TransPhylo results, or process hmmIBD data into standardized node-and-edge JSON formats.
 homepage: https://github.com/jodyphelan/tgtools
 ---
+
 
 # tgtools
 

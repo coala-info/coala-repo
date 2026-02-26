@@ -1,8 +1,9 @@
 ---
 name: paste-bio
-description: PASTE (Probabilistic Alignment of Spatial Transcriptomics Experiments) is a computational method that leverages both gene expression similarity and spatial distances between spots to align and integrate spatial transcriptomics data.
+description: PASTE aligns and integrates spatial transcriptomics data by leveraging gene expression similarity and spatial distances between tissue sections. Use when user asks to map spots between different tissue slices, perform pairwise alignment, or merge multiple sections into a consensus center layer.
 homepage: https://github.com/raphael-group/paste
 ---
+
 
 # paste-bio
 

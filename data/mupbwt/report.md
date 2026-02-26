@@ -3,10 +3,10 @@
 ## mupbwt
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is an error log indicating a failure to build or run the container image due to insufficient disk space.
+mupbwt
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mupbwt:0.1.2--h5ca1c30_5
+- **Docker Image**: quay.io/biocontainers/mupbwt:0.1.2--h6ab5fc9_2
 - **Homepage**: https://github.com/dlcgold/muPBWT
 - **Package**: https://anaconda.org/channels/bioconda/packages/mupbwt/overview
 - **Validation**: PASS
@@ -18,29 +18,17 @@ The provided text does not contain help information for the tool. It is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mupbwt:0.1.2--h5ca1c30_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1984578939: no space left on device
-```
+Usage: mupbwt [options]
 
-
-## Metadata
-- **Skill**: generated
-
-## mupbwt_mem_sample.py
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system log messages and a fatal error regarding container image acquisition (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mupbwt:0.1.2--h5ca1c30_5
-- **Homepage**: https://github.com/dlcgold/muPBWT
-- **Package**: https://anaconda.org/channels/bioconda/packages/mupbwt/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mupbwt:0.1.2--h5ca1c30_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2098560466: no space left on device
+Options:
+  -i, --input_file <path>	 macs file for panel
+  -s, --save <path>	  path to save serialization 
+  -l, --load <path>	 path to load serialization
+  -o, --output <path>	 path to query output
+  -q, --query <path>	 path to macs query file
+  -m, --macs	 use macs format for panel and queries
+  -d, --details	 print memory usage details
+  -v, --verbose	 extra prints
+  -h, --help	 show this help message and exit
 ```
 

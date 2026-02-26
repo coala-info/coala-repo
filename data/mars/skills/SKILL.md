@@ -1,8 +1,9 @@
 ---
 name: mars
-description: MARS (Multiple Alignment-based Refinement of SVs) is a bioinformatics tool designed to refine structural variant calls by leveraging data across multiple samples.
+description: "MARS refines structural variant calls by performing multiple sequence alignment on diploid assembly contigs across multiple samples. Use when user asks to refine structural variants from assemblies, perform population-based SV merging, identify ancestral states using HARP mode, or link SVs to gnomAD SNPs."
 homepage: https://github.com/maiziex/MARS
 ---
+
 
 # mars
 

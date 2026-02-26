@@ -1,9 +1,9 @@
 # ismapper CWL Generation Report
 
-## ismapper
+## ismapper_ismap
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a 'no space left on device' error during image conversion.
+Basic ISMapper options:
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1
@@ -18,46 +18,74 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1834159790: no space left on device
+usage: ismap [--version] --reads READS [READS ...] --queries QUERIES
+             [QUERIES ...] --reference REFERENCE [REFERENCE ...]
+             [--output_dir OUTPUT_DIR] [--log LOG] [--help_all HELP_ALL]
+
+Basic ISMapper options:
+  --version             show program's version number and exit
+  --reads READS [READS ...]
+                        Paired end reads for analysing (can be gzipped)
+  --queries QUERIES [QUERIES ...]
+                        Multifasta file for query gene(s) (eg: insertion
+                        sequence) that will be mapped to.
+  --reference REFERENCE [REFERENCE ...]
+                        Reference genome for typing against in genbank format
+  --output_dir OUTPUT_DIR
+                        Location for all output files (default is current
+                        directory).
+  --log LOG             Prefix for log file. If not supplied, prefix will be
+                        current date and time.
+  --help_all HELP_ALL   Display extended help
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## ismapper_ismap
-
-### Tool Description
-The provided text is an error message from a container runtime (Singularity/Apptainer) and does not contain help information or argument definitions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1
-- **Homepage**: https://github.com/jhawkey/IS_mapper/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ismapper/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3980126667: no space left on device
-```
 
 ## ismapper_compiled_table.py
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains container runtime (Singularity/Apptainer) error messages regarding a lack of disk space.
+Create a table of IS hits in all isolates for ISMapper
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1
 - **Homepage**: https://github.com/jhawkey/IS_mapper/
 - **Package**: https://anaconda.org/channels/bioconda/packages/ismapper/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ismapper:2.0.2--pyhdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2970401403: no space left on device
+usage: compiled_table.py [-h] --tables TABLES [TABLES ...] --reference
+                         REFERENCE --query QUERY [--gap GAP] [--cds CDS]
+                         [--trna TRNA] [--rrna RRNA] [--imprecise IMPRECISE]
+                         [--unconfident UNCONFIDENT] --out_prefix OUT_PREFIX
+
+Create a table of IS hits in all isolates for ISMapper
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --tables TABLES [TABLES ...]
+                        tables to compile
+  --reference REFERENCE
+                        gbk file of reference
+  --query QUERY         fasta file for insertion sequence query for
+                        compilation
+  --gap GAP             distance between regions to call overlapping, default
+                        is 0
+  --cds CDS             qualifier containing gene information (default
+                        product). Also note that all CDS features MUST have a
+                        locus_tag
+  --trna TRNA           qualifier containing gene information (default
+                        product). Also note that all tRNA features MUST have a
+                        locus_tag
+  --rrna RRNA           qualifier containing gene information (default
+                        product). Also note that all rRNA features MUST have a
+                        locus_tag
+  --imprecise IMPRECISE
+                        Binary value for imprecise (*) hit (can be 1, 0 or
+                        0.5), default is 1
+  --unconfident UNCONFIDENT
+                        Binary value for questionable (?) hit (can be 1, 0 or
+                        0.5), default is 0
+  --out_prefix OUT_PREFIX
+                        Prefix for output file
 ```
 

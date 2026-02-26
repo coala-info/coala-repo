@@ -1,8 +1,9 @@
 ---
 name: panisa
-description: The panisa skill enables the identification of insertion sequences in bacterial genomes using a signature-based approach.
+description: PanISa identifies insertion sequences in bacterial genomes by analyzing clipped read clusters in BAM files. Use when user asks to find insertion sequences, identify mobile genetic elements, or reconstruct inverted repeats from alignment data.
 homepage: https://github.com/bvalot/panISa
 ---
+
 
 # panisa
 

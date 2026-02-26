@@ -1,12 +1,12 @@
 # mameshiba CWL Generation Report
 
-## mameshiba
+## mameshiba_shiba.py
 
 ### Tool Description
-A tool for metagenomic analysis (Note: The provided input text contains container runtime error logs rather than the tool's help documentation).
+Shiba v0.8.1 - Pipeline for identification of differential RNA splicing
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0
+- **Docker Image**: quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_1
 - **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
 - **Package**: https://anaconda.org/channels/bioconda/packages/mameshiba/overview
 - **Validation**: PASS
@@ -18,46 +18,35 @@ A tool for metagenomic analysis (Note: The provided input text contains containe
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1491521704: no space left on device
-```
+usage: shiba.py [-h] [-p PROCESS] [-s START_STEP] [--mame] [-v] config
 
+Shiba v0.8.1 - Pipeline for identification of differential RNA splicing
 
-## Metadata
-- **Skill**: generated
+Step 1: bam2gtf.py
+    - Assembles transcript structures based on mapped reads using StringTie2.
+Step 2: gtf2event.py
+    - Converts GTF files to event format.
+Step 3: bam2junc.py
+    - Extracts junction reads from BAM files.
+Step 4: psi.py
+    - Calculates PSI values and performs differential analysis.
+Step 5: expression.py
+    - Analyzes gene expression.
+Step 6: pca.py
+    - Performs PCA.
+Step 7: plots.py
+    - Generates plots from results.
 
-## mameshiba_shiba.py
+positional arguments:
+  config                Config file in yaml format
 
-### Tool Description
-A tool from the mameshiba package (Note: The provided help text contains only system error logs and does not list command-line arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0
-- **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
-- **Package**: https://anaconda.org/channels/bioconda/packages/mameshiba/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3118161067: no space left on device
-```
-
-## mameshiba_shiba2sashimi
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be an error log from a container runtime (Apptainer/Singularity) attempting to pull the mameshiba image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0
-- **Homepage**: https://github.com/Sika-Zheng-Lab/Shiba
-- **Package**: https://anaconda.org/channels/bioconda/packages/mameshiba/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mameshiba:0.8.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2382233298: no space left on device
+options:
+  -h, --help            show this help message and exit
+  -p PROCESS, --process PROCESS
+                        Number of processors to use (default: 1)
+  -s START_STEP, --start-step START_STEP
+                        Start the pipeline from the specified step (default: 0, run all steps)
+  --mame                Execute MameShiba, a lightweight version of Shiba, for only splicing analysis. Steps 5-7 will be skipped.
+  -v, --verbose         Verbose mode
 ```
 

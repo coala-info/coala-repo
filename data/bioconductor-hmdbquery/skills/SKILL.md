@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hmdbquery
-description: the package is available on all platforms; click for details.
+description: The bioconductor-hmdbquery package provides an interface to retrieve and manipulate metabolite metadata from the Human Metabolome Database. Use when user asks to query metabolite information by HMDB ID, extract disease or biospecimen associations, and explore protein or gene relationships.
 homepage: https://bioconductor.org/packages/release/bioc/html/hmdbQuery.html
 ---
+
 
 # bioconductor-hmdbquery
 

@@ -1,11 +1,42 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: megapath-nano_runMegaPath-Nano-Amplicon.sh
+baseCommand: /usr/local/bin/runMegaPath-Nano-Amplicon.sh
 label: megapath-nano_runMegaPath-Nano-Amplicon.sh
-doc: "A script for running MegaPath-Nano on amplicon data. (Note: The provided text
-  contains container runtime error messages rather than help documentation, so no
-  arguments could be extracted).\n\nTool homepage: https://github.com/HKU-BAL/MegaPath-Nano"
-inputs: []
+doc: "Runs the MegaPath-Nano amplicon pipeline.\n\nTool homepage: https://github.com/HKU-BAL/MegaPath-Nano"
+inputs:
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing the database.
+    default: /usr/local/MegaPath-Nano/bin/db
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: Prefix for output files.
+    default: megapath-nano-amplicon
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: read_fq
+    type: File
+    doc: Input FASTQ file containing reads.
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use.
+    default: 24
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

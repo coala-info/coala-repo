@@ -1,8 +1,9 @@
 ---
 name: pirate
-description: PIRATE (Pangenome analysis and threshold evaluation toolbox) is a scalable framework for the rapid interrogation of bacterial pangenomes.
+description: PIRATE is a scalable framework for analyzing bacterial pangenomes by clustering genes across multiple identity thresholds. Use when user asks to perform pangenome analysis, identify orthologous groups across divergent taxa, or handle complex genomic events like gene fissions and duplications.
 homepage: https://github.com/SionBayliss/PIRATE
 ---
+
 
 # pirate
 

@@ -1,8 +1,9 @@
 ---
 name: badread
-description: Badread is a long-read simulation tool designed to generate "imperfect" data.
+description: "Badread simulates long-read sequencing data with fine-grained control over error profiles and structural artifacts. Use when user asks to generate synthetic Oxford Nanopore or PacBio reads, stress-test bioinformatics pipelines with imperfect data, or simulate sequencing artifacts like chimeras and junk reads."
 homepage: https://github.com/rrwick/Badread
 ---
+
 
 # badread
 

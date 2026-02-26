@@ -1,8 +1,9 @@
 ---
 name: bloomfiltertrie
-description: The Bloom Filter Trie (BFT) is a succinct data structure designed for pan-genome indexing.
+description: The Bloom Filter Trie is a succinct data structure used for indexing pan-genomes and representing colored de Bruijn graphs. Use when user asks to build a k-mer index from multiple genomes, query sequence presence across a population, or extract k-mers from an existing index.
 homepage: https://github.com/GuillaumeHolley/BloomFilterTrie
 ---
+
 
 # bloomfiltertrie
 

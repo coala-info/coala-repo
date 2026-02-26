@@ -1,8 +1,9 @@
 ---
 name: fetchmgs
-description: `fetchmgs` is a specialized bioinformatics tool that automates the identification and extraction of 40 universal phylogenetic marker genes.
+description: fetchmgs automates the identification and extraction of 40 universal phylogenetic marker genes from genomic or metagenomic sequences. Use when user asks to extract marker genes, identify phylogenetic markers in assemblies, or process protein sequences for evolutionary analysis.
 homepage: https://github.com/motu-tool/FetchMGs
 ---
+
 
 # fetchmgs
 

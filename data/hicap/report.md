@@ -3,7 +3,7 @@
 ## hicap
 
 ### Tool Description
-The provided text does not contain help documentation or usage instructions for the tool. It consists of error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space.
+HiCap: A tool for Hi-C data analysis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hicap:1.0.4--pyhdfd78af_2
@@ -18,11 +18,15 @@ The provided text does not contain help documentation or usage instructions for 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hicap:1.0.4--pyhdfd78af_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4119506129: no space left on device
+usage: hicap -q QUERY_FP -o OUTPUT_DIR [-v] [-h] [--help_all]
+
+File input and output:
+  -q QUERY_FP, --query_fp QUERY_FP        Input FASTA query
+  -o OUTPUT_DIR, --output_dir OUTPUT_DIR  Output directory
+
+Other:
+  -v, --version                           Show version number and exit
+  -h, --help                              Show this help message and exit
+  --help_all                              Display extended help
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: libshorah
-description: This skill provides procedural knowledge for using `libshorah` (via the `viloca` command-line interface) to reconstruct local haplotypes and call mutations in heterogeneous viral samples.
+description: libshorah reconstructs local haplotypes and calls mutations in heterogeneous viral samples using the viloca interface. Use when user asks to reconstruct haplotypes, call mutations in viral samples, perform error-corrected variant calling, or analyze shotgun and amplicon sequencing data.
 homepage: https://github.com/LaraFuhrmann/VILOCA
 ---
+
 
 # libshorah
 

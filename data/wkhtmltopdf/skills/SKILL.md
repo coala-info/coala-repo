@@ -1,8 +1,9 @@
 ---
 name: wkhtmltopdf
-description: wkhtmltopdf is a command-line toolset (including wkhtmltoimage) that renders HTML content into PDF or various image formats.
+description: wkhtmltopdf renders HTML content into PDF or various image formats. Use when user asks to convert HTML to PDF or image, set PDF page layout, margins, or orientation, add headers, footers, or a table of contents to a PDF, enable interactive forms, or control JavaScript execution during conversion.
 homepage: https://github.com/wkhtmltopdf/wkhtmltopdf
 ---
+
 
 # wkhtmltopdf
 

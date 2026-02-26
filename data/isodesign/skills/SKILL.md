@@ -1,8 +1,9 @@
 ---
 name: isodesign
-description: IsoDesign is a specialized scientific tool for identifying the most effective labeling strategies in 13C-fluxomics.
+description: IsoDesign identifies optimal 13C-labeling strategies by balancing flux resolution against the cost of labeled substrates. Use when user asks to design 13C-fluxomics experiments, optimize substrate labeling for metabolic networks, or perform cost-benefit analysis for isotopic stationary and non-stationary designs.
 homepage: https://github.com/MetaboHUB-MetaToul-FluxoMet/IsoDesign
 ---
+
 
 # isodesign
 

@@ -1,8 +1,9 @@
 ---
 name: r-mmod
-description: "Provides functions for measuring     population divergence from genotypic data.</p>"
+description: This tool calculates modern population differentiation statistics and performs bootstrapping for genetic data in R. Use when user asks to calculate Hedrick's G''ST, Jost's Dest, or Phi'st, perform bootstrapping for confidence intervals, or conduct Mantel tests for isolation by distance.
 homepage: https://cloud.r-project.org/web/packages/mmod/index.html
 ---
+
 
 # r-mmod
 

@@ -3,10 +3,10 @@
 ## extract_vcf
 
 ### Tool Description
-A tool for extracting data from VCF (Variant Call Format) files.
+Extract codon alignments from VCF files.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/extract_vcf:0.5--pyh5e36f6f_0
+- **Docker Image**: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
 - **Homepage**: https://github.com/moonso/extract_vcf
 - **Package**: https://anaconda.org/channels/bioconda/packages/extract_vcf/overview
 - **Validation**: PASS
@@ -18,11 +18,21 @@ A tool for extracting data from VCF (Variant Call Format) files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extract_vcf:0.5--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1953641903: no space left on device
+Unable to find image 'quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0' locally
+0.0.1--py_0: Pulling from biocontainers/extract-codon-alignment
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+f6895238c199: Pulling fs layer
+f6895238c199: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob4075711530: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

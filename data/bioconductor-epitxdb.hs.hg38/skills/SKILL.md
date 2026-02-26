@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epitxdb.hs.hg38
-description: the package is available on all platforms; click for details.
+description: This package provides RNA modification data for the human genome assembly hg38 through structured EpiTxDb objects and specialized rRNA coordinate mapping files. Use when user asks to load tRNA or snoRNA modifications from databases, extract RNA modification coordinates, or perform rRNA coordinate liftover between hg19 and hg38.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Hs.hg38.html
 ---
+
 
 # bioconductor-epitxdb.hs.hg38
 

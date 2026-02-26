@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.cotton
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Cotton Genome Array. Use when user asks to process Affymetrix cotton microarray data, access platform design information for cotton chips, or analyze cotton genome expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cotton.html
 ---
+
 
 # bioconductor-pd.cotton
 

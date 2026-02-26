@@ -1,8 +1,9 @@
 ---
 name: datma
-description: DATMA (Distributed AuTomatic Metagenomic Assembly and Annotation) is a modular framework designed to streamline the complex transition from raw sequencing reads to annotated metagenome-assembled genomes (MAGs).
+description: DATMA is a modular framework that automates the transition from raw sequencing reads to annotated metagenome-assembled genomes through integrated QC, assembly, and binning stages. Use when user asks to install the DATMA pipeline, index 16S databases, configure metagenomic parameters, or execute distributed assembly and annotation workflows.
 homepage: https://github.com/andvides/DATMA
 ---
+
 
 # datma
 

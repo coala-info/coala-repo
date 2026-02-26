@@ -1,11 +1,107 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: mimsi_evaluate_sample
+baseCommand: evaluate_sample
 label: mimsi_evaluate_sample
-doc: "Evaluate a sample using MIMSI. (Note: The provided text is a system error log
-  and does not contain usage instructions or argument definitions.)\n\nTool homepage:
-  https://github.com/mskcc/mimsi"
-inputs: []
+doc: "MiMSI Sample(s) Evalution Utility\n\nTool homepage: https://github.com/mskcc/mimsi"
+inputs:
+  - id: confidence_interval
+    type:
+      - 'null'
+      - float
+    doc: Confidence interval for the estimated MSI Score reported in the tsv 
+      output file
+    default: 0.95
+    inputBinding:
+      position: 101
+      prefix: --confidence-interval
+  - id: coverage
+    type:
+      - 'null'
+      - int
+    doc: Required coverage for both the tumor and the normal. Any coverage in 
+      excess of this limit will be randomly downsampled
+    inputBinding:
+      position: 101
+      prefix: --coverage
+  - id: model
+    type:
+      - 'null'
+      - string
+    doc: name of the saved model weights to load
+    inputBinding:
+      position: 101
+      prefix: --model
+  - id: name
+    type:
+      - 'null'
+      - string
+    doc: name of the run, this will be the filename for any saved results in tsv
+      format with more than one samples.
+    inputBinding:
+      position: 101
+      prefix: --name
+  - id: no_cuda
+    type:
+      - 'null'
+      - boolean
+    doc: Disables CUDA for use off GPU, if this is not specified the utility 
+      will check availability of torch.cuda
+    inputBinding:
+      position: 101
+      prefix: --no-cuda
+  - id: save
+    type:
+      - 'null'
+      - boolean
+    doc: save the results of the evaluation to a numpy array or a tsv text file
+    inputBinding:
+      position: 101
+      prefix: --save
+  - id: save_format
+    type:
+      - 'null'
+      - string
+    doc: save the results of the evaluation to a numpy array or as summary in a 
+      tsv text file or both
+    inputBinding:
+      position: 101
+      prefix: --save-format
+  - id: save_location
+    type:
+      - 'null'
+      - Directory
+    doc: The location on the filesystem to save the final results
+    default: Current_working_directory/mimsi_results/
+    inputBinding:
+      position: 101
+      prefix: --save-location
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Random Seed
+    default: 2
+    inputBinding:
+      position: 101
+      prefix: --seed
+  - id: use_attention
+    type:
+      - 'null'
+      - boolean
+    doc: Use attention pooling rather than average pooling to aggregate sample 
+      embeddings
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --use-attention
+  - id: vector_location
+    type:
+      - 'null'
+      - Directory
+    doc: directory containing the generated vectors to evaluate
+    inputBinding:
+      position: 101
+      prefix: --vector-location
 outputs:
   - id: stdout
     type: stdout

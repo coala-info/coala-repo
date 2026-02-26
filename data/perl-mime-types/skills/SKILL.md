@@ -1,8 +1,9 @@
 ---
 name: perl-mime-types
-description: The `perl-mime-types` skill provides a programmatic interface for handling the official IANA list of media types.
+description: This tool provides a programmatic interface for mapping file extensions to MIME types and retrieving media type metadata in Perl. Use when user asks to translate file extensions to MIME types, identify if a file format is text or binary, or list all extensions associated with a specific media type.
 homepage: http://metacpan.org/pod/MIME-Types
 ---
+
 
 # perl-mime-types
 

@@ -1,8 +1,9 @@
 ---
 name: satsuma2
-description: Satsuma2 is a high-performance synteny aligner optimized for large-scale genomic comparisons.
+description: Satsuma2 is a high-performance synteny aligner designed for large-scale genomic comparisons using FFT cross-correlation. Use when user asks to perform whole-genome synteny alignment, detect homology between large vertebrate genomes, or identify conserved genomic regions.
 homepage: https://github.com/bioinfologics/satsuma2
 ---
+
 
 # satsuma2
 

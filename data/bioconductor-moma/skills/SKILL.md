@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moma
-description: the package is available on all platforms; click for details.
+description: MOMA identifies master regulators by integrating multi-omics data to model gene regulatory networks. Use when user asks to identify master regulators, integrate multi-omics data, or perform multi-omics master regulator analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/MOMA.html
 ---
+
 
 # bioconductor-moma
 

@@ -1,8 +1,9 @@
 ---
 name: sim4
-description: Sim4Rec is a specialized framework built on PySpark for simulating the lifecycle of a recommender system.
+description: Sim4 is a PySpark-based framework for simulating the dynamic lifecycle and iterative evaluation of recommender systems with synthetic or real user data. Use when user asks to simulate user-item interactions, model user responses to recommendations, or evaluate recommendation algorithms in an iterative feedback loop.
 homepage: https://github.com/sb-ai-lab/Sim4Rec
 ---
+
 
 # sim4
 

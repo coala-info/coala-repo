@@ -1,8 +1,9 @@
 ---
 name: perl-text-csv
-description: The `perl-text-csv` skill provides a robust interface for manipulating CSV data within Perl scripts.
+description: This tool provides a robust interface for parsing, generating, and manipulating CSV data within Perl scripts. Use when user asks to parse CSV files with complex formatting, convert data between arrays and CSV strings, or handle multi-line fields and quoted separators in Perl.
 homepage: http://metacpan.org/pod/Text::CSV
 ---
+
 
 # perl-text-csv
 

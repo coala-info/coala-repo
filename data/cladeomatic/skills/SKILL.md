@@ -1,8 +1,9 @@
 ---
 name: cladeomatic
-description: Clade-O-Matic is a phylogenetic tool that automates the discovery of population structures.
+description: Clade-O-Matic is a phylogenetic tool that identifies canonical SNPs and k-mers to automate the discovery of population structures and the creation of typing schemes. Use when user asks to create a de novo typing scheme from a phylogenetic tree, generate a scheme from predefined groups, or assign genotypes to samples using an existing scheme.
 homepage: https://github.com/phac-nml/cladeomatic
 ---
+
 
 # cladeomatic
 

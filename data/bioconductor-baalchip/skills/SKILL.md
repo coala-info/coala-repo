@@ -1,8 +1,9 @@
 ---
 name: bioconductor-baalchip
-description: The package offers functions to process multiple ChIP-seq BAM files and detect allele-specific events. Computes allele counts at individual variants (SNPs/SNVs), implements extensive QC steps to remove problematic variants, and utilizes a bayesian framework to identify statistically significant allele- specific events. BaalChIP is able to account for copy number differences between the two alleles, a known phenotypical feature of cancer samples.
+description: BaalChIP performs Bayesian analysis to identify allele-specific transcription factor binding sites while correcting for copy number variations and mapping biases. Use when user asks to detect allele-specific binding events, process ChIP-seq BAM files for allelic imbalances, or correct for reference mapping and relative allele frequency biases in cancer genomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/BaalChIP.html
 ---
+
 
 # bioconductor-baalchip
 

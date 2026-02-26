@@ -3,7 +3,7 @@
 ## transposonpsi
 
 ### Tool Description
-TransposonPSI is a tool used to identify transposable elements in genomic sequences (nucleotide) or protein sequences by searching against a database of transposon-specific profiles.
+TransposonPSI is used to identify transposon-derived ORFs in DNA or protein sequences by searching against a database of transposon-specific profiles.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/transposonpsi:1.0.0--hdfd78af_3
@@ -18,14 +18,13 @@ TransposonPSI is a tool used to identify transposable elements in genomic sequen
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/transposonpsi:1.0.0--hdfd78af_3 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:d37c677c652ff1b9d79918ac0ca2253c3ee4c6b2b027e1c3405c71267ee4b5af: unpack entry: usr/local/bin/clustalo: unpack to regular file: short write: write /tmp/build-temp-2118897894/rootfs/usr/local/bin/clustalo: no space left on device
+Unable to find image 'quay.io/biocontainers/transposonpsi:1.0.0--hdfd78af_3' locally
+1.0.0--hdfd78af_3: Pulling from biocontainers/transposonpsi
+73349e34840e: Already exists
+acab339ca1e8: Already exists
+d37c677c652f: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2520119156: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

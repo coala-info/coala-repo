@@ -1,8 +1,9 @@
 ---
 name: survivor
-description: The `survivor` skill provides a streamlined workflow for managing structural variation data.
+description: "SURVIVOR manages structural variation data by merging results from multiple callers, simulating datasets, and evaluating variant calling performance. Use when user asks to merge VCF files into a consensus set, simulate structural variations, evaluate SV callers against a truth set, or convert between VCF and BED formats."
 homepage: https://github.com/fritzsedlazeck/SURVIVOR
 ---
+
 
 # survivor
 

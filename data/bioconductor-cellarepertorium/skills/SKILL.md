@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellarepertorium
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: CellaRepertorium provides a framework for managing and analyzing single-cell immune repertoire data by organizing contigs, cells, and clusters into a structured object. Use when user asks to cluster CDR3 sequences, analyze TCR/BCR pairing, or perform statistical testing for clonal expansion and differential usage.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/CellaRepertorium.html
 ---
+
 
 # bioconductor-cellarepertorium
 

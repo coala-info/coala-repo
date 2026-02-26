@@ -1,12 +1,12 @@
 # encode-blacklist CWL Generation Report
 
-## encode-blacklist
+## encode-blacklist_Blacklist
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages regarding a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+Blacklist is used to generate the ENCODE blacklists for various species.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/encode-blacklist:2.0--ha7703dc_3
+- **Docker Image**: quay.io/biocontainers/encode-blacklist:2.0--h06902ac_6
 - **Homepage**: https://github.com/Boyle-Lab/Blacklist
 - **Package**: https://anaconda.org/channels/bioconda/packages/encode-blacklist/overview
 - **Validation**: PASS
@@ -18,29 +18,9 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/encode-blacklist:2.0--ha7703dc_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2807652729: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## encode-blacklist_Blacklist
-
-### Tool Description
-The ENCODE Blacklist tool is used to identify and filter regions of the genome that often produce unreliable or problematic signals in high-throughput sequencing experiments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/encode-blacklist:2.0--ha7703dc_3
-- **Homepage**: https://github.com/Boyle-Lab/Blacklist
-- **Package**: https://anaconda.org/channels/bioconda/packages/encode-blacklist/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/encode-blacklist:2.0--ha7703dc_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4046489997: no space left on device
+Blacklist is used to generate the ENCODE blacklists for various species.
+Usage is ./Blacklist <chr>
+The program requires an input/ folder containing indexed bam files.
+The program requires a mappability/ folder containing Umap mappability files.
 ```
 

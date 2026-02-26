@@ -1,8 +1,9 @@
 ---
 name: krakenuniq
-description: "KrakenUniq is a specialized metagenomics classifier that builds upon the speed of the original Kraken tool while adding a critical layer of validation: unique k-mer counting."
+description: KrakenUniq classifies metagenomic sequences by matching k-mers to a reference database while counting unique k-mer hits to reduce false positives. Use when user asks to classify metagenomic reads, identify taxa in a sample, or validate taxonomic assignments using unique k-mer counts.
 homepage: https://github.com/fbreitwieser/krakenuniq
 ---
+
 
 # krakenuniq
 

@@ -1,8 +1,9 @@
 ---
 name: hts-nim-tools
-description: `hts-nim-tools` is a collection of high-speed bioinformatics utilities built using the Nim programming language.
+description: hts-nim-tools provides high-speed bioinformatics utilities for filtering alignments, counting reads, and validating variant calling data. Use when user asks to filter BAM or CRAM files using expressions, count reads overlapping genomic intervals, or identify missing data in VCF files.
 homepage: https://github.com/brentp/hts-nim-tools
 ---
+
 
 # hts-nim-tools
 

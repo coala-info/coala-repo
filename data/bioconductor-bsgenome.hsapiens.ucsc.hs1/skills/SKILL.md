@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hs1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genomic sequences for the human T2T-CHM13v2.0 assembly as a Bioconductor data object. Use when user asks to access the hs1 human genome, extract DNA sequences from specific genomic coordinates, or perform sequence analysis on the Telomere-to-Telomere assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hs1.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hs1
 

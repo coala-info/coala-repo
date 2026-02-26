@@ -1,8 +1,9 @@
 ---
 name: vpt
-description: The Vizgen Post-processing Tool (VPT) provides a command-line interface for the advanced analysis of MERSCOPE spatial transcriptomics data.
+description: The Vizgen Post-processing Tool (VPT) provides a command-line interface for advanced analysis of MERSCOPE spatial transcriptomics data, enabling cell re-segmentation and transcript assignment. Use when user asks to re-segment cells, assign transcripts to new boundaries, update visualization files, prepare segmentation logic, convert image formats, calculate geometric attributes, quantify signal intensity, or import external segmentation results.
 homepage: https://github.com/Vizgen/vizgen-postprocessing
 ---
+
 
 # vpt
 

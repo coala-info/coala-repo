@@ -1,12 +1,37 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - vtools
-  - gcoverage
+baseCommand: vtools-gcoverage
 label: vtools_vtools-gcoverage
-doc: "The provided text does not contain help information; it is a container runtime
-  error log indicating a failure to fetch or build the image.\n\nTool homepage: https://github.com/LUMC/vtools"
-inputs: []
+doc: "Collect coverage metrics from VCF files.\n\nTool homepage: https://github.com/LUMC/vtools"
+inputs:
+  - id: input_gvcf
+    type: File
+    doc: Path to input VCF file
+    inputBinding:
+      position: 101
+      prefix: --input-gvcf
+  - id: per_exon
+    type:
+      - 'null'
+      - boolean
+    doc: Collect metrics per exon
+    inputBinding:
+      position: 101
+      prefix: --per-exon
+  - id: per_transcript
+    type:
+      - 'null'
+      - boolean
+    doc: Collect metrics per transcript
+    inputBinding:
+      position: 101
+      prefix: --per-transcript
+  - id: refflat_file
+    type: File
+    doc: Path to refFlat file
+    inputBinding:
+      position: 101
+      prefix: --refflat-file
 outputs:
   - id: stdout
     type: stdout

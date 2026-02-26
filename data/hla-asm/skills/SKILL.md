@@ -1,8 +1,9 @@
 ---
 name: hla-asm
-description: The `hla-asm` tool is designed for high-resolution HLA typing specifically from assembled genomic data rather than raw reads.
+description: The hla-asm tool performs high-resolution HLA typing and exon identification from assembled genomic data. Use when user asks to perform HLA typing on a FASTA assembly, identify HLA exon coordinates, or extract HLA sequences from de novo assemblies.
 homepage: https://github.com/DiltheyLab/HLA-LA/blob/master/HLA-ASM.md
 ---
+
 
 # hla-asm
 

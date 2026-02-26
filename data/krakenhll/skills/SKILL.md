@@ -1,8 +1,9 @@
 ---
 name: krakenhll
-description: KrakenUniq (formerly KrakenHLL) is a metagenomics classifier that improves upon the original Kraken algorithm by adding an assessment of unique k-mer coverage.
+description: KrakenHLL is a metagenomics classifier that identifies taxa in sequencing reads by assessing unique k-mer coverage to distinguish true positives from false positives. Use when user asks to classify metagenomic reads, count unique k-mers for taxonomic identification, or build a KrakenUniq database.
 homepage: https://github.com/fbreitwieser/krakenhll
 ---
+
 
 # krakenhll
 

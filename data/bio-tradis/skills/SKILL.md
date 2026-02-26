@@ -1,8 +1,9 @@
 ---
 name: bio-tradis
-description: The `bio-tradis` skill (utilizing the `bio` toolkit) provides a streamlined, "LEGO-like" interface for common bioinformatics operations.
+description: bio-tradis provides a streamlined command-line interface for fetching genomic data, extracting sequences, performing alignments, and querying taxonomic information. Use when user asks to fetch GenBank records, extract gene sequences, translate nucleotides to proteins, align sequences, generate VCF files, or query taxonomic lineages and metadata.
 homepage: https://github.com/ialbert/bio
 ---
+
 
 # bio-tradis
 

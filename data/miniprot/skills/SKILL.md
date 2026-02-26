@@ -1,8 +1,9 @@
 ---
 name: miniprot
-description: miniprot is a specialized alignment tool designed to map protein sequences directly to genomic DNA.
+description: "miniprot aligns protein sequences directly to genomic DNA while accounting for introns and frameshifts. Use when user asks to map proteins to a genome, generate gene annotations in GFF3 format, or visualize protein-to-DNA alignments."
 homepage: https://github.com/lh3/miniprot
 ---
+
 
 # miniprot
 

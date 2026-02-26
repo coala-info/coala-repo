@@ -1,9 +1,9 @@
 # atlas-gene-annotation-manipulation CWL Generation Report
 
-## atlas-gene-annotation-manipulation
+## atlas-gene-annotation-manipulation_gtf2featureAnnotation.R
 
 ### Tool Description
-A tool for manipulating gene annotations, typically used in the context of Expression Atlas or similar bioinformatics pipelines.
+R script for manipulating GTF files to create feature annotations.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/atlas-gene-annotation-manipulation:1.1.1--hdfd78af_0
@@ -18,9 +18,56 @@ A tool for manipulating gene annotations, typically used in the context of Expre
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/099d0e113ec89a65cad7b4546a3b42a2cb76f9c01cb8ca4fe3893e94eb94ea7c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/atlas-gene-annotation-manipulation:1.1.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-187190318: no space left on device
+Usage: /usr/local/bin/gtf2featureAnnotation.R [options]
+
+
+Options:
+	-g GTF-FILE, --gtf-file=GTF-FILE
+		Path to a valid GTF file
+
+	-t FEATURE-TYPE, --feature-type=FEATURE-TYPE
+		Feature type to use (default: gene)
+
+	-f FIRST-FIELD, --first-field=FIRST-FIELD
+		Field to place first in output table (default: gene_id)
+
+	-r, --no-header
+		Suppress header on output
+
+	-l FIELDS, --fields=FIELDS
+		Comma-separated list of output fields to retain (default: all)
+
+	-m, --mito
+		Mark mitochondrial elements with reference to chromsomes and biotypes
+
+	-n MITO-CHR, --mito-chr=MITO-CHR
+		If specified, marks in a column called "mito" features on the specified chromosomes (case insensitive)
+
+	-p MITO-BIOTYPES, --mito-biotypes=MITO-BIOTYPES
+		If specified,  marks in a column called "mito" features with the specified biotypes (case insensitve)
+
+	-c PARSE-CDNAS, --parse-cdnas=PARSE-CDNAS
+		Provide a cDNA file for extracting meta info and/or filtering.
+
+	-y, --parse-cdna-names
+		Where --parse-cdnas is specified, parse out info from the Fasta name. Will likely only work for Ensembl GTFs
+
+	-d PARSE-CDNA-FIELD, --parse-cdna-field=PARSE-CDNA-FIELD
+		Where --parse-cdnas is specified, what field should be used to compare to identfiers from the FASTA?
+
+	-i FILL-EMPTY, --fill-empty=FILL-EMPTY
+		Where --fields is specified, fill empty specified columns with the content of the specified field. Useful when you need to guarantee a value, for example a gene ID for a transcript/gene mapping. 
+
+	-e FILTER-CDNAS-OUTPUT, --filter-cdnas-output=FILTER-CDNAS-OUTPUT
+		Where --parse-cdnas is specified, filter sequences and output to the specified file. No file will be output if this is not specified (for example for use of --dummy-from-cdnas only).
+
+	-u, --version-transcripts
+		Where the GTF contains transcript versions, should these be appended to transcript identifiers? Useful when generating transcript/gene mappings for use with transcriptomes. NOTE: if --filter-cdnas-field is set, the setting of this field is set to best match transcript identifiers in the cDNAs FASTA.
+
+	-o OUTPUT-FILE, --output-file=OUTPUT-FILE
+		Output file path
+
+	-h, --help
+		Show this help message and exit
 ```
 

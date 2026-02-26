@@ -1,8 +1,9 @@
 ---
 name: graphbin
-description: GraphBin is a post-processing tool designed to refine metagenomic binning.
+description: GraphBin refines metagenomic binning results by using assembly graph topology and label propagation to assign contigs to taxonomic groups. Use when user asks to refine metagenomic bins, recover short contigs using assembly graphs, or propagate bin assignments from high-confidence contigs to their neighbors.
 homepage: https://github.com/Vini2/GraphBin
 ---
+
 
 # graphbin
 

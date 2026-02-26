@@ -1,8 +1,9 @@
 ---
 name: svdb
-description: SVDB is a specialized utility for handling structural variant (SV) data in VCF format.
+description: SVDB is a utility for building structural variant databases, querying frequency information, and merging calls from multiple structural variant callers. Use when user asks to build a structural variant database from VCF files, annotate variants with frequency data, or merge overlapping calls from different algorithms.
 homepage: https://github.com/J35P312/SVDB
 ---
+
 
 # svdb
 

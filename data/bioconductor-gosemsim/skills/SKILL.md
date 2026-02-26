@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gosemsim
-description: the package is available on all platforms; click for details.
+description: GOSemSim calculates semantic similarity between Gene Ontology terms, gene products, and gene clusters. Use when user asks to calculate functional similarity between genes, compare GO terms using semantic algorithms, or measure the similarity between gene clusters across different species and ontologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/GOSemSim.html
 ---
+
 
 # bioconductor-gosemsim
 

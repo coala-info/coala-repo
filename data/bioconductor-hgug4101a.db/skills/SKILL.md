@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgug4101a.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Agilent Human Genome G4101A chip probe identifiers to biological metadata and genomic locations. Use when user asks to map hgug4101a probe IDs to gene symbols, Entrez IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4101a.db.html
 ---
+
 
 # bioconductor-hgug4101a.db
 

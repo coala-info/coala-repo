@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytoglmm
-description: the package is available on all platforms; click for details.
+description: This tool performs differential protein expression analysis for flow and mass cytometry data using generalized linear models and mixed models. Use when user asks to identify protein markers associated with experimental conditions, account for inter-subject heterogeneity, or perform bootstrapped GLM and GLMM analysis on single-cell cytometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoGLMM.html
 ---
+
 
 # bioconductor-cytoglmm
 

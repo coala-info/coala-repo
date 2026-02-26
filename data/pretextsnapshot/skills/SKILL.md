@@ -1,8 +1,9 @@
 ---
 name: pretextsnapshot
-description: The `pretextsnapshot` tool is a specialized utility designed to convert Pretext Hi-C contact maps into static image formats.
+description: "pretextsnapshot converts Pretext Hi-C contact maps into static image formats like PNG, BMP, or JPEG. Use when user asks to generate images of genomic contact maps, visualize specific chromosome interactions, or export Hi-C data for publication."
 homepage: https://github.com/wtsi-hpag/PretextSnapshot
 ---
+
 
 # pretextsnapshot
 

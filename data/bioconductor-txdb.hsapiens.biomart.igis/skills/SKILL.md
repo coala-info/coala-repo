@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.hsapiens.biomart.igis
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides a transcript database for Homo sapiens derived from the BioMart IGIS system. Use when user asks to retrieve human gene models, access transcript coordinates, or query genomic annotations from the BioMart IGIS database.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Hsapiens.BioMart.igis.html
 ---
+
 
 # bioconductor-txdb.hsapiens.biomart.igis
 

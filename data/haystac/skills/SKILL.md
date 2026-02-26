@@ -1,8 +1,9 @@
 ---
 name: haystac
-description: The haystac skill provides a robust Bayesian framework for identifying species within complex sequencing libraries.
+description: Haystac provides a Bayesian framework for identifying species and estimating abundances in metagenomic sequencing libraries, with specific optimizations for ancient DNA. Use when user asks to build custom genomic databases from NCBI, pre-process sequencing reads, identify species in complex samples, or assess ancient DNA damage patterns.
 homepage: https://github.com/antonisdim/haystac
 ---
+
 
 # haystac
 

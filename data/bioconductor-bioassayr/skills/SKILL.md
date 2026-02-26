@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioassayr
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and manages small molecule bioactivity data from high-throughput biological screenings. Use when user asks to store screening results in a SQL database, identify target-selective compounds, or analyze multi-target activity profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/bioassayR.html
 ---
+
 
 # bioconductor-bioassayr
 

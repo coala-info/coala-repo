@@ -1,8 +1,9 @@
 ---
 name: vcfkit
-description: VCF-kit (invoked via the command `vk`) is a specialized suite of utilities for downstream VCF analysis.
+description: VCF-kit is a suite of utilities for downstream analysis of VCF files, providing functions for population genetics, phylogenetics, and variant validation. Use when user asks to manage reference genomes, calculate population genetics statistics, design primers for genomic variants, generate phylogenetic trees, convert VCF data to other formats, rename samples, filter variants, or impute genotypes.
 homepage: https://github.com/AndersenLab/VCF-kit
 ---
+
 
 # vcfkit
 

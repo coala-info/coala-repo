@@ -1,8 +1,9 @@
 ---
 name: aligncov
-description: The provided text does not contain help information or usage instructions. It consists of system logs and a fatal error message indicating a failure to build or extract the container image due to insufficient disk space ('no space left on device').
+description: The aligncov tool converts BAM alignment files into tidy tab-separated tables containing coverage statistics and per-base depth data. Use when user asks to calculate breadth of coverage, determine mean depth, or generate position-by-position depth reports from sorted BAM files.
 homepage: https://github.com/pcrxn/aligncov
 ---
+
 
 # aligncov
 

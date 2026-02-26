@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rqc
-description: the package is available on all platforms; click for details.
+description: Rqc provides quality control and assessment for high-throughput sequencing data. Use when user asks to perform quality control on FASTQ files, generate quality reports, or visualize sequencing data quality.
 homepage: https://bioconductor.org/packages/release/bioc/html/Rqc.html
 ---
+
 
 # bioconductor-rqc
 

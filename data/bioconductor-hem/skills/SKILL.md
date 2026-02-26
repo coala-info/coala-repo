@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hem
-description: the package is available on all platforms; click for details.
+description: This tool fits the Heterogeneous Error Model to identify differentially expressed genes in microarray data while accounting for biological and experimental error variances. Use when user asks to identify differentially expressed genes, analyze microarray data with multiple error layers, or estimate false discovery rates using Bayesian hierarchical models.
 homepage: https://bioconductor.org/packages/release/bioc/html/HEM.html
 ---
+
 
 # bioconductor-hem
 

@@ -1,12 +1,12 @@
 # lightstringgraph CWL Generation Report
 
-## lightstringgraph
+## lightstringgraph_lsg
 
 ### Tool Description
-A tool for string graph construction (Note: The provided text is a container runtime error message and does not contain help documentation or argument details).
+Light String Graph tool
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2
+- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h9948957_7
 - **Homepage**: http://lsg.algolab.eu
 - **Package**: https://anaconda.org/channels/bioconda/packages/lightstringgraph/overview
 - **Validation**: PASS
@@ -18,63 +18,60 @@ A tool for string graph construction (Note: The provided text is a container run
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1705487270: no space left on device
+Usage: lsg -B <basename> [-G <GSAFilename>] [-T <TAU>] [-C <CycNum>] [-l <readLenght>]
+
+Options:
+	-B, --basename    <basename>     # (required)
+	-G, --GSA         <GSAFilename>  # (default: '<basename>.pairSA')
+	-T, --TAU         <TAU>          # (default: 0)
+	-C, --CycNum      <CycNum>       # (default: 0)
+	-l, --read-length <readLength>   # 0 if unknown or not fixed (default: 0)
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## lightstringgraph_lsg
-
-### Tool Description
-LightStringGraph (lsg) is a tool for string graph construction. Note: The provided text contains system error messages and does not list command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2
-- **Homepage**: http://lsg.algolab.eu
-- **Package**: https://anaconda.org/channels/bioconda/packages/lightstringgraph/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1339173510: no space left on device
-```
 
 ## lightstringgraph_redbuild
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It is an error log indicating a failure to build or run a container due to insufficient disk space.
+Builds a light string graph.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2
+- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h9948957_7
 - **Homepage**: http://lsg.algolab.eu
 - **Package**: https://anaconda.org/channels/bioconda/packages/lightstringgraph/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3735896224: no space left on device
+Usage: redbuild  -b <basename>  -m <max_arc_length>  [-g <bucket_length>]  [-r] 
+
+Parameters:
+	-b <basename>        # (required)
+	-m <max_arc_length>  # (required)
+	[-g <bucket length>] # (optional) % default = 1000000
+	[-r]                 # (optional) % default = 1
 ```
+
 
 ## lightstringgraph_graph2asqg
 
 ### Tool Description
-A tool within the lightstringgraph suite (description unavailable due to execution error in provided text).
+Converts a string graph to ASQG format.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2
+- **Docker Image**: quay.io/biocontainers/lightstringgraph:0.4.0--h9948957_7
 - **Homepage**: http://lsg.algolab.eu
 - **Package**: https://anaconda.org/channels/bioconda/packages/lightstringgraph/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lightstringgraph:0.4.0--h205c40f_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2047768292: no space left on device
+* ERROR(parse_cmds        :d/graph2asqg.cpp:114 ) 12:43:43 | Can't parse argument: --help
+Usage: graph2asqg  -b <basename>  [-r <read_filename>]  -l <read_length>  [-n]
+
+Parameters:
+	-b <basename>        # (required)
+	-r <read_filename>   # (optional, default: <basename>) 
+	-l <read_length>     # (required) 
+	-n                   # (optional) use numeric IDs instead of FASTA IDs
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humanchrloc
-description: the package is available on all platforms; click for details.
+description: This tool provides human chromosomal location annotation data by mapping Entrez Gene identifiers to transcription start and end positions and cytoband locations. Use when user asks to map genes to genomic coordinates, retrieve transcription start or end positions for specific chromosomes, or find cytoband location data for human genes.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/humanCHRLOC.html
 ---
+
 
 # bioconductor-humanchrloc
 

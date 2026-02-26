@@ -1,8 +1,9 @@
 ---
 name: hmnqc
-description: The `hmnqc` tool is a specialized bioinformatics utility for assessing the quality and integrity of targeted NGS datasets.
+description: The hmnqc tool assesses the quality and integrity of targeted NGS datasets by generating standardized metrics from raw reads, alignments, and variant calls. Use when user asks to extract quality statistics into JSON, identify low-coverage positions, calculate target coverage, infer biological sex, or extract SNPs for identity verification.
 homepage: https://github.com/guillaume-gricourt/HmnQc
 ---
+
 
 # hmnqc
 

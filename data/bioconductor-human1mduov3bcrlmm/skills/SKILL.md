@@ -1,8 +1,9 @@
 ---
 name: bioconductor-human1mduov3bcrlmm
-description: the package is available on all platforms; click for details.
+description: This package provides data and annotation support for the Illumina 1M Duo v3b array within the crlmm framework. Use when user asks to perform genotype calling, copy number analysis, or preprocessing of Illumina 1M Duo v3b SNP array data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/human1mduov3bCrlmm.html
 ---
+
 
 # bioconductor-human1mduov3bcrlmm
 

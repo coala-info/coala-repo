@@ -1,8 +1,9 @@
 ---
 name: perl-graphics-colornames
-description: This skill provides guidance on using the `Graphics::ColorNames` Perl module to manage and retrieve color definitions.
+description: This tool manages and retrieves RGB color definitions using human-readable names within Perl applications. Use when user asks to convert color names to hexadecimal strings, retrieve RGB decimal values, or load standard color schemes like X11 and HTML.
 homepage: http://metacpan.org/pod/Graphics::ColorNames
 ---
+
 
 # perl-graphics-colornames
 

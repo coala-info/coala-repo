@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bovinecdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Bovine Genome Array to map probe identifiers to chip coordinates. Use when user asks to map probe sets to indices, convert between (x,y) coordinates and index values, or retrieve chip dimensions for bovine genomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovinecdf.html
 ---
+
 
 # bioconductor-bovinecdf
 

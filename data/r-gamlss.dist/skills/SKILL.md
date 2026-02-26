@@ -1,8 +1,9 @@
 ---
 name: r-gamlss.dist
-description: Skill for using the CRAN R package r-gamlss.dist.
+description: This package provides over 100 probability distributions and utilities for modeling location, scale, skewness, and kurtosis within the GAMLSS framework. Use when user asks to implement distributional regression, use density or quantile functions for specialized distributions, define truncated or censored distributions, or identify parameterizations for complex data types.
 homepage: https://cloud.r-project.org/web/packages/gamlss.dist/index.html
 ---
+
 
 # r-gamlss.dist
 

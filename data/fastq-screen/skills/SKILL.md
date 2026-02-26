@@ -1,8 +1,9 @@
 ---
 name: fastq-screen
-description: FastQ Screen is a diagnostic tool used to assess the composition of a sequencing library.
+description: FastQ Screen maps a subset of sequencing reads against multiple reference genomes to identify contamination and assess library composition. Use when user asks to screen for contaminants, check library composition, filter reads from specific genomes, or run quality control on FastQ files.
 homepage: https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen
 ---
+
 
 # fastq-screen
 

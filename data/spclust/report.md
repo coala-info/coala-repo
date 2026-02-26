@@ -3,7 +3,7 @@
 ## spclust
 
 ### Tool Description
-A tool for spatial clustering (Note: The provided text is a container build log and does not contain usage instructions or argument definitions).
+SpClust performs nucleotides sequences clustering using GMM.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/spclust:28.5.19--h425c490_1
@@ -18,71 +18,14 @@ A tool for spatial clustering (Note: The provided text is a container build log 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spclust:28.5.19--h425c490_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+SpClust performs nucleotides sequences clustering using GMM.
 
+usage: mpispclust -in [input fasta file] -out [output clustering file] -alignMode [alignment mode] -mdist [scoring matrix]
+   or: mpiexec -n [number of slave processes] spclust -in [input fasta file] -out [output clustering file] -alignMode [alignment mode] -mdist [scoring matrix]
 
-## Metadata
-- **Skill**: generated
+Available scoring matrices are EDNAFULL, BLOSUM62, and PAM250. Defaults to EDNAFULL if not specified.
+Available alignment modes are: fast, moderate, maxPrecision. fast and moderate limit the number of iterations for the alignment to 2 and 4 respectively (using MUSCLE). Defaults to maxPrecision if not specified.
 
-## spclust_mpispclust
-
-### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it contains error logs from a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/spclust:28.5.19--h425c490_1
-- **Homepage**: https://github.com/johnymatar/SpCLUST/
-- **Package**: https://anaconda.org/channels/bioconda/packages/spclust/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spclust:28.5.19--h425c490_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## spclust_muscle
-
-### Tool Description
-The provided text contains system logs and error messages related to a container build process rather than the help documentation for the tool. Consequently, no command-line arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/spclust:28.5.19--h425c490_1
-- **Homepage**: https://github.com/johnymatar/SpCLUST/
-- **Package**: https://anaconda.org/channels/bioconda/packages/spclust/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spclust:28.5.19--h425c490_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## spclust_spclustGMM
-
-### Tool Description
-Spatial clustering using Gaussian Mixture Models. (Note: The provided text contains container build logs rather than tool help text; no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/spclust:28.5.19--h425c490_1
-- **Homepage**: https://github.com/johnymatar/SpCLUST/
-- **Package**: https://anaconda.org/channels/bioconda/packages/spclust/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/spclust:28.5.19--h425c490_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Note: parameters are case sensitive, e.g. using -alignmode instead of -alignMode will cause this parameter to be disregarded, and using blosum62 instead of BLOSUM62 will be mentioned as an error.
 ```
 

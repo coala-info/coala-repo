@@ -1,9 +1,9 @@
 # coconet-binning CWL Generation Report
 
-## coconet-binning
+## coconet-binning_coconet
 
 ### Tool Description
-CoCoNet is a tool for binning metagenomic contigs using a deep learning approach. (Note: The provided text is an error log and does not contain help information; arguments could not be extracted.)
+CoCoNet: a tool for binning metagenomic contigs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coconet-binning:1.1.0--py_0
@@ -18,29 +18,21 @@ CoCoNet is a tool for binning metagenomic contigs using a deep learning approach
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coconet-binning:1.1.0--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1785841599: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## coconet-binning_coconet
-
-### Tool Description
-CoCoNet: Contig binning with CO-occurrence NETworks. (Note: The provided help text contains only container runtime error messages and does not list command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/coconet-binning:1.1.0--py_0
-- **Homepage**: https://github.com/Puumanamana/CoCoNet
-- **Package**: https://anaconda.org/channels/bioconda/packages/coconet-binning/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/coconet-binning:1.1.0--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2995189918: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/coconet", line 10, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.7/site-packages/coconet/coconet.py", line 41, in main
+    cfg.init_config(mkdir=True, **params)
+  File "/usr/local/lib/python3.7/site-packages/coconet/core/config.py", line 64, in init_config
+    self.set_input(name, value)
+  File "/usr/local/lib/python3.7/site-packages/coconet/core/config.py", line 79, in set_input
+    filepath = Path(val)
+  File "/usr/local/lib/python3.7/pathlib.py", line 1027, in __new__
+    self = cls._from_parts(args, init=False)
+  File "/usr/local/lib/python3.7/pathlib.py", line 674, in _from_parts
+    drv, root, parts = self._parse_args(args)
+  File "/usr/local/lib/python3.7/pathlib.py", line 658, in _parse_args
+    a = os.fspath(a)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
 ```
 

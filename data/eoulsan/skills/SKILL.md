@@ -1,8 +1,9 @@
 ---
 name: eoulsan
-description: Eoulsan is a modular and scalable workflow engine designed for bioinformaticians to perform reproducible NGS analysis.
+description: Eoulsan is a modular and scalable workflow engine designed for performing reproducible high-throughput sequencing data analysis across various computing infrastructures. Use when user asks to execute NGS workflows, perform RNA-Seq differential analysis, or manage large-scale genomic data processing on clusters and Hadoop environments.
 homepage: http://www.tools.genomique.biologie.ens.fr/eoulsan/
 ---
+
 
 # eoulsan
 

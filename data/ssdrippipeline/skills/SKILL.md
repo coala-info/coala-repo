@@ -1,8 +1,9 @@
 ---
 name: ssdrippipeline
-description: The `ssdrippipeline` is a comprehensive bioinformatics suite designed specifically for the unique requirements of ssDRIP-seq data.
+description: The ssdrippipeline is a bioinformatics suite designed to automate the processing and analysis of ssDRIP-seq data from raw reads to biological insights. Use when user asks to align reads, call peaks, perform differential analysis, or generate clustering and metaplots for ssDRIP-seq experiments.
 homepage: https://github.com/PEHGP/ssDripPipeline
 ---
+
 
 # ssdrippipeline
 

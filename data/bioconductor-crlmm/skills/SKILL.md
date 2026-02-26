@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crlmm
-description: the package is available on all platforms; click for details.
+description: This package implements the CRLMM algorithm for genotype calling and copy number estimation of Affymetrix and Illumina SNP arrays. Use when user asks to call genotypes, estimate copy number, or process SNP array data.
 homepage: https://bioconductor.org/packages/release/bioc/html/crlmm.html
 ---
+
 
 # bioconductor-crlmm
 

@@ -1,8 +1,9 @@
 ---
 name: slivar
-description: slivar is a high-performance command-line tool designed for rapid querying and filtering of genomic variants.
+description: slivar is a high-performance command-line tool for rapid querying, filtering, and annotating genomic variants using pedigree-aware logic and a JavaScript-based expression engine. Use when user asks to filter VCF files based on inheritance patterns, identify de novo or compound heterozygous mutations, annotate variants with population frequencies, or export filtered genomic data to TSV format.
 homepage: https://github.com/brentp/slivar
 ---
+
 
 # slivar
 

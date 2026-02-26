@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pairedgsea
-description: The package allows you to store intermediate results for further investiation, if desired. pairedGSEA comes with a wrapper function for running an Over-Representation Analysis (ORA) and functionalities for plotting the results.
+description: The pairedGSEA package performs paired gene set enrichment analysis and over-representation analysis with integrated plotting functions. Use when user asks to run an over-representation analysis, perform paired gene set enrichment analysis, or visualize enrichment results.
 homepage: https://bioconductor.org/packages/release/bioc/html/pairedGSEA.html
 ---
+
 
 # bioconductor-pairedgsea
 

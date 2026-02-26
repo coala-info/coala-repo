@@ -1,8 +1,9 @@
 ---
 name: compalignp
-description: The `compalignp` tool is a specialized utility designed to quantify the accuracy of sequence alignments.
+description: compalignp quantifies the accuracy of a sequence alignment by comparing it against a trusted reference alignment. Use when user asks to evaluate alignment accuracy, compare a test alignment to a gold standard, or calculate fractional identity between two alignments.
 homepage: http://www.biophys.uni-duesseldorf.de/bralibase/
 ---
+
 
 # compalignp
 

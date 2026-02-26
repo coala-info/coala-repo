@@ -1,8 +1,9 @@
 ---
 name: mlrho
-description: mlrho is a specialized suite of tools designed to perform maximum likelihood estimation of evolutionary parameters using data from a single diploid individual.
+description: mlrho performs maximum likelihood estimation of evolutionary parameters such as mutation and recombination rates from single diploid individual sequencing data. Use when user asks to estimate population genetic parameters, convert alignment files to profile format, or calculate sequencing error rates from shotgun data.
 homepage: http://guanine.evolbio.mpg.de/mlRho/
 ---
+
 
 # mlrho
 

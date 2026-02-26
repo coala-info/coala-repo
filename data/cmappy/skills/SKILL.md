@@ -1,8 +1,9 @@
 ---
 name: cmappy
-description: cmappy is a specialized suite of Python tools developed by the Broad Institute for handling Connectivity Map data.
+description: cmappy is a Python suite for processing and manipulating Connectivity Map data in GCT and GCTX formats. Use when user asks to parse or write GCT/GCTX files, perform memory-efficient subsetting of genomic matrices, or convert between biological data formats.
 homepage: https://github.com/cmap/cmapPy
 ---
+
 
 # cmappy
 

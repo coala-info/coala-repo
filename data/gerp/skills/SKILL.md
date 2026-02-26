@@ -1,8 +1,9 @@
 ---
 name: gerp
-description: GERP is a computational tool designed to identify genomic regions that have been conserved throughout evolution.
+description: GERP identifies evolutionarily conserved genomic regions by calculating rejected substitution scores from multiple sequence alignments and phylogenetic trees. Use when user asks to identify constrained elements, calculate conservation scores, or detect genomic regions under evolutionary pressure.
 homepage: http://mendel.stanford.edu/SidowLab/downloads/gerp/index.html
 ---
+
 
 # gerp
 

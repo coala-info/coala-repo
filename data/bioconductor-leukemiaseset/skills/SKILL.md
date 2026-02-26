@@ -1,8 +1,9 @@
 ---
 name: bioconductor-leukemiaseset
-description: the package is available on all platforms; click for details.
+description: This package provides a curated ExpressionSet object containing preprocessed microarray gene expression data for the four main types of leukemia and healthy controls. Use when user asks to load leukemia gene expression data, access MILE study microarray samples, or perform multi-class classification analysis on bone marrow expression profiles.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/leukemiasEset.html
 ---
+
 
 # bioconductor-leukemiaseset
 

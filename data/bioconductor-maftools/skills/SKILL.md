@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maftools
-description: the package is available on all platforms; click for details.
+description: Maftools provides a comprehensive suite of functions to analyze, summarize, and visualize Mutation Annotation Format files from cancer genomics studies. Use when user asks to visualize somatic mutations with oncoplots, perform driver gene analysis, or compare mutational profiles between different cancer cohorts.
 homepage: https://bioconductor.org/packages/release/bioc/html/maftools.html
 ---
+
 
 # bioconductor-maftools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu219cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Human Genome U219 Array. Use when user asks to map probe identifiers, convert between (x,y) chip coordinates and indices, or handle CDF environments for this specific microarray platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu219cdf.html
 ---
+
 
 # bioconductor-hgu219cdf
 

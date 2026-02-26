@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyio
-description: the package is available on all platforms; click for details.
+description: This package provides high-performance routines for parsing Affymetrix CEL and CDF data files using C-based infrastructure. Use when user asks to read probe intensities into matrices, extract file headers, check CDF file formats, or parse microarray metadata.
 homepage: https://bioconductor.org/packages/release/bioc/html/affyio.html
 ---
+
 
 # bioconductor-affyio
 

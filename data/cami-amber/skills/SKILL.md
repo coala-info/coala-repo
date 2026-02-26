@@ -1,8 +1,9 @@
 ---
 name: cami-amber
-description: AMBER (Assessment of Metagenome BinnERs) provides a standardized framework for evaluating genome reconstructions from metagenomic data.
+description: AMBER evaluates and benchmarks metagenome binning results by comparing them against a gold standard using metrics like completeness, purity, and Adjusted Rand Index. Use when user asks to assess binning performance, compare multiple binners, calculate taxonomic binning metrics, or convert FASTA bins to Bioboxes format.
 homepage: https://github.com/CAMI-challenge/AMBER
 ---
+
 
 # cami-amber
 

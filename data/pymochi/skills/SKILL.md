@@ -1,8 +1,9 @@
 ---
 name: pymochi
-description: MoCHI (Molecular Characterization of Heterogeneous Interactions) is a specialized tool designed to bridge the gap between high-throughput mutational data and biophysical reality.
+description: pymochi models the non-linear relationship between mutational data and underlying biophysical traits using neural networks. Use when user asks to infer free energy changes from deep mutational scanning experiments, model complex phenotypes as a function of multiple traits, or decompose genetic interactions into energetic couplings.
 homepage: https://github.com/lehner-lab/MoCHI
 ---
+
 
 # pymochi
 

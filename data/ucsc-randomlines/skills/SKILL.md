@@ -1,8 +1,9 @@
 ---
 name: ucsc-randomlines
-description: The `ucsc-randomlines` utility is a high-performance tool from the UCSC Genome Browser "Kent" suite designed to extract a random subset of lines from a file.
+description: The ucsc-randomlines tool extracts a random subset of lines from a file. Use when user asks to extract a random subset of lines, downsample a large dataset, or sample lines from a compressed file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-randomlines
 

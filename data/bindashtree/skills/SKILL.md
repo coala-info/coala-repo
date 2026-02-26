@@ -1,8 +1,9 @@
 ---
 name: bindashtree
-description: bindashtree is a high-performance bioinformatics tool designed for building phylogenetic trees from microbial genomes.
+description: bindashtree builds phylogenetic trees from microbial genomes using densified MinHash and rapid neighbor-joining. Use when user asks to construct a phylogenetic tree, generate a genomic distance matrix, or perform large-scale microbial phylogenomic analysis.
 homepage: https://github.com/jianshu93/bindashtree
 ---
+
 
 # bindashtree
 

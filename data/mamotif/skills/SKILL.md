@@ -1,8 +1,9 @@
 ---
 name: mamotif
-description: The `mamotif` toolkit is a specialized bioinformatics pipeline used to identify transcription factors that drive differential genomic binding.
+description: MAmotif identifies transcription factors that drive differential genomic binding by integrating quantitative peak comparison with motif scanning. Use when user asks to identify transcription factors driving differential binding, compare genomic binding profiles between two conditions, or find motifs enriched in biased peaks.
 homepage: https://github.com/shao-lab/MAmotif
 ---
+
 
 # mamotif
 

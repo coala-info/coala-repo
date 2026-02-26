@@ -1,8 +1,9 @@
 ---
 name: discasm
-description: DISCASM (Discordant and Unmapped Read De novo Transcriptome Assembly) is a specialized utility within the Trinity Cancer Transcriptome Analysis Toolkit (CTAT).
+description: DISCASM performs targeted de novo assembly of discordant and unmapped RNA-Seq reads to reconstruct transcripts representing complex genomic rearrangements or novel insertions. Use when user asks to assemble chimeric junctions, perform de novo assembly on unmapped reads, or reconstruct fusion transcripts from alignment data.
 homepage: https://github.com/DISCASM/DISCASM
 ---
+
 
 # discasm
 

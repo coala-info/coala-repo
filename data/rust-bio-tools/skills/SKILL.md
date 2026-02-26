@@ -1,8 +1,9 @@
 ---
 name: rust-bio-tools
-description: `rust-bio-tools` (invoked via the `rbt` command) is a suite of ultra-fast, robust command-line utilities designed for common bioinformatics tasks.
+description: rust-bio-tools is a suite of high-performance command-line utilities for processing and analyzing Next-Generation Sequencing data. Use when user asks to manipulate VCF/BCF files, split or filter FASTQ files, extract BAM depth, collapse reads, or generate interactive HTML reports for genomic data.
 homepage: https://github.com/rust-bio/rust-bio-tools
 ---
+
 
 # rust-bio-tools
 

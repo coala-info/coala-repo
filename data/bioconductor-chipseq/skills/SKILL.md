@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipseq
-description: the package is available on all platforms; click for details.
+description: The bioconductor-chipseq package provides a framework for analyzing ChIP-Seq data by processing aligned reads, calculating genomic coverage, and identifying enriched regions. Use when user asks to estimate fragment lengths, calculate genomic coverage, identify peaks or islands, and perform differential peak analysis between samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/chipseq.html
 ---
+
 
 # bioconductor-chipseq
 

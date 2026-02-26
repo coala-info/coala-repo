@@ -1,8 +1,9 @@
 ---
 name: pronto
-description: The `pronto` skill enables the management of ontology data through a high-level Python interface.
+description: Pronto manages, parses, and exports ontology data through a high-level Python interface. Use when user asks to load ontologies from files or URLs, navigate class hierarchies, create or edit ontological terms, and convert between formats like OWL and OBO.
 homepage: https://github.com/althonos/pronto
 ---
+
 
 # pronto
 

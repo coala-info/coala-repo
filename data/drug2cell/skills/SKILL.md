@@ -1,8 +1,9 @@
 ---
 name: drug2cell
-description: The `drug2cell` library is a specialized utility for Scanpy that facilitates the evaluation of gene group activities, with a primary focus on drug-target interactions.
+description: "drug2cell evaluates drug-target activity and gene group enrichment in single-cell transcriptomics data. Use when user asks to calculate per-cell drug activity scores, perform drug enrichment analysis on cell clusters, or map custom gene sets onto single-cell manifolds."
 homepage: https://github.com/teichlab/drug2cell/
 ---
+
 
 # drug2cell
 

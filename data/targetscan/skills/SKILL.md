@@ -1,8 +1,9 @@
 ---
 name: targetscan
-description: TargetScan is a specialized tool for the computational prediction of microRNA targets.
+description: TargetScan predicts microRNA targets by identifying complementary sites between miRNA seed regions and mRNA sequences. Use when user asks to predict microRNA targets, rank potential biological targets based on biochemical efficacy, or calculate the probability of conserved targeting.
 homepage: https://www.targetscan.org/vert_80/
 ---
+
 
 # targetscan
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adapt
-description: the package is available on all platforms; click for details.
+description: ADAPT is a Bioconductor package for microbiome differential abundance analysis that uses a Tobit model framework to handle zero-inflation and compositionality. Use when user asks to perform differential abundance testing on microbiome data, identify reference taxa, or generate volcano plots for taxonomic fold changes.
 homepage: https://bioconductor.org/packages/release/bioc/html/ADAPT.html
 ---
+
 
 # bioconductor-adapt
 

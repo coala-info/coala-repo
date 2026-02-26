@@ -1,9 +1,9 @@
 # glimpse-bio CWL Generation Report
 
-## glimpse-bio
+## glimpse-bio_GLIMPSE2_chunk
 
 ### Tool Description
-GLIMPSE is a suite of tools for phasing and imputation of low-coverage sequencing data (Note: The provided input text contains container execution errors rather than tool help documentation).
+Split chromosomes into chunks
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
@@ -18,80 +18,328 @@ GLIMPSE is a suite of tools for phasing and imputation of low-coverage sequencin
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1704944230: no space left on device
+[GLIMPSE2] Split chromosomes into chunks
+  * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
+  * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
+  * Version       	 : GLIMPSE2_chunk v2.0.0 / commit = 2.0.1 / release = 2024-12-15
+  * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
+  *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
+  * Run date      	 : 25/02/2026 - 17:16:12
+
+Basic options:
+  --help                             Produces help message
+  --seed arg (=15052011)             Seed of the random number generator
+  --threads arg (=1)                 Number of threads
+
+Input parameters:
+  -I [ --input ] arg                 Reference or target dataset at all 
+                                     variable positions in VCF/BCF format. The 
+                                     GT field is not required
+  --region arg                       Chromosome or region to be split
+  -M [ --map ] arg                   Genetic map
+  --sparse-maf arg (=0.00100000005)  (Expert setting) Rare variant threshold
+
+Parameters:
+  --window-cm arg (=2.5)             Minimal window size in cM
+  --window-mb arg (=2)               Minimal window size in Mb
+  --window-count arg (=20000)        Minimal window size in # common variants
+  --buffer-cm arg (=0.5)             Minimal buffer size in cM
+  --buffer-mb arg (=0.400000006)     Minimal buffer size in Mb
+  --buffer-count arg (=2000)         Minimal buffer size in # common variants
+
+Model parameters:
+  --recursive                        Recursive algorithm
+  --sequential                       (Recommended). Sequential algorithm
+  --uniform-number-variants          (Experimental) Uniform the number of 
+                                     variants in the sequential algorithm
+
+Output files:
+  -O [ --output ] arg                File containing the chunks for phasing and
+                                     imputation
+  --log arg                          Log file
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## glimpse-bio_GLIMPSE2_chunk
-
-### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be an error log related to a container execution failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
-- **Homepage**: https://odelaneau.github.io/GLIMPSE/
-- **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3711919130: no space left on device
-```
 
 ## glimpse-bio_GLIMPSE2_split_reference
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding container image building (no space left on device).
+Split reference panel into binary GLIMPSE2 files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
 - **Homepage**: https://odelaneau.github.io/GLIMPSE/
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1378072573: no space left on device
+[GLIMPSE2] Split reference panel into binary GLIMPSE2 files
+  * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
+  * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
+  * Version       	 : GLIMPSE2_split_reference v2.0.0 / commit = 2.0.1 / release = 2024-12-15
+  * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
+  *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
+  * Run date      	 : 25/02/2026 - 17:16:34
+
+Basic parameters:
+  --help                             Produces help message
+  --seed arg (=15052011)             Seed of the random number generator
+  --threads arg (=1)                 Number of threads
+
+Input parameters:
+  -R [ --reference ] arg             Haplotype reference panel in VCF/BCF 
+                                     format
+  -M [ --map ] arg                   Genetic map
+  --input-region arg                 Imputation region with buffers
+  --output-region arg                Imputation region without buffers
+  --sparse-maf arg (=0.00100000005)  (Expert setting) Rare variant threshold.
+  --keep-monomorphic-ref-sites       (Expert setting) Keeps monomorphic markers
+                                     in the reference panel (removed by 
+                                     default)
+
+Output parameters:
+  -O [ --output ] arg                Prefix of the output file (region and 
+                                     extension are automatically added)
+  --log arg                          Log file
 ```
+
 
 ## glimpse-bio_GLIMPSE2_phase
 
 ### Tool Description
-The provided text does not contain help information for the tool, but rather system error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+[GLIMPSE2] Phase and impute low coverage sequencing data
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
 - **Homepage**: https://odelaneau.github.io/GLIMPSE/
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3682384784: no space left on device
+[GLIMPSE2] Phase and impute low coverage sequencing data
+  * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
+  * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
+  * Version       	 : GLIMPSE2_phase v2.0.0 / commit = 2.0.1 / release = 2024-12-15
+  * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
+  *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
+  * Run date      	 : 25/02/2026 - 17:16:58
+
+Basic parameters:
+  --help                               Produces help message
+  --seed arg (=15052011)               Seed of the random number generator
+  --threads arg (=1)                   Number of threads
+
+Input parameters:
+  --bam-file arg                       Input BAM/CRAM file containing 
+                                       low-coverage sequencing reads. Only one 
+                                       of the following options can be 
+                                       declared: --input-gl, --bam-file, 
+                                       --bam-list.
+  --bam-list arg                       List (.txt file) of input BAM/CRAM files
+                                       containing low-coverage sequencing 
+                                       reads. One file per line. A second 
+                                       column (space separated) can be used to 
+                                       specify the sample name, otherwise the 
+                                       name of the file is used. Only one of 
+                                       the following options can be declared: 
+                                       --input-gl, --bam-file, --bam-list.
+  --input-gl arg                       VCF/BCF file containing the genotype 
+                                       likelihoods. Only one of the following 
+                                       options can be declared: --input-gl, 
+                                       --bam-file, --bam-list.
+  -R [ --reference ] arg               Haplotype reference in VCF/BCF or binary
+                                       format
+  -M [ --map ] arg                     Genetic map
+  --input-region arg                   Imputation region with buffers
+  --output-region arg                  Imputation region without buffers
+  --sparse-maf arg (=0.00100000005)    (Expert setting) Rare variant threshold
+  --samples-file arg                   File with sample names and ploidy 
+                                       information. One sample per line with a 
+                                       mandatory second column indicating 
+                                       ploidy (1 or 2). Sample names that are 
+                                       not present are assumed to have ploidy 2
+                                       (diploids). If the parameter is omitted,
+                                       all samples are assumed to be diploid. 
+                                       GLIMPSE does NOT handle the use of sex 
+                                       (M/F) instead of ploidy.
+  --ind-name arg                       Only used together with --bam-file. Name
+                                       of the sample to be processed. If not 
+                                       specified the prefix of the BAM/CRAM 
+                                       file (--bam-file) is used.
+  --keep-monomorphic-ref-sites         (Expert setting) Keeps monomorphic 
+                                       markers in the reference panel (removed 
+                                       by default)
+
+VCF/BCF genotype likelihoods input parameters:
+  --impute-reference-only-variants     Only used together with --input-gl. 
+                                       Allows imputation at variants only 
+                                       present in the reference panel. The use 
+                                       of this option is intended only to allow
+                                       imputation at sporadic missing variants.
+                                       If the number of missing variants is 
+                                       non-sporadic, please re-run the genotype
+                                       likelihood computation at all reference 
+                                       variants and avoid using this option, 
+                                       since data from the reads should be 
+                                       used. A warning is thrown if 
+                                       reference-only variants are found.
+  --input-field-gl                     Only used together with --input-gl. Use 
+                                       FORMAT/GL field instead of FORMAT/PL to 
+                                       read genotype likelihoods
+  --use-gl-indels                      (Expert setting) Only used together with
+                                       --input-gl. Use genotype likelihoods at 
+                                       indels from the VCF/BCF file. By default
+                                       GLIMPSE assumes flat likelihoods at 
+                                       non-SNP variants, as genotype 
+                                       likelihoods from low-coverage data are 
+                                       often miscalibrated, potentially 
+                                       affecting neighbouring variants.
+
+Model parameters:
+  --burnin arg (=5)                    (Expert setting) Number of burn-in 
+                                       iterations of the Gibbs sampler
+  --main arg (=15)                     (Expert setting) Number of main 
+                                       iterations of the Gibbs sampler
+  --ne arg (=100000)                   (Expert setting) Effective diploid 
+                                       population size modelling recombination 
+                                       frequency
+  --min-gl arg (=1.00000001e-10)       (Expert setting) Minimim haploid 
+                                       likelihood
+  --err-imp arg (=9.99999996e-13)      (Expert setting) Imputation HMM error 
+                                       rate
+  --err-phase arg (=9.99999975e-05)    (Expert setting) Phasing HMM error rate
+
+Selection parameters:
+  --pbwt-depth arg (=12)               (Expert setting) Number of neighbors in 
+                                       the sparse PBWT selection step (positive
+                                       number)
+  --pbwt-modulo-cm arg (=0.100000001)  (Expert setting) Frequency of PBWT 
+                                       selection in cM (positive number). This 
+                                       parameter is automatically adjusted in 
+                                       case of small imputation regions
+  --Kinit arg (=1000)                  (Expert setting) Number of states used 
+                                       for initialization (positive number). 
+                                       Can be set to zero only when 
+                                       –state-list is set, to skip the 
+                                       selection for the initialization step
+  --Kpbwt arg (=2000)                  (Expert setting)  Maximum number of 
+                                       states selected from the sparse PBWT 
+                                       (positive number). Can be set to zero 
+                                       only when –state-list is set, to skip 
+                                       the selection for during the Gibbs 
+                                       iterations
+  --state-list arg                     (Expert setting) List (.txt file) of 
+                                       haplotypes always present in the 
+                                       conditioning set, independent from state
+                                       selection. Not affected by other 
+                                       selection parameters. Each row is a 
+                                       target haplotype (two lines per sample 
+                                       in case of diploid individuals) each 
+                                       column is a space separated list of 
+                                       reference haplotypes (in numberical 
+                                       order 0-(2N-1) ). Useful when prior 
+                                       knowledge of relatedness between the 
+                                       reference and target panel is known a 
+                                       priori.
+
+BAM/CRAM options and filters:
+  --call-model arg (=standard)         Model to use to call the data. Only the 
+                                       standard model is available at the 
+                                       moment.
+  --call-indels                        (Expert setting) Use the calling model 
+                                       to produce genotype likelihoods at 
+                                       indels. However the likelihoods from 
+                                       low-coverage data can be miscalibrated, 
+                                       therefore by default GLIMPSE does only 
+                                       imputation into the haplotype scaffold 
+                                       (assuming flat likelihoods)
+  -F [ --fasta ] arg                   Faidx-indexed reference sequence file in
+                                       the appropriate genome build. Necessary 
+                                       for CRAM files
+  --mapq arg (=10)                     Minimum mapping quality for a read to be
+                                       considered
+  --baseq arg (=10)                    Minimum phred-scalde based quality to be
+                                       considered
+  --max-depth arg (=40)                (Expert setting) Max read depth at a 
+                                       site. If the number of reads exceeds 
+                                       this number, the reads at the sites are 
+                                       downsampled (e.g. to avoid artifactual 
+                                       coverage increases)
+  --keep-orphan-reads                  (Expert setting) Keep paired end reads 
+                                       where one of mates is unmapped
+  --ignore-orientation                 (Expert setting) Ignore the orientation 
+                                       of mate pairs
+  --check-proper-pairing               (Expert setting) Discard reads that are 
+                                       not properly paired
+  --keep-failed-qc                     (Expert setting) Keep reads that fail 
+                                       sequencing QC (as indicated by the 
+                                       sequencer)
+  --keep-duplicates                    (Expert setting) Keep duplicate 
+                                       sequencing reads in the process
+  --illumina13+                        (Expert setting) Use illimina 1.3 
+                                       encoding for the base quality (for older
+                                       sequencing machines)
+
+Output parameters:
+  -O [ --output ] arg                  Phased and imputed haplotypes in 
+                                       VCF/BCF/BGEN format
+  --contigs-fai arg                    If specified, header contig names and 
+                                       their lengths are copied from the 
+                                       provided fasta index file (.fai). This 
+                                       allows to create imputed whole-genome 
+                                       files as contigs are present and can be 
+                                       easily merged by bcftools
+  --bgen-bits arg (=8)                 (Expert setting) Only used toghether 
+                                       when the output is in BGEN file format. 
+                                       Specifies the number of bits to be used 
+                                       for the encoding probabilities of the 
+                                       output BGEN file. If the output is in 
+                                       the .vcf[.gz]/.bcf format, this value is
+                                       ignored. Accepted values: 1-32
+  --bgen-compr arg (=zstd)             (Expert setting) Only used toghether 
+                                       when the output is in BGEN file format. 
+                                       Specifies the compression of the output 
+                                       BGEN file. If the output is in the 
+                                       .vcf[.gz]/.bcf format, this value is 
+                                       ignored. Accepted values: [no,zlib,zstd]
+  --log arg                            Log file
 ```
+
 
 ## glimpse-bio_GLIMPSE2_ligate
 
 ### Tool Description
-Ligate multiple chunks of imputed data into a single file.
+Ligate multiple output files into chromosome-wide files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3
 - **Homepage**: https://odelaneau.github.io/GLIMPSE/
 - **Package**: https://anaconda.org/channels/bioconda/packages/glimpse-bio/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/glimpse-bio:2.0.1--ha5d29c5_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2376305289: no space left on device
+[GLIMPSE2] Ligate multiple output files into chromosome-wide files
+  * Authors              : Simone RUBINACCI & Olivier DELANEAU, University of Lausanne
+  * Contact              : simone.rubinacci@unil.ch & olivier.delaneau@unil.ch
+  * Version       	 : GLIMPSE2_ligate v2.0.0 / commit = 2.0.1 / release = 2024-12-15
+  * Citation	         : BiorXiv, (2022). DOI: https://doi.org/10.1101/2022.11.28.518213
+  *         	         : Nature Genetics 53, 120–126 (2021). DOI: https://doi.org/10.1038/s41588-020-00756-0
+  * Run date      	 : 25/02/2026 - 17:17:45
+
+Basic options:
+  --help                  Produces help message
+  --seed arg (=15052011)  Seed of the random number generator
+  --threads arg (=1)      Number of threads
+
+Input files:
+  --input arg             Text file containing all VCF/BCF to ligate, one file 
+                          per line
+
+Output files:
+  -O [ --output ] arg     Output ligated (phased) file in VCF/BCF format
+  --no-index              If specified, the ligated VCF/BCF is not indexed by 
+                          GLIMPSE2 for random access to genomic regions
 ```
 

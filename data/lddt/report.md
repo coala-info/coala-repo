@@ -3,7 +3,7 @@
 ## lddt
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'lddt'. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or run the container due to insufficient disk space.
+Calculate the Local Distance Difference Test (LDDT) score for a given model.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lddt:2.2--h9ee0642_0
@@ -18,11 +18,18 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lddt:2.2--h9ee0642_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2675022461: no space left on device
+usage: lddt [options] <mod1> [mod1 [mod2]] <re1>[,ref2,ref3]
+   -s         selection performed on ref
+   -c         use Calphas only
+   -f         perform structural checks and filter input data
+   -t         fault tolerant parsing
+   -p <file>  use specified parmeter file. Mandatory
+   -v <level> verbosity level (0=results only,1=problems reported, 2=full report)
+   -b <value> tolerance in stddevs for bonds
+   -a <value> tolerance in stddevs for angles
+   -r <value> distance inclusion radius
+   -i <value> sequence separation
+   -e         print version
+   -x         ignore residue name consistency checks
 ```
 
-
-## Metadata
-- **Skill**: generated

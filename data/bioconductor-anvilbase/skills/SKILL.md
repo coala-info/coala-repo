@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilbase
-description: the package is available on all platforms; click for details.
+description: AnVILBase provides standardized S4 generics and cloud platform abstractions for interacting with the AnVIL ecosystem on Google Cloud and Azure. Use when user asks to identify the current cloud platform, manage workspaces, interact with data tables, or perform cloud storage operations like copying and listing files.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILBase.html
 ---
+
 
 # bioconductor-anvilbase
 

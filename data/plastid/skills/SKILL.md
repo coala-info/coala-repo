@@ -1,8 +1,9 @@
 ---
 name: plastid
-description: The `plastid` library is designed to bridge the gap between raw sequencing alignments and functional biological insights by treating multi-segment features (like spliced transcripts) as unified objects.
+description: Plastid processes sequencing alignments into position-specific count vectors and performs genomic arithmetic on multi-segment features like spliced transcripts. Use when user asks to map ribosome profiling P-sites, convert between genomic and transcript coordinates, generate metagene profiles, or quantify reads over specific genomic features.
 homepage: http://plastid.readthedocs.io/en/latest/
 ---
+
 
 # plastid
 

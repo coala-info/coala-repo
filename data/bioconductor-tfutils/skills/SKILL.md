@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tfutils
-description: the package is available on all platforms; click for details.
+description: TFutils provides utilities for managing transcription factor metadata and genomic binding site information in R. Use when user asks to retrieve transcription factor data, explore TF binding motifs, or link TF identifiers to genomic coordinates.
 homepage: https://bioconductor.org/packages/release/bioc/html/TFutils.html
 ---
+
 
 # bioconductor-tfutils
 

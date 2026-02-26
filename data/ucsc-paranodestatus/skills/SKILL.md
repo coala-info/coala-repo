@@ -1,8 +1,9 @@
 ---
 name: ucsc-paranodestatus
-description: The `ucsc-paranodestatus` tool is a specialized utility within the UCSC Genome Browser "kent" suite used for cluster administration.
+description: `ucsc-paranodestatus` checks the health and communication status of `paraNode` worker services in a Parasol cluster. Use when user asks to verify cluster health, identify unresponsive worker nodes, or confirm worker daemon restart after maintenance.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-paranodestatus
 

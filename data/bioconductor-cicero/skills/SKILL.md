@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cicero
-description: the package is available on all platforms; click for details.
+description: Cicero predicts physical proximity between genomic regions by calculating co-accessibility scores from single-cell chromatin accessibility data. Use when user asks to predict cis-regulatory interactions, identify co-accessibility networks, or calculate gene activity scores from scATAC-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/cicero.html
 ---
+
 
 # bioconductor-cicero
 

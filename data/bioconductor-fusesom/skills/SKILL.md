@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fusesom
-description: the package is available on all platforms; click for details.
+description: Bioconductor-fusesom performs unsupervised clustering of high-dimensional single-cell and spatial data using correlation-based multiview Self Organizing Maps. Use when user asks to cluster multiplexed imaging cytometry data, estimate the optimal number of clusters using discriminant or distance-based statistics, or visualize marker expression across clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/FuseSOM.html
 ---
+
 
 # bioconductor-fusesom
 

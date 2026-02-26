@@ -3,7 +3,7 @@
 ## swalign
 
 ### Tool Description
-The provided text does not contain help information for swalign; it is a log of a failed container build process.
+Simple Smith-Waterman aligner
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/swalign:0.3.7--pyhdfd78af_0
@@ -18,13 +18,32 @@ The provided text does not contain help information for swalign; it is a log of 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/swalign:0.3.7--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Simple Smith-Waterman aligner
+
+Usage: swalign {options} ref query
+
+Reference and query arguments can either be written on the command-line, read
+from stdin, or read as FASTA format files. If there is more than one sequence
+in the reference FASTA file, the query will be aligned to all reference
+sequences and only the best scoring alignment will be displayed. If more than
+one sequence is in a query FASTA file, each query sequence will be aligned to
+the reference.
+
+Alignments will be made in both forward and reverse directions.
+
+Options:
+  -m N              Match score (default: 2)
+  -mm N             Mismatch penalty (default: 1)
+  -gap N            Gap penalty (default: 1)
+  -gapext N         Gap extension penalty (default: 1)
+  -gapdecay N       Decay the gap extension penalty (default: 0.0)
+  -wrap N           Wrap alignments when they are longer than N bases
+  -global           Perform a global alignment (experimental)
+  -query            Align the full query sequence (mix of local/global)
+  -summary fname    Write a summary files of match locations (tab-delimited)
+  -useregion        Use regions for coordinates if included in FASTA ref
+
+Example:
+    ~$ swalign AAGGGGAGGACGATGCGGATGTTC AGGGAGGACGATGCGG
 ```
 
-
-## Metadata
-- **Skill**: generated

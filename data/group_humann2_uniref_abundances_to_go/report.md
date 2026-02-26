@@ -1,9 +1,9 @@
 # group_humann2_uniref_abundances_to_go CWL Generation Report
 
-## group_humann2_uniref_abundances_to_go
+## group_humann2_uniref_abundances_to_go_group_humann2_uniref_abundances_to_GO.sh
 
 ### Tool Description
-A tool to group HUMAnN2 UniRef abundances to Gene Ontology (GO) terms. Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Groups UniRef abundances to Gene Ontology (GO) terms.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0
@@ -18,46 +18,24 @@ A tool to group HUMAnN2 UniRef abundances to Gene Ontology (GO) terms. Note: The
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4030590057: no space left on device
-```
+ERROR
+Missing argument: -i   
 
+Usage:
+	group_humann2_uniref_abundances_to_GO.sh [OPTIONS] -i humann2_gene_families_abundance -m molecular_function_abundances -b biological_process_abundances -c cellular_component_abundances
 
-## Metadata
-- **Skill**: generated
+Required options:
+             -i   Path to file with UniRef50 gene family abundance (HUMAnN2 output)
+             -m   Path to file which will contain GO slim term abudances corresponding to molecular functions
+             -b   Path to file which will contain GO slim term abudances corresponding to biological processes
+             -c   Path to file which will contain GO slim term abudances corresponding to cellular components
 
-## group_humann2_uniref_abundances_to_go_group_humann2_uniref_abundances_to_GO.sh
-
-### Tool Description
-A tool to group HUMAnN2 UniRef abundances to Gene Ontology (GO) terms.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0
-- **Homepage**: https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO
-- **Package**: https://anaconda.org/channels/bioconda/packages/group_humann2_uniref_abundances_to_go/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3522256276: no space left on device
-```
-
-## group_humann2_uniref_abundances_to_go_install_dependencies.sh
-
-### Tool Description
-Install dependencies for grouping HUMAnN2 UniRef abundances to Gene Ontology (GO) terms.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0
-- **Homepage**: https://github.com/ASaiM/group_humann2_uniref_abundances_to_GO
-- **Package**: https://anaconda.org/channels/bioconda/packages/group_humann2_uniref_abundances_to_go/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/group_humann2_uniref_abundances_to_go:1.3.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3056060916: no space left on device
+Other options:
+             -a   Path to basic Gene Ontology file
+             -s   Path to basic slim Gene Ontology file
+             -u   Path to file with HUMAnN2 correspondance betwen UniRef50 and GO
+             -g   Path to GoaTools scripts
+             -p   Path to HUMAnN2 scripts
+             -h   Print this help message
 ```
 

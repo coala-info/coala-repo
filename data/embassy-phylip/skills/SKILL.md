@@ -1,8 +1,9 @@
 ---
 name: embassy-phylip
-description: The `embassy-phylip` skill provides a specialized interface for the PHYLIP (Phylogeny Inference Package) as implemented within the EMBOSS (European Molecular Biology Open Software Suite) framework.
+description: The embassy-phylip skill provides a command-line interface for the PHYLIP phylogeny inference package integrated within the EMBOSS framework. Use when user asks to calculate distance matrices, build phylogenetic trees using parsimony or maximum likelihood, and manipulate or draw tree files.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # embassy-phylip
 

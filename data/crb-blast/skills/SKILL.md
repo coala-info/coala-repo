@@ -1,8 +1,9 @@
 ---
 name: crb-blast
-description: CRB-BLAST (Conditional Reciprocal Best BLAST) is a tool designed to identify orthologous sequences between two datasets, such as a de-novo transcriptome assembly and a reference proteome.
+description: CRB-BLAST identifies orthologous sequences between two datasets by applying a conditional reciprocal best hit approach to improve sensitivity over standard methods. Use when user asks to identify orthologs between a transcriptome and a proteome, find reciprocal best hits with improved sensitivity, or perform conditional reciprocal best BLAST.
 homepage: https://github.com/cboursnell/crb-blast
 ---
+
 
 # crb-blast
 

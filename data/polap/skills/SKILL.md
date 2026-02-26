@@ -1,8 +1,9 @@
 ---
 name: polap
-description: Polap (Plant Organelle Long-read Assembly Pipeline) is a specialized bioinformatics tool designed to reconstruct plant mitochondrial genomes.
+description: Polap is a bioinformatics pipeline designed to assemble plant mitochondrial genomes from long-read sequencing data. Use when user asks to assemble plant mitochondrial genomes, fetch SRA data for organelle assembly, or polish long-read assemblies with short-read data.
 homepage: https://github.com/goshng/polap
 ---
+
 
 # polap
 

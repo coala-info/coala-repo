@@ -1,8 +1,9 @@
 ---
 name: bioconductor-miqc
-description: the package is available on all platforms; click for details.
+description: This tool performs quality control on single-cell RNA-seq data by jointly modeling mitochondrial read fractions and gene counts to identify low-quality cells. Use when user asks to perform quality control on single-cell RNA-seq data, filter low-quality cells, or model mitochondrial read percentages.
 homepage: https://bioconductor.org/packages/release/bioc/html/miQC.html
 ---
+
 
 # bioconductor-miqc
 

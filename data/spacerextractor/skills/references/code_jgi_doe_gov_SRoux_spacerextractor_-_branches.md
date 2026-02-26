@@ -1,1 +1,1 @@
-Branches · Simon Roux / SpacerExtractor · GitLab Branches Overview Active Stale All Active branches main default protected b49b85d4 &middot; remove extra export that was added temporarily for testing &middot; Dec 29, 2025
+Branches · Simon Roux / SpacerExtractor · GitLab Branches Overview Active Stale All Active branches main default protected 63e2b0f8 &middot; fix a typo (CIRSPR -&gt; CRISPR) &middot; Feb 16, 2026

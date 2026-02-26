@@ -1,8 +1,9 @@
 ---
 name: pyngost
-description: pyngoST is a high-performance bioinformatics tool designed for the simultaneous multi-locus sequence typing of *Neisseria gonorrhoeae* collections.
+description: pyngoST performs simultaneous multi-locus sequence typing of Neisseria gonorrhoeae genomic assemblies using the Aho-Corasick algorithm. Use when user asks to perform MLST, NG-STAR, or NG-MAST typing, identify antimicrobial resistance-associated lineages, or manage gonococcal allele databases.
 homepage: https://github.com/leosanbu/pyngoST
 ---
+
 
 # pyngost
 

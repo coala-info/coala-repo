@@ -1,8 +1,9 @@
 ---
 name: r-corrplot
-description: Provides a visual exploratory tool on correlation matrix that supports automatic variable reordering to help detect hidden patterns among variables.</p>
+description: The r-corrplot package provides a graphical tool for visualizing correlation matrices and identifying patterns through variable reordering. Use when user asks to visualize correlation matrices, reorder variables to reveal hidden patterns, or display statistical significance in correlation plots.
 homepage: https://cloud.r-project.org/web/packages/corrplot/index.html
 ---
+
 
 # r-corrplot
 

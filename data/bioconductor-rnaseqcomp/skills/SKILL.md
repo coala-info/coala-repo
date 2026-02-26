@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnaseqcomp
-description: the package is available on all platforms; click for details.
+description: This package provides a framework for comparing and benchmarking RNA-seq quantification pipelines. Use when user asks to compare RNA-seq quantification methods, evaluate transcript expression estimates, or benchmark different bioinformatics pipelines.
 homepage: https://bioconductor.org/packages/release/bioc/html/rnaseqcomp.html
 ---
+
 
 # bioconductor-rnaseqcomp
 

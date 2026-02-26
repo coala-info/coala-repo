@@ -1,15 +1,21 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: expressbetadiversity_convertToFullMatrix.py
+baseCommand: convertToFullMatrix.py
 label: expressbetadiversity_convertToFullMatrix.py
-doc: "A tool to convert beta diversity results to a full matrix format.\n\nTool homepage:
-  https://github.com/dparks1134/ExpressBetaDiversity"
-inputs: []
+doc: "Convert Phylip lower-triangular matrix produced by EBD to full matrix.\n\nTool
+  homepage: https://github.com/dparks1134/ExpressBetaDiversity"
+inputs:
+  - id: input_matrix
+    type: File
+    doc: Dissimilarity matrix produced by EBD.
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_matrix
+    type: File
+    doc: Output full dissimilarity matrix.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9f5acd7_3
-stdout: expressbetadiversity_convertToFullMatrix.py.out
+    dockerPull: quay.io/biocontainers/expressbetadiversity:1.0.10--h9948957_6

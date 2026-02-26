@@ -1,8 +1,9 @@
 ---
 name: r-fftwtools
-description: Provides a wrapper for several 'FFTW' functions. This package provides access to the two-dimensional 'FFT', the multivariate 'FFT', and the one-dimensional real to complex 'FFT' using the 'FFTW3' library. The package includes the functions fftw() and mvfftw() which are designed to mimic the functionality of the R functions fft() and mvfft(). The 'FFT' functions have a parameter that allows them to not return the redundant complex conjugate when the input is real data. </p>
+description: The r-fftwtools package provides a fast R wrapper for the FFTW3 library to perform efficient one-dimensional and multi-dimensional Fourier transforms. Use when user asks to compute fast Fourier transforms, perform multivariate or multidimensional transforms, or optimize real-valued data processing in R.
 homepage: https://cloud.r-project.org/web/packages/fftwtools/index.html
 ---
+
 
 # r-fftwtools
 

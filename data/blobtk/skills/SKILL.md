@@ -1,8 +1,9 @@
 ---
 name: blobtk
-description: blobtk is a high-performance Rust-based toolkit that provides the engine for the BlobToolKit ecosystem.
+description: Blobtk is a high-performance toolkit for processing genomic assemblies to identify contaminants and generate taxon-annotated visualizations. Use when user asks to generate blob or snail plots, calculate sequence depth, filter genomic assemblies, or manage taxonomy metadata.
 homepage: https://github.com/genomehubs/blobtk
 ---
+
 
 # blobtk
 

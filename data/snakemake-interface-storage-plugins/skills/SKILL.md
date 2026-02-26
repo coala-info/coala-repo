@@ -1,8 +1,9 @@
 ---
 name: snakemake-interface-storage-plugins
-description: The `snakemake-interface-storage-plugins` package acts as the formal bridge between the Snakemake workflow engine and various storage backends (e.g., S3, HTTP, Google Cloud Storage).
+description: This package provides the formal interface and base classes for developing and implementing storage plugins that connect Snakemake to various data backends. Use when user asks to create a new storage plugin, implement StorageProvider or StorageObject classes, define plugin-specific CLI settings, or optimize storage performance with inventory methods.
 homepage: https://github.com/snakemake/snakemake-interface-storage-plugins
 ---
+
 
 # snakemake-interface-storage-plugins
 

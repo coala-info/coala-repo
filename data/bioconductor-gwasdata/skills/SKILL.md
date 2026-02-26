@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwasdata
-description: the package is available on all platforms; click for details.
+description: This package provides example SNP genotype and intensity data from HapMap subjects in GDS and NetCDF formats to support GWASTools workflows. Use when user asks to access sample GWAS datasets, load Illumina or Affymetrix annotation data, or practice using GWASTools for genotype analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/GWASdata.html
 ---
+
 
 # bioconductor-gwasdata
 

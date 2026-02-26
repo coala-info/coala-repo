@@ -1,8 +1,9 @@
 ---
 name: clumppling
-description: Clumppling (CLUster Matching and Permutation Program with integer Linear programmING) provides a robust framework for the "label switching" problem in population genetics.
+description: Clumppling aligns cluster labels across multiple runs of clustering algorithms to ensure consistency in population genetics results. Use when user asks to align clustering replicates, resolve label switching problems, identify consensus modes, or track cluster changes across different K-values.
 homepage: https://pypi.org/project/clumppling
 ---
+
 
 # clumppling
 

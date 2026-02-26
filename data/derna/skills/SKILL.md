@@ -1,8 +1,9 @@
 ---
 name: derna
-description: The `derna` tool is a specialized utility for researchers working on RNA design.
+description: The derna tool generates Pareto optimal RNA sequences from protein inputs by balancing structural stability and translation efficiency. Use when user asks to design RNA sequences, perform lambda sweeps for energy and codon optimization trade-offs, or evaluate the MFE and CAI of existing sequences.
 homepage: https://github.com/elkebir-group/derna
 ---
+
 
 # derna
 

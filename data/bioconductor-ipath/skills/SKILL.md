@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ipath
-description: the package is available on all platforms; click for details.
+description: This tool performs individual-level pathway analysis to quantify pathway alterations within single tumor samples. Use when user asks to calculate individualized enrichment scores, identify perturbed pathways, perform survival association analysis, or visualize pathway score distributions and Kaplan-Meier curves.
 homepage: https://bioconductor.org/packages/release/bioc/html/iPath.html
 ---
+
 
 # bioconductor-ipath
 

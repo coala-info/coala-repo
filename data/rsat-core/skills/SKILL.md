@@ -1,8 +1,9 @@
 ---
 name: rsat-core
-description: The `rsat-core` skill provides a specialized interface for the Regulatory Sequence Analysis Tools (RSAT) suite.
+description: The rsat-core tool provides a suite for identifying and characterizing cis-regulatory elements and DNA motifs within genomic sequences. Use when user asks to retrieve genomic sequences, perform motif discovery, scan sequences for patterns using matrices, or cluster and compare DNA motifs.
 homepage: http://rsat.eu/
 ---
+
 
 # rsat-core
 

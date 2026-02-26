@@ -1,8 +1,9 @@
 ---
 name: exomiser-rest-prioritiser
-description: Exomiser is a specialized Java application designed to filter and rank potential disease-causing variants from whole-exome or whole-genome sequencing (WES/WGS) data.
+description: Exomiser filters and ranks potential disease-causing variants from sequencing data by integrating VCF files with clinical phenotypes. Use when user asks to prioritise variants, rank mutations using HPO terms, or identify causative genes in WES and WGS data.
 homepage: https://github.com/exomiser/Exomiser
 ---
+
 
 # exomiser-rest-prioritiser
 

@@ -1,8 +1,9 @@
 ---
 name: mordred
-description: Mordred is a comprehensive molecular descriptor calculator that serves as a modern alternative to older tools like Dragon.
+description: Mordred is a molecular descriptor calculator that transforms chemical structures into numerical feature sets for machine learning and chemical analysis. Use when user asks to calculate 2D or 3D molecular descriptors, convert SMILES or SDF files into feature matrices, or perform high-throughput screening of chemical properties.
 homepage: https://github.com/mordred-descriptor/mordred
 ---
+
 
 # mordred
 

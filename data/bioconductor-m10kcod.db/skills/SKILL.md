@@ -1,8 +1,9 @@
 ---
 name: bioconductor-m10kcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Mouse 10k Codelink microarray platform. Use when user asks to map Codelink identifiers to gene symbols, retrieve genomic annotations for the m10kcod platform, or perform identifier conversions for mouse microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/m10kcod.db.html
 ---
+
 
 # bioconductor-m10kcod.db
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.ptroglodytes.ucsc.pantro5.refgene
-description: the package is available on all platforms; click for details.
+description: This package provides a transcript database for the chimpanzee (panTro5) genome using UCSC refGene annotations. Use when user asks to retrieve transcript coordinates, access exon or CDS locations, or map genomic features for the panTro5 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Ptroglodytes.UCSC.panTro5.refGene.html
 ---
+
 
 # bioconductor-txdb.ptroglodytes.ucsc.pantro5.refgene
 

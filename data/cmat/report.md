@@ -1,9 +1,9 @@
 # cmat CWL Generation Report
 
-## cmat
+## cmat_annotate
 
 ### Tool Description
-The provided text does not contain help information for the tool 'cmat'. It contains error logs related to a container runtime failure (no space left on device) while attempting to pull the image from quay.io/biocontainers/cmat.
+Execute a pipeline project
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmat:3.4.3--py311hdfd78af_0
@@ -18,11 +18,391 @@ The provided text does not contain help information for the tool 'cmat'. It cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmat:3.4.3--py311hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2922007472: no space left on device
+Execute a pipeline project
+Usage: run [options] Project name or repository url
+  Options:
+    -E
+       Exports all current system environment
+       Default: false
+    -ansi-log
+       Enable/disable ANSI console logging
+    -bucket-dir
+       Remote bucket where intermediate result files are stored
+    -cache
+       Enable/disable processes caching
+    -d, -deep
+       Create a shallow clone of the specified depth
+    -disable-jobs-cancellation
+       Prevent the cancellation of child jobs on execution termination
+    -dump-channels
+       Dump channels for debugging purpose
+    -dump-hashes
+       Dump task hash keys for debugging purpose
+    -e.
+       Add the specified variable to execution environment
+       Syntax: -e.key=value
+       Default: {}
+    -entry
+       Entry workflow name to be executed
+    -h, -help
+       Print the command usage
+       Default: false
+    -hub
+       Service hub where the project is hosted
+    -latest
+       Pull latest changes before run
+       Default: false
+    -lib
+       Library extension path
+    -main-script
+       The script file to be executed when launching a project directory or
+       repository
+    -name
+       Assign a mnemonic name to the a pipeline run
+    -offline
+       Do not check for remote project updates
+       Default: false
+    -o, -output-dir
+       Directory where workflow outputs are stored
+    -params-file
+       Load script parameters from a JSON/YAML file
+    -plugins
+       Specify the plugins to be applied for this run e.g. nf-amazon,nf-tower
+    -preview
+       Run the workflow script skipping the execution of all processes
+       Default: false
+    -process.
+       Set process options
+       Syntax: -process.key=value
+       Default: {}
+    -profile
+       Choose a configuration profile
+    -qs, -queue-size
+       Max number of processes that can be executed in parallel by each executor
+    -resume
+       Execute the script using the cached results, useful to continue
+       executions that was stopped by an error
+    -r, -revision
+       Revision of the project to run (either a git branch, tag or commit SHA
+       number)
+    -stub-run, -stub
+       Execute the workflow replacing process scripts with command stubs
+       Default: false
+    -test
+       Test a script function with the name specified
+    -user
+       Private repository user name
+    -with-apptainer
+       Enable process execution in a Apptainer container
+    -with-charliecloud
+       Enable process execution in a Charliecloud container runtime
+    -with-cloudcache
+       Enable the use of object storage bucket as storage for cache meta-data
+    -with-conda
+       Use the specified Conda environment package or file (must end with
+       .yml|.yaml suffix)
+    -with-dag
+       Create pipeline DAG file
+    -with-docker
+       Enable process execution in a Docker container
+    -N, -with-notification
+       Send a notification email on workflow completion to the specified
+       recipients
+    -with-podman
+       Enable process execution in a Podman container
+    -with-report
+       Create processes execution html report
+    -with-singularity
+       Enable process execution in a Singularity container
+    -with-spack
+       Use the specified Spack environment package or file (must end with .yaml
+       suffix)
+    -with-timeline
+       Create processes execution timeline file
+    -with-tower
+       Monitor workflow execution with Seqera Platform (formerly Tower Cloud)
+    -with-trace
+       Create processes execution tracing file
+    -with-weblog
+       Send workflow status messages via HTTP to target URL
+    -without-conda
+       Disable the use of Conda environments
+    -without-docker
+       Disable process execution with Docker
+       Default: false
+    -without-podman
+       Disable process execution in a Podman container
+    -without-spack
+       Disable the use of Spack environments
+    -w, -work-dir
+       Directory where intermediate result files are stored
 ```
 
 
-## Metadata
-- **Skill**: generated
+## cmat_generate-curation
+
+### Tool Description
+Execute a pipeline project
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cmat:3.4.3--py311hdfd78af_0
+- **Homepage**: https://github.com/EBIvariation/CMAT
+- **Package**: https://anaconda.org/channels/bioconda/packages/cmat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Execute a pipeline project
+Usage: run [options] Project name or repository url
+  Options:
+    -E
+       Exports all current system environment
+       Default: false
+    -ansi-log
+       Enable/disable ANSI console logging
+    -bucket-dir
+       Remote bucket where intermediate result files are stored
+    -cache
+       Enable/disable processes caching
+    -d, -deep
+       Create a shallow clone of the specified depth
+    -disable-jobs-cancellation
+       Prevent the cancellation of child jobs on execution termination
+    -dump-channels
+       Dump channels for debugging purpose
+    -dump-hashes
+       Dump task hash keys for debugging purpose
+    -e.
+       Add the specified variable to execution environment
+       Syntax: -e.key=value
+       Default: {}
+    -entry
+       Entry workflow name to be executed
+    -h, -help
+       Print the command usage
+       Default: false
+    -hub
+       Service hub where the project is hosted
+    -latest
+       Pull latest changes before run
+       Default: false
+    -lib
+       Library extension path
+    -main-script
+       The script file to be executed when launching a project directory or
+       repository
+    -name
+       Assign a mnemonic name to the a pipeline run
+    -offline
+       Do not check for remote project updates
+       Default: false
+    -o, -output-dir
+       Directory where workflow outputs are stored
+    -params-file
+       Load script parameters from a JSON/YAML file
+    -plugins
+       Specify the plugins to be applied for this run e.g. nf-amazon,nf-tower
+    -preview
+       Run the workflow script skipping the execution of all processes
+       Default: false
+    -process.
+       Set process options
+       Syntax: -process.key=value
+       Default: {}
+    -profile
+       Choose a configuration profile
+    -qs, -queue-size
+       Max number of processes that can be executed in parallel by each executor
+    -resume
+       Execute the script using the cached results, useful to continue
+       executions that was stopped by an error
+    -r, -revision
+       Revision of the project to run (either a git branch, tag or commit SHA
+       number)
+    -stub-run, -stub
+       Execute the workflow replacing process scripts with command stubs
+       Default: false
+    -test
+       Test a script function with the name specified
+    -user
+       Private repository user name
+    -with-apptainer
+       Enable process execution in a Apptainer container
+    -with-charliecloud
+       Enable process execution in a Charliecloud container runtime
+    -with-cloudcache
+       Enable the use of object storage bucket as storage for cache meta-data
+    -with-conda
+       Use the specified Conda environment package or file (must end with
+       .yml|.yaml suffix)
+    -with-dag
+       Create pipeline DAG file
+    -with-docker
+       Enable process execution in a Docker container
+    -N, -with-notification
+       Send a notification email on workflow completion to the specified
+       recipients
+    -with-podman
+       Enable process execution in a Podman container
+    -with-report
+       Create processes execution html report
+    -with-singularity
+       Enable process execution in a Singularity container
+    -with-spack
+       Use the specified Spack environment package or file (must end with .yaml
+       suffix)
+    -with-timeline
+       Create processes execution timeline file
+    -with-tower
+       Monitor workflow execution with Seqera Platform (formerly Tower Cloud)
+    -with-trace
+       Create processes execution tracing file
+    -with-weblog
+       Send workflow status messages via HTTP to target URL
+    -without-conda
+       Disable the use of Conda environments
+    -without-docker
+       Disable process execution with Docker
+       Default: false
+    -without-podman
+       Disable process execution in a Podman container
+    -without-spack
+       Disable the use of Spack environments
+    -w, -work-dir
+       Directory where intermediate result files are stored
+```
+
+
+## cmat_export-curation
+
+### Tool Description
+Execute a pipeline project
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/cmat:3.4.3--py311hdfd78af_0
+- **Homepage**: https://github.com/EBIvariation/CMAT
+- **Package**: https://anaconda.org/channels/bioconda/packages/cmat/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Execute a pipeline project
+Usage: run [options] Project name or repository url
+  Options:
+    -E
+       Exports all current system environment
+       Default: false
+    -ansi-log
+       Enable/disable ANSI console logging
+    -bucket-dir
+       Remote bucket where intermediate result files are stored
+    -cache
+       Enable/disable processes caching
+    -d, -deep
+       Create a shallow clone of the specified depth
+    -disable-jobs-cancellation
+       Prevent the cancellation of child jobs on execution termination
+    -dump-channels
+       Dump channels for debugging purpose
+    -dump-hashes
+       Dump task hash keys for debugging purpose
+    -e.
+       Add the specified variable to execution environment
+       Syntax: -e.key=value
+       Default: {}
+    -entry
+       Entry workflow name to be executed
+    -h, -help
+       Print the command usage
+       Default: false
+    -hub
+       Service hub where the project is hosted
+    -latest
+       Pull latest changes before run
+       Default: false
+    -lib
+       Library extension path
+    -main-script
+       The script file to be executed when launching a project directory or
+       repository
+    -name
+       Assign a mnemonic name to the a pipeline run
+    -offline
+       Do not check for remote project updates
+       Default: false
+    -o, -output-dir
+       Directory where workflow outputs are stored
+    -params-file
+       Load script parameters from a JSON/YAML file
+    -plugins
+       Specify the plugins to be applied for this run e.g. nf-amazon,nf-tower
+    -preview
+       Run the workflow script skipping the execution of all processes
+       Default: false
+    -process.
+       Set process options
+       Syntax: -process.key=value
+       Default: {}
+    -profile
+       Choose a configuration profile
+    -qs, -queue-size
+       Max number of processes that can be executed in parallel by each executor
+    -resume
+       Execute the script using the cached results, useful to continue
+       executions that was stopped by an error
+    -r, -revision
+       Revision of the project to run (either a git branch, tag or commit SHA
+       number)
+    -stub-run, -stub
+       Execute the workflow replacing process scripts with command stubs
+       Default: false
+    -test
+       Test a script function with the name specified
+    -user
+       Private repository user name
+    -with-apptainer
+       Enable process execution in a Apptainer container
+    -with-charliecloud
+       Enable process execution in a Charliecloud container runtime
+    -with-cloudcache
+       Enable the use of object storage bucket as storage for cache meta-data
+    -with-conda
+       Use the specified Conda environment package or file (must end with
+       .yml|.yaml suffix)
+    -with-dag
+       Create pipeline DAG file
+    -with-docker
+       Enable process execution in a Docker container
+    -N, -with-notification
+       Send a notification email on workflow completion to the specified
+       recipients
+    -with-podman
+       Enable process execution in a Podman container
+    -with-report
+       Create processes execution html report
+    -with-singularity
+       Enable process execution in a Singularity container
+    -with-spack
+       Use the specified Spack environment package or file (must end with .yaml
+       suffix)
+    -with-timeline
+       Create processes execution timeline file
+    -with-tower
+       Monitor workflow execution with Seqera Platform (formerly Tower Cloud)
+    -with-trace
+       Create processes execution tracing file
+    -with-weblog
+       Send workflow status messages via HTTP to target URL
+    -without-conda
+       Disable the use of Conda environments
+    -without-docker
+       Disable process execution with Docker
+       Default: false
+    -without-podman
+       Disable process execution in a Podman container
+    -without-spack
+       Disable the use of Spack environments
+    -w, -work-dir
+       Directory where intermediate result files are stored
+```
+

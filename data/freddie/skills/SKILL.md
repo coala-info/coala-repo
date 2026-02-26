@@ -1,8 +1,9 @@
 ---
 name: freddie
-description: Freddie is an annotation-free isoform detection and discovery tool designed for transcriptomic long-reads.
+description: Freddie is an annotation-free tool that detects and discovers alternative splicing isoforms from transcriptomic long-reads aligned to a reference genome. Use when user asks to identify novel transcripts, perform isoform discovery without a GTF file, or generate consensus isoforms from long-read alignments.
 homepage: https://github.com/vpc-ccg/freddie
 ---
+
 
 # freddie
 

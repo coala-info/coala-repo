@@ -1,8 +1,9 @@
 ---
 name: perl-dbm-deep
-description: DBM::Deep is a powerful storage solution for Perl developers who need to persist complex, nested data structures to a file.
+description: perl-dbm-deep provides a multi-level, file-based storage engine for Perl that supports nested hashes and arrays with transaction support. Use when user asks to persist complex data structures to a file, manage local configuration with deep nesting, or perform atomic database operations without a full RDBMS.
 homepage: http://metacpan.org/pod/DBM-Deep
 ---
+
 
 # perl-dbm-deep
 

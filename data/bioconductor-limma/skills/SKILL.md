@@ -1,8 +1,9 @@
 ---
 name: bioconductor-limma
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis using linear models and empirical Bayes methods for gene expression data. Use when user asks to perform linear modeling on transcriptomic or proteomic data, design complex experimental matrices, or calculate moderated t-statistics to identify differentially expressed genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/limma.html
 ---
+
 
 # bioconductor-limma
 

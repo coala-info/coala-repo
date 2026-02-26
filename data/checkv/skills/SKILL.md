@@ -1,8 +1,9 @@
 ---
 name: checkv
-description: CheckV is a comprehensive pipeline designed to evaluate the quality of viral contigs identified from metagenomes.
+description: "CheckV evaluates the quality of viral contigs by identifying host contamination, estimating genome completeness, and assigning quality tiers. Use when user asks to assess viral genome quality, remove host contamination from proviruses, or estimate the completeness of metagenomic viral sequences."
 homepage: https://bitbucket.org/berkeleylab/checkv
 ---
+
 
 # checkv
 

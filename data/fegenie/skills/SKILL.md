@@ -1,8 +1,9 @@
 ---
 name: fegenie
-description: FeGenie is a specialized bioinformatics tool that automates the discovery of iron-related genetic potential within microbial genomes and metagenomes.
+description: FeGenie automates the identification and categorization of iron-related genes and operons within microbial genomes and metagenomes using a curated library of Hidden Markov Models. Use when user asks to discover iron-related genetic potential, analyze genomic bins or protein sequences for iron cycling genes, and cross-validate annotations against reference databases.
 homepage: https://github.com/Arkadiy-Garber/FeGenie
 ---
+
 
 # fegenie
 

@@ -1,8 +1,9 @@
 ---
 name: taxor
-description: Taxor is a high-performance bioinformatics tool designed for the taxonomic classification of long-read sequencing data.
+description: Taxor performs taxonomic classification and profiling of long-read sequencing data using a memory-efficient Hierarchical Interleaved XOR Filter index. Use when user asks to build a taxonomic index, search DNA sequences against a database, or generate abundance reports using an EM algorithm.
 homepage: https://github.com/JensUweUlrich/Taxor
 ---
+
 
 # taxor
 

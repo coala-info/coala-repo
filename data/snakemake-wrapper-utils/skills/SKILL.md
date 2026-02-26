@@ -1,8 +1,9 @@
 ---
 name: snakemake-wrapper-utils
-description: snakemake-wrapper-utils is a specialized Python library that serves as the backbone for the official Snakemake Wrapper Repository.
+description: This library provides utility functions to abstract repetitive logic and manage resources within Snakemake wrappers. Use when user asks to calculate Java heap memory from cluster resources, parse command-line options for bioinformatics tools, or infer file formats from extensions.
 homepage: https://github.com/snakemake/snakemake-wrapper-utils
 ---
+
 
 # snakemake-wrapper-utils
 

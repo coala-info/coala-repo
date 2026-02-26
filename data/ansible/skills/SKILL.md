@@ -1,8 +1,9 @@
 ---
 name: ansible
-description: Ansible is an agentless IT automation engine that automates cloud provisioning, configuration management, and application deployment.
+description: Ansible is an agentless IT automation engine used for cloud provisioning, configuration management, and application deployment. Use when user asks to manage collections and roles, view or validate configuration settings, run sanity and integration tests on modules, or perform pull-based deployments.
 homepage: https://github.com/ansible/ansible
 ---
+
 
 # ansible
 

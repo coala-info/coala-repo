@@ -1,8 +1,9 @@
 ---
 name: perl-math-random-mt-auto
-description: The `Math::Random::MT::Auto` module provides an object-oriented interface to the Mersenne Twister algorithm, featuring automatic seeding using the best available entropy source on the system (such as `/dev/urandom`).
+description: This Perl module provides an object-oriented interface to the Mersenne Twister algorithm with automatic seeding for high-quality random number generation. Use when user asks to generate high-quality random numbers, implement the Mersenne Twister algorithm in Perl, or manage reproducible random states.
 homepage: http://metacpan.org/pod/Math::Random::MT::Auto
 ---
+
 
 # perl-math-random-mt-auto
 

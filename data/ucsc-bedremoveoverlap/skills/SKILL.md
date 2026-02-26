@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedremoveoverlap
-description: `bedRemoveOverlap` is a high-performance utility from the UCSC Kent toolset designed to resolve interval conflicts in BED files.
+description: This tool removes overlapping genomic intervals from a BED file. Use when user asks to 'remove overlapping genomic regions', 'filter out overlapping intervals', 'clean up redundant BED data', or 'ensure unique genomic coordinates'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedremoveoverlap
 

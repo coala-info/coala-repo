@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.gaculeatus.ucsc.gasacu1.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genome sequences for the Gasterosteus aculeatus (Stickleback) gasAcu1 assembly. Use when user asks to access Stickleback genomic sequences, perform motif searching in non-masked regions, or analyze assembly gaps and repeat sequences.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Gaculeatus.UCSC.gasAcu1.masked.html
 ---
+
 
 # bioconductor-bsgenome.gaculeatus.ucsc.gasacu1.masked
 

@@ -1,8 +1,9 @@
 ---
 name: phamb
-description: `phamb` (Phage from metagenomic bins) is a specialized tool for the discovery and isolation of metagenome-derived viromes.
+description: "phamb identifies and isolates viral metagenome-assembled genomes from metagenomic bins using a Random Forest model. Use when user asks to differentiate viral clusters from bacterial ones, recover high-quality viral MAGs from VAMB output, or reduce the computational search space for viral evaluation."
 homepage: https://github.com/RasmussenLab/phamb
 ---
+
 
 # phamb
 

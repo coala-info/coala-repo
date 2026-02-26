@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mwgcod.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the MWG Biotech Codon mouse array. Use when user asks to map MWG Biotech Codon mouse array identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for this microarray platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mwgcod.db.html
 ---
+
 
 # bioconductor-mwgcod.db
 

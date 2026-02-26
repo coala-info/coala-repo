@@ -1,8 +1,9 @@
 ---
 name: mumemto
-description: Mumemto is a high-performance tool designed to find exact matches across large, repetitive collections of sequences, such as pangenomes.
+description: Mumemto finds exact matches across large, repetitive sequence collections like pangenomes using the prefix-free parse algorithm. Use when user asks to find multi-MUMs or multi-MEMs, generate synteny visualizations, or merge match results from partitioned sequence assemblies.
 homepage: https://github.com/vikshiv/mumemto
 ---
+
 
 # mumemto
 

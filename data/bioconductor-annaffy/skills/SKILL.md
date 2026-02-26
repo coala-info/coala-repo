@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annaffy
-description: the package is available on all platforms; click for details.
+description: This tool provides an interface for annotating Affymetrix microarray data and linking results to biological databases. Use when user asks to generate annotated HTML reports, link probe IDs to online databases like GenBank or KEGG, and search Bioconductor metadata for specific biological criteria.
 homepage: https://bioconductor.org/packages/release/bioc/html/annaffy.html
 ---
+
 
 # bioconductor-annaffy
 

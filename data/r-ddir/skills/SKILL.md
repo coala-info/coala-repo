@@ -1,8 +1,9 @@
 ---
 name: r-ddir
-description: R package ddir (documentation from project home).
+description: This tool accesses and retrieves multi-omics dataset metadata from the Omics Discovery Index using the ddiR R package. Use when user asks to search for datasets by keywords, retrieve specific dataset details, or find similar datasets based on metadata scores.
 homepage: https://cran.r-project.org/web/packages/ddir/index.html
 ---
+
 
 # r-ddir
 

@@ -1,8 +1,9 @@
 ---
 name: vcf2circos
-description: vcf2circos is a Python-based tool that leverages Plotly to transform genomic data from VCF files into circular Circos plots.
+description: vcf2circos transforms genomic data from VCF files into circular Circos plots. Use when user asks to transform VCF data into circular Circos plots, generate interactive HTML or static image plots, export VCF data to JSON, customize plot appearance, or use custom genome assemblies.
 homepage: https://github.com/bioinfo-chru-strasbourg/vcf2circos
 ---
+
 
 # vcf2circos
 

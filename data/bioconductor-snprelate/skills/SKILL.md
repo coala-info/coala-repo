@@ -1,8 +1,9 @@
 ---
 name: bioconductor-snprelate
-description: the package is available on all platforms; click for details.
+description: SNPRelate performs principal component analysis and relatedness analysis on large-scale single-nucleotide polymorphism data. Use when user asks to perform PCA, calculate identity-by-descent, or estimate kinship coefficients from SNP genotypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/SNPRelate.html
 ---
+
 
 # bioconductor-snprelate
 

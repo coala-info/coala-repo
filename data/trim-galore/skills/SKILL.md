@@ -1,8 +1,9 @@
 ---
 name: trim-galore
-description: Trim Galore!
+description: Trim Galore! pre-processes FastQ files by automating quality trimming and adapter removal. Use when user asks to trim sequencing reads, remove adapter sequences, perform quality trimming, process single-end or paired-end reads, handle bisulfite sequencing data, filter reads by length, or generate quality control reports.
 homepage: https://github.com/FelixKrueger/TrimGalore
 ---
+
 
 # trim-galore
 

@@ -1,8 +1,9 @@
 ---
 name: pyfiglet
-description: pyfiglet is a pure Python implementation of the classic FIGlet utility, designed to transform standard text into large, artistic ASCII banners.
+description: "pyfiglet transforms standard text into large, artistic ASCII banners using various font styles. Use when user asks to generate ASCII art text, render banners in the terminal, or create decorative text in Python scripts."
 homepage: https://github.com/pwaller/pyfiglet
 ---
+
 
 # pyfiglet
 

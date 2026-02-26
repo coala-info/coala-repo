@@ -1,8 +1,9 @@
 ---
 name: bioconductor-consensusseeker
-description: the package is available on all platforms; click for details.
+description: This R package identifies consensus genomic regions and peaks across multiple related experiments or replicates. Use when user asks to find consensus peaks, identify reproducible genomic regions across replicates, or merge overlapping genomic features from multiple samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/consensusSeekeR.html
 ---
+
 
 # bioconductor-consensusseeker
 

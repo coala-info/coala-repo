@@ -1,8 +1,9 @@
 ---
 name: prinseq-plus-plus
-description: PRINSEQ++ is a C++ implementation of the original PRINSEQ-lite tool, designed for rapid sequence cleaning and quality control.
+description: "prinseq-plus-plus is a high-performance C++ tool used for rapid quality control, filtering, and trimming of high-throughput sequencing data. Use when user asks to filter reads by quality or length, trim adapters and low-quality bases, remove sequence duplicates, or perform complexity filtering."
 homepage: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
 ---
+
 
 # prinseq-plus-plus
 

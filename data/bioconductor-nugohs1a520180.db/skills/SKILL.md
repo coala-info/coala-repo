@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nugohs1a520180.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Affymetrix NuGO Human S1A microarray. Use when user asks to map probe identifiers to gene symbols, retrieve genomic annotations for the NuGO Human S1A platform, or perform functional enrichment analysis using these array identifiers.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugohs1a520180.db.html
 ---
+
 
 # bioconductor-nugohs1a520180.db
 

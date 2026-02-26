@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ewce
-description: The package provides tools for testing enrichments within simple gene lists (such as human disease associated genes) and those resulting from differential expression studies. The package does not depend upon any particular Single Cell Transcriptome dataset and user defined datasets can be loaded in and used in the analyses.
+description: This tool performs Expression Weighted Celltype Enrichment analysis to identify specific cell types enriched in a given gene list using single-cell RNA-seq reference data. Use when user asks to prepare CellTypeDatasets from single-cell data, run bootstrap enrichment tests on gene lists, control for transcript length or GC content, perform conditional enrichment analysis, or analyze bulk transcriptomic data for cell-type signatures.
 homepage: https://bioconductor.org/packages/release/bioc/html/EWCE.html
 ---
+
 
 # bioconductor-ewce
 

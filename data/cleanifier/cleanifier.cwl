@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: cleanifier
 label: cleanifier
-doc: "The provided text is an error log from a container build/execution process and
-  does not contain help documentation or usage instructions for the 'cleanifier' tool.
-  Consequently, no arguments could be extracted.\n\nTool homepage: https://gitlab.com/rahmannlab/cleanifier"
-inputs: []
+doc: "fast lightweight tool to remove all reads of a species\n\nTool homepage: https://gitlab.com/rahmannlab/cleanifier"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'Available subcommands: index, filter, info, download, load, remove'
+    inputBinding:
+      position: 1
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: output debugging information (repeat for more)
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: --debug
 outputs:
   - id: stdout
     type: stdout

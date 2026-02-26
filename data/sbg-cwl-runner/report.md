@@ -3,7 +3,7 @@
 ## sbg-cwl-runner
 
 ### Tool Description
-A tool for running Common Workflow Language (CWL) workflows on the Seven Bridges platform.
+CWL E Coyote: A CWL Runner for the Seven Bridges Genomics cloud platform
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sbg-cwl-runner:2018.11--py_0
@@ -18,13 +18,17 @@ A tool for running Common Workflow Language (CWL) workflows on the Seven Bridges
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sbg-cwl-runner:2018.11--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+CWL E Coyote: A CWL Runner for the Seven Bridges Genomics cloud platform
+
+Usage:
+    sbg-cwl-runner [--outdir=<od>] [--quiet] [--api-profile=<prof>] [--project=<proj>] [--poll-interval=<poll>] WORKFLOW [JOB]
+
+Options:
+    -h --help               Show help screen
+    --outdir=<od>           Directory to put results in [default: ./]
+    --quiet                 Suppress logging messages
+    --api-profile=<prof>    API profile name [default: default]
+    --project=<proj>        Project to run tasks in [default: default-sbg-cwl-runner-project]
+    --poll-interval=<poll>  Polling interval to check for job status (in min) [default: 1]
 ```
 
-
-## Metadata
-- **Skill**: generated

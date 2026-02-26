@@ -1,8 +1,9 @@
 ---
 name: jupiterplot
-description: Jupiterplot is a specialized pipeline designed to generate Circos-based visualizations that compare a draft genome assembly against a reference genome.
+description: Jupiterplot generates Circos-based visualizations to compare a draft genome assembly against a reference genome for identifying structural discrepancies and misassemblies. Use when user asks to assess assembly quality, visualize genomic synteny, or identify translocations and inversions between a draft assembly and a reference.
 homepage: https://github.com/JustinChu/JupiterPlot
 ---
+
 
 # jupiterplot
 

@@ -1,8 +1,9 @@
 ---
 name: binette
-description: Binette is a high-performance binning refinement tool designed to improve the quality of Metagenome-Assembled Genomes (MAGs).
+description: Binette is a binning refinement tool that improves the quality of metagenome-assembled genomes by combining results from multiple binning algorithms. Use when user asks to refine metagenomic bins, improve bin completeness and contamination scores, or merge outputs from different binning tools.
 homepage: https://github.com/genotoul-bioinfo/binette
 ---
+
 
 # binette
 

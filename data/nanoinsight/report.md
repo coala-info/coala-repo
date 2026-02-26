@@ -3,7 +3,7 @@
 ## nanoinsight
 
 ### Tool Description
-A tool for analyzing nanopore sequencing data (Note: The provided text is a system error log and does not contain usage instructions or argument descriptions).
+NanoINSight is a repeat annotation tool for insertions called by NanoVar
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0
@@ -18,63 +18,31 @@ A tool for analyzing nanopore sequencing data (Note: The provided text is a syst
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3478558152: no space left on device
-```
+usage: nanoinsight [options] -s [species] [VCF] [work_directory]
 
+NanoINSight is a repeat annotation tool for insertions called by NanoVar
 
-## Metadata
-- **Skill**: generated
+required arguments:
+  -s str, --species str
+                        specify species for repeatmasker (e.g. human)
+  [VCF]                 path to input VCF file
+  [work_directory]      path to work directory
 
-## nanoinsight_nanovar
-
-### Tool Description
-NanoVar is a tool for detecting structural variants from long-read sequencing data. (Note: The provided text was an error log and did not contain help information; arguments could not be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanoinsight/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1853225368: no space left on device
-```
-
-## nanoinsight_mafft
-
-### Tool Description
-A tool for multiple sequence alignment (part of the NanoInsight suite). Note: The provided text contains container runtime error messages rather than command-line help documentation.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanoinsight/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1815367916: no space left on device
-```
-
-## nanoinsight_RepeatMasker
-
-### Tool Description
-A tool for identifying and masking repeat elements in genomic sequences, part of the nanoinsight suite.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanoinsight/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanoinsight:0.0.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1287188394: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  -i path, --insfa path
+                        specify path to ins_seq.fa file from NanoVar, 
+                        otherwise assumed in work directory
+  -u path, --suptsv path
+                        specify path to sv_support_reads.tsv file from NanoVar, 
+                        otherwise assumed in work directory
+  -m path, --mafftpath path
+                        specify path to 'mafft' executable
+  -r path, --repmaskpath path
+                        specify path to 'RepeatMasker' executable
+  -t int, --threads int
+                        specify number of threads [1]
+  -v, --version         print version
+  -q, --quiet           hide verbose
 ```
 

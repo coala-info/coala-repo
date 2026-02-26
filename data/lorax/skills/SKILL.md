@@ -1,8 +1,9 @@
 ---
 name: lorax
-description: Lorax is a specialized toolkit for long-read genomic analysis, designed to handle the complexities of tumor heterogeneity and aneuploidy where standard de novo assembly often fails.
+description: Lorax is a specialized toolkit for long-read genomic analysis designed to identify and extract reads associated with complex structural variants like chromothripsis, templated insertions, and telomere fusions. Use when user asks to analyze templated insertions, identify telomere rearrangements, perform targeted amplicon assembly, or convert pan-genome graph formats.
 homepage: https://github.com/tobiasrausch/lorax
 ---
+
 
 # lorax
 

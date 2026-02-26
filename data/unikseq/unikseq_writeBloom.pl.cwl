@@ -2,9 +2,23 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: unikseq_writeBloom.pl
 label: unikseq_writeBloom.pl
-doc: "The provided text does not contain help information for the tool; it appears
-  to be a container runtime error log.\n\nTool homepage: https://github.com/bcgsc/unikseq"
-inputs: []
+doc: "Writes a bloom filter from sequences.\n\nTool homepage: https://github.com/bcgsc/unikseq"
+inputs:
+  - id: kmer_value
+    type:
+      - 'null'
+      - int
+    doc: k-mer value (default -k 25, optional)
+    default: 25
+    inputBinding:
+      position: 101
+      prefix: -k
+  - id: sequences
+    type: File
+    doc: sequences to scaffold (Multi-FASTA format, required)
+    inputBinding:
+      position: 101
+      prefix: -f
 outputs:
   - id: stdout
     type: stdout

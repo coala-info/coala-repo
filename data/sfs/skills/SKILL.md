@@ -1,8 +1,9 @@
 ---
 name: sfs
-description: The `sfs` tool is a high-performance Rust-based command-line utility designed for the manipulation and analysis of Site Frequency Spectra.
+description: The sfs tool is a high-performance utility for manipulating and analyzing Site Frequency Spectra to generate population genetics summaries. Use when user asks to view or fold spectra, calculate population genetics statistics like Tajima's D, or perform formal tests of admixture such as f3 and f4.
 homepage: https://github.com/malthesr/sfs
 ---
+
 
 # sfs
 

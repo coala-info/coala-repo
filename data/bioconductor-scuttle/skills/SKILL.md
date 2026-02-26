@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scuttle
-description: the package is available on all platforms; click for details.
+description: The scuttle package provides utility functions for single-cell RNA-seq data analysis, focusing on quality control and normalization. Use when user asks to calculate quality control metrics, normalize expression values, or aggregate counts across cell groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/scuttle.html
 ---
+
 
 # bioconductor-scuttle
 

@@ -1,8 +1,9 @@
 ---
 name: macsyfinder
-description: MacSyFinder is a specialized bioinformatics tool used to detect molecular systems in protein datasets.
+description: "MacSyFinder detects molecular systems in protein datasets by identifying clusters of proteins that form functional biological machineries. Use when user asks to detect secretion systems, identify protein clusters, manage system models, or search for complex bacterial machineries in genomic data."
 homepage: https://github.com/gem-pasteur/macsyfinder
 ---
+
 
 # macsyfinder
 

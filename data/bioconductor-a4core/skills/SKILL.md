@@ -1,8 +1,9 @@
 ---
 name: bioconductor-a4core
-description: the package is available on all platforms; click for details.
+description: The a4Core package provides the foundational infrastructure and data simulation tools for the Automated Affymetrix Array Analysis suite. Use when user asks to simulate ExpressionSet objects with controlled biological effects, generate synthetic microarray datasets, or extract top tables from classification models.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Core.html
 ---
+
 
 # bioconductor-a4core
 

@@ -1,8 +1,9 @@
 ---
 name: genome2tree
-description: The `genome2tree` pipeline is a specialized tool for bacterial phylogenomics.
+description: "genome2tree automates the identification, alignment, and concatenation of single-copy orthologous genes from bacterial genomes into a supermatrix for phylogenomic analysis. Use when user asks to identify orthologs, align and trim genomic sequences, or generate a concatenated supermatrix from protein or DNA files."
 homepage: https://github.com/RicoLeiser/Genome2Tree
 ---
+
 
 # genome2tree
 

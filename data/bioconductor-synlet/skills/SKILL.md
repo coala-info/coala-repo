@@ -1,8 +1,9 @@
 ---
 name: bioconductor-synlet
-description: the package is available on all platforms; click for details.
+description: Bioconductor-synlet identifies synthetic lethal gene pairs from high-throughput genetic screening data. Use when user asks to identify synthetic lethal interactions, analyze high-throughput screening results, or find gene-gene dependencies.
 homepage: https://bioconductor.org/packages/release/bioc/html/synlet.html
 ---
+
 
 # bioconductor-synlet
 

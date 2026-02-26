@@ -2,10 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: checkHgFindSpec
 label: ucsc-checkhgfindspec
-doc: "A tool to check hgFindSpec tables for consistency. (Note: The provided help
-  text contained only container execution errors and did not list specific arguments.)\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Check that hgFindSpec table is okay for a given database.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: database
+    type: string
+    doc: The database to check (e.g., hg19, mm10).
+    inputBinding:
+      position: 1
+  - id: spec_table
+    type:
+      - 'null'
+      - string
+    doc: Optional specification table name.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

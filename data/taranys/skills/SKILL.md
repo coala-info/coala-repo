@@ -1,8 +1,9 @@
 ---
 name: taranys
-description: Taranys is a specialized computational pipeline for high-resolution bacterial typing.
+description: Taranys is a computational pipeline for high-resolution bacterial typing that transforms genomic assemblies into allelic profiles using MLST schemas. Use when user asks to validate or clean a schema, select representative alleles, call alleles from assemblies, or generate a genetic distance matrix.
 homepage: https://github.com/BU-ISCIII/taranys
 ---
+
 
 # taranys
 

@@ -1,8 +1,9 @@
 ---
 name: autoclassweb
-description: AutoClassWeb provides a streamlined web interface for AutoClass C, a powerful unsupervised Bayesian classification system originally developed by NASA.
+description: "AutoClassWeb provides a web interface and management tools for the AutoClass C Bayesian classification system to perform unsupervised clustering on complex datasets. Use when user asks to deploy the clustering service, manage the application lifecycle, or run Bayesian classification on omics data."
 homepage: https://github.com/pierrepo/autoclassweb
 ---
+
 
 # autoclassweb
 

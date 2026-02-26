@@ -1,8 +1,9 @@
 ---
 name: resistify
-description: Resistify is a lightweight, high-throughput tool designed to identify and classify plant resistance genes from protein FASTA files.
+description: Resistify identifies and classifies plant resistance genes, specifically NLRs and PRRs, from protein sequences. Use when user asks to identify plant resistance genes, predict NLR or PRR proteins, annotate protein domains and motifs, or visualize resistance gene classifications.
 homepage: https://github.com/swiftseal/resistify
 ---
+
 
 # resistify
 

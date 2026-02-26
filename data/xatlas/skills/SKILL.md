@@ -1,8 +1,9 @@
 ---
 name: xatlas
-description: xatlas is a high-performance small variant caller developed by the Baylor College of Medicine Human Genome Sequencing Center.
+description: xatlas is a high-performance small variant caller. Use when user asks to call variants, retrain variant calling models, or filter for strand bias.
 homepage: https://github.com/jfarek/xatlas
 ---
+
 
 # xatlas
 

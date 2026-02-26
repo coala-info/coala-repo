@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrayexpresshts
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides an integrated RNA-Seq pipeline for processing raw sequence files into expression measurements and quality reports. Use when user asks to process public ArrayExpress datasets, analyze custom local RNA-seq data, perform read alignment, or estimate gene expression levels.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/ArrayExpressHTS.html
 ---
+
 
 # bioconductor-arrayexpresshts
 

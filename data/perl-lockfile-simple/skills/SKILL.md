@@ -1,8 +1,9 @@
 ---
 name: perl-lockfile-simple
-description: This skill provides guidance on implementing the `LockFile::Simple` Perl module.
+description: This tool manages advisory file locking in Perl by creating physical lockfiles containing process IDs and hostnames. Use when user asks to implement file locking, manage stale locks, or handle concurrent file access in NFS environments.
 homepage: http://metacpan.org/pod/LockFile::Simple
 ---
+
 
 # perl-lockfile-simple
 

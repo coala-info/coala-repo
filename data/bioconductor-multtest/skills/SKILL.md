@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multtest
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package implements non-parametric resampling-based procedures for multiple hypothesis testing. Use when user asks to perform multiple testing corrections, control the family-wise error rate, or calculate adjusted p-values using permutation or bootstrap methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/multtest.html
 ---
+
 
 # bioconductor-multtest
 

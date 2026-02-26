@@ -1,8 +1,9 @@
 ---
 name: roary
-description: Roary is a high-performance standalone pipeline for calculating the pan-genome of prokaryotic organisms.
+description: Roary is a high-performance pipeline for calculating the pan-genome of prokaryotic organisms by identifying core and accessory genes across multiple isolates. Use when user asks to calculate a pan-genome, generate a core gene alignment, or analyze gene presence and absence across genomic datasets.
 homepage: https://github.com/sanger-pathogens/Roary
 ---
+
 
 # roary
 

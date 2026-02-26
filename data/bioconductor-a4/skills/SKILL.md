@@ -1,8 +1,9 @@
 ---
 name: bioconductor-a4
-description: the package is available on all platforms; click for details.
+description: This tool performs comprehensive end-to-end analysis of Affymetrix microarray experiments including preprocessing, differential expression, and class prediction. Use when user asks to preprocess microarray data, perform differential expression analysis, generate spectral maps, or build classification models like Random Forest and LASSO.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4.html
 ---
+
 
 # bioconductor-a4
 

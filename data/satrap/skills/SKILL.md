@@ -1,8 +1,9 @@
 ---
 name: satrap
-description: Satrap (SOLiD Assembly TRAnslation Program) is a utility designed to bridge the gap between the unique color-space output of ABI SOLiD sequencers and standard bioinformatics tools that require base-space (A, C, G, T) input.
+description: Satrap converts color-space sequencing data from ABI SOLiD sequencers into standard base-space DNA sequences. Use when user asks to translate color-space assemblies, convert di-base encoded reads to base-space, or process SOLiD sequencer output for use with standard bioinformatics tools.
 homepage: http://satrap.cribi.unipd.it/cgi-bin/satrap.pl
 ---
+
 
 # satrap
 

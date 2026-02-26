@@ -1,8 +1,9 @@
 ---
 name: squirrel
-description: The `squirrel` tool (Some QUIck Reconstruction to Resolve Evolutionary Links) is a specialized bioinformatics pipeline for MPXV data.
+description: Squirrel automates the mapping, alignment, and phylogenetic analysis of MPXV genomes to identify clade-specific mutations and APOBEC3-mediated signatures. Use when user asks to align MPXV sequences, perform phylogenetic reconstruction, detect APOBEC3-mediated mutations, or conduct quality control on consensus sequences.
 homepage: https://github.com/aineniamh/squirrel
 ---
+
 
 # squirrel
 

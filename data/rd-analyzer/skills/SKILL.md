@@ -1,8 +1,9 @@
 ---
 name: rd-analyzer
-description: rd-analyzer is a specialized bioinformatics tool for the in silico detection of Regions of Difference (RD) within the Mycobacterium tuberculosis complex.
+description: rd-analyzer detects Regions of Difference in Mycobacterium tuberculosis complex sequencing data to identify strains and genomic deletions. Use when user asks to identify MTBC lineages, detect genomic deletions from FASTQ reads, or analyze user-defined genomic regions for presence or absence.
 homepage: https://github.com/xiaeryu/RD-Analyzer
 ---
+
 
 # rd-analyzer
 

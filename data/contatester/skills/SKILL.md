@@ -1,8 +1,9 @@
 ---
 name: contatester
-description: contatester is a specialized bioinformatics utility used to assess the purity of human genomic samples.
+description: "contatester assesses the purity of human genomic samples by identifying and estimating cross-contamination within VCF files. Use when user asks to assess sample purity, identify cross-contamination between individuals, or estimate contamination levels in NGS data."
 homepage: https://github.com/CNRGH/contatester
 ---
+
 
 # contatester
 

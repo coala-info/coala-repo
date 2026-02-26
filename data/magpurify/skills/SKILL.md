@@ -1,8 +1,9 @@
 ---
 name: magpurify
-description: MAGpurify is a modular suite designed to improve the quality of metagenome-assembled genomes (MAGs) by identifying and removing "contaminant" contigs—those that likely originated from a different species than the dominant organism in the bin.
+description: MAGpurify is a modular suite designed to improve the quality of metagenome-assembled genomes by identifying and removing contaminant contigs. Use when user asks to refine MAGs, remove genomic contamination, identify taxonomic discordance, or filter contigs based on sequence composition and coverage profiles.
 homepage: https://github.com/snayfach/MAGpurify
 ---
+
 
 # magpurify
 

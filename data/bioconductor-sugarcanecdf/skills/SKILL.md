@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sugarcanecdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment for the Affymetrix Sugarcane genome array. Use when user asks to analyze Affymetrix Sugarcane microarray data, load the Sugarcane chip definition file, or map probes to genomic locations for this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/sugarcanecdf.html
 ---
+
 
 # bioconductor-sugarcanecdf
 

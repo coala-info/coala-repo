@@ -3,7 +3,7 @@
 ## gap
 
 ### Tool Description
-The provided text is a system error message from a container runtime (Apptainer/Singularity) and does not contain help documentation or argument definitions for the 'gap' tool.
+run the Groups, Algorithms and Programming system, Version 4.8.10
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gap:4.8.10--0
@@ -12,35 +12,65 @@ The provided text is a system error message from a container runtime (Apptainer/
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/gap/overview
-- **Total Downloads**: 320.1K
+- **Total Downloads**: 321.1K
 - **Last updated**: 2026-01-28
 - **GitHub**: https://github.com/MacGapProject/MacGap1
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gap:4.8.10--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3791030602: no space left on device
-```
+usage: gap [OPTIONS] [FILES]
+       run the Groups, Algorithms and Programming system, Version 4.8.10
 
+ -h, --help                   print this help and exit
+ -b, --banner                 disable/enable the banner
+ -q, --quiet                  enable/disable quiet mode
+ -e                           disable/enable quitting on <ctr>-D
+ -f                           force line editing
+ -n                           prevent line editing
+ -E, --readline               disable/enable use of readline library (if
+                              possible)
+ -x, --width        <num>     set line width
+ -y, --lines        <num>     set number of lines
 
-## Metadata
-- **Skill**: generated
+ -g, --gasinfo                show GASMAN messages (full/all/no garbage
+                              collections)
+ -m, --minworkspace <mem>     set the initial workspace size
+ -o, --maxworkspace <mem>     set hint for maximal workspace size (GAP may
+                              allocate more)
+ -K, --limitworkspace <mem>  
+                              set maximal workspace size (GAP never
+                              allocates more)
+ -c                 <mem>     set the cache size value
+ -s                 <mem      set the initially mapped virtual memory
+ -a                 <mem>     set amount to pre-malloc-ate
+                              postfix 'k' = *1024, 'm' = *1024*1024,
+                              'g' = *1024*1024*1024
 
-## gap_macgap
+ -l, --roots        <paths>   set the GAP root paths
+                              Directories are separated using ';'.
+                              Putting ';' on the start/end of list appends
+                              directories to the end/start of existing list
+                              of root paths
+ -r                           disable/enable user GAP root dir
+                              GAPInfo.UserGapRoot
+ -A                           disable/enable autoloading of suggested
+                              GAP packages
+ -B                 <name>    current architecture
+ -D                           enable/disable debugging the loading of files
+ -M                           disable/enable loading of compiled modules
+ -N                           unused, for backward compatibility only
+ -O                           disable/enable loading of obsolete files
+ -X                           enable/disable CRC checking for compiled modules
+ -T                           disable/enable break loop
+ -i                 <file>    change the name of the init file
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build a SIF image due to insufficient disk space.
+ -L                 <file>    restore a saved workspace
+ -R                           prevent restoring of workspace (ignoring -L)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gap:4.8.10--0
-- **Homepage**: https://github.com/MacGapProject/MacGap1
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gap:4.8.10--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2229011156: no space left on device
+ -p                           enable/disable package output mode
+     --prof         <file>    Run ProfileLineByLine(<filename>) on GAP start
+     --cover        <file>    Run CoverageLineByLine(<filename>) on GAP start
+  Boolean options (b,q,e,r,A,D,E,M,N,T,X,Y) toggle the current value
+  each time they are called. Default actions are indicated first.
 ```
 

@@ -3,86 +3,43 @@
 ## reapr
 
 ### Tool Description
-REAPR (Recognition of Errors in Assemblies using Paired Reads) is a tool that evaluates the accuracy of a genome assembly using mapped paired-end reads.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: biocontainers/reapr:v1.0.18dfsg-4-deb_cv1
 - **Homepage**: https://github.com/tadelv/reaprime
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/reapr/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/tadelv/reaprime
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reapr:v1.0.18dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'biocontainers/reapr:v1.0.18dfsg-4-deb_cv1' locally
+v1.0.18dfsg-4-deb_cv1: Pulling from biocontainers/reapr
+478cd0aa93c0: Already exists
+94d6a239eb0e: Already exists
+e8e87313e9cb: Already exists
+1badce2e48be: Already exists
+732b6ad56c57: Already exists
+f464fdba1cc8: Already exists
+bfcf45f17a35: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1074498049: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## reapr_flutter_with_commit.sh
-
-### Tool Description
-A tool related to REAPR (Recognition of Errors in Assemblies using Paired Reads). Note: The provided text appears to be a container runtime error log rather than help text, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: biocontainers/reapr:v1.0.18dfsg-4-deb_cv1
-- **Homepage**: https://github.com/tadelv/reaprime
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reapr:v1.0.18dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## reapr_make
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system logs and a fatal error related to a container build failure.
-
-### Metadata
-- **Docker Image**: biocontainers/reapr:v1.0.18dfsg-4-deb_cv1
-- **Homepage**: https://github.com/tadelv/reaprime
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reapr:v1.0.18dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## reapr_npx
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) attempting to fetch the REAPR image.
-
-### Metadata
-- **Docker Image**: biocontainers/reapr:v1.0.18dfsg-4-deb_cv1
-- **Homepage**: https://github.com/tadelv/reaprime
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reapr:v1.0.18dfsg-4-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

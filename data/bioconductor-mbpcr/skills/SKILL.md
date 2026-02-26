@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbpcr
-description: the package is available on all platforms; click for details.
+description: This tool estimates DNA copy number from microarray data using Bayesian Piecewise Constant Regression. Use when user asks to estimate copy number, detect copy number variations, or apply Bayesian piecewise constant regression to genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mBPCR.html
 ---
+
 
 # bioconductor-mbpcr
 

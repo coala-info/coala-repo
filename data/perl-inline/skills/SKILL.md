@@ -1,8 +1,9 @@
 ---
 name: perl-inline
-description: The `perl-inline` module allows you to embed source code from other programming languages directly within your Perl scripts or modules.
+description: The perl-inline module allows you to embed and execute source code from other programming languages directly within Perl scripts. Use when user asks to write Perl subroutines in foreign languages, optimize performance-critical code with C or C++, or glue existing libraries to Perl without using XS.
 homepage: https://github.com/ingydotnet/inline-pm
 ---
+
 
 # perl-inline
 

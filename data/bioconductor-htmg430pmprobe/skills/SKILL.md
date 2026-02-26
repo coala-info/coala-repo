@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htmg430pmprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and spatial coordinates for the Affymetrix HT_MG-430_PM mouse genome microarray chip. Use when user asks to access probe-level sequences, retrieve (x,y) coordinates on the array, or perform sequence-specific analysis for HT Mouse Genome 430 PM arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htmg430pmprobe.html
 ---
+
 
 # bioconductor-htmg430pmprobe
 

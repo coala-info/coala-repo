@@ -3,7 +3,7 @@
 ## mtb-snp-it
 
 ### Tool Description
-A tool for identifying Mycobacterium tuberculosis lineages from SNP data. (Note: The provided help text contains only system error messages and no usage information.)
+A tool to identify the lineage of Mycobacterium tuberculosis isolates from VCF files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mtb-snp-it:1.1--py_0
@@ -18,29 +18,20 @@ A tool for identifying Mycobacterium tuberculosis lineages from SNP data. (Note:
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtb-snp-it:1.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3122788390: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/mtb-snp-it:1.1--py_0' locally
+1.1--py_0: Pulling from biocontainers/mtb-snp-it
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+e7e0f5796615: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3596273231: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## mtb-snp-it_snpit-run.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains system error messages regarding container execution and disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mtb-snp-it:1.1--py_0
-- **Homepage**: https://github.com/samlipworth/snpit
-- **Package**: https://anaconda.org/channels/bioconda/packages/mtb-snp-it/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mtb-snp-it:1.1--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3267296655: no space left on device
+Run 'docker run --help' for more information
 ```
 

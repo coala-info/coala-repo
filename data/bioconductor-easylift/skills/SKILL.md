@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easylift
-description: the package is available on all platforms; click for details.
+description: The easylift package provides a streamlined interface for migrating genomic coordinates between different assembly versions using GRanges objects in R. Use when user asks to perform genomic liftover, convert coordinates between genome assemblies, or manage liftover chain files using BiocFileCache.
 homepage: https://bioconductor.org/packages/release/bioc/html/easylift.html
 ---
+
 
 # bioconductor-easylift
 

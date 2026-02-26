@@ -1,8 +1,9 @@
 ---
 name: fastools
-description: The fastools toolkit provides a suite of efficient utilities for handling common sequence data formats.
+description: fastools provides a suite of efficient utilities for manipulating, converting, and analyzing FASTA and FASTQ sequence data. Use when user asks to calculate sequence statistics, convert between sequence formats, filter sequences by length, extract sequences by ID, or interleave and de-interleave paired-end files.
 homepage: https://git.lumc.nl/j.f.j.laros/fastools
 ---
+
 
 # fastools
 

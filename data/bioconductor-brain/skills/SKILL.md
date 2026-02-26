@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brain
-description: the package is available on all platforms; click for details.
+description: This tool calculates isotopic distributions, monoisotopic masses, and average masses for large biological molecules using the BRAIN algorithm. Use when user asks to predict mass spectrometry patterns, determine atomic compositions from amino acid sequences, or perform high-throughput isotopic calculations for proteins.
 homepage: https://bioconductor.org/packages/release/bioc/html/BRAIN.html
 ---
+
 
 # bioconductor-brain
 

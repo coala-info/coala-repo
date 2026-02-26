@@ -1,8 +1,9 @@
 ---
 name: sadie-antibody
-description: The `sadie-antibody` library is a comprehensive toolkit for immunoinformatics.
+description: The sadie-antibody library provides a comprehensive toolkit for immunoinformatics to process, annotate, and analyze antibody sequences. Use when user asks to identify CDRs and frameworks, assign V(D)J genes, calculate somatic hypermutation levels, renumber sequences, or cluster repertoires.
 homepage: https://sadie.jordanrwillis.com
 ---
+
 
 # sadie-antibody
 

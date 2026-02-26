@@ -1,9 +1,9 @@
 # negspy CWL Generation Report
 
-## negspy
+## negspy_chr_pos_to_genome_pos.py
 
 ### Tool Description
-A python package for handling genomic coordinates and chromosome sizes.
+Converts chromosome and position to genome position.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/negspy:0.2.24--pyh7e72e81_0
@@ -12,35 +12,17 @@ A python package for handling genomic coordinates and chromosome sizes.
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/negspy/overview
-- **Total Downloads**: 89
+- **Total Downloads**: 90
 - **Last updated**: 2025-12-01
 - **GitHub**: https://github.com/pkerpedjiev/negspy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/negspy:0.2.24--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1923539889: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## negspy_chr_pos_to_genome_pos.py
-
-### Tool Description
-A tool to convert chromosome positions to genome-wide positions using the negspy library. Note: The provided help text contains only system error messages regarding container execution and disk space; no specific arguments could be extracted from the input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/negspy:0.2.24--pyh7e72e81_0
-- **Homepage**: https://github.com/pkerpedjiev/negspy
-- **Package**: https://anaconda.org/channels/bioconda/packages/negspy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/negspy:0.2.24--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3000976848: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/chr_pos_to_genome_pos.py", line 4, in <module>
+    import negspy.coordinates as nc
+  File "/usr/local/lib/python3.14/site-packages/negspy/coordinates.py", line 4, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
 ```
 

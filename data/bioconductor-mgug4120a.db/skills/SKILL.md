@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgug4120a.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Agilent Mouse Genome G4120A microarray platform. Use when user asks to map Agilent probe identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for this specific mouse platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgug4120a.db.html
 ---
+
 
 # bioconductor-mgug4120a.db
 

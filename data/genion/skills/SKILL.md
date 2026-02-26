@@ -1,8 +1,9 @@
 ---
 name: genion
-description: genion is a specialized tool designed to detect gene fusions from long-read RNA-seq data.
+description: "genion detects gene fusions and readthrough events from long-read RNA-seq data by analyzing genomic mappings and gene annotations. Use when user asks to detect gene fusions, identify readthrough events, or filter false positive chimeric transcripts in long-read sequencing data."
 homepage: https://github.com/vpc-ccg/genion
 ---
+
 
 # genion
 

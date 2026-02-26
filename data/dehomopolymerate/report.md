@@ -3,10 +3,10 @@
 ## dehomopolymerate
 
 ### Tool Description
-A tool for dehomopolymerizing sequences. (Note: The provided text contains container runtime errors and does not include specific usage instructions or argument definitions.)
+Collapse sequence homopolymers to a single character
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/dehomopolymerate:0.4.0--h577a1d6_5
+- **Docker Image**: quay.io/biocontainers/dehomopolymerate:0.4.1--h577a1d6_0
 - **Homepage**: https://github.com/tseemann/dehomopolymerate
 - **Package**: https://anaconda.org/channels/bioconda/packages/dehomopolymerate/overview
 - **Validation**: PASS
@@ -18,11 +18,18 @@ A tool for dehomopolymerizing sequences. (Note: The provided text contains conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dehomopolymerate:0.4.0--h577a1d6_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2306886533: no space left on device
+SYNOPSIS
+  Collapse sequence homopolymers to a single character
+USAGE
+  dehomopolymerate [options] reads.fast{aq}[.gz] > nohomop.fq
+OPTIONS
+  -h      Show this help
+  -v      Print version and exit
+  -q      Quiet mode; not non-error output
+  -f      Output FASTA not FASTQ
+  -w      Output RAW one line per sequence
+  -l LEN  Discard output sequences shorter then L bp
+URL
+  https://github.com/tseemann/dehomopolymerate (Torsten Seemann)
 ```
 
-
-## Metadata
-- **Skill**: generated

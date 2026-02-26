@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mpo.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Mammalian Phenotype Ontology. Use when user asks to retrieve mammalian phenotype ontology data, map phenotype terms, or perform functional annotation using phenotype identifiers.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MPO.db.html
 ---
+
 
 # bioconductor-mpo.db
 

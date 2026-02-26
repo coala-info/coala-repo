@@ -1,8 +1,9 @@
 ---
 name: gembs
-description: gemBS is a high-performance bioinformatics pipeline optimized for processing large-scale WGBS datasets.
+description: gemBS is a high-performance bioinformatics pipeline for processing large-scale whole genome bisulfite sequencing data to perform alignment and methylation calling. Use when user asks to index a reference genome, map bisulfite-converted reads, or extract methylation and SNP calls.
 homepage: https://github.com/heathsc/gemBS
 ---
+
 
 # gembs
 

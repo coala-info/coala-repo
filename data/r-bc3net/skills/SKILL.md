@@ -1,8 +1,9 @@
 ---
 name: r-bc3net
-description: Skill for using the CRAN R package r-bc3net.
+description: This tool infers gene regulatory networks from large-scale gene expression data using the BC3NET algorithm. Use when user asks to infer gene-gene interactions, perform bagging-based network inference, or generate a consensus gene regulatory network from expression datasets.
 homepage: https://cran.r-project.org/web/packages/bc3net/index.html
 ---
+
 
 # r-bc3net
 

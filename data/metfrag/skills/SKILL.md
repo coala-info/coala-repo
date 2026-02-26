@@ -1,8 +1,9 @@
 ---
 name: metfrag
-description: MetFrag is a computational tool designed to bridge the gap between experimental mass spectrometry data and molecular structures.
+description: MetFrag identifies metabolites by matching experimental mass spectrometry fragmentation patterns against candidate molecular structures from databases. Use when user asks to identify metabolites, simulate molecular fragmentation, or score candidate structures against MS/MS spectra.
 homepage: http://c-ruttkies.github.io/MetFrag/
 ---
+
 
 # metfrag
 

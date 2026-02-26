@@ -1,8 +1,9 @@
 ---
 name: bioconductor-abarray
-description: the package is available on all platforms; click for details.
+description: This tool automates the analysis of Applied Biosystems AB1700 microarray data, including quality control, normalization, and differential expression testing. Use when user asks to perform automated microarray data processing, conduct quantile normalization, run t-tests or ANOVA on expression data, and generate visualizations like heatmaps or Venn diagrams.
 homepage: https://bioconductor.org/packages/release/bioc/html/ABarray.html
 ---
+
 
 # bioconductor-abarray
 

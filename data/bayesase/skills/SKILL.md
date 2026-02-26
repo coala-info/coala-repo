@@ -1,8 +1,9 @@
 ---
 name: bayesase
-description: BayesASE is a modular bioinformatics pipeline that implements a Bayesian approach to estimate allelic imbalance and formally compare it between experimental conditions.
+description: BayesASE is a Bayesian bioinformatics pipeline used to estimate allelic imbalance and compare it across different experimental conditions. Use when user asks to estimate allele-specific expression, perform Bayesian inference on allelic imbalance, or compare allelic bias between conditions.
 homepage: https://github.com/McIntyre-Lab/BayesASE
 ---
+
 
 # bayesase
 

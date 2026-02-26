@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipanalyser
-description: the package is available on all platforms; click for details.
+description: This tool predicts transcription factor binding profiles using a statistical thermodynamic framework based on DNA sequence and chromatin accessibility. Use when user asks to model transcription factor binding affinity, infer optimal binding parameters like the number of bound molecules and scaling factors, or generate ChIP-seq-like occupancy profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPanalyser.html
 ---
+
 
 # bioconductor-chipanalyser
 

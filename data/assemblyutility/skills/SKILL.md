@@ -1,8 +1,9 @@
 ---
 name: assemblyutility
-description: The AssemblyUtility suite provides high-performance C++ tools for common bioinformatics tasks in genome assembly.
+description: AssemblyUtility provides high-performance C++ tools for calculating genome assembly metrics and subsetting sequencing reads by length. Use when user asks to calculate assembly statistics like N50, generate genome-size-normalized metrics, or select the longest reads from FASTA and FASTQ files to reach a target base count.
 homepage: https://github.com/yechengxi/AssemblyUtility
 ---
+
 
 # assemblyutility
 

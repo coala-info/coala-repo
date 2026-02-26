@@ -1,12 +1,12 @@
 # wtdbg CWL Generation Report
 
-## wtdbg
+## wtdbg_wtdbg2
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a log of a container build failure.
+De novo assembler for long noisy sequences
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/wtdbg:2.5--h577a1d6_6
+- **Docker Image**: quay.io/biocontainers/wtdbg:2.5--h5b5514e_2
 - **Homepage**: https://github.com/ruanjue/wtdbg-1.2.8
 - **Package**: https://anaconda.org/channels/bioconda/packages/wtdbg/overview
 - **Validation**: PASS
@@ -18,52 +18,265 @@ The provided text does not contain help information for the tool. It is a log of
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wtdbg:2.5--h577a1d6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+WTDBG: De novo assembler for long noisy sequences
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 0.0 (19830203)
+Usage: wtdbg2 [options] -i <reads.fa> -o <prefix> [reads.fa ...]
+Options:
+ -i <string> Long reads sequences file (REQUIRED; can be multiple), []
+ -o <string> Prefix of output files (REQUIRED), []
+ -t <int>    Number of threads, 0 for all cores, [4]
+ -f          Force to overwrite output files
+ -x <string> Presets, comma delimited, []
+            preset1/rsII/rs: -p 21 -S 4 -s 0.05 -L 5000
+                    preset2: -p 0 -k 15 -AS 2 -s 0.05 -L 5000
+                    preset3: -p 19 -AS 2 -s 0.05 -L 5000
+                  sequel/sq
+               nanopore/ont:
+            (genome size < 1G: preset2) -p 0 -k 15 -AS 2 -s 0.05 -L 5000
+            (genome size >= 1G: preset3) -p 19 -AS 2 -s 0.05 -L 5000
+      preset4/corrected/ccs: -p 21 -k 0 -AS 4 -K 0.05 -s 0.5
+ -g <number> Approximate genome size (k/m/g suffix allowed) [0]
+ -X <float>  Choose the best <float> depth from input reads(effective with -g) [50.0]
+ -L <int>    Choose the longest subread and drop reads shorter than <int> (5000 recommended for PacBio) [0]
+             Negative integer indicate tidying read names too, e.g. -5000.
+ -k <int>    Kmer fsize, 0 <= k <= 23, [0]
+ -p <int>    Kmer psize, 0 <= p <= 23, [21]
+             k + p <= 25, seed is <k-mer>+<p-homopolymer-compressed>
+ -K <float>  Filter high frequency kmers, maybe repetitive, [1000.05]
+             >= 1000 and indexing >= (1 - 0.05) * total_kmers_count
+ -S <float>  Subsampling kmers, 1/(<-S>) kmers are indexed, [4.00]
+             -S is very useful in saving memeory and speeding up
+             please note that subsampling kmers will have less matched length
+ -l <float>  Min length of alignment, [2048]
+ -m <float>  Min matched length by kmer matching, [200]
+ -R          Enable realignment mode
+ -A          Keep contained reads during alignment
+ -s <float>  Min similarity, calculated by kmer matched length / aligned length, [0.05]
+ -e <int>    Min read depth of a valid edge, [3]
+ -q          Quiet
+ -v          Verbose (can be multiple)
+ -V          Print version information and then exit
+ --help      Show more options
+ ** more options **
+ --cpu <int>
+   See -t 0, default: all cores
+ --input <string> +
+   See -i
+ --force
+   See -f
+ --prefix <string>
+   See -o
+ --preset <string>
+   See -x
+ --kmer-fsize <int>
+   See -k 0
+ --kmer-psize <int>
+   See -p 21
+ --kmer-depth-max <float>
+   See -K 1000.05
+ -E, --kmer-depth-min <int>
+   Min kmer frequency, [2]
+ --kmer-subsampling <float>
+   See -S 4.0
+ --kbm-parts <int>
+   Split total reads into multiple parts, index one part by one to save memory, [1]
+ --aln-kmer-sampling <int>
+   Select no more than n seeds in a query bin, default: 256
+ --dp-max-gap <int>
+   Max number of bin(256bp) in one gap, [4]
+ --dp-max-var <int>
+   Max number of bin(256bp) in one deviation, [4]
+ --dp-penalty-gap <int>
+   Penalty for BIN gap, [-7]
+ --dp-penalty-var <int>
+   Penalty for BIN deviation, [-21]
+ --aln-min-length <int>
+   See -l 2048
+ --aln-min-match <int>
+   See -m 200. Here the num of matches counting basepair of the matched kmer's regions
+ --aln-min-similarity <float>
+   See -s 0.05
+ --aln-max-var <float>
+   Max length variation of two aligned fragments, default: 0.25
+ --aln-dovetail <int>
+   Retain dovetail overlaps only, the max overhang size is <--aln-dovetail>, the value should be times of 256, -1 to disable filtering, default: 256
+ --aln-strand <int>
+   1: forward, 2: reverse, 3: both. Please don't change the deault vaule 3, unless you exactly know what you are doing
+ --aln-maxhit <int>
+   Max n hits for each read in build graph, default: 1000
+ --aln-bestn <int>
+   Use best n hits for each read in build graph, 0: keep all, default: 500
+   <prefix>.alignments always store all alignments
+ -R, --realign
+   Enable re-alignment, see --realn-kmer-psize=15, --realn-kmer-subsampling=1, --realn-min-length=2048, --realn-min-match=200, --realn-min-similarity=0.1, --realn-max-var=0.25
+ --realn-kmer-psize <int>
+   Set kmer-psize in realignment, (kmer-ksize always eq 0), default:15
+ --realn-kmer-subsampling <int>
+   Set kmer-subsampling in realignment, default:1
+ --realn-min-length <int>
+   Set aln-min-length in realignment, default: 2048
+ --realn-min-match <int>
+   Set aln-min-match in realignment, default: 200
+ --realn-min-similarity <float>
+   Set aln-min-similarity in realignment, default: 0.1
+ --realn-max-var <float>
+   Set aln-max-var in realignment, default: 0.25
+ -A, --aln-noskip
+   Even a read was contained in previous alignment, still align it against other reads
+ --keep-multiple-alignment-parts
+   By default, wtdbg will keep only the best alignment between two reads after chainning. This option will disable it, and keep multiple
+ --verbose +
+   See -v. -vvvv will display the most detailed information
+ --quiet
+   See -q
+ --limit-input <int>
+   Limit the input sequences to at most <int> M bp. Usually for test
+ -L <int>, --tidy-reads <int>
+   Default: 0. Pick longest subreads if possible. Filter reads less than <--tidy-reads>. Please add --tidy-name or set --tidy-reads to nagetive value
+   if want to rename reads. Set to 0 bp to disable tidy. Suggested value is 5000 for pacbio RSII reads
+ --tidy-name
+   Rename reads into 'S%010d' format. The first read is named as S0000000001
+ --rdname-filter <string>
+   A file contains lines of reads name to be discarded in loading. If you want to filter reads by yourself, please also set -X 0
+ --rdname-includeonly <string>
+   Reverse manner with --rdname-filter
+ -g <number>, --genome-size <number>
+   Provide genome size, e.g. 100.4m, 2.3g. In this version, it is used with -X/--rdcov-cutoff in selecting reads just after readed all.
+ -X <float>, --rdcov-cutoff <float>
+   Default: 50.0. Retaining 50.0 folds of genome coverage, combined with -g and --rdcov-filter.
+ --rdcov-filter [0|1]
+   Default 0. Strategy 0: retaining longest reads. Strategy 1: retaining medain length reads. 
+ --err-free-nodes
+   Select nodes from error-free-sequences only. E.g. you have contigs assembled from NGS-WGS reads, and long noisy reads.
+   You can type '--err-free-seq your_ctg.fa --input your_long_reads.fa --err-free-nodes' to perform assembly somehow act as long-reads scaffolding
+ --node-len <int>
+   The default value is 1024, which is times of KBM_BIN_SIZE(always equals 256 bp). It specifies the length of intervals (or call nodes after selecting).
+   kbm indexs sequences into BINs of 256 bp in size, so that many parameter should be times of 256 bp. There are: --node-len, --node-ovl, --aln-min-length, --aln-dovetail .   Other parameters are counted in BINs, --dp-max-gap, --dp-max-var .
+ --node-matched-bins <int>
+   Min matched bins in a node, default:1
+ --node-ovl <int>
+   Default: 256. Max overlap size between two adjacent intervals in any read. It is used in selecting best nodes representing reads in graph
+ --node-drop <float>
+   Default: 0.25. Will discard an node when has more this ratio intervals are conflicted with previous generated node
+ -e <int>, --edge-min=<int>
+   Default: 3. The minimal depth of a valid edge is set to 3. In another word, Valid edges must be supported by at least 3 reads
+   When the sequence depth is low, have a try with --edge-min 2. Or very high, try --edge-min 4
+ --edge-max-span <int>
+   Default: 1024 BINs. Program will build edges of length no large than 1024
+ --drop-low-cov-edges
+   Don't attempt to rescue low coverage edges
+ --node-min <int>
+   Min depth of an interval to be selected as valid node. Defaultly, this value is automaticly the same with --edge-min.
+ --node-max <int>
+   Nodes with too high depth will be regarded as repetitive, and be masked. Default: 200, more than 200 reads contain this node
+ --ttr-cutoff-depth <int>, 0
+ --ttr-cutoff-ratio <float>, 0.5
+   Tiny Tandom Repeat. A node located inside ttr will bring noisy in graph, should be masked. The pattern of such nodes is:
+   depth >= <--ttr-cutoff-depth>, and none of their edges have depth greater than depth * <--ttr-cutoff-ratio 0.5>
+   set --ttr-cutoff-depth 0 to disable ttr masking
+ --dump-kbm <string>
+   Dump kbm index into file for loaded by `kbm` or `wtdbg`
+ --dump-seqs <string>
+   Dump kbm index (only sequences, no k-mer index) into file for loaded by `kbm` or `wtdbg`
+   Please note: normally load it with --load-kbm, not with --load-seqs
+ --load-kbm <string>
+   Instead of reading sequences and building kbm index, which is time-consumed, loading kbm-index from already dumped file.
+   Please note that, once kbm-index is mmaped by kbm -R <kbm-index> start, will just get the shared memory in minute time.
+   See `kbm` -R <your_seqs.kbmidx> [start | stop]
+ --load-seqs <string>
+   Similar with --load-kbm, but only use the sequences in kbmidx, and rebuild index in process's RAM.
+ --load-alignments <string> +
+   `wtdbg` output reads' alignments into <--prefix>.alignments, program can load them to fastly build assembly graph. Or you can offer
+   other source of alignments to `wtdbg`. When --load-alignment, will only reading long sequences but skip building kbm index
+   You can type --load-alignments <file> more than once to load alignments from many files
+ --load-clips <string>
+   Combined with --load-nodes. Load reads clips. You can find it in `wtdbg`'s <--prefix>.clps
+ --load-nodes <sting>
+   Load dumped nodes from previous execution for fast construct the assembly graph, should be combined with --load-clips. You can find it in `wtdbg`'s <--prefix>.1.nodes
+ --bubble-step <int>
+   Max step to search a bubble, meaning the max step from the starting node to the ending node. Default: 40
+ --tip-step <int>
+   Max step to search a tip, 10
+ --ctg-min-length <int>
+   Min length of contigs to be output, 5000
+ --ctg-min-nodes <int>
+   Min num of nodes in a contig to be ouput, 3
+ --minimal-output
+   Will generate as less output files (<--prefix>.*) as it can
+ --bin-complexity-cutoff <int>
+   Used in filtering BINs. If a BIN has less indexed valid kmers than <--bin-complexity-cutoff 2>, masks it.
+ --no-local-graph-analysis
+   Before building edges, for each node, local-graph-analysis reads all related reads and according nodes, and builds a local graph to judge whether to mask it
+   The analysis aims to find repetitive nodes
+ --no-read-length-sort
+   Defaultly, `wtdbg` sorts input sequences by length DSC. The order of reads affects the generating of nodes in selecting important intervals
+ --keep-isolated-nodes
+   In graph clean, `wtdbg` normally masks isolated (orphaned) nodes
+ --no-read-clip
+   Defaultly, `wtdbg` clips a input sequence by analyzing its overlaps to remove high error endings, rolling-circle repeats (see PacBio CCS), and chimera.
+   When building edges, clipped region won't contribute. However, `wtdbg` will use them in the final linking of unitigs
+ --no-chainning-clip
+   Defaultly, performs alignments chainning in read clipping
+   ** If '--aln-bestn 0 --no-read-clip', alignments will be parsed directly, and less RAM spent on recording alignments
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## wtdbg_wtdbg2
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch the tool's image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/wtdbg:2.5--h577a1d6_6
-- **Homepage**: https://github.com/ruanjue/wtdbg-1.2.8
-- **Package**: https://anaconda.org/channels/bioconda/packages/wtdbg/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wtdbg:2.5--h577a1d6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## wtdbg_wtpoa-cns
 
 ### Tool Description
-The provided text does not contain help information for the tool, but rather error logs from a container runtime (Singularity/Apptainer) failing to fetch the image.
+Consensuser for wtdbg using PO-MSA
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/wtdbg:2.5--h577a1d6_6
+- **Docker Image**: quay.io/biocontainers/wtdbg:2.5--h5b5514e_2
 - **Homepage**: https://github.com/ruanjue/wtdbg-1.2.8
 - **Package**: https://anaconda.org/channels/bioconda/packages/wtdbg/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/wtdbg:2.5--h577a1d6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+WTPOA-CNS: Consensuser for wtdbg using PO-MSA
+Author: Jue Ruan <ruanjue@gmail.com>
+Version: 0.0 (19830203)
+Usage: wtpoa-cns [options]
+Options:
+ -t <int>    Number of threads, [4]
+ -d <string> Reference sequences for SAM input, will invoke sorted-SAM input mode
+ -u <int>    XORed flags to handle SAM input. [0]
+             0x1: Only process reference regions present in/between SAM alignments
+             0x2: Don't fileter secondary/supplementary SAM records with flag (0x100 | 0x800)
+ -r          Force to use reference mode
+ -p <string> Similar with -d, but translate SAM into wtdbg layout file
+ -i <string> Input file(s) *.ctg.lay from wtdbg, +, [STDIN]
+             Or sorted SAM files when having -d/-p
+ -o <string> Output files, [STDOUT]
+ -f          Force overwrite
+ -j <int>    Expected max length of node, or say the overlap length of two adjacent units in layout file, [1500] bp
+             overlap will be default to 1500(or 150 for sam-sr) when having -d/-p, block size will be 2.5 * overlap
+ -b <int>    Bonus for tri-bases match, [0]
+ -M <int>    Match score, [2]
+ -X <int>    Mismatch score, [-5]
+ -I <int>    Insertion score, [-2]
+ -D <int>    Deletion score, [-4]
+ -H <float>  Homopolymer merge score used in dp-call-cns mode, [-3]
+ -B <expr>   Bandwidth in POA, [Wmin[,Wmax[,mat_rate]]], mat_rate = matched_bases/total_bases [64,1024,0.92]
+             Program will double bandwidth from Wmin to Wmax when mat_rate is lower than setting
+ -W <int>    Window size in the middle of the first read for fast align remaining reads, [200]
+             If $W is negative, will disable fast align, but use the abs($W) as Band align score cutoff
+ -w <int>    Min size of aligned size in window, [$W * 0.5]
+ -A          Abort TriPOA when any read cannot be fast aligned, then try POA
+ -S <int>    Shuffle mode, 0: don't shuffle reads, 1: by shared kmers, 2: subsampling. [1]
+ -R <int>    Realignment bandwidth, 0: disable, [16]
+ -c <int>    Consensus mode: 0, run-length; 1, dp-call-cns, [0]
+ -C <int>    Min count of bases to call a consensus base, [3]
+ -F <float>  Min frequency of non-gap bases to call a consensus base, [0.5]
+ -N <int>    Max number of reads in PO-MSA [20]
+             Keep in mind that I am not going to generate high accurate consensus sequences here
+ -x <string> Presets, []
+             sam-sr: polishs contigs from short reads mapping, accepts sorted SAM files
+                     shorted for '-j 50 -W 0 -R 0 -b 1 -c 1 -N 50 -rS 2'
+ -q          Quiet
+ -v          Verbose
+ -V          Print version information and then exit
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: solexaqa
-description: The `solexaqa` skill provides a suite of tools for the initial quality control (QC) and preprocessing of high-throughput sequencing data.
+description: SolexaQA performs quality control and preprocessing of high-throughput sequencing data by analyzing read quality and trimming sequences. Use when user asks to analyze sequencing quality, generate quality heatmaps, perform dynamic trimming of reads, or filter sequences by length.
 homepage: http://solexaqa.sourceforge.net/
 ---
+
 
 # solexaqa
 

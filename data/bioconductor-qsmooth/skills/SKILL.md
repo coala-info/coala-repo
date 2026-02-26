@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qsmooth
-description: the package is available on all platforms; click for details.
+description: qsmooth is a statistical method for normalizing high-throughput data that accounts for global differences in variability between biological groups. Use when user asks to normalize genomic data using quantile smoothing, account for group-level variability in normalization, or perform cross-sample normalization for high-throughput experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/qsmooth.html
 ---
+
 
 # bioconductor-qsmooth
 

@@ -3,7 +3,7 @@
 ## virulign
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains container build logs and a fatal error message regarding a SIF format conversion failure.
+Aligns sequences to a reference genome, identifying mutations and structural variations.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/virulign:1.1.1--hf316886_6
@@ -18,13 +18,22 @@ The provided text does not contain help information for the tool; it contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/virulign:1.1.1--hf316886_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: virulign [reference.fasta orf-description.xml] sequences.fasta
+Optional parameters (first option will be the default):
+  --exportKind [Mutations PairwiseAlignments GlobalAlignment PositionTable MutationTable]
+  --exportAlphabet [AminoAcids Nucleotides]
+  --exportWithInsertions [yes no]
+  --exportReferenceSequence [no yes]
+  --gapExtensionPenalty doubleValue=>3.3
+  --gapOpenPenalty doubleValue=>10.0
+  --maxFrameShifts intValue=>3
+  --progress [no yes]
+  --threads intValue=>1 [default: all cpus available]
+  --nt-debug directory
+Output: The alignment will be printed to standard out and any progress or error messages will be printed to the standard error. This output can be redirected to files, e.g.:
+   virulign ref.xml sequence.fasta > alignment.mutations 2> alignment.err
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

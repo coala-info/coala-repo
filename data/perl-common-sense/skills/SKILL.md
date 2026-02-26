@@ -1,8 +1,9 @@
 ---
 name: perl-common-sense
-description: The `common::sense` module is a "boilerplate reducer" for Perl.
+description: The perl-common-sense module provides a standardized set of modern Perl pragmas and features while reducing boilerplate code. Use when user asks to enable strict mode and warnings, reduce memory overhead in Perl scripts, or simplify script headers with a single boilerplate reducer.
 homepage: http://search.cpan.org/~mlehmann/common-sense-3.74/
 ---
+
 
 # perl-common-sense
 

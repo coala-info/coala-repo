@@ -1,8 +1,9 @@
 ---
 name: superintervals
-description: superintervals is a library designed for rapid interval intersection queries using a "superset-index" approach.
+description: superintervals is a library for performing rapid interval intersection queries using a cache-friendly superset-index approach. Use when user asks to perform fast genomic interval searches, find overlapping features in RNA-seq or Nanopore data, or index intervals for high-performance intersection queries.
 homepage: https://github.com/kcleal/superintervals
 ---
+
 
 # superintervals
 

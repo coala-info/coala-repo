@@ -1,11 +1,23 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fermikit_fermi2.pl
+baseCommand: fermi2.pl
 label: fermikit_fermi2.pl
-doc: "The provided text does not contain help information for the tool. It contains
-  system error messages related to a container runtime (Singularity/Apptainer) failing
-  to build an image due to insufficient disk space.\n\nTool homepage: https://github.com/lh3/fermikit"
-inputs: []
+doc: "fermi2.pl is a Perl script for de novo genome assembly using the Fermi assembler.\n\
+  \nTool homepage: https://github.com/lh3/fermikit"
+inputs:
+  - id: command
+    type: string
+    doc: The command to execute (e.g., unitig, utglog, mag2fmr)
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

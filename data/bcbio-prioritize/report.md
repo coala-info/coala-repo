@@ -3,30 +3,46 @@
 ## bcbio-prioritize
 
 ### Tool Description
-A tool for prioritizing variants in bcbio-nextgen analysis.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bcbio-prioritize:0.0.8--0
+- **Docker Image**: quay.io/biocontainers/bcbio-prioritize:0.0.8--2
 - **Homepage**: https://github.com/chapmanb/bcbio.prioritize
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bcbio-prioritize/overview
 - **Total Downloads**: 48.1K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/chapmanb/bcbio.prioritize
-- **Stars**: 7
+- **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 02:51:50  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/bcbio-prioritize:0.0.8--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8f2f3fe0369397eb7ffa75049f08fce7fd32cb5c7dbbcd3d897235d7035f6fc9: unpack entry: usr/local/bin/bcbio-prioritize: unpack to regular file: short write: write /scratch/21813747/build-temp-2360023485/rootfs/usr/local/bin/bcbio-prioritize: no space left on device
+Unable to find image 'quay.io/biocontainers/bcbio-prioritize:0.0.8--2' locally
+0.0.8--2: Pulling from biocontainers/bcbio-prioritize
+a3ed95caeb02: Already exists
+77c6c00e8b61: Already exists
+3aaade50789a: Already exists
+00cf8b9f3d2a: Already exists
+7ff999a2256f: Already exists
+d2ba336f2e44: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+e5a084fe41a3: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3031535839: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

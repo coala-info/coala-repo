@@ -1,8 +1,9 @@
 ---
 name: qax
-description: The Qiime2 Artifact eXtractor (`qax`) is a high-performance utility designed to provide fast, lightweight access to the contents of Qiime2 artifacts.
+description: The Qiime2 Artifact eXtractor provides fast, lightweight access to the contents and metadata of Qiime2 artifacts without requiring a full Qiime2 environment. Use when user asks to list artifact properties, extract raw data, view file contents in the terminal, inspect provenance, consolidate citations, or create visualization artifacts.
 homepage: https://github.com/telatin/qax
 ---
+
 
 # qax
 

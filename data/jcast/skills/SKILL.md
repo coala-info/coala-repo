@@ -1,8 +1,9 @@
 ---
 name: jcast
-description: JCAST (Junction Centric Alternative Splicing Translator) is a specialized tool designed to bridge the gap between transcriptomics and proteomics.
+description: JCAST translates alternative splicing events from rMATS output into amino acid sequences to create custom protein databases for proteomics. Use when user asks to translate splice junctions into protein sequences, create isoform-specific protein databases, or integrate rMATS results with genomic references.
 homepage: https://github.com/ed-lau/jcast
 ---
+
 
 # jcast
 

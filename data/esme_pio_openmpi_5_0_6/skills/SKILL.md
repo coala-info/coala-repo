@@ -1,8 +1,9 @@
 ---
 name: esme_pio_openmpi_5_0_6
-description: The `esme_pio_openmpi_5_0_6` package provides the ParallelIO (PIO) library, a specialized interface for high-performance computing (HPC) environments.
+description: This package provides the ParallelIO library for performing high-performance parallel I/O operations in HPC environments using MPI. Use when user asks to perform parallel I/O, offload I/O tasks to a subset of processors, or interface with NetCDF and PnetCDF in large-scale simulations.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_openmpi_5_0_6
 

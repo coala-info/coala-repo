@@ -1,8 +1,9 @@
 ---
 name: orthologer
-description: OrthoLoger is a high-performance standalone pipeline used to identify orthologous genes—genes in different species that originated from a single ancestral gene through speciation.
+description: OrthoLoger identifies orthologous genes by mapping sequences to the OrthoDB database or performing de novo ortholog discovery across multiple species. Use when user asks to map protein sequences to OrthoDB taxonomic nodes, perform de novo ortholog discovery, or identify orthologous groups among custom FASTA files.
 homepage: https://orthologer.ezlab.org
 ---
+
 
 # orthologer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lapointe.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping LAPOINTE platform probe identifiers to biological metadata in R. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene IDs, find chromosomal locations, or associate probes with GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/LAPOINTE.db.html
 ---
+
 
 # bioconductor-lapointe.db
 

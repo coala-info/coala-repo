@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anndatar
-description: the package is available on all platforms; click for details.
+description: The anndataR package provides a native R implementation of the AnnData data structure for reading, writing, and manipulating single-cell genomics data in HDF5 format. Use when user asks to read or write .h5ad files, convert between AnnData and SingleCellExperiment or Seurat objects, or access and subset single-cell metadata and expression matrices in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/anndataR.html
 ---
+
 
 # bioconductor-anndatar
 

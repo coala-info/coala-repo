@@ -1,8 +1,9 @@
 ---
 name: sccaf
-description: SCCAF (Single-Cell Clustering Assessment Framework) is a machine learning-based method used to validate and refine cell-type clusters in scRNA-seq datasets.
+description: SCCAF is a machine learning-based method used to validate and refine cell-type clusters in single-cell RNA-seq datasets. Use when user asks to assess clustering quality, optimize cluster resolution by merging indistinct groups, or regress out batch effects from gene expression data.
 homepage: https://github.com/SCCAF/sccaf
 ---
+
 
 # sccaf
 

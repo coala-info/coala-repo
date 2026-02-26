@@ -1,8 +1,9 @@
 ---
 name: minibusco
-description: Minibusco (also known as `compleasm`) is a high-performance tool designed to evaluate the completeness of genomic assemblies.
+description: Minibusco evaluates the completeness of genomic assemblies and protein sets using fast protein-to-genome alignment. Use when user asks to assess assembly quality, evaluate protein set completeness, download taxonomic lineages, or identify missing and duplicated orthologs.
 homepage: https://github.com/huangnengCSU/minibusco
 ---
+
 
 # minibusco
 

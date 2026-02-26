@@ -3,7 +3,7 @@
 ## isajson-validator
 
 ### Tool Description
-A tool for validating ISA-JSON files.
+File path to ISA JSON file
 
 ### Metadata
 - **Docker Image**: biocontainers/isajson-validator:phenomenal-v0.9.4_cv0.4.38
@@ -18,11 +18,6 @@ A tool for validating ISA-JSON files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/isajson-validator:phenomenal-v0.9.4_cv0.4.38 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3098907935: no space left on device
+File path to ISA JSON file 'isajson-validator' does not exist
 ```
 
-
-## Metadata
-- **Skill**: generated

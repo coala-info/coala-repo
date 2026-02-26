@@ -1,12 +1,12 @@
 # vcf2db CWL Generation Report
 
-## vcf2db
+## vcf2db_vcf2db.py
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime logs and a fatal error message regarding a failed image build.
+Take a VCF and create a gemini compatible database
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/vcf2db:2020.02.24--hdfd78af_1
+- **Docker Image**: quay.io/biocontainers/vcf2db:2020.02.24--pl5321hdfd78af_3
 - **Homepage**: https://github.com/quinlan-lab/vcf2db
 - **Package**: https://anaconda.org/channels/bioconda/packages/vcf2db/overview
 - **Validation**: PASS
@@ -18,33 +18,34 @@ The provided text does not contain help information for the tool. It contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vcf2db:2020.02.24--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: 
+Take a VCF and create a gemini compatible database
 
+       [-h] [--a-ok A_OK] [-e INFO_EXCLUDE] [--impacts-field IMPACTS_FIELD]
+       [--legacy-compression]
+       [--expand {gt_depths,gt_ref_depths,gt_alt_freqs,gt_alt_depths,gt_quals,gt_types}]
+       VCF ped db
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  VCF
+  ped
+  db
 
-## vcf2db_vcf2db.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it appears to be a container runtime error log.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vcf2db:2020.02.24--hdfd78af_1
-- **Homepage**: https://github.com/quinlan-lab/vcf2db
-- **Package**: https://anaconda.org/channels/bioconda/packages/vcf2db/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vcf2db:2020.02.24--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  --a-ok A_OK           list of info names to include even with Number=A (will
+                        error if they have > 1 value
+  -e INFO_EXCLUDE, --info-exclude INFO_EXCLUDE
+                        don't save this field to the database. May be
+                        specified multiple times.
+  --impacts-field IMPACTS_FIELD
+                        this field should be propagated to the variant_impacts
+                        table. by default, only CSQ/EFF/ANN fields are added.
+                        the field can be suffixed with a type of ':i' or ':f'
+                        to indicate int or float to override the default of
+                        string. e.g. AF:f
+  --legacy-compression
+  --expand {gt_depths,gt_ref_depths,gt_alt_freqs,gt_alt_depths,gt_quals,gt_types}
+                        sample columns to expand into their own tables
 ```
 

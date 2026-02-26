@@ -1,8 +1,9 @@
 ---
 name: circminer
-description: CircMiner is a high-performance computational tool designed for the rapid and accurate identification of circular RNAs.
+description: CircMiner identifies circular RNAs from sequencing data using a splice-aware pseudo-alignment scheme. Use when user asks to build a reference index, detect circular RNAs, annotate transcripts, or convert GTF formats.
 homepage: https://github.com/vpc-ccg/circminer
 ---
+
 
 # circminer
 

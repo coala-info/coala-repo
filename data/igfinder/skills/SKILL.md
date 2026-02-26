@@ -1,8 +1,9 @@
 ---
 name: igfinder
-description: igfinder is a specialized bioinformatics tool designed to identify and extract functional Immunoglobulin (Ig) sequences from transcriptomic data.
+description: igfinder identifies and extracts functional immunoglobulin sequences from transcriptomic data. Use when user asks to identify immunoglobulin sequences, extract heavy and light chain sequences from assembled transcripts, or profile immune repertoires.
 homepage: https://tx.bioreg.kyushu-u.ac.jp/igfinder
 ---
+
 
 # igfinder
 

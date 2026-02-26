@@ -1,8 +1,9 @@
 ---
 name: zifa
-description: ZIFA (Zero-Inflated Factor Analysis) is a dimensionality reduction framework specifically engineered for single-cell gene expression analysis.
+description: ZIFA performs dimensionality reduction on single-cell gene expression data, specifically modeling zero-inflated counts. Use when user asks to reduce dimensionality of single-cell gene expression data, visualize cell populations, cluster cells, or identify biological trajectories.
 homepage: https://github.com/epierson9/ZIFA
 ---
+
 
 # zifa
 

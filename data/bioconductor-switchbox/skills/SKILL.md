@@ -1,8 +1,9 @@
 ---
 name: bioconductor-switchbox
-description: The package offer different classifiers based on comparisons of pair of features (TSP), using various decision rules (e.g., majority wins principle).
+description: This tool provides classifiers based on comparisons of feature pairs using Top-Scoring Pair algorithms. Use when user asks to build classifiers using feature pairs, apply Top-Scoring Pair algorithms, or perform classification based on relative feature rankings.
 homepage: https://bioconductor.org/packages/release/bioc/html/switchBox.html
 ---
+
 
 # bioconductor-switchbox
 

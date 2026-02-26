@@ -1,8 +1,9 @@
 ---
 name: demultiplex
-description: The `demultiplex` tool is a versatile Python-based utility designed to sort sequencing reads into separate files based on barcode sequences.
+description: The demultiplex tool sorts sequencing reads into separate files based on barcode sequences while handling non-standard placements and errors. Use when user asks to sort reads by barcode, handle sequencing errors in barcodes, demultiplex paired-end data, or identify unknown barcodes.
 homepage: https://github.com/jfjlaros/demultiplex
 ---
+
 
 # demultiplex
 

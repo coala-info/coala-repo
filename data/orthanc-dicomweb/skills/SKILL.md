@@ -1,8 +1,9 @@
 ---
 name: orthanc-dicomweb
-description: This skill provides procedural knowledge for managing a containerized Orthanc PACS environment.
+description: This tool manages a containerized Orthanc PACS environment for medical imaging storage, retrieval, and viewing. Use when user asks to start or stop the PACS stack, perform system health checks, query studies via DICOMweb, or configure remote modalities.
 homepage: https://github.com/ThalesMMS/Orthanc-PACS
 ---
+
 
 # orthanc-dicomweb
 

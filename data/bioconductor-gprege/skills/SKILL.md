@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gprege
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool analyzes biological time-series expression data using Gaussian process regression models. Use when user asks to rank differential expression in time-series data, identify transcription factor target genes, or filter quiet genes.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gprege.html
 ---
+
 
 # bioconductor-gprege
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-humantranscriptomecompendium
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides programmatic access to a large-scale collection of uniformly processed human RNA-seq data stored in the cloud as SummarizedExperiment objects. Use when user asks to load gene-level quantifications, query RNA-seq data by study accession, filter datasets by metadata, or materialize remote transcriptomic data for analysis.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/HumanTranscriptomeCompendium.html
 ---
+
 
 # bioconductor-humantranscriptomecompendium
 

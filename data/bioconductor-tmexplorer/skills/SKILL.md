@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tmexplorer
-description: the package is available on all platforms; click for details.
+description: TMExplorer provides a curated collection of single-cell RNA sequencing datasets specifically focused on the tumor microenvironment. Use when user asks to search for tumor microenvironment datasets, access single-cell sequencing data, or explore curated cancer studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TMExplorer.html
 ---
+
 
 # bioconductor-tmexplorer
 

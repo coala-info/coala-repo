@@ -1,8 +1,9 @@
 ---
 name: bioconductor-phantasuslite
-description: the package is available on all platforms; click for details.
+description: PhantasusLite is an R package for interactive visualization and analysis of gene expression data. Use when user asks to create interactive heatmaps, perform differential expression analysis, or conduct gene set enrichment analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/phantasusLite.html
 ---
+
 
 # bioconductor-phantasuslite
 

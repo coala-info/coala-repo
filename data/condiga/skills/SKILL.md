@@ -1,8 +1,9 @@
 ---
 name: condiga
-description: ConDiGA (Contigs Directed Gene Annotation) is a specialized pipeline designed to improve the accuracy of protein sequence databases used in metaproteomics.
+description: ConDiGA is a pipeline that improves metaproteomics protein sequence databases by integrating taxonomic classification, gene prediction, and contig coverage. Use when user asks to create taxonomically representative protein databases, map predicted genes to reference genomes, or improve protein sequence database accuracy for metaproteomics.
 homepage: https://github.com/metagentools/ConDiGA
 ---
+
 
 # condiga
 

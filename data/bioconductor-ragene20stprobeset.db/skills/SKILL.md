@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ragene20stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Affymetrix Rat Gene 2.0 ST array at the probeset level. Use when user asks to map probeset identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for rat gene expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ragene20stprobeset.db.html
 ---
+
 
 # bioconductor-ragene20stprobeset.db
 

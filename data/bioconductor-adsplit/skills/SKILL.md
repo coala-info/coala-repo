@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adsplit
-description: the package is available on all platforms; click for details.
+description: This tool performs annotation-driven unsupervised clustering of microarray gene expression data using functional gene sets like GO terms or KEGG pathways. Use when user asks to perform unsupervised clustering of samples based on biological annotations, identify patient subgroups using specific gene sets, or calculate DLD scores and empirical p-values for gene set splits.
 homepage: https://bioconductor.org/packages/release/bioc/html/adSplit.html
 ---
+
 
 # bioconductor-adsplit
 

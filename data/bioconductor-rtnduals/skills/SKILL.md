@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtnduals
-description: the package is available on all platforms; click for details.
+description: RTNduals analyzes the similarity between pairs of regulons and identifies co-regulation patterns in transcriptional networks. Use when user asks to analyze dual regulons, calculate regulon similarity, or identify shared targets between transcription factors.
 homepage: https://bioconductor.org/packages/release/bioc/html/RTNduals.html
 ---
+
 
 # bioconductor-rtnduals
 

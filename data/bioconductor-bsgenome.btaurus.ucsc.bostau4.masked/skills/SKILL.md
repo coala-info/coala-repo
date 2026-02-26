@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.btaurus.ucsc.bostau4.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for Bos taurus based on the UCSC bosTau4 assembly. Use when user asks to access cow genomic sequences with assembly gaps, ambiguities, or repeat masks for sequence analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Btaurus.UCSC.bosTau4.masked.html
 ---
+
 
 # bioconductor-bsgenome.btaurus.ucsc.bostau4.masked
 

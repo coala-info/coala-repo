@@ -1,8 +1,9 @@
 ---
 name: minimod
-description: minimod is a high-performance bioinformatics tool designed to extract and aggregate base modification information from long-read sequencing data (e.g., Oxford Nanopore or PacBio).
+description: minimod extracts and aggregates base modification information from long-read sequencing data by parsing MM and ML tags in BAM files. Use when user asks to summarize modification codes, calculate genomic modification frequencies, generate bedMethyl files, or view individual read modifications.
 homepage: https://github.com/warp9seq/minimod
 ---
+
 
 # minimod
 

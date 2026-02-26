@@ -1,9 +1,11 @@
 # nanosim CWL Generation Report
 
-## nanosim
+## nanosim_read_analysis.py
 
 ### Tool Description
-NanoSim is a fast and memory-efficient nanopore read simulator.
+Read characterization step
+Given raw ONT reads, reference genome, metagenome, and/or
+transcriptome, learn read features and output error profiles
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0
@@ -18,46 +20,84 @@ NanoSim is a fast and memory-efficient nanopore read simulator.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4256436840: no space left on device
+/usr/local/bin/besthit_to_histogram.py:46: SyntaxWarning: invalid escape sequence '\*'
+  for item in re.findall('(:[0-9]+|\*[a-z][a-z]|[=\+\-][A-Za-z]+)', cs_string):
+/usr/local/bin/besthit_to_histogram.py:84: SyntaxWarning: invalid escape sequence '\d'
+  cigar = re.findall('(\d+)([MIDSHX=])', cigar_str)  # Don't find (\d+)N since those are introns
+/usr/local/bin/model_base_qualities.py:25: SyntaxWarning: invalid escape sequence '\*'
+  for item in re.findall('(:[0-9]+|\*[a-z][a-z]|[=\+\-][A-Za-z]+)', cs_string):
+usage: read_analysis.py [-h] [-v]
+                        {genome,transcriptome,metagenome,quantify,detect_ir}
+                        ...
+
+Read characterization step
+-----------------------------------------------------------
+Given raw ONT reads, reference genome, metagenome, and/or 
+transcriptome, learn read features and output error profiles
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+subcommands:
+  
+  There are five modes in read_analysis.
+  For detailed usage of each mode:
+      read_analysis.py mode -h
+  -------------------------------------------------------
+
+  {genome,transcriptome,metagenome,quantify,detect_ir}
+    genome              Run the simulator on genome mode
+    transcriptome       Run the simulator on transcriptome mode
+    metagenome          Run the simulator on metagenome mode
+    quantify            Quantify transcriptome expression or metagenome
+                        abundance
+    detect_ir           Detect Intron Retention events using the alignment
+                        file
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## nanosim_read_analysis.py
-
-### Tool Description
-A tool for analyzing nanopore reads as part of the NanoSim simulation pipeline. Note: The provided text contains container runtime error messages rather than help documentation, so no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0
-- **Homepage**: https://github.com/bcgsc/NanoSim
-- **Package**: https://anaconda.org/channels/bioconda/packages/nanosim/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3950688304: no space left on device
-```
 
 ## nanosim_simulator.py
 
 ### Tool Description
-NanoSim: A nanopore sequence simulator. (Note: The provided text contains system error messages regarding container execution and does not list the tool's command-line arguments.)
+Given error profiles, reference genome, metagenome,
+and/or transcriptome, simulate ONT DNA or RNA reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0
 - **Homepage**: https://github.com/bcgsc/NanoSim
 - **Package**: https://anaconda.org/channels/bioconda/packages/nanosim/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nanosim:3.2.3--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3871620983: no space left on device
+/usr/local/bin/simulator.py:511: SyntaxWarning: invalid escape sequence '\d'
+  hp_mis_rate = float(re.search("\d+\.?\d*", next(homopolymer_length_params))[0])
+/usr/local/bin/model_base_qualities.py:25: SyntaxWarning: invalid escape sequence '\*'
+  for item in re.findall('(:[0-9]+|\*[a-z][a-z]|[=\+\-][A-Za-z]+)', cs_string):
+usage: simulator.py [-h] [-v] {genome,transcriptome,metagenome} ...
+
+Simulation step
+-----------------------------------------------------------
+Given error profiles, reference genome, metagenome,
+and/or transcriptome, simulate ONT DNA or RNA reads
+
+options:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+
+subcommands:
+  
+  There are two modes in read_analysis.
+  For detailed usage of each mode:
+      simulator.py mode -h
+  -------------------------------------------------------
+
+  {genome,transcriptome,metagenome}
+                        You may run the simulator on genome, transcriptome, or
+                        metagenome mode.
+    genome              Run the simulator on genome mode
+    transcriptome       Run the simulator on transcriptome mode
+    metagenome          Run the simulator on metagenome mode
 ```
 

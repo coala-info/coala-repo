@@ -1,8 +1,9 @@
 ---
 name: vgan
-description: vgan is a specialized suite of pangenomic tools built upon the `vg` (Variation Graph) framework.
+description: vgan is a pangenomic toolkit that uses graph-based references for high-resolution taxonomic identification and abundance estimation in ancient or degraded DNA. Use when user asks to classify modern human mtDNA haplogroups, estimate bilaterian abundance, identify species, or estimate multiple sources from ancient environmental samples.
 homepage: https://github.com/grenaud/vgan
 ---
+
 
 # vgan
 

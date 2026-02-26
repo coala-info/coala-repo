@@ -1,8 +1,9 @@
 ---
 name: migrate-n
-description: Migrate-n is a specialized tool for evolutionary biologists and population geneticists.
+description: Migrate-n estimates population genetic parameters such as effective population size and migration rates using coalescent-based MCMC or importance sampling. Use when user asks to estimate gene flow, calculate effective population sizes, perform Bayesian inference on population models, or compare migration scenarios using Bayes Factors.
 homepage: http://popgen.sc.fsu.edu/Migrate/Migrate-n.html
 ---
+
 
 # migrate-n
 

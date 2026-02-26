@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qdnaseq.mm10
-description: the package is available on all platforms; click for details.
+description: This package provides genome bin annotations for the mouse assembly mm10 to support copy number analysis using QDNAseq. Use when user asks to perform copy number variation analysis on mouse sequencing data, process shallow whole-genome sequencing for mm10, or load bin annotations for the mouse genome.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/QDNAseq.mm10.html
 ---
+
 
 # bioconductor-qdnaseq.mm10
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-standr
-description: the package are built based on the SpatialExperiment object, allowing integration into various spatial transcriptomics-related packages from Bioconductor. standR allows data inspection, quality control, normalization, batch correction and evaluation with informative visualizations.
+description: standR provides tools for the quality control, normalization, and visualization of spatial transcriptomics data. Use when user asks to perform quality control, normalize data, correct batch effects, or visualize spatial transcriptomics experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/standR.html
 ---
+
 
 # bioconductor-standr
 

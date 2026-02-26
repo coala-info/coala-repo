@@ -1,8 +1,9 @@
 ---
 name: r-combinat
-description: routines for combinatorics</p>
+description: The r-combinat package provides utilities for combinatorial computing in R, including generating permutations, combinations, and integer partitions. Use when user asks to generate all permutations of a vector, find subsets of a specific size, calculate sample sizes, or partition integers into parts.
 homepage: https://cloud.r-project.org/web/packages/combinat/index.html
 ---
+
 
 # r-combinat
 

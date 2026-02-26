@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirintegrator
-description: the package is available on all platforms; click for details.
+description: This tool integrates microRNA and mRNA expression data into signaling pathways to facilitate functional analysis. Use when user asks to integrate miRNA and mRNA data, map microRNA targets to pathways, or analyze miRNA-regulated signaling networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/mirIntegrator.html
 ---
+
 
 # bioconductor-mirintegrator
 

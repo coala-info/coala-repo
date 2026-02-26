@@ -1,8 +1,9 @@
 ---
 name: kmc
-description: KMC is a high-performance, disk-based utility designed for counting k-mers in large genomic datasets.
+description: "KMC is a high-performance utility for counting and manipulating k-mers in large genomic datasets. Use when user asks to count k-mers, perform set operations on k-mer databases, filter reads based on k-mer abundance, or convert binary k-mer files to text."
 homepage: https://github.com/refresh-bio/kmc
 ---
+
 
 # kmc
 

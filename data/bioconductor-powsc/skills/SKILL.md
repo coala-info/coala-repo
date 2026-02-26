@@ -1,8 +1,9 @@
 ---
 name: bioconductor-powsc
-description: the package is available on all platforms; click for details.
+description: POWSC performs power evaluation and sample size determination for single-cell RNA-sequencing experiments. Use when user asks to estimate sample sizes for scRNA-seq, perform power analysis for single-cell data, or evaluate the statistical power of differential expression tests.
 homepage: https://bioconductor.org/packages/release/bioc/html/POWSC.html
 ---
+
 
 # bioconductor-powsc
 

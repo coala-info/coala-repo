@@ -1,8 +1,9 @@
 ---
 name: ucsc-parasync
-description: The `ucsc-parasync` utility is a specialized data transfer tool designed to mirror remote directories to a local path.
+description: ucsc-parasync mirrors remote directories to a local path using parallelized downloads. Use when user asks to mirror remote directories, synchronize large data repositories, or download UCSC Genome Browser files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-parasync
 

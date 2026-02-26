@@ -1,8 +1,9 @@
 ---
 name: anarci
-description: ANARCI (Antibody Numbering and Antigen Receptor ClassIfication) is a specialized bioinformatics tool designed to annotate amino acid sequences of antigen receptors.
+description: ANARCI annotates amino acid sequences of antigen receptors by identifying variable domains and applying standardized numbering schemes. Use when user asks to number antibody or TCR sequences, identify CDR regions, or apply specific numbering schemes like IMGT, Kabat, or Chothia.
 homepage: http://opig.stats.ox.ac.uk/webapps/newsabdab/sabpred/anarci/
 ---
+
 
 # anarci
 

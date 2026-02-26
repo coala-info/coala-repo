@@ -1,8 +1,9 @@
 ---
 name: ska
-description: SKA (Split Kmer Analysis) is a specialized toolkit for prokaryotic genomic epidemiology.
+description: SKA identifies genetic variation in prokaryotic genomes by analyzing split kmers to bypass traditional read mapping and assembly. Use when user asks to create split kmer files, calculate SNP distances, generate reference-free or reference-based alignments, perform genomic typing, or filter sequences for outbreak surveillance.
 homepage: https://github.com/simonrharris/SKA
 ---
+
 
 # ska
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cola
-description: the package is available on all platforms; click for details.
+description: This tool performs consensus partitioning to identify stable subgroups and signature features in high-throughput genomic data. Use when user asks to identify stable subgroups, perform consensus partitioning, extract signature features, or conduct hierarchical clustering for complex datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/cola.html
 ---
+
 
 # bioconductor-cola
 

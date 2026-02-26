@@ -1,8 +1,9 @@
 ---
 name: denovogear
-description: DeNovoGear is a specialized software suite designed to identify de novo variants by integrating sequence data with pedigree or phylogenetic information.
+description: DeNovoGear identifies de novo variants by integrating sequence data with pedigree or phylogenetic information using likelihood-based models. Use when user asks to call mutations in pedigrees, identify de novo variants from BAM or BCF files, or model somatic and germline mutations across generations.
 homepage: https://github.com/ultimatesource/denovogear
 ---
+
 
 # denovogear
 

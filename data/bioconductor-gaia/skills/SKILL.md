@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gaia
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool identifies significant recurrent genomic copy number alterations in aCGH or sequencing data. Use when user asks to identify recurrent chromosomal aberrations, distinguish driver from passenger mutations, or perform statistical assessment of copy number variations across multiple samples.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gaia.html
 ---
+
 
 # bioconductor-gaia
 

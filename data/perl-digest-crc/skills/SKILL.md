@@ -1,8 +1,9 @@
 ---
 name: perl-digest-crc
-description: This skill provides guidance on using the `Digest::CRC` Perl module to calculate CRC sums.
+description: "This tool calculates standard and custom Cyclic Redundancy Check (CRC) checksums using the Perl Digest::CRC module. Use when user asks to calculate CRC sums for data integrity, verify file checksums using algorithms like CRC32 or CRC-CCITT, or define custom CRC parameters for specific bit widths and polynomials."
 homepage: http://metacpan.org/pod/Digest::CRC
 ---
+
 
 # perl-digest-crc
 

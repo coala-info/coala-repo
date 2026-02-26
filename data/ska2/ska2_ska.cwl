@@ -2,10 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ska
 label: ska2_ska
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a log of a failed container build/fetch process.\n\n
-  Tool homepage: https://github.com/bacpop/ska.rust"
-inputs: []
+doc: "Split k-mer analysis\n\nTool homepage: https://github.com/bacpop/ska.rust"
+inputs:
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Show progress messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

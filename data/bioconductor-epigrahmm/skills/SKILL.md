@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epigrahmm
-description: the package is available on all platforms; click for details.
+description: epigraHMM performs consensus and differential peak calling in epigenomic sequencing data using Hidden Markov Models. Use when user asks to call peaks, identify differential enrichment across conditions, normalize epigenomic count data, or analyze ChIP-seq and ATAC-seq experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/epigraHMM.html
 ---
+
 
 # bioconductor-epigrahmm
 

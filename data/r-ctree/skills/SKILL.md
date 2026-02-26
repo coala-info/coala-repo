@@ -1,8 +1,9 @@
 ---
 name: r-ctree
-description: R package ctree (documentation from project home).
+description: The r-ctree tool builds, samples, and visualizes tumor clone trees from subclonal deconvolution data using Cancer Cell Fractions. Use when user asks to model cancer evolutionary trajectories, infer subclonal hierarchies from bulk sequencing data, or generate phylogenetic trees of tumor clones.
 homepage: https://cran.r-project.org/web/packages/ctree/index.html
 ---
+
 
 # r-ctree
 

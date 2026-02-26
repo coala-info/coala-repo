@@ -1,8 +1,9 @@
 ---
 name: r-ada
-description: "Performs discrete, real, and gentle boost under both exponential and               logistic loss on a given data set.  The package ada provides a straightforward,               well-documented, and broad boosting routine for classification, ideally suited               for small to moderate-sized data sets.</p>"
+description: This tool performs discrete, real, and gentle stochastic boosting for binary classification tasks using exponential or logistic loss. Use when user asks to fit boosting models, predict classes or probabilities, perform stochastic boosting, or visualize variable importance and model performance in R.
 homepage: https://cloud.r-project.org/web/packages/ada/index.html
 ---
+
 
 # r-ada
 

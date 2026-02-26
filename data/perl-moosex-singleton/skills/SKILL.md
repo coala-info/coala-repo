@@ -1,8 +1,9 @@
 ---
 name: perl-moosex-singleton
-description: MooseX::Singleton is a Perl module that converts a standard Moose-based class into a singleton, ensuring that only one instance of the class exists within an application.
+description: This Perl module converts a Moose-based class into a singleton to ensure only one instance exists within an application. Use when user asks to create a singleton class, manage global configuration objects, or ensure a single shared instance of a Moose object.
 homepage: https://github.com/moose/MooseX-Singleton
 ---
+
 
 # perl-moosex-singleton
 

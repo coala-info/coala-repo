@@ -1,8 +1,9 @@
 ---
 name: propy3
-description: propy3 is a Python library designed to extract a wide array of theoretical descriptors from protein sequences.
+description: propy3 is a Python library used to extract a wide range of theoretical descriptors and numerical features from protein sequences. Use when user asks to calculate amino acid composition, generate protein descriptors for machine learning, or fetch protein sequences from UniProt.
 homepage: https://github.com/MartinThoma/propy3
 ---
+
 
 # propy3
 

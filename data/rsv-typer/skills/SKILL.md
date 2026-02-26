@@ -1,8 +1,9 @@
 ---
 name: rsv-typer
-description: The `rsv-typer` tool is a specialized bioinformatics pipeline designed to automate the classification and genomic analysis of RSV from Nanopore reads.
+description: rsv-typer automates the classification and genomic analysis of Respiratory Syncytial Virus (RSV) from Nanopore sequencing reads. Use when user asks to classify RSV subtypes, generate consensus sequences, or perform genomic surveillance using the rsv-typer pipeline.
 homepage: https://github.com/DiltheyLab/RSVTyper
 ---
+
 
 # rsv-typer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnviz
-description: the package is available on all platforms; click for details.
+description: bioconductor-cnviz provides an interactive Shiny application for visualizing copy number variants, loss of heterozygosity, and SNV/indel data. Use when user asks to visualize genomic copy number data, explore chromosomal alterations through an interactive web interface, or plot probe-level and gene-level data alongside small variants.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNViz.html
 ---
+
 
 # bioconductor-cnviz
 

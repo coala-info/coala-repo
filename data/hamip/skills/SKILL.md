@@ -1,8 +1,9 @@
 ---
 name: hamip
-description: HaMiP (Hydroxymethylation analysis of CMS-IP) is a scalable pipeline designed to process CMS-IP sequencing data.
+description: HaMiP is a scalable pipeline for processing CMS-IP sequencing data to identify peaks and differential hydroxymethylation. Use when user asks to process raw FASTQ or BAM files, construct CMS measurements, or detect differential hydroxymethylation regions using various statistical tests.
 homepage: https://github.com/lijinbio/HaMiP
 ---
+
 
 # hamip
 

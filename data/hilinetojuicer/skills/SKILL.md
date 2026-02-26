@@ -1,8 +1,9 @@
 ---
 name: hilinetojuicer
-description: The `hilinetojuicer` utility serves as a specialized bridge in Hi-C data processing workflows.
+description: This utility transforms SAM alignment files from the HiLine pipeline into the short-format text files required by Juicer. Use when user asks to convert HiLine SAM files to Juicer format, prepare Hi-C data for Juicer tools pre, or bridge HiLine and Juicer workflows.
 homepage: https://pypi.org/project/HiLineToJuicer/0.0.1/
 ---
+
 
 # hilinetojuicer
 

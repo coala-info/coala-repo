@@ -1,8 +1,9 @@
 ---
 name: fastq-pair
-description: The `fastq-pair` utility is a high-performance C tool designed to solve the common problem of "broken" paired-end FASTQ files.
+description: The fastq-pair utility synchronizes paired-end FASTQ files by identifying matching reads and separating them from singletons. Use when user asks to re-pair broken FASTQ files, synchronize paired-end data after filtering, or extract singleton reads from mismatched sequencing files.
 homepage: https://github.com/linsalrob/fastq-pair
 ---
+
 
 # fastq-pair
 

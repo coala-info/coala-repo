@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ath1121501probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Arabidopsis Thaliana ATH1-121501 Affymetrix microarray. Use when user asks to access probe sequences, map probes to array coordinates, or retrieve interrogation positions for genomic analysis in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ath1121501probe.html
 ---
+
 
 # bioconductor-ath1121501probe
 

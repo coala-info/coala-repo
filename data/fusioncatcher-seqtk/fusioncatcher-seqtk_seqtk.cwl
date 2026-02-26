@@ -2,11 +2,23 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: seqtk
 label: fusioncatcher-seqtk_seqtk
-doc: "The provided help text contains only system error messages related to a container
-  runtime (Apptainer/Singularity) and does not contain usage information for the tool.
-  Seqtk is generally used for processing sequences in FASTA/FASTQ format.\n\nTool
-  homepage: https://github.com/ndaniel/seqtk"
-inputs: []
+doc: "A toolkit for processing sequences.\n\nTool homepage: https://github.com/ndaniel/seqtk"
+inputs:
+  - id: command
+    type: string
+    doc: "The command to execute. Available commands:\nseq, comp, sample, subseq,
+      fqchk, mergepe, trimfq, hety, gc, mutfa, mergefa, famask, dropse, rename, randbase,
+      cutN, listhet"
+    inputBinding:
+      position: 1
+  - id: arguments
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

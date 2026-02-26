@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rhesus.db0
-description: the package is available on all platforms; click for details.
+description: This package provides base annotation data for the Rhesus macaque. Use when user asks to build custom annotation packages for Macaca mulatta or access base genomic mapping data for Rhesus monkeys.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rhesus.db0.html
 ---
+
 
 # bioconductor-rhesus.db0
 

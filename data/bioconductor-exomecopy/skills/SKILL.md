@@ -1,8 +1,9 @@
 ---
 name: bioconductor-exomecopy
-description: The package implements a hidden Markov model which uses positional covariates, such as background read depth and GC-content, to simultaneously normalize and segment the samples into regions of constant copy count.
+description: This tool detects copy number variants in exome sequencing data using a hidden Markov model. Use when user asks to identify CNVs, normalize read counts using positional covariates, or segment genomic regions into copy counts without paired control samples.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/exomeCopy.html
 ---
+
 
 # bioconductor-exomecopy
 

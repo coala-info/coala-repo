@@ -1,8 +1,9 @@
 ---
 name: salmon
-description: Salmon is a high-performance tool designed to estimate transcript-level abundances from RNA-seq data with high accuracy and speed.
+description: Salmon estimates transcript-level abundances from RNA-seq data using selective alignment or existing alignments. Use when user asks to index a transcriptome, quantify transcript expression from FASTQ or BAM files, or perform bias correction and bootstrapping for RNA-seq analysis.
 homepage: https://github.com/COMBINE-lab/salmon
 ---
+
 
 # salmon
 

@@ -1,8 +1,9 @@
 ---
 name: barriers
-description: The `barriers` tool is a specialized utility for landscape analysis.
+description: The barriers tool identifies the hierarchical structure of local minima and saddle points within energy landscapes to visualize topology via barrier trees. Use when user asks to analyze RNA folding landscapes, identify local minima, generate rate matrices for kinetics simulations, or visualize landscape connectivity.
 homepage: https://www.tbi.univie.ac.at/RNA/Barriers/
 ---
+
 
 # barriers
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocsklearn
-description: the package is available on all platforms; click for details.
+description: BiocSklearn provides an R interface to the scikit-learn library for Bioconductor workflows. Use when user asks to perform PCA, run incremental PCA on large datasets, compute pairwise distances, or interface with HDF5 matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocSklearn.html
 ---
+
 
 # bioconductor-biocsklearn
 

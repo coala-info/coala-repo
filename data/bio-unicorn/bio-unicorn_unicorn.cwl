@@ -2,11 +2,20 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: unicorn
 label: bio-unicorn_unicorn
-doc: "The provided text does not contain help information or usage instructions for
-  the tool. It appears to be a system error log from a container runtime (Apptainer/Singularity)
-  indicating a failure to build the image due to insufficient disk space.\n\nTool
-  homepage: https://github.com/GeoGenetics/unicorn"
-inputs: []
+doc: "Compute per reference statistics such as # alignments, # reads, mean read length,
+  etc.\n\nTool homepage: https://github.com/GeoGenetics/unicorn"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (refstats, bamstats, tidstats)
+    inputBinding:
+      position: 1
+  - id: input_file
+    type: File
+    doc: Input BAM/SAM/CRAM file
+    inputBinding:
+      position: 102
+      prefix: -b
 outputs:
   - id: stdout
     type: stdout

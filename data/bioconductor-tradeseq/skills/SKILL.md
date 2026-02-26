@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tradeseq
-description: the package is available on all platforms; click for details.
+description: tradeSeq performs trajectory-based differential expression analysis for single-cell RNA-sequencing data. Use when user asks to identify genes that change along a pseudotime trajectory, compare expression patterns between different lineages, or perform differential expression analysis on single-cell data with complex topologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/tradeSeq.html
 ---
+
 
 # bioconductor-tradeseq
 

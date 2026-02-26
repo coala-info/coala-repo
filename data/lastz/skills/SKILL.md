@@ -1,8 +1,9 @@
 ---
 name: lastz
-description: LASTZ is a powerful pairwise DNA sequence aligner designed as a drop-in, backward-compatible replacement for BLASTZ.
+description: LASTZ is a pairwise DNA sequence aligner designed for large-scale genomic comparisons and sensitive sequence mapping. Use when user asks to align DNA sequences, perform whole-genome comparisons, find internal repeats, or map short reads to a reference.
 homepage: http://www.bx.psu.edu/~rsharris/lastz/
 ---
+
 
 # lastz
 

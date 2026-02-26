@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ebseq
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis for RNA-seq data at both gene and isoform levels using empirical Bayesian models. Use when user asks to identify differentially expressed genes or isoforms, calculate posterior fold changes, or analyze complex multi-condition experimental designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/EBSeq.html
 ---
+
 
 # bioconductor-ebseq
 

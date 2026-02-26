@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dss
-description: the package is available on all platforms; click for details.
+description: "bioconductor-dss provides a statistical framework for differential analysis of count-based sequencing data using dispersion shrinkage. Use when user asks to detect differential expression in RNA-seq data or identify differentially methylated loci and regions in BS-seq data."
 homepage: https://bioconductor.org/packages/release/bioc/html/DSS.html
 ---
+
 
 # bioconductor-dss
 

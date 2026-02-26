@@ -1,8 +1,9 @@
 ---
 name: haslr
-description: HASLR (Hybrid Assembly of Long Reads) is a specialized tool designed for the fast assembly of genomic data by combining the structural information of long reads with the high base-pair accuracy of short reads.
+description: HASLR performs fast hybrid assembly of genomic data by combining long reads with short reads to produce accurate consensus sequences. Use when user asks to perform hybrid genome assembly, assemble long and short reads together, or generate a consensus sequence from multi-technology sequencing data.
 homepage: https://github.com/vpc-ccg/haslr
 ---
+
 
 # haslr
 

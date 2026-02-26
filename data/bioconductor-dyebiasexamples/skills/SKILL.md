@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dyebiasexamples
-description: the package is available on all platforms; click for details.
+description: This package provides example microarray datasets and utility functions to support the dyebias R package for gene-specific dye bias correction. Use when user asks to load example marray objects, convert GEO datasets for dye bias correction, or identify suitable probes for estimating slide bias.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/dyebiasexamples.html
 ---
+
 
 # bioconductor-dyebiasexamples
 

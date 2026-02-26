@@ -1,8 +1,9 @@
 ---
 name: esme_openmpi_4_1_6
-description: The ESME (Earth System Modelling Environment) bundle is a specialized scientific computing stack designed to simplify the installation of complex, interdependent libraries used in climate and earth system modeling.
+description: ESME provides a pre-validated scientific computing stack for climate and earth system modeling using OpenMPI 4.1.6. Use when user asks to install climate modeling libraries, compile model code with netCDF or ESMF, verify parallel computing environments, or run MPI performance benchmarks.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_openmpi_4_1_6
 

@@ -1,31 +1,49 @@
 # circtools CWL Generation Report
 
-## circtools
+## circtools_command
 
 ### Tool Description
-A modular framework for circular RNA analysis.
+a modular, python-based framework for circRNA-related tools that unifies several functions in single command line driven software.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/circtools:2.0.3--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/circtools:2.0.4--pyhdfd78af_0
 - **Homepage**: https://github.com/dieterich-lab/circtools
 - **Package**: https://anaconda.org/channels/bioconda/packages/circtools/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/circtools/overview
-- **Total Downloads**: 7.5K
+- **Total Downloads**: 7.6K
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/dieterich-lab/circtools
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/circtools:2.0.3--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3688082254/rootfs/usr/bin/bash: no space left on device
+The supplied command is unknown
+usage: circtools [-V] <command> [<args>]
+
+            Available commands:
+
+               detect:       circular RNA detection
+               quickcheck:   circular RNA sequencing library quick checks
+               circtest:     circular RNA statistical testing
+               primex:       circular RNA primer design tool
+               nanopore:     circular RNA detection from Oxford Nanopore data
+               padlock:      circular RNA padlock probe design tool
+               sirna:        circular RNA siRNA design tool
+               reconstruct:  circular RNA reconstruction
+               enrich:       circular RNA RBP enrichment scan
+               exon:         circular RNA alternative exon analysis
+               conservation: circular RNA conservation analysis
+            
+
+circtools: a modular, python-based framework for circRNA-related tools that
+unifies several functions in single command line driven software.
+
+positional arguments:
+  command        Command to run
+
+options:
+  -h, --help     show this help message and exit
+  -V, --version  show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

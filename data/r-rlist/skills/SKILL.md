@@ -1,8 +1,9 @@
 ---
 name: r-rlist
-description: "Provides a set of functions for data manipulation with     list objects, including mapping, filtering, grouping, sorting,     updating, searching, and other useful functions. Most functions     are designed to be pipeline friendly so that data processing with     lists can be chained.</p>"
+description: The rlist package provides a comprehensive set of tools for manipulating, filtering, and mapping non-tabular or nested list data in R using functional programming patterns. Use when user asks to map, filter, group, sort, update, or search complex R list objects and hierarchical data structures.
 homepage: https://cloud.r-project.org/web/packages/rlist/index.html
 ---
+
 
 # r-rlist
 

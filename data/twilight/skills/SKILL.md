@@ -1,8 +1,9 @@
 ---
 name: twilight
-description: TWILIGHT (Tall and Wide Alignments at High Throughput) is a high-performance alignment tool optimized for massive genomic and proteomic datasets.
+description: TWILIGHT is a high-performance alignment tool designed for massive genomic and proteomic datasets, leveraging progressive alignment and tiling strategies. Use when user asks to perform sequence alignment, add new sequences to an existing alignment, align proteins, align sequences without a guide tree, or align subsets of a larger phylogenetic study.
 homepage: https://github.com/TurakhiaLab/TWILIGHT
 ---
+
 
 # twilight
 

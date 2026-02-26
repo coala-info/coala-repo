@@ -1,8 +1,9 @@
 ---
 name: fsnviz
-description: `fsnviz` is a Python-based utility that automates the creation of Circos plots to represent gene fusion events.
+description: "fsnviz automates the creation of Circos plots to visualize gene fusion events from genomic data. Use when user asks to visualize gene fusions, generate Circos plots for fusion-calling results, or map genomic rearrangements from STAR-Fusion or FusionCatcher output."
 homepage: https://github.com/bow/fsnviz
 ---
+
 
 # fsnviz
 

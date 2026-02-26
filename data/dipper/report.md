@@ -1,9 +1,9 @@
 # dipper CWL Generation Report
 
-## dipper
+## dipper_dipper_cpu
 
 ### Tool Description
-A tool for generating RDF graphs from various biological data sources.
+DIPPER Command Line Arguments
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/dipper:0.1.3--h6bb9b41_0
@@ -18,29 +18,51 @@ A tool for generating RDF graphs from various biological data sources.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dipper:0.1.3--h6bb9b41_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3315144357: no space left on device
-```
+[31mthe option '--input-file' is required but missing[0m
+DIPPER Command Line Arguments:
 
+Required Options:
+  -i [ --input-format ] arg   Input format:
+                                d - distance matrix in PHYLIP format
+                                r - unaligned sequences in FASTA format
+                                m - aligned sequences in FASTA format
+  -I [ --input-file ] arg     Input file path:
+                                PHYLIP format for distance matrix
+                                FASTA format for aligned or unaligned sequences
+  -O [ --output-file ] arg    Output file path
 
-## Metadata
-- **Skill**: generated
-
-## dipper_dipper_cpu
-
-### Tool Description
-A tool for data ingestion and processing (Note: The provided text contains container runtime error messages rather than tool help text, so no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/dipper:0.1.3--h6bb9b41_0
-- **Homepage**: https://github.com/TurakhiaLab/DIPPER
-- **Package**: https://anaconda.org/channels/bioconda/packages/dipper/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/dipper:0.1.3--h6bb9b41_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1502219722: no space left on device
+Optional Options:
+  -o [ --output-format ] arg  Output format:
+                                t - phylogenetic tree in Newick format 
+                              (default)
+                                d - distance matrix in PHYLIP format (coming 
+                              soon)
+  -m [ --algorithm ] arg      Algorithm selection:
+                                0 - default mode
+                                1 - force placement
+                                2 - force conventional NJ
+                                3 - force divide-and-conquer
+  -K [ --K-closest ] arg      Placement mode:
+                                -1 - exact mode
+                                10 - default
+  -k [ --kmer-size ] arg      K-mer size:
+                                Valid range: 2-15 (default: 15)
+  -s [ --sketch-size ] arg    Sketch size (default: 1000)
+  -d [ --distance-type ] arg  Distance type to calculate:
+                                1 - uncorrected
+                                2 - JC (default)
+                                3 - Tajima-Nei
+                                4 - K2P
+                                5 - Tamura
+                                6 - Jinnei
+  -a [ --add ]                Add query to backbone using k-closest placement
+  -t [ --input-tree ] arg     Input backbone tree (Newick format), required 
+                              with --add option
+  -T [ --threads ] arg        Number of CPU threads. Default: all available 
+                              threads.
+  --no-shuffle                Disable random shuffling to ensure deterministic 
+                              and reproducible results.
+  -h [ --help ]               Print this help message
+  -v [ --version ]            Print DIPPER version
 ```
 

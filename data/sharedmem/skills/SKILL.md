@@ -1,8 +1,9 @@
 ---
 name: sharedmem
-description: sharedmem is a specialized multiprocessing library designed for "trivially parallelizable" tasks in Python.
+description: "sharedmem is a multiprocessing library that enables efficient memory sharing between Python processes using fork and shared NumPy arrays. Use when user asks to perform parallel processing with shared memory, create writable shared NumPy arrays, or execute MapReduce workflows without serialization overhead."
 homepage: http://github.com/rainwoodman/sharedmem
 ---
+
 
 # sharedmem
 

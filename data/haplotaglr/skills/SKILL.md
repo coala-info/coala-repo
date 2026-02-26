@@ -1,8 +1,9 @@
 ---
 name: haplotaglr
-description: HaplotagLR is a specialized bioinformatics tool for "haplotagging"—the process of assigning individual long DNA sequencing reads to a specific parental chromosome (haplotype).
+description: HaplotagLR assigns individual long DNA sequencing reads to specific parental haplotypes by comparing them against pre-phased variants. Use when user asks to haplotag long-read data, assign reads to a specific chromosome, or perform allele-specific analysis.
 homepage: https://github.com/Boyle-Lab/HaplotagLR.git
 ---
+
 
 # haplotaglr
 

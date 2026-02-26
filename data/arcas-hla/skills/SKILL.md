@@ -1,8 +1,9 @@
 ---
 name: arcas-hla
-description: arcasHLA is a specialized tool for the fast and accurate in silico inference of HLA genotypes from RNA-sequencing data.
+description: arcasHLA performs fast and accurate inference of HLA genotypes from RNA-sequencing data. Use when user asks to extract HLA-related reads from BAM files, predict HLA class I and II genotypes, or merge results from multiple samples.
 homepage: https://github.com/RabadanLab/arcasHLA
 ---
+
 
 # arcas-hla
 

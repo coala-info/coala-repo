@@ -1,8 +1,9 @@
 ---
 name: kraken2
-description: Kraken 2 is a high-speed taxonomic classifier that assigns biological labels to DNA sequences by matching k-mers against a genomic database.
+description: Kraken 2 is a high-speed taxonomic classifier that assigns biological labels to DNA sequences by matching k-mers against a genomic database. Use when user asks to build a taxonomic database, classify metagenomic reads, or generate taxonomic reports for downstream abundance estimation.
 homepage: http://ccb.jhu.edu/software/kraken/
 ---
+
 
 # kraken2
 

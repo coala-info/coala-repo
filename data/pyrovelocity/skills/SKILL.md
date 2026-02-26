@@ -1,8 +1,9 @@
 ---
 name: pyrovelocity
-description: Pyro-Velocity is a Bayesian generative framework designed to estimate the future states of cells while providing a rigorous measure of uncertainty.
+description: Pyro-Velocity is a Bayesian generative framework that estimates RNA velocity and cell state transitions while quantifying prediction uncertainty. Use when user asks to estimate future cell states, model spliced and unspliced sequencing counts, or visualize vector field uncertainty in single-cell trajectories.
 homepage: https://github.com/pinellolab/pyrovelocity
 ---
+
 
 # pyrovelocity
 

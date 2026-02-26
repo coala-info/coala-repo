@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yeastrnaseq
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides RNA-Seq data from yeast for transcriptomic analysis and testing. Use when user asks to access yeast RNA-Seq datasets, run example transcriptomic workflows, or practice RNA-Seq data processing.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastRNASeq.html
 ---
+
 
 # bioconductor-yeastrnaseq
 

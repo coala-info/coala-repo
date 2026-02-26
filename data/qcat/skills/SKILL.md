@@ -1,8 +1,9 @@
 ---
 name: qcat
-description: qcat is a command-line utility designed to sort Oxford Nanopore Technologies (ONT) reads.
+description: qcat is a command-line utility used to demultiplex and sort Oxford Nanopore reads into separate files based on detected barcodes. Use when user asks to demultiplex FASTQ files, sort ONT reads by barcode, or replicate EPI2ME demultiplexing logic locally.
 homepage: https://github.com/nanoporetech/qcat
 ---
+
 
 # qcat
 

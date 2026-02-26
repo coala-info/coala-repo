@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedgraphtobigwig
-description: The `bedGraphToBigWig` utility is a core tool from the UCSC Genome Browser "kent" suite designed for high-performance genomic data management.
+description: ucsc-bedgraphtobigwig transforms bedGraph files into bigWig files. Use when user asks to transform bedGraph to bigWig, convert genomic signal tracks for visualization, or create indexed binary files for large-scale data sharing.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedgraphtobigwig
 

@@ -1,8 +1,9 @@
 ---
 name: locityper
-description: Locityper is a specialized bioinformatics tool designed to resolve genotypes for highly polymorphic genomic regions that are typically difficult to analyze with standard pipelines.
+description: Locityper resolves genotypes for highly polymorphic genomic regions using whole genome sequencing data. Use when user asks to prepare target regions, recruit relevant reads, align reads to locus-specific references, genotype complex loci, or prune redundant haplotypes.
 homepage: https://github.com/tprodanov/locityper
 ---
+
 
 # locityper
 

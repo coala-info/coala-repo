@@ -1,8 +1,9 @@
 ---
 name: gc-meox-tms
-description: The `gc-meox-tms` tool provides a computational approach to simulate chemical derivatization, a common requirement for preparing samples for Gas Chromatography-Mass Spectrometry (GC-MS).
+description: This tool simulates chemical derivatization by performing methoximation and trimethylsilylation on molecular structures for GC-MS preparation. Use when user asks to simulate chemical derivatization, generate MeOX or TMS derivatives from SMILES, or remove derivatization groups to reconstruct original structures.
 homepage: https://github.com/RECETOX/gc-meox-tms
 ---
+
 
 # gc-meox-tms
 

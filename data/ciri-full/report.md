@@ -1,9 +1,9 @@
 # ciri-full CWL Generation Report
 
-## ciri-full_build
+## ciri-full_bwa
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a failed container build process (no space left on device).
+alignment via Burrows-Wheeler transformation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1
@@ -12,81 +12,37 @@ The provided text does not contain help information or a description of the tool
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ciri-full/overview
-- **Total Downloads**: 976
+- **Total Downloads**: 979
 - **Last updated**: 2025-07-31
 - **GitHub**: https://github.com/bioinfo-biols/CIRI-full
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-1421587053/rootfs/usr/bin/bash: no space left on device
-```
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.19-r1273
+Contact: Heng Li <hli@ds.dfci.harvard.edu>
 
+Usage:   bwa <command> [options]
 
-## Metadata
-- **Skill**: generated
+Command: index         index sequences in the FASTA format
+         mem           BWA-MEM algorithm
+         fastmap       identify super-maximal exact matches
+         pemerge       merge overlapping paired ends (EXPERIMENTAL)
+         aln           gapped/ungapped alignment
+         samse         generate alignment (single ended)
+         sampe         generate alignment (paired ended)
+         bwasw         BWA-SW for long queries (DEPRECATED)
 
-## ciri-full_CIRI-full.jar
+         shm           manage indices in shared memory
+         fa2pac        convert FASTA to PAC format
+         pac2bwt       generate BWT from PAC
+         pac2bwtgen    alternative algorithm for generating BWT
+         bwtupdate     update .bwt to the new format
+         bwt2sa        generate SA from BWT and Occ
 
-### Tool Description
-CIRI-full: A complete toolkit for circular RNA identification and reconstruction. (Note: The provided text is a container execution error log and does not contain CLI help information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1
-- **Homepage**: https://ciri-cookbook.readthedocs.io/en/latest/CIRI-full.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/ciri-full/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3878683208/rootfs/usr/bin/bash: no space left on device
-```
-
-## ciri-full_bwa
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is a system log showing a failed container build due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1
-- **Homepage**: https://ciri-cookbook.readthedocs.io/en/latest/CIRI-full.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/ciri-full/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-3516718637/rootfs/usr/bin/bash: no space left on device
-```
-
-## ciri-full_CIRI-vis.jar
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system logs indicating a failure to build or extract a container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1
-- **Homepage**: https://ciri-cookbook.readthedocs.io/en/latest/CIRI-full.html
-- **Package**: https://anaconda.org/channels/bioconda/packages/ciri-full/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ciri-full:2.1.2--hdfd78af_1 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:0cacab098358fffeef7e18bd537907ae734dcfa12ab45fbcd0e62cc9b37264a8: unpack entry: usr/bin/bash: unpack to regular file: short write: write /tmp/build-temp-1973845087/rootfs/usr/bin/bash: no space left on device
+Note: To use BWA, you need to first index the genome with `bwa index'.
+      There are three alignment algorithms in BWA: `mem', `bwasw', and
+      `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+      first. Please `man ./bwa.1' for the manual.
 ```
 

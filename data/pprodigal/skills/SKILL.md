@@ -1,8 +1,9 @@
 ---
 name: pprodigal
-description: `pprodigal` is a Python-based wrapper designed to overcome the single-threaded limitations of the Prodigal gene prediction software.
+description: pprodigal is a parallel wrapper for the Prodigal gene prediction tool that enables multi-threaded processing of FASTA files. Use when user asks to run gene prediction in parallel, speed up Prodigal execution, or predict genes across multiple CPU cores.
 homepage: https://github.com/sjaenick/pprodigal
 ---
+
 
 # pprodigal
 

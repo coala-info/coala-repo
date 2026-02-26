@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scatterhatch
-description: the package is available on all platforms; click for details.
+description: scatterHatch is an R package that generates scatter plots using patterns and textures to represent categorical data. Use when user asks to create accessible visualizations, add hatching to scatter plots, or represent data groups using textures instead of just colors.
 homepage: https://bioconductor.org/packages/release/bioc/html/scatterHatch.html
 ---
+
 
 # bioconductor-scatterhatch
 

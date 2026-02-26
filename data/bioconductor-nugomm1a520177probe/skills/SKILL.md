@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nugomm1a520177probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the nugomm1a520177 microarray platform. Use when user asks to retrieve probe sequences, perform sequence-level analysis, or map probes for the nugomm1a520177 array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/nugomm1a520177probe.html
 ---
+
 
 # bioconductor-nugomm1a520177probe
 

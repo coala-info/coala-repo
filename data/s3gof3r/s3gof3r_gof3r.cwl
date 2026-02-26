@@ -1,11 +1,30 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - gof3r
+baseCommand: gof3r
 label: s3gof3r_gof3r
-doc: "The provided text does not contain help information or a description of the
-  tool; it is an error log from a container build process.\n\nTool homepage: https://github.com/rlmcpherson/s3gof3r"
-inputs: []
+doc: "gof3r is a command-line tool for interacting with S3.\n\nTool homepage: https://github.com/rlmcpherson/s3gof3r"
+inputs:
+  - id: command
+    type: string
+    doc: The command to execute (e.g., cp, get, put, rm)
+    inputBinding:
+      position: 1
+  - id: manpage
+    type:
+      - 'null'
+      - boolean
+    doc: Create gof3r.man man page in current directory
+    inputBinding:
+      position: 102
+      prefix: --manpage
+  - id: writeini
+    type:
+      - 'null'
+      - boolean
+    doc: Write .gof3r.ini in current user's home directory
+    inputBinding:
+      position: 102
+      prefix: --writeini
 outputs:
   - id: stdout
     type: stdout

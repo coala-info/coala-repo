@@ -1,8 +1,9 @@
 ---
 name: mapsplice
-description: MapSplice is a specialized alignment tool designed for RNA-seq analysis.
+description: MapSplice is a specialized alignment tool designed to identify canonical and non-canonical splice junctions in RNA-seq data. Use when user asks to align RNA-seq reads to a reference genome, discover novel splice sites, or perform transcriptome analysis without gene models.
 homepage: http://www.netlab.uky.edu/p/bioinfo/MapSplice2
 ---
+
 
 # mapsplice
 

@@ -1,8 +1,9 @@
 ---
 name: r-imp4p
-description: Functions to analyse missing value mechanisms and to impute data sets in the context of bottom-up MS-based proteomics.</p>
+description: The r-imp4p package provides tools for estimating and imputing missing values in MS-based proteomics data by distinguishing between MCAR and MNAR mechanisms. Use when user asks to estimate missing value probabilities, perform SLSA or IGSA imputation, or handle missing data in proteomics datasets using hybrid or multiple imputation strategies.
 homepage: https://cran.r-project.org/web/packages/imp4p/index.html
 ---
+
 
 # r-imp4p
 

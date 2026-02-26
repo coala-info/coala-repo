@@ -1,8 +1,9 @@
 ---
 name: haphpipe
-description: HAPHPIPE is a specialized bioinformatics toolset designed for viral genomics.
+description: HAPHPIPE is a bioinformatics toolset designed to process raw viral NGS data into consensus sequences and haplotype reconstructions. Use when user asks to process raw reads, perform de novo or reference-based assembly, refine consensus sequences, or call variants in viral genomics datasets.
 homepage: https://github.com/gwcbi/haphpipe
 ---
+
 
 # haphpipe
 

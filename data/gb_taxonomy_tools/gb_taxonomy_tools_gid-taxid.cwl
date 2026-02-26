@@ -2,10 +2,22 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: gid-taxid
 label: gb_taxonomy_tools_gid-taxid
-doc: "A tool from the gb_taxonomy_tools suite. Note: The provided help text contains
-  only system error messages regarding container execution and does not list specific
-  arguments or usage instructions.\n\nTool homepage: https://github.com/spond/gb_taxonomy_tools"
-inputs: []
+doc: "Maps GenBank IDs to TaxIDs using a provided mapping file.\n\nTool homepage:
+  https://github.com/spond/gb_taxonomy_tools"
+inputs:
+  - id: genbank_ids
+    type:
+      type: array
+      items: string
+    doc: A list of GenBank IDs to map.
+    inputBinding:
+      position: 1
+  - id: mapping_file
+    type: File
+    doc: GenBank file mapping gids to taxids (gi_taxid files from 
+      ftp://ftp.ncbi.nih.gov/pub/taxonomy/)
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: pbgzip
-description: pbgzip is a specialized utility that implements parallel block compression.
+description: pbgzip is a parallel block compression utility that creates gzip-compatible files using multiple CPU cores for increased speed. Use when user asks to compress files using parallel processing, create BGZF files for random access indexing, or decompress block-compressed data.
 homepage: https://github.com/nh13/pbgzip
 ---
+
 
 # pbgzip
 

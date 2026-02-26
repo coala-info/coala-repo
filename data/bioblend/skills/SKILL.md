@@ -1,8 +1,9 @@
 ---
 name: bioblend
-description: BioBlend is a specialized Python library designed to wrap the Galaxy API, providing a developer-friendly interface for bioinformatics automation.
+description: BioBlend is a Python library that provides a programmatic interface for interacting with the Galaxy API to automate bioinformatics workflows and data management. Use when user asks to automate Galaxy interactions, manage histories and datasets, run tools, or invoke workflows through Python scripts.
 homepage: https://github.com/galaxyproject/bioblend
 ---
+
 
 # bioblend
 

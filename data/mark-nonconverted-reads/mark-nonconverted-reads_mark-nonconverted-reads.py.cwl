@@ -2,15 +2,50 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mark-nonconverted-reads.py
 label: mark-nonconverted-reads_mark-nonconverted-reads.py
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a system error log related to a container environment (Singularity/Apptainer)
-  failing due to lack of disk space.\n\nTool homepage: https://github.com/nebiolabs/mark-nonconverted-reads"
-inputs: []
+doc: "Mark nonconverted reads\n\nTool homepage: https://github.com/nebiolabs/mark-nonconverted-reads"
+inputs:
+  - id: bam
+    type:
+      - 'null'
+      - File
+    doc: Input bam or sam file (must end in .bam or .sam)
+    default: stdin
+    inputBinding:
+      position: 101
+      prefix: --bam
+  - id: c_count
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of nonconverted Cs on a read to consider it nonconverted
+    default: 3
+    inputBinding:
+      position: 101
+      prefix: --c_count
+  - id: flag_reads
+    type:
+      - 'null'
+      - boolean
+    doc: Set the 'Failing platform / vendor quality check flag
+    inputBinding:
+      position: 101
+      prefix: --flag_reads
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: Reference fasta file
+    inputBinding:
+      position: 101
+      prefix: --reference
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out
+    type:
+      - 'null'
+      - File
+    doc: Name for output sam file
+    outputBinding:
+      glob: $(inputs.out)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/mark-nonconverted-reads:1.2--pyhdfd78af_0
-stdout: mark-nonconverted-reads_mark-nonconverted-reads.py.out

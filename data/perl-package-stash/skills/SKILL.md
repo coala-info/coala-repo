@@ -1,8 +1,9 @@
 ---
 name: perl-package-stash
-description: The `Package::Stash` module provides a clean, high-level interface for interacting with Perl's symbol tables.
+description: This tool provides a high-level interface for safely manipulating and inspecting Perl symbol tables. Use when user asks to manage package variables, inject subroutines at runtime, or remove symbols from a namespace.
 homepage: http://metacpan.org/release/Package-Stash
 ---
+
 
 # perl-package-stash
 

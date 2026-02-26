@@ -1,8 +1,9 @@
 ---
 name: manorm
-description: MAnorm is a robust statistical model used to compare ChIP-Seq samples quantitatively.
+description: MAnorm quantitatively compares and normalizes ChIP-Seq samples to identify differential binding events between two conditions. Use when user asks to normalize ChIP-Seq signal intensities, calculate M-values and A-values, or identify cell-type-specific binding sites.
 homepage: https://github.com/shao-lab/MAnorm
 ---
+
 
 # manorm
 

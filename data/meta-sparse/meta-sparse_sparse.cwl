@@ -1,13 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - meta-sparse
-  - sparse
+baseCommand: SPARSE.py
 label: meta-sparse_sparse
-doc: "The provided text does not contain help information for the tool; it is an error
-  log indicating a failure to build a container image due to lack of disk space.\n
-  \nTool homepage: https://github.com/zheminzhou/SPARSE/"
-inputs: []
+doc: "Strain Prediction and Analysis with Representative SEquences\n\nTool homepage:
+  https://github.com/zheminzhou/SPARSE/"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (init, index, query, update, mapDB, predict, mash, 
+      extract, report)
+    inputBinding:
+      position: 1
+  - id: options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the specified command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

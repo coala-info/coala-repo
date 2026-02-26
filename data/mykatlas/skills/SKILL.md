@@ -1,8 +1,9 @@
 ---
 name: mykatlas
-description: mykatlas (invoked via the `atlas` command) is a bioinformatics toolset designed to bridge the gap between raw genomic sequence data and clinical antibiotic-resistance predictions.
+description: mykatlas genotypes genomic sequence data against specific probes to identify antibiotic-resistance profiles. Use when user asks to create resistance-associated variant probes, genotype samples, or manage an atlas collection of variants.
 homepage: http://github.com/phelimb/atlas
 ---
+
 
 # mykatlas
 

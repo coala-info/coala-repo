@@ -3,10 +3,10 @@
 ## multiz
 
 ### Tool Description
-A tool for multiple alignment of genomic sequences. (Note: The provided text is a container runtime error message and does not contain help documentation or argument definitions.)
+aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/multiz:11.2--h7b50bb2_7
+- **Docker Image**: quay.io/biocontainers/multiz:11.2--hec16e2b_3
 - **Homepage**: http://www.bx.psu.edu/miller_lab/
 - **Package**: https://anaconda.org/channels/bioconda/packages/multiz/overview
 - **Validation**: PASS
@@ -18,11 +18,37 @@ A tool for multiple alignment of genomic sequences. (Note: The provided text is 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/multiz:11.2--h7b50bb2_7 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2007955615: no space left on device
+multiz.v11.2:  -- aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats
+args: [R=?] [M=?] file1 file2 v? [out1 out2] [nohead] [all]
+	R(30) radius in dynamic programming.
+	M(1) minimum output width.
+	out1 out2(null) null: stdout; out1 out2: file names for collecting unused input.
+	nohead(null) null: output maf header; nohead: not to output maf header.
+	all(null) null: not to output single-row blocks; all: output all blocks.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## multiz
+
+### Tool Description
+aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/multiz:11.2--hec16e2b_3
+- **Homepage**: http://www.bx.psu.edu/miller_lab/
+- **Package**: https://anaconda.org/channels/bioconda/packages/multiz/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+multiz.v11.2:  -- aligning two files of alignment blocks where top rows are always the reference, reference in both files cannot have duplicats
+args: [R=?] [M=?] file1 file2 v? [out1 out2] [nohead] [all]
+	R(30) radius in dynamic programming.
+	M(1) minimum output width.
+	out1 out2(null) null: stdout; out1 out2: file names for collecting unused input.
+	nohead(null) null: output maf header; nohead: not to output maf header.
+	all(null) null: not to output single-row blocks; all: output all blocks.
+```
+

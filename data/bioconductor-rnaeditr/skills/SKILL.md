@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnaeditr
-description: the package is available on all platforms; click for details.
+description: rnaEditr identifies hyper-edited regions and clusters of RNA editing sites in genomic data. Use when user asks to identify hyper-edited RNA regions, analyze clusters of RNA editing sites, or detect site-specific editing patterns.
 homepage: https://bioconductor.org/packages/release/bioc/html/rnaEditr.html
 ---
+
 
 # bioconductor-rnaeditr
 

@@ -1,8 +1,9 @@
 ---
 name: seshat
-description: Seshat is a specialized toolset designed to bridge the gap between local VCF files and the Seshat TP53 database webserver.
+description: Seshat automates the submission of VCF files to the TP53 database webserver and retrieves functional annotations from Gmail. Use when user asks to annotate TP53 variants, upload VCFs to the Seshat webserver, or retrieve Seshat results from Gmail.
 homepage: https://github.com/clintval/tp53
 ---
+
 
 # seshat
 

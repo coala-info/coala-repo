@@ -1,8 +1,9 @@
 ---
 name: bioconductor-org.pf.plasmo.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides genome-wide annotations for the malaria parasite Plasmodium falciparum. Use when user asks to map gene identifiers, retrieve functional annotations, or perform enrichment analysis for Plasmodium falciparum.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/org.Pf.plasmo.db.html
 ---
+
 
 # bioconductor-org.pf.plasmo.db
 

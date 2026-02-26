@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprverse
-description: the package is available on all platforms; click for details.
+description: The crisprVerse is a collection of R packages for the design, evaluation, and analysis of CRISPR guide RNAs. Use when user asks to design gRNAs, predict off-target effects, or analyze CRISPR screen data.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprVerse.html
 ---
+
 
 # bioconductor-crisprverse
 

@@ -1,8 +1,9 @@
 ---
 name: dropkick
-description: dropkick is a data-driven tool designed to automate the cell filtering process in scRNA-seq workflows.
+description: dropkick is a data-driven tool that automates the filtering of cells from empty droplets in scRNA-seq data using a logistic regression model. Use when user asks to filter scRNA-seq data, identify true cells from ambient RNA, or perform automated quality control on raw count matrices.
 homepage: https://github.com/KenLauLab/dropkick
 ---
+
 
 # dropkick
 

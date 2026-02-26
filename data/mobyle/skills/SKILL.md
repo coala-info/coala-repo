@@ -1,8 +1,9 @@
 ---
 name: mobyle
-description: The mobyle skill facilitates the integration of the Mobylette gem into Ruby on Rails projects.
+description: The mobyle skill integrates the Mobylette gem into Ruby on Rails to detect mobile devices and serve optimized templates. Use when user asks to identify mobile requests, serve mobile-specific views, or force mobile rendering via session overrides.
 homepage: https://github.com/tscolari/mobylette
 ---
+
 
 # mobyle
 

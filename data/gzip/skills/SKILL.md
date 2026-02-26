@@ -1,8 +1,9 @@
 ---
 name: gzip
-description: The gzip skill implements a "low-resource" text classification method that leverages the principle that similar text sequences compress better together than dissimilar ones.
+description: This tool performs text classification by using the gzip compression algorithm to measure similarity between text sequences. Use when user asks to classify text using a parameter-free method, run low-resource text classification, or calculate distance matrices between text samples.
 homepage: https://github.com/bazingagin/npc_gzip
 ---
+
 
 # gzip
 

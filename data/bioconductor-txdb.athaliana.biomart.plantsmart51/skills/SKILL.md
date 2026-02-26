@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.athaliana.biomart.plantsmart51
-description: the package is available on all platforms; click for details.
+description: This R package provides a transcript database for Arabidopsis thaliana derived from BioMart plantsmart51. Use when user asks to retrieve genomic coordinates, access gene models, or analyze transcript annotations for Arabidopsis thaliana.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Athaliana.BioMart.plantsmart51.html
 ---
+
 
 # bioconductor-txdb.athaliana.biomart.plantsmart51
 

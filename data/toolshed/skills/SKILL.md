@@ -1,8 +1,9 @@
 ---
 name: toolshed
-description: Toolshed is a collection of IEx helpers that provides a Unix-like toolbox within the Elixir interactive shell.
+description: Toolshed provides Unix-like utilities within the Elixir interactive shell for debugging and system exploration. Use when user asks to monitor processes, explore file systems, list hardware devices, diagnose network issues, retrieve external data, execute system commands, or get help on available commands.
 homepage: https://github.com/elixir-toolshed/toolshed
 ---
+
 
 # toolshed
 

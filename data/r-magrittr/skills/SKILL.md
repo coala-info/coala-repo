@@ -1,8 +1,9 @@
 ---
 name: r-magrittr
-description: "Provides a mechanism for chaining commands with a new     forward-pipe operator, %&gt;%. This operator will forward a value, or the     result of an expression, into the next function call/expression.     There is flexible support for the type of right-hand side expressions.     For more information, see package vignette.  To quote Rene Magritte,     \"Ceci n'est pas un pipe.\"</p>"
+description: The magrittr package provides the forward-pipe operator and related semantic pipes to chain R commands into readable sequences. Use when user asks to pipe data between functions, chain R operations, improve code readability by reducing nested calls, or use specialized operators for side effects and variable exposition.
 homepage: https://cloud.r-project.org/web/packages/magrittr/index.html
 ---
+
 
 # r-magrittr
 

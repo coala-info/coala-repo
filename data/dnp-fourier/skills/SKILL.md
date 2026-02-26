@@ -1,8 +1,9 @@
 ---
 name: dnp-fourier
-description: The `dnp-fourier` tool is a specialized utility within the `dnpatterntools` suite used for the signal processing of genomic sequence data.
+description: This tool performs signal processing on genomic dinucleotide frequency patterns to calculate periodograms and apply smoothing. Use when user asks to compute a power spectrum of sequence patterns, identify structural periodicities in DNA, or normalize dinucleotide frequency distributions.
 homepage: https://github.com/erinijapranckeviciene/dnpatterntools
 ---
+
 
 # dnp-fourier
 

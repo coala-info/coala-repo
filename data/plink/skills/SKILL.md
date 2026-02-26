@@ -1,8 +1,9 @@
 ---
 name: plink
-description: PLINK is a high-performance command-line utility designed for the rapid analysis of large-scale genetic datasets.
+description: PLINK is a high-performance command-line utility used for the rapid analysis and management of large-scale genetic datasets. Use when user asks to perform quality control filtering, convert genomic file formats, conduct linkage disequilibrium pruning, or run genetic association analyses.
 homepage: https://www.cog-genomics.org/plink
 ---
+
 
 # plink
 

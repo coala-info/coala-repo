@@ -1,9 +1,9 @@
 # perl-bio-tools-run-alignment-clustalw CWL Generation Report
 
-## perl-bio-tools-run-alignment-clustalw
+## perl-bio-tools-run-alignment-clustalw_clustalw
 
 ### Tool Description
-A BioPerl wrapper for running ClustalW alignments. Note: The provided text contains system error logs indicating a failure to initialize the container environment (no space left on device) rather than the tool's help documentation.
+CLUSTAL 2.1 Multiple Sequence Alignments
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0
@@ -12,64 +12,245 @@ A BioPerl wrapper for running ClustalW alignments. Note: The provided text conta
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-run-alignment-clustalw/overview
-- **Total Downloads**: 268.2K
+- **Total Downloads**: 268.6K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:44:44  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:17d016e63e896b20a9072f6c9d7c1cdcb2c29e7ca1910a70b6f5af1e4fd1c2c6: unpack entry: usr/local/lib/libdb_cxx-6.1.so: unpack to regular file: short write: write /tmp/build-temp-2076036861/rootfs/usr/local/lib/libdb_cxx-6.1.so: no space left on device
+CLUSTAL 2.1 Multiple Sequence Alignments
+
+
+                DATA (sequences)
+
+-INFILE=file.ext                             :input sequences.
+-PROFILE1=file.ext  and  -PROFILE2=file.ext  :profiles (old alignment).
+
+
+                VERBS (do things)
+
+-OPTIONS            :list the command line parameters
+-HELP  or -CHECK    :outline the command line params.
+-FULLHELP           :output full help content.
+-ALIGN              :do full multiple alignment.
+-TREE               :calculate NJ tree.
+-PIM                :output percent identity matrix (while calculating the tree)
+-BOOTSTRAP(=n)      :bootstrap a NJ tree (n= number of bootstraps; def. = 1000).
+-CONVERT            :output the input sequences in a different file format.
+
+
+                PARAMETERS (set things)
+
+***General settings:****
+-INTERACTIVE :read command line, then enter normal interactive menus
+-QUICKTREE   :use FAST algorithm for the alignment guide tree
+-TYPE=       :PROTEIN or DNA sequences
+-NEGATIVE    :protein alignment with negative values in matrix
+-OUTFILE=    :sequence alignment file name
+-OUTPUT=     :CLUSTAL(default), GCG, GDE, PHYLIP, PIR, NEXUS and FASTA
+-OUTORDER=   :INPUT or ALIGNED
+-CASE        :LOWER or UPPER (for GDE output only)
+-SEQNOS=     :OFF or ON (for Clustal output only)
+-SEQNO_RANGE=:OFF or ON (NEW: for all output formats)
+-RANGE=m,n   :sequence range to write starting m to m+n
+-MAXSEQLEN=n :maximum allowed input sequence length
+-QUIET       :Reduce console output to minimum
+-STATS=      :Log some alignents statistics to file
+
+***Fast Pairwise Alignments:***
+-KTUPLE=n    :word size
+-TOPDIAGS=n  :number of best diags.
+-WINDOW=n    :window around best diags.
+-PAIRGAP=n   :gap penalty
+-SCORE       :PERCENT or ABSOLUTE
+
+
+***Slow Pairwise Alignments:***
+-PWMATRIX=    :Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
+-PWDNAMATRIX= :DNA weight matrix=IUB, CLUSTALW or filename
+-PWGAPOPEN=f  :gap opening penalty        
+-PWGAPEXT=f   :gap opening penalty
+
+
+***Multiple Alignments:***
+-NEWTREE=      :file for new guide tree
+-USETREE=      :file for old guide tree
+-MATRIX=       :Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
+-DNAMATRIX=    :DNA weight matrix=IUB, CLUSTALW or filename
+-GAPOPEN=f     :gap opening penalty        
+-GAPEXT=f      :gap extension penalty
+-ENDGAPS       :no end gap separation pen. 
+-GAPDIST=n     :gap separation pen. range
+-NOPGAP        :residue-specific gaps off  
+-NOHGAP        :hydrophilic gaps off
+-HGAPRESIDUES= :list hydrophilic res.    
+-MAXDIV=n      :% ident. for delay
+-TYPE=         :PROTEIN or DNA
+-TRANSWEIGHT=f :transitions weighting
+-ITERATION=    :NONE or TREE or ALIGNMENT
+-NUMITER=n     :maximum number of iterations to perform
+-NOWEIGHTS     :disable sequence weighting
+
+
+***Profile Alignments:***
+-PROFILE      :Merge two alignments by profile alignment
+-NEWTREE1=    :file for new guide tree for profile1
+-NEWTREE2=    :file for new guide tree for profile2
+-USETREE1=    :file for old guide tree for profile1
+-USETREE2=    :file for old guide tree for profile2
+
+
+***Sequence to Profile Alignments:***
+-SEQUENCES   :Sequentially add profile2 sequences to profile1 alignment
+-NEWTREE=    :file for new guide tree
+-USETREE=    :file for old guide tree
+
+
+***Structure Alignments:***
+-NOSECSTR1     :do not use secondary structure-gap penalty mask for profile 1 
+-NOSECSTR2     :do not use secondary structure-gap penalty mask for profile 2
+-SECSTROUT=STRUCTURE or MASK or BOTH or NONE   :output in alignment file
+-HELIXGAP=n    :gap penalty for helix core residues 
+-STRANDGAP=n   :gap penalty for strand core residues
+-LOOPGAP=n     :gap penalty for loop regions
+-TERMINALGAP=n :gap penalty for structure termini
+-HELIXENDIN=n  :number of residues inside helix to be treated as terminal
+-HELIXENDOUT=n :number of residues outside helix to be treated as terminal
+-STRANDENDIN=n :number of residues inside strand to be treated as terminal
+-STRANDENDOUT=n:number of residues outside strand to be treated as terminal 
+
+
+***Trees:***
+-OUTPUTTREE=nj OR phylip OR dist OR nexus
+-SEED=n        :seed number for bootstraps.
+-KIMURA        :use Kimura's correction.   
+-TOSSGAPS      :ignore positions with gaps.
+-BOOTLABELS=node OR branch :position of bootstrap values in tree display
+-CLUSTERING=   :NJ or UPGMA
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## perl-bio-tools-run-alignment-clustalw_clustalw
-
-### Tool Description
-The provided text does not contain help information for the tool. It is an error log indicating a failure to build or run a container image due to insufficient disk space ('no space left on device').
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0
-- **Homepage**: https://metacpan.org/release/Bio-Tools-Run-Alignment-Clustalw
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-run-alignment-clustalw/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:46:05  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:17d016e63e896b20a9072f6c9d7c1cdcb2c29e7ca1910a70b6f5af1e4fd1c2c6: unpack entry: usr/local/lib/libdb_cxx-6.1.so: unpack to regular file: short write: write /tmp/build-temp-3741936182/rootfs/usr/local/lib/libdb_cxx-6.1.so: no space left on device
-```
 
 ## perl-bio-tools-run-alignment-clustalw_clustalw2
 
 ### Tool Description
-ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins.
+CLUSTAL 2.1 Multiple Sequence Alignments
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0
 - **Homepage**: https://metacpan.org/release/Bio-Tools-Run-Alignment-Clustalw
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-tools-run-alignment-clustalw/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:46:51  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-tools-run-alignment-clustalw:1.7.4--pl526_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:17d016e63e896b20a9072f6c9d7c1cdcb2c29e7ca1910a70b6f5af1e4fd1c2c6: unpack entry: usr/local/lib/libdb_cxx-6.1.so: unpack to regular file: short write: write /tmp/build-temp-4242694339/rootfs/usr/local/lib/libdb_cxx-6.1.so: no space left on device
+CLUSTAL 2.1 Multiple Sequence Alignments
+
+
+                DATA (sequences)
+
+-INFILE=file.ext                             :input sequences.
+-PROFILE1=file.ext  and  -PROFILE2=file.ext  :profiles (old alignment).
+
+
+                VERBS (do things)
+
+-OPTIONS            :list the command line parameters
+-HELP  or -CHECK    :outline the command line params.
+-FULLHELP           :output full help content.
+-ALIGN              :do full multiple alignment.
+-TREE               :calculate NJ tree.
+-PIM                :output percent identity matrix (while calculating the tree)
+-BOOTSTRAP(=n)      :bootstrap a NJ tree (n= number of bootstraps; def. = 1000).
+-CONVERT            :output the input sequences in a different file format.
+
+
+                PARAMETERS (set things)
+
+***General settings:****
+-INTERACTIVE :read command line, then enter normal interactive menus
+-QUICKTREE   :use FAST algorithm for the alignment guide tree
+-TYPE=       :PROTEIN or DNA sequences
+-NEGATIVE    :protein alignment with negative values in matrix
+-OUTFILE=    :sequence alignment file name
+-OUTPUT=     :CLUSTAL(default), GCG, GDE, PHYLIP, PIR, NEXUS and FASTA
+-OUTORDER=   :INPUT or ALIGNED
+-CASE        :LOWER or UPPER (for GDE output only)
+-SEQNOS=     :OFF or ON (for Clustal output only)
+-SEQNO_RANGE=:OFF or ON (NEW: for all output formats)
+-RANGE=m,n   :sequence range to write starting m to m+n
+-MAXSEQLEN=n :maximum allowed input sequence length
+-QUIET       :Reduce console output to minimum
+-STATS=      :Log some alignents statistics to file
+
+***Fast Pairwise Alignments:***
+-KTUPLE=n    :word size
+-TOPDIAGS=n  :number of best diags.
+-WINDOW=n    :window around best diags.
+-PAIRGAP=n   :gap penalty
+-SCORE       :PERCENT or ABSOLUTE
+
+
+***Slow Pairwise Alignments:***
+-PWMATRIX=    :Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
+-PWDNAMATRIX= :DNA weight matrix=IUB, CLUSTALW or filename
+-PWGAPOPEN=f  :gap opening penalty        
+-PWGAPEXT=f   :gap opening penalty
+
+
+***Multiple Alignments:***
+-NEWTREE=      :file for new guide tree
+-USETREE=      :file for old guide tree
+-MATRIX=       :Protein weight matrix=BLOSUM, PAM, GONNET, ID or filename
+-DNAMATRIX=    :DNA weight matrix=IUB, CLUSTALW or filename
+-GAPOPEN=f     :gap opening penalty        
+-GAPEXT=f      :gap extension penalty
+-ENDGAPS       :no end gap separation pen. 
+-GAPDIST=n     :gap separation pen. range
+-NOPGAP        :residue-specific gaps off  
+-NOHGAP        :hydrophilic gaps off
+-HGAPRESIDUES= :list hydrophilic res.    
+-MAXDIV=n      :% ident. for delay
+-TYPE=         :PROTEIN or DNA
+-TRANSWEIGHT=f :transitions weighting
+-ITERATION=    :NONE or TREE or ALIGNMENT
+-NUMITER=n     :maximum number of iterations to perform
+-NOWEIGHTS     :disable sequence weighting
+
+
+***Profile Alignments:***
+-PROFILE      :Merge two alignments by profile alignment
+-NEWTREE1=    :file for new guide tree for profile1
+-NEWTREE2=    :file for new guide tree for profile2
+-USETREE1=    :file for old guide tree for profile1
+-USETREE2=    :file for old guide tree for profile2
+
+
+***Sequence to Profile Alignments:***
+-SEQUENCES   :Sequentially add profile2 sequences to profile1 alignment
+-NEWTREE=    :file for new guide tree
+-USETREE=    :file for old guide tree
+
+
+***Structure Alignments:***
+-NOSECSTR1     :do not use secondary structure-gap penalty mask for profile 1 
+-NOSECSTR2     :do not use secondary structure-gap penalty mask for profile 2
+-SECSTROUT=STRUCTURE or MASK or BOTH or NONE   :output in alignment file
+-HELIXGAP=n    :gap penalty for helix core residues 
+-STRANDGAP=n   :gap penalty for strand core residues
+-LOOPGAP=n     :gap penalty for loop regions
+-TERMINALGAP=n :gap penalty for structure termini
+-HELIXENDIN=n  :number of residues inside helix to be treated as terminal
+-HELIXENDOUT=n :number of residues outside helix to be treated as terminal
+-STRANDENDIN=n :number of residues inside strand to be treated as terminal
+-STRANDENDOUT=n:number of residues outside strand to be treated as terminal 
+
+
+***Trees:***
+-OUTPUTTREE=nj OR phylip OR dist OR nexus
+-SEED=n        :seed number for bootstraps.
+-KIMURA        :use Kimura's correction.   
+-TOSSGAPS      :ignore positions with gaps.
+-BOOTLABELS=node OR branch :position of bootstrap values in tree display
+-CLUSTERING=   :NJ or UPGMA
 ```
 

@@ -2,10 +2,48 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: SneakerNet.roRun.pl
 label: sneakernet-qc_SneakerNet.roRun.pl
-doc: "A tool within the SneakerNet pipeline. Note: The provided help text contains
-  only container environment logs and build errors, and does not list specific usage
-  instructions or arguments.\n\nTool homepage: https://github.com/lskatz/sneakernet"
-inputs: []
+doc: "Parses an unaltered Illumina run and formats it into something usable for SneakerNet.
+  Fastq files must be in the format of _R1_ and _R2_ instead of _1 and _2 for this
+  particular script.\n\nTool homepage: https://github.com/lskatz/sneakernet"
+inputs:
+  - id: illumina_directory
+    type:
+      type: array
+      items: Directory
+    doc: Path to an Illumina run directory
+    inputBinding:
+      position: 1
+  - id: createsamplesheet
+    type:
+      - 'null'
+      - boolean
+    doc: Also create a SampleSheet.csv or samples.tsv as fallback
+    inputBinding:
+      position: 102
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs to use
+    default: 1
+    inputBinding:
+      position: 102
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    default: ''
+    inputBinding:
+      position: 102
+  - id: tempdir
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary directory
+    default: ''
+    inputBinding:
+      position: 102
 outputs:
   - id: stdout
     type: stdout

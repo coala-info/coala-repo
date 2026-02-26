@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alpine
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The alpine package models and corrects technical biases in RNA-seq data to provide more accurate transcript abundance estimates. Use when user asks to estimate fragment sequence bias, fit bias models for GC content or fragment length, and calculate bias-corrected FPKM values.
 homepage: https://bioconductor.org/packages/3.17/bioc/html/alpine.html
 ---
+
 
 # bioconductor-alpine
 

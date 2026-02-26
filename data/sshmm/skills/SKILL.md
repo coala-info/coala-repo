@@ -1,8 +1,9 @@
 ---
 name: sshmm
-description: ssHMM (Sequence-structure Hidden Markov Model) is a specialized bioinformatics tool designed to recover motifs from RNA-binding protein data.
+description: ssHMM is a bioinformatics tool that identifies RNA-binding protein motifs by integrating primary sequence data with secondary structure information. Use when user asks to recover motifs from CLIP-Seq data, train sequence-structure hidden Markov models, or visualize RNA motifs as model graphs.
 homepage: https://github.molgen.mpg.de/heller/ssHMM
 ---
+
 
 # sshmm
 

@@ -1,8 +1,9 @@
 ---
 name: shmlast
-description: shmlast is a high-performance tool for orthology assignment that implements the Conditional Reciprocal Best Hits (CRBH) algorithm.
+description: shmlast is a high-performance tool for orthology assignment that implements the Conditional Reciprocal Best Hits algorithm for transcriptome-to-protein comparisons. Use when user asks to find orthologs between a transcriptome and a protein database, perform reciprocal best hit searches, or assign orthology using the LAST aligner.
 homepage: https://github.com/camillescott/shmlast
 ---
+
 
 # shmlast
 

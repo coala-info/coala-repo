@@ -1,8 +1,9 @@
 ---
 name: ribotricer
-description: Ribotricer is a specialized bioinformatics tool for Ribo-seq analysis that identifies translating ORFs by assessing the sub-codon periodicity of mapped reads.
+description: "Ribotricer identifies translating open reading frames in Ribo-seq data by analyzing the sub-codon periodicity of mapped reads. Use when user asks to prepare candidate ORF indices, detect active translation in short or overlapping ORFs, or calculate phase scores for ribosome profiling data."
 homepage: https://github.com/smithlabcode/ribotricer
 ---
+
 
 # ribotricer
 

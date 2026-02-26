@@ -1,9 +1,9 @@
 # ucsc-netchainsubset CWL Generation Report
 
-## ucsc-netchainsubset
+## ucsc-netchainsubset_netChainSubset
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container runtime error log.
+Create chain file with subset of chains that appear in the net
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0
@@ -18,33 +18,17 @@ The provided text does not contain help information for the tool. It appears to 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-netchainsubset_netChainSubset
-
-### Tool Description
-Subset a net file to include only chains that are in a chain file. (Note: The provided help text contains container runtime errors and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-netchainsubset/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-netchainsubset:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+netChainSubset - Create chain file with subset of chains that appear in the net
+usage:
+   netChainSubset in.net in.chain out.chain
+options:
+   -gapOut=gap.tab - Output gap sizes to file
+   -type=XXX - Restrict output to particular type in net file
+   -splitOnInsert - Split chain when get an insertion of another chain
+   -wholeChains - Write entire chain references by net, don't split
+    when a high-level net is encoundered.  This is useful when nets
+    have been filtered.
+   -skipMissing - skip chains that are not found instead of generating
+    an error.  Useful if chains have been filtered.
 ```
 

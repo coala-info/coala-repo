@@ -1,8 +1,9 @@
 ---
 name: piscem
-description: piscem is a high-efficiency tool designed for indexing reference genomes and mapping sequencing data using a compacted colored de Bruijn graph (cDBG) structure.
+description: piscem is a high-efficiency tool for indexing reference genomes and mapping sequencing data using a compacted colored de Bruijn graph. Use when user asks to construct indices from FASTA files, perform rapid read alignment for bulk transcriptomics, or process single-cell RNA-seq data.
 homepage: https://github.com/COMBINE-lab/piscem
 ---
+
 
 # piscem
 

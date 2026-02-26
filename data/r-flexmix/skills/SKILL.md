@@ -1,8 +1,9 @@
 ---
 name: r-flexmix
-description: "A general framework for finite mixtures of regression   models using the EM algorithm is implemented. The E-step and all   data handling are provided, while the M-step can be supplied by the   user to easily define new models. Existing drivers implement   mixtures of standard linear models, generalized linear models and   model-based clustering.</p>"
+description: The r-flexmix package provides a comprehensive framework for fitting finite mixture models and latent class regressions using the Expectation-Maximization algorithm in R. Use when user asks to perform model-based clustering, fit finite mixtures of regression models, conduct latent class analysis with concomitant variables, or estimate parameters for unobserved heterogeneity.
 homepage: https://cloud.r-project.org/web/packages/flexmix/index.html
 ---
+
 
 # r-flexmix
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ritan
-description: the package is available on all platforms; click for details.
+description: RITAN integrates gene set annotations and network resources to perform comprehensive enrichment analysis. Use when user asks to perform gene set enrichment analysis, integrate multiple annotation databases, or conduct network-based functional profiling.
 homepage: https://bioconductor.org/packages/release/bioc/html/RITAN.html
 ---
+
 
 # bioconductor-ritan
 

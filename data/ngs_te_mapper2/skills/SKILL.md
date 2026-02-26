@@ -1,8 +1,9 @@
 ---
 name: ngs_te_mapper2
-description: ngs_te_mapper2 is a specialized tool for genomic researchers to identify transposable element (TE) insertions using a three-stage alignment procedure.
+description: ngs_te_mapper2 identifies transposable element insertions and target site duplications in short-read sequencing data using a multi-stage alignment approach. Use when user asks to detect non-reference transposable element insertions, estimate allele frequencies of insertions, or identify target site duplications.
 homepage: https://github.com/bergmanlab/ngs_te_mapper2
 ---
+
 
 # ngs_te_mapper2
 

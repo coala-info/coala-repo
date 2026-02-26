@@ -1,8 +1,9 @@
 ---
 name: epicore
-description: The epicore tool is a specialized bioinformatics utility designed to identify shared consensus epitopes from sets of overlapping peptides.
+description: The epicore tool identifies shared consensus epitopes from overlapping peptide sequences to map immunogenic hotspots across a proteome. Use when user asks to identify core epitopes from peptide evidence, generate consensus epitope sequences, or visualize protein coverage landscapes.
 homepage: https://github.com/AG-Walz/epicore
 ---
+
 
 # epicore
 

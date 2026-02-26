@@ -1,8 +1,9 @@
 ---
 name: karect
-description: Karect (KAUST Assembly Read Error Correction Tool) is a high-performance utility for identifying and fixing sequencing errors in DNA reads.
+description: Karect is a high-performance utility for identifying and correcting substitution and indel errors in DNA sequencing reads. Use when user asks to correct sequencing errors, perform multiple sequence alignments for consensus, or evaluate read correction accuracy against a reference genome.
 homepage: https://github.com/aminallam/karect
 ---
+
 
 # karect
 

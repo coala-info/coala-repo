@@ -1,8 +1,9 @@
 ---
 name: gefast
-description: GeFaST (Generalised Fastidious Swarming Tool) is a bioinformatics utility for clustering nucleotide sequences into OTUs.
+description: GeFaST clusters nucleotide sequences into operational taxonomic units using various distance metrics and refinement methods. Use when user asks to cluster nucleotide sequences into OTUs, perform sequence dereplication, or apply quality-aware distance metrics to bioinformatics data.
 homepage: https://github.com/romueller/gefast
 ---
+
 
 # gefast
 

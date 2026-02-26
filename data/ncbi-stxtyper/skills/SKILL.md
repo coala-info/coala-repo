@@ -1,8 +1,9 @@
 ---
 name: ncbi-stxtyper
-description: The `ncbi-stxtyper` tool is a specialized bioinformatic utility used to detect and classify Shiga toxin genes from assembled nucleotide sequences.
+description: The ncbi-stxtyper tool detects and classifies Shiga toxin genes from assembled nucleotide sequences using a standardized nomenclature. Use when user asks to identify Stx subtypes, extract Stx operon sequences, or characterize the pathogenic potential of E. coli strains.
 homepage: https://github.com/ncbi/stxtyper
 ---
+
 
 # ncbi-stxtyper
 

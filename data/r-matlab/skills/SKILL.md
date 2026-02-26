@@ -1,8 +1,9 @@
 ---
 name: r-matlab
-description: Emulate 'MATLAB' code using 'R'.</p>
+description: The r-matlab package provides R functions that emulate the syntax and behavior of MATLAB for matrix generation, array manipulation, and visualization. Use when user asks to create matrices using MATLAB-style constructors, reshape arrays, find non-zero indices, or generate linear and logarithmic spacing.
 homepage: https://cloud.r-project.org/web/packages/matlab/index.html
 ---
+
 
 # r-matlab
 

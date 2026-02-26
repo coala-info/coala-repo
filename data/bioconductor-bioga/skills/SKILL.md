@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioga
-description: the package is available on all platforms; click for details.
+description: BioGA performs multi-objective genetic algorithm optimization on high-throughput genomic data to balance data fidelity and model sparsity. Use when user asks to perform feature selection, identify gene signatures, tune model parameters, or optimize genomic models using biologically informed operators.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioGA.html
 ---
+
 
 # bioconductor-bioga
 

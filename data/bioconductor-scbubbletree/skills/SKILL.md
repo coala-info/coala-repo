@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scbubbletree
-description: the package is available on all platforms; click for details.
+description: scBubbletree creates hierarchical bubble tree plots for the quantitative visualization of single-cell RNA-sequencing data. Use when user asks to visualize single-cell clusters, generate bubble tree plots, or represent hierarchical structures in transcriptomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/scBubbletree.html
 ---
+
 
 # bioconductor-scbubbletree
 

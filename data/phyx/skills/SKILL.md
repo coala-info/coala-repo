@@ -1,8 +1,9 @@
 ---
 name: phyx
-description: `phyx` is a comprehensive suite of C++ command-line tools designed for phylogenetic procedures.
+description: Phyx is a suite of command-line tools for performing modular phylogenetic operations and sequence alignment manipulations. Use when user asks to concatenate alignments, convert phylogenetic file formats, reroot trees, or translate nucleotide sequences.
 homepage: https://github.com/FePhyFoFum/phyx
 ---
+
 
 # phyx
 

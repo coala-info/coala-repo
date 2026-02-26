@@ -1,8 +1,9 @@
 ---
 name: panchip
-description: PanChIP is a computational tool designed for the large-scale analysis of protein colocalization using ChIP-seq peak sets.
+description: "PanChIP analyzes protein colocalization by comparing genomic intervals against a large library of ChIP-seq peak sets. Use when user asks to initialize the reference library, perform peak set analysis, or filter the library for quality control."
 homepage: https://github.com/hanjunlee21/PanChIP
 ---
+
 
 # panchip
 

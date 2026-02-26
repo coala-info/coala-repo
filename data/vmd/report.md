@@ -3,28 +3,32 @@
 ## vmd
 
 ### Tool Description
-Visual Molecular Dynamics (VMD) is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3D graphics and built-in scripting.
+FAIL to generate CWL: vmd not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vmd:1.9.3
 - **Homepage**: https://github.com/yoshuawuyts/vmd
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/conda-forge/packages/vmd/overview
-- **Total Downloads**: 40.2K
+- **Total Downloads**: 40.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/yoshuawuyts/vmd
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: vmd not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: vmd not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vmd:1.9.3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+
 ```
 
-
-## Metadata
-- **Skill**: generated

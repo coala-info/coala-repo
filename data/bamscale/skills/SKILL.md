@@ -1,8 +1,9 @@
 ---
 name: bamscale
-description: BAMscale is a high-performance tool designed for the rapid processing of BAM files into genomic tracks and quantification matrices.
+description: "BAMscale processes BAM files to generate normalized genomic tracks and quantification matrices for sequencing data analysis. Use when user asks to quantify signal across genomic regions, generate scaled BigWig files, calculate log2 ratios between samples, or process specialized assays like RNA-seq, OK-seq, and END-seq."
 homepage: https://github.com/ncbi/BAMscale
 ---
+
 
 # bamscale
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-arrmdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets, including raw Beta values and negative control probe intensities, for Illumina 450k Methylation arrays. Use when user asks to load sample methylation data, access negative control probe matrices, or test normalization algorithms for Infinium HumanMethylation450k arrays.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ARRmData.html
 ---
+
 
 # bioconductor-arrmdata
 

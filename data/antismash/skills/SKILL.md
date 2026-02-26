@@ -1,8 +1,9 @@
 ---
 name: antismash
-description: antiSMASH is the standard bioinformatic pipeline for the automated identification of biosynthetic gene clusters.
+description: antiSMASH is a bioinformatic pipeline for the automated identification and annotation of biosynthetic gene clusters in genomic sequences. Use when user asks to identify secondary metabolite clusters, run comparative cluster analysis, or predict biosynthetic pathways in bacterial, fungal, or plant genomes.
 homepage: http://antismash.secondarymetabolites.org/
 ---
+
 
 # antismash
 

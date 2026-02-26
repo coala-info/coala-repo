@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pepsnmr
-description: the package is available on all platforms; click for details.
+description: PepsNMR is an R package designed for the preprocessing of 1H NMR metabolomics data. Use when user asks to preprocess NMR spectra, perform baseline correction, or normalize metabolomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/PepsNMR.html
 ---
+
 
 # bioconductor-pepsnmr
 

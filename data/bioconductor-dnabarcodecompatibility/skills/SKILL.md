@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnabarcodecompatibility
-description: The package allows one to obtain optimised combinations of DNA barcodes to be used for multiplex sequencing. In each barcode combination, barcodes are pooled with respect to Illumina chemistry constraints. Combinations can be filtered to keep those that are robust against substitution and insertion/deletion errors thereby facilitating the demultiplexing step. In addition, the package provides an optimiser function to further favor the selection of barcode combinations with least heterogeneity in barcode usage.
+description: This tool designs and optimizes DNA barcode combinations for multiplex sequencing on Illumina platforms while ensuring chemical compatibility and error robustness. Use when user asks to design compatible barcode sets, optimize barcode entropy for multiplexing, filter barcodes for sequencing error robustness, or select optimal barcode combinations for specific Illumina chemistry platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/DNABarcodeCompatibility.html
 ---
+
 
 # bioconductor-dnabarcodecompatibility
 

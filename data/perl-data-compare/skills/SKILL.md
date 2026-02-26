@@ -1,8 +1,9 @@
 ---
 name: perl-data-compare
-description: The `perl-data-compare` skill leverages the `Data::Compare` Perl module to determine if two data structures are identical.
+description: This tool recursively compares Perl data structures to determine if they are identical. Use when user asks to compare nested data structures, verify if two hashes or arrays are identical, or ignore specific keys during a data comparison.
 homepage: http://metacpan.org/pod/Data::Compare
 ---
+
 
 # perl-data-compare
 

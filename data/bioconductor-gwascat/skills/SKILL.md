@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gwascat
-description: the package is available on all platforms; click for details.
+description: "This tool provides methods for querying, analyzing, and visualizing the NHGRI-EBI GWAS catalog within the R Bioconductor environment. Use when user asks to fetch the latest GWAS data, filter associations by traits or genomic regions, generate Manhattan plots, or calculate risk allele counts from genotype data."
 homepage: https://bioconductor.org/packages/release/bioc/html/gwascat.html
 ---
+
 
 # bioconductor-gwascat
 

@@ -3,7 +3,7 @@
 ## reprof
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process.
+Predicts protein sequence profiles.
 
 ### Metadata
 - **Docker Image**: biocontainers/reprof:v1.0.1-6-deb_cv1
@@ -18,33 +18,40 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reprof:v1.0.1-6-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage:
+    reprof -i [query.blastPsiMat] [OPTIONS]
 
+    reprof -i [query.fasta] [OPTIONS]
 
-## Metadata
-- **Skill**: generated
+    reprof -i [query.blastPsiMat|query.fasta] --mutations [mutations.txt]
+    [OPTIONS]
 
-## reprof_reprofed
+Options:
+    -i, --input=FILE
+        Input BLAST PSSM matrix file (from Blast -Q option) or input
+        (single) FASTA file.
 
-### Tool Description
-A tool for protein secondary structure and solvent accessibility prediction (Note: The provided help text contains only system logs and build errors, no specific arguments could be extracted).
+    -o, --out=FILE
+        Either an output file or a directory. If not provided or a
+        directory, the suffix of the input filename (i.e. .fasta or
+        .blastPsiMat) is replaced to create an output filename.
 
-### Metadata
-- **Docker Image**: biocontainers/reprof:v1.0.1-6-deb_cv1
-- **Homepage**: https://github.com/ephmo/reprofed
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/reprof:v1.0.1-6-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+    --mutations=[all|FILE]
+        Either the keyword "all" to predict all possible mutations or a file
+        containing mutations one per line such as "C12M" for C is mutated to
+        M on position 12:
+
+         C30Y
+         R31W
+         G48D
+
+        This mutation code is also attached to the output filename using
+        "_". An additional file ending "_ORI" contains the prediction using
+        no evolutionary information even if a BLAST PSSM matrix was
+        provided.
+
+    --modeldir=DIR
+        Directory where the model and feature files are stored. Default:
+        /usr/share/reprof.
 ```
 

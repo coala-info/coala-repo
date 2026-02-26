@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dapardata
-description: the package is available on all platforms; click for details.
+description: This package provides proteomics benchmark datasets formatted as MSnSet objects for differential protein abundance analysis. Use when user asks to access example LC-MS/MS data, test DAPAR or Prostar workflows, or benchmark proteomics algorithms using gold-standard spike-in datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DAPARdata.html
 ---
+
 
 # bioconductor-dapardata
 

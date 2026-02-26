@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gagedata
-description: the package is available on all platforms; click for details.
+description: This package provides auxiliary datasets and curated gene set collections for gene set enrichment and pathway analysis. Use when user asks to access KEGG pathways, GO terms, or BioCarta gene sets, load demo microarray and RNA-seq datasets, or map yeast gene identifiers.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gageData.html
 ---
+
 
 # bioconductor-gagedata
 

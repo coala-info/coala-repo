@@ -1,8 +1,9 @@
 ---
 name: matchtigs
-description: The `matchtigs` tool implements algorithms to reduce the redundancy of k-mer sets by finding efficient paths through a de Bruijn graph.
+description: Matchtigs reduces the redundancy of k-mer sets by computing efficient paths through a de Bruijn graph to produce compressed genomic representations. Use when user asks to compute matchtigs, generate eulertigs, or compress unitig files into more efficient k-mer representations.
 homepage: https://github.com/algbio/matchtigs.git
 ---
+
 
 # matchtigs
 

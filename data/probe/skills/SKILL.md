@@ -1,8 +1,9 @@
 ---
 name: probe
-description: The `probe` tool is a specialized utility for all-atom contact analysis.
+description: The probe tool performs all-atom contact analysis to identify steric clashes, hydrogen bonds, and van der Waals interactions within or between molecular structures. Use when user asks to detect clashes, validate packing quality, analyze inter-chain contacts, or generate dot-list visualizations for kinemage files.
 homepage: http://kinemage.biochem.duke.edu/software/probe/
 ---
+
 
 # probe
 

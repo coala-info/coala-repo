@@ -1,8 +1,9 @@
 ---
 name: svclone
-description: svclone is a modular computational framework used to determine the clonality of structural variations in cancer genomes.
+description: "svclone determines the clonality of structural variations in cancer genomes by estimating the proportion of cancer cells carrying specific rearrangements. Use when user asks to annotate structural variants, count reads at breakpoints, filter variants with copy-number data, or cluster variants to infer tumor phylogeny."
 homepage: https://github.com/mcmero/SVclone
 ---
+
 
 # svclone
 

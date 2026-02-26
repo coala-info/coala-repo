@@ -1,8 +1,9 @@
 ---
 name: svict
-description: SViCT (Structural Variant detection in Circulating Tumor DNA) is a specialized computational tool designed for liquid biopsy analysis.
+description: SViCT detects structural variations and gene fusions from targeted sequencing data, specifically for liquid biopsy analysis. Use when user asks to detect structural variants in circulating tumor DNA, identify gene fusions, or analyze cfDNA sequencing data.
 homepage: https://github.com/vpc-ccg/svict
 ---
+
 
 # svict
 

@@ -1,8 +1,9 @@
 ---
 name: r-genometricorr
-description: R package genometricorr (documentation from project home).
+description: This tool performs spatial correlation and independence tests on genome-wide interval datasets to evaluate the spatial relationship between two sets of genomic features. Use when user asks to analyze the spatial relationship between genomic features, test for non-random distribution of intervals, or perform spatial correlation tests like relative distance and Jaccard similarity.
 homepage: https://cran.r-project.org/web/packages/genometricorr/index.html
 ---
+
 
 # r-genometricorr
 

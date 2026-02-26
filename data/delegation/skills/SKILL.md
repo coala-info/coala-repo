@@ -1,8 +1,9 @@
 ---
 name: delegation
-description: The `delegation` library provides a simple, lightweight mechanism for object delegation in Python.
+description: The delegation library provides a lightweight mechanism for implementing object delegation and proxy patterns in Python. Use when user asks to wrap existing objects, delegate method calls dynamically, implement the Decorator pattern, or broadcast calls to multiple objects.
 homepage: https://github.com/symonsoft/delegation
 ---
+
 
 # delegation
 

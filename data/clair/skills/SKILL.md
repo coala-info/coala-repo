@@ -1,8 +1,9 @@
 ---
 name: clair
-description: Clair is a genomic variant caller that utilizes deep neural networks to identify germline small variants from pileup data.
+description: Clair is a genomic variant caller that uses deep neural networks to identify germline small variants from aligned sequencing reads. Use when user asks to call variants from pileup data, identify SNPs and indels from single-molecule sequencing, or generate VCF files from BAM files using pre-trained models.
 homepage: https://github.com/HKU-BAL/Clair
 ---
+
 
 # clair
 

@@ -1,8 +1,9 @@
 ---
 name: fc
-description: The `fc` (or `fc-virus`) tool is a specialized genome assembly algorithm tailored for the complexities of viral quasispecies.
+description: The fc tool is a specialized genome assembly algorithm designed to generate high-fidelity, full-length consensus sequences for viral quasispecies. Use when user asks to perform viral genome assembly, generate a consensus sequence from paired-end reads, or assemble viral quasispecies data.
 homepage: https://github.com/qdu-bioinfo/fc-virus
 ---
+
 
 # fc
 

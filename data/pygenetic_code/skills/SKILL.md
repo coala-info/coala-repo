@@ -1,8 +1,9 @@
 ---
 name: pygenetic_code
-description: The `pygenetic_code` tool is a high-performance library and command-line utility designed to handle the complexities of biological sequence translation.
+description: pygenetic_code translates nucleotide sequences into proteins using various NCBI genetic codes through a high-performance C-based backend. Use when user asks to translate DNA sequences, perform six-frame translations, or look up amino acid codes for specific codons using alternative translation tables.
 homepage: https://github.com/linsalrob/genetic_codes
 ---
+
 
 # pygenetic_code
 

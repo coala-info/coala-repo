@@ -1,8 +1,9 @@
 ---
 name: kmertools
-description: kmertools is a high-performance utility designed to transform raw DNA sequences into numerical vectors, a process essential for applying machine learning and advanced analytics to genomic data.
+description: kmertools transforms raw DNA sequences into numerical vectors for machine learning and genomic analysis. Use when user asks to vectorize metagenomic datasets, generate sequence composition features, create coverage histograms, or bin reads using minimizers.
 homepage: https://github.com/anuradhawick/kmertools
 ---
+
 
 # kmertools
 

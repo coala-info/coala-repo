@@ -1,8 +1,9 @@
 ---
 name: xpore
-description: xPore is a statistical framework designed to identify and quantify differential RNA modifications from Nanopore direct RNA sequencing data.
+description: xPore identifies and quantifies differential RNA modifications from Nanopore direct RNA sequencing data. Use when user asks to identify and quantify differential RNA modifications, prepare Nanopore direct RNA sequencing data, or perform differential modification analysis.
 homepage: https://github.com/GoekeLab/xpore
 ---
+
 
 # xpore
 

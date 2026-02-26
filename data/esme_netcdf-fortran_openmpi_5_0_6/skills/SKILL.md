@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_openmpi_5_0_6
-description: This skill provides procedural knowledge for utilizing the NetCDF-Fortran library within an OpenMPI 5.0.6 environment.
+description: This tool provides the NetCDF-Fortran library built with OpenMPI 5.0.6 for handling array-oriented scientific data in parallel Fortran applications. Use when user asks to compile Fortran code with NetCDF support, link NetCDF libraries using nf-config, or perform parallel I/O operations in an MPI environment.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_openmpi_5_0_6
 

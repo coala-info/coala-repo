@@ -1,8 +1,9 @@
 ---
 name: ucsc-facount
-description: The `ucsc-facount` tool (part of the UCSC Kent Utilities, often invoked as `faCount`) is a high-performance command-line utility designed to scan FASTA files and report detailed nucleotide statistics.
+description: The ucsc-facount tool analyzes FASTA files to report detailed nucleotide statistics. Use when user asks to get nucleotide statistics, determine sequence composition, obtain aggregate statistics for FASTA files, count CpG dinucleotides, or identify gap content.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-facount
 

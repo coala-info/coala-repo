@@ -1,8 +1,9 @@
 ---
 name: methylmap
-description: Methylmap is a specialized visualization tool designed to handle large-scale cohort data for nucleotide modifications.
+description: Methylmap is a visualization tool for comparing nucleotide modification patterns across large-scale cohorts using long-read sequencing data. Use when user asks to visualize methylation patterns from BAM or Nanopolish files, compare modification data across experimental groups, or perform hierarchical clustering on cohort modification data.
 homepage: https://github.com/EliseCoopman/methylmap
 ---
+
 
 # methylmap
 

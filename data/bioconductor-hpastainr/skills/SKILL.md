@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hpastainr
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: "HPAStainR queries the Human Protein Atlas to identify cell types and tissues associated with a specific list of genes or proteins. Use when user asks to identify cell-type associations for a gene list, calculate protein expression enrichment scores, or download and analyze Human Protein Atlas staining data."
 homepage: https://bioconductor.org/packages/3.12/bioc/html/HPAStainR.html
 ---
+
 
 # bioconductor-hpastainr
 

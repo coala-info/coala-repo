@@ -1,8 +1,9 @@
 ---
 name: biobb_chemistry
-description: Biobb_chemistry is a specialized module within the BioExcel Building Blocks (biobb) ecosystem focused on chemical transformations.
+description: Biobb_chemistry performs chemical transformations and force field conversions by wrapping various bioinformatics and chemistry tools. Use when user asks to convert AMBER topologies to GROMACS format, automate MD simulation chemistry setups, or perform structure preparation and format interoperation.
 homepage: https://github.com/bioexcel/biobb_chemistry
 ---
+
 
 # biobb_chemistry
 

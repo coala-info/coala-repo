@@ -1,8 +1,9 @@
 ---
 name: ebi-eva-common-pyutils
-description: The `ebi-eva-common-pyutils` library is a collection of Python utilities designed to standardize common tasks within the European Variation Archive (EVA) data processing ecosystem.
+description: This library provides Python utilities for downloading genomic assemblies from NCBI and implementing standardized logging within bioinformatics workflows. Use when user asks to download genomic reference data, organize assembly files by species, or set up consistent logging handlers in Python scripts.
 homepage: https://github.com/EBIVariation/eva-common-pyutils
 ---
+
 
 # ebi-eva-common-pyutils
 

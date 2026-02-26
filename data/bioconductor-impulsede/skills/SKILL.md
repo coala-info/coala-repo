@@ -1,8 +1,9 @@
 ---
 name: bioconductor-impulsede
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: ImpulseDE identifies differentially expressed genes in time course experiments by fitting a parametric impulse model to longitudinal expression data. Use when user asks to detect genes with significant expression changes over time, compare gene behavior between case and control conditions in time course data, or perform differential expression analysis on time-series experiments.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/ImpulseDE.html
 ---
+
 
 # bioconductor-impulsede
 

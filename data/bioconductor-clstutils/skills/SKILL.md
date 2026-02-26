@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clstutils
-description: the package is available on all platforms; click for details.
+description: Bioconductor-clstutils provides tools for taxonomic classification and phylogenetic placement of sequence data. Use when user asks to perform taxonomic assignment, process phylogenetic placement results, or calculate classification confidence.
 homepage: https://bioconductor.org/packages/release/bioc/html/clstutils.html
 ---
+
 
 # bioconductor-clstutils
 

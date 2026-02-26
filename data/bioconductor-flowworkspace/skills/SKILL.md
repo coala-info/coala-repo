@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowworkspace
-description: the package is available on all platforms; click for details.
+description: This package manages and manipulates gated flow cytometry data using hierarchical GatingSet objects in R. Use when user asks to import gating workspaces, build gating trees, perform transformations and compensations, merge GatingSets, or extract population statistics.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowWorkspace.html
 ---
+
 
 # bioconductor-flowworkspace
 

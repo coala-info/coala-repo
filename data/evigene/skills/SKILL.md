@@ -1,8 +1,9 @@
 ---
 name: evigene
-description: EvidentialGene (evigene) is a specialized genome informatics suite used to produce "Evidence Directed" gene sets.
+description: EvidentialGene is a genome informatics suite used to produce high-quality, non-redundant gene sets from multiple transcript assemblies. Use when user asks to reduce transcript assembly redundancy, filter gene models, or generate high-confidence protein and mRNA sets from multiple assembly sources.
 homepage: http://arthropods.eugenes.org/EvidentialGene/
 ---
+
 
 # evigene
 

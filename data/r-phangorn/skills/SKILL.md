@@ -1,8 +1,9 @@
 ---
 name: r-phangorn
-description: "Allows for estimation of phylogenetic trees and networks     using Maximum Likelihood, Maximum Parsimony, distance methods and     Hadamard conjugation (Schliep 2011). Offers methods for tree comparison,      model selection and visualization of phylogenetic networks as described in     Schliep et al. (2017).</p>"
+description: This tool provides expert guidance for phylogenetic reconstruction and analysis using the phangorn R package. Use when user asks to perform maximum likelihood or parsimony tree estimation, conduct ancestral sequence reconstruction, or analyze phylogenetic networks.
 homepage: https://cloud.r-project.org/web/packages/phangorn/index.html
 ---
+
 
 # r-phangorn
 

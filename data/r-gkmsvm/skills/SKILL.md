@@ -1,8 +1,9 @@
 ---
 name: r-gkmsvm
-description: R package gkmsvm (documentation from project home).
+description: This tool provides a gapped k-mer Support Vector Machine for DNA sequence classification and functional genomic analysis. Use when user asks to train SVM models on genomic sequences, calculate gkm-kernel matrices, predict regulatory activity for new sequences, or score the impact of genetic variants.
 homepage: https://cran.r-project.org/web/packages/gkmsvm/index.html
 ---
+
 
 # r-gkmsvm
 

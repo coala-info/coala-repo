@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bader
-description: the package is available on all platforms; click for details.
+description: bioconductor-bader performs differential expression analysis on RNA-seq count data using a Bayesian hierarchical model to estimate posterior distributions of fold changes. Use when user asks to perform Bayesian differential expression analysis, estimate posterior probabilities of differential expression, or quantify uncertainty in RNA-seq log fold changes.
 homepage: https://bioconductor.org/packages/release/bioc/html/BADER.html
 ---
+
 
 # bioconductor-bader
 

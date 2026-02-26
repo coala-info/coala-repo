@@ -1,8 +1,9 @@
 ---
 name: stacks
-description: The `stacks` skill provides procedural knowledge for managing the Stacks software suite.
+description: Stacks processes raw sequencing data into genotyped loci and population-level statistics using de novo or reference-based pipelines. Use when user asks to demultiplex RAD-seq data, build a locus catalog, call SNPs, or calculate population genetics statistics.
 homepage: https://catchenlab.life.illinois.edu/stacks/
 ---
+
 
 # stacks
 

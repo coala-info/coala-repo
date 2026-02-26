@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gars
-description: the package is available on all platforms; click for details.
+description: bioconductor-gars performs feature selection for high-dimensional datasets using a genetic algorithm based on the averaged Silhouette Index. Use when user asks to identify robust subsets of variables, reduce dimensionality in -omics data, or select informative features for multi-class classification problems.
 homepage: https://bioconductor.org/packages/release/bioc/html/GARS.html
 ---
+
 
 # bioconductor-gars
 

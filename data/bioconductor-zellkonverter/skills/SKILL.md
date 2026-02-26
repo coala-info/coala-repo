@@ -1,8 +1,9 @@
 ---
 name: bioconductor-zellkonverter
-description: the package is available on all platforms; click for details.
+description: This package converts between SingleCellExperiment and AnnData objects for single-cell data interoperability. Use when user asks to convert H5AD files to SingleCellExperiment, export R objects to AnnData, or move data between Bioconductor and Scanpy.
 homepage: https://bioconductor.org/packages/release/bioc/html/zellkonverter.html
 ---
+
 
 # bioconductor-zellkonverter
 

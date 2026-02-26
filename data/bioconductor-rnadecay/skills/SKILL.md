@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnadecay
-description: the package is available on all platforms; click for details.
+description: RNAdecay models and analyzes RNA degradation rates and decay kinetics from time-course sequencing data. Use when user asks to calculate RNA half-lives, estimate decay rates, or analyze transcript stability.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAdecay.html
 ---
+
 
 # bioconductor-rnadecay
 

@@ -1,8 +1,9 @@
 ---
 name: perl-fast
-description: The FAST Analysis of Sequences Toolbox (FAST) provides a suite of command-line utilities that bring the power of standard UNIX text processing (like grep, cut, and head) to biological sequence records.
+description: The FAST Analysis of Sequences Toolbox provides command-line utilities for processing biological sequence records using UNIX-style text processing patterns. Use when user asks to filter records by regex or length, transform sequences, calculate composition statistics, or perform taxonomic sorting.
 homepage: http://metacpan.org/pod/FAST
 ---
+
 
 # perl-fast
 

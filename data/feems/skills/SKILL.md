@@ -1,8 +1,9 @@
 ---
 name: feems
-description: FEEMS (Fast Estimation of Effective Migration Surfaces) is a statistical framework designed to infer and visualize migration patterns from spatial population genetic data.
+description: "FEEMS infers and visualizes migration patterns and long-range gene flow from spatial population genetic data. Use when user asks to estimate effective migration surfaces, fit spatial graphs to genotype data, or perform admixture analysis using FEEMSmix."
 homepage: https://github.com/NovembreLab/feems
 ---
+
 
 # feems
 

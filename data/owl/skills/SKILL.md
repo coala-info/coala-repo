@@ -1,8 +1,9 @@
 ---
 name: owl
-description: `owl` is a specialized bioinformatics tool developed by Pacific Biosciences for detecting microsatellite instability (MSI) in high-fidelity (HiFi) long-read sequencing data.
+description: Owl detects microsatellite instability in high-fidelity long-read sequencing data by analyzing repeat length variation across haplotypes. Use when user asks to detect microsatellite instability, profile repeats from phased BAM files, or calculate MSI scores.
 homepage: https://github.com/PacificBiosciences/owl
 ---
+
 
 # owl
 

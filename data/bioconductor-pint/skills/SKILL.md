@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pint
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs pairwise integration of high-throughput genomic data to identify dependencies between different data types. Use when user asks to integrate genomic data sets, find dependencies between copy number and gene expression, or perform pairwise screening of functional data.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/pint.html
 ---
+
 
 # bioconductor-pint
 

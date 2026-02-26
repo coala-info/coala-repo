@@ -1,8 +1,9 @@
 ---
 name: r-ridigbio
-description: "An interface to iDigBio's search API that allows downloading   specimen records. Searches are returned as a data.frame. Other functions   such as the metadata end points return lists of information. iDigBio is a US   project focused on digitizing and serving museum specimen collections on the   web."
+description: This tool provides an R interface to the iDigBio Data API for searching and downloading biological specimen records and associated media. Use when user asks to query museum specimen data, retrieve geographic coordinates, access taxonomic information, or download specimen images from the Integrated Digitized Biocollections database.
 homepage: https://cloud.r-project.org/web/packages/ridigbio/index.html
 ---
+
 
 # r-ridigbio
 

@@ -1,10 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: halfdeep_halfdeep.sh
+baseCommand: halfdeep
 label: halfdeep_halfdeep.sh
-doc: "halfdeep_halfdeep.sh (Note: The provided help text contains only system error
-  messages and no usage information.)\n\nTool homepage: https://github.com/richard-burhans/HalfDeep"
-inputs: []
+doc: "Assumes we have <ref>.lengths and <input.fofn> in the same dir\n\nTool homepage:
+  https://github.com/richard-burhans/HalfDeep"
+inputs:
+  - id: ref
+    type: string
+    doc: Reference file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

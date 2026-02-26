@@ -2,12 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: convertf
 label: admixtools_convertf
-doc: "A tool from the AdmixTools package used to convert between different genetic
-  data formats (e.g., PACKEDANCESTRYMAP, ANCESTRYMAP, EIGENSTRAT, PED). Note: The
-  provided input text appears to be a system error log regarding a container build
-  failure and does not contain the actual help text or argument definitions.\n\nTool
-  homepage: https://github.com/DReichLab/AdmixTools"
-inputs: []
+doc: "A tool from the AdmixTools suite used to convert between different genetic data
+  formats (e.g., EIGENSTRAT, PACKEDANCESTRYMAP, PED, etc.) using a parameter file.\n\
+  \nTool homepage: https://github.com/DReichLab/AdmixTools"
+inputs:
+  - id: parameter_file
+    type: File
+    doc: The parameter file containing input/output file paths and format 
+      specifications.
+    inputBinding:
+      position: 101
+      prefix: -p
 outputs:
   - id: stdout
     type: stdout

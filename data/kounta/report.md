@@ -3,7 +3,7 @@
 ## kounta
 
 ### Tool Description
-A tool for counting (description not available in provided text)
+Build a multi-genome k-mer count matrix
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kounta:0.2.3--0
@@ -18,11 +18,23 @@ A tool for counting (description not available in provided text)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kounta:0.2.3--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1899196407: no space left on device
+NAME
+  kounta 0.2.3
+SYNOPSIS
+  Build a multi-genome k-mer count matrix
+USAGE
+  kounta [options]
+OPTIONS
+  --fofn     file     File of filenames to process
+  --help              Show this help
+  --kmer     int      k-mer length [25]
+  --minfreq  int      Min k-mer frequency (FASTQ only) [3]
+  --out      file     Output matrix file
+  --ram      int      RAM in gigabytes to use [4]
+  --tempdir  string   Fast working directory [auto]
+  --threads  int      Threads to use [1]
+  --version           Print version and exit
+HOMEPAGE
+  https://github.com/tseemann/kounta
 ```
 
-
-## Metadata
-- **Skill**: generated

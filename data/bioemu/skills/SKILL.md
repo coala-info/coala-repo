@@ -1,8 +1,9 @@
 ---
 name: bioemu
-description: BioEmu (Biomolecular Emulator) is a generative AI tool designed to sample the approximated equilibrium distribution of protein monomer structures.
+description: BioEmu is a generative AI tool that samples the equilibrium distribution of protein monomer structures to represent their structural diversity. Use when user asks to sample protein conformational ensembles, generate multiple physical structures for a sequence, or use diffusion models to explore protein equilibrium distributions.
 homepage: https://github.com/microsoft/bioemu
 ---
+
 
 # bioemu
 

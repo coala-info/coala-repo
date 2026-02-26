@@ -1,8 +1,9 @@
 ---
 name: perl-heap
-description: The `perl-heap` skill enables the management of partially sorted data structures within Perl environments.
+description: This tool manages partially sorted data structures in Perl to provide efficient access to extreme values. Use when user asks to implement priority queues, manage task scheduling, handle streaming data, or perform heap operations like adding, extracting, or merging elements.
 homepage: http://metacpan.org/pod/Heap
 ---
+
 
 # perl-heap
 

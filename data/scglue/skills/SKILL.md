@@ -1,8 +1,9 @@
 ---
 name: scglue
-description: scglue (Graph-Linked Unified Embedding) is a specialized framework for multi-omics data integration.
+description: scglue is a framework for integrating multi-omics data by learning a shared latent space through a guidance graph. Use when user asks to integrate single-cell RNA and ATAC data, construct genomic guidance graphs, or infer gene regulatory networks.
 homepage: https://github.com/gao-lab/GLUE
 ---
+
 
 # scglue
 

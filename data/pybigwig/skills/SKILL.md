@@ -1,8 +1,9 @@
 ---
 name: pybigwig
-description: The `pybigwig` skill enables efficient programmatic access to bigWig and bigBed files, which are standard formats for storing dense, indexed genomic data.
+description: The pybigwig tool provides programmatic access to bigWig and bigBed files for high-performance reading, querying, and writing of indexed genomic data. Use when user asks to read signal data from genomic tracks, calculate binned statistics for visualization, retrieve raw values or intervals from bigWig files, or create new bigWig files from signal data.
 homepage: https://github.com/deeptools/pyBigWig
 ---
+
 
 # pybigwig
 

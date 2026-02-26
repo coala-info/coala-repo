@@ -1,8 +1,9 @@
 ---
 name: pomoxis
-description: Pomoxis is a suite of bioinformatics tools developed by Oxford Nanopore Technologies Research to streamline common analysis chains for nanopore sequencing data.
+description: Pomoxis is a suite of bioinformatics tools designed to streamline assembly, alignment, and error analysis for Oxford Nanopore sequencing data. Use when user asks to generate rapid assemblies, align reads to a reference, calculate BAM statistics, or assess assembly quality and error rates.
 homepage: https://github.com/nanoporetech/pomoxis
 ---
+
 
 # pomoxis
 

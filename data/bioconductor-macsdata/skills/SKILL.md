@@ -1,8 +1,9 @@
 ---
 name: bioconductor-macsdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for the MACS peak calling algorithm. Use when user asks to access sample ChIP-seq data, run MACS algorithm examples, or explore peak calling datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MACSdata.html
 ---
+
 
 # bioconductor-macsdata
 

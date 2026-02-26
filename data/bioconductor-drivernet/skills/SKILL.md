@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drivernet
-description: the package is available on all platforms; click for details.
+description: DriverNet identifies driver mutations by quantifying their influence on gene expression networks using a greedy optimization algorithm. Use when user asks to identify driver genes, rank mutations based on expression outliers, or assess the statistical significance of driver candidates in cancer cohorts.
 homepage: https://bioconductor.org/packages/release/bioc/html/DriverNet.html
 ---
+
 
 # bioconductor-drivernet
 

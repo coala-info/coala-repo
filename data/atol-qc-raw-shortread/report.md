@@ -3,24 +3,60 @@
 ## atol-qc-raw-shortread
 
 ### Tool Description
-Quality control for raw short-read sequencing data (Note: The provided text contains system error messages regarding container execution and does not list specific command-line arguments).
+Performs quality control and trimming on raw short-read sequencing data.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/atol-qc-raw-shortread:0.2.1--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/atol-qc-raw-shortread:0.2.2--pyhdfd78af_0
 - **Homepage**: https://github.com/TomHarrop/atol-qc-raw-shortread
 - **Package**: https://anaconda.org/channels/bioconda/packages/atol-qc-raw-shortread/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/atol-qc-raw-shortread/overview
-- **Total Downloads**: 475
+- **Total Downloads**: 485
 - **Last updated**: 2026-02-19
 - **GitHub**: https://github.com/TomHarrop/atol-qc-raw-shortread
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/7de6acc65611d69e1df87df0d688c86413bd898bba35f8a7eb3092d3c3eeb4d3: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/atol-qc-raw-shortread:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3991410231: no space left on device
+usage: atol-qc-raw-shortread [-h] [-t THREADS] [-n] [--qtrim | --no-qtrim]
+                             [--trimq TRIMQ] [--dataset_id DATASET_ID]
+                             [--hic_kit HIC_KIT] --in R1 --in2 R2
+                             [-a ADAPTORS [ADAPTORS ...]]
+                             (--cram CRAM_OUT | --out R1_OUT) [--out2 R2_OUT]
+                             --stats STATS [--logs LOGS_DIRECTORY]
+
+options:
+  -h, --help            show this help message and exit
+  -t THREADS, --threads THREADS
+  -n                    Dry run
+  --qtrim, --no-qtrim   Trim right end of reads to remove bases with quality
+                        below trimq.
+  --trimq TRIMQ         Regions with average quality BELOW this will be
+                        trimmed, if qtrim is enabled
+  --dataset_id DATASET_ID
+                        Only for CRAM output. Will be added to the @RG header
+                        line.
+  --hic_kit HIC_KIT     Only for CRAM output. Will be added to the @RG header
+                        line.
+
+Input:
+  --in R1               Read 1 input
+  --in2 R2              Read 2 input
+  -a ADAPTORS [ADAPTORS ...], --adaptors ADAPTORS [ADAPTORS ...]
+                        FASTA file(s) of adaptors. Multiple adaptor files can
+                        be used. Default ['/usr/local/opt/bbmap-38.95-
+                        1/resources/adapters.fa'].
+
+Output:
+  --cram CRAM_OUT       CRAM output. For IO efficiency, you can output CRAM or
+                        fastq, but not both. If you need both, convert the
+                        output afterwards.
+  --out R1_OUT          Read 1 output. For IO efficiency, you can output CRAM
+                        or fastq, but not both. If you need both, convert the
+                        output afterwards.
+  --out2 R2_OUT         Read 2 output
+  --stats STATS         Stats output (json)
+  --logs LOGS_DIRECTORY
+                        Log output directory. Default: logs are discarded.
 ```
 

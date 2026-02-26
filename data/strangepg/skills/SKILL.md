@@ -1,8 +1,9 @@
 ---
 name: strangepg
-description: strangepg is a high-performance, cross-platform tool designed for the interactive visualization of massive pangenome graphs.
+description: strangepg is a high-performance tool for the interactive visualization and manipulation of massive pangenome graphs. Use when user asks to visualize GFA files, compute force-directed layouts, perform 3D graph visualization, or query pangenome data using the strawk scripting language.
 homepage: https://github.com/qwx9/strangepg
 ---
+
 
 # strangepg
 

@@ -1,8 +1,9 @@
 ---
 name: liftoff
-description: Liftoff is a specialized tool for mapping gene annotations between genome assemblies.
+description: Liftoff maps gene annotations between genome assemblies by aligning gene sequences from a reference to a target genome. Use when user asks to map annotations between assemblies, re-annotate a new genome version, or identify additional gene copies in a target genome.
 homepage: https://github.com/agshumate/Liftoff
 ---
+
 
 # liftoff
 

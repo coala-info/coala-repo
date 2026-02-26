@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mlseq
-description: the package is available on all platforms; click for details.
+description: MLSeq provides a machine learning interface for the classification and analysis of high-throughput sequencing data. Use when user asks to classify RNA-Seq samples, perform machine learning on count data, or evaluate classification models for sequencing experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/MLSeq.html
 ---
+
 
 # bioconductor-mlseq
 

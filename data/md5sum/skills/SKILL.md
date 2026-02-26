@@ -1,7 +1,8 @@
 ---
 name: md5sum
-description: Compute and check MD5 message digests. Use when Claude needs to: (1) Generate checksums for file integrity verification, (2) Verify files against existing .md5 manifests, (3) Perform bulk integrity checks in a multi-core environment, (4) Calculate hashes within a data pipeline, or (5) Validate data consistency after file transfers. Trigger this skill for any request involving MD5 hashing, checksum generation, or file verification.
+description: md5sum calculates and verifies MD5 message digests to ensure file integrity. Use when user asks to generate a checksum, verify files against a manifest, or recursively hash files within a directory tree.
 ---
+
 
 # md5sum
 

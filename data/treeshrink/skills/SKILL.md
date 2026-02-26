@@ -1,8 +1,9 @@
 ---
 name: treeshrink
-description: TreeShrink is a specialized tool designed to detect and remove abnormally long branches in phylogenetic trees.
+description: TreeShrink detects and removes abnormally long branches in phylogenetic trees. Use when user asks to filter long-branch outliers, clean sequence alignments, or prune phylogenomic datasets.
 homepage: https://github.com/uym2/TreeShrink
 ---
+
 
 # treeshrink
 

@@ -1,8 +1,9 @@
 ---
 name: srnamapper
-description: srnamapper is a specialized tool for aligning small RNA sequencing reads to a genome.
+description: "srnamapper aligns small RNA sequencing reads to a genome using the BWA API. Use when user asks to map sRNA-seq reads, configure alignment parameters for small RNAs, or process multiple samples into merged output files."
 homepage: https://github.com/mzytnicki/srnaMapper
 ---
+
 
 # srnamapper
 

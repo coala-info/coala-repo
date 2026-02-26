@@ -1,8 +1,9 @@
 ---
 name: sciphin
-description: SCIPhI (Single-Cell mutation Identification via finite-sites Phylogenetic Inference) is a specialized tool for joint mutation calling and phylogeny estimation.
+description: SCIPhI performs joint mutation calling and phylogeny estimation from single-cell sequencing data using a Markov Chain Monte Carlo scheme. Use when user asks to call mutations in single cells, estimate tumor phylogenies, or process mpileup files to identify somatic variants while accounting for sequencing errors.
 homepage: https://github.com/cbg-ethz/SCIPhI
 ---
+
 
 # sciphin
 

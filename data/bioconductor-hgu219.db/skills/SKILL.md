@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu219.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Genome U219 platform to map probe identifiers to biological metadata. Use when user asks to map probe IDs to gene symbols, retrieve Entrez Gene identifiers, or associate microarray data with GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu219.db.html
 ---
+
 
 # bioconductor-hgu219.db
 

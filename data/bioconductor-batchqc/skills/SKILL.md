@@ -1,8 +1,9 @@
 ---
 name: bioconductor-batchqc
-description: the package is available on all platforms; click for details.
+description: BatchQC identifies, evaluates, and corrects batch effects in high-throughput genomic data using diagnostic tests and established correction methods. Use when user asks to identify batch effects, evaluate data confounding, perform kBET analysis, or correct batch effects using ComBat or ComBat-Seq.
 homepage: https://bioconductor.org/packages/release/bioc/html/BatchQC.html
 ---
+
 
 # bioconductor-batchqc
 

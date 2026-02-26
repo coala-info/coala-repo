@@ -3,26 +3,32 @@
 ## gbrowse
 
 ### Tool Description
-The provided text contains system error messages related to a container runtime (Singularity/Apptainer) failure and does not include the actual help documentation or usage instructions for the gbrowse tool.
+FAIL to generate CWL: gbrowse not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/gbrowse:v2.56dfsg-4-deb_cv1
 - **Homepage**: https://github.com/edgafner/GBrowser
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gbrowse/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: https://github.com/edgafner/GBrowser
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: gbrowse not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: gbrowse not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/gbrowse:v2.56dfsg-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2671650944: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

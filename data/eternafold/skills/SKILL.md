@@ -1,8 +1,9 @@
 ---
 name: eternafold
-description: EternaFold is a specialized RNA structure prediction tool that leverages multitask learning from Eterna project data.
+description: EternaFold is an RNA secondary structure prediction tool that uses multitask learning to improve accuracy over traditional thermodynamic models. Use when user asks to predict RNA structures, incorporate SHAPE reactivity data into folding models, calculate base-pairing probabilities, or sample structures from the Boltzmann distribution.
 homepage: https://github.com/eternagame/EternaFold
 ---
+
 
 # eternafold
 

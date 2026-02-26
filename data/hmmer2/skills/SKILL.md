@@ -1,8 +1,9 @@
 ---
 name: hmmer2
-description: HMMER2GO is a comprehensive command-line solution for biological sequence annotation.
+description: HMMER2GO annotates biological sequences by translating DNA into protein domains and mapping them to functional metadata. Use when user asks to extract open reading frames, search sequences against Pfam databases, map protein domains to Gene Ontology terms, or generate Gene Association Files.
 homepage: https://github.com/sestaton/HMMER2GO
 ---
+
 
 # hmmer2
 

@@ -1,9 +1,9 @@
 # irma CWL Generation Report
 
-## irma
+## irma_IRMA
 
 ### Tool Description
-The provided text does not contain help information for the tool 'irma'. It consists of error messages related to a container runtime (Apptainer/Singularity) failing to pull an image due to insufficient disk space.
+Iterative Refinement Meta-Assembler (IRMA)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/irma:1.2.0--pl5321hdfd78af_0
@@ -18,11 +18,18 @@ The provided text does not contain help information for the tool 'irma'. It cons
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/irma:1.2.0--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3055421915: no space left on device
+Iterative Refinement Meta-Assembler (IRMA), v1.2.0 (23 Aug 2024)
+Samuel S. Shepard (CDC/DDID/NCIRD/ID), vfn4@cdc.gov
+
+GPL version 3. This program comes with ABSOLUTELY NO WARRANTY. This is free software.
+You are welcome to redistribute it under certain conditions. See:  <http://www.gnu.org/licenses/>.
+Components of this pipeline have non-commercial restrictions. See: IRMA_RES/scripts/packaged-citations-licenses
+
+Usage:
+(PAIRED-END):	IRMA <MODULE|MODULE-CONFIG> <R1.fastq.gz|R1.fastq> <R2.fastq.gz|R2.fastq> [path/to/]<sample_name> [options]
+(SINGLE-END):	IRMA <MODULE|MODULE-CONFIG> <fastq|fastq.gz> [path/to/]<sample_name> [options]
+
+Options:
+	--external-config|-c <VALID_CONFIG_PATH>
 ```
 
-
-## Metadata
-- **Skill**: generated

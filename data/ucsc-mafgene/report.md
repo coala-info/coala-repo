@@ -1,9 +1,9 @@
 # ucsc-mafgene CWL Generation Report
 
-## ucsc-mafgene
+## ucsc-mafgene_mafGene
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains container execution logs and a fatal error indicating a failure to build or fetch the OCI image.
+output protein alignments using maf and genePred
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-mafgene:490--ha62e71f_1
@@ -18,13 +18,27 @@ The provided text does not contain help information for the tool. It contains co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-mafgene:490--ha62e71f_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+mafGene - output protein alignments using maf and genePred
+usage:
+   mafGene dbName mafTable genePredTable species.lst output
+arguments:
+   dbName         name of SQL database
+   mafTable       name of maf file table or bigMaf if ends in .bigMaf or .bb
+   genePredTable  name of the genePred table or file if useFile is on or ends in .gp
+   species.lst    list of species names
+   output         put output here
+options:
+   -twoBit=file.2bit  use 2bit file to fill in spaces in the alignment instead of database
+   -geneName=foobar   name of gene as it appears in genePred
+   -geneList=foolst   name of file with list of genes
+   -geneBeds=foo.bed  name of bed file with genes and positions
+   -chrom=chr1        name of chromosome from which to grab genes
+   -useFile           genePredTable is a file
+   -exons             output exons
+   -noTrans           don't translate output into amino acids
+   -uniqAA            put out unique pseudo-AA for every different codon
+   -includeUtr        include the UTRs, use only with -noTrans
+   -delay=N           delay N seconds between genes (default 0)
+   -noDash            don't output lines with all dashes
 ```
 
-
-## Metadata
-- **Skill**: generated

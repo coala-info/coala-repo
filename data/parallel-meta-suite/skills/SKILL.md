@@ -1,8 +1,9 @@
 ---
 name: parallel-meta-suite
-description: Parallel-META Suite (PMS) is a high-performance software package designed for the automated processing of microbiome data.
+description: Parallel-META Suite is a high-performance software package for the automated processing and visualization of amplicon and shotgun metagenomic microbiome data. Use when user asks to perform taxonomic profiling, conduct diversity analysis, or generate publication-ready charts from raw sequence data.
 homepage: https://github.com/qdu-bioinfo/parallel-meta-suite
 ---
+
 
 # parallel-meta-suite
 

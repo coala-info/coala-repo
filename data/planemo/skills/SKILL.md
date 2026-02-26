@@ -1,8 +1,9 @@
 ---
 name: planemo
-description: Planemo is the primary command-line toolkit designed to assist developers in creating and maintaining Galaxy tools.
+description: Planemo is a command-line toolkit designed to assist developers in creating, linting, testing, and publishing Galaxy tools. Use when user asks to initialize new tool projects, validate XML syntax, run functional tests, or preview tool interfaces in a local Galaxy instance.
 homepage: https://github.com/galaxyproject/planemo
 ---
+
 
 # planemo
 

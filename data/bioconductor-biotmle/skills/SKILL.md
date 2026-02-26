@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biotmle
-description: the package is available on all platforms; click for details.
+description: This tool performs biomarker discovery using Targeted Maximum Likelihood Estimation to identify genomic features associated with a binary exposure while adjusting for confounding. Use when user asks to identify biomarkers using causal inference, compute influence curve representations of the average treatment effect, or perform moderated t-tests on transformed expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/biotmle.html
 ---
+
 
 # bioconductor-biotmle
 

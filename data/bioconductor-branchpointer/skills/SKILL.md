@@ -1,8 +1,9 @@
 ---
 name: bioconductor-branchpointer
-description: the package is available on all platforms; click for details.
+description: This tool predicts and analyzes cis-acting intronic branch point sites in RNA splicing using machine learning. Use when user asks to identify branch point locations, evaluate the impact of genetic variants on splicing branch points, or process genomic coordinates to find potential branch point sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/branchpointer.html
 ---
+
 
 # bioconductor-branchpointer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoli2.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data and identifier mappings for the E. coli genome. Use when user asks to map between probe IDs, gene symbols, Entrez IDs, GO terms, or KEGG pathways for E. coli data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoli2.db.html
 ---
+
 
 # bioconductor-ecoli2.db
 

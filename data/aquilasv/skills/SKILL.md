@@ -1,8 +1,9 @@
 ---
 name: aquilasv
-description: AquilaSV is a specialized bioinformatics tool designed for region-based diploid assembly.
+description: AquilaSV is a bioinformatics tool for region-based diploid assembly and structural variant calling using linked-read sequencing data. Use when user asks to reconstruct haplotypes, perform local assembly of phased reads, or identify structural variations from 10X or stLFR data.
 homepage: https://github.com/maiziezhoulab/AquilaSV
 ---
+
 
 # aquilasv
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biomvcclass
-description: the package is available on all platforms; click for details.
+description: This package provides Model-View-Controller structures for managing and synchronizing interactive visualizations of Bioconductor data objects. Use when user asks to create or manage S4 classes for linked views of genomic data, define models for ExpressionSets or graphs, or implement Gene Set Enrichment structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioMVCClass.html
 ---
+
 
 # bioconductor-biomvcclass
 

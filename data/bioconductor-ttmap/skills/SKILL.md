@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ttmap
-description: the package is available on all platforms; click for details.
+description: TTMap is a topological data analysis tool for integrating and visualizing high-dimensional multi-omics data to identify structural patterns. Use when user asks to integrate multi-omics datasets, identify sample subgroups, or perform topological data analysis on biological data.
 homepage: https://bioconductor.org/packages/release/bioc/html/TTMap.html
 ---
+
 
 # bioconductor-ttmap
 

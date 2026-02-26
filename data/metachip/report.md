@@ -1,9 +1,9 @@
 # metachip CWL Generation Report
 
-## metachip
+## metachip_MetaCHIP
 
 ### Tool Description
-MetaCHIP: community-level horizontal gene transfer identification pipeline (Note: The provided help text contains only system error messages and no usage information).
+MetaCHIP v1.10.13
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0
@@ -18,63 +18,20 @@ MetaCHIP: community-level horizontal gene transfer identification pipeline (Note
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4100822450: no space left on device
-```
+...::: MetaCHIP v1.10.13 :::...
+        
+    Core modules:
+       PI            ->  Prepare input files 
+       BP            ->  Run Best-match and Phylogenetic approaches
+       
+    Supplementary modules:
+       filter_HGT    ->  Get HGTs been found at no less than n taxonomic ranks
+       update_hmms   ->  Update hmm profiles used for inferring SCG tree
+       get_SCG_tree  ->  Get SCG protein tree
+       rename_seqs   ->  Rename sequences in a file
 
-
-## Metadata
-- **Skill**: generated
-
-## metachip_rename_seqs
-
-### Tool Description
-A tool within the MetaCHIP package for renaming sequences. (Note: The provided help text contains only container runtime error messages and does not list specific arguments or usage instructions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0
-- **Homepage**: https://github.com/songweizhi/MetaCHIP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metachip/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3731330425: no space left on device
-```
-
-## metachip_filter_HGT
-
-### Tool Description
-Filter horizontal gene transfer (HGT) candidates identified by MetaCHIP.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0
-- **Homepage**: https://github.com/songweizhi/MetaCHIP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metachip/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1209151052: no space left on device
-```
-
-## metachip_update_hmms
-
-### Tool Description
-Update HMM databases for MetaCHIP. (Note: The provided help text contains only system error logs and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0
-- **Homepage**: https://github.com/songweizhi/MetaCHIP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metachip/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metachip:1.10.13--pyh7cba7a3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3648732485: no space left on device
+    # for command specific help info
+    MetaCHIP PI -h
+    MetaCHIP BP -h
 ```
 

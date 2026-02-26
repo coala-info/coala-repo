@@ -3,7 +3,7 @@
 ## cytocad
 
 ### Tool Description
-The provided text does not contain help information for the tool; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+CytoCAD is a tool for discovering large genomic copy-number variation through coverage anormaly detection (CAD) using low-depth whole-genome sequencing data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cytocad:1.0.3--py310h4b81fae_2
@@ -18,14 +18,42 @@ The provided text does not contain help information for the tool; it contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cytocad:1.0.3--py310h4b81fae_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade: unpack entry: sbin/ldconfig: unpack to regular file: short write: write /tmp/build-temp-3512058657/rootfs/sbin/ldconfig: no space left on device
+usage: cytocad [options] [BAM] [WORK_DIRECTORY]
+
+CytoCAD is a tool for discovering large genomic copy-number variation through coverage anormaly detection (CAD) using low-depth whole-genome sequencing data.
+
+positional arguments:
+  [BAM]                 path to mapped BAM file.
+                        Format: .bam
+  [work_directory]      path to work directory. Directory will be created 
+                        if it does not exist.
+
+options:
+  -h, --help            show this help message and exit
+  -b str, --build str   build version of human reference genome assembly [hg38]
+  -c hex_color [hex_color ...], --colors hex_color [hex_color ...]
+                        hex color for neutral, gain, and loss CNVs on chromosome
+                        ideograms respectively separated by space ['#a6a6a6' '#990000' '#000099']
+  -f [png/pdf], --format [png/pdf]
+                        Output format of chromosome illustration figure [png]
+  -i int, --interval int
+                        spread between each point in a chromosome where "
+                        coverage is enquired, in bp. Minimum CNV sensitive 
+                        detection size ~= interval*rolling [50000]
+  -j int, --buffer int  buffer window size of each point, in bp [10]
+  -r int, --rolling int
+                        rolling mean window size [10]
+  -p int, --penalty int
+                        Linear kernel penalty value for change 
+                        point detection using Ruptures [500]
+  -s float, --scale float
+                        proportion of mean coverage to be used for 
+                        buffering to call hetero- and homozygous CNVs 
+                        (E.g. a heterozygous loss is where a coverage (c) 
+                        satisfies: mean-mean*scale <= c < mean+mean*scale [0.25]
+  --add_plots           output additional coverage plots in 'fig' directory
+  --debug               run in debug mode
+  -v, --version         show version and exit
+  -q, --quiet           hide verbose
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: pheniqs
-description: Pheniqs (PHEnotypic iNdexing and Quality Supervision) is a high-performance, multi-threaded C++ toolset designed for the precise manipulation and classification of Next-Generation Sequencing (NGS) data.
+description: Pheniqs is a high-performance toolset for the probabilistic demultiplexing, classification, and format conversion of Next-Generation Sequencing data. Use when user asks to demultiplex reads using Bayesian classification, handle combinatorial indexing, or convert between FASTQ, SAM, BAM, and CRAM formats.
 homepage: http://biosails.github.io/pheniqs
 ---
+
 
 # pheniqs
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-glmgampoi
-description: The package can estimate the overdispersion and fit repeated models for matrix input. It is designed to handle large input datasets as they typically occur in single cell RNA-seq experiments.
+description: This tool fits Gamma-Poisson generalized linear models to large-scale count data with optimized performance for single-cell RNA-seq. Use when user asks to fit Negative Binomial GLMs, estimate gene-wise overdispersion, perform differential expression analysis, or create pseudobulk aggregations for multi-sample comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/glmGamPoi.html
 ---
+
 
 # bioconductor-glmgampoi
 

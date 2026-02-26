@@ -1,8 +1,9 @@
 ---
 name: tvc
-description: The TVC skill facilitates the process of getting Tron-based tokens recognized and listed on TRONSCAN's data statistics platform.
+description: The TVC skill facilitates getting Tron-based tokens recognized and listed on TRONSCAN's data statistics platform. Use when user asks to list a Tron-based token, submit a token for listing, or understand token submission requirements.
 homepage: https://github.com/tronscan/tron-tvc-list
 ---
+
 
 # tvc
 

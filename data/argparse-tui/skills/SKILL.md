@@ -1,8 +1,9 @@
 ---
 name: argparse-tui
-description: `argparse-tui` is a Python library that serves as a bridge between the standard `argparse` module and the Textual TUI framework.
+description: argparse-tui automatically generates a terminal-based graphical interface for Python command-line tools using the argparse module. Use when user asks to create a TUI for a CLI, add a visual interface to an existing script, or simplify the interaction for complex command-line arguments and subcommands.
 homepage: https://github.com/fresh2dev/argparse-tui
 ---
+
 
 # argparse-tui
 

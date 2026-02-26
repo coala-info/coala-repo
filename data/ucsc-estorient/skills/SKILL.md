@@ -1,8 +1,9 @@
 ---
 name: ucsc-estorient
-description: The `ucsc-estorient` utility is a specialized tool for refining EST (Expressed Sequence Tag) alignments.
+description: UCSC-estorient refines EST alignments by correcting the strand field in PSL records to reflect true biological orientation. Use when user asks to correct EST alignment orientation, update PSL strand fields, or determine the true biological orientation of ESTs.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-estorient
 

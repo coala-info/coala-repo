@@ -1,8 +1,9 @@
 ---
 name: r-txrevise
-description: R package txrevise (documentation from project home).
+description: The txrevise package decomposes complex transcript models into independent alternative transcription events categorized by promoter usage, internal splicing, and poly-adenylation. Use when user asks to decompose transcript models, construct alternative transcription events, or prepare gene annotations for event-level quantification.
 homepage: https://cran.r-project.org/web/packages/txrevise/index.html
 ---
+
 
 # r-txrevise
 

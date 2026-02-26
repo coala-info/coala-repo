@@ -1,9 +1,9 @@
 # bactopia-sketcher CWL Generation Report
 
-## bactopia-sketcher
+## bactopia-sketcher_sketch
 
 ### Tool Description
-A tool for creating sketches (e.g., Mash or Sourmash) of genomic data within the Bactopia framework.
+The 'sketch dna' command reads in DNA sequences and outputs DNA sketches.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bactopia-sketcher:1.0.2--hdfd78af_0
@@ -18,9 +18,52 @@ A tool for creating sketches (e.g., Mash or Sourmash) of genomic data within the
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/63c5b70464214b4213317d1e93eb3bf808eec1cea6b4a0f86dd481e8f790fca7: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/bactopia-sketcher:1.0.2--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1232659584: no space left on device
+usage: 
+
+    sourmash sketch dna data/*.fna.gz
+
+The 'sketch dna' command reads in DNA sequences and outputs DNA
+sketches.
+
+By default, 'sketch dna' uses the parameter string 'k=31,scaled=1000,noabund'.
+
+This creates sketches with a k-mer size of 31, a scaled factor of
+1000, and no abundance tracking of k-mers.  You can specify one or
+more parameter strings of your own with -p, e.g.  'sourmash sketch dna
+-p k=31,noabund -p k=21,scaled=100,abund'. Note that a single `-p` parameter string can contain multiple ksize values, but only a single scaled value or abundance value, e.g. -p k=21,k=31,abund
+
+'sourmash sketch' takes input sequences in FASTA and FASTQ,
+uncompressed or gz/bz2 compressed.
+
+Please see the 'sketch' documentation for more details:
+  https://sourmash.readthedocs.io/en/latest/sourmash-sketch.html
+
+positional arguments:
+  filenames             file(s) of sequences
+
+options:
+  -h, --help            show this help message and exit
+  --license LICENSE     signature license. Currently only CC0 is supported.
+  --check-sequence      complain if input sequence is invalid DNA
+  -p PARAM_STRING, --param-string PARAM_STRING
+                        signature parameters to use.
+  --from-file FROM_FILE
+                        a text file containing a list of sequence files to
+                        load
+
+File handling options:
+  -f, --force           recompute signatures even if the file exists
+  -o OUTPUT, --output OUTPUT
+                        output computed signatures to this file
+  --merge FILE, --name FILE
+                        merge all input files into one signature file with the
+                        specified name
+  --output-dir OUTPUT_DIR, --outdir OUTPUT_DIR
+                        output computed signatures to this directory
+  --singleton           compute a signature for each sequence record
+                        individually
+  --name-from-first     name the signature generated from each file after the
+                        first record in the file
+  --randomize           shuffle the list of input filenames randomly
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: salty
-description: SaLTy (Staphylococcus aureus Lineage Typer) is a specialized bioinformatic tool designed to accurately assign lineages to *S.
+description: SaLTy assigns lineages to *Staphylococcus aureus* genomic data by screening for specific markers and alleles. Use when user asks to assign lineages to *S. aureus* assemblies or raw reads, track genomic epidemiology, or perform MLST-based lineage inference.
 homepage: https://github.com/LanLab/salty
 ---
+
 
 # salty
 

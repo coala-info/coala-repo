@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapfabia
-description: The package supports VCF formats, is based on sparse matrix operations, and provides visualization of haplotype clusters in different formats.
+description: This tool identifies short identity by descent segments in large sequencing data using FABIA biclustering. Use when user asks to identify IBD segments tagged by rare variants, convert VCF files to sparse matrix formats, or visualize haplotype clusters.
 homepage: https://bioconductor.org/packages/release/bioc/html/hapFabia.html
 ---
+
 
 # bioconductor-hapfabia
 

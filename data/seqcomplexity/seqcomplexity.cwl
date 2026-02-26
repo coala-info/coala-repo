@@ -2,10 +2,23 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: seqcomplexity
 label: seqcomplexity
-doc: "A tool for calculating sequence complexity (Note: The provided text is a container
-  execution error log and does not contain help documentation or argument definitions).\n
-  \nTool homepage: https://github.com/stevenweaver/seqcomplexity"
-inputs: []
+doc: "Calculates Per-Read and Total Sequence Complexity from FastQ file.\n\nTool homepage:
+  https://github.com/stevenweaver/seqcomplexity"
+inputs:
+  - id: fastq
+    type: File
+    doc: The input FASTQ file (gzip acceptable).
+    inputBinding:
+      position: 101
+      prefix: --fastq
+  - id: per_read
+    type:
+      - 'null'
+      - boolean
+    doc: Report complexity per read.
+    inputBinding:
+      position: 101
+      prefix: --per-read
 outputs:
   - id: stdout
     type: stdout

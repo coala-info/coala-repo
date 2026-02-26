@@ -1,8 +1,9 @@
 ---
 name: enabrowsertools
-description: enabrowsertools is a specialized set of Python scripts that interface with ENA web services to automate data retrieval.
+description: enabrowsertools is a set of Python scripts used to automate the retrieval of raw reads, sequence records, and assembly data from the European Nucleotide Archive. Use when user asks to download FastQ files, fetch genomic data using ENA accession numbers, or retrieve all runs associated with a specific study or sample.
 homepage: https://github.com/enasequence/enaBrowserTools
 ---
+
 
 # enabrowsertools
 

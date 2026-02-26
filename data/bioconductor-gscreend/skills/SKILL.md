@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gscreend
-description: the package is available on all platforms; click for details.
+description: This package identifies essential genes in pooled CRISPR screens by modeling gRNA log fold changes with a skew-normal distribution and aggregating results via Robust Ranking Aggregation. Use when user asks to identify essential genes from CRISPR screens, analyze pooled perturbation data, or calculate gene-level rankings from gRNA counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/gscreend.html
 ---
+
 
 # bioconductor-gscreend
 

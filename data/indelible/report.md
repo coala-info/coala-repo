@@ -3,7 +3,7 @@
 ## indelible
 
 ### Tool Description
-INDELible is a program for the simulation of biological sequence evolution. (Note: The provided text was an error log and did not contain usage information; arguments could not be extracted from the source text).
+INDELible V1.03 by Will Fletcher: Simulation began at Wed Feb 25 00:46:21 2026
 
 ### Metadata
 - **Docker Image**: biocontainers/indelible:v1.03-4-deb_cv1
@@ -18,29 +18,139 @@ INDELible is a program for the simulation of biological sequence evolution. (Not
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/indelible:v1.03-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2537741578: no space left on device
-```
+INDELible V1.03 by Will Fletcher: Simulation began at Wed Feb 25 00:46:21 2026
 
 
-## Metadata
-- **Skill**: generated
 
-## indelible_indelible.py
+                                                                      
 
-### Tool Description
-INDELible is a powerful and flexible simulator of biological sequence evolution. (Note: The provided help text contains only system error logs and no argument definitions).
 
-### Metadata
-- **Docker Image**: biocontainers/indelible:v1.03-4-deb_cv1
-- **Homepage**: https://github.com/HurlesGroupSanger/indelible
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/indelible:v1.03-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3269085682: no space left on device
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +-----------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                     |
+ | There is no control file. INDELible was looking for file named: |
+ | control.txt                                                     |
+ | Please enter the correct filename.                              |
+ +-----------------------------------------------------------------+
+
+
+                                                                      
+
+
+
+ +------------------------------------------------------------------------+
+ | ERROR in CONTROL FILE block                                            |
+ | There is no control file. INDELible was looking for file named:        |
+ | control.txt                                                            |
+ | 10 failed attempts - please check your filenames and re-run INDELible. |
+ +------------------------------------------------------------------------+
 ```
 

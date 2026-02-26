@@ -1,8 +1,9 @@
 ---
 name: staden_io_lib
-description: The Staden io_lib (often distributed as `libstaden-read`) is a specialized library and toolset designed for the efficient handling of DNA sequence data.
+description: The Staden io_lib is a bioinformatics library and toolset used for DNA sequence file conversion and the handling of chromatogram trace formats. Use when user asks to convert between SAM, BAM, and CRAM formats, optimize CRAM compression profiles, or read and write Sanger sequencing trace files.
 homepage: https://github.com/jkbonfield/io_lib/
 ---
+
 
 # staden_io_lib
 

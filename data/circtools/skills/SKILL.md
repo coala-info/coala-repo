@@ -1,8 +1,9 @@
 ---
 name: circtools
-description: `circtools` is a modular Python-based framework designed to unify circular RNA (circRNA) bioinformatics workflows.
+description: circtools is a modular Python framework for the end-to-end analysis of circular RNA, covering detection, reconstruction, and functional characterization. Use when user asks to detect circRNAs, perform differential expression testing, reconstruct internal structures, analyze RBP enrichment, or design divergent primers for experimental validation.
 homepage: https://github.com/dieterich-lab/circtools
 ---
+
 
 # circtools
 

@@ -1,8 +1,9 @@
 ---
 name: yacht
-description: YACHT (Yes/No Answers to Community membership via Hypothesis Testing) is a tool designed for the mathematically rigorous detection of organisms within metagenomic samples.
+description: YACHT statistically determines the presence or absence of organisms in metagenomic samples. Use when user asks to detect organisms in metagenomic samples, determine the presence or absence of reference genomes, sketch samples or reference genomes, train reference databases, convert analysis results, or download pre-built reference databases.
 homepage: https://github.com/KoslickiLab/YACHT
 ---
+
 
 # yacht
 

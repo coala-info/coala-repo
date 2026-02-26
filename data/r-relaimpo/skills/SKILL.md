@@ -1,8 +1,9 @@
 ---
 name: r-relaimpo
-description: Provides several metrics for assessing relative importance in linear models. These can be printed, plotted and bootstrapped. The recommended metric is lmg, which provides a decomposition of the model explained variance into non-negative contributions. There is a version of this package available that additionally provides a new and also recommended metric called pmvd. If you are a non-US user, you can download this extended version from Ulrike Groempings web site.</p>
+description: This tool assesses the relative importance of regressors in linear models by decomposing the model's explained variance into contributions from individual predictors. Use when user asks to calculate relative importance metrics like LMG, decompose R-squared into predictor contributions, or perform bootstrapping for confidence intervals in linear regression models.
 homepage: https://cloud.r-project.org/web/packages/relaimpo/index.html
 ---
+
 
 # r-relaimpo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huo22.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for mapping HuO22 platform probe identifiers to biological metadata. Use when user asks to map manufacturer probes to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/HuO22.db.html
 ---
+
 
 # bioconductor-huo22.db
 

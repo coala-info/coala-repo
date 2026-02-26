@@ -1,8 +1,9 @@
 ---
 name: bcbio_monitor
-description: The `bcbio_monitor` skill provides a specialized interface for interacting with the bcbio-nextgen-monitor tool.
+description: "bcbio_monitor provides a web-based interface to visualize and track the real-time progress of bcbio-nextgen sequencing pipelines. Use when user asks to monitor bcbio-nextgen logs, visualize execution flowcharts, or track the status of remote and local bioinformatics analyses."
 homepage: https://github.com/guillermo-carrasco/bcbio-nextgen-monitor
 ---
+
 
 # bcbio_monitor
 

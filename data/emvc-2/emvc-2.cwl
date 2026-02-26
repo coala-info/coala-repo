@@ -2,15 +2,71 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: emvc-2
 label: emvc-2
-doc: "The provided text does not contain help information for the tool. It contains
-  system log messages and a fatal error regarding container image conversion and disk
-  space.\n\nTool homepage: https://github.com/guilledufort/EMVC-2"
-inputs: []
+doc: "EMVC-2 v1.0\n\nTool homepage: https://github.com/guilledufort/EMVC-2"
+inputs:
+  - id: bam_file
+    type: File
+    doc: The bam file
+    inputBinding:
+      position: 101
+      prefix: --bam_file
+  - id: bypass_dt
+    type:
+      - 'null'
+      - boolean
+    doc: Bypass Decision Tree filter
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --bypass_dt
+  - id: iterations
+    type:
+      - 'null'
+      - int
+    doc: The number of EM iterations
+    default: 5
+    inputBinding:
+      position: 101
+      prefix: --iterations
+  - id: learners
+    type:
+      - 'null'
+      - int
+    doc: The number of learners
+    default: 7
+    inputBinding:
+      position: 101
+      prefix: --learners
+  - id: ref_file
+    type: File
+    doc: The reference fasta file
+    inputBinding:
+      position: 101
+      prefix: --ref_file
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: The number of parallel threads
+    default: 8
+    inputBinding:
+      position: 101
+      prefix: --threads
+  - id: verbose
+    type:
+      - 'null'
+      - int
+    doc: Make output verbose
+    default: 0
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: out_file
+    type: File
+    doc: The output file name
+    outputBinding:
+      glob: $(inputs.out_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/emvc-2:1.0--h031d066_0
-stdout: emvc-2.out
+    dockerPull: quay.io/biocontainers/emvc-2:1.0--h7b50bb2_4

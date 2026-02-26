@@ -3,10 +3,10 @@
 ## gfinisher
 
 ### Tool Description
-A tool for refining and finishing bacterial genome assemblies.
+Genome Assembler Finisher
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/gfinisher:1.4--py35_0
+- **Docker Image**: quay.io/biocontainers/gfinisher:1.4--py27_0
 - **Homepage**: Not found
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,11 +18,20 @@ A tool for refining and finishing bacterial genome assemblies.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gfinisher:1.4--py35_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3196046047: no space left on device
+Genome Assembler Finisher       version 1.4 - 2016-09-18
+-i	contigs/scaffolds input file
+-ds	dataset files names (one or more separated by comma)
+-o	output directory
+-v	verbose mode
+-ref	genome sequence reference in fasta format
+-config	configuration file
+-config -create	generate template config file.
+
+
+Note
+eg java parameters:  -Xms8G -Xmx64G -Djava.awt.headless=true
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

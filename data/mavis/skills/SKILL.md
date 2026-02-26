@@ -1,8 +1,9 @@
 ---
 name: mavis
-description: MAVIS (Merging, Annotation, Validation, and Illustration of Structural variants) is a specialized bioinformatics suite for the post-processing of structural variant calls.
+description: MAVIS post-processes structural variant calls through validation, functional annotation, and visualization. Use when user asks to cluster structural variants, validate breakpoints, annotate gene fusions, or generate summary reports.
 homepage: https://github.com/bcgsc/mavis.git
 ---
+
 
 # mavis
 

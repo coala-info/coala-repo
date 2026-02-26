@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtu34cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix Rat Toxicology U34 array. Use when user asks to access probe mapping data for the RT-U34 platform or process Affymetrix GeneChip results for rat toxicology studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rtu34cdf.html
 ---
+
 
 # bioconductor-rtu34cdf
 

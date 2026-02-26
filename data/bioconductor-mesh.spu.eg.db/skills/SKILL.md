@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.spu.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This Bioconductor package provides mapping between Medical Subject Headings (MeSH) and Entrez Gene identifiers for Strongylocentrotus purpuratus. Use when user asks to map MeSH terms to sea urchin genes, perform functional annotation for Strongylocentrotus purpuratus, or retrieve gene-MeSH associations.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Spu.eg.db.html
 ---
+
 
 # bioconductor-mesh.spu.eg.db
 

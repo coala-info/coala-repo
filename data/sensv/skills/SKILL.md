@@ -1,8 +1,9 @@
 ---
 name: sensv
-description: SENSV is a structural variant detection pipeline that processes raw sequencing reads to identify genomic rearrangements.
+description: SENSV is a structural variant detection pipeline that identifies genomic rearrangements from raw sequencing reads. Use when user asks to install SENSV via Bioconda, download required data resources, or execute the command line interface for variant discovery.
 homepage: https://github.com/HKU-BAL/SENSV
 ---
+
 
 # sensv
 

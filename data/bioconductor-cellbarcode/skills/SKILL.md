@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellbarcode
-description: The package CellBarcode performs Cellular DNA Barcode analysis. It can handle all kinds of DNA barcodes, as long as the barcode is within a single sequencing read and has a pattern that can be matched by a regular expression. \code{CellBarcode} can handle barcodes with flexible lengths, with or without UMI (unique molecular identifier). This tool also can be used for pre-processing some amplicon data such as CRISPR gRNA screening, immune repertoire sequencing, and metagenome data.
+description: This tool performs comprehensive DNA barcode analysis including extraction, quality control, error correction, and quantification from sequencing data. Use when user asks to extract barcodes from FASTQ or BAM files, perform lineage tracing analysis, or conduct clonal tracking using regular expressions.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellBarcode.html
 ---
+
 
 # bioconductor-cellbarcode
 

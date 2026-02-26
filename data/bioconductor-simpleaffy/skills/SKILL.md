@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simpleaffy
-description: the package is available on all platforms; click for details.
+description: Bioconductor-simpleaffy provides high-level functions for the analysis and quality control of Affymetrix GeneChip data. Use when user asks to read Affymetrix CEL files, perform microarray quality control, or normalize expression data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/simpleaffy.html
 ---
+
 
 # bioconductor-simpleaffy
 

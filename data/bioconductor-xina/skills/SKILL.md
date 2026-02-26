@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xina
-description: the package is available on all platforms; click for details.
+description: XINA analyzes multiplexed proteomics data by clustering co-abundance profiles and integrating protein-protein interaction networks. Use when user asks to cluster protein expression profiles, analyze multiplexed proteomics data, or visualize protein-protein interaction networks across multiple conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/XINA.html
 ---
+
 
 # bioconductor-xina
 

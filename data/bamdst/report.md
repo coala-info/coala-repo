@@ -3,7 +3,7 @@
 ## bamdst
 
 ### Tool Description
-The provided text does not contain help information for the tool; it is a system error log indicating a failure to pull a container image due to lack of disk space.
+A lightweight tool to calculate depth and coverage statistics for target regions in BAM files.
 
 ### Metadata
 - **Docker Image**: biocontainers/bamdst:1.0.9_cv1
@@ -18,9 +18,20 @@ The provided text does not contain help information for the tool; it is a system
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/e47ace85c2c465f80ab0b723771bf581b4520120592f09b7b3000b254aeb970b: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/bamdst:1.0.9_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3722108376: no space left on device
+Unable to find image 'biocontainers/bamdst:1.0.9_cv1' locally
+1.0.9_cv1: Pulling from biocontainers/bamdst
+3b65ec22a9e9: Pulling fs layer
+ec058f282056: Pulling fs layer
+282c65134706: Pulling fs layer
+efdc0cdf5a3d: Pulling fs layer
+344300d73cb6: Pulling fs layer
+3b65ec22a9e9: Waiting
+ec058f282056: Waiting
+282c65134706: Waiting
+efdc0cdf5a3d: Waiting
+344300d73cb6: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob108116849: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

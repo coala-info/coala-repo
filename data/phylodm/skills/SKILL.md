@@ -1,8 +1,9 @@
 ---
 name: phylodm
-description: PhyloDM is a high-performance library written in Rust with a Python API designed to convert phylogenetic trees into pairwise distance matrices (PDM).
+description: PhyloDM is a high-performance library that converts phylogenetic trees into pairwise distance matrices. Use when user asks to calculate a distance matrix from a Newick file, convert a DendroPy tree to a matrix, or find distances between specific taxa.
 homepage: https://github.com/aaronmussig/PhyloDM
 ---
+
 
 # phylodm
 

@@ -1,8 +1,9 @@
 ---
 name: submission-tool-validator
-description: The submission-tool-validator is a Java-based command-line utility designed for client-side validation of proteomics data.
+description: The submission-tool-validator is a command-line utility for client-side validation of proteomics data files prior to repository submission. Use when user asks to validate mzIdentML, mzTab, or ProteomeXchange XML files, or verify identification results against associated spectra.
 homepage: https://github.com/bigbio/submission-tool-validator
 ---
+
 
 # submission-tool-validator
 

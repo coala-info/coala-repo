@@ -1,8 +1,9 @@
 ---
 name: bioconductor-m3drop
-description: the package is available on all platforms; click for details.
+description: M3Drop identifies informative genes in single-cell RNA sequencing data by modeling the relationship between mean expression and dropout rates. Use when user asks to identify highly variable genes, perform feature selection for scRNA-seq data, or analyze dropout rates in single-cell transcriptomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/M3Drop.html
 ---
+
 
 # bioconductor-m3drop
 

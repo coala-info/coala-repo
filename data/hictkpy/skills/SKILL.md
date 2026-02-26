@@ -1,8 +1,9 @@
 ---
 name: hictkpy
-description: hictkpy provides high-performance Python bindings for the hictk toolkit, designed for efficient manipulation of .hic and .cool files.
+description: hictkpy provides high-performance Python bindings for the hictk toolkit to efficiently manipulate and extract data from .hic and .cool files. Use when user asks to read Hi-C data, convert genomic interactions to pandas DataFrames or numpy matrices, and perform fast format conversions between specialized genomic interaction files.
 homepage: https://github.com/paulsengroup/hictkpy
 ---
+
 
 # hictkpy
 

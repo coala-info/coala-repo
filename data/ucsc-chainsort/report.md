@@ -3,7 +3,7 @@
 ## ucsc-chainsort
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a container execution log showing a fatal error during the image build/fetch process.
+Sort a chain file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0
@@ -18,33 +18,13 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Unable to find image 'quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-chainsort
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+158a6b063e40: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1798672139: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-chainsort_chainSort
-
-### Tool Description
-Sort a chain file. (Note: The provided help text contains only container execution errors and no usage information was available to parse.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-chainsort/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-chainsort:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Run 'docker run --help' for more information
 ```
 

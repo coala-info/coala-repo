@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cafe
-description: the package is available on all platforms; click for details.
+description: CAFE identifies chromosomal gains and losses by analyzing Affymetrix microarray expression data. Use when user asks to detect chromosomal aberrations, perform virtual karyotyping, or visualize gene expression deviations across chromosomes and cytobands.
 homepage: https://bioconductor.org/packages/release/bioc/html/CAFE.html
 ---
+
 
 # bioconductor-cafe
 

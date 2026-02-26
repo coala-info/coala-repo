@@ -1,8 +1,9 @@
 ---
 name: grz-pydantic-models
-description: The `grz-pydantic-models` library provides the official Pydantic implementation of the GRZ metadata schema.
+description: This library provides the official Pydantic implementation of the GRZ metadata schema for validating and parsing genomic data submissions. Use when user asks to validate GRZ metadata, check supported schema versions, or generate JSON schemas for genomic reporting.
 homepage: https://github.com/BfArM-MVH/grz-pydantic-models
 ---
+
 
 # grz-pydantic-models
 

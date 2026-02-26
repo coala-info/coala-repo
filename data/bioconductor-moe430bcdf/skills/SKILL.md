@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moe430bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix Mouse Expression 430B array. Use when user asks to process Affymetrix Mouse Expression 430B microarray data or map probe identifiers to genomic locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430bcdf.html
 ---
+
 
 # bioconductor-moe430bcdf
 

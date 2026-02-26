@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotatr
-description: the package is available on all platforms; click for details.
+description: This tool intersects genomic regions with genomic features to provide biological context and visualization. Use when user asks to annotate genomic regions, intersect BED files with genomic features, or visualize the distribution of data across annotations.
 homepage: https://bioconductor.org/packages/release/bioc/html/annotatr.html
 ---
+
 
 # bioconductor-annotatr
 

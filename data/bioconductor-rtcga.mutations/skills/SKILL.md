@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rtcga.mutations
-description: the package is available on all platforms; click for details.
+description: This tool provides mutation data from The Cancer Genome Atlas (TCGA) for analysis in R. Use when user asks to access TCGA mutation datasets, retrieve somatic mutation information, or analyze cancer genomic variants.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RTCGA.mutations.html
 ---
+
 
 # bioconductor-rtcga.mutations
 

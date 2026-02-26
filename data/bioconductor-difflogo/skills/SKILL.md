@@ -1,8 +1,9 @@
 ---
 name: bioconductor-difflogo
-description: the package is available on all platforms; click for details.
+description: Bioconductor-difflogo visualizes differences between multiple DNA, RNA, or protein motifs using difference logos. Use when user asks to compare position weight matrices, align motifs of different lengths, or generate a table of motif comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/DiffLogo.html
 ---
+
 
 # bioconductor-difflogo
 

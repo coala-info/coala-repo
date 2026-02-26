@@ -1,8 +1,9 @@
 ---
 name: cdbfasta
-description: The `cdbfasta` suite provides a high-performance, file-based hashing mechanism to create indices for FASTA files.
+description: "cdbfasta creates high-performance indices for FASTA files to enable rapid retrieval of genomic records. Use when user asks to index FASTA files, retrieve specific sequences by accession, perform batch record extraction, or extract sub-sequences from large genomic databases."
 homepage: https://github.com/gpertea/cdbfasta
 ---
+
 
 # cdbfasta
 

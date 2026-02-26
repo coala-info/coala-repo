@@ -1,8 +1,9 @@
 ---
 name: r-gamlss.data
-description: "Data used as examples in the books on Generalized Additive Models for Location Scale and Shape:   Stasinopoulos, Rigby, Heller, Voudouris, De Bastiani (2017)."
+description: This package provides curated datasets for Generalized Additive Models for Location, Scale, and Shape (GAMLSS) modeling and distributional regression analysis. Use when user asks to access benchmark datasets for centile estimation, perform growth curve modeling, or practice GAMLSS techniques using standard examples from the GAMLSS textbooks.
 homepage: https://cloud.r-project.org/web/packages/gamlss.data/index.html
 ---
+
 
 # r-gamlss.data
 

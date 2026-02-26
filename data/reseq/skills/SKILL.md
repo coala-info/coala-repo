@@ -1,8 +1,9 @@
 ---
 name: reseq
-description: ReSeq is a high-fidelity genomic sequence simulator designed to bridge the gap between synthetic and real-world sequencing data.
+description: ReSeq simulates high-fidelity genomic sequencing data by reproducing coverage profiles, systematic errors, and k-mer spectra from real-world datasets. Use when user asks to simulate realistic Illumina reads, generate synthetic FASTQ files from BAM alignments, or model biological variation using a VCF file.
 homepage: https://github.com/schmeing/ReSeq/tree/devel
 ---
+
 
 # reseq
 

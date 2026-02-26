@@ -3,7 +3,7 @@
 ## islandpath
 
 ### Tool Description
-IslandPath-DIMOB is a tool for predicting genomic islands in bacterial and archaeal genomes. (Note: The provided help text contains only container runtime error messages and no usage information.)
+Extracts genomic island information from a GenBank file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/islandpath:1.0.6--hdfd78af_0
@@ -18,11 +18,9 @@ IslandPath-DIMOB is a tool for predicting genomic islands in bacterial and archa
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/islandpath:1.0.6--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3672554572: no space left on device
+Usage:
+./Dimob.pl <genome.gbk> <outputfile.txt>
+Example:
+./Dimob.pl example/NC_003210.gbk NC_003210_GIs.txt
 ```
 
-
-## Metadata
-- **Skill**: generated

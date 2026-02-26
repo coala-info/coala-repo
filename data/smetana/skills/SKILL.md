@@ -1,8 +1,9 @@
 ---
 name: smetana
-description: SMETANA (Species METabolic interaction ANAlysis) is a specialized command-line tool designed to quantify the potential for metabolic exchange within microbial consortia.
+description: SMETANA quantifies metabolic exchange and community-level interactions within microbial consortia using genome-scale metabolic models. Use when user asks to analyze metabolite exchange between species, identify essential community dependencies, or simulate the impact of environmental perturbations on microbial metabolic niches.
 homepage: https://github.com/cdanielmachado/smetana
 ---
+
 
 # smetana
 

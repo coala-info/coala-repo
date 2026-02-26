@@ -1,8 +1,9 @@
 ---
 name: perl-text-balanced
-description: Text::Balanced provides a suite of functions to identify and extract substrings bounded by specific delimiters.
+description: This tool extracts balanced substrings, nested brackets, and tagged text from strings while handling Perl-specific syntax. Use when user asks to extract nested parentheses, parse delimited quotes, identify Perl code blocks, or handle tagged XML-style structures.
 homepage: https://metacpan.org/pod/Text::Balanced
 ---
+
 
 # perl-text-balanced
 

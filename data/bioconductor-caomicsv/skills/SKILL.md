@@ -1,8 +1,9 @@
 ---
 name: bioconductor-caomicsv
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides tools for the integrative visualization of multi-dimensional cancer genomic data using matrix-based or circular network layouts. Use when user asks to create bioMatrix heatmaps, generate bioNetCircos network visualizations, or integrate multiple genomic data types like expression and mutations into a single plot.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/caOmicsV.html
 ---
+
 
 # bioconductor-caomicsv
 

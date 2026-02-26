@@ -1,8 +1,9 @@
 ---
 name: straglr
-description: Straglr is a bioinformatics tool designed to resolve tandem repeat (TR) expansions that are often too large or complex for short-read sequencing.
+description: Straglr identifies and genotypes tandem repeat expansions using long-read sequencing alignments. Use when user asks to perform a genome-wide scan for novel expansions, genotype specific tandem repeat loci, or identify alleles larger than the reference genome.
 homepage: https://github.com/bcgsc/straglr
 ---
+
 
 # straglr
 

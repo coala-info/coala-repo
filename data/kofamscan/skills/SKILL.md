@@ -1,8 +1,9 @@
 ---
 name: kofamscan
-description: kofamscan is a command-line tool used for the functional annotation of genomic, transcriptomic, or proteomic data.
+description: kofamscan performs functional annotation of protein sequences by searching them against the KOfam database of KEGG Ortholog HMMs using adaptive thresholds. Use when user asks to annotate protein sequences with KEGG Orthologs, perform functional annotation of genomic data, or identify metabolic functions using HMM profiles.
 homepage: https://www.genome.jp/tools/kofamkoala/
 ---
+
 
 # kofamscan
 

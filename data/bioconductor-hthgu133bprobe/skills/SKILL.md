@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133bprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix HT_HG-U133B microarray platform. Use when user asks to retrieve probe sequences, identify probe coordinates, or perform sequence-level analysis for the hthgu133b chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133bprobe.html
 ---
+
 
 # bioconductor-hthgu133bprobe
 

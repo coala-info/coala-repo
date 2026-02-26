@@ -3,7 +3,7 @@
 ## fastlin
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container due to lack of disk space.
+fastlin
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastlin:0.4.2.1--h4349ce8_0
@@ -18,11 +18,20 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastlin:0.4.2.1--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1800003415: no space left on device
+fastlin     
+
+Usage: fastlin [OPTIONS] --dir <DIR> --barcodes <BARCODES>
+
+Options:
+  -d, --dir <DIR>                directory containing the data files
+  -b, --barcodes <BARCODES>      file containing the reference barcodes
+  -o, --output <OUTPUT>          output file [out_fastlin.txt] [default: out_fastlin.txt]
+  -k, --kmer-size <KMER_SIZE>    kmer size [default: 25]
+  -c, --min-count <MIN_COUNT>    minimum number of kmer occurences [default: 4]
+  -n, --n-barcodes <N_BARCODES>  minimum number of barcodes [default: 3]
+  -x, --max-cov <MAX_COV>        maximum kmer coverage
+  -t, --nb-threads <NB_THREADS>  number of threads [default: 1]
+  -h, --help                     Print help
+  -V, --version                  Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

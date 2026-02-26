@@ -1,8 +1,9 @@
 ---
 name: bufet
-description: BUFET (Boosting the Unbiased Functional Enrichment Analysis) is a high-performance bioinformatics tool designed to identify biological pathways significantly associated with specific miRNA profiles.
+description: BUFET performs high-performance unbiased functional enrichment analysis to identify biological pathways associated with specific miRNA profiles. Use when user asks to perform miRNA enrichment analysis, calculate empirical p-values for biological pathways, or identify overrepresented gene ontologies from miRNA-gene interactions.
 homepage: https://github.com/diwis/BUFET/
 ---
+
 
 # bufet
 

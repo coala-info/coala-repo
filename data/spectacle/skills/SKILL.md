@@ -1,8 +1,9 @@
 ---
 name: spectacle
-description: Spectacle is a keyboard-driven window management utility for macOS that eliminates the need for mouse-based window dragging.
+description: Spectacle is a keyboard-driven window management utility for macOS that snaps windows to specific screen regions and moves them between displays. Use when user asks to snap windows to halves or thirds, move windows between monitors, or resize windows using keyboard shortcuts.
 homepage: https://github.com/eczarny/spectacle
 ---
+
 
 # spectacle
 

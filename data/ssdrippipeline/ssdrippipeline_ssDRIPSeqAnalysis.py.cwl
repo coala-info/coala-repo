@@ -1,11 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ssdrippipeline_ssDRIPSeqAnalysis.py
+baseCommand: ssDRIPSeqAnalysis.py
 label: ssdrippipeline_ssDRIPSeqAnalysis.py
-doc: "A tool for ssDRIP-seq analysis. Note: The provided help text contains system
-  logs and error messages rather than command-line usage instructions.\n\nTool homepage:
-  https://github.com/PEHGP/ssDripPipeline"
-inputs: []
+doc: "Performs DRIP-seq analysis.\n\nTool homepage: https://github.com/PEHGP/ssDripPipeline"
+inputs:
+  - id: config_file
+    type: File
+    doc: Path to the DRIP-seq configuration JSON file.
+    inputBinding:
+      position: 1
+  - id: analysis_type
+    type: string
+    doc: 'Type of analysis to perform. Options: BaseAnalysis, DeseqAnalysis, DownstreamAnalysis,
+      AllPip.'
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

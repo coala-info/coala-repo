@@ -1,8 +1,9 @@
 ---
 name: pydustmasker
-description: pydustmasker is a high-performance Python library designed to detect and mask low-complexity DNA sequences.
+description: pydustmasker is a Python library used to detect and mask low-complexity DNA sequences using the SDUST and Longdust algorithms. Use when user asks to identify low-complexity regions, soft-mask or hard-mask nucleotide sequences, or retrieve coordinates of repetitive genomic intervals.
 homepage: https://github.com/apcamargo/pydustmasker
 ---
+
 
 # pydustmasker
 

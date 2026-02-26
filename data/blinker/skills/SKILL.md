@@ -1,8 +1,9 @@
 ---
 name: blinker
-description: Blink Shell is a professional-grade terminal emulator for iOS that prioritizes speed and persistent connectivity.
+description: Blink Shell is a professional-grade terminal emulator for iOS that provides persistent remote access and a local Unix-like environment. Use when user asks to connect to remote servers via SSH or Mosh, manage files using SCP or SFTP, and execute local scripts or commands on an iOS device.
 homepage: https://github.com/blinksh/blink
 ---
+
 
 # blinker
 

@@ -1,8 +1,9 @@
 ---
 name: bactopia-variants
-description: The `bactopia-variants` skill provides procedural knowledge for executing high-quality variant calling (SNPs and InDels) on bacterial sequencing data.
+description: Bactopia-variants performs high-quality variant calling to identify SNPs and InDels in bacterial sequencing data against a reference genome. Use when user asks to call variants, identify genetic variations, or perform SNP-based strain characterization.
 homepage: https://bactopia.github.io/
 ---
+
 
 # bactopia-variants
 

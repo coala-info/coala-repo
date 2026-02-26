@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oncomix
-description: the package is available on all platforms; click for details.
+description: This package identifies genes that are overexpressed in a subset of cancer samples using mixture modeling. Use when user asks to identify oncogene candidates, detect heterogeneous gene expression in tumors, or analyze cancer transcriptomics data with mixture models.
 homepage: https://bioconductor.org/packages/release/bioc/html/oncomix.html
 ---
+
 
 # bioconductor-oncomix
 

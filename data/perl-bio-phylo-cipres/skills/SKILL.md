@@ -1,8 +1,9 @@
 ---
 name: perl-bio-phylo-cipres
-description: This skill enables programmatic access to the CIPRES (Cyberinfrastructure for Phylogenetic Research) REST API.
+description: This tool provides programmatic access to the CIPRES REST API for running phylogenetic analyses on remote supercomputing resources. Use when user asks to submit phylogenetic jobs, monitor job status, or retrieve analysis results from the CIPRES gateway.
 homepage: http://metacpan.org/pod/Bio::Phylo::CIPRES
 ---
+
 
 # perl-bio-phylo-cipres
 

@@ -3,7 +3,7 @@
 ## bior_annotate
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It consists of system error messages related to a failed container execution (no space left on device).
+Annotates variants in a given input file (vcf)
 
 ### Metadata
 - **Docker Image**: biocontainers/bior_annotate:v2.1.1_cv3
@@ -18,9 +18,38 @@ The provided text does not contain help information or usage instructions. It co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/e7e3aaa675a8d098c5c4e020ce42399b148650105e798c9f1a053f3b328c0fe4: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/bior_annotate:v2.1.1_cv3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2670726641: no space left on device
+NAME
+	bior_annotate -- Annotates variants in a given input file (vcf)
+
+SYNOPSIS
+	bior_annotate [--configfile <CONFIG FILE>] [--help] [--log]
+
+DESCRIPTION
+	The bior_annotate command adds functional annotation to a given set of variants and the
+	results are sent to STDOUT.
+
+	The options are as follows:
+
+	-c, --configfile <CONFIG FILE>
+		The config file containing the columns to be shown in the result.
+
+	-h, --help
+		print this message
+
+	-l, --log
+		Use this option to generate the log file. By default, the log file is not generated.
+
+EXAMPLE
+	Given a file with rsIDs, fetch annotations for just the columns that we specify in the config
+	file 
+	(with results compressed so that multiple lines with the same variant but different
+	annotations are still on one line):
+	cat data.txt
+		#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+		chr1	216424275	rs696723	C	G	.	.	.
+	
+	cat data.txt | bior_annotate -c myAnnotConfig.txt
+		#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	rsID	dbSNP.SuspectRegion	dbSNP.ClinicalSig	dbSNP.DiseaseVariant	COSMIC.Mutation_ID	COSMIC.Mutation_CDS	COSMIC.Mutation_AA	COSMIC.strand	1000Genomes.AMR_AF	1000Genomes.AFR_AF	1000Genomes.EUR_AF
+		chr1	216424275	rs696723	C	G	.	.	.	rs696723	unspecified	untested	0	.	.	.	.	.	0.02	0.17	0.01
 ```
 

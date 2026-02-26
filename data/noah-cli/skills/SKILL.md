@@ -1,8 +1,9 @@
 ---
 name: noah-cli
-description: Noah is a specialized project management tool designed to bring reproducibility and portability to bioinformatics workflows.
+description: Noah-cli is a bioinformatics project management tool that manages data dependencies to ensure research reproducibility and portability. Use when user asks to initialize a new project, add datasets from public repositories or remote paths, remove tracked data, or fetch project dependencies.
 homepage: https://github.com/raymond-u/noah-cli
 ---
+
 
 # noah-cli
 

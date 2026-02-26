@@ -1,8 +1,9 @@
 ---
 name: gasic
-description: Gas Town is a workspace management system designed to scale AI coding operations by providing persistent identity and state for agents.
+description: Gas Town is a workspace management system that provides persistent identity and state for scaling AI coding operations through agent orchestration. Use when user asks to initialize a workspace, manage agent rigs, delegate tasks via convoys and beads, or monitor the status of persistent AI-driven modifications.
 homepage: https://github.com/steveyegge/gastown
 ---
+
 
 # gasic
 

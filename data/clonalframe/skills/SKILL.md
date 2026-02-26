@@ -1,8 +1,9 @@
 ---
 name: clonalframe
-description: ClonalFrameML is a maximum likelihood implementation of the ClonalFrame model designed for large-scale bacterial genomic datasets.
+description: ClonalFrameML identifies recombination events in bacterial genomes and adjusts phylogenetic branch lengths to reflect true clonal relationships. Use when user asks to detect horizontal gene transfer, distinguish between mutation and recombination, or correct a phylogeny for the effects of recombination.
 homepage: https://github.com/xavierdidelot/ClonalFrameML
 ---
+
 
 # clonalframe
 

@@ -1,8 +1,9 @@
 ---
 name: perl-math-complex
-description: The `Math::Complex` module provides a robust framework for handling complex numbers in Perl as first-class objects.
+description: The perl-math-complex module provides a framework for performing arithmetic and trigonometric operations on complex numbers in Perl. Use when user asks to handle complex number calculations, convert between Cartesian and polar coordinates, or use trigonometric functions with complex arguments.
 homepage: http://metacpan.org/pod/Math::Complex
 ---
+
 
 # perl-math-complex
 

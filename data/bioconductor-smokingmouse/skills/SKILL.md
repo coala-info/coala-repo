@@ -1,8 +1,9 @@
 ---
 name: bioconductor-smokingmouse
-description: the package is available on all platforms; click for details.
+description: This package provides transcriptomic data from a mouse model of prenatal nicotine exposure. Use when user asks to access smokingMouse datasets, analyze gene expression from prenatal nicotine exposure models, or explore mouse brain transcriptomics.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/smokingMouse.html
 ---
+
 
 # bioconductor-smokingmouse
 

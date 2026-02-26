@@ -1,8 +1,10 @@
 ---
 name: tinscan
-description: The `tinscan` tool identifies transposon insertion sites by detecting specific alignment signatures where two contiguous segments in a query genome are separated by a gap in the target genome.
+description: The `tinscan` tool identifies transposon insertion sites by detecting specific alignment signatures where two contiguous segments in a query genome are separated by a gap in the target genome. Use when user asks to identify transposon insertion sites, locate structural variations, prepare genomes for alignment, align genomes, find insertion events, or identify Target Site Duplications.
 homepage: https://github.com/Adamtaranto/TE-insertion-scanner
 ---
+
+
 
 # tinscan
 

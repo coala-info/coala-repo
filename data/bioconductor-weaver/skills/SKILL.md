@@ -1,8 +1,9 @@
 ---
 name: bioconductor-weaver
-description: the package is available on all platforms; click for details.
+description: Weaver provides tools for the parallel execution and caching of code chunks within Sweave documents. Use when user asks to cache Sweave code chunks, parallelize report generation, or optimize dynamic document processing in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/weaver.html
 ---
+
 
 # bioconductor-weaver
 

@@ -1,8 +1,9 @@
 ---
 name: qgrs-cpp
-description: The `qgrs-cpp` tool is a high-performance C++ implementation of the QGRS mapping algorithm.
+description: qgrs-cpp identifies potential G-quadruplex motifs in nucleic acid sequences using a high-performance mapping algorithm. Use when user asks to find G-quadruplexes, filter motifs by G-score or tetrad count, and generate structured JSON or CSV data from FASTA files.
 homepage: https://github.com/freezer333/qgrs-cpp
 ---
+
 
 # qgrs-cpp
 

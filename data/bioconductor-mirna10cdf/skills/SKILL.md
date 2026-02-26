@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirna10cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Affymetrix miRNA 1.0 Array. Use when user asks to analyze Affymetrix miRNA 1.0 microarray data or access probe set mapping information in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mirna10cdf.html
 ---
+
 
 # bioconductor-mirna10cdf
 

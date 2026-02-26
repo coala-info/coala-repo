@@ -1,8 +1,9 @@
 ---
 name: raiss
-description: RAISS is a Python-based tool designed to fill in missing Z-scores in GWAS summary statistics by leveraging the correlation structure of neighboring SNPs.
+description: RAISS imputes missing Z-scores in GWAS summary statistics by leveraging linkage disequilibrium information from a reference panel. Use when user asks to impute missing variants, precompute LD matrices, optimize imputation parameters via grid search, or perform sanity checks on imputed summary statistics.
 homepage: http://statistical-genetics.pages.pasteur.fr/raiss/
 ---
+
 
 # raiss
 

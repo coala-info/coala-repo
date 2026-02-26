@@ -1,8 +1,9 @@
 ---
 name: r-mmcpcounter
-description: R package mmcpcounter (documentation from project home).
+description: The r-mmcpcounter package quantifies 16 immune and stromal cell populations from mouse transcriptomic data to estimate relative cell abundance in heterogeneous tissue samples. Use when user asks to estimate immune cell infiltration, quantify stromal cell populations in mouse samples, or calculate abundance scores from murine expression matrices.
 homepage: https://cran.r-project.org/web/packages/mmcpcounter/index.html
 ---
+
 
 # r-mmcpcounter
 

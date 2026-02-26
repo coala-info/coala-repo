@@ -1,8 +1,9 @@
 ---
 name: sankoff
-description: The `sankoff` tool is a high-performance, parallelized implementation of Sankoff’s algorithm designed for ancestral state reconstruction.
+description: The sankoff tool performs ancestral state reconstruction by minimizing transition costs across a phylogeny using a parallelized implementation of Sankoff’s algorithm. Use when user asks to infer ancestral sequences, reconstruct internal nodes of a tree, or apply cost-based parsimony to DNA and amino acid data.
 homepage: https://github.com/hzi-bifo/sankoff
 ---
+
 
 # sankoff
 

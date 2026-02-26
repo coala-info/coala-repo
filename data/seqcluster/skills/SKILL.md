@@ -1,8 +1,9 @@
 ---
 name: seqcluster
-description: The `seqcluster` tool is designed to handle the complexity of small RNA-seq data by grouping sequences into clusters based on genomic location and abundance.
+description: seqcluster groups small RNA-seq data into clusters based on genomic location and abundance to handle multi-mapping reads and identify non-canonical small RNAs. Use when user asks to preprocess small RNA reads, align sequences to a reference genome, or group and quantify small RNA clusters for downstream analysis.
 homepage: https://github.com/lpantano/seqclsuter
 ---
+
 
 # seqcluster
 

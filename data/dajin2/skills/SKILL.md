@@ -1,8 +1,9 @@
 ---
 name: dajin2
-description: DAJIN2 is a "one-step" genotyping solution designed for targeted long-read sequencing (Nanopore).
+description: DAJIN2 is a genotyping tool for targeted long-read sequencing that identifies complex genome-editing outcomes by comparing edited samples against non-edited controls. Use when user asks to perform automated allele classification, identify large deletions or insertions in Nanopore data, or visualize mutation outcomes from genome editing experiments.
 homepage: https://github.com/akikuno/DAJIN2
 ---
+
 
 # dajin2
 

@@ -1,8 +1,9 @@
 ---
 name: rad_haplotyper
-description: rad_haplotyper is a specialized tool for converting SNP data into multi-allelic haplotypes using read-level information from RAD-seq experiments.
+description: rad_haplotyper converts SNP data into multi-allelic haplotypes using read-level information from RAD-seq experiments. Use when user asks to phase SNPs into haplotypes, filter out paralogous sequences, or generate population genetic outputs like Genepop files.
 homepage: https://github.com/chollenbeck/rad_haplotyper
 ---
+
 
 # rad_haplotyper
 

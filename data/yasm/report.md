@@ -3,7 +3,7 @@
 ## yasm
 
 ### Tool Description
-The provided text does not contain help information for yasm; it appears to be an error log from a container runtime (Apptainer/Singularity) failing to fetch the yasm image.
+Assemble source files into object files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/yasm:1.3.0--0
@@ -18,13 +18,54 @@ The provided text does not contain help information for yasm; it appears to be a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/yasm:1.3.0--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: yasm [option]* file
+Options:
+    --version               show version text
+    --license               show license text
+    -h, --help              show help text
+    --arch=<arch>           select architecture (list with -a help)
+     -a <arch>
+    --parser=<parser>       select parser (list with -p help)
+     -p <parser>
+    --preproc=<preproc>     select preprocessor (list with -r help)
+     -r <preproc>
+    --oformat=<format>      select object format (list with -f help)
+     -f <format>
+    --dformat=<debug>       select debugging format (list with -g help)
+     -g <debug>
+    --lformat=<list>        select list format (list with -L help)
+     -L <list>
+    --list=<listfile>       name of list-file output
+     -l <listfile>
+    --objfile=<filename>    name of object-file output
+     -o <filename>
+    --mapfile=<filename>    name of map-file output
+    --machine=<machine>     select machine (list with -m help)
+     -m <machine>
+    --force-strict          treat all sized operands as if `strict' was used
+    -w                      inhibits warning messages
+    -W                      enables/disables warning
+    -M                      generate Makefile dependencies on stdout
+    -E <file>               redirect error messages to file
+    -s                      redirect error messages to stdout
+    -e, --preproc-only      preprocess only (writes output to stdout by default)
+    -i <path>               add include path
+    -I <path>               add include path
+    -P <filename>           pre-include file
+    -d <macro[=value]>      pre-define a macro, optionally to value
+    -D <macro[=value]>      pre-define a macro, optionally to value
+    -u <macro>              undefine a macro
+    -U <macro>              undefine a macro
+    -X <style>              select error/warning message style (`gnu' or `vc')
+    --prefix=<prefix>       prepend argument to name of all external symbols
+    --suffix=<suffix>       append argument to name of all external symbols
+    --postfix=<suffix>      append argument to name of all external symbols
+
+Files are asm sources to be assembled.
+
+Sample invocation:
+   yasm -f elf -o object.o source.asm
+
+Report bugs to bug-yasm@tortall.net
 ```
 
-
-## Metadata
-- **Skill**: generated

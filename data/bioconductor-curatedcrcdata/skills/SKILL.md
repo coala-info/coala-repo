@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedcrcdata
-description: the package is available on all platforms; click for details.
+description: This package provides curated and standardized colorectal cancer gene expression datasets as ExpressionSet objects for meta-analysis. Use when user asks to load colorectal cancer datasets, retrieve clinical metadata and survival data, or perform large-scale analysis across multiple public CRC studies.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedCRCData.html
 ---
+
 
 # bioconductor-curatedcrcdata
 

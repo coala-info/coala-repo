@@ -1,8 +1,9 @@
 ---
 name: r-maldirppa
-description: R package maldirppa (documentation from project home).
+description: The MALDIrppa package provides robust statistical methods for pre-processing and quality control of MALDI mass spectrometry data. Use when user asks to screen spectra for quality, perform robust peak alignment, detect atypical peak profiles, or filter mass spectrometry data for downstream analysis.
 homepage: https://cran.r-project.org/web/packages/maldirppa/index.html
 ---
+
 
 # r-maldirppa
 

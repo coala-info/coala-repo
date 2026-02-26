@@ -1,8 +1,9 @@
 ---
 name: probconsrna
-description: The `probconsrna` skill provides a specialized workflow for generating multiple sequence alignments of nucleotide sequences.
+description: "probconsrna generates high-accuracy multiple sequence alignments for RNA sequences using a consistency-based algorithm. Use when user asks to align RNA sequences, perform multiple sequence alignment with structural conservation, or generate alignments in ClustalW or MFA formats."
 homepage: http://probcons.stanford.edu/
 ---
+
 
 # probconsrna
 

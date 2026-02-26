@@ -1,8 +1,9 @@
 ---
 name: tree-qmc
-description: TREE-QMC (Quartet-based species tree and tree of blob estimation) is a phylogenomic tool that utilizes the Quartet Max Cut framework to infer species trees.
+description: TREE-QMC is a phylogenomic tool that infers species trees and analyzes network-like evolution using the Quartet Max Cut framework. Use when user asks to estimate a species tree, map individuals to species, estimate a tree from character matrices, analyze network-like evolution, get branch support for the output tree, or root the output tree.
 homepage: https://github.com/molloy-lab/TREE-QMC
 ---
+
 
 # tree-qmc
 

@@ -1,8 +1,9 @@
 ---
 name: npstructures
-description: The `npstructures` library extends NumPy's capabilities by introducing data structures designed for "ragged" data—datasets where rows have varying lengths.
+description: The npstructures library provides efficient NumPy-like data structures for handling ragged arrays, hash tables, and counters with vectorized performance. Use when user asks to perform operations on non-uniform datasets, map keys to values using arrays, or count occurrences of specific elements.
 homepage: https://github.com/bionumpy/npstructures
 ---
+
 
 # npstructures
 

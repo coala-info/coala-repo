@@ -1,8 +1,9 @@
 ---
 name: liana
-description: LIANA+ is a versatile and scalable framework designed to decode the complex language of cell-cell communication.
+description: LIANA+ is a framework for decoding cell-cell communication by providing a unified interface to multiple inference methods for single-cell and spatial transcriptomics. Use when user asks to infer ligand-receptor interactions, perform spatial bivariate analysis, compare multi-sample communication patterns via tensor factorization, or visualize intercellular connectivity.
 homepage: https://liana-py.readthedocs.io
 ---
+
 
 # liana
 

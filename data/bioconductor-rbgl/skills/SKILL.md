@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rbgl
-description: the package is available on all platforms; click for details.
+description: RBGL provides an interface to the Boost Graph Library for performing graph-theoretic calculations and analysis in R. Use when user asks to find shortest paths, compute minimum spanning trees, or analyze graph connectivity and clustering.
 homepage: https://bioconductor.org/packages/release/bioc/html/RBGL.html
 ---
+
 
 # bioconductor-rbgl
 

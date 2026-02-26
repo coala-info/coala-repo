@@ -1,8 +1,9 @@
 ---
 name: lrez
-description: LRez is a suite of tools designed for efficient manipulation of linked-read data.
+description: LRez is a suite of tools designed for the efficient indexing, extraction, and spatial analysis of linked-read data based on molecular barcodes. Use when user asks to index FASTQ files by barcode, extract specific reads for local assembly, or identify barcode overlaps between genomic regions to detect structural variants.
 homepage: https://github.com/flegeai/LRez
 ---
+
 
 # lrez
 

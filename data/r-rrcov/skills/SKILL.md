@@ -1,8 +1,9 @@
 ---
 name: r-rrcov
-description: Skill for using the CRAN R package r-rrcov.
+description: This package provides scalable robust estimators for multivariate location, scatter, principal component analysis, and discriminant analysis in R. Use when user asks to identify outliers, compute high breakdown point estimates, perform robust PCA, or conduct robust linear and quadratic discriminant analysis.
 homepage: https://cloud.r-project.org/web/packages/rrcov/index.html
 ---
+
 
 # r-rrcov
 

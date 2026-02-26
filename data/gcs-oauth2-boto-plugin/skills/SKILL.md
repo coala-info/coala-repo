@@ -1,8 +1,9 @@
 ---
 name: gcs-oauth2-boto-plugin
-description: The gcs-oauth2-boto-plugin is a specialized authentication handler for the legacy `boto` library's auth plugin framework.
+description: This tool provides an OAuth 2.0 authentication handler for the legacy boto library to enable secure access to Google Cloud Storage. Use when user asks to authenticate boto applications with OAuth 2.0, configure service account credentials for GCS, or manage thread-safe token caching.
 homepage: https://github.com/GoogleCloudPlatform/gcs-oauth2-boto-plugin
 ---
+
 
 # gcs-oauth2-boto-plugin
 

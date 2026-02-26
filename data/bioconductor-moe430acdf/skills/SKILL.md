@@ -1,8 +1,9 @@
 ---
 name: bioconductor-moe430acdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) for the Affymetrix Mouse Expression 430A array. Use when user asks to process raw Affymetrix data, map probes to genes, or analyze Mouse Expression 430A microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/moe430acdf.html
 ---
+
 
 # bioconductor-moe430acdf
 

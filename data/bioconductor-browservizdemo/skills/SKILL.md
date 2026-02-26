@@ -1,8 +1,9 @@
 ---
 name: bioconductor-browservizdemo
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool provides interactive R-to-browser x-y plotting and websocket communication using the BrowserViz framework. Use when user asks to create web-based visualizations from R, handle websocket communications between R and a browser, or retrieve user selections from a browser back into an R session.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/BrowserVizDemo.html
 ---
+
 
 # bioconductor-browservizdemo
 

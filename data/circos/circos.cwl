@@ -2,11 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: circos
 label: circos
-doc: "Circos is a software package for visualizing data and information in a circular
-  layout. (Note: The provided text is a container execution error log and does not
-  contain help documentation; therefore, no arguments could be extracted.)\n\nTool
-  homepage: http://circos.ca"
-inputs: []
+doc: "Circos could not find the configuration file []. To run Circos, you need to
+  specify this file using the -conf flag. The configuration file contains all the
+  parameters that define the image, including input files, image size, formatting,
+  etc.\n\nTool homepage: http://circos.ca"
+inputs:
+  - id: conf
+    type:
+      - 'null'
+      - File
+    doc: Specify the configuration file
+    inputBinding:
+      position: 101
+      prefix: -conf
+  - id: debug_flag
+    type:
+      - 'null'
+      - string
+    doc: Enable specific debugging flags (e.g., 'io')
+    inputBinding:
+      position: 101
+      prefix: -debug_flag
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: purge_dups
-description: `purge_dups` is a bioinformatics pipeline designed to refine de novo genome assemblies by removing redundant sequences.
+description: purge_dups is a bioinformatics pipeline that removes redundant haplotypic sequences from de novo genome assemblies using read depth and sequence alignment. Use when user asks to refine a genome assembly, remove haplotigs, identify redundant sequences, or purge duplications from diploid or polyploid assemblies.
 homepage: https://github.com/dfguan/purge_dups
 ---
+
 
 # purge_dups
 

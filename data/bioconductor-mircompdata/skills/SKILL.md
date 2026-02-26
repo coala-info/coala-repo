@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mircompdata
-description: the package is available on all platforms; click for details.
+description: This package provides raw data from a microRNA quality control study used to assess the performance of expression estimation methods. Use when user asks to access miRcomp datasets, evaluate microRNA expression estimation techniques, or load miRNA performance assessment data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/miRcompData.html
 ---
+
 
 # bioconductor-mircompdata
 

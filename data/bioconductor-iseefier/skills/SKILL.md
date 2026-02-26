@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseefier
-description: the package is available on all platforms; click for details.
+description: The iSEEfier package automates the configuration of iSEE dashboards by providing predefined recipes for complex visualization layouts. Use when user asks to generate initial dashboard states, visualize specific gene expression patterns, explore gene set enrichment results, or identify and display marker genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEfier.html
 ---
+
 
 # bioconductor-iseefier
 

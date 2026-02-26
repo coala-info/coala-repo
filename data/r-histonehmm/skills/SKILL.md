@@ -1,8 +1,9 @@
 ---
 name: r-histonehmm
-description: R package histonehmm (documentation from project home).
+description: This tool analyzes ChIP-seq data for histone modifications with broad genomic footprints using Hidden Markov Models. Use when user asks to call modified regions in single samples or identify differentially modified regions between two samples.
 homepage: https://cran.r-project.org/web/packages/histonehmm/index.html
 ---
+
 
 # r-histonehmm
 

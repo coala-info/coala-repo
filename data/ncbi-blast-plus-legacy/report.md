@@ -3,26 +3,32 @@
 ## ncbi-blast-plus-legacy
 
 ### Tool Description
-The provided text is a system error log indicating a failure to initialize the container environment (no space left on device) and does not contain help text or usage information for the tool.
+[Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'; fallback failed: [Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'
 
 ### Metadata
-- **Docker Image**: biocontainers/ncbi-blast-plus-legacy:v2.8.1-1-deb_cv1
+- **Docker Image**: Not found
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ncbi-blast-plus-legacy/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'; fallback failed: [Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'; fallback failed: [Errno 2] No such file or directory: 'ncbi-blast-plus-legacy'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/ncbi-blast-plus-legacy:v2.8.1-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3426807730: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

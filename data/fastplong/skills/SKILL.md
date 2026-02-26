@@ -1,8 +1,9 @@
 ---
 name: fastplong
-description: fastplong is a high-performance C++ tool designed specifically for the unique characteristics of long-read sequencing data.
+description: fastplong is a high-performance tool designed for quality control, filtering, and adapter trimming of long-read sequencing data. Use when user asks to filter reads by quality or length, trim adapter sequences, remove low complexity reads, or generate sequencing quality reports.
 homepage: https://github.com/OpenGene/fastplong
 ---
+
 
 # fastplong
 

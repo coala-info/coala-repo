@@ -3,7 +3,7 @@
 ## ervmancer
 
 ### Tool Description
-A tool for Endogenous Retrovirus (ERV) analysis (Note: The provided text contains error logs rather than help documentation, so specific arguments could not be extracted).
+ervmancer
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0
@@ -18,63 +18,35 @@ A tool for Endogenous Retrovirus (ERV) analysis (Note: The provided text contain
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2782499226: no space left on device
-```
+usage: ervmancer [-h] [--kd KMER_DICT] [--b B] [--advanced ADVANCED] [--r1 R1]
+                 [--r2 R2] [--s1 S1] [--keep_files] [--num_cores NUM_CORES]
+                 --output_dir OUTPUT_DIR [--bowtie_index BOWTIE_INDEX]
 
+ervmancer
 
-## Metadata
-- **Skill**: generated
-
-## ervmancer_ervmancer_fastq
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0
-- **Homepage**: https://github.com/AuslanderLab/ervmancer
-- **Package**: https://anaconda.org/channels/bioconda/packages/ervmancer/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3074106458: no space left on device
-```
-
-## ervmancer_ervmancer_sam
-
-### Tool Description
-The provided text does not contain help information or a description of the tool. It contains system log messages and a fatal error regarding container image building (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0
-- **Homepage**: https://github.com/AuslanderLab/ervmancer
-- **Package**: https://anaconda.org/channels/bioconda/packages/ervmancer/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1788444059: no space left on device
-```
-
-## ervmancer_ervmancer_tree
-
-### Tool Description
-Endogenous Retrovirus analysis tool - tree subcommand (Note: The provided help text contains only system error messages and no argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0
-- **Homepage**: https://github.com/AuslanderLab/ervmancer
-- **Package**: https://anaconda.org/channels/bioconda/packages/ervmancer/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ervmancer:0.0.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2900010821: no space left on device
+options:
+  -h, --help            show this help message and exit
+  --kd KMER_DICT, --kmer_dict KMER_DICT
+                        Absolute path to the kmer dictionary file
+                        (clean_kmer_31_60_percent_cutoff.pkl).
+  --b B, --bt2 B        User provided absolute path to self provided bowtie2
+                        alignment file.
+  --advanced ADVANCED   User provided absolute path to CSV file with user-
+                        provided read counts from other methods.
+  --r1 R1               Absolute path to paired-end R1 fastq file. A file is
+                        also needed for normalization
+  --r2 R2               Absolute path to paired-end R2 fastq file.
+  --s1 S1               Absolute path to single strand S1 fastq file.
+  --keep_files          Keeps intermediate outputs from Samtools and Bedtools.
+  --num_cores NUM_CORES
+                        Number of CPU cores used for processing.
+  --output_dir OUTPUT_DIR
+                        Absolute path to base output directory for CSV output
+                        and intermediate files. (Output folders are
+                        autogenerated if they do not exist already!)
+  --bowtie_index BOWTIE_INDEX
+                        Absolute path to the Bowtie2 index to be used for
+                        processing. If not provided, uses the built-in
+                        GRCh38_noalt_as index.
 ```
 

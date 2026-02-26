@@ -1,8 +1,9 @@
 ---
 name: pubchempy
-description: PubChemPy is a Python library that wraps the PubChem PUG REST API, allowing for seamless integration of chemical data into informatics workflows.
+description: PubChemPy is a Python library that retrieves chemical data, properties, and structural information from the PubChem database via its REST API. Use when user asks to fetch molecular properties, search for compounds by name or identifier, perform substructure or similarity searches, and convert chemical identifiers like SMILES or IUPAC names.
 homepage: https://github.com/mcs07/PubChemPy
 ---
+
 
 # pubchempy
 

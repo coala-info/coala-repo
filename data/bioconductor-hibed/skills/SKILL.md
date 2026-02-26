@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hibed
-description: the package is available on all platforms; click for details.
+description: bioconductor-hibed performs brain cell type deconvolution on human DNA methylation microarray data to estimate proportions of seven major brain cell types. Use when user asks to estimate cell type proportions from bulk brain methylation beta values, perform hierarchical brain cell deconvolution, or resolve GABAergic and glutamatergic neurons alongside non-neuronal cells.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiBED.html
 ---
+
 
 # bioconductor-hibed
 

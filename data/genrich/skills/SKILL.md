@@ -1,8 +1,9 @@
 ---
 name: genrich
-description: Genrich is a high-performance peak-caller designed to identify sites of genomic enrichment from alignment data.
+description: Genrich is a peak-caller designed to identify genomic enrichment from alignment data, specifically optimized for ATAC-seq and multimapping reads. Use when user asks to call peaks from ChIP-seq or ATAC-seq data, handle multiple replicates, or remove PCR duplicates from queryname-sorted alignments.
 homepage: https://github.com/jsh58/Genrich
 ---
+
 
 # genrich
 

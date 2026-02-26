@@ -1,8 +1,9 @@
 ---
 name: metabuli
-description: Metabuli is a specialized metagenomic classifier that utilizes a novel k-mer structure called a "metamer." By analyzing both DNA and amino acid (AA) sequences simultaneously, it achieves high sensitivity for homology detection through AA conservation while maintaining high specificity via DNA mutations.
+description: Metabuli is a metagenomic classifier that performs taxonomic profiling by simultaneously analyzing DNA and amino acid sequences using a metamer k-mer structure. Use when user asks to classify metagenomic reads, build custom reference databases, refine classification results, or extract reads assigned to specific taxonomic IDs.
 homepage: https://github.com/steineggerlab/Metabuli
 ---
+
 
 # metabuli
 

@@ -1,8 +1,9 @@
 ---
 name: logol-bin
-description: Logol is a specialized biological pattern matching tool that utilizes a unique grammar language to identify complex structures in nucleic or proteic sequences.
+description: Logol is a biological pattern matching tool that uses a grammar language to identify complex structures in nucleic or proteic sequences. Use when user asks to search for complex biological patterns, execute searches against single or multiple sequences, or convert search results into GFF or FASTA formats.
 homepage: https://github.com/genouest/logol
 ---
+
 
 # logol-bin
 

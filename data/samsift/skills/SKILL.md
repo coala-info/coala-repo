@@ -1,8 +1,9 @@
 ---
 name: samsift
-description: samsift is a powerful bioinformatics utility that bridges the gap between simple SAM filtering and complex custom scripting.
+description: samsift filters and modifies SAM or BAM files by applying Python logic to individual alignment records. Use when user asks to filter reads by mapping quality or sequence content, add custom SAM tags, or modify alignment records using Python expressions.
 homepage: https://github.com/karel-brinda/samsift
 ---
+
 
 # samsift
 

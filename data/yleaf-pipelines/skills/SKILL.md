@@ -1,8 +1,9 @@
 ---
 name: yleaf-pipelines
-description: The `yleaf-pipelines` tool is a specialized version of Yleaf optimized for integration into automated bioinformatics workflows.
+description: The `yleaf-pipelines` tool predicts human Y-chromosome haplogroups from sequencing data, designed for automated bioinformatics workflows. Use when user asks to predict Y-chromosome haplogroups, infer haplogroups from FASTQ, BAM, or CRAM files, use custom reference genomes, draw haplogroup trees, report private mutations, or extract the Y-chromosome from a full genome FASTA.
 homepage: https://github.com/trianglegrrl/Yleaf-pipelines
 ---
+
 
 # yleaf-pipelines
 

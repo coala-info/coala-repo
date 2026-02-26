@@ -1,8 +1,9 @@
 ---
 name: r-ichorcna
-description: R package ichorcna (documentation from project home).
+description: This tool estimates tumor fraction and copy number alterations from ultra-low-pass whole genome sequencing of cell-free DNA. Use when user asks to estimate tumor purity, segment the genome, or predict copy number states in cfDNA samples.
 homepage: https://cran.r-project.org/web/packages/ichorcna/index.html
 ---
+
 
 # r-ichorcna
 

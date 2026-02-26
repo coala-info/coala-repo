@@ -1,8 +1,9 @@
 ---
 name: brig
-description: Brigadier is a high-performance command parsing and dispatching library.
+description: Brigadier is a command parsing and dispatching library for building complex command trees. Use when user asks to register commands, build command trees, define execution logic, or parse user input.
 homepage: https://github.com/Mojang/brigadier
 ---
+
 
 # brig
 

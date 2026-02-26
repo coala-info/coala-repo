@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.mae
-description: the package is available on all platforms; click for details.
+description: This package provides language-agnostic storage and retrieval for MultiAssayExperiment objects using the alabaster framework. Use when user asks to save MultiAssayExperiment objects to disk, load MultiAssayExperiment data from a directory, or manage portable multi-omics data artifacts.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.mae.html
 ---
+
 
 # bioconductor-alabaster.mae
 

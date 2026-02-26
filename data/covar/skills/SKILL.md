@@ -1,8 +1,9 @@
 ---
 name: covar
-description: `covar` is a specialized bioinformatics tool designed for wastewater surveillance and viral genomic analysis.
+description: covar identifies physically linked clusters of mutations in viral genomic data to distinguish lineages in mixed environmental samples. Use when user asks to identify mutation clusters, analyze wastewater surveillance data, or translate nucleotide changes into amino acid mutations using GFF3 annotations.
 homepage: https://github.com/andersen-lab/covar
 ---
+
 
 # covar
 

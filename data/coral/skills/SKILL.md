@@ -1,8 +1,9 @@
 ---
 name: coral
-description: The `coral` skill (implementing the `rnabridge-align` tool) provides a specialized workflow for bridging the gap between paired-end RNA-seq mates.
+description: Coral bridges the gap between paired-end RNA-seq mates to infer the full alignment of the intervening sequence. Use when user asks to bridge paired-end reads, resolve full fragment structures, or improve transcript assembly accuracy using coordinate-sorted BAM files.
 homepage: https://github.com/Shao-Group/coral
 ---
+
 
 # coral
 

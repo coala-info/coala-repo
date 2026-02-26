@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breakpointr
-description: the package is available on all platforms; click for details.
+description: This tool analyzes Strand-seq data to detect template strand inheritance states and identify genomic breakpoints such as Sister Chromatid Exchanges. Use when user asks to process single-cell BAM files to track strand directionality changes, call breakpoint hotspots, or visualize strand states across the genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/breakpointR.html
 ---
+
 
 # bioconductor-breakpointr
 

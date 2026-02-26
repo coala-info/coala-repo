@@ -1,8 +1,9 @@
 ---
 name: perl-json-xs
-description: The `perl-json-xs` skill provides guidance on using the `JSON::XS` module, a C-based Perl extension designed for maximum performance and correctness.
+description: This tool provides high-performance conversion between Perl data structures and JSON text using a C-based extension. Use when user asks to encode Perl references to JSON, decode JSON strings into Perl structures, or perform fast and strict JSON validation.
 homepage: https://metacpan.org/pod/JSON::XS
 ---
+
 
 # perl-json-xs
 

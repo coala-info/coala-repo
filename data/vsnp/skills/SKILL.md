@@ -1,8 +1,9 @@
 ---
 name: vsnp
-description: vSNP is a specialized bioinformatics pipeline designed for high-consequence disease investigations and outbreak tracking.
+description: vSNP is a bioinformatics pipeline that transforms raw sequencing data into validated SNP calls and phylogenetic insights for disease investigations. Use when user asks to call and validate SNPs, build SNP tables, create phylogenetic trees, perform comparative analysis, manage reference genomes, or filter SNP positions.
 homepage: https://github.com/USDA-VS/vSNP
 ---
+
 
 # vsnp
 

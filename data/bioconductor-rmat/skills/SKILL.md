@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rmat
-description: "the package MAT and contains functions to parse and merge Affymetrix BPMAP and CEL tiling array files (using C++ based Fusion SDK and Bioconductor package affxparser), normalize tiling arrays using sequence specific models, detect enriched regions from ChIP-chip experiments. Note: users should have GSL and GenomeGraphs installed. Windows users: 'consult the README file available in the inst directory of the source distribution for necessary configuration instructions'."
+description: rMAT processes Affymetrix tiling array data and identifies enriched regions in ChIP-chip experiments. Use when user asks to parse and merge BPMAP and CEL files, normalize tiling arrays using sequence-specific models, or detect enriched regions from ChIP-chip data.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/rMAT.html
 ---
+
 
 # bioconductor-rmat
 

@@ -1,8 +1,9 @@
 ---
 name: savont
-description: Savont is a specialized bioinformatics tool designed for high-accuracy long-read amplicon sequencing data (>98% accuracy).
+description: Savont is a bioinformatics tool that generates high-accuracy amplicon sequence variants and taxonomic classifications from long-read sequencing data. Use when user asks to generate ASVs from ONT or PacBio reads, download reference databases, or perform species-level taxonomic classification.
 homepage: https://github.com/bluenote-1577/savont
 ---
+
 
 # savont
 

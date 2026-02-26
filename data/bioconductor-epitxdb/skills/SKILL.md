@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epitxdb
-description: the package is available on all platforms; click for details.
+description: This tool stores, accesses, and manipulates epitranscriptomic information using the AnnotationDbi interface. Use when user asks to create EpiTxDb objects, query RNA modification data, or shift modification coordinates between genomic and transcriptomic contexts.
 homepage: https://bioconductor.org/packages/release/bioc/html/EpiTxDb.html
 ---
+
 
 # bioconductor-epitxdb
 

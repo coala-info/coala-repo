@@ -1,8 +1,9 @@
 ---
 name: genometester4
-description: GenomeTester4 is a high-performance toolkit designed for the manipulation of k-mer lists.
+description: GenomeTester4 is a high-performance toolkit for counting k-mers and performing set theory operations on genomic sequences. Use when user asks to count k-mers in sequencing data, perform set operations like intersections or unions on k-mer lists, or query specific k-mer frequencies from binary databases.
 homepage: https://github.com/bioinfo-ut/GenomeTester4
 ---
+
 
 # genometester4
 

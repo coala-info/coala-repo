@@ -1,8 +1,9 @@
 ---
 name: colormap
-description: The colormap skill provides a standardized interface for mapping normalized scalar data to high-quality color gradients.
+description: "This tool maps normalized scalar data to high-quality color gradients using fragment shaders or a C++ library. Use when user asks to map float values to RGBA colors, integrate scientific palettes into shaders, or process heatmaps in C++."
 homepage: https://github.com/kbinani/colormap-shaders
 ---
+
 
 # colormap
 

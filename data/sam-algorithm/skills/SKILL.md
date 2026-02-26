@@ -1,8 +1,9 @@
 ---
 name: sam-algorithm
-description: The Self-Assembling-Manifold (SAM) algorithm is a specialized tool for single-cell transcriptomics that identifies topologically significant features to reconstruct the underlying manifold of cellular states.
+description: The Self-Assembling-Manifold algorithm identifies topologically significant features to reconstruct the manifold of cellular states in single-cell transcriptomics data. Use when user asks to analyze scRNA-seq data, perform manifold learning, visualize cellular states, or apply batch correction using the samalg package.
 homepage: https://github.com/atarashansky/self-assembling-manifold
 ---
+
 
 # sam-algorithm
 

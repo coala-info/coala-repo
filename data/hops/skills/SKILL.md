@@ -1,8 +1,9 @@
 ---
 name: hops
-description: HOPS (Heuristic Operations for Pathogen Screening) is a Java-based pipeline that streamlines the identification and authentication of pathogen DNA in metagenomic data.
+description: HOPS is a Java-based pipeline that automates the identification and authentication of pathogen DNA in metagenomic data by running MALT and MaltExtract. Use when user asks to screen metagenomic samples for pathogens, identify target species in ancient DNA, or run the full MALT and MaltExtract analysis pipeline.
 homepage: https://github.com/rhuebler/HOPS/
 ---
+
 
 # hops
 

@@ -1,8 +1,9 @@
 ---
 name: folddisco
-description: Folddisco is a high-performance structural bioinformatics tool developed by the Steinegger Lab.
+description: Folddisco searches for complex structural motifs across millions of protein structures by focusing on the spatial arrangement of residues. Use when user asks to index protein structures, search for specific structural motifs like catalytic triads or zinc fingers, or perform batch structural queries.
 homepage: https://github.com/steineggerlab/folddisco
 ---
+
 
 # folddisco
 

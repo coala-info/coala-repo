@@ -1,8 +1,9 @@
 ---
 name: expat
-description: The `node-expat` library is a Node.js binding for the `libexpat` C library, providing one of the fastest XML SAX (Simple API for XML) parsers available for the Node ecosystem.
+description: "Expat provides a high-performance, event-based XML SAX parser for Node.js that processes documents as streams. Use when user asks to parse XML efficiently, handle large XML files using streams, or process XML tags and attributes through event callbacks."
 homepage: https://github.com/xmppo/node-expat
 ---
+
 
 # expat
 

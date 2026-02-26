@@ -1,8 +1,9 @@
 ---
 name: miniprot-boundary-scorer
-description: The `miniprot-boundary-scorer` is a specialized post-processing tool designed to enhance the reliability of `miniprot` alignments.
+description: This tool scores and validates splice sites and coding boundaries in miniprot protein-to-genome alignments to improve annotation reliability. Use when user asks to score splice sites, validate coding boundaries in miniprot alignments, or filter exons and introns based on substitution matrices.
 homepage: https://github.com/tomasbruna/miniprot-boundary-scorer
 ---
+
 
 # miniprot-boundary-scorer
 

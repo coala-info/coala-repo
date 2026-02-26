@@ -1,8 +1,9 @@
 ---
 name: appspam
-description: App-SpaM (Alignment-free Phylogenetic Placement using filtered SPAced word Matches) is a tool designed to place query sequences into a reference tree without the need for a multiple sequence alignment.
+description: App-SpaM performs alignment-free phylogenetic placement of query sequences into a reference tree using filtered spaced word matches. Use when user asks to place sequences into a phylogeny without multiple sequence alignment, estimate distances between genomic sequences, or perform phylogenetic placement on unassembled draft genomes.
 homepage: https://github.com/matthiasblanke/App-SpaM/
 ---
+
 
 # appspam
 

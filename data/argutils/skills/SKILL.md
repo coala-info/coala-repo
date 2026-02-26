@@ -1,8 +1,9 @@
 ---
 name: argutils
-description: `argutils` is a Python utility designed to bridge the gap between command-line argument parsing and configuration file management.
+description: "argutils synchronizes command-line argument parsing with configuration file management using a single specification file. Use when user asks to define program interfaces, generate argparsers from specifications, or sync CLI flags with configuration files."
 homepage: https://github.com/eclarke/argutils
 ---
+
 
 # argutils
 

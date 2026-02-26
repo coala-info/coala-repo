@@ -1,8 +1,9 @@
 ---
 name: seqsero2
-description: SeqSero2 is a specialized bioinformatics pipeline for determining Salmonella serotypes from Whole Genome Sequencing (WGS) data.
+description: SeqSero2 predicts Salmonella serotypes from whole genome sequencing data using allele micro-assembly or k-mer based workflows. Use when user asks to determine Salmonella serotypes, perform high-resolution allele assembly, or conduct rapid k-mer based screening from raw reads or genome assemblies.
 homepage: https://github.com/denglab/SeqSero2
 ---
+
 
 # seqsero2
 

@@ -2,10 +2,15 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: je
 label: je-suite_je
-doc: "Je-suite is a suite of tools for handling multiplexed sequencing data. (Note:
-  The provided help text contains only container runtime error messages and does not
-  list specific command-line arguments.)\n\nTool homepage: https://gbcs.embl.de/Je"
-inputs: []
+doc: "JE-Suite is a collection of tools for processing sequencing data, particularly
+  for single-cell RNA sequencing.\n\nTool homepage: https://gbcs.embl.de/Je"
+inputs:
+  - id: command
+    type: string
+    doc: 'The command to execute. Available commands: clip, debarcode, demultiplex,
+      demultiplex-illu, markdupes, dropseq, retag.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

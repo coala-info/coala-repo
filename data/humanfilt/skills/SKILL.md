@@ -1,8 +1,9 @@
 ---
 name: humanfilt
-description: `humanfilt` is a specialized bioinformatics utility designed to streamline the removal of human "contaminant" reads from sequencing data.
+description: humanfilt removes human contaminant reads from sequencing data by running a sequential pipeline of decontamination tools against multiple reference genomes. Use when user asks to remove human DNA from metagenomics or pathogen sequencing data, filter sequencing reads, or setup human reference databases for decontamination.
 homepage: https://github.com/jprehn-lab/humanfilt
 ---
+
 
 # humanfilt
 

@@ -1,8 +1,9 @@
 ---
 name: longcallr_nn
-description: longcallR_nn is a specialized genomic tool designed to handle the unique error profiles and characteristics of long-read RNA sequencing.
+description: longcallr_nn uses a deep learning architecture to perform high-precision variant calling on long-read RNA sequencing data. Use when user asks to call variants from long-read RNA-seq data, download pre-trained genomic models, or perform neural network inference on extracted features.
 homepage: https://github.com/huangnengCSU/longcallR-nn
 ---
+
 
 # longcallr_nn
 

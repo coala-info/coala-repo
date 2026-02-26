@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hugene.2.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Gene 2.0 ST microarray. Use when user asks to process Affymetrix Human Gene 2.0 ST array data, annotate microarray probes, or load platform design information for this chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hugene.2.0.st.html
 ---
+
 
 # bioconductor-pd.hugene.2.0.st
 

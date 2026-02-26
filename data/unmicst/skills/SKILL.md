@@ -1,8 +1,9 @@
 ---
 name: unmicst
-description: UnMicst (Universal Models for Identifying Cells and Segmenting Tissue) is a deep learning tool that addresses the challenge of nuclear segmentation in complex tissue morphologies.
+description: UnMicst is a deep learning tool that performs nuclear segmentation in complex tissue images. Use when user asks to segment nuclei, classify pixels for nuclei, run nuclear segmentation on an image, select a segmentation model, adjust for image pixel size, normalize image intensity, or generate nuclei probability maps.
 homepage: https://github.com/labsyspharm/UnMicst
 ---
+
 
 # unmicst
 

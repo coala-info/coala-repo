@@ -1,8 +1,9 @@
 ---
 name: involucro
-description: Involucro is a specialized tool for building and packaging software using containers, driven by a Lua-based configuration file (`invfile.lua`).
+description: Involucro builds and packages software using containers driven by a Lua-based configuration file. Use when user asks to build software in ephemeral containers, package artifacts into minimal production images, or define containerized build tasks using Lua.
 homepage: https://github.com/involucro/involucro
 ---
+
 
 # involucro
 

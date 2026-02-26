@@ -1,8 +1,9 @@
 ---
 name: unitig-counter
-description: The `unitig-counter` tool is a specialized utility for bacterial genomics that identifies and counts unitigs (non-branching paths in a de Bruijn graph) across multiple strains.
+description: The `unitig-counter` tool identifies and counts unitigs across multiple bacterial strains, preparing assembly data for genome-wide association studies. Use when user asks to count unitigs, build a de Bruijn graph, prepare data for GWAS, calculate distances between sequences, or extend unitig sequences.
 homepage: https://github.com/johnlees/unitig-counter
 ---
+
 
 # unitig-counter
 

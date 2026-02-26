@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rnamodr
-description: the package is available on all platforms; click for details.
+description: RNAmodR detects and analyzes post-transcriptional RNA modifications from high-throughput sequencing data. Use when user asks to identify modified nucleotides, analyze RNA modification patterns, or process sequencing data for RNA modifications.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNAmodR.html
 ---
+
 
 # bioconductor-rnamodr
 

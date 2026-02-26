@@ -1,8 +1,9 @@
 ---
 name: perl-test-requires
-description: Test::Requires is a Perl testing utility that provides a clean way to declare dependencies within test scripts.
+description: This Perl testing utility checks for module or version availability and skips tests if requirements are not met. Use when user asks to declare test dependencies, skip tests for missing modules, or enforce minimum Perl versions in test scripts.
 homepage: https://github.com/tokuhirom/Test-Requires
 ---
+
 
 # perl-test-requires
 

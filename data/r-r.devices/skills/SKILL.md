@@ -1,8 +1,9 @@
 ---
 name: r-r.devices
-description: "Functions for creating plots and image files in a unified way     regardless of output format (EPS, PDF, PNG, SVG, TIFF, WMF, etc.). Default     device options as well as scales and aspect ratios are controlled in a uniform     way across all device types. Switching output format requires minimal changes     in code. This package is ideal for large-scale batch processing, because it     will never leave open graphics devices or incomplete image files behind, even on     errors or user interrupts.</p>"
+description: This tool provides a unified interface for creating, managing, and automating R graphics devices to generate plots in various image formats. Use when user asks to create plots in multiple formats, manage consistent aspect ratios, ensure graphics devices are properly closed, or automate batch processing of figures.
 homepage: https://cloud.r-project.org/web/packages/R.devices/index.html
 ---
+
 
 # r-r.devices
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-updateobject
-description: The package is primarily useful to package maintainers who want to update the serialized S4 instances included in their package. This is still work-in-progress.
+description: The bioconductor-updateobject package updates serialized S4 instances within R packages. Use when user asks to update serialized S4 objects or maintain Bioconductor package instances.
 homepage: https://bioconductor.org/packages/release/bioc/html/updateObject.html
 ---
+
 
 # bioconductor-updateobject
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cageminer
-description: the package is available on all platforms; click for details.
+description: Bioconductor-cageminer integrates GWAS-derived SNPs with transcriptomic data and coexpression networks to prioritize high-confidence candidate genes. Use when user asks to mine candidate genes from GWAS results, identify genes near SNPs, filter genes by coexpression module enrichment, or rank candidates based on condition correlation and hub status.
 homepage: https://bioconductor.org/packages/release/bioc/html/cageminer.html
 ---
+
 
 # bioconductor-cageminer
 

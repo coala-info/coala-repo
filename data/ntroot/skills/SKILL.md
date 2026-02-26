@@ -1,8 +1,9 @@
 ---
 name: ntroot
-description: ntroot is a scalable framework designed for rapid ancestry prediction in human cohorts.
+description: ntroot is a scalable framework for rapid ancestry prediction in human cohorts using k-mer based variant identification. Use when user asks to predict ancestry from sequencing reads, infer super-population origins from genome assemblies, perform local ancestry inference, or generate ancestry profiles from VCF files.
 homepage: https://github.com/bcgsc/ntroot
 ---
+
 
 # ntroot
 

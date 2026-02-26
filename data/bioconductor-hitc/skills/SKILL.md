@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hitc
-description: the package is available on all platforms; click for details.
+description: This package provides tools for the analysis and visualization of high-throughput chromosome conformation capture data such as Hi-C and 5C. Use when user asks to import contact maps, perform genomic binning, normalize interaction data using ICE or LGF methods, visualize interaction heatmaps, or detect topological domains.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiTC.html
 ---
+
 
 # bioconductor-hitc
 

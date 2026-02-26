@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.clariom.s.human.ht
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Clariom S Human HT microarray. Use when user asks to analyze Clariom S Human HT microarray data, map probes to genomic locations, or perform high-throughput gene expression studies.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.human.ht.html
 ---
+
 
 # bioconductor-pd.clariom.s.human.ht
 

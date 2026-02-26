@@ -1,8 +1,9 @@
 ---
 name: immuneml
-description: The immuneML platform is a specialized framework designed for the machine learning-based classification and analysis of adaptive immune receptors.
+description: immuneML is a machine learning platform for the classification and analysis of adaptive immune receptor repertoires. Use when user asks to install or validate the software, execute machine learning workflows using specification files, or troubleshoot and interpret analysis results.
 homepage: https://github.com/uio-bmi/immuneML
 ---
+
 
 # immuneml
 

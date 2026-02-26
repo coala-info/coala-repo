@@ -1,8 +1,9 @@
 ---
 name: lsd
-description: lsd (LSDeluxe) is a modern, high-performance rewrite of the GNU `ls` command.
+description: "lsd is a modern directory listing tool that provides colorized output, icons, and a native tree-view mode. Use when user asks to list files with icons, visualize directory structures in a tree view, sort files by metadata, or display recursive directory sizes."
 homepage: https://github.com/lsd-rs/lsd
 ---
+
 
 # lsd
 

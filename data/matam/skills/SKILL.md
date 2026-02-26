@@ -1,8 +1,9 @@
 ---
 name: matam
-description: MATAM (Mapping-Assisted Targeted-Assembly for Metagenomics) is a specialized bioinformatic tool designed to reconstruct complete marker genes from short-read metagenomic datasets.
+description: MATAM reconstructs complete marker genes from short-read metagenomic datasets using a reference-guided assembly approach. Use when user asks to reconstruct full-length marker sequences, perform taxonomic assignment, or compare abundances across metagenomic samples.
 homepage: https://github.com/bonsai-team/matam
 ---
+
 
 # matam
 

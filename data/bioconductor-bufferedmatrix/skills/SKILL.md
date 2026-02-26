@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bufferedmatrix
-description: the package is available on all platforms; click for details.
+description: This tool creates and manages BufferedMatrix objects in R to handle large tabular datasets that exceed available main memory by storing data on the file system. Use when user asks to create out-of-memory matrices, perform row-wise or column-wise operations on large datasets, or calculate summary statistics on matrices stored on disk.
 homepage: https://bioconductor.org/packages/release/bioc/html/BufferedMatrix.html
 ---
+
 
 # bioconductor-bufferedmatrix
 

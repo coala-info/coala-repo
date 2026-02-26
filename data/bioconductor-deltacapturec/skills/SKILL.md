@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deltacapturec
-description: the package is available on all platforms; click for details.
+description: This tool analyzes meso-scale changes in chromatin conformation from 3C data by identifying significant regional shifts in interaction levels between conditions. Use when user asks to normalize 3C interaction counts, calculate delta mean normalized values, or identify statistically significant regions of differential interaction using a permutation-based approach.
 homepage: https://bioconductor.org/packages/release/bioc/html/deltaCaptureC.html
 ---
+
 
 # bioconductor-deltacapturec
 

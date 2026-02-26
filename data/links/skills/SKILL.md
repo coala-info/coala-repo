@@ -1,8 +1,9 @@
 ---
 name: links
-description: LINKS (Long Interval Nucleotide K-mer Scaffolder) is a specialized genomics application used to increase the continuity of draft genome assemblies.
+description: LINKS is a genomics tool that uses long-range sequence data and k-mer pairs to scaffold draft genome assemblies. Use when user asks to scaffold contigs, increase assembly continuity, or run alignment-free genome scaffolding workflows.
 homepage: https://github.com/bcgsc/LINKS
 ---
+
 
 # links
 

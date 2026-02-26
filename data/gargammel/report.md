@@ -3,7 +3,7 @@
 ## gargammel
 
 ### Tool Description
-A tool for simulating ancient DNA fragments (Note: The provided help text contains only system error messages and no usage information).
+This script is a wrapper to run the different programs to create a set of Illumina reads for ancient DNA from a set of fasta files representing the endogenous, the contaminant from the same species and the bacterial contamination.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0
@@ -18,80 +18,124 @@ A tool for simulating ancient DNA fragments (Note: The provided help text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1325220698: no space left on device
-```
+This script is a wrapper to run the different programs to create
+ a set of Illumina reads for ancient DNA from a set of fasta files
+ representing the endogenous, the contaminant from the same species
+ and the bacterial contamination.
 
 
-## Metadata
-- **Skill**: generated
 
-## gargammel_fragSim
+ usage:	/usr/local/bin/gargammel <options> [directory with fasta directories] 
 
-### Tool Description
-A tool from the gargammel package (description unavailable due to error in provided help text).
+ This directory should contain 3 directories:
+ 	bact/ The bacterial contamination
+ 	cont/ The contamination from the same species
+ 	endo/ The endogenous material
+ 
+ Options:
+	--comp [B,C,E]				Composition of the final set in fraction 
+						the 3 numbers represent the bacterial, contaminant and endogenous
+						ex: --comp 0.6,0.02,0.38 will result
+						in 60% bacterial contamination while the rest will be from the same
+						species 5% will be contamination and 95% will be endogenous
+						Default: --comp 0,0,1
+	--mock					Do nothing, just print the commands that will be run
+	-o					Output prefix (default: [input dir]/simadna)
+ Either specify:
+		-n	[number]		Generate [number] fragments (default: 1000)
+		-c	[coverage]		Endogenous coverage
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0
-- **Homepage**: https://github.com/grenaud/gargammel
-- **Package**: https://anaconda.org/channels/bioconda/packages/gargammel/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4020948401: no space left on device
-```
+ Fragment selection
+ ===================
+ 		--misince	[file]		Base misincorporation for the endogenous fragments (default none)
+ 		--misincc	[file]		Base misincorporation for the contaminant fragments (default none)
+ 		--misincb	[file]		Base misincorporation for the bacterial fragments (default none)
+ 		--distmis	[dist]		Distance to consider for base misincorporation (default 1)
+ 						this file is obtained from mapDamage
 
-## gargammel_deamSim
+ 	Fragment size distribution: specify either one of the 3 possible options:
+		-l	[length]		Generate fragments of fixed length  (default: 35)
+		-s	[file]			Open file with size distribution (one fragment length per line)
+		-f	[file]			Open file with size frequency in the following format:
+				     		length[TAB]freq	ex:
+				     		40	0.0525
+				     		41	0.0491
+				     		...
 
-### Tool Description
-A tool for simulating deamination in ancient DNA sequences. (Note: The provided help text contained only system error messages and no usage information.)
+		Length options:
+			--loc	[file]		Location for lognormal distribution (default none)
+			--scale	[file]		Scale for lognormal distribution    (default none)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0
-- **Homepage**: https://github.com/grenaud/gargammel
-- **Package**: https://anaconda.org/channels/bioconda/packages/gargammel/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1268227881: no space left on device
-```
+ 	Fragment size limit:
+		--minsize	[length]	Minimum fragments length (default: 0)
+                --maxsize	[length]	Maximum fragments length (default: 1000)
 
-## gargammel_adptSim
+ 	Fragment methylation:
+		--methyl			Allow for lowercase C and G to denote
+                				methylated cytosines on the + and - strand respectively
+                				(default: not used)
 
-### Tool Description
-A tool within the gargammel package (likely for adapter simulation), however, the provided text contains only system error messages and no help documentation.
+ Deamination
+ ===================
+ To add deamination to the bacterial and endogenous material,you can specify
+ either one of these options:
+	-mapdamage	[mis.txt] [protocol]	Read the miscorporation file [mis.txt]
+                           	       		produced by mapDamage
+		                       		[protocol] can be either "single" or "double" (without quotes)
+		                       		Single strand will have C->T damage on both ends
+		                       		Double strand will have and C->T at the 5' end and G->A damage at the 3' end
+	-matfile	[matrix file prefix]	Read the matrix file of substitutions
+		                                Provide the prefix only, both files must end with
+		                               	5.dat and 3.dat
+	-damage		[v,l,d,s]	  	For the Briggs et al. 2007 model
+		                  		The parameters must be comma-separated e.g.: -damage 0.03,0.4,0.01,0.3
+		                  			v: nick frequency
+		                  			l: length of overhanging ends (geometric parameter)
+		                  			d: prob. of deamination of Cs in double-stranded parts
+		                  			s: prob. of deamination of Cs in single-stranded parts
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0
-- **Homepage**: https://github.com/grenaud/gargammel
-- **Package**: https://anaconda.org/channels/bioconda/packages/gargammel/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2151096379: no space left on device
-```
+ Alternatively, you can specify these options independently for the endogenous (e), bacterial (b)
+ and present-day human contaminant (c) using the following options:
+	-mapdamagee	[mis.txt] [protocol]	Endogenous mapDamage misincorporation file
+	-matfilee	[matrix file prefix]	Endogenous matrix file of substitutions
+	-damagee	[v,l,d,s]	  	Endogenous Briggs parameters
+	-mapdamageb	[mis.txt] [protocol]	Bacterial mapDamage misincorporation file
+	-matfileb	[matrix file prefix]	Bacterial matrix file of substitutions
+	-damageb	[v,l,d,s]	  	Bacterial Briggs parameters
+	-mapdamagec	[mis.txt] [protocol]	Human contaminant mapDamage misincorporation file
+	-matfilec	[matrix file prefix]	Human contaminant matrix file of substitutions
+	-damagecd	[v,l,d,s]	  	Human contaminant Briggs parameters
 
-## gargammel_gargammel.pl
+ please note that if you do specify deamination for one source but not for another, no deamination will be added
 
-### Tool Description
-The provided text does not contain help information for the tool; it consists of system error logs related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
+ If using --methyl, you can also specify different matrix file for methylated
+	-matfilenonmeth	[matrix file prefix]	Read the matrix file of substitutions for non-methylated Cs
+		                            	Provide the prefix only, both files must end with
+		                            	5.dat and 3.dat
+   	-matfilemeth	[matrix file prefix]	Read the matrix file of substitutions for methylated Cs
+		                         	Provide the prefix only, both files must end with
+		                         	5.dat and 3.data
+ Adapter and sequencing
+ ===================
+	-fa	[seq]				Adapter that is observed after the forward read (Default: AGATCGGAAG...)
+	-sa	[seq]				Adapter that is observed after the reverse read (Default: AGATCGGAAG...)
+	-rl	[length]			Desired read length  (Default: 75)
+	-se                             	use single-end sequencing (Default: paired-end)
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0
-- **Homepage**: https://github.com/grenaud/gargammel
-- **Package**: https://anaconda.org/channels/bioconda/packages/gargammel/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gargammel:1.1.4--hb66fcc3_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2667487774: no space left on device
+                                        	The following options change the sequencing error rate, please note that positive factor
+                                        	will decrease the rate of such errors and a negative one will increase it.
+        -qs     [factor]                	Increase error rate for forward reads by a factor of 1/(10^([factor]/10)) (Default: 0)
+        -qs2    [factor]                	Increase error rate for reverse reads by a factor of 1/(10^([factor]/10)) (Default: 0)
+
+
+	-ss     [system]                	Illumina platfrom to use, the parentheses indicate the max. read length
+	                                	use the shorthand in the left column:
+                                                                        (single-end, paired-end)
+						   GA2  - GenomeAnalyzer II (  50bp,  75bp)
+						   HS20 - HiSeq 2000        ( 100bp, 100bp)
+						   HS25 - HiSeq 2500        ( 125bp, 150bp) (Default)
+						   HSXt - HiSeqX TruSeq     ( 150bp, 150bp)
+						   MSv1 - MiSeq v1          ( 250bp, 250bp)
+						   MSv3 - MiSeq v3          ( 250bp, 250bp)
 ```
 

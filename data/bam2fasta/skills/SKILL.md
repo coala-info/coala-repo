@@ -1,8 +1,9 @@
 ---
 name: bam2fasta
-description: The `bam2fasta` tool is a specialized utility designed to bridge the gap between alignment data (BAM) and sequence-based analysis (FASTA).
+description: The bam2fasta tool converts BAM alignment files into FASTA format, specifically for single-cell sequence extraction and barcode filtering. Use when user asks to convert BAM files to FASTA, extract sequences for specific cell barcodes, or filter genomic data by barcode read counts.
 homepage: https://github.com/czbiohub/bam2fasta
 ---
+
 
 # bam2fasta
 

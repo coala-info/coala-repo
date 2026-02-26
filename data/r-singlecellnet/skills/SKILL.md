@@ -1,8 +1,9 @@
 ---
 name: r-singlecellnet
-description: R package singlecellnet (documentation from project home).
+description: This tool classifies single-cell RNA-Seq data across different platforms and species using the singleCellNet R package. Use when user asks to train classifiers on reference scRNA-Seq datasets, assess classifier performance, predict cell identities, or perform cross-species cell type mapping.
 homepage: https://cran.r-project.org/web/packages/singlecellnet/index.html
 ---
+
 
 # r-singlecellnet
 

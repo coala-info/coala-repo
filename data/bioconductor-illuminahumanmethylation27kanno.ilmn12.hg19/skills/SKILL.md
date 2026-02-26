@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation27kanno.ilmn12.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data and metadata for the Illumina HumanMethylation27k platform using the hg19 genome build. Use when user asks to access genomic coordinates, probe design information, or SNP annotations for 27k methylation arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation27kanno.ilmn12.hg19.html
 ---
+
 
 # bioconductor-illuminahumanmethylation27kanno.ilmn12.hg19
 

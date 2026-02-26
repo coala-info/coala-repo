@@ -1,8 +1,9 @@
 ---
 name: peka
-description: PEKA (Positionally-enriched k-mer analysis) is a bioinformatics tool designed to identify enriched protein-RNA binding motifs from CLIP datasets.
+description: PEKA identifies enriched protein-RNA binding motifs from CLIP datasets by comparing k-mer distributions around high-confidence crosslink sites. Use when user asks to determine PEKA scores, rank k-mers, or visualize motif enrichment profiles around crosslink sites.
 homepage: https://github.com/ulelab/peka
 ---
+
 
 # peka
 

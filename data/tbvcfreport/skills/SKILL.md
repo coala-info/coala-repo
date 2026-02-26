@@ -1,8 +1,9 @@
 ---
 name: tbvcfreport
-description: The `tbvcfreport` tool is designed to bridge the gap between raw genomic variant data and actionable biological insights for *Mycobacterium tuberculosis*.
+description: This tool generates interactive HTML reports from SnpEff-annotated VCF files to facilitate the analysis of genomic variants and drug resistance in Mycobacterium tuberculosis. Use when user asks to generate variant reports, integrate TBProfiler data into HTML summaries, or filter upstream and downstream variants from genomic results.
 homepage: http://github.com/COMBAT-TB/tbvcfreport
 ---
+
 
 # tbvcfreport
 

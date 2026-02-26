@@ -1,8 +1,9 @@
 ---
 name: geopandas
-description: GeoPandas is a Python library that extends the capabilities of pandas by adding support for geographic data.
+description: GeoPandas extends the pandas library to support geographic data by providing specialized data structures for vector-based spatial analysis. Use when user asks to read or write spatial file formats, manage coordinate reference systems, perform spatial joins and overlays, or create geographic visualizations.
 homepage: https://github.com/geopandas/geopandas
 ---
+
 
 # geopandas
 

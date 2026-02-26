@@ -1,8 +1,9 @@
 ---
 name: bioconductor-destiny
-description: the package is available on all platforms; click for details.
+description: bioconductor-destiny implements Diffusion Maps and Diffusion Pseudo Time for the analysis of single-cell gene expression data. Use when user asks to perform non-linear dimension reduction, identify developmental branching points, calculate pseudotime metrics, or find gene relevance in single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/destiny.html
 ---
+
 
 # bioconductor-destiny
 

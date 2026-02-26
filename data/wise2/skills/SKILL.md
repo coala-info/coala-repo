@@ -1,8 +1,9 @@
 ---
 name: wise2
-description: Wise2 is a specialized bioinformatics suite designed for high-accuracy alignment of biological sequences.
+description: Wise2 performs high-accuracy alignment of biological sequences, particularly protein-to-DNA alignment with intron and frameshift modeling. Use when user asks to map protein sequences to genomic DNA, identify gene structures, align HMM profiles to DNA, or compare non-co-linear DNA sequences.
 homepage: https://www.ebi.ac.uk/~birney/wise2/
 ---
+
 
 # wise2
 

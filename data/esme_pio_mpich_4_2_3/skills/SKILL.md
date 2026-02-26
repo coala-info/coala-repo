@@ -1,8 +1,9 @@
 ---
 name: esme_pio_mpich_4_2_3
-description: The ParallelIO (PIO) library is a specialized interface for C and Fortran applications that need to perform netCDF I/O efficiently on high-performance computing (HPC) systems.
+description: The ParallelIO library provides a specialized interface for C and Fortran applications to perform efficient parallel netCDF I/O on high-performance computing systems. Use when user asks to perform parallel disk access, manage netCDF I/O in HPC environments, or optimize data throughput for climate modeling and structured grid simulations.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_mpich_4_2_3
 

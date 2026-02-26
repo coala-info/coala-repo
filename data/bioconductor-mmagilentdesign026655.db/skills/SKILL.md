@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mmagilentdesign026655.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Agilent Mouse Microarray Design 026655. Use when user asks to map Agilent probe identifiers to gene symbols, retrieve Entrez Gene IDs, or annotate mouse microarray results.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MmAgilentDesign026655.db.html
 ---
+
 
 # bioconductor-mmagilentdesign026655.db
 

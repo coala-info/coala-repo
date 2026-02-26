@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nucpos
-description: the package is available on all platforms; click for details.
+description: nuCpos predicts nucleosome positions and occupancy from DNA sequences using a chemical map-based model. Use when user asks to predict nucleosome positioning, calculate nucleosome occupancy, or analyze sequence-dependent nucleosome distribution.
 homepage: https://bioconductor.org/packages/release/bioc/html/nuCpos.html
 ---
+
 
 # bioconductor-nucpos
 

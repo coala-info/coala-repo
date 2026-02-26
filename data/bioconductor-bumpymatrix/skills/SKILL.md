@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bumpymatrix
-description: the package is available on all platforms; click for details.
+description: The BumpyMatrix package provides a two-dimensional container where each cell holds non-scalar objects of variable length, such as DataFrames or vectors. Use when user asks to create ragged matrices from long-format data, perform 3D subsetting on internal DataFrame columns, or apply mathematical aggregations to complex biological data structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/BumpyMatrix.html
 ---
+
 
 # bioconductor-bumpymatrix
 

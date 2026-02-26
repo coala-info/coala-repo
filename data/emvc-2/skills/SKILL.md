@@ -1,8 +1,9 @@
 ---
 name: emvc-2
-description: EMVC-2 is a specialized tool for identifying Single Nucleotide Variants (SNVs) in genomic sequencing data.
+description: EMVC-2 identifies single nucleotide variants in genomic sequencing data using an expectation maximization algorithm. Use when user asks to call SNVs, identify variants in BAM files, or perform statistically-driven variant discovery.
 homepage: https://github.com/guilledufort/EMVC-2
 ---
+
 
 # emvc-2
 

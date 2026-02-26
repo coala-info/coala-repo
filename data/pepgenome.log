@@ -1,4 +1,0 @@
-[14-Feb-2026 10:24:00 - INFO] " *** Error in parsing the input arguments. Please check the arguments ***" (org.bigbio.pgatk.pepgenome.PepGenomeTool:124)
-[14-Feb-2026 10:24:03 - INFO] " *** Error in parsing the input arguments. Please check the arguments ***" (org.bigbio.pgatk.pepgenome.PepGenomeTool:124)
-[14-Feb-2026 10:24:06 - INFO] " *** Error in parsing the input arguments. Please check the arguments ***" (org.bigbio.pgatk.pepgenome.PepGenomeTool:124)
-[14-Feb-2026 10:24:09 - INFO] "*** Missing mandatory parameters: -fasta, -gtf and -in ***" (org.bigbio.pgatk.pepgenome.PepGenomeTool:129)

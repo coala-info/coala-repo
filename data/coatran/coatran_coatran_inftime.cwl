@@ -1,13 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - coatran
-  - inftime
+baseCommand: coatran_inftime
 label: coatran_coatran_inftime
-doc: "The provided text contains error logs from a container runtime (Apptainer/Singularity)
-  and does not include the help documentation for the tool. No arguments could be
-  extracted.\n\nTool homepage: https://github.com/niemasd/CoaTran"
-inputs: []
+doc: "CoaTran v0.0.4 (time of infection)\n\nTool homepage: https://github.com/niemasd/CoaTran"
+inputs:
+  - id: trans_network
+    type: File
+    doc: Transmission network file
+    inputBinding:
+      position: 1
+  - id: sample_times
+    type: File
+    doc: Sample times file
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

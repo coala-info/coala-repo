@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lumihumanidmapping
-description: the package is available on all platforms; click for details.
+description: This package provides mapping information between different Illumina human microarray identifiers and other genomic databases. Use when user asks to map Illumina human probe IDs, convert TargetIDs to Entrez IDs, or perform identifier mapping for human Illumina expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/lumiHumanIDMapping.html
 ---
+
 
 # bioconductor-lumihumanidmapping
 

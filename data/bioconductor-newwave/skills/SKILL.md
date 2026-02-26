@@ -1,8 +1,9 @@
 ---
 name: bioconductor-newwave
-description: the package is available on all platforms; click for details.
+description: NewWave performs dimensionality reduction and batch effect correction for large-scale single-cell RNA-seq data. Use when user asks to perform dimensionality reduction, correct batch effects, or analyze large single-cell datasets using a negative binomial model.
 homepage: https://bioconductor.org/packages/release/bioc/html/NewWave.html
 ---
+
 
 # bioconductor-newwave
 

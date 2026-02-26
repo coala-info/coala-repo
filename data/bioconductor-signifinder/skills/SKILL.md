@@ -1,8 +1,9 @@
 ---
 name: bioconductor-signifinder
-description: the package is available on all platforms; click for details.
+description: This R package computes scores for a wide range of published gene expression signatures from transcriptomic data. Use when user asks to calculate signature scores, evaluate biological processes in gene expression datasets, or apply established transcriptomic biomarkers.
 homepage: https://bioconductor.org/packages/release/bioc/html/signifinder.html
 ---
+
 
 # bioconductor-signifinder
 

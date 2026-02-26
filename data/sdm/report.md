@@ -12,7 +12,7 @@ sdm (simple demultiplexer) is a fast, memory efficient program to demultiplex fa
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/sdm/overview
-- **Total Downloads**: 56.3K
+- **Total Downloads**: 56.4K
 - **Last updated**: 2026-01-27
 - **GitHub**: https://github.com/hildebra/sdm
 - **Stars**: N/A
@@ -37,4 +37,4 @@ If you have questions, please contact me at:  falk.hildebrand@gmail.com
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

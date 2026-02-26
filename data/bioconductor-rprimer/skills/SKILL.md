@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rprimer
-description: the package vignette.
+description: The rprimer package designs primers and probes for highly variable DNA or RNA targets. Use when user asks to design primers for consensus sequences, find probes for variable templates, or visualize primer binding sites.
 homepage: https://bioconductor.org/packages/release/bioc/html/rprimer.html
 ---
+
 
 # bioconductor-rprimer
 

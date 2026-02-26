@@ -1,8 +1,9 @@
 ---
 name: agat
-description: The provided text does not contain help information for the tool. It is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+description: AGAT is a comprehensive suite of tools designed to check, fix, and standardize genomic annotation files in GFF and GTF formats. Use when user asks to validate GFF files, convert between annotation formats, extract sequences from coordinates, or filter features like the longest isoform.
 homepage: https://github.com/NBISweden/AGAT
 ---
+
 
 # agat
 

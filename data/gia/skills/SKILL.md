@@ -1,8 +1,9 @@
 ---
 name: gia
-description: `gia` (Genomic Interval Arithmetic) is a high-performance command-line utility designed for set operations on genomic intervals.
+description: gia is a high-performance command-line utility designed for performing set operations and arithmetic on genomic intervals. Use when user asks to intersect intervals, perform relational joins, calculate genomic coverage, or find the complement of genomic regions.
 homepage: https://github.com/noamteyssier/gia
 ---
+
 
 # gia
 

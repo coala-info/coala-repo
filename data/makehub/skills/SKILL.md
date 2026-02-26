@@ -1,8 +1,9 @@
 ---
 name: makehub
-description: MakeHub is a specialized automation tool that transforms genomic data into a structured format compatible with the UCSC Genome Browser.
+description: MakeHub automates the creation of UCSC Genome Browser hubs by converting genomic data into compatible file formats and generating required configuration files. Use when user asks to create a track hub, transform genomic data for UCSC Genome Browser visualization, or generate BigBed and BigWig files from FASTA and GTF inputs.
 homepage: https://github.com/Gaius-Augustus/MakeHub
 ---
+
 
 # makehub
 

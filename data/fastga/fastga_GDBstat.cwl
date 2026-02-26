@@ -1,11 +1,39 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: fastga_GDBstat
+baseCommand: GDBstat
 label: fastga_GDBstat
-doc: "A tool within the fastga package. (Note: The provided help text contains only
-  container runtime error messages and does not list usage instructions or arguments.)\n
-  \nTool homepage: https://github.com/thegenemyers/FASTGA"
-inputs: []
+doc: "Display histograms of scaffold & contig lengths.\n\nTool homepage: https://github.com/thegenemyers/FASTGA"
+inputs:
+  - id: source_path
+    type: string
+    doc: Source GDB path
+    inputBinding:
+      position: 1
+  - id: display_histograms
+    type:
+      - 'null'
+      - boolean
+    doc: Display histograms of scaffold & contig lengths.
+    inputBinding:
+      position: 102
+      prefix: -h
+  - id: histogram_bucket_sizes
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: Bucket sizes for respective histograms
+    inputBinding:
+      position: 102
+      prefix: -h
+  - id: log_histograms
+    type:
+      - 'null'
+      - boolean
+    doc: Log histograms
+    inputBinding:
+      position: 102
+      prefix: -hlog
 outputs:
   - id: stdout
     type: stdout

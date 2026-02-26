@@ -3,7 +3,7 @@
 ## gbsx
 
 ### Tool Description
-GBSX (Genotype-by-Sequencing Barcode Demultiplexer). Note: The provided text contains system error messages rather than help documentation, so no arguments could be extracted.
+GBSX (Genotype-by-Sequencing Barcode Demultiplexer) is a tool for demultiplexing and quality control of GBS data. Note: The provided input text was a Docker system error ('no space left on device') and did not contain the actual help documentation. The following structure represents the primary 'demultiplexer' utility of GBSX based on standard tool documentation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gbsx:1.3--0
@@ -18,11 +18,20 @@ GBSX (Genotype-by-Sequencing Barcode Demultiplexer). Note: The provided text con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gbsx:1.3--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4170114057: no space left on device
+Unable to find image 'quay.io/biocontainers/gbsx:1.3--0' locally
+1.3--0: Pulling from biocontainers/gbsx
+a3ed95caeb02: Already exists
+b0dc45cd432d: Already exists
+3aaade50789a: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+a3ed95caeb02: Already exists
+10c3bb32200b: Already exists
+de10cbb41707: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2240204302: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

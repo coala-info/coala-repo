@@ -1,8 +1,9 @@
 ---
 name: spliceai-wrapper
-description: The `spliceai-wrapper` is a performance-focused utility designed to wrap Illumina's SpliceAI.
+description: This tool accelerates SpliceAI variant annotation by using a caching layer and a precomputed SQLite3 database to avoid redundant computations. Use when user asks to annotate VCF files with splice site predictions, prepare a precomputed database of scores, or speed up variant interpretation pipelines.
 homepage: https://github.com/bihealth/spliceai-wrapper
 ---
+
 
 # spliceai-wrapper
 

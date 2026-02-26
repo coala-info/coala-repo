@@ -1,8 +1,9 @@
 ---
 name: snakefmt
-description: snakefmt is an opinionated code formatter for Snakemake, heavily inspired by the Python formatter "Black".
+description: "snakefmt is an opinionated code formatter that automatically styles Snakemake files according to a deterministic standard. Use when user asks to format Snakemake files, check for style compliance, or preview formatting changes with a diff."
 homepage: https://github.com/snakemake/snakefmt
 ---
+
 
 # snakefmt
 

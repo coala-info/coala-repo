@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bovineprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and spatial coordinates for the Affymetrix Bovine genome array. Use when user asks to retrieve probe-level information, access nucleotide sequences, or perform custom probe-set analysis for bovine microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bovineprobe.html
 ---
+
 
 # bioconductor-bovineprobe
 

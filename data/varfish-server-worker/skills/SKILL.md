@@ -1,8 +1,9 @@
 ---
 name: varfish-server-worker
-description: The `varfish-server-worker` is a high-performance Rust-based utility designed to handle computationally intensive background tasks for VarFish Server.
+description: varfish-server-worker processes genomic data from VCFs into optimized formats and executes complex variant queries for VarFish Server. Use when user asks to ingest sequence variants, query sequence variants, aggregate sequence variant carrier counts, ingest structural variants, convert structural variant databases to binary, query structural variants, or prefilter sequence variants.
 homepage: https://github.com/bihealth/varfish-server-worker
 ---
+
 
 # varfish-server-worker
 

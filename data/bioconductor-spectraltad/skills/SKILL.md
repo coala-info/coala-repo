@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spectraltad
-description: the package is available on all platforms; click for details.
+description: SpectralTAD identifies hierarchical Topologically Associating Domains (TADs) from Hi-C contact matrices using spectral clustering. Use when user asks to detect TADs, find hierarchical chromatin domains, or analyze Hi-C data for genomic organization.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpectralTAD.html
 ---
+
 
 # bioconductor-spectraltad
 

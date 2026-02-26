@@ -1,8 +1,9 @@
 ---
 name: pysamstats
-description: pysamstats is a specialized utility for summarizing sequence alignment data into actionable statistics.
+description: pysamstats summarizes sequence alignment data into genomic statistics such as coverage, variation, and quality metrics. Use when user asks to calculate per-base or binned coverage, quantify allele frequencies, analyze insert sizes, or extract mapping quality distributions from BAM files.
 homepage: https://github.com/alimanfoo/pysamstats
 ---
+
 
 # pysamstats
 

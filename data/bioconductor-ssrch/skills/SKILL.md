@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ssrch
-description: the package is available on all platforms; click for details.
+description: Bioconductor-ssrch searches for simple sequence repeats in genomic sequences. Use when user asks to find microsatellites, identify simple sequence repeats, or search for SSRs in DNA sequences.
 homepage: https://bioconductor.org/packages/release/bioc/html/ssrch.html
 ---
+
 
 # bioconductor-ssrch
 

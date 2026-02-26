@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dnashaper
-description: The package allows to predict, visualize and encode DNA shape features for statistical learning.
+description: This tool predicts, visualizes, and encodes DNA structural features such as minor groove width and helix twist from nucleotide sequences or genomic intervals. Use when user asks to predict DNA shape features, analyze the impact of CpG methylation on DNA structure, visualize ensemble shape profiles, or encode sequence and shape features for machine learning models.
 homepage: https://bioconductor.org/packages/release/bioc/html/DNAshapeR.html
 ---
+
 
 # bioconductor-dnashaper
 

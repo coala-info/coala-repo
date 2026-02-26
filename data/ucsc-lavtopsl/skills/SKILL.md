@@ -1,8 +1,9 @@
 ---
 name: ucsc-lavtopsl
-description: The `lavToPsl` utility is a specialized conversion tool within the UCSC Kent Toolkit.
+description: The `lavToPsl` utility converts `.lav` alignment files, typically from blastz or lastz, into the `.psl` format. Use when user asks to 'convert alignment files to PSL', 'calculate alignment statistics', 'lift coordinates', or 'create custom tracks for genome visualization'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-lavtopsl
 

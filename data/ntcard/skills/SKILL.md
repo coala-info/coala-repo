@@ -1,8 +1,9 @@
 ---
 name: ntcard
-description: ntCard is a memory-efficient streaming algorithm designed to analyze the k-mer composition of genomic data.
+description: ntCard is a memory-efficient streaming algorithm that estimates k-mer abundance and frequency distributions in genomic data. Use when user asks to estimate genome size, assess library complexity, or generate a k-mer spectrum histogram.
 homepage: https://github.com/bcgsc/ntCard
 ---
+
 
 # ntcard
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fourdndata
-description: the package is available on all platforms; click for details.
+description: This package provides programmatic access to uniformly processed 4D Nucleome (4DN) Hi-C data and genomic features within the R/Bioconductor environment. Use when user asks to browse, download, or import 4DN-hosted contact matrices, insulation scores, compartments, or domains into R workflows.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/fourDNData.html
 ---
+
 
 # bioconductor-fourdndata
 

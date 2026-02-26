@@ -3,7 +3,7 @@
 ## randfold
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container build failure.
+Performs randomizations on a sequence file to assess statistical significance of predicted RNA structures.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/randfold:2.0.1--h7b50bb2_9
@@ -18,13 +18,13 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/randfold:2.0.1--h7b50bb2_9 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+FATAL: Usage: randfold <method> <file name> <number of randomizations>
+
+methods:
+-s simple mononucleotide shuffling
+-d dinucleotide shuffling
+-m markov chain 1 shuffling
+
+Example: randfold -d let7.tfa 999
 ```
 
-
-## Metadata
-- **Skill**: generated

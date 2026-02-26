@@ -1,8 +1,9 @@
 ---
 name: seqverify
-description: SeqVerify is a specialized pipeline designed to provide a comprehensive "readout" of a gene-edited sample.
+description: SeqVerify is a pipeline designed to verify gene edits by identifying insertion sites, assessing genomic integrity, and detecting unintended integrations. Use when user asks to detect transgene integration, perform copy number variation analysis, screen for bacterial contamination, or call and filter variants.
 homepage: https://github.com/mpiersonsmela/SeqVerify
 ---
+
 
 # seqverify
 

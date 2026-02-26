@@ -1,8 +1,9 @@
 ---
 name: phyphy
-description: The `phyphy` package provides a Pythonic interface for the HyPhy (Hypothesis testing using Phylogenies) software.
+description: The phyphy package provides a Pythonic interface for executing HyPhy evolutionary models and extracting data from the resulting JSON files. Use when user asks to configure HyPhy environments, run phylogenetic analyses like FEL or BUSTED, and convert analysis outputs into CSV or Newick formats.
 homepage: https://github.com/sjspielman/phyphy
 ---
+
 
 # phyphy
 

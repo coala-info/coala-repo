@@ -3,10 +3,10 @@
 ## minirmd
 
 ### Tool Description
-A tool for removing duplicate reads from DNA sequencing data. (Note: The provided text contains system error messages regarding container execution and does not list specific command-line arguments.)
+v1, by Yuansheng Liu, October 2020.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/minirmd:1.1--h077b44d_5
+- **Docker Image**: quay.io/biocontainers/minirmd:1.1--hd03093a_2
 - **Homepage**: https://github.com/yuansliu/minirmd
 - **Package**: https://anaconda.org/channels/bioconda/packages/minirmd/overview
 - **Validation**: PASS
@@ -18,11 +18,19 @@ A tool for removing duplicate reads from DNA sequencing data. (Note: The provide
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/minirmd:1.1--h077b44d_5 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1816535692: no space left on device
+minirmd v1, by Yuansheng Liu, October 2020.
+Usage: minirmd -i <file> -f <file> -o <output> [option parameters]
+	 options:
+		 -i reads file
+		 -f reads file, if paired end
+		 -o the output file
+		 -d number of allowed mismatch
+		 -k the file to store values of k
+		 -r remove duplicates on reverse-complement strand
+		 -t the number of threads
+		 -h print help message
+Example:
+		./minirmd -i test.fastq -o test_rm_1.fastq -d 1
+		./minirmd -i test_1.fastq -f test_2.fastq -o test_rm_2.fastq -d 2
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: mantis_pfa
-description: The mantis_pfa skill enables automated functional profiling of protein sequences.
+description: Mantis_pfa performs automated functional profiling and consensus-driven annotation of protein sequences by aggregating data from multiple reference databases. Use when user asks to annotate protein sequences, perform functional profiling of genomes or metagenomes, or setup and verify protein annotation databases.
 homepage: https://github.com/PedroMTQ/Mantis
 ---
+
 
 # mantis_pfa
 

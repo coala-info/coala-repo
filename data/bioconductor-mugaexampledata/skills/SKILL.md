@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mugaexampledata
-description: the package is available on all platforms; click for details.
+description: This package provides example data for the Mouse Universal Genotyping Array platforms. Use when user asks to access example MUGA datasets, test genotyping analysis workflows, or run demonstrations for mouse genotyping data.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MUGAExampleData.html
 ---
+
 
 # bioconductor-mugaexampledata
 

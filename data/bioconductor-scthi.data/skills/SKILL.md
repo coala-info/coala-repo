@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scthi.data
-description: the package scTHI.
+description: This package provides the reference data and ligand-receptor pairs required for the scTHI R package to analyze single-cell tumor-host interactions. Use when user asks to access tumor-host interaction data, load scTHI reference datasets, or retrieve ligand-receptor pairs for single-cell analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scTHI.data.html
 ---
+
 
 # bioconductor-scthi.data
 

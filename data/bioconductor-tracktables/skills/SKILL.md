@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tracktables
-description: the package is available on all platforms; click for details.
+description: This package creates HTML reports with links to view genomic tracks in the Integrative Genomics Viewer. Use when user asks to create IGV track tables, generate HTML reports for genomic data, or organize genomic tracks for visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/tracktables.html
 ---
+
 
 # bioconductor-tracktables
 

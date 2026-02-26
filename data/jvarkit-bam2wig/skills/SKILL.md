@@ -1,8 +1,9 @@
 ---
 name: jvarkit-bam2wig
-description: The `jvarkit-bam2wig` tool is a specialized Java utility for transforming sequence alignment data (BAM) into continuous value tracks suitable for genome browsers like UCSC or IGV.
+description: This tool converts BAM alignment files into Wiggle or BedGraph formats to visualize genomic coverage and alignment metrics. Use when user asks to generate coverage tracks, convert BAM to Wiggle or BedGraph, visualize read clipping and indels, or calculate coverage ratios between samples.
 homepage: http://lindenb.github.io/jvarkit/Bam2Wig.html
 ---
+
 
 # jvarkit-bam2wig
 

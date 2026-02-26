@@ -1,8 +1,9 @@
 ---
 name: saspector
-description: SASpector (Short-read Assembly inSpector) is a comparative genomics tool designed to evaluate the completeness of bacterial draft genomes.
+description: SASpector evaluates the completeness of bacterial draft genomes by aligning them against a high-quality reference to identify and characterize missing genomic regions. Use when user asks to evaluate assembly completeness, identify missing regions in a draft genome, or characterize gaps through gene prediction and k-mer analysis.
 homepage: https://github.com/alejocrojo09/SASpector
 ---
+
 
 # saspector
 

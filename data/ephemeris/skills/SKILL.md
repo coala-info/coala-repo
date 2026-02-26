@@ -1,8 +1,9 @@
 ---
 name: ephemeris
-description: Ephemeris is a specialized Python library and suite of command-line utilities designed to automate the administrative "bootstrapping" of a Galaxy server.
+description: Ephemeris automates the administrative bootstrapping and management of Galaxy servers, including tool installation, workflow deployment, and data library setup. Use when user asks to install tools from the Tool Shed, extract tool lists from workflows or instances, setup data libraries, or validate Galaxy configurations.
 homepage: https://github.com/galaxyproject/ephemeris
 ---
+
 
 # ephemeris
 

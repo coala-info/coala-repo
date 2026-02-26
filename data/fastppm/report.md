@@ -1,9 +1,9 @@
 # fastppm CWL Generation Report
 
-## fastppm
+## fastppm_fastppm-cli
 
 ### Tool Description
-The provided text does not contain help documentation for fastppm; it contains system error logs regarding a container execution failure (no space left on device).
+FastPPM CLI
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastppm:1.1.1--py39h2de1943_0
@@ -12,35 +12,26 @@ The provided text does not contain help documentation for fastppm; it contains s
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fastppm/overview
-- **Total Downloads**: 4.0K
+- **Total Downloads**: 4.1K
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/elkebir-group/fastppm
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastppm:1.1.1--py39h2de1943_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2280144191: no space left on device
-```
+Unknown argument: --h
+Usage: fastppm [--help] --variant VAR [--version] --total VAR [--weights VAR] --tree VAR --output VAR [--format VAR] [--loss VAR] [--precision VAR] [--segments VAR]
 
-
-## Metadata
-- **Skill**: generated
-
-## fastppm_fastppm-cli
-
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding disk space during a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastppm:1.1.1--py39h2de1943_0
-- **Homepage**: https://github.com/elkebir-group/fastppm
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastppm/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastppm:1.1.1--py39h2de1943_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2150881431: no space left on device
+Optional arguments:
+  -h, --help       shows help message and exits 
+  -v, --variant    Path to the variant read matrix file [required]
+  --version        prints version information and exits 
+  -d, --total      Path to the total read matrix file [required]
+  -w, --weights    Path to the weights matrix file [nargs=0..1] [default: ""]
+  -t, --tree       Path to the tree file [required]
+  -o, --output     Path to the output file [required]
+  -f, --format     Output format, either 'concise' or 'verbose' [nargs=0..1] [default: "concise"]
+  -l, --loss       Loss function L_i(.) to use for optimization [nargs=0..1] [default: "l2"]
+  -s, --precision  Precision parameter, only used when loss function is 'beta_binomial*' [nargs=0..1] [default: 10]
+  -K, --segments   Number of segments, only used when loss function is '*_pla' or '*_ppla' [nargs=0..1] [default: 10]
 ```
 

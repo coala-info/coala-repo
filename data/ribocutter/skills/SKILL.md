@@ -1,8 +1,9 @@
 ---
 name: ribocutter
-description: Ribocutter is a specialized bioinformatics tool designed to improve the signal-to-noise ratio in sequencing libraries by targeting and depleting unwanted, high-abundance sequences.
+description: Ribocutter identifies high-abundance contaminant sequences in sequencing libraries and designs sgRNA oligos for their depletion. Use when user asks to design sgRNAs for sequence depletion, identify library contaminants, or generate reports on abundant sequences in fastq files.
 homepage: https://github.com/Delayed-Gitification/ribocutter.git
 ---
+
 
 # ribocutter
 

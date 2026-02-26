@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubaprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix hu35ksuba microarray. Use when user asks to retrieve nucleotide sequences, map probe identifiers to physical coordinates, or perform sequence-specific analysis for the hu35ksuba chip.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubaprobe.html
 ---
+
 
 # bioconductor-hu35ksubaprobe
 

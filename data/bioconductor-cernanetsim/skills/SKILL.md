@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cernanetsim
-description: the package has potential to incorparate any ceRNA (circRNA, lincRNA, etc.) into miRNA:target interaction network.  The package basically distributes miRNA expression over available ceRNAs where each ceRNA attracks miRNAs proportional to its amount. But, the package can utilize multiple parameters that modify miRNA effect on its target (seed type, binding energy, binding location, etc.).  The functions handle the given dataset as graph object and the processes progress via edge and node variables.
+description: This tool simulates and analyzes miRNA-target interaction networks to model how expression changes propagate through competitive endogenous RNA systems. Use when user asks to model ceRNA network perturbations, calculate miRNA-target binding efficiencies, or simulate the ripple effect of RNA expression changes on a network.
 homepage: https://bioconductor.org/packages/release/bioc/html/ceRNAnetsim.html
 ---
+
 
 # bioconductor-cernanetsim
 

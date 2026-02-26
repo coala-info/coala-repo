@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chicken.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive SQLite-based annotation data for the chicken (Gallus gallus) genome. Use when user asks to map between gene identifiers, retrieve chromosomal locations, or look up GO terms and KEGG pathways for chicken genes.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/chicken.db.html
 ---
+
 
 # bioconductor-chicken.db
 

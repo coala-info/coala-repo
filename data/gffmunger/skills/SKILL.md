@@ -1,8 +1,9 @@
 ---
 name: gffmunger
-description: gffmunger is a specialized bioinformatics utility designed to bridge the gap between GMOD/Chado database exports and the WebApollo annotation platform.
+description: gffmunger restructures GFF3 files by transferring functional annotations from polypeptide features to their parent mRNA or transcript features. Use when user asks to fix GFF3 feature relationships for WebApollo, move annotations from polypeptides to transcripts, or prepare Chado database exports for annotation platforms.
 homepage: https://github.com/sanger-pathogens/gffmunger
 ---
+
 
 # gffmunger
 

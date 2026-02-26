@@ -1,12 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - bamhash_checksum_fasta
+baseCommand: bamhash_checksum_fasta
 label: bamhash_bamhash_checksum_fasta
-doc: "The provided text does not contain help information for the tool, but rather
-  error logs from a container runtime (Apptainer/Singularity) indicating a failure
-  to build the image due to lack of disk space.\n\nTool homepage: https://github.com/DecodeGenetics/BamHash"
-inputs: []
+doc: "Checksum of a set of fasta files\n\nTool homepage: https://github.com/DecodeGenetics/BamHash"
+inputs:
+  - id: input_fastas
+    type:
+      type: array
+      items: File
+    doc: Input FASTA files
+    inputBinding:
+      position: 1
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Debug mode. Prints full hex for each read to stdout
+    inputBinding:
+      position: 102
+      prefix: --debug
+  - id: no_readnames
+    type:
+      - 'null'
+      - boolean
+    doc: Do not use read names as part of checksum
+    inputBinding:
+      position: 102
+      prefix: --no-readnames
 outputs:
   - id: stdout
     type: stdout

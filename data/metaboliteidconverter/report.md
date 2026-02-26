@@ -3,7 +3,7 @@
 ## metaboliteidconverter
 
 ### Tool Description
-A tool for converting metabolite identifiers between different databases.
+Converts metabolite IDs between different databases.
 
 ### Metadata
 - **Docker Image**: biocontainers/metaboliteidconverter:phenomenal-v0.5.1_cv1.2.31
@@ -18,11 +18,14 @@ A tool for converting metabolite identifiers between different databases.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/metaboliteidconverter:phenomenal-v0.5.1_cv1.2.31 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1885258901: no space left on device
+Application Usage:
+ -h              : Prints this help. (default: false)
+ -headers        : use this if the input file has database names on the first
+                   line (default: false)
+ -inDB VAL       : [Required] Input database to convert from.
+ -inFile VAL     : Input file in tsv file format.
+ -inId VAL       : Input ID to convert.
+ -outDB STRING[] : Output databases to convert to.
+ -outFile VAL    : [Required] Output file name.
 ```
 
-
-## Metadata
-- **Skill**: generated

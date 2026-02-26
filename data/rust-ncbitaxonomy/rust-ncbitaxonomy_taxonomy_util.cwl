@@ -2,8 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: taxonomy_util
 label: rust-ncbitaxonomy_taxonomy_util
-doc: "NCBI Taxonomy utility\n\nTool homepage: https://github.com/pvanheus/ncbitaxonomy"
-inputs: []
+doc: "Utilities for working with the NCBI taxonomy database\n\nTool homepage: https://github.com/pvanheus/ncbitaxonomy"
+inputs:
+  - id: subcommand
+    type:
+      - 'null'
+      - string
+    doc: Subcommand to execute
+    inputBinding:
+      position: 1
+  - id: db
+    type: string
+    doc: URL for SQLite taxonomy database
+    inputBinding:
+      position: 102
+      prefix: --db
 outputs:
   - id: stdout
     type: stdout

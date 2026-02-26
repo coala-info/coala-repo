@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cll
-description: the package is available on all platforms; click for details.
+description: This tool provides access to gene expression data and filtering workflows for chronic lymphocytic leukemia (CLL) patients from the Bioconductor CLL package. Use when user asks to load CLL microarray datasets, access raw AffyBatch or preprocessed ExpressionSet objects, or filter genes based on disease progression status.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CLL.html
 ---
+
 
 # bioconductor-cll
 

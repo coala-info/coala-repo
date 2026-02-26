@@ -1,8 +1,9 @@
 ---
 name: pybel
-description: PyBEL is the primary Python framework for handling biological networks encoded in Biological Expression Language (BEL).
+description: PyBEL is a Python framework for parsing, validating, and managing biological networks encoded in Biological Expression Language. Use when user asks to compile BEL scripts, convert networks to formats like JSON or TSV, manage local network databases, or perform graph-based analysis and filtering.
 homepage: https://pybel.readthedocs.io
 ---
+
 
 # pybel
 

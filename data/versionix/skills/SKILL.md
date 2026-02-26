@@ -1,8 +1,9 @@
 ---
 name: versionix
-description: Versionix is a lightweight utility designed to standardize the extraction of version information from command-line tools.
+description: Versionix standardizes the extraction of version information from command-line tools. Use when user asks to get the version of a command-line tool, list registered tools, or check versionix statistics.
 homepage: https://github.com/sequana/versionix
 ---
+
 
 # versionix
 

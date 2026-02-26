@@ -1,8 +1,9 @@
 ---
 name: trimal
-description: trimal (trimAl) is a command-line utility designed to refine biological sequence alignments.
+description: trimal refines biological multiple sequence alignments by filtering out noisy columns and sequences. Use when user asks to trim multiple sequence alignments, clean up alignments, filter alignment columns, remove noisy sequences, convert alignment formats, visualize trimming results, map trimmed columns, or get removed alignment regions.
 homepage: https://trimal.readthedocs.io
 ---
+
 
 # trimal
 

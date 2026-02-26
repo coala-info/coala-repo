@@ -1,8 +1,9 @@
 ---
 name: halla
-description: HAllA is a statistical framework for discovering associations between two high-dimensional datasets.
+description: HAllA is a statistical framework that discovers associations between two high-dimensional datasets using hierarchical clustering and correlation testing. Use when user asks to find associations between datasets, identify correlations between clusters of features, or generate a hallagram to visualize complex biological relationships.
 homepage: http://huttenhower.sph.harvard.edu/halla
 ---
+
 
 # halla
 

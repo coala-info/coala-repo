@@ -1,8 +1,9 @@
 ---
 name: fairease-source
-description: The Sea Observations Utility for Reprocessing, Calibration and Evaluation (SOURCE) is a specialized tool for managing oceanographic datasets.
+description: fairease-source manages oceanographic datasets by processing in situ observations and comparing them with ocean model data. Use when user asks to automate quality control, generate time series for essential ocean variables, or evaluate model accuracy against real-world observations.
 homepage: https://github.com/fair-ease/Source
 ---
+
 
 # fairease-source
 

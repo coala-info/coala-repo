@@ -1,8 +1,9 @@
 ---
 name: anndata
-description: anndata is a specialized Python package designed to handle annotated data matrices, serving as a middle ground between the tabular flexibility of pandas and the N-dimensional array capabilities of xarray.
+description: anndata manages annotated data matrices by synchronizing a primary data array with observation and variable metadata. Use when user asks to organize large-scale numerical datasets, store single-cell data in h5ad format, or perform synchronized slicing and filtering of matrices and their annotations.
 homepage: http://github.com/theislab/anndata
 ---
+
 
 # anndata
 

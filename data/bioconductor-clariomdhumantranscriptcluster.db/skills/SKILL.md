@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomdhumantranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides genome-wide annotation mappings for the Affymetrix Clariom D Human Transcript Cluster array. Use when user asks to map Clariom D Human probe identifiers to gene symbols, Entrez IDs, Ensembl IDs, GO terms, or KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomdhumantranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomdhumantranscriptcluster.db
 

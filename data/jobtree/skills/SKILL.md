@@ -1,8 +1,9 @@
 ---
 name: jobtree
-description: jobtree is a specialized framework for managing large-scale computational pipelines on high-performance computing (HPC) clusters.
+description: jobtree is a framework for managing and executing large-scale, nested computational pipelines on high-performance computing clusters. Use when user asks to configure job execution, monitor pipeline status, restart failed jobs, or analyze resource utilization across a batch system.
 homepage: https://github.com/benedictpaten/jobTree
 ---
+
 
 # jobtree
 

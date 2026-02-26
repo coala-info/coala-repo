@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ruvcorr
-description: the package is available on all platforms; click for details.
+description: RUVcorr removes unwanted variation from gene expression data to improve the estimation of correlation matrices. Use when user asks to remove batch effects from gene expression data, estimate correlation matrices, or perform co-expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/RUVcorr.html
 ---
+
 
 # bioconductor-ruvcorr
 

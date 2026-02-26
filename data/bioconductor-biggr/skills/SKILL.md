@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biggr
-description: The package facilitates flux balance analysis (FBA) and the sampling of feasible flux distributions. Metabolic networks and estimated fluxes can be visualized with hypergraphs.
+description: BiGGR is an R package for constraint-based modeling, flux balance analysis, and hypergraph visualization of metabolic networks using the RECON1 human reconstruction. Use when user asks to perform flux balance analysis, sample feasible flux distributions using MCMC, create metabolic models from specific genes or pathways, or visualize biochemical networks as hypergraphs.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiGGR.html
 ---
+
 
 # bioconductor-biggr
 

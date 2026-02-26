@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: kbo
 label: kbo-cli_kbo
-doc: "Knowledge Base Operations CLI (Note: The provided text is a system error log
-  and does not contain help documentation or argument definitions).\n\nTool homepage:
-  https://docs.rs/kbo"
-inputs: []
+doc: "kbo\n\nTool homepage: https://docs.rs/kbo"
+inputs:
+  - id: command
+    type: string
+    doc: Command to run
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: vcf2variants
 label: vcf2variants
-doc: "A tool to convert VCF files to variants. (Note: The provided text contains system
-  logs and error messages rather than help documentation; no arguments could be extracted.)\n
-  \nTool homepage: https://github.com/varda/varda2_preprocessing"
-inputs: []
+doc: "Read phase sets from single sample VCF 4.3 file.\n\nTool homepage: https://github.com/varda/varda2_preprocessing"
+inputs:
+  - id: filename
+    type: File
+    doc: VCF file
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

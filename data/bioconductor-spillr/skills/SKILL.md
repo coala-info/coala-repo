@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spillr
-description: the package is available on all platforms; click for details.
+description: spillR estimates and compensates for spillover in mass cytometry data. Use when user asks to estimate spillover, compensate for signal overlap, or process mass cytometry data.
 homepage: https://bioconductor.org/packages/release/bioc/html/spillR.html
 ---
+
 
 # bioconductor-spillr
 

@@ -1,8 +1,9 @@
 ---
 name: r-metarnaseq
-description: R package metarnaseq (documentation from project home).
+description: The metaRNASeq package combines p-values from independent RNA-Seq studies to identify consistently differentially expressed genes using Fisher's or inverse normal methods. Use when user asks to perform meta-analysis on multiple RNA-Seq datasets, combine p-values from independent studies, or apply Fisher's method and the inverse normal method to differential expression results.
 homepage: https://cran.r-project.org/web/packages/metarnaseq/index.html
 ---
+
 
 # r-metarnaseq
 

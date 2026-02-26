@@ -1,8 +1,9 @@
 ---
 name: verifybamid
-description: VerifyBamID2 is a specialized tool for quantifying DNA contamination in sequence reads.
+description: VerifyBamID quantifies DNA contamination in sequence reads. Use when user asks to quantify DNA contamination, estimate DNA contamination, or check for DNA contamination.
 homepage: https://github.com/Griffan/VerifyBamID
 ---
+
 
 # verifybamid
 

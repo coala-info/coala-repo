@@ -1,8 +1,9 @@
 ---
 name: perl-test-needs
-description: The `perl-test-needs` skill facilitates the implementation of conditional testing in Perl.
+description: This tool facilitates conditional testing in Perl by skipping tests when required modules or specific interpreter versions are unavailable. Use when user asks to implement conditional test skipping, check for CPAN module availability during testing, or require specific Perl versions for test execution.
 homepage: http://metacpan.org/pod/Test::Needs
 ---
+
 
 # perl-test-needs
 

@@ -1,8 +1,9 @@
 ---
 name: shorttracks
-description: ShortTracks is a specialized utility designed to transform small RNA-seq alignments into biologically meaningful coverage tracks.
+description: ShortTracks converts small RNA-seq alignments into normalized, strand-specific BigWig coverage tracks optimized for genome browser visualization. Use when user asks to transform BAM files into RPM-normalized tracks, separate small RNA reads by length or read group, or generate multi-wiggle files for JBrowse2.
 homepage: https://github.com/MikeAxtell/ShortTracks
 ---
+
 
 # shorttracks
 

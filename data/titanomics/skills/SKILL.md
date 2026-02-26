@@ -1,8 +1,10 @@
 ---
 name: titanomics
-description: Titanomics is a specialized framework designed to bridge the gap between different "omics" layers.
+description: Titanomics integrates and analyzes multi-modal biological data across different omics layers. Use when user asks to normalize, integrate, or analyze multi-omics data, identify cross-layer biological signals, correct batch effects, or filter low-variance features.
 homepage: https://github.com/raw-lab/titan
 ---
+
+
 
 # titanomics
 

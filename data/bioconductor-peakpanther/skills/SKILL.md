@@ -1,8 +1,9 @@
 ---
 name: bioconductor-peakpanther
-description: the package is available on all platforms; click for details.
+description: peakPantheR provides automated peak picking and annotation for high-resolution liquid chromatography-mass spectrometry data. Use when user asks to perform automated peak integration, annotate metabolites in LC-MS datasets, or extract ion chromatograms for targeted metabolomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/peakPantheR.html
 ---
+
 
 # bioconductor-peakpanther
 

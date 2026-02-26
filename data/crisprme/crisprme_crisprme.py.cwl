@@ -1,11 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: crisprme_crisprme.py
+baseCommand: crisprme.py
 label: crisprme_crisprme.py
-doc: "The provided text does not contain help information; it is an error log indicating
-  a failure to build or extract the container image due to insufficient disk space.\n
-  \nTool homepage: https://github.com/samuelecancellieri/CRISPRme"
-inputs: []
+doc: "CRISPRme is a tool for analyzing CRISPR-Cas9 off-target effects.\n\nTool homepage:
+  https://github.com/samuelecancellieri/CRISPRme"
+inputs:
+  - id: function
+    type: string
+    doc: 'The functionality to execute. Options include: complete-search, complete-test,
+      validate-test, targets-integration, gnomAD-converter, generate-personal-card,
+      web-interface.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

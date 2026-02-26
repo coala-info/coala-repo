@@ -3,7 +3,7 @@
 ## squizz
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'squizz'. It contains error logs related to a container image build failure.
+Detect alignment formats only.
 
 ### Metadata
 - **Docker Image**: biocontainers/squizz:v0.99ddfsg-2-deb_cv1
@@ -18,13 +18,20 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/squizz:v0.99ddfsg-2-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: squizz [options] <file>
+
+options:
+  -A       ... Detect alignment formats only.
+  -S       ... Detect sequence formats only.
+  -c <fmt> ... Convert into format <fmt>.
+  -f <fmt> ... Assume input format <fmt>.
+  -h       ... Display help message and exit.
+  -l       ... List all supported formats.
+  -n       ... Count and report entries number.
+  -s       ... Disable strict format checks.
+  -v       ... Display version information and exit.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

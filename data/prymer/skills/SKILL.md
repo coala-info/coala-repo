@@ -1,8 +1,9 @@
 ---
 name: prymer
-description: Prymer is a specialized toolset for genomic primer design that prioritizes specificity and thermodynamic stability.
+description: Prymer is a specialized toolset for designing genomic primers with high specificity and thermodynamic stability. Use when user asks to design primers for targeted sequencing, validate primer pairs for off-target binding, calculate melting temperatures, or optimize multiplex PCR assays.
 homepage: https://pypi.org/project/prymer/
 ---
+
 
 # prymer
 

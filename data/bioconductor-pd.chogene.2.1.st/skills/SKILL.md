@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.chogene.2.1.st
-description: the package is available on all platforms; click for details.
+description: This package provides annotation and platform design data for the Affymetrix Chinese Hamster Gene 2.1 ST expression microarray. Use when user asks to analyze Chinese Hamster Gene 2.1 ST array data, map probes to genes, or perform differential expression studies using this platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.chogene.2.1.st.html
 ---
+
 
 # bioconductor-pd.chogene.2.1.st
 

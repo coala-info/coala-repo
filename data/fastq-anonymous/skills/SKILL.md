@@ -1,8 +1,9 @@
 ---
 name: fastq-anonymous
-description: `fastq-anonymous` is a specialized utility for de-identifying FASTQ files.
+description: "fastq-anonymous de-identifies FASTQ files by replacing genomic sequences with random nucleotides or masks while preserving read lengths and quality scores. Use when user asks to anonymize sequencing data, mask FASTQ files for privacy, or generate safe datasets for troubleshooting bioinformatics pipelines."
 homepage: https://github.com/wdecoster/fastq-anonymous
 ---
+
 
 # fastq-anonymous
 

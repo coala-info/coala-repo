@@ -1,8 +1,9 @@
 ---
 name: kbo-cli
-description: kbo-cli is a high-performance command-line interface for the kbo local aligner.
+description: kbo-cli is a high-performance command-line interface for rapid approximate genomic alignment and analysis. Use when user asks to call variants, search for sequence segments, or perform reference-based mapping.
 homepage: https://docs.rs/kbo
 ---
+
 
 # kbo-cli
 

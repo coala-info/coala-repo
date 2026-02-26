@@ -1,8 +1,9 @@
 ---
 name: r-cssam
-description: R package cssam (documentation from project home).
+description: This tool performs cell-type specific significance analysis of microarrays to deconvolve differential expression from mixed tissue samples. Use when user asks to identify cell-type specific gene expression signatures, deconvolve bulk expression data using cell proportions, or perform differential expression analysis on specific cell types within a mixture.
 homepage: https://cran.r-project.org/web/packages/cssam/index.html
 ---
+
 
 # r-cssam
 

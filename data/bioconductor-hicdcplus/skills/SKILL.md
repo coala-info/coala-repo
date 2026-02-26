@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicdcplus
-description: the package is available on all platforms; click for details.
+description: HiCDCPlus performs statistical analysis of Hi-C and HiChIP data to identify significant genomic interactions while accounting for systematic biases. Use when user asks to identify significant chromatin interactions, perform differential interaction analysis, call Topologically Associating Domains, or extract A/B compartments.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCDCPlus.html
 ---
+
 
 # bioconductor-hicdcplus
 

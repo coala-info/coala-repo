@@ -1,8 +1,9 @@
 ---
 name: bioconductor-demuxsnp
-description: the package is available on all platforms; click for details.
+description: The demuxSNP package provides a supervised approach to demultiplexing scRNA-seq data by combining cell hashing and SNP information. Use when user asks to demultiplex scRNA-seq data, recover unclassifiable cells using SNP signatures, or train a k-nearest neighbors classifier for donor assignment without prior genotyping.
 homepage: https://bioconductor.org/packages/release/bioc/html/demuxSNP.html
 ---
+
 
 # bioconductor-demuxsnp
 

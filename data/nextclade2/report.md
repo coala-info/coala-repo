@@ -25,4 +25,4 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/nextclade2:2.14.0--h9ee
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

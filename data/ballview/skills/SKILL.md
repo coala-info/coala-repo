@@ -1,8 +1,9 @@
 ---
 name: ballview
-description: BallView is a custom Android UI component designed to visualize progress through a "water ball" effect.
+description: BallView is an Android UI component that visualizes progress through a circular water ripple animation. Use when user asks to integrate the water ball effect into an Android project, configure its layout in XML, or control progress and animations programmatically.
 homepage: https://github.com/LaxusJie/BallViewDemo
 ---
+
 
 # ballview
 

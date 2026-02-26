@@ -1,8 +1,9 @@
 ---
 name: perl-gd-svg
-description: The `perl-gd-svg` module (GD::SVG) acts as a wrapper for the standard Perl GD library.
+description: This Perl module enables the generation of SVG files by wrapping the GD library and translating its method calls into vector graphics. Use when user asks to generate SVG output from existing GD scripts, convert raster graphics to scalable vector formats, or create high-quality data visualizations in Perl.
 homepage: http://metacpan.org/pod/GD::SVG
 ---
+
 
 # perl-gd-svg
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cancerdata
-description: the package is available on all platforms; click for details.
+description: This tool provides access to breast cancer gene expression datasets from the van't Veer and Vijver studies as ExpressionSet objects. Use when user asks to load breast cancer molecular data, access VEER or VIJVER datasets, or analyze high-dimensional gene expression data for cancer outcome prediction.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cancerdata.html
 ---
+
 
 # bioconductor-cancerdata
 

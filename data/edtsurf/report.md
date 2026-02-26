@@ -1,9 +1,9 @@
 # edtsurf CWL Generation Report
 
-## edtsurf
+## edtsurf_EDTSurf
 
 ### Tool Description
-EDTSurf is a software for generating triangulated surfaces of macromolecules.
+EDTSurf calculates the solvent accessible surface area (SASA) and the volume of the cavities of a protein.
 
 ### Metadata
 - **Docker Image**: biocontainers/edtsurf:v0.2009-6-deb_cv1
@@ -18,11 +18,16 @@ EDTSurf is a software for generating triangulated surfaces of macromolecules.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/edtsurf:v0.2009-6-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3405769022: no space left on device
+usage: EDTSurf -i pdbname ...
+-o outname
+-t 1-MC 2-VCMC
+-s 1-VWS 2-SAS 3-MS 4-SES
+-c 1-pure 2-atom 3-chain
+-p probe radius [0,2.0]
+-f scale factor (0,20.0]
+-h 1-in and out 2-out 3-in
+output1: outname.ply
+output2: outname.asa
+output3: outname-cav.pdb
 ```
 
-
-## Metadata
-- **Skill**: generated

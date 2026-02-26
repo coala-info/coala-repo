@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromscape
-description: the package is available on all platforms; click for details.
+description: ChromSCape performs comprehensive analysis of single-cell epigenomic data including quality control, normalization, clustering, and differential analysis. Use when user asks to analyze scChIP-seq or scATAC-seq data, perform dimensionality reduction and clustering on chromatin datasets, or identify differentially enriched genomic regions and pathways.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChromSCape.html
 ---
+
 
 # bioconductor-chromscape
 

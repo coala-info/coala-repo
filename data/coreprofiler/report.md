@@ -1,9 +1,9 @@
 # coreprofiler CWL Generation Report
 
-## coreprofiler
+## coreprofiler_allele_calling
 
 ### Tool Description
-The provided text appears to be a system error log (Singularity/Apptainer build failure) rather than CLI help text. No arguments or usage information could be extracted from the input.
+Allele calling specific arguments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/coreprofiler:2.0.0--pyhdfd78af_0
@@ -18,12 +18,88 @@ The provided text appears to be a system error log (Singularity/Apptainer build 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/coreprofiler:2.0.0--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/95a293211829ec5604944bc011141c3a4542e000528e9e2315c7b5ef8a2e1d202677565514: no space left on device
+usage: coreprofiler allele_calling [-h] -q QUERY [QUERY ...] -sf SCHEME_DIR
+                                   -out OUT [--outfa OUTFA]
+                                   [-db BLAST_DB_PATH] [-v] [-n NUM_THREADS]
+                                   [--autotag_word_size AUTOTAG_WORD_SIZE]
+                                   [-cds] [-d]
+                                   [--min_id_new_allele MIN_ID_NEW_ALLELE]
+                                   [--min_cov_new_allele MIN_COV_NEW_ALLELE]
+                                   [--min_cov_incomplete MIN_COV_INCOMPLETE]
+                                   [--profiles_w_tmp_alleles PROFILES_W_TMP_ALLELES]
+                                   [--num_alleles_per_locus NUM_ALLELES_PER_LOCUS]
+
+Allele calling specific arguments.
+
+options:
+  -h, --help            show this help message and exit
+  -q, --query QUERY [QUERY ...]
+                        Path(s) to query fasta file(s)
+  -sf, --scheme_dir SCHEME_DIR
+                        Path to scheme files.
+  -out OUT              Path to output file.
+  --outfa OUTFA         Path to output fasta file with new alleles sequences
+                        if detected.
+  -db, --blast_db_path BLAST_DB_PATH
+                        Path to the BLAST database.
+  -v, --verbose         Verbose mode.
+  -n, --num_threads NUM_THREADS
+                        Number of threads. Default 4.
+  --autotag_word_size AUTOTAG_WORD_SIZE
+                        Word size for Autotag BLASTn. Default 31.
+  -cds                  Extract new alleles within CDS.
+  -d, --detailed        Return further information on incomplete alleles.
+  --min_id_new_allele MIN_ID_NEW_ALLELE
+                        Minimum identity perc to consider new alleles. Default
+                        90.
+  --min_cov_new_allele MIN_COV_NEW_ALLELE
+                        Minimum coverage perc to consider new alleles. Default
+                        90.
+  --min_cov_incomplete MIN_COV_INCOMPLETE
+                        Minimum coverage perc to consider an allele incomplete
+                        (if --detailed option). Default 70.
+  --profiles_w_tmp_alleles PROFILES_W_TMP_ALLELES
+                        A JSON file containing info about files with temporary
+                        alleles.
+  --num_alleles_per_locus NUM_ALLELES_PER_LOCUS
+                        Tsv file containing the number of alleles per locus of
+                        a given scheme.
+```
+
+
+## coreprofiler_db
+
+### Tool Description
+Database handling specific arguments.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/coreprofiler:2.0.0--pyhdfd78af_0
+- **Homepage**: https://gitlab.com/ifb-elixirfr/abromics
+- **Package**: https://anaconda.org/channels/bioconda/packages/coreprofiler/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage: coreprofiler db [-h] [-av]
+                       {get_request_tokens,download,update,makeblastdb,get_num_alleles} ...
+
+Database handling specific arguments.
+
+positional arguments:
+  {get_request_tokens,download,update,makeblastdb,get_num_alleles}
+                        Functions of database mode.
+    get_request_tokens  Get request tokens from pubMLST/BigsDB.
+    download            Database download function.
+    update              Locally update a scheme.
+    makeblastdb         Run BLAST makeblasdtdb function.
+    get_num_alleles     Get number of alleles per locus.
+
+options:
+  -h, --help            show this help message and exit
+  -av, --available_schemes
+                        List available schemes.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

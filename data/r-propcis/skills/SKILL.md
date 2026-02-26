@@ -1,8 +1,9 @@
 ---
 name: r-propcis
-description: Computes two-sample confidence intervals for single, paired and independent proportions.</p>
+description: This tool computes specialized confidence intervals for single, paired, and independent proportions using methods like Wilson Score, Agresti-Coull, and Newcombe. Use when user asks to calculate confidence intervals for proportions, compare differences between independent groups, or analyze paired categorical data.
 homepage: https://cloud.r-project.org/web/packages/PropCIs/index.html
 ---
+
 
 # r-propcis
 

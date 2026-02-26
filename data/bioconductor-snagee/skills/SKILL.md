@@ -1,8 +1,9 @@
 ---
 name: bioconductor-snagee
-description: the package is available on all platforms; click for details.
+description: SNAGEE estimates the signal-to-noise ratio of gene expression data to evaluate the quality of transcriptomic studies. Use when user asks to estimate signal-to-noise ratios, assess the quality of gene expression experiments, or identify low-quality microarray datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/SNAGEE.html
 ---
+
 
 # bioconductor-snagee
 

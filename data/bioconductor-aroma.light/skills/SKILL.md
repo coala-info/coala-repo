@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aroma.light
-description: the package is available on all platforms; click for details.
+description: This package provides robust methods for the normalization and calibration of microarray data using basic R data types like matrices and vectors. Use when user asks to perform scanner calibration, affine normalization, quantile normalization, or allele-specific copy number preprocessing using TumorBoost.
 homepage: https://bioconductor.org/packages/release/bioc/html/aroma.light.html
 ---
+
 
 # bioconductor-aroma.light
 

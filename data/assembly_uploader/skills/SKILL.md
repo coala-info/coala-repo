@@ -1,8 +1,9 @@
 ---
 name: assembly_uploader
-description: The `assembly_uploader` tool streamlines the complex process of submitting metagenomic data to the ENA.
+description: The assembly_uploader tool automates the submission of metagenomic assembly data and metadata to the European Nucleotide Archive. Use when user asks to register a study, generate assembly manifests, or upload genomic data to the ENA.
 homepage: https://github.com/EBI-Metagenomics/assembly_uploader
 ---
+
 
 # assembly_uploader
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pocrcannotation.db
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides functional annotation data for the POCRC platform. Use when user asks to map probe identifiers to gene symbols, retrieve genomic metadata, or perform functional annotation for POCRC data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/POCRCannotation.db.html
 ---
+
 
 # bioconductor-pocrcannotation.db
 

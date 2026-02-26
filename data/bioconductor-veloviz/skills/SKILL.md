@@ -1,8 +1,9 @@
 ---
 name: bioconductor-veloviz
-description: the package is available on all platforms; click for details.
+description: VeloViz creates low-dimensional embeddings for visualizing RNA velocity and cellular trajectories. Use when user asks to visualize RNA velocity, project velocity vectors onto a 2D embedding, or analyze cellular transitions in single-cell data.
 homepage: https://bioconductor.org/packages/release/bioc/html/veloviz.html
 ---
+
 
 # bioconductor-veloviz
 

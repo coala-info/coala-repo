@@ -1,8 +1,9 @@
 ---
 name: bellavista
-description: BellaVista is a Python-based visualization tool specifically engineered for the spatial transcriptomics community.
+description: BellaVista is a Python-based visualization tool that transforms spatial transcriptomics data into interactive, multi-layered maps using the napari rendering engine. Use when user asks to install the software, load Xenium datasets, visualize large-scale spatial transcriptomics data, or generate figures for publication.
 homepage: https://github.com/pkosurilab/BellaVista
 ---
+
 
 # bellavista
 

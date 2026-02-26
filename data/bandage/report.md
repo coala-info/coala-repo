@@ -1,9 +1,9 @@
 # bandage CWL Generation Report
 
-## bandage
+## bandage_Bandage
 
 ### Tool Description
-The provided text is a system error log indicating a failure to build or extract a container image (no space left on device) and does not contain CLI help information or arguments.
+Launch the Bandage GUI
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bandage:0.9.0--h9948957_0
@@ -18,14 +18,29 @@ The provided text is a system error log indicating a failure to build or extract
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bandage:0.9.0--h9948957_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2cc3d3b08aaa900b79e78bbfb3fec41e987bad11b25ff964df842537a1180718: unpack entry: usr/lib/x86_64-linux-gnu/libcrypto.so.3: unpack to regular file: short write: write /scratch/21813747/build-temp-3677863771/rootfs/usr/lib/x86_64-linux-gnu/libcrypto.so.3: no space left on device
+____                  _                  
+ |  _ \                | |                 
+ | |_) | __ _ _ __   __| | __ _  __ _  ___ 
+ |  _ < / _` | '_ \ / _` |/ _` |/ _` |/ _ \
+ | |_) | (_| | | | | (_| | (_| | (_| |  __/
+ |____/ \__,_|_| |_|\__,_|\__,_|\__, |\___|
+                                 __/ |     
+                                |___/      
+Version: 0.9.0
+
+Usage:    Bandage <command> [options]
+          
+Commands: <blank>      Launch the Bandage GUI
+          load         Launch the Bandage GUI and load a graph file
+          info         Display information about a graph
+          image        Generate an image file of a graph
+          querypaths   Output graph paths for BLAST queries
+          reduce       Save a subgraph of a larger graph
+          
+Options:  --help       View this help message
+          --helpall    View all command line settings
+          --version    View Bandage version number
+          
+Online Bandage help: https://github.com/rrwick/Bandage/wiki
 ```
 
-
-## Metadata
-- **Skill**: generated

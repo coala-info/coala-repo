@@ -1,8 +1,9 @@
 ---
 name: sequencetools
-description: The `sequencetools` package, primarily centered around the `pileupCaller` utility, is a specialized suite for paleogenomics.
+description: sequencetools is a specialized suite for paleogenomics designed to transform sequence alignment data into population genetics formats using read-sampling methods. Use when user asks to call genotypes from ancient DNA BAM files, convert pileup data to Eigenstrat or Plink formats, or mitigate post-mortem degradation using random haploid calling.
 homepage: https://github.com/stschiff/sequenceTools
 ---
+
 
 # sequencetools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metascope
-description: the package is available on all platforms; click for details.
+description: MetaScope performs taxonomic identification and quantification of metagenomic sequencing data. Use when user asks to identify pathogens, perform taxonomic profiling, or quantify microbial abundances in metagenomic samples.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MetaScope.html
 ---
+
 
 # bioconductor-metascope
 

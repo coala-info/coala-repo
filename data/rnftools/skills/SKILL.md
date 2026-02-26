@@ -1,8 +1,9 @@
 ---
 name: rnftools
-description: rnftools provides a unified environment for managing simulated sequencing data.
+description: rnftools manages simulated sequencing data by encoding genomic coordinates into read names using the RNF convention to facilitate automated mapper evaluation. Use when user asks to simulate sequencing reads with coordinate metadata, convert SAM files to RNF format, or evaluate the alignment accuracy of mappers using precision-recall curves.
 homepage: http://karel-brinda.github.io/rnftools
 ---
+
 
 # rnftools
 

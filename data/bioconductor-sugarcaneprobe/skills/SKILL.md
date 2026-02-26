@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sugarcaneprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Sugarcane genome array. Use when user asks to retrieve probe sequences for sugarcane microarrays or perform sequence-based analysis on sugarcane expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/sugarcaneprobe.html
 ---
+
 
 # bioconductor-sugarcaneprobe
 

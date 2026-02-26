@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biomm
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-biomm performs biologically-informed multi-stage machine learning for phenotype prediction using high-dimensional omics data. Use when user asks to map omics features to biological entities, build multi-stage predictive models, or prioritize outcome-associated functional patterns.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/BioMM.html
 ---
+
 
 # bioconductor-biomm
 

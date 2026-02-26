@@ -1,8 +1,9 @@
 ---
 name: pyrodigal
-description: Pyrodigal is a Python module providing Cython bindings to Prodigal, the industry-standard ORF finder for prokaryotic sequences.
+description: Pyrodigal provides Python bindings to the Prodigal gene finder for predicting open reading frames in prokaryotic sequences. Use when user asks to predict genes in prokaryotic genomes, find open reading frames in metagenomic samples, or translate predicted genes into protein sequences.
 homepage: https://github.com/althonos/pyrodigal
 ---
+
 
 # pyrodigal
 

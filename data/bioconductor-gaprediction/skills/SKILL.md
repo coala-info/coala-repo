@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gaprediction
-description: the package is available on all platforms; click for details.
+description: This tool predicts gestational age from DNA methylation data using Lasso-regression models. Use when user asks to estimate gestational age in days, predict pregnancy duration from CpG beta values, or identify required CpG sites for methylation analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/GAprediction.html
 ---
+
 
 # bioconductor-gaprediction
 

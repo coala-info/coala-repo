@@ -1,9 +1,261 @@
 # crossmap CWL Generation Report
 
-## crossmap
+## crossmap_bam
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error logs related to a container runtime (Apptainer/Singularity) failing to pull or build the image due to insufficient disk space ('no space left on device').
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+- **Conda**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Total Downloads**: 103.3K
+- **Last updated**: 2025-06-25
+- **GitHub**: https://github.com/liguowang/CrossMap
+- **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+24ac73aba4ba: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob2139796477: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_bed
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3200429142: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_bigwig
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4134125933: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_gff
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob4171965679: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_gvcf
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2994336826: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_maf
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+24ac73aba4ba: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob1161453266: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_sam
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3351535910: no space left on device
+
+Run 'docker run --help' for more information
+```
+
+
+## crossmap_vcf
+
+### Tool Description
+CrossMap is a program for convenient conversion of genome coordinates and genome annotation files between assemblies (e.g. lift over from human hg18 to hg19 or vice versa). It supports VCF format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
@@ -11,21 +263,50 @@ The provided text does not contain help information for the tool. It contains er
 - **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
-- **Total Downloads**: 103.3K
-- **Last updated**: 2025-06-25
-- **GitHub**: https://github.com/liguowang/CrossMap
-- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:24ac73aba4bafbdd5a004b641e3762d91bfb0306cabef45f7dde94c2c1cb78a4: unpack entry: usr/local/lib/libopenblasp-r0.3.30.so: unpack to regular file: short write: write /tmp/build-temp-1745997539/rootfs/usr/local/lib/libopenblasp-r0.3.30.so: no space left on device
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1180352256: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 
-## Metadata
-- **Skill**: generated
+## crossmap_wig
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0
+- **Homepage**: https://crossmap.sourceforge.net
+- **Package**: https://anaconda.org/channels/bioconda/packages/crossmap/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Unable to find image 'quay.io/biocontainers/crossmap:0.7.3--pyhdfd78af_0' locally
+0.7.3--pyhdfd78af_0: Pulling from biocontainers/crossmap
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+24ac73aba4ba: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2818805778: no space left on device
+
+Run 'docker run --help' for more information
+```
+

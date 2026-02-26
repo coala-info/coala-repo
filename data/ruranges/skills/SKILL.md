@@ -1,8 +1,9 @@
 ---
 name: ruranges
-description: `ruranges` (specifically the `ruranges-py` package) provides Rust-implemented kernels for interval arithmetic, offering a significantly faster and more feature-rich alternative to libraries like NCLS.
+description: ruranges provides high-performance Rust-implemented kernels for interval arithmetic and genomic coordinate operations using NumPy arrays. Use when user asks to calculate overlaps between genomic intervals, find k-nearest neighbors, perform interval subtraction, or merge overlapping regions.
 homepage: https://github.com/pyranges/ruranges
 ---
+
 
 # ruranges
 

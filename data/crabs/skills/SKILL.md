@@ -1,8 +1,9 @@
 ---
 name: crabs
-description: CRABS (Creating Reference databases for Amplicon-Based Sequencing) is a command-line toolkit designed to transform raw genomic data into curated, primer-specific reference databases.
+description: CRABS is a command-line toolkit designed to create curated, primer-specific reference databases for metagenomic and amplicon-based sequencing analysis. Use when user asks to download genomic sequences, perform in silico PCR to extract amplicons, filter sequences by quality or taxonomy, and export databases for taxonomic classifiers.
 homepage: https://github.com/gjeunen/reference_database_creator
 ---
+
 
 # crabs
 

@@ -1,8 +1,9 @@
 ---
 name: r-optparse
-description: "A command line parser inspired by Python's 'optparse' library to     be used with Rscript to write \"#!\" shebang scripts that accept short and     long flag/options.</p>"
+description: The r-optparse package enables R developers to create command-line interfaces with support for flags, type casting, and automatic help menus. Use when user asks to parse command-line arguments in R, define script options with short or long flags, or handle positional arguments for R scripts.
 homepage: https://cloud.r-project.org/web/packages/optparse/index.html
 ---
+
 
 # r-optparse
 

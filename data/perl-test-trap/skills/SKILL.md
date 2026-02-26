@@ -1,8 +1,9 @@
 ---
 name: perl-test-trap
-description: The `perl-test-trap` skill provides a sophisticated mechanism for "trapping" the side effects of Perl code blocks.
+description: This tool captures and inspects the output, warnings, exceptions, and exit codes of Perl code blocks for testing purposes. Use when user asks to trap side effects of Perl code, capture STDOUT or STDERR in tests, or verify exit statuses and warning messages.
 homepage: https://metacpan.org/pod/Test::Trap
 ---
+
 
 # perl-test-trap
 

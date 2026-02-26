@@ -1,8 +1,9 @@
 ---
 name: r-dimsum
-description: R package dimsum (documentation from project home).
+description: DiMSum is an R-based pipeline and error model for processing and analyzing Deep Mutational Scanning data to estimate variant fitness. Use when user asks to process raw sequencing reads into variant counts, estimate variant fitness and error from counts, or diagnose experimental pathologies in mutational scanning data.
 homepage: https://cran.r-project.org/web/packages/dimsum/index.html
 ---
+
 
 # r-dimsum
 

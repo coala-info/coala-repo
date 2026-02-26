@@ -1,8 +1,9 @@
 ---
 name: rnaalishapes
-description: RNAalishapes is a specialized bioinformatics tool that predicts secondary structures for a set of aligned RNA sequences.
+description: RNAalishapes predicts secondary structures and structural shape abstractions for a set of aligned RNA sequences. Use when user asks to predict consensus structures, identify structural folds through shape abstraction, calculate shape probabilities, or perform suboptimal folding on RNA alignments.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/rnaalishapes
 ---
+
 
 # rnaalishapes
 

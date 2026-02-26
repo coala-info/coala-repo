@@ -1,8 +1,9 @@
 ---
 name: phylopandas
-description: PhyloPandas provides a seamless bridge between specialized phylogenetic data formats and the standard Python data science stack.
+description: PhyloPandas integrates phylogenetic data formats into Pandas DataFrames to enable standard data science operations on biological sequences and evolutionary trees. Use when user asks to load FASTA or Newick files into DataFrames, convert between phylogenetic file formats, or filter and merge biological metadata using Pandas.
 homepage: https://github.com/Zsailer/phylopandas
 ---
+
 
 # phylopandas
 

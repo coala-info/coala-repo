@@ -1,8 +1,9 @@
 ---
 name: univariate
-description: N-BEATS (Neural Basis Expansion Analysis for Interpretable Time Series) is a specialized neural network model designed for univariate forecasting.
+description: This tool performs univariate time series forecasting using the N-BEATS neural network model. Use when user asks to initialize the environment, prepare datasets, validate metrics, build experiment configurations, train a model, extract trend and seasonality, or calculate performance statistics.
 homepage: https://github.com/ServiceNow/N-BEATS
 ---
+
 
 # univariate
 

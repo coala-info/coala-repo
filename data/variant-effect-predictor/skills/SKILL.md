@@ -1,8 +1,9 @@
 ---
 name: variant-effect-predictor
-description: The Ensembl Variant Effect Predictor (VEP) is the industry-standard tool for determining the functional impact of genetic variation.
+description: The Ensembl Variant Effect Predictor determines the functional impact of genetic variation. Use when user asks to predict variant consequences, annotate genetic variants, filter variant consequences, analyze phased haplotypes, or translate variant identifiers.
 homepage: https://github.com/Ensembl/ensembl-vep
 ---
+
 
 # variant-effect-predictor
 

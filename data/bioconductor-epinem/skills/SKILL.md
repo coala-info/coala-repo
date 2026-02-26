@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epinem
-description: the package is available on all platforms; click for details.
+description: This tool infers signaling pathway structures and logical epistatic relationships from knock-out screens containing single and double perturbations. Use when user asks to reconstruct signaling hierarchies, identify logical gates between genes, or analyze binary effect matrices from high-throughput perturbation screens.
 homepage: https://bioconductor.org/packages/release/bioc/html/epiNEM.html
 ---
+
 
 # bioconductor-epinem
 

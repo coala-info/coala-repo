@@ -1,8 +1,9 @@
 ---
 name: perl-json-pp
-description: `perl-json-pp` provides a pure-Perl implementation of a JSON encoder and decoder that is compatible with the high-performance `JSON::XS` module.
+description: "perl-json-pp provides a pure-Perl implementation for encoding and decoding JSON data. Use when user asks to pretty-print JSON, validate JSON files, convert JSON to Perl Data::Dumper format, or programmatically handle JSON data within Perl scripts."
 homepage: http://metacpan.org/pod/JSON::PP
 ---
+
 
 # perl-json-pp
 

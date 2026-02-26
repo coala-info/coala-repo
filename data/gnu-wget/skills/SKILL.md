@@ -1,8 +1,9 @@
 ---
 name: gnu-wget
-description: GNU Wget is a powerful command-line utility for retrieving content from web and FTP servers.
+description: GNU Wget is a command-line utility for retrieving files and mirroring content from web and FTP servers. Use when user asks to download files, resume interrupted transfers, mirror websites, or recursively crawl directories for offline viewing.
 homepage: https://github.com/darnir/wget
 ---
+
 
 # gnu-wget
 

@@ -1,8 +1,9 @@
 ---
 name: cpat
-description: CPAT is a bioinformatics tool designed to evaluate the coding probability of RNA transcripts.
+description: CPAT evaluates the coding probability of RNA transcripts using a logistic regression model based on sequence features. Use when user asks to predict coding potential, identify open reading frames, or build species-specific hexamer tables and logit models.
 homepage: https://cpat.readthedocs.io/en/latest/
 ---
+
 
 # cpat
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sconify
-description: the package is available on all platforms; click for details.
+description: Sconify performs k-nearest neighbor smoothing and surface-constrained interpolation for single-cell data analysis. Use when user asks to smooth marker expression, impute values across a cell manifold, or analyze co-expression in single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/Sconify.html
 ---
+
 
 # bioconductor-sconify
 

@@ -1,8 +1,9 @@
 ---
 name: ourotools
-description: Ouro-Tools is a specialized computational pipeline for single-cell long-read RNA-sequencing (scLRR).
+description: Ouro-Tools is a computational pipeline designed for processing and normalizing single-cell long-read RNA-sequencing data. Use when user asks to filter raw reads, normalize size distributions, analyze 5' mRNA cap sites, or generate strand-specific coverage files.
 homepage: https://github.com/ahs2202/ouro-tools
 ---
+
 
 # ourotools
 

@@ -1,8 +1,9 @@
 ---
 name: cdhit-reader
-description: The `cdhit-reader` tool (also known as `cdhit-parser`) provides a Python API and command-line utilities to interact with the output of the CD-HIT clustering suite.
+description: "This tool parses CD-HIT cluster files and compares sequence sets to identify overlaps or redundancies. Use when user asks to parse .clstr files into Python objects, compare FASTA files for shared sequences, or extract statistics from CD-HIT clustering results."
 homepage: https://github.com/telatin/cdhit-parser
 ---
+
 
 # cdhit-reader
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-causalr
-description: the package is available on all platforms; click for details.
+description: Bioconductor-causalr performs causal reasoning and network analysis to predict upstream regulators from differential experimental data by integrating it with causal interaction networks. Use when user asks to create computational causal graphs from network files, rank hypotheses based on experimental fit, calculate statistical significance for regulators, perform sequential causal analysis of networks, or generate hypothesis-specific sub-networks for visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/CausalR.html
 ---
+
 
 # bioconductor-causalr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bufferedmatrixmethods
-description: the package is available on all platforms; click for details.
+description: This tool performs memory-efficient microarray data analysis by processing large Affymetrix datasets using disk-buffered objects. Use when user asks to perform RMA background correction, apply quantile normalization, or summarize CEL files into expression values without exhausting available RAM.
 homepage: https://bioconductor.org/packages/release/bioc/html/BufferedMatrixMethods.html
 ---
+
 
 # bioconductor-bufferedmatrixmethods
 

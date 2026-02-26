@@ -1,8 +1,9 @@
 ---
 name: r-idr
-description: This is a package for estimating the copula mixture model and plotting correspondence curves. Details are in "Measuring reproducibility of high-throughput experiments" (2011), Annals of Applied Statistics, Vol. 5, No. 3, 1752-1779, by Li, Brown, Huang, and Bickel. </p>
+description: The idr package implements the Irreproducible Discovery Rate framework to measure consistency and reproducibility between replicates in high-throughput experiments. Use when user asks to measure consistency between replicates, estimate parameters of a copula mixture model, compute local or global IDR for genomic features, or plot correspondence curves.
 homepage: https://cloud.r-project.org/web/packages/idr/index.html
 ---
+
 
 # r-idr
 

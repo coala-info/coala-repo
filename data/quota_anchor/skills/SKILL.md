@@ -1,8 +1,9 @@
 ---
 name: quota_anchor
-description: The `quota_anchor` toolkit is designed for high-resolution syntenic gene identification.
+description: "quota_anchor identifies high-resolution syntenic gene blocks and analyzes comparative genomics data using a WGD-aware longest path algorithm. Use when user asks to identify syntenic gene pairs, perform collinearity analysis with specific duplication ratios, calculate Ks values, classify gene duplication types, or generate synteny visualizations like dotplots and circle plots."
 homepage: https://github.com/baoxingsong/quota_Anchor
 ---
+
 
 # quota_anchor
 

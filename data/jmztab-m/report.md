@@ -3,7 +3,7 @@
 ## jmztab-m
 
 ### Tool Description
-A tool for processing and validating mzTab-m files (a standard format for metabolomics results). Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Command-line interface for mzTab validation and conversion.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1
@@ -18,29 +18,28 @@ A tool for processing and validating mzTab-m files (a standard format for metabo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3682697767: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## jmztab-m_jmztabm-cli.jar
-
-### Tool Description
-A command-line interface for the mzTab-M format. Note: The provided text contains system error logs regarding container execution and does not list specific tool arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1
-- **Homepage**: https://github.com/lifs-tools/jmztab-m
-- **Package**: https://anaconda.org/channels/bioconda/packages/jmztab-m/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/jmztab-m:1.0.6--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2954749282: no space left on device
+usage: jmztabm-cli
+ -c,--check <arg>           Example: -c /path/to/file.mztab. Check and
+                            validate the provided a mzTab file.
+    --fromJson              Example: --fromJson. Will parse inFile as JSON
+                            and write mzTab representation to disk.
+                            Requires validation to be successful!
+ -h,--help                  Print help message.
+ -l,--level <arg>           Choose validation level (Info, Warn, Error),
+                            default level is Info!
+ -m,--message               Example: -m 1002. Print validation message
+                            detail information based on error code.
+ -o,--outFile <arg>         Example: -o "output.txt". Record validation
+                            messages into outfile. If not set, print
+                            validation messages to stdout/stderr.
+ -s,--checkSemantic <arg>   Example: -s /path/to/mappingFile.xml. Use the
+                            provided mapping file for semantic validation.
+                            If no mapping file is provided, the default
+                            one will be used. Requires an active internet
+                            connection!
+    --toJson                Example: --toJson. Will write a json
+                            representation of inFile to disk. Requires
+                            validation to be successful!
+ -v,--version               Print version information.
 ```
 

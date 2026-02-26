@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mosim
-description: the package is available on all platforms; click for details.
+description: "MOSim simulates multi-omics data with regulatory relationships between different biological layers. Use when user asks to simulate multi-omics datasets, generate synthetic gene expression data, or model regulatory interactions between omics layers."
 homepage: https://bioconductor.org/packages/release/bioc/html/MOSim.html
 ---
+
 
 # bioconductor-mosim
 

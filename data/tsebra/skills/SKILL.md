@@ -1,8 +1,9 @@
 ---
 name: tsebra
-description: TSEBRA (Transcript Selector for BRAKER) is a bioinformatics tool used to refine genome annotations.
+description: TSEBRA refines genome annotations by selecting the most plausible transcripts from multiple gene predictions using extrinsic evidence. Use when user asks to refine genome annotations, combine gene predictions from multiple sources, improve gene set completeness, or manage gene isoforms.
 homepage: https://github.com/Gaius-Augustus/TSEBRA
 ---
+
 
 # tsebra
 

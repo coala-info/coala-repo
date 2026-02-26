@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: deepacstrain
 label: deepacstrain
-doc: "The provided text does not contain help information or a description of the
-  tool; it contains system log messages and a fatal error regarding container image
-  building (no space left on device).\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
-inputs: []
+doc: "DeePaC-strain CLI for creating configuration templates and training models for
+  strain-level classification.\n\nTool homepage: https://gitlab.com/rki_bioinformatics/DeePaC"
+inputs:
+  - id: subcommand
+    type: string
+    doc: The subcommand to run (templates or train)
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

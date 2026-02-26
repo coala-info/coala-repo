@@ -1,8 +1,9 @@
 ---
 name: bioconductor-foldgo
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs fold-change-specific Gene Ontology enrichment analysis by subdividing differentially expressed genes into quantiles based on their expression levels. Use when user asks to identify GO terms enriched within specific fold-change intervals, detect biological processes associated with narrow ranges of transcriptional response, or perform fold-change-specific functional enrichment.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/FoldGO.html
 ---
+
 
 # bioconductor-foldgo
 

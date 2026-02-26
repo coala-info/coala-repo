@@ -1,8 +1,9 @@
 ---
 name: bioconductor-logicfs
-description: the package is available on all platforms; click for details.
+description: This R package identifies important interactions between binary variables using logic regression and feature selection. Use when user asks to identify SNP interactions, perform logic regression, or find important logic expressions for classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/logicFS.html
 ---
+
 
 # bioconductor-logicfs
 

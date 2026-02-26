@@ -1,8 +1,9 @@
 ---
 name: perl-autodie
-description: The `autodie` pragma is a powerful tool for Perl developers that replaces standard built-in functions with versions that automatically throw exceptions on failure.
+description: The perl-autodie pragma replaces standard Perl built-in functions with versions that automatically throw exceptions upon failure. Use when user asks to enable automatic error handling for Perl scripts, replace manual die statements with lexical exceptions, or manage error checking for specific I/O and system categories.
 homepage: http://metacpan.org/pod/autodie
 ---
+
 
 # perl-autodie
 

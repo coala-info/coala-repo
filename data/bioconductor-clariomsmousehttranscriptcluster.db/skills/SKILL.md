@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clariomsmousehttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Clariom S Mouse HT Transcript Cluster array by mapping manufacturer probe identifiers to various biological identifiers. Use when user asks to map probe IDs to gene symbols, retrieve Entrez or Ensembl identifiers, or perform Gene Ontology and KEGG pathway lookups for mouse transcriptomic data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/clariomsmousehttranscriptcluster.db.html
 ---
+
 
 # bioconductor-clariomsmousehttranscriptcluster.db
 

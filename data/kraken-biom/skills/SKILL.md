@@ -1,8 +1,9 @@
 ---
 name: kraken-biom
-description: The `kraken-biom` tool is a utility designed to bridge the gap between Kraken taxonomic classifiers and microbiome analysis pipelines that utilize the BIOM (Biological Observation Matrix) format.
+description: "kraken-biom converts Kraken taxonomic report files into BIOM format tables for downstream microbiome analysis. Use when user asks to create a BIOM table from Kraken reports, aggregate taxonomic counts at specific ranks, or integrate sample metadata into a metagenomic feature table."
 homepage: https://github.com/smdabdoub/kraken-biom
 ---
+
 
 # kraken-biom
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocsingular
-description: the package is available on all platforms; click for details.
+description: The BiocSingular package provides a unified interface for performing singular value decomposition and principal component analysis using exact or approximate algorithms. Use when user asks to perform SVD or PCA, run approximate matrix decompositions like IRLBA or randomized SVD, or manage memory-efficient low-rank matrix approximations.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocSingular.html
 ---
+
 
 # bioconductor-biocsingular
 

@@ -1,8 +1,9 @@
 ---
 name: guidescan
-description: GuideScan2 (guidescan) is a specialized bioinformatics toolset for the systematic design and specificity assessment of CRISPR guide RNAs.
+description: GuideScan2 is a bioinformatics toolset for designing CRISPR guide RNAs and assessing their specificity through off-target analysis. Use when user asks to download genomic indices, enumerate gRNAs, or generate specificity-ranked guide databases in CSV or SAM formats.
 homepage: https://github.com/pritykinlab/guidescan-cli
 ---
+
 
 # guidescan
 

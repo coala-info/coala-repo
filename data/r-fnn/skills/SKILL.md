@@ -1,8 +1,9 @@
 ---
 name: r-fnn
-description: R package fnn (documentation from project home).
+description: The r-fnn package provides fast implementations of k-nearest neighbor algorithms for classification, regression, and neighbor searching using efficient tree-based data structures. Use when user asks to perform fast KNN classification or regression, find nearest neighbors in large datasets, or estimate information measures like entropy and mutual information.
 homepage: https://cran.r-project.org/web/packages/fnn/index.html
 ---
+
 
 # r-fnn
 

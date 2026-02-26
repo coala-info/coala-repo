@@ -1,8 +1,9 @@
 ---
 name: tabulate
-description: The `tabulate` skill enables the transformation of raw data structures into formatted tables.
+description: The tabulate tool transforms raw data structures into formatted, readable tables for terminal displays or documentation. Use when user asks to format data as a table, convert lists or dictionaries into markdown, or align columns in text output.
 homepage: https://github.com/astanin/python-tabulate
 ---
+
 
 # tabulate
 

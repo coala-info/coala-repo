@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pathostat
-description: the package is available on all platforms; click for details.
+description: PathoStat performs statistical analysis and interactive visualization of metagenomic taxonomic data. Use when user asks to analyze microbiome sample compositions, visualize pathogen abundance, or perform differential expression analysis on metagenomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/PathoStat.html
 ---
+
 
 # bioconductor-pathostat
 

@@ -1,8 +1,9 @@
 ---
 name: rnalyze
-description: rnalyze is a comprehensive automation tool designed to streamline the multi-stage RNA-Seq workflow.
+description: "rnalyze automates the complete RNA-Seq workflow from data acquisition and quality control to alignment and quantification. Use when user asks to download SRA data, perform read trimming, align reads to a reference genome, or generate gene counts."
 homepage: https://github.com/MohamedElsisii/rnalyze
 ---
+
 
 # rnalyze
 

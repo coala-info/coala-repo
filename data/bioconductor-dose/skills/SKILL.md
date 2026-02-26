@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dose
-description: the package is available on all platforms; click for details.
+description: The DOSE package performs disease-centric enrichment analysis and calculates semantic similarity between genes or Disease Ontology terms. Use when user asks to perform over-representation analysis, conduct gene set enrichment analysis for diseases, or calculate semantic similarity between genes and disease terms.
 homepage: https://bioconductor.org/packages/release/bioc/html/DOSE.html
 ---
+
 
 # bioconductor-dose
 

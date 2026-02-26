@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.aofficinalis.ncbi.v1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Asparagus officinalis (Garden asparagus) as Biostrings objects based on the NCBI Aspof.V1 assembly. Use when user asks to access the garden asparagus genome, extract specific sequence regions, search for motifs, or calculate nucleotide frequencies within the Bioconductor environment.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Aofficinalis.NCBI.V1.html
 ---
+
 
 # bioconductor-bsgenome.aofficinalis.ncbi.v1
 

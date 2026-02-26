@@ -1,8 +1,9 @@
 ---
 name: smoove
-description: The `smoove` skill provides a high-level interface for structural variant (SV) analysis.
+description: Smoove automates structural variant calling and genotyping by integrating tools like Lumpy and SVTyper into a streamlined workflow. Use when user asks to call structural variants, genotype samples across a cohort, or merge and annotate variant calls.
 homepage: https://github.com/brentp/smoove
 ---
+
 
 # smoove
 

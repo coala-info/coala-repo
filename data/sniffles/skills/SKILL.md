@@ -1,8 +1,9 @@
 ---
 name: sniffles
-description: Sniffles is a high-performance structural variant caller specifically optimized for the unique characteristics of long-read sequencing technologies.
+description: Sniffles is a structural variant caller optimized for identifying large-scale genomic alterations from long-read sequencing data. Use when user asks to call structural variants, detect mosaic or somatic mutations, perform multi-sample population studies, or genotype known variants.
 homepage: https://github.com/fritzsedlazeck/Sniffles
 ---
+
 
 # sniffles
 

@@ -1,12 +1,12 @@
 # barrnap-python CWL Generation Report
 
-## barrnap-python
+## barrnap-python_barrnap
 
 ### Tool Description
-BAsic Rapid Ribosomal RNA Predictor (Python wrapper/version)
+This is barrnap 0.9
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/barrnap-python:0.0.5--py36_0
+- **Docker Image**: quay.io/biocontainers/barrnap-python:0.0.5--py36_1
 - **Homepage**: https://github.com/nickp60/barrnap-python
 - **Package**: https://anaconda.org/channels/bioconda/packages/barrnap-python/overview
 - **Validation**: PASS
@@ -18,37 +18,22 @@ BAsic Rapid Ribosomal RNA Predictor (Python wrapper/version)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 01:36:24  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/barrnap-python:0.0.5--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b97a623baaabdd2ebe805ab40020df2043702df35c275b2002d14075fa55fb8f: unpack entry: usr/local/lib/perl5/5.22.2/Pod/Simple/PullParser.pm: unpack to regular file: short write: write /scratch/21813747/build-temp-3446644656/rootfs/usr/local/lib/perl5/5.22.2/Pod/Simple/PullParser.pm: no space left on device
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## barrnap-python_barrnap
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log regarding a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/barrnap-python:0.0.5--py36_0
-- **Homepage**: https://github.com/nickp60/barrnap-python
-- **Package**: https://anaconda.org/channels/bioconda/packages/barrnap-python/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/10 01:37:18  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/barrnap-python:0.0.5--py36_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:b97a623baaabdd2ebe805ab40020df2043702df35c275b2002d14075fa55fb8f: unpack entry: usr/local/lib/perl5/5.22.2/Pod/Simple/PullParser.pm: unpack to regular file: short write: write /scratch/21813747/build-temp-1017325435/rootfs/usr/local/lib/perl5/5.22.2/Pod/Simple/PullParser.pm: no space left on device
+[barrnap] This is barrnap 0.9
+[barrnap] Written by Torsten Seemann
+[barrnap] Obtained from https://github.com/tseemann/barrnap
+[barrnap] Detected operating system: linux
+[barrnap] Adding /usr/local/lib/barrnap/bin/../binaries/linux to end of PATH
+[barrnap] Checking for dependencies:
+[barrnap] Found nhmmer - /usr/local/bin/nhmmer
+[barrnap] Found bedtools - /usr/local/bin/bedtools
+[barrnap] Will use 1 threads
+[barrnap] Setting evalue cutoff to 1e-06
+[barrnap] Will tag genes < 0.8 of expected length.
+[barrnap] Will reject genes < 0.25 of expected length.
+[barrnap] Using database: /usr/local/lib/barrnap/bin/../db/bac.hmm
+[barrnap] Copying STDIN to a temporary file: /tmp/DIxjnZ23fp
+[barrnap] Scanning /tmp/DIxjnZ23fp for bac rRNA genes... please wait
+[barrnap] Command: nhmmer --cpu 1 -E 1e-06 --w_length 3878 -o /dev/null --tblout /dev/stdout '/usr/local/lib/barrnap/bin/../db/bac.hmm' '/tmp/DIxjnZ23fp'
+[barrnap] ERROR: bad line in nhmmer output - Fatal exception (source file esl_buffer.c, line 1599):
 ```
 

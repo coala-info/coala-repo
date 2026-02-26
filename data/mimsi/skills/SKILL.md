@@ -1,8 +1,9 @@
 ---
 name: mimsi
-description: MiMSI (Microsatellite Instability Classification using Multiple Instance Learning) is a deep learning-based tool designed to predict MSI phenotypes from tumor-normal BAM pairs.
+description: MiMSI is a deep learning tool that predicts microsatellite instability phenotypes from tumor-normal BAM pairs using multiple instance learning. Use when user asks to classify MSI status, predict MSI phenotypes from NGS data, or process tumor-normal pairs for microsatellite analysis.
 homepage: https://github.com/mskcc/mimsi
 ---
+
 
 # mimsi
 

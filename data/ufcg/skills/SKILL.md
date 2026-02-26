@@ -1,8 +1,9 @@
 ---
 name: ufcg
-description: UFCG is a specialized bioinformatics suite designed for fungal phylogenomics.
+description: UFCG performs fungal phylogenomic analysis by extracting marker genes and reconstructing phylogenetic trees. Use when user asks to download HMM profiles, extract marker genes from fungal genomes or RNA-seq reads, reconstruct phylogenetic trees, or update tree labels.
 homepage: https://ufcg.steineggerlab.com
 ---
+
 
 # ufcg
 

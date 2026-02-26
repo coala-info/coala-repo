@@ -1,8 +1,9 @@
 ---
 name: centroid_rna_package
-description: The `centroid_rna_package` is a specialized suite of tools designed for predicting RNA secondary structures.
+description: The centroid_rna_package predicts RNA secondary structures for single sequences or multiple sequence alignments using the gamma-centroid estimator. Use when user asks to predict RNA secondary structures, find consensus structures from alignments, or optimize structural predictions using the gamma parameter and experimental constraints.
 homepage: https://github.com/satoken/centroid-rna-package
 ---
+
 
 # centroid_rna_package
 

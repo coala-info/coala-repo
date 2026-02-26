@@ -1,8 +1,9 @@
 ---
 name: bioconductor-camera
-description: the package is available on all platforms; click for details.
+description: "bioconductor-camera performs post-processing of LC-MS data by grouping peaks into pseudospectra and annotating them for isotopes and adducts to determine neutral molecular masses. Use when user asks to annotate LC-MS peak lists, group co-eluting metabolites, identify isotopes and adducts, or calculate neutral masses from mass spectrometry data."
 homepage: https://bioconductor.org/packages/release/bioc/html/CAMERA.html
 ---
+
 
 # bioconductor-camera
 

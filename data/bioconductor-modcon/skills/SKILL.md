@@ -1,8 +1,9 @@
 ---
 name: bioconductor-modcon
-description: the package is available on all platforms; click for details.
+description: ModCon is a Bioconductor package designed to modify DNA sequences for controlled protein expression. Use when user asks to optimize codon usage, adjust GC content, or design synthetic genes for specific expression levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/ModCon.html
 ---
+
 
 # bioconductor-modcon
 

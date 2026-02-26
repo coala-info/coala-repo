@@ -1,8 +1,9 @@
 ---
 name: genomics-data-index
-description: The `genomics-data-index` (GDI) is a high-performance system designed to organize genomic information into a searchable database.
+description: The genomics-data-index tool indexes and queries large-scale genomic features such as SNVs, MLST profiles, and kmers for rapid comparative analysis. Use when user asks to index VCF files, query samples by specific mutations, perform MLST-based clustering, or filter genomic datasets using a Python API or CLI.
 homepage: https://github.com/apetkau/genomics-data-index
 ---
+
 
 # genomics-data-index
 

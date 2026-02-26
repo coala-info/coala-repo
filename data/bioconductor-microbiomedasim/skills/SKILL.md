@@ -1,8 +1,9 @@
 ---
 name: bioconductor-microbiomedasim
-description: the package is available on all platforms; click for details.
+description: This R package simulates longitudinal differential abundance data for microbiome studies. Use when user asks to simulate microbiome count data, generate longitudinal differential abundance profiles, or evaluate statistical methods for microbiome analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/microbiomeDASim.html
 ---
+
 
 # bioconductor-microbiomedasim
 

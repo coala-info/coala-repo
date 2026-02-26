@@ -1,8 +1,9 @@
 ---
 name: metabolabpy
-description: MetabolabPy is a specialized Python package designed to streamline the processing of Nuclear Magnetic Resonance (NMR) spectra.
+description: MetabolabPy is a Python package designed to process and analyze 1D and 2D NMR spectra for metabolomics and tracer-based metabolism studies. Use when user asks to process raw NMR data, perform automatic phase and baseline correction, identify peaks, or quantify metabolites from HSQC analysis.
 homepage: https://github.com/ludwigc/metabolabpy
 ---
+
 
 # metabolabpy
 

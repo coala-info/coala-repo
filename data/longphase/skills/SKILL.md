@@ -1,8 +1,9 @@
 ---
 name: longphase
-description: LongPhase is a high-performance bioinformatics tool designed to handle the complexity of long-read sequencing data from Oxford Nanopore (ONT) and PacBio platforms.
+description: LongPhase is a high-performance tool for the simultaneous phasing of SNPs, indels, structural variants, and DNA methylation patterns using long-read sequencing data. Use when user asks to phase multiple variant types, co-phase methylation modifications, or haplotag reads from Oxford Nanopore or PacBio platforms.
 homepage: https://github.com/twolinin/longphase
 ---
+
 
 # longphase
 

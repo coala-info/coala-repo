@@ -1,9 +1,9 @@
 # saspector CWL Generation Report
 
-## saspector
+## saspector_SASpector
 
 ### Tool Description
-A tool for analyzing and inspecting SAS datasets (Note: The provided text contains only container build logs and error messages, not the actual help documentation).
+Short-read Assembly inSpector
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/saspector:0.0.5--pyhdfd78af_0
@@ -18,33 +18,45 @@ A tool for analyzing and inspecting SAS datasets (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/saspector:0.0.5--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: SASpector - Short-read Assembly inSpector [-h] -draft Contigs FASTA
+                                                 [-ref [Reference FASTA]]
+                                                 [-p [Prefix]] -dir Output
+                                                 path [--force]
+                                                 [-fl [Length flanks bp]]
+                                                 [-db [Protein FASTA file]]
+                                                 [-trf]
+                                                 [-msh [mash sketch file]]
+                                                 [-k [k size]] [-q]
+                                                 [-c [BAM file]]
 
-
-## Metadata
-- **Skill**: generated
-
-## saspector_SASpectorcheck
-
-### Tool Description
-SASpector check utility (Note: The provided text is a container build error log and does not contain tool help information or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/saspector:0.0.5--pyhdfd78af_0
-- **Homepage**: https://github.com/alejocrojo09/SASpector
-- **Package**: https://anaconda.org/channels/bioconda/packages/saspector/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/saspector:0.0.5--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  -draft Contigs FASTA, --draft Contigs FASTA
+                        Illumina FASTA file as contigs/draft genome
+  -ref [Reference FASTA], --reference [Reference FASTA]
+                        Completed assembly FASTA file as reference genome
+  -p [Prefix], --prefix [Prefix]
+                        Set the prefix of the files, use for example the
+                        strain name
+  -dir Output path, --outdir Output path
+                        Output directory
+  --force               Force output directory overwrite
+  -fl [Length flanks (bp)], --flanking [Length flanks (bp)]
+                        Add flanking regions [Default = 100 bp]
+  -db [Protein FASTA file], --proteindb [Protein FASTA file]
+                        BLAST protein database FASTA file
+  -trf, --tandem_repeats
+                        Run tandem repeat finder within missing regions
+  -msh [mash sketch file], --mash_selection [mash sketch file]
+                        Automatic selection of genome amongst RefSeq 202
+                        database (complete genomes) /!\ Experimental feature!
+  -k [k size], --kmers [k size]
+                        Sourmash analysis
+  -q, --quast           Run QUAST for unmapped regions against reference
+                        assembly
+  -c [BAM file], --coverage [BAM file]
+                        Run SAMtools bedcov to look at short-read coverage in
+                        the missing regions.Needs alignment of reads to the
+                        reference genome in BAM format
 ```
 

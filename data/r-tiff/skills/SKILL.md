@@ -1,8 +1,9 @@
 ---
 name: r-tiff
-description: Functions to read, write and display bitmap images stored in the TIFF format. It can read and write both files and in-memory raw vectors, including native image representation.</p>
+description: The r-tiff package provides an interface for reading and writing TIFF images in R using the libtiff library. Use when user asks to read TIFF files into arrays, write matrices to TIFF format, handle multi-page TIFFs, or process image data in memory.
 homepage: https://cloud.r-project.org/web/packages/tiff/index.html
 ---
+
 
 # r-tiff
 

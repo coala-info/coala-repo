@@ -3,7 +3,7 @@
 ## proteomiqon-joinquantpepionswithproteins
 
 ### Tool Description
-A tool for joining quantified peptide ions with proteins. (Note: The provided help text contained only system logs and an error message; no specific arguments or usage details were available in the input.)
+Joins quantified peptide information with inferred protein information.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/proteomiqon-joinquantpepionswithproteins:0.0.2--hdfd78af_1
@@ -15,36 +15,36 @@ A tool for joining quantified peptide ions with proteins. (Note: The provided he
 - **Total Downloads**: 4.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/CSBiology/ProteomIQon
-- **Stars**: 14
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/proteomiqon-joinquantpepionswithproteins:0.0.2--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+ERROR: missing parameter '--quantifiedpeptides'.
+USAGE: ProteomIQon.JoinQuantPepIonsWithProteins [--help]
+                                                --quantifiedpeptides [<path>...]
+                                                --inferredproteins [<path>...]
+                                                --outputdirectory <path>
+                                                [--matchfiles]
+                                                [--parallelism-level <level>]
 
+OPTIONS:
 
-## Metadata
-- **Skill**: generated
-
-## proteomiqon-joinquantpepionswithproteins_proteomiqon
-
-### Tool Description
-A tool for joining quantified peptide ions with proteins, part of the ProteomIQon suite.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/proteomiqon-joinquantpepionswithproteins:0.0.2--hdfd78af_1
-- **Homepage**: https://csbiology.github.io/ProteomIQon/
-- **Package**: https://anaconda.org/channels/bioconda/packages/proteomiqon-joinquantpepionswithproteins/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/proteomiqon-joinquantpepionswithproteins:0.0.2--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+    --quantifiedpeptides, -i [<path>...]
+                          Specify quantified peptides, specify either a
+                          directory containing or a space separated list of
+                          .quant files.
+    --inferredproteins, -ii [<path>...]
+                          Specify inferred proteins, specify either a directory
+                          containing or a space separated list of .prot files.
+    --outputdirectory, -o <path>
+                          Specify the output directory.
+    --matchfiles, -mf     If this flag is set the files specified using the
+                          QuantifiedPeptides and InferredProteins are matched
+                          according to their file name, otherwise they are
+                          matched by their position in the input lists.
+    --parallelism-level, -c <level>
+                          Set the number of cores the programm can use.
+                          Parallelization occurs on file level. This flag is
+                          only of effect if a input directory (-i) is specified.
+    --help                display this list of options.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: r-permute
-description: A set of restricted permutation designs for freely exchangeable, line transects (time series), and spatial grid designs plus permutation of blocks (groups of samples) is provided. 'permute' also allows split-plot designs, in which the whole-plots or split-plots or both can be freely-exchangeable or one of the restricted designs. The 'permute' package is modelled after the permutation schemes of 'Canoco 3.1' (and later) by Cajo ter Braak.</p>
+description: The permute package generates restricted and hierarchical permutations for randomization tests. Use when user asks to shuffle data with constraints, generate permutation sets for time series or spatial grids, or handle nested experimental designs like blocks and plots.
 homepage: https://cloud.r-project.org/web/packages/permute/index.html
 ---
+
 
 # r-permute
 

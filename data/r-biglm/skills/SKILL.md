@@ -1,8 +1,9 @@
 ---
 name: r-biglm
-description: Regression for data too large to fit in memory.</p>
+description: The r-biglm package fits linear and generalized linear models to large datasets by processing data in chunks or through database connections. Use when user asks to perform regression on datasets that exceed available memory, fit models using incremental QR decomposition, or run GLMs directly on database tables.
 homepage: https://cloud.r-project.org/web/packages/biglm/index.html
 ---
+
 
 # r-biglm
 

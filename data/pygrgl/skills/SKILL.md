@@ -1,8 +1,9 @@
 ---
 name: pygrgl
-description: The `pygrgl` library is a specialized tool designed for the high-performance management of large-scale genomic data.
+description: pygrgl manages large-scale genomic data using graph-based representations for efficient storage and high-performance access. Use when user asks to convert VCF files into indexed graph structures, build representations from reference genomes, or query genotypes from massive cohorts.
 homepage: https://aprilweilab.github.io/
 ---
+
 
 # pygrgl
 

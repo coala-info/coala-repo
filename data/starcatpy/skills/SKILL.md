@@ -1,8 +1,9 @@
 ---
 name: starcatpy
-description: starcatpy (also known as starCAT or starCellAnnoTator) is a specialized tool for the annotation of scRNA-Seq data by mapping cells onto established gene expression programs.
+description: starcatpy annotates scRNA-Seq data by mapping cells onto established gene expression programs using a reference-based approach. Use when user asks to annotate single-cell RNA sequencing data, map cells to gene expression programs, or classify cell states using pre-built or custom references.
 homepage: https://github.com/immunogenomics/starCAT
 ---
+
 
 # starcatpy
 

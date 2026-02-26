@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anvilworkflow
-description: the package is available on all platforms; click for details.
+description: This tool facilitates running batch analysis workflows on the AnVIL/Terra cloud platform using the AnVILWorkflow R package. Use when user asks to clone Terra workspaces, configure workflow inputs, launch cloud-based genomic pipelines, monitor job status, or retrieve results from the Google Cloud Platform.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnVILWorkflow.html
 ---
+
 
 # bioconductor-anvilworkflow
 

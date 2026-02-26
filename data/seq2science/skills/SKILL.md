@@ -1,8 +1,9 @@
 ---
 name: seq2science
-description: Seq2science is an end-to-end pipeline manager built on Snakemake that simplifies the complex process of NGS data preprocessing.
+description: Seq2science is an end-to-end pipeline manager that automates NGS data preprocessing from raw reads to analysis-ready files using standardized Snakemake workflows. Use when user asks to initialize project templates, execute sequencing workflows like RNA-seq or ATAC-seq, download public data by accession number, or generate technical methods for manuscripts.
 homepage: https://vanheeringen-lab.github.io/seq2science
 ---
+
 
 # seq2science
 

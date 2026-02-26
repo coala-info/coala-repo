@@ -1,8 +1,9 @@
 ---
 name: riborex
-description: Riborex is a specialized R package designed to detect differential translation by comparing Ribo-seq (ribosome profiling) data with corresponding RNA-seq data.
+description: Riborex is an R package that detects differential translation by comparing Ribo-seq and RNA-seq data using statistical frameworks like DESeq2 and edgeR. Use when user asks to identify changes in translation efficiency, analyze ribosome profiling data, or find genes where protein synthesis rates change independently of mRNA levels.
 homepage: https://github.com/smithlabcode/riborex
 ---
+
 
 # riborex
 

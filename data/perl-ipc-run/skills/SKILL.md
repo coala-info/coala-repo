@@ -1,8 +1,9 @@
 ---
 name: perl-ipc-run
-description: The `perl-ipc-run` skill provides a robust framework for process management in Perl, far exceeding the capabilities of standard `system()`, `exec()`, or backticks.
+description: "perl-ipc-run provides a framework for managing subprocesses, capturing output, and handling complex redirections in Perl. Use when user asks to execute external commands, manage interactive process harnesses, pipe data between multiple processes, or handle Windows-specific command-line execution."
 homepage: https://metacpan.org/pod/IPC::Run
 ---
+
 
 # perl-ipc-run
 

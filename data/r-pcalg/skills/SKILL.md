@@ -1,8 +1,9 @@
 ---
 name: r-pcalg
-description: "Functions for causal structure   learning and causal inference using graphical models. The main algorithms   for causal structure learning are PC (for observational data without hidden   variables), FCI and RFCI (for observational data with hidden variables),   and GIES (for a mix of data from observational studies   (i.e. observational data) and data from experiments   involving interventions (i.e. interventional data) without hidden   variables). For causal inference the IDA algorithm, the Generalized   Backdoor Criterion (GBC), the Generalized Adjustment Criterion (GAC)   and some related functions are implemented. Functions for incorporating   background knowledge are provided.</p>"
+description: This tool provides algorithms for causal structure learning and causal inference using the pcalg R package. Use when user asks to estimate causal graphs like CPDAGs or PAGs, perform structure learning with PC or FCI algorithms, or estimate causal effects using IDA and covariate adjustment.
 homepage: https://cran.r-project.org/web/packages/pcalg/index.html
 ---
+
 
 # r-pcalg
 

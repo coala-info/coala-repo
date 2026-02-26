@@ -2,10 +2,46 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bamkit_bamfilterrg.py
 label: bamkit_bamfilterrg.py
-doc: "A tool from the bamkit suite. (Note: The provided text contains system error
-  messages regarding a container build failure and does not include the actual help
-  documentation or usage instructions for the tool.)\n\nTool homepage: https://github.com/hall-lab/bamkit"
-inputs: []
+doc: "Filter BAM files by read group.\n\nTool homepage: https://github.com/hall-lab/bamkit"
+inputs:
+  - id: input
+    type: File
+    doc: Input BAM file
+    inputBinding:
+      position: 1
+  - id: readgroup
+    type: string
+    doc: Read group ID to filter by
+    inputBinding:
+      position: 2
+  - id: S
+    type:
+      - 'null'
+      - boolean
+    doc: Output SAM format
+    inputBinding:
+      position: 103
+  - id: b
+    type:
+      - 'null'
+      - boolean
+    doc: Output BAM format (default)
+    inputBinding:
+      position: 103
+  - id: n
+    type:
+      - 'null'
+      - string
+    doc: 'Output BAM file (default: stdout)'
+    inputBinding:
+      position: 103
+  - id: u
+    type:
+      - 'null'
+      - boolean
+    doc: Uncompressed BAM output
+    inputBinding:
+      position: 103
 outputs:
   - id: stdout
     type: stdout

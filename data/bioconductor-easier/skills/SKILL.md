@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easier
-description: the package is available on all platforms; click for details.
+description: This tool analyzes tumor RNA-seq data to predict patient response to immune checkpoint inhibitors and identify systems biomarkers of the tumor microenvironment. Use when user asks to compute immune cell fractions, estimate pathway or transcription factor activities, calculate ligand-receptor interaction scores, or predict immune response hallmarks.
 homepage: https://bioconductor.org/packages/release/bioc/html/easier.html
 ---
+
 
 # bioconductor-easier
 

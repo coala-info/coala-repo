@@ -1,8 +1,9 @@
 ---
 name: dbcanlight
-description: dbcanlight is a lightweight, performance-optimized rewrite of the `run_dbcan` tool.
+description: dbcanlight identifies Carbohydrate-Active Enzymes (CAZymes) and their potential substrates within protein sequence datasets using optimized HMM and DIAMOND searches. Use when user asks to build dbCAN databases, search for CAZyme families, predict enzyme substrates, or summarize search results into a consolidated table.
 homepage: https://github.com/chtsai0105/dbcanLight/tree/main
 ---
+
 
 # dbcanlight
 

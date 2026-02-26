@@ -1,8 +1,9 @@
 ---
 name: perl-devel-cycle
-description: The `perl-devel-cycle` skill provides tools to traverse Perl reference trees and identify circularities.
+description: This tool traverses Perl reference trees to identify circularities and memory leaks. Use when user asks to find memory cycles in objects, detect circular references in data structures, or debug memory leaks in Perl code.
 homepage: http://metacpan.org/pod/Devel::Cycle
 ---
+
 
 # perl-devel-cycle
 

@@ -3,7 +3,10 @@
 ## real
 
 ### Tool Description
-The provided text appears to be a container build log showing a fatal error during the fetching of the OCI image for 'real', rather than the help text for the tool itself. As a result, no command-line arguments or descriptions could be extracted from this specific input.
+This is real version 0.0.31
+real is distributed under version 3.0 of the GNU GENERAL PUBLIC LICENSE.
+Machine supports popcnt instruction.
+Ignoring argument --help
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/real:1.0--he941832_1
@@ -18,13 +21,28 @@ The provided text appears to be a container build log showing a fatal error duri
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/real:1.0--he941832_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+This is real version 0.0.31
+real is distributed under version 3.0 of the GNU GENERAL PUBLIC LICENSE.
+Machine supports popcnt instruction.
+Ignoring argument --help
+Options:
+-t <textfilename>
+-p <patternfilename>
+-o <outputfilename>
+-s <maximum number of errors in seed, default=2>
+-e <total maximum number of errors, default=5>
+-l <length of seed, default=32>
+-u <search for unique match, default=1>
+-f <fraction of physical memory to use, default=0.75>
+-q <use quality scores, default=1>
+-Q <offset for quality scores, default=autodetect>
+-R <rewrite pattern file, default=1>
+-T <number of matching threads, default=20>
+-similarity <sequence similarity, default=0.995>
+-trans <transitions fraction of mutations, default=0.71>
+-gc <composition bias, default=0.41>
+-gcmut_bias <mutability bias of G&C, default=2>
+-filter_level <filtering level for equal hits 0-4, default=2>
+Mandatory argument -t (text file name) is not given.
 ```
 
-
-## Metadata
-- **Skill**: generated

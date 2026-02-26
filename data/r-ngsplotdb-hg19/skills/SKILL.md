@@ -1,8 +1,9 @@
 ---
 name: r-ngsplotdb-hg19
-description: R package ngsplotdb-hg19 (documentation from project home).
+description: This package provides the genomic database and annotation tables required to visualize NGS data for the hg19 human genome assembly. Use when user asks to generate enrichment plots, create heatmaps, or produce average profiles for genomic regions like TSS, TES, and gene bodies using the ngsplot framework.
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-hg19/index.html
 ---
+
 
 # r-ngsplotdb-hg19
 

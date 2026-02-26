@@ -1,8 +1,9 @@
 ---
 name: bioconductor-buscorrect
-description: the package is available on all platforms; click for details.
+description: This tool performs batch effect correction and identifies biological subtypes in high-throughput genomic data using Bayesian hierarchical models. Use when user asks to correct batch effects with unknown subtypes, cluster samples into biological groups, identify intrinsic genes, or obtain adjusted expression values for downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/BUScorrect.html
 ---
+
 
 # bioconductor-buscorrect
 

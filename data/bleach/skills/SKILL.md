@@ -1,8 +1,9 @@
 ---
 name: bleach
-description: BleachBit is a powerful, open-source cleanup utility that identifies and removes unnecessary files to free up storage and protect user privacy.
+description: "BleachBit is a cleanup utility that removes unnecessary files to free up storage and securely deletes data to protect user privacy. Use when user asks to clean system files, shred sensitive data, preview disk space recovery, or list available cleaners."
 homepage: https://github.com/bleachbit/bleachbit
 ---
+
 
 # bleach
 

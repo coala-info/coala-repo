@@ -1,8 +1,9 @@
 ---
 name: eggnog-mapper
-description: eggnog-mapper (e-mapper) is a specialized tool designed for high-throughput functional annotation.
+description: eggnog-mapper performs high-throughput functional annotation of genomic and metagenomic sequences using orthology-based transfers. Use when user asks to annotate protein sequences, predict functions for a genome, or perform orthology-based searches using DIAMOND, HMMER, or MMseqs2.
 homepage: https://github.com/jhcepas/eggnog-mapper
 ---
+
 
 # eggnog-mapper
 

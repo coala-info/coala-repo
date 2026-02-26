@@ -2,10 +2,56 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ismap
 label: ismapper_ismap
-doc: "The provided text is an error message from a container runtime (Singularity/Apptainer)
-  and does not contain help information or argument definitions for the tool.\n\n
-  Tool homepage: https://github.com/jhawkey/IS_mapper/"
-inputs: []
+doc: "Basic ISMapper options:\n\nTool homepage: https://github.com/jhawkey/IS_mapper/"
+inputs:
+  - id: reads
+    type:
+      type: array
+      items: File
+    doc: Paired end reads for analysing (can be gzipped)
+    inputBinding:
+      position: 1
+  - id: queries
+    type:
+      type: array
+      items: File
+    doc: 'Multifasta file for query gene(s) (eg: insertion sequence) that will be
+      mapped to.'
+    inputBinding:
+      position: 2
+  - id: reference
+    type:
+      type: array
+      items: File
+    doc: Reference genome for typing against in genbank format
+    inputBinding:
+      position: 3
+  - id: help_all
+    type:
+      - 'null'
+      - string
+    doc: Display extended help
+    inputBinding:
+      position: 104
+      prefix: --help_all
+  - id: log
+    type:
+      - 'null'
+      - string
+    doc: Prefix for log file. If not supplied, prefix will be current date and 
+      time.
+    inputBinding:
+      position: 104
+      prefix: --log
+  - id: output_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Location for all output files (default is current directory).
+    default: current directory
+    inputBinding:
+      position: 104
+      prefix: --output_dir
 outputs:
   - id: stdout
     type: stdout

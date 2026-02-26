@@ -1,8 +1,9 @@
 ---
 name: palikiss
-description: palikiss is a specialized bioinformatics tool designed for comparative RNA structure analysis.
+description: Palikiss performs comparative RNA secondary structure prediction and pseudoknot detection using multiple sequence alignments. Use when user asks to predict consensus RNA structures, identify pseudoknots in sequence alignments, or analyze structural motifs across multiple RNA sequences.
 homepage: https://bibiserv.cebitec.uni-bielefeld.de/palikiss
 ---
+
 
 # palikiss
 

@@ -3,7 +3,7 @@
 ## sensv
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'sensv'. It consists of error logs from a failed container build process (Apptainer/Singularity) due to insufficient disk space.
+SENSV - Structural Variant caller
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sensv:1.0.4--h43eeafb_2
@@ -18,14 +18,37 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sensv:1.0.4--h43eeafb_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:613a81aebedd4c2b9266b697e9f301891d46aec7344f1311868aebfc95263e0a: unpack entry: usr/local/bin/data/depth/GRCh37.depth_ref.csv: unpack to regular file: short write: write /tmp/build-temp-1603544377/rootfs/usr/local/bin/data/depth/GRCh37.depth_ref.csv: no space left on device
+usage: sensv [-h] -sample_name SAMPLE_NAME -fastq FASTQ_FILE -output_prefix
+             OUTPUT_PREFIX [-min_sv_size MIN_SV_SIZE]
+             [-max_sv_size MAX_SV_SIZE] [-disable_dp_filter DISABLE_DP_FILTER]
+             [-disable_gen_altref_bam DISABLE_GEN_ALTREF_BAM]
+             [-target_sv_type TARGET_SV_TYPE] [-ref_ver REF_VER] -ref REF
+             [-nprocs NPROCS]
+
+SENSV
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -sample_name SAMPLE_NAME, --sample_name SAMPLE_NAME
+                        sample name
+  -fastq FASTQ_FILE, --fastq_file FASTQ_FILE
+                        fastq file
+  -output_prefix OUTPUT_PREFIX, --output_prefix OUTPUT_PREFIX
+                        output prefix
+  -min_sv_size MIN_SV_SIZE, --min_sv_size MIN_SV_SIZE
+                        min Sv Size
+  -max_sv_size MAX_SV_SIZE, --max_sv_size MAX_SV_SIZE
+                        max Sv Size
+  -disable_dp_filter DISABLE_DP_FILTER, --disable_dp_filter DISABLE_DP_FILTER
+                        disable DP filter
+  -disable_gen_altref_bam DISABLE_GEN_ALTREF_BAM, --disable_gen_altref_bam DISABLE_GEN_ALTREF_BAM
+                        disable gen altref bam
+  -target_sv_type TARGET_SV_TYPE, --target_sv_type TARGET_SV_TYPE
+                        target sv type
+  -ref_ver REF_VER, --ref_ver REF_VER
+                        reference version (default 37)
+  -ref REF, --ref REF   reference fasta file absolute path
+  -nprocs NPROCS, --nprocs NPROCS
+                        max # of processes to run sensv
 ```
 
-
-## Metadata
-- **Skill**: generated

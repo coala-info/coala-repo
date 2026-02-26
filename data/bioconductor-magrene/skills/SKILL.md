@@ -1,8 +1,9 @@
 ---
 name: bioconductor-magrene
-description: the package is available on all platforms; click for details.
+description: Magrene identifies and analyzes motifs in gene regulatory networks with a focus on the evolutionary patterns of duplicated genes. Use when user asks to identify network motifs, analyze gene regulatory networks, or investigate the regulatory divergence of duplicated genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/magrene.html
 ---
+
 
 # bioconductor-magrene
 

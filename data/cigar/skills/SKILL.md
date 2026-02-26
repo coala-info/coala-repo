@@ -1,8 +1,9 @@
 ---
 name: cigar
-description: The `cigar` library is a specialized Python utility for parsing and modifying CIGAR strings, which represent the relationship between a sequenced read and a reference genome.
+description: The cigar library parses, modifies, and performs soft-masking on CIGAR strings representing sequence alignments. Use when user asks to parse CIGAR strings, mask bases at alignment boundaries, or modify alignment operations for SAM/BAM records.
 homepage: https://github.com/brentp/cigar
 ---
+
 
 # cigar
 

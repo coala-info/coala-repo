@@ -1,8 +1,9 @@
 ---
 name: osra
-description: OSRA (Optical Structure Recognition Application) is a command-line utility that translates visual chemical diagrams into computational molecular formats.
+description: OSRA translates visual chemical diagrams from images or PDF documents into computational molecular formats like SMILES or SDF. Use when user asks to convert chemical structure images to machine-readable strings, extract molecular data from PDFs, or perform optical structure recognition on scanned documents.
 homepage: http://cactus.nci.nih.gov/osra/
 ---
+
 
 # osra
 

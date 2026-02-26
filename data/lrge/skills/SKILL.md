@@ -1,8 +1,9 @@
 ---
 name: lrge
-description: LRGE (Long Read-based Genome size Estimation) is a specialized tool designed to calculate genome size by analyzing overlaps between long reads.
+description: LRGE estimates genome size by analyzing overlaps between long-read sequencing data from Oxford Nanopore or PacBio platforms. Use when user asks to calculate genome size from long reads, estimate genome size using overlap-based strategies, or determine genome size for bacterial and eukaryotic datasets.
 homepage: https://github.com/mbhall88/lrge
 ---
+
 
 # lrge
 

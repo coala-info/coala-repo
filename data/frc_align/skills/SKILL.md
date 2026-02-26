@@ -1,8 +1,9 @@
 ---
 name: frc_align
-description: The `frc_align` skill (utilizing the `FRCbam` tool) provides a robust framework for assessing the quality of de novo genome assemblies.
+description: frc_align assesses the quality of de novo genome assemblies by analyzing the distribution of assembly features and generating Feature Response Curves. Use when user asks to evaluate assembly quality, identify potential assembly errors, or compare different genome assembly versions.
 homepage: https://github.com/vezzi/FRC_align
 ---
+
 
 # frc_align
 

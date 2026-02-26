@@ -1,8 +1,9 @@
 ---
 name: mercat
-description: The mercat skill provides specialized knowledge for the GNU Core Utilities, the fundamental tools of the GNU operating system.
+description: The mercat tool provides specialized knowledge and best practices for using GNU Core Utilities. Use when user asks to manage files, process text with command-line tools, retrieve system or disk information, or troubleshoot common shell utility behaviors.
 homepage: https://www.gnu.org/software/coreutils/
 ---
+
 
 # mercat
 

@@ -1,8 +1,9 @@
 ---
 name: r-aroma.core
-description: "Core methods and classes used by higher-level 'aroma.*' packages         part of the Aroma Project, e.g. 'aroma.affymetrix' and 'aroma.cn'.</p>"
+description: aroma.core provides the foundational classes and methods for the Aroma Project framework to analyze extremely large microarray data sets using a file-system-based approach. Use when user asks to manage large-scale genomic data, locate data sets by name, or implement memory-efficient workflows for Affymetrix, SNP, and exon arrays.
 homepage: https://cran.r-project.org/web/packages/aroma.core/index.html
 ---
+
 
 # r-aroma.core
 

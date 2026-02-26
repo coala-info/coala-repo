@@ -1,8 +1,9 @@
 ---
 name: cogclassifier
-description: The `cogclassifier` tool automates the functional annotation of microbial genes by searching query sequences against the COG database using RPS-BLAST.
+description: The cogclassifier tool automates the functional annotation of microbial protein sequences by searching them against the COG database using RPS-BLAST. Use when user asks to classify prokaryotic proteins into functional categories, perform COG database searches, or generate visual summaries of metabolic roles.
 homepage: https://github.com/moshi4/COGclassifier/
 ---
+
 
 # cogclassifier
 

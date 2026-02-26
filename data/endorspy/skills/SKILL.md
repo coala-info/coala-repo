@@ -1,8 +1,9 @@
 ---
 name: endorspy
-description: The `endorspy` skill enables the calculation of key sequencing metrics by comparing different stages of a bioinformatics pipeline.
+description: endorspy calculates sequencing metrics such as endogenous DNA percentage, clonality, and duplication rates by analyzing samtools flagstat outputs. Use when user asks to calculate endogenous DNA content, determine library complexity, or generate MultiQC-compatible sequencing metrics from flagstat files.
 homepage: https://github.com/aidaanva/endorS.py
 ---
+
 
 # endorspy
 

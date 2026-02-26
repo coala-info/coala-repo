@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytotree
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: CytoTree is an R package for analyzing multidimensional flow and mass cytometry data using clustering and trajectory inference. Use when user asks to analyze cytometry data, perform SOM clustering, run dimensionality reduction, construct trajectory trees, or estimate pseudotime.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/CytoTree.html
 ---
+
 
 # bioconductor-cytotree
 

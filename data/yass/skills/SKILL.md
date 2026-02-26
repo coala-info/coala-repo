@@ -1,8 +1,9 @@
 ---
 name: yass
-description: YASS (Yet Another Similarity Searcher) is a specialized bioinformatics tool designed for sensitive genomic sequence comparison.
+description: YASS is a specialized bioinformatics tool for sensitive genomic sequence comparison. Use when user asks to 'compare genomic sequences', 'detect distant homologies', 'find fuzzy repeats', 'search for non-coding RNA or regulatory elements', 'detect segmental duplications'.
 homepage: https://bioinfo.lifl.fr/yass
 ---
+
 
 # yass
 

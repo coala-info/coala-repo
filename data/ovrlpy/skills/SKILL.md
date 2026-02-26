@@ -1,8 +1,9 @@
 ---
 name: ovrlpy
-description: ovrlpy is a specialized Python-based quality control tool designed for spatial biology.
+description: ovrlpy detects vertical signal overlaps and generates signal integrity maps for spatial transcriptomics quality control. Use when user asks to detect doublets, generate signal integrity maps, visualize regions of interest, or analyze vertical signal properties in spatial biology data.
 homepage: https://github.com/HiDiHlabs/ovrl.py
 ---
+
 
 # ovrlpy
 

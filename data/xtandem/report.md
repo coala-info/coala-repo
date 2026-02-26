@@ -3,10 +3,10 @@
 ## xtandem
 
 ### Tool Description
-X! Tandem is a software for identifying proteins from tandem mass spectrometry data. (Note: The provided text contains container build logs and error messages rather than command-line help documentation; therefore, no arguments could be extracted.)
+X! TANDEM Vengeance (2015.12.15.2)
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/xtandem:15.12.15.2--h4464bbb_11
+- **Docker Image**: quay.io/biocontainers/xtandem:15.12.15.2--0
 - **Homepage**: https://github.com/bspratt/xtandem-g
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,13 +18,25 @@ X! Tandem is a software for identifying proteins from tandem mass spectrometry d
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/xtandem:15.12.15.2--h4464bbb_11 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+USAGE: tandem filename
+
+where filename is any valid path to an XML input file.
+
++-+-+-+-+-+-+
+
+X! TANDEM Vengeance (2015.12.15.2)
+
+Copyright (C) 2003-2014 Ronald C Beavis, all rights reserved
+This software is a component of the GPM  project.
+Use of this software governed by the Artistic license.
+If you do not have this license, you can get a copy at
+http://www.perl.com/pub/a/language/misc/Artistic.html
+
++-+-+-+-+-+-+
+
+press <Enter> to continue ...
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

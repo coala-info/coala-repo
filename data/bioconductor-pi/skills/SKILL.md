@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pi
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package prioritizes genes and genomic regions by integrating functional genomic data and network information. Use when user asks to prioritize genes from genome-wide association studies, rank candidates using network-based analysis, or perform functional genomic data integration.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/Pi.html
 ---
+
 
 # bioconductor-pi
 

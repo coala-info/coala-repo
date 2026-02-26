@@ -1,8 +1,9 @@
 ---
 name: bioconductor-parglms
-description: the package is available on all platforms; click for details.
+description: The bioconductor-parglms package provides parallelized functions for fitting generalized linear models to improve computational efficiency. Use when user asks to fit GLMs in parallel, speed up generalized linear model computations, or perform large-scale regression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/parglms.html
 ---
+
 
 # bioconductor-parglms
 

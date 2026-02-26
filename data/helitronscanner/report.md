@@ -3,26 +3,32 @@
 ## helitronscanner
 
 ### Tool Description
-A tool for identifying Helitron transposable elements (Note: The provided help text contains only container execution errors and no usage information).
+FAIL to generate CWL: helitronscanner not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/helitronscanner:1.0--hdfd78af_0
 - **Homepage**: https://sourceforge.net/projects/helitronscanner
 - **Package**: https://anaconda.org/channels/bioconda/packages/helitronscanner/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/helitronscanner/overview
-- **Total Downloads**: 4.2K
+- **Total Downloads**: 4.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: helitronscanner not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: helitronscanner not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/helitronscanner:1.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1169828857: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

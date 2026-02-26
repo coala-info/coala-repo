@@ -1,8 +1,9 @@
 ---
 name: skani
-description: skani is a high-performance genomic distance estimator designed to calculate ANI and Aligned Fraction (AF) for sequences with >80% identity.
+description: skani is a high-performance genomic distance estimator that calculates Average Nucleotide Identity and Aligned Fraction for sequences with high identity. Use when user asks to calculate ANI between genomes, search queries against a genomic database, or generate distance matrices for phylogenomic analysis.
 homepage: https://github.com/bluenote-1577/skani
 ---
+
 
 # skani
 

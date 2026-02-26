@@ -1,8 +1,9 @@
 ---
 name: bioconductor-indac.db
-description: the package is available on all platforms; click for details.
+description: bioconductor-indac.db provides annotation mappings between manufacturer probe identifiers and biological database identifiers for the indac Drosophila melanogaster platform. Use when user asks to map probe IDs to gene symbols, perform functional enrichment analysis, or retrieve genomic locations for Drosophila microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/indac.db.html
 ---
+
 
 # bioconductor-indac.db
 

@@ -1,8 +1,9 @@
 ---
 name: erne
-description: ERNeRF (Avatar ERNeRF) is an end-to-end pipeline designed for high-fidelity talking-head synthesis.
+description: ERNeRF is an end-to-end pipeline for high-fidelity talking-head synthesis that creates digital avatars from video and synchronizes them to audio. Use when user asks to train a new avatar model from a source video, generate realistic video output from audio input, or perform face tracking and 3DMM conversion for digital avatars.
 homepage: https://github.com/chengyuanba/avatar_ernerf
 ---
+
 
 # erne
 

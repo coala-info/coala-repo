@@ -1,8 +1,9 @@
 ---
 name: dialign2
-description: DIALIGN 2.2.1 is a specialized multiple sequence alignment tool that differs from standard global or local alignment methods by constructing alignments from gap-free segment pairs (fragments).
+description: DIALIGN 2.2.1 is a multiple sequence alignment tool that constructs alignments from gap-free segment pairs to identify local similarities. Use when user asks to perform multiple sequence alignment, align sequences with large non-homologous regions, use anchored alignment, or configure sensitivity thresholds for sequence comparison.
 homepage: http://dialign.gobics.de
 ---
+
 
 # dialign2
 

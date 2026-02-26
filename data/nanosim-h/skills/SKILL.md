@@ -1,8 +1,9 @@
 ---
 name: nanosim-h
-description: NanoSim-H is a specialized simulator for Oxford Nanopore reads, derived from the original NanoSim package.
+description: "NanoSim-H simulates Oxford Nanopore sequencing reads by capturing technology-specific error profiles and read length distributions. Use when user asks to simulate ONT reads, generate perfect reads from a reference, model circular genomes, or adjust specific error rates for nanopore data."
 homepage: https://github.com/karel-brinda/NanoSim-H
 ---
+
 
 # nanosim-h
 

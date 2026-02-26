@@ -1,8 +1,9 @@
 ---
 name: gxformat2
-description: The `gxformat2` toolkit is designed to manage Galaxy Workflow Format 2, a concise and human-friendly alternative to the traditional native Galaxy `.ga` format.
+description: The gxformat2 toolkit provides utilities to validate, visualize, and manage Galaxy Workflow Format 2 files. Use when user asks to lint Galaxy workflows, visualize workflow connections, export abstract workflow versions, or manage human-readable workflow formats.
 homepage: https://github.com/jmchilton/gxformat2
 ---
+
 
 # gxformat2
 

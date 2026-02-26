@@ -1,8 +1,9 @@
 ---
 name: cgmlst-dists
-description: The `cgmlst-dists` tool is a high-performance C utility designed to transform allele call tables into distance matrices.
+description: cgmlst-dists converts allele call tables into distance matrices by calculating Hamming distances while accounting for missing data. Use when user asks to transform allele tables into distance matrices, calculate genetic distances for cgMLST data, or generate formatted distance outputs like CSV or lower triangle matrices.
 homepage: https://github.com/tseemann/cgmlst-dists
 ---
+
 
 # cgmlst-dists
 

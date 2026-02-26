@@ -1,8 +1,9 @@
 ---
 name: chewbbaca
-description: chewBBACA is a comprehensive suite designed for the creation, evaluation, and application of core genome (cgMLST) and whole genome (wgMLST) MultiLocus Sequence Typing schemas.
+description: chewBBACA is a comprehensive suite for creating, evaluating, and applying core genome and whole genome MultiLocus Sequence Typing schemas. Use when user asks to create a schema, perform allele calling, compute multiple sequence alignments, or evaluate schema quality.
 homepage: https://github.com/B-UMMI/chewBBACA
 ---
+
 
 # chewbbaca
 

@@ -2,10 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: sailfish
 label: sailfish
-doc: "Sailfish is a tool for estimating the abundance of isoforms from RNA-seq data.
-  (Note: The provided text is a container build error log and does not contain help
-  documentation or argument definitions.)\n\nTool homepage: https://github.com/rust-sailfish/sailfish"
-inputs: []
+doc: "Sailfish is a tool for quantifying transcript abundance in RNA-Seq data.\n\n\
+  Tool homepage: https://github.com/rust-sailfish/sailfish"
+inputs:
+  - id: no_version_check
+    type:
+      - 'null'
+      - boolean
+    doc: don't check with the server to see if this is the latest version
+    inputBinding:
+      position: 101
+      prefix: --no-version-check
 outputs:
   - id: stdout
     type: stdout

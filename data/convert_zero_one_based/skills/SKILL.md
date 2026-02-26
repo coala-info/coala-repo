@@ -1,8 +1,9 @@
 ---
 name: convert_zero_one_based
-description: The `convert_zero_one_based` tool is a Python-based command-line interface (CLI) developed by the Griffith Lab.
+description: This tool shifts genomic coordinates between zero-based and one-based numbering systems. Use when user asks to convert BED files to VCF or GFF formats, change coordinate systems for tool compatibility, or ensure consistency across different genomic file formats.
 homepage: https://github.com/griffithlab/convert_zero_one_based.git
 ---
+
 
 # convert_zero_one_based
 

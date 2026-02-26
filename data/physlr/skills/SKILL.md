@@ -1,8 +1,9 @@
 ---
 name: physlr
-description: Physlr is a bioinformatics toolset designed to leverage the long-range information inherent in linked reads to improve genome assembly quality.
+description: Physlr is a bioinformatics toolset that uses linked-read data to construct physical maps and improve genome assembly quality through scaffolding. Use when user asks to generate a physical map from linked reads, scaffold a draft assembly, or evaluate the quality of a physical map against a reference genome.
 homepage: https://github.com/bcgsc/physlr
 ---
+
 
 # physlr
 

@@ -1,8 +1,9 @@
 ---
 name: mlst-cge
-description: The `mlst` tool (from the Center for Genomic Epidemiology) identifies the allelic profile of bacterial samples by comparing genomic data against specific MLST schemes.
+description: This tool identifies the allelic profile and sequence type of bacterial samples by comparing genomic data against specific MLST schemes. Use when user asks to identify sequence types, analyze assembled genomes for MLST, or map raw reads to MLST alleles.
 homepage: https://bitbucket.org/genomicepidemiology/mlst
 ---
+
 
 # mlst-cge
 

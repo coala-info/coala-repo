@@ -1,8 +1,9 @@
 ---
 name: perl-file-slurp
-description: The `File::Slurp` module provides a highly efficient, functional interface for handling entire files in Perl.
+description: This Perl module provides a functional interface for efficiently reading, writing, and modifying entire files or directories with minimal boilerplate. Use when user asks to read file contents into strings or arrays, perform atomic writes, append data to files, or modify file content in-place.
 homepage: http://metacpan.org/pod/File::Slurp
 ---
+
 
 # perl-file-slurp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneplast.data
-description: The package geneplast.data provides datasets from different sources via AnnotationHub to use in geneplast pipelines. The datasets have species, phylogenetic trees, and orthology relationships among eukaryotes from different orthologs databases.
+description: This package provides datasets and utility functions for geneplast evolutionary pipelines, including species trees and orthology relationships. Use when user asks to access pre-processed orthology data, create custom phylogenetic trees, or format data for evolutionary rooting analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/geneplast.data.html
 ---
+
 
 # bioconductor-geneplast.data
 

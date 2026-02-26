@@ -3,7 +3,7 @@
 ## genomescope2
 
 ### Tool Description
-GenomeScope 2.0: Reference-free profiling of polyploid genomes from k-mer distributions
+Reference-free profiling of polyploid genomes from k-mer frequencies.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0
@@ -18,29 +18,15 @@ GenomeScope 2.0: Reference-free profiling of polyploid genomes from k-mer distri
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1058668119: no space left on device
-```
+Unable to find image 'quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0' locally
+2.1.0--py313r44hdfd78af_0: Pulling from biocontainers/genomescope2
+36b7914fc8ba: Already exists
+2cc3d3b08aaa: Already exists
+bd9ddc54bea9: Already exists
+946048906e85: Pulling fs layer
+946048906e85: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3232383612: no space left on device
 
-
-## Metadata
-- **Skill**: generated
-
-## genomescope2_genomescope.R
-
-### Tool Description
-GenomeScope 2.0: Reference-free profiling of polyploid genomes from k-mer frequencies.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0
-- **Homepage**: https://github.com/tbenavi1/genomescope2.0
-- **Package**: https://anaconda.org/channels/bioconda/packages/genomescope2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomescope2:2.1.0--py313r44hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2663211845: no space left on device
+Run 'docker run --help' for more information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: earlgrey
-description: Earl Grey is a comprehensive, fully automated pipeline designed to identify, curate, and annotate transposable elements (TEs) in genome assemblies.
+description: Earl Grey is a fully automated pipeline for identifying, curating, and annotating transposable elements in genome assemblies. Use when user asks to identify transposable elements, construct de novo repeat libraries, annotate genome assemblies, or visualize repeat landscapes.
 homepage: https://github.com/TobyBaril/EarlGrey
 ---
+
 
 # earlgrey
 

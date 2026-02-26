@@ -1,8 +1,9 @@
 ---
 name: metaplex
-description: MetaPlex is a specialized toolkit designed to handle the unique requirements of dual-indexed metabarcoding workflows.
+description: MetaPlex processes dual-indexed metabarcoding data to prepare it for QIIME2 analysis and filters false reads caused by index jumping. Use when user asks to remultiplex raw reads, calculate index jump rates, or perform frequency and length-based quality filtering.
 homepage: https://github.com/NGabry/MetaPlex
 ---
+
 
 # metaplex
 

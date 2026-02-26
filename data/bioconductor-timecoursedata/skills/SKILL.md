@@ -1,8 +1,9 @@
 ---
 name: bioconductor-timecoursedata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of time-course data sets for longitudinal data analysis. Use when user asks to access example time-course datasets, load longitudinal microarray data, or perform time-series analysis using Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/timecoursedata.html
 ---
+
 
 # bioconductor-timecoursedata
 

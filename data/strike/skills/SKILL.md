@@ -1,8 +1,9 @@
 ---
 name: strike
-description: The STRIKE (Single sTRucture Induced Evaluation) tool provides a quantitative measure of alignment quality by projecting contacts from a known protein structure onto a sequence alignment.
+description: "STRIKE evaluates the quality of a protein sequence alignment by scoring its consistency with a known 3D structure. Use when user asks to assess alignment quality, score structural consistency, or compare different sequence alignments using a template structure."
 homepage: http://www.tcoffee.org/Projects/strike/index.html
 ---
+
 
 # strike
 

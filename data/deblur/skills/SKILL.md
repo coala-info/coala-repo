@@ -1,8 +1,9 @@
 ---
 name: deblur
-description: Deblur is a high-resolution deconvolution algorithm used to recover biological sequences from amplicon sequencing data.
+description: Deblur is a high-resolution deconvolution algorithm used to recover exact biological sequence variants from amplicon sequencing data by subtracting noise. Use when user asks to denoise amplicon reads, identify sub-operational taxonomic units, or generate a BIOM table from demultiplexed sequences.
 homepage: https://github.com/biocore/deblur
 ---
+
 
 # deblur
 

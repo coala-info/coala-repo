@@ -1,8 +1,9 @@
 ---
 name: parasail-python
-description: The `parasail-python` skill enables efficient biological sequence alignment by leveraging SIMD (Single Instruction, Multiple Data) C implementations.
+description: parasail-python performs efficient pairwise sequence alignment of DNA, RNA, or protein sequences using SIMD-accelerated C implementations. Use when user asks to perform local, global, or semi-global alignments, calculate alignment scores, or generate CIGAR strings for biological sequences.
 homepage: https://github.com/jeffdaily/parasail-python
 ---
+
 
 # parasail-python
 

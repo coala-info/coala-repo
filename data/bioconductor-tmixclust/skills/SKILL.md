@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tmixclust
-description: the package is available on all platforms; click for details.
+description: TMixClust clusters time-series gene expression data using a template-based mixture model approach. Use when user asks to cluster longitudinal gene expression data, identify temporal expression profiles, or analyze time-course transcriptomics.
 homepage: https://bioconductor.org/packages/release/bioc/html/TMixClust.html
 ---
+
 
 # bioconductor-tmixclust
 

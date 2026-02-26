@@ -3,24 +3,32 @@
 ## parent-map
 
 ### Tool Description
-A tool for parental mapping (Note: The provided text contains system error messages regarding disk space and container conversion rather than the tool's help documentation).
+FAIL to generate CWL: parent-map not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/parent-map:1.1.2--pyhdfd78af_3
+- **Docker Image**: quay.io/biocontainers/parent-map:1.1.2--pyhdfd78af_2
 - **Homepage**: https://github.com/damienmarsic/parent-map
 - **Package**: https://anaconda.org/channels/bioconda/packages/parent-map/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/parent-map/overview
 - **Total Downloads**: 15.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/damienmarsic/parent-map
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: parent-map not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: parent-map not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/791a26019648b9bceba5c5f0dfa3de0ab7f0a69cce46f0e41bedbd40b0a7ddcf: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/parent-map:1.1.2--pyhdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-346482736: no space left on device
+
 ```
 

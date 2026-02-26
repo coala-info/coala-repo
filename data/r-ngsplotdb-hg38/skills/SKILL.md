@@ -1,8 +1,9 @@
 ---
 name: r-ngsplotdb-hg38
-description: R package ngsplotdb-hg38 (documentation from project home).
+description: This package provides the hg38 human genome database and functional annotations for the ngsplot visualization system. Use when user asks to create average profiles, generate heatmaps of sequencing read distributions, or visualize genomic enrichment across hg38 features like TSS and gene bodies.
 homepage: https://cran.r-project.org/web/packages/ngsplotdb-hg38/index.html
 ---
+
 
 # r-ngsplotdb-hg38
 

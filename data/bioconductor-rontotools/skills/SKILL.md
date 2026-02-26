@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rontotools
-description: the package is available on all platforms; click for details.
+description: "ROntoTools is a Bioconductor package for performing topology-based pathway enrichment analysis. Use when user asks to analyze biological pathways using topology, perform functional enrichment analysis, or calculate pathway perturbation factors."
 homepage: https://bioconductor.org/packages/release/bioc/html/ROntoTools.html
 ---
+
 
 # bioconductor-rontotools
 

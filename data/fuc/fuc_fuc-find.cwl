@@ -2,13 +2,33 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
   - fuc
-  - find
+  - fuc-find
 label: fuc_fuc-find
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a fatal error log from a container runtime (Singularity/Apptainer) indicating
-  a failure to build a SIF image due to insufficient disk space.\n\nTool homepage:
-  https://github.com/sbslee/fuc"
-inputs: []
+doc: "Retrieve absolute paths of files whose name matches a specified pattern, optionally
+  recursively.\n\nTool homepage: https://github.com/sbslee/fuc"
+inputs:
+  - id: pattern
+    type: string
+    doc: Filename pattern.
+    inputBinding:
+      position: 1
+  - id: directory
+    type:
+      - 'null'
+      - Directory
+    doc: 'Directory to search in (default: current directory).'
+    default: .
+    inputBinding:
+      position: 102
+      prefix: --directory
+  - id: recursive
+    type:
+      - 'null'
+      - boolean
+    doc: Turn on recursive retrieving.
+    inputBinding:
+      position: 102
+      prefix: --recursive
 outputs:
   - id: stdout
     type: stdout

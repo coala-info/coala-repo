@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mvgst
-description: the package is available on all platforms; click for details.
+description: This tool performs multivariate gene set testing to identify enriched biological pathways across multiple experimental contrasts. Use when user asks to perform multivariate gene set analysis, identify enriched pathways across multiple conditions, or integrate results from multiple differential expression tests.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/mvGST.html
 ---
+
 
 # bioconductor-mvgst
 

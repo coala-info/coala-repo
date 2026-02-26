@@ -1,8 +1,9 @@
 ---
 name: scallop-umi
-description: The `scallop-umi` tool (and its successor `scallop2`) is a specialized transcript assembler that leverages the connectivity information in paired-end or linked-read RNA-seq data.
+description: Scallop-umi is a transcript assembler that reconstructs expressed transcripts from RNA-seq alignments by decomposing splice graphs. Use when user asks to assemble transcripts from BAM files, resolve complex alternative splicing events, or perform reference-based transcriptome assembly.
 homepage: https://github.com/Shao-Group/scallop-umi
 ---
+
 
 # scallop-umi
 

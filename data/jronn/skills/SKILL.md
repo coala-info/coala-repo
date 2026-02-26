@@ -1,8 +1,9 @@
 ---
 name: jronn
-description: JRONN is a specialized tool for bioinformatics that implements the Regional Order Neural Network (RONN) algorithm in Java.
+description: JRONN detects natively disordered regions in protein sequences using the Regional Order Neural Network algorithm. Use when user asks to predict protein disorder, identify non-structured protein segments, or calculate disorder scores from FASTA files.
 homepage: https://biojava.org/
 ---
+
 
 # jronn
 

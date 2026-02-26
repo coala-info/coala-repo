@@ -1,8 +1,9 @@
 ---
 name: solvebio
-description: The `solvebio` skill provides a streamlined interface for managing genomic data and workflows on the SolveBio platform.
+description: The solvebio tool provides a command-line interface and Python client for managing genomic data, authenticating environments, and interacting with data vaults on the SolveBio platform. Use when user asks to login to SolveBio, configure API credentials, upload or download genomic datasets, and list resources within data vaults.
 homepage: https://github.com/solvebio/solvebio-python
 ---
+
 
 # solvebio
 

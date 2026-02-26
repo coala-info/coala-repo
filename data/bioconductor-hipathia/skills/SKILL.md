@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hipathia
-description: the package is available on all platforms; click for details.
+description: This tool performs high-throughput functional analysis of signaling pathways by transforming gene expression data into mechanistic signal intensities. Use when user asks to calculate pathway activation signals, perform differential signaling analysis between experimental groups, or visualize functional profiles on pathway topologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/hipathia.html
 ---
+
 
 # bioconductor-hipathia
 

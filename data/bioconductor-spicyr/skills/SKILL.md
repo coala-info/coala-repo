@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spicyr
-description: the package is available on all platforms; click for details.
+description: This tool performs spatial analysis of multiplexed imaging data to identify changes in spatial relationships between cell types. Use when user asks to perform spatial association testing, analyze cell-cell interactions in multiplexed images, or identify changes in spatial distributions across conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/spicyR.html
 ---
+
 
 # bioconductor-spicyr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the Homo sapiens hg19 assembly from UCSC for use in R. Use when user asks to retrieve DNA sequences, calculate sequence statistics like GC content, or perform motif searching on the hg19 human reference genome.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg19.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg19
 

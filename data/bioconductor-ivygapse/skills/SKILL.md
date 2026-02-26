@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ivygapse
-description: the package is available on all platforms; click for details.
+description: This package provides a SummarizedExperiment container for accessing and analyzing RNA-seq data and metadata from the Ivy Glioblastoma Atlas Project. Use when user asks to access glioblastoma FPKM values, retrieve tumor anatomical metadata, or perform differential expression analysis on Ivy-GAP datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ivygapSE.html
 ---
+
 
 # bioconductor-ivygapse
 

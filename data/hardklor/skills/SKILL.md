@@ -1,8 +1,9 @@
 ---
 name: hardklor
-description: Hardklor is a specialized algorithmic tool used to deconvolve complex mass spectra.
+description: "Hardklor deconvolves complex mass spectra to identify overlapping isotopic distributions and assign monoisotopic masses. Use when user asks to deconvolve mass spectra, identify molecular features in high-resolution data, or reduce isotopic distributions to monoisotopic mass assignments."
 homepage: https://github.com/mhoopmann/hardklor
 ---
+
 
 # hardklor
 

@@ -1,8 +1,9 @@
 ---
 name: r-riborex
-description: R package riborex (documentation from project home).
+description: This tool identifies differential translation by integrating Ribo-seq and RNA-seq data using various statistical engines. Use when user asks to identify genes with significant changes in translation efficiency, analyze ribosome profiling data alongside RNA-seq, or perform differential translation analysis using DESeq2 or edgeR.
 homepage: https://cran.r-project.org/web/packages/riborex/index.html
 ---
+
 
 # r-riborex
 

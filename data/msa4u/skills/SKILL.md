@@ -1,8 +1,9 @@
 ---
 name: msa4u
-description: msa4u is a specialized tool for biological sequence analysis that streamlines the transition from raw sequence data to visual alignment plots.
+description: msa4u aligns biological sequences using MAFFT and generates publication-quality PDF visualizations of the results. Use when user asks to align sequences, visualize existing alignments, or customize sequence labels in alignment plots.
 homepage: https://github.com/GCA-VH-lab/msa4u
 ---
+
 
 # msa4u
 

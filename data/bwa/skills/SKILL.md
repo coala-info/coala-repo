@@ -1,8 +1,9 @@
 ---
 name: bwa
-description: Index database sequences in the FASTA format
+description: "BWA aligns low-divergent DNA sequences against a large reference genome using the Burrows-Wheeler transform. Use when user asks to index a reference genome, align short or long sequencing reads, or map reads from specific platforms like Illumina, PacBio, and Oxford Nanopore."
 homepage: https://github.com/lh3/bwa
 ---
+
 
 # bwa
 

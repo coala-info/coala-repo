@@ -1,8 +1,9 @@
 ---
 name: glimmer
-description: Glimmer is a high-performance, low-level rendering pipeline designed to create and update the DOM efficiently using Handlebars templates.
+description: Glimmer is a high-performance rendering pipeline that uses a virtual machine to efficiently create and update the DOM using Handlebars templates. Use when user asks to build the Glimmer VM, run browser or Node.js tests, link local packages, or implement internal TypeScript patterns using indexed access syntax.
 homepage: https://github.com/glimmerjs/glimmer-vm
 ---
+
 
 # glimmer
 

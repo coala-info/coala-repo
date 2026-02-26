@@ -1,8 +1,9 @@
 ---
 name: dna-nn
-description: The `dna-nn` package (primarily utilizing the `dna-brnn` executable) implements a deep-learning approach to recognize simple DNA sequence patterns.
+description: "dna-nn uses deep learning to identify and annotate simple DNA sequence patterns such as centromeric satellites and repeats. Use when user asks to predict sequence features, evaluate model accuracy, or train new models for satellite DNA recognition."
 homepage: https://github.com/lh3/dna-nn
 ---
+
 
 # dna-nn
 

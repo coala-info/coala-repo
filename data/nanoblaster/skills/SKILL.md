@@ -1,8 +1,9 @@
 ---
 name: nanoblaster
-description: NanoBLASTer is a specialized alignment tool designed to handle the high error rates (historically ~65% accuracy) associated with Oxford Nanopore Technologies (ONT) long reads.
+description: NanoBLASTer is a specialized alignment tool designed to map high-error Oxford Nanopore long reads to a reference genome using a k-mer and anchor-based approach. Use when user asks to align ONT reads, perform sensitive sequence mapping, or execute fast and exhaustive alignments for noisy long-read data.
 homepage: https://github.com/ruhulsbu/NanoBLASTer
 ---
+
 
 # nanoblaster
 

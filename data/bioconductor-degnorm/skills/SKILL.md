@@ -1,8 +1,9 @@
 ---
 name: bioconductor-degnorm
-description: the package is available on all platforms; click for details.
+description: DegNorm corrects for transcript degradation bias in RNA-seq data by accounting for sample-specific and gene-specific degradation patterns. Use when user asks to normalize RNA-seq read counts, estimate degradation index scores, or correct for transcript degradation before differential expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/DegNorm.html
 ---
+
 
 # bioconductor-degnorm
 

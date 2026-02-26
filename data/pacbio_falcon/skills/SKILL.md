@@ -1,8 +1,9 @@
 ---
 name: pacbio_falcon
-description: FALCON (Fast Aligning Long reads for Consensus) is a suite of tools developed for the efficient assembly of long-read sequencing data.
+description: FALCON is a suite of tools designed for the efficient assembly and haplotig resolution of long-read sequencing data. Use when user asks to assemble long reads, phase diploid genomes, or convert assembly graphs to GFA format.
 homepage: https://github.com/PacificBiosciences/FALCON
 ---
+
 
 # pacbio_falcon
 

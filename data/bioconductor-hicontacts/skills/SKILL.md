@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicontacts
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and visualizes Hi-C chromosome conformation capture data using the HiContacts R package. Use when user asks to import cool files, generate contact map heatmaps, perform matrix arithmetics, identify A/B compartments, or calculate insulation scores and TAD borders.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiContacts.html
 ---
+
 
 # bioconductor-hicontacts
 

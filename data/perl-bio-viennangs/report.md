@@ -1,9 +1,9 @@
 # perl-bio-viennangs CWL Generation Report
 
-## perl-bio-viennangs
+## perl-bio-viennangs_gff2bed.pl
 
 ### Tool Description
-Bio-ViennaNGS is a collection of Perl modules and scripts for Next-Generation Sequencing (NGS) data analysis, specifically designed to work with the ViennaRNA package. Note: The provided text is a container build error log and does not contain command-line help information.
+Extract specific features from a GFF3 file and convert them to BED format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
@@ -18,184 +18,142 @@ Bio-ViennaNGS is a collection of Perl modules and scripts for Next-Generation Se
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:58:01  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-1159691079/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
+Usage:
+    gff2bed.pl [--gff FILE] [options]
+
+Options:
+    --gff
+        Input GFF file.
+
+    --feature -f
+        Specify feature type (eg. CDS,tRNA,rRNA,SBS, etc) to be extracted
+        from GFF3.
+
+    --out -o
+        Output path.
+
+    --help -h
+        Print short help
+
+    --man
+        Prints the manual page and exits
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## perl-bio-viennangs_kallisto_quant_merge.pl
-
-### Tool Description
-The provided text does not contain help information for the tool. It consists of system error messages related to a container build failure (no space left on device).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 07:59:27  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-2716534934/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
-
-## perl-bio-viennangs_bed2gff.pl
-
-### Tool Description
-A script from the Bio-ViennaNGS suite to convert BED files to GFF format. (Note: The provided help text contains system error logs and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:00:15  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-1603198328/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
-
-## perl-bio-viennangs_gff2bed.pl
-
-### Tool Description
-A script to convert GFF files to BED format, part of the Bio-ViennaNGS suite.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:01:00  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-1504181547/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
 
 ## perl-bio-viennangs_bam_split.pl
 
 ### Tool Description
-A tool from the Bio-ViennaNGS suite, likely used for splitting BAM files. Note: The provided help text contains only system error messages regarding container extraction and does not list specific command-line arguments.
+Split BAM files by strand and optionally create BED, BedGraph, and bigWig coverage files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
 - **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:01:38  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-1016570691/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
+Usage:
+    bam_split.pl [--bam FILE] [options]
+
+Options:
+    --bam
+        Input file in BAM format
+
+    --bed
+        Create a BED6 file for each split BAM file
+
+    --bw
+        Create BedGraph and bigWig coverage files for e.g. genome browser
+        visualization.
+
+    --bwdir
+        Directory name for resulting bigWig files. This directory is created
+        as subdirectory of the output directory. Default is 'vis'.
+
+    --cs
+        Chromosome sizes file (required if --bw is given).
+
+    --norm
+        Normalize resulting bigWig files
+
+    --out -o
+        Output directory
+
+    --reverse -r
+        Reverse the +/- strand mapping. This is required to achieve proper
+        strand assignments for certain RNA-seq library preparation protocol.
+
+    --scale
+        If --bw is given, scale bigWig files to this number. Default is
+        1000000.
+
+    --uniq
+        Filter uniquely mapped reads by inspecting the NH:i: SAM attribute.
+        See also the bam_uniq.pl utility, which extracts both uniquely and
+        multiply mapped reads from BAM files without strand-splitting.
+
+    --log -l
+        Log file extension. Default is ".bam_split.log". The log file is
+        created in the directory given via -o and its name is constructed
+        from the base name of the input BAM file and the log filename
+        extension.
+
+    --help -h
+        Print short help
+
+    --man
+        Prints the manual page and exits
 ```
+
 
 ## perl-bio-viennangs_bam_to_bigwig.pl
 
 ### Tool Description
-A script from the Bio-ViennaNGS suite to convert BAM files to BigWig format. Note: The provided help text contains system error logs and does not list specific command-line arguments.
+Convert BAM files to bigWig format for visualization, with support for strand-specific data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
 - **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:02:28  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-1139269645/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
+Usage:
+    bam_to_bigWig.pl [--bam FILE] [--cs FILE] [--strand +/-] [options]
 
-## perl-bio-viennangs_trim_split.pl
+Options:
+    --bam -b
+        Input file in BAM format
 
-### Tool Description
-A tool from the Bio-ViennaNGS suite. Note: The provided help text contains system error logs regarding a failed container build (no space left on device) and does not contain the actual command usage or argument descriptions.
+    --cs -c
+        Chromosome sizes file
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:03:07  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-3488429184/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
+    --strand -s
+        Use this option if the input BAM file is strictly strand-specific,
+        ie. contains only reads mapped to either the positive or negative
+        strand. Possible values are either '+' or '-'. If the value given
+        here is '+', the interim bedGraph file will be created with positive
+        values. A '-' given here will create the inerim bedGraph file with
+        negative values, which is required for proper visualization of
+        bigWig files holding coverage profiles of reads mapped to the
+        negative strand in the UCSC genome browser. If the input BAM file is
+        not strand-specific, ie contains reads mapped to both positive and
+        negative strand, then the default value '+' will be used, resulting
+        in bigWig coverage profiles rendered in positive (y-axis direction)
+        in the UCSC genome browser.
 
-## perl-bio-viennangs_sj_visualize.pl
+    -o  Output directory
 
-### Tool Description
-A tool for visualizing splice junctions (Note: The provided text contained only system error messages and no usage information).
+    --log -l
+        Name of the log file. Unless specified, the default log file will be
+        "bam_to_bigwig.log" in the given output directory.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:03:50  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-3029388878/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
-```
+    --help -h
+        Print short help
 
-## perl-bio-viennangs_assembly_stats.pl
-
-### Tool Description
-A script to calculate assembly statistics. Note: The provided help text contains only system error messages regarding a container build failure ('no space left on device') and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5
-- **Homepage**: http://metacpan.org/pod/Bio::ViennaNGS
-- **Package**: https://anaconda.org/channels/bioconda/packages/perl-bio-viennangs/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 08:04:36  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/perl-bio-viennangs:v0.19.2--pl526_5 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:a595d1a560ba81f7966d5e8c3943dfe81cf68c57546371dc119bf96722554cf0: unpack entry: usr/local/lib/libasan.so.4.0.0: unpack to regular file: short write: write /tmp/build-temp-2432755524/rootfs/usr/local/lib/libasan.so.4.0.0: no space left on device
+    --man
+        Prints the manual page and exits
 ```
 

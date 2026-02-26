@@ -1,8 +1,9 @@
 ---
 name: mice
-description: `mice` (Markers Inferred by Compacting Elements) is a specialized tool for pangenomics that identifies synteny blocks across multiple genomes.
+description: mice identifies synteny blocks across multiple genomes by compacting discrete genomic elements into stable markers. Use when user asks to identify synteny blocks, analyze structural variations, or compress pangenome paths into conserved markers.
 homepage: https://github.com/gi-bielefeld/mice
 ---
+
 
 # mice
 

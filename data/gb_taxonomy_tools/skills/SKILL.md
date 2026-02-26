@@ -1,8 +1,9 @@
 ---
 name: gb_taxonomy_tools
-description: The `gb_taxonomy_tools` suite provides a specialized workflow for bioinformaticians to transform raw GenBank IDs (GIDs) into structured, hierarchical taxonomic data.
+description: The gb_taxonomy_tools suite transforms GenBank IDs into structured NCBI taxonomic hierarchies and visualizations. Use when user asks to map GenBank IDs to taxonomy IDs, expand TaxIDs into full lineages, generate Newick trees, or render taxonomic trees as PostScript images.
 homepage: https://github.com/spond/gb_taxonomy_tools
 ---
+
 
 # gb_taxonomy_tools
 

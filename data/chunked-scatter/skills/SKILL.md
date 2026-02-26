@@ -1,8 +1,9 @@
 ---
 name: chunked-scatter
-description: The `chunked-scatter` suite provides three distinct utilities to divide genomic contigs and regions into overlapping or balanced chunks.
+description: The chunked-scatter suite partitions genomic contigs and regions into overlapping or balanced chunks for distributed computing. Use when user asks to divide genomic regions into BED files, scatter intervals for GATK-style parallelization, or split a genome into a fixed number of balanced files.
 homepage: https://github.com/biowdl/chunked-scatter
 ---
+
 
 # chunked-scatter
 

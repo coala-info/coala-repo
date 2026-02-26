@@ -1,8 +1,9 @@
 ---
 name: bioconductor-medme
-description: the package is available on all platforms; click for details.
+description: MEDME models enrichment data from MeDIP experiments to estimate absolute DNA methylation levels. Use when user asks to analyze MeDIP-seq or MeDIP-chip data, model DNA methylation enrichment, or calculate absolute methylation levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/MEDME.html
 ---
+
 
 # bioconductor-medme
 

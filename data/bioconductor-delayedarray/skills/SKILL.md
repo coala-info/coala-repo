@@ -1,8 +1,9 @@
 ---
 name: bioconductor-delayedarray
-description: the package is available on all platforms; click for details.
+description: The DelayedArray package provides a framework for wrapping large on-disk or in-memory datasets in a container that behaves like a standard R array while supporting delayed operations and block processing. Use when user asks to wrap large datasets in array-like containers, perform delayed transformations on massive arrays, realize data to memory or disk, or execute block-processed summarizations.
 homepage: https://bioconductor.org/packages/release/bioc/html/DelayedArray.html
 ---
+
 
 # bioconductor-delayedarray
 

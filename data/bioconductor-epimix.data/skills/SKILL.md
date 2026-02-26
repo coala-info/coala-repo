@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epimix.data
-description: the package is available on all platforms; click for details.
+description: This package provides supporting data, CpG annotations, and automated workflows for the EpiMix R package to perform integrative analysis of DNA methylation and gene expression. Use when user asks to analyze methylation states across genetic elements, retrieve and preprocess TCGA data, identify functional epigenetic changes using mixture modeling, or perform survival analysis and functional enrichment.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/EpiMix.data.html
 ---
+
 
 # bioconductor-epimix.data
 

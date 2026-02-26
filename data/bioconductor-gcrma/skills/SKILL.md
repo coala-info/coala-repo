@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcrma
-description: the package is available on all platforms; click for details.
+description: This tool performs background adjustment and summarization for Affymetrix GeneChip data using probe sequence information to account for non-specific binding. Use when user asks to background correct microarray data, process Affymetrix .CEL files using the GCRMA algorithm, or estimate probe affinities based on GC-content.
 homepage: https://bioconductor.org/packages/release/bioc/html/gcrma.html
 ---
+
 
 # bioconductor-gcrma
 

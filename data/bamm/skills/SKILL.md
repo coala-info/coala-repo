@@ -1,8 +1,9 @@
 ---
 name: bamm
-description: BamM is a specialized toolkit designed for the efficient handling of BAM files within metagenomic workflows.
+description: BamM is a specialized toolkit for high-speed BAM file parsing and coverage analysis in metagenomic workflows. Use when user asks to calculate trimmed mean coverage, identify inter-contig links, filter BAM files, or generate library statistics.
 homepage: https://github.com/Ecogenomics/BamM
 ---
+
 
 # bamm
 

@@ -1,8 +1,9 @@
 ---
 name: motulizer
-description: motulizer is a specialized suite of tools for microbial genomics designed to handle the inherent "noise" and incompleteness of metagenomic data.
+description: motulizer is a microbial genomics suite for clustering genomes into taxonomic units and performing likelihood-based pangenome analysis. Use when user asks to cluster genomic assemblies into mOTUs using ANI, estimate core genomes from incomplete metagenomic data, or convert ortholog clusters from other tools for pangenome modeling.
 homepage: https://github.com/moritzbuck/mOTUlizer/
 ---
+
 
 # motulizer
 

@@ -1,8 +1,9 @@
 ---
 name: metacompass
-description: MetaCompass is a specialized pipeline for the reference-guided assembly of metagenomic data.
+description: MetaCompass is a reference-guided assembly pipeline for reconstructing genomes from metagenomic sequencing data. Use when user asks to perform reference-guided metagenomic assembly, recover low-coverage genomes from metagenomic samples, or combine reference-based and de novo assembly workflows.
 homepage: https://github.com/marbl/MetaCompass
 ---
+
 
 # metacompass
 

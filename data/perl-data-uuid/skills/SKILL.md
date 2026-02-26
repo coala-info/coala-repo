@@ -1,8 +1,9 @@
 ---
 name: perl-data-uuid
-description: The `perl-data-uuid` skill provides a high-performance interface for generating 128-bit unique identifiers based on RFC 4122.
+description: This tool generates high-performance, RFC 4122-compliant 128-bit unique identifiers in various formats including binary, hex, and Base64. Use when user asks to generate unique identifiers, create deterministic namespace-based UUIDs, or convert between different UUID string and binary representations.
 homepage: https://metacpan.org/pod/Data::UUID
 ---
+
 
 # perl-data-uuid
 

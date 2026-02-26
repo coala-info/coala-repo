@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocneighbors
-description: the package is available on all platforms; click for details.
+description: This tool provides a unified interface for performing exact and approximate nearest-neighbor searches in R. Use when user asks to find k-nearest neighbors, query neighbors across datasets, perform range searches within a specific radius, or build reusable search indices.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocNeighbors.html
 ---
+
 
 # bioconductor-biocneighbors
 

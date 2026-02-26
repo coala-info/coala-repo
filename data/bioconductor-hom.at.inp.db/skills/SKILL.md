@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hom.at.inp.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides orthology and paralogy mappings for Arabidopsis thaliana based on the Inparanoid algorithm. Use when user asks to identify orthologous genes between Arabidopsis and other organisms, perform cross-species gene identifier conversions, or access Inparanoid seed mappings.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/hom.At.inp.db.html
 ---
+
 
 # bioconductor-hom.at.inp.db
 

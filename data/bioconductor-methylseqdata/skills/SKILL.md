@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylseqdata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of DNA methylation sequencing datasets for benchmarking and analysis. Use when user asks to access example DNA methylation data, download benchmark datasets for methyl-seq, or load sample methylation sequencing experiments in R.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MethylSeqData.html
 ---
+
 
 # bioconductor-methylseqdata
 

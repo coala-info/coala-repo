@@ -1,8 +1,9 @@
 ---
 name: r-funrar
-description: Computes functional rarity indices as proposed by Violle et al.
+description: This tool computes functional rarity indices to quantify species distinctiveness, scarcity, uniqueness, and restrictedness within ecological communities. Use when user asks to calculate functional rarity metrics, compute functional distances between species, or analyze species rarity based on trait and abundance data.
 homepage: https://cran.r-project.org/web/packages/funrar/index.html
 ---
+
 
 # r-funrar
 

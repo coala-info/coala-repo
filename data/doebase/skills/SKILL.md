@@ -1,8 +1,9 @@
 ---
 name: doebase
-description: doebase (also known as OptBioDes) is a specialized framework for applying Optimal Design of Experiments to synthetic biology.
+description: doebase is a framework that applies Optimal Design of Experiments to select statistically optimized subsets of genetic part combinations for synthetic biology. Use when user asks to define a genetic design space, generate an optimal experimental library, or calculate a representative subset of constructs from a full factorial.
 homepage: https://github.com/pablocarb/doebase
 ---
+
 
 # doebase
 

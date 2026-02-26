@@ -1,8 +1,9 @@
 ---
 name: svsolver
-description: The `svsolver` suite is the computational engine of the SimVascular pipeline, designed for high-fidelity finite element Navier-Stokes simulations.
+description: The svsolver suite performs finite element Navier-Stokes simulations to generate detailed hemodynamic data from anatomical meshes and boundary conditions. Use when user asks to preprocess mesh files, execute parallel fluid flow simulations, or convert raw solver output into visualization formats like VTK.
 homepage: https://simtk.org/projects/simvascular/
 ---
+
 
 # svsolver
 

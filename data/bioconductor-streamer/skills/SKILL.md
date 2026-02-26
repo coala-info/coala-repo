@@ -1,8 +1,9 @@
 ---
 name: bioconductor-streamer
-description: The package provides useful Producer and Consumer stream components for operations such as data input, sampling, indexing, and transformation; see package?Streamer for details.
+description: "This R package provides Producer and Consumer components for efficient data streaming and processing. Use when user asks to stream data, perform data input, sample datasets, or transform data using stream components."
 homepage: https://bioconductor.org/packages/release/bioc/html/Streamer.html
 ---
+
 
 # bioconductor-streamer
 

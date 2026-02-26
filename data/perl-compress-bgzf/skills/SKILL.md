@@ -1,8 +1,9 @@
 ---
 name: perl-compress-bgzf
-description: This skill enables the handling of BGZF (Blocked GNU Zip Format) files, which are essential for high-performance genomic data processing.
+description: This tool provides a Perl interface for reading and writing Blocked GNU Zip Format (BGZF) files with support for random access via virtual offsets. Use when user asks to create indexable compressed files, parse BGZF data like BAM or VCF files, or implement random access on compressed genomic streams.
 homepage: http://metacpan.org/pod/Compress::BGZF
 ---
+
 
 # perl-compress-bgzf
 

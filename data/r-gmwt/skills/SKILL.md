@@ -1,8 +1,9 @@
 ---
 name: r-gmwt
-description: R package gmwt (documentation from project home).
+description: This tool performs generalized Mann-Whitney type tests using probabilistic indices to compare multiple groups. Use when user asks to perform non-parametric statistical tests, calculate probabilistic indices, conduct Jonckheere-Terpstra tests, or generate diagnostic plots for multi-group comparisons.
 homepage: https://cran.r-project.org/web/packages/gmwt/index.html
 ---
+
 
 # r-gmwt
 

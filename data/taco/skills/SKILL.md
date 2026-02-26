@@ -1,8 +1,9 @@
 ---
 name: taco
-description: TACO is a specialized meta-assembly tool designed to aggregate transcriptome data from multiple RNA-Seq samples.
+description: TACO aggregates transcriptome data from multiple RNA-Seq samples to produce a comprehensive, unified transcriptome. Use when user asks to merge GTF files, perform multi-sample transcriptome assembly, filter transcripts by expression metrics, or compare assemblies against a reference.
 homepage: https://github.com/tacorna/taco
 ---
+
 
 # taco
 

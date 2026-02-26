@@ -1,8 +1,9 @@
 ---
 name: gdal
-description: GDAL is the foundational translator library for geospatial data, handling raster (GDAL) and vector (OGR) formats through a unified abstract data model.
+description: GDAL is a translator library and command-line toolkit used to process, convert, and manipulate geospatial raster and vector data. Use when user asks to inspect spatial metadata, translate between file formats, reproject datasets to different coordinate systems, or perform spatial subsetting and filtering.
 homepage: https://github.com/OSGeo/gdal
 ---
+
 
 # gdal
 

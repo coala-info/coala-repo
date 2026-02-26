@@ -1,9 +1,9 @@
 # regtools CWL Generation Report
 
-## regtools
+## regtools_junctions
 
 ### Tool Description
-The provided text does not contain help information for regtools; it contains error logs from a container runtime (Singularity/Apptainer) failing to pull the regtools image.
+Identify exon-exon junctions from alignments or annotate junctions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/regtools:1.0.0--h077b44d_5
@@ -12,19 +12,80 @@ The provided text does not contain help information for regtools; it contains er
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/regtools/overview
-- **Total Downloads**: 30.8K
+- **Total Downloads**: 30.9K
 - **Last updated**: 2025-05-03
 - **GitHub**: https://github.com/griffithlab/regtools
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/regtools:1.0.0--h077b44d_5 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage:		regtools junctions <command> [options]
+Command:	extract		Identify exon-exon junctions from alignments.
+		annotate	Annotate the junctions.
 ```
 
 
-## Metadata
-- **Skill**: generated
+## regtools_cis-ase
+
+### Tool Description
+Identify cis ase.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/regtools:1.0.0--h077b44d_5
+- **Homepage**: https://github.com/griffithlab/regtools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/regtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:		regtools cis-ase <command> [options]
+Command:	identify		Identify cis ase.
+```
+
+
+## regtools_cis-splice-effects
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/regtools:1.0.0--h077b44d_5
+- **Homepage**: https://github.com/griffithlab/regtools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/regtools/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+Usage:		regtools cis-splice-effects <command> [options]
+Command:	identify		Identify cis splicing effects.
+		associate	Associate extracted junctions with variants
+```
+
+
+## regtools_variants
+
+### Tool Description
+Annotate variants with splicing information.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/regtools:1.0.0--h077b44d_5
+- **Homepage**: https://github.com/griffithlab/regtools/
+- **Package**: https://anaconda.org/channels/bioconda/packages/regtools/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage:		regtools variants <command> [options]
+Command:	annotate		Annotate variants with splicing information.
+```
+

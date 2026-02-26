@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sampleclassifierdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and pre-trained models for classifying samples based on gene expression profiles. Use when user asks to access sample classification data, load reference datasets for gene expression analysis, or use pre-trained models for sample identification.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/sampleClassifierData.html
 ---
+
 
 # bioconductor-sampleclassifierdata
 

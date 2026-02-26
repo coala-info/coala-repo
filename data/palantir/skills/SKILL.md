@@ -1,8 +1,9 @@
 ---
 name: palantir
-description: Palantir is a specialized tool for modeling the stochastic process of cell differentiation.
+description: Palantir models the stochastic process of cell differentiation by treating it as a continuous journey from stem cells to terminal states using a Markov chain framework. Use when user asks to model cell differentiation trajectories, calculate pseudotime and fate probabilities, identify terminal states, or compute gene expression trends across lineages.
 homepage: https://github.com/dpeerlab/palantir
 ---
+
 
 # palantir
 

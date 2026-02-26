@@ -1,8 +1,9 @@
 ---
 name: sylph
-description: Sylph is a bioinformatics tool designed for high-throughput metagenomic analysis.
+description: Sylph performs high-throughput metagenomic profiling and containment ANI estimation using an abundance-corrected MinHash approach. Use when user asks to profile metagenomic reads against a database, estimate species-level abundance in low-coverage samples, or sketch custom genomes for database preparation.
 homepage: https://github.com/bluenote-1577/sylph
 ---
+
 
 # sylph
 

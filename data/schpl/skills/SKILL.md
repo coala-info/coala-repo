@@ -1,8 +1,9 @@
 ---
 name: schpl
-description: The `schpl` (scHPL) skill provides a workflow for the hierarchical progressive learning of cell identities.
+description: This tool performs hierarchical progressive learning to match cell populations across single-cell datasets and organize them into a tree structure. Use when user asks to match cell populations across datasets, build a hierarchical classification tree, or identify novel cell types using progressive learning.
 homepage: https://github.com/lcmmichielsen/scHPL
 ---
+
 
 # schpl
 

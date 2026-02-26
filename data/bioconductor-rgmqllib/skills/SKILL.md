@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgmqllib
-description: the package is available on all platforms; click for details.
+description: This package provides the R interface and libraries for the Genometric Query Language to process large-scale genomic data. Use when user asks to run GMQL queries, integrate heterogeneous genomic datasets, or perform large-scale genomic data processing in R.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/RGMQLlib.html
 ---
+
 
 # bioconductor-rgmqllib
 

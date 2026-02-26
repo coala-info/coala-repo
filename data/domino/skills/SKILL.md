@@ -1,8 +1,9 @@
 ---
 name: domino
-description: DOMINO (Discovery of Modules In Networks using Omic) is a specialized algorithm for identifying active modules in biological networks.
+description: DOMINO identifies active modules in biological networks by partitioning gene networks and discovering gene sets with high rates of empirically validated GO terms. Use when user asks to identify active modules in networks, partition a network using the Louvain algorithm, or discover gene modules from active gene sets.
 homepage: https://github.com/Shamir-Lab/DOMINO
 ---
+
 
 # domino
 

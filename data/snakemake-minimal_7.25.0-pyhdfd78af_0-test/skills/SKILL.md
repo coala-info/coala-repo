@@ -1,8 +1,9 @@
 ---
 name: snakemake-minimal_7.25.0-pyhdfd78af_0-test
-description: Snakemake is a Python-based workflow management system that simplifies the creation of data analysis pipelines.
+description: Snakemake is a Python-based workflow management system used to create and execute reproducible data analysis pipelines. Use when user asks to build data analysis workflows, perform dry runs of pipelines, visualize rule dependencies, or execute tasks in parallel using specific CPU cores.
 homepage: https://snakemake.github.io
 ---
+
 
 # snakemake-minimal_7.25.0-pyhdfd78af_0-test
 

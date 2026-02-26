@@ -1,8 +1,9 @@
 ---
 name: bakta
-description: Bakta is a high-throughput tool designed to provide comprehensive functional annotation of bacterial sequences.
+description: Bakta provides comprehensive functional annotation of bacterial genomes, plasmids, and metagenome-assembled genomes using a high-throughput, database-driven approach. Use when user asks to annotate bacterial sequences, identify specialized features like ncRNAs and CRISPR arrays, or generate FAIR-compliant annotations with extensive database cross-references.
 homepage: https://github.com/oschwengers/bakta
 ---
+
 
 # bakta
 

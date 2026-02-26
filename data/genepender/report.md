@@ -3,7 +3,7 @@
 ## genepender
 
 ### Tool Description
-A tool for genomic data analysis and gene name standardization. (Note: The provided text contains system error logs and does not list specific command-line arguments.)
+Appends a new column containing gene names, whilst filtering out intergenic regions (i.e. where there are no genes), and can also optionally filter out introns.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genepender:v2.6--h470a237_1
@@ -18,46 +18,19 @@ A tool for genomic data analysis and gene name standardization. (Note: The provi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genepender:v2.6--h470a237_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1116036544: no space left on device
-```
+2.6v20170522
 
+Appends a new column containing gene names, whilst filtering out intergenic regions (i.e. where there are no genes), and can also optionally filter out introns.
 
-## Metadata
-- **Skill**: generated
+Usage: genepender <genemap> <[VCFS]> <[OPTIONS]
 
-## genepender_makegenemaps.sh
+where a <column file> is any file which has a <chr>[TAB]<index>[TAB]<etc...> layout.
+Two files are created: one with a .genes.rejects.vcf suffix, and the other with a .genes.vcf suffix at the source directory
 
-### Tool Description
-A tool for creating gene maps. (Note: The provided help text contains only system error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genepender:v2.6--h470a237_1
-- **Homepage**: https://github.com/BioTools-Tek/genepender
-- **Package**: https://anaconda.org/channels/bioconda/packages/genepender/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genepender:v2.6--h470a237_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2181278187: no space left on device
-```
-
-## genepender_appendgenecol.py
-
-### Tool Description
-A tool to append a gene column to a dataset (Note: The provided help text contains only system error messages regarding container execution and does not list specific arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/genepender:v2.6--h470a237_1
-- **Homepage**: https://github.com/BioTools-Tek/genepender
-- **Package**: https://anaconda.org/channels/bioconda/packages/genepender/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genepender:v2.6--h470a237_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2914556836: no space left on device
+OPTIONS:
+--keepall	Also keeps variants that only fall within intron/intergenic regions.
+--force		Forces reprocessing even if VCF header present in either in/out file
+--output-folder=<name>	Root output folder, source folder otherwise
+--prefix-extract=<name>	Preserves directory structure starting from prefix value. Dumped into root of output folder otherwise.
 ```
 

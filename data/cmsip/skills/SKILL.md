@@ -1,8 +1,9 @@
 ---
 name: cmsip
-description: The `cmsip` tool (also known as HaMiP) is a comprehensive pipeline designed for the analysis of DNA hydroxymethylation.
+description: The cmsip tool is a comprehensive pipeline for analyzing DNA hydroxymethylation data from raw sequencing reads to the identification of differential 5hmC regions. Use when user asks to align reads to a reference, perform genome scanning, normalize data using spike-ins, or detect differential hydroxymethylated regions using statistical tests like t-test or negative binomial models.
 homepage: https://github.com/lijinbio/cmsip
 ---
+
 
 # cmsip
 

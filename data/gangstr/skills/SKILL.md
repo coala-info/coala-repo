@@ -1,8 +1,9 @@
 ---
 name: gangstr
-description: GangSTR is a genomic tool designed to estimate the length of tandem repeats by analyzing short-read alignments (BAM files).
+description: "GangSTR estimates the length of tandem repeats by analyzing short-read alignments using a maximum likelihood model. Use when user asks to genotype short tandem repeats, estimate allele lengths from BAM files, or perform genome-wide STR profiling."
 homepage: https://github.com/gymreklab/GangSTR
 ---
+
 
 # gangstr
 

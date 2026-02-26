@@ -1,8 +1,9 @@
 ---
 name: r-htscluster
-description: R package htscluster (documentation from project home).
+description: The r-htscluster package implements Poisson mixture models to cluster genes from RNA-seq count data while accounting for experimental conditions and normalization. Use when user asks to cluster high-throughput sequencing data, fit Poisson mixture models to gene expression counts, or determine the optimal number of gene clusters using slope heuristics.
 homepage: https://cran.r-project.org/web/packages/htscluster/index.html
 ---
+
 
 # r-htscluster
 

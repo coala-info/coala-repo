@@ -1,8 +1,9 @@
 ---
 name: gmsc-mapper
-description: GMSC-mapper is a specialized bioinformatics tool for the discovery and characterization of small proteins within the global microbiome.
+description: GMSC-mapper predicts and annotates small proteins from microbiome sequences by aligning them against the Global Microbial Small ORF Catalog. Use when user asks to predict smORFs from genomic contigs, align amino acid or nucleotide sequences to the GMSC database, or characterize small proteins with habitat and taxonomic metadata.
 homepage: https://github.com/BigDataBiology/GMSC-mapper
 ---
+
 
 # gmsc-mapper
 

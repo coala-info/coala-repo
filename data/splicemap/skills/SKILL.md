@@ -1,8 +1,9 @@
 ---
 name: splicemap
-description: SpliceMap is a specialized alignment tool designed to discover splice junctions directly from RNA-seq data.
+description: SpliceMap is an alignment tool designed to discover splice junctions from RNA-seq data using a seeding and extension strategy. Use when user asks to align RNA-seq reads to a reference genome, identify unannotated splicing events, or detect splice junctions without relying on known gene models.
 homepage: http://www.stanford.edu/group/wonglab/SpliceMap/
 ---
+
 
 # splicemap
 

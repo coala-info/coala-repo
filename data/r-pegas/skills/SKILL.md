@@ -1,8 +1,9 @@
 ---
 name: r-pegas
-description: Functions for reading, writing, plotting, analysing, and manipulating allelic and haplotypic data, including from VCF files, and for the analysis of population nucleotide sequences and micro-satellites including coalescent analyses, linkage disequilibrium, population structure (Fst, Amova) and equilibrium (HWE), haplotype networks, minimum spanning tree and network, and median-joining networks.</p>
+description: This tool provides functions for population and evolutionary genetics analysis in R, including data manipulation, statistical testing, and haplotype network construction. Use when user asks to read or write genetic data formats, calculate population statistics like Fst and AMOVA, perform Hardy-Weinberg equilibrium tests, or build and plot haplotype networks.
 homepage: https://cloud.r-project.org/web/packages/pegas/index.html
 ---
+
 
 # r-pegas
 

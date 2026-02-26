@@ -1,8 +1,9 @@
 ---
 name: ucsc-qatoqac
-description: The `qaToQac` utility is a specialized tool within the UCSC Genome Browser "Kent" suite.
+description: The ucsc-qatoqac tool compresses uncompressed quality score files (.qa) into a binary compressed format (.qac). Use when user asks to compress quality score files, or convert .qa files to .qac format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-qatoqac
 

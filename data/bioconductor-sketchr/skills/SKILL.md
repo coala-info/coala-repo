@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sketchr
-description: the package is available on all platforms; click for details.
+description: sketchR generates representative subsets of large-scale single-cell genomic data to preserve structural information for efficient analysis. Use when user asks to downsample single-cell datasets, create geometric sketches, or visualize large-scale genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/sketchR.html
 ---
+
 
 # bioconductor-sketchr
 

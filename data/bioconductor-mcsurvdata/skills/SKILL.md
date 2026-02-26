@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mcsurvdata
-description: the package is available on all platforms; click for details.
+description: This package provides a collection of curated human cancer survival datasets for meta-analysis. Use when user asks to access curated cancer survival data, perform meta-analysis on survival datasets, or retrieve clinical and genomic data for cancer research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/mcsurvdata.html
 ---
+
 
 # bioconductor-mcsurvdata
 

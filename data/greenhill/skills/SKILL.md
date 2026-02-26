@@ -1,8 +1,9 @@
 ---
 name: greenhill
-description: GreenHill is a specialized bioinformatics tool for scaffolding and phasing contigs into chromosome-scale haplotypes.
+description: "GreenHill scaffolds and phases contigs into chromosome-scale haplotypes using Hi-C data and optional sequencing reads. Use when user asks to scaffold contigs into chromosome-scale assemblies, phase diploid genomes, or integrate Hi-C data with haplotype-aware assemblies."
 homepage: https://github.com/ShunOuchi/GreenHill
 ---
+
 
 # greenhill
 

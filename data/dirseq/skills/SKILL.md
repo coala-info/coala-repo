@@ -1,8 +1,9 @@
 ---
 name: dirseq
-description: dirseq is a specialized bioinformatics tool used to evaluate the directional consistency of RNA-seq mappings against genomic features.
+description: dirseq evaluates the directional consistency of RNA-seq mappings against genomic features to validate strand-specific library preparations. Use when user asks to check read directionality, perform gene-level quantification, or calculate coverage for specific GFF feature types.
 homepage: https://github.com/wwood/dirseq
 ---
+
 
 # dirseq
 

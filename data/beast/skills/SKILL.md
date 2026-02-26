@@ -1,8 +1,9 @@
 ---
 name: beast
-description: The BEAST (Bayesian Evolutionary Analysis Sampling Trees) skill enables the reconstruction of phylogenies and the testing of evolutionary hypotheses.
+description: BEAST performs Bayesian evolutionary analysis to reconstruct phylogenies and test evolutionary hypotheses using MCMC sampling. Use when user asks to reconstruct phylogenetic trees, perform tip-dating to calibrate molecular clocks, estimate population dynamics, or summarize tree distributions with TreeAnnotator.
 homepage: https://beast.community
 ---
+
 
 # beast
 

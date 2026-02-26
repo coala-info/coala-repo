@@ -1,8 +1,9 @@
 ---
 name: cascade-config
-description: `cascade-config` is a Python utility that simplifies the management of application settings by layering multiple configuration sources.
+description: cascade-config is a Python utility that manages application settings by layering multiple configuration sources using a hierarchical override logic. Use when user asks to manage application settings, layer multiple configuration sources, or validate configurations against a JSON schema.
 homepage: https://github.com/RalfG/cascade-config
 ---
+
 
 # cascade-config
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-past
-description: the package is available on all platforms; click for details.
+description: The bioconductor-past package performs pathway association studies to identify biological pathways linked to specific phenotypes. Use when user asks to conduct pathway association analysis, link genomic data to biological pathways, or identify significant pathways associated with a trait.
 homepage: https://bioconductor.org/packages/release/bioc/html/PAST.html
 ---
+
 
 # bioconductor-past
 

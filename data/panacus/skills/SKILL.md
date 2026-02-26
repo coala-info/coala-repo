@@ -1,8 +1,9 @@
 ---
 name: panacus
-description: Panacus is a high-performance tool designed for the statistical analysis of pangenome graphs.
+description: "Panacus performs statistical analysis and computes metrics for pangenome graphs in GFA format. Use when user asks to calculate pangenome growth, generate coverage histograms, compute path similarity, or visualize graph-based genomic data."
 homepage: https://github.com/marschall-lab/panacus
 ---
+
 
 # panacus
 

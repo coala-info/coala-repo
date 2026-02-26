@@ -1,8 +1,9 @@
 ---
 name: imsindel
-description: IMSindel is a specialized bioinformatics tool designed to bridge the gap in structural variant calling by focusing on intermediate-size indels (typically ≥50 bp).
+description: IMSindel detects intermediate-size insertions and deletions by performing de novo assembly on soft-clipped and unmapped reads. Use when user asks to call intermediate-size indels, analyze soft-clipped fragments, or identify structural variants in genomic data.
 homepage: https://github.com/NCGG-MGC/IMSindel
 ---
+
 
 # imsindel
 

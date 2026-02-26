@@ -1,8 +1,9 @@
 ---
 name: rsem
-description: RSEM (RNA-Seq by Expectation-Maximization) is a specialized tool for quantifying transcript abundances from RNA-Seq data without requiring a reference genome, though it can leverage one.
+description: RSEM quantifies transcript abundances from RNA-Seq data by using an expectation-maximization algorithm to accurately assign multi-mapping reads. Use when user asks to build a reference index, calculate gene or isoform expression levels, or prepare a count matrix for differential expression analysis.
 homepage: https://deweylab.github.io/RSEM/
 ---
+
 
 # rsem
 

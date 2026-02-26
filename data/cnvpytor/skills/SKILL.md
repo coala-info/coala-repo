@@ -1,8 +1,9 @@
 ---
 name: cnvpytor
-description: CNVpytor is a Python-based tool designed for CNV/CNA analysis using read-depth (RD) and allele imbalance signals.
+description: CNVpytor is a Python-based tool for copy number variation analysis using read-depth and allele imbalance signals from sequencing data. Use when user asks to initialize pytor files, generate histograms, partition data, call variations, or analyze SNP and B-allele frequency data.
 homepage: https://github.com/abyzovlab/CNVpytor
 ---
+
 
 # cnvpytor
 

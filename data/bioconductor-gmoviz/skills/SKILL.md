@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gmoviz
-description: the package is available on all platforms; click for details.
+description: This tool creates circular visualizations of complex genomic variations and tandem insertions in genetically modified organisms. Use when user asks to generate insertion diagrams, create feature maps, build plasmid maps, or visualize multi-track genomic data and coverage.
 homepage: https://bioconductor.org/packages/release/bioc/html/gmoviz.html
 ---
+
 
 # bioconductor-gmoviz
 

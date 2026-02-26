@@ -1,8 +1,9 @@
 ---
 name: gcen
-description: gcen is a specialized command-line toolkit designed to bridge the gap between raw RNA-Seq expression data and biological insights.
+description: gcen is a toolkit for constructing gene co-expression networks and predicting gene functions from RNA-Seq data. Use when user asks to build co-expression networks, identify functional gene modules, or predict the functions of uncharacterized genes like lncRNAs.
 homepage: https://www.biochen.com/gcen/
 ---
+
 
 # gcen
 

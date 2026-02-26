@@ -1,10 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: protk_protk_setup.rb
+baseCommand: protk_setup.rb
 label: protk_protk_setup.rb
-doc: "A tool for setting up the Protk proteomics toolkit environment.\n\nTool homepage:
-  https://github.com/iracooke/protk"
-inputs: []
+doc: "Post install tasks for protk.\n\nTool homepage: https://github.com/iracooke/protk"
+inputs:
+  - id: setup_task
+    type: string
+    doc: The setup task to perform (e.g., all, system_packages) or the specific 
+      tool name to set up.
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

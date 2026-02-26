@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecoliasv2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence and location data for the Affymetrix E_coli_Asv2 microarray. Use when user asks to access probe sequences, map probes to array coordinates, or perform sequence-specific analysis for E. coli gene expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ecoliasv2probe.html
 ---
+
 
 # bioconductor-ecoliasv2probe
 

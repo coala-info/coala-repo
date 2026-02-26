@@ -1,8 +1,9 @@
 ---
 name: octopus
-description: Octopus is a sophisticated variant caller that utilizes a unified haplotype-aware framework to identify mutations.
+description: Octopus is a haplotype-aware variant caller that identifies genomic mutations using a unified framework across various sample types. Use when user asks to call germline or somatic variants, perform joint population calling, analyze trios, or identify mutations in polyclone and single-cell mixtures.
 homepage: https://github.com/luntergroup/octopus
 ---
+
 
 # octopus
 

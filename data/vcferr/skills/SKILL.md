@@ -1,8 +1,9 @@
 ---
 name: vcferr
-description: The `vcferr` tool is a lightweight Python-based framework designed to inject stochastic errors into VCF genotypes.
+description: vcferr injects stochastic errors and missing data into VCF genotypes based on user-defined probabilities. Use when user asks to inject errors into VCF genotypes, simulate specific error profiles like drop-outs or drop-ins, add missing data to VCF genotypes, or generate reproducible error datasets.
 homepage: https://github.com/signaturescience/vcferr
 ---
+
 
 # vcferr
 

@@ -1,8 +1,9 @@
 ---
 name: phyloaln
-description: PhyloAln is a specialized tool for the "omic era" that streamlines the creation of multiple sequence alignments (MSA) for phylogenetic studies.
+description: PhyloAln creates multiple sequence alignments for phylogenetic studies by mapping sequences directly to reference alignments while filtering for contamination. Use when user asks to create multiple sequence alignments, map reads to reference alignments, process large-scale genomic data for phylogenetics, or remove foreign sequences from alignments.
 homepage: https://github.com/huangyh45/PhyloAln
 ---
+
 
 # phyloaln
 

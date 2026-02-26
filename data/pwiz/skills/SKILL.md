@@ -1,8 +1,9 @@
 ---
 name: pwiz
-description: ProteoWizard (pwiz) is a modular, open-source C++ library and toolset designed to simplify mass spectrometry data analysis.
+description: ProteoWizard is a modular toolset and library designed to convert and process mass spectrometry data across diverse vendor formats. Use when user asks to convert raw mass spectrometry files to mzML, perform peak picking or centroiding, and build the pwiz library from source.
 homepage: https://github.com/ProteoWizard/pwiz
 ---
+
 
 # pwiz
 

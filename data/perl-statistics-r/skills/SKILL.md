@@ -1,8 +1,9 @@
 ---
 name: perl-statistics-r
-description: The `perl-statistics-r` skill (based on the `PDL::Stats` module) transforms the Perl Data Language shell into a lightweight statistical environment similar to R.
+description: This tool transforms the Perl Data Language shell into a statistical environment for performing advanced data analysis on multi-dimensional datasets. Use when user asks to perform linear regression, conduct ANOVA, run k-means clustering, or analyze time series data within Perl.
 homepage: https://github.com/PDLPorters/PDL-Stats
 ---
+
 
 # perl-statistics-r
 

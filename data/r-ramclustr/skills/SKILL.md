@@ -1,8 +1,9 @@
 ---
 name: r-ramclustr
-description: R package ramclustr (documentation from project home).
+description: This tool clusters mass spectrometry features into groups representing individual compounds for metabolomics data analysis. Use when user asks to group MS features into spectra, handle GC-MS or LC-MS data, perform batch or QC normalization, or export deconvoluted features in MSP format.
 homepage: https://cran.r-project.org/web/packages/ramclustr/index.html
 ---
+
 
 # r-ramclustr
 

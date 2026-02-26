@@ -1,8 +1,9 @@
 ---
 name: scorpio
-description: Scorpio is a specialized genomic utility designed to identify and categorize viral variants using "constellations"—predefined sets of mutations and logical rules.
+description: Scorpio identifies and categorizes viral variants by evaluating genomic alignments against predefined sets of mutations called constellations. Use when user asks to classify sequences into lineages, generate haplotype barcodes for recombination analysis, or define new variant constellations.
 homepage: https://github.com/cov-lineages/scorpio
 ---
+
 
 # scorpio
 

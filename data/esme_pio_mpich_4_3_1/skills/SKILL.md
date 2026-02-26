@@ -1,8 +1,9 @@
 ---
 name: esme_pio_mpich_4_3_1
-description: The `esme_pio_mpich_4_3_1` package provides the ParallelIO (PIO) library, a high-level interface designed to manage complex parallel I/O patterns in Earth system models and other structured grid applications.
+description: This tool provides a high-level interface for managing complex parallel I/O patterns in Earth system models by abstracting MPI-IO, NetCDF, and PnetCDF calls. Use when user asks to manage parallel data storage, optimize I/O performance in structured grid applications, or configure asynchronous data writing to prevent disk bottlenecks.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_mpich_4_3_1
 

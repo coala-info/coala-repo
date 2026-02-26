@@ -1,8 +1,9 @@
 ---
 name: r-mixtools
-description: "Analyzes finite mixture models for various parametric and semiparametric settings.  This includes mixtures of parametric distributions (normal, multivariate normal, multinomial, gamma), various Reliability Mixture Models (RMMs), mixtures-of-regressions settings (linear regression, logistic regression, Poisson regression, linear regression with changepoints, predictor-dependent mixing proportions, random effects regressions, hierarchical mixtures-of-experts), and tools for selecting the number of components (bootstrapping the likelihood ratio test statistic, mixturegrams, and model selection criteria).  Bayesian estimation of mixtures-of-linear-regressions models is available as well as a novel data depth method for obtaining credible bands.  This package is based upon work supported by the National Science Foundation under Grant No. SES-0518772 and the Chan Zuckerberg Initiative: Essential Open Source Software for Science (Grant No. 2020-255193).</p>"
+description: This tool provides EM algorithms for analyzing parametric, semiparametric, and nonparametric finite mixture models in R. Use when user asks to fit normal or multinomial mixtures, perform mixtures of regressions, analyze nonparametric component densities, or determine the number of components using bootstrapping and information criteria.
 homepage: https://cloud.r-project.org/web/packages/mixtools/index.html
 ---
+
 
 # r-mixtools
 

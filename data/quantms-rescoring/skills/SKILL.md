@@ -1,8 +1,9 @@
 ---
 name: quantms-rescoring
-description: The `quantms-rescoring` tool is a specialized utility within the quantms ecosystem designed to bridge the gap between raw search results and high-confidence identifications.
+description: The quantms-rescoring tool annotates peptide-spectrum matches with predicted spectral intensities, retention times, and quality metrics to improve identification confidence. Use when user asks to annotate idXML files with MS2PIP or DeepLC features, calculate spectrum quality metrics, integrate SAGE search results, perform transfer learning for PTM-heavy datasets, or clean PSM features before rescoring.
 homepage: https://www.github.com/bigbio/quantms-rescoring
 ---
+
 
 # quantms-rescoring
 

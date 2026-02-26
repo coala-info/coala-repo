@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodbhmdb
-description: the package is available on all platforms; click for details.
+description: The biodbHmdb package provides a connector to the Human Metabolome Database for programmatic access and high-performance local searching within the biodb framework. Use when user asks to retrieve metabolite entries by accession ID, search for metabolites by name or description, or extract metadata fields from the HMDB database.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodbHmdb.html
 ---
+
 
 # bioconductor-biodbhmdb
 

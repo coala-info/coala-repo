@@ -1,8 +1,9 @@
 ---
 name: bioconductor-selectksigs
-description: the package is available on all platforms; click for details.
+description: This R package selects the optimal number of mutational signatures in a catalog of somatic mutations using a likelihood-based approach. Use when user asks to determine the number of mutational signatures, select the best K for signature analysis, or evaluate signature models.
 homepage: https://bioconductor.org/packages/release/bioc/html/selectKSigs.html
 ---
+
 
 # bioconductor-selectksigs
 

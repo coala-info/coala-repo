@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.clariom.s.rat
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Clariom S Rat microarray. Use when user asks to analyze Clariom S rat microarray data, access platform design files for rat assays, or perform transcript-level expression profiling in rats.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.clariom.s.rat.html
 ---
+
 
 # bioconductor-pd.clariom.s.rat
 

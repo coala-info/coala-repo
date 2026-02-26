@@ -1,8 +1,9 @@
 ---
 name: bioconductor-goprofiles
-description: The package implements methods to compare lists of genes based on comparing the corresponding 'functional profiles'.
+description: This tool performs statistical analysis and comparison of gene lists by projecting them onto specific Gene Ontology functional profiles. Use when user asks to create functional profiles at specific GO levels, compare gene lists using statistical tests for difference or equivalence, or visualize functional distributions between experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/goProfiles.html
 ---
+
 
 # bioconductor-goprofiles
 

@@ -1,8 +1,9 @@
 ---
 name: kompot
-description: Kompot is a high-performance Python library and CLI tool designed to compare phenotypic manifolds in single-cell data.
+description: Kompot is a Python library and CLI tool for comparing phenotypic manifolds in single-cell data to identify differential abundance and gene expression. Use when user asks to compare single-cell conditions, compute Mahalanobis distances between manifolds, or perform differential expression analysis using Gaussian Process models.
 homepage: https://github.com/settylab/kompot
 ---
+
 
 # kompot
 

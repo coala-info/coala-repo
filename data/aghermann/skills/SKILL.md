@@ -1,8 +1,9 @@
 ---
 name: aghermann
-description: The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain help documentation or argument definitions for the tool 'aghermann'.
+description: Aghermann is a specialized tool for sleep researchers to model the homeostatic regulation of sleep and manage complex EEG datasets. Use when user asks to model Process S based on slow-wave activity, visualize EDF files, perform artifact removal, or detect specific EEG patterns like K-complexes.
 homepage: https://github.com/BackupTheBerlios/aghermann
 ---
+
 
 # aghermann
 

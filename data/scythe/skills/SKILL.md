@@ -1,8 +1,9 @@
 ---
 name: scythe
-description: Scythe is a lightweight diagnostic tool designed to help developers prune legacy codebases by tracking actual execution in production.
+description: "Scythe tracks the execution of specific code paths in production to help developers identify and prune legacy or dead code. Use when user asks to instrument code with probes, gather probe definitions from source directories, analyze the time since a probe was last triggered, or delete tracked probes."
 homepage: https://github.com/michaelfeathers/scythe
 ---
+
 
 # scythe
 

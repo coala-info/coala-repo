@@ -1,8 +1,9 @@
 ---
 name: searchgui
-description: SearchGUI is a unified, open-source interface designed to streamline the configuration and execution of multiple proteomics search and de novo engines, including X!
+description: SearchGUI is a unified interface that streamlines the configuration and execution of multiple proteomics search and de novo engines. Use when user asks to configure search parameters, execute protein identification searches across multiple algorithms, or generate decoy sequences for FASTA databases.
 homepage: https://github.com/CompOmics/searchgui
 ---
+
 
 # searchgui
 

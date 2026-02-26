@@ -1,9 +1,9 @@
 # conservation CWL Generation Report
 
-## conservation
+## conservation_codon
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool's functionality; it contains error messages related to a container runtime environment (Singularity/Docker) failing due to insufficient disk space.
+Codon conservation analysis from Pfam domains and CDS sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/conservation:1.0.1--pyhdfd78af_0
@@ -18,9 +18,22 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/58a7a5212ba44db218d890b34b57edc229f952a705f34c264c77cd85fc4625d1: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/conservation:1.0.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2623900366: no space left on device
+usage: conservation codon [-h] -d DOMAIN -c CDS -o OUTPUT [-t THREADS]
+                          [-q FDR] [-s CONSERVEDNESS] [-r DPI]
+
+Codon conservation analysis from Pfam domains and CDS sequences.
+
+options:
+  -h, --help            show this help message and exit
+  -d, --domain DOMAIN   FASTA file of domain sequences (e.g., Pfam)
+  -c, --cds CDS         Comma-separated list of CDS fasta files for each
+                        organism
+  -o, --output OUTPUT   Output directory to store results
+  -t, --threads THREADS
+                        Number of parallel threads (default: 1)
+  -q, --fdr FDR         FDR cutoff (default: 0.05 / num_records)
+  -s, --conservedness CONSERVEDNESS
+                        Identity ratio threshold (default: mean + 2*std)
+  -r, --dpi DPI         DPI for all generated PDF files (default: 300)
 ```
 

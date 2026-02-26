@@ -1,8 +1,9 @@
 ---
 name: bioconductor-concordexr
-description: the package is available on all platforms; click for details.
+description: concordexR measures the spatial concordance of categorical labels in spatial transcriptomics datasets. Use when user asks to calculate spatial concordance scores, evaluate cell type clustering, or analyze the spatial distribution of discrete labels.
 homepage: https://bioconductor.org/packages/release/bioc/html/concordexR.html
 ---
+
 
 # bioconductor-concordexr
 

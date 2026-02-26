@@ -3,7 +3,7 @@
 ## pylprotpredictor
 
 ### Tool Description
-The provided text contains container runtime logs and error messages rather than the tool's help documentation. As a result, no arguments or tool descriptions could be extracted.
+PylProtPredictor Pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pylprotpredictor:1.0.2--py_0
@@ -18,33 +18,20 @@ The provided text contains container runtime logs and error messages rather than
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pylprotpredictor:1.0.2--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pylprotpredictor [-h] --genome GENOME --output OUTPUT
+                        [--reference_fasta_db REFERENCE_FASTA_DB]
+                        [--reference_dmnd_db REFERENCE_DMND_DB]
 
+PylProtPredictor Pipeline
 
-## Metadata
-- **Skill**: generated
-
-## pylprotpredictor_diamond
-
-### Tool Description
-A tool for predicting lipoproteins using Diamond. Note: The provided text contains only environment logs and a fatal error regarding container image retrieval, so no specific arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/pylprotpredictor:1.0.2--py_0
-- **Homepage**: http://bebatut.fr/PylProtPredictor/
-- **Package**: https://anaconda.org/channels/bioconda/packages/pylprotpredictor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/pylprotpredictor:1.0.2--py_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+optional arguments:
+  -h, --help            show this help message and exit
+  --genome GENOME       path to a FASTA file with full or contig sequences of
+                        a genome to analyze
+  --output OUTPUT       path to the output directory
+  --reference_fasta_db REFERENCE_FASTA_DB
+                        path to FASTA file with reference database
+  --reference_dmnd_db REFERENCE_DMND_DB
+                        path to Diamond formatted file with reference database
 ```
 

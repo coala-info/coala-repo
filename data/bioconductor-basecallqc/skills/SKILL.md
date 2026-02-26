@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basecallqc
-description: the package is available on all platforms; click for details.
+description: This tool manages Illumina basecalling and demultiplexing data by validating sample sheets and processing bcl2fastq output metrics. Use when user asks to validate or clean Illumina Sample Sheets, generate bcl2fastq shell commands, or analyze and visualize sequencing run quality control metrics.
 homepage: https://bioconductor.org/packages/release/bioc/html/basecallQC.html
 ---
+
 
 # bioconductor-basecallqc
 

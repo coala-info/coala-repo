@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genestructuretools
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and manipulates gene structures to evaluate the functional impact of alternative splicing events. Use when user asks to import splicing results from Whippet or Leafcutter, generate in silico transcript isoforms for splicing events, or analyze functional consequences like ORF changes and NMD potential.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneStructureTools.html
 ---
+
 
 # bioconductor-genestructuretools
 

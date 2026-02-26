@@ -1,8 +1,9 @@
 ---
 name: bioconductor-inpas
-description: the package is available on all platforms; click for details.
+description: InPAS identifies and quantifies alternative polyadenylation sites from RNA-Seq data by analyzing read coverage profiles. Use when user asks to discover novel cleavage sites, calculate the Percentage of Distal Usage Index, or perform differential analysis of alternative polyadenylation events.
 homepage: https://bioconductor.org/packages/release/bioc/html/InPAS.html
 ---
+
 
 # bioconductor-inpas
 

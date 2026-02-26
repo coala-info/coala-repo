@@ -1,8 +1,9 @@
 ---
 name: smalr
-description: SMALR (Skinned Multi-Animal Linear model Refinement) is a toolset for generating 3D animal poses and shapes from standard 2D photographs.
+description: SMALR generates 3D animal poses and shapes from 2D photographs by fitting a linear model to keypoints and silhouettes. Use when user asks to reconstruct 3D animal meshes, set up the SMALR environment, or refine animal textures and shapes from images.
 homepage: https://github.com/silviazuffi/smalr_online
 ---
+
 
 # smalr
 

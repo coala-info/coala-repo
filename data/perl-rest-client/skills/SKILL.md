@@ -1,8 +1,9 @@
 ---
 name: perl-rest-client
-description: The `perl-rest-client` (REST::Client) module is a lightweight wrapper around `LWP::UserAgent` designed to simplify RESTful interactions in Perl.
+description: The perl-rest-client module provides a lightweight wrapper for making RESTful HTTP requests and handling responses in Perl. Use when user asks to interact with web services, execute GET or POST requests, manage HTTP headers, or handle API responses in Perl scripts.
 homepage: http://metacpan.org/pod/REST::Client
 ---
+
 
 # perl-rest-client
 

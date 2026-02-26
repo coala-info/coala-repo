@@ -1,8 +1,9 @@
 ---
 name: gotree
-description: The `gotree` skill provides a specialized interface for handling phylogenetic data through a modular, pipe-oriented CLI.
+description: Gotree is a command-line toolkit for the manipulation, analysis, and visualization of phylogenetic trees. Use when user asks to reformat tree files, compute bootstrap support, prune specific tips, calculate tree statistics, or generate random tree models.
 homepage: https://github.com/fredericlemoine/gotree
 ---
+
 
 # gotree
 

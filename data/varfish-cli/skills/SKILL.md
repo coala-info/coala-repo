@@ -1,8 +1,9 @@
 ---
 name: varfish-cli
-description: The `varfish-cli` tool provides a command-line interface to the VarFish REST API, enabling researchers and bioinformaticians to manage variant data programmatically.
+description: varfish-cli provides a command-line interface to manage variant data on the VarFish platform. Use when user asks to manage variant data, import VCF and pedigree files, or upload new cases to VarFish.
 homepage: https://github.com/bihealth/varfish-cli
 ---
+
 
 # varfish-cli
 

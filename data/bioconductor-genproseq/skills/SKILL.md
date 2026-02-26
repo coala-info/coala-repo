@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genproseq
-description: the package is available on all platforms; click for details.
+description: GenProSeq provides tools for protein engineering by training deep generative models like GANs, VAEs, and Transformers to generate novel amino acid sequences. Use when user asks to train generative models on protein sequences, generate novel protein sequences, or perform Word2vec embedding for amino acids.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenProSeq.html
 ---
+
 
 # bioconductor-genproseq
 

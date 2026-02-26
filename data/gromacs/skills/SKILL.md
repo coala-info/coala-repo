@@ -1,8 +1,9 @@
 ---
 name: gromacs
-description: GROMACS is a high-performance molecular dynamics package designed for simulating the Newtonian equations of motion for systems ranging from hundreds to millions of particles.
+description: GROMACS is a high-performance molecular dynamics package used to simulate the Newtonian equations of motion for molecular systems. Use when user asks to prepare molecular topologies, define simulation boxes, solvate systems, add ions, or execute and optimize molecular dynamics simulations.
 homepage: https://www.gromacs.org/
 ---
+
 
 # gromacs
 

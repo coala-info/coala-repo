@@ -1,8 +1,9 @@
 ---
 name: unimap
-description: unimap is a specialized fork of minimap2 designed specifically for assembly-to-reference alignment.
+description: unimap aligns high-quality assemblies or long reads to a reference genome, specializing in large structural variations. Use when user asks to align assemblies or long reads to a reference, create a reference index, or generate alignment details for downstream analysis.
 homepage: https://github.com/lh3/unimap
 ---
+
 
 # unimap
 

@@ -1,8 +1,9 @@
 ---
 name: r-scales
-description: "Graphical scales map data to aesthetics, and provide methods     for automatically determining breaks and labels for axes and legends.</p>"
+description: The scales package provides infrastructure for mapping data values to visual aesthetics, including label formatting, break calculation, and data transformation. Use when user asks to format axis labels, calculate scale breaks, transform data ranges, or manipulate colors for visualizations.
 homepage: https://cloud.r-project.org/web/packages/scales/index.html
 ---
+
 
 # r-scales
 

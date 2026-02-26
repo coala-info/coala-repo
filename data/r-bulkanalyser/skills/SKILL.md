@@ -1,8 +1,9 @@
 ---
 name: r-bulkanalyser
-description: R package bulkanalyser (documentation from project home).
+description: bulkAnalyseR creates interactive Shiny applications for the comprehensive analysis and visualization of bulk sequencing data. Use when user asks to preprocess expression matrices, perform differential expression analysis, conduct functional enrichment, infer gene regulatory networks, or generate a web-based dashboard for sharing results.
 homepage: https://cran.r-project.org/web/packages/bulkanalyser/index.html
 ---
+
 
 # r-bulkanalyser
 

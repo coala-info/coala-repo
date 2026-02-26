@@ -1,8 +1,9 @@
 ---
 name: aptardi
-description: aptardi is a machine learning-based tool that improves the annotation of 3' transcript boundaries.
+description: aptardi uses machine learning to improve the annotation of 3' transcript boundaries by predicting polyA sites from DNA sequences and RNA-Seq data. Use when user asks to refine 3' terminal exons, identify new transcript isoforms, or improve transcriptome annotations.
 homepage: https://github.com/luskry/aptardi
 ---
+
 
 # aptardi
 

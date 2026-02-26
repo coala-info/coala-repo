@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deseq
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs differential expression analysis of RNA-Seq and other count data using the negative binomial distribution. Use when user asks to identify differentially expressed genes, normalize sequencing data, estimate dispersion, or perform statistical testing on biological count tables.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/DESeq.html
 ---
+
 
 # bioconductor-deseq
 

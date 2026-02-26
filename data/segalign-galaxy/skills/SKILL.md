@@ -1,8 +1,9 @@
 ---
 name: segalign-galaxy
-description: SegAlign is a high-performance genomic alignment tool designed to leverage GPU acceleration for the LASTZ seed-filter-extend algorithm.
+description: SegAlign is a GPU-accelerated genomic alignment tool that performs large-scale pairwise whole-genome alignments and repeat masking. Use when user asks to perform pairwise whole-genome alignments, identify repetitive elements, or accelerate the LASTZ algorithm using GPUs.
 homepage: https://github.com/gsneha26/SegAlign
 ---
+
 
 # segalign-galaxy
 

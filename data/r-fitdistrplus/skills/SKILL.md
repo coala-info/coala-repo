@@ -1,8 +1,9 @@
 ---
 name: r-fitdistrplus
-description: "Extends the fitdistr() function (of the MASS package) with several functions    to help the fit of a parametric distribution to non-censored or censored data.    Censored data may contain left censored, right censored and interval censored values,    with several lower and upper bounds. In addition to maximum likelihood estimation (MLE),    the package provides moment matching (MME), quantile matching (QME), maximum goodness-of-fit    estimation (MGE) and maximum spacing estimation (MSE) methods (available only for    non-censored data). Weighted versions of MLE, MME, QME and MSE are available. See e.g.    Casella &amp; Berger (2002), Statistical inference, Pacific Grove, for a general introduction    to parametric estimation.</p>"
+description: The r-fitdistrplus package provides a comprehensive toolbox for fitting univariate distributions to both non-censored and censored data using various estimation methods. Use when user asks to fit probability distributions to data, estimate distribution parameters, evaluate goodness-of-fit, or compare different distribution models.
 homepage: https://cloud.r-project.org/web/packages/fitdistrplus/index.html
 ---
+
 
 # r-fitdistrplus
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-complexheatmap
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package creates highly customizable heatmaps with complex annotations and multiple data slices. Use when user asks to visualize large-scale genomic data, create heatmaps with side annotations, or concatenate multiple heatmaps into a single plot.
 homepage: https://bioconductor.org/packages/release/bioc/html/ComplexHeatmap.html
 ---
+
 
 # bioconductor-complexheatmap
 

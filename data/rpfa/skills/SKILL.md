@@ -1,8 +1,9 @@
 ---
 name: rpfa
-description: The `rpfa` tool (also known as `straindesign`) is a command-line interface for metabolic engineering.
+description: The rpfa tool identifies optimal gene deletions and integrates heterologous pathways to maximize target compound production in metabolic models. Use when user asks to simulate gene deletions, reduce SBML models by applying deletions, or generate Pareto plots to analyze metabolic trade-offs.
 homepage: https://github.com/brsynth/rpFbaAnalysis
 ---
+
 
 # rpfa
 

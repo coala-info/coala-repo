@@ -1,8 +1,9 @@
 ---
 name: perl-http-cookiejar-lwp
-description: The `perl-http-cookiejar-lwp` skill provides guidance on utilizing the `HTTP::CookieJar` Perl module, a minimalist and thread-safe cookie store.
+description: This tool provides a minimalist, thread-safe cookie store for Perl applications using the HTTP::CookieJar module. Use when user asks to manage HTTP cookies with minimal dependencies, integrate a cookie jar with LWP::UserAgent, or handle RFC 6265 compliant cookies in concurrent environments.
 homepage: https://github.com/dagolden/HTTP-CookieJar
 ---
+
 
 # perl-http-cookiejar-lwp
 

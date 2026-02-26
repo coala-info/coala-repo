@@ -3,7 +3,7 @@
 ## ucsc-maftopsl
 
 ### Tool Description
-Convert MAF (Multiple Alignment Format) files to PSL (Pattern Space Layout) format.
+Convert MAF format to PSL format.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-maftopsl:482--h0b57e2e_0
@@ -18,13 +18,13 @@ Convert MAF (Multiple Alignment Format) files to PSL (Pattern Space Layout) form
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-maftopsl:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unable to find image 'quay.io/biocontainers/ucsc-maftopsl:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-maftopsl
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+049cdb45a972: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2133430355: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

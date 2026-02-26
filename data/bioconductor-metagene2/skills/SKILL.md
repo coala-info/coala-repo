@@ -1,8 +1,9 @@
 ---
 name: bioconductor-metagene2
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package produces metagene plots by aggregating genomic signals over sets of genomic regions. Use when user asks to generate metagene plots, aggregate sequencing coverage over genomic features, or compare signal profiles across multiple samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/metagene2.html
 ---
+
 
 # bioconductor-metagene2
 

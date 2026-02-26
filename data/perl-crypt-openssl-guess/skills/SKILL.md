@@ -1,8 +1,9 @@
 ---
 name: perl-crypt-openssl-guess
-description: The `perl-crypt-openssl-guess` skill facilitates the automated discovery of OpenSSL installation paths within Perl development workflows.
+description: This tool automatically discovers OpenSSL installation paths and provides the necessary compiler and linker flags for Perl development. Use when user asks to locate OpenSSL headers and libraries, configure build scripts for Perl extensions, or handle environment-specific OpenSSL configurations.
 homepage: https://github.com/akiym/Crypt-OpenSSL-Guess
 ---
+
 
 # perl-crypt-openssl-guess
 

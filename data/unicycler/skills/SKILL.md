@@ -1,8 +1,9 @@
 ---
 name: unicycler
-description: Unicycler is a specialized assembly pipeline optimized for bacterial genomes.
+description: Unicycler assembles bacterial genomes, producing complete and circularized sequences. Use when user asks to assemble bacterial genomes, perform hybrid assembly, perform Illumina-only assembly, perform long-read-only assembly, or resolve plasmids.
 homepage: https://github.com/rrwick/Unicycler
 ---
+
 
 # unicycler
 

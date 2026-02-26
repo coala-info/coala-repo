@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnvrd2
-description: the package is available on all platforms; click for details.
+description: CNVrd2 measures copy number counts and identifies copy number polymorphisms using next-generation sequencing data. Use when user asks to calculate copy number counts, identify copy number polymorphisms, or analyze complex genomic loci.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNVrd2.html
 ---
+
 
 # bioconductor-cnvrd2
 

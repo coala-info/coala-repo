@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowfp
-description: the package is available on all platforms; click for details.
+description: This tool generates fingerprints from multivariate flow cytometry data using probability binning to create feature vectors for downstream analysis. Use when user asks to transform flowFrames or flowSets into fingerprints, perform high-throughput quality control, or generate feature vectors for clustering and classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowFP.html
 ---
+
 
 # bioconductor-flowfp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowploidydata
-description: the package is available on all platforms; click for details.
+description: This package provides example flow cytometry data files in LMD format for plant ploidy analysis. Use when user asks to load sample datasets for flowPloidy workflows, access raw LMD files for testing, or demonstrate plant leaf tissue analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/flowPloidyData.html
 ---
+
 
 # bioconductor-flowploidydata
 

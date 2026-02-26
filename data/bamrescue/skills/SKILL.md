@@ -1,8 +1,9 @@
 ---
 name: bamrescue
-description: `bamrescue` is a specialized utility designed to recover data from damaged BAM files.
+description: bamrescue is a utility designed to check for corruption in BAM files and recover data from damaged BGZF blocks. Use when user asks to check the integrity of a BAM file, repair corrupted BAM files, or salvage reads from damaged genomic data.
 homepage: https://github.com/Arkanosis/bamrescue
 ---
+
 
 # bamrescue
 

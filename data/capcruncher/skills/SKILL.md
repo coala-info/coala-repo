@@ -1,8 +1,9 @@
 ---
 name: capcruncher
-description: CapCruncher is a specialized bioinformatics suite designed to handle the unique filtering requirements of Capture-C, Tri-C, and Tiled-C datasets, which differ significantly from standard Hi-C workflows.
+description: CapCruncher is a bioinformatics suite designed to process and analyze Capture-C, Tri-C, and Tiled-C sequencing data. Use when user asks to initialize projects, generate pipeline configurations, or execute data processing workflows on local workstations and HPC clusters.
 homepage: https://github.com/sims-lab/CapCruncher.git
 ---
+
 
 # capcruncher
 

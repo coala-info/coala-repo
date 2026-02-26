@@ -1,8 +1,9 @@
 ---
 name: defiant
-description: "Defiant (Differential methylation: Easy, Fast, Identification and ANnoTation) is a high-performance tool designed to identify differentially methylated regions (DMRs) with minimal computational overhead."
+description: Defiant identifies differentially methylated regions (DMRs) from large-scale methylation datasets with minimal computational overhead. Use when user asks to identify DMRs, annotate regions with genomic features, or visualize methylation differences using heatmaps.
 homepage: https://github.com/hhg7/defiant
 ---
+
 
 # defiant
 

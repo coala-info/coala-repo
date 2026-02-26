@@ -1,8 +1,9 @@
 ---
 name: schema-salad
-description: Schema Salad is a schema language designed for describing JSON or YAML structured linked data.
+description: Schema Salad is a schema language and toolset for validating, processing, and generating code from JSON or YAML structured linked data. Use when user asks to validate schemas or documents, generate documentation, visualize inheritance graphs, produce code for data models, or convert documents to RDF.
 homepage: https://github.com/common-workflow-language/schema_salad
 ---
+
 
 # schema-salad
 

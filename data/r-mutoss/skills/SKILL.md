@@ -1,8 +1,9 @@
 ---
 name: r-mutoss
-description: "Designed to ease the application and comparison of multiple     hypothesis testing procedures for FWER, gFWER, FDR and FDX. Methods are      standardized and usable by the accompanying 'mutossGUI'.</p>"
+description: The r-mutoss package provides a unified interface for applying and comparing multiple hypothesis testing procedures to control various error rates. Use when user asks to perform multiple testing procedures, control error rates like FDR or FWER, or set up benchmark simulations to evaluate procedure performance.
 homepage: https://cran.r-project.org/web/packages/mutoss/index.html
 ---
+
 
 # r-mutoss
 

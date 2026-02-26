@@ -1,8 +1,9 @@
 ---
 name: bioconductor-odseq
-description: the package is available on all platforms; click for details.
+description: Bioconductor-odseq detects outlier sequences in multiple sequence alignments using distance-based methods. Use when user asks to identify outlier sequences in an alignment, detect anomalous sequences, or perform quality control on multiple sequence alignments.
 homepage: https://bioconductor.org/packages/release/bioc/html/odseq.html
 ---
+
 
 # bioconductor-odseq
 

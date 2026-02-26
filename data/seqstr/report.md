@@ -3,7 +3,7 @@
 ## seqstr
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help documentation or argument definitions for the 'seqstr' tool.
+A tool for sequence string manipulation and analysis.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seqstr:0.1.0--pyhdfd78af_0
@@ -18,14 +18,14 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seqstr:0.1.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:983b0c463fa34a92913bc011cf275d87de951e3109dd066ced25944db656f114: unpack entry: usr/local/bin/python3.12: unpack to regular file: short write: write /tmp/build-temp-2410356018/rootfs/usr/local/bin/python3.12: no space left on device
+/usr/local/lib/python3.12/site-packages/seqstr/seqstr.py:105: SyntaxWarning: invalid escape sequence '\['
+  re.search("\[", text).start() + 1 : re.search("\]", text).start()
+/usr/local/lib/python3.12/site-packages/seqstr/seqstr.py:105: SyntaxWarning: invalid escape sequence '\]'
+  re.search("\[", text).start() + 1 : re.search("\]", text).start()
+/usr/local/lib/python3.12/site-packages/seqstr/seqstr.py:107: SyntaxWarning: invalid escape sequence '\]'
+  sub = text[re.search("\]", text).start() + 1 :].split(":")
+usage: seqstr [-h] [--download DOWNLOAD] [--dir DIR] [--output OUTPUT]
+              [input_file]
+seqstr: error: argument -h/--help: ignored explicit argument 'elp'
 ```
 
-
-## Metadata
-- **Skill**: generated

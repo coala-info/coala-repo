@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgfocus.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Human Genome Focus Array. Use when user asks to map hgfocus probe identifiers to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgfocus.db.html
 ---
+
 
 # bioconductor-hgfocus.db
 

@@ -1,8 +1,9 @@
 ---
 name: perl-minion
-description: Minion is a high-performance job queue for the Mojolicious real-time web framework.
+description: Perl-minion is a high-performance job queue for the Mojolicious framework used to manage background tasks and asynchronous processing. Use when user asks to manage background jobs, start workers, inspect the job queue, or enqueue non-blocking tasks.
 homepage: https://mojolicious.org
 ---
+
 
 # perl-minion
 

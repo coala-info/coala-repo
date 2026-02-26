@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.celegans.ucsc.ce11
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Caenorhabditis elegans based on the UCSC ce11 assembly. Use when user asks to retrieve C. elegans chromosome sequences, extract specific genomic subsequences, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Celegans.UCSC.ce11.html
 ---
+
 
 # bioconductor-bsgenome.celegans.ucsc.ce11
 

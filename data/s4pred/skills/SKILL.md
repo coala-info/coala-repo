@@ -1,8 +1,9 @@
 ---
 name: s4pred
-description: S4PRED is a deep semi-supervised learning framework for high-accuracy protein secondary structure prediction.
+description: S4PRED is a deep learning framework for high-accuracy protein secondary structure prediction directly from primary amino acid sequences. Use when user asks to predict protein secondary structures, perform fast sequence-to-structure inference without homology searches, or generate PSIPRED-style secondary structure files.
 homepage: https://github.com/psipred/s4pred
 ---
+
 
 # s4pred
 

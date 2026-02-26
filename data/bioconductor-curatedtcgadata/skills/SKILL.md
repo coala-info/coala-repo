@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedtcgadata
-description: the package is available on all platforms; click for details.
+description: This package provides a streamlined interface for accessing and integrating highly curated The Cancer Genome Atlas (TCGA) data as MultiAssayExperiment objects. Use when user asks to download TCGA datasets, explore available cancer assays, filter samples by type, or access standardized clinical and subtype information.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedTCGAData.html
 ---
+
 
 # bioconductor-curatedtcgadata
 

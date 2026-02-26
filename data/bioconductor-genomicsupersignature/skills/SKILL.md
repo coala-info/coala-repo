@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicsupersignature
-description: the package is available on all platforms; click for details.
+description: This package projects transcriptomic datasets onto pre-computed Replicable Axes of Variation to identify and interpret established biological signals. Use when user asks to validate transcriptomic data against RAV models, interpret biological signatures using GSEA or MeSH terms, or identify related public studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicSuperSignature.html
 ---
+
 
 # bioconductor-genomicsupersignature
 

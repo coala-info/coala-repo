@@ -1,8 +1,9 @@
 ---
 name: abra2
-description: ABRA2 is a localized assembly-based realigner that improves the accuracy of sequence alignments, particularly around insertions and deletions (indels).
+description: ABRA2 is a localized assembly-based realigner that improves the accuracy of sequence alignments around insertions and deletions. Use when user asks to perform DNA or RNA realignment, improve indel alignment accuracy, or re-assemble reads in specific genomic regions.
 homepage: https://github.com/mozack/abra2
 ---
+
 
 # abra2
 

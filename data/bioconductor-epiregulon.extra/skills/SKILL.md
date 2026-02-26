@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epiregulon.extra
-description: the package is available on all platforms; click for details.
+description: This tool provides statistical and visualization methods for interpreting transcription factor activity and gene regulatory networks in single-cell multiomic data. Use when user asks to calculate TF activity scores, identify differential TF activity between cell clusters, perform gene set enrichment on regulons, or visualize network topology.
 homepage: https://bioconductor.org/packages/release/bioc/html/epiregulon.extra.html
 ---
+
 
 # bioconductor-epiregulon.extra
 

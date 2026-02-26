@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affylmgui
-description: the package is available on all platforms; click for details.
+description: This package provides a graphical user interface for analyzing Affymetrix microarray data using the limma linear modeling framework. Use when user asks to perform differential expression analysis, normalize microarray data via RMA or PLM, or extract Bioconductor objects from affylmGUI project files.
 homepage: https://bioconductor.org/packages/release/bioc/html/affylmGUI.html
 ---
+
 
 # bioconductor-affylmgui
 

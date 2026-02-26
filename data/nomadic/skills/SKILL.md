@@ -1,8 +1,9 @@
 ---
 name: nomadic
-description: Nomadic is designed for mobile, real-time analysis of nanopore sequencing data, specifically optimized for amplicon sequencing protocols like NOMADS-MVP.
+description: Nomadic performs real-time analysis of nanopore sequencing data by automating read mapping, quality control, and variant calling for amplicon sequencing protocols. Use when user asks to initialize a workspace, perform real-time analysis of sequencing data, visualize results via a dashboard, or manage and back up experiment data.
 homepage: https://jasonahendry.github.io/nomadic/
 ---
+
 
 # nomadic
 

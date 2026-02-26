@@ -3,7 +3,7 @@
 ## blacksheep-outliers
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It consists of system error messages related to a container execution failure (no space left on device).
+Perform outlier analysis on a table of values, typically for proteomics data. It calculates thresholds based on Interquartile Range (IQR) and identifies values exceeding those thresholds.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/blacksheep-outliers:0.0.8--py_0
@@ -18,9 +18,20 @@ The provided text does not contain help information or usage instructions. It co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/5998cfd3b2c0479be7668da1dbef98960aeb0ae8c5bd45db2f02c4b008fd22ed: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/blacksheep-outliers:0.0.8--py_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2175962014: no space left on device
+Unable to find image 'quay.io/biocontainers/blacksheep-outliers:0.0.8--py_0' locally
+0.0.8--py_0: Pulling from biocontainers/blacksheep-outliers
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+0473173e9e90: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1661967027: no space left on device
+
+Run 'docker run --help' for more information
 ```
 

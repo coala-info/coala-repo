@@ -1,8 +1,9 @@
 ---
 name: perl-html-tidy
-description: The `perl-html-tidy` skill provides access to the `HTML::Tidy` and `HTML::Tidy5` Perl modules and their associated command-line utility, `webtidy`.
+description: This tool validates, cleans, and repairs HTML and XHTML markup using the Perl interface or the webtidy command-line utility. Use when user asks to clean up messy HTML, identify syntax errors, or programmatically ensure documents adhere to specific web standards.
 homepage: http://github.com/petdance/html-tidy
 ---
+
 
 # perl-html-tidy
 

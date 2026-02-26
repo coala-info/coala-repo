@@ -1,8 +1,9 @@
 ---
 name: bioconductor-orfhunter
-description: the package was confirmed by the examples of the analysis of RNA molecules from the NCBI RefSeq and Ensembl databases. The package can be used in basic and applied biomedical research related to the study of the transcriptome of normal as well as altered (for example, cancer) human cells.
+description: ORFhunteR is a Bioconductor package used to identify and analyze open reading frames within human RNA sequences. Use when user asks to identify open reading frames, analyze RNA molecules from NCBI RefSeq or Ensembl databases, or study the transcriptome of normal and cancerous cells.
 homepage: https://bioconductor.org/packages/release/bioc/html/ORFhunteR.html
 ---
+
 
 # bioconductor-orfhunter
 

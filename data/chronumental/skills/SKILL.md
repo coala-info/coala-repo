@@ -1,8 +1,9 @@
 ---
 name: chronumental
-description: Chronumental is a high-performance tool designed to transform phylogenetic divergence trees—where branch lengths represent genetic substitutions—into time-trees where branch lengths represent chronological time.
+description: Chronumental transforms phylogenetic divergence trees into time-trees by estimating chronological branch lengths using a differentiable graph approach. Use when user asks to estimate a time-tree from a large phylogeny, convert genetic distance to chronological time, or perform molecular clock analysis on datasets with millions of nodes.
 homepage: https://github.com/theosanderson/chronumental
 ---
+
 
 # chronumental
 

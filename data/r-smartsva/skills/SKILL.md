@@ -1,8 +1,9 @@
 ---
 name: r-smartsva
-description: R package smartsva (documentation from project home).
+description: This tool performs fast and robust Surrogate Variable Analysis to identify and estimate unknown sources of variation in high-dimensional genomic or transcriptomic datasets. Use when user asks to estimate surrogate variables, account for batch effects in large-scale data, or perform efficient SVA for differential expression analysis.
 homepage: https://cran.r-project.org/web/packages/smartsva/index.html
 ---
+
 
 # r-smartsva
 

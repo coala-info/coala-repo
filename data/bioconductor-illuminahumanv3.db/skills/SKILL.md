@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanv3.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for mapping Illumina Humanv3 expression microarray probe identifiers to biological metadata like Gene Symbols, Entrez IDs, and GO terms. Use when user asks to map Illumina Humanv3 probes to gene identifiers, retrieve probe sequences, assess probe quality, or perform functional annotation using KEGG and GO pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html
 ---
+
 
 # bioconductor-illuminahumanv3.db
 

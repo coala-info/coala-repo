@@ -1,8 +1,9 @@
 ---
 name: smcounter2
-description: smCounter2 is a specialized variant caller optimized for identifying low-allele-frequency (AF) mutations.
+description: smCounter2 is a variant caller that leverages Unique Molecular Identifiers to identify low-allele-frequency mutations in deep sequencing data. Use when user asks to identify low-frequency variants, perform liquid biopsy analysis, or call variants from UMI-tagged sequencing data.
 homepage: https://github.com/qiaseq/qiaseq-smcounter-v2
 ---
+
 
 # smcounter2
 

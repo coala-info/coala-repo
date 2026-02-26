@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ldblock
-description: the package is available on all platforms; click for details.
+description: This package provides data structures and functions to manage linkage disequilibrium data and define LD blocks using population-level datasets. Use when user asks to import HapMap LD data, visualize LD matrix structures, or expand SNP sets to include neighboring variants in high linkage disequilibrium.
 homepage: https://bioconductor.org/packages/release/bioc/html/ldblock.html
 ---
+
 
 # bioconductor-ldblock
 

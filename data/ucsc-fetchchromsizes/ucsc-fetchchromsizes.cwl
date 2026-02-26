@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: fetchChromSizes
 label: ucsc-fetchchromsizes
-doc: "Fetch chromosome sizes for a genome from UCSC. (Note: The provided help text
-  contains only container runtime error messages and no usage information.)\n\nTool
-  homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Fetch chromosome sizes for a specified genome database from UCSC.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: db
+    type: string
+    doc: UCSC genome database name (e.g., hg38, mm10)
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

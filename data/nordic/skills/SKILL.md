@@ -1,8 +1,9 @@
 ---
 name: nordic
-description: NORDic (Network-Oriented Repurposing of Drugs) is a specialized Python framework designed to automate the modeling of gene interactions and their influence on biological activity.
+description: NORDic is a Python framework that uses network-oriented modeling to automate gene interaction analysis and drug repurposing. Use when user asks to build Boolean networks from transcriptomic data, identify master regulators of disease, score drug efficacy through signature reversal, or adaptively recommend treatments.
 homepage: https://github.com/clreda/NORDic
 ---
+
 
 # nordic
 

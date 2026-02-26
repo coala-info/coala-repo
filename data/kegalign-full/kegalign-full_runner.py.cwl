@@ -1,11 +1,80 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: kegalign-full_runner.py
+baseCommand: runner.py
 label: kegalign-full_runner.py
-doc: "The provided text is an error log from a container runtime (Singularity/Apptainer)
-  and does not contain help information or argument definitions for the tool.\n\n
-  Tool homepage: https://github.com/galaxyproject/KegAlign"
-inputs: []
+doc: "Runner script for kegalign-full\n\nTool homepage: https://github.com/galaxyproject/KegAlign"
+inputs:
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: print debug messages
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: diagonal_partition
+    type:
+      - 'null'
+      - boolean
+    doc: run diagonal partition optimization
+    inputBinding:
+      position: 101
+      prefix: --diagonal-partition
+  - id: markend
+    type:
+      - 'null'
+      - boolean
+    doc: write a marker line just before completion
+    inputBinding:
+      position: 101
+      prefix: --markend
+  - id: nogapped
+    type:
+      - 'null'
+      - boolean
+    doc: don't perform gapped extension stage
+    inputBinding:
+      position: 101
+      prefix: --nogapped
+  - id: num_cpu
+    type:
+      - 'null'
+      - int
+    doc: number of CPUs to use
+    default: -1
+    inputBinding:
+      position: 101
+      prefix: --num-cpu
+  - id: num_gpu
+    type:
+      - 'null'
+      - int
+    doc: number of GPUs to use
+    default: -1
+    inputBinding:
+      position: 101
+      prefix: --num-gpu
+  - id: output_file
+    type: string
+    doc: output pathname
+    inputBinding:
+      position: 101
+      prefix: --output-file
+  - id: output_type
+    type:
+      - 'null'
+      - string
+    doc: output type
+    default: commands
+    inputBinding:
+      position: 101
+      prefix: --output-type
+  - id: tool_directory
+    type: Directory
+    doc: tool directory
+    inputBinding:
+      position: 101
+      prefix: --tool_directory
 outputs:
   - id: stdout
     type: stdout

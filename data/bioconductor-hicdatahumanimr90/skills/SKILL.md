@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicdatahumanimr90
-description: the package is available on all platforms; click for details.
+description: This package provides processed Hi-C chromosome conformation capture data and topological associating domains from human IMR90 fibroblast cells. Use when user asks to load genome-wide interaction maps, access TAD boundaries for spatial genome analysis, or visualize 3D genome architecture in human IMR90 cells.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HiCDataHumanIMR90.html
 ---
+
 
 # bioconductor-hicdatahumanimr90
 

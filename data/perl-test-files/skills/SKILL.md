@@ -1,8 +1,9 @@
 ---
 name: perl-test-files
-description: The `perl-test-files` skill provides a specialized interface for the `Test::Files` Perl module.
+description: This tool provides an interface for the Test::Files Perl module to perform assertions on file and directory contents during automated testing. Use when user asks to compare file contents, filter non-deterministic data for testing, verify directory listings, or perform recursive directory comparisons.
 homepage: http://metacpan.org/pod/Test::Files
 ---
+
 
 # perl-test-files
 

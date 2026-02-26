@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggpa
-description: the package is available on all platforms; click for details.
+description: bioconductor-ggpa performs joint analysis of multiple GWAS datasets using a hidden Markov random field to investigate pleiotropy and prioritize genetic associations. Use when user asks to estimate pleiotropic architecture, perform association mapping across multiple phenotypes, or visualize phenotype graphs from GWAS p-value matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/GGPA.html
 ---
+
 
 # bioconductor-ggpa
 

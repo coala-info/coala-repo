@@ -1,8 +1,9 @@
 ---
 name: pytest-xdist
-description: pytest-xdist is a core plugin for the pytest ecosystem designed to solve the bottleneck of slow test suites.
+description: pytest-xdist parallelizes test execution across multiple CPU cores or worker processes to speed up slow test suites. Use when user asks to run tests in parallel, distribute tests across multiple CPUs, or use a file-watching mode to re-run failing tests.
 homepage: https://github.com/pytest-dev/pytest-xdist
 ---
+
 
 # pytest-xdist
 

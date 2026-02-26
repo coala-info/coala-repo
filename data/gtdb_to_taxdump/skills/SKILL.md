@@ -1,8 +1,9 @@
 ---
 name: gtdb_to_taxdump
-description: The `gtdb_to_taxdump` toolset bridges the gap between the flat TSV taxonomy files provided by GTDB and the hierarchical `taxdump` format used by many legacy and modern bioinformatics classifiers.
+description: This tool converts GTDB taxonomy files into the NCBI-style taxdump format required by many bioinformatics classifiers. Use when user asks to generate nodes.dmp and names.dmp files from GTDB data, integrate TaxIDs into metadata, or create accession-to-TaxID maps for tools like Kraken2 and Diamond.
 homepage: https://github.com/nick-youngblut/gtdb_to_taxdump
 ---
+
 
 # gtdb_to_taxdump
 

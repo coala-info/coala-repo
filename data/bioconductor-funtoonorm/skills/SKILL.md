@@ -1,8 +1,9 @@
 ---
 name: bioconductor-funtoonorm
-description: the package is available on all platforms; click for details.
+description: This tool normalizes Illumina HumanMethylation450 BeadChip data while accounting for differences between multiple tissues or cell types. Use when user asks to perform funtooNorm normalization, convert RGChannelSet objects to SampleSet format, or extract normalized Beta and M-values from methylation data.
 homepage: https://bioconductor.org/packages/release/bioc/html/funtooNorm.html
 ---
+
 
 # bioconductor-funtoonorm
 

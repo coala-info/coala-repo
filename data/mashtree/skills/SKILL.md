@@ -1,8 +1,9 @@
 ---
 name: mashtree
-description: Mashtree is a bioinformatics tool designed for the high-speed generation of phylogenetic trees.
+description: Mashtree generates phylogenetic trees from genomic sequences using the Mash algorithm to estimate distances without multiple sequence alignment. Use when user asks to create a phylogenetic tree from raw reads or assemblies, calculate genomic distance matrices, or perform bootstrapping and jackknifing for tree confidence.
 homepage: https://github.com/lskatz/mashtree
 ---
+
 
 # mashtree
 

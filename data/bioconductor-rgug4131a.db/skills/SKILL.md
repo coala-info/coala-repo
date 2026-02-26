@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgug4131a.db
-description: the package is available on all platforms; click for details.
+description: This package provides comprehensive annotation data for the Agilent Rat Genome G4131A array. Use when user asks to map Agilent probe identifiers to gene symbols, retrieve Entrez Gene IDs, or perform functional annotation for the G4131A platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rgug4131a.db.html
 ---
+
 
 # bioconductor-rgug4131a.db
 

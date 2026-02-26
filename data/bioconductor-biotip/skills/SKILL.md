@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biotip
-description: the package is available on all platforms; click for details.
+description: BioTIP identifies critical transition states and tipping points in biological systems using transcriptomic data. Use when user asks to detect tipping points in disease progression, identify critical transition signals, or analyze gene modules for state transitions in bulk or single-cell RNA-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioTIP.html
 ---
+
 
 # bioconductor-biotip
 

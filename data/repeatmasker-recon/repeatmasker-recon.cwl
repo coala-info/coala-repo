@@ -1,11 +1,24 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: repeatmasker-recon
+baseCommand: recon
 label: repeatmasker-recon
-doc: "A tool for de novo identification of repeat families in genomic sequences. Note:
-  The provided help text contains only system logs and a fatal error, so no arguments
-  could be extracted.\n\nTool homepage: https://www.repeatmasker.org/RepeatMasker"
-inputs: []
+doc: "See 00README for details.\n\nTool homepage: https://www.repeatmasker.org/RepeatMasker"
+inputs:
+  - id: seq_name_list_file
+    type: File
+    doc: Sequence name list file
+    inputBinding:
+      position: 1
+  - id: msp_file
+    type: File
+    doc: MSP file
+    inputBinding:
+      position: 2
+  - id: integer
+    type: int
+    doc: An integer value
+    inputBinding:
+      position: 3
 outputs:
   - id: stdout
     type: stdout

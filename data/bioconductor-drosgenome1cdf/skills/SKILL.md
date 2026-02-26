@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosgenome1cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping data for the Affymetrix Drosophila Genome 1.0 Array. Use when user asks to map probe indices to physical coordinates, access chip dimensions, or process raw expression data from Drosophila Genome 1.0 microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1cdf.html
 ---
+
 
 # bioconductor-drosgenome1cdf
 

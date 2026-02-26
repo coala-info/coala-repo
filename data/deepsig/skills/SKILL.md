@@ -1,8 +1,9 @@
 ---
 name: deepsig
-description: DeepSig is a bioinformatics tool designed to detect signal peptides in proteins with high accuracy using deep learning architectures.
+description: DeepSig detects signal peptides and predicts cleavage sites in protein sequences using deep learning architectures. Use when user asks to detect signal peptides, identify protein cleavage sites, or determine the secretory nature of proteins.
 homepage: https://github.com/BolognaBiocomp/deepsig
 ---
+
 
 # deepsig
 

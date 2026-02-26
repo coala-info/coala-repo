@@ -1,8 +1,9 @@
 ---
 name: socksipy-branch
-description: The `socksipy-branch` skill provides guidance on using a specialized Python module that extends the standard `socket` interface to support SOCKS and HTTP proxying.
+description: This tool provides a Python module for creating proxy-aware sockets that support SOCKS4, SOCKS5, and HTTP proxying. Use when user asks to route Python socket traffic through a proxy, configure SOCKS5 authentication, or handle remote DNS resolution.
 homepage: https://github.com/gsutil-mirrors/socksipy-branch
 ---
+
 
 # socksipy-branch
 

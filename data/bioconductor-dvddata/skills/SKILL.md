@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dvddata
-description: the package is available on all platforms; click for details.
+description: This package provides reference datasets of curated gene expression profiles for drugs and diseases required by the Drug versus Disease analysis tool. Use when user asks to access drug-disease signatures, load connectivity map data, or retrieve gene expression profiles for drug repurposing and side effect analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/DvDdata.html
 ---
+
 
 # bioconductor-dvddata
 

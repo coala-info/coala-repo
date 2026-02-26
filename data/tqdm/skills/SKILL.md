@@ -1,8 +1,9 @@
 ---
 name: tqdm
-description: The `tqdm` skill provides procedural knowledge for integrating fast, extensible progress meters into both code and shell environments.
+description: `tqdm` integrates fast, extensible progress meters into both code and shell environments. Use when user asks to wrap iterables with progress bars, control progress manually, or monitor data flow in CLI pipelines.
 homepage: https://github.com/tqdm/tqdm
 ---
+
 
 # tqdm
 

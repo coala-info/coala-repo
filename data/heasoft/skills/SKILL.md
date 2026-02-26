@@ -1,8 +1,9 @@
 ---
 name: heasoft
-description: HEASoft is the standard software suite for processing and analyzing data from X-ray and Gamma-ray observatories (e.g., Swift, NuSTAR, NICER).
+description: HEASoft is a software suite used for processing and analyzing data from X-ray and Gamma-ray observatories. Use when user asks to initialize the HEASoft environment, manipulate FITS files with FTOOLS, perform spectral modeling in XSPEC, or extract lightcurves and spectra using XSELECT.
 homepage: https://heasarc.gsfc.nasa.gov/lheasoft/
 ---
+
 
 # heasoft
 

@@ -1,8 +1,9 @@
 ---
 name: genform
-description: genform is a specialized command-line tool for the automated determination of molecular formulas.
+description: genform automatically determines molecular formulas by processing high-resolution MS and MS/MS data. Use when user asks to identify chemical compositions, determine molecular formulas from mass spectrometry data, or process MS/MS fragmentation patterns.
 homepage: https://sourceforge.net/projects/genform/
 ---
+
 
 # genform
 

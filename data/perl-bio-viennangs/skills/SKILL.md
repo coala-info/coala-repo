@@ -1,8 +1,9 @@
 ---
 name: perl-bio-viennangs
-description: The `Bio::ViennaNGS` suite provides a collection of high-level Perl modules and command-line utilities designed to streamline NGS data processing.
+description: The perl-bio-viennangs suite provides Perl modules and utilities for processing next-generation sequencing data with a focus on genomic interval manipulation and RNA-seq analysis. Use when user asks to convert between BED and GFF formats, split BAM files by strand, generate BigWig tracks, or consolidate transcript abundance estimates.
 homepage: http://metacpan.org/pod/Bio::ViennaNGS
 ---
+
 
 # perl-bio-viennangs
 

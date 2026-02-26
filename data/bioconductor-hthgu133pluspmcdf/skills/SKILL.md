@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133pluspmcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix HT_HG-U133_Plus_PM array. Use when user asks to map probe coordinates to indices, access CDF environment metadata, or process low-level data for Human Genome U133 Plus 2.0 PM-only arrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133pluspmcdf.html
 ---
+
 
 # bioconductor-hthgu133pluspmcdf
 

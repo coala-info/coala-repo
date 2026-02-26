@@ -1,8 +1,9 @@
 ---
 name: howdesbt
-description: HowDeSBT (How-Determined Sequence Bloom Tree) is a specialized tool for large-scale sequence search.
+description: HowDeSBT is a tool for large-scale sequence search that uses partitioned Bloom filters to optimize storage and query efficiency. Use when user asks to create Bloom filters from sequence data, cluster filters into a tree topology, build a searchable index, or query sequences against a Sequence Bloom Tree.
 homepage: https://github.com/medvedevgroup/HowDeSBT
 ---
+
 
 # howdesbt
 

@@ -3,7 +3,7 @@
 ## snakeatac_env
 
 ### Tool Description
-SnakeATAC environment container (biocontainer)
+Environment variables for snakeatac
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/snakeatac_env:0.1.1--pyha70a07d_0
@@ -18,13 +18,24 @@ SnakeATAC environment container (biocontainer)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/snakeatac_env:0.1.1--pyha70a07d_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+HOSTNAME=2ff8ad51e846
+JAVA_HOME=/usr/local/lib/jvm
+JAVA_LD_LIBRARY_PATH=/usr/local/lib/jvm/lib/server
+XML_CATALOG_FILES=file:///usr/local/etc/xml/catalog file:///etc/xml/catalog
+PWD=/
+GSETTINGS_SCHEMA_DIR=/usr/local/share/glib-2.0/schemas
+CONDA_PREFIX=/usr/local
+GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+RSTUDIO_WHICH_R=/usr/local/bin/R
+HOME=/root
+LANG=C.UTF-8
+CONDA_PROMPT_MODIFIER=
+CONDA_SHLVL=1
+SHLVL=0
+CONDA_DEFAULT_ENV=/usr/local
+PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

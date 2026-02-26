@@ -1,8 +1,9 @@
 ---
 name: bioconductor-motifbreakr
-description: the package is available on all platforms; click for details.
+description: motifbreakR predicts the impact of single nucleotide polymorphisms on transcription factor binding sites. Use when user asks to predict the effect of variants on motifs, identify transcription factor binding sites disrupted by SNPs, or analyze the functional impact of genetic variants.
 homepage: https://bioconductor.org/packages/release/bioc/html/motifbreakR.html
 ---
+
 
 # bioconductor-motifbreakr
 

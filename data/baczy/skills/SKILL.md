@@ -1,8 +1,9 @@
 ---
 name: baczy
-description: Baczy is an end-to-end Snakemake-based workflow designed for the assembly and functional characterization of bacterial host genomes.
+description: Baczy is a Snakemake-based workflow for the automated assembly, annotation, and functional characterization of bacterial genomes. Use when user asks to assemble bacterial genomes from short or long reads, identify antimicrobial resistance and virulence factors, or perform pangenome and comparative genomics analyses.
 homepage: https://github.com/npbhavya/baczy/
 ---
+
 
 # baczy
 

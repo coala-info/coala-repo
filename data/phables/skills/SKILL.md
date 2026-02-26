@@ -1,8 +1,9 @@
 ---
 name: phables
-description: Phables is a specialized bioinformatics tool designed to resolve bacteriophage genomes from fragmented metagenomic data.
+description: Phables resolves bacteriophage genomes from fragmented metagenomic assembly graphs by modeling phage bubbles as flow networks. Use when user asks to reconstruct complete phage genomes, resolve viral sequences from assembly graphs, or identify phage components in metagenomic data.
 homepage: https://github.com/Vini2/phables
 ---
+
 
 # phables
 

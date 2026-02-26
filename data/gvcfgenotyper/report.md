@@ -3,7 +3,7 @@
 ## gvcfgenotyper
 
 ### Tool Description
-A tool for genotyper gVCF files (Note: The provided help text contains only container runtime error messages and no usage information).
+GVCF merging and genotyping for Illumina GVCFs
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gvcfgenotyper:2019.02.26--h13024bc_6
@@ -18,11 +18,20 @@ A tool for genotyper gVCF files (Note: The provided help text contains only cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gvcfgenotyper:2019.02.26--h13024bc_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1187707279: no space left on device
+About:   GVCF merging and genotyping for Illumina GVCFs
+Version: 2019.02.26
+Usage:   gvcfgenotyper -f ref.fa -l gvcf_list.txt
+
+Options:
+    -l, --list          <file>          plain text list of gvcfs to merge
+    -f, --fasta-ref     <file>          reference sequence
+    -o, --output-file   <file>          output file name [stdout]
+    -L, --log-file      <file>          logging information
+    -O, --output-type   <b|u|z|v>       b: compressed BCF, u: uncompressed BCF, z: compressed VCF, v: uncompressed VCF [v]
+    -r, --region        <region>        region to genotype eg. chr1 or chr20:5000000-6000000
+    -M, --max-alleles   INT             maximum number of alleles [50]
+
+ERROR: --list is required
+Exiting...
 ```
 
-
-## Metadata
-- **Skill**: generated

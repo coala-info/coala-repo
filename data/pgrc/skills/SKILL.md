@@ -1,8 +1,9 @@
 ---
 name: pgrc
-description: PgRC (Pseudogenome-based Read Compressor) is a high-performance, in-memory tool specifically designed to compress the DNA sequence data within FASTQ files.
+description: PgRC is a high-performance tool designed to compress DNA sequence data from FASTQ files by building a pseudogenome. Use when user asks to compress single-end or paired-end reads, preserve read order during compression, or decompress .pgrc archives.
 homepage: https://github.com/kowallus/PgRC
 ---
+
 
 # pgrc
 

@@ -1,8 +1,9 @@
 ---
 name: cloudspades
-description: cloudspades is a specialized module of the SPAdes (St.
+description: cloudspades is a genome assembly tool designed to reconstruct genomes from linked-read sequencing data by utilizing molecular barcodes to resolve complex genomic regions. Use when user asks to assemble 10x Genomics data, perform Tell-Seq assembly, process haplotagging datasets, or conduct hybrid assemblies with linked reads.
 homepage: https://github.com/ablab/spades
 ---
+
 
 # cloudspades
 

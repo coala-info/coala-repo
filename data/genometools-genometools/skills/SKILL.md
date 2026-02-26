@@ -1,8 +1,9 @@
 ---
 name: genometools-genometools
-description: GenomeTools is a versatile suite of bioinformatics tools unified under the `gt` executable.
+description: GenomeTools is a versatile bioinformatics suite for processing structured genome annotations and large-scale sequence data using the gt executable. Use when user asks to validate or sort GFF3 files, convert between genomic formats, extract sequences from specific features, visualize annotations with AnnotationSketch, or perform LTR retrotransposon analysis.
 homepage: https://genometools.org
 ---
+
 
 # genometools-genometools
 

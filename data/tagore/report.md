@@ -3,7 +3,7 @@
 ## tagore
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build/fetch process.
+a utility for illustrating human chromosomes https://github.com/jordanlab/tagore
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tagore:1.1.2--pyhdfd78af_0
@@ -18,33 +18,18 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tagore:1.1.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: tagore [-h] [--version] -i <input.bed> [-p [output file prefix]] [-b [hg78/hg38]] [-f] [-ofmt [png/pdf]] [-v]
 
+tagore: a utility for illustrating human chromosomes https://github.com/jordanlab/tagore
 
-## Metadata
-- **Skill**: generated
-
-## tagore_rfmix2tagore
-
-### Tool Description
-The provided text does not contain help information as it is an error log from a container runtime (Apptainer/Singularity) failure. No arguments could be parsed from the input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tagore:1.1.2--pyhdfd78af_0
-- **Homepage**: https://github.com/jordanlab/tagore
-- **Package**: https://anaconda.org/channels/bioconda/packages/tagore/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tagore:1.1.2--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help                                              show this help message and exit
+  --version                                               Print the software version
+  -i <input.bed>, --input <input.bed>                     Input BED-like file
+  -p [output file prefix], --prefix [output file prefix]  Output prefix [Default: "out"]
+  -b [hg78/hg38], --build [hg78/hg38]                     Human genome build to use [Default: hg38]
+  -f, --force                                             Overwrite output files if they exist already
+  -ofmt [png/pdf], --oformat [png/pdf]                    Output format for conversion (pdf requires rsvg-convert)
+  -v, --verbose                                           Display verbose output
 ```
 

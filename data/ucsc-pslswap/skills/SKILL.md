@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslswap
-description: The `ucsc-pslswap` tool is a utility from the UCSC Genome Browser "kent" source suite designed to transpose the target and query fields within a PSL file.
+description: `ucsc-pslswap` transposes the target and query fields within a PSL file. Use when user asks to swap target and query fields in a PSL file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslswap
 

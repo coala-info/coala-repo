@@ -1,8 +1,9 @@
 ---
 name: plant_tribes_gene_family_integrator
-description: The GeneFamilyIntegrator is a core component of the PlantTribes comparative genomics framework.
+description: This tool integrates classified protein sequences into orthogroup gene families based on specific scaffold datasets and clustering methods. Use when user asks to integrate classified orthogroups, organize gene families for downstream alignment, or prepare protein sequences for phylogenetic analysis.
 homepage: https://github.com/dePamphilis/PlantTribes
 ---
+
 
 # plant_tribes_gene_family_integrator
 

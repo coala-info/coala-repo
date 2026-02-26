@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bgeecall
-description: the package is available on all platforms; click for details.
+description: BgeeCall generates statistically grounded present or absent gene expression calls from RNA-Seq data using reference intergenic regions to define background noise. Use when user asks to generate reliable expression calls, calculate null distributions from intergenic regions, or merge calls from multiple RNA-Seq libraries.
 homepage: https://bioconductor.org/packages/release/bioc/html/BgeeCall.html
 ---
+
 
 # bioconductor-bgeecall
 

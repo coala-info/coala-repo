@@ -1,8 +1,9 @@
 ---
 name: boquila
-description: boquila is a specialized tool for generating synthetic sequencing reads that preserve the nucleotide profile of a provided input file.
+description: "Boquila generates synthetic sequencing reads that preserve the nucleotide profile and k-mer frequencies of a provided model input file. Use when user asks to generate synthetic sequencing reads, create control datasets, simulate sequence-specific biases, or match k-mer frequencies from a model file."
 homepage: https://github.com/CompGenomeLab/boquila
 ---
+
 
 # boquila
 

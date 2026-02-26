@@ -1,8 +1,9 @@
 ---
 name: r-mvr
-description: R package mvr (documentation from project home).
+description: This tool performs joint adaptive mean-variance regularization and variance stabilization for high-dimensional multivariate data. Use when user asks to normalize omics data, compute regularized t-statistics, or generate diagnostic plots for mean-variance relationships.
 homepage: https://cran.r-project.org/web/packages/mvr/index.html
 ---
+
 
 # r-mvr
 

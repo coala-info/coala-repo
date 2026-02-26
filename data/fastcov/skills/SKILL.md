@@ -1,8 +1,9 @@
 ---
 name: fastcov
-description: fastcov is a high-performance Python utility designed to transform indexed BAM files into visual coverage plots.
+description: "fastcov is a high-performance utility that transforms indexed BAM files into visual coverage plots or CSV data. Use when user asks to generate genomic coverage plots, visualize depth across specific regions, or export alignment coverage to CSV format."
 homepage: https://github.com/RaverJay/fastcov
 ---
+
 
 # fastcov
 

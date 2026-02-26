@@ -1,14 +1,25 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: neighbor
+baseCommand:
+  - phylip
+  - neighbor
 label: phylip_neighbor
-doc: "Neighbor-Joining and UPGMA methods (PHYLIP package)\n\nTool homepage: http://evolution.genetics.washington.edu/phylip/"
-inputs: []
+doc: "Neighbor-joining method for constructing phylogenetic trees.\n\nTool homepage:
+  http://evolution.genetics.washington.edu/phylip/"
+inputs:
+  - id: infile
+    type: File
+    doc: Input file containing the distance matrix or sequence data.
+    inputBinding:
+      position: 1
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outfile
+    type:
+      - 'null'
+      - File
+    doc: Output file for the phylogenetic tree.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/phylip:3.697--h470a237_0
-stdout: phylip_neighbor.out

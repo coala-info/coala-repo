@@ -1,9 +1,9 @@
 # fastreer CWL Generation Report
 
-## fastreer
+## fastreer_fastreeR
 
 ### Tool Description
-FastReer (Note: The provided input text contains container runtime error messages regarding disk space and does not contain the actual help documentation or argument definitions for the tool).
+fastreeR CLI: Calculate distance matrices and phylogenetic trees from VCF or FASTA files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastreer:2.1.3--pyhdfd78af_0
@@ -18,11 +18,34 @@ FastReer (Note: The provided input text contains container runtime error message
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastreer:2.1.3--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3154355515: no space left on device
+usage: fastreeR.py [-h] [--lib LIB] [--mem MEM] [--pipe-stderr] [--version]
+                   [--check] [--extraVerbose]
+                   {VCF2DIST,VCF2TREE,DIST2TREE,FASTA2DIST,VCF2EMB} ...
+
+fastreeR CLI: Calculate distance matrices and phylogenetic trees from VCF or
+FASTA files Citation: Anestis Gkanogiannis (2016) .A scalable assembly-free
+variable selection algorithm for biomarker discovery from metagenomes. BMC
+Bioinformatics 17, 311 (2016) https://doi.org/10.1186/s12859-016-1186-3
+https://github.com/gkanogiannis/fastreeR
+
+positional arguments:
+  {VCF2DIST,VCF2TREE,DIST2TREE,FASTA2DIST,VCF2EMB}
+    VCF2DIST            Compute distance matrix from VCF(s)
+    VCF2TREE            Compute tree from VCF(s)
+    DIST2TREE           Compute tree from distance matrix
+    FASTA2DIST          Compute distance matrix from FASTA(s)
+    VCF2EMB             Generate variant embeddings from VCF using BioFM
+                        genomic language model
+
+options:
+  -h, --help            show this help message and exit
+  --lib LIB             Path to JAR library folder (default:
+                        /usr/local/share/fastreer-2.1.3-0)
+  --mem MEM             Max RAM for JVM in MB (default: 256)
+  --pipe-stderr         Pipe Java stderr to CLI (default: direct passthrough
+                        to terminal)
+  --version             Print version information and exit
+  --check               Test Java and backend availability
+  --extraVerbose        Print extra messages on stderr (default: false)
 ```
 
-
-## Metadata
-- **Skill**: generated

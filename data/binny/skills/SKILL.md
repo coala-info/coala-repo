@@ -1,8 +1,9 @@
 ---
 name: binny
-description: binny is an automated binning algorithm designed to recover high-quality Metagenome-Assembled Genomes (MAGs) from metagenomic datasets.
+description: binny is an automated binning algorithm that recovers high-quality Metagenome-Assembled Genomes from metagenomic datasets by integrating contig sequences with abundance information. Use when user asks to initialize binning environments, perform dry runs, or execute genome reconstruction workflows on local or cluster environments.
 homepage: https://github.com/a-h-b/binny
 ---
+
 
 # binny
 

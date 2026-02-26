@@ -1,9 +1,9 @@
 # lepwrap CWL Generation Report
 
-## lepwrap
+## lepwrap_LepWrap
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for lepwrap; it contains system logs and a fatal error regarding container image creation (no space left on device).
+Perform the modules of Lep-Map3 and/or Lep-Anchor
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/lepwrap:5.0--hdfd78af_0
@@ -18,11 +18,12 @@ The provided text does not contain help information or usage instructions for le
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/lepwrap:5.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1624707049: no space left on device
+Perform the modules of Lep-Map3 and/or Lep-Anchor
+A config file (default: config.yml) must be configured (one was created for you)
+The second positional argument is optional if your config file is named config.yml
+
+[01;32m[usage][0m   LepWrap <# of threads> <config.yml>
+[01;32m[example][0m LepWrap 16
+[01;32m[example][0m LepWrap 30 kosambi.20iterations.yml
 ```
 
-
-## Metadata
-- **Skill**: generated

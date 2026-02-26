@@ -1,8 +1,9 @@
 ---
 name: dsrc
-description: The `dsrc` (DNA Sequence Reads Compressor) tool is a specialized utility designed for the efficient handling of FASTQ files.
+description: The dsrc tool provides high-efficiency compression and decompression for FASTQ files using domain-specific algorithms for genomic data. Use when user asks to compress DNA sequence reads, decompress .dsrc archives, or optimize storage for large-scale genomic datasets.
 homepage: https://github.com/refresh-bio/DSRC
 ---
+
 
 # dsrc
 

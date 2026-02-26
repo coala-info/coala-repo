@@ -1,8 +1,9 @@
 ---
 name: bioconductor-citrusprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and array coordinates for the Affymetrix Citrus genome microarray. Use when user asks to retrieve probe sequences, access x/y coordinates on the Citrus array, or perform low-level microarray analysis using Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/citrusprobe.html
 ---
+
 
 # bioconductor-citrusprobe
 

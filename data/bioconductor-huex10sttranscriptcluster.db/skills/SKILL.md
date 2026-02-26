@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huex10sttranscriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides Bioconductor annotation data for the Affymetrix Human Exon 1.0 ST GeneChip at the transcript cluster level. Use when user asks to map manufacturer probe identifiers to biological annotations, retrieve gene symbols, or find functional data like GO terms and KEGG pathways for this specific array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex10sttranscriptcluster.db.html
 ---
+
 
 # bioconductor-huex10sttranscriptcluster.db
 

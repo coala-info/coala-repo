@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hthgu133bcdf
-description: the package is available on all platforms; click for details.
+description: This package provides Chip Definition File mapping and coordinate conversion for the Affymetrix HT Human Genome U133B microarray. Use when user asks to map probe coordinates to indices, access CDF environment metadata, or convert between 2D chip layouts and 1D indices for this specific array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hthgu133bcdf.html
 ---
+
 
 # bioconductor-hthgu133bcdf
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hugene10stv1cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix GeneChip Human Gene 1.0 ST v1 array. Use when user asks to map probe coordinates to indices, access chip dimensions, or analyze microarray data from the Human Gene 1.0 ST v1 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hugene10stv1cdf.html
 ---
+
 
 # bioconductor-hugene10stv1cdf
 

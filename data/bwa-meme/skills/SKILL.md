@@ -1,8 +1,9 @@
 ---
 name: bwa-meme
-description: BWA-MEME is a performance-optimized version of BWA-MEM2 that utilizes a machine learning approach (learned-indexes) to accelerate DNA sequence alignment.
+description: BWA-MEME is a performance-optimized DNA sequence aligner that uses learned-indexes to accelerate the mapping of reads to a reference genome. Use when user asks to index a reference genome with a machine learning model, train a P-RMI index, or perform high-speed sequence alignment.
 homepage: https://github.com/kaist-ina/BWA-MEME
 ---
+
 
 # bwa-meme
 

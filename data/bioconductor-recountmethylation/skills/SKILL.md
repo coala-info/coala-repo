@@ -1,8 +1,9 @@
 ---
 name: bioconductor-recountmethylation
-description: the package is available on all platforms; click for details.
+description: The recountmethylation package provides access to a large collection of uniformly processed DNA methylation data from the Gene Expression Omnibus. Use when user asks to download processed DNA methylation datasets, access cross-study epigenetic data, or perform large-scale methylation analyses.
 homepage: https://bioconductor.org/packages/release/bioc/html/recountmethylation.html
 ---
+
 
 # bioconductor-recountmethylation
 

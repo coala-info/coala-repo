@@ -1,8 +1,9 @@
 ---
 name: phylocsf
-description: PhyloCSF (Phylogenetic Codon Substitution Frequencies) is a comparative genomics tool used to identify conserved protein-coding regions within multi-species nucleotide sequence alignments.
+description: PhyloCSF identifies conserved protein-coding regions in multi-species nucleotide sequence alignments by analyzing evolutionary signatures. Use when user asks to distinguish between protein-coding genes and non-coding RNAs, identify coding potential in novel transcripts, or evaluate alignments using phylogenetic codon substitution frequencies.
 homepage: https://github.com/mlin/PhyloCSF/wiki
 ---
+
 
 # phylocsf
 

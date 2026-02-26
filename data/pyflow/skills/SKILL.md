@@ -1,8 +1,9 @@
 ---
 name: pyflow
-description: PyFlow is a modular, general-purpose visual scripting framework for Python.
+description: PyFlow is a modular visual scripting framework for Python that allows users to build and execute logic through a node-based interface. Use when user asks to create visual dataflow pipelines, convert Python functions into reusable nodes, or execute node-based graphs in GUI or headless environments.
 homepage: https://github.com/pedroCabrera/PyFlow
 ---
+
 
 # pyflow
 

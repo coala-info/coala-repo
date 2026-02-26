@@ -1,8 +1,9 @@
 ---
 name: tadtool
-description: TADtool is a specialized utility for Hi-C data analysis that helps researchers determine the most biologically meaningful parameters for TAD-calling algorithms.
+description: TADtool is a utility for Hi-C data analysis that enables interactive visualization and parameter optimization for identifying Topologically Associating Domains. Use when user asks to find optimal TAD-calling parameters, visualize insulation indices or directionality indices, and generate domain calls from contact matrices.
 homepage: https://github.com/vaquerizaslab/tadtool
 ---
+
 
 # tadtool
 

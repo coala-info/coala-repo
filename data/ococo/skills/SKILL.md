@@ -1,8 +1,9 @@
 ---
 name: ococo
-description: Ococo is a high-performance tool for "online" variant calling, meaning it processes sequence alignments as they arrive in a stream.
+description: Ococo performs online variant calling and consensus generation by processing sequence alignments in a stream using memory-efficient bit-counters. Use when user asks to call variants in VCF format, generate consensus sequences in FASTA format, or process alignment data from a pipe without intermediate storage.
 homepage: http://github.com/karel-brinda/ococo
 ---
+
 
 # ococo
 

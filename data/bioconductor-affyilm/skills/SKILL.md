@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyilm
-description: the package is available on all platforms; click for details.
+description: The affyILM package uses a physical model based on the Langmuir isotherm to estimate gene expression concentrations in picoMolar from raw Affymetrix CEL files. Use when user asks to estimate gene expression concentrations, preprocess Affymetrix microarrays using the Integrated Langmuir Model, or visualize Langmuir isotherm fits for probesets.
 homepage: https://bioconductor.org/packages/release/bioc/html/affyILM.html
 ---
+
 
 # bioconductor-affyilm
 

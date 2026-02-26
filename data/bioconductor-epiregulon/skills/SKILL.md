@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epiregulon
-description: the package is available on all platforms; click for details.
+description: This tool constructs gene regulatory networks and infers transcription factor activity by integrating single-cell RNA-seq and ATAC-seq data. Use when user asks to identify peak-to-gene links, construct regulons using ChIP-seq or motif data, prune regulatory networks, or calculate single-cell transcription factor activity scores.
 homepage: https://bioconductor.org/packages/release/bioc/html/epiregulon.html
 ---
+
 
 # bioconductor-epiregulon
 

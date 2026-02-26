@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hapmap500ksty
-description: the package is available on all platforms; click for details.
+description: This package provides sample Affymetrix 500K Sty SNP array data from the HapMap project for demonstration and testing purposes. Use when user asks to load sample CEL files, test genotyping algorithms, or practice preprocessing workflows with the oligo package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/hapmap500ksty.html
 ---
+
 
 # bioconductor-hapmap500ksty
 

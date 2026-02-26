@@ -1,8 +1,9 @@
 ---
 name: telosearchlr
-description: TeloSearchLR is a specialized tool designed to scan the terminal regions of long sequencing reads to identify tandemly repeated motifs characteristic of telomeres.
+description: TeloSearchLR scans the terminal regions of long sequencing reads to identify and rank tandemly repeated telomeric motifs. Use when user asks to discover telomere repeat motifs, perform exhaustive motif searches, or verify specific motifs in long-read sequencing data.
 homepage: https://github.com/gchchung/TeloSearchLR
 ---
+
 
 # telosearchlr
 

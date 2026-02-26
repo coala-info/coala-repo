@@ -1,9 +1,9 @@
 # ensemblcov CWL Generation Report
 
-## ensemblcov
+## ensemblcov_threaded-auto
 
 ### Tool Description
-The provided text does not contain help information for the tool, but appears to be a system error log regarding a container execution failure (no space left on device).
+threaded version of ensembl auto gene conversion
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
@@ -12,17 +12,165 @@ The provided text does not contain help information for the tool, but appears to
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
-- **Total Downloads**: 287
+- **Total Downloads**: 290
 - **Last updated**: 2025-07-21
 - **GitHub**: https://github.com/IBCHgenomic/ensemlcov
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2258658712: no space left on device
+threaded version of ensembl auto gene conversion
+
+Usage: ensemblcov threaded-auto <GENERATE>
+
+Arguments:
+  <GENERATE>  provide yes as argument
+
+Options:
+  -h, --help  Print help
+```
+
+
+## ensemblcov_auto-generate
+
+### Tool Description
+autogenerate the ensemble gene conversion
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+autogenerate the ensemble gene conversion
+
+Usage: ensemblcov auto-generate <GENERATE>
+
+Arguments:
+  <GENERATE>  provide yes as argument
+
+Options:
+  -h, --help  Print help
+```
+
+
+## ensemblcov_gtf-annotate-generate
+
+### Tool Description
+Generate annotations from GTF files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+error: unexpected argument '--h' found
+
+  tip: a similar argument exists: '--help'
+
+Usage: ensemblcov gtf-annotate-generate --help <GTF>
+
+For more information, try '--help'.
+```
+
+
+## ensemblcov_countconvert
+
+### Tool Description
+Convert counts from one format to another.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+error: unexpected argument '--h' found
+
+  tip: a similar argument exists: '--help'
+
+Usage: ensemblcov countconvert --help <COUNTS>
+
+For more information, try '--help'.
+```
+
+
+## ensemblcov_differentialexpression
+
+### Tool Description
+id convert from differential expression
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+id convert from differential expression
+
+Usage: ensemblcov differentialexpression <DIFFERNTIALEXPRESSION>
+
+Arguments:
+  <DIFFERNTIALEXPRESSION>  path to the differential expression
+
+Options:
+  -h, --help  Print help
+```
+
+
+## ensemblcov_gene-ensembl
+
+### Tool Description
+For more information, try '--help'.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+error: unexpected argument '--h' found
+
+  tip: a similar argument exists: '--help'
+
+Usage: ensemblcov gene-ensembl --help <ENSEMBLID>
+
+For more information, try '--help'.
+```
+
+
+## ensemblcov_exon-ensembl
+
+### Tool Description
+Generates exon-ensembl coverage data.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/ensemblcov:0.1.0--h4349ce8_0
+- **Homepage**: https://github.com/IBCHgenomic/ensemlcov
+- **Package**: https://anaconda.org/channels/bioconda/packages/ensemblcov/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+error: unexpected argument '--h' found
+
+  tip: a similar argument exists: '--help'
+
+Usage: ensemblcov exon-ensembl --help <EXONENSEMBL>
+
+For more information, try '--help'.
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

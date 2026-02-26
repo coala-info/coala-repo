@@ -1,8 +1,9 @@
 ---
 name: junit-xml
-description: The `junit-xml` library allows you to construct JUnit XML documents by defining test cases and grouping them into test suites.
+description: The junit-xml library creates JUnit XML documents by defining test cases and grouping them into test suites for CI server reporting. Use when user asks to generate JUnit XML reports, create test suites and cases in Python, or export test results to XML files.
 homepage: https://github.com/kyrus/python-junit-xml
 ---
+
 
 # junit-xml
 

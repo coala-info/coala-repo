@@ -1,8 +1,9 @@
 ---
 name: pyamilyseq
-description: PyamilySeq is a pangenome investigation suite designed to group gene sequences into families based on sequence similarity.
+description: PyamilySeq is a pangenome investigation suite that groups gene sequences into families based on sequence similarity and generates presence-absence reports. Use when user asks to perform pangenome analysis, cluster gene sequences into families, add novel sequences to an existing pangenome, or generate alignments for phylogenomic trees.
 homepage: https://github.com/NickJD/PyamilySeq
 ---
+
 
 # pyamilyseq
 

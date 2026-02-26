@@ -1,8 +1,9 @@
 ---
 name: scoary
-description: Scoary is a specialized tool for microbial pan-genome wide association studies.
+description: Scoary performs microbial pan-genome wide association studies by calculating the statistical association between gene presence/absence and binary phenotypic traits. Use when user asks to identify genes associated with a specific phenotype, perform a pan-genome wide association study, or convert VCF files into a format suitable for association analysis.
 homepage: https://github.com/AdmiralenOla/Scoary
 ---
+
 
 # scoary
 

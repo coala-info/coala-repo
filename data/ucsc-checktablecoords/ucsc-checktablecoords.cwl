@@ -1,11 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ucsc-checktablecoords
+baseCommand: checkTableCoords
 label: ucsc-checktablecoords
-doc: "A tool to check table coordinates. Note: The provided help text contains container
-  runtime error messages and does not list specific usage instructions or arguments.\n
-  \nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Check that table coordinates are within chromosome sizes.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: database
+    type: string
+    doc: The database name (e.g., hg19).
+    inputBinding:
+      position: 1
+  - id: table
+    type: string
+    doc: The table name to check.
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

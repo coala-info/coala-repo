@@ -1,8 +1,9 @@
 ---
 name: sciphi
-description: SCIPhI (Single-cell mutation identification via phylogenetic inference) is a specialized tool for somatic mutation calling in single-cell sequencing (SCS) data.
+description: SCIPhI identifies somatic mutations and infers tumor phylogeny from single-cell sequencing data using a joint probabilistic model. Use when user asks to call mutations in single cells, estimate evolutionary trees, or account for allelic dropout in sequencing data.
 homepage: https://github.com/cbg-ethz/SCIPhI
 ---
+
 
 # sciphi
 

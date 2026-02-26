@@ -1,8 +1,9 @@
 ---
 name: samhaplotag
-description: samhaplotag is a specialized suite of tools designed to manage barcode metadata within SAM-formatted sequencing data.
+description: samhaplotag manages and converts barcode metadata within SAM-formatted sequencing data to facilitate haplotagging workflows. Use when user asks to convert BC and QT tags to RX, QX, and BX tags, reformat barcodes for 10x Genomics pipelines, or generate generic 16-base barcodes for downstream analysis.
 homepage: https://github.com/wtsi-hpag/SamHaplotag
 ---
+
 
 # samhaplotag
 

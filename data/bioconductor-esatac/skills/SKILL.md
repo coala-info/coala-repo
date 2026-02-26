@@ -1,8 +1,9 @@
 ---
 name: bioconductor-esatac
-description: The package is managed by dataflow graph. It is easy for user to pass variables seamlessly between processes and understand the workflow. Users can process FASTQ files through end-to-end preset pipeline which produces a pretty HTML report for quality control and preliminary statistical results, or customize workflow starting from any intermediate stages with esATAC functions easily and flexibly.
+description: bioconductor-esatac provides a systematic, end-to-end pipeline for analyzing ATAC-seq and DNase-seq data within the R environment. Use when user asks to process raw FASTQ files, align reads to a reference genome, call peaks, annotate genomic features, or generate quality control reports for chromatin accessibility data.
 homepage: https://bioconductor.org/packages/release/bioc/html/esATAC.html
 ---
+
 
 # bioconductor-esatac
 

@@ -1,8 +1,9 @@
 ---
 name: pyensembl
-description: PyEnsembl is a Python library and command-line tool designed to simplify access to genomic annotations.
+description: PyEnsembl is a Python library and command-line tool that automates the downloading, indexing, and querying of genomic annotations from Ensembl. Use when user asks to download genomic data, lookup genes by ID or name, find genomic features at a specific locus, or manage local SQLite databases of GTF and FASTA files.
 homepage: https://github.com/openvax/pyensembl
 ---
+
 
 # pyensembl
 

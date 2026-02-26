@@ -1,8 +1,9 @@
 ---
 name: ucsc-htmlcheck
-description: The `htmlCheck` utility is a command-line tool from the UCSC Genome Browser "kent" source tree.
+description: The `ucsc-htmlcheck` tool verifies HTML files for well-formedness and common errors. Use when user asks to audit HTML files, check for broken internal or external links, verify tag consistency, or validate local and remote HTML files.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-htmlcheck
 

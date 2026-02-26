@@ -1,8 +1,9 @@
 ---
 name: biomaj3
-description: BioMAJ3 is a workflow engine dedicated to the management of biological data banks.
+description: BioMAJ3 is a workflow engine that automates the management and update cycle of biological data banks. Use when user asks to install the tool with a PostgreSQL backend, configure bank properties, monitor workflow status, or manage session history.
 homepage: https://github.com/horkko/biomaj-postgres
 ---
+
 
 # biomaj3
 

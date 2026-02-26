@@ -2,16 +2,62 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ontime
 label: ontime
-doc: "Real-time monitoring of Nanopore sequencing. (Note: The provided text is an
-  error log indicating a failure to build the container image due to lack of disk
-  space and does not contain the tool's help documentation or argument definitions.)\n
-  \nTool homepage: https://github.com/mbhall88/ontime"
-inputs: []
+doc: "Extract subsets of ONT (Nanopore) reads based on time\n\nTool homepage: https://github.com/mbhall88/ontime"
+inputs:
+  - id: input_file
+    type: File
+    doc: Input fastq/fasta/BAM/SAM file
+    inputBinding:
+      position: 1
+  - id: compress_level
+    type:
+      - 'null'
+      - int
+    doc: Compression level to use if compressing fastq output
+    default: 6
+    inputBinding:
+      position: 102
+      prefix: --compress-level
+  - id: from_time
+    type:
+      - 'null'
+      - string
+    doc: Earliest start time; otherwise the earliest time is used
+    inputBinding:
+      position: 102
+      prefix: --from
+  - id: output_type
+    type:
+      - 'null'
+      - string
+    doc: '(fastq/a output only) u: uncompressed; b: Bzip2; g: Gzip; l: Lzma'
+    inputBinding:
+      position: 102
+      prefix: --output-type
+  - id: show
+    type:
+      - 'null'
+      - boolean
+    doc: Show the earliest and latest start times in the input and exit
+    inputBinding:
+      position: 102
+      prefix: --show
+  - id: to_time
+    type:
+      - 'null'
+      - string
+    doc: Latest start time; otherwise the latest time is used
+    inputBinding:
+      position: 102
+      prefix: --to
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type:
+      - 'null'
+      - File
+    doc: Output file name
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/ontime:0.3.1--hc1c3326_2
-stdout: ontime.out
+    dockerPull: quay.io/biocontainers/ontime:0.3.1--h031d066_0

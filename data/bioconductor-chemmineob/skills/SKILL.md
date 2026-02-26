@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chemmineob
-description: the package is available on all platforms; click for details.
+description: ChemmineOB provides an R interface to the OpenBabel C++ library for high-performance chemical data processing and cheminformatics tasks. Use when user asks to convert chemical file formats, calculate molecular descriptors, generate fingerprints, or access the OpenBabel API within R.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChemmineOB.html
 ---
+
 
 # bioconductor-chemmineob
 

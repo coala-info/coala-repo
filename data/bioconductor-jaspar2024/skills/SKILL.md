@@ -1,8 +1,9 @@
 ---
 name: bioconductor-jaspar2024
-description: the package is available on all platforms; click for details.
+description: This tool provides a local SQLite interface to access and query the JASPAR 2024 database of transcription factor binding profiles. Use when user asks to retrieve DNA-binding motifs, query transcription factor metadata, or access curated position frequency matrices across various taxa.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/JASPAR2024.html
 ---
+
 
 # bioconductor-jaspar2024
 

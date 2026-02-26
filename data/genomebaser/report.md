@@ -1,9 +1,9 @@
 # genomebaser CWL Generation Report
 
-## genomebaser
+## genomebaser_GenomeBaser
 
 ### Tool Description
-A tool for genome base analysis (Note: The provided text contains container runtime error messages rather than tool help documentation, so no arguments could be extracted).
+GenomeBaser is tool to manage complete (bacterial) genomes from the NCBI.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genomebaser:0.1.2--py27_1
@@ -18,11 +18,24 @@ A tool for genome base analysis (Note: The provided text contains container runt
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genomebaser:0.1.2--py27_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1155401146: no space left on device
+Usage: GenomeBaser [OPTIONS] GENUS SPECIES OUT_DATABASE_LOCATION
+
+  GenomeBaser is tool to manage complete (bacterial) genomes from the NCBI.
+
+  Example usage:
+
+      $ GenomeBaser.py Klebsiella pneumoniae ~/dbs
+
+      $ # (wait a few months)...
+
+      $ GenomeBaser Klebsiella pneumoniae ~/dbs
+
+  By Mitchell Stanton-Cook (m.stantoncook@gmail.com)
+
+  **More info at:** https://github.com/mscook/GenomeBaser
+
+Options:
+  --check_deps / --no-check_deps  Check that non-python dependencies exist
+  --help                          Show this message and exit.
 ```
 
-
-## Metadata
-- **Skill**: generated

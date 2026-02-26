@@ -1,8 +1,9 @@
 ---
 name: bio2zarr
-description: bio2zarr is a specialized utility designed to bridge the gap between legacy bioinformatics file formats and modern, distributed computing frameworks.
+description: bio2zarr converts VCF and PLINK files into Zarr stores for efficient, parallelized genomic data analysis. Use when user asks to convert VCF files to Zarr, transform PLINK datasets into Zarr format, or optimize large-scale genotype data for distributed computing.
 homepage: https://sgkit-dev.github.io/bio2zarr/
 ---
+
 
 # bio2zarr
 

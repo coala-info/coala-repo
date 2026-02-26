@@ -1,8 +1,9 @@
 ---
 name: aci
-description: The provided text appears to be a system log or error message from a container runtime (Apptainer/Singularity) rather than the help text for the 'aci' tool itself. As a result, no command-line arguments, flags, or descriptions of the tool's functionality could be extracted from the input.
+description: The Amplicon Coverage Inspector evaluates sequencing coverage at the amplicon level to distinguish between total and unique read depths. Use when user asks to perform quality control on amplicon-based sequencing, identify amplicon dropouts, or assess coverage uniformity across tiled schemes.
 homepage: https://github.com/erinyoung/ACI
 ---
+
 
 # aci
 

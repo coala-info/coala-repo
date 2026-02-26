@@ -1,8 +1,9 @@
 ---
 name: sprinter
-description: SPRINTER (Single-cell Proliferation Rate Inference in Non-homogeneous Tumours through Evolutionary Routes) is a specialized bioinformatics tool for inferring the growth dynamics of tumor clones.
+description: SPRINTER infers clonal proliferation rates and identifies replicating cells from single-cell DNA sequencing data. Use when user asks to infer tumor growth dynamics, identify cells in S-phase, or estimate proliferation rates at a clonal level.
 homepage: https://github.com/zaccaria-lab/SPRINTER
 ---
+
 
 # sprinter
 

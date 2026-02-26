@@ -2,10 +2,77 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: igda_pipe_phase_pb
 label: igda-script_igda_pipe_phase_pb
-doc: "The provided text does not contain help information for the tool. It contains
-  system log messages and a fatal error indicating a failure to build the container
-  image due to insufficient disk space.\n\nTool homepage: https://github.com/zhixingfeng/shell"
-inputs: []
+doc: "Performs phasing of pangenome graphs.\n\nTool homepage: https://github.com/zhixingfeng/shell"
+inputs:
+  - id: indir
+    type: Directory
+    doc: Input directory
+    inputBinding:
+      position: 1
+  - id: reffile
+    type: File
+    doc: Reference file
+    inputBinding:
+      position: 2
+  - id: outdir
+    type: Directory
+    doc: Output directory
+    inputBinding:
+      position: 3
+  - id: max_nn
+    type:
+      - 'null'
+      - int
+    doc: maximal number of nearest neighbors
+    default: 50
+    inputBinding:
+      position: 104
+      prefix: -m
+  - id: min_cvg
+    type:
+      - 'null'
+      - int
+    doc: minimal coverage of each contig
+    default: 10
+    inputBinding:
+      position: 104
+      prefix: -c
+  - id: min_jaccard_index
+    type:
+      - 'null'
+      - float
+    doc: minimal jaccard index for find_nccontigs and tred
+    default: 2.0
+    inputBinding:
+      position: 104
+      prefix: -j
+  - id: min_nn
+    type:
+      - 'null'
+      - int
+    doc: minimal number of nearest neighbors
+    default: 25
+    inputBinding:
+      position: 104
+      prefix: -t
+  - id: niter
+    type:
+      - 'null'
+      - int
+    doc: maximal number of iteration in ANN
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -b
+  - id: nthread
+    type:
+      - 'null'
+      - int
+    doc: number of threads
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -n
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: nest
-description: NEST is a specialized simulation environment designed for spiking neural network models of varying complexity, from simple integrate-and-fire neurons to detailed biophysical models.
+description: NEST is a simulation environment designed for large-scale spiking neural network models. Use when user asks to create neural nodes, establish synaptic connections, simulate network dynamics, or record membrane potentials and spikes.
 homepage: http://www.nest-simulator.org/
 ---
+
 
 # nest
 

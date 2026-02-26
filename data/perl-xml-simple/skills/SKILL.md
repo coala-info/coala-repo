@@ -1,8 +1,9 @@
 ---
 name: perl-xml-simple
-description: The `XML::Simple` module provides a straightforward API for transforming XML into nested Perl data structures and vice versa.
+description: This tool converts XML files or strings into nested Perl data structures and transforms Perl hashes or arrays back into XML. Use when user asks to parse XML into Perl hashes, generate XML from Perl data, or configure XML processing options like ForceArray and KeyAttr.
 homepage: http://metacpan.org/pod/XML-Simple
 ---
+
 
 # perl-xml-simple
 

@@ -1,8 +1,9 @@
 ---
 name: r-factominer
-description: R package factominer (documentation from project home).
+description: FactoMineR is an R package for multivariate exploratory data analysis that provides advanced geometrical methods for analyzing structured datasets. Use when user asks to perform principal component analysis, correspondence analysis, multiple factor analysis, or hierarchical clustering on principal components.
 homepage: https://cran.r-project.org/web/packages/factominer/index.html
 ---
+
 
 # r-factominer
 

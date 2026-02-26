@@ -1,8 +1,9 @@
 ---
 name: ucsc-blat
-description: BLAT (Blast-Like Alignment Tool) is designed for rapid searching and alignment of DNA or protein sequences.
+description: BLAT is a tool for rapid searching and alignment of DNA or protein sequences. Use when user asks to align DNA or protein sequences, map mRNA to genomic DNA, identify homologous regions, perform translated alignments, create 2bit files, or filter alignment results.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-blat
 

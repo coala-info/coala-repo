@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneplast
-description: the package is available on all platforms; click for details.
+description: This tool performs evolutionary analysis of orthologous groups using the Bridge algorithm to infer gene roots and calculate evolutionary plasticity indices. Use when user asks to determine the evolutionary root of genes, calculate evolutionary plasticity indices, or map ancestral information onto protein-protein interaction and regulatory networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/geneplast.html
 ---
+
 
 # bioconductor-geneplast
 

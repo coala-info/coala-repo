@@ -1,8 +1,9 @@
 ---
 name: gnali
-description: gNALI (gene Nonessentiality And Loss-of-function Identifier) is a bioinformatics tool used to find and filter high-confidence loss-of-function variants.
+description: gNALI identifies and filters high-confidence loss-of-function variants to help researchers find potentially nonessential genes in humans. Use when user asks to identify nonessential genes, filter high-confidence loss-of-function variants, or analyze gene lists using gnomAD or custom variation data.
 homepage: https://github.com/phac-nml/gnali
 ---
+
 
 # gnali
 

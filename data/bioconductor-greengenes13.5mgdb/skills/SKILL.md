@@ -1,8 +1,9 @@
 ---
 name: bioconductor-greengenes13.5mgdb
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides access to the Greengenes 13.5 16S rRNA database for taxonomic and sequence queries within R. Use when user asks to retrieve 16S rRNA sequences, query taxonomic information, or access Greengenes reference data for microbiome analysis.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/greengenes13.5MgDb.html
 ---
+
 
 # bioconductor-greengenes13.5mgdb
 

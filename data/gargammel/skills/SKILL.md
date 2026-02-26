@@ -1,8 +1,9 @@
 ---
 name: gargammel
-description: gargammel is a specialized simulation suite that models the end-to-end process of ancient DNA retrieval.
+description: gargammel is a simulation suite that generates synthetic ancient DNA sequencing reads by modeling degradation, deamination, and contamination. Use when user asks to simulate ancient DNA fragments, model post-mortem damage, or generate synthetic sequencing datasets with specific contamination levels.
 homepage: https://github.com/grenaud/gargammel
 ---
+
 
 # gargammel
 

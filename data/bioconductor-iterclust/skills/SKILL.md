@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iterclust
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides a framework for performing iterative clustering to identify subtle sub-populations within heterogeneous biological datasets. Use when user asks to perform recursive clustering, evaluate cluster heterogeneity, or identify nested cell types in expression data.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/iterClust.html
 ---
+
 
 # bioconductor-iterclust
 

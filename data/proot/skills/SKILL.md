@@ -1,8 +1,9 @@
 ---
 name: proot
-description: This skill enables the management of Linux distributions on Android via Termux.
+description: This tool manages Linux distributions on Android via Termux without requiring root privileges. Use when user asks to list, install, remove, login to, backup, or restore Linux distributions.
 homepage: https://github.com/termux/proot-distro
 ---
+
 
 # proot
 

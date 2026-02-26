@@ -1,8 +1,9 @@
 ---
 name: zgtf
-description: The `zgtf` tool is a specialized command-line utility designed for the conversion and processing of GTF files.
+description: `zgtf` converts and processes GTF files for genomics workflows. Use when user asks to 'convert GTF files', 'process GTF files', 'convert annotation formats', 'prepare gene models'.
 homepage: The package home page
 ---
+
 
 # zgtf
 

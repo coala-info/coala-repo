@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gemini
-description: the package is available on all platforms; click for details.
+description: The gemini package implements a variational Bayes approach to identify genetic interactions and calculate interaction scores from pairwise CRISPR knockout screens. Use when user asks to identify synergistic or buffering gene relationships, analyze dual-guide CRISPR screens, or calculate interaction significance values from guide counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/gemini.html
 ---
+
 
 # bioconductor-gemini
 

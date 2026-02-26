@@ -3,7 +3,7 @@
 ## legsta
 
 ### Tool Description
-Legionella pneumophila Sequence Typing from Assemblies
+Legionella in silico SBT typing of contig sequences
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/legsta:0.5.2--hdfd78af_0
@@ -18,11 +18,21 @@ Legionella pneumophila Sequence Typing from Assemblies
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/legsta:0.5.2--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2197728618: no space left on device
+NAME
+  legsta 0.5.2
+SYNPOSIS
+  Legionella in silico SBT typing of contig sequences
+USAGE
+  legsta [options] <contigs.fa> ... 
+OPTIONS
+  --help       This help.
+  --version    Print version and exit.
+  --quiet      Don't print anything to stderr.
+  --debug+     Verbose debug output to stderr (default '0').
+  --dbdir=s    SBT database folder (default '/usr/local/db').
+  --csv        Output CSV instead of TSV (default '0').
+  --noheader   Don't print header row (default '0').
+HOMEPAGE
+  https://github.com/tseemann/legsta
 ```
 
-
-## Metadata
-- **Skill**: generated

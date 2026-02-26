@@ -3,7 +3,7 @@
 ## gtfsort
 
 ### Tool Description
-A tool for sorting GTF files (Note: The provided text contains container runtime error messages rather than the tool's help documentation).
+An optimized chr/pos/feature GTF2.5-3 sorter using a lexicographic-based index ordering algorithm written in Rust.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gtfsort:0.2.2--ha6fb395_2
@@ -18,11 +18,15 @@ A tool for sorting GTF files (Note: The provided text contains container runtime
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gtfsort:0.2.2--ha6fb395_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4076709060: no space left on device
+An optimized chr/pos/feature GTF2.5-3 sorter using a lexicographic-based index ordering algorithm written in Rust.
+
+Usage: gtfsort [OPTIONS] --input <UNSORTED> --output <OUTPUT>
+
+Options:
+  -i, --input <UNSORTED>   Path to unsorted GTF file
+  -o, --output <OUTPUT>    Path to output sorted GTF file
+  -t, --threads <THREADS>  Number of threads [default: 20]
+  -h, --help               Print help
+  -V, --version            Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

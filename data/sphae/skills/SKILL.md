@@ -1,8 +1,9 @@
 ---
 name: sphae
-description: Sphae is a specialized bioinformatic toolkit designed for the assembly and functional annotation of pure culture phages.
+description: Sphae is a bioinformatic toolkit for the automated assembly and functional annotation of pure culture phage genomes. Use when user asks to install phage databases, run the full assembly and annotation pipeline for Illumina or Nanopore reads, or perform functional annotation on existing phage genomes.
 homepage: https://github.com/linsalrob/sphae/
 ---
+
 
 # sphae
 

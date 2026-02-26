@@ -1,8 +1,9 @@
 ---
 name: bioconductor-excluster
-description: the package Rsubread. Library sizes are normalized across all biological replicates, and ExCluster then compares two different conditions to detect signifcantly differentially spliced genes. This process requires at least two independent biological repliates per condition, and ExCluster accepts only exactly two conditions at a time. ExCluster ultimately produces false discovery rates (FDRs) per gene, which are used to detect significance. Exon log2 fold change (log2FC) means and variances may be plotted for each significantly differentially spliced gene, which helps scientists develop hypothesis and target differential splicing events for RT-qPCR validation in the wet lab.
+description: Bioconductor-excluster detects differentially spliced genes in RNA-seq data by comparing exon-level expression between two biological conditions. Use when user asks to identify differential splicing, convert GTF files to flattened GFF format, count exon-level reads from BAM files, or visualize exon log2 fold changes.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExCluster.html
 ---
+
 
 # bioconductor-excluster
 

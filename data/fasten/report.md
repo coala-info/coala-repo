@@ -1,9 +1,9 @@
 # fasten CWL Generation Report
 
-## fasten
+## fasten_fasten_metrics
 
 ### Tool Description
-A toolkit for manipulating FASTQ files. Note: The provided help text contains only system error messages regarding container execution and does not list specific tool arguments.
+Gives read metrics on a read set.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
@@ -18,216 +18,340 @@ A toolkit for manipulating FASTQ files. Note: The provided help text contains on
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3496779517: no space left on device
+fasten_metrics: Gives read metrics on a read set.
+
+Usage: fasten_metrics [-h] [-n INT] [-p] [--verbose] [--version] [--each-read]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+        --each-read     Print the metrics for each read. This creates very
+                        large output
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## fasten_fasten_metrics
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Singularity/Apptainer) failure due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
-- **Homepage**: https://github.com/lskatz/fasten
-- **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1178481036: no space left on device
-```
 
 ## fasten_fasten_shuffle
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
+Interleaves reads from either stdin or file parameters
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2806406042: no space left on device
+fasten_shuffle: Interleaves reads from either stdin or file parameters
+
+Usage: fasten_shuffle [-h] [-n INT] [-p] [--verbose] [--version] [-d] [-1 1.fastq] [-2 2.fastq]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -d, --deshuffle     Deshuffle reads from stdin
+    -1 1.fastq          Forward reads. If deshuffling, reads are written to
+                        this file.
+    -2 2.fastq          Forward reads. If deshuffling, reads are written to
+                        this file.
 ```
+
 
 ## fasten_fasten_trim
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages regarding container image conversion and disk space issues.
+Blunt-end trims using 0-based coordinates
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4169205562: no space left on device
+fasten_trim: Blunt-end trims using 0-based coordinates
+
+Usage: fasten_trim [-h] [-n INT] [-p] [--verbose] [--version] [-f INT] [-l INT] [-a path/to/file.fa]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -f, --first-base INT
+                        The first base to keep (default: 0)
+    -l, --last-base INT The last base to keep (default: 0)
+    -a, --adapterseqs path/to/file.fa
+                        fasta file of adapters
 ```
+
 
 ## fasten_fasten_clean
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains container runtime error messages indicating a failure to build the SIF image due to lack of disk space.
+Trims and filters reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2954909109: no space left on device
+fasten_clean: Trims and filters reads
+
+Usage: fasten_clean [-h] [-n INT] [-p] [--verbose] [--version] [--min-length INT] [--min-avg-quality FLOAT] [--min-trim-quality INT]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+        --min-length INT
+                        Minimum length for each read in bp
+        --min-avg-quality FLOAT
+                        Minimum average quality for each read
+        --min-trim-quality INT
+                        Trim the edges of each read until a nucleotide of at
+                        least X quality is found
 ```
+
 
 ## fasten_fasten_sample
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system log messages and a fatal error regarding container image creation (no space left on device).
+Downsample your reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2669588373: no space left on device
+fasten_sample: Downsample your reads
+
+Usage: fasten_sample [-h] [-n INT] [-p] [--verbose] [--version] [-f FLOAT]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -f, --frequency FLOAT
+                        Frequency of sequences to print, 0 to 1. Default: 1
 ```
+
 
 ## fasten_fasten_randomize
 
 ### Tool Description
-Randomize the order of reads in a FASTQ file. (Note: The provided help text contained only system error messages and no usage information; arguments could not be extracted.)
+Create random reads from stdin.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2689858927: no space left on device
+fasten_randomize: Create random reads from stdin.
+
+Usage: fasten_randomize [-h] [-n INT] [-p] [--verbose] [--version]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
 ```
+
 
 ## fasten_fasten_regex
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container runtime (Singularity/Apptainer) failing to build an image due to lack of disk space.
+Filter reads based on a regular expression.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3181425792: no space left on device
+fasten_regex: Filter reads based on a regular expression.
+
+Usage: fasten_regex [-h] [-n INT] [-p] [--verbose] [--version] [-r STRING] [-w String]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -r, --regex STRING  Regular expression (default: '.')
+    -w, --which String  Which field to match on? ID, SEQ, QUAL. Default: SEQ
 ```
+
 
 ## fasten_fasten_quality_filter
 
 ### Tool Description
-A tool from the fasten suite to filter FASTQ reads based on quality scores. (Note: The provided help text contains system error messages and does not list specific arguments.)
+Transforms any low-quality base to 'N'.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4128090883: no space left on device
+fasten_quality_filter: Transforms any low-quality base to 'N'.
+
+Usage: fasten_quality_filter [-h] [-n INT] [-p] [--verbose] [--version] [-m INT]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -m, --max-quality INT
+                        The maximum quality at which a base will be
+                        transformed to 'N'
 ```
+
 
 ## fasten_fasten_repair
 
 ### Tool Description
-The provided text contains only system error messages and does not include help documentation for the tool. No arguments could be extracted.
+Repairs reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2854207793: no space left on device
+fasten_repair: Repairs reads
+
+Usage: fasten_repair [-h] [-n INT] [-p] [--verbose] [--version] [--min-length INT] [--min-quality FLOAT] [--remove-info] [-m STRING]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+        --min-length INT
+                        Minimum read length allowed
+        --min-quality FLOAT
+                        Minimum quality allowed
+        --remove-info   Remove fasten_inspect headers
+    -m, --mode STRING   Either repair or panic. If panic, then the binary will
+                        panic when the first issue comes up. Default:repair
 ```
+
 
 ## fasten_fasten_inspect
 
 ### Tool Description
-The provided text does not contain help information as it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space. No arguments or tool descriptions could be extracted from the input.
+Marks up your reads with useful information like read length
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3180320127: no space left on device
+fasten_inspect: Marks up your reads with useful information like read length
+
+Usage: fasten_inspect [-h] [-n INT] [-p] [--verbose] [--version]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
 ```
+
 
 ## fasten_fasten_kmer
 
 ### Tool Description
-A tool for k-mer analysis within the fasten suite. (Note: The provided help text contains system error messages and does not list specific arguments.)
+Counts kmers.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3628544275: no space left on device
+fasten_kmer: Counts kmers.
+
+Usage: fasten_kmer [-h] [-n INT] [-p] [--verbose] [--version] [-k INT] [-r] [-m]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
+    -k, --kmer-length INT
+                        The size of the kmer (default: 21)
+    -r, --revcomp       Count kmers on the reverse complement strand too
+    -m, --remember-reads 
+                        Add reads to subsequent columns. Each read begins with
+                        the kmer. Only lists reads in the forward direction.
 ```
+
 
 ## fasten_fasten_straighten
 
 ### Tool Description
-The provided text does not contain help information, but appears to be a system error log indicating a failure to build or run the 'fasten' container due to lack of disk space. No arguments could be extracted.
+Convert a fastq file to a standard 4-lines-per-entry format
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fasten:0.9.0--hc1c3326_0
 - **Homepage**: https://github.com/lskatz/fasten
 - **Package**: https://anaconda.org/channels/bioconda/packages/fasten/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fasten:0.9.0--hc1c3326_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1468083072: no space left on device
+fasten_straighten: Convert a fastq file to a standard 4-lines-per-entry format
+
+Usage: fasten_straighten [-h] [-n INT] [-p] [--verbose] [--version]
+
+Options:
+    -h, --help          Print this help menu.
+    -n, --numcpus INT   Number of CPUs (default: 1)
+    -p, --paired-end    The input reads are interleaved paired-end
+        --verbose       Print more status messages
+        --version       Print the version of Fasten and exit
 ```
 

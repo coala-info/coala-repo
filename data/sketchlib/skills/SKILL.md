@@ -1,8 +1,9 @@
 ---
 name: sketchlib
-description: sketchlib is a high-performance genomic sketching tool designed for rapid sequence distance estimation.
+description: "sketchlib is a high-performance genomic sketching tool used for rapid sequence distance estimation and population structure visualization. Use when user asks to create genomic sketches, compare sequence distances, estimate ANI, or perform k-nearest neighbor searches."
 homepage: https://github.com/bacpop/sketchlib.rust
 ---
+
 
 # sketchlib
 

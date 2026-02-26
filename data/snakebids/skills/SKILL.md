@@ -1,8 +1,9 @@
 ---
 name: snakebids
-description: Snakebids is a specialized framework that integrates BIDS datasets into Snakemake workflows.
+description: Snakebids integrates BIDS datasets into Snakemake workflows to automate the discovery of neuroimaging data and create standardized BIDS Apps. Use when user asks to build Snakemake workflows for BIDS data, automate subject and session discovery, or generate BIDS-compliant file paths.
 homepage: https://github.com/khanlab/snakebids
 ---
+
 
 # snakebids
 

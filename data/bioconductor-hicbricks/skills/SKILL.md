@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicbricks
-description: The package provides an R/Bioconductor framework with the bricks to build more complex data analysis pipelines and algorithms. HiCBricks already incorporates example algorithms for calling domain boundaries and functions for high quality data visualization.
+description: HiCBricks provides an HDF5-based framework for the efficient storage, management, and analysis of large-scale Hi-C contact matrices. Use when user asks to initialize a BrickContainer, load Hi-C data from text or mcool files, retrieve sub-matrices by genomic coordinates, or call Topologically Associated Domains using the LSD algorithm.
 homepage: https://bioconductor.org/packages/release/bioc/html/HiCBricks.html
 ---
+
 
 # bioconductor-hicbricks
 

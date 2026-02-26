@@ -1,8 +1,9 @@
 ---
 name: snakemake-interface-report-plugins
-description: The `snakemake-interface-report-plugins` package serves as the official bridge between the Snakemake core engine and external reporting tools.
+description: This package provides the official API and base classes for developing external reporting plugins for the Snakemake workflow engine. Use when user asks to create a custom report plugin, implement a reporter class, or define plugin-specific command-line settings.
 homepage: https://github.com/snakemake/snakemake-interface-report-plugins
 ---
+
 
 # snakemake-interface-report-plugins
 

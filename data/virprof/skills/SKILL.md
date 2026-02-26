@@ -1,8 +1,9 @@
 ---
 name: virprof
-description: VirProf is a specialized bioinformatics tool designed to bridge the gap between host transcriptomics and pathogen discovery.
+description: VirProf identifies pathogens, viruses, and other microbes from host RNA-seq data using host read depletion, metagenomic assembly, and BLAST classification. Use when user asks to identify pathogens, discover viruses, identify commensal microbes, or recover viral genomes.
 homepage: https://github.com/seiboldlab/virprof
 ---
+
 
 # virprof
 

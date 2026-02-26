@@ -3,7 +3,7 @@
 ## curare
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain help documentation or argument definitions for the 'curare' tool.
+Customizable and Reproducible Analysis Pipeline for RNA-Seq Experiments (Curare).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/curare:0.6.0--pyhdfd78af_0
@@ -18,35 +18,30 @@ The provided text is an error log from a container build process and does not co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curare:0.6.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ca7680d1025d7a2df2c11bc7fdcc87594a7d0c43f16f970e7b0b4bef1b266918: unpack entry: usr/lib/x86_64-linux-gnu/libnsl.so.1: unpack to regular file: short write: write /tmp/build-temp-1751895316/rootfs/usr/lib/x86_64-linux-gnu/libnsl.so.1: no space left on device
-```
+Customizable and Reproducible Analysis Pipeline for RNA-Seq Experiments (Curare).
 
+Usage:
+    curare.py --samples <samples_file> --pipeline <pipeline_file> --output <output_folder> --cores <cores>
+                 [--use-conda | --no-conda] [--conda-frontend <frontend>] [--conda-prefix <conda_prefix>] [--keep-going] [--latency-wait <seconds>] [--verbose]
+    curare.py --samples <samples_file> --pipeline <pipeline_file> --output <output_folder> --create-conda-envs-only [--conda-frontend <frontend>] [--conda-prefix <conda_prefix>] [--verbose]
+    curare.py (--version | --help)
 
-## Metadata
-- **Skill**: generated
+Options:
+    -h --help               Show this help message and exit
+    --version               Show version and exit
 
-## curare_curare_wizard
+    --samples <samples_file>                        File containing information about each sample
+    --pipeline <pipeline_file>                      File containing information about the RNA-seq pipeline
+    --output <output_folder>                        Output folder (will be created if not existing)
 
-### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/curare:0.6.0--pyhdfd78af_0
-- **Homepage**: https://github.com/pblumenkamp/Curare
-- **Package**: https://anaconda.org/channels/bioconda/packages/curare/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/curare:0.6.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:ca7680d1025d7a2df2c11bc7fdcc87594a7d0c43f16f970e7b0b4bef1b266918: unpack entry: usr/lib/x86_64-linux-gnu/libmvec.so.1: unpack to regular file: short write: write /tmp/build-temp-1720950746/rootfs/usr/lib/x86_64-linux-gnu/libmvec.so.1: no space left on device
+    --use-conda                                     DEPRECATED, BY DEFAULT ON - Install and use separate conda environments for pipeline modules
+    --no-conda                                      Don't use Conda/Mamba for the installation of module tools. (All tools necessary must be installed manually in advance) 
+    --conda-frontend <frontend>                     Choose conda frontend for creating and installing conda environments (conda, mamba) [Default: mamba]
+    --conda-prefix <conda_prefix>                   The directory in which conda environments will be created. Relative paths will be relative to output folder! (Default: Output_folder)
+    --create-conda-envs-only                        Only download and create conda environments.
+    -t <cores> --cores <cores>                      Number of threads/cores.
+    --keep-going                                    Keep going with individual jobs if a job fails.
+    --latency-wait <seconds>                        Seconds to wait before checking if all files of a rule were created. [Default: 5]
+    -v --verbose                                    Print additional information
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm3.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for Drosophila melanogaster (UCSC version dm3) as a BSgenome data object in R. Use when user asks to access the fruit fly reference genome, perform motif searching in masked sequences, or analyze genomic regions while accounting for assembly gaps and repeats.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm3.masked.html
 ---
+
 
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm3.masked
 

@@ -1,8 +1,9 @@
 ---
 name: perl-encode
-description: The `perl-encode` skill provides the procedural knowledge required to manage character encodings using the Perl `Encode` module and its associated utility, `piconv`.
+description: This tool manages character encodings by translating between raw bytes and Perl strings using the Encode module and the piconv utility. Use when user asks to convert file encodings, list supported character sets, or handle character encoding and decoding within Perl scripts.
 homepage: http://metacpan.org/pod/Encode
 ---
+
 
 # perl-encode
 

@@ -1,8 +1,9 @@
 ---
 name: ucsc-chaintopsl
-description: The `ucsc-chaintopsl` utility (part of the UCSC Kent Toolkit) is a specialized tool designed to transform chain alignment files into PSL format.
+description: ucsc-chaintopsl converts genomic alignment chain files into PSL format. Use when user asks to convert chain files to PSL, perform basic chain to PSL conversion, prepare chain files for genome assembly comparisons, convert chain files for cross-species alignments, or create browser-compatible alignment tracks.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chaintopsl
 

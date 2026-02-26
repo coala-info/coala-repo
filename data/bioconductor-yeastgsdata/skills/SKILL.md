@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yeastgsdata
-description: the package is available on all platforms; click for details.
+description: This package provides yeast gold standard data sets for benchmarking functional genomics. Use when user asks to access yeast gold standard datasets or benchmark functional genomics methods.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/yeastGSData.html
 ---
+
 
 # bioconductor-yeastgsdata
 

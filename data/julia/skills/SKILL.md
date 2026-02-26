@@ -1,8 +1,9 @@
 ---
 name: julia
-description: Julia is a high-level, high-performance dynamic language specifically designed for technical and scientific computing.
+description: Julia is a high-level, high-performance dynamic language designed for technical and scientific computing. Use when user asks to install or build Julia from source, manage environments and packages, or execute scripts and numerical simulations via the CLI.
 homepage: https://github.com/JuliaLang/julia
 ---
+
 
 # julia
 

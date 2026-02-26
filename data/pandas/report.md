@@ -3,24 +3,32 @@
 ## pandas
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the pandas tool. It consists of error messages from a container runtime (Singularity/Apptainer) indicating a failure to pull and build a SIF image for pandas due to insufficient disk space ('no space left on device').
+FAIL to generate CWL: pandas not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/pandas:2.2.1
 - **Homepage**: https://github.com/pandas-dev/pandas
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/pandas/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/main/packages/pandas/overview
+- **Total Downloads**: 142.9K
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/pandas-dev/pandas
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: pandas not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: pandas not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/509adc4983db6c608fa516bea822c29bf34d5b3f039d331fc705fc27492a0987: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/pandas:2.2.1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3642966867: no space left on device
+
 ```
 

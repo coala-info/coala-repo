@@ -1,13 +1,73 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - machina
-  - cluster
+baseCommand: cluster
 label: machina_cluster
-doc: "A tool within the Machina suite (likely for clustering clones or migration patterns),
-  however, the provided text contains only system error messages and no usage information.\n
-  \nTool homepage: https://github.com/raphael-group/machina"
-inputs: []
+doc: "Cluster mutations based on their co-occurrence patterns.\n\nTool homepage: https://github.com/raphael-group/machina"
+inputs:
+  - id: read_matrix
+    type: string
+    doc: Read matrix
+    inputBinding:
+      position: 1
+  - id: clustering_confidence_interval
+    type:
+      - 'null'
+      - float
+    doc: Confidence interval used for clustering
+    default: 0.001
+    inputBinding:
+      position: 102
+      prefix: -a
+  - id: clustering_filename
+    type:
+      - 'null'
+      - string
+    doc: Clustering input filename
+    inputBinding:
+      position: 102
+      prefix: -C
+  - id: family_wise_error_rate
+    type:
+      - 'null'
+      - float
+    doc: Family-wise error rate
+    inputBinding:
+      position: 102
+      prefix: -FWR
+  - id: min_variant_reads
+    type:
+      - 'null'
+      - int
+    doc: Minimum number of variant reads
+    default: 3
+    inputBinding:
+      position: 102
+      prefix: -varLB
+  - id: output_ancestree
+    type:
+      - 'null'
+      - boolean
+    doc: Output AncesTree input file
+    inputBinding:
+      position: 102
+      prefix: -A
+  - id: pooled_frequency_confidence_interval
+    type:
+      - 'null'
+      - float
+    doc: Confidence interval used for pooled frequency matrix
+    default: 0.01
+    inputBinding:
+      position: 102
+      prefix: -b
+  - id: relabel_clusters
+    type:
+      - 'null'
+      - boolean
+    doc: Relabel mutation clusters
+    inputBinding:
+      position: 102
+      prefix: -r
 outputs:
   - id: stdout
     type: stdout

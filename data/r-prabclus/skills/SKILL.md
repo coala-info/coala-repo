@@ -1,8 +1,9 @@
 ---
 name: r-prabclus
-description: "Distance-based parametric bootstrap tests for clustering with    spatial neighborhood information. Some distance measures,    Clustering of presence-absence, abundance and multilocus genetic data    for species delimitation, nearest neighbor    based noise detection. Genetic distances between communities.   Tests whether various distance-based regressions   are equal. Try package?prabclus for on overview. </p>"
+description: The r-prabclus package provides functions for clustering and testing presence-absence, abundance, and multilocus genetic data. Use when user asks to perform species delimitation, detect spatial noise using nearest neighbors, calculate ecological distance measures, or conduct parametric bootstrap tests for clustering.
 homepage: https://cloud.r-project.org/web/packages/prabclus/index.html
 ---
+
 
 # r-prabclus
 

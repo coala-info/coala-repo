@@ -1,8 +1,9 @@
 ---
 name: check-sort-order
-description: check-sort-order is a specialized validation utility from the ggd-utils suite.
+description: "check-sort-order validates that genomic files are correctly sorted and follow the chromosome sequence defined by a reference genome. Use when user asks to verify file sorting, check chromosome ordering against a reference, or validate genomic file headers and indices."
 homepage: https://github.com/gogetdata/ggd-utils
 ---
+
 
 # check-sort-order
 

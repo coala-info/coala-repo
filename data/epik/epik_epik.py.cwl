@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: epik_epik.py
+baseCommand: epik.py
 label: epik_epik.py
-doc: "The provided text does not contain help information for the tool; it is an error
-  log indicating a failure to build a Singularity/Apptainer container due to insufficient
-  disk space.\n\nTool homepage: https://github.com/phylo42/epik"
-inputs: []
+doc: "EPIK: Evolutionary Placement with Informative K-mers\n\nTool homepage: https://github.com/phylo42/epik"
+inputs:
+  - id: command
+    type: string
+    doc: Command to execute (e.g., place)
+    inputBinding:
+      position: 1
+  - id: args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

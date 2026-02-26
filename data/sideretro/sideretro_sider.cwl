@@ -1,12 +1,18 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - sideretro
-  - sider
+baseCommand: sider
 label: sideretro_sider
-doc: "Sideretro tool (Note: The provided text is a container build log and does not
-  contain help documentation or argument details).\n\nTool homepage: https://github.com/galantelab/sideRETRO"
-inputs: []
+doc: "A pipeline for detecting Somatic Insertion of DE novo RETROcopies\n\nTool homepage:
+  https://github.com/galantelab/sideRETRO"
+inputs:
+  - id: cite
+    type:
+      - 'null'
+      - boolean
+    doc: Show citation in BibTeX
+    inputBinding:
+      position: 101
+      prefix: --cite
 outputs:
   - id: stdout
     type: stdout

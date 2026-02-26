@@ -1,8 +1,9 @@
 ---
 name: perl-data-predicate
-description: The `perl-data-predicate` skill provides guidance on using the `Data::Predicate` Perl module to compose logic into reusable objects.
+description: This tool provides guidance on using the Data::Predicate Perl module to encapsulate and compose logical tests into reusable objects. Use when user asks to build logical predicates, filter or transform data lists, and combine multiple boolean conditions into complex validation objects.
 homepage: http://metacpan.org/pod/Data::Predicate
 ---
+
 
 # perl-data-predicate
 

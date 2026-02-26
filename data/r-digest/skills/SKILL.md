@@ -1,8 +1,9 @@
 ---
 name: r-digest
-description: "Implementation of a function 'digest()' for the creation of hash  digests of arbitrary R objects (using the 'md5', 'sha-1', 'sha-256', 'crc32',  'xxhash', 'murmurhash', 'spookyhash', 'blake3', 'crc32c', 'xxh3_64', and 'xxh3_128'  algorithms) permitting easy comparison of R language objects, as well as functions  such as 'hmac()' to create hash-based message authentication code. Please note that  this package is not meant to be deployed for cryptographic purposes for which more  comprehensive (and widely tested) libraries such as 'OpenSSL' should be used.</p>"
+description: The digest package generates consistent hash digests and message authentication codes for arbitrary R objects and files. Use when user asks to create hash digests of data frames or lists, verify data integrity, implement caching based on object fingerprints, or generate numerically stable SHA-1 hashes for floating-point data.
 homepage: https://cloud.r-project.org/web/packages/digest/index.html
 ---
+
 
 # r-digest
 

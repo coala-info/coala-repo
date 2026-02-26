@@ -1,8 +1,9 @@
 ---
 name: naf
-description: The Nucleotide Archival Format (NAF) is a specialized binary format designed for the efficient storage of biological sequences.
+description: The Nucleotide Archival Format (NAF) provides high-speed, high-ratio compression and decompression for biological sequence data using the ennaf and unnaf tools. Use when user asks to compress FASTA or FASTQ files, decompress NAF archives for downstream analysis, or manage multi-file genomic datasets.
 homepage: https://github.com/KirillKryukov/naf
 ---
+
 
 # naf
 

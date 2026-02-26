@@ -1,8 +1,9 @@
 ---
 name: vgp-processcuration
-description: The `vgp-processcuration` (also known as `vgl-curation`) skill provides a specialized workflow for the final stages of genome assembly.
+description: `vgp-processcuration` automates the structural reconciliation of genome assemblies after manual curation. Use when user asks to process genome assemblies, split haplotypes, assign unlocalized sequences, correct AGP files, assign chromosomes, align haplotypes, or reorient sequences.
 homepage: https://github.com/vgl-hub/vgl-curation
 ---
+
 
 # vgp-processcuration
 

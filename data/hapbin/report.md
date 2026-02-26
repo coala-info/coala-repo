@@ -1,9 +1,9 @@
 # hapbin CWL Generation Report
 
-## hapbin
+## hapbin_hapbinconv
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error messages related to a container runtime (Apptainer/Singularity) failing to pull the image due to insufficient disk space.
+Convert between ASCII hap and binary hapbin formats.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hapbin:1.3.0--h503566f_6
@@ -18,80 +18,98 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapbin:1.3.0--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1477605187: no space left on device
+Usage: hapbinconv --hap input.hap --out outfile.hapbin
+
+	-h,--help			Show this help
+	-v,--version			Version information
+	-d,--hap			ASCII Hap file
+	-o,--out			Binary output file
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## hapbin_hapbinconv
-
-### Tool Description
-A tool for converting files for use with hapbin. (Note: The provided help text contains only system error messages and does not list specific arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hapbin:1.3.0--h503566f_6
-- **Homepage**: https://github.com/evotools/hapbin
-- **Package**: https://anaconda.org/channels/bioconda/packages/hapbin/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapbin:1.3.0--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1013134770: no space left on device
-```
 
 ## hapbin_ehhbin
 
 ### Tool Description
-The provided text is an error log indicating a failure to build or run the container image and does not contain help documentation for the tool.
+Calculate EHH and EHHbin statistics for a given locus.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hapbin:1.3.0--h503566f_6
 - **Homepage**: https://github.com/evotools/hapbin
 - **Package**: https://anaconda.org/channels/bioconda/packages/hapbin/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapbin:1.3.0--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3232988637: no space left on device
+Usage: ehhbin --map input.map --hap input.hap --locus id
+
+	-h,--help			Show this help
+	-v,--version			Version information
+	-d,--hap			Hap file
+	-m,--map			Map file
+	-l,--locus			Locus
+	-c,--cutoff			EHH cutoff value (default: 0.05)
+	-b,--minmaf			Minimum allele frequency (default: 0.05)
+	-s,--scale			Gap scale parameter in bp, used to scale gaps > scale parameter as in Voight, et al.
+	-e,--max-extend			Maximum distance in bp to traverse when calculating EHH (default: 0 (disabled))
+	-a,--binom			Use binomial coefficients rather than frequency squared for EHH
 ```
+
 
 ## hapbin_ihsbin
 
 ### Tool Description
-A tool for calculating iHS (integrated Haplotype Score) statistics.
+Calculate iHS values for SNPs based on haplotype data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hapbin:1.3.0--h503566f_6
 - **Homepage**: https://github.com/evotools/hapbin
 - **Package**: https://anaconda.org/channels/bioconda/packages/hapbin/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapbin:1.3.0--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3737208890: no space left on device
+Usage: ihsbin --map input.map --hap input.hap [--ascii] [--out outfile]
+
+	-h,--help			Show this help
+	-v,--version			Version information
+	-d,--hap			Hap file
+	-m,--map			Map file
+	-o,--out			Output file
+	-c,--cutoff			EHH cutoff value (default: 0.05)
+	-f,--minmaf			Minimum allele frequency (default: 0.05)
+	-s,--scale			Gap scale parameter in bp, used to scale gaps > scale parameter as in Voight, et al.
+	-b,--bin			Number of frequency bins for iHS normalization (default: 50)
+	-e,--max-extend			Maximum distance in bp to traverse when calculating EHH (default: 0 (disabled))
+	-a,--binom			Use binomial coefficients rather than frequency squared for EHH
 ```
+
 
 ## hapbin_xpehhbin
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it contains system error messages related to a container runtime failure (no space left on device).
+Calculate XP-EHH values for bins of SNPs.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hapbin:1.3.0--h503566f_6
 - **Homepage**: https://github.com/evotools/hapbin
 - **Package**: https://anaconda.org/channels/bioconda/packages/hapbin/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hapbin:1.3.0--h503566f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4025299105: no space left on device
+Usage: xpehhbin --map input.map --hapA inputA.hap --hapB inputB.hap
+
+	-h,--help			Show this help
+	-v,--version			Version information
+	-d,--hapA			Hap file for population A
+	-e,--hapB			Hap file for population B
+	-m,--map			Map file
+	-o,--out			Output file
+	-c,--cutoff			EHH cutoff value (default: 0.05)
+	-f,--minmaf			Minimum allele frequency (default: 0.05)
+	-s,--scale			Gap scale parameter in bp, used to scale gaps > scale parameter as in Voight, et al.
+	-b,--bin			Number of frequency bins for iHS normalization (default: 50)
+	-a,--binom			Use binomial coefficients rather than frequency squared for EHH
+	-e,--max-extend			Maximum distance in bp to traverse when calculating EHH (default: 0 (disabled))
 ```
 

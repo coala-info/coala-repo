@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anota2seq
-description: the package is available on all platforms; click for details.
+description: This tool analyzes translational efficiency and gene expression modes using polysome-profiling or ribosome-profiling data. Use when user asks to identify changes in mRNA abundance, detect differential translational efficiency, or analyze translational buffering using Analysis of Partial Variance.
 homepage: https://bioconductor.org/packages/release/bioc/html/anota2seq.html
 ---
+
 
 # bioconductor-anota2seq
 

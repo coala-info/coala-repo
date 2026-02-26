@@ -1,8 +1,9 @@
 ---
 name: rgt
-description: The Regulatory Genomics Toolbox (RGT) is a specialized suite of Python-based tools designed for the analysis of regulatory genomics data.
+description: The Regulatory Genomics Toolbox is a suite of Python-based tools for analyzing regulatory genomics data, including transcription factor footprinting and differential peak calling. Use when user asks to identify transcription factor footprints, perform motif enrichment analysis, detect differential peaks in ChIP-seq data, or visualize genomic tracks.
 homepage: http://www.regulatory-genomics.org
 ---
+
 
 # rgt
 

@@ -1,8 +1,11 @@
 ---
 name: tidehunter
-description: TideHunter is a high-performance tool designed to identify tandemly repeated sequences and call consensus sequences from long-read genomic data.
+description: TideHunter identifies tandemly repeated sequences and calls consensus sequences from long-read genomic data. Use when user asks to identify tandem repeats, call consensus sequences, extract individual repeat units, or find full-length sequences flanked by adapters.
 homepage: https://github.com/yangao07/TideHunter
 ---
+
+
+
 
 # tidehunter
 

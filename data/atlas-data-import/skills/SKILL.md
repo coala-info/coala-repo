@@ -1,8 +1,9 @@
 ---
 name: atlas-data-import
-description: The `atlas-data-import` tool provides a suite of R scripts designed to interface with the Single Cell Expression Atlas.
+description: This tool fetches standardized expression matrices, metadata, and cell-type classifiers directly from the Single Cell Expression Atlas. Use when user asks to download experiment data, retrieve marker genes, or import pre-trained classification models and performance metrics.
 homepage: https://github.com/ebi-gene-expression-group/atlas-data-import
 ---
+
 
 # atlas-data-import
 

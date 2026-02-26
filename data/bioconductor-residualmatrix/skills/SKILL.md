@@ -1,8 +1,9 @@
 ---
 name: bioconductor-residualmatrix
-description: the package is available on all platforms; click for details.
+description: The ResidualMatrix package provides a memory-efficient delayed matrix representation of residuals from linear models. Use when user asks to calculate residuals for large datasets, perform principal component analysis on residualized matrices, or regress out covariates from genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/ResidualMatrix.html
 ---
+
 
 # bioconductor-residualmatrix
 

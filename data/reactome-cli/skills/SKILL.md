@@ -1,8 +1,9 @@
 ---
 name: reactome-cli
-description: The `reactome-cli` is a command-line utility designed to wrap Reactome's web APIs, providing a streamlined interface for biological pathway analysis.
+description: The reactome-cli utility provides a command-line interface for performing biological pathway analysis using Reactome web APIs. Use when user asks to analyze gene lists for pathways, perform tissue-specific pathway filtering, or compare pathways across different species.
 homepage: https://github.com/reactome/reactome_galaxy
 ---
+
 
 # reactome-cli
 

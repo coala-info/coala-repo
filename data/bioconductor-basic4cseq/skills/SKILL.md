@@ -1,8 +1,9 @@
 ---
 name: bioconductor-basic4cseq
-description: the package is available on all platforms; click for details.
+description: Basic4Cseq is an R/Bioconductor package for the end-to-end analysis and visualization of 4C-seq data. Use when user asks to create virtual fragment libraries, map aligned reads to fragments, normalize data, or visualize 4C-seq interactions near a viewpoint.
 homepage: https://bioconductor.org/packages/release/bioc/html/Basic4Cseq.html
 ---
+
 
 # bioconductor-basic4cseq
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-htrat230pmcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File (CDF) environment and coordinate mapping data for the Affymetrix HT_Rat230_PM array. Use when user asks to map probes to probesets, convert between (x,y) coordinates and indices, or perform low-level analysis of Rat Genome 230 PM expression data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/htrat230pmcdf.html
 ---
+
 
 # bioconductor-htrat230pmcdf
 

@@ -1,8 +1,9 @@
 ---
 name: checkm2
-description: CheckM2 is a machine learning-based tool designed to predict the completeness and contamination of genomic bins.
+description: CheckM2 uses machine learning models to predict the completeness and contamination of genomic bins across all taxonomic lineages. Use when user asks to assess genome quality, predict completeness and contamination of metagenomic bins, or download the CheckM2 database.
 homepage: https://github.com/chklovski/CheckM2
 ---
+
 
 # checkm2
 

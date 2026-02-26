@@ -1,14 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fasten
-  - inspect
+baseCommand: fasten_inspect
 label: fasten_fasten_inspect
-doc: "The provided text does not contain help information as it is an error log from
-  a container runtime (Apptainer/Singularity) indicating a failure to build the image
-  due to lack of disk space. No arguments or tool descriptions could be extracted
-  from the input.\n\nTool homepage: https://github.com/lskatz/fasten"
-inputs: []
+doc: "Marks up your reads with useful information like read length\n\nTool homepage:
+  https://github.com/lskatz/fasten"
+inputs:
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numcpus
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: The input reads are interleaved paired-end
+    inputBinding:
+      position: 101
+      prefix: --paired-end
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more status messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

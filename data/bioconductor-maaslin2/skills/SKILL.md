@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maaslin2
-description: the package is available on all platforms; click for details.
+description: MaAsLin2 identifies multivariable associations between clinical metadata and microbial community features in omics data. Use when user asks to find correlations between phenotypes and microbial abundances, perform multivariable statistical modeling on microbiome data, or account for confounding variables in longitudinal studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/Maaslin2.html
 ---
+
 
 # bioconductor-maaslin2
 

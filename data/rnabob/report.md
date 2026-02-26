@@ -3,7 +3,7 @@
 ## rnabob
 
 ### Tool Description
-A program for fast searching of RNA secondary structure motifs in sequence databases.
+fast RNA pattern searching
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rnabob:2.2.1--h470a237_1
@@ -18,13 +18,18 @@ A program for fast searching of RNA secondary structure motifs in sequence datab
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rnabob:2.2.1--h470a237_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+rnabob - fast RNA pattern searching
+    version 2.2.1 (December 2012), using squid 1.5m (Sept 1997)
+Usage: rnabob [-options] <descriptor-file> <sequence-file>
+
+  Available options: 
+     -c:    search both strands of database
+     -h:    print short help and usage info
+     -q:    quiet: suppress verbose banner and headers
+     -s:    skip mode: disallow overlapping matches
+     -F:    fancy: show full alignments to pattern
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

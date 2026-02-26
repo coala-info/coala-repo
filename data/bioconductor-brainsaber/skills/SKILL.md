@@ -1,8 +1,9 @@
 ---
 name: bioconductor-brainsaber
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool maps and compares human brain RNA-Seq data against the Allen Institute BrainSpan atlas to identify matching developmental stages and brain structures. Use when user asks to map expression data to the BrainSpan atlas, calculate similarity scores between samples and brain regions, or perform differential expression analysis relative to reference developmental data.
 homepage: https://bioconductor.org/packages/3.12/bioc/html/BrainSABER.html
 ---
+
 
 # bioconductor-brainsaber
 

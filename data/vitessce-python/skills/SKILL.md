@@ -1,8 +1,9 @@
 ---
 name: vitessce-python
-description: The `vitessce-python` library is the Pythonic interface for Vitessce, a visual analytics framework tailored for multimodal and spatially resolved single-cell experiments.
+description: `vitessce-python` is a Python library for creating interactive, linked-view dashboards for multimodal and spatially resolved single-cell experiments. Use when user asks to visualize single-cell spatial data, rapidly prototype dashboards, configure custom layouts, add specific data elements, visualize large point sets, optimize high-resolution data, or link multiple views.
 homepage: https://vitessce.io/
 ---
+
 
 # vitessce-python
 

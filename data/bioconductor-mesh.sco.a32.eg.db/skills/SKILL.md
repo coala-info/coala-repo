@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mesh.sco.a32.eg.db
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides mapping between Medical Subject Headings (MeSH) and Entrez Gene identifiers for Streptomyces coelicolor. Use when user asks to map MeSH terms to genes, perform functional enrichment analysis, or retrieve biological annotations for Streptomyces coelicolor.
 homepage: https://bioconductor.org/packages/3.8/data/annotation/html/MeSH.Sco.A32.eg.db.html
 ---
+
 
 # bioconductor-mesh.sco.a32.eg.db
 

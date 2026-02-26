@@ -1,8 +1,9 @@
 ---
 name: suppa
-description: SUPPA is a high-performance toolset designed for the rapid and accurate analysis of alternative splicing.
+description: SUPPA is a toolset for the rapid analysis of alternative splicing using transcript-level quantification. Use when user asks to generate splicing events from a GTF, calculate Percent Spliced In values, perform differential splicing analysis, or cluster splicing patterns across conditions.
 homepage: https://github.com/comprna/SUPPA
 ---
+
 
 # suppa
 

@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_mvapich_4_0
-description: This skill provides guidance for utilizing the `esme_netcdf-c_mvapich_4_0` package, which provides the C interface for the Network Common Data Form (NetCDF).
+description: This package provides the C interface for the Network Common Data Form (NetCDF) optimized for parallel computing with the MVAPICH MPI implementation. Use when user asks to create or manage self-describing scientific datasets, perform parallel I/O in MPI environments, or compile C applications using NetCDF libraries.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_mvapich_4_0
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ddct
-description: the package is available on all platforms; click for details.
+description: This tool analyzes quantitative real-time PCR data using the 2^-ddCt method to determine relative gene expression levels. Use when user asks to import SDS files, normalize Ct values with housekeeping genes, calculate relative quantification against reference samples, or visualize fold changes with error bars.
 homepage: https://bioconductor.org/packages/release/bioc/html/ddCt.html
 ---
+
 
 # bioconductor-ddct
 

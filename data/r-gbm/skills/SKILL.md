@@ -1,8 +1,9 @@
 ---
 name: r-gbm
-description: "An implementation of extensions to Freund and Schapire's AdaBoost    algorithm and Friedman's gradient boosting machine. Includes regression    methods for least squares, absolute loss, t-distribution loss, quantile    regression, logistic, multinomial logistic, Poisson, Cox proportional hazards    partial likelihood, AdaBoost exponential loss, Huberized hinge loss, and    Learning to Rank measures (LambdaMart). Originally developed by Greg Ridgeway.   Newer version available at github.com/gbm-developers/gbm3.</p>"
+description: This tool provides expert guidance for implementing Generalized Boosted Regression Models using the gbm package in R. Use when user asks to fit gradient boosting models for regression, classification, ranking, or survival analysis, tune hyperparameters like shrinkage and tree depth, or evaluate model performance using cross-validation and variable importance.
 homepage: https://cloud.r-project.org/web/packages/gbm/index.html
 ---
+
 
 # r-gbm
 

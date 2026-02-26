@@ -1,8 +1,9 @@
 ---
 name: ucsc-ixixx
-description: The `ixIxx` utility is a specialized indexing tool from the UCSC Genome Browser "kent" suite.
+description: The ucsc-ixixx tool transforms a sorted text file into a high-performance searchable database. Use when user asks to index a sorted text file, create a searchable database, build searchable Track Hubs, or build custom genome browser assemblies.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-ixixx
 

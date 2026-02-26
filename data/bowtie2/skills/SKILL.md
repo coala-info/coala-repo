@@ -1,8 +1,9 @@
 ---
 name: bowtie2
-description: Builds a Bowtie 2 index from a set of DNA sequences.
+description: "Bowtie 2 maps sequencing reads to large reference genomes using a memory-efficient FM Index. Use when user asks to align sequencing reads to a reference, index a genome, or perform end-to-end and local alignments."
 homepage: https://bowtie-bio.sourceforge.net/bowtie2/index.shtml
 ---
+
 
 # bowtie2
 

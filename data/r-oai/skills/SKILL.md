@@ -1,8 +1,9 @@
 ---
 name: r-oai
-description: "A general purpose client to work with any 'OAI-PMH'     (Open Archives Initiative Protocol for 'Metadata' Harvesting) service."
+description: The r-oai package provides a client for the OAI-PMH protocol to harvest metadata from various repositories. Use when user asks to identify repository capabilities, list metadata formats, harvest identifiers, or retrieve full records from OAI-PMH compliant services.
 homepage: https://cloud.r-project.org/web/packages/oai/index.html
 ---
+
 
 # r-oai
 

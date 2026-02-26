@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gofuncr
-description: "the package and updated regularly (01-May-2021). GOfuncR provides the standard candidate vs. background enrichment analysis using the hypergeometric test, as well as three additional tests: (i) the Wilcoxon rank-sum test that is used when genes are ranked, (ii) a binomial test that is used when genes are associated with two counts and (iii) a Chi-square or Fisher's exact test that is used in cases when genes are associated with four counts. To correct for multiple testing and interdependency of the tests, family-wise error rates are computed based on random permutations of the gene-associated variables. GOfuncR also provides tools for exploring the ontology graph and the annotations, and options to take gene-length or spatial clustering of genes into account. It is also possible to provide custom gene coordinates, annotations and ontologies."
+description: This tool performs Gene Ontology (GO) enrichment analysis using the FUNC software to identify over-represented biological categories. Use when user asks to perform GO enrichment analysis, identify over-represented terms in candidate gene sets, analyze ranked gene lists, or conduct enrichment tests on genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GOfuncR.html
 ---
+
 
 # bioconductor-gofuncr
 

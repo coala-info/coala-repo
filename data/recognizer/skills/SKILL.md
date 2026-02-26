@@ -1,8 +1,9 @@
 ---
 name: recognizer
-description: reCOGnizer is a specialized tool for the functional characterization of proteomes.
+description: reCOGnizer performs functional characterization of proteomes by comparing protein sequences against conserved domain databases using RPS-BLAST. Use when user asks to annotate protein sequences, map hits to functional categories, or perform metabolic reconstruction and comparative genomics.
 homepage: https://github.com/iquasere/reCOGnizer
 ---
+
 
 # recognizer
 

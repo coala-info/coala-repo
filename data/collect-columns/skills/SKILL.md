@@ -1,8 +1,9 @@
 ---
 name: collect-columns
-description: `collect-columns` is a specialized utility for consolidating data across multiple tables.
+description: This tool consolidates data from multiple tables into a single output by aligning value columns based on a shared feature identifier. Use when user asks to merge count files, aggregate expression data across samples, or append genomic attributes from a GTF file to a combined table.
 homepage: https://github.com/biowdl/collect-columns
 ---
+
 
 # collect-columns
 

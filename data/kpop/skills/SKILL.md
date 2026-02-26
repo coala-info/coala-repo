@@ -1,8 +1,9 @@
 ---
 name: kpop
-description: KPop (K-mer Power) is a scalable bioinformatics toolset designed to analyze microbial genomes by transforming k-mer spectra into low-dimensional embeddings.
+description: KPop analyzes microbial genomes by transforming k-mer spectra into low-dimensional embeddings for rapid classification and comparison. Use when user asks to count k-mers, build sequence databases, train dimensionality reduction models, or classify genomic samples.
 homepage: https://github.com/PaoloRibeca/KPop
 ---
+
 
 # kpop
 

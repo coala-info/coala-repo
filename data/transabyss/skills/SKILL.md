@@ -1,8 +1,9 @@
 ---
 name: transabyss
-description: Trans-ABySS is a pipeline designed for the de novo assembly of RNA-Seq data, leveraging the ABySS assembler.
+description: Trans-ABySS performs de novo assembly of RNA-Seq data. Use when user asks to assemble RNA-Seq data, perform individual k-mer assemblies, merge multiple assemblies, or produce a transcriptome.
 homepage: http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss
 ---
+
 
 # transabyss
 

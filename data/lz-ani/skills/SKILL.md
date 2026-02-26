@@ -1,8 +1,9 @@
 ---
 name: lz-ani
-description: `lz-ani` is a high-performance tool designed for determining genomic similarity through Lempel-Ziv parsing.
+description: lz-ani calculates genomic similarity and Average Nucleotide Identity (ANI) using high-performance Lempel-Ziv parsing. Use when user asks to perform pairwise genomic comparisons, calculate ANI between viral or bacterial sequences, or filter similarity results based on coverage and identity thresholds.
 homepage: https://github.com/refresh-bio/lz-ani
 ---
+
 
 # lz-ani
 

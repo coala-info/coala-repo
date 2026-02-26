@@ -1,8 +1,9 @@
 ---
 name: sourmash
-description: sourmash is a versatile bioinformatics tool for searching, comparing, and analyzing genomic data through k-mer based MinHash and FracMinHash sketching.
+description: "sourmash performs fast genomic data searching, comparison, and taxonomic profiling using k-mer based sketching. Use when user asks to sketch sequences into signatures, compare genomic datasets, perform metagenomic profiling with gather, or manage and filter signature files."
 homepage: https://github.com/sourmash-bio/sourmash
 ---
+
 
 # sourmash
 

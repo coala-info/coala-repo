@@ -1,8 +1,9 @@
 ---
 name: fqgrep
-description: The `fqgrep` utility is a high-performance tool designed specifically for searching FASTQ files using regular expressions or fixed strings.
+description: fqgrep is a high-performance, sequence-aware utility designed for searching and filtering FASTQ files using regular expressions or fixed strings. Use when user asks to search for sequences in FASTQ files, filter paired-end reads, count matching records, or identify reverse complement matches.
 homepage: https://github.com/fulcrumgenomics/fqgrep
 ---
+
 
 # fqgrep
 

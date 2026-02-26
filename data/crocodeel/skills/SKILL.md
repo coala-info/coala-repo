@@ -1,8 +1,9 @@
 ---
 name: crocodeel
-description: CroCoDeEL (CROss-sample COntamination DEtection and Estimation of its Level) is a specialized tool for quality control in metagenomics.
+description: "CroCoDeEL detects and estimates cross-sample contamination levels in metagenomic datasets by analyzing species abundance tables. Use when user asks to identify contaminated samples, estimate contamination rates, or generate visual contamination reports from species abundance data."
 homepage: https://github.com/metagenopolis/crocodeel
 ---
+
 
 # crocodeel
 

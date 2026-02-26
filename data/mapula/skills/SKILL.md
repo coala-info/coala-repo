@@ -1,8 +1,9 @@
 ---
 name: mapula
-description: Mapula is a specialized utility for extracting and summarizing performance metrics from sequence alignments.
+description: Mapula extracts and summarizes performance metrics from sequence alignments to assess sequencing quality and mapping accuracy. Use when user asks to extract alignment statistics, summarize sequencing performance, or calculate read accuracy from BAM or SAM files.
 homepage: https://github.com/epi2me-labs/mapula
 ---
+
 
 # mapula
 

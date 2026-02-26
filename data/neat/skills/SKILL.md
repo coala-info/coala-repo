@@ -1,8 +1,9 @@
 ---
 name: neat
-description: NEAT (NExt-generation Analysis Toolkit) is a specialized suite for creating high-fidelity synthetic sequencing data with an established ground truth.
+description: "NEAT generates high-fidelity synthetic sequencing data and ground truth files by modeling the characteristics of real sequencing runs. Use when user asks to simulate sequencing reads, create custom error or mutation models, or compare VCF files against a golden reference to evaluate pipeline performance."
 homepage: https://github.com/ncsa/NEAT/
 ---
+
 
 # neat
 

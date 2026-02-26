@@ -1,8 +1,9 @@
 ---
 name: perl-http-daemon
-description: The `perl-http-daemon` skill provides guidance on utilizing the `HTTP::Daemon` Perl class to instantiate HTTP servers.
+description: The perl-http-daemon tool provides a Perl class for instantiating and managing simple HTTP servers to handle network requests. Use when user asks to create a basic web server, handle incoming HTTP requests in Perl, or automate network services.
 homepage: http://metacpan.org/pod/HTTP-Daemon
 ---
+
 
 # perl-http-daemon
 

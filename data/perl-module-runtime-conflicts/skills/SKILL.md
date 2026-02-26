@@ -1,8 +1,9 @@
 ---
 name: perl-module-runtime-conflicts
-description: The perl-module-runtime-conflicts skill provides guidance on managing a specialized Perl utility designed to detect incompatibilities introduced by specific versions of Module::Runtime.
+description: This tool identifies version conflicts between Module::Runtime and dependent Perl modules to prevent runtime failures. Use when user asks to check for outdated modules, detect environment incompatibilities, or troubleshoot Moose errors after system updates.
 homepage: https://github.com/karenetheridge/Module-Runtime-Conflicts
 ---
+
 
 # perl-module-runtime-conflicts
 

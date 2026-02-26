@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cnorfeeder
-description: the package is available on all platforms; click for details.
+description: CNORfeeder integrates protein-protein interaction networks with signaling data to infer missing links in logic models. Use when user asks to infer missing links in signaling pathways, integrate PPI networks with experimental data, or refine logic models of cell signaling.
 homepage: https://bioconductor.org/packages/release/bioc/html/CNORfeeder.html
 ---
+
 
 # bioconductor-cnorfeeder
 

@@ -3,7 +3,7 @@
 ## maude
 
 ### Tool Description
-MAUDE (Mean Alteration of Uniplexed Deletions) is a tool for analyzing CRISPR screens.
+Maude interpreter
 
 ### Metadata
 - **Docker Image**: biocontainers/maude:v2.7-2b1-deb_cv1
@@ -18,11 +18,28 @@ MAUDE (Mean Alteration of Uniplexed Deletions) is a tool for analyzing CRISPR sc
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/maude:v2.7-2b1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3211576941: no space left on device
+Maude interpreter
+Usage: maude [options] [files]
+Options:
+  --help		Display this information
+  --version		Display version number
+  -no-prelude		Do not read in the standard prelude
+  -no-banner		Do not output banner on startup
+  -no-advise		No advisories on startup
+  -always-advise		Always show advisories regardless  -no-mixfix		Do not use mixfix notation for output
+  -no-wrap		Do not automatic line wrapping for output
+  -ansi-color		Use ANSI control sequences
+  -no-ansi-color	Do not use ANSI control sequences
+  -tecla		Use tecla command line editing
+  -no-tecla		Do not use tecla command line editing
+  -batch		Run in batch mode
+  -interactive		Run in interactive mode
+  -random-seed=<int>	Set seed for random number generator
+  -xml-log=<filename>	Set file in which to produce an xml log
+
+Send bug reports to: maude-bugs@maude.cs.uiuc.edu
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

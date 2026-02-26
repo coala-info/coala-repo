@@ -1,8 +1,9 @@
 ---
 name: agfusion
-description: "AGFusion is a tool for visualizing and annotating gene fusions. (Note: The provided text appears to be a system error log regarding a container build failure and does not contain help text or argument definitions.)"
+description: AGFusion annotates gene fusion events by predicting their functional impact, protein sequences, and domain preservation. Use when user asks to annotate gene fusions, predict fusion protein sequences, visualize protein domain structures, or batch process outputs from fusion-calling algorithms.
 homepage: https://github.com/murphycj/AGFusion
 ---
+
 
 # agfusion
 

@@ -1,8 +1,9 @@
 ---
 name: atlas-metadata-validator
-description: The `atlas-metadata-validator` is a specialized Python tool designed to verify that MAGE-TAB files are compatible with the analysis pipelines used by the EBI Gene Expression Group.
+description: This tool validates MAGE-TAB files for compatibility with EBI Gene Expression Group analysis pipelines. Use when user asks to verify IDF and SDRF files, check metadata for experiment types like single-cell or microarray, or validate Human Cell Atlas imports.
 homepage: https://github.com/ebi-gene-expression-group/atlas-metadata-validator
 ---
+
 
 # atlas-metadata-validator
 

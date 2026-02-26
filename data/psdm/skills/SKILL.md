@@ -1,8 +1,9 @@
 ---
 name: psdm
-description: psdm is a high-performance utility designed to compute pairwise SNP distance matrices from one or two FASTA alignment files.
+description: psdm computes pairwise SNP distance matrices from one or two FASTA alignment files. Use when user asks to calculate SNP distances, generate distance matrices, compare sequences between two different alignments, or format distance data into long-form or tab-delimited outputs.
 homepage: https://github.com/mbhall88/psdm
 ---
+
 
 # psdm
 

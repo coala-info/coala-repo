@@ -1,8 +1,9 @@
 ---
 name: bioconductor-derfinder
-description: the package is available on all platforms; click for details.
+description: This tool performs annotation-agnostic differential expression analysis of RNA-seq data at base-pair resolution. Use when user asks to identify differentially expressed regions, find expressed regions from BAM or BigWig files, or perform single base-level F-statistics without relying on existing gene models.
 homepage: https://bioconductor.org/packages/release/bioc/html/derfinder.html
 ---
+
 
 # bioconductor-derfinder
 

@@ -3,7 +3,7 @@
 ## cnv-vcf2json
 
 ### Tool Description
-A tool to convert CNV (Copy Number Variation) VCF files to JSON format.
+Convert CNVkit VCF to Beacon JSON format following the Progenetix pgxVariant schema
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cnv-vcf2json:2.0.0
@@ -18,9 +18,29 @@ A tool to convert CNV (Copy Number Variation) VCF files to JSON format.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cnv-vcf2json:2.0.0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3054216114: no space left on device
+usage: cnv-vcf2json [-h] -o OUTPUT [--assembly ASSEMBLY] [--analysis ANALYSIS]
+                    [--individual INDIVIDUAL] [--sequence SEQUENCE]
+                    [--reference REFERENCE] [--fusion FUSION]
+                    input
+
+Convert CNVkit VCF to Beacon JSON format following the Progenetix pgxVariant
+schema
+
+positional arguments:
+  input                 Input VCF file name
+
+options:
+  -h, --help            show this help message and exit
+  -o, --output OUTPUT   Output JSON file name
+  --assembly ASSEMBLY   Assembly identifier (e.g. GRCh38); if omitted,
+                        assemblyId will be excluded
+  --analysis ANALYSIS   Analysis identifier (analysisId)
+  --individual INDIVIDUAL
+                        Individual identifier (individualId)
+  --sequence SEQUENCE   Variant sequence
+  --reference REFERENCE
+                        Reference sequence
+  --fusion FUSION       Fusion identifier (fusionId)
 ```
 
 

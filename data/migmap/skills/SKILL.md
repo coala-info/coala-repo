@@ -1,8 +1,9 @@
 ---
 name: migmap
-description: MiGMAP is a specialized tool for processing immune repertoire sequencing data.
+description: MiGMAP processes immune repertoire sequencing data by mapping reads to germline segments and extracting CDR3 regions. Use when user asks to assemble clonotype abundance tables, perform per-read mapping, or filter sequencing data based on quality and coding properties.
 homepage: https://github.com/mikessh/migmap
 ---
+
 
 # migmap
 

@@ -3,7 +3,7 @@
 ## ucsc-beditemoverlapcount
 
 ### Tool Description
-The provided help text does not contain usage information due to a system error (no space left on device). This tool is part of the UCSC Genome Browser utilities and is typically used to count overlaps between BED items.
+Count how many items in a BED file overlap each other. Note: The provided help text was a system error message; parameters are based on standard tool documentation.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-beditemoverlapcount:482--h0b57e2e_0
@@ -18,12 +18,14 @@ The provided help text does not contain usage information due to a system error 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-beditemoverlapcount:482--h0b57e2e_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:5066db21a77d0ca4c94408449e088c750af39827aad5d7fedc6498e13077af0b: unpack entry: usr/local/lib/libmysqlclient.so.18.4.0: unpack to regular file: short write: write /tmp/build-temp-1340360313/rootfs/usr/local/lib/libmysqlclient.so.18.4.0: no space left on device
+Unable to find image 'quay.io/biocontainers/ucsc-beditemoverlapcount:482--h0b57e2e_0' locally
+482--h0b57e2e_0: Pulling from biocontainers/ucsc-beditemoverlapcount
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+5066db21a77d: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1822327550: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

@@ -1,8 +1,9 @@
 ---
 name: perl-hpc-runner-command
-description: `perl-hpc-runner-command` (invoked via the `hpcrunner.pl` script) is a specialized framework for orchestrating data analysis on HPC clusters.
+description: This tool orchestrates and manages data analysis workflows on HPC clusters by converting shell scripts with special directives into scheduled jobs. Use when user asks to automate bioinformatics pipelines, manage job dependencies, allocate cluster resources, or execute managed workflows locally and on schedulers like Slurm.
 homepage: https://github.com/biosails/HPC-Runner-Command
 ---
+
 
 # perl-hpc-runner-command
 

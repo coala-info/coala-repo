@@ -1,8 +1,9 @@
 ---
 name: pyseer
-description: `pyseer` is a comprehensive Python-based framework for microbial pangenome-wide association studies.
+description: pyseer is a Python framework for performing microbial genome-wide association studies using k-mers, unitigs, or SNPs to identify genetic variants associated with phenotypes. Use when user asks to perform bacterial GWAS, account for population structure in microbial associations, run linear mixed models on pangenomes, or identify predictive features using elastic net.
 homepage: https://github.com/mgalardini/pyseer
 ---
+
 
 # pyseer
 

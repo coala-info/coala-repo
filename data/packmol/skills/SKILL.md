@@ -1,8 +1,9 @@
 ---
 name: packmol
-description: Packmol is a utility used to create starting configurations for molecular simulations.
+description: Packmol generates initial configurations for molecular simulations by packing molecules into defined spatial regions while avoiding atomic overlaps. Use when user asks to create starting configurations, build solvated systems, generate lipid bilayers, or pack molecules into specific volumes.
 homepage: https://github.com/m3g/packmol
 ---
+
 
 # packmol
 

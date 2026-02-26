@@ -1,8 +1,9 @@
 ---
 name: scallop2
-description: Scallop2 is a specialized tool for assembling transcripts using a reference-based approach.
+description: Scallop2 is a reference-based transcript assembler optimized for reconstructing transcripts from paired-end and multiple-end RNA-seq data. Use when user asks to assemble transcripts from RNA-seq alignments, reconstruct transcriptomes from BAM files, or identify isoforms using splice graphs.
 homepage: https://github.com/Shao-Group/scallop2
 ---
+
 
 # scallop2
 

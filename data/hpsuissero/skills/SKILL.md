@@ -1,8 +1,9 @@
 ---
 name: hpsuissero
-description: HpsuisSero is a specialized bioinformatics pipeline designed to streamline the serotyping of *Haemophilus parasuis* from long-read sequencing data.
+description: HpsuisSero is a bioinformatics pipeline designed for the serotyping of Haemophilus parasuis from long-read sequencing data. Use when user asks to serotype Haemophilus parasuis, assemble Nanopore reads, or differentiate between serotypes 5 and 12.
 homepage: https://github.com/jimmyliu1326/HpsuisSero
 ---
+
 
 # hpsuissero
 

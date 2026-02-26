@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgreat
-description: the package is available on all platforms; click for details.
+description: This package performs functional enrichment analysis for genomic regions by associating them with nearby genes using the GREAT algorithm. Use when user asks to perform GREAT analysis, identify enriched biological terms for genomic coordinates, or associate non-coding regions with functional annotations.
 homepage: https://bioconductor.org/packages/release/bioc/html/rGREAT.html
 ---
+
 
 # bioconductor-rgreat
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylaiddata
-description: the package is available on all platforms; click for details.
+description: This package provides example data for the MethylAid quality control tool for DNA methylation arrays. Use when user asks to access example methylation data, run MethylAid demonstrations, or test quality control workflows for Illumina arrays.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/MethylAidData.html
 ---
+
 
 # bioconductor-methylaiddata
 

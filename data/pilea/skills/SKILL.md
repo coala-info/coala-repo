@@ -1,8 +1,9 @@
 ---
 name: pilea
-description: Pilea is a high-performance bioinformatics tool that leverages sketching algorithms to profile bacterial growth dynamics from metagenomic datasets.
+description: Pilea profiles bacterial growth dynamics from metagenomic datasets by using sketching algorithms to estimate peak-to-trough ratios. Use when user asks to profile metagenomes, estimate bacterial growth rates, index custom genomes, or fetch reference databases.
 homepage: https://github.com/xinehc/pilea
 ---
+
 
 # pilea
 

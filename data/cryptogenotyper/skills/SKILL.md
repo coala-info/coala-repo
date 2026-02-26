@@ -1,8 +1,9 @@
 ---
 name: cryptogenotyper
-description: CryptoGenotyper is a specialized bioinformatics tool designed for the rapid and reproducible identification of *Cryptosporidium* genotypes.
+description: "CryptoGenotyper identifies Cryptosporidium genotypes and subtypes from DNA sequences using SSU rRNA and gp60 gene markers. Use when user asks to identify Cryptosporidium species, perform gp60 subtyping, or process Sanger electropherogram files for genotype analysis."
 homepage: https://github.com/phac-nml/CryptoGenotyper
 ---
+
 
 # cryptogenotyper
 

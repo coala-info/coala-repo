@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biomvrcns
-description: the package is available on all platforms; click for details.
+description: This tool performs copy number study and segmentation for multivariate biological data using Hidden Semi-Markov Models and other segmentation algorithms. Use when user asks to segment genomic profiles, detect copy number variations, identify transcripts in RNA-seq data, or find differentially methylated regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/biomvRCNS.html
 ---
+
 
 # bioconductor-biomvrcns
 

@@ -1,8 +1,9 @@
 ---
 name: trust4
-description: TRUST4 (T-cell Receptor Universal Statistical Classifier 4) is a computational tool designed to extract and assemble immune repertoire sequences from unselected RNA-seq data.
+description: TRUST4 extracts and assembles immune repertoire sequences from standard RNA-seq data. Use when user asks to extract or assemble immune repertoire sequences, or process bulk, single-cell, or SMART-seq RNA-seq data.
 homepage: https://github.com/liulab-dfci/TRUST4
 ---
+
 
 # trust4
 

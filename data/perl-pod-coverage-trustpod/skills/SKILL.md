@@ -1,8 +1,9 @@
 ---
 name: perl-pod-coverage-trustpod
-description: The `perl-pod-coverage-trustpod` skill provides guidance on using `Pod::Coverage::TrustPod`, a Perl module that extends the standard `Pod::Coverage` functionality.
+description: This tool allows Perl developers to define POD documentation coverage exceptions directly within the source code using trust hints. Use when user asks to exempt subroutines from coverage requirements, embed documentation exceptions in POD, or integrate TrustPod with automated testing.
 homepage: https://github.com/rjbs/Pod-Coverage-TrustPod
 ---
+
 
 # perl-pod-coverage-trustpod
 

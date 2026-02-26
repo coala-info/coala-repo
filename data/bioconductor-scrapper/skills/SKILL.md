@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scrapper
-description: the package is available on all platforms; click for details.
+description: Scrapper is a Bioconductor package for preprocessing and evaluating single-cell RNA-sequencing data. Use when user asks to preprocess single-cell RNA-seq data, evaluate single-cell datasets, or perform quality control on single-cell experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/scrapper.html
 ---
+
 
 # bioconductor-scrapper
 

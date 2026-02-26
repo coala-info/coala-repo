@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.drerio.ucsc.danrer5.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genome sequences for Danio rerio based on the UCSC danRer5 assembly. Use when user asks to access zebrafish genomic sequences, manage assembly gaps and repeat masks, or perform sequence analysis on non-repetitive regions.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer5.masked.html
 ---
+
 
 # bioconductor-bsgenome.drerio.ucsc.danrer5.masked
 

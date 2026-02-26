@@ -1,8 +1,9 @@
 ---
 name: pytrf
-description: The `pytrf` skill enables the rapid detection of tandem repeats within genomic sequences.
+description: "pytrf detects perfect and imperfect tandem repeats within genomic sequences using a fast Python C extension. Use when user asks to find microsatellites, identify generic or approximate tandem repeats, or extract repeat sequences with flanking regions."
 homepage: https://github.com/lmdu/pytrf
 ---
+
 
 # pytrf
 

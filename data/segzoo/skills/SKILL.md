@@ -1,8 +1,9 @@
 ---
 name: segzoo
-description: Segzoo is a specialized tool designed to streamline the interpretation of genomic segmentations produced by Segway.
+description: Segzoo automates the interpretation and visualization of genomic segmentations produced by Segway by integrating multiple analysis tools and reference data. Use when user asks to interpret genomic segmentations, generate summary visualizations of Segway results, or translate numeric labels into descriptive biological tracks.
 homepage: https://github.com/hoffmangroup/segzoo
 ---
+
 
 # segzoo
 

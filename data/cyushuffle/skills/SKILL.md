@@ -1,8 +1,9 @@
 ---
 name: cyushuffle
-description: `cyushuffle` is a high-performance Cython wrapper for the uShuffle algorithm.
+description: cyushuffle is a high-performance Cython wrapper that randomizes biological sequences while preserving their exact k-let composition. Use when user asks to shuffle sequences, generate null sequences for statistical significance testing, or preserve dinucleotide and trinucleotide frequencies in randomized controls.
 homepage: https://github.com/guma44/ushuffle
 ---
+
 
 # cyushuffle
 

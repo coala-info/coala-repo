@@ -1,8 +1,9 @@
 ---
 name: yleaf
-description: `yleaf` is a specialized bioinformatics tool designed to automate the inference of human Y-chromosome haplogroups from sequencing data.
+description: `yleaf` infers human Y-chromosome haplogroups from sequencing data. Use when user asks to infer Y-chromosome haplogroups, predict Y-chromosome haplogroups, visualize Y-chromosome haplogroup trees, report private Y-chromosome mutations, or analyze ancient Y-chromosome DNA.
 homepage: https://github.com/genid/Yleaf
 ---
+
 
 # yleaf
 

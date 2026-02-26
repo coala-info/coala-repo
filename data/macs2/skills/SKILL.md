@@ -1,8 +1,9 @@
 ---
 name: macs2
-description: MACS2 (Model-based Analysis of ChIP-Seq) is a specialized toolset designed to identify enriched genomic regions from high-throughput sequencing data.
+description: MACS2 identifies enriched genomic regions from high-throughput sequencing data by modeling fragment shifts and evaluating statistical significance. Use when user asks to call narrow or broad peaks, identify transcription factor binding sites, or detect differential peaks between samples.
 homepage: https://pypi.org/project/MACS2/
 ---
+
 
 # macs2
 

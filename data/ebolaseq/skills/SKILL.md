@@ -1,8 +1,9 @@
 ---
 name: ebolaseq
-description: `ebolaseq` is a specialized bioinformatics pipeline designed to streamline the analysis of Ebola virus (EBOV) genomic data.
+description: ebolaseq is a bioinformatics pipeline that automates the retrieval of Ebola virus sequences from GenBank, performs multiple sequence alignment, and generates phylogenetic trees. Use when user asks to fetch Ebola genomic data, perform sequence alignment, generate phylogenetic trees, or compare local consensus sequences against GenBank records.
 homepage: https://github.com/DaanJansen94/ebolaseq
 ---
+
 
 # ebolaseq
 

@@ -1,8 +1,9 @@
 ---
 name: rbase
-description: The `rbasefind` tool is a high-performance utility designed to solve the "base address problem" in reverse engineering.
+description: The rbasefind tool identifies the correct memory base address for raw binary blobs by correlating internal pointers with ASCII strings. Use when user asks to find the loading address of a firmware dump, resolve pointers in a raw binary, or solve the base address problem in reverse engineering.
 homepage: https://github.com/sgayou/rbasefind
 ---
+
 
 # rbase
 

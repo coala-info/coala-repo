@@ -3,7 +3,7 @@
 ## truvari
 
 ### Tool Description
-The provided text is a system error log from a container runtime (Singularity/Apptainer) and does not contain CLI help information or usage instructions. As a result, no arguments could be parsed.
+Performance metrics for structural variant calling
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/truvari:5.4.0--pyhdfd78af_0
@@ -12,20 +12,19 @@ The provided text is a system error log from a container runtime (Singularity/Ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/truvari/overview
-- **Total Downloads**: 27.2K
+- **Total Downloads**: 27.3K
 - **Last updated**: 2025-10-08
 - **GitHub**: https://github.com/spiralgenetics/truvari
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/truvari:5.4.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:eafbf86db929c2d75411630d1676fe374cec43fe88a34f3326feb727ee12d72e: unpack entry: usr/local/include/krb5/krb5.h: unpack to regular file: short write: write /tmp/build-temp-3049657367/rootfs/usr/local/include/krb5/krb5.h: no space left on device
+Unable to find image 'quay.io/biocontainers/truvari:5.4.0--pyhdfd78af_0' locally
+5.4.0--pyhdfd78af_0: Pulling from biocontainers/truvari
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+eafbf86db929: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2966681274: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

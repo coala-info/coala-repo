@@ -3,27 +3,32 @@
 ## astropy
 
 ### Tool Description
-A community-developed core Python package for Astronomy. (Note: The provided text appears to be a container build log rather than CLI help text, so no arguments could be extracted.)
+FAIL to generate CWL: astropy not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/astropy:6.1.7
 - **Homepage**: https://github.com/astropy/astropy
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/astropy/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/main/packages/astropy/overview
+- **Total Downloads**: 36.3K
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/astropy/astropy
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: astropy not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: astropy not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/astropy:6.1.7 uri: while building SIF from layers: conveyor failed to get: error writing layer: write /home/qhu/.singularity/cache/blob/blobs/sha256/e97baa9f572e90e0c28c2b3be4fe5a8b69057f0c75d98d3abe95d5a72cca4d002920511937: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

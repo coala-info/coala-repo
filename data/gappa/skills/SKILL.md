@@ -1,8 +1,9 @@
 ---
 name: gappa
-description: Gappa (Genesis Applications for Phylogenetic Placement Analysis) is a high-performance toolkit designed for the post-processing of phylogenetic placement data.
+description: Gappa is a high-performance toolkit designed for the post-processing, analysis, and visualization of phylogenetic placement data. Use when user asks to assign taxonomy to environmental reads, visualize placement mass on heat-trees, compare microbial communities using Edge PCA, or manipulate and filter placement files.
 homepage: https://github.com/lczech/gappa
 ---
+
 
 # gappa
 

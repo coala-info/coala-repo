@@ -1,8 +1,9 @@
 ---
 name: ucsc-fasomerecords
-description: The `faSomeRecords` utility is a specialized tool from the UCSC Genome Browser "kent" source tree designed for efficient sequence extraction.
+description: This tool extracts specific sequences from a FASTA file. Use when user asks to extract specific sequences from a FASTA file, subset a FASTA file by sequence names, or exclude sequences from a FASTA file.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fasomerecords
 

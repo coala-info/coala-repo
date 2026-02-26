@@ -3,7 +3,7 @@
 ## insilicosv
 
 ### Tool Description
-A tool for simulating structural variations (Note: The provided text contains system error messages regarding container image conversion and disk space, rather than the tool's help documentation).
+insilicoSV is a software to design and simulate complex structural variants, both novel and known.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/insilicosv:0.0.6--pyhdfd78af_0
@@ -18,11 +18,18 @@ A tool for simulating structural variations (Note: The provided text contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/insilicosv:0.0.6--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2496484689: no space left on device
+usage: insilicosv [-h] [-r DIR] [--random_seed RANDOM_SEED] config
+
+insilicoSV is a software to design and simulate complex structural variants,
+both novel and known.
+
+positional arguments:
+  config                YAML config file
+
+options:
+  -h, --help            show this help message and exit
+  -r DIR, --root DIR    root directory for all files given
+  --random_seed RANDOM_SEED
+                        if non-zero, random seed for random number generation
 ```
 
-
-## Metadata
-- **Skill**: generated

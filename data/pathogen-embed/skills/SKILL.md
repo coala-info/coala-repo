@@ -1,8 +1,9 @@
 ---
 name: pathogen-embed
-description: pathogen-embed is a specialized toolkit designed to transform high-dimensional pathogen sequence alignments into interpretable 2D or 3D visualizations.
+description: pathogen-embed transforms high-dimensional pathogen sequence alignments into low-dimensional visualizations and clusters to identify evolutionary lineages and genetic diversity. Use when user asks to calculate genetic distances, generate t-SNE or UMAP embeddings from FASTA alignments, identify clusters in sequence data, or analyze reassortment in segmented genomes.
 homepage: https://github.com/blab/pathogen-embed
 ---
+
 
 # pathogen-embed
 

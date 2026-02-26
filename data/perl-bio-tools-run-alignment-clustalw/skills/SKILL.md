@@ -1,8 +1,9 @@
 ---
 name: perl-bio-tools-run-alignment-clustalw
-description: This skill provides guidance on using the BioPerl interface for ClustalW.
+description: This tool provides a BioPerl interface to automate multiple sequence alignments, profile alignments, and phylogenetic tree generation using ClustalW. Use when user asks to perform multiple sequence alignments, align sequences to an existing profile, or generate neighbor-joining trees within a Perl environment.
 homepage: https://metacpan.org/release/Bio-Tools-Run-Alignment-Clustalw
 ---
+
 
 # perl-bio-tools-run-alignment-clustalw
 

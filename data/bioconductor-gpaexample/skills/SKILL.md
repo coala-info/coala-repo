@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gpaexample
-description: the package is available on all platforms; click for details.
+description: This package provides example GWAS p-value and functional annotation data from the Psychiatric GWAS Consortium for use with the GPA package. Use when user asks to access sample datasets for multi-phenotype genetic analysis, test pleiotropy estimation models, or practice integrating functional annotations with GWAS results.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gpaExample.html
 ---
+
 
 # bioconductor-gpaexample
 

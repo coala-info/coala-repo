@@ -1,8 +1,9 @@
 ---
 name: bioconductor-nearbynding
-description: the package is available on all platforms; click for details.
+description: nearBynding provides a pipeline for analyzing the proximity of RNA-binding protein binding sites to RNA secondary structures. Use when user asks to analyze RBP binding sites relative to RNA structure, integrate CLIP-seq data with structural information, or visualize binding site distribution across RNA folds.
 homepage: https://bioconductor.org/packages/release/bioc/html/nearBynding.html
 ---
+
 
 # bioconductor-nearbynding
 

@@ -1,8 +1,9 @@
 ---
 name: r-crisprcleanr
-description: R package crisprcleanr (documentation from project home).
+description: CRISPRcleanR is an R package for identifying and correcting gene-independent responses and copy number biases in pooled genome-wide CRISPR-Cas9 screens. Use when user asks to normalize log fold changes, correct for genomic location biases, or derive corrected guide counts for downstream essentiality analysis.
 homepage: https://cran.r-project.org/web/packages/crisprcleanr/index.html
 ---
+
 
 # r-crisprcleanr
 

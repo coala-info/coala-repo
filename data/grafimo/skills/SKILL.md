@@ -1,8 +1,9 @@
 ---
 name: grafimo
-description: GRAFIMO (GRAph-based Finding of Individual Motif Occurrences) is a command-line tool designed to scan Position Weight Matrices (PWMs) against genome variation graphs.
+description: GRAFIMO scans Position Weight Matrices against genome variation graphs to identify motif occurrences across multiple haplotypes simultaneously. Use when user asks to find motifs in variation graphs, scan PWMs against genomic variants, or identify individual-specific motif occurrences.
 homepage: https://github.com/pinellolab/GRAFIMO
 ---
+
 
 # grafimo
 

@@ -3,7 +3,7 @@
 ## isocor
 
 ### Tool Description
-No description available: The provided text contains container runtime error messages rather than tool help text.
+A tool for analyzing isotopic distributions of molecules.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/isocor:2.2.2--pyhdfd78af_0
@@ -18,11 +18,17 @@ No description available: The provided text contains container runtime error mes
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/isocor:2.2.2--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3446841238: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/isocor", line 6, in <module>
+    from isocor.ui.isocorgui import start_gui
+  File "/usr/local/lib/python3.12/site-packages/isocor/ui/isocorgui.py", line 1, in <module>
+    import tkinter as tk
+  File "/usr/local/lib/python3.12/tkinter/__init__.py", line 38, in <module>
+    import _tkinter # If this fails your Python may not be configured for Tk
+    ^^^^^^^^^^^^^^^
+ImportError: libX11.so.6: cannot open shared object file: No such file or directory
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

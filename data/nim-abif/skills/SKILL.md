@@ -1,8 +1,9 @@
 ---
 name: nim-abif
-description: The `nim-abif` skill enables the handling of Applied Biosystems Information Format (ABIF) files, which are the standard output for Sanger capillary sequencing.
+description: "nim-abif processes Applied Biosystems Information Format (ABIF) files to extract, trim, and visualize Sanger sequencing data. Use when user asks to convert AB1 files to FASTQ, perform quality-based trimming, merge forward and reverse reads into a consensus sequence, or generate chromatogram visualizations."
 homepage: https://github.com/quadram-institute-bioscience/nim-abif
 ---
+
 
 # nim-abif
 

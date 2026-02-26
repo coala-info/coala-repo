@@ -1,8 +1,9 @@
 ---
 name: pftools
-description: The pftools suite provides specialized algorithms for sequence interpretation using generalized profiles.
+description: pftools provides algorithms for constructing and searching generalized sequence profiles against protein or DNA databases. Use when user asks to search a profile against a sequence database, scan a sequence against a profile library, or build profiles from multiple sequence alignments.
 homepage: https://web.expasy.org/pftools/
 ---
+
 
 # pftools
 

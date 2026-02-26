@@ -1,8 +1,9 @@
 ---
 name: kcalign
-description: kcalign (also known as Kc-Align) is a fast, codon-aware multiple sequence aligner that uses Kalign3 as its core engine.
+description: kcalign is a codon-aware multiple sequence aligner that performs amino acid alignment before projecting results back to nucleotide sequences to preserve reading frames. Use when user asks to perform codon-aware alignment, extract and align genes from whole genomes, or align sequences while preserving codon structure for evolutionary analysis.
 homepage: https://github.com/davebx/kc-align
 ---
+
 
 # kcalign
 

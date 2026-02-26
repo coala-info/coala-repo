@@ -1,8 +1,9 @@
 ---
 name: flash
-description: FlashAttention is a suite of IO-aware attention algorithms designed to accelerate Transformer training and inference.
+description: FlashAttention provides IO-aware algorithms to accelerate Transformer training and inference by optimizing memory usage and computation speed on modern GPUs. Use when user asks to install FlashAttention, optimize attention mechanisms for speed and memory efficiency, or implement high-performance attention kernels for Ampere and Hopper architectures.
 homepage: https://github.com/Dao-AILab/flash-attention
 ---
+
 
 # flash
 

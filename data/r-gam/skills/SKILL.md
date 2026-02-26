@@ -1,8 +1,9 @@
 ---
 name: r-gam
-description: Functions for fitting and working with generalized	additive models, as described in chapter 7 of "Statistical Models in S" (Chambers and Hastie (eds), 1991), and "Generalized Additive Models" (Hastie and Tibshirani, 1990).</p>
+description: This tool fits and analyzes Generalized Additive Models in R to model non-linear relationships using smoothing splines or local regression. Use when user asks to fit a GAM, model non-linear effects with smoothing splines or loess, visualize partial residual plots, or perform stepwise model selection for additive models.
 homepage: https://cloud.r-project.org/web/packages/gam/index.html
 ---
+
 
 # r-gam
 

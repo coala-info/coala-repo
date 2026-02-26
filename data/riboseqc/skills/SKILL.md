@@ -1,8 +1,9 @@
 ---
 name: riboseqc
-description: RiboseQC (also known as Ribo-seQC) is a specialized R package designed for the comprehensive quality control of Ribosome Profiling (Ribo-seq) data.
+description: RiboseQC is an R package for the comprehensive quality control and analysis of ribosome profiling data. Use when user asks to evaluate Ribo-seq library quality, calculate P-site offsets, or generate interactive reports on triplet periodicity and codon usage.
 homepage: https://github.com/ohlerlab/RiboseQC
 ---
+
 
 # riboseqc
 

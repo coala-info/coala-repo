@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsubtiliscdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Description File environment and coordinate mapping for the Bacillus subtilis Affymetrix microarray. Use when user asks to map probe coordinates to indices, access CDF metadata for B. subtilis, or perform low-level analysis of AffyBatch objects.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/bsubtiliscdf.html
 ---
+
 
 # bioconductor-bsubtiliscdf
 

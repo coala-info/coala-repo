@@ -1,8 +1,9 @@
 ---
 name: retry_decorator
-description: The `retry_decorator` is a specialized Python library designed to simplify exception handling through a declarative decorator.
+description: The retry_decorator library provides a Python decorator to automatically re-execute functions when specific exceptions occur. Use when user asks to handle transient failures, retry functions after a delay, or configure maximum execution attempts for unstable code.
 homepage: https://github.com/pnpnpn/retry-decorator
 ---
+
 
 # retry_decorator
 

@@ -1,8 +1,9 @@
 ---
 name: vcontact3
-description: vcontact3 is a computational tool designed for the automated clustering and taxonomic classification of viral sequences.
+description: vcontact3 clusters and taxonomically classifies viral sequences based on shared protein families. Use when user asks to cluster viral sequences, classify viral sequences taxonomically, download or list reference databases, visualize protein-sharing networks, or interpret viral clusters.
 homepage: https://bitbucket.org/MAVERICLab/vcontact3
 ---
+
 
 # vcontact3
 

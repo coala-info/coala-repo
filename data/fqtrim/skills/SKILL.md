@@ -1,8 +1,9 @@
 ---
 name: fqtrim
-description: fqtrim is a standalone utility designed for the pre-processing of next-generation sequencing (NGS) data.
+description: fqtrim is a standalone utility designed to trim sequencing adapters, poly-A/T tails, and low-quality bases from next-generation sequencing data. Use when user asks to trim adapters, remove poly-A/T tails, filter reads by quality, or collapse duplicate sequences in FASTQ files.
 homepage: https://ccb.jhu.edu/software/fqtrim/
 ---
+
 
 # fqtrim
 

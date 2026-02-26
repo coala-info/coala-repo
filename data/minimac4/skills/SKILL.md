@@ -1,8 +1,9 @@
 ---
 name: minimac4
-description: Minimac4 is a specialized tool designed for computationally efficient genotype imputation.
+description: Minimac4 is a computationally efficient tool designed for genotype imputation and reference panel management in genomic research. Use when user asks to impute missing genotypes, convert reference panels to MVCF format, or generate empirical doses for meta-analysis.
 homepage: https://github.com/statgen/Minimac4
 ---
+
 
 # minimac4
 

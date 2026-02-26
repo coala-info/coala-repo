@@ -1,8 +1,9 @@
 ---
 name: bioconductor-u133x3p.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation maps for the Affymetrix Human Genome U133 X3P array. Use when user asks to map Affymetrix U133 X3P probe identifiers to gene symbols, Entrez IDs, or other genomic metadata.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/u133x3p.db.html
 ---
+
 
 # bioconductor-u133x3p.db
 

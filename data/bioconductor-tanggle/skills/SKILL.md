@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tanggle
-description: the package is available on all platforms; click for details.
+description: Bioconductor-tanggle is an R package designed for the visualization and manipulation of phylogenetic networks. Use when user asks to visualize phylogenetic networks, plot reticulate evolution, or customize network diagrams using the ggtree framework.
 homepage: https://bioconductor.org/packages/release/bioc/html/tanggle.html
 ---
+
 
 # bioconductor-tanggle
 

@@ -1,8 +1,9 @@
 ---
 name: ccne
-description: The Carbapenemase-encoding gene copy number estimator (ccne) is a specialized bioinformatics tool used to quantify the abundance of resistance genes within a bacterial sample.
+description: The Carbapenemase-encoding gene copy number estimator quantifies the abundance of antimicrobial resistance genes in bacterial samples by comparing read depth against a reference. Use when user asks to estimate resistance gene copy numbers, list supported species and genes, or calculate gene abundance from raw reads or genome assemblies.
 homepage: https://github.com/biojiang/ccne
 ---
+
 
 # ccne
 

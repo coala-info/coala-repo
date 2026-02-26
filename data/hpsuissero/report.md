@@ -1,9 +1,9 @@
 # hpsuissero CWL Generation Report
 
-## hpsuissero
+## hpsuissero_HpsuisSero.sh
 
 ### Tool Description
-HPSuissero is a tool for the serotyping of Haemophilus parasuis.
+Serotyping tool for Haemophilus parasuis
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/hpsuissero:1.0.1--hdfd78af_0
@@ -18,29 +18,16 @@ HPSuissero is a tool for the serotyping of Haemophilus parasuis.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hpsuissero:1.0.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2939723596: no space left on device
-```
+Usage: /usr/local/bin/HpsuisSero.sh
 
+Required arguments:
+-i  input file
+-o  path to output directory
+-s  sample name
+-x  input type [fasta or fastq]
 
-## Metadata
-- **Skill**: generated
-
-## hpsuissero_HpsuisSero.sh
-
-### Tool Description
-A tool for serotyping Haemophilus parasuis. (Note: The provided help text contains only system error messages regarding container execution and does not list command-line arguments).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/hpsuissero:1.0.1--hdfd78af_0
-- **Homepage**: https://github.com/jimmyliu1326/HpsuisSero
-- **Package**: https://anaconda.org/channels/bioconda/packages/hpsuissero/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/hpsuissero:1.0.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2281979736: no space left on device
+Optional arguments:
+-h|--help       display help message
+-t|--threads    number of threads [Default: 4]
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adamgui
-description: the package is available on all platforms; click for details.
+description: ADAMgui provides a graphical user interface for the Activity and Diversity Analysis Module to visualize gene functional associated groups and enrichment results. Use when user asks to launch interactive Shiny applications, visualize path-level heatmaps, or analyze target-level differential expression and gene diversity.
 homepage: https://bioconductor.org/packages/release/bioc/html/ADAMgui.html
 ---
+
 
 # bioconductor-adamgui
 

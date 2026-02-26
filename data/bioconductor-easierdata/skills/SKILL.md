@@ -1,8 +1,9 @@
 ---
 name: bioconductor-easierdata
-description: the package is available on all platforms; click for details.
+description: The easierData package provides essential datasets and model parameters required for predicting immune checkpoint inhibitor response. Use when user asks to retrieve bladder cancer datasets, access optimized model coefficients, or load curated gene signatures for immune response scoring.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/easierData.html
 ---
+
 
 # bioconductor-easierdata
 

@@ -1,8 +1,9 @@
 ---
 name: flapjack
-description: Flapjack is a high-performance tool designed for the interactive visualization and analysis of large-scale genotyping data.
+description: Flapjack is a high-performance tool for the interactive visualization and analysis of large-scale genotyping and SNP data. Use when user asks to visualize genotype data, create Flapjack projects from map and genotype files, perform marker-assisted backcrossing analysis, verify F1 hybrids or line purity, or run principal coordinate analysis on genetic data.
 homepage: https://ics.hutton.ac.uk/flapjack
 ---
+
 
 # flapjack
 

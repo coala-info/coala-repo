@@ -1,8 +1,9 @@
 ---
 name: bioconductor-lineagepulse
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: LineagePulse performs differential expression analysis on single-cell RNA-seq data using a zero-inflated negative binomial noise model to account for drop-outs. Use when user asks to identify genes with significant expression changes across pseudotime trajectories, perform differential expression analysis on discrete cell clusters, or model gene expression using splines and impulse models.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/LineagePulse.html
 ---
+
 
 # bioconductor-lineagepulse
 

@@ -1,9 +1,9 @@
 # variantbam CWL Generation Report
 
-## variantbam
+## variantbam_variant
 
 ### Tool Description
-The provided text does not contain help information for variantbam; it is an error log from a container runtime (Singularity/Apptainer) failing to fetch the image.
+Filter a BAM/SAM/CRAM/STDIN according to hierarchical rules
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/variantbam:1.4.3--0
@@ -18,33 +18,44 @@ The provided text does not contain help information for variantbam; it is an err
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/variantbam:1.4.3--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: variant <input.bam> [OPTIONS] 
 
+  Description: Filter a BAM/SAM/CRAM/STDIN according to hierarchical rules
 
-## Metadata
-- **Skill**: generated
-
-## variantbam_variant
-
-### Tool Description
-VariantBAM is a tool for filtering and profiling BAM files. (Note: The provided help text contains only container runtime error logs and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/variantbam:1.4.3--0
-- **Homepage**: https://github.com/jwalabroad/VariantBam
-- **Package**: https://anaconda.org/channels/bioconda/packages/variantbam/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/variantbam:1.4.3--0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ General options
+  -h, --help                           Display this help and exit
+  -v, --verbose                        Verbose output
+  -x, --no-output                      Don't output reads (used for profiling with -q)
+  -r, --rules                          JSON ecript for the rules.
+  -k, --proc-regions-file              Samtools-style region string (e.g. 1:1,000-2,000) or BED/VCF of regions to process. -k UN iterates over unmapped-unmapped reads
+ Output options
+  -o, --output                         Output file to write to (BAM/SAM/CRAM) file instead of stdout
+  -C, --cram                           Output file should be in CRAM format
+  -b, --bam                            Output should be in binary BAM format
+  -T, --reference                      Path to reference. Required for reading/writing CRAM
+  -s, --strip-tags                     Remove the specified tags, separated by commas. eg. -s RG,MD
+  -S, --strip-all-tags                 Remove all alignment tags
+      --write-trimmed                  Output the base-quality trimmed sequence rather than the original sequence. Also removes quality scores
+ Filtering options
+  -q, --qc-file                        Output a qc file that contains information about BAM
+  -m, --max-coverage                   Maximum coverage of output file. BAM must be sorted. Negative values enforce a minimum coverage
+  -p, --min-phred                      Set the minimum base quality score considered to be high-quality
+ Region specifiers
+  -g, --region                         Regions (e.g. myvcf.vcf or WG for whole genome) or newline seperated subsequence file.
+  -G, --exclude-region                 Same as -g, but for region where satisfying a rule EXCLUDES this read.
+  -l, --linked-region                  Same as -g, but turns on mate-linking
+  -L, --linked-exclude-region          Same as -l, but for mate-linked region where satisfying this rule EXCLUDES this read.
+  -P, --region-pad                     Apply a padding to each region supplied with the region flags (specify after region flag)
+ Command line rules shortcuts (to be used without supplying a -r script)
+      --min-clip                       Minimum number of quality clipped bases
+      --max-nbases                     Maximum number of N bases
+      --min-mapq                       Minimum mapping quality
+      --min-del                        Minimum number of deleted bases
+      --min-ins                        Minimum number of inserted bases
+      --min-length                     Minimum read length (after base-quality trimming)
+      --motif                          Motif file
+  -R, --read-group                     Limit to just a single read group
+  -f, --include-aln-flag               Flags to include (like samtools -f)
+  -F, --exclude-aln-flag               Flags to exclude (like samtools -F)
 ```
 

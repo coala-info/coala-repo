@@ -1,8 +1,9 @@
 ---
 name: arborist
-description: Arborist is a specialized bioinformatics tool that helps researchers identify the most likely evolutionary history of a tumor.
+description: Arborist ranks candidate tumor phylogenetic trees by calculating the evidence lower bound using single-cell sequencing data. Use when user asks to rank candidate trees, identify the most likely clonal architecture, or assign cells to specific clones.
 homepage: https://github.com/VanLoo-lab/Arborist
 ---
+
 
 # arborist
 

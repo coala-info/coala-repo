@@ -1,8 +1,9 @@
 ---
 name: mapad
-description: mapAD is a specialized short-read mapper optimized for the unique characteristics of ancient DNA.
+description: "mapAD is a damage-aware short-read mapper optimized for aligning ancient DNA sequences to a reference genome. Use when user asks to index a reference genome, map ancient DNA reads using a damage-aware model, or perform distributed mapping across a cluster."
 homepage: https://github.com/mpieva/mapAD
 ---
+
 
 # mapad
 

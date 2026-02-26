@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: metawrap
 label: metawrap-mg_metawrap
-doc: "The provided text does not contain help information; it contains system error
-  messages regarding a failed container build (no space left on device).\n\nTool homepage:
-  https://github.com/bxlab/metaWRAP"
-inputs: []
+doc: "Please select a proper module of metaWRAP.\n\nTool homepage: https://github.com/bxlab/metaWRAP"
+inputs:
+  - id: module
+    type: string
+    doc: The module to run (e.g., read_qc, assembly, kraken, blobology, binning,
+      bin_refinement, reassemble_bins, quant_bins, classify_bins, annotate_bins)
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

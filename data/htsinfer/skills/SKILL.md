@@ -1,8 +1,9 @@
 ---
 name: htsinfer
-description: HTSinfer is a diagnostic tool designed to analyze Illumina high-throughput sequencing (HTS) data to reconstruct missing metadata.
+description: HTSinfer analyzes Illumina high-throughput sequencing data to reconstruct missing metadata and verify sample integrity. Use when user asks to infer library source, determine read orientation, identify adapters, or extract sequencing parameters from FASTQ files.
 homepage: https://github.com/zavolanlab/htsinfer
 ---
+
 
 # htsinfer
 

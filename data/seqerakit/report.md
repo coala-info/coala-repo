@@ -3,7 +3,7 @@
 ## seqerakit
 
 ### Tool Description
-The provided text does not contain help information for seqerakit; it is an error log from a failed container build process (no space left on device).
+Create resources on Seqera Platform using a YAML configuration file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/seqerakit:0.5.6--pyhdfd78af_0
@@ -18,14 +18,45 @@ The provided text does not contain help information for seqerakit; it is an erro
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/seqerakit:0.5.6--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:1b668072e13aa86244f61885f9fa9351f153657845e08664c0647e72b6d0c52c: unpack entry: usr/local/bin/python3.13: unpack to regular file: short write: write /tmp/build-temp-1202670104/rootfs/usr/local/bin/python3.13: no space left on device
+usage: seqerakit [-h] [-l {CRITICAL,ERROR,WARNING,INFO,DEBUG}] [--info] [-j]
+                 [--dryrun] [--version] [--delete] [--cli CLI_ARGS]
+                 [--targets TARGETS] [--env-file ENV_FILE]
+                 [--on-exists {fail,ignore,overwrite}] [--overwrite]
+                 [--verbose]
+                 [yaml ...]
+
+Create resources on Seqera Platform using a YAML configuration file.
+
+options:
+  -h, --help            show this help message and exit
+
+General Options:
+  -l, --log_level {CRITICAL,ERROR,WARNING,INFO,DEBUG}
+                        Set the logging level.
+  --info, -i            Display Seqera Platform information and exit.
+  -j, --json            Output JSON format in stdout.
+  --dryrun, -d          Print the commands that would be executed.
+  --version, -v         Show version number and exit.
+
+YAML Processing Options:
+  yaml                  One or more YAML files with Seqera Platform resource
+                        definitions.
+  --delete              Recursively delete resources defined in the YAML
+                        files.
+  --cli CLI_ARGS        Additional Seqera Platform CLI specific options to be
+                        passed, enclosed in double quotes (e.g. '--cli="--
+                        insecure"'). Can be specified multiple times.
+  --targets TARGETS     Specify the resources to be targeted for creation in a
+                        YAML file through a comma-separated list (e.g. '--
+                        targets=teams,participants').
+  --env-file ENV_FILE   Path to a YAML file containing environment variables
+                        for configuration.
+  --on-exists {fail,ignore,overwrite}
+                        Globally specifies the action to take if a resource
+                        already exists.
+  --overwrite           Globally enable overwrite for all resources defined in
+                        YAML input(s). Deprecated: Please use '--on-
+                        exists=overwrite' instead.
+  --verbose             Enable verbose output for Seqera Platform CLI.
 ```
 
-
-## Metadata
-- **Skill**: generated

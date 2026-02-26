@@ -1,8 +1,9 @@
 ---
 name: bioconductor-infercnv
-description: the package is available on all platforms; click for details.
+description: This tool identifies somatic copy number alterations in single-cell RNA-Seq data by comparing gene expression intensities between tumor and reference cells. Use when user asks to infer chromosomal gains or losses, analyze tumor heterogeneity, or visualize copy number variations in single-cell datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/infercnv.html
 ---
+
 
 # bioconductor-infercnv
 

@@ -1,8 +1,9 @@
 ---
 name: adapterremoval
-description: AdapterRemoval searches for and removes remnant adapter sequences from High-Throughput Sequencing (HTS) data and (optionally) trims low quality bases.
+description: "AdapterRemoval pre-processes raw sequencing data by removing adapter sequences, trimming low-quality bases, and merging overlapping paired-end reads. Use when user asks to trim adapters, merge overlapping reads, perform quality filtering, identify unknown adapters, or demultiplex samples using barcodes."
 homepage: https://github.com/MikkelSchubert/adapterremoval
 ---
+
 
 # adapterremoval
 

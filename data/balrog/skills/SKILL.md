@@ -1,8 +1,9 @@
 ---
 name: balrog
-description: Balrog (Bacterial Annotation by Learned Representation Of Genes) is a data-driven prokaryotic gene finder.
+description: Balrog is a data-driven prokaryotic gene finder that utilizes a universal model to identify genes across diverse species without requiring genome-specific training. Use when user asks to predict genes in bacterial genomes, annotate metagenomic bins, or identify protein-coding sequences in prokaryotic assemblies.
 homepage: https://github.com/Markusjsommer/BalrogCPP
 ---
+
 
 # balrog
 

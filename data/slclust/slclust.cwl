@@ -2,14 +2,35 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: slclust
 label: slclust
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a log of a failed container image retrieval process.\n\nTool homepage: https://github.com/brianjohnhaas/SLCLUST"
-inputs: []
+doc: "Cluster pairs based on Jaccard coefficient.\n\nTool homepage: https://github.com/brianjohnhaas/SLCLUST"
+inputs:
+  - id: input_pairs
+    type: File
+    doc: File of pairs to cluster
+    inputBinding:
+      position: 1
+  - id: jaccard_coefficient
+    type:
+      - 'null'
+      - float
+    doc: Jaccard coefficient threshold for clustering
+    inputBinding:
+      position: 102
+      prefix: -j
+  - id: verbosity
+    type:
+      - 'null'
+      - string
+    doc: Verbosity level ('info', 'debug')
+    inputBinding:
+      position: 102
+      prefix: -vv
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_clusters
+    type: File
+    doc: Output file for clusters
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/slclust:02022010--h077b44d_6
-stdout: slclust.out

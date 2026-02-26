@@ -1,8 +1,9 @@
 ---
 name: linkstats
-description: LinkStats is a specialized bioinformatics utility designed to extract and process metadata from barcoded genomic reads.
+description: LinkStats extracts and processes metadata from barcoded genomic reads to evaluate linked-read library quality and molecule metrics. Use when user asks to evaluate linked-read libraries, determine molecule length distributions, or visualize coverage gaps from alignment data.
 homepage: https://github.com/wtsi-hpag/LinkStats
 ---
+
 
 # linkstats
 

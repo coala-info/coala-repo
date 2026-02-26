@@ -1,8 +1,9 @@
 ---
 name: verifybamid2
-description: verifybamid2 is a specialized tool for quantifying inter-sample DNA contamination in sequencing libraries.
+description: "verifybamid2 quantifies inter-sample DNA contamination in sequencing libraries using an ancestry-agnostic SVD approach. Use when user asks to 'estimate DNA contamination', 'detect within-ancestry contamination', 'constrain contamination level', or 'constrain PC coordinates'."
 homepage: https://github.com/Griffan/VerifyBamID
 ---
+
 
 # verifybamid2
 

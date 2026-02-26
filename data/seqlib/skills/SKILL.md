@@ -1,8 +1,9 @@
 ---
 name: seqlib
-description: SeqLib is a specialized C++ development library that provides a high-level, memory-managed interface to the industry-standard HTSlib, BWA-MEM, and Fermi engines.
+description: SeqLib is a C++ development library that provides a high-level interface for HTSlib, BWA-MEM, and Fermi engines to perform sequence alignment and assembly. Use when user asks to perform high-performance BAM I/O, align sequences in memory using BWA-MEM, or conduct de novo assembly with Fermi.
 homepage: https://github.com/walaj/SeqLib
 ---
+
 
 # seqlib
 

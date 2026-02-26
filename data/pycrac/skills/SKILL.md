@@ -1,8 +1,9 @@
 ---
 name: pycrac
-description: The pycrac skill provides procedural knowledge for handling the pyCRAC software suite.
+description: pyCRAC is a software suite designed for processing and analyzing RNA-protein interaction sequencing data. Use when user asks to demultiplex reads, trim adapters, map reads to a reference genome, count reads on genomic features, call peaks, or discover sequence motifs.
 homepage: http://sandergranneman.bio.ed.ac.uk/Granneman_Lab/pyCRAC_software.html
 ---
+
 
 # pycrac
 

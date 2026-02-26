@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simbenchdata
-description: the package is available on all platforms; click for details.
+description: SimBenchData provides a collection of benchmark datasets for evaluating and comparing simulation methods in genomic data analysis. Use when user asks to access benchmark datasets, evaluate simulation performance, or compare single-cell RNA sequencing simulation tools.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SimBenchData.html
 ---
+
 
 # bioconductor-simbenchdata
 

@@ -1,8 +1,9 @@
 ---
 name: r-bayesprism
-description: R package bayesprism (documentation from project home).
+description: BayesPrism performs Bayesian deconvolution of bulk RNA-seq data using single-cell references to estimate cell type proportions and gene expression profiles. Use when user asks to deconvolve bulk RNA-seq samples, estimate cell type fractions, or infer cell type-specific gene expression in tumor microenvironments.
 homepage: https://cran.r-project.org/web/packages/bayesprism/index.html
 ---
+
 
 # r-bayesprism
 

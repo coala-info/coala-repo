@@ -1,8 +1,9 @@
 ---
 name: genenotebook
-description: GeneNoteBook is a specialized platform designed for comparative genomics research.
+description: GeneNoteBook is a comparative genomics platform for integrating and visualizing genome annotations, functional domains, orthology, and expression data. Use when user asks to initialize the server, add genome assemblies or annotations, import protein domains and orthogroups, or manage expression data.
 homepage: https://genenotebook.github.io
 ---
+
 
 # genenotebook
 

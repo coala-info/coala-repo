@@ -1,8 +1,9 @@
 ---
 name: plastedma
-description: PlastEDMA (also known as M-PARTY) is a specialized bioinformatics tool designed to identify enzymes capable of degrading plastics within metagenomic datasets.
+description: PlastEDMA identifies plastic-degrading enzymes within metagenomic datasets by searching protein sequences against curated HMM models. Use when user asks to build a plastic-degrading enzyme database, annotate protein sequences for plastic degradation potential, or search metagenomic data for specific enzymatic activities.
 homepage: https://github.com/ozefreitas/PlastEDMA
 ---
+
 
 # plastedma
 

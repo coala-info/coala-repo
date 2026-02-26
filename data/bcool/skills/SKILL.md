@@ -1,8 +1,9 @@
 ---
 name: bcool
-description: BCOOL (de Bruijn graph cOrrectiOn from graph aLignment) is a specialized tool for improving the accuracy of NGS reads.
+description: "BCOOL improves the accuracy of NGS reads by aligning them to a de Bruijn graph to correct sequencing errors. Use when user asks to correct sequencing artifacts in NGS data, improve read accuracy for downstream assembly, or filter noise from genomic reads using graph alignment."
 homepage: https://github.com/Malfoy/BCOOL
 ---
+
 
 # bcool
 

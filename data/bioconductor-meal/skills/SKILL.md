@@ -1,8 +1,9 @@
 ---
 name: bioconductor-meal
-description: the package is available on all platforms; click for details.
+description: MEAL performs integrative analysis of DNA methylation and gene expression data to identify genomic associations. Use when user asks to analyze methylation and expression data, perform integrative genomic analysis, or identify associations between epigenetic and transcriptomic features.
 homepage: https://bioconductor.org/packages/release/bioc/html/MEAL.html
 ---
+
 
 # bioconductor-meal
 

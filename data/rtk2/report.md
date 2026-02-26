@@ -1,9 +1,9 @@
 # rtk2 CWL Generation Report
 
-## rtk2
+## rtk2_rarefaction
 
 ### Tool Description
-Rarefaction Tool Kit 2 (Note: The provided text contains container build logs rather than command-line help documentation. No arguments could be extracted.)
+rarefaction tool kit (rtk)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rtk2:2.11.2--h077b44d_1
@@ -18,33 +18,85 @@ Rarefaction Tool Kit 2 (Note: The provided text contains container build logs ra
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rtk2:2.11.2--h077b44d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+rarefaction tool kit (rtk) 2.12
+
+USAGE
+    rtk <mode> -i <input.csv> -o <output> [options] 
+
+MODE rarefaction
+
+OPTIONS
+<mode>      For rarefaction: mode can be either swap or memory.
+            Swap mode creates temporary files but uses less memory. 
+            The speed of both modes is comparable.
+    -i      path to an .txt file (tab delimited) to rarefy
+    -o      path to a output directory
+    -d      Depth or multiple comma seperated depths to rarefy to. Default is 0.95 times the minimal column sum.
+    -r      Number of times to create diversity measures. Default is 10.
+    -w      Number of rarefied tables to write.
+    -t      Number of threads to use. Default: 1
+    -ns     If set, no temporary files will be used when writing rarefaction tables to disk.
+
+EXAMPLE
+    Rarefy a table to 1000 counts per sample with two threads. Create one table:
+        rtk swap -i table.csv -o outputdir/prefix. -d 1000 -r 10 -w 1 -t 2
+
+    Rarefy with most memory and least amount of IO:
+        rtk memory -i table.csv -o outputdir/prefix. -ns
+
+MODE: Colsums
+Reports the column sums of all columns in form of a sorted and an unsorted file.
+
+EXAMPLE
+    Repot column sums of file 'table.csv'
+        rtk colsums -i table.csv -o prefix
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## rtk2_rtk
+## rtk2_colsums
 
 ### Tool Description
-Rarefaction Tool Kit (RTK) for rarefying and analyzing ecological data. Note: The provided text contains container runtime error logs rather than the tool's help documentation.
+Reports the column sums of all columns in form of a sorted and an unsorted file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rtk2:2.11.2--h077b44d_1
 - **Homepage**: https://github.com/hildebra/rtk2/
 - **Package**: https://anaconda.org/channels/bioconda/packages/rtk2/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rtk2:2.11.2--h077b44d_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+rarefaction tool kit (rtk) 2.12
+
+USAGE
+    rtk <mode> -i <input.csv> -o <output> [options] 
+
+MODE rarefaction
+
+OPTIONS
+<mode>      For rarefaction: mode can be either swap or memory.
+            Swap mode creates temporary files but uses less memory. 
+            The speed of both modes is comparable.
+    -i      path to an .txt file (tab delimited) to rarefy
+    -o      path to a output directory
+    -d      Depth or multiple comma seperated depths to rarefy to. Default is 0.95 times the minimal column sum.
+    -r      Number of times to create diversity measures. Default is 10.
+    -w      Number of rarefied tables to write.
+    -t      Number of threads to use. Default: 1
+    -ns     If set, no temporary files will be used when writing rarefaction tables to disk.
+
+EXAMPLE
+    Rarefy a table to 1000 counts per sample with two threads. Create one table:
+        rtk swap -i table.csv -o outputdir/prefix. -d 1000 -r 10 -w 1 -t 2
+
+    Rarefy with most memory and least amount of IO:
+        rtk memory -i table.csv -o outputdir/prefix. -ns
+
+MODE: Colsums
+Reports the column sums of all columns in form of a sorted and an unsorted file.
+
+EXAMPLE
+    Repot column sums of file 'table.csv'
+        rtk colsums -i table.csv -o prefix
 ```
 

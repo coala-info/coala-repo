@@ -1,8 +1,9 @@
 ---
 name: plasmidid
-description: PlasmidID is a hybrid pipeline that combines read mapping and de novo assembly to accurately identify plasmid sequences within bacterial samples.
+description: PlasmidID is a hybrid pipeline that combines read mapping and de novo assembly to identify and reconstruct plasmid sequences within bacterial samples. Use when user asks to identify plasmidic composition, reconstruct plasmids from reads or contigs, or generate circular visualizations of plasmid sequences.
 homepage: https://github.com/BU-ISCIII/plasmidID
 ---
+
 
 # plasmidid
 

@@ -3,7 +3,7 @@
 ## luciphor2
 
 ### Tool Description
-Luciphor2 is a tool for site localization of post-translational modifications (PTMs) from tandem mass spectrometry data.
+JAVA-based version of Luciphor
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/luciphor2:2020_04_03--hdfd78af_1
@@ -18,29 +18,20 @@ Luciphor2 is a tool for site localization of post-translational modifications (P
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/luciphor2:2020_04_03--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1353498164: no space left on device
-```
+JarClassLoader: Warning: module-info.class in lib/jaxb-runtime-2.3.1.jar is hidden by lib/jaxb-api-2.3.1.jar (with different bytecode)
+JarClassLoader: Warning: module-info.class in lib/txw2-2.3.1.jar is hidden by lib/jaxb-api-2.3.1.jar (with different bytecode)
+JarClassLoader: Warning: module-info.class in lib/istack-commons-runtime-3.0.7.jar is hidden by lib/jaxb-api-2.3.1.jar (with different bytecode)
+JarClassLoader: Warning: module-info.class in lib/stax-ex-1.8.jar is hidden by lib/jaxb-api-2.3.1.jar (with different bytecode)
+JarClassLoader: Warning: module-info.class in lib/FastInfoset-1.2.15.jar is hidden by lib/jaxb-api-2.3.1.jar (with different bytecode)
 
+luciphor2 (JAVA-based version of Luciphor)
+Version: 1.2014Oct10
+Original C++ version available at: http://luciphor.sf.net
 
-## Metadata
-- **Skill**: generated
+USAGE: java -jar luciphor2.jar <input_file>
 
-## luciphor2_luciphor2.jar
-
-### Tool Description
-Luciphor2 is a tool for site localization of post-translational modifications (PTMs) from tandem mass spectrometry data. Note: The provided text appears to be a system error log rather than help text; therefore, no arguments could be extracted from the input.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/luciphor2:2020_04_03--hdfd78af_1
-- **Homepage**: http://luciphor2.sourceforge.net/
-- **Package**: https://anaconda.org/channels/bioconda/packages/luciphor2/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/luciphor2:2020_04_03--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2967435015: no space left on device
+	Generate a luciphor2 input file with: java -jar luciphor2.jar -t
+	Modify the input file to suit your needs and submit it to the program.
+	Example: java -jar luciphor2.jar input_file_you_edited
 ```
 

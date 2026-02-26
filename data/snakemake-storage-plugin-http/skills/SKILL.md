@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-http
-description: The `snakemake-storage-plugin-http` is a specialized extension for Snakemake (version 8+) that enables the seamless integration of web-based resources into data pipelines.
+description: This plugin enables Snakemake to use web-based resources as input files by managing remote URL downloads and caching. Use when user asks to integrate HTTP or HTTPS resources into a workflow, define remote URLs as input files, or disable HEAD requests for specific web servers.
 homepage: https://github.com/snakemake/snakemake-storage-plugin-http
 ---
+
 
 # snakemake-storage-plugin-http
 

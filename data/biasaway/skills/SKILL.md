@@ -1,8 +1,9 @@
 ---
 name: biasaway
-description: BiasAway is a specialized bioinformatics tool used to generate control sequence sets that match the composition of a target set of genomic sequences.
+description: BiasAway generates control sequence sets that match the nucleotide composition and GC content of a target set of genomic sequences. Use when user asks to generate shuffled background sequences, create GC-matched control sets from a genomic pool, or perform k-mer shuffling to preserve sequence properties.
 homepage: https://github.com/asntech/biasaway
 ---
+
 
 # biasaway
 

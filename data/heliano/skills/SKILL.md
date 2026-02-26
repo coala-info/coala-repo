@@ -1,8 +1,9 @@
 ---
 name: heliano
-description: HELIANO (Helitron-like elements annotator) is a specialized bioinformatics tool designed for the fast and accurate identification of Helitron-like elements within host genomes.
+description: HELIANO identifies and annotates Helitron-like elements within host genomes by distinguishing between canonical and non-canonical variants. Use when user asks to perform de novo searches for Helitrons, generate consensus sequences from predicted elements, or use pre-identified pair information to accelerate discovery in related species.
 homepage: https://github.com/Zhenlisme/heliano
 ---
+
 
 # heliano
 

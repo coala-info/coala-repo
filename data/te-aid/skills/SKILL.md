@@ -1,8 +1,9 @@
 ---
 name: te-aid
-description: TE-aid is a specialized diagnostic tool designed for the "finishing" stage of transposable element discovery.
+description: TE-aid generates diagnostic plots and structural evidence to assist in the manual curation and finishing of transposable element consensus sequences. Use when user asks to visualize genomic hits, identify structural features like LTRs or TIRs, analyze coding potential, or refine consensus sequences for transposable elements.
 homepage: https://github.com/clemgoub/TE-Aid/tree/v{version}
 ---
+
 
 # te-aid
 

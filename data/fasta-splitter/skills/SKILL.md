@@ -1,8 +1,9 @@
 ---
 name: fasta-splitter
-description: The `fasta-splitter` utility provides a robust way to segment large genomic datasets into smaller, approximately equal-sized files.
+description: "fasta-splitter segments large FASTA files into smaller, approximately equal-sized parts while ensuring individual sequence records remain intact. Use when user asks to split genomic datasets into a specific number of files, partition sequences by count or total length, or manage large files for parallel processing."
 homepage: http://kirill-kryukov.com/study/tools/fasta-splitter/
 ---
+
 
 # fasta-splitter
 

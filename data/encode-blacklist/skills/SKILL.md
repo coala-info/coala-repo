@@ -1,8 +1,9 @@
 ---
 name: encode-blacklist
-description: The ENCODE Blacklist tool is used to identify and remove genomic regions that consistently show high signal artifacts regardless of the cell line or experiment type.
+description: The ENCODE Blacklist tool identifies and removes genomic regions that exhibit consistent high-signal artifacts to prevent false positives in downstream analyses. Use when user asks to filter problematic genomic regions, apply pre-computed blacklists for standard assemblies, or generate custom blacklists from raw sequencing data.
 homepage: https://github.com/Boyle-Lab/Blacklist
 ---
+
 
 # encode-blacklist
 

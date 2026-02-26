@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-c_mvapich_4_0_ofi
-description: The `esme_netcdf-c_mvapich_4_0_ofi` package provides the C implementation of the Network Common Data Form (NetCDF) specifically compiled for compatibility with MVAPICH and OFI fabrics.
+description: This package provides the C implementation of the Network Common Data Form (NetCDF) optimized for parallel I/O with MVAPICH and OFI fabrics. Use when user asks to inspect NetCDF metadata, convert or compress scientific datasets, generate binary files from CDL text, or configure C projects with MPI-enabled NetCDF linking flags.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-c_mvapich_4_0_ofi
 

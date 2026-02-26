@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spoon
-description: the package is available on all platforms; click for details.
+description: Bioconductor-spoon provides tools for the analysis and simulation of spatial transcriptomics data using spatially offset observation networks. Use when user asks to simulate spatial transcriptomics datasets, analyze spatially offset observations, or benchmark spatial transcriptomics analysis methods.
 homepage: https://bioconductor.org/packages/release/bioc/html/spoon.html
 ---
+
 
 # bioconductor-spoon
 

@@ -1,8 +1,9 @@
 ---
 name: sirius-csifingerid
-description: This skill provides guidance for using the SIRIUS software suite to process tandem mass spectra.
+description: This tool processes tandem mass spectra to identify molecular formulas, predict molecular fingerprints, and classify unknown metabolites. Use when user asks to calculate molecular formulas, generate fragmentation trees, perform structural annotation with CSI:FingerID, or classify metabolites using CANOPUS.
 homepage: https://bio.informatik.uni-jena.de/software/sirius/
 ---
+
 
 # sirius-csifingerid
 

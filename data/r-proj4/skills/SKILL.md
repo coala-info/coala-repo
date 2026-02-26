@@ -1,8 +1,9 @@
 ---
 name: r-proj4
-description: "A simple interface to lat/long projection and datum 	     transformation of the PROJ.4 cartographic projections library. It 	     allows transformation of geographic coordinates from one projection 	     and/or datum to another.</p>"
+description: This tool performs cartographic projections and datum transformations in R using the PROJ.4 library. Use when user asks to convert geographic coordinates to projected coordinates, transform data between different coordinate reference systems, or perform datum shifts.
 homepage: https://cloud.r-project.org/web/packages/proj4/index.html
 ---
+
 
 # r-proj4
 

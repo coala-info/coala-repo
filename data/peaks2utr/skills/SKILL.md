@@ -1,8 +1,9 @@
 ---
 name: peaks2utr
-description: peaks2utr is a parallelized Python command-line tool that automates the discovery and refinement of 3' UTR boundaries.
+description: peaks2utr is a command-line tool that automates the discovery and refinement of 3' UTR boundaries by combining read coverage peaks with polyA-tail truncation analysis. Use when user asks to identify 3' UTR termination sites, refine transcript annotations, or process 3'-end enriched sequencing data.
 homepage: https://github.com/haessar/peaks2utr
 ---
+
 
 # peaks2utr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tpp2d
-description: the package is available on all platforms; click for details.
+description: TPP2D analyzes two-dimensional thermal proteome profiling data to identify protein-ligand interactions. Use when user asks to analyze 2D thermal proteome profiling experiments, detect changes in protein thermal stability, or identify drug targets using concentration-dependent melting curves.
 homepage: https://bioconductor.org/packages/release/bioc/html/TPP2D.html
 ---
+
 
 # bioconductor-tpp2d
 

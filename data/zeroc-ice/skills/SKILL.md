@@ -1,8 +1,9 @@
 ---
 name: zeroc-ice
-description: ZeroC Ice (Internet Communications Engine) is a comprehensive RPC framework designed to simplify the creation of networked applications.
+description: ZeroC Ice is an RPC framework for building networked applications. Use when user asks to create networked applications, compile IDL definitions, deploy or monitor servers, implement publish-subscribe messaging, secure client-server communication, or monitor application performance.
 homepage: https://github.com/zeroc-ice
 ---
+
 
 # zeroc-ice
 

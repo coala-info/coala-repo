@@ -1,8 +1,9 @@
 ---
 name: beads
-description: Beads (invoked via the `bd` CLI) provides a persistent, graph-based memory system for coding agents.
+description: Beads provides a persistent, graph-based memory system that tracks task dependencies and project states directly within a repository. Use when user asks to initialize a task tracking system, create or update tasks, manage dependencies between items, or view ready-to-work tasks in a structured graph format.
 homepage: https://github.com/steveyegge/beads
 ---
+
 
 # beads
 

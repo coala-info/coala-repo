@@ -1,8 +1,9 @@
 ---
 name: gofasta
-description: gofasta is a high-performance command-line utility designed for the rapid processing of short genome alignments.
+description: gofasta is a high-performance command-line utility designed for the rapid processing, conversion, and analysis of short genome alignments. Use when user asks to convert SAM files to multiple sequence alignments, find closest neighbors by genetic distance, or list variants and mutations relative to a reference.
 homepage: https://github.com/cov-ert/gofasta
 ---
+
 
 # gofasta
 

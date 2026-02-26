@@ -1,8 +1,9 @@
 ---
 name: mavenn
-description: The `mavenn` skill enables the construction of predictive models that map genetic sequences to functional phenotypes.
+description: MAVE-NN constructs predictive models that map genetic sequences to functional phenotypes by treating genotype-phenotype map inference as an information compression problem. Use when user asks to implement Global Epistasis regression for continuous phenotypes, perform Measurement Process Agnostic regression for binned data, or visualize sequence-function relationships using heatmaps.
 homepage: http://mavenn.readthedocs.io
 ---
+
 
 # mavenn
 

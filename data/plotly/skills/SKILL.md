@@ -1,8 +1,9 @@
 ---
 name: plotly
-description: The `plotly` skill enables the creation of declarative, interactive visualizations using the `plotly.py` library.
+description: Plotly creates interactive, browser-based data visualizations and statistical charts using a declarative Python API. Use when user asks to create interactive plots, build dashboards, generate standalone HTML reports, or visualize large datasets with WebGL acceleration.
 homepage: https://github.com/plotly/plotly.py
 ---
+
 
 # plotly
 

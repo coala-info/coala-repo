@@ -1,8 +1,9 @@
 ---
 name: microbecensus
-description: MicrobeCensus is a specialized bioinformatics tool that estimates the average genome size (AGS) of a microbial community from metagenomic data.
+description: MicrobeCensus estimates the average genome size of a microbial community from metagenomic sequencing data. Use when user asks to estimate average genome size, calculate genome equivalents, or normalize gene abundances across metagenomic samples.
 homepage: https://github.com/snayfach/MicrobeCensus
 ---
+
 
 # microbecensus
 

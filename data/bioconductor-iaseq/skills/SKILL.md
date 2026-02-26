@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iaseq
-description: the package is available on all platforms; click for details.
+description: The iASeq package provides a Bayesian hierarchical model for detecting allele-specific events by integrating multiple sequencing datasets. Use when user asks to detect allele-specific binding or expression, integrate multiple ChIP-seq or RNA-seq studies, or identify common patterns of allelic skewness across different conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/iASeq.html
 ---
+
 
 # bioconductor-iaseq
 

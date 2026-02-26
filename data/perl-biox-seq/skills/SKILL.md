@@ -1,8 +1,9 @@
 ---
 name: perl-biox-seq
-description: `BioX::Seq` is designed as a lightweight, high-speed alternative to more bloated bioinformatics libraries.
+description: BioX::Seq is a lightweight Perl library and command-line toolset for high-speed parsing and manipulation of biological sequences. Use when user asks to parse FASTA or FASTQ files, perform reverse complements, translate sequences, or extract subsequences with low memory overhead.
 homepage: http://metacpan.org/pod/BioX::Seq
 ---
+
 
 # perl-biox-seq
 

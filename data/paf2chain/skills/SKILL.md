@@ -1,8 +1,9 @@
 ---
 name: paf2chain
-description: `paf2chain` is a high-performance Rust tool designed to bridge the gap between modern sequence aligners and legacy genomic toolsets.
+description: paf2chain converts PAF alignment files into the CHAIN format for use with legacy genomic coordinate transformation tools. Use when user asks to convert PAF files to CHAIN format, transform alignment outputs for legacy toolsets, or process minimap2 alignments into CHAIN files.
 homepage: https://github.com/AndreaGuarracino/paf2chain
 ---
+
 
 # paf2chain
 

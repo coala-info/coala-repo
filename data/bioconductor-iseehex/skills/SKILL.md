@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseehex
-description: the package is available on all platforms; click for details.
+description: This tool creates hexagonal binning plots within the iSEE interactive visualization framework to summarize large-scale Bioconductor data. Use when user asks to visualize large datasets without overplotting, create interactive hexagonal binning dashboards, or use the ReducedDimensionHexPlot class for SingleCellExperiment objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSEEhex.html
 ---
+
 
 # bioconductor-iseehex
 

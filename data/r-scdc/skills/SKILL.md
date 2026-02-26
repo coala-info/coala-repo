@@ -1,8 +1,9 @@
 ---
 name: r-scdc
-description: R package scdc (documentation from project home).
+description: SCDC is an R package that deconvolves bulk RNA-seq samples by integrating cell-type specific gene expressions from multiple single-cell RNA-seq reference datasets using an ensemble method. Use when user asks to deconvolve bulk RNA-seq data, estimate cell type proportions, or integrate multiple single-cell references to address batch effects.
 homepage: https://cran.r-project.org/web/packages/scdc/index.html
 ---
+
 
 # r-scdc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-musicatk
-description: the package is available on all platforms; click for details.
+description: musicatk is a comprehensive toolkit for the discovery, analysis, and visualization of mutational signatures in genomic data. Use when user asks to discover de novo mutational signatures, predict exposures for known signatures, or visualize mutational patterns across different genomic scales.
 homepage: https://bioconductor.org/packages/release/bioc/html/musicatk.html
 ---
+
 
 # bioconductor-musicatk
 

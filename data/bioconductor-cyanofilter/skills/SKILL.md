@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cyanofilter
-description: The package is especially tuned for cyanobacteria, but will work fine for phytoplankton communities where there is at least one cell characteristic that differentiates every phytoplankton in the community.
+description: The cyanoFilter package provides a specialized workflow for analyzing flow cytometry data from cyanobacteria. Use when user asks to filter FCS files based on metadata, clean flow cytometry data, remove margin events, filter out debris, or identify phytoplankton populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/cyanoFilter.html
 ---
+
 
 # bioconductor-cyanofilter
 

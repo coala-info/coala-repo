@@ -3,7 +3,7 @@
 ## bakta
 
 ### Tool Description
-Bakta is a tool for the rapid & standardized annotation of bacterial genomes and plasmids.
+Rapid & standardized annotation of bacterial genomes, MAGs & plasmids
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0
@@ -12,41 +12,114 @@ Bakta is a tool for the rapid & standardized annotation of bacterial genomes and
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bakta/overview
-- **Total Downloads**: 104.6K
+- **Total Downloads**: 104.8K
 - **Last updated**: 2026-01-29
 - **GitHub**: https://github.com/oschwengers/bakta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:80d7c04fb4fe03c9ac10959e6aaecbec2907e684fa7b75bc3db840e191423279: unpack entry: usr/local/bin/rchive.Linux: unpack to regular file: short write: write /scratch/21813747/build-temp-1770949137/rootfs/usr/local/bin/rchive.Linux: no space left on device
-```
+usage: bakta [--db DB] [--min-contig-length MIN_CONTIG_LENGTH]
+             [--prefix PREFIX] [--output OUTPUT] [--force] [--genus GENUS]
+             [--species SPECIES] [--strain STRAIN] [--plasmid PLASMID]
+             [--complete] [--prodigal-tf PRODIGAL_TF]
+             [--translation-table {11,4,25}] [--gram {+,-,?}] [--locus LOCUS]
+             [--locus-tag LOCUS_TAG] [--locus-tag-increment {1,5,10}]
+             [--keep-contig-headers] [--compliant] [--replicons REPLICONS]
+             [--regions REGIONS] [--proteins PROTEINS] [--hmms HMMS] [--meta]
+             [--partial] [--skip-trna] [--skip-tmrna] [--skip-rrna]
+             [--skip-ncrna] [--skip-ncrna-region] [--skip-crispr] [--skip-cds]
+             [--skip-pseudo] [--skip-sorf] [--skip-gap] [--skip-ori]
+             [--skip-filter] [--skip-plot] [--help] [--verbose] [--debug]
+             [--threads THREADS] [--tmp-dir TMP_DIR] [--version]
+             <genome>
 
+Rapid & standardized annotation of bacterial genomes, MAGs & plasmids
 
-## Metadata
-- **Skill**: generated
+positional arguments:
+  <genome>              Genome sequences in (zipped) fasta format
 
-## bakta_bakta_db
+Input / Output:
+  --db, -d DB           Database path (default = <bakta_path>/db). Can also be
+                        provided as BAKTA_DB environment variable.
+  --min-contig-length, -m MIN_CONTIG_LENGTH
+                        Minimum contig/sequence size (default = 1; 200 in
+                        compliant mode)
+  --prefix, -p PREFIX   Prefix for output files
+  --output, -o OUTPUT   Output directory (default = current working directory)
+  --force, -f           Force overwriting existing output folder (except for
+                        current working directory)
 
-### Tool Description
-Bakta database management tool. (Note: The provided input text was an error log and did not contain usage information or argument definitions.)
+Organism:
+  --genus GENUS         Genus name
+  --species SPECIES     Species name
+  --strain STRAIN       Strain name
+  --plasmid PLASMID     Plasmid name
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0
-- **Homepage**: https://github.com/oschwengers/bakta
-- **Package**: https://anaconda.org/channels/bioconda/packages/bakta/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/bakta:1.12.0--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:80d7c04fb4fe03c9ac10959e6aaecbec2907e684fa7b75bc3db840e191423279: unpack entry: usr/local/bin/rchive.Linux: unpack to regular file: short write: write /scratch/21813747/build-temp-2346407092/rootfs/usr/local/bin/rchive.Linux: no space left on device
+Annotation:
+  --complete            All sequences are complete replicons
+                        (chromosome/plasmid[s])
+  --prodigal-tf PRODIGAL_TF
+                        Path to existing Prodigal training file to use for CDS
+                        prediction
+  --translation-table {11,4,25}
+                        Translation table: 11/4/25 (default = 11)
+  --gram {+,-,?}        Gram type for signal peptide predictions: +/-/?
+                        (default = ?)
+  --locus LOCUS         Locus prefix (default = 'contig')
+  --locus-tag LOCUS_TAG
+                        Locus tag prefix (default = autogenerated)
+  --locus-tag-increment {1,5,10}
+                        Locus tag increment: 1/5/10 (default = 1)
+  --keep-contig-headers
+                        Keep original contig/sequence headers
+  --compliant           Force Genbank/ENA/DDJB compliance
+  --replicons, -r REPLICONS
+                        Replicon information table (tsv/csv)
+  --regions REGIONS     Path to pre-annotated regions in GFF3 or Genbank
+                        format (regions only, no functional annotations).
+  --proteins PROTEINS   Fasta file of trusted protein sequences for CDS
+                        annotation
+  --hmms HMMS           HMM file of trusted hidden markov models in HMMER
+                        format for CDS annotation
+  --meta                Run in metagenome mode. This only affects CDS
+                        prediction.
+  --partial             Predict partial (truncated) genes spanning linear
+                        sequence ends
+
+Workflow:
+  --skip-trna           Skip tRNA detection & annotation
+  --skip-tmrna          Skip tmRNA detection & annotation
+  --skip-rrna           Skip rRNA detection & annotation
+  --skip-ncrna          Skip ncRNA detection & annotation
+  --skip-ncrna-region   Skip ncRNA region detection & annotation
+  --skip-crispr         Skip CRISPR array detection & annotation
+  --skip-cds            Skip CDS detection & annotation
+  --skip-pseudo         Skip pseudogene detection & annotation
+  --skip-sorf           Skip sORF detection & annotation
+  --skip-gap            Skip gap detection & annotation
+  --skip-ori            Skip oriC/oriT detection & annotation
+  --skip-filter         Skip feature overlap filters
+  --skip-plot           Skip generation of circular genome plots
+
+General:
+  --help, -h            Show this help message and exit
+  --verbose, -v         Print verbose information
+  --debug               Run Bakta in debug mode. Temp data will not be
+                        removed.
+  --threads, -t THREADS
+                        Number of threads to use (default = number of
+                        available CPUs)
+  --tmp-dir TMP_DIR     Location for temporary files (default = system
+                        dependent auto detection)
+  --version             show program's version number and exit
+
+Version: 1.12.0
+DOI: 10.1099/mgen.0.000685
+URL: github.com/oschwengers/bakta
+
+Citation:
+Schwengers O., Jelonek L., Dieckmann M. A., Beyvers S., Blom J., Goesmann A. (2021).
+Bakta: rapid and standardized annotation of bacterial genomes via alignment-free sequence identification.
+Microbial Genomics, 7(11). https://doi.org/10.1099/mgen.0.000685
 ```
 

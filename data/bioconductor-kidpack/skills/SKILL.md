@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kidpack
-description: the package is available on all platforms; click for details.
+description: This package provides gene expression data and metadata from renal cell cancer biopsies for analysis and benchmarking. Use when user asks to access the Sültmann kidney cancer dataset, analyze ExpressionSet objects for renal cell cancer subtypes, or retrieve raw microarray intensity data and clone annotations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/kidpack.html
 ---
+
 
 # bioconductor-kidpack
 

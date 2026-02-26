@@ -1,8 +1,9 @@
 ---
 name: geosketch
-description: Geosketch is a specialized tool for summarizing massive datasets by selecting a representative subset of points.
+description: Geosketch selects a representative subset of points from large datasets while preserving the underlying geometric structure and rare populations. Use when user asks to summarize massive datasets, perform geometric sketching, preserve rare cell types, or reduce data volume for visualization and analysis.
 homepage: https://github.com/brianhie/geosketch/
 ---
+
 
 # geosketch
 

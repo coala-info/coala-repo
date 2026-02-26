@@ -3,7 +3,7 @@
 ## automappa
 
 ### Tool Description
-Automated mapping and processing of genomic data (Note: The provided text contains system error messages and does not include help documentation or argument definitions).
+A tool for mapping and analyzing genomic data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/automappa:2.2.1--pyhdfd78af_0
@@ -18,9 +18,18 @@ Automated mapping and processing of genomic data (Note: The provided text contai
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/9d395514ab4fbb56b7ff63116feab3c87884a4261c06cc67d39a9a3962ea7c8c: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/automappa:2.2.1--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3882852543: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/automappa", line 6, in <module>
+    from automappa.__main__ import main
+  File "/usr/local/lib/python3.12/site-packages/automappa/__main__.py", line 7, in <module>
+    from automappa import settings
+  File "/usr/local/lib/python3.12/site-packages/automappa/settings.py", line 81, in <module>
+    server = ServerSettings()
+             ^^^^^^^^^^^^^^^^
+  File "pydantic/env_settings.py", line 40, in pydantic.env_settings.BaseSettings.__init__
+  File "pydantic/main.py", line 347, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for ServerSettings
+root_upload_folder
+  field required (type=value_error.missing)
 ```
 

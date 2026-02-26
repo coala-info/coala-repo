@@ -3,7 +3,7 @@
 ## sracat
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for 'sracat'. It appears to be an error log from a container runtime (Apptainer/Singularity) failing to fetch the OCI image.
+Reads SRA accession or file and outputs it to stdout or a file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sracat:0.2--h077b44d_3
@@ -18,13 +18,10 @@ The provided text does not contain help information or usage instructions for 's
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sracat:0.2--h077b44d_3 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage for sracat (v. 0.2)
+	[-o <output file *prefix*>] (default is stdout)
+	[-z] (zlib-based compression of file-based output; default is no compression)
+	[--qual] (fastq output)
+	<SRA accession/file 1> ...
 ```
 
-
-## Metadata
-- **Skill**: generated

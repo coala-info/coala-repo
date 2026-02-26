@@ -1,9 +1,9 @@
 # amplicontyper CWL Generation Report
 
-## amplicontyper
+## amplicontyper_train
 
 ### Tool Description
-A tool for amplicon typing (Note: The provided text contains error logs from a container build process rather than the tool's help documentation, so specific arguments could not be extracted).
+Classify reads in BAM file using existing model or train a model from bam files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/amplicontyper:0.1.34--pyhdfd78af_0
@@ -15,13 +15,72 @@ A tool for amplicon typing (Note: The provided text contains error logs from a c
 - **Total Downloads**: 1.1K
 - **Last updated**: 2026-01-31
 - **GitHub**: https://github.com/AntonS-bio/AmpliconTyper
-- **Stars**: 6
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/amplicontyper:0.1.34--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking tmpfs: while unpacking layer sha256:798f2a1d572ee8772dfdfe1f3d2f73713a14d374a4d4c18f4c77ffc75ab538f4: unpack entry: usr/local/x86_64-conda-linux-gnu/sysroot/usr/lib64/locale/locale-archive: unpack to regular file: short write: write /tmp/build-temp-3838621532/rootfs/usr/local/x86_64-conda-linux-gnu/sysroot/usr/lib64/locale/locale-archive: no space left on device
+usage: train [-h] -t TARGET_REGIONS -r REFERENCE [-p POSITIVE_BAMS]
+             [-n NEGATIVE_BAMS] -v VCF [-s SPECIAL_CASES] -o OUTPUT_DIR
+             [--cpus CPUS] [-m BAMS_MATRIX]
+
+Classify reads in BAM file using existing model or train a model from bam
+files
+
+options:
+  -h, --help            show this help message and exit
+  -t, --target_regions TARGET_REGIONS
+                        Bed file that specifies reference intervals to which
+                        reads where mapped
+  -r, --reference REFERENCE
+                        FASTA file with the reference to which reads where
+                        mapped
+  -p, --positive_bams POSITIVE_BAMS
+                        Directory with or list of NON-target BAM files and
+                        corresponding BAM index files (.bai)
+  -n, --negative_bams NEGATIVE_BAMS
+                        Directory with or list of TARGET BAM files and
+                        corresponding BAM index files (.bai)
+  -v, --vcf VCF         VCF file containing positions that will be excluded
+                        from training as well as genotype defining SNPs (also
+                        excluded)
+  -s, --special_cases SPECIAL_CASES
+                        Tab delimited file specifying amplicon for which
+                        presence/absense should be reported
+  -o, --output_dir OUTPUT_DIR
+                        Directory for output files
+  --cpus CPUS           Directory for output files
+  -m, --bams_matrix BAMS_MATRIX
+                        Matrix with precalculated BAM matrices ()
+usage: train [-h] -t TARGET_REGIONS -r REFERENCE [-p POSITIVE_BAMS]
+             [-n NEGATIVE_BAMS] -v VCF [-s SPECIAL_CASES] -o OUTPUT_DIR
+             [--cpus CPUS] [-m BAMS_MATRIX]
+
+Classify reads in BAM file using existing model or train a model from bam
+files
+
+options:
+  -h, --help            show this help message and exit
+  -t, --target_regions TARGET_REGIONS
+                        Bed file that specifies reference intervals to which
+                        reads where mapped
+  -r, --reference REFERENCE
+                        FASTA file with the reference to which reads where
+                        mapped
+  -p, --positive_bams POSITIVE_BAMS
+                        Directory with or list of NON-target BAM files and
+                        corresponding BAM index files (.bai)
+  -n, --negative_bams NEGATIVE_BAMS
+                        Directory with or list of TARGET BAM files and
+                        corresponding BAM index files (.bai)
+  -v, --vcf VCF         VCF file containing positions that will be excluded
+                        from training as well as genotype defining SNPs (also
+                        excluded)
+  -s, --special_cases SPECIAL_CASES
+                        Tab delimited file specifying amplicon for which
+                        presence/absense should be reported
+  -o, --output_dir OUTPUT_DIR
+                        Directory for output files
+  --cpus CPUS           Directory for output files
+  -m, --bams_matrix BAMS_MATRIX
+                        Matrix with precalculated BAM matrices ()
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: libis
-description: LiBis (Low input Bisulfite sequencing alignment) is an ultrasensitive alignment method designed to overcome the low mapping ratios typically associated with Whole Genome Bisulfite Sequencing (WGBS) of limited DNA quantities.
+description: LiBis is an ultrasensitive alignment tool that rescues informative reads from low-input whole genome bisulfite sequencing data through dynamic clipping and remapping. Use when user asks to align fragmented bisulfite sequencing reads, optimize clipping parameters, or generate methylation calls and reports.
 homepage: https://github.com/Dangertrip/LiBis
 ---
+
 
 # libis
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pathnetdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and pathway information for the PathNet pathway analysis tool. Use when user asks to load example data for PathNet, access pathway topology information, or run PathNet tutorials.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PathNetData.html
 ---
+
 
 # bioconductor-pathnetdata
 

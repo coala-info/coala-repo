@@ -1,8 +1,9 @@
 ---
 name: ipython-cluster-helper
-description: The `ipython-cluster-helper` library provides a simplified interface for running parallel Python tasks on distributed infrastructure.
+description: ipython-cluster-helper automates the setup and management of IPython Parallel clusters for distributed task execution on batch schedulers. Use when user asks to run Python functions in parallel, distribute tasks across a compute cluster, or manage temporary IPython profiles for SLURM, LSF, or SGE.
 homepage: https://github.com/roryk/ipython-cluster-helper
 ---
+
 
 # ipython-cluster-helper
 

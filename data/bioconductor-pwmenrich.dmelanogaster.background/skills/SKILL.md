@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pwmenrich.dmelanogaster.background
-description: the package is available on all platforms; click for details.
+description: This package provides pre-compiled background distributions for Position Weight Matrix enrichment analysis in Drosophila melanogaster. Use when user asks to perform motif enrichment analysis, calculate P-values for transcription factor binding, or access fruit fly genomic background models.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PWMEnrich.Dmelanogaster.background.html
 ---
+
 
 # bioconductor-pwmenrich.dmelanogaster.background
 

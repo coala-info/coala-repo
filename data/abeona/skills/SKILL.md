@@ -1,8 +1,9 @@
 ---
 name: abeona
-description: Abeona is a transcriptome assembler designed to process short-read RNA-seq data through a multi-stage graph traversal pipeline.
+description: Abeona is a transcriptome assembler that processes short-read RNA-seq data using a multi-stage graph traversal and quantification pipeline. Use when user asks to assemble transcripts from RNA-seq reads, construct De Bruijn graphs for transcriptomics, or generate abundance-filtered candidate transcripts.
 homepage: https://github.com/winni2k/abeona
 ---
+
 
 # abeona
 

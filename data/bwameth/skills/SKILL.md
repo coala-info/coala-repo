@@ -1,8 +1,9 @@
 ---
 name: bwameth
-description: bwameth is a specialized tool designed for the fast and accurate alignment of Bisulfite-Seq reads.
+description: bwameth aligns bisulfite-treated DNA sequencing reads to a reference genome using in silico C-to-T conversion. Use when user asks to index a reference genome for bisulfite sequencing or align Bisulfite-Seq reads to produce SAM or BAM files.
 homepage: https://github.com/brentp/bwa-meth
 ---
+
 
 # bwameth
 

@@ -1,9 +1,9 @@
 # excludonfinder CWL Generation Report
 
-## excludonfinder
+## excludonfinder_ExcludonFinder
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container environment (Apptainer/Singularity) failing to pull the image due to lack of disk space.
+ExcludonFinder main processing script
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/excludonfinder:0.2.0--hdfd78af_0
@@ -18,11 +18,23 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/excludonfinder:0.2.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3275927033: no space left on device
+ExcludonFinder main processing script
+Usage:
+    main.sh -f <reference.fasta> -1 <reads_R1.fastq> [-2 <reads_R2.fastq>] -g <annotation.gff> [options]
+
+Required arguments:
+    -f <file>    Reference genome in FASTA format
+    -1 <file>    Input FASTQ file (Read 1 for paired-end data)
+    -g <file>    Annotation file in GFF format
+
+Optional arguments:
+    -2 <file>    Input FASTQ file (Read 2 for paired-end data)
+    -t <float>   Coverage threshold (default: 0.5)
+    -j <int>     Number of threads (default: 8)
+    -l           Use long-read mode (uses minimap2 instead of bwa-mem2)
+    -o <dir>     Supply a custom output dir (default: ./output)
+    -k           Keep intermediate files (default: remove)
+    -C           Run quality control checks
+    -h, --help   Show this help message
 ```
 
-
-## Metadata
-- **Skill**: generated

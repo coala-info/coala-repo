@@ -1,8 +1,9 @@
 ---
 name: sigprofilermatrixgenerator
-description: SigProfilerMatrixGenerator is a high-performance tool designed to transform raw somatic mutation calls into structured matrices required for mutational signature extraction.
+description: SigProfilerMatrixGenerator transforms raw somatic mutation calls into structured matrices for mutational signature extraction across various reference genomes. Use when user asks to generate mutational matrices, classify SBS, DBS, or ID mutations, perform transcriptional strand bias tests, or visualize mutational profiles.
 homepage: https://github.com/AlexandrovLab/SigProfilerMatrixGenerator.git
 ---
+
 
 # sigprofilermatrixgenerator
 

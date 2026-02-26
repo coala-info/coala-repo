@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cctutorial
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides documented workflows and data for the primary statistical analysis of ChIP-chip tiling array experiments. Use when user asks to import NimbleGen pair data, normalize intensities, smooth signals, identify ChIP-enriched regions, or relate peaks to genomic annotations.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/ccTutorial.html
 ---
+
 
 # bioconductor-cctutorial
 

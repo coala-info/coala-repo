@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneanswers
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: GeneAnswers performs statistical enrichment analysis and provides integrated visualization for gene lists. Use when user asks to perform enrichment tests against GO or KEGG, visualize concept-gene networks, generate heatmaps of gene expression data, or map Entrez IDs to gene symbols.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GeneAnswers.html
 ---
+
 
 # bioconductor-geneanswers
 

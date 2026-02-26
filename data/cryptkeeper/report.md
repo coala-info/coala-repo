@@ -3,7 +3,7 @@
 ## cryptkeeper
 
 ### Tool Description
-The provided text is a log of a failed container build/execution and does not contain help information or argument definitions for the tool.
+Pipeline for predicting cryptic gene expression
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cryptkeeper:1.0.1--pyhdfd78af_0
@@ -12,20 +12,31 @@ The provided text is a log of a failed container build/execution and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/cryptkeeper/overview
-- **Total Downloads**: 266
+- **Total Downloads**: 268
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/barricklab/cryptkeeper
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/cryptkeeper:1.0.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:8583ef0646682d830a3e91776bbf0a671a42719aa825e34f40417a89fc1ee259: unpack entry: usr/local/lib/libRNA.a: unpack to regular file: short write: write /tmp/build-temp-4146736787/rootfs/usr/local/lib/libRNA.a: no space left on device
+usage: cryptkeeper [-h] -i I [-c] -o O [-j J] [-p] [-n NAME]
+                   [--rbs-score-cutoff RBS_SCORE_CUTOFF] [-t TICK_FREQUENCY]
+                   [--no-vis] [--show-small]
+
+Pipeline for predicting cryptic gene expression
+
+options:
+  -h, --help            show this help message and exit
+  -i I, --input I       input fasta file
+  -c, --circular        The input file is circular. (Note: Increases runtime)
+  -o O, --output O      output file prefix
+  -j J, -threads J      Number of threads/processes to use
+  -p, --plot-only       plot mode, assumes output files all exist
+  -n NAME, --name NAME  name of sample (if not provided the filename is used)
+  --rbs-score-cutoff RBS_SCORE_CUTOFF
+                        Minimum score that is graphed and output to final
+                        files (all are used in calculating burden)
+  -t TICK_FREQUENCY     Y axis tick frequency (default 1000)
+  --no-vis              Skip visualization
+  --show-small          Show small ORFs on visualization
 ```
 
-
-## Metadata
-- **Skill**: generated

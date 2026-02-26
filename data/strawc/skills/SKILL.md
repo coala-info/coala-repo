@@ -1,8 +1,9 @@
 ---
 name: strawc
-description: The `strawc` skill provides guidance for using the high-performance Straw library to access Hi-C contact maps.
+description: "strawc extracts contact frequency data from Hi-C files in a sparse triplet format with high performance and minimal memory overhead. Use when user asks to access Hi-C contact maps, extract specific matrix slices from .hic files, or stream remote genomic interaction data."
 homepage: https://github.com/aidenlab/straw
 ---
+
 
 # strawc
 

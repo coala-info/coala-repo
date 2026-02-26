@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multiclust
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package identifies the optimal number of clusters and performs feature selection for transcriptomic data analysis. Use when user asks to cluster gene expression data, determine the best number of clusters, or select informative features for transcriptomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/multiClust.html
 ---
+
 
 # bioconductor-multiclust
 

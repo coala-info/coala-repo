@@ -1,8 +1,9 @@
 ---
 name: qimba
-description: Qimba (Quadram Institute MetaBarcoding Analysis) is a modular bioinformatics toolkit designed to streamline the transition from raw sequencing data to processed amplicon sets.
+description: Qimba is a modular bioinformatics toolkit for processing raw sequencing data into amplicon sets for metabarcoding workflows. Use when user asks to generate sample sheets, merge paired-end reads, dereplicate sequences, split DADA2 output, or validate TSV files.
 homepage: https://github.com/quadram-institute-bioscience/qimba
 ---
+
 
 # qimba
 

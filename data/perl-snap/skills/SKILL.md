@@ -1,8 +1,9 @@
 ---
 name: perl-snap
-description: The `perl-snap` tool (Synonymous Non-synonymous Analysis Program) provides a command-line implementation of the Nei-Gojobori algorithm.
+description: This tool calculates synonymous and non-synonymous substitution rates to determine selection pressure in codon-aligned sequences using the Nei-Gojobori algorithm. Use when user asks to calculate dN/dS ratios, analyze selection pressure, or identify synonymous and non-synonymous substitutions in genetic sequences.
 homepage: https://www.hiv.lanl.gov/content/sequence/SNAP/SNAP.html
 ---
+
 
 # perl-snap
 

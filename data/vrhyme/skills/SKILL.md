@@ -1,8 +1,9 @@
 ---
 name: vrhyme
-description: vRhyme is a specialized binning tool designed specifically for viruses rather than microbes.
+description: vRhyme reconstructs viral metagenome-assembled genomes (vMAGs) by analyzing sequence features and coverage variance. Use when user asks to reconstruct viral metagenome-assembled genomes, bin viral sequences, or dereplicate scaffolds.
 homepage: https://github.com/AnantharamanLab/vRhyme
 ---
+
 
 # vrhyme
 

@@ -1,8 +1,9 @@
 ---
 name: r-viber
-description: R package viber (documentation from project home).
+description: r-viber fits multi-variate Binomial mixture models to count data using variational Bayesian inference. Use when user asks to perform subclonal deconvolution, cluster multi-sample sequencing counts, or model variant allele frequencies in cancer genomics.
 homepage: https://cran.r-project.org/web/packages/viber/index.html
 ---
+
 
 # r-viber
 

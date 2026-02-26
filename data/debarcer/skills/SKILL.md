@@ -1,8 +1,9 @@
 ---
 name: debarcer
-description: Debarcer is a bioinformatics suite designed to improve the accuracy of DNA sequencing by leveraging molecular barcodes.
+description: Debarcer is a bioinformatics suite that processes molecular barcodes to improve DNA sequencing accuracy and detect low-frequency mutations. Use when user asks to extract UMIs from FASTQ files, group reads into families, collapse sequences into consensus reads, or call variants from UMI-tagged data.
 homepage: https://github.com/oicr-gsi/debarcer
 ---
+
 
 # debarcer
 

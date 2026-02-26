@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fishalyser
-description: the package is available on all platforms; click for details.
+description: FISHalyseR provides automated processing of fluorescence in situ hybridisation images to identify nuclei and quantify probe signals. Use when user asks to process FISH images, detect probes in multiple color channels, calculate probe counts and distances, or perform image thresholding and particle analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/FISHalyseR.html
 ---
+
 
 # bioconductor-fishalyser
 

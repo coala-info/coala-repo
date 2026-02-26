@@ -1,8 +1,9 @@
 ---
 name: megalodon
-description: Megalodon is a research-oriented command-line tool designed to extract high-accuracy modified base and sequence variant calls from raw nanopore signal data.
+description: Megalodon extracts high-accuracy modified base calls, sequence variants, and basecalls from raw nanopore signal data by anchoring neural network outputs to a reference. Use when user asks to identify DNA or RNA methylation, call sequence variants from raw signal, or generate basecalls and mappings simultaneously.
 homepage: https://github.com/nanoporetech/megalodon
 ---
+
 
 # megalodon
 

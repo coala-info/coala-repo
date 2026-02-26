@@ -1,8 +1,9 @@
 ---
 name: malder
-description: MALDER (Multiple ALDER) is a specialized population genetics tool designed to infer the timing and proportions of multiple ancestral admixture events.
+description: MALDER infers the timing and proportions of multiple ancestral admixture events by fitting exponential decay curves to linkage disequilibrium data. Use when user asks to estimate admixture dates, analyze complex population histories with multiple migration waves, or fit weighted LD decay curves.
 homepage: https://github.com/joepickrell/malder
 ---
+
 
 # malder
 

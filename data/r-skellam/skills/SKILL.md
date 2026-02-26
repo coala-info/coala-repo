@@ -1,8 +1,9 @@
 ---
 name: r-skellam
-description: "Functions for the Skellam distribution, including: density     (pmf), cdf, quantiles and regression.</p>"
+description: This tool provides statistical functions for the Skellam distribution to model the difference between two independent Poisson random variables. Use when user asks to calculate probability mass, cumulative distribution, quantiles, or generate random samples for Skellam-distributed data.
 homepage: https://cloud.r-project.org/web/packages/skellam/index.html
 ---
+
 
 # r-skellam
 

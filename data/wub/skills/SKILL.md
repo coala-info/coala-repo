@@ -1,8 +1,9 @@
 ---
 name: wub
-description: The `wub` (Oxford Nanopore Technologies Applications group) library is a specialized suite of bioinformatics tools designed to handle the unique characteristics of nanopore sequencing data.
+description: wub is a bioinformatics tool suite for analyzing and simulating nanopore sequencing data, providing utilities for quality control, alignment analysis, and sequence manipulation. Use when user asks to simulate nanopore errors, assess genome assembly accuracy, perform quality control on transcriptome alignments, extract metrics from aligned nanopore reads, process sequence files, summarize read length distributions, quantify transcripts, or compare expression data.
 homepage: https://github.com/nanoporetech/wub
 ---
+
 
 # wub
 

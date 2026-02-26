@@ -1,8 +1,9 @@
 ---
 name: vcf2pandas
-description: vcf2pandas is a Python library designed to simplify the process of loading genomic variant data into the pandas ecosystem.
+description: vcf2pandas converts genomic variant data from VCF files into pandas DataFrames. Use when user asks to convert VCF files to pandas, load genomic variant data, parse VCF structures, filter VCF data, select or rename VCF fields, or remove empty columns from VCF data.
 homepage: https://github.com/trentzz/vcf2pandas
 ---
+
 
 # vcf2pandas
 

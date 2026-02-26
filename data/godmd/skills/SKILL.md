@@ -1,8 +1,9 @@
 ---
 name: godmd
-description: GOdMD is a specialized tool designed to map the transition pathways of macromolecules.
+description: GOdMD maps transition pathways between macromolecular structures using discrete molecular dynamics and biasing techniques. Use when user asks to find pathways between initial and target structures, simulate macromolecular transitions, or generate initial pathways for atomistic refinement.
 homepage: http://mmb.irbbarcelona.org/gitlab/adam/GOdMD
 ---
+
 
 # godmd
 

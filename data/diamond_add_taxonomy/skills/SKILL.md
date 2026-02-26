@@ -1,8 +1,9 @@
 ---
 name: diamond_add_taxonomy
-description: The `diamond_add_taxonomy` tool is a utility designed to enrich DIAMOND alignment data with biological context.
+description: This tool appends taxonomic lineage information to DIAMOND alignment files by looking up TaxIDs in the NCBI taxonomy database. Use when user asks to annotate DIAMOND output with taxonomic ranks, add lineage information to protein hits, or enrich alignment data with biological context.
 homepage: https://github.com/pvanheus/diamond_add_taxonomy
 ---
+
 
 # diamond_add_taxonomy
 

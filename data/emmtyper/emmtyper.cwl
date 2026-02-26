@@ -2,10 +2,177 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: emmtyper
 label: emmtyper
-doc: "The provided text does not contain help information or a description of the
-  tool; it is an error log from a container runtime (Apptainer/Singularity) indicating
-  a failure to build the image due to insufficient disk space.\n\nTool homepage: https://github.com/MDUPHL/emmtyper"
-inputs: []
+doc: "Welcome to emmtyper.\n\nTool homepage: https://github.com/MDUPHL/emmtyper"
+inputs:
+  - id: fasta_files
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Input FASTA files
+    inputBinding:
+      position: 1
+  - id: align_diff
+    type:
+      - 'null'
+      - int
+    doc: '[BLAST] Threshold for difference between alignment length and subject length
+      in BLAST hit.'
+    default: 5
+    inputBinding:
+      position: 102
+      prefix: --align-diff
+  - id: blast_db
+    type:
+      - 'null'
+      - string
+    doc: Path to EMM BLAST DB
+    default: /usr/local/lib/python3.7/site-packages/emmtyper/db/emm.fna
+    inputBinding:
+      position: 102
+      prefix: --blast_db
+  - id: blast_path
+    type:
+      - 'null'
+      - string
+    doc: '[BLAST] Specify full path to blastn executable.'
+    inputBinding:
+      position: 102
+      prefix: --blast-path
+  - id: cluster_distance
+    type:
+      - 'null'
+      - int
+    doc: Distance between cluster of matches to consider as different clusters.
+    default: 500
+    inputBinding:
+      position: 102
+      prefix: --cluster-distance
+  - id: culling_limit
+    type:
+      - 'null'
+      - int
+    doc: '[BLAST] Total hits to return in a position.'
+    default: 5
+    inputBinding:
+      position: 102
+      prefix: --culling-limit
+  - id: dust
+    type:
+      - 'null'
+      - string
+    doc: '[BLAST] Filter query sequence with DUST.'
+    default: no
+    inputBinding:
+      position: 102
+      prefix: --dust
+  - id: gap
+    type:
+      - 'null'
+      - int
+    doc: '[BLAST] Threshold gap to allow in BLAST hit.'
+    default: 2
+    inputBinding:
+      position: 102
+      prefix: --gap
+  - id: ispcr_path
+    type:
+      - 'null'
+      - string
+    doc: '[isPcr] Specify full path to isPcr executable.'
+    inputBinding:
+      position: 102
+      prefix: --ispcr-path
+  - id: keep
+    type:
+      - 'null'
+      - boolean
+    doc: Keep BLAST and isPcr output files.
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --keep
+  - id: max_size
+    type:
+      - 'null'
+      - int
+    doc: '[isPcr] Maximum size of PCR product.'
+    default: 2000
+    inputBinding:
+      position: 102
+      prefix: --max-size
+  - id: min_good
+    type:
+      - 'null'
+      - int
+    doc: '[isPcr] Minimum size where there must be 2 matches for each mismatch.'
+    default: 15
+    inputBinding:
+      position: 102
+      prefix: --min-good
+  - id: min_perfect
+    type:
+      - 'null'
+      - int
+    doc: "[isPcr] Minimum size of perfect match at 3' primer end."
+    default: 15
+    inputBinding:
+      position: 102
+      prefix: --min-perfect
+  - id: mismatch
+    type:
+      - 'null'
+      - int
+    doc: '[BLAST] Threshold for number of mismatch to allow in BLAST hit.'
+    default: 4
+    inputBinding:
+      position: 102
+      prefix: --mismatch
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output stream. Path to file for output to a file.
+    default: stdout
+    inputBinding:
+      position: 102
+      prefix: --output
+  - id: output_format
+    type:
+      - 'null'
+      - string
+    doc: Output format.
+    inputBinding:
+      position: 102
+      prefix: --output-format
+  - id: percent_identity
+    type:
+      - 'null'
+      - int
+    doc: '[BLAST] Minimal percent identity of sequence.'
+    default: 95
+    inputBinding:
+      position: 102
+      prefix: --percent-identity
+  - id: primer_db
+    type:
+      - 'null'
+      - string
+    doc: '[isPcr] PCR primer. Text file with 3 columns: Name, Forward Primer, Reverse
+      Primer.'
+    default: /usr/local/lib/python3.7/site-packages/emmtyper/data/isPcrPrim.tsv
+    inputBinding:
+      position: 102
+      prefix: --primer-db
+  - id: workflow
+    type:
+      - 'null'
+      - string
+    doc: Choose workflow
+    default: blast
+    inputBinding:
+      position: 102
+      prefix: --workflow
 outputs:
   - id: stdout
     type: stdout

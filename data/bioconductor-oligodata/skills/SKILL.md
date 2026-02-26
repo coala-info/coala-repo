@@ -1,8 +1,9 @@
 ---
 name: bioconductor-oligodata
-description: the package is available on all platforms; click for details.
+description: This package provides sample datasets for the oligo package to support the analysis of oligonucleotide arrays. Use when user asks to access example data for oligonucleotide arrays, run vignettes for the oligo package, or test microarray analysis workflows.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/oligoData.html
 ---
+
 
 # bioconductor-oligodata
 

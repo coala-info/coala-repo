@@ -3,7 +3,7 @@
 ## integron_finder
 
 ### Tool Description
-IntegronFinder is a tool to detect integrons in DNA sequences.
+Finds integrons in a given genome sequence.
 
 ### Metadata
 - **Docker Image**: biocontainers/integron-finder:v1.5.1_cv2
@@ -18,11 +18,22 @@ IntegronFinder is a tool to detect integrons in DNA sequences.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/integron-finder:v1.5.1_cv2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2967275018: no space left on device
+Unable to find image 'biocontainers/integron-finder:v1.5.1_cv2' locally
+v1.5.1_cv2: Pulling from biocontainers/integron-finder
+9ff7e2e5f967: Pulling fs layer
+59856638ac9f: Pulling fs layer
+6f317d6d954b: Pulling fs layer
+a9dde5e2a643: Pulling fs layer
+47ce52e5fcaa: Pulling fs layer
+22e082fd1f08: Pulling fs layer
+a119bff55ec6: Pulling fs layer
+6f317d6d954b: Waiting
+a9dde5e2a643: Waiting
+47ce52e5fcaa: Waiting
+22e082fd1f08: Waiting
+a119bff55ec6: Waiting
+docker: write /var/lib/docker/tmp/GetImageBlob3579949033: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hta20transcriptcluster.db
-description: the package is available on all platforms; click for details.
+description: This package provides Bioconductor annotation data for mapping Affymetrix Human Transcriptome Array 2.0 transcript cluster identifiers to biological metadata. Use when user asks to map HTA 2.0 probe IDs to gene symbols, retrieve Entrez or Ensembl identifiers, or annotate transcript clusters with GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hta20transcriptcluster.db.html
 ---
+
 
 # bioconductor-hta20transcriptcluster.db
 

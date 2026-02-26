@@ -1,8 +1,9 @@
 ---
 name: bioconductor-discorhythm
-description: the package is available on all platforms; click for details.
+description: DiscoRhythm analyzes periodicity and rhythmicity in large-scale temporal biological datasets. Use when user asks to perform rhythmicity analysis, detect outliers in temporal data, combine biological replicates, or estimate oscillation characteristics using methods like Cosinor and JTK Cycle.
 homepage: https://bioconductor.org/packages/release/bioc/html/DiscoRhythm.html
 ---
+
 
 # bioconductor-discorhythm
 

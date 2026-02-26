@@ -1,8 +1,9 @@
 ---
 name: nextclade_js
-description: Nextclade is a bioinformatics tool designed to identify genetic variations in viral genomes.
+description: Nextclade identifies genetic variations, assigns clades, and performs quality control on viral sequences. Use when user asks to align sequences to a reference, identify mutations, assign lineages, or perform quality checks on viral genomes.
 homepage: https://github.com/nextstrain/nextclade
 ---
+
 
 # nextclade_js
 

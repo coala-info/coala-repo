@@ -1,8 +1,9 @@
 ---
 name: r-rphast
-description: Skill for using the CRAN R package r-rphast.
+description: r-rphast provides an R interface to the PHAST library for comparative genomics and molecular evolutionary analysis. Use when user asks to fit phylogenetic substitution models, calculate conservation scores with phyloP or phastCons, and manipulate multiple sequence alignments or genomic features.
 homepage: https://cran.r-project.org/web/packages/rphast/index.html
 ---
+
 
 # r-rphast
 

@@ -1,8 +1,9 @@
 ---
 name: r-dartr
-description: R package dartr (documentation from project home).
+description: The r-dartr package imports, filters, and analyzes SNP and SilicoDART genomic data for population genetic studies. Use when user asks to import DArT or VCF files, perform quality control filtering, visualize population structure via PCoA, or export data to software like Structure and NewHybrids.
 homepage: https://cran.r-project.org/web/packages/dartr/index.html
 ---
+
 
 # r-dartr
 

@@ -1,8 +1,9 @@
 ---
 name: r-hahmmr
-description: Haplotype-aware Hidden Markov Model for RNA (HaHMMR) is a method for detecting copy number variations (CNVs) from bulk RNA-seq data.
+description: r-hahmmr detects copy number variations from bulk RNA-seq data using a haplotype-aware Hidden Markov Model. Use when user asks to identify chromosomal gains or losses, analyze subclonal CNVs, or integrate gene expression and phased allele counts for genomic analysis.
 homepage: https://cran.r-project.org/web/packages/hahmmr/index.html
 ---
+
 
 # r-hahmmr
 

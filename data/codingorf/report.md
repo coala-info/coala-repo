@@ -3,7 +3,7 @@
 ## codingorf
 
 ### Tool Description
-A tool for identifying coding Open Reading Frames (ORFs). Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.
+Finds coding regions in a DNA sequence and translates them into amino acid sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/codingorf:v1.0.0--pyh5e36f6f_0
@@ -18,11 +18,20 @@ A tool for identifying coding Open Reading Frames (ORFs). Note: The provided hel
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/codingorf:v1.0.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2812086772: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/codingorf", line 10, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.9/site-packages/codingorf/__main__.py", line 11, in main
+    orfParser.getCodingorf()
+  File "/usr/local/lib/python3.9/site-packages/codingorf/classmodule.py", line 15, in getCodingorf
+    aaSeq = orf.translate()
+  File "/usr/local/lib/python3.9/site-packages/Bio/Seq.py", line 1377, in translate
+    _translate_str(str(self), table, stop_symbol, to_stop, cds, gap=gap)
+  File "/usr/local/lib/python3.9/site-packages/Bio/Seq.py", line 3011, in _translate_str
+    raise CodonTable.TranslationError(
+Bio.Data.CodonTable.TranslationError: Codon '--H' is invalid
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

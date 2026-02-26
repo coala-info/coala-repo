@@ -1,8 +1,9 @@
 ---
 name: crossmap
-description: CrossMap is a specialized utility designed to translate genomic coordinates from one assembly version to another.
+description: "CrossMap translates genomic coordinates between different assembly versions for various high-throughput sequencing data formats. Use when user asks to liftover BED files, convert VCF variants between assemblies, update BAM or SAM alignments, or transform GFF, GTF, and BigWig files to a new reference genome."
 homepage: https://crossmap.sourceforge.net
 ---
+
 
 # crossmap
 

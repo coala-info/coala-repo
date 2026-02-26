@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocparallel
-description: the package is available on all platforms; click for details.
+description: BiocParallel provides a unified interface for performing parallel computing across various R backends and cluster schedulers. Use when user asks to parallelize R code, distribute tasks across multiple cores or clusters, manage parallel backends, or handle errors in distributed computations.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocParallel.html
 ---
+
 
 # bioconductor-biocparallel
 

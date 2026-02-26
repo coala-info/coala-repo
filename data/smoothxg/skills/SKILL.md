@@ -1,8 +1,9 @@
 ---
 name: smoothxg
-description: `smoothxg` is a specialized tool for pangenomics that resolves local complexities in variation graphs.
+description: Smoothxg simplifies pangenome variation graphs by applying partial order alignment to resolve local complexities and noise. Use when user asks to smooth a variation graph, simplify pangenome structures, or extract a consensus pangenome graph.
 homepage: https://github.com/pangenome/smoothxg
 ---
+
 
 # smoothxg
 

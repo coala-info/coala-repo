@@ -1,8 +1,9 @@
 ---
 name: nextflow
-description: Nextflow is a reactive workflow framework and domain-specific language (DSL) designed to simplify the creation of complex data-driven pipelines.
+description: Nextflow is a reactive workflow framework and domain-specific language used to create and manage scalable, data-driven pipelines across diverse computing infrastructures. Use when user asks to run or resume computational workflows, manage pipeline configurations, execute scripts across different infrastructure profiles, or orchestrate complex data processing tasks using channels and operators.
 homepage: https://github.com/nextflow-io/nextflow
 ---
+
 
 # nextflow
 

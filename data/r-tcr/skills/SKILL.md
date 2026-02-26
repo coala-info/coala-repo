@@ -1,8 +1,9 @@
 ---
 name: r-tcr
-description: R package tcr (documentation from project home).
+description: This tool analyzes and visualizes T-cell receptor repertoire data using the tcR R package. Use when user asks to parse immune receptor sequencing files, calculate repertoire diversity, analyze V(D)J gene usage, or compare clonotype overlap and sharedness.
 homepage: https://cran.r-project.org/web/packages/tcr/index.html
 ---
+
 
 # r-tcr
 

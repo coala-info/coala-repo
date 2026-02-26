@@ -1,8 +1,9 @@
 ---
 name: perl-exception-class
-description: `Exception::Class` allows Perl developers to move beyond simple string-based `die` calls by declaring a hierarchy of exception objects.
+description: This tool enables the declaration and management of a hierarchy of exception objects in Perl for structured error handling. Use when user asks to define custom exception classes, throw object-based errors with stack traces, or catch and inspect specific error types.
 homepage: http://metacpan.org/release/Exception-Class
 ---
+
 
 # perl-exception-class
 

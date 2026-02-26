@@ -1,8 +1,9 @@
 ---
 name: r-plotly
-description: Create interactive web graphics from 'ggplot2' graphs and/or a custom interface to the (MIT-licensed) JavaScript library 'plotly.js' inspired by the grammar of graphics.</p>
+description: The r-plotly package creates interactive, web-based visualizations and graphics directly from R. Use when user asks to create interactive charts, convert ggplot2 objects to plotly, build 3D surfaces, or integrate interactive plots into Shiny applications.
 homepage: https://cloud.r-project.org/web/packages/plotly/index.html
 ---
+
 
 # r-plotly
 

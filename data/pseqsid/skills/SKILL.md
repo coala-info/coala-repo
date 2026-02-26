@@ -1,8 +1,9 @@
 ---
 name: pseqsid
-description: pseqsid is a specialized tool for protein sequence analysis that processes Multiple Sequence Alignments in FASTA format.
+description: pseqsid calculates pairwise identity, similarity, and Normalized Similarity Scores from protein multiple sequence alignments. Use when user asks to calculate sequence identity matrices, evaluate protein similarity based on custom amino acid groups, or compute normalized similarity scores for structural template selection.
 homepage: https://github.com/amaurypm/pseqsid
 ---
+
 
 # pseqsid
 

@@ -1,9 +1,9 @@
 # sigprofilerplotting CWL Generation Report
 
-## sigprofilerplotting
+## sigprofilerplotting_SigProfilerPlotting
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the image.
+SigProfilerPlotting is a tool for plotting various types of genomic variations.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/sigprofilerplotting:1.4.3--pyhdfd78af_0
@@ -18,13 +18,15 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/sigprofilerplotting:1.4.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage: SigProfilerPlotting <command> [<args>]
+
+Commands:
+  plotSBS: Plot Single Base Substitutions.
+  plotID: Plot Small Insertions and Deletions.
+  plotDBS: Plot Doublet Base Substitutions.
+  plotSV: Plot Structural Variations.
+  plotCNV: Plot Copy Number Variations.
+
+Use 'SigProfilerPlotting <command> --help' for more information on a specific command.
 ```
 
-
-## Metadata
-- **Skill**: generated

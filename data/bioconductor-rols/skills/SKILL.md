@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rols
-description: the package is available on all platforms; click for details.
+description: The bioconductor-rols package provides an interface to the Ontology Lookup Service for querying and retrieving biological ontology data. Use when user asks to search for ontology terms, retrieve term metadata, or browse biological ontologies.
 homepage: https://bioconductor.org/packages/release/bioc/html/rols.html
 ---
+
 
 # bioconductor-rols
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-txdb.rnorvegicus.ucsc.rn6.ncbirefseq
-description: the package is available on all platforms; click for details.
+description: This package provides a transcript database for the Rattus norvegicus genome assembly rn6 using NCBI RefSeq annotations. Use when user asks to retrieve genomic coordinates for rat transcripts, access gene models for the rn6 assembly, or map genomic features using NCBI RefSeq data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/TxDb.Rnorvegicus.UCSC.rn6.ncbiRefSeq.html
 ---
+
 
 # bioconductor-txdb.rnorvegicus.ucsc.rn6.ncbirefseq
 

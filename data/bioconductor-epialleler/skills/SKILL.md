@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epialleler
-description: the package is available on all platforms; click for details.
+description: This package performs fast and scalable analysis of DNA methylation at the level of individual sequencing reads to identify epiallele patterns. Use when user asks to calculate variant epiallele frequency, generate cytosine or region-based reports, extract methylation patterns, or associate sequence variations with hypermethylated alleles.
 homepage: https://bioconductor.org/packages/release/bioc/html/epialleleR.html
 ---
+
 
 # bioconductor-epialleler
 

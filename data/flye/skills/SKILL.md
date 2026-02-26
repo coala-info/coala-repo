@@ -1,8 +1,9 @@
 ---
 name: flye
-description: Flye is a specialized de novo assembler designed for single-molecule sequencing (SMS) reads.
+description: Flye is a de novo assembler designed to transform long-read sequencing data into high-quality contigs using a repeat graph approach. Use when user asks to perform de novo assembly of long reads, assemble metagenomes, or resolve complex genomic repeats from Oxford Nanopore or PacBio data.
 homepage: https://github.com/fenderglass/Flye/
 ---
+
 
 # flye
 

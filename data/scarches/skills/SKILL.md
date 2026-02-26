@@ -1,8 +1,9 @@
 ---
 name: scarches
-description: scArches (Single-cell Architecture Surgery) is a deep learning strategy for the decentralized integration of single-cell data.
+description: scArches is a deep learning tool for integrating single-cell datasets by mapping query data onto pre-trained reference atlases. Use when user asks to map query datasets to a reference, perform automated cell-type annotation, or integrate new scRNA-seq data while preserving a reference latent space.
 homepage: https://github.com/theislab/scarches
 ---
+
 
 # scarches
 

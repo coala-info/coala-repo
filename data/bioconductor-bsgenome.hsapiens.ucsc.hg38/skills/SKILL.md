@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg38
-description: the package is available on all platforms; click for details.
+description: This package provides the full genomic sequences for the Homo sapiens UCSC hg38 reference genome as a BSgenome object. Use when user asks to access human reference sequences, perform genome-wide motif searching, or retrieve sequence metadata for the hg38 assembly in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg38.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg38
 

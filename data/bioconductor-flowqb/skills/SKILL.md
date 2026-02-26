@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowqb
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: bioconductor-flowqb provides a standardized framework for characterizing flow cytometer sensitivity by calculating detection efficiency, background illumination, and intrinsic variability. Use when user asks to calculate Q and B parameters, fit quadratic models to LED pulse series, or characterize instrument sensitivity using multi-level bead sets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/flowQB.html
 ---
+
 
 # bioconductor-flowqb
 

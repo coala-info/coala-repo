@@ -1,8 +1,9 @@
 ---
 name: transindel
-description: transIndel is a specialized tool for indel discovery that leverages chimeric alignments—reads that map to non-contiguous portions of the genome—to pinpoint structural variations.
+description: transIndel is a specialized tool for discovering indels and structural variations using chimeric alignments, outputting results in a VCF file. Use when user asks to discover indels, call structural variations, analyze chimeric alignments, or detect indels in RNA-seq data.
 homepage: https://github.com/cauyrd/transIndel
 ---
+
 
 # transindel
 

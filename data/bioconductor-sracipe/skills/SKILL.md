@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sracipe
-description: the package is available on all platforms; click for details.
+description: sRACIPE simulates gene regulatory networks to identify robust dynamical properties using a stochastic random circuit perturbation approach. Use when user asks to simulate gene expression data from network topologies, perform random circuit perturbation analysis, or identify stable states in gene regulatory networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/sRACIPE.html
 ---
+
 
 # bioconductor-sracipe
 

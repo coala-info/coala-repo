@@ -1,8 +1,9 @@
 ---
 name: pash
-description: PaSh is a specialized compiler and runtime system designed to automatically parallelize shell scripts.
+description: PaSh is a compiler and runtime system that automatically parallelizes shell scripts to execute across multiple CPU cores. Use when user asks to parallelize shell pipelines, optimize script performance, or execute bash commands with data-parallel transformations.
 homepage: https://github.com/binpash/pash
 ---
+
 
 # pash
 

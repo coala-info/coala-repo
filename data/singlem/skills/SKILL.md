@@ -1,8 +1,9 @@
 ---
 name: singlem
-description: SingleM is a specialized tool for profiling microbial and viral communities directly from shotgun metagenomic reads.
+description: SingleM profiles microbial and viral communities from shotgun metagenomic reads by focusing on specific marker genes to estimate relative abundance and detect novel lineages. Use when user asks to perform taxonomic profiling, estimate prokaryotic fractions, extract marker sequences, or aggregate metagenomic data for summarization.
 homepage: https://github.com/wwood/singlem
 ---
+
 
 # singlem
 

@@ -1,8 +1,9 @@
 ---
 name: biodigest
-description: The `biodigest` tool (DIGEST) provides a computational framework for validating biological hypotheses derived from high-throughput data.
+description: Biodigest validates the biological significance of gene sets, clusters, and subnetworks by comparing them against known disease associations and functional annotations. Use when user asks to validate gene sets against disease libraries, evaluate clustering algorithm results, or assess the functional coherence of protein-protein interaction subnetworks.
 homepage: http://pypi.python.org/pypi/biodigest/
 ---
+
 
 # biodigest
 

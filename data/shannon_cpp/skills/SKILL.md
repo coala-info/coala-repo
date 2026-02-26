@@ -1,8 +1,9 @@
 ---
 name: shannon_cpp
-description: The `shannon_cpp` skill provides a high-performance implementation of the Shannon de novo RNA-Seq assembler.
+description: shannon_cpp is a high-performance tool for de novo RNA-Seq transcriptome assembly using a k-mer based graph approach. Use when user asks to perform de novo assembly of RNA-Seq data, reconstruct transcriptomes from raw sequencing reads, or detect isoforms without a reference genome.
 homepage: https://github.com/bx3/shannon_cpp.git
 ---
+
 
 # shannon_cpp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dream4
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The bioconductor-dream4 package provides synthetic gene regulatory network datasets and gold standard adjacency matrices from the DREAM4 challenge for benchmarking network inference algorithms. Use when user asks to access DREAM4 synthetic expression data, load gene regulatory network gold standards, or benchmark network inference software using simulated time series and knockout data.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/DREAM4.html
 ---
+
 
 # bioconductor-dream4
 

@@ -1,8 +1,9 @@
 ---
 name: grepq
-description: `grepq` is a specialized, high-performance utility designed to filter FASTQ records based on sequence content.
+description: grepq is a high-performance utility designed to filter FASTQ records based on sequence content while avoiding false positives from headers or quality scores. Use when user asks to filter FASTQ files by sequence patterns, extract records matching IUPAC ambiguity codes, or export sequence metadata to SQLite databases.
 homepage: https://github.com/Rbfinch/grepq
 ---
+
 
 # grepq
 

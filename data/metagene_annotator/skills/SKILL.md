@@ -1,8 +1,9 @@
 ---
 name: metagene_annotator
-description: The metagene_annotator skill enables the identification of open reading frames (ORFs) and gene structures in diverse prokaryotic sequences.
+description: MetaGeneAnnotator identifies open reading frames and gene structures in prokaryotic sequences, particularly within metagenomic datasets. Use when user asks to predict genes in metagenomic reads, identify ORFs in bacterial or phage genomes, or analyze prokaryotic sequence structures.
 homepage: http://metagene.cb.k.u-tokyo.ac.jp/
 ---
+
 
 # metagene_annotator
 

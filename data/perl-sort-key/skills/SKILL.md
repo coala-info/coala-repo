@@ -1,8 +1,9 @@
 ---
 name: perl-sort-key
-description: The `perl-sort-key` skill focuses on the `Sort::Key` Perl module, which provides a fast and memory-efficient way to sort data by calculating sort keys only once.
+description: This tool provides fast and memory-efficient sorting for Perl by calculating sort keys only once. Use when user asks to sort large arrays, perform multi-key sorting, or optimize performance for complex key extraction logic.
 homepage: http://metacpan.org/pod/Sort-Key
 ---
+
 
 # perl-sort-key
 

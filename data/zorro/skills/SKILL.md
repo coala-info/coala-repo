@@ -1,8 +1,9 @@
 ---
 name: zorro
-description: ZORRO is a probabilistic masking tool designed to identify and score the reliability of individual columns within a multiple sequence alignment.
+description: ZORRO identifies and scores the reliability of individual columns within a multiple sequence alignment. Use when user asks to score a multiple sequence alignment, specify sampling parameters, use a custom guide tree, ignore gaps, or adjust weighting for alignment scoring.
 homepage: https://sourceforge.net/projects/probmask/
 ---
+
 
 # zorro
 

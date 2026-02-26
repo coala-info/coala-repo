@@ -1,8 +1,9 @@
 ---
 name: homer
-description: The HOMER (Hypergeometric Optimization of Motif EnRichment) suite is a collection of command-line utilities for UNIX-style systems.
+description: HOMER is a suite of command-line tools designed for motif discovery, peak calling, and genomic annotation in large-scale functional genomics datasets. Use when user asks to find enriched motifs, call peaks from ChIP-Seq or Hi-C data, annotate peaks with genomic features, or perform functional enrichment analysis.
 homepage: http://homer.ucsd.edu/homer/index.html
 ---
+
 
 # homer
 

@@ -1,8 +1,9 @@
 ---
 name: cromwell-tools
-description: `cromwell-tools` is a utility suite designed to streamline interactions with the Cromwell workflow execution engine.
+description: Cromwell-tools is a utility suite for interacting with the Cromwell workflow execution engine to manage and monitor WDL-based workflows. Use when user asks to submit workflows, check workflow status, abort runs, query workflow metadata, or wait for workflow completion.
 homepage: http://github.com/broadinstitute/cromwell-tools
 ---
+
 
 # cromwell-tools
 

@@ -1,8 +1,9 @@
 ---
 name: targetfinder
-description: TargetFinder is a computational pipeline designed to predict enhancer-promoter interactions by leveraging one-dimensional genomic data, such as ChIP-seq assays and epigenetic modifications.
+description: TargetFinder predicts enhancer-promoter interactions by applying supervised learning to one-dimensional genomic and epigenetic data. Use when user asks to predict 3D chromatin loops, identify key regulatory proteins, or analyze functional genomics data for enhancer-promoter connectivity.
 homepage: https://github.com/shwhalen/targetfinder
 ---
+
 
 # targetfinder
 

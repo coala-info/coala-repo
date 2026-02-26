@@ -1,9 +1,9 @@
 # ucsc-parahub CWL Generation Report
 
-## ucsc-parahub
+## ucsc-parahub_paraHub
 
 ### Tool Description
-A tool from the UCSC Genome Browser utilities. (Note: The provided text contains container execution logs and error messages rather than the tool's help documentation; therefore, no arguments could be extracted.)
+parasol hub server
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
@@ -18,166 +18,37 @@ A tool from the UCSC Genome Browser utilities. (Note: The provided text contains
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+paraHub - parasol hub server version 12.19
+usage:
+    paraHub machineList
+Where machine list is a file with the following columns:
+    name - Network name
+    cpus - Number of CPUs we can use
+    ramSize - Megabytes of memory
+    tempDir - Location of (local) temp dir
+    localDir - Location of local data dir
+    localSize - Megabytes of local disk
+    switchName - Name of switch this is on
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-parahub_paraHubStop
-
-### Tool Description
-A tool to stop a ParaHub cluster. (Note: The provided help text contains only container runtime error logs and does not list specific command-line arguments.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_paraNodeStart
-
-### Tool Description
-The provided text does not contain help information for the tool, but appears to be a container runtime error log. No arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_paraNodeStatus
-
-### Tool Description
-A tool to check the status of nodes in a paraHub cluster. Note: The provided help text contains only system logs and error messages, so no specific arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_paraNodeStop
-
-### Tool Description
-A tool within the UCSC ParaHub suite, likely used to stop a processing node.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_parasol
-
-### Tool Description
-The provided text does not contain help information for the tool, but rather container runtime logs indicating a failure to fetch or build the OCI image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_paraTestJob
-
-### Tool Description
-A tool from the UCSC ParaHub suite, likely used for testing parallel jobs. (Note: The provided help text contains only container environment logs and a fatal error, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_paraSync
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a set of system logs and a fatal error message from a container runtime (Apptainer/Singularity) indicating a failure to fetch or build the container image.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## ucsc-parahub_para
-
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-parahub:469--h664eb37_1
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-parahub/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-parahub:469--h664eb37_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+   -spokes=N  Number of processes that feed jobs to nodes - default 30.
+   -jobCheckPeriod=N  Minutes between checking on job - default 10.
+   -machineCheckPeriod=N  Minutes between checking on machine - default 20.
+   -subnet=XXX.YYY.ZZZ Only accept connections from subnet (example 192.168).
+     Or CIDR notation (example 192.168.1.2/24).
+     Supports comma-separated list of IPv4 or IPv6 subnets in CIDR notation.
+   -nextJobId=N  Starting job ID number.
+   -logFacility=facility  Log to the specified syslog facility - default local0.
+   -logMinPriority=pri minimum syslog priority to log, also filters file logging.
+    defaults to "warn"
+   -log=file  Log to file instead of syslog.
+   -debug  Don't daemonize
+   -noResume  Don't try to reconnect with jobs running on nodes.
+   -ramUnit=N  Number of bytes of RAM in the base unit used by the jobs.
+      Default is RAM on node divided by number of cpus on node.
+      Shorthand expressions allow t,g,m,k for tera, giga, mega, kilo.
+      e.g. 4g = 4 Gigabytes.
+   -defaultJobRam=N Number of ram units in a job has no specified ram usage.
+      Defaults to 1.
 ```
 

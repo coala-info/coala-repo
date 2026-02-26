@@ -1,8 +1,9 @@
 ---
 name: bioconductor-canine2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Canine Genome 2.0 Array. Use when user asks to map probe indices to physical coordinates, access CDF data for low-level microarray analysis, or process Affymetrix Canine 2.0 CEL files.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine2cdf.html
 ---
+
 
 # bioconductor-canine2cdf
 

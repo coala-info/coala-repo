@@ -1,8 +1,9 @@
 ---
 name: snpeff
-description: SnpEff is a genomic variant annotation and effect prediction tool.
+description: "SnpEff annotates genomic variants and predicts their functional effects on genes and proteins. Use when user asks to annotate VCF files, predict variant impacts, download genome databases, or generate variant summary statistics."
 homepage: http://snpeff.sourceforge.net/
 ---
+
 
 # snpeff
 

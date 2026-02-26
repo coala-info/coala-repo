@@ -1,8 +1,9 @@
 ---
 name: bamdam
-description: `bamdam` is a specialized toolkit designed for the post-processing and authentication phase of ancient metagenomics.
+description: bamdam is a toolkit for the post-processing and authentication of ancient metagenomics data through taxonomic filtering and damage pattern analysis. Use when user asks to shrink BAM files based on LCA assignments, compute ancient DNA damage metrics, extract taxon-specific reads, or generate damage plots.
 homepage: https://github.com/bdesanctis/bamdam
 ---
+
 
 # bamdam
 

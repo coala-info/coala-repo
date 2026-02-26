@@ -1,9 +1,9 @@
 # shorttracks CWL Generation Report
 
-## shorttracks
+## shorttracks_ShortTracks
 
 ### Tool Description
-The provided text does not contain help information for the tool 'shorttracks'. It appears to be a log of a failed container build/fetch process.
+Calculate and plot coverage tracks from BAM files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/shorttracks:1.3--hdfd78af_0
@@ -18,13 +18,17 @@ The provided text does not contain help information for the tool 'shorttracks'. 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/shorttracks:1.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+usage: ShortTracks [-h] [--version] [--mode {simple,readgroup,readlength}]
+                   [--stranded] --bamfile BAMFILE
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --mode {simple,readgroup,readlength}
+                        Parsing mode: simple, readgroup, or readlength
+  --stranded            If set, stranded splits + and - coverage intoseparate
+                        tracks
+  --bamfile BAMFILE     Path to bamfile. The corresponding .bai or .csi file
+                        must also be there.
 ```
 
-
-## Metadata
-- **Skill**: generated

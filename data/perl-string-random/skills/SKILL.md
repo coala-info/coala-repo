@@ -1,8 +1,9 @@
 ---
 name: perl-string-random
-description: The `perl-string-random` tool (based on the `String::Random` Perl module) allows for the generation of random strings that conform to a predefined pattern.
+description: This tool generates random strings based on specific patterns or regular expressions. Use when user asks to generate random passwords, create formatted random strings, or produce random data matching a specific character template.
 homepage: http://metacpan.org/release/String-Random
 ---
+
 
 # perl-string-random
 

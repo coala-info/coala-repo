@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seq.hotspot
-description: the package is available on all platforms; click for details.
+description: seq.hotSPOT is an R package for identifying recombination hotspots in genomic sequences. Use when user asks to detect recombination hotspots, map crossover events, or analyze localized genomic features.
 homepage: https://bioconductor.org/packages/release/bioc/html/seq.hotSPOT.html
 ---
+
 
 # bioconductor-seq.hotspot
 

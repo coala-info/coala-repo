@@ -1,8 +1,9 @@
 ---
 name: red
-description: Red is a specialized bioinformatics tool used for the automated discovery of genomic repeats.
+description: Red is a bioinformatics tool for the automated de-novo discovery and masking of genomic repeats using machine learning. Use when user asks to identify repetitive elements, mask genomes, or annotate genomic repeats.
 homepage: http://toolsmith.ens.utulsa.edu
 ---
+
 
 # red
 

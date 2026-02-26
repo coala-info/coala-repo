@@ -1,8 +1,9 @@
 ---
 name: fastsimcoal2
-description: fastsimcoal2 is a powerful tool for simulating genetic data under complex demographic histories.
+description: fastsimcoal2 simulates genetic data under complex demographic histories using a continuous-time sequential Markovian coalescent approximation. Use when user asks to simulate genomic regions, model population migrations and fissions, or perform composite likelihood-based demographic inference using the site frequency spectrum.
 homepage: http://cmpg.unibe.ch/software/fastsimcoal27/
 ---
+
 
 # fastsimcoal2
 

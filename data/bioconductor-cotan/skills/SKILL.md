@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cotan
-description: the package is available on all platforms; click for details.
+description: COTAN analyzes gene co-expression patterns and identifies cell clusters in single-cell RNA sequencing data. Use when user asks to analyze gene co-expression, identify cell clusters, or evaluate gene-gene correlations in single-cell transcriptomics data.
 homepage: https://bioconductor.org/packages/release/bioc/html/COTAN.html
 ---
+
 
 # bioconductor-cotan
 

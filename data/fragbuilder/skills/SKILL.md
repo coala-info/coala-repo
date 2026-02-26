@@ -1,8 +1,9 @@
 ---
 name: fragbuilder
-description: FragBuilder is a Python-based toolkit designed to automate the setup and analysis of quantum mechanical (QM) calculations for peptides.
+description: FragBuilder is a Python toolkit that automates the generation of 3D peptide structures and the preparation of quantum mechanical calculation input files. Use when user asks to generate peptide models from sequences, sample backbone or side-chain torsion angles, and create Gaussian 09 input files for geometry optimization or NMR shielding calculations.
 homepage: https://github.com/jensengroup/fragbuilder
 ---
+
 
 # fragbuilder
 

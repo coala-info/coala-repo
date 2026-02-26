@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ye6100subdcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix Yeast Genome 6100 Subarray. Use when user asks to access probe mapping information or analyze data from the YE6100SubD microarray platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/ye6100subdcdf.html
 ---
+
 
 # bioconductor-ye6100subdcdf
 

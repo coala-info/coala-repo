@@ -1,8 +1,9 @@
 ---
 name: galaxy-ml
-description: galaxy-ml is a specialized framework that extends scikit-learn's unified API to support complex machine learning workflows, with a focus on biomedical applications.
+description: galaxy-ml is a machine learning framework that extends the scikit-learn API to support deep learning integration and specialized biomedical data processing. Use when user asks to build end-to-end machine learning pipelines, wrap Keras models for scikit-learn compatibility, perform hyperparameter tuning on genomic data, or use specialized biological sequence encoders and generators.
 homepage: https://github.com/goeckslab/Galaxy-ML
 ---
+
 
 # galaxy-ml
 

@@ -1,8 +1,9 @@
 ---
 name: svync
-description: svync is a command-line utility designed to solve the "interoperability problem" in structural variant calling.
+description: svync is a command-line utility that standardizes structural variant VCF files by mapping inconsistent tags and nomenclature into a unified schema. Use when user asks to normalize structural variant caller outputs, map VCF INFO tags, or prepare genomic data for multi-caller integration.
 homepage: https://github.com/nvnieuwk/svync
 ---
+
 
 # svync
 

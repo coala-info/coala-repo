@@ -1,8 +1,9 @@
 ---
 name: yaggo
-description: Yaggo (Yet Another GenGetOpt) is a C++ code generation tool that automates the creation of command-line argument parsers.
+description: Yaggo is a C++ code generation tool that automates the creation of command-line argument parsers. Use when user asks to define command-line arguments, generate a C++ parser header, or automate command-line parsing for a C++ program.
 homepage: https://github.com/gmarcais/yaggo
 ---
+
 
 # yaggo
 

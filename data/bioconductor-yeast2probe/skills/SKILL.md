@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yeast2probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix Yeast Genome 2.0 Array. Use when user asks to retrieve probe sequences for the yeast2 microarray or access probe-level data for yeast genomic analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/yeast2probe.html
 ---
+
 
 # bioconductor-yeast2probe
 

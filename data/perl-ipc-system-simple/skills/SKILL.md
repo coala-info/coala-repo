@@ -1,8 +1,9 @@
 ---
 name: perl-ipc-system-simple
-description: This skill enables the use of the `IPC::System::Simple` Perl module to manage external process execution.
+description: This tool executes external commands in Perl with automatic error handling and shell avoidance. Use when user asks to execute system commands, capture command output, or manage process exit codes with descriptive exceptions.
 homepage: http://metacpan.org/pod/IPC::System::Simple
 ---
+
 
 # perl-ipc-system-simple
 

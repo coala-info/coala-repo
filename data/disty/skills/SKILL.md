@@ -1,8 +1,9 @@
 ---
 name: disty
-description: The `disty` tool (also known as Disty McMatrixface) is a high-performance utility designed to transform core genome alignments into distance matrices.
+description: "disty transforms core genome alignments into distance matrices while providing multiple strategies for handling ambiguous bases. Use when user asks to calculate genetic distances, generate a distance matrix from a FASTA alignment, or handle ambiguous bases in genomic data."
 homepage: https://github.com/c2-d2/disty
 ---
+
 
 # disty
 

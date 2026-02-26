@@ -1,9 +1,9 @@
 # ifcnv CWL Generation Report
 
-## ifcnv
+## ifcnv_ifCNV
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error message indicating a failure to pull or build the container image due to insufficient disk space.
+ifCNV
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ifcnv:0.2.1--pyh5e36f6f_0
@@ -18,11 +18,50 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ifcnv:0.2.1--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3189304429: no space left on device
+usage: ifCNV [-h] -i INPUT -b BED -o OUTPUT [-s SKIP] [-m MODE]
+             [-rm READSMATRIXOUPTUT] [-min MINREADS] [-cs CONTASAMPLES]
+             [-ct CONTATARGETS] [-sT SCORETHRESHOLD] [-rS REGSAMPLE]
+             [-rT REGTARGETS] [-v VERBOSE] [-a AUTOOPEN] [-r RUN] [-sv SAVE]
+             [-l LIB_RESSOURCES]
+
+ifCNV
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SKIP, --skip SKIP  A path to the reads matrix
+  -m MODE, --mode MODE  fast or extensive
+  -rm READSMATRIXOUPTUT, --readsMatrixOuptut READSMATRIXOUPTUT
+                        A path to a file to export the reads matrix as a .tsv
+                        file
+  -min MINREADS, --minReads MINREADS
+                        Min mean reads per target
+  -cs CONTASAMPLES, --contaSamples CONTASAMPLES
+                        Contamination parameter for the AberrantSamples
+                        function
+  -ct CONTATARGETS, --contaTargets CONTATARGETS
+                        Contamination parameter for the AberrantTargets
+                        function
+  -sT SCORETHRESHOLD, --scoreThreshold SCORETHRESHOLD
+                        Threshold on the localisation score
+  -rS REGSAMPLE, --regSample REGSAMPLE
+                        A pattern for removing controls
+  -rT REGTARGETS, --regTargets REGTARGETS
+                        A pattern for removing targets
+  -v VERBOSE, --verbose VERBOSE
+                        A boolean
+  -a AUTOOPEN, --autoOpen AUTOOPEN
+                        A boolean
+  -r RUN, --run RUN     The name of the experiment
+  -sv SAVE, --save SAVE
+                        A boolean, if True, saves the results in a .tsv file
+  -l LIB_RESSOURCES, --lib-ressources LIB_RESSOURCES
+                        Path where lib to import for report.
+
+Mandatory:
+  -i INPUT, --input INPUT
+                        Path to the input bam folder
+  -b BED, --bed BED     Path to the bed file
+  -o OUTPUT, --output OUTPUT
+                        Path to the output report
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mdqc
-description: the package is available on all platforms; click for details.
+description: This tool performs multivariate quality control for microarray data using Mahalanobis distance to identify outlying observations. Use when user asks to perform quality control on microarray experiments, identify outliers in high-dimensional data, or assess data quality using Mahalanobis distance.
 homepage: https://bioconductor.org/packages/release/bioc/html/mdqc.html
 ---
+
 
 # bioconductor-mdqc
 

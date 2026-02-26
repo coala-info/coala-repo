@@ -1,8 +1,9 @@
 ---
 name: perl-getopt-long
-description: Getopt::Long is the industry-standard Perl module for parsing command-line arguments.
+description: This Perl module parses command-line arguments into variables using both short flags and descriptive long names. Use when user asks to parse command-line options, handle complex CLI inputs, or configure argument validation in Perl scripts.
 homepage: http://metacpan.org/pod/Getopt::Long
 ---
+
 
 # perl-getopt-long
 

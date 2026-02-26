@@ -1,8 +1,9 @@
 ---
 name: bioconductor-msbackendmetabolights
-description: the package is available on all platforms; click for details.
+description: This package provides a backend for the Spectra framework to access and retrieve mass spectrometry data directly from the MetaboLights repository. Use when user asks to retrieve mass spectrometry data from MetaboLights, access metabolomics datasets, or integrate MetaboLights files into R-based spectral analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/MsBackendMetaboLights.html
 ---
+
 
 # bioconductor-msbackendmetabolights
 

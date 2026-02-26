@@ -1,8 +1,9 @@
 ---
 name: primedrpa
-description: PrimedRPA is a specialized bioinformatic tool designed to automate and refine the selection of oligonucleotides for RPA.
+description: PrimedRPA automates the selection and refinement of optimized primer and probe sets specifically for Recombinase Polymerase Amplification. Use when user asks to design RPA-specific oligonucleotides, perform sequence alignment for conserved regions, or screen primers for cross-reactivity.
 homepage: https://github.com/MatthewHiggins2017/bioconda-PrimedRPA/
 ---
+
 
 # primedrpa
 

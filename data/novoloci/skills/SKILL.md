@@ -1,8 +1,9 @@
 ---
 name: novoloci
-description: NOVOLoci is a specialized assembly tool designed to handle the complexities of phasing in small genomes and specific genomic targets.
+description: NOVOLoci is a specialized assembly tool designed to reconstruct individual haplotypes and phase small genomes or specific genomic targets using long-read data. Use when user asks to perform targeted assembly using a seed sequence, reconstruct haplotypes from Nanopore or PacBio reads, or assemble small genomes.
 homepage: https://github.com/ndierckx/NOVOLoci
 ---
+
 
 # novoloci
 

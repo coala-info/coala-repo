@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huex.1.0.st.v2frmavecs
-description: the package is available on all platforms; click for details.
+description: This package provides frozen parameter vectors for performing Frozen Robust Multi-array Analysis on Affymetrix Human Exon 1.0 ST v2 microarray data. Use when user asks to perform fRMA preprocessing, estimate gene expression probabilities using the barcode function, or calculate GNUSE scores for quality control.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex.1.0.st.v2frmavecs.html
 ---
+
 
 # bioconductor-huex.1.0.st.v2frmavecs
 

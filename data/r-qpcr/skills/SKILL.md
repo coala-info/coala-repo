@@ -1,8 +1,9 @@
 ---
 name: r-qpcr
-description: R package qpcr (documentation from project home).
+description: The qpcR package provides a comprehensive toolset for the mechanistic and sigmoidal modeling of quantitative real-time PCR amplification curves. Use when user asks to fit PCR models, estimate amplification efficiency, calculate quantification cycles, or perform automated model selection for qPCR data.
 homepage: https://cran.r-project.org/web/packages/qpcr/index.html
 ---
+
 
 # r-qpcr
 

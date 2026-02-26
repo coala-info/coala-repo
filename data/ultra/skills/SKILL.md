@@ -1,8 +1,9 @@
 ---
 name: ultra
-description: ULTRA is a specialized bioinformatics tool designed to locate and annotate tandemly repetitive regions in genomic data.
+description: ULTRA is a specialized bioinformatics tool designed to locate and annotate tandemly repetitive regions in genomic data. Use when user asks to locate and annotate tandem repeats, perform repeat discovery, identify simple sequence repeats or large tandem repeats, generate masked FASTA files, analyze sub-repeat structures, or get detailed statistics and sequences.
 homepage: https://github.com/TravisWheelerLab/ULTRA
 ---
+
 
 # ultra
 

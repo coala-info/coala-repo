@@ -1,8 +1,9 @@
 ---
 name: jvarkit
-description: jvarkit is a comprehensive suite of Java-based command-line utilities designed for bioinformatics and high-throughput sequencing data analysis.
+description: jvarkit is a suite of Java-based command-line utilities designed for the manipulation, filtering, and visualization of high-throughput sequencing data formats. Use when user asks to process VCF files, visualize BAM alignments as SVG or raster images, convert genomic formats like GTF or BED to XML, and generate alignment statistics.
 homepage: https://github.com/lindenb/jvarkit
 ---
+
 
 # jvarkit
 

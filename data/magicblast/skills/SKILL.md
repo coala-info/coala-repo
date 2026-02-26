@@ -1,8 +1,9 @@
 ---
 name: magicblast
-description: Magic-BLAST is a specialized alignment tool built on the NCBI BLAST framework, optimized for mapping NGS runs.
+description: Magic-BLAST is a specialized alignment tool designed to map large-scale next-generation sequencing reads to reference genomes or transcriptomes. Use when user asks to align RNA-seq or DNA-seq reads, map SRA accessions directly from NCBI, or perform spliced alignments against a reference database.
 homepage: https://ncbi.github.io/magicblast/
 ---
+
 
 # magicblast
 

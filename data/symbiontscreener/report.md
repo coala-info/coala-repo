@@ -1,9 +1,9 @@
 # symbiontscreener CWL Generation Report
 
-## symbiontscreener
+## symbiontscreener_sysc
 
 ### Tool Description
-A tool for screening symbionts. (Note: The provided text is a container build error log and does not contain usage instructions or argument definitions.)
+Symbiont Screener (SYSC) is a tool for analyzing microbial communities. It supports two main modes: strobemer mode (s40) and kmer mode (k21), with various actions for building, density analysis, clustering, and consensus clustering.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
@@ -18,109 +18,43 @@ A tool for screening symbionts. (Note: The provided text is a container build er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+#----------------------------------------
+LOG : version           -- 1.0-0-0
+LOG : release date      -- 2023/01/06
+LOG : installation path -- /usr/local/bin 
+#----------------------------------------
+CMD : /usr/local/bin/sysc -help
+Usage : ./sysc <action> [options]
+
+Actions:
+  +---------+-----------------------+-----------------------+
+  |stage    | strobemer mode (s40)  | kmer mode (k21)       |
+  +---------+-----------------------+-----------------------+
+  |step01   | build_s40             | build_k21             |
+  +---------+-----------------------+-----------------------+
+  |step02.1 | density_s40           | density_k21           |
+  |step02.2 | trio_result_s40       | trio_result_k21       |
+  +---------+-----------------------+-----------------------+
+  |step03.1 | cluster_s40           | cluster_k21           |
+  |step03.2 | consensus_cluster_s40 | consensus_cluster_k21 |
+  +---------+-----------------------+-----------------------+
+
+Try sysc <action> -h to see detail usage for each action like: ./sysc build_s40 -h
 
 
-## Metadata
-- **Skill**: generated
+The four available workflows of sysc :
+  +--------------------------------------------------------------------------------+-------------------------------+
+  |                                   Workflows                                    |     Example pipeline          |
+  +---+------------------------------------------------------------------------+---+-------------------------------+
+  |   | -> build_s40 -> density_s40 -> trio_result_s40 ----------------------> |   |  sysc_strobmer_mode.sh        |
+  | S |                     |                                                  |   |                               |
+  | T |                     +--------> cluster_s40 -> consensus_cluster_s40 -> | E |  sysc_strobmercluster_mode.sh |
+  | A |                                                                        | N |                               |
+  | R | -> build_k21 -> density_k21 -> trio_result_k21 ----------------------> | D |  sysc_kmer_mode.sh            |
+  | T |                     |                                                  |   |                               |
+  |   |                     +--------> cluster_k21 -> consensus_cluster_k21 -> |   |  sysc_kmercluster_mode.sh     |
+  +---+------------------------------------------------------------------------+---+-------------------------------+
 
-## symbiontscreener_sysc_strobmercluster_mode.sh
-
-### Tool Description
-SymbiontScreener strobmer cluster mode (Note: The provided text contains container runtime logs and a fatal error rather than help documentation; therefore, no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
-- **Homepage**: https://github.com/BGI-Qingdao/Symbiont-Screener
-- **Package**: https://anaconda.org/channels/bioconda/packages/symbiontscreener/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## symbiontscreener_sysc_strobmer_mode.sh
-
-### Tool Description
-A tool for symbiont screening using strobemer mode. (Note: The provided help text contains container runtime logs and error messages rather than command usage instructions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
-- **Homepage**: https://github.com/BGI-Qingdao/Symbiont-Screener
-- **Package**: https://anaconda.org/channels/bioconda/packages/symbiontscreener/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## symbiontscreener_sysc_kmercluster_mode.sh
-
-### Tool Description
-SymbiontScreener k-mer clustering mode (Note: The provided text contains container runtime error logs rather than help documentation; no arguments could be extracted).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
-- **Homepage**: https://github.com/BGI-Qingdao/Symbiont-Screener
-- **Package**: https://anaconda.org/channels/bioconda/packages/symbiontscreener/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## symbiontscreener_sysc_kmer_mode.sh
-
-### Tool Description
-SymbiontScreener k-mer mode script. (Note: The provided text contains container runtime logs and error messages rather than tool help documentation, so no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
-- **Homepage**: https://github.com/BGI-Qingdao/Symbiont-Screener
-- **Package**: https://anaconda.org/channels/bioconda/packages/symbiontscreener/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## symbiontscreener_sysc
-
-### Tool Description
-SymbiontScreener is a tool for screening symbionts. (Note: The provided text is an error log from a container build process and does not contain help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2
-- **Homepage**: https://github.com/BGI-Qingdao/Symbiont-Screener
-- **Package**: https://anaconda.org/channels/bioconda/packages/symbiontscreener/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/symbiontscreener:1.0.0--h5ca1c30_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Please find example pipelines in easy-to-use_pipelines folder.
 ```
 

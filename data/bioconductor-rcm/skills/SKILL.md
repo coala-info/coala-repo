@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcm
-description: The package includes unconstrained as well as constrained analysis. In addition, diagnostic plot to detect lack of fit are available.
+description: The Bioconductor package RCM performs unconstrained and constrained analysis of count data and provides diagnostic plots to detect lack of fit. Use when user asks to perform unconstrained analysis, conduct constrained analysis, or generate diagnostic plots to detect lack of fit.
 homepage: https://bioconductor.org/packages/release/bioc/html/RCM.html
 ---
+
 
 # bioconductor-rcm
 

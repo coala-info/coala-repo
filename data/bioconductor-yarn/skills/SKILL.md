@@ -1,8 +1,9 @@
 ---
 name: bioconductor-yarn
-description: the package is available on all platforms; click for details.
+description: Yarn provides tools for robust multi-condition RNA-Seq preprocessing and quality control. Use when user asks to filter genes, normalize expression data, or perform quality control on large-scale gene expression datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/yarn.html
 ---
+
 
 # bioconductor-yarn
 

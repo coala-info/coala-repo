@@ -1,8 +1,9 @@
 ---
 name: lofreq
-description: LoFreq is a sequence-quality aware variant caller designed to identify low-frequency mutations with high sensitivity and rigorous false-positive control.
+description: LoFreq is a sequence-quality aware variant caller designed to identify low-frequency mutations in heterogeneous samples with high sensitivity. Use when user asks to call SNVs or indels, perform somatic variant calling on tumor-normal pairs, or add indel qualities to BAM files.
 homepage: http://csb5.github.io/lofreq/
 ---
+
 
 # lofreq
 

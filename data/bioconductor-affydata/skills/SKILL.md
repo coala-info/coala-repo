@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affydata
-description: the package affy.
+description: This package provides the Dilution example dataset for demonstrating and testing Affymetrix microarray data processing workflows. Use when user asks to load the Dilution AffyBatch object, perform probe-level normalization, or visualize microarray data using boxplots and MVA plots.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/affydata.html
 ---
+
 
 # bioconductor-affydata
 

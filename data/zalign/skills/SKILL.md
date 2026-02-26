@@ -1,8 +1,9 @@
 ---
 name: zalign
-description: ZAlign is a LabVIEW QuickDrop plugin designed to automate the layout and organization of Front Panel objects.
+description: ZAlign automates the layout and organization of LabVIEW Front Panel objects, arranging them based on the connector pane and adjusting the window bounds. Use when user asks to rearrange controls, organize Front Panel objects, align selected elements, identify unconnected controls, or fit the window to content.
 homepage: https://github.com/Zuehlke/ZAlign
 ---
+
 
 # zalign
 

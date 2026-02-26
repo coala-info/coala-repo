@@ -1,8 +1,9 @@
 ---
 name: ucsc-pslprottornacoords
-description: The `pslProtToRnaCoords` utility is a specialized tool within the UCSC Genome Browser "Kent" suite designed to bridge the gap between protein-level alignments and nucleotide-level coordinates.
+description: "This tool converts protein alignment coordinates to nucleotide coordinates. Use when user asks to 'convert protein alignment coordinates to nucleotide coordinates', 'transform protein alignments for RNA analysis', 'map protein alignments to transcript-level variants'."
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-pslprottornacoords
 

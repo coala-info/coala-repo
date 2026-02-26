@@ -1,8 +1,9 @@
 ---
 name: ymp
-description: YMP is a flexible omics pipeline engine designed to simplify the processing of large-scale NGS data.
+description: YMP is a flexible omics pipeline engine for processing large-scale NGS data. Use when user asks to initialize projects, run NGS pipelines, manage project environments, list available stages, provision reference databases, submit jobs to a cluster, or resume interrupted jobs.
 homepage: https://ymp.readthedocs.io
 ---
+
 
 # ymp
 

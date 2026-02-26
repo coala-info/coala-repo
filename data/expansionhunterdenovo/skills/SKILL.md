@@ -1,8 +1,9 @@
 ---
 name: expansionhunterdenovo
-description: ExpansionHunter Denovo (EHdn) is a specialized toolset designed to identify large STR expansions that cannot be fully spanned by short reads (typically 100-200bp).
+description: ExpansionHunter Denovo is a toolset for performing genome-wide identification of large short tandem repeat expansions from short-read sequencing data. Use when user asks to profile STR-related reads, perform case-control or outlier analysis to find significant expansions, or annotate and visualize expansion results.
 homepage: https://github.com/Illumina/ExpansionHunterDenovo
 ---
+
 
 # expansionhunterdenovo
 

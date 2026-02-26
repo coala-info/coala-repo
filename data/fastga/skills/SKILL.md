@@ -1,8 +1,9 @@
 ---
 name: fastga
-description: FastGA is a specialized toolset designed for rapid DNA alignment between two high-quality genomes or a genome against itself.
+description: FastGA performs rapid DNA alignment between high-quality genomes or a genome against itself using a specialized database and indexing system. Use when user asks to align two genomes, perform self-alignment to find repeats, convert FASTA files to GDB format, or generate alignment plots and statistics.
 homepage: https://github.com/thegenemyers/FASTGA
 ---
+
 
 # fastga
 

@@ -1,8 +1,9 @@
 ---
 name: edlib
-description: Edlib is a lightweight C/C++ and Python library designed for rapid sequence alignment.
+description: Edlib is a lightweight library that performs rapid sequence alignment and edit distance calculations using Myers's bit-vector algorithm. Use when user asks to calculate edit distances, find optimal alignment paths, or perform global, prefix, and infix sequence alignments.
 homepage: https://github.com/Martinsos/edlib/
 ---
+
 
 # edlib
 

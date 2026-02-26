@@ -1,8 +1,9 @@
 ---
 name: regtools
-description: RegTools is a specialized suite of tools designed to bridge the gap between DNA-seq and RNA-seq data.
+description: RegTools is a suite of tools designed to integrate DNA-seq and RNA-seq data to identify genomic variants that influence RNA splicing patterns. Use when user asks to extract exon-exon junctions from RNA-seq alignments, identify cis-splice effects of variants, or annotate junctions and variants with respect to a reference transcriptome.
 homepage: https://github.com/griffithlab/regtools/
 ---
+
 
 # regtools
 

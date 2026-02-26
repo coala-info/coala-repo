@@ -1,8 +1,9 @@
 ---
 name: bioconductor-badregionfinder
-description: the package is available on all platforms; click for details.
+description: BadRegionFinder identifies and classifies genomic regions with suboptimal coverage in sequencing data across multiple samples. Use when user asks to identify regions with low read depth, classify coverage quality based on custom thresholds, or generate summary reports of problematic genomic regions from BAM files.
 homepage: https://bioconductor.org/packages/release/bioc/html/BadRegionFinder.html
 ---
+
 
 # bioconductor-badregionfinder
 

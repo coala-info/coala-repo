@@ -1,8 +1,9 @@
 ---
 name: read-it-and-keep
-description: This skill provides procedural knowledge for `read-it-and-keep`, a tool designed for "read contamination removal" by positive selection.
+description: read-it-and-keep removes read contamination by keeping only the sequences that align to a specific target reference genome. Use when user asks to filter reads by positive selection, remove host contamination from clinical samples, or keep reads matching a reference.
 homepage: https://github.com/GenomePathogenAnalysisService/read-it-and-keep
 ---
+
 
 # read-it-and-keep
 

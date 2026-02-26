@@ -1,8 +1,9 @@
 ---
 name: quickmirseq
-description: QuickMIRSeq is a strand-aware pipeline designed for the joint processing of multiple small RNA-sequencing samples.
+description: QuickMIRSeq is a strand-aware pipeline for the joint processing and quantification of multiple small RNA-sequencing samples. Use when user asks to prepare reference databases, configure multi-sample miRNA runs, quantify isomiRs, or generate interactive summary reports.
 homepage: https://sourceforge.net/projects/quickmirseq/
 ---
+
 
 # quickmirseq
 

@@ -1,8 +1,9 @@
 ---
 name: dnachisel
-description: DNA Chisel is a versatile sequence optimizer that treats DNA design as a constraint-satisfaction problem.
+description: DNA Chisel optimizes DNA sequences by resolving constraints and improving optimization objectives through a local search algorithm. Use when user asks to optimize DNA sequences, harmonize codon usage, avoid specific patterns, or enforce GC content and translation frames.
 homepage: https://github.com/Edinburgh-Genome-Foundry/DnaChisel
 ---
+
 
 # dnachisel
 

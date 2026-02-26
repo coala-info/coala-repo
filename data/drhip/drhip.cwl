@@ -2,10 +2,34 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: drhip
 label: drhip
-doc: "A tool for detecting and reporting highly informative positions (Note: Help
-  text provided was an error log and did not contain usage details).\n\nTool homepage:
-  https://github.com/veg/drhip"
-inputs: []
+doc: "Summarize HyPhy analysis results for many genes into 2-4 CSV files. Always produces
+  summary and site files. CFEL and RELAX results, if present, will generate additional
+  comparison files.\n\nTool homepage: https://github.com/veg/drhip"
+inputs:
+  - id: input
+    type: Directory
+    doc: Path to hyphy results directory (CAPHEINE workflow format)
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: output
+    type:
+      - 'null'
+      - Directory
+    doc: Path to output directory (defaults to current directory)
+    default: current directory
+    inputBinding:
+      position: 101
+      prefix: --output
+  - id: tabular
+    type:
+      - 'null'
+      - boolean
+    doc: 'Output tab-delimited files (default: comma-delimited).'
+    default: false
+    inputBinding:
+      position: 101
+      prefix: --tabular
 outputs:
   - id: stdout
     type: stdout

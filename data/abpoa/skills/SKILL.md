@@ -1,8 +1,9 @@
 ---
 name: abpoa
-description: adaptive banded Partial Order Alignment
+description: abPOA is a high-performance tool that performs multiple sequence alignment and consensus calling using adaptive banded partial order graphs. Use when user asks to generate consensus sequences from noisy long-reads, create multiple sequence alignments, output alignment graphs in GFA format, or align protein sequences.
 homepage: https://github.com/yangao07/abPOA
 ---
+
 
 # abpoa
 

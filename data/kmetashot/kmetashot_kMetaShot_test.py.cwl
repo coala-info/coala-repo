@@ -2,11 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: kmetashot_kMetaShot_test.py
 label: kmetashot_kMetaShot_test.py
-doc: "The provided text contains system logs and error messages related to a container
-  environment failure (no space left on device) rather than help documentation for
-  the tool. No arguments or usage information could be extracted.\n\nTool homepage:
-  https://github.com/gdefazio/kMetaShot"
-inputs: []
+doc: "kMetaShot installation test\n\nTool homepage: https://github.com/gdefazio/kMetaShot"
+inputs:
+  - id: reference
+    type: File
+    doc: Path to HDF5 file containing reference
+    inputBinding:
+      position: 101
+      prefix: --reference
 outputs:
   - id: stdout
     type: stdout

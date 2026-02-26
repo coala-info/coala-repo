@@ -1,9 +1,9 @@
 # vapor CWL Generation Report
 
-## vapor
+## vapor_vapor.py
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool. It appears to be a log of a failed container image build/fetch process.
+Do some viral classification!
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0
@@ -18,33 +18,40 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: vapor.py [-h] [--return_seqs | -o [OUTPUT_PREFIX]] [-q]
+                [--return_best_n RETURN_BEST_N] [-m [MIN_KMER_PROP]] [-k [K]]
+                [-t [THRESHOLD]] [-c [MIN_KMER_COV]] [-fa FA]
+                [-fq FQ [FQ ...]] [-s [SUBSAMPLE]] [-dbg [DEBUG_QUERY]]
+                [-f [TOP_SEED_FRAC]] [--nocache] [-v] [--low_mem]
 
+Do some viral classification!
 
-## Metadata
-- **Skill**: generated
-
-## vapor_vapor.py
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is a log of a failed container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0
-- **Homepage**: https://github.com/connor-lab/vapor
-- **Package**: https://anaconda.org/channels/bioconda/packages/vapor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/vapor:1.0.3--pyhdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  --return_seqs
+  -o, --output_prefix [OUTPUT_PREFIX]
+                        Prefix to write full output to, stout by default
+  -q, --quiet
+  --return_best_n RETURN_BEST_N
+  -m, --min_kmer_prop [MIN_KMER_PROP]
+                        Minimum proportion of matched kmers allowed for
+                        queries [default=0.1]
+  -k [K]                Kmer Length [5 > int > 30, default=21]
+  -t, --threshold [THRESHOLD]
+                        Read kmer filtering threshold [0 > float > 1,
+                        default=0.2]
+  -c, --min_kmer_cov [MIN_KMER_COV]
+                        Minimum coverage kmer culling [default=5]
+  -fa FA                Fasta file
+  -fq FQ [FQ ...]       Fastq file/files
+  -s, --subsample [SUBSAMPLE]
+                        Number of reads to subsample [default=all reads]
+  -dbg, --debug_query [DEBUG_QUERY]
+                        Debug query [default=all reads]
+  -f, --top_seed_frac [TOP_SEED_FRAC]
+                        Fraction of best seeds to extend [default=0.2]
+  --nocache
+  -v, --version
+  --low_mem
 ```
 

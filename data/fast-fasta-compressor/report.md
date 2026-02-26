@@ -1,9 +1,9 @@
 # fast-fasta-compressor CWL Generation Report
 
-## fast-fasta-compressor
+## fast-fasta-compressor_ffc
 
 ### Tool Description
-A tool for fast FASTA compression (Note: The provided help text contains only container runtime error logs and does not list specific command-line arguments).
+Fast FASTA Compressor (ffc)
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fast-fasta-compressor:1.0--h9948957_0
@@ -12,35 +12,31 @@ A tool for fast FASTA compression (Note: The provided help text contains only co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/fast-fasta-compressor/overview
-- **Total Downloads**: 794
+- **Total Downloads**: 806
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/kowallus/ffc
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fast-fasta-compressor:1.0--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2895774561: no space left on device
-```
+ffc [OPTIONS] [file...]
 
+  Fast FASTA Compressor (ffc) 
+  
+POSITIONALS:
+  file FNAME ...              Input file, use hyphen symbol (-) for stdin 
 
-## Metadata
-- **Skill**: generated
-
-## fast-fasta-compressor_ffc
-
-### Tool Description
-A tool for fast FASTA file compression. Note: The provided text contains system error logs rather than help documentation, so specific arguments could not be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fast-fasta-compressor:1.0--h9948957_0
-- **Homepage**: https://github.com/kowallus/ffc
-- **Package**: https://anaconda.org/channels/bioconda/packages/fast-fasta-compressor/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fast-fasta-compressor:1.0--h9948957_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2820136695: no space left on device
+OPTIONS:
+  -h,     --help              Print this help message and exit 
+  -d,     --decompress        Decompress mode 
+  -f,     --force             Overwrite the output file if exists 
+  -i,     --input FNAME       Input file, use hyphen symbol (-) for stdin 
+  -o,     --output FNAME      Output file, use hyphen symbol (-) for stdout 
+  -l,     --level INT:INT in [0 - 22] 
+                              Backend compr. level, default: adaptive 
+  -b,     --block INT:INT in [20 - 30] 
+                              Block size order, default: 22 
+  -t,     --threads INT:POSITIVE 
+                              Number of threads, default: 12c / 4d 
+  -v,     --version           Show version information
 ```
 

@@ -2,10 +2,16 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: diatracer
 label: diatracer
-doc: "A tool for DIA (Data-Independent Acquisition) proteomics data analysis (Note:
-  The provided text contains only container runtime error logs and no help documentation;
-  arguments could not be extracted).\n\nTool homepage: https://diatracer.nesvilab.org/"
-inputs: []
+doc: "Please provide pass a license key with the --key argument. You may obtain a
+  key by agreeing to the terms at msfragger-upgrader.nesvilab.org/diatracer/.\n\n\
+  Tool homepage: https://diatracer.nesvilab.org/"
+inputs:
+  - id: key
+    type: string
+    doc: license key
+    inputBinding:
+      position: 101
+      prefix: --key
 outputs:
   - id: stdout
     type: stdout

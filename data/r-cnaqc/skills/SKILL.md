@@ -1,8 +1,9 @@
 ---
 name: r-cnaqc
-description: R package cnaqc (documentation from project home).
+description: CNAqc performs quality control for bulk cancer sequencing data by integrating somatic mutations with allele-specific copy number alterations and purity estimates. Use when user asks to validate copy number segmentations, estimate cancer cell fractions, phase mutation multiplicities, or identify genomic over-fragmentation.
 homepage: https://cran.r-project.org/web/packages/cnaqc/index.html
 ---
+
 
 # r-cnaqc
 

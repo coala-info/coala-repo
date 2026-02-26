@@ -1,12 +1,12 @@
 # novobreak CWL Generation Report
 
-## novobreak
+## novobreak_run_novoBreak.sh
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding container image acquisition (no space left on device).
+Runs the novoBreak pipeline.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10
+- **Docker Image**: quay.io/biocontainers/novobreak:1.1.3rc--h7132678_8
 - **Homepage**: https://github.com/czc/nb_distribution
 - **Package**: https://anaconda.org/channels/bioconda/packages/novobreak/overview
 - **Validation**: PASS
@@ -18,46 +18,36 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2035133798: no space left on device
+/usr/local/bin/run_novoBreak.sh <novoBreak_exe_dir> <ref> <tumor_bam> <normal_bam> <n_CPUs:INT> [outputdir:-PWD]
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## novobreak_run_novoBreak.sh
+## novobreak_novoBreak
 
 ### Tool Description
-A tool for discovering structural variations from next-generation sequencing data. (Note: The provided text contains runtime error logs rather than help documentation, so no arguments could be extracted.)
+a tool for discovering somatic sv breakpoints
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10
+- **Docker Image**: quay.io/biocontainers/novobreak:1.1.3rc--h7132678_8
 - **Homepage**: https://github.com/czc/nb_distribution
 - **Package**: https://anaconda.org/channels/bioconda/packages/novobreak/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3921252255: no space left on device
-```
-
-## novobreak_filter_sv2.pl
-
-### Tool Description
-A tool for filtering structural variants. (Note: The provided text contains system error messages regarding container execution and does not include the actual help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10
-- **Homepage**: https://github.com/czc/nb_distribution
-- **Package**: https://anaconda.org/channels/bioconda/packages/novobreak/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/novobreak:1.1.3rc--h577a1d6_10 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3237653628: no space left on device
+novoBreak - a tool for discovering somatic sv breakpoints
+Auther: Zechen Chong <zchong@mdanderson.org> 
+Version: 1.1 (r20151007)
+Usage:
+  novoBreak -i <tumorbam> -c <normalbam> -r <reference> -o <output.kmer> [options]
+Options:
+  -h             This help
+  -i <string>    Tumor bam file
+  -c <string>    Normal bam file
+  -r <string>    Reference file in fasta format
+  -k <int>       Kmer size, <=31 [31]
+  -o <string>    Output kmer
+  -g <int>       Output germline events [0]
+  -m <int>       Minimum kmer count regarded as novo kmers [3]
 ```
 

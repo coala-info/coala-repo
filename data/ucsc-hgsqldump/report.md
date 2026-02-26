@@ -1,9 +1,9 @@
 # ucsc-hgsqldump CWL Generation Report
 
-## ucsc-hgsqldump
+## ucsc-hgsqldump_hgsqldump
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) while attempting to fetch the tool image.
+Execute mysqldump using passwords from .hg.conf
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-hgsqldump:482--h0b57e2e_0
@@ -18,33 +18,18 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgsqldump:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-hgsqldump_hgsqldump
-
-### Tool Description
-A tool from the UCSC Genome Browser utility suite, typically used to dump MySQL databases. Note: The provided help text contains only container runtime error messages and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-hgsqldump:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-hgsqldump/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-hgsqldump:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+hgsqldump - Execute mysqldump using passwords from .hg.conf
+usage:
+   hgsqldump [OPTIONS] database [tables]
+or:
+   hgsqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3 ...]
+or:
+   hgsqldump [OPTIONS] --all-databases [OPTIONS]
+Generally anything in command line is passed to mysqldump
+	after an implicit '-u user -ppassword
+See also: mysqldump
+Note: directory for results must be writable by mysql.  i.e. 'chmod 777 .'
+Which is a security risk, so remember to change permissions back after use.
+e.g.: hgsqldump --all -c --tab=. cb1
 ```
 

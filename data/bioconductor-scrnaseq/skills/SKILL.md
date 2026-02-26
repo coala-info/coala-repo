@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scrnaseq
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides access to a collection of public single-cell RNA sequencing datasets for analysis in R. Use when user asks to download public scRNA-seq data, access example single-cell datasets, or load curated transcriptomics experiments.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/scRNAseq.html
 ---
+
 
 # bioconductor-scrnaseq
 

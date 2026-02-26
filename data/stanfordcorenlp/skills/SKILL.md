@@ -1,8 +1,9 @@
 ---
 name: stanfordcorenlp
-description: Stanford CoreNLP is a comprehensive suite of linguistic analysis tools.
+description: Stanford CoreNLP provides a comprehensive suite of linguistic analysis tools for processing English and Chinese text. Use when user asks to perform tokenization, part-of-speech tagging, syntactic parsing, named entity recognition, or coreference resolution.
 homepage: https://github.com/elisa-aleman/StanfordCoreNLP_Chinese
 ---
+
 
 # stanfordcorenlp
 

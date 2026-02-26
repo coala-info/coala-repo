@@ -1,8 +1,9 @@
 ---
 name: biopet-bamstats
-description: biopet-bamstats is a utility within the BIOPET tool suite used to profile alignment data.
+description: Biopet-bamstats extracts and aggregates detailed alignment metrics from BAM files while maintaining a hierarchical structure of samples, libraries, and readgroups. Use when user asks to profile alignment data, generate clipping and mapping quality statistics, merge multiple QC reports, or validate the integrity of bamstats files.
 homepage: https://github.com/biopet/bamstats
 ---
+
 
 # biopet-bamstats
 

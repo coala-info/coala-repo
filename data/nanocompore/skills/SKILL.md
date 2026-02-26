@@ -1,8 +1,9 @@
 ---
 name: nanocompore
-description: Nanocompore is a bioinformatics suite designed to detect RNA modifications by identifying differences in the raw ionic current signal from Nanopore dRNA-Seq data.
+description: Nanocompore identifies RNA modifications by comparing raw nanopore signal distributions between control and test samples. Use when user asks to detect RNA modifications from dRNA-Seq data, collapse eventalign data, or perform comparative signal analysis between biological replicates.
 homepage: https://github.com/tleonardi/nanocompore
 ---
+
 
 # nanocompore
 

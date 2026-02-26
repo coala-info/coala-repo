@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clumsiddata
-description: the package is available on all platforms; click for details.
+description: This package provides example LC-MS/MS and GC-MS datasets for testing and demonstrating workflows within the CluMSID R package. Use when user asks to access sample mass spectrometry data, load pre-processed R objects for spectral clustering, or locate raw data files for testing MS/MS analysis tools.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CluMSIDdata.html
 ---
+
 
 # bioconductor-clumsiddata
 

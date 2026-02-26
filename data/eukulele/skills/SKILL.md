@@ -1,8 +1,9 @@
 ---
 name: eukulele
-description: EUKulele is a specialized bioinformatics pipeline designed to simplify the taxonomic classification of eukaryotes in environmental "omics" data.
+description: EUKulele is a bioinformatics pipeline for the taxonomic classification of eukaryotes in environmental metagenomic and metatranscriptomic data. Use when user asks to classify eukaryotic sequences, manage reference databases like EukProt or MMETSP, or assess taxonomic annotation completeness using BUSCO.
 homepage: https://github.com/AlexanderLabWHOI/EUKulele
 ---
+
 
 # eukulele
 

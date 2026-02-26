@@ -1,8 +1,9 @@
 ---
 name: sphinxcontrib-programoutput
-description: The `sphinxcontrib-programoutput` extension allows Sphinx to execute arbitrary shell commands during the documentation build process and capture their output (stdout and stderr) directly into the document.
+description: This Sphinx extension executes shell commands during the documentation build and captures their output directly into the document. Use when user asks to insert command output into Sphinx documentation, simulate terminal sessions, or display help menus and version information automatically.
 homepage: https://github.com/OpenNTI/sphinxcontrib-programoutput
 ---
+
 
 # sphinxcontrib-programoutput
 

@@ -1,8 +1,9 @@
 ---
 name: mapcaller
-description: MapCaller is a high-performance tool that integrates NGS short-read alignment with variant identification.
+description: MapCaller integrates NGS short-read alignment with variant identification to detect germline and somatic mutations. Use when user asks to index a reference genome, align reads, or call variants from sequencing data.
 homepage: https://github.com/hsinnan75/MapCaller
 ---
+
 
 # mapcaller
 

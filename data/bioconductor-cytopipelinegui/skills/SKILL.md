@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytopipelinegui
-description: the package is available on all platforms; click for details.
+description: CytoPipelineGUI provides interactive Shiny applications and programmatic plotting functions to visualize, compare, and refine flow cytometry data processing pipelines. Use when user asks to interactively inspect pipeline steps, manually tune scale transformations, or programmatically generate comparison plots for flow frames.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoPipelineGUI.html
 ---
+
 
 # bioconductor-cytopipelinegui
 

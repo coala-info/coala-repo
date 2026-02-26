@@ -1,8 +1,9 @@
 ---
 name: bioconductor-apl
-description: The package performs correspondence analysis (CA) and allows to identify cluster-specific genes using Association Plots. Additionally, APL computes the cluster-specificity scores for all genes which allows to rank the genes by their specificity for a selected cell cluster of interest.
+description: This tool performs correspondence analysis and identifies cluster-specific genes in single-cell transcriptomics data using association plots. Use when user asks to rank genes by cluster-specificity, visualize cell-gene relationships in a shared embedding, or perform GO enrichment on cluster-specific markers.
 homepage: https://bioconductor.org/packages/release/bioc/html/APL.html
 ---
+
 
 # bioconductor-apl
 

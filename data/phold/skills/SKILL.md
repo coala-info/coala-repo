@@ -1,8 +1,9 @@
 ---
 name: phold
-description: phold is a specialized bioinformatics tool designed to improve the functional annotation of bacteriophages by leveraging protein structural information rather than just primary sequences.
+description: phold improves bacteriophage functional annotation by using protein structural information and language models to identify proteins. Use when user asks to annotate phage genomes, perform structural protein searches, or refine hypothetical protein assignments using Foldseek and ProstT5.
 homepage: https://github.com/gbouras13/phold
 ---
+
 
 # phold
 

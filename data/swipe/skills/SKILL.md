@@ -1,8 +1,9 @@
 ---
 name: swipe
-description: The `swipe` tool provides a high-performance implementation of the Smith-Waterman local alignment algorithm.
+description: The swipe tool performs high-performance exhaustive Smith-Waterman local alignments for protein or DNA sequences using SIMD instructions. Use when user asks to perform highly sensitive sequence alignments, search protein or nucleotide databases, or run Smith-Waterman searches with BLAST-compatible formatting.
 homepage: http://dna.uio.no/swipe
 ---
+
 
 # swipe
 

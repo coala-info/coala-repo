@@ -1,8 +1,9 @@
 ---
 name: maxentscan
-description: MaxEntScan is a specialized tool for calculating the strength of splice site signals based on the Maximum Entropy principle.
+description: "MaxEntScan calculates the strength of 5' and 3' splice site signals based on the Maximum Entropy principle. Use when user asks to score donor or acceptor splice sites, evaluate the impact of mutations on splicing, or quantify the strength of short sequence motifs."
 homepage: https://github.com/esebesty/maxentscan
 ---
+
 
 # maxentscan
 

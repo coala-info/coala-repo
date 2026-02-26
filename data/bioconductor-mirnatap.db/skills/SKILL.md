@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirnatap.db
-description: the package is available on all platforms; click for details.
+description: This package provides the annotation database for microRNA target prediction integration. Use when user asks to access miRNA target prediction data, integrate multiple miRNA target databases, or identify potential miRNA targets.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/miRNAtap.db.html
 ---
+
 
 # bioconductor-mirnatap.db
 

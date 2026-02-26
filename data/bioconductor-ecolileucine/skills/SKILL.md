@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ecolileucine
-description: the package is available on all platforms; click for details.
+description: This package provides access to the ecoliLeucine Bioconductor experiment data package containing Affymetrix microarray data for E. coli. Use when user asks to load the Hung et al. (2002) Lrp dataset, analyze E. coli microarray experiments, or perform normalization and differential expression on AffyBatch objects.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ecoliLeucine.html
 ---
+
 
 # bioconductor-ecolileucine
 

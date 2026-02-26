@@ -1,8 +1,9 @@
 ---
 name: grabix
-description: grabix is a lightweight command-line utility that provides random access to text files compressed with `bgzip`.
+description: "grabix provides random access to text files compressed with bgzip for efficient retrieval of specific lines or ranges. Use when user asks to index bgzipped files, extract specific lines or ranges, sample random lines, or get the total line count of a file."
 homepage: https://github.com/arq5x/grabix
 ---
+
 
 # grabix
 

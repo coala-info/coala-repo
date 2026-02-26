@@ -1,8 +1,9 @@
 ---
 name: je-suite
-description: The `je-suite` (Just Extract) is a specialized toolkit for handling the initial stages of high-throughput sequencing data analysis.
+description: je-suite is a toolkit for de-multiplexing high-throughput sequencing reads and performing UMI-based deduplication. Use when user asks to split FASTQ files by barcodes, extract molecular tags, or remove PCR duplicates using UMI information.
 homepage: https://gbcs.embl.de/Je
 ---
+
 
 # je-suite
 

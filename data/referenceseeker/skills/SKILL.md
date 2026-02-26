@@ -1,8 +1,9 @@
 ---
 name: referenceseeker
-description: ReferenceSeeker is a high-performance tool designed to rapidly determine the most appropriate reference genomes for a given query assembly.
+description: ReferenceSeeker identifies the most suitable reference genomes for a query assembly using a combination of kmer-based lookups and Average Nucleotide Identity calculations. Use when user asks to find reference genomes for a query assembly, calculate ANI and conserved DNA values, or rank genomic candidates for comparative genomics.
 homepage: https://github.com/oschwengers/referenceseeker
 ---
+
 
 # referenceseeker
 

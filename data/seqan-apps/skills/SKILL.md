@@ -1,8 +1,9 @@
 ---
 name: seqan-apps
-description: SeqAn is a specialized C++ template library designed for high-performance bioinformatics.
+description: SeqAn provides a high-performance C++ library and applications for biological sequence analysis and genomic data processing. Use when user asks to install the SeqAn environment, perform pairwise or multiple sequence alignments, search string indices, or handle high-performance genomic I/O.
 homepage: http://www.seqan.de/
 ---
+
 
 # seqan-apps
 

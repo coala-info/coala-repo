@@ -1,8 +1,9 @@
 ---
 name: mea
-description: The `mea` toolset provides a specialized approach to RNA secondary structure prediction by focusing on maximum expected accuracy rather than minimum free energy.
+description: The mea toolset predicts RNA secondary structures by calculating the maximum expected accuracy from ViennaRNA-formatted dot plots. Use when user asks to predict RNA structures from dot plot files, compare predicted structures to references using accuracy metrics, or combine multiple dot plots to improve prediction reliability.
 homepage: http://www.bioinf.uni-leipzig.de/Software/mea/
 ---
+
 
 # mea
 

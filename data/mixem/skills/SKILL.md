@@ -1,8 +1,9 @@
 ---
 name: mixem
-description: mixem is a lightweight, pure-Python library designed to simplify the process of fitting mixture models using the Expectation-Maximization algorithm.
+description: mixem is a Python library for fitting mixture models using the Expectation-Maximization algorithm. Use when user asks to estimate parameters of multiple probability distributions, fit mixture models to a dataset, or find maximum likelihood estimates using the EM algorithm.
 homepage: https://github.com/sseemayer/mixem
 ---
+
 
 # mixem
 

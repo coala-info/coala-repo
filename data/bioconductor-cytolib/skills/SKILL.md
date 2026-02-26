@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytolib
-description: the package is available on all platforms; click for details.
+description: This package provides the core C++ data structures and headers for representing and managing gated cytometry data. Use when user asks to link to C++ cytometry infrastructure, develop high-performance flow cytometry tools, or manage GatingSet data structures in R packages.
 homepage: https://bioconductor.org/packages/release/bioc/html/cytolib.html
 ---
+
 
 # bioconductor-cytolib
 

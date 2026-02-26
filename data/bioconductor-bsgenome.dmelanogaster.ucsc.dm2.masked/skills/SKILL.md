@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.dmelanogaster.ucsc.dm2.masked
-description: the package is available on all platforms; click for details.
+description: This package provides the full masked genome sequences for Drosophila melanogaster (UCSC version dm2) as Biostrings objects in R. Use when user asks to access masked fly genome sequences, toggle assembly gap or repeat masks, or perform motif searching in non-repetitive regions of the dm2 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Dmelanogaster.UCSC.dm2.masked.html
 ---
+
 
 # bioconductor-bsgenome.dmelanogaster.ucsc.dm2.masked
 

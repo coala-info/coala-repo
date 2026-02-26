@@ -1,9 +1,9 @@
 # poplddecay CWL Generation Report
 
-## poplddecay
+## poplddecay_PopLDdecay
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system logs and a fatal error related to a container image build failure.
+Calculates and visualizes Linkage Disequilibrium (LD) decay from VCF files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1
@@ -18,71 +18,83 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+More Help document please see the Manual.pdf file
+ Para [-OutType] can be [1-8],(1-3) are recommended
+        [-OutType 1] is the fastest for only cal (Dist ~ R^2) for MeanBin method plot
+        [-OutType 2] will OutPut the Stat (Dist ~ r^2 & D') result for R^2 & D' MeanBin method plot
+        [-OutType 3] will OutPut one more result of PairWise LD compaire result(with Dist~r^2)
+        [-OutType 4] will OutPut the Stat (Dist ~ r^2 & D' ~ Number) result for R^2 & D' MeanBin/HW/MedianBin/PercentileBin plot
+        [-OutType 5] will OutPut the Stat (Dist ~ r^2 ~ Number) result for R^2 MeanBin/HW/MedianBin/PercentileBin plot
+        [-OutType 6] will OutPut one more result of PairWise LD compaire result(with Dist~r^2/D')
+        [-OutType 7] will OutPut one more result of PairWise LD compaire result(with Dist~r^2/D'/LOD)
+        [-OutType 8] will OutPut one more result of PairWise LD compaire result(with Dist~r^2/D'/LOD/CIlow/CIhi)
+ Para [-Method] can be 1 or 2, default agorithm [1],at most time agorithm 1 is faster than agorithm 2, and agorithm 2 may will cost Big MEM
+ Para [-EHH] format should be chr:site, such like -EHH chr1:5000000 will give out the EHH Decay of this site nearby distance
 
 
-## Metadata
-- **Skill**: generated
+ Here, we provide four classic cases to demonstrate the application of this software, four situation will be show how to follow to get the LD decay figure out.
 
-## poplddecay_plink2genotype.pl
+1). One population
+    This situation (one population with all chromosomes together) is encountered by most users, and this situation is the simplest to carry out.
 
-### Tool Description
-A script to convert Plink genotype data for PopLDDecay. Note: The provided help text contains only container runtime error messages and no usage information.
+              ./bin/PopLDdecay -InVCF  ALLchr.vcf.gz  -OutStat  LDDecay.stat.gz
+              perl bin/Plot_OnePop.pl  -inFile  LDDecay.stat.gz -output  Out.Prefix
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1
-- **Homepage**: https://github.com/BGI-shenzhen/PopLDdecay
-- **Package**: https://anaconda.org/channels/bioconda/packages/poplddecay/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+    Note:
+      This will generate the two finale figures named 'Out.Prefix.png' and 'Out.Prefix.pdf'
 
-## poplddecay_Plot_OnePop.pl
+2). Muti population
+    This is common situation in the LD decay analysis. For example, if there are 50 samples (wild1, wild2, wild3...wild25, cul1, cul2, cul3...cul25) in the VCF file,
+    To compare the LD decay of these two groups (wild vs cultivation), first of all, put their sample names into own file list for each group, column or row is ok.
 
-### Tool Description
-A tool for plotting Linkage Disequilibrium (LD) decay for a single population. Note: The provided help text contains container runtime errors and does not list specific arguments.
+             ./bin/PopLDdecay -InVCF  In.vcf.gz  -OutStat  wild.stat.gz  -SubPop wildName.list
+             ./bin/PopLDdecay -InVCF  In.vcf.gz  -OutStat   cul.stat.gz  -SubPop culName.list
+             #   created manually  muti.list by yourself
+             perl bin/Plot_MutiPop.pl -inList  muti.list  -output  OutputPrefix
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1
-- **Homepage**: https://github.com/BGI-shenzhen/PopLDdecay
-- **Package**: https://anaconda.org/channels/bioconda/packages/poplddecay/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+    Note:
+      A. The <wildName.list> can list as follow(column or row is ok):
+                      wild1
+                      wild2
+                      ...
+                      wild25
+      B. The format of <muti.list> had two columns, the file path of population result and the population flag, such as:
+                      /ifshk7/BC_PS/Lddecay/wild.stat.gz   wild
+                      /ifshk7/BC_PS/Lddecay/cul.stat.gz    cultivation
 
-## poplddecay_Plot_MutiPop.pl
+3). One population with multi-chr
+    One population with multiple chromosome VCF files. For example, if there are 3 chromosomes VCF files (Chr1, Chr2 and Chr3) as the input.
 
-### Tool Description
-A tool for plotting Linkage Disequilibrium (LD) decay across multiple populations. Note: The provided help text contains container runtime errors and does not list specific arguments.
+            ./bin/PopLDdecay -InVCF  Chr1.vcf.gz  -OutStat  Chr1.stat.gz
+            ./bin/PopLDdecay -InVCF  Chr2.vcf.gz  -OutStat  Chr2.stat.gz
+            ./bin/PopLDdecay -InVCF  Chr3.vcf.gz  -OutStat  Chr3.stat.gz
+            ls  `pwd`/Chr*.stat.gz   > chr.list
+            perl bin/Plot_OnePop.pl -inList  chr.list  -output  OutputPrefix
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1
-- **Homepage**: https://github.com/BGI-shenzhen/PopLDdecay
-- **Package**: https://anaconda.org/channels/bioconda/packages/poplddecay/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/poplddecay:3.43--hdcf5f25_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+   Note:
+     A. It can run in parallel when calculating the chromosomes' statistics files.
+     B. The files list only store the file path, which is diff with the multi-population list
+     C. It will generate the file 'OutputPrefix.bin' is the summary statistics file of all chromosomes, and same format with the chromosomes' statistics files.
+     D. The <chr.list> format can be generated by as above command 'ls Chr*.stat.gz   > chr.list'
+
+4). Muti population with multi-chr
+    Muti population with multiple chromosome VCF files. For example, if there are 2 chromosomes VCF files (Chr1, Chr2) as the input.
+
+             ./bin/PopLDdecay -InVCF  Chr1.vcf.gz  -OutStat  W.Chr1.stat.gz -SubPop wildName.list
+             ./bin/PopLDdecay -InVCF  Chr2.vcf.gz  -OutStat  W.Chr2.stat.gz -SubPop wildName.list
+             ./bin/PopLDdecay -InVCF  Chr1.vcf.gz  -OutStat  C.Chr1.stat.gz -SubPop culName.list
+             ./bin/PopLDdecay -InVCF  Chr2.vcf.gz  -OutStat  C.Chr2.stat.gz -SubPop culName.list
+             ls  `pwd`/W.Chr*.stat.gz   > W.chr.list
+             perl bin/Plot_OnePop.pl -inList  W.chr.list  -output  Wild.cat
+             ls  `pwd`/C.Chr*.stat.gz   > C.chr.list
+             perl bin/Plot_OnePop.pl -inList  C.chr.list  -output  Cul.cat
+             perl bin/Plot_MutiPop.pl -inList  muti.list  -output  OutputPrefix
+
+    Note:
+     A. The format of <muti.list> had two columns , the file path of population result and the population flag, such as:
+                      /ifshk7/BC_PS/Lddecay/Wild.cat.bin    wild
+                      /ifshk7/BC_PS/Lddecay/Cul.cat.bin     cultivation
+
+		 Contact:hewm2008@gmail.com / hewm2008@qq.com           join the QQ Group : 125293663
 ```
 

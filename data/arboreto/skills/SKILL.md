@@ -1,8 +1,9 @@
 ---
 name: arboreto
-description: Arboreto is a high-performance framework designed to reconstruct gene regulatory networks from expression matrices.
+description: Arboreto is a high-performance framework for inferring gene regulatory networks from expression matrices. Use when user asks to reconstruct gene regulatory networks, infer regulatory links between transcription factors and target genes, or run GRNBoost2 and GENIE3.
 homepage: https://github.com/tmoerman/arboreto
 ---
+
 
 # arboreto
 

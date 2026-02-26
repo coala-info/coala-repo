@@ -1,8 +1,9 @@
 ---
 name: graph2pro-var
-description: The `graph2pro-var` tool is a specialized suite for meta-proteogenomics that integrates mass spectrometry (MS) data with genomic/transcriptomic assembly graphs.
+description: graph2pro-var identifies peptides by integrating mass spectrometry data with genomic assembly graphs and sequencing reads. Use when user asks to identify peptides from meta-proteogenomic data, prepare protein databases from assembly graphs, or capture variants using unassembled sequencing reads.
 homepage: https://github.com/COL-IU/graph2pro-var
 ---
+
 
 # graph2pro-var
 

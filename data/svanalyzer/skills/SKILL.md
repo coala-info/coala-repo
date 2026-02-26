@@ -1,8 +1,9 @@
 ---
 name: svanalyzer
-description: SVanalyzer is a specialized suite of tools designed for the high-resolution analysis of structural variants.
+description: SVanalyzer is a suite of tools for the high-resolution analysis, comparison, and refinement of structural variants using sequence-level comparisons. Use when user asks to benchmark SV callers, compare sequence-resolved variants, merge callsets, refine variants from assemblies, or annotate genomic context around breakpoints.
 homepage: http://svanalyzer.readthedocs.io/
 ---
+
 
 # svanalyzer
 

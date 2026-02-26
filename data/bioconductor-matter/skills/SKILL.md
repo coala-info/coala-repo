@@ -1,8 +1,9 @@
 ---
 name: bioconductor-matter
-description: the package is available on all platforms; click for details.
+description: This package provides memory-efficient data structures for rapid prototyping and analysis of large datasets that exceed available RAM. Use when user asks to analyze out-of-memory data, manage large-scale datasets in R, or process mass spectrometry imaging files.
 homepage: https://bioconductor.org/packages/release/bioc/html/matter.html
 ---
+
 
 # bioconductor-matter
 

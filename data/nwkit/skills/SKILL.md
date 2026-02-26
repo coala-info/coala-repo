@@ -1,8 +1,9 @@
 ---
 name: nwkit
-description: nwkit is a specialized command-line suite designed for the efficient handling and transformation of Newick-formatted phylogenetic trees.
+description: nwkit is a command-line suite designed for the manipulation, transformation, and analysis of Newick-formatted phylogenetic trees. Use when user asks to root or prune trees, label nodes, calculate topological distances, or sanitize Newick files for downstream evolutionary analysis.
 homepage: https://github.com/kfuku52/nwkit
 ---
+
 
 # nwkit
 

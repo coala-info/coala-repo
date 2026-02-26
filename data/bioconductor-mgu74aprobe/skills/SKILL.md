@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mgu74aprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data for the Affymetrix MG_U74A microarray. Use when user asks to access probe sequences for the MG_U74A chip or perform sequence-level analysis on microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mgu74aprobe.html
 ---
+
 
 # bioconductor-mgu74aprobe
 

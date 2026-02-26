@@ -3,26 +3,32 @@
 ## libarbdb
 
 ### Tool Description
-The provided text does not contain help information for libarbdb; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the container due to insufficient disk space.
+FAIL to generate CWL: libarbdb not found in Docker image. The image may not provide this executable.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/libarbdb:6.0.6--2
+- **Docker Image**: quay.io/biocontainers/libarbdb:6.0.6--4
 - **Homepage**: http://www.arb-home.de
 - **Package**: https://anaconda.org/channels/bioconda/packages/libarbdb/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/libarbdb/overview
 - **Total Downloads**: 67.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: libarbdb not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: libarbdb not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/libarbdb:6.0.6--2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1136837711: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

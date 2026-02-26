@@ -1,8 +1,9 @@
 ---
 name: bioconductor-randpack
-description: the package is available on all platforms; click for details.
+description: The randPack package provides classes and methods for clinical trial randomization. Use when user asks to perform clinical trial randomization, generate randomization sequences, or manage randomization procedures in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/randPack.html
 ---
+
 
 # bioconductor-randpack
 

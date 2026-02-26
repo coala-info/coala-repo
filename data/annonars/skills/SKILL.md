@@ -1,8 +1,9 @@
 ---
 name: annonars
-description: annonars is a high-performance genome annotation tool built with Rust and RocksDB.
+description: annonars is a high-performance genome annotation tool that converts large variant TSV files into indexed RocksDB databases for efficient querying. Use when user asks to import variant annotation data from sources like CADD or dbNSFP, build indexed databases from TSV files, or perform SPDI-style coordinate queries.
 homepage: https://github.com/bihealth/annona-rs
 ---
+
 
 # annonars
 

@@ -1,9 +1,9 @@
 # canu CWL Generation Report
 
-## canu
+## canu_haplotype
 
 ### Tool Description
-A hierarchical assembler for single-molecule sequencing (no help text provided in input, text contains container runtime errors)
+Canu is a de novo assembler for highly accurate long-read sequencing data. It is particularly well-suited for PacBio and Nanopore sequencing data, and can also be used for shorter reads. This command is specifically for generating haplotype-specific reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/canu:2.3--h3fb4750_2
@@ -12,41 +12,493 @@ A hierarchical assembler for single-molecule sequencing (no help text provided i
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/canu/overview
-- **Total Downloads**: 109.2K
+- **Total Downloads**: 109.3K
 - **Last updated**: 2025-08-28
 - **GitHub**: https://github.com/marbl/canu
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/canu:2.3--h3fb4750_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:36b7914fc8ba5e3cd9a86a4a572597a8617a2e754230f1cc116ac7119019afd9: unpack entry: usr/lib/x86_64-linux-gnu/gconv/IBM939.so: unpack to regular file: short write: write /tmp/build-temp-2425976020/rootfs/usr/lib/x86_64-linux-gnu/gconv/IBM939.so: no space left on device
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'haplotype'.  Did you forget quotes around options with spaces?
+ERROR:  Invalid command line option '--h'.  Did you forget quotes around options with spaces?
+ERROR:  Assembly name prefix (-p) not supplied.
+ERROR:  Required parameter 'genomeSize' not set.
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## canu_meryl
+## canu_correct
 
 ### Tool Description
-The provided text does not contain help information for the tool. It is a system error log indicating a failure to build or extract a container image due to insufficient disk space ('no space left on device').
+To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/canu:2.3--h3fb4750_2
 - **Homepage**: https://github.com/marbl/canu
 - **Package**: https://anaconda.org/channels/bioconda/packages/canu/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/canu:2.3--h3fb4750_2 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:36b7914fc8ba5e3cd9a86a4a572597a8617a2e754230f1cc116ac7119019afd9: unpack entry: usr/lib/x86_64-linux-gnu/gconv/IBM939.so: unpack to regular file: short write: write /tmp/build-temp-2950265383/rootfs/usr/lib/x86_64-linux-gnu/gconv/IBM939.so: no space left on device
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'correct'.  Did you forget quotes around options with spaces?
+ERROR:  Invalid command line option '--h'.  Did you forget quotes around options with spaces?
+ERROR:  Assembly name prefix (-p) not supplied.
+ERROR:  Required parameter 'genomeSize' not set.
+```
+
+
+## canu_trim
+
+### Tool Description
+To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+The assembly is computed in the -d <assembly-directory>, with output files named
+using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+possible to run multiple assemblies in the same directory.
+
+The genome size should be your best guess of the haploid genome size of what is being
+assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/canu:2.3--h3fb4750_2
+- **Homepage**: https://github.com/marbl/canu
+- **Package**: https://anaconda.org/channels/bioconda/packages/canu/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'trim'.  Did you forget quotes around options with spaces?
+ERROR:  Invalid command line option '--h'.  Did you forget quotes around options with spaces?
+ERROR:  Assembly name prefix (-p) not supplied.
+ERROR:  Required parameter 'genomeSize' not set.
+```
+
+
+## canu_assemble
+
+### Tool Description
+Canu is a de novo assembler for long-read sequencing data. It is designed to produce high-quality assemblies from PacBio, Nanopore, and other long-read technologies.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/canu:2.3--h3fb4750_2
+- **Homepage**: https://github.com/marbl/canu
+- **Package**: https://anaconda.org/channels/bioconda/packages/canu/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'assemble'.  Did you forget quotes around options with spaces?
+ERROR:  Invalid command line option '--h'.  Did you forget quotes around options with spaces?
+ERROR:  Assembly name prefix (-p) not supplied.
+ERROR:  Required parameter 'genomeSize' not set.
+```
+
+
+## canu_trim-assemble
+
+### Tool Description
+Canu is a de novo assembler for long, noisy reads. It is designed to assemble genomes from PacBio, Nanopore, and other long-read technologies. It can also be used to assemble genomes from short reads, but it is not as efficient as other short-read assemblers.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/canu:2.3--h3fb4750_2
+- **Homepage**: https://github.com/marbl/canu
+- **Package**: https://anaconda.org/channels/bioconda/packages/canu/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'trim-assemble'.  Did you forget quotes around options with spaces?
+ERROR:  Invalid command line option '--h'.  Did you forget quotes around options with spaces?
+ERROR:  Assembly name prefix (-p) not supplied.
+ERROR:  Required parameter 'genomeSize' not set.
 ```
 

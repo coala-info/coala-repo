@@ -1,8 +1,9 @@
 ---
 name: bifrost
-description: Bifrost is a high-performance bioinformatics tool designed to manage de Bruijn graphs through compaction and coloring.
+description: Bifrost builds, updates, and queries compacted and colored de Bruijn graphs for large-scale genomic sequence analysis. Use when user asks to build a compacted de Bruijn graph, update an existing graph with new sequences, or query sequences against a colored graph.
 homepage: https://github.com/pmelsted/bifrost
 ---
+
 
 # bifrost
 

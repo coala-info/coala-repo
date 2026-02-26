@@ -1,9 +1,9 @@
 # ucsc-maffrags CWL Generation Report
 
-## ucsc-maffrags
+## ucsc-maffrags_mafFrags
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system logs and a fatal error message regarding a container build failure. No arguments or tool descriptions could be extracted from the input.
+Collect MAFs from regions specified in a 6 column bed file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-maffrags:482--h0b57e2e_0
@@ -18,13 +18,16 @@ The provided text does not contain help information for the tool. It contains sy
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-maffrags:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+mafFrags - Collect MAFs from regions specified in a 6 column bed file
+usage:
+   mafFrags database track in.bed out.maf
+options:
+   -orgs=org.txt - File with list of databases/organisms in order
+   -bed12 - If set, in.bed is a bed 12 file, including exons
+   -thickOnly - Only extract subset between thickStart/thickEnd
+   -meFirst - Put native sequence first in maf
+   -txStarts - Add MAF txstart region definitions ('r' lines) using BED name
+    and output actual reference genome coordinates in MAF.
+   -refCoords - output actual reference genome coordinates in MAF.
 ```
 
-
-## Metadata
-- **Skill**: generated

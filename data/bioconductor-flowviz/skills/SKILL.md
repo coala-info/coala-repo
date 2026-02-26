@@ -1,8 +1,9 @@
 ---
 name: bioconductor-flowviz
-description: the package is available on all platforms; click for details.
+description: This tool provides visualization functions for flow cytometry data using the lattice graphics system. Use when user asks to create density plots, generate scatter plots for flowFrames or flowSets, visualize gating results, or display population statistics on flow cytometry plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/flowViz.html
 ---
+
 
 # bioconductor-flowviz
 

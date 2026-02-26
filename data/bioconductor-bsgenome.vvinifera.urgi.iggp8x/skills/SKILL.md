@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.vvinifera.urgi.iggp8x
-description: the package is available on all platforms; click for details.
+description: This package provides the full reference nuclear genome sequences for Vitis vinifera (Grapevine) IGGP version 8X as a BSgenome object. Use when user asks to access grapevine reference sequences, extract specific genomic sub-sequences, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Vvinifera.URGI.IGGP8X.html
 ---
+
 
 # bioconductor-bsgenome.vvinifera.urgi.iggp8x
 

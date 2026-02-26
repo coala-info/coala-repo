@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gseabenchmarker
-description: the package is available on all platforms; click for details.
+description: This tool provides a framework for the reproducible evaluation and benchmarking of gene set enrichment analysis methods across transcriptomic data compendia. Use when user asks to load standardized microarray or RNA-seq datasets, perform differential expression across multiple datasets, execute various enrichment methods, or assess method performance based on runtime and phenotype relevance.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSEABenchmarkeR.html
 ---
+
 
 # bioconductor-gseabenchmarker
 

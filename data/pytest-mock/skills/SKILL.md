@@ -1,8 +1,9 @@
 ---
 name: pytest-mock
-description: pytest-mock is a pytest plugin that provides the `mocker` fixture, a thin and ergonomic wrapper around the standard `unittest.mock` library.
+description: pytest-mock provides a fixture that wraps the standard unittest.mock library to simplify mocking and ensure automatic cleanup in tests. Use when user asks to mock functions or objects, patch imports, spy on existing code, create stubs, or modify dictionaries for testing.
 homepage: https://github.com/pytest-dev/pytest-mock
 ---
+
 
 # pytest-mock
 

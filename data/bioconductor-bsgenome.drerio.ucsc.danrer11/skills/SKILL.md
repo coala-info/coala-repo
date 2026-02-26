@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.drerio.ucsc.danrer11
-description: the package is available on all platforms; click for details.
+description: This package provides the complete genome sequence for the Zebrafish based on the UCSC danRer11 assembly. Use when user asks to access Zebrafish genomic sequences, extract specific chromosome subsequences, retrieve promoter sequences, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Drerio.UCSC.danRer11.html
 ---
+
 
 # bioconductor-bsgenome.drerio.ucsc.danrer11
 

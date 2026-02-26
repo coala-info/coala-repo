@@ -1,8 +1,9 @@
 ---
 name: ucsc-gmtime
-description: The `gmtime` utility is a lightweight command-line tool provided by the UCSC Genome Browser team.
+description: The ucsc-gmtime tool translates Unix timestamps (integer seconds) into a standardized GMT/UTC calendar format. Use when user asks to convert Unix timestamps to GMT/UTC, get the current GMT time, process multiple timestamps from a file, or verify data currency from database timestamps.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-gmtime
 

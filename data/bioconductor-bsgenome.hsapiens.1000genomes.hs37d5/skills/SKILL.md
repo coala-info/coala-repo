@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.1000genomes.hs37d5
-description: the package is available on all platforms; click for details.
+description: This package provides the full 1000 Genomes Project Phase 2 human reference genome sequence (hs37d5) as a BSgenome object. Use when user asks to access the GRCh37-based reference assembly, extract DNA sequences from chromosomes or decoys, or analyze genomic regions using the hs37d5 build.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.1000genomes.hs37d5.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.1000genomes.hs37d5
 

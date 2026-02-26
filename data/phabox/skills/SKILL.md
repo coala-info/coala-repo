@@ -1,8 +1,9 @@
 ---
 name: phabox
-description: PhaBOX (specifically PhaBOX2) is an integrated bioinformatics suite designed for the comprehensive analysis of viral sequences.
+description: PhaBOX is an integrated bioinformatics suite for identifying, classifying, and analyzing viral sequences from high-throughput sequencing data. Use when user asks to identify viral contigs, classify viruses according to ICTV taxonomy, predict bacterial or archaeal hosts, determine viral lifestyle, or perform protein annotation and vOTU grouping.
 homepage: https://github.com/KennthShang/PhaBOX
 ---
+
 
 # phabox
 

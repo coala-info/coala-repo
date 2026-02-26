@@ -1,8 +1,9 @@
 ---
 name: r-rblast
-description: R package rblast (documentation from project home).
+description: This tool provides an R interface for the Basic Local Alignment Search Tool to perform sequence searches and manage BLAST databases. Use when user asks to search genetic sequence databases, create custom BLAST databases, or perform sequence alignments within R.
 homepage: https://cran.r-project.org/web/packages/rblast/index.html
 ---
+
 
 # r-rblast
 

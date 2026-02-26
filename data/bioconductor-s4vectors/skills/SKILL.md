@@ -1,8 +1,9 @@
 ---
 name: bioconductor-s4vectors
-description: the package is available on all platforms; click for details.
+description: "S4Vectors provides S4 implementation of vectors and list-like objects for efficient data representation in Bioconductor. Use when user asks to create S4 vector objects, manage metadata on list-like structures, or use efficient run-length encoding for genomic data."
 homepage: https://bioconductor.org/packages/release/bioc/html/S4Vectors.html
 ---
+
 
 # bioconductor-s4vectors
 

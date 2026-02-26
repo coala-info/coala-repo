@@ -1,8 +1,9 @@
 ---
 name: ryuto
-description: Ryuto is a high-performance bioinformatics tool designed for the exact and fast reconstruction of transcriptomes.
+description: Ryuto performs fast and exact transcriptome reconstruction and quantification from RNA-Seq data using network flows and splice-graphs. Use when user asks to reconstruct transcriptomes, identify transcript structures, quantify expression levels, or perform multi-sample consensus assembly.
 homepage: https://github.com/studla/RYUTO/
 ---
+
 
 # ryuto
 

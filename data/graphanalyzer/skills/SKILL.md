@@ -1,8 +1,9 @@
 ---
 name: graphanalyzer
-description: The `graphanalyzer` tool automates the manual inspection of vConTACT2 outputs.
+description: The graphanalyzer tool automates the taxonomic assignment and visualization of viral clusters by parsing vConTACT2 network outputs and INPHARED metadata. Use when user asks to assign taxonomy to viral operational taxonomic units, analyze vConTACT2 network graphs, or generate interactive 2D and 3D visualizations of viral clusters.
 homepage: https://github.com/lazzarigioele/graphanalyzer
 ---
+
 
 # graphanalyzer
 

@@ -1,8 +1,9 @@
 ---
 name: scprep
-description: scprep (Single-Cell Preparation) is a specialized Python framework designed to streamline the transition from raw biological matrices to analysis-ready data.
+description: scprep is a Python framework for preprocessing single-cell data using standard data structures like Pandas and SciPy. Use when user asks to load 10X Genomics data, filter cells by library size or mitochondrial expression, and normalize or transform gene expression matrices.
 homepage: https://github.com/KrishnaswamyLab/scprep
 ---
+
 
 # scprep
 

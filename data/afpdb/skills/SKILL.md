@@ -1,8 +1,9 @@
 ---
 name: afpdb
-description: "A tool for processing AlphaFold PDB files. (Note: The provided text appears to be a container execution error log rather than help text; no arguments could be extracted from the input.)"
+description: afpdb is a NumPy-based library for high-performance protein structure manipulation, selection, and preparation for AI models. Use when user asks to load PDB files, select residues using contig syntax, renumber chains, identify protein interfaces, or analyze antibody CDR regions.
 homepage: https://github.com/data2code/afpdb
 ---
+
 
 # afpdb
 

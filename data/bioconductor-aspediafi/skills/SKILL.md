@@ -1,8 +1,9 @@
 ---
 name: bioconductor-aspediafi
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: ASpediaFI performs functional interaction analysis of alternative splicing events by integrating RNA-Seq data with biological pathways using a heterogeneous network. Use when user asks to detect and quantify alternative splicing events, analyze the functional impact of splicing via the DRaWR algorithm, or visualize pathway-specific splicing subnetworks.
 homepage: https://bioconductor.org/packages/3.10/bioc/html/ASpediaFI.html
 ---
+
 
 # bioconductor-aspediafi
 

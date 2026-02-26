@@ -1,8 +1,9 @@
 ---
 name: r-rnexml
-description: "Provides access to phyloinformatic data in 'NeXML' format.  The     package should add new functionality to R such as the possibility to     manipulate 'NeXML' objects in more various and refined way and compatibility     with 'ape' objects.</p>"
+description: This tool provides an interface for reading, writing, and manipulating NeXML phylogenetic data files within the R environment. Use when user asks to read or write NeXML files, convert between ape phylo objects and NeXML, extract character data and metadata, or validate NeXML documents against the official schema.
 homepage: https://cloud.r-project.org/web/packages/RNeXML/index.html
 ---
+
 
 # r-rnexml
 

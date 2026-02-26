@@ -1,8 +1,9 @@
 ---
 name: r-gap
-description: "As first reported [Zhao, J. H. 2007. \"gap: Genetic Analysis Package\". J Stat Soft 23(8):1-18."
+description: The r-gap package provides a comprehensive suite of tools for genetic data analysis, including study design calculations and high-level visualization of genome-wide association study results. Use when user asks to calculate power or sample size for genetic studies, perform haplotype analysis, test for Hardy-Weinberg equilibrium, or generate Manhattan and Q-Q plots.
 homepage: https://cloud.r-project.org/web/packages/gap/index.html
 ---
+
 
 # r-gap
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-specl
-description: The package provides a BiblioSpec reader, a function which can add the protein information using a FASTA formatted amino acid file, and an export method for using the created library in the Spectronaut software.
+description: This package reads BiblioSpec files and adds protein information to create spectral libraries for Spectronaut software. Use when user asks to read BiblioSpec files, add protein information from FASTA files, or export spectral libraries for Spectronaut.
 homepage: https://bioconductor.org/packages/release/bioc/html/specL.html
 ---
+
 
 # bioconductor-specl
 

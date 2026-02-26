@@ -1,9 +1,9 @@
 # tmb CWL Generation Report
 
-## tmb
+## tmb_pyTMB.py
 
 ### Tool Description
-Tumor Mutational Burden analysis tool (Note: The provided text is a container build error log and does not contain help documentation or argument definitions).
+Calculates Tumor Mutational Burden (TMB) from variant data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1
@@ -18,33 +18,57 @@ Tumor Mutational Burden analysis tool (Note: The provided text is a container bu
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: pyTMB.py [-h] -i VCF --dbConfig DBCONFIG --varConfig VARCONFIG
+                [--sample SAMPLE] [--effGenomeSize EFFGENOMESIZE] [--bed BED]
+                [--vaf VAF] [--maf MAF] [--minDepth MINDEPTH]
+                [--minAltDepth MINALTDEPTH] [--filterLowQual] [--filterIndels]
+                [--filterCoding] [--filterSplice] [--filterNonCoding]
+                [--filterSyn] [--filterNonSyn] [--filterCancerHotspot]
+                [--filterPolym] [--filterRecurrence] [--polymDb POLYMDB]
+                [--cancerDb CANCERDB] [--verbose] [--debug] [--export]
+                [--version]
 
-
-## Metadata
-- **Skill**: generated
-
-## tmb_pyTMB.py
-
-### Tool Description
-Tumor Mutational Burden (TMB) calculation tool. (Note: The provided text contains container runtime error logs rather than the tool's help documentation; therefore, no arguments could be extracted.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1
-- **Homepage**: https://github.com/bioinfo-pf-curie/TMB
-- **Package**: https://anaconda.org/channels/bioconda/packages/tmb/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tmb:1.5.0--pyhdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+options:
+  -h, --help            show this help message and exit
+  -i VCF, --vcf VCF     Input file (.vcf, .vcf.gz, .bcf, .bcf.gz) (default:
+                        None)
+  --dbConfig DBCONFIG   Databases config file (default: None)
+  --varConfig VARCONFIG
+                        Variant calling config file (default: None)
+  --sample SAMPLE       Specify the sample ID to focus on (default: None)
+  --effGenomeSize EFFGENOMESIZE
+                        Effective genome size (default: None)
+  --bed BED             Capture design to use if effGenomeSize is not defined
+                        (BED file) (default: None)
+  --vaf VAF             Filter variants with Allelic Ratio < vaf (default: 0)
+  --maf MAF             Filter variants with MAF > maf (default: 1)
+  --minDepth MINDEPTH   Filter variants with depth < minDepth (default: 1)
+  --minAltDepth MINALTDEPTH
+                        Filter variants with alternative allele depth <
+                        minAltDepth (default: 1)
+  --filterLowQual       Filter low quality (i.e not PASS) variant (default:
+                        False)
+  --filterIndels        Filter insertions/deletions (default: False)
+  --filterCoding        Filter Coding variants (default: False)
+  --filterSplice        Filter Splice variants (default: False)
+  --filterNonCoding     Filter Non-coding variants (default: False)
+  --filterSyn           Filter Synonymous variants (default: False)
+  --filterNonSyn        Filter Non-Synonymous variants (default: False)
+  --filterCancerHotspot
+                        Filter variants annotated as cancer hotspots (default:
+                        False)
+  --filterPolym         Filter polymorphism variants in genome databases. See
+                        --maf (default: False)
+  --filterRecurrence    Filter on recurrence values (default: False)
+  --polymDb POLYMDB     Databases used for polymorphisms detection (comma
+                        separated) (default: gnomad)
+  --cancerDb CANCERDB   Databases used for cancer hotspot annotation (comma
+                        separated) (default: cosmic)
+  --verbose             Active verbose mode (default: False)
+  --debug               Export original VCF with TMB_FILTER tag (default:
+                        False)
+  --export              Export a VCF with the considered variants (default:
+                        False)
+  --version             Version number
 ```
 

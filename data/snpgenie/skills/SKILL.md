@@ -1,8 +1,9 @@
 ---
 name: snpgenie
-description: SNPGenie is a specialized toolkit for population genetics that calculates nucleotide diversity and its nonsynonymous/synonymous partitions.
+description: SNPGenie calculates nucleotide diversity and nonsynonymous/synonymous partitions to identify selective pressures in genomic data. Use when user asks to calculate dN/dS ratios, analyze evolutionary metrics in pooled sequencing data, or identify selective pressures in viral and microbial populations.
 homepage: https://github.com/chasewnelson/SNPGenie
 ---
+
 
 # snpgenie
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scdotplot
-description: the package is available on all platforms; click for details.
+description: scDotPlot generates customizable dot plots to visualize gene expression across different cell clusters in single-cell RNA-seq data. Use when user asks to visualize single-cell gene expression, generate dot plots for cell clusters, or compare expression patterns across groups.
 homepage: https://bioconductor.org/packages/release/bioc/html/scDotPlot.html
 ---
+
 
 # bioconductor-scdotplot
 

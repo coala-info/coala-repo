@@ -1,8 +1,9 @@
 ---
 name: forwardgenomics
-description: Forward Genomics is a computational framework designed to identify genomic regions responsible for specific traits by looking for "use it or lose it" evolutionary signatures.
+description: Forward Genomics identifies genomic regions responsible for specific traits by detecting evolutionary signatures of sequence divergence in lineages where the trait has been lost. Use when user asks to identify trait-related genomic elements, perform phylogenetically-controlled association testing, or analyze sequence divergence using GLS and branch-based methods.
 homepage: https://github.com/hillerlab/ForwardGenomics
 ---
+
 
 # forwardgenomics
 

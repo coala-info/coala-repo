@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gesper
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool deconvolutes off-target confounded phenotypes from RNAi screens using regularized linear regression to estimate gene-specific phenotypes. Use when user asks to estimate gene-specific phenotypes from siRNA-specific phenotypes, account for predicted seed-based off-targets, or perform concordance analysis between different RNAi screens.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/gespeR.html
 ---
+
 
 # bioconductor-gesper
 

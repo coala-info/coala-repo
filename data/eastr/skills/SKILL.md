@@ -1,8 +1,9 @@
 ---
 name: eastr
-description: EASTR (Emending Alignment of Spliced Transcript Reads) is a bioinformatics utility designed to refine RNA-seq datasets by identifying and eliminating mapping artifacts.
+description: EASTR identifies and removes spurious splice junction alignments from RNA-seq datasets to improve the accuracy of transcriptome assemblies. Use when user asks to filter mapping artifacts from BAM files, identify questionable junctions in GTF annotations, or analyze specific intron coordinates in BED files.
 homepage: https://github.com/ishinder/EASTR
 ---
+
 
 # eastr
 

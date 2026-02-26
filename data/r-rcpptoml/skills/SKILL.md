@@ -1,8 +1,9 @@
 ---
 name: r-rcpptoml
-description: R package rcpptoml (documentation from project home).
+description: The r-rcpptoml package provides R bindings for the C++11 cpptoml parser to read and parse TOML configuration files into R lists. Use when user asks to parse TOML files, read configuration data into R, or convert TOML strings to R objects.
 homepage: https://cran.r-project.org/web/packages/rcpptoml/index.html
 ---
+
 
 # r-rcpptoml
 

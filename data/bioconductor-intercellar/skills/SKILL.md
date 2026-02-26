@@ -1,8 +1,9 @@
 ---
 name: bioconductor-intercellar
-description: the package is available on all platforms; click for details.
+description: InterCellar analyzes and visualizes cell-cell communication results predicted from single-cell RNA-seq data across multiple biological conditions. Use when user asks to perform downstream analysis of cell-cell communication, visualize interaction networks, identify functional patterns in cellular signaling, or compare interaction pairs across different experimental conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/InterCellar.html
 ---
+
 
 # bioconductor-intercellar
 

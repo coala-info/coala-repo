@@ -1,8 +1,9 @@
 ---
 name: genome_updater
-description: The `genome_updater` skill provides a streamlined workflow for interacting with the NCBI Genomes repository.
+description: Genome_updater automates the retrieval and management of genomic data from NCBI using snapshots to efficiently update local collections. Use when user asks to download genomic sequences, update local genome databases, filter assemblies by taxonomy or metadata, or create representative datasets with reduced redundancy.
 homepage: https://github.com/pirovc/genome_updater
 ---
+
 
 # genome_updater
 

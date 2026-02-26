@@ -1,8 +1,9 @@
 ---
 name: cobs
-description: COBS is a specialized indexing tool designed for rapid search across massive collections of genomic data.
+description: "COBS indexes and searches large collections of genomic sequences using a compact bit-sliced signature index. Use when user asks to build a classic or compact index from genomic data, query sequences against an index, or retrieve index metadata."
 homepage: https://panthema.net/cobs
 ---
+
 
 # cobs
 

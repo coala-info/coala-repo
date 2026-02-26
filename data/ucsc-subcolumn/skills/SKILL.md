@@ -1,8 +1,9 @@
 ---
 name: ucsc-subcolumn
-description: The `subColumn` utility is a high-performance command-line tool from the UCSC Genome Browser suite designed for efficient column substitution in tab-separated files.
+description: The `ucsc-subcolumn` tool replaces values in a specified column of a tab-separated file using a lookup table. Use when user asks to 'map internal IDs to public accessions', 'update chromosome names', or 'replace specific data fields'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-subcolumn
 

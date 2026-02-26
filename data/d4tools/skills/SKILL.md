@@ -1,8 +1,9 @@
 ---
 name: d4tools
-description: The Dense Depth Data Dump (D4) format is a high-performance alternative to BigWig for storing and analyzing quantitative genomic signals like read depth.
+description: "d4tools manages high-performance genomic signal data by converting, querying, and calculating statistics on files in the D4 format. Use when user asks to convert BAM, CRAM, BigWig, or BedGraph files to D4, query specific genomic regions, or calculate coverage statistics like mean and median."
 homepage: https://github.com/38/d4-format
 ---
+
 
 # d4tools
 

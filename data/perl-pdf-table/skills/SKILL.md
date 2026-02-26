@@ -1,8 +1,9 @@
 ---
 name: perl-pdf-table
-description: This skill provides the procedural knowledge required to implement table layouts in PDF documents using the PDF::Table Perl module.
+description: This tool implements table layouts in PDF documents using the PDF::Table Perl module to manage cell dimensions, styling, and pagination. Use when user asks to create tables in PDFs, convert 2D data arrays into visual reports, or automate multi-page table generation with dynamic page breaks.
 homepage: http://metacpan.org/pod/PDF::Table
 ---
+
 
 # perl-pdf-table
 

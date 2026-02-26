@@ -3,10 +3,10 @@
 ## extract_fullseq
 
 ### Tool Description
-Extract full sequences (Note: The provided text contains container runtime error messages and does not include usage instructions or argument definitions).
+Extracts full sequences from a FASTA file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/extract_fullseq:3.101--h9948957_6
+- **Docker Image**: quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0
 - **Homepage**: Not found
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,9 +18,21 @@ Extract full sequences (Note: The provided text contains container runtime error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/extract_fullseq:3.101--h9948957_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1987241322: no space left on device
+Unable to find image 'quay.io/biocontainers/extract-codon-alignment:0.0.1--py_0' locally
+0.0.1--py_0: Pulling from biocontainers/extract-codon-alignment
+4f4fb700ef54: Already exists
+b0dc45cd432d: Already exists
+9466b3513669: Already exists
+ddd482ea7b54: Already exists
+7ff999a2256f: Already exists
+e7c454e5167d: Already exists
+dfda3e01f2b6: Already exists
+4f4fb700ef54: Already exists
+10c3bb32200b: Already exists
+f6895238c199: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3002758085: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
 

@@ -1,8 +1,9 @@
 ---
 name: gqt
-description: GQT (Genotype Query Tools) is a high-performance command-line interface for interacting with massive genomic datasets.
+description: GQT uses compressed bitmap indices to perform high-performance, sample-centric queries on massive genomic datasets. Use when user asks to index genotype data, create a sample metadata database, or filter variants based on population phenotypes and genotype frequencies.
 homepage: https://github.com/ryanlayer/gqt
 ---
+
 
 # gqt
 

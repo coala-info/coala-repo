@@ -2,9 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: subChar
 label: ucsc-subchar
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a container execution error log.\n\nTool homepage: https://hgdownload.cse.ucsc.edu/admin/exe"
-inputs: []
+doc: "Substitute one character for another in one or more files.\n\nTool homepage:
+  https://hgdownload.cse.ucsc.edu/admin/exe"
+inputs:
+  - id: old_char
+    type: string
+    doc: The character to be replaced.
+    inputBinding:
+      position: 1
+  - id: new_char
+    type: string
+    doc: The character to substitute in.
+    inputBinding:
+      position: 2
+  - id: files
+    type:
+      type: array
+      items: File
+    doc: The file(s) to process.
+    inputBinding:
+      position: 3
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: trf
-description: The `trf` skill provides a specialized workflow for detecting tandem repeats—adjacent, approximate copies of a nucleotide pattern—within DNA sequences.
+description: trf detects tandem repeats within DNA sequences. Use when user asks to detect tandem repeats, analyze satellite DNA, identify microsatellites or minisatellites, or mask repetitive elements.
 homepage: https://tandem.bu.edu/trf/trf.html
 ---
+
 
 # trf
 

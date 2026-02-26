@@ -1,11 +1,14 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pdbxyz
+baseCommand: tinker_pdbxyz
 label: tinker_pdbxyz
-doc: "The provided text does not contain help information for the tool. It appears
-  to be a log of a failed container image retrieval (Apptainer/Singularity).\n\nTool
-  homepage: https://dasher.wustl.edu/tinker/"
-inputs: []
+doc: "Tinker Software Tools for Molecular Design\n\nTool homepage: https://dasher.wustl.edu/tinker/"
+inputs:
+  - id: protein_data_bank_file_name
+    type: File
+    doc: Enter Protein Data Bank File Name
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

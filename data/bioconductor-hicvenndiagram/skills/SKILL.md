@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hicvenndiagram
-description: The package generates plots specifically crafted to eliminate the deceptive visual representation caused by the counts method.
+description: This tool calculates and visualizes overlaps between genomic interactions or peaks while correcting for multiple-overlap biases. Use when user asks to calculate Hi-C loop overlaps, generate Venn diagrams or UpSet plots for genomic interactions, or perform enrichment analysis using GLEAM.
 homepage: https://bioconductor.org/packages/release/bioc/html/hicVennDiagram.html
 ---
+
 
 # bioconductor-hicvenndiagram
 

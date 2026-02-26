@@ -1,8 +1,9 @@
 ---
 name: r-recetox-waveica
-description: R package recetox-waveica (documentation from project home).
+description: This tool removes batch effects from untargeted metabolomics data using wavelet transform and Independent Component Analysis. Use when user asks to normalize metabolomics data, remove technical variations or batch effects, or correct for time-dependent drift using injection order.
 homepage: https://cran.r-project.org/web/packages/recetox-waveica/index.html
 ---
+
 
 # r-recetox-waveica
 

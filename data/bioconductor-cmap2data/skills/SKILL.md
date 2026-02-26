@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cmap2data
-description: the package is available on all platforms; click for details.
+description: This package provides reference data from the Connectivity Map project for gene expression signature analysis. Use when user asks to access Connectivity Map reference datasets, retrieve CMap gene expression signatures, or prepare data for connectivity mapping analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/cMap2data.html
 ---
+
 
 # bioconductor-cmap2data
 

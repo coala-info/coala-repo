@@ -1,8 +1,9 @@
 ---
 name: aliview
-description: "AliView is a graphical alignment viewer and editor. (Note: The provided text contains system error logs regarding a container build failure and does not contain CLI help documentation.)"
+description: AliView is a high-performance alignment viewer and editor designed for visualizing, editing, and aligning large phylogenomic datasets. Use when user asks to view or edit sequence alignments, realign sequences using MUSCLE or MAFFT, translate nucleotides to amino acids, or design degenerate primers.
 homepage: https://ormbunkar.se/aliview/
 ---
+
 
 # aliview
 

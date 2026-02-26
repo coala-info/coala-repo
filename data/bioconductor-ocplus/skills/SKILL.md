@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ocplus
-description: The package includes tools both for planned experiments (for sample size assessment) and for already collected data (identification of differentially expressed genes).
+description: "OCplus provides tools for sample size assessment and the identification of differentially expressed genes. Use when user asks to assess sample size for experiments or identify differentially expressed genes."
 homepage: https://bioconductor.org/packages/release/bioc/html/OCplus.html
 ---
+
 
 # bioconductor-ocplus
 

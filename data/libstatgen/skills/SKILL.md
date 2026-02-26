@@ -1,8 +1,9 @@
 ---
 name: libstatgen
-description: libstatgen provides a foundational framework for high-performance statistical genetic analysis.
+description: libstatgen provides a C++ library for high-performance statistical genetic analysis and sequence data manipulation. Use when user asks to develop bioinformatics tools, integrate SAM/BAM or VCF file processing into C++ pipelines, or manage genomic coordinates and parameters.
 homepage: https://genome.sph.umich.edu/wiki/C++_Library:_libStatGen
 ---
+
 
 # libstatgen
 

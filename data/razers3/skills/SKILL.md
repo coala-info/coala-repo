@@ -1,8 +1,9 @@
 ---
 name: razers3
-description: RazerS 3 is a versatile read mapper designed for high-sensitivity alignment of genomic sequences.
+description: RazerS 3 is a high-sensitivity read mapper designed for aligning genomic sequences to a reference without the need for pre-built indexing. Use when user asks to map single-end or paired-end reads, perform sensitive sequence alignment with guaranteed error thresholds, or align reads to frequently changing reference sets.
 homepage: https://www.seqan.de/apps/razers3.html
 ---
+
 
 # razers3
 

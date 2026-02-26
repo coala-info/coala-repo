@@ -1,9 +1,9 @@
 # nextdenovo CWL Generation Report
 
-## nextdenovo
+## nextdenovo_nextDenovo
 
 ### Tool Description
-NextDenovo is a string graph-based de novo assembler for long reads (CLR, HiFi, and ONT). Note: The provided text contains container runtime error messages and does not list specific command-line arguments.
+Fast and accurate de novo assembler for long reads
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/nextdenovo:2.5.2--py310h0ceaa1d_6
@@ -12,17 +12,24 @@ NextDenovo is a string graph-based de novo assembler for long reads (CLR, HiFi, 
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/nextdenovo/overview
-- **Total Downloads**: 12.7K
+- **Total Downloads**: 12.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/Nextomics/NextDenovo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/nextdenovo:2.5.2--py310h0ceaa1d_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2961565943: no space left on device
+usage: nextDenovo [-l FILE] [-v] [-h]
+
+nextDenovo:
+	Fast and accurate de novo assembler for long reads
+exmples: 
+	nextDenovo run.cfg
+
+For more information about NextDenovo, see https://github.com/Nextomics/NextDenovo
+
+options:
+  -l FILE, --log FILE  log file (default: pidXXX.log.info)
+  -v, --version        show program's version number and exit
+  -h, --help           please use the config file to pass parameters
 ```
 
-
-## Metadata
-- **Skill**: generated

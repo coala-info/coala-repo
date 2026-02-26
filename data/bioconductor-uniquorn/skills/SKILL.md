@@ -1,8 +1,9 @@
 ---
 name: bioconductor-uniquorn
-description: the package is available on all platforms; click for details.
+description: Uniquorn identifies cancer cell lines by matching somatic point mutations against reference databases. Use when user asks to identify cancer cell lines, verify cell line authenticity, or match genomic profiles to reference datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/Uniquorn.html
 ---
+
 
 # bioconductor-uniquorn
 

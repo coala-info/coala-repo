@@ -1,8 +1,9 @@
 ---
 name: mdtraj
-description: MDTraj is a powerful Python library and command-line utility suite designed for the rapid analysis of molecular dynamics trajectories.
+description: MDTraj is a Python library and command-line suite designed for the rapid analysis, manipulation, and conversion of molecular dynamics trajectories. Use when user asks to load or save simulation files, perform structural alignments, calculate physical observables like RMSD or hydrogen bonds, and select atoms using a domain-specific language.
 homepage: https://github.com/mdtraj/mdtraj
 ---
+
 
 # mdtraj
 

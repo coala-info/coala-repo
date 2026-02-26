@@ -1,8 +1,9 @@
 ---
 name: platon
-description: Platon is a bioinformatics tool designed to identify and characterize plasmid-borne contigs within bacterial draft genome assemblies.
+description: Platon identifies and characterizes plasmid-borne contigs within bacterial draft genome assemblies using protein-coding gene distribution scores and functional markers. Use when user asks to identify plasmid sequences, characterize plasmid-borne genes, or separate chromosomal and plasmid contigs in genomic data.
 homepage: https://github.com/oschwengers/platon
 ---
+
 
 # platon
 

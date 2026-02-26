@@ -3,7 +3,7 @@
 ## quicktree
 
 ### Tool Description
-QuickTree is an efficient implementation of the neighbor-joining algorithm for reconstruction of phylogenies. (Note: The provided help text contains only system logs and error messages; no arguments could be extracted from the input.)
+Constructs a phylogenetic tree from a distance matrix or an alignment.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/quicktree:2.5--h7b50bb2_9
@@ -18,13 +18,23 @@ QuickTree is an efficient implementation of the neighbor-joining algorithm for r
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/quicktree:2.5--h7b50bb2_9 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+A Fatal Error occurred: Fatal error: Incorrect number of arguments.
+Usage: quicktree [-options] <inputfile>
+Options:
+-in <m|a>        : input file is a distance matrix in phylip format (m)
+                   or an alignment in stockholm format* (a, default)
+-out <m|t>       : output is a distance matrix in phylip format (m) or
+                   a tree in New Hampshire format
+
+Advanced options :
+-upgma           : Use the UPGMA method to construct the tree
+                     (ignored for distance matrix outputs)
+-kimura          : Use the kimura translation for pairwise distances
+                     (ignored for distance matrix inputs)
+-boot <n>        : Calcuate bootstrap values with n iterations
+                     (ignored for distance matrix outputs)
+-v               : print version and exit
+
+*Use sreformat, part of the HMMer package to convert your alignment to Stockholm format
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: provean
-description: PROVEAN (Protein Variation Effect Analyzer) is a bioinformatics tool used to predict whether an individual amino acid change or an indel (insertion/deletion) affects the biological function of a protein.
+description: PROVEAN predicts the functional impact of amino acid substitutions, insertions, and deletions on protein biological function. Use when user asks to predict the effect of protein variants, filter non-synonymous mutations, or analyze the impact of indels on protein function.
 homepage: https://www.jcvi.org/research/provean
 ---
+
 
 # provean
 

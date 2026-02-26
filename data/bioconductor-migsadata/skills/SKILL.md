@@ -1,8 +1,9 @@
 ---
 name: bioconductor-migsadata
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides example datasets and pre-computed results for the Multidimensional Gene Set Analysis (MIGSA) R package. Use when user asks to load MIGSA example data, run multidimensional gene set analysis vignettes, or access biological data for MIGSA testing.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/MIGSAdata.html
 ---
+
 
 # bioconductor-migsadata
 

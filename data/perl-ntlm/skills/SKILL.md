@@ -1,8 +1,9 @@
 ---
 name: perl-ntlm
-description: The `perl-ntlm` skill provides procedural knowledge for implementing NTLM (NT LAN Manager) authentication within the Perl `Authen::SASL` ecosystem.
+description: This tool provides NTLM authentication support for Perl applications using the Authen::SASL framework. Use when user asks to implement NTLM authentication in Perl, resolve "No SASL mechanism found" errors, or connect to Windows-based mail servers using Net::SMTP.
 homepage: https://github.com/stevenl/Authen-SASL-Perl-NTLM
 ---
+
 
 # perl-ntlm
 

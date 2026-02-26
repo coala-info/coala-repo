@@ -1,8 +1,9 @@
 ---
 name: ucsc-fatofastq
-description: `ucsc-fatofastq` (specifically the `faToFastq` binary) is a specialized utility from the UCSC Genome Browser "kent" tool suite.
+description: ucsc-fatofastq converts FASTA files to FASTQ format by assigning uniform, placeholder quality scores to each base. Use when user asks to 'convert FASTA to FASTQ', 'add fake quality scores to a FASTA file', or 'prepare FASTA for tools requiring FASTQ input'.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-fatofastq
 

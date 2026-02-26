@@ -1,8 +1,9 @@
 ---
 name: bioconductor-huex10stprobeset.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation mappings for the Affymetrix Human Exon 1.0 ST Array at the probeset level. Use when user asks to map probeset IDs to gene symbols, retrieve genomic coordinates, or perform functional annotation for human exon microarray data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/huex10stprobeset.db.html
 ---
+
 
 # bioconductor-huex10stprobeset.db
 

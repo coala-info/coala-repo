@@ -1,8 +1,9 @@
 ---
 name: perl-math-base-convert
-description: This skill provides guidance on using the `Math::Base::Convert` Perl module for efficient number system transformations.
+description: This tool performs efficient conversions between different number bases and custom positional notation systems. Use when user asks to convert numbers between standard bases like hex or base64, shorten long numeric IDs, or define custom character sets for number transformation.
 homepage: https://metacpan.org/pod/Math::Base::Convert
 ---
+
 
 # perl-math-base-convert
 

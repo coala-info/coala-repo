@@ -1,8 +1,9 @@
 ---
 name: pdfkit
-description: pdfkit is a Python wrapper for the wkhtmltopdf utility, which uses the Webkit rendering engine to transform HTML into PDF.
+description: "pdfkit converts HTML content, URLs, or local files into PDF documents using the wkhtmltopdf rendering engine. Use when user asks to generate PDFs from web pages, convert HTML strings to PDF files, or batch process multiple URLs into a single document."
 homepage: https://pypi.python.org/pypi/pdfkit
 ---
+
 
 # pdfkit
 

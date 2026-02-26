@@ -1,8 +1,9 @@
 ---
 name: rnablueprint
-description: The `rnablueprint` library and command-line tool provide a solution for the "inverse folding" problem—generating sequences that match desired structural targets.
+description: RNAblueprint generates RNA sequences that match specific structural targets through uniform sampling of the valid sequence space. Use when user asks to design RNA sequences for multiple structural targets, generate unbiased samples of compatible sequences, or apply IUPAC sequence constraints to RNA design.
 homepage: https://github.com/ViennaRNA/RNAblueprint
 ---
+
 
 # rnablueprint
 

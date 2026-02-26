@@ -1,9 +1,9 @@
 # ucsc-splitfilebycolumn CWL Generation Report
 
-## ucsc-splitfilebycolumn
+## ucsc-splitfilebycolumn_splitFileByColumn
 
 ### Tool Description
-Split a file into multiple files based on the values in a specific column.
+Split text input into files named by column value
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-splitfilebycolumn:482--h0b57e2e_0
@@ -18,33 +18,22 @@ Split a file into multiple files based on the values in a specific column.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-splitfilebycolumn:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-splitfilebycolumn_splitFileByColumn
-
-### Tool Description
-Split a file by a column. (Note: The provided text contains container build errors and does not include usage information or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-splitfilebycolumn:482--h0b57e2e_0
-- **Homepage**: https://hgdownload.cse.ucsc.edu/admin/exe
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-splitfilebycolumn/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-splitfilebycolumn:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+splitFileByColumn - Split text input into files named by column value
+usage:
+   splitFileByColumn source outDir
+options:
+   -col=N      - Use the Nth column value (default: N=1, first column)
+   -head=file  - Put head in front of each output
+   -tail=file  - Put tail at end of each output
+   -chromDirs  - Split into subdirs of outDir that are distilled from chrom
+                 names, e.g. chr3_random -> outDir/3/chr3_random.XXX .
+   -ending=XXX - Use XXX as the dot-suffix of split files (default: taken
+                 from source).
+   -tab        - Split by tab characters instead of whitespace.
+Split source into multiple files in outDir, with each filename determined
+by values from a column of whitespace-separated input in source.
+If source begins with a header, you should pipe "tail +N source" to this
+program where N is number of header lines plus 1, or use some similar
+method to strip the header from the input.
 ```
 

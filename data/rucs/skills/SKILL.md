@@ -1,8 +1,9 @@
 ---
 name: rucs
-description: RUCS automates the discovery of unique core sequences across large genomic datasets.
+description: RUCS identifies unique core sequences within a target group of genomes by comparing them against a background set of non-target genomes. Use when user asks to find unique genomic markers, identify clade-specific sequences, or discover diagnostic targets to distinguish pathogens from their close relatives.
 homepage: https://bitbucket.org/genomicepidemiology/rucs/src/master/
 ---
+
 
 # rucs
 

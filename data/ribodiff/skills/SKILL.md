@@ -1,8 +1,9 @@
 ---
 name: ribodiff
-description: RiboDiffusion is a generative diffusion model designed for tertiary structure-based RNA inverse folding.
+description: RiboDiffusion is a generative diffusion model that performs RNA inverse folding by generating sequences that match a specific 3D tertiary structure. Use when user asks to design RNA sequences for a given PDB structure, perform RNA inverse folding, or generate multiple candidate sequences for a specific RNA shape.
 homepage: https://github.com/ml4bio/RiboDiffusion
 ---
+
 
 # ribodiff
 

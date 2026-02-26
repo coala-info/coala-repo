@@ -1,8 +1,9 @@
 ---
 name: isoseq3
-description: The `isoseq3` (or `isoseq`) suite is the standard toolset for analyzing PacBio long-read RNA sequencing data.
+description: The isoseq3 suite processes PacBio HiFi reads to generate high-quality, full-length transcript sequences. Use when user asks to remove cDNA primers, cluster reads into isoforms, or perform single-cell deduplication.
 homepage: https://github.com/PacificBiosciences/IsoSeq3
 ---
+
 
 # isoseq3
 

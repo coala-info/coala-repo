@@ -1,8 +1,9 @@
 ---
 name: backspinpy
-description: BackSPIN (Back-Sorted Points Into Neighborhoods) is a biclustering algorithm designed to simultaneously cluster genes and cells.
+description: BackSPIN is a biclustering algorithm that simultaneously clusters genes and cells in single-cell RNA-sequencing data by iteratively reordering and splitting the expression matrix. Use when user asks to cluster scRNA-seq data, identify cell populations and gene modules, or perform hierarchical biclustering on a CEF formatted file.
 homepage: https://github.com/linnarsson-lab/BackSPIN
 ---
+
 
 # backspinpy
 

@@ -1,8 +1,9 @@
 ---
 name: hippunfold
-description: Hippunfold is a specialized BIDS App that automates the modeling of the human hippocampus's topological folding structure.
+description: Hippunfold automates the modeling of the human hippocampus by unfolding its topological structure into a 2D surface representation. Use when user asks to model hippocampal folding, perform surface-based morphometry, or map quantitative metrics across hippocampal layers.
 homepage: https://github.com/khanlab/hippunfold
 ---
+
 
 # hippunfold
 

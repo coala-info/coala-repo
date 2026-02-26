@@ -1,8 +1,9 @@
 ---
 name: fusion-inspector
-description: FusionInspector is a specialized tool within the Trinity Cancer Transcriptome Analysis Toolkit (CTAT) designed to validate predicted fusion transcripts.
+description: "FusionInspector validates and refines predicted fusion transcripts by performing a supervised re-alignment of RNA-Seq reads to candidate fusion contigs. Use when user asks to validate fusion candidates, recover evidence for specific fusion transcripts, or generate high-quality visualizations of fusion breakpoints."
 homepage: https://github.com/FusionInspector/FusionInspector
 ---
+
 
 # fusion-inspector
 

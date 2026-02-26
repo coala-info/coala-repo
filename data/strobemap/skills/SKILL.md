@@ -1,8 +1,9 @@
 ---
 name: strobemap
-description: Strobemap is a tool and library designed for generating strobemers—a type of "fuzzy" seed used in biological sequence analysis.
+description: Strobemap generates strobemers, which are fuzzy seeds used to improve sensitivity in biological sequence analysis and read mapping. Use when user asks to generate strobemers, create seeds for sequence alignment, or index biological sequences using randstrobes.
 homepage: https://github.com/ksahlin/strobemers
 ---
+
 
 # strobemap
 

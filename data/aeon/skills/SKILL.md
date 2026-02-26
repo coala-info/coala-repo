@@ -1,8 +1,9 @@
 ---
 name: aeon
-description: The provided text does not contain help information for the tool 'aeon'. It appears to be a log of a failed container build process (Apptainer/Singularity) due to insufficient disk space.
+description: AEON is a framework for the symbolic analysis and parameter synthesis of Boolean networks using Binary Decision Diagrams. Use when user asks to analyze large state spaces, detect attractors or fixed points, perform reachability analysis, or synthesize parameters for partially specified biological models.
 homepage: https://github.com/sybila/biodivine-aeon-py
 ---
+
 
 # aeon
 

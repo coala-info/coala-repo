@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spotclean
-description: the package is available on all platforms; click for details.
+description: SpotClean decontaminates spatial transcriptomics data by adjusting for mRNA bleeding between spots. Use when user asks to decontaminate spatial transcriptomics data, correct for ambient RNA contamination in Visium slides, or improve gene expression accuracy in spatial datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/SpotClean.html
 ---
+
 
 # bioconductor-spotclean
 

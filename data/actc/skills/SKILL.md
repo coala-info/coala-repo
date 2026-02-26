@@ -1,8 +1,9 @@
 ---
 name: actc
-description: Align clr to ccs reads.
+description: "actc aligns Pacific Biosciences subreads to their corresponding consensus reads from the same zero-mode waveguides. Use when user asks to map subreads to CCS reads, align CLR data to consensus sequences, or generate subread-level alignments for PacBio data."
 homepage: https://github.com/PacificBiosciences/actc
 ---
+
 
 # actc
 

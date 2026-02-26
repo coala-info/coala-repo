@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqgate
-description: the package is available on all platforms; click for details.
+description: SeqGate filters low-count reads in RNA-seq data to improve the performance of downstream analysis. Use when user asks to filter low-count reads, remove noise from sequencing data, or preprocess RNA-seq counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/SeqGate.html
 ---
+
 
 # bioconductor-seqgate
 

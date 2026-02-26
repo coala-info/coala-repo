@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tdbasedufe
-description: the package is available on all platforms; click for details.
+description: TDbasedUFE performs tensor decomposition-based unsupervised feature extraction for high-dimensional biological data analysis. Use when user asks to perform unsupervised feature extraction, identify relevant features in omics datasets, or apply tensor decomposition for dimensionality reduction.
 homepage: https://bioconductor.org/packages/release/bioc/html/TDbasedUFE.html
 ---
+
 
 # bioconductor-tdbasedufe
 

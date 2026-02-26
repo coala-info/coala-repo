@@ -1,8 +1,9 @@
 ---
 name: virema
-description: ViReMa is a specialized bioinformatic tool designed to identify non-linear genomic events in viral datasets that standard alignment algorithms often overlook.
+description: ViReMa identifies non-linear genomic events in viral datasets that standard alignment algorithms often overlook. Use when user asks to identify non-linear genomic events, discover functional genomic motifs, find recombination breakpoints, detect fusion events, or configure iterative alignment.
 homepage: https://sourceforge.net/projects/virema/
 ---
+
 
 # virema
 

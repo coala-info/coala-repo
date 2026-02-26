@@ -1,8 +1,9 @@
 ---
 name: insilicosv
-description: insilicoSV is a specialized framework for simulating structural variants ranging from simple deletions to highly complex, multi-breakpoint rearrangements.
+description: "insilicoSV is a framework for simulating simple and complex structural variants using a flexible grammatical notation. Use when user asks to simulate structural variants, define custom genomic rearrangements, or create synthetic benchmarks for bioinformatic pipelines."
 homepage: https://github.com/PopicLab/insilicoSV
 ---
+
 
 # insilicosv
 

@@ -1,8 +1,9 @@
 ---
 name: famli
-description: FAMLI (Functional Analysis of Metagenomes by Likelihood Inference) is a specialized tool designed to improve the precision of protein-coding sequence identification in metagenomic datasets.
+description: FAMLI identifies and quantifies protein-coding sequences in metagenomic datasets by resolving multi-mapped reads and filtering alignments based on coverage evenness. Use when user asks to align metagenomic reads to a protein database, resolve multi-mapping using likelihood inference, or filter existing alignments to estimate protein abundances.
 homepage: https://github.com/FredHutch/FAMLI
 ---
+
 
 # famli
 

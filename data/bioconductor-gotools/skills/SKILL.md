@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gotools
-description: the package is available on all platforms; click for details.
+description: This tool performs functional annotation and comparison of gene sets by mapping probe IDs to Gene Ontology terms. Use when user asks to map probe IDs to GO terms, compare the functional composition of multiple gene lists, or generate graphical representations of GO term distributions.
 homepage: https://bioconductor.org/packages/release/bioc/html/goTools.html
 ---
+
 
 # bioconductor-gotools
 

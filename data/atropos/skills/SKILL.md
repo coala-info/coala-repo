@@ -1,8 +1,9 @@
 ---
 name: atropos
-description: Atropos is a specialized tool for the sensitive and rapid trimming of adapters from high-throughput sequencing reads.
+description: Atropos is a high-performance tool for trimming adapters and quality filtering high-throughput sequencing reads. Use when user asks to trim adapters from single-end or paired-end reads, detect unknown adapter sequences, estimate sequencing error rates, or generate read quality control metrics.
 homepage: https://github.com/jdidion/atropos
 ---
+
 
 # atropos
 

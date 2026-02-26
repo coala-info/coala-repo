@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsalightning
-description: the package is available on all platforms; click for details.
+description: GSALightning performs ultra-fast permutation-based gene set analysis using maxmean, mean, or absmean statistics. Use when user asks to conduct high-performance gene set enrichment analysis, perform permutation tests on large-scale expression datasets, or analyze gene sets using paired or unpaired experimental designs.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSALightning.html
 ---
+
 
 # bioconductor-gsalightning
 

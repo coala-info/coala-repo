@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u219
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U219 microarray. Use when user asks to process Affymetrix HG-U219 array data, map probes to genomic locations, or perform low-level analysis of U219 microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u219.html
 ---
+
 
 # bioconductor-pd.hg.u219
 

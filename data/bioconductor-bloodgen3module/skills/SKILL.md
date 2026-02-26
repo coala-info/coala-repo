@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bloodgen3module
-description: the package is available on all platforms; click for details.
+description: This package performs modular repertoire analysis of blood transcription data to interpret immune response signatures at a module level. Use when user asks to perform group comparison analysis, conduct individual sample comparisons against a reference, or generate fingerprint grid and heatmap visualizations.
 homepage: https://bioconductor.org/packages/release/bioc/html/BloodGen3Module.html
 ---
+
 
 # bioconductor-bloodgen3module
 

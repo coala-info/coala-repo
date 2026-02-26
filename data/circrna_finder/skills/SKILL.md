@@ -1,8 +1,9 @@
 ---
 name: circrna_finder
-description: The circrna_finder pipeline is a specialized bioinformatics tool designed to extract circular RNA candidates from transcriptomic data.
+description: circrna_finder identifies circular RNA candidates from transcriptomic data by processing chimeric reads mapped with the STAR aligner. Use when user asks to detect circular RNAs, extract non-linear splice junctions, or identify circRNA candidates from FASTQ files.
 homepage: https://github.com/orzechoj/circRNA_finder
 ---
+
 
 # circrna_finder
 

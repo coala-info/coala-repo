@@ -1,8 +1,9 @@
 ---
 name: hesslab-gambit
-description: GAMBIT (Genomic Approximation Method for Bacterial Identification and Tracking) is a high-performance bioinformatics tool designed for the rapid classification of bacterial isolates.
+description: GAMBIT rapidly classifies bacterial genome assemblies by comparing them against a large reference database. Use when user asks to identify bacterial isolates, perform taxonomic classification of genome assemblies, or run queries against the GAMBIT reference database.
 homepage: https://github.com/hesslab-gambit/gambit
 ---
+
 
 # hesslab-gambit
 

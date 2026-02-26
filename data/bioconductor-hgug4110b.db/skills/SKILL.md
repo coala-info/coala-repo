@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgug4110b.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Agilent Human Genome G4110B Microarray. Use when user asks to map manufacturer probe identifiers to biological metadata, retrieve gene symbols, or link probes to functional annotations like GO terms and KEGG pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgug4110b.db.html
 ---
+
 
 # bioconductor-hgug4110b.db
 

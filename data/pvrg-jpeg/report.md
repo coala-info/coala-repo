@@ -3,7 +3,7 @@
 ## pvrg-jpeg
 
 ### Tool Description
-The provided text does not contain help information for pvrg-jpeg; it contains a fatal error log from a container engine (Apptainer/Singularity) attempting to fetch the tool's image.
+PVRG JPEG codec for encoding and decoding images
 
 ### Metadata
 - **Docker Image**: biocontainers/pvrg-jpeg:v1.2.1dfsg1-6-deb_cv1
@@ -18,11 +18,32 @@ The provided text does not contain help information for pvrg-jpeg; it contains a
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://biocontainers/pvrg-jpeg:v1.2.1dfsg1-6-deb_cv1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+jpeg -iw ImageWidth -ih ImageHeight [-JFIF] [-q(l) Q-Factor]
+     [-a] [-b] [-d] [-k predictortype] [-n] [-O] [-y] [-z] [-g]
+     [-p PrecisionValue] [-t pointtransform]
+     [-r ResyncInterval] [-s StreamName] [-o OutBaseName]
+     [[-ci ComponentIndex1] [-fw FrameWidth1] [-fh FrameHeight1]
+      [-hf HorizontalFrequency1] [-vf VerticalFrequency1]
+      ComponentFile1]
+     [[-ci ComponentIndex2] [-fw FrameWidth2] [-fh FrameHeight2]
+      [-hf HorizontalFrequency2] [-vf VerticalFrequency2]
+      ComponentFile1]
+     ....
+
+-JFIF puts a JFIF marker. Don't change component indices.
+-a enables Reference DCT.
+-b enables Lee DCT.
+-d decoder enable.
+-g put PGM headers on decode output files.
+-[k predictortype] enables lossless mode.
+-q specifies quantization factor; -ql specifies can be long.
+-n enables non-interleaved mode.
+-[t pointtransform] is the number of bits for the PT shift.
+-o set a base name for decode output files.
+-O enables the Command Interpreter.
+-p specifies precision.
+-y run in robust mode against errors (cannot be used with DNL).
+-z uses default Huffman tables.
 ```
 
 

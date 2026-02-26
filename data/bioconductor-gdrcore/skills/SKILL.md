@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gdrcore
-description: The package provides tools for normalizing, averaging, and calculation of gDR metrics data. All core functions are wrapped into the pipeline function allowing analyzing the data in a straightforward way.
+description: This package processes raw drug response data into standardized MultiAssayExperiment objects by performing normalization, replicate averaging, and dose-response curve fitting. Use when user asks to process drug sensitivity data, calculate drug response metrics like IC50 or GR50, or manage MultiAssayExperiment objects for single-agent and combination experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/gDRcore.html
 ---
+
 
 # bioconductor-gdrcore
 

@@ -1,8 +1,9 @@
 ---
 name: pdbfixer
-description: PDBFixer is a specialized tool for structural biology that automates the "cleaning" process required before a protein structure can be used in a simulation.
+description: PDBFixer repairs and prepares protein structures for molecular simulations by fixing structural gaps and adding missing atoms. Use when user asks to fix a PDB file, add missing side-chain atoms, replace non-standard residues, add hydrogens at a specific pH, or solvate a protein structure.
 homepage: https://github.com/openmm/pdbfixer
 ---
+
 
 # pdbfixer
 

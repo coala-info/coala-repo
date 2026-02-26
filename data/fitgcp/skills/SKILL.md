@@ -1,8 +1,9 @@
 ---
 name: fitgcp
-description: `fitgcp` is a statistical tool designed to model the distribution of reads across a genome.
+description: fitgcp models genome coverage distributions by fitting mixture models to sequencing read data. Use when user asks to model read distributions, fit mixture models to SAM files, or distinguish biological signals from technical noise.
 homepage: 
 ---
+
 
 # fitgcp
 

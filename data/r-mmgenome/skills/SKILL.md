@@ -1,8 +1,9 @@
 ---
 name: r-mmgenome
-description: R package mmgenome (documentation from project home).
+description: The r-mmgenome package provides tools for extracting individual genomes from metagenomes through differential coverage analysis and visualization. Use when user asks to perform metagenomic binning, visualize scaffold data, refine metagenome-assembled genomes, or calculate bin completeness and contamination.
 homepage: https://cran.r-project.org/web/packages/mmgenome/index.html
 ---
+
 
 # r-mmgenome
 

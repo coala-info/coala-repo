@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multiscan
-description: the package is available on all platforms; click for details.
+description: This tool estimates gene expression levels by combining data from multiple scans of the same microarray slide. Use when user asks to normalize microarray data from multiple scans, combine multiple laser scans, or extend the dynamic range of microarray measurements.
 homepage: https://bioconductor.org/packages/release/bioc/html/multiscan.html
 ---
+
 
 # bioconductor-multiscan
 

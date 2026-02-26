@@ -1,8 +1,9 @@
 ---
 name: phylics
-description: PhyliCS is a specialized Python toolkit designed for the analysis of single-cell Copy Number Alterations (scCNA).
+description: PhyliCS is a Python toolkit for analyzing single-cell copy number alterations to identify sub-clonal structures and measure intra-tumor heterogeneity. Use when user asks to load binned CNV data, calculate genomic metrics, perform dimensionality reduction with UMAP, or visualize cell clusters and copy number distributions.
 homepage: https://github.com/bioinformatics-polito/PhyliCS
 ---
+
 
 # phylics
 

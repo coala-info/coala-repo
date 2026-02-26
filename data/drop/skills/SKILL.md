@@ -1,8 +1,9 @@
 ---
 name: drop
-description: The Detection of RNA Outlier Pipeline (DROP) is a specialized bioinformatic workflow designed to identify rare aberrant events in RNA-sequencing data.
+description: The Detection of RNA Outlier Pipeline (DROP) identifies rare aberrant expression, splicing, and mono-allelic expression events in RNA-sequencing data to help diagnose rare disorders. Use when user asks to detect RNA outliers, identify aberrant splicing or expression, perform mono-allelic expression analysis, or run a standardized diagnostic workflow for rare diseases.
 homepage: https://github.com/gagneurlab/drop
 ---
+
 
 # drop
 

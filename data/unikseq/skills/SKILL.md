@@ -1,8 +1,9 @@
 ---
 name: unikseq
-description: `unikseq` identifies genomic regions that are present in a reference and an ingroup but absent (or minimally present) in an outgroup.
+description: unikseq identifies genomic regions present in a reference and an ingroup but absent or minimally present in an outgroup. Use when user asks to 'identify unique genomic regions', 'design qPCR assays', 'develop eDNA assays', or 'characterize genomic gaps'.
 homepage: https://github.com/bcgsc/unikseq
 ---
+
 
 # unikseq
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenomeforge
-description: the package is available on all platforms; click for details.
+description: This tool creates and forges BSgenome data packages for efficient genomic sequence access within the Bioconductor ecosystem. Use when user asks to forge a BSgenome package from NCBI or UCSC, build a custom genome package from local FASTA or 2bit files, or create masked genome packages.
 homepage: https://bioconductor.org/packages/release/bioc/html/BSgenomeForge.html
 ---
+
 
 # bioconductor-bsgenomeforge
 

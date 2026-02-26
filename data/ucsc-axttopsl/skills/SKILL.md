@@ -1,8 +1,9 @@
 ---
 name: ucsc-axttopsl
-description: The `axtToPsl` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: `ucsc-axttopsl` converts AXT alignment files into PSL (Pattern Space Layout) files. Use when user asks to convert AXT files to PSL format, integrate custom alignments into the UCSC Genome Browser, or calculate alignment coverage and identity metrics.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-axttopsl
 

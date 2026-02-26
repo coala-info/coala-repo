@@ -1,8 +1,9 @@
 ---
 name: cooltools
-description: cooltools is the primary suite for processing and analyzing Hi-C data within the Open2C ecosystem.
+description: cooltools is a suite for processing and analyzing Hi-C data in the .cool format to extract biological insights from chromosome conformation capture experiments. Use when user asks to calculate contact frequency decay, identify A/B compartments, call TAD boundaries using insulation scores, or perform aggregate pileup analysis.
 homepage: https://github.com/mirnylab/cooltools
 ---
+
 
 # cooltools
 

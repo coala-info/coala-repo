@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cogena
-description: the package is available on all platforms; click for details.
+description: Cogena performs co-expressed gene-set enrichment analysis to identify biological functions and drug repositioning opportunities from transcriptomic data. Use when user asks to perform co-expression clustering, conduct gene set enrichment analysis, or identify potential drug candidates for specific diseases.
 homepage: https://bioconductor.org/packages/release/bioc/html/cogena.html
 ---
+
 
 # bioconductor-cogena
 

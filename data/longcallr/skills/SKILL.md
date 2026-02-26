@@ -1,8 +1,9 @@
 ---
 name: longcallr
-description: longcallr is a specialized Rust-based tool designed to handle the specific challenges of long-read transcriptomics, such as high error rates and splicing complexity.
+description: Longcallr identifies variants and phases haplotypes from long-read RNA-seq alignments. Use when user asks to call variants, phase haplotypes, perform allele-specific expression analysis, or analyze allele-specific junctions in long-read transcriptomics data.
 homepage: https://github.com/huangnengCSU/longcallR
 ---
+
 
 # longcallr
 

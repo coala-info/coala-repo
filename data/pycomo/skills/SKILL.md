@@ -1,8 +1,9 @@
 ---
 name: pycomo
-description: PyCoMo is a specialized Python package designed to bridge the gap between individual metabolic models and community-scale simulations.
+description: PyCoMo generates compartmentalized community metabolic models from individual member models for community-scale simulations. Use when user asks to generate community models, perform flux variability analysis, predict cross-feeding interactions, or analyze metabolite exchanges between community members.
 homepage: https://github.com/univieCUBE/PyCoMo
 ---
+
 
 # pycomo
 

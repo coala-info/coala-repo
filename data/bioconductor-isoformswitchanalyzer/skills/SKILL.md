@@ -1,8 +1,9 @@
 ---
 name: bioconductor-isoformswitchanalyzer
-description: the package is available on all platforms; click for details.
+description: IsoformSwitchAnalyzeR identifies and analyzes isoform switches with functional consequences from RNA-seq data. Use when user asks to identify differential transcript usage, predict functional consequences of isoform switches, or visualize alternative splicing events and their genomic impacts.
 homepage: https://bioconductor.org/packages/release/bioc/html/IsoformSwitchAnalyzeR.html
 ---
+
 
 # bioconductor-isoformswitchanalyzer
 

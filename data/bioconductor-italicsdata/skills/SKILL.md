@@ -1,8 +1,9 @@
 ---
 name: bioconductor-italicsdata
-description: the package is available on all platforms; click for details.
+description: This package provides pre-computed quartet effects and genomic annotation data for the normalization of Affymetrix GeneChip Mapping 100K and 500K sets. Use when user asks to load quartet effects for SNP array normalization, access genomic annotations for Affymetrix arrays, or provide example data for the ITALICS workflow.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ITALICSData.html
 ---
+
 
 # bioconductor-italicsdata
 

@@ -1,8 +1,9 @@
 ---
 name: fgmp
-description: FGMP (Fungal Genome Mapping Project) is a specialized bioinformatics pipeline used to evaluate the completeness of fungal genome assemblies.
+description: FGMP evaluates the completeness of fungal genome assemblies by screening them against a curated set of conserved protein markers and genomic segments. Use when user asks to assess fungal genome assembly quality, identify conserved gene markers, or estimate genome completeness from raw reads.
 homepage: https://github.com/stajichlab/FGMP
 ---
+
 
 # fgmp
 

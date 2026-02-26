@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mafdb.topmed.freeze5.hg38
-description: the package is available on all platforms; click for details.
+description: This package provides minor allele frequency data from the TOPMed freeze 5 project for the hg38 human genome assembly. Use when user asks to retrieve minor allele frequencies, annotate genetic variants with TOPMed data, or query population frequency statistics for the hg38 genome build.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/MafDb.TOPMed.freeze5.hg38.html
 ---
+
 
 # bioconductor-mafdb.topmed.freeze5.hg38
 

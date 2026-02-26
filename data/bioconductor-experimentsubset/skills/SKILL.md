@@ -1,8 +1,9 @@
 ---
 name: bioconductor-experimentsubset
-description: the package is available on all platforms; click for details.
+description: This tool manages and tracks data subsets within Bioconductor experiment objects without redundant data copying. Use when user asks to create subsets of genomic data, manage subset-specific assays, or track hierarchical relationships between filtered datasets and their parent objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/ExperimentSubset.html
 ---
+
 
 # bioconductor-experimentsubset
 

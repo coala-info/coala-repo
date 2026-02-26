@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipseqr
-description: the package is available on all platforms; click for details.
+description: This tool identifies nucleosome positions and DNA-binding sites from ChIP-seq and MNase-seq data using a sliding window approach. Use when user asks to call nucleosomes, identify histone modification sites, estimate binding site lengths, or calculate binding site scores from strand-specific read counts.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPseqR.html
 ---
+
 
 # bioconductor-chipseqr
 

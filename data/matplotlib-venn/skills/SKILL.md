@@ -1,8 +1,9 @@
 ---
 name: matplotlib-venn
-description: The `matplotlib-venn` skill provides a specialized interface for generating proportional Venn diagrams within the Matplotlib framework.
+description: The matplotlib-venn tool generates area-proportional Venn diagrams for two or three sets within the Matplotlib framework. Use when user asks to create a Venn diagram, visualize overlapping data sets, plot proportional intersections, or customize the appearance of set-based visualizations.
 homepage: https://github.com/konstantint/matplotlib-venn
 ---
+
 
 # matplotlib-venn
 

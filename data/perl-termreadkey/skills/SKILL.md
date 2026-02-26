@@ -1,8 +1,9 @@
 ---
 name: perl-termreadkey
-description: The `Term::ReadKey` module provides a low-level interface for controlling terminal behavior in Perl.
+description: The perl-termreadkey module provides a low-level interface for controlling terminal input modes and retrieving hardware-level terminal information in Perl. Use when user asks to read passwords without echoing, perform non-blocking key presses, or determine terminal window dimensions.
 homepage: http://metacpan.org/pod/TermReadKey
 ---
+
 
 # perl-termreadkey
 

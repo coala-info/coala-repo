@@ -1,8 +1,9 @@
 ---
 name: fastqpuri
-description: FastqPuri is a lightweight and efficient suite of tools designed for the quality management of FASTQ files.
+description: FastqPuri is a lightweight suite of tools for FASTQ quality assessment and sequence filtering using Bloom filters. Use when user asks to generate quality reports, filter contaminants, trim reads, or create Bloom filters for sequence screening.
 homepage: https://github.com/jengelmann/FastqPuri
 ---
+
 
 # fastqpuri
 

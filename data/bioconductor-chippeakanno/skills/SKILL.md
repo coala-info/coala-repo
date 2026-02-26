@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chippeakanno
-description: The package encompasses a range of functions for identifying the closest gene, exon, miRNA, or custom features—such as highly conserved elements and user-supplied transcription factor binding sites. Additionally, users can retrieve sequences around the peaks and obtain enriched Gene Ontology (GO) or Pathway terms. In version 2.0.5 and beyond, new functionalities have been introduced. These include features for identifying peaks associated with bi-directional promoters along with summary statistics (peaksNearBDP), summarizing motif occurrences in peaks (summarizePatternInPeaks), and associating additional identifiers with annotated peaks or enrichedGO (addGeneIDs). The package integrates with various other packages such as biomaRt, IRanges, Biostrings, BSgenome, GO.db, multtest, and stat to enhance its analytical capabilities.
+description: This tool provides expert guidance for the ChIPpeakAnno R package to annotate, visualize, and compare genomic peaks from ChIP-seq, ATAC-seq, and CUT&RUN experiments. Use when user asks to convert peak files to GRanges, annotate peaks with genomic features, perform GO or pathway enrichment analysis, visualize peak distributions and overlaps, or discover DNA motifs.
 homepage: https://bioconductor.org/packages/release/bioc/html/ChIPpeakAnno.html
 ---
+
 
 # bioconductor-chippeakanno
 

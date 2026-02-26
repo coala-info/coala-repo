@@ -1,12 +1,12 @@
 # fastaindex CWL Generation Report
 
-## fastaindex
+## fastaindex_FastaIndex
 
 ### Tool Description
-The provided text contains system error messages related to a container runtime failure and does not include the tool's help documentation or usage instructions.
+Create an index for a FASTA file.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastaindex:0.11c--py27_0
+- **Docker Image**: quay.io/biocontainers/fastaindex:0.11c--py36_0
 - **Homepage**: https://github.com/lpryszcz/FastaIndex
 - **Package**: Not found
 - **Validation**: PASS
@@ -18,29 +18,43 @@ The provided text contains system error messages related to a container runtime 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastaindex:0.11c--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3282181477: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/FastaIndex", line 11, in <module>
+    load_entry_point('FastaIndex==0.11rc7', 'console_scripts', 'FastaIndex')()
+  File "/usr/local/lib/python3.6/site-packages/FastaIndex-0.11rc7-py3.6.egg/FastaIndex.py", line 358, in main
+NameError: name 'file' is not defined
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## fastaindex_fasta_stats
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a system error log indicating a failure to build a container image due to lack of disk space.
+Report FASTA statistics. Support gzipped files.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastaindex:0.11c--py27_0
+- **Docker Image**: quay.io/biocontainers/fastaindex:0.11c--py36_0
 - **Homepage**: https://github.com/lpryszcz/FastaIndex
 - **Package**: Not found
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastaindex:0.11c--py27_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2682411448: no space left on device
+usage: fasta_stats [-h] [--version] [-v] [-i FASTA [FASTA ...]] [-o OUT]
+
+Report FASTA statistics. Support gzipped files.
+
+Statistics are stored as .fai formatted file (http://www.htslib.org/doc/faidx.html),
+with 4 extended columns, storing counts for A, C, G & T for each sequence. 
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -v, --verbose         verbose
+  -i FASTA [FASTA ...], --fasta FASTA [FASTA ...]
+                        FASTA file(s)
+  -o OUT, --out OUT     output stream	 [stdout]
+
+Author: l.p.pryszcz+git@gmail.com
+Mizerow/Bratislava, 26/08/2014
 ```
 

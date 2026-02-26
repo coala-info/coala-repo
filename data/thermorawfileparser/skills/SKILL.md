@@ -1,8 +1,9 @@
 ---
 name: thermorawfileparser
-description: The `thermorawfileparser` is a cross-platform utility designed to liberate proprietary mass spectrometry data from Thermo RAW files.
+description: ThermoRawFileParser converts proprietary Thermo mass spectrometry RAW files into standardized formats like mzML, MGF, or Parquet. Use when user asks to convert RAW files to mzML or MGF, extract instrument metadata, retrieve specific spectra via scan numbers, or generate extracted ion chromatograms.
 homepage: https://github.com/compomics/ThermoRawFileParser
 ---
+
 
 # thermorawfileparser
 

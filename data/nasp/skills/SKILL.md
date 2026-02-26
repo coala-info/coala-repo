@@ -1,8 +1,9 @@
 ---
 name: nasp
-description: NASP (Northern Arizona SNP Pipeline) is a comparative genomics toolset designed to identify and report statistically relevant, high-confidence SNPs across a collection of genomes.
+description: NASP is a comparative genomics pipeline that identifies and reports high-confidence SNPs across a collection of genomes. Use when user asks to identify SNPs, perform large-scale genomic analysis, or generate a SNP matrix for phylogenetics.
 homepage: https://github.com/TGenNorth/nasp
 ---
+
 
 # nasp
 

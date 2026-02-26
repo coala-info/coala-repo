@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sincell
-description: the package is available on all platforms; click for details.
+description: Bioconductor-sincell provides tools for the statistical assessment of cell-state hierarchies and the estimation of cell trajectories from single-cell RNA-seq data. Use when user asks to assess cell-state hierarchies, estimate cell trajectories, or evaluate the robustness of single-cell differentiation pipelines.
 homepage: https://bioconductor.org/packages/release/bioc/html/sincell.html
 ---
+
 
 # bioconductor-sincell
 

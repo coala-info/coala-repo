@@ -1,8 +1,9 @@
 ---
 name: r-leidenbase
-description: "An R to C/C++ interface that runs the Leiden community     detection algorithm to find a basic partition (). It runs the     equivalent of the 'leidenalg' find_partition() function, which is     given in the 'leidenalg' distribution file     'leiden/src/functions.py'. This package includes the     required source code files from the official 'leidenalg'     distribution and functions from the R 'igraph'     package."
+description: The r-leidenbase package provides R and C++ wrappers for the Leiden algorithm to perform community detection on igraph objects. Use when user asks to find partitions in networks, optimize modularity or CPM, or run high-performance community detection using the leiden_find_partition function.
 homepage: https://cloud.r-project.org/web/packages/leidenbase/index.html
 ---
+
 
 # r-leidenbase
 

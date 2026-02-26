@@ -1,8 +1,9 @@
 ---
 name: dbg2olc
-description: DBG2OLC (De Bruijn Graph to Overlap-Layout-Consensus) is a hybrid assembly framework designed to overcome the high error rates of third-generation sequencing (3GS) technologies.
+description: DBG2OLC is a hybrid assembly framework that combines short-read contigs with long, error-prone reads to produce high-quality genome assemblies. Use when user asks to perform hybrid genome assembly, align long reads to NGS contigs, or generate a backbone for consensus calling.
 homepage: https://github.com/yechengxi/DBG2OLC
 ---
+
 
 # dbg2olc
 

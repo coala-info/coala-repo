@@ -1,8 +1,9 @@
 ---
 name: sesimcmc
-description: The sesimcmc tool implements a modified MCMC algorithm designed to find motifs (short, recurring patterns) within biological sequences.
+description: The sesimcmc tool uses a modified MCMC algorithm to identify recurring motifs within biological sequences. Use when user asks to find unknown patterns in DNA or protein sequences, perform blind motif searching, or identify regulatory elements using Gibbs sampling.
 homepage: http://favorov.bioinfolab.net/SeSiMCMC/
 ---
+
 
 # sesimcmc
 

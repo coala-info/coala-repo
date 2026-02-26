@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sponge
-description: the package is available on all platforms; click for details.
+description: This tool identifies competing endogenous RNA (ceRNA) interactions by calculating sparse partial correlations from gene expression data. Use when user asks to identify ceRNA networks, infer miRNA-mediated interactions, or calculate sensitivity correlation between RNA molecules.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPONGE.html
 ---
+
 
 # bioconductor-sponge
 

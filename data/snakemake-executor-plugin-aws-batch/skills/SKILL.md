@@ -1,8 +1,9 @@
 ---
 name: snakemake-executor-plugin-aws-batch
-description: The `snakemake-executor-plugin-aws-batch` enables Snakemake to seamlessly submit and manage jobs within the AWS Batch ecosystem.
+description: This plugin allows Snakemake to submit and manage workflow tasks as jobs within the AWS Batch ecosystem. Use when user asks to execute Snakemake workflows on AWS Batch, dispatch rules to cloud compute queues, or scale genomic pipelines using elastic AWS resources.
 homepage: https://github.com/snakemake/snakemake-executor-plugin-aws-batch
 ---
+
 
 # snakemake-executor-plugin-aws-batch
 

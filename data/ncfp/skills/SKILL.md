@@ -1,8 +1,9 @@
 ---
 name: ncfp
-description: The `ncfp` (NCBI CDS From Protein) tool automates the recovery of DNA sequences that encode specific proteins.
+description: The ncfp tool automates the retrieval of nucleotide coding sequences from NCBI based on a provided set of protein sequences. Use when user asks to recover DNA sequences for specific proteins, download CDS from NCBI accessions, or synchronize protein and nucleotide datasets for phylogenetic analysis.
 homepage: http://widdowquinn.github.io/ncfp/
 ---
+
 
 # ncfp
 

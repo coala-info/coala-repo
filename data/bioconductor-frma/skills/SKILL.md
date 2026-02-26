@@ -1,8 +1,9 @@
 ---
 name: bioconductor-frma
-description: the package is available on all platforms; click for details.
+description: The frma package provides a preprocessing algorithm for Affymetrix microarrays that uses frozen parameter vectors to analyze samples individually or in small batches. Use when user asks to preprocess microarray data using fRMA, estimate absolute expression with the barcode algorithm, or assess sample quality using GNUSE.
 homepage: https://bioconductor.org/packages/release/bioc/html/frma.html
 ---
+
 
 # bioconductor-frma
 

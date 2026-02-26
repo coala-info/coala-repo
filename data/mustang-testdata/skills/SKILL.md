@@ -1,8 +1,9 @@
 ---
 name: mustang-testdata
-description: MUSTANG (MUltiple STructural AligNment) is a specialized tool for aligning multiple protein structures by analyzing the spatial coordinates of C-alpha atoms.
+description: MUSTANG performs multiple structural alignment of protein structures by analyzing the spatial coordinates of C-alpha atoms. Use when user asks to align multiple protein structures, generate structural superpositions, or calculate RMSD tables and rotation matrices for protein comparison.
 homepage: http://lcb.infotech.monash.edu.au/mustang/
 ---
+
 
 # mustang-testdata
 

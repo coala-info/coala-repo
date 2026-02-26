@@ -1,8 +1,9 @@
 ---
 name: bioconductor-curatedadipoarray
-description: The package documents the data collection and processing. In addition to the documentation, the package contains the scripts that was used to generated the data.
+description: This package provides curated adipose tissue microarray data along with the scripts used for its collection and processing. Use when user asks to access curated adipose microarray datasets, process adipose tissue gene expression data, or examine data generation scripts.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/curatedAdipoArray.html
 ---
+
 
 # bioconductor-curatedadipoarray
 

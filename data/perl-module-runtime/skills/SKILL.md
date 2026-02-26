@@ -1,8 +1,9 @@
 ---
 name: perl-module-runtime
-description: The `perl-module-runtime` skill provides guidance on using the `Module::Runtime` Perl library to manage module loading dynamically.
+description: This tool provides functions to manage the dynamic loading and validation of Perl modules at runtime. Use when user asks to load modules from string variables, validate module names, or instantiate classes dynamically.
 homepage: http://metacpan.org/pod/Module-Runtime
 ---
+
 
 # perl-module-runtime
 

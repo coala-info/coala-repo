@@ -1,10 +1,193 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gs-tama_tama_collapse.py
+baseCommand: tama_collapse.py
 label: gs-tama_tama_collapse.py
-doc: "TAMA collapse is a tool for collapsing redundant transcripts from Iso-Seq or
-  other long-read RNA-seq data.\n\nTool homepage: https://github.com/sguizard/gs-tama"
-inputs: []
+doc: "This script collapses mapped transcript models\n\nTool homepage: https://github.com/sguizard/gs-tama"
+inputs:
+  - id: capped_flag
+    type:
+      - 'null'
+      - string
+    doc: 'Capped flag: capped or no_cap'
+    inputBinding:
+      position: 101
+      prefix: -x
+  - id: collapse_exon_ends_flag
+    type:
+      - 'null'
+      - string
+    doc: 'Collapse exon ends flag: common_ends or longest_ends'
+    default: common_ends
+    inputBinding:
+      position: 101
+      prefix: -e
+  - id: coverage
+    type:
+      - 'null'
+      - int
+    doc: Coverage
+    default: 99
+    inputBinding:
+      position: 101
+      prefix: -c
+  - id: exon_splice_junction_threshold
+    type:
+      - 'null'
+      - int
+    doc: Exon/Splice junction threshold
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: -m
+  - id: genome_fasta_file
+    type: File
+    doc: Genome fasta file (required)
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: identity
+    type:
+      - 'null'
+      - int
+    doc: Identity
+    default: 85
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: identity_calculation_method
+    type:
+      - 'null'
+      - string
+    doc: Identity calculation method (default ident_cov for including coverage) 
+      (alternate is ident_map for excluding hard and soft clipping)
+    default: ident_cov for including coverage
+    inputBinding:
+      position: 101
+      prefix: -icm
+  - id: local_density_error_threshold
+    type:
+      - 'null'
+      - int
+    doc: Threshold for amount of local density error near splice junctions that 
+      is allowed
+    default: 1000 errors which practically means no threshold is applied
+    inputBinding:
+      position: 101
+      prefix: -lde
+  - id: merge_duplicate_transcript_groups_flag
+    type:
+      - 'null'
+      - string
+    doc: Flag for merging duplicate transcript groups (default is merge_dup will
+      merge duplicates ,no_merge quits when duplicates are found)
+    default: merge_dup will merge duplicates ,no_merge quits when duplicates are
+      found
+    inputBinding:
+      position: 101
+      prefix: -d
+  - id: output_prefix
+    type: string
+    doc: Output prefix (required)
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: prime_3_threshold
+    type:
+      - 'null'
+      - int
+    doc: 3 prime threshold
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: -z
+  - id: prime_5_threshold
+    type:
+      - 'null'
+      - int
+    doc: 5 prime threshold
+    default: 10
+    inputBinding:
+      position: 101
+      prefix: -a
+  - id: print_version
+    type:
+      - 'null'
+      - boolean
+    doc: Prints out version date and exits.
+    inputBinding:
+      position: 101
+      prefix: -v
+  - id: run_mode
+    type:
+      - 'null'
+      - string
+    doc: Run mode allows you to use original or low_mem mode, default is 
+      original
+    default: original
+    inputBinding:
+      position: 101
+      prefix: -rm
+  - id: simple_error_symbol
+    type:
+      - 'null'
+      - string
+    doc: Simple error symbol. Use this to pick the symbol used to represent 
+      matches in the simple error string for LDE output.
+    inputBinding:
+      position: 101
+      prefix: -ses
+  - id: sorted_sam_file
+    type: File
+    doc: Sorted sam file (required)
+    inputBinding:
+      position: 101
+      prefix: -s
+  - id: splice_junction_error_threshold
+    type:
+      - 'null'
+      - int
+    doc: Threshold for detecting errors near splice junctions
+    default: 10bp
+    inputBinding:
+      position: 101
+      prefix: -sjt
+  - id: turn_off_log_output
+    type:
+      - 'null'
+      - string
+    doc: Turns off log output to screen of collapsing process.
+    default: on, use log_off to turn off
+    inputBinding:
+      position: 101
+      prefix: -log
+  - id: use_bam
+    type:
+      - 'null'
+      - boolean
+    doc: Use BAM instead of SAM
+    inputBinding:
+      position: 101
+      prefix: -b
+  - id: use_splice_junction_priority
+    type:
+      - 'null'
+      - string
+    doc: Use error threshold to prioritize the use of splice junction 
+      information from collapsing transcripts(default no_priority, activate with
+      sj_priority)
+    default: no_priority
+    inputBinding:
+      position: 101
+      prefix: -sj
+  - id: variation_coverage_threshold
+    type:
+      - 'null'
+      - int
+    doc: 'Variation coverage threshold: Default 5 reads'
+    default: 5
+    inputBinding:
+      position: 101
+      prefix: -vc
 outputs:
   - id: stdout
     type: stdout

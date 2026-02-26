@@ -1,8 +1,9 @@
 ---
 name: mutmap
-description: The `mutmap` skill provides a streamlined workflow for identifying agronomically important loci.
+description: The mutmap tool identifies agronomically important loci by mapping reads, calling variants, and calculating SNP-indices to pinpoint genomic regions where mutant alleles are fixed. Use when user asks to identify causal mutations, calculate SNP-indices from bulked segregant analysis, or predict functional impacts of variants in mutant populations.
 homepage: https://github.com/YuSugihara/MutMap
 ---
+
 
 # mutmap
 

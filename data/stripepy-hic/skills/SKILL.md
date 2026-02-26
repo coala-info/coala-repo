@@ -1,8 +1,9 @@
 ---
 name: stripepy-hic
-description: StripePy is a high-performance command-line tool designed to detect architectural stripes in chromosome conformation capture data.
+description: StripePy is a high-performance command-line tool designed to detect architectural stripes in chromosome conformation capture data. Use when user asks to call stripes, export results to BEDPE format, or visualize identified stripes in Hi-C datasets.
 homepage: https://github.com/paulsengroup/StripePy
 ---
+
 
 # stripepy-hic
 

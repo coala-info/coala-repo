@@ -1,8 +1,9 @@
 ---
 name: r-checkpoint
-description: Skill for using the CRAN R package r-checkpoint.
+description: The r-checkpoint tool manages R package reproducibility by installing specific package versions from a CRAN snapshot date. Use when user asks to ensure R script reproducibility, install packages from a specific date, or manage project-specific package dependencies.
 homepage: https://cloud.r-project.org/web/packages/checkpoint/index.html
 ---
+
 
 # r-checkpoint
 

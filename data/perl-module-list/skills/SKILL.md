@@ -1,8 +1,9 @@
 ---
 name: perl-module-list
-description: The `perl-module-list` skill provides a specialized interface for inspecting the Perl module namespace.
+description: This tool inspects the Perl module namespace to discover installed modules, sub-namespaces, and their file system paths. Use when user asks to list installed Perl modules, find the file path of a module, or search for documentation files within a specific namespace.
 homepage: http://metacpan.org/pod/Module::List
 ---
+
 
 # perl-module-list
 

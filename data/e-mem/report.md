@@ -3,7 +3,7 @@
 ## e-mem
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains error logs related to a container runtime (Apptainer/Singularity) failing to build the image due to insufficient disk space.
+E-MEM finds and outputs the position and length of all maximal exact matches (MEMs) between <query-file> and <reference-file>
 
 ### Metadata
 - **Docker Image**: biocontainers/e-mem:v1.0.1-2-deb_cv1
@@ -18,11 +18,28 @@ The provided text does not contain help information for the tool. It contains er
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/e-mem:v1.0.1-2-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3736476131: no space left on device
+E-MEM Version 1.0.1, Dec. 12, 2017
+© 2014 Nilesh Khiste, Lucian Ilie
+
+E-MEM finds and outputs the position and length of all maximal
+exact matches (MEMs) between <query-file> and <reference-file>
+
+Usage: ../e-mem [options]  <reference-file>  <query-file>
+
+Options:
+-n	match only the characters a, c, g, or t
+  	they can be in upper or in lower case
+-l	set the minimum length of a match. The default length
+  	is 50
+-b	compute forward and reverse complement matches
+-r	only compute reverse complement matches
+-c	report the query-position of a reverse complement match
+  	relative to the original query sequence
+-F	force 4 column output format regardless of the number of
+  	reference sequence input
+-L	show the length of the query sequences on the header line
+-d	set the split size. The default value is 1
+-t	number of threads. The default is 1 thread
+-h	show possible options
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: fastdup
-description: FastDup is a specialized bioinformatics utility designed for marking duplicate reads in genomic alignment data.
+description: FastDup is a high-throughput bioinformatics utility designed to mark duplicate reads in coordinate-sorted genomic alignment data while maintaining compatibility with Picard MarkDuplicates. Use when user asks to mark duplicates in BAM files, identify PCR or optical duplicates, or speed up duplicate marking in sequencing pipelines.
 homepage: https://github.com/zzhofict/FastDup
 ---
+
 
 # fastdup
 

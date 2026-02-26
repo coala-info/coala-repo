@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tenxvisiumdata
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides example spatial transcriptomics datasets from the 10x Genomics Visium platform. Use when user asks to load example Visium data, access spatial transcriptomics datasets, or retrieve 10x Genomics Visium data for analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/TENxVisiumData.html
 ---
+
 
 # bioconductor-tenxvisiumdata
 

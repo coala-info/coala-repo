@@ -1,8 +1,9 @@
 ---
 name: mass2chem
-description: The `mass2chem` library provides low-level utilities for the "mass-to-chemistry" transition in metabolomics and mass spectrometry workflows.
+description: mass2chem provides low-level utilities for high-resolution mass spectrometry data processing and chemical formula calculations. Use when user asks to calculate monoisotopic masses, predict adduct m/z values, identify contaminants, or analyze isotopologue patterns.
 homepage: https://github.com/shuzhao-li/mass2chem
 ---
+
 
 # mass2chem
 

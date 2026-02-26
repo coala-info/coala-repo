@@ -1,8 +1,9 @@
 ---
 name: prinseq
-description: PRINSEQ++ is a high-performance C++ implementation of the original PRINSEQ tool, optimized for speed and memory efficiency through multi-threading.
+description: PRINSEQ++ is a high-performance tool used for filtering, trimming, and cleaning sequencing reads to improve data quality. Use when user asks to filter reads by quality or length, trim adapters and poly-A tails, remove low-complexity sequences, or deduplicate sequencing data.
 homepage: https://github.com/Adrian-Cantu/PRINSEQ-plus-plus
 ---
+
 
 # prinseq
 

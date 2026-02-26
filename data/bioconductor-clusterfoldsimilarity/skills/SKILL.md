@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clusterfoldsimilarity
-description: the package is available on all platforms; click for details.
+description: ClusterFoldSimilarity calculates similarity between clusters across different single-cell datasets using fold-change values of marker genes. Use when user asks to compare clusters across experiments, match cell types between datasets, or identify similar clusters without full data integration.
 homepage: https://bioconductor.org/packages/release/bioc/html/ClusterFoldSimilarity.html
 ---
+
 
 # bioconductor-clusterfoldsimilarity
 

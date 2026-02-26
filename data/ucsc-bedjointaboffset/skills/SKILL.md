@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedjointaboffset
-description: The `ucsc-bedjointaboffset` utility is a specialized tool from the UCSC Genome Browser "Kent" toolkit.
+description: ucsc-bedjointaboffset joins a BED file with a TAB file to append byte offset and line length information to BED records. Use when user asks to append offset and length to a BED file, join a BED file with a TAB file, create an indexed BED file, or build custom tracks and indices.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-bedjointaboffset
 

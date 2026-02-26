@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grndata
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides synthetic gene expression datasets and their corresponding gold-standard network topologies for benchmarking gene regulatory network inference algorithms. Use when user asks to load noise-free synthetic expression data, access benchmark datasets for network inference, or retrieve gold-standard adjacency matrices for GNW, SynTReN, or Rogers simulations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/grndata.html
 ---
+
 
 # bioconductor-grndata
 

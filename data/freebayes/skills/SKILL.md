@@ -1,8 +1,9 @@
 ---
 name: freebayes
-description: Freebayes is a haplotype-based variant caller that identifies small genetic variations by analyzing the sequences of reads aligned to a reference genome.
+description: Freebayes is a haplotype-based variant caller that identifies small genetic variations by analyzing reads aligned to a reference genome. Use when user asks to call variants, perform joint calling across multiple samples, identify variants in polyploid or pooled samples, or generate a GVCF.
 homepage: https://github.com/freebayes/freebayes
 ---
+
 
 # freebayes
 

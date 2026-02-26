@@ -1,8 +1,9 @@
 ---
 name: bioconductor-proteinprofiles
-description: the package is available on all platforms; click for details.
+description: The proteinProfiles package analyzes protein expression profiles to identify specific patterns across multiple samples or conditions. Use when user asks to analyze protein expression data, identify proteins with specific profile shapes, or perform significance testing on protein profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/proteinProfiles.html
 ---
+
 
 # bioconductor-proteinprofiles
 

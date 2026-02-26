@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ncbi.grch38
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Homo sapiens based on the NCBI GRCh38 assembly for use in R. Use when user asks to access human genomic sequences, perform genome-wide motif searching, or calculate nucleotide frequencies using the BSgenome framework.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ncbi.grch38
 

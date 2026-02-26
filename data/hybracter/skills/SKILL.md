@@ -1,8 +1,9 @@
 ---
 name: hybracter
-description: hybracter is a Snakemake-based pipeline designed to streamline the assembly of bacterial isolate genomes.
+description: "hybracter is a Snakemake-based pipeline that automates the assembly and polishing of bacterial isolate genomes using long-read or hybrid sequencing data. Use when user asks to assemble bacterial genomes, perform hybrid or long-read only assembly, polish contigs, or process batches of genomic isolates."
 homepage: https://github.com/gbouras13/hybracter
 ---
+
 
 # hybracter
 

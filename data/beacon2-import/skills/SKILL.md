@@ -1,8 +1,9 @@
 ---
 name: beacon2-import
-description: The `beacon2-import` toolkit is designed for bioinformaticians and genomic data managers who need to populate or query a Beacon v2 database.
+description: The beacon2-import toolkit facilitates the ingestion of genomic data into a Beacon v2 database and provides a command-line interface for querying that data. Use when user asks to import local or Galaxy data into a Beacon store, perform genomic variation searches, or query metadata for individuals and biosamples.
 homepage: https://pypi.org/project/beacon2-import/
 ---
+
 
 # beacon2-import
 

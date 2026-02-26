@@ -1,8 +1,9 @@
 ---
 name: nanomonsv
-description: nanomonsv is a specialized suite of Python tools for identifying somatic structural variations (SVs) using long-read nanopore data.
+description: nanomonsv identifies somatic structural variations from long-read nanopore sequencing data. Use when user asks to detect somatic structural variants, parse candidate reads from alignment files, call somatic SVs using local assembly, or classify insertion sequences.
 homepage: https://github.com/friend1ws/nanomonsv
 ---
+
 
 # nanomonsv
 

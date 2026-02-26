@@ -1,8 +1,9 @@
 ---
 name: bioconductor-globalseq
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical testing for associations between RNA-Seq count data and high-dimensional covariate sets using a negative binomial framework. Use when user asks to perform global tests of association, decompose test statistics to identify influential covariates, or conduct genome-wide mapping of expression data to local molecular profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/globalSeq.html
 ---
+
 
 # bioconductor-globalseq
 

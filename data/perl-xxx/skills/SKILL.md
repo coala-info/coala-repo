@@ -1,8 +1,9 @@
 ---
 name: perl-xxx
-description: The `perl-xxx` skill enables efficient "print-debugging" for Perl developers.
+description: perl-xxx provides a set of shorthand functions for dumping Perl data structures to the terminal or logs for debugging purposes. Use when user asks to print-debug Perl code, inspect nested data structures, or dump variables without breaking method chains.
 homepage: https://github.com/ingydotnet/xxx-pm
 ---
+
 
 # perl-xxx
 

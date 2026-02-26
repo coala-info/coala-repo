@@ -1,8 +1,9 @@
 ---
 name: gxf2chrom
-description: gxf2chrom is a high-performance Rust-based utility designed to transform standard genomic annotation formats (GTF/GFF) into a simplified, tab-delimited .chrom format.
+description: gxf2chrom is a high-performance utility that transforms GTF or GFF genomic annotation files into a simplified, tab-delimited .chrom format. Use when user asks to convert GTF or GFF files to .chrom format, extract specific genomic features like transcript IDs, or process large-scale annotation datasets quickly.
 homepage: https://github.com/alejandrogzi/gxf2chrom
 ---
+
 
 # gxf2chrom
 

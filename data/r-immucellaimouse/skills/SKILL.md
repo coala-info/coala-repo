@@ -1,8 +1,9 @@
 ---
 name: r-immucellaimouse
-description: R package immucellaimouse (documentation from project home).
+description: This tool estimates the abundance of 36 immune cell types and predicts immune checkpoint blockade response from mouse gene expression data. Use when user asks to estimate immune cell proportions, analyze mouse transcriptomic data for cell infiltration, or predict ICB response.
 homepage: https://cran.r-project.org/web/packages/immucellaimouse/index.html
 ---
+
 
 # r-immucellaimouse
 

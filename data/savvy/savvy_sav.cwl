@@ -2,10 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: sav
 label: savvy_sav
-doc: "Savvy is a tool for handling SAV (Sparse Allele Vector) files. Note: The provided
-  text is a container engine (Singularity/Apptainer) error log and does not contain
-  CLI help information or argument definitions.\n\nTool homepage: https://github.com/statgen/savvy"
-inputs: []
+doc: "Missing sub-command\n\nTool homepage: https://github.com/statgen/savvy"
+inputs:
+  - id: sub_command
+    type: string
+    doc: Sub-command to execute
+    inputBinding:
+      position: 1
+  - id: args
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Arguments for the sub-command
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

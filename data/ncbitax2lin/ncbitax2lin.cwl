@@ -2,10 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: ncbitax2lin
 label: ncbitax2lin
-doc: "A tool to convert NCBI taxonomy data into a lineage format. (Note: The provided
-  text is an error log and does not contain usage information or argument definitions.)\n
-  \nTool homepage: https://github.com/zyxue/ncbitax2lin"
-inputs: []
+doc: "Converts NCBI taxomony dump into lineages.\n\nTool homepage: https://github.com/zyxue/ncbitax2lin"
+inputs:
+  - id: nodes_file
+    type: File
+    doc: path/to/taxdump/nodes.dmp from NCBI taxonomy
+    inputBinding:
+      position: 1
+  - id: names_file
+    type: File
+    doc: path/to/taxdump/names.dmp from NCBI taxonomy
+    inputBinding:
+      position: 2
+  - id: output
+    type:
+      - 'null'
+      - string
+    doc: Output file path
+    default: None
+    inputBinding:
+      position: 103
+      prefix: --output
 outputs:
   - id: stdout
     type: stdout

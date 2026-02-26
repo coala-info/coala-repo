@@ -2,10 +2,21 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: showali
 label: showali
-doc: "The provided text does not contain help information for the tool 'showali'.
-  It contains error logs from a container runtime (Apptainer/Singularity) attempting
-  to fetch the tool's image.\n\nTool homepage: https://github.com/kirilenkobm/showali"
-inputs: []
+doc: "Show alignment file\n\nTool homepage: https://github.com/kirilenkobm/showali"
+inputs:
+  - id: alignment_file
+    type: File
+    doc: Alignment file to display
+    inputBinding:
+      position: 1
+  - id: no_color
+    type:
+      - 'null'
+      - boolean
+    doc: Disable ANSI color codes
+    inputBinding:
+      position: 102
+      prefix: --no-color
 outputs:
   - id: stdout
     type: stdout

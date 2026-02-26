@@ -1,8 +1,9 @@
 ---
 name: duphist
-description: The duphist toolkit provides an automated pipeline for reconstructing the duplication history of gene families.
+description: This tool reconstructs the duplication history of gene families by calculating synonymous substitution rates and performing hierarchical clustering. Use when user asks to reconstruct gene duplication history, calculate Ks values between paralogs, or generate duplication dendrograms.
 homepage: https://github.com/minjeongjj/DupHIST
 ---
+
 
 # duphist
 

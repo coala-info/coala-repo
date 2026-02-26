@@ -1,8 +1,9 @@
 ---
 name: snpsift
-description: SnpSift is a powerful command-line utility designed to process VCF files post-annotation (typically after SnpEff).
+description: SnpSift is a command-line utility used to filter, annotate, and manipulate VCF files containing genetic variants. Use when user asks to filter variants using logical expressions, annotate VCFs with external databases, extract specific fields into tabular format, or perform case-control association studies.
 homepage: http://snpeff.sourceforge.net/SnpSift.html
 ---
+
 
 # snpsift
 

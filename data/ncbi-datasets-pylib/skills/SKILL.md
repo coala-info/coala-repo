@@ -1,8 +1,9 @@
 ---
 name: ncbi-datasets-pylib
-description: The `ncbi-datasets-pylib` provides a Pythonic interface to the NCBI Datasets API, allowing for seamless integration of NCBI data into bioinformatics pipelines.
+description: The ncbi-datasets-pylib library provides a Python interface for querying and downloading biological datasets and metadata from the NCBI Datasets API. Use when user asks to download genome assemblies, fetch metadata for genes or genomes, retrieve data packages containing sequences and annotations, or perform taxonomy queries.
 homepage: https://www.ncbi.nlm.nih.gov/datasets
 ---
+
 
 # ncbi-datasets-pylib
 

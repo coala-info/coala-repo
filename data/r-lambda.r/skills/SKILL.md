@@ -1,8 +1,9 @@
 ---
 name: r-lambda.r
-description: A language extension to efficiently write functional programs in R. Syntax extensions include multi-part function definitions, pattern matching, guard statements, built-in (optional) type safety.</p>
+description: The lambda.r package provides a functional programming framework for R that enables pattern matching, guards, and type constraints. Use when user asks to define multi-part functions, apply pattern matching to function signatures, use guards for conditional logic, or enforce type safety in R code.
 homepage: https://cloud.r-project.org/web/packages/lambda.r/index.html
 ---
+
 
 # r-lambda.r
 

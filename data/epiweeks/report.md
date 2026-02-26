@@ -3,26 +3,32 @@
 ## epiweeks
 
 ### Tool Description
-A tool for calculating epidemiological weeks. (Note: The provided input text contains container runtime error messages rather than CLI help documentation, so no arguments could be extracted.)
+FAIL to generate CWL: epiweeks not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/epiweeks:2.4.0--pyhdfd78af_0
 - **Homepage**: https://github.com/dralshehri/epiweeks
 - **Package**: https://anaconda.org/channels/bioconda/packages/epiweeks/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/epiweeks/overview
-- **Total Downloads**: 68.1K
+- **Total Downloads**: 68.2K
 - **Last updated**: 2026-01-07
 - **GitHub**: https://github.com/dralshehri/epiweeks
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: epiweeks not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: epiweeks not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/epiweeks:2.4.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3358743504: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

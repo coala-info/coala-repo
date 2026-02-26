@@ -1,8 +1,9 @@
 ---
 name: uniqsketch
-description: UniqSketch is a specialized bioinformatics toolset for high-resolution metagenomic analysis.
+description: UniqSketch performs high-resolution metagenomic analysis to detect specific microbial strains and their relative abundances. Use when user asks to index reference genomes, build a sketch index, query metagenomic samples, or estimate microbial abundance.
 homepage: https://github.com/amazon-science/uniqsketch
 ---
+
 
 # uniqsketch
 

@@ -1,8 +1,9 @@
 ---
 name: hifive
-description: HiFive is a high-performance Python library and toolset designed for the end-to-end analysis of HiC and 5C datasets.
+description: HiFive is a high-performance Python library for the end-to-end analysis, normalization, and visualization of HiC and 5C datasets. Use when user asks to process raw mapped reads into normalized interaction matrices, perform quality control with QuASAR, or generate multi-resolution heatmaps.
 homepage: https://github.com/bxlab/hifive
 ---
+
 
 # hifive
 

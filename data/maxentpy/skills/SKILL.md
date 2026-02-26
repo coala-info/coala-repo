@@ -1,8 +1,9 @@
 ---
 name: maxentpy
-description: `maxentpy` is a Python wrapper for the MaxEntScan algorithm, which models the distribution of short sequence motifs to score splice sites.
+description: "maxentpy scores DNA or RNA sequences to evaluate the strength of 5' and 3' splice sites using the MaxEntScan algorithm. Use when user asks to score splice sites, quantify the impact of mutations on splicing, or scan sequences for potential splicing signals."
 homepage: https://github.com/kepbod/maxentpy
 ---
+
 
 # maxentpy
 

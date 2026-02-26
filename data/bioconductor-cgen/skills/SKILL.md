@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cgen
-description: the package is available on all platforms; click for details.
+description: This tool performs analysis of case-control genetic association studies with a focus on gene-environment interactions. Use when user asks to perform SNP-environment interaction analysis using UML, CML, or EB methods, conduct matched case-control studies, or run GWAS-scale GxE scans.
 homepage: https://bioconductor.org/packages/release/bioc/html/CGEN.html
 ---
+
 
 # bioconductor-cgen
 

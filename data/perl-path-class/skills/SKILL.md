@@ -1,8 +1,9 @@
 ---
 name: perl-path-class
-description: The `perl-path-class` skill enables the creation of robust Perl applications that remain functional across different operating systems.
+description: This tool provides a cross-platform object-oriented interface for manipulating file and directory paths in Perl. Use when user asks to create path objects, navigate directory trees, handle cross-platform path conversions, or open file handles using Path::Class.
 homepage: http://metacpan.org/pod/Path::Class
 ---
+
 
 # perl-path-class
 

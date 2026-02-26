@@ -1,8 +1,9 @@
 ---
 name: adapt
-description: The provided text is a system error log (out of disk space during a container build) and does not contain the help text or usage information for the 'adapt' tool. Consequently, no arguments could be extracted.
+description: ADAPT designs optimized viral diagnostic assays by using predictive models to maximize detection activity across genomic diversity. Use when user asks to design CRISPR-Cas13a guides, find optimal amplification primers, or create diagnostic assays for specific viral taxa.
 homepage: https://github.com/broadinstitute/adapt
 ---
+
 
 # adapt
 

@@ -1,8 +1,9 @@
 ---
 name: splitp
-description: splitp is a high-speed Rust implementation of SPLiT-seq read pre-processing logic.
+description: splitp is a high-speed tool for pre-processing SPLiT-seq reads by extracting and mapping barcodes from FASTQ files. Use when user asks to pre-process SPLiT-seq data, extract barcodes from R2 files, or map oligo-dT sequences to random hexamers.
 homepage: https://github.com/COMBINE-lab/splitp
 ---
+
 
 # splitp
 

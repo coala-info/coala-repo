@@ -1,8 +1,9 @@
 ---
 name: bioconductor-canine2.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Affymetrix Canine Genome 2.0 Array to map probe identifiers to biological metadata. Use when user asks to map canine probe IDs to gene symbols, Entrez IDs, GO terms, KEGG pathways, or chromosomal locations.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/canine2.db.html
 ---
+
 
 # bioconductor-canine2.db
 

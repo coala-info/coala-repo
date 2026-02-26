@@ -1,8 +1,9 @@
 ---
 name: ray-extra
-description: `ray-extra` is a specialized utility for maintaining high-availability proxy subscription feeds.
+description: ray-extra automates the scraping, verification, and organization of proxy configuration strings from Telegram channels into protocol-specific subscription files. Use when user asks to scrape VPN configurations, verify proxy connectivity, or generate updated subscription feeds for protocols like VLESS, VMess, and Trojan.
 homepage: https://github.com/arshiacomplus/v2rayExtractor
 ---
+
 
 # ray-extra
 

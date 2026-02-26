@@ -1,8 +1,9 @@
 ---
 name: gecco
-description: GECCO (Gene Cluster prediction with Conditional Random Fields) is a high-performance bioinformatics tool designed to identify secondary metabolite biosynthetic gene clusters in genomic data.
+description: GECCO is a machine learning tool used to identify and predict biosynthetic gene clusters in genomic and metagenomic data. Use when user asks to predict biosynthetic gene clusters, annotate protein domains, convert cluster coordinates to different formats, or train custom CRF models.
 homepage: https://gecco.embl.de/
 ---
+
 
 # gecco
 

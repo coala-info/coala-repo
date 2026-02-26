@@ -1,8 +1,9 @@
 ---
 name: perl-base
-description: The `perl-base` skill provides a specialized workflow for using `latexindent.pl`, a powerful Perl-based formatter for LaTeX documents.
+description: This tool formats and indents LaTeX source code using the latexindent.pl script to improve readability and structure. Use when user asks to format LaTeX files, indent code blocks, wrap text in documents, or apply consistent styling to .tex, .sty, or .cls files.
 homepage: https://github.com/cmhughes/latexindent.pl
 ---
+
 
 # perl-base
 

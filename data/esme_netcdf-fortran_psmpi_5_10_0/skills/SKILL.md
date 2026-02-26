@@ -1,8 +1,9 @@
 ---
 name: esme_netcdf-fortran_psmpi_5_10_0
-description: This skill provides procedural knowledge for utilizing the NetCDF-Fortran interface specifically built for the PSMPI 5.10.0 stack.
+description: This tool provides the NetCDF-Fortran interface built for the PSMPI 5.10.0 stack to manage portable, array-oriented data in Earth system models. Use when user asks to install the library, retrieve compiler and linker flags using nf-config, or compile Fortran applications with parallel I/O support.
 homepage: http://www.unidata.ucar.edu/software/netcdf/
 ---
+
 
 # esme_netcdf-fortran_psmpi_5_10_0
 

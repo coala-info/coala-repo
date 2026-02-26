@@ -1,8 +1,9 @@
 ---
 name: crabz
-description: crabz is a high-speed, cross-platform tool written in Rust that serves as a modern alternative to pigz.
+description: "crabz is a high-speed, parallelized tool for compressing and decompressing data across multiple CPU threads. Use when user asks to compress or decompress files, process BGZF genomic data, or perform multi-threaded gzip operations."
 homepage: https://github.com/sstadick/crabz
 ---
+
 
 # crabz
 

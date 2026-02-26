@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biodb
-description: the package is available on all platforms; click for details.
+description: This tool provides a unified API to access, search, and manage chemical, biological, and mass spectra databases within R. Use when user asks to retrieve database entries, search by name or mass, annotate LCMS/MS spectra, or manage local CSV and SQLite databases.
 homepage: https://bioconductor.org/packages/release/bioc/html/biodb.html
 ---
+
 
 # bioconductor-biodb
 

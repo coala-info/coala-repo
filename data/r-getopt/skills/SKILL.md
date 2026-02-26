@@ -1,8 +1,9 @@
 ---
 name: r-getopt
-description: "Package designed to be used with Rscript to write     '#!' shebang scripts that accept short and long flags/options.     Many users will prefer using instead the packages optparse or argparse     which add extra features like automatically generated help option and usage,     support for default values, positional argument support, etc.</p>"
+description: This tool provides C-like command-line option parsing for R scripts to handle short and long flags with specific data types. Use when user asks to parse command-line arguments in R, define flags for Rscript-based tools, or create shebang scripts with custom command-line interfaces.
 homepage: https://cloud.r-project.org/web/packages/getopt/index.html
 ---
+
 
 # r-getopt
 

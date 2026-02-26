@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainantirepeat
-description: The `ucsc-chainantirepeat` tool is a specialized utility from the UCSC Kent Toolkit designed to post-process genomic alignment chain files.
+description: The `ucsc-chainantirepeat` tool removes repeat-driven alignments from genomic chain files. Use when user asks to remove spurious alignments, filter repeat-heavy chains, or clean up genomic alignment files.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainantirepeat
 

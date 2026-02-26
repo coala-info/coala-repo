@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cosiadata
-description: the package is available on all platforms; click for details.
+description: CoSIAdata provides pre-computed cross-species gene expression data for use with the CoSIA R package. Use when user asks to access cross-species transcriptome data, perform cross-species interface analysis, or compare gene expression across different organisms.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/CoSIAdata.html
 ---
+
 
 # bioconductor-cosiadata
 

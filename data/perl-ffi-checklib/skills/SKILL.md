@@ -1,8 +1,9 @@
 ---
 name: perl-ffi-checklib
-description: `FFI::CheckLib` is a Perl-based utility designed to locate dynamic libraries (such as `.so`, `.dll`, or `.dylib` files) across different operating systems.
+description: This Perl utility locates dynamic libraries across different operating systems for use with Foreign Function Interface calls. Use when user asks to find the path of a dynamic library, verify the presence of specific symbols, or validate library dependencies during a Perl module build process.
 homepage: https://metacpan.org/pod/FFI::CheckLib
 ---
+
 
 # perl-ffi-checklib
 

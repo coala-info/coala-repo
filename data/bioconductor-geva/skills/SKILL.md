@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geva
-description: the package is available on all platforms; click for details.
+description: bioconductor-geva performs Gene Expression Variation Analysis (GEVA) to identify consistent or condition-dependent expression patterns across multiple differential expression experiments. Use when user asks to classify genes as similar or factor-specific, perform SV-space analysis on logFC and p-value tables, or summarize gene expression variation across multiple comparisons.
 homepage: https://bioconductor.org/packages/release/bioc/html/geva.html
 ---
+
 
 # bioconductor-geva
 

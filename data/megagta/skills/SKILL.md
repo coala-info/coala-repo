@@ -1,8 +1,9 @@
 ---
 name: megagta
-description: MegaGTA is a specialized metagenomic assembler designed to reconstruct specific genes of interest rather than the entire metagenome.
+description: MegaGTA is a metagenomic assembler that uses Hidden Markov Models to reconstruct specific target genes from metagenomic datasets. Use when user asks to assemble full-length functional marker genes, perform gene-targeted metagenomic assembly, or filter and cluster assembled gene sequences.
 homepage: https://github.com/HKU-BAL/MegaGTA
 ---
+
 
 # megagta
 

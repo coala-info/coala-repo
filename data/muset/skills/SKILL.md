@@ -1,8 +1,9 @@
 ---
 name: muset
-description: The `muset` suite provides a high-performance pipeline for transforming raw sequencing reads into unitig-based matrices.
+description: Muset transforms raw sequencing reads into unitig-based abundance or presence-absence matrices for comparative genomic analysis. Use when user asks to build a unitig matrix from sequencing data, generate a presence-absence matrix, or filter and manipulate k-mer matrices.
 homepage: https://github.com/CamilaDuitama/muset
 ---
+
 
 # muset
 

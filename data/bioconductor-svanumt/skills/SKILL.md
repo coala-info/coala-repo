@@ -1,8 +1,9 @@
 ---
 name: bioconductor-svanumt
-description: the package is available on all platforms; click for details.
+description: This tool detects and annotates nuclear mitochondrial DNA segments (NUMTs) from structural variant calls. Use when user asks to identify NUMTs, annotate mitochondrial insertions in the nuclear genome, or filter structural variants for mitochondrial DNA integration.
 homepage: https://bioconductor.org/packages/release/bioc/html/svaNUMT.html
 ---
+
 
 # bioconductor-svanumt
 

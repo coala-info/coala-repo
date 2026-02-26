@@ -1,8 +1,9 @@
 ---
 name: bioconductor-amountain
-description: the package is available on all platforms; click for details.
+description: This tool identifies active modules in single-layer and multi-layer weighted gene co-expression networks using convex optimization. Use when user asks to find gene subnetworks, integrate node scores with network topology, or identify conserved modules across multiple layers of biological data.
 homepage: https://bioconductor.org/packages/release/bioc/html/AMOUNTAIN.html
 ---
+
 
 # bioconductor-amountain
 

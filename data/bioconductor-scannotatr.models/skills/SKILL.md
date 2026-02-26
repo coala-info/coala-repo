@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scannotatr.models
-description: the package is available on all platforms; click for details.
+description: This package provides pre-trained classification models for automated cell type annotation of single-cell RNA-seq data. Use when user asks to identify cell types in single-cell datasets, load pre-trained models for scAnnotatR, or perform automated cell classification.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/scAnnotatR.models.html
 ---
+
 
 # bioconductor-scannotatr.models
 

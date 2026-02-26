@@ -1,8 +1,9 @@
 ---
 name: vardict
-description: VarDict is a versatile variant caller designed to identify a wide range of genetic alterations, including SNPs, MNPs, and complex indels, from BAM files.
+description: VarDict identifies genetic alterations like SNPs, MNPs, and indels from BAM files. Use when user asks to call variants, call variants for a single sample, call somatic mutations, or perform amplicon-aware variant calling.
 homepage: https://github.com/AstraZeneca-NGS/VarDict
 ---
+
 
 # vardict
 

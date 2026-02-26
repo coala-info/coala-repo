@@ -1,8 +1,9 @@
 ---
 name: rdp_classifier
-description: The RDP Classifier is a specialized bioinformatics tool designed for high-throughput taxonomic classification.
+description: The RDP Classifier performs taxonomic classification of bacterial, archaeal, and fungal sequences using a Naive Bayesian algorithm. Use when user asks to classify 16S rRNA or ITS sequences, train the classifier with custom reference databases, or interpret taxonomic confidence scores.
 homepage: http://rdp.cme.msu.edu/
 ---
+
 
 # rdp_classifier
 

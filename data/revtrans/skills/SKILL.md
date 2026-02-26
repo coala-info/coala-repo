@@ -1,8 +1,9 @@
 ---
 name: revtrans
-description: The `revtrans` tool is designed to synchronize protein-level evolutionary analysis with underlying genetic data.
+description: Revtrans generates a codon-based nucleotide alignment by mapping DNA sequences onto a corresponding protein multiple sequence alignment. Use when user asks to create a codon-aware alignment, thread nucleotides through a protein alignment, or prepare sequences for dN/dS and selection analysis.
 homepage: http://www.cbs.dtu.dk/services/RevTrans-2.0/web/download.php
 ---
+
 
 # revtrans
 

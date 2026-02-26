@@ -1,8 +1,9 @@
 ---
 name: hmmratac
-description: HMMRATAC is a dedicated peak caller for ATAC-seq data that utilizes a Hidden Markov Model to identify open chromatin regions.
+description: HMMRATAC is a peak caller specifically designed to identify open chromatin regions in paired-end ATAC-seq data using a Hidden Markov Model. Use when user asks to call peaks from ATAC-seq BAM files, identify nucleosome-free regions, or filter peak results by score.
 homepage: https://github.com/LiuLabUB/HMMRATAC
 ---
+
 
 # hmmratac
 

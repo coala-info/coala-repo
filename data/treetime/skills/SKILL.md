@@ -1,8 +1,9 @@
 ---
 name: treetime
-description: TreeTime is a specialized tool for maximum-likelihood phylogenetic analysis, focusing on the inference of molecular-clock phylogenies and ancestral state reconstruction.
+description: TreeTime performs maximum-likelihood phylogenetic analysis to infer molecular-clock phylogenies and reconstruct ancestral states. Use when user asks to infer a timetree, estimate substitution rates, reconstruct ancestral sequences, model discrete trait evolution, or detect homoplasy.
 homepage: https://github.com/neherlab/treetime
 ---
+
 
 # treetime
 

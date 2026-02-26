@@ -1,8 +1,9 @@
 ---
 name: picopore
-description: Picopore is a compression utility specifically designed for Oxford Nanopore FAST5 files.
+description: Picopore is a compression utility designed to reduce the storage footprint of Oxford Nanopore FAST5 files by removing redundant data or applying HDF5-level compression. Use when user asks to compress nanopore sequencing data, reduce FAST5 file size, or strip intermediate datasets from raw signal files.
 homepage: https://github.com/scottgigante/picopore
 ---
+
 
 # picopore
 

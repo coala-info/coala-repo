@@ -1,8 +1,9 @@
 ---
 name: inspector
-description: Inspector is a reference-free assembly evaluator designed specifically for long-read sequencing data.
+description: Inspector evaluates and corrects long-read genome assemblies by mapping raw reads back to contigs to identify structural and base-level errors. Use when user asks to evaluate assembly quality, identify misassemblies or base errors in long-read data, and perform local re-assembly for error correction.
 homepage: https://github.com/ChongLab/Inspector
 ---
+
 
 # inspector
 

@@ -1,8 +1,9 @@
 ---
 name: wiggletools
-description: WiggleTools is a specialized toolkit designed to treat genomic data as continuous numerical functions.
+description: WiggleTools performs mathematical and statistical operations on genomic data, treating it as continuous numerical functions. Use when user asks to aggregate multiple genomic tracks, apply thresholds, scale data, compute derived statistics, calculate coverage, restrict analysis to specific genomic regions, or perform mathematical transformations on genomic data.
 homepage: https://github.com/Ensembl/WiggleTools
 ---
+
 
 # wiggletools
 

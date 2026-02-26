@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ihw
-description: the package is available on all platforms; click for details.
+description: IHW performs independent hypothesis weighting to increase statistical power in multiple testing by incorporating an informative covariate. Use when user asks to control the false discovery rate, adjust p-values using independent covariates, or perform weighted Benjamini-Hochberg or Bonferroni corrections.
 homepage: https://bioconductor.org/packages/release/bioc/html/IHW.html
 ---
+
 
 # bioconductor-ihw
 

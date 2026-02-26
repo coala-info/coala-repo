@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminaratv1.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Illumina Ratv1 microarray platform to map probe identifiers to biological metadata and quality metrics. Use when user asks to map Illumina Ratv1 probes to gene symbols, Entrez IDs, or GO terms, filter probes by quality, or retrieve genomic locations for Rattus norvegicus.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/illuminaRatv1.db.html
 ---
+
 
 # bioconductor-illuminaratv1.db
 

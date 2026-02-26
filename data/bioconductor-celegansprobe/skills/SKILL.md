@@ -1,8 +1,9 @@
 ---
 name: bioconductor-celegansprobe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence data and chip coordinates for the Affymetrix C. elegans microarray. Use when user asks to retrieve probe sequences, find probe coordinates on the array, or map probes to probe set identifiers for C. elegans gene expression analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/celegansprobe.html
 ---
+
 
 # bioconductor-celegansprobe
 

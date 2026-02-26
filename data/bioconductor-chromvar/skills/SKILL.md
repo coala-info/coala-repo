@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chromvar
-description: the package is available on all platforms; click for details.
+description: chromVAR analyzes sparse chromatin accessibility data by computing bias-corrected deviations in accessibility for genomic annotations like transcription factor motifs. Use when user asks to calculate motif accessibility deviations, analyze single-cell ATAC-seq data, or identify variable transcription factor motifs across samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/chromVAR.html
 ---
+
 
 # bioconductor-chromvar
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicscores
-description: the package is available on all platforms; click for details.
+description: The GenomicScores package provides a unified interface for efficiently storing, discovering, and retrieving genomewide position-specific scores such as conservation, pathogenicity, and allele frequencies. Use when user asks to load genomic score datasets, retrieve scores for specific genomic ranges or alleles, or summarize scores over regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicScores.html
 ---
+
 
 # bioconductor-genomicscores
 

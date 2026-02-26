@@ -1,8 +1,9 @@
 ---
 name: giatools
-description: giatools is a specialized suite of utilities designed to support Galaxy Image Analysis.
+description: giatools provides a suite of utilities for Galaxy Image Analysis to handle complex bio-imaging formats and multi-dimensional arrays. Use when user asks to process bio-imaging data, manage multi-dimensional arrays, preserve image metadata, handle large datasets with Dask, or work with OME-Zarr formats.
 homepage: https://github.com/BMCV/giatools
 ---
+
 
 # giatools
 

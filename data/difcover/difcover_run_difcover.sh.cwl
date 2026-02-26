@@ -2,10 +2,13 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: difcover_run_difcover.sh
 label: difcover_run_difcover.sh
-doc: "A tool for identifying genomic differences (DifCover). Note: The provided help
-  text contains only system error logs and does not list command-line arguments.\n
-  \nTool homepage: https://github.com/timnat/DifCover"
-inputs: []
+doc: "Stage 1\n\nTool homepage: https://github.com/timnat/DifCover"
+inputs:
+  - id: sample1_sample2_unionbedcv
+    type: File
+    doc: sample1_sample2.unionbedcv
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

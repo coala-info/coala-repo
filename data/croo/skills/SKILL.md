@@ -1,8 +1,9 @@
 ---
 name: croo
-description: Croo (Cromwell Output Organizer) is a specialized utility designed to transform the often-convoluted directory structure produced by Cromwell into a clean, human-readable format.
+description: Croo organizes complex Cromwell workflow outputs into a structured, human-readable directory format using metadata files. Use when user asks to organize workflow results, create HTML summaries of genomic pipelines, or link Cromwell outputs to a destination directory.
 homepage: https://github.com/ENCODE-DCC/croo
 ---
+
 
 # croo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-noiseq
-description: the package is available on all platforms; click for details.
+description: NOISeq performs differential expression analysis of RNA-seq data using a non-parametric approach. Use when user asks to identify differentially expressed genes, analyze transcriptomic data with or without replicates, or perform quality control and normalization on RNA-seq count data.
 homepage: https://bioconductor.org/packages/release/bioc/html/NOISeq.html
 ---
+
 
 # bioconductor-noiseq
 

@@ -1,8 +1,9 @@
 ---
 name: r-scroshi
-description: R package scroshi (documentation from project home).
+description: scROSHI identifies cell types in single-cell expression data using gene sets and hierarchical relationships without requiring training data. Use when user asks to identify cell types, assign labels to single-cell expression profiles, or use marker gene lists to classify cells.
 homepage: https://cran.r-project.org/web/packages/scroshi/index.html
 ---
+
 
 # r-scroshi
 

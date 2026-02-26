@@ -3,7 +3,7 @@
 ## msalign2
 
 ### Tool Description
-A tool for mass spectrometry alignment (Note: The provided help text contains only system error messages and no usage information).
+(c) Magnus Palmblad 2007-
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/msalign2:1.0--h577a1d6_6
@@ -18,11 +18,10 @@ A tool for mass spectrometry alignment (Note: The provided help text contains on
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/msalign2:1.0--h577a1d6_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2637957151: no space left on device
+msalign - (c) Magnus Palmblad 2007-
+
+usage: msalign -1<LC-MS dataset 1 filename> -2<LC-MS dataset 2 filename> -e<max. mass error in MS-only data (in ppm)>  [-b<background> -l<typical standard deviation in LC retention time in LC-MS data> -X<Xmax> -Y<Ymax> -R<MS start scan>,<MS end scan> -o<output file> -nographics]
+
+for more information, see http://www.ms-utils.org/msalign or e-mail magnus.palmblad@gmail.com
 ```
 
-
-## Metadata
-- **Skill**: generated

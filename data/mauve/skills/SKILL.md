@@ -1,8 +1,9 @@
 ---
 name: mauve
-description: Mauve is a specialized bioinformatics tool designed for the global alignment of multiple genomes that have undergone significant structural changes.
+description: Mauve is a bioinformatics tool designed for the global alignment of multiple genomes that have undergone significant structural rearrangements. Use when user asks to align multiple genomes, identify locally collinear blocks, or visualize chromosomal shuffling and horizontal gene transfer.
 homepage: http://darlinglab.org/mauve/
 ---
+
 
 # mauve
 

@@ -1,8 +1,9 @@
 ---
 name: sketchy
-description: Sketchy is a high-performance bioinformatics tool designed for the rapid identification of bacterial strains and their associated traits.
+description: Sketchy rapidly identifies bacterial strains and their associated traits by comparing sequencing reads against a database of reference sketches. Use when user asks to identify bacterial lineages, predict genotypes from low-coverage reads, or build custom genomic reference sketches.
 homepage: https://github.com/esteinig/sketchy
 ---
+
 
 # sketchy
 

@@ -1,8 +1,9 @@
 ---
 name: anvio-minimal
-description: anvi'o is a comprehensive platform designed to bridge the gap between data generation and biological insight.
+description: Anvi'o is a comprehensive platform for integrating sequence data, coverage, and functional annotations into unified databases for microbial omics analysis. Use when user asks to generate contigs databases, profile mapping results, perform pangenomic analyses, or visualize and refine metagenomic bins.
 homepage: http://merenlab.org/software/anvio/index.html
 ---
+
 
 # anvio-minimal
 

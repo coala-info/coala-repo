@@ -1,8 +1,9 @@
 ---
 name: bioconductor-liquidassociation
-description: The package contains functions for calculate direct and model-based estimators for liquid association. It also provides functions for testing the existence of liquid association given a gene triplet data.
+description: This tool analyzes three-way gene interactions to determine if the correlation between two variables is modulated by a third controller variable. Use when user asks to calculate liquid association estimators, fit conditional normal models, or visualize changes in co-expression across different levels of a modulator.
 homepage: https://bioconductor.org/packages/release/bioc/html/LiquidAssociation.html
 ---
+
 
 # bioconductor-liquidassociation
 

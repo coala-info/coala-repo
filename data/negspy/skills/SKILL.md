@@ -1,8 +1,9 @@
 ---
 name: negspy
-description: `negspy` is a specialized Python toolkit designed to handle the metadata of reference genomes.
+description: "negspy is a Python toolkit for managing genomic assembly metadata and converting chromosome coordinates into global genome positions. Use when user asks to retrieve chromosome sizes, get standard chromosome orderings, or convert chromosome-specific positions to absolute genome coordinates."
 homepage: https://github.com/pkerpedjiev/negspy
 ---
+
 
 # negspy
 

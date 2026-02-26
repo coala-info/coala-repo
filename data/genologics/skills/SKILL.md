@@ -1,8 +1,9 @@
 ---
 name: genologics
-description: The `genologics` library is a Pythonic interface to the GenoLogics LIMS REST API.
+description: The genologics library provides a Pythonic interface to interact with the GenoLogics LIMS REST API for managing laboratory information. Use when user asks to query, create, or update LIMS entities such as projects, samples, and artifacts.
 homepage: https://github.com/scilifelab/genologics
 ---
+
 
 # genologics
 

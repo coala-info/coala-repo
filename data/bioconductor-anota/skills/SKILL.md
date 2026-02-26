@@ -1,8 +1,9 @@
 ---
 name: bioconductor-anota
-description: the package is available on all platforms; click for details.
+description: This tool identifies differential translational activity from genomic data by applying Analysis of Partial Variance to correct for changes in cytosolic mRNA levels. Use when user asks to identify genes with changing translational efficiency, perform quality control on polysome profiling data, or analyze ribosome sequencing experiments using a regression-based approach.
 homepage: https://bioconductor.org/packages/release/bioc/html/anota.html
 ---
+
 
 # bioconductor-anota
 

@@ -1,8 +1,9 @@
 ---
 name: airr
-description: The provided text does not contain help information for the 'airr' tool; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space ('no space left on device').
+description: The airr tool facilitates the standardized handling, validation, and conversion of immune repertoire data according to AIRR Community schemas. Use when user asks to validate rearrangement files, read or write AIRR-compliant TSV data, or access schema definitions for V(D)J sequence analysis.
 homepage: http://docs.airr-community.org
 ---
+
 
 # airr
 

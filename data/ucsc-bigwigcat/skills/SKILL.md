@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigwigcat
-description: The `bigWigCat` utility is a specialized tool from the UCSC Genome Browser "kent" suite used to join multiple bigWig files.
+description: ucsc-bigwigcat concatenates multiple bigWig files containing non-overlapping genomic data into a single output file. Use when user asks to join bigWig files, concatenate bigWig files, merge chromosome-level bigWig files, or assemble a full-genome track.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigwigcat
 

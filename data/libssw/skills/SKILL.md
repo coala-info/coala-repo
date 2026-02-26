@@ -1,8 +1,9 @@
 ---
 name: libssw
-description: libssw is a high-performance implementation of the Smith-Waterman algorithm that leverages Single-Instruction Multiple-Data (SIMD) instructions to parallelize sequence alignment at the instruction level.
+description: libssw is a high-performance implementation of the Smith-Waterman algorithm that uses SIMD instructions to accelerate local sequence alignment. Use when user asks to perform local alignment of DNA or protein sequences, map reads to a reference, or generate SAM output for genomic data.
 homepage: https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library
 ---
+
 
 # libssw
 

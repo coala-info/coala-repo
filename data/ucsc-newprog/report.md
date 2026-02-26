@@ -1,9 +1,9 @@
 # ucsc-newprog CWL Generation Report
 
-## ucsc-newprog
+## ucsc-newprog_newProg
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) failing to fetch or build the image.
+make a new C source skeleton.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ucsc-newprog:482--h0b57e2e_0
@@ -18,33 +18,14 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-newprog:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+newProg - make a new C source skeleton.
+usage:
+   newProg progName description words
+This will make a directory 'progName' and a file in it 'progName.c'
+with a standard skeleton
 
-
-## Metadata
-- **Skill**: generated
-
-## ucsc-newprog_newPythonProg
-
-### Tool Description
-A tool from the UCSC Genome Browser utilities suite (ucsc-newprog). Note: The provided help text contains only container execution logs and error messages, so no specific arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ucsc-newprog:482--h0b57e2e_0
-- **Homepage**: http://hgdownload.cse.ucsc.edu/admin/exe/
-- **Package**: https://anaconda.org/channels/bioconda/packages/ucsc-newprog/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/ucsc-newprog:482--h0b57e2e_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Options:
+   -jkhgap - include jkhgap.a and mysql libraries as well as jkweb.a archives 
+   -cgi    - create shell of a CGI script for web
 ```
 

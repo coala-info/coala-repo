@@ -1,8 +1,9 @@
 ---
 name: multiqc-bcbio
-description: The `multiqc-bcbio` skill provides specialized support for the MultiQC plugin that handles outputs from the bcbio-nextgen bioinformatics framework.
+description: This tool provides a MultiQC plugin to aggregate and visualize metrics specifically from bcbio-nextgen bioinformatics pipelines. Use when user asks to generate interactive reports for bcbio outputs, visualize bcbio sample metadata, or parse project-summary files from bcbio workflows.
 homepage: http://multiqc.info
 ---
+
 
 # multiqc-bcbio
 

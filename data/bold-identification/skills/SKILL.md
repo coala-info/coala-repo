@@ -1,8 +1,9 @@
 ---
 name: bold-identification
-description: The `bold-identification` tool is a specialized utility for automated taxonomic assignment.
+description: This tool performs automated taxonomic assignment by matching input sequences against the BOLD Systems reference libraries via API. Use when user asks to identify species from DNA sequences, perform taxonomic classification using COI, ITS, or MATK_RBCL markers, or detect chimeric sequences in barcoding data.
 homepage: https://github.com/linzhi2013/bold_identification
 ---
+
 
 # bold-identification
 

@@ -1,8 +1,9 @@
 ---
 name: r-fastmatch
-description: "Package providing a fast match() replacement for cases 	that require repeated look-ups. It is slightly faster that R's 	built-in match() function on first match against a table, but 	extremely fast on any subsequent lookup as it keeps the hash 	table in memory.</p>"
+description: This tool provides a high-performance replacement for R's built-in match and %in% functions by caching hash tables for faster repeated lookups. Use when user asks to perform fast value matching, speed up repeated lookups against the same table, or optimize membership testing in large datasets.
 homepage: https://cloud.r-project.org/web/packages/fastmatch/index.html
 ---
+
 
 # r-fastmatch
 

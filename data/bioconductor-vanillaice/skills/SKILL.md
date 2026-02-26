@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vanillaice
-description: the package is available on all platforms; click for details.
+description: VanillaICE implements Hidden Markov Models for identifying copy number alterations and genotypes from high-throughput SNP array data. Use when user asks to identify copy number variants, estimate genotypes, or perform HMM-based analysis on genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/VanillaICE.html
 ---
+
 
 # bioconductor-vanillaice
 

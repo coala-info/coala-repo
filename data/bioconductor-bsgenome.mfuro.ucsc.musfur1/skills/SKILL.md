@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mfuro.ucsc.musfur1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the domestic ferret as a Biostrings object based on the UCSC musFur1 build. Use when user asks to access ferret genome sequences, extract DNA from specific genomic coordinates, or perform genome-wide motif searching in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mfuro.UCSC.musFur1.html
 ---
+
 
 # bioconductor-bsgenome.mfuro.ucsc.musfur1
 

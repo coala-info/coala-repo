@@ -1,8 +1,9 @@
 ---
 name: perl-sereal
-description: Sereal is a binary serialization format designed for speed and compactness.
+description: Perl-sereal provides a high-performance binary serialization format for fast and compact data encoding and decoding. Use when user asks to serialize complex Perl data structures, optimize data persistence with compression, or convert between JSON and Sereal formats.
 homepage: https://metacpan.org/pod/Sereal
 ---
+
 
 # perl-sereal
 

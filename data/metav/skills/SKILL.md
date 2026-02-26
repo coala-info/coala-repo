@@ -1,8 +1,9 @@
 ---
 name: metav
-description: metav is a Python-based command-line tool designed for the high-throughput identification of viruses within metagenomic datasets.
+description: metav is a command-line tool for the high-throughput identification and taxonomic classification of viruses within metagenomic datasets. Use when user asks to identify viruses in metagenomic data, perform host and plasmid decontamination, or map reads to viral protein databases.
 homepage: https://github.com/ZhijianZhou01/metav
 ---
+
 
 # metav
 

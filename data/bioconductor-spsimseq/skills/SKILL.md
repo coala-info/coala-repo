@@ -1,8 +1,9 @@
 ---
 name: bioconductor-spsimseq
-description: the package is available on all platforms; click for details.
+description: SPsimSeq is a semi-parametric tool for simulating bulk and single-cell RNA-sequencing data by resampling from real datasets. Use when user asks to simulate RNA-seq data, generate synthetic transcriptomic datasets, or model gene expression distributions from experimental data.
 homepage: https://bioconductor.org/packages/release/bioc/html/SPsimSeq.html
 ---
+
 
 # bioconductor-spsimseq
 

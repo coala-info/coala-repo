@@ -1,8 +1,9 @@
 ---
 name: amas
-description: AMAS (Alignment Manipulation and Summary statistics) is a versatile tool designed for the rapid processing of biological sequence data.
+description: AMAS is a command-line tool for manipulating biological sequence alignments and calculating summary statistics. Use when user asks to calculate alignment metrics, concatenate multiple sequence files, convert between alignment formats, translate DNA to protein, or split alignments by partition.
 homepage: https://github.com/marekborowiec/AMAS
 ---
+
 
 # amas
 

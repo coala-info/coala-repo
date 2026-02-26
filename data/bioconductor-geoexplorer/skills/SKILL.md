@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geoexplorer
-description: the package is available on all platforms; click for details.
+description: GEOexplorer is an R package and Shiny application for the automated retrieval, exploratory analysis, and differential expression analysis of transcriptomic data from the Gene Expression Omnibus. Use when user asks to perform differential gene expression analysis, conduct gene enrichment analysis, or visualize gene expression data from GEO accessions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEOexplorer.html
 ---
+
 
 # bioconductor-geoexplorer
 

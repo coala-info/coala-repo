@@ -1,8 +1,9 @@
 ---
 name: perl-digest-perl-md5
-description: The `Digest::Perl::MD5` module provides a robust, platform-independent way to generate 128-bit fingerprints (message digests) for arbitrary data.
+description: This module provides a pure-Perl implementation of the MD5 message digest algorithm for generating 128-bit fingerprints of data. Use when user asks to calculate MD5 checksums, generate hexadecimal digests for strings or files, or ensure platform-independent data integrity in Perl environments.
 homepage: http://metacpan.org/pod/Digest-Perl-MD5
 ---
+
 
 # perl-digest-perl-md5
 

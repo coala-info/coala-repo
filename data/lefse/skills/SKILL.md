@@ -1,8 +1,9 @@
 ---
 name: lefse
-description: LEfSe (Linear Discriminant Analysis Effect Size) is a specialized algorithm for discovering biomarkers in biological datasets, most commonly used in microbiome research.
+description: LEfSe identifies statistically significant biomarkers and estimates their effect sizes in biological datasets using Kruskal-Wallis, Wilcoxon rank-sum, and Linear Discriminant Analysis tests. Use when user asks to format microbiome data, identify differentially abundant features between classes, calculate LDA scores, or generate cladograms and LDA bar plots.
 homepage: https://github.com/SegataLab/lefse
 ---
+
 
 # lefse
 

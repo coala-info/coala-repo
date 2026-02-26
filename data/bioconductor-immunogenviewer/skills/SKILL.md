@@ -1,8 +1,9 @@
 ---
 name: bioconductor-immunogenviewer
-description: the package is available on all platforms; click for details.
+description: immunogenViewer facilitates the selection of antibodies by analyzing and visualizing the structural and functional context of their immunogens within a protein. Use when user asks to retrieve protein features from UniProt, add and manage immunogen sequences, visualize antibody binding sites, or quantitatively evaluate immunogens based on accessibility and post-translational modifications.
 homepage: https://bioconductor.org/packages/release/bioc/html/immunogenViewer.html
 ---
+
 
 # bioconductor-immunogenviewer
 

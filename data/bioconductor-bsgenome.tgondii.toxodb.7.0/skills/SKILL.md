@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.tgondii.toxodb.7.0
-description: the package is available on all platforms; click for details.
+description: This tool provides the full genome sequence for Toxoplasma gondii ME49 (ToxoDB-7.0) as a BSgenome object for Bioconductor analysis. Use when user asks to access the Toxoplasma gondii genome, extract specific DNA sequences, search for motifs, or perform coordinate-based genomic lookups.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Tgondii.ToxoDB.7.0.html
 ---
+
 
 # bioconductor-bsgenome.tgondii.toxodb.7.0
 

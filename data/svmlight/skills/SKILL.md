@@ -1,8 +1,9 @@
 ---
 name: svmlight
-description: `svmlight` is a specialized toolset for implementing Support Vector Machines, optimized for speed and memory efficiency when dealing with sparse data.
+description: "svmlight is a toolset for training and applying Support Vector Machines optimized for high-dimensional sparse data. Use when user asks to train classification or regression models, perform preference ranking, or classify new data using a trained model."
 homepage: http://svmlight.joachims.org/
 ---
+
 
 # svmlight
 

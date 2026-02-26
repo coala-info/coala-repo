@@ -1,11 +1,22 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: clair_clair.py
+baseCommand: python clair.py
 label: clair_clair.py
-doc: "Clair (v2.1.1): A germline variant caller for long-read sequencing. (Note: The
-  provided text is a container execution error log and does not contain help documentation
-  or argument definitions.)\n\nTool homepage: https://github.com/HKU-BAL/Clair"
-inputs: []
+doc: "Clair submodule invocator\n\nTool homepage: https://github.com/HKU-BAL/Clair"
+inputs:
+  - id: submodule
+    type: string
+    doc: Submodule to invoke
+    inputBinding:
+      position: 1
+  - id: submodule_options
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Options for the specified submodule
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

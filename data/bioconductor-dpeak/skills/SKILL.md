@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dpeak
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: Bioconductor-dpeak identifies high-resolution protein binding sites by deconvolving overlapping binding events within ChIP-seq peak regions using parametric mixture models. Use when user asks to load peak lists and aligned reads, fit mixture models to identify multiple binding events, visualize binding site estimates, or export high-resolution coordinates to BED or GFF formats.
 homepage: https://bioconductor.org/packages/3.11/bioc/html/dpeak.html
 ---
+
 
 # bioconductor-dpeak
 

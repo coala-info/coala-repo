@@ -1,8 +1,9 @@
 ---
 name: chewiesnake
-description: chewieSnake is a specialized Snakemake workflow designed to streamline the process of cgMLST allele calling.
+description: chewieSnake is a Snakemake workflow that performs cgMLST allele calling to transform genome assemblies into standardized allele profiles. Use when user asks to perform allele calling, generate distance matrices, perform cluster analysis, or merge multiple allele calling runs.
 homepage: https://gitlab.com/bfr_bioinformatics/chewieSnake
 ---
+
 
 # chewiesnake
 

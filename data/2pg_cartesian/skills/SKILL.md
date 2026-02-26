@@ -1,8 +1,9 @@
 ---
 name: 2pg_cartesian
-description: 2pg_cartesian is an evolutionary computation framework specifically tailored for physical biology and structural biology optimization.
+description: 2pg_cartesian is an evolutionary computation framework designed for protein structure prediction and structural biology optimization. Use when user asks to predict protein structures, renumber PDB residues, or prepare structural data from CASP submissions.
 homepage: https://github.com/rodrigofaccioli/2pg_cartesian
 ---
+
 
 # 2pg_cartesian
 

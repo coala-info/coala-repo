@@ -1,8 +1,9 @@
 ---
 name: galaxy-ops
-description: The `galaxy-ops` tool (invoked via `galaxyOps.py`) provides a suite of operations for genomic interval arithmetic.
+description: This tool performs genomic interval arithmetic and set operations on BED files. Use when user asks to subtract regions, find intersections, merge overlapping segments, cluster features, or calculate overlap density.
 homepage: https://github.com/galaxyproject/gops
 ---
+
 
 # galaxy-ops
 

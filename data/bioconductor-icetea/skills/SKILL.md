@@ -1,8 +1,9 @@
 ---
 name: bioconductor-icetea
-description: the package is available on all platforms; click for details.
+description: This tool analyzes transcript 5'-profiling data such as CAGE, RAMPAGE, and MAPCap to identify transcription start sites and perform differential expression analysis. Use when user asks to demultiplex 5' end sequencing data, filter PCR duplicates using UMIs, detect transcription start sites, or conduct differential TSS expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/icetea.html
 ---
+
 
 # bioconductor-icetea
 

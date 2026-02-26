@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg17.masked
-description: the package is available on all platforms; click for details.
+description: This package provides masked genomic sequences for the Homo sapiens hg17 assembly including assembly gaps, ambiguities, and repeat regions. Use when user asks to access masked human genome data, analyze non-masked genomic regions, or manage sequence masks for the hg17 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg17.masked.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg17.masked
 

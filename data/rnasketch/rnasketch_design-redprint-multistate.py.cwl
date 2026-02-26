@@ -1,16 +1,118 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: rnasketch_design-redprint-multistate.py
+baseCommand: design-redprint-multistate.py
 label: rnasketch_design-redprint-multistate.py
-doc: "RNA design tool (Note: The provided text is a container execution error log
-  and does not contain help information or argument definitions.)\n\nTool homepage:
+doc: "Design a multi-stable riboswitch similar using Boltzmann sampling.\n\nTool homepage:
   https://github.com/ViennaRNA/RNAsketch"
-inputs: []
+inputs:
+  - id: csv_output
+    type:
+      - 'null'
+      - boolean
+    doc: Write output as semi-colon csv file to stdout
+    inputBinding:
+      position: 101
+      prefix: --csv
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Show debug information of library
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Read file in *.inp format
+    inputBinding:
+      position: 101
+      prefix: --file
+  - id: input_stdin
+    type:
+      - 'null'
+      - boolean
+    doc: Read custom structures and sequence constraints from stdin
+    inputBinding:
+      position: 101
+      prefix: --input
+  - id: kill
+    type:
+      - 'null'
+      - int
+    doc: Timeout value of graph construction in seconds.
+    default: infinite
+    inputBinding:
+      position: 101
+      prefix: --kill
+  - id: model
+    type:
+      - 'null'
+      - string
+    doc: 'Model for getting a new sequence: uniform, nussinov, basepairs, stacking'
+    inputBinding:
+      position: 101
+      prefix: --model
+  - id: number
+    type:
+      - 'null'
+      - int
+    doc: Number of designs to generate
+    inputBinding:
+      position: 101
+      prefix: --number
+  - id: objective
+    type:
+      - 'null'
+      - int
+    doc: 'Chose the objective function: 1 for abs differences and 2 for squared'
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --objective
+  - id: package
+    type:
+      - 'null'
+      - string
+    doc: 'Chose the calculation package: hotknots, pkiss, nupack, or vrna/ViennaRNA'
+    default: vrna
+    inputBinding:
+      position: 101
+      prefix: --package
+  - id: progress
+    type:
+      - 'null'
+      - boolean
+    doc: Show progress of optimization
+    inputBinding:
+      position: 101
+      prefix: --progress
+  - id: stop
+    type:
+      - 'null'
+      - int
+    doc: Stop optimization run of unpaired bases if no better solution is 
+      aquired after (stop) trials. 0 is no unpaired bases optimization.
+    inputBinding:
+      position: 101
+      prefix: --stop
+  - id: temperature
+    type:
+      - 'null'
+      - float
+    doc: Temperature of the energy calculations.
+    inputBinding:
+      position: 101
+      prefix: --temperature
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: graphml_file
+    type:
+      - 'null'
+      - File
+    doc: Write a graphml file with the given filename.
+    outputBinding:
+      glob: $(inputs.graphml_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/rnasketch:1.5--py27_1
-stdout: rnasketch_design-redprint-multistate.py.out

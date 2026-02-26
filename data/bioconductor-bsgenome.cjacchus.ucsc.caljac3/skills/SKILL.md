@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.cjacchus.ucsc.caljac3
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for the Common marmoset based on the UCSC calJac3 assembly for use in R. Use when user asks to access marmoset genomic sequences, extract DNA from specific coordinates, or perform genome-wide motif searching.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cjacchus.UCSC.calJac3.html
 ---
+
 
 # bioconductor-bsgenome.cjacchus.ucsc.caljac3
 

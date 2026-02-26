@@ -1,8 +1,9 @@
 ---
 name: ripser
-description: "Ripser is a high-performance C++ tool designed for a singular purpose: computing Vietoris–Rips persistence barcodes."
+description: Ripser computes Vietoris–Rips persistence barcodes for topological data analysis. Use when user asks to compute persistence barcodes, identify topological features like loops or voids, or analyze point clouds and distance matrices.
 homepage: http://ripser.org/
 ---
+
 
 # ripser
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-keggandmetacoredzpathwaysgeo
-description: the package is available on all platforms; click for details.
+description: This R package provides curated gene expression datasets from the Gene Expression Omnibus for benchmarking pathway analysis methods against KEGG and MetaCore signaling pathways. Use when user asks to access disease-related datasets, evaluate pathway analysis performance, or compare results between KEGG and MetaCore databases.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KEGGandMetacoreDzPathwaysGEO.html
 ---
+
 
 # bioconductor-keggandmetacoredzpathwaysgeo
 

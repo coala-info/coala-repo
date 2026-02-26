@@ -1,8 +1,9 @@
 ---
 name: r-truncnorm
-description: "Density, probability, quantile and random number         generation functions for the truncated normal distribution.</p>"
+description: This tool provides functions for calculating the density, probability, quantiles, and random generation for the truncated normal distribution. Use when user asks to generate random samples within a specific range, calculate probabilities for bounded normal variables, or determine moments of a truncated normal distribution.
 homepage: https://cloud.r-project.org/web/packages/truncnorm/index.html
 ---
+
 
 # r-truncnorm
 

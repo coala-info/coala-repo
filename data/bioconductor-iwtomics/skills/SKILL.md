@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iwtomics
-description: the package is available on all platforms; click for details.
+description: The IWTomics package implements interval-wise testing for functional data analysis to identify significant differences in genomic features across different locations and scales. Use when user asks to statistically evaluate differences in genomic features along the genome, perform non-parametric permutation-based testing on functional data, or visualize significant genomic regions at multiple resolutions.
 homepage: https://bioconductor.org/packages/release/bioc/html/IWTomics.html
 ---
+
 
 # bioconductor-iwtomics
 

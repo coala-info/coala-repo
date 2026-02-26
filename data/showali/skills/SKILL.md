@@ -1,8 +1,9 @@
 ---
 name: showali
-description: showali is a lightweight, terminal-based viewer designed for the rapid inspection of aligned biological sequences.
+description: showali is a terminal-based viewer for the rapid inspection and visualization of aligned biological sequences. Use when user asks to visualize multiple sequence alignments in the command line, inspect alignment files like FASTA or PHYLIP, or sanity-check alignment outputs.
 homepage: https://github.com/kirilenkobm/showali
 ---
+
 
 # showali
 

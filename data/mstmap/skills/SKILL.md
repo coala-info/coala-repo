@@ -1,8 +1,9 @@
 ---
 name: mstmap
-description: MSTmap is a tool designed to build accurate genetic linkage maps by calculating a Minimum Spanning Tree (MST) of a graph.
+description: MSTmap constructs accurate genetic linkage maps by calculating a Minimum Spanning Tree to group and order markers. Use when user asks to build linkage maps, group markers into linkage groups, determine marker order, or calculate genetic distances.
 homepage: http://mstmap.org/
 ---
+
 
 # mstmap
 

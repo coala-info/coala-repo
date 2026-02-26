@@ -1,8 +1,9 @@
 ---
 name: mantis-msi
-description: MANTIS (Microsatellite Analysis for Normal-Tumor InStability) is a specialized bioinformatics tool used to identify MSI by comparing microsatellite loci between a tumor sample and its matched normal control.
+description: "MANTIS identifies microsatellite instability by comparing repeat length distributions between matched tumor and normal sequencing samples. Use when user asks to detect microsatellite instability, calculate MSI scores, or analyze microsatellite loci in paired-end sequencing data."
 homepage: https://github.com/OSU-SRLab/MANTIS/
 ---
+
 
 # mantis-msi
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-summarizedexperiment
-description: the package is available on all platforms; click for details.
+description: SummarizedExperiment provides a container for storing and manipulating matrix-like data from biological experiments along with associated metadata. Use when user asks to store high-throughput sequencing data, manage assay results with sample metadata, or manipulate genomic ranges and experimental data in R.
 homepage: https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html
 ---
+
 
 # bioconductor-summarizedexperiment
 

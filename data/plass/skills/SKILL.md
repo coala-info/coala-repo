@@ -1,8 +1,9 @@
 ---
 name: plass
-description: PLASS (Protein-Level ASSembler) is a specialized tool for de novo assembly of sequencing reads at the amino acid level.
+description: PLASS performs de novo assembly of sequencing reads at the protein level to overcome high diversity and low coverage in metagenomic datasets. Use when user asks to assemble protein sequences from nucleotide reads, perform protein-guided nucleotide assembly, or reconstruct viral genomes and 16S rRNA sequences.
 homepage: https://github.com/soedinglab/plass
 ---
+
 
 # plass
 

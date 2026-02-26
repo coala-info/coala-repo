@@ -1,8 +1,9 @@
 ---
 name: clustalw
-description: ClustalW is a progressive multiple sequence alignment tool that aligns sets of sequences by repeatedly aligning pairs and previously generated alignments.
+description: ClustalW is a progressive multiple sequence alignment tool optimized for high-performance computing using GPU acceleration. Use when user asks to perform multiple sequence alignments, align genomic or proteomic sequences, or accelerate alignment tasks using CUDA.
 homepage: https://github.com/coldfunction/CUDA-clustalW
 ---
+
 
 # clustalw
 

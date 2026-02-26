@@ -1,8 +1,9 @@
 ---
 name: r-rseis
-description: R package rseis (documentation from project home).
+description: The r-rseis package provides a comprehensive suite of tools for seismic time series analysis, signal processing, and interactive visualization. Use when user asks to analyze seismic data, apply filters, perform spectral or wavelet analysis, visualize particle motion, or interactively pick arrival times.
 homepage: https://cran.r-project.org/web/packages/rseis/index.html
 ---
+
 
 # r-rseis
 

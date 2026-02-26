@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scdblfinder
-description: the package is available on all platforms; click for details.
+description: scDblFinder identifies and removes doublets from single-cell RNA sequencing data. Use when user asks to detect doublets, identify multiplets, or filter single-cell datasets for technical artifacts.
 homepage: https://bioconductor.org/packages/release/bioc/html/scDblFinder.html
 ---
+
 
 # bioconductor-scdblfinder
 

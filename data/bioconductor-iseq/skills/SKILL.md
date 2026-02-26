@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iseq
-description: the package is available on all platforms; click for details.
+description: Bioconductor-iseq performs ChIP-seq peak calling using Bayesian hierarchical modeling and Hidden Ising Models. Use when user asks to analyze ChIP-seq data, aggregate sequence tags into dynamic bins, model tag counts, or identify enriched regions using posterior probabilities.
 homepage: https://bioconductor.org/packages/release/bioc/html/iSeq.html
 ---
+
 
 # bioconductor-iseq
 

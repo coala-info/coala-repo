@@ -1,8 +1,9 @@
 ---
 name: bz2file
-description: The `bz2file` library is a Python-based drop-in replacement for the standard library's `bz2` module.
+description: bz2file is a Python library that provides a drop-in replacement for the standard bz2 module to handle bzip2 compression and multi-stream files. Use when user asks to read or write bzip2 compressed files, handle multi-stream bzip2 archives, or use a feature-rich interface for bzip2 data in older Python environments.
 homepage: https://github.com/nvawda/bz2file
 ---
+
 
 # bz2file
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-feast
-description: the package is available on all platforms; click for details.
+description: FEAST selects the most informative genes for single-cell RNA-seq data to improve the accuracy of downstream cell clustering. Use when user asks to perform feature selection for scRNA-seq, rank genes by their ability to distinguish cell populations, or optimize gene sets for clustering algorithms like SC3 and TSCAN.
 homepage: https://bioconductor.org/packages/release/bioc/html/FEAST.html
 ---
+
 
 # bioconductor-feast
 

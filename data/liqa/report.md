@@ -25,4 +25,28 @@ FATAL:   Unable to handle docker://quay.io/biocontainers/liqa:1.3.4--pyhdfd78af_
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## liqa
+
+### Tool Description
+Please specify task
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/liqa:1.3.4--pyhdfd78af_0
+- **Homepage**: https://github.com/WGLab/LIQA
+- **Package**: https://anaconda.org/channels/bioconda/packages/liqa/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+Please specify task (liqa -task <task>):
+
+	refgene:   preprocess reference file
+
+	quantify:   quantify isoform expression
+
+	diff:   detect differential splicing gene/isoform
+
+	novel:   detect novel isoform
+```
+

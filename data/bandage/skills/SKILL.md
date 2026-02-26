@@ -1,8 +1,9 @@
 ---
 name: bandage
-description: Bandage (Bioinformatics Application for Navigating De novo Assembly Graphs Easily) is a specialized tool for inspecting the graph structures that underlie genome assemblies.
+description: "Bandage visualizes and analyzes the graph structures of de novo genome assemblies to identify connections between contigs. Use when user asks to visualize assembly graphs, generate assembly statistics, or create images of contig connections."
 homepage: https://github.com/rrwick/Bandage
 ---
+
 
 # bandage
 

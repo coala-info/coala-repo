@@ -1,8 +1,9 @@
 ---
 name: r-kaos
-description: "Sequences encoding by using the chaos game representation.     Löchel et al."
+description: This tool encodes biological or symbolic sequences into Chaos Game Representation (CGR) and Frequency Matrix Chaos Game Representation (FMCGR) for visualization and numerical analysis. Use when user asks to transform sequences into 2D spatial distributions, generate k-mer frequency matrices, or visualize sequence patterns using CGR plots and heatmaps.
 homepage: https://cran.r-project.org/web/packages/kaos/index.html
 ---
+
 
 # r-kaos
 

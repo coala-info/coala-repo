@@ -1,8 +1,9 @@
 ---
 name: fastp
-description: fastp is a high-performance, all-in-one preprocessor for FASTQ files.
+description: "fastp is an all-in-one FASTQ preprocessor that performs quality profiling, adapter trimming, read filtering, and data merging. Use when user asks to preprocess sequencing data, trim adapters, filter reads by quality, merge paired-end reads, or extract unique molecular identifiers."
 homepage: https://github.com/OpenGene/fastp
 ---
+
 
 # fastp
 

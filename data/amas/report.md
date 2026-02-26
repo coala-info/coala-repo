@@ -1,9 +1,9 @@
 # amas CWL Generation Report
 
-## amas
+## amas_AMAS.py
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a container execution log ending in a fatal error indicating that the 'amas' executable was not found in the system PATH.
+AMAS (Alignment Manipulation and Summary) is a tool for manipulating and summarizing DNA and protein alignments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/amas:1.0--pyh864c0ab_0
@@ -15,21 +15,27 @@ The provided text does not contain help information for the tool. It appears to 
 - **Total Downloads**: 8.2K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/marekborowiec/AMAS
-- **Stars**: 91
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/05 17:43:13  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "amas": executable file not found in $PATH
+usage: AMAS <command> [<args>]
+
+The AMAS commands are:
+  concat      Concatenate input alignments
+  convert     Convert to other file format
+  replicate   Create replicate data sets for phylogenetic jackknife
+  split       Split alignment according to a partitions file
+  summary     Write alignment summary
+  remove      Remove taxa from alignment
+  translate   Translate DNA alignment into protein alignment
+  trim        Remove columns from alignment
+
+Use AMAS <command> -h for help with arguments of the command of interest
+
+positional arguments:
+  command     Subcommand to run
+
+optional arguments:
+  -h, --help  show this help message and exit
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: r-itertools
-description: "Various tools for creating iterators, many patterned after         functions in the Python itertools module, and others patterned         after functions in the 'snow' package.</p>"
+description: The r-itertools package provides advanced iterator tools for R to enable memory-efficient data processing and Python-style iteration. Use when user asks to create memory-efficient chunks, perform Cartesian products, zip multiple iterators, or implement complex looping logic for large datasets.
 homepage: https://cloud.r-project.org/web/packages/itertools/index.html
 ---
+
 
 # r-itertools
 

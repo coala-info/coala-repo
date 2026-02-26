@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.fingene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the FinGene 1.0 ST microarray. Use when user asks to process FinGene 1.0 ST microarray data, analyze Affymetrix FinGene 1.0 ST chips, or load platform design information for this specific array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.fingene.1.0.st.html
 ---
+
 
 # bioconductor-pd.fingene.1.0.st
 

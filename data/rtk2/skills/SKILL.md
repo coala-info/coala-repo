@@ -1,8 +1,9 @@
 ---
 name: rtk2
-description: The `rtk2` skill provides guidance for using the Rarefaction ToolKit, a high-performance C++ binary designed for matrix operations on Operational Taxonomic Unit (OTU) tables and gene matrices.
+description: rtk2 is a high-performance tool for rarefaction and matrix operations on microbiome OTU tables and gene matrices. Use when user asks to rarefy OTU tables, calculate abundance using mean or median statistics, or process large-scale gene coverage matrices.
 homepage: https://github.com/hildebra/rtk2/
 ---
+
 
 # rtk2
 

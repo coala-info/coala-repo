@@ -1,8 +1,9 @@
 ---
 name: perl-bio-cigar
-description: The `Bio::Cigar` Perl module provides a robust interface for handling Compact Idiosyncratic Gabor Alignment Resolution (CIGAR) strings, which are standard in SAM/BAM files.
+description: This Perl module parses and manages CIGAR strings to facilitate coordinate mapping between sequencing reads and reference genomes. Use when user asks to translate coordinates between query and reference positions, calculate alignment lengths, or decompose CIGAR strings into individual operations.
 homepage: http://search.cpan.org/~tsibley/Bio-Cigar-1.01
 ---
+
 
 # perl-bio-cigar
 

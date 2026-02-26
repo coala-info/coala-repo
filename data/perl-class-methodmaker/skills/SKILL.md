@@ -1,8 +1,9 @@
 ---
 name: perl-class-methodmaker
-description: Class::MethodMaker is a meta-programming tool for Perl that automates the creation of common class methods.
+description: Class::MethodMaker is a Perl module that automates the creation of common class methods and accessors through a declarative syntax. Use when user asks to generate getter and setter methods, manage list or hash-based attributes, or reduce boilerplate code in Perl object-oriented programming.
 homepage: http://search.cpan.org/~schwigon/Class-MethodMaker-2.24/
 ---
+
 
 # perl-class-methodmaker
 

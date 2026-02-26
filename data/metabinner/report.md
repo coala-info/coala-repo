@@ -1,9 +1,9 @@
 # metabinner CWL Generation Report
 
-## metabinner
+## metabinner_Filter_tooshort.py
 
 ### Tool Description
-A tool for binning metagenomic contigs (Note: The provided text is an error log and does not contain help information).
+Filters out short sequences from a FASTA file.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
@@ -18,80 +18,55 @@ A tool for binning metagenomic contigs (Note: The provided text is an error log 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2392031165: no space left on device
+Usage: Filter_tooshort.py [OPTIONS] INPUT_FILE K
+Try 'Filter_tooshort.py --help' for help.
+
+Error: no such option: --h  Did you mean --help?
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## metabinner_Filter_tooshort.py
-
-### Tool Description
-A tool to filter sequences that are too short (Note: The provided help text contains only system error messages and no usage information).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
-- **Homepage**: https://github.com/ziyewang/MetaBinner
-- **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2629669489: no space left on device
-```
-
-## metabinner_gen_coverage_file.sh
-
-### Tool Description
-A script to generate coverage files for MetaBinner. (Note: The provided help text contains only system error messages and no usage information.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
-- **Homepage**: https://github.com/ziyewang/MetaBinner
-- **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3822154460: no space left on device
-```
 
 ## metabinner_gen_kmer.py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for metabinner_gen_kmer.py. It contains container runtime logs and a fatal error indicating 'no space left on device' during a SIF image build.
+Generates k-mers from input sequences.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
 - **Homepage**: https://github.com/ziyewang/MetaBinner
 - **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2856232983: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/gen_kmer.py", line 61, in <module>
+    length_threshold = int(sys.argv[2])
+IndexError: list index out of range
 ```
+
 
 ## metabinner_run_metabinner.sh
 
 ### Tool Description
-A tool for binning metagenomic sequences. (Note: The provided text contains container runtime error messages rather than command-line help documentation.)
+Run the MetaBinner pipeline
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1
 - **Homepage**: https://github.com/ziyewang/MetaBinner
 - **Package**: https://anaconda.org/channels/bioconda/packages/metabinner/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabinner:1.4.4--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2678662862: no space left on device
+Usage: bash run_metabinner.sh [options] -a contig_file -o output_dir -d coverage_profile -k kmer_profile -p path_to_MetaBinner
+Options:
+
+  -a STR          metagenomic assembly file
+  -o STR          output directory
+  -d STR          coverage_profile.tsv; The coverage profiles, containing a table where each row correspond to a contig, and each column correspond to a sample. All values are separated with tabs.
+  -k STR          kmer_profile.csv; The composition profiles, containing a table where each row correspond to a contig, and each column correspond to the kmer composition of particular kmer. All values are separated with comma.
+  -p STR          path to MetaBinner; e.g. /home/wzy/MetaBinner
+  -t INT          number of threads (default=1)
+  -s STR          Dataset scale; eg. small,large,huge
 ```
 

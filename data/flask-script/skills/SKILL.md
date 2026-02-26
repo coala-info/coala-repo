@@ -1,8 +1,9 @@
 ---
 name: flask-script
-description: Flask-Script is a legacy extension for the Flask web framework that provides a structured way to create and manage command-line scripts.
+description: Flask-Script provides a structured way to create and manage command-line scripts for Flask applications. Use when user asks to create custom CLI commands, manage database migrations, or run a development server in legacy Flask environments.
 homepage: https://github.com/smurfix/flask-script
 ---
+
 
 # flask-script
 

@@ -1,8 +1,9 @@
 ---
 name: mimeo
-description: Mimeo is a bioinformatics suite designed to parse and annotate repeats from whole-genome alignments.
+description: Mimeo is a bioinformatics suite that uses alignment-based approaches to identify, parse, and annotate repeats and shared segments within or between genomes. Use when user asks to identify internal repeat regions, find cross-species repeat abundance, map shared segments for horizontal gene transfer detection, or filter simple sequence repeats from candidate libraries.
 homepage: https://github.com/Adamtaranto/mimeo
 ---
+
 
 # mimeo
 

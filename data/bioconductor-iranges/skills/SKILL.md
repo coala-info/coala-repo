@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iranges
-description: the package is available on all platforms; click for details.
+description: The IRanges package provides memory-efficient containers and optimized algorithms for manipulating integer intervals and sequences in R. Use when user asks to perform interval arithmetic, find overlaps between ranges, calculate coverage, or manage lists of atomic vectors like Rle and IntegerList.
 homepage: https://bioconductor.org/packages/release/bioc/html/IRanges.html
 ---
+
 
 # bioconductor-iranges
 

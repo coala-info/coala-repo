@@ -1,8 +1,9 @@
 ---
 name: ucsc-catdir
-description: The `catDir` utility is a specialized tool from the UCSC Genome Browser "kent" suite designed to simplify the process of merging multiple files.
+description: The `ucsc-catdir` utility merges the content of all files within a specified directory into a single stream. Use when user asks to merge files from a directory, combine data from multiple files, or pipe the aggregated content to another tool.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-catdir
 

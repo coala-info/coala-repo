@@ -1,8 +1,9 @@
 ---
 name: tantan
-description: tantan is a specialized tool for identifying and masking "simple" regions in biological sequences.
+description: "tantan identifies and masks simple regions and tandem repeats in DNA or protein sequences. Use when user asks to mask repetitive regions, identify tandem repeats, or soft-mask sequences for homology searches."
 homepage: http://cbrc3.cbrc.jp/~martin/tantan/
 ---
+
 
 # tantan
 

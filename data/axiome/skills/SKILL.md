@@ -1,8 +1,9 @@
 ---
 name: axiome
-description: Axiomeer acts as a universal marketplace for AI agents, providing a production-ready infrastructure to discover and execute specialized tools.
+description: Axiome provides a marketplace infrastructure for AI agents to discover and execute specialized tools, datasets, and APIs through semantic search. Use when user asks to search for specialized AI tools, discover RAG systems or datasets, and execute marketplace products for specific tasks.
 homepage: https://github.com/ujjwalredd/Axiomeer
 ---
+
 
 # axiome
 

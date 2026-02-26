@@ -1,8 +1,9 @@
 ---
 name: bioconductor-neighbornet
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This R package constructs and visualizes phylogenetic networks from distance matrices using the Neighbor-Net algorithm. Use when user asks to construct phylogenetic networks, visualize non-treelike evolutionary relationships, or analyze distance data for reticulate evolution.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/NeighborNet.html
 ---
+
 
 # bioconductor-neighbornet
 

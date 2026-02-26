@@ -1,8 +1,9 @@
 ---
 name: bioconductor-heron
-description: the package is available on all platforms; click for details.
+description: This tool performs hierarchical analysis of high-density peptide array data to identify significant binding events at probe, epitope, and protein levels. Use when user asks to perform quantile normalization, calculate probe-level p-values, identify epitope segments, or aggregate peptide binding results to protein levels.
 homepage: https://bioconductor.org/packages/release/bioc/html/HERON.html
 ---
+
 
 # bioconductor-heron
 

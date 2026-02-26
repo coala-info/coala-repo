@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alphabeta
-description: the package is available on all platforms; click for details.
+description: This tool estimates epimutation rates and spectra from high-throughput DNA methylation data using pedigree-based models. Use when user asks to calculate methylation gain and loss rates, estimate selection coefficients, or analyze methylome divergence in mutation accumulation lines and clonal lineages.
 homepage: https://bioconductor.org/packages/release/bioc/html/AlphaBeta.html
 ---
+
 
 # bioconductor-alphabeta
 

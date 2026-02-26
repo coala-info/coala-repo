@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fantom3and4cage
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package provides genome-wide transcription start site maps and CAGE expression data from the FANTOM3 and FANTOM4 projects for human and mouse. Use when user asks to access tissue-specific TSS maps, retrieve CAGE tag counts, or explore timecourse expression datasets for hg18 and mm9 genomes.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/FANTOM3and4CAGE.html
 ---
+
 
 # bioconductor-fantom3and4cage
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ggcyto
-description: the package is available on all platforms; click for details.
+description: This tool provides specialized visualization of flow cytometry data using ggplot2 syntax. Use when user asks to create publication-quality plots for cytometry data structures, visualize gating hierarchies, apply flow-specific transformations, or add population statistics to plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/ggcyto.html
 ---
+
 
 # bioconductor-ggcyto
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-acgh
-description: the package is available on all platforms; click for details.
+description: This tool analyzes and visualizes array Comparative Genomic Hybridization (aCGH) data to identify copy number alterations. Use when user asks to process log2 ratios, perform HMM-based segmentation, identify genomic events like amplifications or transitions, and test associations between copy number changes and clinical outcomes.
 homepage: https://bioconductor.org/packages/release/bioc/html/aCGH.html
 ---
+
 
 # bioconductor-acgh
 

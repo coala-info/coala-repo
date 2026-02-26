@@ -1,8 +1,9 @@
 ---
 name: msaprobs
-description: MSAProbs is a sophisticated protein multiple sequence alignment tool that combines pair hidden Markov models (HMMs) and partition functions to calculate posterior probabilities.
+description: MSAProbs is a protein multiple sequence alignment tool that uses pair hidden Markov models and partition functions to achieve high accuracy. Use when user asks to align protein sequences, generate alignments in FASTA or ClustalW format, or optimize alignment performance using multi-threading.
 homepage: http://msaprobs.sourceforge.net/homepage.htm
 ---
+
 
 # msaprobs
 

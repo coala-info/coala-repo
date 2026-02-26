@@ -1,8 +1,9 @@
 ---
 name: somaticseq
-description: SomaticSeq is a meta-caller that integrates outputs from various somatic mutation detection tools to produce a more accurate final call set.
+description: SomaticSeq is a meta-caller that integrates results from multiple somatic mutation detection tools to produce a more accurate final call set. Use when user asks to merge VCFs from different callers, train machine learning models for variant filtering, or predict somatic mutations in tumor-normal and tumor-only samples.
 homepage: http://bioinform.github.io/somaticseq/
 ---
+
 
 # somaticseq
 

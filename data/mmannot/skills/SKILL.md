@@ -1,8 +1,9 @@
 ---
 name: mmannot
-description: mmannot is a specialized bioinformatics tool designed for the quantification of small RNA-seq (sRNA-seq) data.
+description: mmannot quantifies small RNA-seq data by resolving multi-mapping reads based on feature types and user-defined priorities. Use when user asks to quantify sRNA-seq reads, handle multi-mapping sequences, or assign reads to genomic features using a GTF annotation.
 homepage: https://github.com/mzytnicki/mmannot
 ---
+
 
 # mmannot
 

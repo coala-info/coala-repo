@@ -1,8 +1,9 @@
 ---
 name: pybedtools
-description: pybedtools is a powerful Python wrapper for the BEDTools suite, designed to facilitate "genome algebra" directly within Python scripts.
+description: pybedtools is a Python wrapper for the BEDTools suite that enables genomic interval manipulation and "genome algebra" directly within Python scripts. Use when user asks to perform operations like intersections or subtractions on genomic files, iterate over individual genomic intervals, or convert between BED files and Pandas DataFrames.
 homepage: https://github.com/daler/pybedtools
 ---
+
 
 # pybedtools
 

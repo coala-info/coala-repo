@@ -1,8 +1,9 @@
 ---
 name: motifscan
-description: MotifScan is a bioinformatics tool designed to detect known DNA motif occurrences within specific genomic coordinates.
+description: MotifScan identifies DNA motif occurrences and performs enrichment analysis within specific genomic regions. Use when user asks to scan for transcription factor binding sites, perform motif enrichment analysis, or manage genome assemblies and motif libraries.
 homepage: https://github.com/shao-lab/MotifScan
 ---
+
 
 # motifscan
 

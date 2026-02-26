@@ -1,8 +1,9 @@
 ---
 name: bioconductor-motifstack
-description: the package is available on all platforms; click for details.
+description: The bioconductor-motifstack package provides methods for the graphical representation and alignment of multiple sequence motifs. Use when user asks to visualize multiple motifs, create motif stacks, or generate radial motif plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/motifStack.html
 ---
+
 
 # bioconductor-motifstack
 

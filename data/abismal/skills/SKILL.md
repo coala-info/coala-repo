@@ -1,8 +1,9 @@
 ---
 name: abismal
-description: A fast and memory-efficient mapper for bisulfite sequencing reads.
+description: "Abismal aligns bisulfite-converted DNA sequences to a reference genome using a memory-efficient two-letter alphabet approach. Use when user asks to index a reference genome, map single-end or paired-end bisulfite reads, or process PBAT sequencing data."
 homepage: https://github.com/smithlabcode/abismal
 ---
+
 
 # abismal
 

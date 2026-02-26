@@ -1,8 +1,9 @@
 ---
 name: fgpyo
-description: The `fgpyo` toolkit provides a suite of utilities designed for high-performance genomic data manipulation.
+description: "fgpyo provides a suite of utilities for high-performance genomic data manipulation and sequence processing. Use when user asks to extract UMIs, demultiplex FASTQ files, filter BAM alignments, or perform genomic interval operations."
 homepage: https://pypi.org/project/fgpyo/
 ---
+
 
 # fgpyo
 

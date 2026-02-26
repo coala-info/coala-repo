@@ -1,8 +1,9 @@
 ---
 name: esme_pio_openmpi_4_1_6
-description: The ParallelIO (PIO) library is a high-level C and Fortran interface designed to optimize I/O performance in parallel environments.
+description: The ParallelIO library provides a high-level interface for optimizing parallel I/O performance by managing data transfers between compute processors and storage via netCDF or PnetCDF. Use when user asks to optimize parallel I/O performance, manage asynchronous data writing in MPI environments, or build climate modeling applications using OpenMPI 4.1.6.
 homepage: https://github.com/NCAR/ParallelIO
 ---
+
 
 # esme_pio_openmpi_4_1_6
 

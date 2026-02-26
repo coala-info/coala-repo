@@ -3,7 +3,7 @@
 ## imsindel
 
 ### Tool Description
-A tool for detecting intermediate-size insertions and deletions (Note: The provided text is a container execution error log and does not contain help or usage information).
+imsindel
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/imsindel:1.0.2--hdfd78af_1
@@ -18,11 +18,28 @@ A tool for detecting intermediate-size insertions and deletions (Note: The provi
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/imsindel:1.0.2--hdfd78af_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2708763725: no space left on device
+bam is required
+Usage: imsindel [options]
+        --bam /path/to/foo.bam
+        --chr chromosome
+        --outd /path/to/outoput-dir
+        --indelsize maximal indel-size
+        --reffa /path/to/ref.fa
+        --baseq [20]
+        --mapq [20]
+        --within [3]
+        --pair-within [5]
+        --alt-read-depth [5]
+        --support-reads [3]
+        --clip-length [5]
+        --support-clip-length [5]
+        --glsearch [glsearch36]
+        --glsearch-mat [data/mydna.mat]
+        --mafft [mafft]
+        --samtools [samtools]
+        --temp [/temp]
+        --thread [1]
+        --output-consensus-seq /path/to/output-dir
+        --exclude-region /path/to/exclude-list
 ```
 
-
-## Metadata
-- **Skill**: generated

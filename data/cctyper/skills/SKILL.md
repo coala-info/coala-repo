@@ -1,8 +1,9 @@
 ---
 name: cctyper
-description: cctyper (CRISPRCasTyper) is a comprehensive bioinformatic pipeline that identifies CRISPR-Cas loci by integrating Cas gene detection with CRISPR array analysis.
+description: cctyper identifies and subtypes CRISPR-Cas loci by integrating Cas gene detection with CRISPR array analysis. Use when user asks to identify CRISPR-Cas systems, subtype CRISPR arrays, or find orphan Cas operons and CRISPR arrays in genomic or metagenomic data.
 homepage: https://github.com/Russel88/CRISPRCasTyper
 ---
+
 
 # cctyper
 

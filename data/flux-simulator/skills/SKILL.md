@@ -1,8 +1,9 @@
 ---
 name: flux-simulator
-description: FluxSim is a Docker-based simulation environment designed for security researchers and network engineers to experiment with DNS and HTTP traffic patterns.
+description: FluxSim is a Docker-based simulation environment for experimenting with DNS and HTTP traffic patterns across various network topologies. Use when user asks to create fast-flux networks, deploy load balancers or CDNs, tune DNS rotation settings, and monitor network behavior through real-time dashboards.
 homepage: https://github.com/logstr/Fluxsim
 ---
+
 
 # flux-simulator
 

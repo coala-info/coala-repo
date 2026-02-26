@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellbench
-description: the package is available on all platforms; click for details.
+description: This tool provides a benchmarking framework for comparing single-cell analysis methods and algorithms across multiple datasets in a combinatorial fashion. Use when user asks to compare multiple R methods across datasets, benchmark single-cell analysis algorithms, time computations, or manage combinatorial benchmarking workflows.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellBench.html
 ---
+
 
 # bioconductor-cellbench
 

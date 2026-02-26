@@ -1,8 +1,9 @@
 ---
 name: bioconductor-compspot
-description: the package is available on all platforms; click for details.
+description: compSPOT is a Bioconductor package for comparing spatial transcriptomics data across multiple samples or conditions. Use when user asks to compare spatial transcriptomics datasets, analyze spot-level differences between samples, or identify spatially variable features.
 homepage: https://bioconductor.org/packages/release/bioc/html/compSPOT.html
 ---
+
 
 # bioconductor-compspot
 

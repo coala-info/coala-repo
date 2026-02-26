@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tidysinglecellexperiment
-description: the package provides various utility functions specific to single-cell omics data analysis (e.g., aggregation of cell-level data to pseudobulks).
+description: This package provides a tidy data interface for manipulating and analyzing SingleCellExperiment objects. Use when user asks to apply tidyverse principles to single-cell data, aggregate cell-level data to pseudobulks, or perform data wrangling on single-cell experiments.
 homepage: https://bioconductor.org/packages/release/bioc/html/tidySingleCellExperiment.html
 ---
+
 
 # bioconductor-tidysinglecellexperiment
 

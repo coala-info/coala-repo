@@ -1,8 +1,9 @@
 ---
 name: bioconductor-multiassayexperiment
-description: the package is available on all platforms; click for details.
+description: MultiAssayExperiment provides a unified data structure for managing and manipulating multiple omics datasets across a common set of samples. Use when user asks to integrate multi-omics data, manage multiple assays for a single set of samples, or subset data across different experimental platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/MultiAssayExperiment.html
 ---
+
 
 # bioconductor-multiassayexperiment
 

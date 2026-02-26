@@ -1,8 +1,9 @@
 ---
 name: phanotate
-description: PHANOTATE is a specialized gene caller designed for the unique architecture of phage genomes.
+description: PHANOTATE is a specialized gene caller that uses a weighted graph approach to identify genes in phage genomes. Use when user asks to predict genes in phage genomes, identify overlapping open reading frames, or generate protein and nucleotide sequences from viral fasta files.
 homepage: https://github.com/deprekate/PHANOTATE
 ---
+
 
 # phanotate
 

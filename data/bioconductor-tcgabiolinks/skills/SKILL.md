@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tcgabiolinks
-description: the package provides multiple methods for analysis (e.g., differential expression analysis, identifying differentially methylated regions) and methods for visualization (e.g., survival plots, volcano plots, starburst plots) in order to easily develop complete analysis pipelines.
+description: TCGAbiolinks provides methods for the analysis and visualization of cancer genomics data to develop complete analysis pipelines. Use when user asks to perform differential expression analysis, identify differentially methylated regions, or create survival and volcano plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/TCGAbiolinks.html
 ---
+
 
 # bioconductor-tcgabiolinks
 

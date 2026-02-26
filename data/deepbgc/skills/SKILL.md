@@ -1,8 +1,9 @@
 ---
 name: deepbgc
-description: DeepBGC is a specialized tool for genome mining that identifies Biosynthetic Gene Clusters (BGCs) using deep learning.
+description: DeepBGC identifies biosynthetic gene clusters in genomic sequences using deep learning and protein domain embeddings. Use when user asks to detect secondary metabolite clusters, predict BGC product classes, or train custom genome mining models.
 homepage: https://github.com/Merck/DeepBGC
 ---
+
 
 # deepbgc
 

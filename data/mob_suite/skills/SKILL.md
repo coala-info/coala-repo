@@ -1,8 +1,9 @@
 ---
 name: mob_suite
-description: The `mob_suite` is a specialized bioinformatics toolkit designed for the comprehensive analysis of plasmids within Whole Genome Sequencing (WGS) data.
+description: The mob_suite toolkit identifies, reconstructs, and characterizes plasmid sequences from whole genome sequencing data. Use when user asks to reconstruct plasmids from draft assemblies, type plasmid biomarkers, or cluster plasmids into similarity groups.
 homepage: https://github.com/phac-nml/mob-suite
 ---
+
 
 # mob_suite
 

@@ -1,8 +1,9 @@
 ---
 name: pylibseq
-description: pylibseq provides high-performance Python bindings for the C++11 library `libsequence`.
+description: pylibseq provides high-performance Python bindings for calculating evolutionary statistics on genomic polymorphism data. Use when user asks to calculate population genetic statistics, analyze site frequency spectra, or estimate linkage disequilibrium and haplotype diversity.
 homepage: http://pypi.python.org/pypi/pylibseq
 ---
+
 
 # pylibseq
 

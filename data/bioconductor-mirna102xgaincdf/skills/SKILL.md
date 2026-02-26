@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mirna102xgaincdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the miRNA-102x gain microarray. Use when user asks to process miRNA-102x gain microarray data, map probes to genomic targets, or load CDF environments in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/mirna102xgaincdf.html
 ---
+
 
 # bioconductor-mirna102xgaincdf
 

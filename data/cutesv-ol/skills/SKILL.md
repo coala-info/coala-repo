@@ -1,8 +1,9 @@
 ---
 name: cutesv-ol
-description: cutesv-ol is a specialized framework for real-time structural variation discovery.
+description: cutesv-ol is a framework for real-time structural variation discovery that processes sequencing data incrementally as it is generated. Use when user asks to detect structural variations in real-time, monitor a directory for incoming sequencing data, or identify genomic variations before a sequencing run concludes.
 homepage: https://github.com/120L022331/cuteSV-OL
 ---
+
 
 # cutesv-ol
 

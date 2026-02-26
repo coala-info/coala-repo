@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geodiff
-description: the package is available on all platforms; click for details.
+description: This tool provides statistical analysis and differential expression modeling for NanoString GeoMx Digital Spatial Profiler data. Use when user asks to model background noise, aggregate probes into targets, normalize spatial profiling data, or perform differential expression analysis with fixed and mixed effects.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeoDiff.html
 ---
+
 
 # bioconductor-geodiff
 

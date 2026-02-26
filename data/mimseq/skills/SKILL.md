@@ -1,8 +1,9 @@
 ---
 name: mimseq
-description: The `mimseq` skill provides a specialized workflow for the comprehensive analysis of tRNA pools.
+description: "mimseq analyzes tRNA sequencing data to quantify tRNA abundance and detect modification-induced misincorporation patterns. Use when user asks to analyze tRNA pools, quantify tRNA abundance, detect tRNA modifications, or perform modification crosstalk analysis."
 homepage: https://github.com/nedialkova-lab/mim-tRNAseq
 ---
+
 
 # mimseq
 

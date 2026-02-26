@@ -1,8 +1,9 @@
 ---
 name: somalier
-description: somalier is a high-performance tool designed for genomic quality control.
+description: "somalier performs genomic quality control by extracting informative site data to evaluate sample relatedness, sex, and ancestry. Use when user asks to extract genotypes from alignments, calculate relatedness, verify sex, or predict ancestry."
 homepage: https://github.com/brentp/somalier
 ---
+
 
 # somalier
 

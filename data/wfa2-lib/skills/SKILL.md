@@ -1,8 +1,9 @@
 ---
 name: wfa2-lib
-description: WFA2-lib is a high-performance library designed for the Wavefront Alignment algorithm, which provides an exact alternative to traditional dynamic programming (DP) methods like Smith-Waterman or Needleman-Wunsch.
+description: WFA2-lib is a high-performance library for sequence alignment using the Wavefront Alignment algorithm. Use when user asks to align sequences, perform gap-affine alignment, align long or noisy sequences with low memory, accelerate alignment, or use different distance metrics.
 homepage: https://github.com/smarco/WFA2-lib
 ---
+
 
 # wfa2-lib
 

@@ -1,11 +1,32 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: visualizeMigrationGraph
+baseCommand: visualizemigrationgraph
 label: machina_visualizemigrationgraph
-doc: "A tool from the MACHINA suite for visualizing migration graphs. Note: The provided
-  help text contains only system error messages and no usage information.\n\nTool
-  homepage: https://github.com/raphael-group/machina"
-inputs: []
+doc: "Visualize the migration graph of a clone tree.\n\nTool homepage: https://github.com/raphael-group/machina"
+inputs:
+  - id: clone_tree
+    type: string
+    doc: Clone tree
+    inputBinding:
+      position: 1
+  - id: leaf_labeling
+    type: string
+    doc: Leaf labeling
+    inputBinding:
+      position: 2
+  - id: vertex_labeling
+    type: string
+    doc: Vertex labeling
+    inputBinding:
+      position: 3
+  - id: color_map_file
+    type:
+      - 'null'
+      - string
+    doc: Color map file
+    inputBinding:
+      position: 104
+      prefix: --color-map-file
 outputs:
   - id: stdout
     type: stdout

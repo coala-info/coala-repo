@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hs6ug171.db
-description: the package is available on all platforms; click for details.
+description: This package provides annotation data for the Hs6UG171 microarray platform to map probe identifiers to biological metadata. Use when user asks to map manufacturer probe IDs to Gene Symbols, Entrez IDs, Ensembl IDs, GO terms, or KEGG pathways for human genomic data analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/Hs6UG171.db.html
 ---
+
 
 # bioconductor-hs6ug171.db
 

@@ -1,8 +1,9 @@
 ---
 name: galaxy-parsec
-description: The `galaxy-parsec` tool provides a suite of command-line utilities that wrap BioBlend functions, allowing for direct interaction with Galaxy servers without writing Python scripts.
+description: The galaxy-parsec tool provides command-line utilities that wrap BioBlend functions to interact with Galaxy servers via the API. Use when user asks to manage histories, download datasets, run workflows, or automate Galaxy tasks through the command line.
 homepage: https://github.com/galaxy-iuc/parsec
 ---
+
 
 # galaxy-parsec
 

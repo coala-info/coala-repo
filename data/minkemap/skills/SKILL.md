@@ -1,8 +1,9 @@
 ---
 name: minkemap
-description: minkemap is a command-line utility designed for rapid circular genome visualization, drawing inspiration from tools like BRIG.
+description: minkemap is a command-line utility that generates circular genome visualizations by aligning sequencing reads or assemblies against a reference genome. Use when user asks to create circular genome plots, visualize sequence alignments as concentric rings, or export coverage metrics from FASTA and FASTQ data.
 homepage: https://github.com/erinyoung/MinkeMap
 ---
+
 
 # minkemap
 

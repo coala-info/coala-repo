@@ -1,11 +1,55 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: eval_get_distribution.pl
+baseCommand: get_distribution.pl
 label: eval_get_distribution.pl
-doc: "The provided text does not contain help information for the tool; it contains
-  system log messages and a fatal error regarding container execution and disk space.\n
-  \nTool homepage: http://mblab.wustl.edu/software.html"
-inputs: []
+doc: "Takes the maximum value to report in the distribution, the size of bins to report
+  data in, and one of more gtf sets and creates outputs the distribution to standard
+  out.\n\nTool homepage: http://mblab.wustl.edu/software.html"
+inputs:
+  - id: max_val
+    type: float
+    doc: The maximum value to report in the distribution
+    inputBinding:
+      position: 1
+  - id: bin_size
+    type: float
+    doc: The size of bins to report data in
+    inputBinding:
+      position: 2
+  - id: pred_gtf
+    type:
+      type: array
+      items: File
+    doc: One or more GTF sets (or list files if -g is not specified)
+    inputBinding:
+      position: 3
+  - id: gtf_inputs
+    type:
+      - 'null'
+      - boolean
+    doc: Inputs are gtf files instead of list files
+    inputBinding:
+      position: 104
+      prefix: -g
+  - id: mode
+    type:
+      - 'null'
+      - int
+    doc: 'Specify distribution mode. Must be a number selected from the list (1: Transcripts_Per_Gene,
+      2: Transcript_Length, 3: Transcript_Coding_Length, 4: Exons_Per_Transcript,
+      5: Exon_Length, 6: Exon_Score).'
+    default: 1
+    inputBinding:
+      position: 104
+      prefix: -m
+  - id: quick_load
+    type:
+      - 'null'
+      - boolean
+    doc: Quick load the gtf file. Do not check them for errors.
+    inputBinding:
+      position: 104
+      prefix: -q
 outputs:
   - id: stdout
     type: stdout

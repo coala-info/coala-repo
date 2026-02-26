@@ -1,9 +1,9 @@
 # s3gof3r CWL Generation Report
 
-## s3gof3r
+## s3gof3r_gof3r
 
 ### Tool Description
-s3gof3r is a fast, concurrent S3 client that optimizes throughput via multipart parallel transfers and pipelining.
+gof3r is a command-line tool for interacting with S3.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/s3gof3r:0.5.0--1
@@ -18,33 +18,21 @@ s3gof3r is a fast, concurrent S3 client that optimizes throughput via multipart 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/s3gof3r:0.5.0--1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage:
+  gof3r [OPTIONS] <command>
 
+Application Options:
+  -v, --version   Print version
+  -m, --manpage   Create gof3r.man man page in current directory
+  -i, --writeini  Write .gof3r.ini in current user's home directory
 
-## Metadata
-- **Skill**: generated
+Help Options:
+  -h, --help      Show this help message
 
-## s3gof3r_gof3r
-
-### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container build process.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/s3gof3r:0.5.0--1
-- **Homepage**: https://github.com/rlmcpherson/s3gof3r
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/s3gof3r:0.5.0--1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Available commands:
+  cp   copy S3 objects (aliases: copy)
+  get  download from S3
+  put  upload to S3
+  rm   delete from S3
 ```
 

@@ -1,9 +1,9 @@
 # svdss CWL Generation Report
 
-## svdss
+## svdss_SVDSS
 
 ### Tool Description
-Structural Variant Discovery from Sample-specific Strings (Note: The provided text is a container runtime error log and does not contain help information or argument definitions).
+SVDSS [index|smooth|search|call]
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svdss:2.1.0--h9013031_0
@@ -18,33 +18,46 @@ Structural Variant Discovery from Sample-specific Strings (Note: The provided te
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svdss:2.1.0--h9013031_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SVDSS [index|smooth|search|call] --help
+      --help                           print help message
+      --version                        print version
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## svdss_run_svdss
 
 ### Tool Description
-Structural variant discovery from sparse sequencing (Note: The provided text contains container runtime errors and does not include usage information or argument definitions).
+Run SVDSS for structural variant detection.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/svdss:2.1.0--h9013031_0
 - **Homepage**: https://github.com/Parsoa/SVDSS
 - **Package**: https://anaconda.org/channels/bioconda/packages/svdss/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/svdss:2.1.0--h9013031_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+ERROR: Wrong number of arguments.
+
+
+Usage: run_svdss <reference.fa> <alignments.bam>
+
+Arguments:
+     -w                 output directory (default: .)
+     -i                 use this FMD index/store it here (default: build FMD index and store to <reference.fa.fmd>)
+     -q                 mapping quality (default: 20)
+     -p                 accuracy percentile (default: 0.98)
+     -s                 minimum support for calling (default: 2)
+     -l                 minimum length for SV (default: 50)
+     -t                 do not consider haplotagging information (default: consider it)
+     -@                 number of threads (default: 4)
+     -x                 path to SVDSS binary (default: SVDSS)
+     -k                 path to kanpig binary (default: kanpig)
+     -v                 print version
+     -h                 print this help and exit
+
+Positional arguments:
+     <reference.fa>     reference file in FASTA format
+     <alignments.bam>   alignments in BAM format
 ```
 

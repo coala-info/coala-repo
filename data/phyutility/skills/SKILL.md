@@ -1,8 +1,9 @@
 ---
 name: phyutility
-description: Phyutility is a Java-based command-line utility designed for high-throughput processing of phylogenetic trees and molecular data.
+description: Phyutility is a command-line utility for processing phylogenetic trees and molecular data alignments. Use when user asks to reroot or prune trees, generate consensus trees, concatenate alignments, trim molecular data, or fetch sequences from NCBI.
 homepage: https://github.com/blackrim/phyutility
 ---
+
 
 # phyutility
 

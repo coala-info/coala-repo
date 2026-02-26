@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genvisr
-description: the package is available on all platforms; click for details.
+description: GenVisR produces highly customizable, publication-quality graphics for visualizing and interpreting genomic data at a cohort level. Use when user asks to create waterfall plots, visualize transition and transversion ratios, plot copy number alterations, or display sequence coverage across genomic regions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenVisR.html
 ---
+
 
 # bioconductor-genvisr
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alternativesplicingevents.hg19
-description: the package is available on all platforms; click for details.
+description: This package provides a unified collection of alternative splicing event annotations for the human hg19 genome assembly from multiple quantification tools. Use when user asks to retrieve hg19 alternative splicing data, map splicing events across different tools, or filter splicing annotations by gene and event type.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/alternativeSplicingEvents.hg19.html
 ---
+
 
 # bioconductor-alternativesplicingevents.hg19
 

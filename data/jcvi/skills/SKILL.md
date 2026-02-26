@@ -1,8 +1,9 @@
 ---
 name: jcvi
-description: The `jcvi` library is a comprehensive Python toolkit designed to streamline complex genomic workflows.
+description: The jcvi library is a comprehensive Python toolkit for genomic data processing, comparative genomics, and high-quality biological visualization. Use when user asks to manipulate FASTA files, detect orthologs, perform synteny mapping, reconstruct assemblies with ALLMAPS, or generate genomic dot plots and karyotype visualizations.
 homepage: http://github.com/tanghaibao/jcvi
 ---
+
 
 # jcvi
 

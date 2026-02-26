@@ -1,8 +1,9 @@
 ---
 name: emboss-test
-description: EMBOSS is a comprehensive, open-source package containing over 200 applications tailored for molecular biology and bioinformatics.
+description: EMBOSS provides a comprehensive suite of over 200 applications for molecular biology and bioinformatics sequence analysis. Use when user asks to perform sequence analysis workflows, manage biological databases, or process sequences using Uniform Sequence Address syntax.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # emboss-test
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gcspikelite
-description: the package is available on all platforms; click for details.
+description: This package provides spike-in Gas Chromatography/Mass Spectrometry data for metabolomics analysis. Use when user asks to access example GC/MS datasets, test peak alignment workflows, or demonstrate the flagme package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/gcspikelite.html
 ---
+
 
 # bioconductor-gcspikelite
 

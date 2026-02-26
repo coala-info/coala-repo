@@ -1,8 +1,9 @@
 ---
 name: fastqc
-description: FastQC provides a modular set of analyses which can give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.
+description: FastQC performs quality control checks on raw sequencing data to identify potential problems and visualize technical metrics. Use when user asks to assess sequencing quality, generate quality control reports, or inspect FASTQ files for errors and contaminants.
 homepage: http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 ---
+
 
 # fastqc
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kinswingr
-description: the package is available on all platforms; click for details.
+description: KinSwingR predicts kinase activity by integrating kinase-substrate motifs with experimental phosphoproteomics data using a swing score. Use when user asks to predict kinase activation or inhibition, build position weight matrices for kinases, score phosphopeptide sequences, or analyze phosphoproteomic fold-change data.
 homepage: https://bioconductor.org/packages/release/bioc/html/KinSwingR.html
 ---
+
 
 # bioconductor-kinswingr
 

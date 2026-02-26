@@ -1,8 +1,9 @@
 ---
 name: methurator
-description: Methurator is a specialized bioinformatics tool designed to assess the saturation of CpG site discovery in DNA methylation experiments.
+description: Methurator assesses the saturation of CpG site discovery in DNA methylation experiments by analyzing the relationship between sequencing depth and detected sites. Use when user asks to estimate CpG discovery saturation, calculate statistical estimators for library completeness, or generate saturation curve plots from BAM files.
 homepage: https://github.com/VIBTOBIlab/methurator
 ---
+
 
 # methurator
 

@@ -1,8 +1,9 @@
 ---
 name: cazy_webscraper
-description: cazy_webscraper is a specialized bioinformatics tool designed to bridge the gap between the CAZy web interface and local analytical pipelines.
+description: cazy_webscraper scrapes CAZyme data from the CAZy database and organizes it into a local SQLite3 database for downstream analysis. Use when user asks to scrape CAZy data, build a local CAZyme database, retrieve protein sequences and structures, or enrich CAZy datasets with UniProt and GTDB metadata.
 homepage: https://hobnobmancer.github.io/cazy_webscraper/
 ---
+
 
 # cazy_webscraper
 

@@ -1,8 +1,9 @@
 ---
 name: peregrine-2021
-description: Peregrine-2021 is a specialized genome assembler designed for long-read sequencing data that possesses high accuracy (such as PacBio HiFi reads).
+description: Peregrine-2021 is a high-speed genome assembler designed for efficient assembly of long-read sequencing data like PacBio HiFi reads. Use when user asks to assemble a genome from long reads, perform fast human genome assembly, or use the SHIMMER approach for sequence mapping.
 homepage: https://github.com/cschin/peregrine-2021
 ---
+
 
 # peregrine-2021
 

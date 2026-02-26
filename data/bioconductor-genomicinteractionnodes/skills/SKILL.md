@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicinteractionnodes
-description: the package is available on all platforms; click for details.
+description: This tool identifies and analyzes genomic interaction nodes or hot spots from chromatin interaction data like Hi-C or ChIA-PET. Use when user asks to detect interaction nodes, annotate node regions with gene promoters, or perform Gene Ontology enrichment analysis on interaction networks.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicInteractionNodes.html
 ---
+
 
 # bioconductor-genomicinteractionnodes
 

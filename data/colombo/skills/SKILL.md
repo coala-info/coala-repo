@@ -1,8 +1,9 @@
 ---
 name: colombo
-description: COLOMBO is a specialized bioinformatics framework designed to detect genomic islands—regions of a genome acquired via horizontal gene transfer.
+description: COLOMBO is a bioinformatics framework designed to detect genomic islands acquired through horizontal gene transfer using statistical models like HMMs and CRFs. Use when user asks to identify genomic islands, detect pathogenicity or metabolic islands, or analyze genomic sequences for alien DNA regions.
 homepage: https://www.uni-goettingen.de/en/research/185810.html
 ---
+
 
 # colombo
 

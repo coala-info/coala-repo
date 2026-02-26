@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hubpub
-description: The package provides the ability to create a skeleton of a Hub style package that the user can then populate with the necessary information. There are also functions to help add resources to the Hub package metadata files as well as publish data to the Bioconductor S3 bucket.
+description: This tool creates and manages Bioconductor Hub-style packages for hosting data via AnnotationHub or ExperimentHub. Use when user asks to generate package skeletons, define resource metadata, add resources to a package, or publish data to Bioconductor S3 buckets.
 homepage: https://bioconductor.org/packages/release/bioc/html/HubPub.html
 ---
+
 
 # bioconductor-hubpub
 

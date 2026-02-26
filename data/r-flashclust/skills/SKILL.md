@@ -1,8 +1,9 @@
 ---
 name: r-flashclust
-description: R package flashclust (documentation from project home).
+description: This tool provides a fast, memory-efficient implementation of hierarchical clustering designed as a drop-in replacement for the standard R hclust function. Use when user asks to perform hierarchical clustering on large datasets, speed up agglomerative clustering workflows, or use flashClust for high-performance data analysis.
 homepage: https://cran.r-project.org/web/packages/flashclust/index.html
 ---
+
 
 # r-flashclust
 

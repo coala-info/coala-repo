@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gewist
-description: the package is available on all platforms; click for details.
+description: This tool prioritizes SNPs for gene-gene and gene-environment interaction testing using the Variance Prioritization method to increase statistical power. Use when user asks to calculate optimal p-value thresholds for Levene's test, prioritize SNPs based on variance differences, or perform genome-wide interaction studies with improved power.
 homepage: https://bioconductor.org/packages/release/bioc/html/GEWIST.html
 ---
+
 
 # bioconductor-gewist
 

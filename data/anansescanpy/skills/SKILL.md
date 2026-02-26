@@ -1,8 +1,9 @@
 ---
 name: anansescanpy
-description: anansescanpy is a Python implementation of the scANANSE workflow, specifically designed to integrate with the Scanpy ecosystem.
+description: anansescanpy integrates the scANANSE workflow with the Scanpy ecosystem to infer cell-type-specific gene regulatory networks from single-cell expression and chromatin accessibility data. Use when user asks to export AnnData objects for ANANSE analysis, run the anansnake pipeline, or import transcription factor activities and gene regulatory network scores back into Scanpy.
 homepage: https://github.com/Arts-of-coding/AnanseScanpy
 ---
+
 
 # anansescanpy
 

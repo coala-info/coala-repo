@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.cyrgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Cynomolgus Gene 1.0 ST array. Use when user asks to process Affymetrix Cynomolgus Gene 1.0 ST array data or access platform design information for Cyrgene 1.0 ST microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cyrgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.cyrgene.1.0.st
 

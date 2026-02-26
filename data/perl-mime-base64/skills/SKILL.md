@@ -1,8 +1,9 @@
 ---
 name: perl-mime-base64
-description: The `perl-mime-base64` skill enables the transformation of arbitrary sequences of octets into a printable 65-character subset of US-ASCII.
+description: This tool encodes and decodes data using the Base64 format to facilitate the transmission of binary data over text-based transport layers. Use when user asks to encode files to Base64, decode Base64 strings to binary, or perform URL-safe Base64 transformations.
 homepage: http://metacpan.org/pod/MIME::Base64
 ---
+
 
 # perl-mime-base64
 

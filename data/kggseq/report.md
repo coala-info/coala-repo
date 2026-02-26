@@ -3,7 +3,7 @@
 ## kggseq
 
 ### Tool Description
-KGGSeq is a software platform for genetic studies of human complex diseases and traits. (Note: The provided help text contains only system error messages and no usage information.)
+KGGSeq: a tool for annotating and prioritizing genetic variants.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kggseq:1.1--0
@@ -18,11 +18,39 @@ KGGSeq is a software platform for genetic studies of human complex diseases and 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kggseq:1.1--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1067268603: no space left on device
+java.io.FileNotFoundException: -help (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at org.cobi.kggseq.Options.readOptions(Unknown Source)
+	at org.cobi.kggseq.NewCUIApp.main(Unknown Source)
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated
+
+## kggseq
+
+### Tool Description
+KGGSeq: a tool for annotating and prioritizing genetic variants.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/kggseq:1.1--0
+- **Homepage**: http://grass.cgs.hku.hk/limx/kggseq/
+- **Package**: https://anaconda.org/channels/bioconda/packages/kggseq/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+java.io.FileNotFoundException: -help (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at java.base/java.io.FileReader.<init>(FileReader.java:60)
+	at org.cobi.kggseq.Options.readOptions(Unknown Source)
+	at org.cobi.kggseq.NewCUIApp.main(Unknown Source)
+```
+

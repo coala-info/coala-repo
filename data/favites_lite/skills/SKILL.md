@@ -1,8 +1,9 @@
 ---
 name: favites_lite
-description: FAVITES-Lite (FrAmework for VIral Transmission and Evolution Simulation) is a streamlined, high-performance tool designed to model viral outbreaks.
+description: FAVITES-Lite is a high-performance tool designed to simulate viral transmission and evolution within a population. Use when user asks to model viral outbreaks, simulate epidemic spread, or generate viral sequence data for large-scale populations.
 homepage: https://github.com/niemasd/FAVITES-Lite
 ---
+
 
 # favites_lite
 

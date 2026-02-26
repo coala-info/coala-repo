@@ -1,8 +1,9 @@
 ---
 name: ldsc
-description: ldsc (LD Score Regression) is a command-line toolset designed for the statistical analysis of Genome-Wide Association Study (GWAS) results.
+description: ldsc is a command-line toolset for the statistical analysis of GWAS results using Linkage Disequilibrium Score Regression. Use when user asks to munge summary statistics, estimate SNP-heritability, calculate genetic correlation between traits, or perform partitioned heritability analysis.
 homepage: https://github.com/bulik/ldsc/
 ---
+
 
 # ldsc
 

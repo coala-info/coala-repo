@@ -1,8 +1,9 @@
 ---
 name: snpiphy
-description: `snpiphy` is a streamlined pipeline designed to generate phylogenetic trees derived from Single Nucleotide Polymorphisms (SNPs).
+description: snpiphy is a pipeline that generates phylogenetic trees from Single Nucleotide Polymorphisms (SNPs) by integrating variant calling, recombination detection, and tree-building tools. Use when user asks to generate a phylogenetic tree from bacterial genomes, perform SNP-based variant calling, or filter recombination events using Gubbins.
 homepage: https://github.com/bogemad/snpiphy
 ---
+
 
 # snpiphy
 

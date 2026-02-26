@@ -1,8 +1,9 @@
 ---
 name: phyclone
-description: PhyClone is a specialized tool for cancer genomics that implements a forest-structured Chinese restaurant process to model tumor evolution.
+description: PhyClone models tumor evolution by transforming bulk sequencing data into phylogenetic trees using a forest-structured Chinese restaurant process. Use when user asks to infer tumor phylogenies, model clonal evolution from multi-sample sequencing data, or reconstruct cancer cell population relationships.
 homepage: https://github.com/Roth-Lab/PhyClone
 ---
+
 
 # phyclone
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rgenometracks
-description: the package is available on all platforms; click for details.
+description: rGenomeTracks creates high-quality, publication-ready visualizations of genomic data tracks. Use when user asks to visualize genomic data, create genome browser-like plots, or display multiple genomic tracks simultaneously.
 homepage: https://bioconductor.org/packages/release/bioc/html/rGenomeTracks.html
 ---
+
 
 # bioconductor-rgenometracks
 

@@ -1,8 +1,9 @@
 ---
 name: pbsim3
-description: pbsim3 is a specialized simulator designed to mimic the characteristics of PacBio and ONT long-read sequencing.
+description: pbsim3 simulates PacBio and Oxford Nanopore long-read sequencing data using model-based or sampling-based strategies. Use when user asks to simulate long-read sequencing data, generate benchmark datasets for bioinformatics tools, or perform whole genome and transcriptome sequencing simulations.
 homepage: https://github.com/yukiteruono/pbsim3
 ---
+
 
 # pbsim3
 

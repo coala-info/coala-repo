@@ -3,7 +3,7 @@
 ## enzbert
 
 ### Tool Description
-EnzBERT: A tool for enzyme-related tasks using BERT models (Note: The provided text contains only container runtime error logs and no help documentation).
+EnzBert: A BERT-based model for enzyme function prediction.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/enzbert:1.1--pyh7e72e81_0
@@ -18,11 +18,35 @@ EnzBERT: A tool for enzyme-related tasks using BERT models (Note: The provided t
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/enzbert:1.1--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1241436435: no space left on device
+usage: enzbert [-h] [--chosen_model CHOSEN_MODEL] --fasta_path FASTA_PATH
+               [--output_folder_path OUTPUT_FOLDER_PATH]
+               [--max_seq_length MAX_SEQ_LENGTH] [--enzyme_a_priori]
+               [--output_attentions_scores] [--top_k TOP_K] [--verbose]
+               --path_model PATH_MODEL
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --chosen_model CHOSEN_MODEL
+                        Which models to use: EnzBert_SwissProt_2016_08,
+                        EnzBert_SwissProt_2018_01, EnzBert_SwissProt_2021_04,
+                        EnzBert_EC40, EnzBert_ECPred40
+  --fasta_path FASTA_PATH
+                        Fasta file with the sequences
+  --output_folder_path OUTPUT_FOLDER_PATH
+                        Path of the csv output prediction
+  --max_seq_length MAX_SEQ_LENGTH
+                        Limit the sequence lenght and take only the begining
+                        of the sequence. This can avoid Out Of Memory error
+                        for very long sequences.
+  --enzyme_a_priori     If we know the sequences are enzyme
+  --output_attentions_scores
+                        Compute and outputs attentions scores
+  --top_k TOP_K         How many prediction per sequence
+  --verbose             If the prediction results are shown in the terminal
+  --path_model PATH_MODEL
+                        Path of the directory containing the models
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

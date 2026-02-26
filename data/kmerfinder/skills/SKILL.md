@@ -1,8 +1,9 @@
 ---
 name: kmerfinder
-description: Kmerfinder is a taxonomic identification tool that uses K-mer genomic signatures to rapidly determine the species of an unknown bacterial sample.
+description: Kmerfinder identifies the species of bacterial samples by matching genomic K-mer signatures against a reference database. Use when user asks to identify species from genomic data, perform taxonomic classification, or match K-mers against a reference database.
 homepage: https://bitbucket.org/genomicepidemiology/kmerfinder
 ---
+
 
 # kmerfinder
 

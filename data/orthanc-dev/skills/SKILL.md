@@ -1,8 +1,9 @@
 ---
 name: orthanc-dev
-description: The orthanc-dev skill provides a procedural framework for managing a containerized Orthanc DICOM server environment integrated with a Radiology Information System (RIS).
+description: The orthanc-dev tool manages a containerized Orthanc DICOM server environment integrated with a Radiology Information System and secure Nginx reverse proxy. Use when user asks to generate TLS certificates, deploy the Docker Compose stack, manage MySQL and Postgres databases, or configure Modality Worklists for medical imaging.
 homepage: https://github.com/hieutnbk2011/Orthanc-Docker-DEV_RIS
 ---
+
 
 # orthanc-dev
 

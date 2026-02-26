@@ -1,8 +1,9 @@
 ---
 name: macrel
-description: Macrel is a comprehensive pipeline designed for the classification and retrieval of antimicrobial peptides (AMPs) from (meta)genomic data.
+description: Macrel classifies and retrieves antimicrobial peptides from genomic and metagenomic data using machine learning models. Use when user asks to predict antimicrobial peptides from sequences, analyze contigs or metagenomic reads, determine peptide abundance, or query the AMPSphere database.
 homepage: https://github.com/BigDataBiology/macrel
 ---
+
 
 # macrel
 

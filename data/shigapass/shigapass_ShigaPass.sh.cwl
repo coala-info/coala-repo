@@ -1,12 +1,55 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: shigapass_ShigaPass.sh
+baseCommand: ShigaPass.sh
 label: shigapass_ShigaPass.sh
-doc: "ShigaPass is a tool for the classification of Shiga toxin-producing Escherichia
-  coli (STEC). (Note: The provided help text contains system error logs regarding
-  a failed container build and does not list command-line arguments.)\n\nTool homepage:
-  https://github.com/imanyass/ShigaPass/"
-inputs: []
+doc: "This tool is used to predict Shigella serotypes\n\nTool homepage: https://github.com/imanyass/ShigaPass/"
+inputs:
+  - id: databases_path
+    type: Directory
+    doc: Path to databases directory
+    inputBinding:
+      position: 101
+      prefix: -p
+  - id: initialize_databases
+    type:
+      - 'null'
+      - boolean
+    doc: Call the makeblastdb utility for databases initialisation (optional, 
+      but required when running the script for the first time)
+    inputBinding:
+      position: 101
+      prefix: -u
+  - id: input_files
+    type:
+      type: array
+      items: File
+    doc: List of input file(s) (FASTA) with their path(s)
+    inputBinding:
+      position: 101
+      prefix: -l
+  - id: keep_subdirectories
+    type:
+      - 'null'
+      - boolean
+    doc: Do not remove subdirectories
+    inputBinding:
+      position: 101
+      prefix: -k
+  - id: output_directory
+    type: Directory
+    doc: Output directory
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads
+    default: 2
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: ndg-httpsclient
-description: The `ndg-httpsclient` tool provides an enhanced HTTPS client for Python's `http.client` and `urllib` modules by leveraging PyOpenSSL.
+description: ndg-httpsclient provides an enhanced HTTPS client for Python that supports peer verification and Subject Alternative Names using PyOpenSSL. Use when user asks to fetch resources via HTTPS, perform mutual TLS authentication with client certificates, or verify server certificates with fine-grained SSL control.
 homepage: https://github.com/cedadev/ndg_httpsclient
 ---
+
 
 # ndg-httpsclient
 

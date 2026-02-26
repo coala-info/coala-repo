@@ -1,8 +1,9 @@
 ---
 name: verifyidintensity
-description: The `verifyidintensity` tool is a specialized utility for quality control in genomic studies using Illumina arrays.
+description: The `verifyidintensity` tool detects DNA contamination in genomic samples by analyzing signal intensity patterns. Use when user asks to detect DNA contamination, estimate contamination levels, identify contaminated samples, or check for sample mix-ups.
 homepage: https://genome.sph.umich.edu/wiki/VerifyIDintensity
 ---
+
 
 # verifyidintensity
 

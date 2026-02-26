@@ -1,9 +1,9 @@
 # siann CWL Generation Report
 
-## siann
+## siann_siann.py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'siann'. It appears to be a log of a failed container build/fetch process.
+Please contact git@signaturescience.com with questions about this tool (C) 2020, Signature Science, LLC
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/siann:1.3--hdfd78af_0
@@ -18,52 +18,29 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/siann:1.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: siann.py [-h] [-d DB] [-t THREADS] [-p PAIRED] [--report] [--reads_out]
+                [--keep_sam] -r READS --out OUT [-v]
 
+usage: %prog [options] input output
 
-## Metadata
-- **Skill**: generated
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DB, --db DB        database of reference genomes to use
+  -t THREADS, --threads THREADS
+                        number of threads to use for alignment (all by
+                        default)
+  -p PAIRED, --paired PAIRED
+                        second set of reads in pair (if any)
+  --report              turn off the generation of a report
+  --reads_out           turn on the output of species- and strain-specific
+                        reads
+  --keep_sam            retain the aligned reads in SAM format
+  -r READS, --reads READS
+                        Set of reads (FASTQ/FASTA) to be processed
+  --out OUT             Prefix for output files
+  -v, --version         print version
 
-## siann_make_database.sh
-
-### Tool Description
-The provided text does not contain help information or usage instructions for siann_make_database.sh. It contains system log messages related to a container build failure.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/siann:1.3--hdfd78af_0
-- **Homepage**: https://github.com/signaturescience/siann/wiki
-- **Package**: https://anaconda.org/channels/bioconda/packages/siann/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/siann:1.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
-
-## siann_siann.py
-
-### Tool Description
-SIANN (Strain Identification and Antimicrobial resistance analysis from Next-generation sequencing)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/siann:1.3--hdfd78af_0
-- **Homepage**: https://github.com/signaturescience/siann/wiki
-- **Package**: https://anaconda.org/channels/bioconda/packages/siann/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/siann:1.3--hdfd78af_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Please contact git@signaturescience.com with questions about this tool (C)
+2020, Signature Science, LLC
 ```
 

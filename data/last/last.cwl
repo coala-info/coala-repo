@@ -2,11 +2,26 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: last
 label: last
-doc: "The provided text does not contain help information for the 'last' command.
-  It is an error log from a container runtime (Apptainer/Singularity) indicating a
-  failure to build the SIF image due to insufficient disk space.\n\nTool homepage:
+doc: "Show listing of the last users that logged into the system\n\nTool homepage:
   https://gitlab.com/mcfrith/last"
-inputs: []
+inputs:
+  - id: input_file
+    type:
+      - 'null'
+      - File
+    doc: Read from FILE instead of /var/log/wtmp
+    default: /var/log/wtmp
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: no_host_truncation
+    type:
+      - 'null'
+      - boolean
+    doc: Display with no host column truncation
+    inputBinding:
+      position: 101
+      prefix: -W
 outputs:
   - id: stdout
     type: stdout

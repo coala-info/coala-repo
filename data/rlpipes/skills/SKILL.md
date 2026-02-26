@@ -1,8 +1,9 @@
 ---
 name: rlpipes
-description: RLPipes is a standardized upstream workflow designed specifically for R-loop-mapping data.
+description: RLPipes is a standardized upstream workflow that automates the processing of R-loop-mapping data from raw sequencing reads to downstream-ready coverage tracks and peak files. Use when user asks to build configuration files for R-loop modalities, validate workflow DAGs, or run the Snakemake pipeline for samples like DRIP, qDRIP, and R-ChIP.
 homepage: https://github.com/Bishop-Laboratory/RLPipes
 ---
+
 
 # rlpipes
 

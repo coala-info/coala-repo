@@ -3,26 +3,32 @@
 ## gridss
 
 ### Tool Description
-GRIDSS is a module software suite for the detection of genomic rearrangements.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/gridss:2.13.2--h96c455f_6
 - **Homepage**: https://github.com/PapenfussLab/gridss
 - **Package**: https://anaconda.org/channels/bioconda/packages/gridss/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/gridss/overview
-- **Total Downloads**: 169.7K
+- **Total Downloads**: 169.8K
 - **Last updated**: 2025-09-04
 - **GitHub**: https://github.com/PapenfussLab/gridss
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/gridss:2.13.2--h96c455f_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2785721077: no space left on device
+"exit $EX_USAGE" command completed with exit code 64.
 ```
 
-
-## Metadata
-- **Skill**: not generated

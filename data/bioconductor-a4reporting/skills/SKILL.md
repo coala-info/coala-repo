@@ -1,8 +1,9 @@
 ---
 name: bioconductor-a4reporting
-description: the package is available on all platforms; click for details.
+description: This tool generates enhanced reports and annotation tables for microarray data analysis and classification results. Use when user asks to create formatted annotation tables for genes or GO terms, summarize classification results from models like glmnet or PAM, or generate confusion matrices.
 homepage: https://bioconductor.org/packages/release/bioc/html/a4Reporting.html
 ---
+
 
 # bioconductor-a4reporting
 

@@ -2,10 +2,31 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: mga
 label: metagene_annotator_mga
-doc: "MetaGeneAnnotator (mga) is a tool for identifying genes in metagenomic sequences.
-  Note: The provided help text contains a system error message regarding container
-  execution and does not list command-line arguments.\n\nTool homepage: http://metagene.cb.k.u-tokyo.ac.jp/"
-inputs: []
+doc: "Metagenome Gene Annotator\n\nTool homepage: http://metagene.cb.k.u-tokyo.ac.jp/"
+inputs:
+  - id: fasta
+    type:
+      - 'null'
+      - File
+    doc: Input multi-fasta file
+    inputBinding:
+      position: 1
+  - id: multiple_species
+    type:
+      - 'null'
+      - boolean
+    doc: multiple species (sequences are individually treated)
+    inputBinding:
+      position: 102
+      prefix: -m
+  - id: single_species
+    type:
+      - 'null'
+      - boolean
+    doc: single species (sequences are treated as a unit)
+    inputBinding:
+      position: 102
+      prefix: -s
 outputs:
   - id: stdout
     type: stdout

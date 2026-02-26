@@ -1,8 +1,9 @@
 ---
 name: maxquant
-description: MaxQuant is the industry-standard platform for high-resolution MS-based proteomics.
+description: MaxQuant is a proteomics platform that identifies and quantifies protein groups from high-resolution mass spectrometry data. Use when user asks to process raw MS data, perform label-free or isobaric quantification, or execute searches using mqpar.xml configuration files.
 homepage: http://www.coxdocs.org/doku.php?id=maxquant:start
 ---
+
 
 # maxquant
 

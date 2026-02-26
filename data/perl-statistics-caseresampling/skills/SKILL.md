@@ -1,8 +1,9 @@
 ---
 name: perl-statistics-caseresampling
-description: This skill provides guidance on using the `Statistics::CaseResampling` Perl module, which is optimized for high-performance bootstrapping.
+description: This Perl module performs high-performance case resampling and bootstrapping to calculate robust statistics and confidence intervals. Use when user asks to resample data with replacement, estimate medians with uncertainty, or perform efficient bootstrap simulations for non-normally distributed datasets.
 homepage: http://metacpan.org/pod/Statistics::CaseResampling
 ---
+
 
 # perl-statistics-caseresampling
 

@@ -1,8 +1,9 @@
 ---
 name: r-scopfunctions
-description: R package scopfunctions (documentation from project home).
+description: This R package provides specialized tools for single-cell omics analysis that extend Seurat workflows for demultiplexing, differential expression, and visualization. Use when user asks to demultiplex HTO data, infer intra-hash doublets, perform MAST-based differential expression with random effects, calculate geneset activity scores, or generate advanced cluster and gene network visualizations.
 homepage: https://cran.r-project.org/web/packages/scopfunctions/index.html
 ---
+
 
 # r-scopfunctions
 

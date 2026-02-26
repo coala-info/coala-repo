@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hilbertcurve
-description: the package is available on all platforms; click for details.
+description: This tool transforms one-dimensional data into a two-dimensional space using Hilbert space-filling curves to visualize long sequences or large datasets while preserving locality. Use when user asks to map 1D coordinates to a 2D plane, visualize genomic sequences at high resolution, or plot large-scale methylation patterns and chromosome tracks.
 homepage: https://bioconductor.org/packages/release/bioc/html/HilbertCurve.html
 ---
+
 
 # bioconductor-hilbertcurve
 

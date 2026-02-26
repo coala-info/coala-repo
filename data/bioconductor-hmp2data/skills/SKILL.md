@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hmp2data
-description: the package is available on all platforms; click for details.
+description: The HMP2Data package provides streamlined access to processed longitudinal data from the second phase of the Human Microbiome Project in standard Bioconductor containers. Use when user asks to access 16S rRNA sequencing or host cytokine data from MOMS-PI, IBD, or T2D studies, load microbiome data into phyloseq or MultiAssayExperiment objects, or generate summary tables for HMP2 datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HMP2Data.html
 ---
+
 
 # bioconductor-hmp2data
 

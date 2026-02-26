@@ -1,8 +1,9 @@
 ---
 name: vcf2genome
-description: vcf2genome is a specialized tool for transforming VCF call sets into sample-specific draft genomes.
+description: vcf2genome transforms VCF call sets into sample-specific draft genomes in FASTA format. Use when user asks to transform VCF to draft genome, reconstruct a genome from VCF, or create a sample-specific genome FASTA.
 homepage: https://github.com/apeltzer/vcf2genome
 ---
+
 
 # vcf2genome
 

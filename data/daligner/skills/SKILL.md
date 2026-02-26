@@ -1,8 +1,9 @@
 ---
 name: daligner
-description: The `daligner` tool is the core "overlap" module of the Dazzler suite.
+description: The daligner tool finds all significant local alignments between long-read sequences in a Dazzler database. Use when user asks to find overlaps between long reads, manage memory during alignment via k-mer suppression, or sort and merge alignment files.
 homepage: https://github.com/thegenemyers/DALIGNER
 ---
+
 
 # daligner
 

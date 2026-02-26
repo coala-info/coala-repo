@@ -1,9 +1,9 @@
 # rnaredprint CWL Generation Report
 
-## rnaredprint
+## rnaredprint_RNARedPrint
 
 ### Tool Description
-A tool for RNA design (RedPrint). Note: The provided input text contains container runtime error logs rather than the tool's help documentation, so no arguments could be extracted.
+Generates valid designs for the RNA secondary structures from the weighted distribution
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rnaredprint:0.3--h9948957_2
@@ -15,55 +15,89 @@ A tool for RNA design (RedPrint). Note: The provided input text contains contain
 - **Total Downloads**: 7.8K
 - **Last updated**: 2025-10-02
 - **GitHub**: https://github.com/yannponty/RNARedPrint
-- **Stars**: 5
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rnaredprint:0.3--h9948957_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Error: Missing target structure(s).
+Usage: /usr/local/bin/../share/RNARedPrint/RNARedPrint Struct1 Struct2 ... [--num k]
+Generates valid designs for the RNA secondary structures from the weighted distribution
+------ Mode ------------
+  --num k           - Sets number of generated sequences (default 10)
+  --count           - Simply compute the partition function and report the result.
+------ Options ------------
+  --weights w1,w2.. - Assigns custom weights to each targeted structure (default 1. for all)
+  --gcw w       - Assigns custom weight to each occurrence of GC, to control GC% (default 1.)
+  --model m         - Set energy model used for stochastic sampling: 
+        m = 0: Uniform
+        m = 1: Nussinov (-3/-2/-1 for GC/AU/GU)
+        m = 2: Base pair energy model (Default; distinguishs GC/AU/GU, inner/exterior)
+        m = 3: Stacking model (no isolated base-pairs!)
+  --prefix            - Prefix path for locating the TD libraries
+  --version            - Show version and exit
+  --help            - Display help message and exit
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## rnaredprint_design-energyshift.py
 
 ### Tool Description
-A tool for RNA design with energy shift. Note: The provided help text contains only container execution errors and no usage information could be extracted.
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rnaredprint:0.3--h9948957_2
 - **Homepage**: https://github.com/yannponty/RNARedPrint
 - **Package**: https://anaconda.org/channels/bioconda/packages/rnaredprint/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rnaredprint:0.3--h9948957_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Traceback (most recent call last):
+  File "/usr/local/bin/design-energyshift.py", line 11, in <module>
+    import RNA # ViennaRNA python bindings
+    ^^^^^^^^^^
+ModuleNotFoundError: No module named 'RNA'
 ```
+
 
 ## rnaredprint_design-multistate.py
 
 ### Tool Description
-A tool for multi-state RNA design. (Note: The provided text is a container execution error log and does not contain help documentation or argument definitions.)
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rnaredprint:0.3--h9948957_2
 - **Homepage**: https://github.com/yannponty/RNARedPrint
 - **Package**: https://anaconda.org/channels/bioconda/packages/rnaredprint/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rnaredprint:0.3--h9948957_2 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Traceback (most recent call last):
+  File "/usr/local/bin/design-multistate.py", line 13, in <module>
+    import RNA # ViennaRNA python bindings
+    ^^^^^^^^^^
+ModuleNotFoundError: No module named 'RNA'
 ```
 

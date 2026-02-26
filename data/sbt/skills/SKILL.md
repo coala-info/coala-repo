@@ -1,8 +1,9 @@
 ---
 name: sbt
-description: sbt is the standard interactive build tool for Scala and Java projects.
+description: "sbt is an interactive build tool for Scala and Java projects that provides incremental compilation and dependency management. Use when user asks to compile code, run tests, manage multi-module builds, inspect project dependencies, or execute tasks within the sbt shell."
 homepage: https://github.com/sbt/sbt
 ---
+
 
 # sbt
 

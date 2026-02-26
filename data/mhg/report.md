@@ -1,9 +1,9 @@
 # mhg CWL Generation Report
 
-## mhg
+## mhg_MHG
 
 ### Tool Description
-The provided text does not contain help information for the tool 'mhg'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to pull or build the container image due to insufficient disk space.
+Make blastn database & Build blastn queries
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mhg:1.1.0--hdfd78af_0
@@ -18,46 +18,126 @@ The provided text does not contain help information for the tool 'mhg'. It conta
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mhg:1.1.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3951050496: no space left on device
+usage: MHG [-h] [-g GENOME] [-b BLAST] [-db DATABASE] [-q QUERY]
+           [-w WORD_SIZE] [-T THREAD] [-go GAPOPEN] [-ge GAPEXTEND]
+           [-o OUTPUT] [-t THRESHOLD]
+
+Make blastn database & Build blastn queries
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GENOME, --genome GENOME
+                        Genome nucleotide sequence directory (Required)
+  -b BLAST, --blast BLAST
+                        Blastn bin directory; try to call 'makeblastdb,
+                        blastn' straightly if no path is inputted by
+                        default(if blast folder is added as an environemnt
+                        variable
+  -db DATABASE, --database DATABASE
+                        Directory to store blast nucleotide databases for each
+                        sequence in genome directory. By default write to
+                        current folder 'blastn_db'
+  -q QUERY, --query QUERY
+                        Output folder storing all blastn queries in xml
+                        format. By defualt write to current folder
+                        'blastn_against_bank'
+  -w WORD_SIZE, --word_size WORD_SIZE
+                        Blastn word size, default 28
+  -T THREAD, --thread THREAD
+                        Blastn thread number, default 1
+  -go GAPOPEN, --gapopen GAPOPEN
+                        Blastn gap open penalty, default 5
+  -ge GAPEXTEND, --gapextend GAPEXTEND
+                        Blastn gap extend penalty, default 2
+  -o OUTPUT, --output OUTPUT
+                        File containing the final partitioned MHGs, each line
+                        represents a MHG containing different blocks
+  -t THRESHOLD, --threshold THRESHOLD
+                        Bitscore threshold for determining true homology
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## mhg_genome-to-blast-db
 
 ### Tool Description
-Convert genome to BLAST database
+Make blastn database & Build blastn queries
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mhg:1.1.0--hdfd78af_0
 - **Homepage**: https://github.com/NakhlehLab/Maximal-Homologous-Groups
 - **Package**: https://anaconda.org/channels/bioconda/packages/mhg/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mhg:1.1.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1185752774: no space left on device
+usage: genome-to-blast-db [-h] [-g GENOME] [-b BLAST] [-db DATABASE]
+                          [-q QUERY] [-w WORD_SIZE] [-T THREAD] [-go GAPOPEN]
+                          [-ge GAPEXTEND]
+
+Make blastn database & Build blastn queries
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GENOME, --genome GENOME
+                        Genome nucleotide sequence directory (Required)
+  -b BLAST, --blast BLAST
+                        Blastn bin directory; try to call 'makeblastdb,
+                        blastn' straightly if no path is inputted by
+                        default(if blast folder is added as an environemnt
+                        variable
+  -db DATABASE, --database DATABASE
+                        Directory to store blast nucleotide databases for each
+                        sequence in genome directory. By default write to
+                        current folder 'blastn_db'
+  -q QUERY, --query QUERY
+                        Output folder storing all blastn queries in xml
+                        format. By defualt write to current folder
+                        'blastn_against_bank'
+  -w WORD_SIZE, --word_size WORD_SIZE
+                        Blastn word size, default 28
+  -T THREAD, --thread THREAD
+                        Blastn thread number, default 1
+  -go GAPOPEN, --gapopen GAPOPEN
+                        Blastn gap open penalty, default 5
+  -ge GAPEXTEND, --gapextend GAPEXTEND
+                        Blastn gap extend penalty, default 2
 ```
+
 
 ## mhg_MHG-partition
 
 ### Tool Description
-MHG-partition tool (Note: The provided text contains system error messages and does not include usage instructions or argument definitions).
+No inputs — do not generate CWL.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mhg:1.1.0--hdfd78af_0
 - **Homepage**: https://github.com/NakhlehLab/Maximal-Homologous-Groups
 - **Package**: https://anaconda.org/channels/bioconda/packages/mhg/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mhg:1.1.0--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2381144939: no space left on device
+2026-02-24 21:43:26,049 - root - INFO - start building dataframe containing pairwise blastn calls
+Traceback (most recent call last):
+  File "/usr/local/bin/MHG-partition", line 1516, in <module>
+    blastDf = pd.concat(frames)
+  File "/usr/local/lib/python3.8/site-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/pandas/core/reshape/concat.py", line 347, in concat
+    op = _Concatenator(
+  File "/usr/local/lib/python3.8/site-packages/pandas/core/reshape/concat.py", line 404, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
 ```
 

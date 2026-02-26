@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cordon
-description: the package is available on all platforms; click for details.
+description: The coRdon package analyzes codon usage bias and ribosomal stalling in genomic sequences. Use when user asks to calculate codon usage metrics, visualize bias patterns, or evaluate ribosomal stalling.
 homepage: https://bioconductor.org/packages/release/bioc/html/coRdon.html
 ---
+
 
 # bioconductor-cordon
 

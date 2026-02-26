@@ -1,11 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: tdrmapper_TdrMappingScripts.pl
+baseCommand: TdrMappingScripts.pl
 label: tdrmapper_TdrMappingScripts.pl
-doc: "The provided text does not contain help information for the tool; it contains
-  container engine log messages and a fatal error regarding image fetching.\n\nTool
-  homepage: https://github.com/sararselitsky/tDRmapper"
-inputs: []
+doc: "Map tRNA sequences to a reference tRNA database.\n\nTool homepage: https://github.com/sararselitsky/tDRmapper"
+inputs:
+  - id: reference_trna
+    type: File
+    doc: Reference tRNA FASTA file
+    inputBinding:
+      position: 1
+  - id: sample_fa
+    type: File
+    doc: Sample FASTA file containing tRNA sequences to map
+    inputBinding:
+      position: 2
 outputs:
   - id: stdout
     type: stdout

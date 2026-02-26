@@ -1,8 +1,9 @@
 ---
 name: bioconductor-svaretro
-description: the package is available on all platforms; click for details.
+description: svaRetro identifies and annotates retrotransposed gene insertions from structural variant calls. Use when user asks to identify retrotransposed genes, filter structural variants for retrocopies, or analyze retrotransposition events in genomic data.
 homepage: https://bioconductor.org/packages/release/bioc/html/svaRetro.html
 ---
+
 
 # bioconductor-svaretro
 

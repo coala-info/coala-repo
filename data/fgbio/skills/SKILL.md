@@ -1,8 +1,9 @@
 ---
 name: fgbio
-description: fgbio is a suite of high-performance tools designed to handle the complexities of modern sequencing workflows.
+description: fgbio is a suite of high-performance tools for processing genomic sequencing data, specializing in UMI-based consensus calling and BAM file manipulation. Use when user asks to collapse reads into consensus sequences, group reads by UMI, process duplex sequencing data, or perform quality control on BAM files.
 homepage: https://github.com/fulcrumgenomics/fgbio
 ---
+
 
 # fgbio
 

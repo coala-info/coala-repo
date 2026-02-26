@@ -1,0 +1,641 @@
+cwlVersion: v1.2
+class: CommandLineTool
+baseCommand:
+  - binchicken
+  - single
+label: binchicken_single
+doc: "Perform single-sample assembly and binning\n\nTool homepage: https://github.com/aroneys/binchicken"
+inputs:
+  - id: abundance_weighted
+    type:
+      - 'null'
+      - boolean
+    doc: Use abundance-weighted coassembly
+    inputBinding:
+      position: 101
+      prefix: --abundance-weighted
+  - id: abundance_weighted_samples
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Samples to use for abundance-weighted coassembly
+    inputBinding:
+      position: 101
+      prefix: --abundance-weighted-samples
+  - id: abundance_weighted_samples_list
+    type:
+      - 'null'
+      - File
+    doc: File containing samples for abundance-weighted coassembly
+    inputBinding:
+      position: 101
+      prefix: --abundance-weighted-samples-list
+  - id: anchor_samples
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Samples to use as anchors
+    inputBinding:
+      position: 101
+      prefix: --anchor-samples
+  - id: anchor_samples_list
+    type:
+      - 'null'
+      - File
+    doc: File containing samples to use as anchors
+    inputBinding:
+      position: 101
+      prefix: --anchor-samples-list
+  - id: appraise_sequence_identity
+    type:
+      - 'null'
+      - float
+    doc: Minimum sequence identity for appraise
+    inputBinding:
+      position: 101
+      prefix: --appraise-sequence-identity
+  - id: assemble_unmapped
+    type:
+      - 'null'
+      - boolean
+    doc: Assemble unmapped reads
+    inputBinding:
+      position: 101
+      prefix: --assemble-unmapped
+  - id: assembly_strategy
+    type:
+      - 'null'
+      - string
+    doc: Assembly strategy to use
+    inputBinding:
+      position: 101
+      prefix: --assembly-strategy
+  - id: aviary_assemble_cores
+    type:
+      - 'null'
+      - int
+    doc: Cores for Aviary assembly
+    inputBinding:
+      position: 101
+      prefix: --aviary-assemble-cores
+  - id: aviary_assemble_memory
+    type:
+      - 'null'
+      - string
+    doc: Memory for Aviary assembly
+    inputBinding:
+      position: 101
+      prefix: --aviary-assemble-memory
+  - id: aviary_checkm2_db
+    type:
+      - 'null'
+      - Directory
+    doc: CheckM2 database for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-checkm2-db
+  - id: aviary_extra_binners
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Extra binners for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-extra-binners
+  - id: aviary_gtdbtk_db
+    type:
+      - 'null'
+      - Directory
+    doc: GTDB-Tk database for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-gtdbtk-db
+  - id: aviary_metabuli_db
+    type:
+      - 'null'
+      - Directory
+    doc: MetaBuli database for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-metabuli-db
+  - id: aviary_recover_cores
+    type:
+      - 'null'
+      - int
+    doc: Cores for Aviary recovery
+    inputBinding:
+      position: 101
+      prefix: --aviary-recover-cores
+  - id: aviary_recover_memory
+    type:
+      - 'null'
+      - string
+    doc: Memory for Aviary recovery
+    inputBinding:
+      position: 101
+      prefix: --aviary-recover-memory
+  - id: aviary_request_gpu
+    type:
+      - 'null'
+      - boolean
+    doc: Request GPU for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-request-gpu
+  - id: aviary_skip_binners
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Binners to skip for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-skip-binners
+  - id: aviary_snakemake_profile
+    type:
+      - 'null'
+      - File
+    doc: Snakemake profile for Aviary
+    inputBinding:
+      position: 101
+      prefix: --aviary-snakemake-profile
+  - id: aviary_speed
+    type:
+      - 'null'
+      - string
+    doc: Aviary pipeline speed
+    inputBinding:
+      position: 101
+      prefix: --aviary-speed
+  - id: cluster_submission
+    type:
+      - 'null'
+      - boolean
+    doc: Submit jobs to cluster
+    inputBinding:
+      position: 101
+      prefix: --cluster-submission
+  - id: coassembly_samples
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Samples to include in coassembly
+    inputBinding:
+      position: 101
+      prefix: --coassembly-samples
+  - id: coassembly_samples_list
+    type:
+      - 'null'
+      - File
+    doc: File containing samples to include in coassembly
+    inputBinding:
+      position: 101
+      prefix: --coassembly-samples-list
+  - id: cores
+    type:
+      - 'null'
+      - int
+    doc: Number of cores to use
+    inputBinding:
+      position: 101
+      prefix: --cores
+  - id: debug
+    type:
+      - 'null'
+      - boolean
+    doc: Enable debug mode
+    inputBinding:
+      position: 101
+      prefix: --debug
+  - id: download_limit
+    type:
+      - 'null'
+      - int
+    doc: Download limit
+    inputBinding:
+      position: 101
+      prefix: --download-limit
+  - id: dryrun
+    type:
+      - 'null'
+      - boolean
+    doc: Perform a dry run
+    inputBinding:
+      position: 101
+      prefix: --dryrun
+  - id: exclude_coassemblies
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Samples to exclude from coassemblies
+    inputBinding:
+      position: 101
+      prefix: --exclude-coassemblies
+  - id: exclude_coassemblies_list
+    type:
+      - 'null'
+      - File
+    doc: File containing samples to exclude from coassemblies
+    inputBinding:
+      position: 101
+      prefix: --exclude-coassemblies-list
+  - id: file_hierarchy
+    type:
+      - 'null'
+      - string
+    doc: File hierarchy strategy
+    default: large
+    inputBinding:
+      position: 101
+      prefix: --file-hierarchy
+  - id: file_hierarchy_chars
+    type:
+      - 'null'
+      - int
+    doc: File hierarchy characters
+    inputBinding:
+      position: 101
+      prefix: --file-hierarchy-chars
+  - id: file_hierarchy_depth
+    type:
+      - 'null'
+      - int
+    doc: File hierarchy depth
+    inputBinding:
+      position: 101
+      prefix: --file-hierarchy-depth
+  - id: forward
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Forward reads
+    inputBinding:
+      position: 101
+      prefix: --forward
+  - id: forward_list
+    type:
+      - 'null'
+      - File
+    doc: File containing forward reads
+    inputBinding:
+      position: 101
+      prefix: --forward-list
+  - id: full_help
+    type:
+      - 'null'
+      - boolean
+    doc: Display full help message
+    inputBinding:
+      position: 101
+      prefix: --full-help
+  - id: full_help_roff
+    type:
+      - 'null'
+      - boolean
+    doc: Display full help message in roff format
+    inputBinding:
+      position: 101
+      prefix: --full-help-roff
+  - id: genome_singlem
+    type:
+      - 'null'
+      - string
+    doc: SingleM results for genomes
+    inputBinding:
+      position: 101
+      prefix: --genome-singlem
+  - id: genome_transcripts
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Transcripts for genomes
+    inputBinding:
+      position: 101
+      prefix: --genome-transcripts
+  - id: genome_transcripts_list
+    type:
+      - 'null'
+      - File
+    doc: File containing transcripts for genomes
+    inputBinding:
+      position: 101
+      prefix: --genome-transcripts-list
+  - id: genomes
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Reference genomes
+    inputBinding:
+      position: 101
+      prefix: --genomes
+  - id: genomes_list
+    type:
+      - 'null'
+      - File
+    doc: File containing reference genomes
+    inputBinding:
+      position: 101
+      prefix: --genomes-list
+  - id: kmer_precluster
+    type:
+      - 'null'
+      - string
+    doc: Kmer preclustering strategy
+    default: large
+    inputBinding:
+      position: 101
+      prefix: --kmer-precluster
+  - id: local_cores
+    type:
+      - 'null'
+      - int
+    doc: Number of local cores to use
+    inputBinding:
+      position: 101
+      prefix: --local-cores
+  - id: max_coassembly_samples
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of samples to include in coassembly
+    inputBinding:
+      position: 101
+      prefix: --max-coassembly-samples
+  - id: max_coassembly_size
+    type:
+      - 'null'
+      - int
+    doc: Maximum size of coassembly
+    inputBinding:
+      position: 101
+      prefix: --max-coassembly-size
+  - id: max_recovery_samples
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of samples for recovery
+    inputBinding:
+      position: 101
+      prefix: --max-recovery-samples
+  - id: max_sample_combinations
+    type:
+      - 'null'
+      - int
+    doc: Maximum number of sample combinations
+    inputBinding:
+      position: 101
+      prefix: --max-sample-combinations
+  - id: min_sequence_coverage
+    type:
+      - 'null'
+      - float
+    doc: Minimum sequence coverage
+    inputBinding:
+      position: 101
+      prefix: --min-sequence-coverage
+  - id: num_coassembly_samples
+    type:
+      - 'null'
+      - int
+    doc: Number of samples to include in coassembly
+    inputBinding:
+      position: 101
+      prefix: --num-coassembly-samples
+  - id: precluster_distances
+    type:
+      - 'null'
+      - float
+    doc: Preclustering distances
+    inputBinding:
+      position: 101
+      prefix: --precluster-distances
+  - id: precluster_size
+    type:
+      - 'null'
+      - int
+    doc: Preclustering size
+    inputBinding:
+      position: 101
+      prefix: --precluster-size
+  - id: prior_assemblies
+    type:
+      - 'null'
+      - Directory
+    doc: Directory of prior assemblies
+    inputBinding:
+      position: 101
+      prefix: --prior-assemblies
+  - id: prodigal_meta
+    type:
+      - 'null'
+      - boolean
+    doc: Use Prodigal for metagenomic mode
+    inputBinding:
+      position: 101
+      prefix: --prodigal-meta
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Suppress output
+    inputBinding:
+      position: 101
+      prefix: --quiet
+  - id: retries
+    type:
+      - 'null'
+      - int
+    doc: Number of retries for failed jobs
+    inputBinding:
+      position: 101
+      prefix: --retries
+  - id: reverse
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: Reverse reads
+    inputBinding:
+      position: 101
+      prefix: --reverse
+  - id: reverse_list
+    type:
+      - 'null'
+      - File
+    doc: File containing reverse reads
+    inputBinding:
+      position: 101
+      prefix: --reverse-list
+  - id: run_aviary
+    type:
+      - 'null'
+      - boolean
+    doc: Run Aviary pipeline
+    inputBinding:
+      position: 101
+      prefix: --run-aviary
+  - id: run_qc
+    type:
+      - 'null'
+      - boolean
+    doc: Run quality control
+    inputBinding:
+      position: 101
+      prefix: --run-qc
+  - id: sample_query
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: Query samples
+    inputBinding:
+      position: 101
+      prefix: --sample-query
+  - id: sample_query_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing query samples
+    inputBinding:
+      position: 101
+      prefix: --sample-query-dir
+  - id: sample_query_list
+    type:
+      - 'null'
+      - File
+    doc: File containing query samples
+    inputBinding:
+      position: 101
+      prefix: --sample-query-list
+  - id: sample_read_size
+    type:
+      - 'null'
+      - int
+    doc: Read size for samples
+    inputBinding:
+      position: 101
+      prefix: --sample-read-size
+  - id: sample_singlem
+    type:
+      - 'null'
+      - type: array
+        items: string
+    doc: SingleM results for samples
+    inputBinding:
+      position: 101
+      prefix: --sample-singlem
+  - id: sample_singlem_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Directory containing SingleM results for samples
+    inputBinding:
+      position: 101
+      prefix: --sample-singlem-dir
+  - id: sample_singlem_list
+    type:
+      - 'null'
+      - File
+    doc: File containing SingleM results for samples
+    inputBinding:
+      position: 101
+      prefix: --sample-singlem-list
+  - id: single_assembly
+    type:
+      - 'null'
+      - boolean
+    doc: Perform single-sample assembly only
+    inputBinding:
+      position: 101
+      prefix: --single-assembly
+  - id: singlem_metapackage
+    type:
+      - 'null'
+      - string
+    doc: SingleM metapackage to use
+    inputBinding:
+      position: 101
+      prefix: --singlem-metapackage
+  - id: snakemake_args
+    type:
+      - 'null'
+      - string
+    doc: Additional arguments for Snakemake
+    inputBinding:
+      position: 101
+      prefix: --snakemake-args
+  - id: snakemake_profile
+    type:
+      - 'null'
+      - File
+    doc: Snakemake profile
+    inputBinding:
+      position: 101
+      prefix: --snakemake-profile
+  - id: sra
+    type:
+      - 'null'
+      - boolean
+    doc: Process SRA data
+    inputBinding:
+      position: 101
+      prefix: --sra
+  - id: taxa_of_interest
+    type:
+      - 'null'
+      - string
+    doc: Taxa of interest
+    inputBinding:
+      position: 101
+      prefix: --taxa-of-interest
+  - id: tmp_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Temporary directory
+    inputBinding:
+      position: 101
+      prefix: --tmp-dir
+  - id: unmapping_max_alignment
+    type:
+      - 'null'
+      - float
+    doc: Maximum alignment for unmapping
+    inputBinding:
+      position: 101
+      prefix: --unmapping-max-alignment
+  - id: unmapping_max_identity
+    type:
+      - 'null'
+      - float
+    doc: Maximum identity for unmapping
+    inputBinding:
+      position: 101
+      prefix: --unmapping-max-identity
+  - id: unmapping_min_appraised
+    type:
+      - 'null'
+      - float
+    doc: Minimum appraised value for unmapping
+    inputBinding:
+      position: 101
+      prefix: --unmapping-min-appraised
+outputs:
+  - id: output
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    outputBinding:
+      glob: $(inputs.output)
+hints:
+  - class: DockerRequirement
+    dockerPull: quay.io/biocontainers/binchicken:0.13.5--pyhdfd78af_0

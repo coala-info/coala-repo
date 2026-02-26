@@ -1,8 +1,9 @@
 ---
 name: perl-class-singleton
-description: The `perl-class-singleton` skill facilitates the implementation of the Singleton pattern in Perl environments.
+description: This tool facilitates the implementation of the Singleton design pattern in Perl to ensure a class has only one globally accessible instance. Use when user asks to implement the Singleton pattern, create a single-instance Perl module, or manage global state through Class::Singleton.
 homepage: http://metacpan.org/pod/Class::Singleton
 ---
+
 
 # perl-class-singleton
 

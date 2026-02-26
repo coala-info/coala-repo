@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cellscore
-description: the package is available on all platforms; click for details.
+description: This tool evaluates cell identity and differentiation success by comparing test samples to target and donor cell types using the CellScore method. Use when user asks to calculate CellScore values, assess the identity of engineered cells, determine Likelihood Ratios for cell transitions, or visualize differentiation success.
 homepage: https://bioconductor.org/packages/release/bioc/html/CellScore.html
 ---
+
 
 # bioconductor-cellscore
 

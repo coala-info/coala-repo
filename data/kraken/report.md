@@ -3,7 +3,7 @@
 ## kraken
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It contains system log messages and a fatal error regarding container image building (no space left on device).
+Need to specify input filenames!
 
 ### Metadata
 - **Docker Image**: biocontainers/kraken:v1.1-3-deb_cv1
@@ -18,46 +18,39 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/kraken:v1.1-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2268122023: no space left on device
-```
+Need to specify input filenames!
+Usage: kraken [options] <filename(s)>
 
+Options:
+  --db NAME               Name for Kraken DB
+                          (default: none)
+  --threads NUM           Number of threads (default: 1)
+  --fasta-input           Input is FASTA format
+  --fastq-input           Input is FASTQ format
+  --fastq-output          Output in FASTQ format
+  --gzip-compressed       Input is gzip compressed
+  --bzip2-compressed      Input is bzip2 compressed
+  --quick                 Quick operation (use first hit or hits)
+  --min-hits NUM          In quick op., number of hits req'd for classification
+                          NOTE: this is ignored if --quick is not specified
+  --unclassified-out FILENAME
+                          Print unclassified sequences to filename
+  --classified-out FILENAME
+                          Print classified sequences to filename
+  --out-fmt FORMAT        Format for [un]classified sequence output. supported 
+                          options are: {legacy, paired, interleaved}
+  --output FILENAME       Print output to filename (default: stdout); "-" will
+                          suppress normal output
+  --only-classified-output
+                          Print no Kraken output for unclassified sequences
+  --preload               Loads DB into memory before classification
+  --paired                The two filenames provided are paired-end reads
+  --check-names           Ensure each pair of reads have names that agree
+                          with each other; ignored if --paired is not specified
+  --help                  Print this message
+  --version               Print version information
 
-## Metadata
-- **Skill**: generated
-
-## kraken_kraken-build
-
-### Tool Description
-The provided text does not contain help information for kraken-build; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build a SIF image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/kraken:v1.1-3-deb_cv1
-- **Homepage**: http://ccb.jhu.edu/software/kraken/
-- **Package**: https://anaconda.org/channels/bioconda/packages/kraken/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/kraken:v1.1-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1189930874: no space left on device
-```
-
-## kraken_kraken-report
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failure due to insufficient disk space.
-
-### Metadata
-- **Docker Image**: biocontainers/kraken:v1.1-3-deb_cv1
-- **Homepage**: http://ccb.jhu.edu/software/kraken/
-- **Package**: https://anaconda.org/channels/bioconda/packages/kraken/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/kraken:v1.1-3-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1398785631: no space left on device
+If none of the *-input or *-compressed flags are specified, and the 
+file is a regular file, automatic format detection is attempted.
 ```
 

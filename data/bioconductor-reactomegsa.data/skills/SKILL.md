@@ -1,8 +1,9 @@
 ---
 name: bioconductor-reactomegsa.data
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets and companion data for the ReactomeGSA gene set analysis tool. Use when user asks to access example datasets for ReactomeGSA, load companion data for pathway analysis, or run ReactomeGSA vignettes.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ReactomeGSA.data.html
 ---
+
 
 # bioconductor-reactomegsa.data
 

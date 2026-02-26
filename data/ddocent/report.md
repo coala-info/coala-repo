@@ -1,9 +1,9 @@
 # ddocent CWL Generation Report
 
-## ddocent
+## ddocent_dDocent
 
 ### Tool Description
-dDocent is an interactive pipeline for processing RADseq data. (Note: The provided help text contains only system error messages regarding container image creation and does not list specific command-line arguments).
+dDocent 2.9.8
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0
@@ -18,63 +18,60 @@ dDocent is an interactive pipeline for processing RADseq data. (Note: The provid
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3191556279: no space left on device
+dDocent 2.9.8 
+
+Contact jpuritz@uri.edu with any problems 
+
+ 
+Checking for required software
+
+All required software is installed!
+
+dDocent version 2.9.8 started Wed Feb 25 06:22:11 AM UTC 2026 
+
+0 individuals are detected. Is this correct? Enter yes or no and press [ENTER]
+Incorrect Input
 ```
 
-
-## Metadata
-- **Skill**: generated
 
 ## ddocent_ReferenceOpt.sh
 
 ### Tool Description
-Reference optimization script for dDocent. Note: The provided help text contains only system error messages regarding container execution and does not list available command-line arguments.
+Scales similarity parameters for reference-based assembly.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0
 - **Homepage**: https://ddocent.com
 - **Package**: https://anaconda.org/channels/bioconda/packages/ddocent/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2674275296: no space left on device
+Usage is sh ReferenceOpt.sh minK1 maxK1 minK2 maxK2 Assembly_Type Number_of_Processors
+
+
+
+Optionally, a new range of similarities can be entered as well:
+ReferenceOpt.sh minK1 maxK1 minK2 maxK2 Assembly_Type Number_of_Processors minSim maxSim increment
+
+For example, to scale between 0.95 and 0.99 using 0.005 increments:
+ReferenceOpt.sh minK1 maxK1 minK2 maxK2 Assembly_Type Number_of_Processors 0.95 0.99 0.005
 ```
+
 
 ## ddocent_RefMapOpt.sh
 
 ### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container environment (Singularity/Apptainer) failing to pull an image due to lack of disk space.
+RefMapOpt
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0
 - **Homepage**: https://ddocent.com
 - **Package**: https://anaconda.org/channels/bioconda/packages/ddocent/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2443073275: no space left on device
-```
-
-## ddocent_test_HWE.sh
-
-### Tool Description
-A tool for testing Hardy-Weinberg Equilibrium, likely part of the dDocent pipeline. Note: The provided help text contains only system error messages and no usage information.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0
-- **Homepage**: https://ddocent.com
-- **Package**: https://anaconda.org/channels/bioconda/packages/ddocent/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ddocent:2.9.8--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2613464999: no space left on device
+Usage is RefMapOpt minK1 maxK1 minK2 maxK2 cluster_similarity Assembly_Type Num_of_Processors optional_list_of_individuals
 ```
 

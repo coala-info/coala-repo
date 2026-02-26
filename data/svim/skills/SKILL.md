@@ -1,8 +1,9 @@
 ---
 name: svim
-description: SVIM (Structural Variant Identification Method) is a specialized tool designed to detect and classify six classes of structural variation using third-generation sequencing reads.
+description: SVIM detects and classifies six classes of structural variation from long-read sequencing data. Use when user asks to identify large-scale genomic changes, call structural variants from aligned BAM files, or process raw PacBio and Oxford Nanopore reads.
 homepage: https://github.com/eldariont/svim
 ---
+
 
 # svim
 

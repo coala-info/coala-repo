@@ -1,8 +1,9 @@
 ---
 name: r-scistreer
-description: Skill for using the CRAN R package r-scistreer.
+description: The r-scistreer package infers maximum-likelihood phylogenetic trees from single-cell genotype probability matrices. Use when user asks to infer cell phylogenies, perform nearest neighbor interchange searches to refine tree topologies, or annotate mutations onto phylogenetic branches.
 homepage: https://cran.r-project.org/web/packages/scistreer/index.html
 ---
+
 
 # r-scistreer
 

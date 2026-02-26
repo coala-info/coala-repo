@@ -1,8 +1,9 @@
 ---
 name: bioconductor-kissde
-description: the package is available on all platforms; click for details.
+description: This tool performs statistical analysis of differential variant usage, such as alternative splicing and SNVs, from RNA-Seq count data. Use when user asks to analyze differential variant usage, identify alternative splicing events, or detect significant changes in allele frequencies across conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/kissDE.html
 ---
+
 
 # bioconductor-kissde
 

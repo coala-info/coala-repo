@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: shed-tools
 label: ephemeris_shed-tools
-doc: "The provided text is an error log related to a container runtime (Singularity/Apptainer)
-  failure and does not contain help documentation or argument definitions for the
-  tool.\n\nTool homepage: https://github.com/galaxyproject/ephemeris"
-inputs: []
+doc: "A command-line tool for managing tools in Galaxy from the Tool Shed.\n\nTool
+  homepage: https://github.com/galaxyproject/ephemeris"
+inputs:
+  - id: subcommand
+    type: string
+    doc: 'The subcommand to execute: install, update, or test.'
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

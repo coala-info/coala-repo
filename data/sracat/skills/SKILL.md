@@ -1,8 +1,9 @@
 ---
 name: sracat
-description: sracat is a high-performance C++ utility designed to extract genomic read data from SRA records using the NCBI sra-toolkit API.
+description: sracat is a high-performance utility that extracts genomic read data from SRA records in their physical storage order for maximum speed. Use when user asks to extract sequences from SRA accessions, convert SRA files to FASTA or FASTQ format, or concatenate multiple SRA records into a single output.
 homepage: https://github.com/lanl/sracat
 ---
+
 
 # sracat
 

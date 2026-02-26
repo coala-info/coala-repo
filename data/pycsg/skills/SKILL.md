@@ -1,8 +1,9 @@
 ---
 name: pycsg
-description: pycsg is a Python port of the csg.js library, providing an elegant implementation of Constructive Solid Geometry.
+description: "pycsg is a Python library for performing constructive solid geometry operations to create complex 3D shapes from simpler meshes. Use when user asks to perform boolean operations on 3D solids, create primitive shapes like cubes or spheres, or generate manifold geometry programmatically."
 homepage: https://github.com/timknip/pycsg
 ---
+
 
 # pycsg
 

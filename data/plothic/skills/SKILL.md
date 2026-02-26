@@ -1,8 +1,9 @@
 ---
 name: plothic
-description: plothic is a specialized Python tool designed for generating high-quality heatmaps of Hi-C interaction data.
+description: plothic generates high-quality heatmaps for visualizing Hi-C interaction data and genome scaffolding accuracy. Use when user asks to visualize .hic or HiCPro files, generate contact heatmaps, or verify genome assembly quality.
 homepage: https://github.com/Jwindler/PlotHiC
 ---
+
 
 # plothic
 

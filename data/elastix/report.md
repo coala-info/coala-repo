@@ -3,7 +3,8 @@
 ## elastix
 
 ### Tool Description
-The provided text does not contain help information for the elastix tool; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+elastix registers a moving image to a fixed image.
+The registration-process is specified in the parameter file.
 
 ### Metadata
 - **Docker Image**: biocontainers/elastix:v4.9.0-1-deb_cv1
@@ -18,29 +19,30 @@ The provided text does not contain help information for the elastix tool; it con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/elastix:v4.9.0-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3975238470: no space left on device
-```
+elastix version: 4.900
 
+elastix registers a moving image to a fixed image.
+The registration-process is specified in the parameter file.
+  --help, -h displays this message and exit
+  --version  output version information and exit
 
-## Metadata
-- **Skill**: generated
+Call elastix from the command line with mandatory arguments:
+  -f        fixed image
+  -m        moving image
+  -out      output directory
+  -p        parameter file, elastix handles 1 or more "-p"
 
-## elastix_transformix
+Optional extra commands:
+  -fMask    mask for fixed image
+  -mMask    mask for moving image
+  -t0       parameter file for initial transform
+  -priority set the process priority to high, abovenormal, normal (default),
+            belownormal, or idle (Windows only option)
+  -threads  set the maximum number of threads of elastix
 
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to pull an image due to insufficient disk space.
+The parameter-file must contain all the information necessary for elastix to run properly. That includes which metric to use, which optimizer, which transform, etc. It must also contain information specific for the metric, optimizer, transform, etc. For a usable parameter-file, see the website.
 
-### Metadata
-- **Docker Image**: biocontainers/elastix:v4.9.0-1-deb_cv1
-- **Homepage**: https://github.com/SuperElastix/elastix
-- **Package**: Not found
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/elastix:v4.9.0-1-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3513629491: no space left on device
+Need further help?
+Check the website http://elastix.isi.uu.nl, or mail elastix@bigr.nl.
 ```
 

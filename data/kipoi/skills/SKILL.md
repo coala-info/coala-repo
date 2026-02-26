@@ -1,8 +1,9 @@
 ---
 name: kipoi
-description: Kipoi is a standardized API and repository for sharing and using trained models in genomics.
+description: Kipoi provides a standardized API and repository for accessing and running trained genomic models across various deep learning frameworks. Use when user asks to list available models, create model-specific environments, or run predictions on genomic data using the CLI or Python API.
 homepage: https://github.com/kipoi/kipoi
 ---
+
 
 # kipoi
 

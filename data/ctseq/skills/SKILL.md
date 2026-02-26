@@ -1,8 +1,9 @@
 ---
 name: ctseq
-description: ctseq is a specialized bioinformatics pipeline designed for the analysis of methylation patch PCR data.
+description: "ctseq is a bioinformatics pipeline that automates the analysis of methylation patch PCR data from ctDNA. Use when user asks to process sequencing reads for methylation state determination, perform UMI deduplication, or align bisulfite-treated reads using targeted patch PCR panels."
 homepage: https://github.com/ryanhmiller/ctseq
 ---
+
 
 # ctseq
 

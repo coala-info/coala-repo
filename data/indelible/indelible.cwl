@@ -2,10 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: indelible
 label: indelible
-doc: "INDELible is a program for the simulation of biological sequence evolution.
-  (Note: The provided text was an error log and did not contain usage information;
-  arguments could not be extracted from the source text).\n\nTool homepage: https://github.com/HurlesGroupSanger/indelible"
-inputs: []
+doc: "INDELible V1.03 by Will Fletcher: Simulation began at Wed Feb 25 00:46:21 2026\n\
+  \nTool homepage: https://github.com/HurlesGroupSanger/indelible"
+inputs:
+  - id: control_file
+    type: File
+    doc: Control file for INDELible
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout

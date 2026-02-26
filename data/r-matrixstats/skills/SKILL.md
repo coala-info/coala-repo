@@ -1,8 +1,9 @@
 ---
 name: r-matrixstats
-description: High-performing functions operating on rows and columns of matrices, e.g. col / rowMedians(), col / rowRanks(), and col / rowSds().  Functions optimized per data type and for subsetted calculations such that both memory usage and processing time is minimized.  There are also optimized vector-based methods, e.g. binMeans(), madDiff() and weightedMedian().</p>
+description: The matrixStats package provides high-performance functions for calculating row and column statistics on matrices using optimized C code. Use when user asks to calculate row or column medians, compute weighted statistics, perform subsetted matrix operations, or replace slow apply functions with faster alternatives.
 homepage: https://cloud.r-project.org/web/packages/matrixStats/index.html
 ---
+
 
 # r-matrixstats
 

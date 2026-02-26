@@ -1,8 +1,9 @@
 ---
 name: julia-divand
-description: The julia-divand skill enables the interpolation of arbitrarily located data points into a smooth, continuous field across multiple dimensions (1D, 2D, 3D, or more).
+description: julia-divand interpolates scattered data points into smooth multidimensional fields while respecting complex topological barriers like land masses. Use when user asks to interpolate multidimensional data, perform variational analysis, or create continuous fields from sparse observations.
 homepage: https://github.com/gher-uliege/DIVAnd.jl
 ---
+
 
 # julia-divand
 

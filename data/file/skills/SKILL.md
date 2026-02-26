@@ -1,8 +1,9 @@
 ---
 name: file
-description: The `markitdown` tool is a specialized utility for transforming unstructured or complex binary files into structured Markdown text.
+description: This tool converts unstructured or complex binary files into structured Markdown text while preserving semantic elements like headings and tables. Use when user asks to convert documents to Markdown, extract text from images or audio, or process files for RAG workflows.
 homepage: https://github.com/microsoft/markitdown
 ---
+
 
 # file
 

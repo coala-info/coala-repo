@@ -1,9 +1,9 @@
 # quatradis CWL Generation Report
 
-## quatradis
+## quatradis_tradis
 
 ### Tool Description
-The provided text is an error log from a container build process and does not contain the help documentation or usage instructions for the quatradis tool.
+This script contains a number of tools for running or supporting TraDIS experiments.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1
@@ -12,39 +12,25 @@ The provided text is an error log from a container build process and does not co
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/quatradis/overview
-- **Total Downloads**: 49.7K
+- **Total Downloads**: 49.8K
 - **Last updated**: 2025-09-21
 - **GitHub**: https://github.com/quadram-institute-bioscience/QuaTradis
-- **Stars**: 3
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+usage: This script contains a number of tools for running or supporting TraDIS experiments.
+       [-h] [--profile] [-V] {plot,compare,pipeline,utils} ...
 
+options:
+  -h, --help            show this help message and exit
+  --profile             Turn on profiling.  Prints out cumulative time in each function to stdout and to an output file (tradis.profile).  The profile file can be read by tools such as snakeviz.
+  -V, --version         Output the software version
 
-## Metadata
-- **Skill**: generated
-
-## quatradis_tradis
-
-### Tool Description
-The provided text is a container runtime error log and does not contain help information or argument definitions for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1
-- **Homepage**: https://github.com/quadram-institute-bioscience/QuaTradis
-- **Package**: https://anaconda.org/channels/bioconda/packages/quatradis/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/quatradis:1.4.0--py312h0fa9677_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Tradis Tools:
+  {plot,compare,pipeline,utils}
+    plot                TraDIS plot file tools
+    compare             Comparative analysis and visualisation of TraDIS experiments (albatradis)
+    pipeline            TraDIS pipelines that stitch together other tools in this package.
+    utils               Miscellaneous utilities.
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: fastdtw
-description: FastDTW is a Python implementation of the Fast Dynamic Time Warping algorithm, which provides an $O(N)$ approximation of the standard $O(N^2)$ DTW algorithm.
+description: FastDTW provides an efficient linear-time approximation of the Dynamic Time Warping algorithm to find the optimal alignment between two sequences. Use when user asks to calculate the distance between time-series data, find the warping path between sequences, or perform memory-efficient sequence alignment.
 homepage: https://github.com/slaypni/fastdtw
 ---
+
 
 # fastdtw
 

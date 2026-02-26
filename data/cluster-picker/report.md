@@ -3,7 +3,7 @@
 ## cluster-picker
 
 ### Tool Description
-A tool for picking clusters (description not available in provided text)
+A tool for identifying clusters in phylogenetic trees from Newick format files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cluster-picker:1.2.3--0
@@ -18,13 +18,15 @@ A tool for picking clusters (description not available in provided text)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/11 18:24:55  warn rootless{dev/console} creating empty file in place of device 5:1
-FATAL:   Unable to handle docker://quay.io/biocontainers/cluster-picker:1.2.3--0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:77c6c00e8b61bb628567c060b85690b0b0561bb37d8ad3f3792877bddcfe2500: unpack entry: lib/libc-2.18.so: unpack to regular file: short write: write /tmp/build-temp-2381614873/rootfs/lib/libc-2.18.so: no space left on device
+** ClusterPicker **
+
+ClusterPicker Copyright (C) 2016 S Lycett
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain conditions
+See GNU GPLv3 for details http://www.gnu.org/licenses/gpl-3.0.txt
+Project home page (and tutorials): http://hiv.bio.ed.ac.uk/software.html
+
+Please enter newick format tree, with branch lengths and node support (include // in path and .nwk extension):
 ```
 
 

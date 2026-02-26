@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graph
-description: the package is available on all platforms; click for details.
+description: The bioconductor-graph package provides S4 classes and methods for representing, manipulating, and performing algebraic operations on directed and undirected graphs in R. Use when user asks to create graph objects from adjacency lists or matrices, modify nodes and edges, manage graph metadata, or perform basic graph traversals and connectivity analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/graph.html
 ---
+
 
 # bioconductor-graph
 

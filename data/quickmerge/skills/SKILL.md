@@ -1,8 +1,9 @@
 ---
 name: quickmerge
-description: Quickmerge is a meta-assembler designed to increase the contiguity of genome assemblies generated from long-molecule sequencing data.
+description: Quickmerge is a meta-assembler that improves genome assembly contiguity by merging two different assemblies into a single, more contiguous result. Use when user asks to merge genome assemblies, increase assembly N50, or bridge gaps in long-read sequencing data using a reference assembly.
 homepage: https://github.com/mahulchak/quickmerge
 ---
+
 
 # quickmerge
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ga4ghshiny
-description: the package is available on all platforms; click for details.
+description: GA4GHshiny provides a web-based user interface for exploring genomic data and searching for variants across GA4GH-compliant servers. Use when user asks to launch a Shiny application to search for genomic features, connect to GA4GH servers like 1000 Genomes, or query the Beacon Network for specific variants.
 homepage: https://bioconductor.org/packages/release/bioc/html/GA4GHshiny.html
 ---
+
 
 # bioconductor-ga4ghshiny
 

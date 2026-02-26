@@ -2,10 +2,32 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: SemiBin2
 label: semibin_SemiBin2
-doc: "SemiBin2 is a tool for metagenomic binning using self-supervised deep learning.
-  (Note: The provided help text contains only system error logs regarding a failed
-  container build and does not list command-line arguments.)\n\nTool homepage: https://github.com/BigDataBiology/SemiBin"
-inputs: []
+doc: "Neural network-based binning of metagenomic contigs\n\nTool homepage: https://github.com/BigDataBiology/SemiBin"
+inputs:
+  - id: subcommand
+    type: string
+    doc: SemiBin subcommand to run (e.g., single_easy_bin, multi_easy_bin, bin, 
+      etc.)
+    inputBinding:
+      position: 1
+  - id: quiet
+    type:
+      - 'null'
+      - boolean
+    doc: Quiet output
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --quiet
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Verbose output
+    default: false
+    inputBinding:
+      position: 102
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

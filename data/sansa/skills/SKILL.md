@@ -1,8 +1,9 @@
 ---
 name: sansa
-description: Sansa is a specialized toolkit designed for the post-processing of structural variants (SVs).
+description: "Sansa is a toolkit designed for the post-processing, annotation, and benchmarking of structural variants. Use when user asks to annotate structural variants with population databases or genomic features, identify and remove redundant variant calls, or compare VCF files for benchmarking."
 homepage: https://github.com/dellytools/sansa
 ---
+
 
 # sansa
 

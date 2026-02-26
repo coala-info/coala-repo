@@ -1,8 +1,9 @@
 ---
 name: whatshap
-description: WhatsHap is a specialized tool for reconstructing haplotypes from sequencing data.
+description: WhatsHap reconstructs haplotypes and phases genetic variants from sequencing data. Use when user asks to phase genetic variants, reconstruct haplotypes, phase polyploid genomes, tag or split reads by haplotype, or generate phasing statistics.
 homepage: https://whatshap.readthedocs.io
 ---
+
 
 # whatshap
 

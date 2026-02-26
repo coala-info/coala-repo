@@ -1,8 +1,9 @@
 ---
 name: bioconductor-tweedeseq
-description: the package is available on all platforms; click for details.
+description: This tool performs differential expression analysis of RNA-seq count data using the Poisson-Tweedie family of distributions. Use when user asks to analyze RNA-seq data for differential expression, model overdispersed count data, or identify differentially expressed genes.
 homepage: https://bioconductor.org/packages/release/bioc/html/tweeDEseq.html
 ---
+
 
 # bioconductor-tweedeseq
 

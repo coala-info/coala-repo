@@ -1,8 +1,9 @@
 ---
 name: bioconductor-simona
-description: the package is available on all platforms; click for details.
+description: "Simona is an R package for semantic similarity analysis and visualization of biological ontologies. Use when user asks to calculate semantic similarity between ontology terms, analyze the structure of directed acyclic graphs, or compare functional annotations of gene sets."
 homepage: https://bioconductor.org/packages/release/bioc/html/simona.html
 ---
+
 
 # bioconductor-simona
 

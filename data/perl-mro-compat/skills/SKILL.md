@@ -1,8 +1,9 @@
 ---
 name: perl-mro-compat
-description: The `MRO::Compat` module allows developers to write code using the modern `mro::*` syntax (introduced in Perl 5.10) while maintaining compatibility with older Perl installations.
+description: This Perl module provides modern method resolution order functionality while maintaining compatibility with older Perl versions. Use when user asks to set C3 method resolution order, retrieve linear inheritance hierarchies, or ensure consistent method resolution across different Perl installations.
 homepage: https://metacpan.org/release/MRO-Compat
 ---
+
 
 # perl-mro-compat
 

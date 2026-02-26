@@ -1,8 +1,9 @@
 ---
 name: uchime
-description: UCHIME is a specialized algorithm designed to identify chimeric sequences, which are common artifacts in amplicon sequencing (like 16S rRNA surveys) created when two or more biological sequences fuse during PCR.
+description: UCHIME identifies chimeric sequences in amplicon sequencing data by comparing query sequences against a trusted reference database. Use when user asks to check sequences for chimeras, benchmark chimera detection, get chimera scores, or view chimera alignments.
 homepage: https://drive5.com/uchime/uchime_download.html
 ---
+
 
 # uchime
 

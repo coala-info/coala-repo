@@ -3,10 +3,10 @@
 ## fastsimbac
 
 ### Tool Description
-A program for the fast simulation of bacterial populations. (Note: The provided help text contains only system error messages and does not list command-line arguments.)
+A fast simulator for sequences under the coalescent with recombination. It is a program for simulating DNA sequences evolved under a variety of models, including population structure, variable population size, and recombination.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/fastsimbac:1.0.1_bd3ad13d8f79--h72a8191_3
+- **Docker Image**: quay.io/biocontainers/fastsimbac:1.0.1_bd3ad13d8f79--h503566f_7
 - **Homepage**: https://bitbucket.org/nicofmay/fastsimbac/
 - **Package**: https://anaconda.org/channels/bioconda/packages/fastsimbac/overview
 - **Validation**: PASS
@@ -18,11 +18,13 @@ A program for the fast simulation of bacterial populations. (Note: The provided 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastsimbac:1.0.1_bd3ad13d8f79--h72a8191_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2231250314: no space left on device
+Unable to find image 'quay.io/biocontainers/fastsimbac:1.0.1_bd3ad13d8f79--h503566f_7' locally
+1.0.1_bd3ad13d8f79--h503566f_7: Pulling from biocontainers/fastsimbac
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+94438f66d58d: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob3521344067: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

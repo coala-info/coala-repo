@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fci
-description: the package is available on all platforms; click for details.
+description: The fCI package identifies differentially expressed genes by calculating the f-divergence Cutoff Index to compare fold-change distributions between replicates and treatment groups. Use when user asks to identify differentially expressed genes in small sample sizes, normalize raw count data, or perform multi-dimensional proteogenomic data integration.
 homepage: https://bioconductor.org/packages/release/bioc/html/fCI.html
 ---
+
 
 # bioconductor-fci
 

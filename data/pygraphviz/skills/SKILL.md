@@ -1,8 +1,9 @@
 ---
 name: pygraphviz
-description: Pygraphviz provides a Pythonic interface to the Graphviz graph layout and visualization package.
+description: Pygraphviz provides a Python interface to the Graphviz package for creating, manipulating, and rendering graph data structures and DOT files. Use when user asks to create graph visualizations, apply layout algorithms to diagrams, or programmatically edit DOT files.
 homepage: https://github.com/pygraphviz/pygraphviz
 ---
+
 
 # pygraphviz
 

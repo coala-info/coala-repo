@@ -1,8 +1,9 @@
 ---
 name: fpocketr
-description: fpocketR is a specialized RNA-centric wrapper for the fpocket 4.0 pocket detection suite.
+description: fpocketr is an RNA-centric pocket detection tool that predicts potential small molecule binding sites in RNA structures using alpha-sphere clustering. Use when user asks to predict RNA binding pockets, analyze multi-state structural ensembles, visualize pockets on secondary structures, or perform apo/holo structural comparisons.
 homepage: https://github.com/Weeks-UNC/fpocketR
 ---
+
 
 # fpocketr
 

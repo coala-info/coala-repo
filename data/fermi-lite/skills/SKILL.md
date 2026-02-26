@@ -1,8 +1,9 @@
 ---
 name: fermi-lite
-description: Fermi-lite is a specialized assembly tool designed for targeted genomic reconstruction.
+description: Fermi-lite is an in-memory assembly tool that transforms Illumina short reads into unitigs for targeted genomic reconstruction. Use when user asks to perform local assembly of a specific locus, reconstruct small viral or bacterial genomes, or preserve heterozygous events for accurate variant calling.
 homepage: https://github.com/lh3/fermi-lite
 ---
+
 
 # fermi-lite
 

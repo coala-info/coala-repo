@@ -1,8 +1,9 @@
 ---
 name: novobreak
-description: novoBreak is a specialized tool for identifying structural variant breakpoints in cancer genomes.
+description: novoBreak identifies structural variant breakpoints in cancer genomes using local assembly of k-mers. Use when user asks to detect deletions, duplications, inversions, translocations, or viral integrations in genomic data.
 homepage: https://github.com/czc/nb_distribution
 ---
+
 
 # novobreak
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyhgu133plus2expr
-description: the package is available on all platforms; click for details.
+description: This package provides a pre-built database of over 5,000 normalized and standardized human gene expression profiles from the Affymetrix Human Genome U133 Plus 2.0 Array. Use when user asks to retrieve fRMA-normalized expression data, access gene expression barcodes for human transcriptomes, or perform Gene Set Context Analysis using the GPL570 platform.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affyhgu133Plus2Expr.html
 ---
+
 
 # bioconductor-affyhgu133plus2expr
 

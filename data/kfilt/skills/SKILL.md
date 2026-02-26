@@ -1,8 +1,9 @@
 ---
 name: kfilt
-description: kfilt is a specialized bioinformatics tool designed to subset sequencing data by matching read k-mers against a pre-defined index.
+description: "kfilt subsets sequencing data by matching read k-mers against a pre-defined index using Burkhard-Keller trees for efficient approximate matching. Use when user asks to build a k-mer index, filter sequencing reads based on k-mer content, or extract reads containing specific k-mer variations within a set Hamming distance."
 homepage: https://github.com/davidebolo1993/kfilt
 ---
+
 
 # kfilt
 

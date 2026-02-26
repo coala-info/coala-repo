@@ -1,8 +1,9 @@
 ---
 name: deeplc
-description: DeepLC is a specialized tool for liquid chromatography retention time (RT) prediction.
+description: DeepLC predicts liquid chromatography retention times for peptides using a deep learning architecture that supports various chemical modifications. Use when user asks to predict peptide retention times, calibrate predictions to specific experimental gradients, or format peptide modification data for chromatography modeling.
 homepage: http://compomics.github.io/projects/DeepLC
 ---
+
 
 # deeplc
 

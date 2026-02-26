@@ -1,8 +1,9 @@
 ---
 name: irissv
-description: Iris (irissv) is a tool designed to improve the sequence accuracy of structural variant calls, particularly insertions.
+description: Iris refines the sequence accuracy of structural variant calls by generating high-quality consensus sequences from supporting reads. Use when user asks to improve the precision of insertion or deletion calls, perform local assembly of structural variants, or refine VCF entries using Racon or FalconSense.
 homepage: https://github.com/mkirsche/Iris
 ---
+
 
 # irissv
 

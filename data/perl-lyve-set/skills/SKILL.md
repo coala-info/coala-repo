@@ -1,8 +1,9 @@
 ---
 name: perl-lyve-set
-description: Lyve-SET (Lyve version of the Snp Extraction Tool) is a phylogenomics pipeline optimized for genomic epidemiology and outbreak investigations.
+description: Lyve-SET is a phylogenomics pipeline that identifies high-quality SNPs from raw sequencing data to create multiple sequence alignments and phylogenetic trees for genomic epidemiology. Use when user asks to initialize a phylogenomics project, interleave paired-end reads, identify high-quality SNPs, mask problematic genomic regions, or generate phylogenetic trees for outbreak investigations.
 homepage: https://github.com/lskatz/lyve-SET
 ---
+
 
 # perl-lyve-set
 

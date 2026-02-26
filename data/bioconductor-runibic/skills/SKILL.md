@@ -1,8 +1,9 @@
 ---
 name: bioconductor-runibic
-description: the package is available on all platforms; click for details.
+description: This package provides a parallel implementation of the UniBic algorithm for row-based biclustering of gene expression data. Use when user asks to perform biclustering on transcriptomic datasets, identify co-expressed genes across subsets of conditions, or apply the UniBic method to find functional modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/runibic.html
 ---
+
 
 # bioconductor-runibic
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.ppaniscus.ucsc.panpan1
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Pan paniscus (Bonobo) as a BSgenome data container for R. Use when user asks to access Bonobo genome sequences, extract specific DNA sequences by coordinates, or perform genome-wide motif searching using the panPan1 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Ppaniscus.UCSC.panPan1.html
 ---
+
 
 # bioconductor-bsgenome.ppaniscus.ucsc.panpan1
 

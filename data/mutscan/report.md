@@ -3,7 +3,7 @@
 ## mutscan
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error message regarding a container build failure due to insufficient disk space.
+A tool for scanning mutations in FASTQ data and generating HTML/JSON reports.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mutscan:1.14.1--h5ca1c30_0
@@ -18,11 +18,13 @@ The provided text does not contain help information or a description of the tool
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mutscan:1.14.1--h5ca1c30_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4251428477: no space left on device
+Unable to find image 'quay.io/biocontainers/mutscan:1.14.1--h5ca1c30_0' locally
+1.14.1--h5ca1c30_0: Pulling from biocontainers/mutscan
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+7289b658e627: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob2683491073: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

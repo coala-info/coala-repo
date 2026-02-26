@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hsmmsinglecell
-description: the package is available on all platforms; click for details.
+description: This tool provides access to single-cell RNA-Seq data from differentiating human skeletal muscle myoblasts stored as a CellDataSet object. Use when user asks to load the HSMM dataset, explore single-cell expression data from myoblast differentiation, or perform trajectory analysis workflows using the Monocle R package.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/HSMMSingleCell.html
 ---
+
 
 # bioconductor-hsmmsinglecell
 

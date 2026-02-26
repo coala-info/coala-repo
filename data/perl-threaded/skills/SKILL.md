@@ -1,8 +1,9 @@
 ---
 name: perl-threaded
-description: This skill provides guidance on utilizing `perl-threaded`, a specific build of the Perl interpreter configured with thread support.
+description: This tool provides a Perl interpreter build specifically configured with thread support for executing scripts that require internal parallelism. Use when user asks to install a threaded Perl environment, run scripts utilizing the threads or threads::shared modules, or resolve interpreter dependencies in Bioconda.
 homepage: http://www.perl.org/
 ---
+
 
 # perl-threaded
 

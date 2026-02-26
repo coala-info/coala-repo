@@ -1,8 +1,9 @@
 ---
 name: ampliconnoise
-description: The `ampliconnoise` skill facilitates the denoising of high-throughput amplicon sequencing data, specifically targeting the 454 platform.
+description: "Ampliconnoise denoises high-throughput amplicon sequencing data from the 454 platform to remove sequencing artifacts. Use when user asks to split multiplexed SFF files, denoise flowgrams using PyroNoise, truncate sequences, or denoise sequences using SeqNoise."
 homepage: https://github.com/fhcrc/ampliconnoise
 ---
+
 
 # ampliconnoise
 

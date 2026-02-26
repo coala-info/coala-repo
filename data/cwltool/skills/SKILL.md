@@ -1,8 +1,9 @@
 ---
 name: cwltool
-description: The `cwltool` utility is the primary reference implementation for the Common Workflow Language standards.
+description: cwltool is the reference implementation for executing Common Workflow Language standards to run portable data analysis workflows. Use when user asks to run CWL workflows, configure container runtimes like Docker or Singularity, validate workflow syntax, or optimize execution through caching and parallelism.
 homepage: https://github.com/common-workflow-language/cwltool
 ---
+
 
 # cwltool
 

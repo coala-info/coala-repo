@@ -1,8 +1,9 @@
 ---
 name: evofr
-description: `evofr` is a specialized Python toolkit developed for evolutionary forecasting of genetic variants.
+description: evofr is a Python toolkit for estimating growth advantages and forecasting the future frequencies of genetic variants using genomic surveillance data. Use when user asks to estimate variant fitness, predict lineage frequencies, or fit multinomial logistic regression models to evolutionary data.
 homepage: https://github.com/blab/evofr
 ---
+
 
 # evofr
 

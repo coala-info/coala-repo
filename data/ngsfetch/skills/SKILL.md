@@ -1,8 +1,9 @@
 ---
 name: ngsfetch
-description: ngsfetch is a command-line utility designed to streamline the acquisition of genomic data from public archives.
+description: ngsfetch is a command-line utility that automates the acquisition and verification of genomic data from public archives. Use when user asks to download genomic datasets from public archives, fetch data using accession IDs, or perform high-performance parallel downloads with MD5 checksum verification.
 homepage: https://github.com/NaotoKubota/ngsfetch
 ---
+
 
 # ngsfetch
 

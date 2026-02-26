@@ -1,8 +1,9 @@
 ---
 name: perl-package-deprecationmanager
-description: The `Package::DeprecationManager` provides a standardized way for Perl module authors to manage deprecations.
+description: This tool provides a standardized mechanism for Perl module authors to manage and version deprecation warnings. Use when user asks to implement deprecation warnings in a Perl package, tie deprecations to specific module versions, or suppress warnings by declaring a compliant API version.
 homepage: http://metacpan.org/release/Package-DeprecationManager
 ---
+
 
 # perl-package-deprecationmanager
 

@@ -1,8 +1,9 @@
 ---
 name: r
-description: The STAR (Spliced Transcripts Alignment to a Reference) tool is a high-performance aligner specifically engineered for RNA-seq data.
+description: STAR is a high-performance RNA-seq aligner designed to map sequencing reads to a reference genome and identify splice junctions. Use when user asks to generate a genome index, align RNA-seq reads, perform two-pass mapping, or process single-cell RNA-seq data using STARsolo.
 homepage: https://github.com/alexdobin/STAR
 ---
+
 
 # r
 

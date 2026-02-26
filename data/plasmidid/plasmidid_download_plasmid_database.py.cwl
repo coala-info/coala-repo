@@ -1,11 +1,15 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: plasmidid_download_plasmid_database.py
+baseCommand: download_plasmid_database.py
 label: plasmidid_download_plasmid_database.py
-doc: "Download plasmid database for PlasmidID. Note: The provided help text contains
-  only system execution logs and error messages regarding container extraction; no
-  specific command-line arguments were listed in the input.\n\nTool homepage: https://github.com/BU-ISCIII/plasmidID"
-inputs: []
+doc: "Download up to date plasmid database from ncbi ftp\n\nTool homepage: https://github.com/BU-ISCIII/plasmidID"
+inputs:
+  - id: output
+    type: Directory
+    doc: Output directory to extract plasmid database
+    inputBinding:
+      position: 101
+      prefix: --output
 outputs:
   - id: stdout
     type: stdout

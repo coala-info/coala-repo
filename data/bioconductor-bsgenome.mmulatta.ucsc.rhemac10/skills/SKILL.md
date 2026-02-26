@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac10
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for Macaca mulatta based on the UCSC rheMac10 assembly. Use when user asks to access the Rhesus macaque reference genome, extract DNA sequences, search for motifs, or perform coordinate-based genomic lookups in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac10.html
 ---
+
 
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac10
 

@@ -1,9 +1,9 @@
 # copernicusmarine CWL Generation Report
 
-## copernicusmarine
+## copernicusmarine_describe
 
 ### Tool Description
-The Copernicus Marine Toolbox is a CLI tool to browse and download products from the Copernicus Marine Service.
+Retrieve and parse the metadata information from the Copernicus Marine catalogue.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/copernicusmarine:2.3.0
@@ -11,17 +11,470 @@ The Copernicus Marine Toolbox is a CLI tool to browse and download products from
 - **Package**: Not found
 - **Validation**: PASS
 
-- **Conda**: https://anaconda.org/channels/bioconda/packages/copernicusmarine/overview
-- **Total Downloads**: N/A
-- **Last updated**: N/A
+- **Conda**: https://anaconda.org/channels/conda-forge/packages/copernicusmarine/overview
+- **Total Downloads**: 75.7K
+- **Last updated**: 2026-01-19
 - **GitHub**: https://github.com/pepijn-devries/CopernicusMarine
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/copernicusmarine:2.3.0 uri: while building SIF from layers: packer failed to pack: while unpacking tmpfs: while unpacking layer sha256:9ee9039684d595ec77e263532b700f8253326e4fefe9a7d4a33d36cda9742c37: unpack entry: usr/local/lib/python3.14/site-packages/dask/array/tests/__pycache__/test_array_core.cpython-314.pyc: unpack to regular file: short write: write /tmp/build-temp-3833710394/rootfs/usr/local/lib/python3.14/site-packages/dask/array/tests/__pycache__/test_array_core.cpython-314.pyc: no space left on device
+Usage: copernicusmarine describe [OPTIONS]
+
+  Retrieve and parse the metadata information from the Copernicus Marine
+  catalogue.
+
+  Returns  JSON  A dictionary containing the retrieved metadata information.
+
+Options:
+  --show-all-versions             Include dataset versions in output. By
+                                  default, shows only the default version.
+  -r, --return-fields TEXT        Option to specify the fields to return in
+                                  the output. The fields are separated by a
+                                  comma. You can use 'all' to return all
+                                  fields.
+  -e, --exclude-fields TEXT       Option to specify the fields to exclude from
+                                  the output. The fields are separated by a
+                                  comma.
+  -c, --contains TEXT             Filter catalogue output. Returns products
+                                  with attributes matching a string token.
+  -p, --product-id TEXT           Force the productID to be used for the
+                                  describe command. Will not parse the whole
+                                  catalogue, but only the product with the
+                                  given productID.
+  -i, --dataset-id TEXT           Force the datasetID to be used for the
+                                  describe command. Will not parse the whole
+                                  catalogue, but only the dataset with the
+                                  given datasetID.
+  --max-concurrent-requests INTEGER
+                                  Maximum number of concurrent requests (>=1).
+                                  Default 15. The command uses a thread pool
+                                  executor to manage concurrent requests.
+  --disable-progress-bar          Flag to hide progress bar.
+  --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL|QUIET]
+                                  Set the details printed to console by the
+                                  command (based on standard logging library).
+  --raise-on-error                If set to True, the function will raise at
+                                  the first error encountered during the
+                                  parsing and fetching of the catalogue.
+                                  Default, False.
+  -h, --help                      Show this message and exit.
+
+
+    Examples:
+
+
+        copernicusmarine describe --contains METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2 --return-fields datasets
+
+
+        copernicusmarine describe -c METOFFICE-GLO-SST-L4-NRT-OBS-SST-V2
+```
+
+
+## copernicusmarine_get
+
+### Tool Description
+Download originally produced data files.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/copernicusmarine:2.3.0
+- **Homepage**: https://github.com/pepijn-devries/CopernicusMarine
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: copernicusmarine get [OPTIONS]
+
+  Download originally produced data files.
+
+  The datasetID is required (either as an argument or in a request file) and
+  can be found via the ``describe`` command. See :ref:`describe <cli-
+  describe>`.
+
+  Returns  JSON   A list of files that were downloaded and some metadata.
+
+Options:
+  -i, --dataset-id TEXT           The datasetID, required either as an
+                                  argument or in the request_file option.
+  --dataset-version TEXT          Force the selection of a specific dataset
+                                  version.
+  --dataset-part TEXT             Force the selection of a specific dataset
+                                  part.
+  --username TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_USERNAME, then
+                                  search for a credentials file, else ask for
+                                  user input.
+  --password TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_PASSWORD, then
+                                  search for a credentials file, else ask for
+                                  user input.
+  -nd, --no-directories           If True, downloaded files will not be
+                                  organized into directories. NOTE: This
+                                  argument is mutually exclusive with
+                                  arguments: [sync-delete].
+  -o, --output-directory PATH     The destination folder for the downloaded
+                                  files. Default is the current directory.
+  --credentials-file PATH         Path to a credentials file if not in its
+                                  default directory
+                                  (``$HOME/.copernicusmarine``). Accepts
+                                  .copernicusmarine-credentials / .netrc or
+                                  _netrc / motuclient-python.ini files.
+  --overwrite                     If specified and if the file already exists
+                                  on destination, then it will be overwritten.
+                                  By default, the toolbox creates a new file
+                                  with a new index (eg 'filename_(1).nc').
+                                  NOTE: This argument is mutually exclusive
+                                  with arguments: [skip-existing, sync, sync-
+                                  delete].
+  --create-template               Option to create a file
+                                  <argument>_template.json in your current
+                                  directory containing the arguments. If
+                                  specified, no other action will be
+                                  performed.
+  --request-file PATH             Option to pass a file containing the
+                                  arguments. For more information please refer
+                                  to the documentation or use option
+                                  ``--create-template`` from the command line
+                                  interface for an example template.
+  --filter, --filter-with-globbing-pattern TEXT
+                                  A pattern that must match the absolute paths
+                                  of the files to download.
+  --regex, --filter-with-regular-expression TEXT
+                                  The regular expression that must match the
+                                  absolute paths of the files to download.
+  --file-list PATH                Path to a '.txt' file containing a list of
+                                  file paths, line by line, that will be
+                                  downloaded directly. These files must be
+                                  from the same dataset as the one specified
+                                  dataset with the datasetID option. If no
+                                  files can be found, the Toolbox will list
+                                  all files on the remote server and attempt
+                                  to find a match.
+  --create-file-list TEXT         Option to only create a file containing the
+                                  names of the targeted files instead of
+                                  downloading them. It writes the file to the
+                                  specified output directory (default to
+                                  current directory). The file name specified
+                                  should end with '.txt' or '.csv'. If
+                                  specified, no other action will be
+                                  performed.
+  --sync                          Option to synchronize the local directory
+                                  with the remote directory. See the
+                                  documentation for more details. Requires to
+                                  set ``--dataset-version``. NOTE: This
+                                  argument is mutually exclusive with
+                                  arguments: [overwrite, skip-existing].
+  --sync-delete                   Option to delete local files that are not
+                                  present on the remote server while applying
+                                  sync. Requires to set ``--dataset-version``.
+                                  NOTE: This argument is mutually exclusive
+                                  with arguments: [no-directories, overwrite,
+                                  skip-existing].
+  --skip-existing                 If the files already exists where it would
+                                  be downloaded, then the download is skipped
+                                  for this file. By default, the toolbox
+                                  creates a new file with a new index (eg
+                                  'filename_(1).nc'). NOTE: This argument is
+                                  mutually exclusive with arguments:
+                                  [overwrite, sync, sync-delete].
+  --index-parts                   Option to get the index files of an INSITU
+                                  dataset.
+  --dry-run                       If True, runs query without downloading
+                                  data.
+  -r, --response-fields TEXT      List of fields to include in the query
+                                  metadata. The fields are separated by a
+                                  comma. To return all fields, use 'all'.
+  --max-concurrent-requests INTEGER
+                                  Maximum number of concurrent requests.
+                                  Default 15. The command uses a thread pool
+                                  executor to manage concurrent requests. If
+                                  set to 0, no parallel executions are used.
+  --disable-progress-bar          Flag to hide progress bar.
+  --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL|QUIET]
+                                  Set the details printed to console by the
+                                  command (based on standard logging library).
+  -h, --help                      Show this message and exit.
+
+
+    Example to download all the files from a given dataset:
+
+
+        copernicusmarine get -i cmems_mod_nws_bgc-pft_myint_7km-3D-diato_P1M-m
+```
+
+
+## copernicusmarine_login
+
+### Tool Description
+Create a configuration file with your Copernicus Marine credentials under the ``$HOME/.copernicusmarine`` directory.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/copernicusmarine:2.3.0
+- **Homepage**: https://github.com/pepijn-devries/CopernicusMarine
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: copernicusmarine login [OPTIONS]
+
+  Create a configuration file with your Copernicus Marine credentials under
+  the ``$HOME/.copernicusmarine`` directory.
+
+  Returns  Exit code  0 if the login was successfully completed, 1 otherwise.
+
+Options:
+  --username TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_USERNAME, else ask
+                                  for user input.
+  --password TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_PASSWORD, else ask
+                                  for user input.
+  --configuration-file-directory PATH
+                                  Path to the directory where the
+                                  configuration file will be stored.
+  --force-overwrite               Flag to skip confirmation before overwriting
+                                  configuration file.
+  --check-credentials-valid       Flag to check if the credentials are valid.
+                                  No other action will be performed. The
+                                  validity will be check in this order: 1.
+                                  Check if the credentials are valid with the
+                                  provided username and password. 2. Check if
+                                  the credentials are valid in the environment
+                                  variables. 3. Check if the credentials are
+                                  valid in the configuration file. When any is
+                                  found (valid or not valid), will return
+                                  immediately.
+  --credentials-file PATH         Path to a credentials file if not in its
+                                  default directory
+                                  (``$HOME/.copernicusmarine``). Accepts
+                                  .copernicusmarine-credentials / .netrc or
+                                  _netrc / motuclient-python.ini files. Will
+                                  only be taken into account when checking the
+                                  credentials validity.
+  --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL|QUIET]
+                                  Set the details printed to console by the
+                                  command (based on standard logging library).
+  -h, --help                      Show this message and exit.
+
+
+    Examples:
+
+    Using environment variables:
+
+
+        COPERNICUSMARINE_SERVICE_USERNAME=<USERNAME> COPERNICUSMARINE_SERVICE_PASSWORD=<PASSWORD> copernicusmarine login
+
+    Using command line arguments:
+
+
+        copernicusmarine login --username <USERNAME> --password <PASSWORD>
+
+    Using directly user input:
+
+
+        copernicusmarine login
+        > Username: [USER-INPUT]
+        > Password: [USER-INPUT]
+```
+
+
+## copernicusmarine_subset
+
+### Tool Description
+Extract a subset of data from a specified dataset using given parameters.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/copernicusmarine:2.3.0
+- **Homepage**: https://github.com/pepijn-devries/CopernicusMarine
+- **Package**: Not found
+- **Validation**: PASS
+
+### Original Help Text
+```text
+Usage: copernicusmarine subset [OPTIONS] COMMAND [ARGS]...
+
+  Extract a subset of data from a specified dataset using given parameters.
+
+  The datasetID is required and can be found via the ``describe`` command. See
+  :ref:`describe <cli-describe>`.
+
+  Returns  JSON   A description of the downloaded data and its destination.
+
+Options:
+  -i, --dataset-id TEXT           The datasetID, required either as an
+                                  argument or in the request_file option.
+  --dataset-version TEXT          Force the selection of a specific dataset
+                                  version.
+  --dataset-part TEXT             Force the selection of a specific dataset
+                                  part.
+  --username TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_USERNAME, then
+                                  search for a credentials file, else ask for
+                                  user input.
+  --password TEXT                 If not set, search for environment variable
+                                  COPERNICUSMARINE_SERVICE_PASSWORD, then
+                                  search for a credentials file, else ask for
+                                  user input.
+  -v, --variable TEXT             Specify dataset variable. Can be used
+                                  multiple times.
+  --minimum-longitude FLOAT       Minimum longitude for the subset. The value
+                                  will be transposed to the interval [-180;
+                                  360[.
+  -x FLOAT                        Alias for ``--minimum-longitude`` and
+                                  ``--minimum-x``.
+  --minimum-x FLOAT               Minimum x-axis value for the subset. The
+                                  units are considered in length (m,
+                                  100km...).
+  --maximum-longitude FLOAT       Maximum longitude for the subset. The value
+                                  will be transposed to the interval [-180;
+                                  360[.
+  -X FLOAT                        Alias for ``--maximum-longitude`` and
+                                  ``--maximum-x``.
+  --maximum-x FLOAT               Maximum x-axis value for the subset. The
+                                  units are considered in length (m,
+                                  100km...).
+  --minimum-latitude FLOAT RANGE  Minimum latitude for the subset. Requires a
+                                  float from -90 degrees to +90.  [-90<=x<=90]
+  -y FLOAT                        Alias for ``--minimum-latitude`` and
+                                  ``--minimum-y``.
+  --minimum-y FLOAT               Minimum y-axis value for the subset. The
+                                  units are considered in length (m,
+                                  100km...).
+  --maximum-latitude FLOAT RANGE  Maximum latitude for the subset. Requires a
+                                  float from -90 degrees to +90.  [-90<=x<=90]
+  -Y FLOAT                        Alias for ``--maximum-latitude`` and
+                                  ``--maximum-y``.
+  --maximum-y FLOAT               Maximum y-axis value for the subset. The
+                                  units are considered in length (m,
+                                  100km...).
+  -z, --minimum-depth FLOAT       Minimum depth for the subset.
+  -Z, --maximum-depth FLOAT       Maximum depth for the subset.
+  -V, --vertical-axis [depth|elevation]
+                                  Consolidate the vertical dimension (the
+                                  z-axis) as requested: depth with descending
+                                  positive values, elevation with ascending
+                                  positive values. Default is depth.
+  -t, --start-datetime TEXT       The start datetime of the temporal subset.
+                                  Supports common format parsed by dateutil (h
+                                  ttps://dateutil.readthedocs.io/en/stable/par
+                                  ser.html). Caution: encapsulate date with “
+                                  “ to ensure valid expression for format
+                                  “%Y-%m-%d %H:%M:%S”.
+  -T, --end-datetime TEXT         The end datetime of the temporal subset.
+                                  Supports common format parsed by dateutil (h
+                                  ttps://dateutil.readthedocs.io/en/stable/par
+                                  ser.html). Caution: encapsulate date with “
+                                  “ to ensure valid expression for format
+                                  “%Y-%m-%d %H:%M:%S”.
+  -p, --platform-id TEXT          Specify platform ID. Can be used multiple
+                                  times. Only available for platform chunked
+                                  datasets.
+  --coordinates-selection-method [inside|strict-inside|nearest|outside]
+                                  If ``inside``, the selection retrieved will
+                                  be inside the requested range. If ``strict-
+                                  inside``, the selection retrieved will be
+                                  inside the requested range, and an error
+                                  will be raised if the values don't exist. If
+                                  ``nearest``, the extremes closest to the
+                                  requested values will be returned. If
+                                  ``outside``, the extremes will be taken to
+                                  contain all the requested interval. The
+                                  methods ``inside``, ``nearest`` and
+                                  ``outside`` will display a warning if the
+                                  request is out of bounds.
+  -o, --output-directory PATH     The destination folder for the downloaded
+                                  files. Default is the current directory.
+  --credentials-file PATH         Path to a credentials file if not in its
+                                  default directory
+                                  (``$HOME/.copernicusmarine``). Accepts
+                                  .copernicusmarine-credentials / .netrc or
+                                  _netrc / motuclient-python.ini files.
+  -f, --output-filename TEXT      Save the downloaded data with the given file
+                                  name (under the output directory).
+  --file-format [netcdf|zarr|csv|parquet]
+                                  Format of the downloaded dataset. If not set
+                                  or set to ``None``, defaults to NetCDF '.nc'
+                                  for gridded datasets and to CSV '.csv' for
+                                  sparse datasets.
+  --overwrite                     If specified and if the file already exists
+                                  on destination, then it will be overwritten.
+                                  By default, the toolbox creates a new file
+                                  with a new index (eg 'filename_(1).nc').
+                                  NOTE: This argument is mutually exclusive
+                                  with arguments: [skip-existing].
+  --skip-existing                 If the files already exists where it would
+                                  be downloaded, then the download is skipped
+                                  for this file. By default, the toolbox
+                                  creates a new file with a new index (eg
+                                  'filename_(1).nc'). NOTE: This argument is
+                                  mutually exclusive with arguments:
+                                  [overwrite].
+  -s, --service TEXT              Force download through one of the available
+                                  services using the service name among
+                                  ['arco-geo-series', 'arco-time-series',
+                                  'omi-arco', 'static-arco', 'arco-platform-
+                                  series'] or its short name among
+                                  ['geoseries', 'timeseries', 'omi-arco',
+                                  'static-arco', 'platformseries'].
+  --create-template               Option to create a file
+                                  <argument>_template.json in your current
+                                  directory containing the arguments. If
+                                  specified, no other action will be
+                                  performed.
+  --request-file PATH             Option to pass a file containing the
+                                  arguments. For more information please refer
+                                  to the documentation or use option
+                                  ``--create-template`` from the command line
+                                  interface for an example template.
+  --motu-api-request TEXT         Option to pass a complete MOTU API request
+                                  as a string. Caution, user has to replace
+                                  double quotes " with single quotes ' in the
+                                  request.
+  --dry-run                       If True, runs query without downloading
+                                  data.
+  -r, --response-fields TEXT      List of fields to include in the query
+                                  metadata. The fields are separated by a
+                                  comma. To return all fields, use 'all'.
+  --netcdf-compression-level INTEGER RANGE
+                                  Specify a compression level to apply on the
+                                  NetCDF output file. A value of 0 means no
+                                  compression, and 9 is the highest level of
+                                  compression available. If used as a flag,
+                                  the assigned value will be 1.  [0<=x<=9]
+  --netcdf3-compatible            Enable downloading the dataset in a netCDF3
+                                  compatible format.
+  --chunk-size-limit INTEGER RANGE
+                                  Limit the size of the chunks in the dask
+                                  array. Default is set to -1 which behaves
+                                  similarly to 'chunks=auto' from ``xarray``.
+                                  Positive integer values and '-1' are
+                                  accepted. This is an experimental feature.
+                                  [x>=-1]
+  --disable-progress-bar          Flag to hide progress bar.
+  --log-level [DEBUG|INFO|WARN|ERROR|CRITICAL|QUIET]
+                                  Set the details printed to console by the
+                                  command (based on standard logging library).
+  --raise-if-updating             If set, raises a
+                                  :class:`copernicusmarine.DatasetUpdating`
+                                  error if the dataset is being updated and
+                                  the subset interval requested overpasses the
+                                  updating start date of the dataset.
+                                  Otherwise, a simple warning is displayed.
+  -h, --help                      Show this message and exit.
+
+Commands:
+  split-on  Extract a subset of data and split the output files.
+
+
+    Examples:
+
+
+        copernicusmarine subset --dataset-id cmems_mod_ibi_phy_my_0.083deg-3D_P1D-m --variable thetao --variable so --start-datetime 2021-01-01 --end-datetime 2021-01-03 --minimum-longitude 0.0 --maximum-longitude 0.1 --minimum-latitude 28.0 --maximum-latitude 28.1 --minimum-depth 1 --maximum-depth 2
+
+    Equivalent to:
+
+
+        copernicusmarine subset -i cmems_mod_ibi_phy_my_0.083deg-3D_P1D-m -v thetao -v so -t 2021-01-01 -T 2021-01-03 -x 0.0 -X 0.1 -y 28.0 -Y 28.1 -z 1 -Z 2
 ```
 

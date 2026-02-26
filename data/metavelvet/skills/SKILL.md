@@ -1,8 +1,9 @@
 ---
 name: metavelvet
-description: MetaVelvet is an extension of the Velvet assembler designed specifically for metagenomics.
+description: MetaVelvet is an extension of the Velvet assembler designed to perform de novo assembly of metagenomic reads by decomposing de Bruijn graphs based on species-specific k-mer coverage peaks. Use when user asks to assemble metagenomic sequences, identify coverage peaks in microbial communities, or decompose shared assembly graphs into individual species components.
 homepage: https://github.com/hacchy/MetaVelvet
 ---
+
 
 # metavelvet
 

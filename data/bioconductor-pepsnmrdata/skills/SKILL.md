@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pepsnmrdata
-description: the package is available on all platforms; click for details.
+description: This package provides example datasets for the PepsNMR R package used in processing 1H NMR spectra. Use when user asks to access example NMR data, load datasets for PepsNMR, or practice NMR spectral preprocessing.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/PepsNMRData.html
 ---
+
 
 # bioconductor-pepsnmrdata
 

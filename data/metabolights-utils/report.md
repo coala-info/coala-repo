@@ -1,9 +1,9 @@
 # metabolights-utils CWL Generation Report
 
-## metabolights-utils
+## metabolights-utils_mtbls
 
 ### Tool Description
-MetaboLights utilities for data management and metadata handling.
+Metabolights utilities
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metabolights-utils:1.4.18--pyhdfd78af_0
@@ -18,29 +18,16 @@ MetaboLights utilities for data management and metadata handling.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabolights-utils:1.4.18--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3325549825: no space left on device
-```
+Usage: mtbls [OPTIONS] COMMAND [ARGS]...
 
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
 
-## Metadata
-- **Skill**: generated
-
-## metabolights-utils_mtbls
-
-### Tool Description
-MetaboLights utility tool. (Note: The provided text contains container runtime error messages and does not include help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metabolights-utils:1.4.18--pyhdfd78af_0
-- **Homepage**: https://github.com/EBI-Metabolights/metabolights-utils
-- **Package**: https://anaconda.org/channels/bioconda/packages/metabolights-utils/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metabolights-utils:1.4.18--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1552621432: no space left on device
+Commands:
+  local-validate  Validate local ISA metadata files.
+  model           Commands to explain MetaboLights study data model.
+  public          Commands to use MetaboLights public study data and ISA...
+  submission      Commands to use MetaboLights study submission REST API.
 ```
 

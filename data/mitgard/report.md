@@ -1,9 +1,9 @@
 # mitgard CWL Generation Report
 
-## mitgard
+## mitgard_MITGARD-LR.py
 
 ### Tool Description
-The provided text does not contain help information or usage instructions; it consists of system log messages and a fatal error regarding disk space during a container image pull.
+MITGARD-LR.py
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mitgard:1.1--hdfd78af_0
@@ -18,46 +18,31 @@ The provided text does not contain help information or usage instructions; it co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mitgard:1.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2835340299: no space left on device
-```
+Usage: MITGARD-LR.py [options]
 
-
-## Metadata
-- **Skill**: generated
-
-## mitgard_install_NCBITaxa.py
-
-### Tool Description
-Install the NCBI Taxonomy database for the Mitgard pipeline. Note: The provided help text contains only system error logs and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mitgard:1.1--hdfd78af_0
-- **Homepage**: https://github.com/pedronachtigall/MITGARD
-- **Package**: https://anaconda.org/channels/bioconda/packages/mitgard/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mitgard:1.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3999437987: no space left on device
-```
-
-## mitgard_MITGARD-LR.py
-
-### Tool Description
-Mitochondrial Genome Assembler using Long Reads (Note: The provided text is an error log and does not contain usage information or argument definitions).
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/mitgard:1.1--hdfd78af_0
-- **Homepage**: https://github.com/pedronachtigall/MITGARD
-- **Package**: https://anaconda.org/channels/bioconda/packages/mitgard/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mitgard:1.1--hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3409891664: no space left on device
+Options:
+  -h, --help            show this help message and exit
+  -s string, --sample=string
+                        Mandatory - sample ID to be used in the output files
+                        and final mitogenome assembly
+  -r fq, --reads=fq     Mandatory - input long-reads fq file (FASTQ format),
+                        /path/to/long_read.fq ; the fq file can be in .gz the
+                        compressed format (e.g. long_read.fq.gz).
+  -R fasta, --reference=fasta
+                        Mandatory - input mitogenome in FASTA format to be
+                        used as reference, /path/to/reference.fa
+  -m string, --method=string
+                        Optional - this parameter indicates the type of long-
+                        read data being used (e.g., "pacbio_hifi",
+                        "pacbio_clr", or "nanopore"). If not set, the
+                        "pacbio_hifi" will be considered.
+                        [default=pacbio_hifi]
+  -l int, --length=int  Optional - this parameter indicates the estimated size
+                        of the final mitochondiral genome (in bp; e.g., use
+                        17000 for 17Kb). If not set, the estimated size will
+                        be considered similar to the reference being used.
+                        [default=length(reference)]
+  -c int, --cpu=int     Optional - number of threads to be used in each step
+                        [default=1]
 ```
 

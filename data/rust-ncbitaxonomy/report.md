@@ -1,9 +1,9 @@
 # rust-ncbitaxonomy CWL Generation Report
 
-## rust-ncbitaxonomy
+## rust-ncbitaxonomy_taxonomy_util
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) attempting to fetch the tool image.
+Utilities for working with the NCBI taxonomy database
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
@@ -18,71 +18,100 @@ The provided text does not contain help information or usage instructions. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+taxonomy_util 1.0.7
+Peter van Heusden <pvh@sanbi.axc.za>
+Utilities for working with the NCBI taxonomy database
+
+USAGE:
+    taxonomy_util --db <TAXDB_URL> [SUBCOMMAND]
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -d, --db <TAXDB_URL>    URL for SQLite taxonomy database
+
+SUBCOMMANDS:
+    common_ancestor_distance    find the tree distance to te common ancestor between two taxa
+    get_id                      find taxonomy ID for name
+    get_lineage                 get lineage for name
+    get_name                    find name for taxonomy ID
+    help                        Prints this message or the help of the given subcommand(s)
+    to_sqlite                   save taxonomy database loaded from files to SQLite database file
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## rust-ncbitaxonomy_taxonomy_util
-
-### Tool Description
-NCBI Taxonomy utility
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
-- **Homepage**: https://github.com/pvanheus/ncbitaxonomy
-- **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
 
 ## rust-ncbitaxonomy_taxonomy_filter_refseq
 
 ### Tool Description
-A tool within the rust-ncbitaxonomy package. (Note: The provided help text contains container build error logs rather than command usage information; therefore, specific arguments could not be extracted.)
+Filter NCBI RefSeq FASTA files by taxonomic lineage
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
 - **Homepage**: https://github.com/pvanheus/ncbitaxonomy
 - **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+taxonomy_filter_refseq 1.0.7
+Peter van Heusden <pvh@sanbi.axc.za>
+Filter NCBI RefSeq FASTA files by taxonomic lineage
+
+USAGE:
+    taxonomy_filter_refseq [FLAGS] [OPTIONS] <INPUT_FASTA> <ANCESTOR_NAME> [OUTPUT_FASTA]
+
+FLAGS:
+        --no_curated      Don't accept curated RNAs and proteins (NM_, NR_ and NP_ accessions)
+        --no_predicted    Don't accept computationally predicted RNAs and proteins (XM_, XR_ and XP_ accessions)
+    -h, --help            Prints help information
+    -V, --version         Prints version information
+
+OPTIONS:
+    -d, --db <TAXDB_URL>    URL for SQLite taxonomy database
+
+ARGS:
+    <INPUT_FASTA>      FASTA file with RefSeq sequences
+    <ANCESTOR_NAME>    Name of ancestor to use as ancestor filter
+    <OUTPUT_FASTA>     Output FASTA filename (or stdout if omitted)
 ```
+
 
 ## rust-ncbitaxonomy_taxonomy_filter_fastq
 
 ### Tool Description
-A tool for filtering FASTQ files based on NCBI taxonomy information.
+Filter FASTQ files whose reads have been classified by Centrifuge or Kraken2, only retaining reads in taxa descending from given ancestor
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6
 - **Homepage**: https://github.com/pvanheus/ncbitaxonomy
 - **Package**: https://anaconda.org/channels/bioconda/packages/rust-ncbitaxonomy/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/rust-ncbitaxonomy:1.0.7--hf9427c6_6 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+taxonomy_filter_fastq 1.0.7
+Peter van Heusden <pvh@sanbi.axc.za>
+Filter FASTQ files whose reads have been classified by Centrifuge or Kraken2, only retaining reads in taxa descending
+from given ancestor
+
+USAGE:
+    taxonomy_filter_fastq [FLAGS] [OPTIONS] <INPUT_FASTQ>... --ancestor_taxid <ANCESTOR_ID> --tax_report_filename <TAXONOMY_REPORT_FILENAME> <--centrifuge|--kraken2>
+
+FLAGS:
+    -d, --output_dir    Directory to deposited filtered output files in
+    -C, --centrifuge    Filter using report from Centrifuge
+    -h, --help          Prints help information
+    -K, --kraken2       Filter using report from Kraken2
+    -V, --version       Prints version information
+
+OPTIONS:
+    -A, --ancestor_taxid <ANCESTOR_ID>                      Name of ancestor to use as ancestor filter
+    -d, --db <TAXDB_URL>                                    URL for SQLite taxonomy database
+    -F, --tax_report_filename <TAXONOMY_REPORT_FILENAME>    Output from Kraken2 (default) or Centrifuge
+
+ARGS:
+    <INPUT_FASTQ>...    FASTA file with RefSeq sequences
 ```
 

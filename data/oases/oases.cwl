@@ -2,10 +2,155 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: oases
 label: oases
-doc: "Oases is a de novo transcriptome assembler for very short reads. (Note: The
-  provided help text contains only system error messages regarding a container execution
-  failure and does not list command-line arguments.)\n\nTool homepage: https://github.com/coin-or/qpOASES"
-inputs: []
+doc: "De novo transcriptome assembler for the Velvet package\n\nTool homepage: https://github.com/coin-or/qpOASES"
+inputs:
+  - id: directory
+    type: Directory
+    doc: working directory name
+    inputBinding:
+      position: 1
+  - id: alignments
+    type:
+      - 'null'
+      - string
+    doc: export a summary of contig alignment to the reference sequences
+    default: no
+    inputBinding:
+      position: 102
+      prefix: -alignments
+  - id: amos_file
+    type:
+      - 'null'
+      - string
+    doc: export assembly to AMOS file
+    default: no export
+    inputBinding:
+      position: 102
+      prefix: -amos_file
+  - id: cov_cutoff
+    type:
+      - 'null'
+      - float
+    doc: removal of low coverage nodes AFTER tour bus or allow the system to 
+      infer it
+    default: 3
+    inputBinding:
+      position: 102
+      prefix: -cov_cutoff
+  - id: degree_cutoff
+    type:
+      - 'null'
+      - int
+    doc: Maximum allowed degree on either end of a contigg to consider it 
+      'unique'
+    default: 3
+    inputBinding:
+      position: 102
+      prefix: -degree_cutoff
+  - id: edge_fraction_cutoff
+    type:
+      - 'null'
+      - float
+    doc: Remove edges which represent less than that fraction of a nodes 
+      outgoing flow
+    default: 0.01
+    inputBinding:
+      position: 102
+      prefix: -edgeFractionCutoff
+  - id: ins_length2
+    type:
+      - 'null'
+      - int
+    doc: expected distance between two paired-end reads in the second short-read
+      dataset
+    default: no read pairing
+    inputBinding:
+      position: 102
+      prefix: -ins_length2
+  - id: ins_length2_sd
+    type:
+      - 'null'
+      - int
+    doc: est. standard deviation of respective dataset
+    default: 10% of corresponding length
+    inputBinding:
+      position: 102
+      prefix: -ins_length2_sd
+  - id: ins_length_long
+    type:
+      - 'null'
+      - int
+    doc: expected distance between two long paired-end reads
+    default: no read pairing
+    inputBinding:
+      position: 102
+      prefix: -ins_length_long
+  - id: ins_length_long_sd
+    type:
+      - 'null'
+      - int
+    doc: est. standard deviation of respective dataset
+    default: 10% of corresponding length
+    inputBinding:
+      position: 102
+      prefix: -ins_length_long_sd
+  - id: merge
+    type:
+      - 'null'
+      - string
+    doc: Preserve contigs mapping onto long sequences to be preserved from 
+      coverage cutoff
+    default: no
+    inputBinding:
+      position: 102
+      prefix: -merge
+  - id: min_pair_count
+    type:
+      - 'null'
+      - int
+    doc: minimum number of paired end connections to justify the scaffolding of 
+      two long contigs
+    default: 4
+    inputBinding:
+      position: 102
+      prefix: -min_pair_count
+  - id: min_trans_lgth
+    type:
+      - 'null'
+      - int
+    doc: Minimum length of output transcripts
+    default: hash-length
+    inputBinding:
+      position: 102
+      prefix: -min_trans_lgth
+  - id: paired_cutoff
+    type:
+      - 'null'
+      - float
+    doc: minimum ratio allowed between the numbers of observed and estimated 
+      connecting read pairs
+    default: 0.1
+    inputBinding:
+      position: 102
+      prefix: -paired_cutoff
+  - id: scaffolding
+    type:
+      - 'null'
+      - string
+    doc: Allow gaps in transcripts
+    default: no
+    inputBinding:
+      position: 102
+      prefix: -scaffolding
+  - id: unused_reads
+    type:
+      - 'null'
+      - string
+    doc: export unused reads in UnusedReads.fa file
+    default: no
+    inputBinding:
+      position: 102
+      prefix: -unused_reads
 outputs:
   - id: stdout
     type: stdout

@@ -1,8 +1,9 @@
 ---
 name: r-bseqsc
-description: R package bseqsc (documentation from project home).
+description: This tool deconvolutes bulk RNA-seq data using single-cell transcriptomic references to estimate cell type proportions and cell type-specific expression. Use when user asks to estimate cell type proportions in bulk samples, generate a signature basis matrix from single-cell data, or perform deconvolution using CIBERSORT.
 homepage: https://cran.r-project.org/web/packages/bseqsc/index.html
 ---
+
 
 # r-bseqsc
 

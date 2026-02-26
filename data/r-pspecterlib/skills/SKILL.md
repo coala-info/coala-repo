@@ -1,8 +1,9 @@
 ---
 name: r-pspecterlib
-description: R package pspecterlib (documentation from project home).
+description: This R package provides tools for proteomics data analysis, including peptide fragment matching, sequence mapping, and mass spectrometry visualization. Use when user asks to calculate fragmentation patterns, match peptides to experimental spectra, map peptides to protein sequences, generate extracted ion chromatograms, or visualize MSPathFinderT output.
 homepage: https://cran.r-project.org/web/packages/pspecterlib/index.html
 ---
+
 
 # r-pspecterlib
 

@@ -1,8 +1,9 @@
 ---
 name: panta
-description: PanTA (Pan-genome Analysis) is a high-performance pipeline designed to identify the core and accessory genomes of a set of related bacterial strains.
+description: PanTA identifies core and accessory genomes and clusters orthologous genes for bacterial strains. Use when user asks to construct a pan-genome, cluster orthologous genes, perform sequence alignments, or incrementally add new genomic samples to an existing analysis.
 homepage: https://github.com/amromics/panta
 ---
+
 
 # panta
 

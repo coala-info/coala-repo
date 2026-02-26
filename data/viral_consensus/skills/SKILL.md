@@ -1,8 +1,9 @@
 ---
 name: viral_consensus
-description: ViralConsensus is a high-performance tool designed to call consensus sequences directly from read alignments.
+description: ViralConsensus calls consensus sequences directly from read alignments. Use when user asks to call consensus sequences, reconstruct a genome, trim primer sequences, or generate base and insertion counts.
 homepage: https://github.com/niemasd/ViralConsensus
 ---
+
 
 # viral_consensus
 

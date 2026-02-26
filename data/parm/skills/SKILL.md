@@ -1,8 +1,9 @@
 ---
 name: parm
-description: PARM (Promoter Activity Regulatory Model) is a lightweight convolutional neural network designed to predict cell-type-specific promoter activity directly from DNA sequences.
+description: PARM is a convolutional neural network that predicts cell-type-specific promoter activity and identifies transcription factor binding sites from DNA sequences. Use when user asks to predict promoter activity from FASTA files, perform in-silico mutagenesis, visualize motif hits, or train custom models on MPRA data.
 homepage: https://github.com/vansteensellab/PARM
 ---
+
 
 # parm
 

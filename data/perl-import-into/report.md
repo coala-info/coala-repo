@@ -3,33 +3,32 @@
 ## perl-import-into
 
 ### Tool Description
-The provided text does not contain help documentation for the tool. It appears to be a log of a failed execution where the executable was not found.
+FAIL to generate CWL: perl-import-into not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/perl-import-into:1.002005--pl526_0
 - **Homepage**: http://metacpan.org/pod/Import::Into
 - **Package**: https://anaconda.org/channels/bioconda/packages/perl-import-into/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/perl-import-into/overview
 - **Total Downloads**: 4.7K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: perl-import-into not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: perl-import-into not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 13:17:34  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-WARNING: Skipping mount /var/lib/apptainer/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container
-FATAL:   "perl-import-into": executable file not found in $PATH
+
 ```
 
-
-## Metadata
-- **Skill**: generated

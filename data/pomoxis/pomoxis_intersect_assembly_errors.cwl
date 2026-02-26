@@ -1,11 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: pomoxis_intersect_assembly_errors
+baseCommand: intersect_assembly_errors
 label: pomoxis_intersect_assembly_errors
-doc: "The provided text does not contain help information or a description of the
-  tool. It appears to be a fatal error log from a container runtime (Apptainer/Singularity)
-  while attempting to fetch the pomoxis image.\n\nTool homepage: https://github.com/nanoporetech/pomoxis"
-inputs: []
+doc: "Assess errors which occur in the same reference position accross multiple assemblies.\n\
+  \nTool homepage: https://github.com/nanoporetech/pomoxis"
+inputs:
+  - id: fasta_input_assemblies
+    type: File
+    doc: fasta input assemblies
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    default: compare_assm
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: reference
+    type: File
+    doc: "reference, should be a fasta file. If correspondng bwa indices\ndo not exist
+      they will be created."
+    inputBinding:
+      position: 101
+      prefix: -r
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: alignment threads
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
   - id: stdout
     type: stdout

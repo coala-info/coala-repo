@@ -1,8 +1,9 @@
 ---
 name: tgsgapcloser
-description: TGS-GapCloser is a specialized tool for genome assembly finishing.
+description: TGS-GapCloser fills gaps in draft genome scaffolds by aligning long reads or contigs to the edges of N-regions. Use when user asks to fill gaps in draft assemblies, close gaps using TGS reads, or polish genome scaffolds with long-read data.
 homepage: https://github.com/BGI-Qingdao/TGS-GapCloser
 ---
+
 
 # tgsgapcloser
 

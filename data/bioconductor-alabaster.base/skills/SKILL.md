@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.base
-description: the package is available on all platforms; click for details.
+description: This tool saves and loads Bioconductor objects to and from file artifacts using a language-agnostic framework. Use when user asks to save R objects to disk, load objects from file artifacts, serialize data into JSON or HDF5 formats, or validate the integrity of saved object directories.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.base.html
 ---
+
 
 # bioconductor-alabaster.base
 

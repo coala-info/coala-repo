@@ -1,8 +1,9 @@
 ---
 name: bactopia-teton
-description: The `bactopia-teton` skill provides specialized guidance for using the taxonomic classification methods integrated into the Bactopia ecosystem.
+description: Bactopia-teton provides specialized guidance for performing taxonomic classification and abundance estimation within the Bactopia bacterial genomics pipeline. Use when user asks to configure classification parameters, manage taxonomic databases, run Kraken2 or Bracken workflows, and interpret species composition reports.
 homepage: https://bactopia.github.io/
 ---
+
 
 # bactopia-teton
 

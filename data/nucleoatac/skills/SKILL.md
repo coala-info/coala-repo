@@ -1,8 +1,9 @@
 ---
 name: nucleoatac
-description: NucleoATAC is a specialized computational framework for high-resolution mapping of nucleosomes using ATAC-Seq data.
+description: NucleoATAC is a computational framework for high-resolution mapping of nucleosome positions and occupancy levels using ATAC-Seq data. Use when user asks to call nucleosomes, infer nucleosome occupancy, or analyze Tn5 insertion patterns within open chromatin regions.
 homepage: http://nucleoatac.readthedocs.io/en/latest/
 ---
+
 
 # nucleoatac
 

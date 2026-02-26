@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.mmulatta.ucsc.rhemac2
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequences for the Rhesus macaque based on the UCSC rheMac2 assembly. Use when user asks to access Rhesus monkey DNA sequences, extract genomic ranges, search for motifs, or retrieve promoter sequences using Bioconductor.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Mmulatta.UCSC.rheMac2.html
 ---
+
 
 # bioconductor-bsgenome.mmulatta.ucsc.rhemac2
 

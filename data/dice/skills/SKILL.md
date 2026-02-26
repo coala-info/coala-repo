@@ -1,8 +1,9 @@
 ---
 name: dice
-description: DICE (Distance-based Inference of Copy-number Evolution) is a specialized tool for inferring the evolutionary history of cells using copy number profiles.
+description: "DICE infers the evolutionary history and phylogenetic trees of cells using copy number profiles. Use when user asks to infer copy-number evolution, reconstruct phylogenetic trees from allele-specific or total copy number data, or calculate distance matrices between cells."
 homepage: https://github.com/samsonweiner/DICE
 ---
+
 
 # dice
 

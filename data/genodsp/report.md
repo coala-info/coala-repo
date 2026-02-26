@@ -1,9 +1,9 @@
 # genodsp CWL Generation Report
 
-## genodsp
+## genodsp_sum
 
 ### Tool Description
-Genomic Digital Signal Processing tool. (Note: The provided help text contains only system error messages regarding container execution and does not list specific command-line arguments.)
+Summate genotype data across specified regions.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
@@ -18,11 +18,108 @@ Genomic Digital Signal Processing tool. (Note: The provided help text contains o
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1898632223: no space left on device
+"sum" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
 ```
 
 
-## Metadata
-- **Skill**: generated
+## genodsp_slidingsum
+
+### Tool Description
+Calculates the sum of values within sliding windows along a genome.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
+- **Homepage**: https://github.com/rsharris/genodsp
+- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+"slidingsum" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
+```
+
+
+## genodsp_smooth
+
+### Tool Description
+Smooths genomic data, but requires chromosome length information.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
+- **Homepage**: https://github.com/rsharris/genodsp
+- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+"smooth" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
+```
+
+
+## genodsp_cumulativesum
+
+### Tool Description
+Calculates the cumulative sum of values across a genome, potentially considering chromosome lengths and regions.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
+- **Homepage**: https://github.com/rsharris/genodsp
+- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+"cumulativesum" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
+```
+
+
+## genodsp_clump
+
+### Tool Description
+Clumps regions based on proximity. Requires chromosome lengths or explicit start/end coordinates.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
+- **Homepage**: https://github.com/rsharris/genodsp
+- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+"clump" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
+```
+
+
+## genodsp_anticlump
+
+### Tool Description
+No inputs — do not generate CWL.
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/genodsp:0.0.10--h7b50bb2_1
+- **Homepage**: https://github.com/rsharris/genodsp
+- **Package**: https://anaconda.org/channels/bioconda/packages/genodsp/overview
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
+### Original Help Text
+```text
+"anticlump" contains no chromosome length
+(expected "chromosome:length" or "chromosome:start:end")
+```
+

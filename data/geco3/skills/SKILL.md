@@ -1,8 +1,9 @@
 ---
 name: geco3
-description: GeCo3 is a specialized tool designed for DNA sequence compression.
+description: GeCo3 is a DNA sequence compression tool that uses neural networks to mix prediction models for high compression ratios. Use when user asks to compress DNA sequences, decompress .co files, or perform referential compression using a template sequence.
 homepage: https://github.com/cobilab/geco3
 ---
+
 
 # geco3
 

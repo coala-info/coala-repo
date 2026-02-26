@@ -1,8 +1,9 @@
 ---
 name: bioconductor-allmll
-description: the package is available on all platforms; click for details.
+description: This tool provides probe-level microarray data from a pediatric acute lymphoblastic leukemia study for use in bioinformatics workflows. Use when user asks to load, inspect, or normalize the MLL.A or MLL.B AffyBatch datasets for leukemia research.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/ALLMLL.html
 ---
+
 
 # bioconductor-allmll
 

@@ -1,9 +1,17 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: aeskulap
+baseCommand: Gio::Settings init
 label: aeskulap
-doc: "Aeskulap is a medical image viewer (DICOM viewer).\n\nTool homepage: https://github.com/pipelka/aeskulap"
-inputs: []
+doc: "Initialize Gio settings.\n\nTool homepage: https://github.com/pipelka/aeskulap"
+inputs:
+  - id: datadir
+    type:
+      - 'null'
+      - Directory
+    doc: Data directory for settings.
+    default: /usr/share
+    inputBinding:
+      position: 101
 outputs:
   - id: stdout
     type: stdout

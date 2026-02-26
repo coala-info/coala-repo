@@ -1,8 +1,9 @@
 ---
 name: submission-excel2xml
-description: The `submission-excel2xml` tool simplifies the DDBJ submission process by allowing users to manage metadata in familiar Excel spreadsheets rather than manual XML.
+description: This tool converts Excel spreadsheets into DDBJ-compliant XML files for metadata submission and validation. Use when user asks to generate DRA metadata XMLs, validate metadata against XSD schemas, or convert Excel templates to JGA or AGD submission formats.
 homepage: https://github.com/ddbj/submission-excel2xml
 ---
+
 
 # submission-excel2xml
 

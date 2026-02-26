@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enrichplot
-description: the package is available on all platforms; click for details.
+description: The bioconductor-enrichplot package provides a suite of visualization methods to interpret and present functional enrichment results from Bioconductor tools. Use when user asks to visualize gene set enrichment analysis results, create gene-concept networks, generate enrichment maps, or produce GSEA running score plots.
 homepage: https://bioconductor.org/packages/release/bioc/html/enrichplot.html
 ---
+
 
 # bioconductor-enrichplot
 

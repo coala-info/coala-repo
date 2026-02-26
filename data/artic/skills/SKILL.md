@@ -1,8 +1,9 @@
 ---
 name: artic
-description: The `artic` tool is a specialized bioinformatics suite designed for the analysis of viral genomes sequenced using Oxford Nanopore Technologies (ONT).
+description: The artic tool processes viral nanopore sequencing data from tiling amplicon protocols to generate consensus sequences and variant calls. Use when user asks to filter reads by length, perform primer trimming, generate consensus sequences from Nanopore data, or call variants using Medaka or Nanopolish.
 homepage: https://github.com/artic-network/fieldbioinformatics
 ---
+
 
 # artic
 

@@ -1,9 +1,19 @@
 # zavolan-multiqc-plugins CWL Generation Report
 
-## zavolan-multiqc-plugins
+## zavolan-multiqc-plugins_multiqc
 
 ### Tool Description
-MultiQC plugins developed by the Zavolan Lab. Note: The provided text contains container runtime error logs rather than CLI help documentation, so no arguments could be extracted.
+MultiQC aggregates results from bioinformatics analyses across many samples
+  into a single report.
+
+  It searches a given directory for analysis logs and compiles a HTML report.
+  It's a general use tool, perfect for summarising the output from numerous
+  bioinformatics tools.
+
+  To run, supply with one or more directory to scan for analysis results. To
+  run here, use 'multiqc .'
+
+  See http://multiqc.info for more details.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/zavolan-multiqc-plugins:1.3--pyh5e36f6f_0
@@ -18,33 +28,84 @@ MultiQC plugins developed by the Zavolan Lab. Note: The provided text contains c
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/zavolan-multiqc-plugins:1.3--pyh5e36f6f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
-```
+Usage: multiqc [OPTIONS] <analysis directory>
 
+  MultiQC aggregates results from bioinformatics analyses across many samples
+  into a single report.
 
-## Metadata
-- **Skill**: generated
+  It searches a given directory for analysis logs and compiles a HTML report.
+  It's a general use tool, perfect for summarising the output from numerous
+  bioinformatics tools.
 
-## zavolan-multiqc-plugins_multiqc
+  To run, supply with one or more directory to scan for analysis results. To
+  run here, use 'multiqc .'
 
-### Tool Description
-MultiQC aggregates results from bioinformatics analyses across many samples into a single report. (Note: The provided text contains container runtime logs and a fatal error rather than help text; no arguments could be extracted.)
+  See http://multiqc.info for more details.
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/zavolan-multiqc-plugins:1.3--pyh5e36f6f_0
-- **Homepage**: https://github.com/zavolanlab/multiqc-plugins
-- **Package**: https://anaconda.org/channels/bioconda/packages/zavolan-multiqc-plugins/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/zavolan-multiqc-plugins:1.3--pyh5e36f6f_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+  Author: Phil Ewels (http://phil.ewels.co.uk)
+
+Options:
+  -f, --force                     Overwrite any existing reports
+  -d, --dirs                      Prepend directory to sample names
+  -dd, --dirs-depth INTEGER       Prepend [INT] directories to sample names.
+                                  Negative number to take from start of path.
+  -s, --fullnames                 Do not clean the sample names (leave as full
+                                  file name)
+  -i, --title TEXT                Report title. Printed as page header, used
+                                  for filename if not otherwise specified.
+  -b, --comment TEXT              Custom comment, will be printed at the top
+                                  of the report.
+  -n, --filename TEXT             Report filename. Use 'stdout' to print to
+                                  standard out.
+  -o, --outdir TEXT               Create report in the specified output
+                                  directory.
+  -t, --template [default|default_dev|gathered|geo|sections|simple]
+                                  Report template to use.
+  --tag TEXT                      Use only modules which tagged with this
+                                  keyword, eg. RNA
+  --view-tags, --view_tags        View the available tags and which modules
+                                  they load
+  -x, --ignore TEXT               Ignore analysis files (glob expression)
+  --ignore-samples TEXT           Ignore sample names (glob expression)
+  --ignore-symlinks               Ignore symlinked directories and files
+  --sample-names PATH             File containing alternative sample names
+  --sample-filters PATH           File containing show/hide patterns for the
+                                  report
+  -l, --file-list                 Supply a file containing a list of file
+                                  paths to be searched, one per row
+  -e, --exclude [module name]     Do not use this module. Can specify multiple
+                                  times.
+  -m, --module [module name]      Use only this module. Can specify multiple
+                                  times.
+  --data-dir                      Force the parsed data directory to be
+                                  created.
+  --no-data-dir                   Prevent the parsed data directory from being
+                                  created.
+  -k, --data-format [tsv|json|yaml]
+                                  Output parsed data in a different format.
+                                  Default: tsv
+  -z, --zip-data-dir              Compress the data directory.
+  -p, --export                    Export plots as static images in addition to
+                                  the report
+  -fp, --flat                     Use only flat plots (static images)
+  -ip, --interactive              Use only interactive plots (HighCharts
+                                  Javascript)
+  --lint                          Use strict linting (validation) to help code
+                                  development
+  --pdf                           Creates PDF report with 'simple' template.
+                                  Requires Pandoc to be installed.
+  --no-megaqc-upload              Don't upload generated report to MegaQC,
+                                  even if MegaQC options are found
+  -c, --config PATH               Specific config file to load, after those in
+                                  MultiQC dir / home dir / working dir.
+  --cl-config, --cl_config TEXT   Specify MultiQC config YAML on the command
+                                  line
+  -v, --verbose                   Increase output verbosity.  [x>=0]
+  -q, --quiet                     Only show log warnings
+  --profile-runtime               Add analysis of how long MultiQC takes to
+                                  run to the report
+  --no-ansi                       Disable coloured log output
+  --version                       Show the version and exit.
+  -h, --help                      Show this message and exit.
 ```
 

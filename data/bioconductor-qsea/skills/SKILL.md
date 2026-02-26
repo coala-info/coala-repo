@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qsea
-description: the package is available on all platforms; click for details.
+description: "qsea provides a framework for the quantitative analysis of DNA methylation data from enrichment-based sequencing experiments. Use when user asks to model absolute methylation levels, perform differential methylation analysis, or process MeDIP-seq and MBD-seq data."
 homepage: https://bioconductor.org/packages/release/bioc/html/qsea.html
 ---
+
 
 # bioconductor-qsea
 

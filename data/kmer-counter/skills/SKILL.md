@@ -1,8 +1,9 @@
 ---
 name: kmer-counter
-description: The `kmer-counter` tool is a Rust-based utility optimized for speed and minimal memory footprint.
+description: The kmer-counter tool transforms nucleotide sequences into a fixed-size feature matrix stored as a NumPy file for machine learning applications. Use when user asks to count k-mers in FASTA files, generate a k-mer count matrix for TensorFlow or NumPy, or extract sequence features for genomic analysis.
 homepage: https://github.com/CobiontID/kmer-counter
 ---
+
 
 # kmer-counter
 

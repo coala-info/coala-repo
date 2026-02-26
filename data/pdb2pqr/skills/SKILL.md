@@ -1,8 +1,9 @@
 ---
 name: pdb2pqr
-description: PDB2PQR is a specialized utility for converting protein structures from the PDB format into PQR format, which is essential for Poisson-Boltzmann electrostatics calculations (such as those performed by APBS).
+description: "PDB2PQR converts protein structures from PDB to PQR format by repairing missing atoms, adding hydrogens, and assigning force field parameters. Use when user asks to prepare structures for electrostatics calculations, assign charges and radii, or determine pH-dependent protonation states."
 homepage: https://github.com/Electrostatics/pdb2pqr
 ---
+
 
 # pdb2pqr
 

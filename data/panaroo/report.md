@@ -3,7 +3,7 @@
 ## panaroo
 
 ### Tool Description
-The provided text is an error log related to a container runtime (Singularity/Apptainer) failing to pull the panaroo image due to insufficient disk space. It does not contain CLI help information or argument definitions.
+an updated pipeline for pangenome investigation
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/panaroo:1.6.0--pyhdfd78af_0
@@ -12,15 +12,163 @@ The provided text is an error log related to a container runtime (Singularity/Ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/panaroo/overview
-- **Total Downloads**: 53.7K
+- **Total Downloads**: 53.9K
 - **Last updated**: 2026-01-15
 - **GitHub**: https://github.com/gtonkinhill/panaroo
 - **Stars**: N/A
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: write /home/qhu/.singularity/cache/blob/blobs/sha256/575f3443970a0d882e8e253ae954cd43cbac799f9a941c7ebe324ab9b11060f9: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/panaroo:1.6.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3722041442: no space left on device
+usage: panaroo [-h] -i INPUT_FILES [INPUT_FILES ...] -o OUTPUT_DIR
+               --clean-mode {strict,moderate,sensitive}
+               [--remove-invalid-genes] [-c ID] [-f FAMILY_THRESHOLD]
+               [--len_dif_percent LEN_DIF_PERCENT]
+               [--family_len_dif_percent FAMILY_LEN_DIF_PERCENT]
+               [--merge_paralogs] [--search_radius SEARCH_RADIUS]
+               [--refind_prop_match REFIND_PROP_MATCH]
+               [--refind-mode {default,strict,off}]
+               [--min_trailing_support MIN_TRAILING_SUPPORT]
+               [--trailing_recursive TRAILING_RECURSIVE]
+               [--edge_support_threshold EDGE_SUPPORT_THRESHOLD]
+               [--length_outlier_support_proportion LENGTH_OUTLIER_SUPPORT_PROPORTION]
+               [--remove_by_consensus {True,False}]
+               [--high_var_flag CYCLE_THRESHOLD_MIN]
+               [--min_edge_support_sv MIN_EDGE_SUPPORT_SV]
+               [--all_seq_in_graph] [--no_clean_edges] [-a {core,pan}]
+               [--aligner {prank,clustal,mafft,none}] [--codons]
+               [--core_threshold CORE] [--core_subset SUBSET]
+               [--core_entropy_filter HC_THRESHOLD] [-t N_CPU]
+               [--codon-table TABLE] [--quiet] [--version]
+
+panaroo: an updated pipeline for pangenome investigation
+
+options:
+  -h, --help            show this help message and exit
+  -t N_CPU, --threads N_CPU
+                        number of threads to use (default=1)
+  --codon-table TABLE   the codon table to use for translation (default=11)
+  --quiet               suppress additional output
+  --version             show program's version number and exit
+
+Input/output:
+  -i INPUT_FILES [INPUT_FILES ...], --input INPUT_FILES [INPUT_FILES ...]
+                        input GFF3 files (usually output from running Prokka).
+                        Can also take a file listing each gff file line by
+                        line.
+  -o OUTPUT_DIR, --out_dir OUTPUT_DIR
+                        location of an output directory
+
+Mode:
+  --clean-mode {strict,moderate,sensitive}
+                        The stringency mode at which to run panaroo. Must be
+                        one of 'strict','moderate' or 'sensitive'. Each of
+                        these modes can be fine tuned using the additional
+                        parameters in the 'Graph correction' section.
+                        
+                        strict:
+                        Requires fairly strong evidence (present in  at least
+                        5% of genomes) to keep likely contaminant genes. Will
+                        remove genes that are refound more often than they were
+                        called originally.
+                        
+                        moderate:
+                        Requires moderate evidence (present in  at least 1% of
+                        genomes) to keep likely contaminant genes. Keeps genes
+                        that are refound more often than they were called
+                        originally.
+                        
+                        sensitive:
+                        Does not delete any genes and only performes merge and
+                        refinding operations. Useful if rare plasmids are of
+                        interest as these are often hard to disguish from
+                        contamination. Results will likely include  higher
+                        number of spurious annotations.
+  --remove-invalid-genes
+                        removes annotations that do not conform to the
+                        expected Prokka format such as those including
+                        premature stop codons.
+
+Matching:
+  -c ID, --threshold ID
+                        sequence identity threshold (default=0.98)
+  -f FAMILY_THRESHOLD, --family_threshold FAMILY_THRESHOLD
+                        protein family sequence identity threshold
+                        (default=0.7)
+  --len_dif_percent LEN_DIF_PERCENT
+                        length difference cutoff (default=0.98)
+  --family_len_dif_percent FAMILY_LEN_DIF_PERCENT
+                        length difference cutoff at the gene family level
+                        (default=0.0)
+  --merge_paralogs      don't split paralogs
+
+Refind:
+  --search_radius SEARCH_RADIUS
+                        the distance in nucleotides surronding the neighbour
+                        of an accessory gene in which to search for it
+  --refind_prop_match REFIND_PROP_MATCH
+                        the proportion of an accessory gene that must be found
+                        in order to consider it a match
+  --refind-mode {default,strict,off}
+                        The stringency mode at which to re-find genes.
+                        
+                        default:
+                        Will re-find similar gene sequences. Allows for
+                        premature stop codons and incorrect lengths to account
+                        for misassemblies.
+                        
+                        strict:
+                        Prevents fragmented, misassembled, or potential
+                        pseudogene sequences from being re-found.
+                        
+                        off:
+                        Turns off all re-finding steps.
+
+Graph correction:
+  --min_trailing_support MIN_TRAILING_SUPPORT
+                        minimum cluster size to keep a gene called at the end
+                        of a contig
+  --trailing_recursive TRAILING_RECURSIVE
+                        number of times to perform recursive trimming of low
+                        support nodes near the end of contigs
+  --edge_support_threshold EDGE_SUPPORT_THRESHOLD
+                        minimum support required to keep an edge that has been
+                        flagged as a possible mis-assembly
+  --length_outlier_support_proportion LENGTH_OUTLIER_SUPPORT_PROPORTION
+                        proportion of genomes supporting a gene with a length
+                        more than 1.5x outside the interquatile range for
+                        genes in the same cluster (default=0.01). Genes
+                        failing this test will be re-annotated at the shorter
+                        length
+  --remove_by_consensus {True,False}
+                        if a gene is called in the same region with similar
+                        sequence a minority of the time, remove it. One of
+                        'True' or 'False'
+  --high_var_flag CYCLE_THRESHOLD_MIN
+                        minimum number of nested cycles to call a highly
+                        variable gene region (default = 5).
+  --min_edge_support_sv MIN_EDGE_SUPPORT_SV
+                        minimum edge support required to call structural
+                        variants in the presence/absence sv file
+  --all_seq_in_graph    Retains all DNA sequence for each gene cluster in the
+                        graph output. Off by default as it uses a large amount
+                        of space.
+  --no_clean_edges      Turn off edge filtering in the final output graph.
+
+Gene alignment:
+  -a {core,pan}, --alignment {core,pan}
+                        Output alignments of core genes or all genes. Options
+                        are 'core' and 'pan'. Default: 'None'
+  --aligner {prank,clustal,mafft,none}
+                        Specify an aligner. Options:'prank', 'clustal', and
+                        default: 'mafft'
+  --codons              Generate codon alignments by aligning sequences at the
+                        protein level
+  --core_threshold CORE
+                        Core-genome sample threshold (default=0.95)
+  --core_subset SUBSET  Randomly subset the core genome to these many genes
+                        (default=all)
+  --core_entropy_filter HC_THRESHOLD
+                        Manually set the Block Mapping and Gathering with
+                        Entropy (BMGE) filter. Can be between 0.0 and 1.0. By
+                        default this is set using the Tukey outlier method.
 ```
 

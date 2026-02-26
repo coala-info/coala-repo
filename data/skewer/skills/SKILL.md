@@ -1,8 +1,9 @@
 ---
 name: skewer
-description: Skewer transforms Emacs into a live development environment for the web by establishing a bridge between the editor and one or more browser tabs.
+description: "Skewer provides a live development environment for web development by bridging Emacs to one or more browser tabs. Use when user asks to evaluate JavaScript snippets, update CSS rules in real-time, or modify HTML tags directly in a live browser instance."
 homepage: https://github.com/skeeto/skewer-mode
 ---
+
 
 # skewer
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-methylmix
-description: the package is available on all platforms; click for details.
+description: MethylMix identifies transcriptionally predictive and differentially methylated genes by integrating DNA methylation and gene expression data. Use when user asks to identify driver methylation genes, integrate methylation and gene expression datasets, or model DNA methylation levels using beta mixture models.
 homepage: https://bioconductor.org/packages/release/bioc/html/MethylMix.html
 ---
+
 
 # bioconductor-methylmix
 

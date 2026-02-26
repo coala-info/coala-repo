@@ -1,8 +1,9 @@
 ---
 name: xxmotif
-description: XXmotif is a specialized tool designed to identify sequence motifs using position weight matrices (PWMs) rather than simple consensus strings.
+description: XXmotif identifies sequence motifs using position weight matrices. Use when user asks to find sequence motifs, discover complex motifs including gapped, palindromic, or tandem repeats, find motifs enriched in a positive set, search for motifs on both strands, mask repetitive regions, or refine known motifs.
 homepage: https://github.com/soedinglab/xxmotif
 ---
+
 
 # xxmotif
 

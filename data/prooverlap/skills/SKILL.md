@@ -1,8 +1,9 @@
 ---
 name: prooverlap
-description: ProOvErlap is a specialized bioinformatics tool designed to quantify and statistically validate the spatial relationships between genomic features.
+description: ProOvErlap quantifies and statistically validates spatial relationships and overlaps between genomic features using non-parametric randomization tests. Use when user asks to test overlap enrichment, analyze spatial proximity between features, perform strand-specific genomic analysis, or generate statistical visualizations of genomic localization.
 homepage: https://github.com/ngualand/ProOvErlap
 ---
+
 
 # prooverlap
 

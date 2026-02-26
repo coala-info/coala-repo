@@ -1,8 +1,9 @@
 ---
 name: fgwas
-description: fgwas (Functional Genomics and Genome-Wide Association Studies) is a specialized command-line tool designed to bridge the gap between statistical associations and biological function.
+description: fgwas uses a Bayesian framework to integrate genome-wide association study results with functional genomic annotations to identify enriched biological features. Use when user asks to calculate enrichment parameters for genomic annotations, re-rank SNPs based on functional priors, or model the relationship between GWAS results and functional data.
 homepage: https://github.com/joepickrell/fgwas
 ---
+
 
 # fgwas
 

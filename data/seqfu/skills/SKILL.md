@@ -1,8 +1,9 @@
 ---
 name: seqfu
-description: The `seqfu` suite is a high-performance collection of DNA sequence utilities designed for the robust manipulation of FASTX files.
+description: Seqfu is a high-performance suite of utilities for manipulating, filtering, and analyzing FASTA and FASTQ sequence files. Use when user asks to calculate assembly metrics like N50, count sequences, filter reads by length or pattern, manage paired-end data, or rename sequence headers.
 homepage: http://github.com/quadram-institute-bioscience/seqfu/
 ---
+
 
 # seqfu
 

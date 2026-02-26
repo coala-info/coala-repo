@@ -3,7 +3,7 @@
 ## fastspar
 
 ### Tool Description
-FastSpar is a C++ implementation of the SparCC algorithm for estimating correlations in compositional data. (Note: The provided input text contains system error messages regarding container image conversion and does not contain the actual help documentation for the tool.)
+c++ implementation of SparCC
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6
@@ -18,46 +18,40 @@ FastSpar is a C++ implementation of the SparCC algorithm for estimating correlat
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2929833793: no space left on device
-```
+Program: FastSpar (c++ implementation of SparCC)
+Version 1.0.0
+Contact: Stephen Watts (s.watts2@student.unimelb.edu.au)
 
+Usage:
+  fastspar [options] --otu_table <path> --correlation <path> --covariance <path>
 
-## Metadata
-- **Skill**: generated
+  -c <path>, --otu_table <path>
+                OTU input OTU count table
+  -r <path>, -correlation <path>
+                Correlation output table
+  -a <path>, --covariance <path>
+                Covariance output table
 
-## fastspar_fastspar_bootstrap
+Options:
+  -i <int>, --iterations <int>
+                Number of interations to perform (default: 50)
+  -x <int>, --exclusion_iterations <int>
+                Number of exclusion interations to perform (default: 10)
+  -e <float>, --threshold <float>
+                Correlation strength exclusion threshold (default: 0.1)
+  -t <int>, --threads <int>
+                Number of threads (default: 1)
+  -s <int>, --seed <int>
+                Random number generator seed (default: 1)
+  -y, --yes
+                Assume yes for prompts (default: unset)
 
-### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log indicating a failure to build a container image due to lack of disk space.
+Other:
+  -h        --help
+                Display this help and exit
+  -v        --version
+                Display version information and exit
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6
-- **Homepage**: https://github.com/scwatts/fastspar
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastspar/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4242036577: no space left on device
-```
-
-## fastspar_fastspar_pvalues
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6
-- **Homepage**: https://github.com/scwatts/fastspar
-- **Package**: https://anaconda.org/channels/bioconda/packages/fastspar/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/fastspar:1.0.0--h1b620e3_6 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1678830661: no space left on device
+fastspar: error: option -c/--otu_table, -r/--correlation, and -a/--covariance are required
 ```
 

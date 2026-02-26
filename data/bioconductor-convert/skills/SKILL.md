@@ -1,8 +1,9 @@
 ---
 name: bioconductor-convert
-description: the package is available on all platforms; click for details.
+description: This package provides functions to convert between different data structures used in microarray analysis. Use when user asks to convert between ExpressionSet, marrayRaw, and RGList objects or translate data formats between Bioconductor packages.
 homepage: https://bioconductor.org/packages/release/bioc/html/convert.html
 ---
+
 
 # bioconductor-convert
 

@@ -1,8 +1,9 @@
 ---
 name: requests-mock
-description: The `requests-mock` skill (utilizing the `responses` library) allows you to intercept and simulate HTTP responses in Python applications without hitting actual network endpoints.
+description: requests-mock intercepts and simulates HTTP responses in Python applications to facilitate deterministic testing without network calls. Use when user asks to mock API responses, simulate network errors, test specific HTTP status codes, or verify request parameters in unit tests.
 homepage: https://github.com/getsentry/responses
 ---
+
 
 # requests-mock
 

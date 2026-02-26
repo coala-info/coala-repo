@@ -1,8 +1,9 @@
 ---
 name: bioconductor-awst
-description: the package is available on all platforms; click for details.
+description: This tool regularizes RNA-seq read counts using per-sample standardization and asymmetric winsorization to reduce noise and improve sample clustering. Use when user asks to transform gene expression data, reduce background noise in lowly expressed genes, or mitigate amplification bias for downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/awst.html
 ---
+
 
 # bioconductor-awst
 

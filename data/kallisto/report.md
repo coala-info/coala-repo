@@ -3,7 +3,7 @@
 ## kallisto
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull or convert the kallisto image due to insufficient disk space. It does not contain help text or argument definitions.
+kallisto is a program for quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using high-throughput mRNA sequencing reads.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/kallisto:0.51.1--h2b92561_2
@@ -12,17 +12,19 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/kallisto/overview
-- **Total Downloads**: 239.5K
+- **Total Downloads**: 239.6K
 - **Last updated**: 2025-08-10
 - **GitHub**: https://github.com/pachterlab/kallisto
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/kallisto:0.51.1--h2b92561_2 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2166068708: no space left on device
+Unable to find image 'quay.io/biocontainers/kallisto:0.51.1--h2b92561_2' locally
+0.51.1--h2b92561_2: Pulling from biocontainers/kallisto
+0cacab098358: Already exists
+bd9ddc54bea9: Already exists
+29d5e0752561: Pulling fs layer
+docker: write /var/lib/docker/tmp/GetImageBlob1710517092: no space left on device
+
+Run 'docker run --help' for more information
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: moca
-description: moca (Motif Conservation Analysis) is a specialized bioinformatics tool used to distinguish "true" biological motifs from noise by analyzing their evolutionary signatures.
+description: "moca analyzes the evolutionary conservation of transcription factor binding sites to distinguish functional biological motifs from noise. Use when user asks to identify motifs in ChIP-Seq data, calculate motif conservation scores, or generate conservation plots."
 homepage: https://github.com/saketkc/moca
 ---
+
 
 # moca
 

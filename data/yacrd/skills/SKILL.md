@@ -1,8 +1,9 @@
 ---
 name: yacrd
-description: yacrd (Yet Another Chimeric Read Detector) is a specialized tool for identifying problematic sequences in long-read datasets.
+description: yacrd identifies and processes problematic (chimeric or low-coverage) sequences in long-read datasets. Use when user asks to detect chimeric reads, filter problematic reads, extract problematic reads, split reads to remove bad regions, or scrub reads to remove bad regions.
 homepage: https://github.com/natir/yacrd
 ---
+
 
 # yacrd
 

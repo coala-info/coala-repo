@@ -1,8 +1,9 @@
 ---
 name: alcor
-description: "FAIL to generate CWL: alcor not found in Singularity image. The image may not provide this executable."
+description: AlcoR is a toolkit for characterizing, mapping, and masking low-complexity regions in genomic and proteomic sequences using data compression. Use when user asks to map or mask low-complexity regions, simulate synthetic sequences with repetitive elements, or generate SVG visualizations for comparative genomics.
 homepage: https://cobilab.github.io/alcor/
 ---
+
 
 # alcor
 

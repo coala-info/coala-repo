@@ -1,8 +1,9 @@
 ---
 name: pyfastaq
-description: The `pyfastaq` tool is a versatile suite of Python3 scripts designed for the rapid manipulation of common genomic sequence formats.
+description: "pyfastaq is a suite of scripts for the manipulation and conversion of common genomic sequence formats like FASTA and FASTQ. Use when user asks to reverse complement sequences, translate DNA to protein, filter or sort sequences, interleave paired-end reads, or convert between sequence file formats."
 homepage: https://github.com/sanger-pathogens/Fastaq
 ---
+
 
 # pyfastaq
 

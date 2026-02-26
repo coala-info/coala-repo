@@ -1,18 +1,20 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - niemagraphgen
-  - ngg_complete
+baseCommand: ngg_complete
 label: niemagraphgen_ngg_complete
-doc: "NIEMA Graph Generator - Complete workflow command. Note: The provided text contains
-  execution logs/errors rather than help documentation, so no specific arguments could
-  be extracted.\n\nTool homepage: https://github.com/niemasd/NiemaGraphGen"
-inputs: []
+doc: "NiemaGraphGen v1.0.6 (FAVITES Output Format) (32-bit) (Complete Graph)\n\nTool
+  homepage: https://github.com/niemasd/NiemaGraphGen"
+inputs:
+  - id: num_nodes
+    type: int
+    doc: Number of nodes in the graph
+    inputBinding:
+      position: 1
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/niemagraphgen:1.0.6--h503566f_1
+    dockerPull: quay.io/biocontainers/niemagraphgen:1.0.6--hdbdd923_0
 stdout: niemagraphgen_ngg_complete.out

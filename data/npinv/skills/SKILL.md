@@ -1,8 +1,9 @@
 ---
 name: npinv
-description: npInv is a specialized bioinformatics tool designed to identify and genotype inversion structural variations from long-read alignments.
+description: npInv identifies and genotypes inversion structural variations from long-read alignments. Use when user asks to detect inversions, genotype structural variants, or resolve inversion breakpoints in long-read sequencing data.
 homepage: https://github.com/haojingshao/npInv
 ---
+
 
 # npinv
 

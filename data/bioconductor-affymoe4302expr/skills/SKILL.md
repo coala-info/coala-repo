@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affymoe4302expr
-description: the package is available on all platforms; click for details.
+description: This package provides a curated database of normalized mouse gene expression profiles for the Affymetrix Mouse Genome 430 2.0 Array. Use when user asks to retrieve standardized mouse transcriptome data, perform Gene Set Context Analysis, or access curated NCBI GEO metadata for the GPL1261 platform.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affymoe4302Expr.html
 ---
+
 
 # bioconductor-affymoe4302expr
 

@@ -1,8 +1,9 @@
 ---
 name: hera
-description: Hera is a specialized bioinformatics tool designed to optimize the processing of RNA-seq data.
+description: Hera is a bioinformatics tool designed for rapid and precise RNA-seq data processing using a hybrid alignment strategy. Use when user asks to build a transcriptome index, estimate transcript abundance, or detect splicing events and gene fusions.
 homepage: https://github.com/bioturing/hera
 ---
+
 
 # hera
 

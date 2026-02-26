@@ -1,8 +1,9 @@
 ---
 name: esme_psmpi_5_12_1
-description: The `esme_psmpi_5_12_1` skill provides a specialized environment for climate scientists and HPC engineers.
+description: This tool provides a curated bundle of interoperable libraries and frameworks for Earth system modeling and high-performance computing. Use when user asks to set up a climate modeling environment, verify library linkages, or perform MPI performance benchmarking.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_psmpi_5_12_1
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-maskbad
-description: the package is available on all platforms; click for details.
+description: The bioconductor-maskbad package identifies and masks microarray probes affected by sequence polymorphisms or binding affinity differences. Use when user asks to mask probes with sequence polymorphisms, identify binding affinity differences, or filter unreliable microarray probes.
 homepage: https://bioconductor.org/packages/release/bioc/html/maskBAD.html
 ---
+
 
 # bioconductor-maskbad
 

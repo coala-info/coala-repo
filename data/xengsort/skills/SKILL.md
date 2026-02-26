@@ -1,8 +1,9 @@
 ---
 name: xengsort
-description: xengsort is a high-performance tool designed to classify sequencing reads from xenograft samples by assigning them to host, graft, both, neither, or ambiguous categories.
+description: xengsort classifies sequencing reads from xenograft samples into host, graft, both, neither, or ambiguous categories. Use when user asks to build a hash index, classify sequencing reads, or inspect a hash index.
 homepage: https://gitlab.com/genomeinformatics/xengsort
 ---
+
 
 # xengsort
 

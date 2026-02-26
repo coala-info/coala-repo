@@ -1,8 +1,9 @@
 ---
 name: epiweeks
-description: The `epiweeks` skill provides specialized functionality for handling epidemiological calendars.
+description: The epiweeks tool calculates and manipulates epidemiological weeks and years using the US CDC or ISO 8601 systems. Use when user asks to convert calendar dates to epidemiological weeks, calculate week boundary dates, or perform arithmetic on reporting periods.
 homepage: https://github.com/dralshehri/epiweeks
 ---
+
 
 # epiweeks
 

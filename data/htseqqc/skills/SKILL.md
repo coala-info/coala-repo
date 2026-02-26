@@ -1,8 +1,9 @@
 ---
 name: htseqqc
-description: `htseqqc` (also known as HTSQualC) is an automated preprocessing tool designed to ensure the integrity of Illumina sequencing data.
+description: htseqqc is an automated preprocessing tool that filters, trims, and generates quality control reports for Illumina sequencing data. Use when user asks to filter low-quality reads, trim adapter sequences, or generate visual quality assessment reports for FASTQ files.
 homepage: https://reneshbedre.github.io/blog/htseqqc.html
 ---
+
 
 # htseqqc
 

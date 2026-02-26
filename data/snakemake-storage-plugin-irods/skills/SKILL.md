@@ -1,8 +1,9 @@
 ---
 name: snakemake-storage-plugin-irods
-description: The snakemake-storage-plugin-irods is a specialized extension for Snakemake that allows the workflow engine to communicate directly with iRODS servers.
+description: This plugin enables Snakemake to use iRODS as a storage backend for automated data transfer and management. Use when user asks to access data using iRODS URIs, configure iRODS as a default storage provider, or integrate iRODS authentication into Snakemake workflows.
 homepage: https://github.com/snakemake/snakemake-storage-plugin-irods
 ---
+
 
 # snakemake-storage-plugin-irods
 

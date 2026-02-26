@@ -3,10 +3,10 @@
 ## novoalign
 
 ### Tool Description
-The provided text is an error log indicating a failure to run the tool via a container (Apptainer/Singularity) due to insufficient disk space. No help text or argument definitions were found in the input.
+Show list of processes
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/novoalign:4.03.04--h5ca1c30_4
+- **Docker Image**: quay.io/biocontainers/novoalign:4.03.04--h43eeafb_3
 - **Homepage**: http://www.novocraft.com/products/novoalign/
 - **Package**: https://anaconda.org/channels/bioconda/packages/novoalign/overview
 - **Validation**: PASS
@@ -18,29 +18,17 @@ The provided text is an error log indicating a failure to run the tool via a con
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/novoalign:4.03.04--h5ca1c30_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2049349541: no space left on device
-```
+ps: invalid option -- 'p'
+BusyBox v1.32.1 (2021-04-13 11:15:36 UTC) multi-call binary.
 
+Usage: ps [-o COL1,COL2=HEADER] [-T]
 
-## Metadata
-- **Skill**: generated
+Show list of processes
 
-## novoalign_novoindex
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/novoalign:4.03.04--h5ca1c30_4
-- **Homepage**: http://www.novocraft.com/products/novoalign/
-- **Package**: https://anaconda.org/channels/bioconda/packages/novoalign/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/novoalign:4.03.04--h5ca1c30_4 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2992639161: no space left on device
+	-o COL1,COL2=HEADER	Select columns for display
+	-T			Show threads
+Error - You need a valid current license to use this product.
+You can purchase a license or request a trial license from http://www.novocraft.com/buy-now/
+Novoalign V3 and earlier can be used by non-profit organisations without a license with some limitations on functionality.
 ```
 

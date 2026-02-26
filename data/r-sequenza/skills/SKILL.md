@@ -1,8 +1,9 @@
 ---
 name: r-sequenza
-description: Skill for using the CRAN R package r-sequenza.
+description: r-sequenza analyzes tumor DNA sequencing data to estimate genomic abnormalities like somatic copy number alterations, tumor purity, and ploidy. Use when user asks to process seqz files, calculate log-ratios and B-allele frequencies, or infer tumor cellularity and ploidy in R.
 homepage: https://cran.r-project.org/web/packages/sequenza/index.html
 ---
+
 
 # r-sequenza
 

@@ -1,8 +1,9 @@
 ---
 name: biobasehttptools
-description: BiobaseHTTPTools is a suite of command-line utilities designed to streamline common bioinformatics workflows that involve querying remote databases.
+description: BiobaseHTTPTools is a suite of command-line utilities for querying remote bioinformatics databases to map identifiers and retrieve biological sequences. Use when user asks to fetch sequences in FASTA format, convert NCBI accessions to Taxonomy IDs, retrieve Gene Ontology terms, or map Ensembl Gene IDs to UniProt identifiers.
 homepage: https://github.com/eggzilla/BiobaseHTTPTools
 ---
+
 
 # biobasehttptools
 

@@ -1,8 +1,9 @@
 ---
 name: cleaverna
-description: CleaveRNA is a machine learning-powered computational tool designed to predict the cleavage efficiency of DNAzymes on target RNA sequences.
+description: CleaveRNA predicts the cleavage efficiency of DNAzymes on target RNA sequences using machine learning and structural features. Use when user asks to predict DNAzyme cleavage sites, evaluate candidate site accessibility, or train custom models using experimental cleavage data.
 homepage: https://github.com/reyhaneh-tavakoli/CleaveRNA
 ---
+
 
 # cleaverna
 

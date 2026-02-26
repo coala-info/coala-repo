@@ -1,8 +1,9 @@
 ---
 name: alloshp
-description: "A tool for allosteric site prediction (Note: The provided help text contains container build logs rather than tool usage information)."
+description: AlloSHP is a bioinformatics pipeline that resolves the subgenomes of allopolyploid organisms by extracting homeologous polymorphisms from mapped reads. Use when user asks to identify syntenic regions between diploid references, extract subgenome-specific alignments from VCF files, or reconstruct phylogenies for complex polyploid systems.
 homepage: https://github.com/eead-csic-compbio/AlloSHP
 ---
+
 
 # alloshp
 

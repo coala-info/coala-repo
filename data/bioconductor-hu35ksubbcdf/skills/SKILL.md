@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hu35ksubbcdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment and coordinate mapping functions for the Affymetrix Hu35KsubB microarray platform. Use when user asks to map probe coordinates to indices, access CDF metadata, or process Affymetrix Human Genome U35K Subset B chip data in R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hu35ksubbcdf.html
 ---
+
 
 # bioconductor-hu35ksubbcdf
 

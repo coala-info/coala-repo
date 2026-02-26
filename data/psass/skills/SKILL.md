@@ -1,8 +1,9 @@
 ---
 name: psass
-description: PSASS (Pooled Sequencing Analysis for Sex Signal) is a specialized toolset designed to detect genomic signals that differ between two pooled populations.
+description: PSASS detects genomic signals and comparative metrics between two pooled populations to identify sex-linked regions or scaffolds. Use when user asks to identify sex-determination signals, calculate Fst and SNP distribution from pooled sequencing data, or generate nucleotide composition files from BAM or CRAM files.
 homepage: https://github.com/RomainFeron/PSASS
 ---
+
 
 # psass
 

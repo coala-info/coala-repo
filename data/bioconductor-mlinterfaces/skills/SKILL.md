@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mlinterfaces
-description: the package is available on all platforms; click for details.
+description: MLInterfaces provides a uniform interface to various machine learning algorithms for Bioconductor data structures. Use when user asks to perform classification, clustering, or cross-validation on genomic datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/MLInterfaces.html
 ---
+
 
 # bioconductor-mlinterfaces
 

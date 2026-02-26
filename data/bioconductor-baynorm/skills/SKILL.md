@@ -1,8 +1,9 @@
 ---
 name: bioconductor-baynorm
-description: the package is available on all platforms; click for details.
+description: This tool provides a Bayesian approach for normalizing single-cell RNA-seq data by estimating gene-specific priors and cell-specific capture efficiencies. Use when user asks to normalize scRNA-seq counts, estimate capture efficiencies, or generate posterior distributions of transcript counts for downstream analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/bayNorm.html
 ---
+
 
 # bioconductor-baynorm
 

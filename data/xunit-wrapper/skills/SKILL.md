@@ -1,8 +1,9 @@
 ---
 name: xunit-wrapper
-description: `xunit-wrapper` is a lightweight Python utility that provides a simple interface for generating XUnit XML reports.
+description: xunit-wrapper generates XUnit XML reports by wrapping blocks of code to track execution duration and capture errors. Use when user asks to generate XUnit XML reports, track execution time of code blocks, capture errors in script steps, report script step success or failure to CI/CD, or group multiple test cases into a suite.
 homepage: https://github.com/TAMU-CPT/xunit-python-decorator
 ---
+
 
 # xunit-wrapper
 

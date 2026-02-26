@@ -1,8 +1,9 @@
 ---
 name: phytest
-description: phytest is a specialized testing framework built on top of pytest designed to automate quality control for phylogenetic analyses.
+description: phytest is a testing framework designed to automate quality control and validation for phylogenetic trees and sequence alignments. Use when user asks to validate sequence alignments, check phylogenetic tree topology, or generate quality control reports for biological data.
 homepage: https://github.com/phytest-devs/phytest
 ---
+
 
 # phytest
 

@@ -1,8 +1,9 @@
 ---
 name: r-ccube
-description: R package ccube (documentation from project home).
+description: r-ccube clusters somatic variants and estimates cancer cell fractions from bulk sequencing data using Bayesian mixture models. Use when user asks to estimate cancer cell fractions, cluster SNVs or SVs, identify clonal architecture, or estimate tumor purity.
 homepage: https://cran.r-project.org/web/packages/ccube/index.html
 ---
+
 
 # r-ccube
 

@@ -1,8 +1,9 @@
 ---
 name: selscan
-description: selscan is a specialized tool for detecting signatures of recent or ongoing positive selection in genomes by analyzing haplotype structure.
+description: selscan calculates haplotype-based statistics to detect signatures of recent or ongoing positive selection in genomic data. Use when user asks to calculate iHS, nSL, or iHH12 for single populations, perform cross-population scans like XP-EHH or XP-nSL, or analyze site-specific EHH decay.
 homepage: https://github.com/szpiech/selscan
 ---
+
 
 # selscan
 

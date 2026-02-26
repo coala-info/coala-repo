@@ -1,8 +1,9 @@
 ---
 name: r-chromvarmotifs
-description: R package chromvarmotifs (documentation from project home).
+description: The r-chromvarmotifs package provides curated collections of transcription factor motif sets as PWMatrixList objects for chromatin accessibility analysis. Use when user asks to load human or mouse cisBP motifs, access HOMER or ENCODE motif collections, or provide motif inputs for chromVAR and motifmatchr workflows.
 homepage: https://cran.r-project.org/web/packages/chromvarmotifs/index.html
 ---
+
 
 # r-chromvarmotifs
 

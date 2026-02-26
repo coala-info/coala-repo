@@ -1,8 +1,9 @@
 ---
 name: bioconductor-squadd
-description: the package is available on all platforms; click for details.
+description: This package provides a standardized method for the analysis and comparison of Boolean network simulations with experimental data. Use when user asks to analyze Boolean network dynamics, compare simulation results with experimental data, or quantify differences in signaling network models.
 homepage: https://bioconductor.org/packages/3.5/bioc/html/SQUADD.html
 ---
+
 
 # bioconductor-squadd
 

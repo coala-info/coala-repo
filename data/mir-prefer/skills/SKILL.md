@@ -1,8 +1,9 @@
 ---
 name: mir-prefer
-description: miR-PREFeR is a specialized bioinformatics tool for the accurate and efficient prediction of plant microRNAs.
+description: miR-PREFeR predicts plant microRNAs from small RNA-seq expression profiles using established annotation criteria and thermodynamic stability. Use when user asks to predict plant miRNAs, analyze small RNA-seq expression profiles, or perform genome-wide miRNA discovery.
 homepage: https://github.com/hangelwen/miR-PREFeR
 ---
+
 
 # mir-prefer
 

@@ -1,8 +1,9 @@
 ---
 name: phyluce
-description: Phyluce is a comprehensive bioinformatics suite designed to transform raw genomic data into phylogenomic insights.
+description: Phyluce is a bioinformatics suite designed to process genomic data for phylogenomic analysis of ultraconserved elements and other conserved loci. Use when user asks to assemble contigs from raw reads, identify UCE loci, align and trim sequences, or export data for phylogenetic inference.
 homepage: https://github.com/faircloth-lab/phyluce
 ---
+
 
 # phyluce
 

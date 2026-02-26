@@ -1,8 +1,9 @@
 ---
 name: bioconductor-facopy.annot
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This package provides genome annotations and reference copy number alteration frequency data for use with the facopy Bioconductor package. Use when user asks to access chromosome arm limits, retrieve genomic feature locations, or compare experimental results against reference cancer datasets like TCGA and NCI60.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/facopy.annot.html
 ---
+
 
 # bioconductor-facopy.annot
 

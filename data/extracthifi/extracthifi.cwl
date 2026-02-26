@@ -2,13 +2,29 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: extracthifi
 label: extracthifi
-doc: "Extract HiFi reads from PacBio data\n\nTool homepage: https://github.com/PacificBiosciences/extracthifi"
-inputs: []
+doc: "extract HiFi reads (>= Q20) from full CCS reads.bam output\n\nTool homepage:
+  https://github.com/PacificBiosciences/extracthifi"
+inputs:
+  - id: input_bam
+    type: File
+    doc: Input CCS BAM.
+    inputBinding:
+      position: 1
+  - id: num_threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use, 0 means autodetection.
+    default: 0
+    inputBinding:
+      position: 102
+      prefix: --num-threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_bam
+    type: File
+    doc: Ouput HiFi BAM.
+    outputBinding:
+      glob: '*.out'
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/extracthifi:1.0.0--0
-stdout: extracthifi.out
+    dockerPull: quay.io/biocontainers/extracthifi:1.0.0--h9ee0642_1

@@ -1,8 +1,9 @@
 ---
 name: r-biom
-description: Skill for using the CRAN R package r-biom.
+description: The r-biom package provides an R interface for reading, writing, and manipulating Biological Observation Matrix (BIOM) files. Use when user asks to read BIOM files into R, extract sample or observation metadata, or export R objects to the BIOM format.
 homepage: https://cran.r-project.org/web/packages/biom/index.html
 ---
+
 
 # r-biom
 

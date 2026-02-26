@@ -1,8 +1,9 @@
 ---
 name: bioconductor-clippda
-description: the package is available on all platforms; click for details.
+description: This package performs sample size calculations and power analysis for clinical proteomic profiling data. Use when user asks to calculate sample sizes for mass spectrometry experiments, perform power analysis for clinical proteomics, or determine the number of replicates needed for proteomic studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/clippda.html
 ---
+
 
 # bioconductor-clippda
 

@@ -1,8 +1,9 @@
 ---
 name: fastobo
-description: fastobo is a high-performance library, implemented in Rust with Python bindings, designed to handle the OBO 1.4 file format.
+description: "fastobo is a high-performance library for parsing, editing, and serializing OBO 1.4 ontology files into a structured Abstract Syntax Tree. Use when user asks to load OBO files, edit ontology components, validate format compliance, or serialize ontology data back to the OBO format."
 homepage: https://github.com/fastobo/fastobo-py
 ---
+
 
 # fastobo
 

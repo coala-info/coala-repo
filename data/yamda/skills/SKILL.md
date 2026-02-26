@@ -1,8 +1,9 @@
 ---
 name: yamda
-description: YAMDA (Yet Another Motif Discovery Algorithm) is a specialized bioinformatics tool designed for the high-throughput identification of sequence motifs.
+description: YAMDA is a bioinformatics tool for high-throughput identification of sequence motifs. Use when user asks to 'identify sequence motifs', 'preprocess sequences for motif discovery', 'extract sequences from genomic intervals', or 'work with protein sequences'.
 homepage: https://github.com/daquang/YAMDA
 ---
+
 
 # yamda
 

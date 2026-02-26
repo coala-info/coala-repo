@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hgu133a2cdf
-description: the package is available on all platforms; click for details.
+description: This package provides the Chip Definition File environment for the Affymetrix Human Genome U133A 2.0 Array. Use when user asks to map probe coordinates to indices, access array dimensions, or retrieve probeset metadata for HG-U133A 2.0 data.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/hgu133a2cdf.html
 ---
+
 
 # bioconductor-hgu133a2cdf
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cghmcr
-description: the package is available on all platforms; click for details.
+description: This tool identifies recurrent genomic regions of gain or loss across multiple samples using segmented copy number data. Use when user asks to identify minimum common regions, calculate segment gain or loss scores, or analyze recurrent copy number alterations across a cohort.
 homepage: https://bioconductor.org/packages/release/bioc/html/cghMCR.html
 ---
+
 
 # bioconductor-cghmcr
 

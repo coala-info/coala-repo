@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gsva
-description: the package is available on all platforms; click for details.
+description: GSVA performs single-sample gene set enrichment analysis to calculate pathway-level scores from molecular data such as RNA-seq or microarrays. Use when user asks to calculate enrichment scores for gene sets, perform ssGSEA, PLAGE, or z-score analysis, and transform gene expression matrices into pathway-centric results.
 homepage: https://bioconductor.org/packages/release/bioc/html/GSVA.html
 ---
+
 
 # bioconductor-gsva
 

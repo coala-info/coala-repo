@@ -1,8 +1,9 @@
 ---
 name: bioconductor-epitxdb.sc.saccer3
-description: the package is available on all platforms; click for details.
+description: This package provides EpiTxDb objects containing RNA modification data for Saccharomyces cerevisiae from RMBase v2.0 and tRNAdb. Use when user asks to access yeast epitranscriptomic annotations, retrieve RNA modification coordinates for the sacCer3 genome, or load RMBase and tRNAdb data into R.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EpiTxDb.Sc.sacCer3.html
 ---
+
 
 # bioconductor-epitxdb.sc.saccer3
 

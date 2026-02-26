@@ -1,8 +1,9 @@
 ---
 name: deploid
-description: DEploid is a specialized tool designed to disentangle mixed genomes from samples where multiple strains are present in unknown proportions.
+description: DEploid deconvolutes mixed genomic samples to estimate the number of strains, their relative proportions, and their individual haplotypes. Use when user asks to disentangle mixed genomes, estimate strain abundance, or perform haplotype deconvolution on multi-strain infections.
 homepage: http://deploid.readthedocs.io/en/latest/index.html
 ---
+
 
 # deploid
 

@@ -1,8 +1,9 @@
 ---
 name: semidbm
-description: semidbm is a high-performance, pure-Python implementation of a DBM (Database Manager).
+description: semidbm is a high-performance, pure-Python DBM implementation that provides a persistent, disk-backed dictionary for storing string-based key-value pairs. Use when user asks to create a persistent database, store data in a single-file DBM format, or perform disk-backed dictionary operations without external C dependencies.
 homepage: https://github.com/jamesls/semidbm
 ---
+
 
 # semidbm
 

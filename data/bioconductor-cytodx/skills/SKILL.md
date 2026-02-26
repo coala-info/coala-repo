@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cytodx
-description: the package is available on all platforms; click for details.
+description: This tool predicts clinical outcomes from single-cell cytometry data without the need for manual cell gating. Use when user asks to build predictive models from .fcs files, perform rank transformation to reduce batch effects, or identify cell subsets associated with clinical outcomes using decision trees.
 homepage: https://bioconductor.org/packages/release/bioc/html/CytoDx.html
 ---
+
 
 # bioconductor-cytodx
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.matrix
-description: the package is available on all platforms; click for details.
+description: This tool saves and loads matrix-like objects to and from file artifacts using the alabaster framework. Use when user asks to save R matrices to disk in HDF5-backed formats, load saved matrix objects as ReloadedMatrix instances, or persist DelayedArray operations without evaluation.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.matrix.html
 ---
+
 
 # bioconductor-alabaster.matrix
 

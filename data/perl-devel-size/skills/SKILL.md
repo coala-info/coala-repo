@@ -1,8 +1,9 @@
 ---
 name: perl-devel-size
-description: The `perl-devel-size` skill provides the ability to precisely quantify how much memory Perl data structures occupy.
+description: This tool measures the memory consumption of Perl data structures in bytes. Use when user asks to quantify the size of variables, calculate the total memory used by nested data structures, or profile memory usage to debug leaks.
 homepage: http://metacpan.org/pod/Devel::Size
 ---
+
 
 # perl-devel-size
 

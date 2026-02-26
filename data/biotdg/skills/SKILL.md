@@ -1,8 +1,9 @@
 ---
 name: biotdg
-description: The Bioinformatics Test Data Generator (`biotdg`) is a specialized tool for creating realistic test datasets where chromosome counts vary.
+description: biotdg generates realistic bioinformatics test datasets by creating a true genome FASTA with custom chromosome-specific ploidy and phased mutations before simulating FASTQ reads. Use when user asks to generate test datasets with varying chromosome counts, simulate male or female genomes, or create reads with specific ploidy levels per chromosome.
 homepage: https://github.com/biowdl/biotdg
 ---
+
 
 # biotdg
 

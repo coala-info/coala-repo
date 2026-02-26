@@ -1,8 +1,9 @@
 ---
 name: freyja
-description: Freyja is a specialized tool for "de-mixing" genomic data from samples containing multiple SARS-CoV-2 lineages.
+description: Freyja estimates the relative abundance of SARS-CoV-2 lineages in mixed genomic samples by de-mixing variant frequencies. Use when user asks to de-mix lineages from wastewater samples, estimate variant proportions, or aggregate and plot lineage abundances.
 homepage: https://github.com/andersen-lab/Freyja
 ---
+
 
 # freyja
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.cytogenetics.array
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for cytogenetics microarrays. Use when user asks to process cytogenetics array data, access platform design information for Affymetrix arrays, or perform chromosomal analysis.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.cytogenetics.array.html
 ---
+
 
 # bioconductor-pd.cytogenetics.array
 

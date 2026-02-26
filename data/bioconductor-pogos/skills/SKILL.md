@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pogos
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for interacting with pharmacogenomics databases and ontologies to integrate drug, gene, and phenotype data. Use when user asks to query pharmacogenomics databases, analyze drug-gene interactions, or integrate genomic data with clinical phenotypes.
 homepage: https://bioconductor.org/packages/release/bioc/html/pogos.html
 ---
+
 
 # bioconductor-pogos
 

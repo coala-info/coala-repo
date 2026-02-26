@@ -1,8 +1,9 @@
 ---
 name: mergevcf
-description: mergevcf is a specialized Python utility for merging VCF files by identifying overlapping genomic calls.
+description: mergevcf merges VCF files by identifying overlapping genomic calls with a specific focus on structural variants. Use when user asks to merge structural variant calls from multiple pipelines, track variant provenance across different callers, or identify overlapping breakpoints within a specified distance.
 homepage: https://github.com/ljdursi/mergevcf
 ---
+
 
 # mergevcf
 

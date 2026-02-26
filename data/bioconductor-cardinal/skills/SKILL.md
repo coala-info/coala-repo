@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cardinal
-description: the package is available on all platforms; click for details.
+description: Cardinal provides a comprehensive framework for the analysis and visualization of mass spectrometry imaging data within the R environment. Use when user asks to read or write imzML files, pre-process imaging data, generate ion images, or perform spatial statistical analysis like clustering and classification.
 homepage: https://bioconductor.org/packages/release/bioc/html/Cardinal.html
 ---
+
 
 # bioconductor-cardinal
 

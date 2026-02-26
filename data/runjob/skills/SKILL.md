@@ -1,8 +1,9 @@
 ---
 name: runjob
-description: `runjob` is a specialized job scheduler and pipeline manager designed for bioinformatics workflows.
+description: runjob is a job scheduler and pipeline manager that executes bioinformatics tasks in parallel across local and HPC environments. Use when user asks to submit batch jobs, manage task dependencies, execute workflows on Slurm or SGE clusters, or group shell script commands for resource-efficient execution.
 homepage: https://github.com/yodeng/runjob
 ---
+
 
 # runjob
 

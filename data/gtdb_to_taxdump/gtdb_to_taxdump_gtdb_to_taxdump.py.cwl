@@ -1,10 +1,53 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: gtdb_to_taxdump_gtdb_to_taxdump.py
+baseCommand: gtdb_to_taxdump.py
 label: gtdb_to_taxdump_gtdb_to_taxdump.py
-doc: "A tool to convert GTDB (Genome Taxonomy Database) taxonomy data into NCBI-style
-  taxdump format.\n\nTool homepage: https://github.com/nick-youngblut/gtdb_to_taxdump"
-inputs: []
+doc: "Convert Genome Taxonomy Database (GTDB) taxonomy files to NCBI taxdump format
+  (names.dmp & nodes.dmp).\n\nTool homepage: https://github.com/nick-youngblut/gtdb_to_taxdump"
+inputs:
+  - id: tax_files
+    type:
+      type: array
+      items: File
+    doc: '>=1 taxonomy file (or url)'
+    inputBinding:
+      position: 1
+  - id: column
+    type:
+      - 'null'
+      - string
+    doc: Column in --table that contains genome accessions
+    default: accession
+    inputBinding:
+      position: 102
+      prefix: --column
+  - id: embl_code
+    type:
+      - 'null'
+      - string
+    doc: embl code to use for all nodes
+    default: XX
+    inputBinding:
+      position: 102
+      prefix: --embl-code
+  - id: outdir
+    type:
+      - 'null'
+      - Directory
+    doc: Output directory
+    default: .
+    inputBinding:
+      position: 102
+      prefix: --outdir
+  - id: table
+    type:
+      - 'null'
+      - File
+    doc: Table to append taxIDs to. Accessions used for table join
+    default: None
+    inputBinding:
+      position: 102
+      prefix: --table
 outputs:
   - id: stdout
     type: stdout

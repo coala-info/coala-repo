@@ -1,8 +1,9 @@
 ---
 name: cath-tools
-description: The `cath-tools` suite provides high-performance C++ implementations of protein structure comparison and classification algorithms.
+description: The cath-tools suite provides high-performance C++ implementations for protein structure comparison, classification, and domain architecture resolution. Use when user asks to perform structural alignment via SSAP, resolve overlapping domain hits, superpose 3D coordinates, or cluster structural similarity data.
 homepage: https://github.com/UCLOrengoGroup/cath-tools
 ---
+
 
 # cath-tools
 

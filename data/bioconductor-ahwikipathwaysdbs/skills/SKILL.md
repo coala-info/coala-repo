@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahwikipathwaysdbs
-description: The package provides a comprehensive mapping table of metabolites linked to Wikipathways pathways. The tables include HMDB, KEGG, ChEBI, Drugbank, PubChem compound, ChemSpider, KNApSAcK, and Wikidata IDs plus CAS and InChIKey. The tables are provided for each of the 25 species ("Anopheles gambiae", "Arabidopsis thaliana", "Bacillus subtilis", "Bos taurus", "Caenorhabditis elegans", "Canis familiaris", "Danio rerio", "Drosophila melanogaster", "Equus caballus", "Escherichia coli", "Gallus gallus", "Gibberella zeae", "Homo sapiens", "Hordeum vulgare", "Mus musculus", "Mycobacterium tuberculosis", "Oryza sativa", "Pan troglodytes", "Plasmodium falciparum", "Populus trichocarpa", "Rattus norvegicus", "Saccharomyces cerevisiae", "Solanum lycopersicum", "Sus scrofa", "Zea mays"). These table information can be used for Metabolite Set Enrichment Analysis.
+description: This tool retrieves metabolite-pathway mapping tables from WikiPathways for 25 species via the AnnotationHub framework. Use when user asks to perform metabolite set enrichment analysis, cross-reference metabolite identifiers across multiple databases, or identify metabolites associated with specific biological pathways.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHWikipathwaysDbs.html
 ---
+
 
 # bioconductor-ahwikipathwaysdbs
 

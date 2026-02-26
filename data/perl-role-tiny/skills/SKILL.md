@@ -1,8 +1,9 @@
 ---
 name: perl-role-tiny
-description: This skill facilitates the implementation of minimalist roles in Perl using the `Role::Tiny` module.
+description: This tool facilitates the implementation of minimalist roles and trait-based composition in Perl. Use when user asks to define roles, require specific method implementations in classes, or apply roles to objects and packages at runtime.
 homepage: http://metacpan.org/pod/Role-Tiny
 ---
+
 
 # perl-role-tiny
 

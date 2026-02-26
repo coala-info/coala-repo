@@ -1,8 +1,9 @@
 ---
 name: deepaccess
-description: DeepAccess is a specialized deep learning framework designed for genomic sequence analysis.
+description: DeepAccess is a deep learning framework for predicting chromatin accessibility and interpreting the genomic sequence features that drive those predictions. Use when user asks to train ensemble models on genomic regions, perform differential interpretation between cell types, or generate saliency maps for sequence visualization.
 homepage: https://github.com/gifford-lab/deepaccess-package
 ---
+
 
 # deepaccess
 

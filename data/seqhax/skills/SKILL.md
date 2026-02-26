@@ -1,8 +1,9 @@
 ---
 name: seqhax
-description: `seqhax` is a specialized toolkit designed for bioinformatics workflows that require fast, command-line sequence processing.
+description: Seqhax is a bioinformatics toolkit for fast sequence processing, paired-end read management, and variant file analysis. Use when user asks to interleave or validate paired-end reads, anonymize sequence headers, truncate sequences, or generate histograms for VCF metrics like allele frequency and depth.
 homepage: https://github.com/kdmurray91/seqhax
 ---
+
 
 # seqhax
 

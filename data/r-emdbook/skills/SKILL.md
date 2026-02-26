@@ -1,8 +1,9 @@
 ---
 name: r-emdbook
-description: Auxiliary functions and data sets for "Ecological Models and Data", a book presenting maximum likelihood estimation and related topics for ecologists (ISBN 978-0-691-12522-0).</p>
+description: The emdbook package provides auxiliary functions and datasets to support ecological modeling and maximum likelihood estimation in R. Use when user asks to visualize likelihood surfaces, calculate profile confidence intervals, work with ecological distributions like beta-binomial or zero-inflated models, or access ecological datasets.
 homepage: https://cloud.r-project.org/web/packages/emdbook/index.html
 ---
+
 
 # r-emdbook
 

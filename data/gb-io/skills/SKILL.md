@@ -1,8 +1,9 @@
 ---
 name: gb-io
-description: The `gb-io` library provides a Python interface to a fast GenBank parser written in Rust.
+description: The gb-io library provides a high-performance Python interface for parsing and writing GenBank files using a Rust-based backend. Use when user asks to parse GenBank records efficiently, iterate through large genomic files, extract specific features or qualifiers, or serialize records back to GenBank format.
 homepage: https://github.com/althonos/gb-io.py
 ---
+
 
 # gb-io
 

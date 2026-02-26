@@ -1,8 +1,9 @@
 ---
 name: fastk
-description: FastK is a high-performance k-mer counter specifically optimized for high-quality DNA assembly data.
+description: FastK is a high-performance k-mer counter designed to generate frequency distributions, tables, and per-base profiles for large DNA sequencing datasets. Use when user asks to count k-mers, generate k-mer frequency histograms, create per-base k-mer profiles, or perform set operations on k-mer tables.
 homepage: https://github.com/thegenemyers/FASTK
 ---
+
 
 # fastk
 

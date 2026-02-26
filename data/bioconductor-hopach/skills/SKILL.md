@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hopach
-description: the package is available on all platforms; click for details.
+description: This tool performs hierarchical ordered partitioning and collapsing hybrid clustering for genomic data. Use when user asks to perform automated hierarchical clustering of genes or arrays, determine optimal cluster numbers using the Median Split Silhouette criterion, or assess cluster stability through bootstrap resampling.
 homepage: https://bioconductor.org/packages/release/bioc/html/hopach.html
 ---
+
 
 # bioconductor-hopach
 

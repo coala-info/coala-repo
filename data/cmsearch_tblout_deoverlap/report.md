@@ -1,9 +1,9 @@
 # cmsearch_tblout_deoverlap CWL Generation Report
 
-## cmsearch_tblout_deoverlap
+## cmsearch_tblout_deoverlap_cmsearch-deoverlap.pl
 
 ### Tool Description
-A tool to remove overlapping hits from Infernal cmsearch tabular output (tblout) files.
+Remove overlapping hits from cmsearch, cmscan, nhmmer, or hmmsearch tblout files.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/cmsearch_tblout_deoverlap:0.09--pl5321hdfd78af_0
@@ -18,29 +18,30 @@ A tool to remove overlapping hits from Infernal cmsearch tabular output (tblout)
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmsearch_tblout_deoverlap:0.09--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3303819115: no space left on device
-```
+cmsearch-deoverlap v0.09 [Aug 2023]
 
+Usage:
 
-## Metadata
-- **Skill**: generated
+cmsearch-deoverlap.pl    [OPTIONS] <tblout file>
+	OR
+cmsearch-deoverlap.pl -l [OPTIONS] <list of tblout files>
 
-## cmsearch_tblout_deoverlap_cmsearch-deoverlap.pl
-
-### Tool Description
-A tool to de-overlap cmsearch tabular output (tblout) files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/cmsearch_tblout_deoverlap:0.09--pl5321hdfd78af_0
-- **Homepage**: https://github.com/nawrockie/cmsearch_tblout_deoverlap
-- **Package**: https://anaconda.org/channels/bioconda/packages/cmsearch_tblout_deoverlap/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/cmsearch_tblout_deoverlap:0.09--pl5321hdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3380807421: no space left on device
+	OPTIONS:
+		-l               : single command line argument is a list of tblout files, not a single tblout file
+		-s               : sort hits by bit score [default: sort by E-value]
+		-d               : run in debugging mode (prints extra info)
+		-v               : run in verbose mode (prints all removed and kept hits)
+		--noverlap <n>   : define an overlap as >= <n> or more overlapping residues [1]
+		--nhmmer         : tblout files are from nhmmer v3.x
+		--hmmsearch      : tblout files are from hmmsearch v3.x
+		--cmscan         : tblout files are from cmscan v1.1x, not cmsearch
+		--fcmsearch      : assert tblout files are cmsearch not cmscan
+		--besthmm        : with --hmmsearch, sort by evalue/score of *best* single hit not evalue/score of full seq
+		--clanin <s>     : only remove overlaps within clans, read clan info from file <s> [default: remove all overlaps]
+		--invclan        : w/--clanin, invert clan behavior: do not remove overlaps within clans, remove all other overlaps
+		--maxkeep        : keep hits that only overlap with other hits that are not kept [default: remove all hits with higher scoring overlap]
+		--overlapout <s> : create new tabular file with overlap information in <s>
+		--mdllenin <s>   : w/--overlapout, read model lengths from two-token-per-line-file <s>
+		--dirty          : keep intermediate files (sorted tblout files)
 ```
 

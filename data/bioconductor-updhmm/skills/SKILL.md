@@ -1,8 +1,9 @@
 ---
 name: bioconductor-updhmm
-description: the package is available on all platforms; click for details.
+description: UPDhmm uses Hidden Markov Models to detect regions of uniparental disomy in genomic data. Use when user asks to detect uniparental disomy, identify regions of homozygosity, or perform UPD analysis on SNP array or sequencing data.
 homepage: https://bioconductor.org/packages/release/bioc/html/UPDhmm.html
 ---
+
 
 # bioconductor-updhmm
 

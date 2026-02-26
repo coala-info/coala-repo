@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sparrow
-description: the package is available on all platforms; click for details.
+description: The bioconductor-sparrow package provides a unified interface for performing and comparing multiple gene set enrichment analysis methods. Use when user asks to perform gene set enrichment analysis, compare results from different GSEA algorithms, or visualize pathway enrichment scores.
 homepage: https://bioconductor.org/packages/release/bioc/html/sparrow.html
 ---
+
 
 # bioconductor-sparrow
 

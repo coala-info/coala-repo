@@ -1,8 +1,9 @@
 ---
 name: bioconductor-assessorf
-description: the package is available on all platforms; click for details.
+description: AssessORF evaluates the quality of prokaryotic gene predictions by mapping proteomics and evolutionary conservation data to a central genome. Use when user asks to assess gene prediction accuracy, map peptide evidence to genomic coordinates, categorize predicted genes based on conservation, or compare different gene prediction sets.
 homepage: https://bioconductor.org/packages/release/bioc/html/AssessORF.html
 ---
+
 
 # bioconductor-assessorf
 

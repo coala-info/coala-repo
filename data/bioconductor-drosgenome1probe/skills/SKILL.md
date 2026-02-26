@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosgenome1probe
-description: the package is available on all platforms; click for details.
+description: This package provides probe sequence and layout data for the Affymetrix DrosGenome1 microarray. Use when user asks to access probe sequences, map probes to coordinates, or perform sequence-level analysis for Drosophila melanogaster gene expression data on the drosgenome1 platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosgenome1probe.html
 ---
+
 
 # bioconductor-drosgenome1probe
 

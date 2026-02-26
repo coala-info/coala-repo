@@ -1,8 +1,9 @@
 ---
 name: hydra-multi
-description: Hydra-multi is a specialized bioinformatics tool designed to detect structural variants by integrating signals from paired-end reads across hundreds of genomic samples.
+description: Hydra-multi detects structural variants by integrating paired-end read signals across multiple genomic samples. Use when user asks to identify structural variant breakpoints, run the automated hydra-multi pipeline, or manually extract and cluster discordant alignments.
 homepage: https://github.com/arq5x/Hydra
 ---
+
 
 # hydra-multi
 

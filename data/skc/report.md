@@ -3,7 +3,7 @@
 ## skc
 
 ### Tool Description
-The provided text is a log of a failed container build process and does not contain help documentation for the tool.
+Shared k-mer content between two genomes
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/skc:0.1.0--h7b50bb2_1
@@ -18,13 +18,46 @@ The provided text is a log of a failed container build process and does not cont
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/skc:0.1.0--h7b50bb2_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Shared k-mer content between two genomes
+
+Usage: skc [OPTIONS] <TARGET> <QUERY>
+
+Arguments:
+  <TARGET>
+          Target sequence (smallest of the two genomes recommended)
+          
+          Can be compressed with gzip, bzip2, xz, or zstd
+
+  <QUERY>
+          Query sequence
+          
+          Can be compressed with gzip, bzip2, xz, or zstd
+
+Options:
+  -k, --kmer <KMER>
+          Size of k-mers (max. 32)
+          
+          [default: 21]
+
+  -o, --output <OUTPUT>
+          Output filepath(s); stdout if not present
+
+  -O, --output-type <u|b|g|l|z>
+          u: uncompressed; b: Bzip2; g: Gzip; l: Lzma; z: Zstd
+          
+          Output compression format is automatically guessed from the filename extension. This option is used to override that
+          
+          [default: u]
+
+  -l, --compress-level <INT>
+          Compression level to use if compressing output
+          
+          [default: 6]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
 ```
 
-
-## Metadata
-- **Skill**: generated

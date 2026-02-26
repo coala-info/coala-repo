@@ -1,13 +1,35 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - fasten
-  - straighten
+baseCommand: fasten_straighten
 label: fasten_fasten_straighten
-doc: "The provided text does not contain help information, but appears to be a system
-  error log indicating a failure to build or run the 'fasten' container due to lack
-  of disk space. No arguments could be extracted.\n\nTool homepage: https://github.com/lskatz/fasten"
-inputs: []
+doc: "Convert a fastq file to a standard 4-lines-per-entry format\n\nTool homepage:
+  https://github.com/lskatz/fasten"
+inputs:
+  - id: numcpus
+    type:
+      - 'null'
+      - int
+    doc: Number of CPUs
+    default: 1
+    inputBinding:
+      position: 101
+      prefix: --numcpus
+  - id: paired_end
+    type:
+      - 'null'
+      - boolean
+    doc: The input reads are interleaved paired-end
+    inputBinding:
+      position: 101
+      prefix: --paired-end
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: Print more status messages
+    inputBinding:
+      position: 101
+      prefix: --verbose
 outputs:
   - id: stdout
     type: stdout

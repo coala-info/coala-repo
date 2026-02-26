@@ -1,8 +1,9 @@
 ---
 name: bioconductor-enrichtf
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool performs transcription factor enrichment analysis by integrating motif enrichment with the PECA model to identify functional regulators from genomic regions. Use when user asks to identify candidate transcription factors, perform motif enrichment analysis, or connect genomic regions to target genes in human or mouse genomes.
 homepage: https://bioconductor.org/packages/3.9/bioc/html/enrichTF.html
 ---
+
 
 # bioconductor-enrichtf
 

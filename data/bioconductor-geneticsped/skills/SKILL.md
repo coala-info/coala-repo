@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geneticsped
-description: the package is available on all platforms; click for details.
+description: This tool provides comprehensive pedigree management and genetic analysis within the R environment. Use when user asks to manage pedigree data, calculate genetic relationship matrices, compute inbreeding coefficients, or set up mixed model equations for quantitative genetics.
 homepage: https://bioconductor.org/packages/release/bioc/html/GeneticsPed.html
 ---
+
 
 # bioconductor-geneticsped
 

@@ -1,8 +1,9 @@
 ---
 name: phast
-description: PHAST (Phylogenetic Analysis with Space/Time models) is a specialized toolkit for comparative genomics that models evolutionary processes across both phylogeny (time) and sequence position (space).
+description: PHAST is a toolkit for comparative genomics that models evolutionary processes to identify conserved elements and estimate phylogenetic parameters. Use when user asks to fit phylogenetic models, identify conserved elements with phastCons, compute site-specific conservation p-values with phyloP, or manipulate alignments and trees.
 homepage: http://compgen.cshl.edu/phast/
 ---
+
 
 # phast
 

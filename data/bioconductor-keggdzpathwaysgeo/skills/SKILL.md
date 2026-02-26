@@ -1,8 +1,9 @@
 ---
 name: bioconductor-keggdzpathwaysgeo
-description: the package is available on all platforms; click for details.
+description: This package provides 24 human disease datasets from GEO linked to specific target KEGG pathways for benchmarking gene set analysis methods. Use when user asks to access gold-standard disease datasets, retrieve ExpressionSet objects for benchmarking, or validate gene set enrichment sensitivity using known disease-pathway associations.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/KEGGdzPathwaysGEO.html
 ---
+
 
 # bioconductor-keggdzpathwaysgeo
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rots
-description: the package is available on all platforms; click for details.
+description: ROTS calculates a reproducibility-optimized test statistic for identifying differentially expressed features in high-throughput omics data. Use when user asks to perform differential expression analysis, optimize test statistics for omics data, or identify significant features in transcriptomics and proteomics datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/ROTS.html
 ---
+
 
 # bioconductor-rots
 

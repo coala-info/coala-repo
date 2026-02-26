@@ -1,8 +1,9 @@
 ---
 name: rattle
-description: RATTLE (Reference-free reconstruction and quantification of transcriptomes from long-read sequencing) is a specialized toolset for de novo transcriptome analysis.
+description: RATTLE performs reference-free reconstruction, error correction, and quantification of transcriptomes from long-read sequencing data. Use when user asks to cluster Nanopore reads into genes or isoforms, perform de novo transcriptome assembly, or generate consensus sequences without a reference genome.
 homepage: https://github.com/comprna/RATTLE
 ---
+
 
 # rattle
 

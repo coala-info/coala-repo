@@ -1,8 +1,9 @@
 ---
 name: faststructure
-description: fastStructure is a specialized tool for population genetics designed to infer population structure from large-scale SNP data.
+description: fastStructure infers population structure and ancestry proportions from large-scale SNP genotype data using a variational Bayesian framework. Use when user asks to infer population clusters, perform cross-validation for model selection, or generate Distruct-style visualization plots.
 homepage: https://github.com/rajanil/fastStructure
 ---
+
 
 # faststructure
 

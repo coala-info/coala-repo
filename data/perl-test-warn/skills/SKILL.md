@@ -1,8 +1,9 @@
 ---
 name: perl-test-warn
-description: The `Test::Warn` Perl module extends the standard `Test::More` framework, allowing developers to treat warnings as testable events.
+description: This Perl module provides functions to test whether specific code blocks emit, or do not emit, warnings during execution. Use when user asks to validate warning messages, check for API deprecations, or ensure code blocks are warning-free.
 homepage: http://metacpan.org/pod/Test-Warn
 ---
+
 
 # perl-test-warn
 

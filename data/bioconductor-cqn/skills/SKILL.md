@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cqn
-description: the package is available on all platforms; click for details.
+description: This tool performs conditional quantile normalization for RNA-seq data to remove biases related to GC-content and gene length. Use when user asks to normalize RNA-seq data, correct for GC-content bias, or account for gene length in expression analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/cqn.html
 ---
+
 
 # bioconductor-cqn
 

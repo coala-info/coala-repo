@@ -1,8 +1,9 @@
 ---
 name: perl-cpan-meta-requirements
-description: `perl-cpan-meta-requirements` is a library used to model and manipulate sets of version requirements for Perl distributions.
+description: This library models and manipulates sets of version requirements for Perl distributions to ensure dependencies are correctly defined and validated. Use when user asks to manage Perl module dependencies, simplify version range constraints, or build and test Perl distributions using CPAN standards.
 homepage: https://github.com/Perl-Toolchain-Gang/CPAN-Meta-Requirements
 ---
+
 
 # perl-cpan-meta-requirements
 

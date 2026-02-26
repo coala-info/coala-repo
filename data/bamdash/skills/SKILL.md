@@ -1,8 +1,9 @@
 ---
 name: bamdash
-description: BAMdash is a specialized tool for viral genomics that generates interactive dashboards from sequencing data.
+description: BAMdash creates interactive dashboards and visualizations from viral sequencing data by integrating BAM files with genomic feature tracks. Use when user asks to create interactive dashboards, visualize sequencing coverage, overlay genomic features, calculate genome recovery, annotate variants, or export publication-ready images.
 homepage: https://github.com/jonas-fuchs/BAMdash
 ---
+
 
 # bamdash
 

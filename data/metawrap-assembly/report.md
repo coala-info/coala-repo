@@ -1,9 +1,9 @@
 # metawrap-assembly CWL Generation Report
 
-## metawrap-assembly
+## metawrap-assembly_metawrap
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It contains system log messages and a fatal error regarding container image building (no space left on device).
+Please select a proper module of metaWRAP.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3
@@ -18,29 +18,29 @@ The provided text does not contain help information or usage instructions. It co
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2311544606: no space left on device
-```
+------------------------------------------------------------------------------------------------------------------------
+-----                                  Please select a proper module of metaWRAP.                                  -----
+------------------------------------------------------------------------------------------------------------------------
 
 
-## Metadata
-- **Skill**: generated
+MetaWRAP v=1.3.0
+Usage: metaWRAP [module]
 
-## metawrap-assembly_metawrap
+	Modules:
+	read_qc		Raw read QC module (read trimming and contamination removal)
+	assembly	Assembly module (metagenomic assembly)
+	kraken		KRAKEN module (taxonomy annotation of reads and assemblies)
+	blobology	Blobology module (GC vs Abund plots of contigs and bins)
 
-### Tool Description
-The provided text contains system error messages related to a container runtime failure and does not include the tool's help documentation. No arguments could be parsed.
+	binning		Binning module (metabat, maxbin, or concoct)
+	bin_refinement	Refinement of bins from binning module
+	reassemble_bins Reassemble bins using metagenomic reads
+	quant_bins	Quantify the abundance of each bin across samples
+	classify_bins	Assign taxonomy to genomic bins
+	annotate_bins	Functional annotation of draft genomes
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3
-- **Homepage**: https://github.com/bxlab/metaWRAP
-- **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-assembly/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-assembly:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4214766155: no space left on device
+	--help | -h		show this help message
+	--version | -v	show metaWRAP version
+	--show-config	show where the metawrap configuration files are stored
 ```
 

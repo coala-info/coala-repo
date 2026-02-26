@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bigmemoryextras
-description: the package provides a "BigMatrixFactor" class, a file-backed matrix with factor properties.
+description: This package manages large, file-backed matrices in R using the BigMatrix and BigMatrixFactor classes for memory-efficient data storage. Use when user asks to create persistent matrices that exceed RAM, store categorical data as file-backed factors, or integrate large-scale matrix data into Bioconductor containers like SummarizedExperiment.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/bigmemoryExtras.html
 ---
+
 
 # bioconductor-bigmemoryextras
 

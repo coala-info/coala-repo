@@ -1,8 +1,9 @@
 ---
 name: tr-trimmer
-description: The `tr-trimmer` tool is a specialized utility for bioinformaticians working with FASTA files.
+description: tr-trimmer detects and removes terminal repeats from FASTA sequences. Use when user asks to trim terminal repeats, identify direct or inverted terminal repeats, check for circularity, filter repeats by quality, or report repeat information.
 homepage: https://github.com/apcamargo/tr-trimmer
 ---
+
 
 # tr-trimmer
 

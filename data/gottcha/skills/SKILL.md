@@ -1,8 +1,9 @@
 ---
 name: gottcha
-description: GOTTCHA (Genomic Origin Through Taxonomic CHAllenge) is a specialized metagenomic tool that employs a gene-independent, signature-based method for taxonomic profiling.
+description: GOTTCHA is a metagenomic tool that performs high-resolution taxonomic profiling using a gene-independent, signature-based method. Use when user asks to profile metagenomic samples, classify taxonomic origins, or identify genomic signatures in FASTQ files.
 homepage: https://github.com/poeli/GOTTCHA
 ---
+
 
 # gottcha
 

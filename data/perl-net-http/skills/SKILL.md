@@ -1,8 +1,9 @@
 ---
 name: perl-net-http
-description: The `perl-net-http` skill provides guidance on using the `Net::HTTP` module, a low-level interface for HTTP communication.
+description: The perl-net-http tool provides a low-level Perl interface for managing HTTP protocol communication and socket-level interactions. Use when user asks to initialize HTTP connections, manually format request headers, read response bodies in chunks, or handle chunked transfer encoding.
 homepage: https://github.com/libwww-perl/Net-HTTP
 ---
+
 
 # perl-net-http
 

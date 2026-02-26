@@ -1,8 +1,9 @@
 ---
 name: bioconductor-girafe
-description: The package 'girafe' deals with the genome-level representation of aligned reads from next-generation sequencing data. It contains an object class for enabling a detailed description of genome intervals with aligned reads and functions for comparing, visualising, exporting and working with such intervals and the aligned reads. As such, the package interacts with and provides a link between the packages ShortRead, IRanges and genomeIntervals.
+description: The girafe package processes and visualizes aligned genomic sequence data using interval-based representations. Use when user asks to import BAM files, trim adapter sequences, merge overlapping reads into consensus intervals, calculate read density, or overlap alignments with genomic annotations.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/girafe.html
 ---
+
 
 # bioconductor-girafe
 

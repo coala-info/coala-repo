@@ -1,8 +1,9 @@
 ---
 name: perl-io-tty
-description: The `perl-io-tty` package (comprising `IO::Tty` and `IO::Pty`) is the fundamental Perl library for pseudo-terminal allocation.
+description: The perl-io-tty package provides low-level Perl interfaces for pseudo-terminal allocation and terminal constant management. Use when user asks to allocate a pseudo-tty, automate interactive command-line tools, or bypass errors requiring a terminal environment.
 homepage: http://metacpan.org/pod/IO-Tty
 ---
+
 
 # perl-io-tty
 

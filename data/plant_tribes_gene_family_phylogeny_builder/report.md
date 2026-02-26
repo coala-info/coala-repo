@@ -1,9 +1,9 @@
 # plant_tribes_gene_family_phylogeny_builder CWL Generation Report
 
-## plant_tribes_gene_family_phylogeny_builder
+## plant_tribes_gene_family_phylogeny_builder_GeneFamilyPhylogenyBuilder
 
 ### Tool Description
-A tool for building gene family phylogenies within the PlantTribes framework.
+GENE FAMILY PHYLOGENETIC INFERENCE
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
@@ -18,115 +18,74 @@ A tool for building gene family phylogenies within the PlantTribes framework.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:39:42  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
+Unknown option: help
 
-
-## Metadata
-- **Skill**: generated
-
-## plant_tribes_gene_family_phylogeny_builder_GeneFamilyPhylogenyBuilder
-
-### Tool Description
-The provided text is an error log from a container build process and does not contain the help text or usage information for the tool. As a result, no arguments could be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
-- **Homepage**: https://github.com/dePamphilis/PlantTribes
-- **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_gene_family_phylogeny_builder/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:40:54  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
-
-## plant_tribes_gene_family_phylogeny_builder_GeneFamilyClassifier
-
-### Tool Description
-A tool for gene family classification within the PlantTribes gene family phylogeny builder suite. (Note: The provided input text consists of system error logs regarding a container build failure and does not contain the standard help documentation or argument definitions.)
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
-- **Homepage**: https://github.com/dePamphilis/PlantTribes
-- **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_gene_family_phylogeny_builder/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:41:27  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
-
-## plant_tribes_gene_family_phylogeny_builder_GeneFamilyIntegrator
-
-### Tool Description
-A tool within the PlantTribes gene family phylogeny builder suite. Note: The provided help text contains only system error messages regarding a failed container build and does not list specific command-line arguments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
-- **Homepage**: https://github.com/dePamphilis/PlantTribes
-- **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_gene_family_phylogeny_builder/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:41:59  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
-```
-
-## plant_tribes_gene_family_phylogeny_builder_GeneFamilyAligner
-
-### Tool Description
-A tool from the PlantTribes suite for building gene family phylogenies and alignments.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0
-- **Homepage**: https://github.com/dePamphilis/PlantTribes
-- **Package**: https://anaconda.org/channels/bioconda/packages/plant_tribes_gene_family_phylogeny_builder/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-2026/02/14 21:42:31  warn rootless{dev/console} creating empty file in place of device 5:1
-INFO:    Inserting Apptainer configuration...
-INFO:    Creating SIF file...
-FATAL:   Unable to handle docker://quay.io/biocontainers/plant_tribes_gene_family_phylogeny_builder:1.0.4--0 uri: while building SIF from layers: while creating squashfs: /usr/libexec/apptainer/bin/mksquashfs command failed: exit status 1: Write failed because No space left on device
-FATAL ERROR: Failed to write to output filesystem
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#                                  GENE FAMILY PHYLOGENETIC INFERENCE
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Required Options:
+#
+#  --orthogroup_aln <string>       : Directory containing gene family orthogroup alignment files
+#
+#  --tree_inference <string>       : Phylogenetic trees inference method
+#                                    If RAxML: raxml
+#                                    If FastTree: fasttree
+#
+# # # # # # # # # # # # # # # # # #
+#  Others Options:
+#
+#  --scaffold <string>             : Orthogroups or gene families proteins scaffold.  This can either be an absolute
+#                                    path to the directory containing the scaffolds (e.g., /home/scaffolds/22Gv1.1)
+#                                    or just the scaffold (e.g., 22Gv1.1).  If the latter, ~home/data is prepended to
+#                                    the scaffold to create the absolute path.
+#                                    If Monocots clusters (version 1.0): 12Gv1.0
+#                                    If Angiosperms clusters (version 1.0): 22Gv1.0
+#                                    If Angiosperms clusters (version 1.1): 22Gv1.1
+#                                    If Green plants clusters (version 1.0): 30Gv1.0
+#                                    If Other non PlantTribes clusters: XGvY.Z, where "X" is the number species in the scaffold,
+#                                    and "Y.Z" version number such as 12Gv1.0. Please look at one of the PlantTribes scaffold
+#                                    data on how data files and directories are named, formated, and organized.
+#
+#  --method <string>               : Protein clustering method for the classification scaffold
+#                                    If GFam: gfam
+#                                    If OrthoFinder: orthofinder
+#                                    If OrthoMCL: orthomcl
+#                                    If Other non PlantTribes method: methodname, where "methodname" a nonempty string of
+#                                    word characters (alphanumeric or "_"). No embedded special charaters or white spaces.
+#
+#  --config_dir <string>           : (Optional) Absolute path to the directory containing the default configuration files
+#                                    for the selected scaffold defined by the value of the --scaffold parameter (e.g.,
+#                                    /home/configs/22Gv1.1). If this parameter is not used, the directory containing the
+#                                    default configuration files is set to ~home/config.
+#
+#  --max_orthogroup_size <int>     : Maximum number of sequences in orthogroup alignments
+#                                    Default: 100  
+#
+#  --min_orthogroup_size <int>     : Minimum number of sequences in orthogroup alignments
+#                                    Default: 4
+#
+#  --rooting_order <string>        : File with a list of string fragments matching sequences identifiers of species in the 
+#                                    classification (including scaffold taxa) to be used for determining the most basal taxa in
+#                                    the orthogroups for rooting trees. Should be listed in decreasing order from older to younger
+#                                    lineages. If the file is not provided, trees will be rooted using the most distant taxon
+#                                    present in the orthogroup (see example rooting order configuration files in config sub-directory
+#                                    of the installation). 
+#                                    - requires "--tree_inference" with RAxML
+#
+#  --bootstrap_replicates <int>    : Number of replicates for rapid bootstrap analysis and search for the best-scoring ML tree
+#                                    - requires "--tree_inference" with RAxML
+#                                    Default: 100
+#
+#  --num_threads <int>             : number of threads (CPUs) to assign to external utilities (RAxML)
+#                                    Default: 1 
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#  Example Usage:
+#
+#  GeneFamilyPhylogenyBuilder --orthogroup_aln geneFamilyAlignments_dir/orthogroups_aln_faa --tree_inference fasttree
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ```
 

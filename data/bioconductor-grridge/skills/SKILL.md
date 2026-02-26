@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grridge
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The GRridge package performs adaptive group-regularized ridge regression for high-dimensional data by incorporating external co-data to estimate group-specific penalties. Use when user asks to perform group-regularized ridge regression, incorporate co-data into predictive models, create feature partitions, or select relevant features from high-dimensional biological datasets.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/GRridge.html
 ---
+
 
 # bioconductor-grridge
 

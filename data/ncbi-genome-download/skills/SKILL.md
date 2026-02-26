@@ -1,8 +1,9 @@
 ---
 name: ncbi-genome-download
-description: The `ncbi-genome-download` tool is a specialized CLI utility designed to bypass the complexity of navigating NCBI's FTP structure.
+description: This tool downloads genomic assemblies and metadata from NCBI's RefSeq or GenBank databases using command-line filters. Use when user asks to download sequences by taxonomic group, filter assemblies by quality level, fetch specific file formats like GFF or FASTA, or retrieve genomes using TaxIDs and genera.
 homepage: https://github.com/kblin/ncbi-genome-download/
 ---
+
 
 # ncbi-genome-download
 

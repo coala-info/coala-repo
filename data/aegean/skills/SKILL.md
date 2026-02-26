@@ -1,8 +1,9 @@
 ---
 name: aegean
-description: The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help documentation or usage instructions for the 'aegean' tool. As a result, no arguments could be extracted.
+description: The AEGeAn Toolkit provides a suite of tools for analyzing genome annotations, calculating genomic statistics, and partitioning gene models into distinct loci. Use when user asks to process GFF3 files, define intergenic loci, validate gene model consistency, or summarize gene density and spacing.
 homepage: https://github.com/BrendelGroup/AEGeAn
 ---
+
 
 # aegean
 

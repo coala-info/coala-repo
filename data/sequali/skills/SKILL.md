@@ -1,8 +1,9 @@
 ---
 name: sequali
-description: `sequali` is a high-performance sequencing quality control tool designed to provide rapid insights into genomic data with a minimal memory footprint (typically under 2 GB).
+description: sequali is a high-performance sequencing quality control tool that provides rapid insights into genomic data with a minimal memory footprint. Use when user asks to perform quality control on FASTQ or BAM files, generate MultiQC-compatible reports, or analyze adapter contamination and insert size metrics.
 homepage: https://github.com/rhpvorderman/sequali
 ---
+
 
 # sequali
 

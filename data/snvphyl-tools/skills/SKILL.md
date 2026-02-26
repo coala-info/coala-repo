@@ -1,8 +1,9 @@
 ---
 name: snvphyl-tools
-description: The `snvphyl-tools` package is a collection of Perl scripts and plugins designed for high-density SNV phylogenomics.
+description: The snvphyl-tools package provides a collection of scripts for high-density SNV phylogenomics, including variant calling, filtering, and alignment generation. Use when user asks to prepare genomic data for phylogenetic analysis, convert VCF data into core SNV alignments, or generate distance matrices from microbial isolates.
 homepage: https://github.com/phac-nml/snvphyl-tools
 ---
+
 
 # snvphyl-tools
 

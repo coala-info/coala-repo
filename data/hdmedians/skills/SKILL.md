@@ -1,8 +1,9 @@
 ---
 name: hdmedians
-description: The `hdmedians` package provides fast, specialized implementations for extending median calculations into higher dimensions.
+description: The hdmedians package provides fast implementations for calculating medoids and geometric medians in high-dimensional datasets. Use when user asks to calculate a robust central tendency, find a representative medoid from a dataset, or compute a geometric median that is resistant to outliers.
 homepage: https://github.com/daleroberts/hdmedians
 ---
+
 
 # hdmedians
 

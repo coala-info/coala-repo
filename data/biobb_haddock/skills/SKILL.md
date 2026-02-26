@@ -1,8 +1,9 @@
 ---
 name: biobb_haddock
-description: The `biobb_haddock` module is a collection of Python-based building blocks that wrap the HADDOCK (High Ambiguity Driven protein-protein DOCKing) software suite.
+description: The biobb_haddock tool provides Python-based building blocks to integrate the HADDOCK software suite into automated protein-protein docking workflows. Use when user asks to perform flexible protein-protein docking, define experimental restraints for simulations, or execute HADDOCK docking steps within a bioinformatics pipeline.
 homepage: https://github.com/bioexcel/biobb_haddock
 ---
+
 
 # biobb_haddock
 

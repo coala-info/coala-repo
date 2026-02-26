@@ -1,8 +1,9 @@
 ---
 name: perl-gdgraph
-description: The `perl-gdgraph` skill enables the automated creation of presentation-quality charts.
+description: This tool creates presentation-quality charts and graphs from data using the GD library. Use when user asks to generate bar charts, plot line graphs, create pie charts, or render visual reports from tabular data.
 homepage: https://metacpan.org/pod/GDGraph
 ---
+
 
 # perl-gdgraph
 

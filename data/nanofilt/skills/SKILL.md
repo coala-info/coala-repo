@@ -1,8 +1,9 @@
 ---
 name: nanofilt
-description: NanoFilt is a specialized tool designed for the refinement of long-read sequencing datasets.
+description: "NanoFilt filters and trims long-read sequencing data based on quality, length, and GC content. Use when user asks to filter FASTQ reads by quality score, trim adapter sequences from read ends, or subset reads by length and GC content."
 homepage: https://github.com/wdecoster/nanofilt
 ---
+
 
 # nanofilt
 

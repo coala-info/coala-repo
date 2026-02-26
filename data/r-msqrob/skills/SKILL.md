@@ -1,8 +1,9 @@
 ---
 name: r-msqrob
-description: R package msqrob (documentation from project home).
+description: This tool performs robust statistical inference for quantitative LC-MS proteomics using peptide-level models to handle unbalanced designs and outliers. Use when user asks to perform protein-level inference from label-free proteomics data, conduct differential expression analysis, or visualize protein expression and volcano plots.
 homepage: https://cran.r-project.org/web/packages/msqrob/index.html
 ---
+
 
 # r-msqrob
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-chipenrich
-description: the package is available on all platforms; click for details.
+description: The chipenrich package performs gene set enrichment analysis on genomic regions while accounting for locus length bias. Use when user asks to perform gene set enrichment testing on ChIP-seq or ATAC-seq peaks, account for gene length bias in enrichment analysis, or assign genomic regions to genes using various locus definitions.
 homepage: https://bioconductor.org/packages/release/bioc/html/chipenrich.html
 ---
+
 
 # bioconductor-chipenrich
 

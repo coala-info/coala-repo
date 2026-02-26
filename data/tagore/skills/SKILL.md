@@ -1,8 +1,9 @@
 ---
 name: tagore
-description: tagore is a specialized bioinformatics visualization tool designed to render genomic features onto human chromosome ideograms.
+description: tagore visualizes genomic features by rendering them as shapes onto human chromosome ideograms. Use when user asks to create chromosome painting diagrams, map genomic data to human ideograms, or visualize ancestry and somatic mutations across chromosomes.
 homepage: https://github.com/jordanlab/tagore
 ---
+
 
 # tagore
 

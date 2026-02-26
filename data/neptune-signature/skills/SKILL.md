@@ -1,8 +1,9 @@
 ---
 name: neptune-signature
-description: Neptune is a specialized tool for genomic signature discovery.
+description: "Neptune identifies genomic signatures that are present in an inclusion group and absent from an exclusion group using probabilistic models and k-mer matching. Use when user asks to discover genomic signatures, identify sequences unique to specific groups, or find loci that delineate isolates from a background population."
 homepage: https://github.com/phac-nml/neptune
 ---
+
 
 # neptune-signature
 

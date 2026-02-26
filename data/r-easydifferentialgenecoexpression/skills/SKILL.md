@@ -1,8 +1,9 @@
 ---
 name: r-easydifferentialgenecoexpression
-description: R package easydifferentialgenecoexpression (documentation from project home).
+description: This package performs differential gene coexpression analysis by automating data retrieval from GEO and identifying gene pairs with significant correlation changes between conditions. Use when user asks to perform differential coexpression analysis, download and preprocess GEO expression data, or map gene symbols to platform-specific probesets for correlation studies.
 homepage: https://cran.r-project.org/web/packages/easydifferentialgenecoexpression/index.html
 ---
+
 
 # r-easydifferentialgenecoexpression
 

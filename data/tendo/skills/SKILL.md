@@ -1,8 +1,9 @@
 ---
 name: tendo
-description: The `tendo` module provides a suite of "missing" Python functionalities.
+description: Tendo provides a suite of utility modules for Python CLI developers to handle script locking, terminal coloring, and advanced command execution. Use when user asks to ensure a script runs as a singleton, add color to console logging, execute shell commands with output redirection, or handle unicode file operations.
 homepage: https://github.com/phom9/tendo
 ---
+
 
 # tendo
 

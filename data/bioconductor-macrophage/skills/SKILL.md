@@ -1,8 +1,9 @@
 ---
 name: bioconductor-macrophage
-description: the package vignette.
+description: This package provides RNA-seq data from human macrophages for use in Bioconductor vignettes and tutorials. Use when user asks to access macrophage RNA-seq datasets, perform example gene expression analysis, or follow Bioconductor workflow tutorials.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/macrophage.html
 ---
+
 
 # bioconductor-macrophage
 

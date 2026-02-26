@@ -1,8 +1,9 @@
 ---
 name: megahit
-description: MEGAHIT is a specialized assembler designed to handle the high complexity and massive volume of metagenomic sequencing data.
+description: "MEGAHIT is a memory-efficient de Bruijn graph assembler designed for large-scale metagenomic sequencing data. Use when user asks to assemble contigs from metagenomic libraries, optimize assembly for high-diversity samples, or resume an interrupted assembly workflow."
 homepage: https://github.com/voutcn/megahit
 ---
+
 
 # megahit
 

@@ -1,8 +1,9 @@
 ---
 name: control-freec
-description: Control-FREEC (Control-Free Calling) is a command-line tool designed to identify copy number variations and genotype annotations in deep-sequencing data.
+description: Control-FREEC identifies copy number variations and genotype annotations in deep-sequencing data through automated normalization, segmentation, and calling. Use when user asks to detect genomic gains and losses, perform loss of heterozygosity analysis, or identify subclonal alterations in whole genome or exome sequencing data.
 homepage: https://github.com/BoevaLab/FREEC
 ---
+
 
 # control-freec
 

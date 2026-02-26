@@ -1,8 +1,9 @@
 ---
 name: bioconductor-affyhgu133a2expr
-description: the package is available on all platforms; click for details.
+description: This package provides curated and normalized human gene expression data from the Affymetrix Human Genome U133A 2.0 Array. Use when user asks to retrieve normalized expression data for the GPL571 platform, perform Gene Set Context Analysis, or access pre-built gene expression profiles for meta-analysis.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/Affyhgu133A2Expr.html
 ---
+
 
 # bioconductor-affyhgu133a2expr
 

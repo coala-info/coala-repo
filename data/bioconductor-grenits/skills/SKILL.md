@@ -1,8 +1,9 @@
 ---
 name: bioconductor-grenits
-description: "The package offers four network inference statistical models using Dynamic Bayesian Networks and Gibbs Variable Selection: a linear interaction model, two linear interaction models with added experimental noise (Gaussian and Student distributed) for the case where replicates are available and a non-linear interaction model."
+description: This tool infers gene regulatory networks from time-series gene expression data using Dynamic Bayesian Networks and Gibbs Variable Selection. Use when user asks to reconstruct gene interaction networks, identify probable network topologies from time-course data, or analyze linear and non-linear gene interactions.
 homepage: https://bioconductor.org/packages/release/bioc/html/GRENITS.html
 ---
+
 
 # bioconductor-grenits
 

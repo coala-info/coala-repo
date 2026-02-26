@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rae230acdf
-description: the package is available on all platforms; click for details.
+description: This package provides the chip definition file for the Affymetrix Rat Expression 230A microarray. Use when user asks to map probes to their physical locations on the chip, process raw Affymetrix data, or load the rae230a CDF.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/rae230acdf.html
 ---
+
 
 # bioconductor-rae230acdf
 

@@ -1,8 +1,9 @@
 ---
 name: pysnptools
-description: The `pysnptools` library is a high-performance Python toolkit developed by Microsoft Research for genomic data science.
+description: Pysnptools is a high-performance Python library for efficiently loading, subsetting, and processing large-scale genomic datasets using memory-mapping and lazy-loading. Use when user asks to load PLINK files, subset genetic data by individuals or markers, standardize genotypes, or prepare SNP matrices for GWAS and machine learning workflows.
 homepage: http://research.microsoft.com/en-us/um/redmond/projects/mscompbio/
 ---
+
 
 # pysnptools
 

@@ -3,7 +3,7 @@
 ## mutalyzer_hgvs_parser
 
 ### Tool Description
-A tool for parsing HGVS (Human Genome Variation Society) variant descriptions. (Note: The provided input text contains system error messages regarding container execution and does not list specific command-line arguments.)
+Mutalyzer HGVS variant description parser.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mutalyzer_hgvs_parser:0.3.9--pyh7e72e81_0
@@ -12,17 +12,32 @@ A tool for parsing HGVS (Human Genome Variation Society) variant descriptions. (
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mutalyzer_hgvs_parser/overview
-- **Total Downloads**: 803
+- **Total Downloads**: 806
 - **Last updated**: 2025-09-29
 - **GitHub**: https://github.com/mutalyzer/hgvs-parser
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mutalyzer_hgvs_parser:0.3.9--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1471012848: no space left on device
+usage: mutalyzer_hgvs_parser [-h] [-c] [-r R] [-g G] [-p] [-i I] [-v]
+                             description
+
+Mutalyzer HGVS variant description parser.
+
+positional arguments:
+  description  the HGVS variant description to be parsed
+
+options:
+  -h, --help   show this help message and exit
+  -c           convert the description to the model
+  -r R         alternative start (top) rule for the grammar
+  -g G         alternative input grammar file path (do not use with -c)
+  -p           raw parse tree (no ambiguity solving)
+  -i I         save the parse tree as a PNG image (pydot required!)
+  -v           show program's version number and exit
+
+Copyright (c) Mihai Lefter <M.Lefter@lumc.nl>
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

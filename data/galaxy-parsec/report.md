@@ -1,9 +1,9 @@
 # galaxy-parsec CWL Generation Report
 
-## galaxy-parsec
+## galaxy-parsec_parsec
 
 ### Tool Description
-The provided text does not contain help information or usage instructions. It appears to be a fatal error log from a container runtime (Apptainer/Singularity) indicating a failure to build a SIF image due to insufficient disk space.
+Command line wrappers around BioBlend functions. While this sounds unexciting, with parsec and jq you can easily build powerful command line scripts.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galaxy-parsec:1.16.0--pyh5e36f6f_0
@@ -12,35 +12,79 @@ The provided text does not contain help information or usage instructions. It ap
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/galaxy-parsec/overview
-- **Total Downloads**: 22.7K
+- **Total Downloads**: 22.8K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/galaxy-iuc/parsec
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-parsec:1.16.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2924360514: no space left on device
+Usage: parsec [OPTIONS] COMMAND [ARGS]...
+
+  Command line wrappers around BioBlend functions. While this sounds
+  unexciting, with parsec and jq you can easily build powerful command line
+  scripts.
+
+Options:
+  --version                   Show the version and exit.
+  -v, --verbose               Enables verbose mode.
+  -g, --galaxy_instance TEXT  Name of instance in /root/.parsec.yml. This
+                              parameter can also be set via the environment
+                              variable PARSEC_GALAXY_INSTANCE  [default:
+                              __default;required]
+  -f, --path TEXT             config file path
+  -h, --help                  Show this message and exit.
+
+Commands:
+  config
+  dataset_collections
+  datasets
+  datatypes
+  folders
+  forms
+  ftpfiles
+  genomes
+  groups
+  histories
+  init                   Help initialize global configuration (in home...
+  invocations
+  jobs
+  libraries
+  quotas
+  roles
+  tool_data
+  tool_dependencies
+  toolshed_categories
+  toolshed
+  toolShed
+  toolshed_repositories
+  toolshed_tools
+  tools
+  users
+  visual
+  workflows
 ```
 
 
-## Metadata
-- **Skill**: generated
-
-## galaxy-parsec_parsec
+## galaxy-parsec_parsec init
 
 ### Tool Description
-A command-line interface for interacting with Galaxy APIs.
+Initialize Galaxy parsec connection.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/galaxy-parsec:1.16.0--pyh5e36f6f_0
 - **Homepage**: https://github.com/galaxy-iuc/parsec
 - **Package**: https://anaconda.org/channels/bioconda/packages/galaxy-parsec/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/galaxy-parsec:1.16.0--pyh5e36f6f_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3679492438: no space left on device
+Welcome to
+      ____   ____ _   _____   _____  ___   _____
+     / __ \ / __ `/  / ___/  / ___/ / _ \ / ___/
+    / /_/ // /_/ /  / /     (__  ) /  __// /__
+   / .___/ \__,_/  /_/     /____/  \___/ \___/
+  /_/ Galaxy at the Speed of Light
+
+Please enter your Galaxy's URL:
 ```
 

@@ -1,8 +1,9 @@
 ---
 name: perl-class-xsaccessor
-description: Class::XSAccessor is a Perl module designed to accelerate object-oriented code by implementing accessors in XS (C code) rather than pure Perl.
+description: Class::XSAccessor generates fast XS-based accessors, mutators, and constructors to accelerate attribute access in Perl classes. Use when user asks to generate high-performance getters and setters, create fast constructors for hash-based objects, or implement predicates and boolean methods in Perl.
 homepage: http://metacpan.org/pod/Class::XSAccessor
 ---
+
 
 # perl-class-xsaccessor
 

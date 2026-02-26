@@ -1,8 +1,9 @@
 ---
 name: vamb
-description: Vamb (Variational Autoencoder for Metagenomic Binning) is a suite of tools designed to cluster metagenomic contigs into biological bins.
+description: Vamb clusters metagenomic contigs into biological bins using deep learning. Use when user asks to cluster metagenomic contigs, bin contigs, preprocess contigs for binning, estimate contig abundance, perform semi-supervised binning with taxonomic data, or refine taxonomic predictions.
 homepage: https://github.com/RasmussenLab/vamb
 ---
+
 
 # vamb
 

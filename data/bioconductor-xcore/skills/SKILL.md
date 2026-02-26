@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xcore
-description: the package is available on all platforms; click for details.
+description: xcore models transcriptional regulatory networks to identify key regulators of gene expression changes. Use when user asks to identify transcription factors driving expression changes, perform transcriptional regulatory network modeling, or relate molecular signatures to gene expression data.
 homepage: https://bioconductor.org/packages/release/bioc/html/xcore.html
 ---
+
 
 # bioconductor-xcore
 

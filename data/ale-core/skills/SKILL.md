@@ -1,8 +1,9 @@
 ---
 name: ale-core
-description: "ALE (Assembly Likelihood Evaluation) is a tool for evaluating genome assemblies. (Note: The provided input text contains container runtime logs and error messages rather than the tool's help documentation, so no arguments could be extracted.)"
+description: ALE evaluates the quality of a genome assembly by calculating a likelihood score based on how well sequencing reads align to the contigs. Use when user asks to assess assembly accuracy, compute ALE scores from BAM files, or convert ALE output to wiggle format for visualization.
 homepage: https://github.com/sc932/ALE
 ---
+
 
 # ale-core
 

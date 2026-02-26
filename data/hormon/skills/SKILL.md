@@ -1,8 +1,9 @@
 ---
 name: hormon
-description: HORmon is a specialized bioinformatics suite designed to characterize the repetitive architecture of centromeres in human genome assemblies.
+description: HORmon identifies alpha-satellite monomers and annotates Higher-Order Repeat patterns within human centromeric sequences. Use when user asks to characterize centromere architecture, infer monomers from centromeric sequences, or perform Higher-Order Repeat decomposition.
 homepage: https://github.com/ablab/HORmon
 ---
+
 
 # hormon
 

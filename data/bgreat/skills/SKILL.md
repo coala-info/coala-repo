@@ -1,8 +1,9 @@
 ---
 name: bgreat
-description: BGREAT2 is a specialized bioinformatics tool designed to align sequencing reads directly onto a de Bruijn graph.
+description: BGREAT2 aligns sequencing reads to a de Bruijn graph to represent them as paths of unitigs or corrected sequences. Use when user asks to map reads to a de Bruijn graph, perform read correction, or align reads to unitigs.
 homepage: https://github.com/Malfoy/BGREAT2
 ---
+
 
 # bgreat
 

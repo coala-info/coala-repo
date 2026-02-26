@@ -1,8 +1,9 @@
 ---
 name: emboss
-description: EMBOSS (European Molecular Biology Open Software Suite) is a comprehensive collection of over 200 bioinformatics tools designed to handle a wide array of molecular biology tasks.
+description: EMBOSS is a comprehensive suite of bioinformatics tools for analyzing DNA and protein sequences, searching databases, and performing sequence alignments. Use when user asks to convert sequence formats, translate nucleic acids to proteins, process restriction enzyme data, or manipulate molecular biology data using a consistent command-line interface.
 homepage: http://emboss.open-bio.org/
 ---
+
 
 # emboss
 

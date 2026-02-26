@@ -1,8 +1,9 @@
 ---
 name: lumpy-sv-minimal
-description: LUMPY is a comprehensive discovery framework that utilizes a probabilistic approach to identify structural variants by integrating various evidence types from high-throughput sequencing data.
+description: LUMPY discovers structural variants in sequencing data by integrating multiple evidence types through a probabilistic framework. Use when user asks to identify structural variants, run lumpyexpress for automated SV discovery, or perform joint multi-sample variant calling.
 homepage: https://github.com/arq5x/lumpy-sv
 ---
+
 
 # lumpy-sv-minimal
 

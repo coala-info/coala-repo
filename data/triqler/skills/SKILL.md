@@ -1,8 +1,9 @@
 ---
 name: triqler
-description: Triqler (Transparent Identification-Quantification-linked Error Rates) is a probabilistic graphical model designed for shotgun proteomics.
+description: Triqler performs statistically rigorous label-free quantification in shotgun proteomics. Use when user asks to perform label-free quantification, evaluate differential expression, handle missing values, calculate posterior probabilities for fold changes, or analyze DDA/DIA proteomics data.
 homepage: https://github.com/statisticalbiotechnology/triqler
 ---
+
 
 # triqler
 

@@ -1,8 +1,9 @@
 ---
 name: mosdepth
-description: mosdepth is a high-performance utility designed for rapid depth-of-coverage calculations from alignment files (BAM or CRAM).
+description: mosdepth is a high-performance utility for rapidly calculating genomic depth-of-coverage from BAM or CRAM alignment files. Use when user asks to calculate mean depth in windows, determine coverage for targeted regions, identify callable loci, or generate coverage threshold statistics.
 homepage: https://github.com/brentp/mosdepth
 ---
+
 
 # mosdepth
 

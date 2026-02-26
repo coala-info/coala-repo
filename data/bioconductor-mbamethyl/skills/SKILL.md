@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mbamethyl
-description: the package is available on all platforms; click for details.
+description: MBAmethyl provides a model-based approach to integrate and reconstruct DNA methylation values from multiple data platforms. Use when user asks to reconstruct DNA methylation at CpG sites, integrate methylation data from different platforms, or perform model-based analysis of DNA methylation.
 homepage: https://bioconductor.org/packages/release/bioc/html/MBAmethyl.html
 ---
+
 
 # bioconductor-mbamethyl
 

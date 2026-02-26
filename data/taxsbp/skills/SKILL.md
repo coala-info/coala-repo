@@ -1,8 +1,9 @@
 ---
 name: taxsbp
-description: TaxSBP implements a specialized bin packing algorithm designed for hierarchically structured data, specifically optimized for the NCBI Taxonomy database.
+description: TaxSBP partitions genomic sequences into bins based on taxonomic relationships using a specialized bin packing algorithm. Use when user asks to group sequences by taxonomy, distribute genomic data into balanced bins, or partition sequences for distributed computing while minimizing taxonomic fragmentation.
 homepage: https://github.com/pirovc/taxsbp
 ---
+
 
 # taxsbp
 

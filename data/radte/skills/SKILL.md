@@ -1,8 +1,9 @@
 ---
 name: radte
-description: RADTE (Reconciliation-Assisted Divergence Time Estimation) is a specialized phylogenetic tool that addresses the challenge of dating gene trees in the presence of gene duplications.
+description: RADTE estimates divergence times for gene trees by reconciling them with a dated species tree to calibrate duplication and speciation nodes. Use when user asks to estimate gene tree node ages, date gene duplication events, or perform reconciliation-assisted divergence time estimation.
 homepage: https://github.com/kfuku52/radte
 ---
+
 
 # radte
 

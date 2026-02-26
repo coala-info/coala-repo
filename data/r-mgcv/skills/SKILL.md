@@ -1,8 +1,9 @@
 ---
 name: r-mgcv
-description: "Generalized additive (mixed) models, some of their extensions and               other generalized ridge regression with multiple smoothing               parameter estimation by (Restricted) Marginal Likelihood,               Cross Validation and similar, or using iterated nested Laplace 	     approximation for fully Bayesian inference."
+description: The r-mgcv package fits Generalized Additive Models and Generalized Additive Mixed Models using penalized regression splines with automatic smoothness selection. Use when user asks to model non-linear relationships with smooth functions, fit GAMs or GAMMs, handle large datasets with penalized splines, or perform spatial smoothing and random effect modeling.
 homepage: https://cloud.r-project.org/web/packages/mgcv/index.html
 ---
+
 
 # r-mgcv
 

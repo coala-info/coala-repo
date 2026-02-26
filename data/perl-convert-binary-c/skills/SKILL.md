@@ -1,8 +1,9 @@
 ---
 name: perl-convert-binary-c
-description: This skill facilitates the use of the `Convert::Binary::C` Perl module to bridge the gap between raw binary data and high-level Perl data structures.
+description: This tool converts between raw binary data and Perl data structures using C header file definitions. Use when user asks to pack or unpack binary data, parse C structs for data conversion, or interface Perl with binary formats using C type definitions.
 homepage: http://search.cpan.org/~mhx/Convert-Binary-C/
 ---
+
 
 # perl-convert-binary-c
 

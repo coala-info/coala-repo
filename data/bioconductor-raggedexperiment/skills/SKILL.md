@@ -1,8 +1,9 @@
 ---
 name: bioconductor-raggedexperiment
-description: the package is available on all platforms; click for details.
+description: RaggedExperiment provides a container for managing and representing sparse genomic range data across multiple samples. Use when user asks to store genomic ranges, handle copy number variation data, or transform ragged data into matrix formats for analysis.
 homepage: https://bioconductor.org/packages/release/bioc/html/RaggedExperiment.html
 ---
+
 
 # bioconductor-raggedexperiment
 

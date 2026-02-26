@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ahpubmeddbs
-description: the package is available on all platforms; click for details.
+description: This package provides metadata and access to structured PubMed datasets through AnnotationHub in R. Use when user asks to retrieve PubMed abstracts, query author information, map PMC identifiers, or access MeSH terms in SQLite or data.table formats.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/AHPubMedDbs.html
 ---
+
 
 # bioconductor-ahpubmeddbs
 

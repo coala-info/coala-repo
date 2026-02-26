@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cogaps
-description: the package is available on all platforms; click for details.
+description: "CoGAPS performs Bayesian non-negative matrix factorization to identify latent patterns in high-throughput genomic data. Use when user asks to perform non-negative matrix factorization, identify gene expression patterns, or infer biological processes from genomic datasets."
 homepage: https://bioconductor.org/packages/release/bioc/html/CoGAPS.html
 ---
+
 
 # bioconductor-cogaps
 

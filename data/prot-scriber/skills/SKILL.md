@@ -1,8 +1,9 @@
 ---
 name: prot-scriber
-description: `prot-scriber` automates the process of functional annotation by extracting and scoring informative phrases from sequence similarity search results.
+description: prot-scriber generates consensus functional annotations for proteins by performing lexical analysis on sequence similarity search results. Use when user asks to annotate individual proteins, assign descriptions to gene families, or generate human-readable descriptions from Blast or Diamond hits.
 homepage: https://github.com/usadellab/prot-scriber
 ---
+
 
 # prot-scriber
 

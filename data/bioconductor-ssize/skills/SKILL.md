@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ssize
-description: the package is available on all platforms; click for details.
+description: This R package estimates sample sizes and statistical power for microarray experiments. Use when user asks to calculate required sample sizes, estimate power for differential expression analysis, or plan microarray studies.
 homepage: https://bioconductor.org/packages/release/bioc/html/ssize.html
 ---
+
 
 # bioconductor-ssize
 

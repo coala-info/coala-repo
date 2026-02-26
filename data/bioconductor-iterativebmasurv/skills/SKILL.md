@@ -1,8 +1,9 @@
 ---
 name: bioconductor-iterativebmasurv
-description: the package is available on all platforms; click for details.
+description: This tool performs gene selection and survival analysis on high-dimensional microarray data using the iterative Bayesian Model Averaging algorithm. Use when user asks to identify predictive gene subsets for patient survival, account for model uncertainty, predict risk scores, or evaluate survival model performance through cross-validation.
 homepage: https://bioconductor.org/packages/release/bioc/html/iterativeBMAsurv.html
 ---
+
 
 # bioconductor-iterativebmasurv
 

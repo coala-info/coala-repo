@@ -1,8 +1,9 @@
 ---
 name: annotsv
-description: AnnotSV is a comprehensive tool designed for the functional annotation and clinical ranking of structural variations.
+description: "AnnotSV provides functional annotation and clinical ranking for structural variations by integrating multiple data sources. Use when user asks to annotate structural variants from VCF or BED files, rank variants according to ACMG guidelines, or interpret the functional impact of deletions, duplications, and translocations."
 homepage: https://github.com/lgmgeo/AnnotSV
 ---
+
 
 # annotsv
 

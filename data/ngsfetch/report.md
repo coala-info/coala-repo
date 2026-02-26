@@ -3,7 +3,7 @@
 ## ngsfetch
 
 ### Tool Description
-The provided text does not contain help information for ngsfetch; it is an error log indicating a failure to pull or build the container image due to insufficient disk space.
+fast retrieval of metadata and fastq files with ffq and aria2c
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/ngsfetch:0.1.1--pyh7e72e81_0
@@ -18,11 +18,19 @@ The provided text does not contain help information for ngsfetch; it is an error
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/ngsfetch:0.1.1--pyh7e72e81_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1489330306: no space left on device
+usage: ngsfetch [-h] [-i ID] [-o OUTPUT] [-p PROCESSES] [--attempts ATTEMPTS]
+                [-v]
+
+ngsfetch v0.1.1 - fast retrieval of metadata and fastq files with ffq and
+aria2c
+
+options:
+  -h, --help            show this help message and exit
+  -i, --id ID           ID of the data to fetch
+  -o, --output OUTPUT   Output directory
+  -p, --processes PROCESSES
+                        Number of processes to use (up to 16)
+  --attempts ATTEMPTS   Number of attempts to fetch metadata and fastq files
+  -v, --verbose         Increase verbosity
 ```
 
-
-## Metadata
-- **Skill**: generated

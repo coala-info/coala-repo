@@ -1,8 +1,9 @@
 ---
 name: jmodeltest
-description: jModelTest 2 is a specialized tool for identifying the most appropriate model of nucleotide substitution for a given DNA sequence alignment.
+description: jModelTest identifies the most appropriate model of nucleotide substitution for DNA sequence alignments to support phylogenetic inference. Use when user asks to select a substitution model, evaluate information criteria like AIC or BIC, or estimate model-averaged parameters for genomic data.
 homepage: https://github.com/ddarriba/jmodeltest2
 ---
+
 
 # jmodeltest
 

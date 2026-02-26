@@ -1,8 +1,9 @@
 ---
 name: assemblytics
-description: Assemblytics is a specialized tool for identifying six classes of genomic variants based on alignment signatures between a de novo assembly and a reference.
+description: Assemblytics identifies six classes of genomic variants by analyzing alignment signatures between a de novo assembly and a reference genome. Use when user asks to identify structural variants from assembly alignments, call genomic variants using MUMmer delta files, or detect tandem and repeat expansions and contractions.
 homepage: http://assemblytics.com/
 ---
+
 
 # assemblytics
 

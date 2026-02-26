@@ -1,8 +1,9 @@
 ---
 name: ucsc-parahubstop
-description: The `ucsc-parahubstop` utility is a specialized administrative tool used to terminate the `paraHub` daemon.
+description: The `ucsc-parahubstop` utility terminates the `paraHub` daemon gracefully. Use when user asks to stop the paraHub, shut down the paraHub, or terminate the paraHub daemon.
 homepage: http://hgdownload.cse.ucsc.edu/admin/exe/
 ---
+
 
 # ucsc-parahubstop
 

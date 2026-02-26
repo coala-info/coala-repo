@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ledpred
-description: The package contains a workflow based on the support vector machine (SVM) algorithm that maps features to sequences, optimize SVM parameters and feature number and creates a model that can be stored and used to score the regulatory potential of unknown sequences.
+description: This tool predicts cis-regulatory modules by building Support Vector Machine models based on genomic features like transcription factor binding sites and NGS signals. Use when user asks to map features to genomic coordinates, optimize SVM parameters, perform recursive feature elimination, or evaluate the performance of regulatory element prediction models.
 homepage: https://bioconductor.org/packages/release/bioc/html/LedPred.html
 ---
+
 
 # bioconductor-ledpred
 

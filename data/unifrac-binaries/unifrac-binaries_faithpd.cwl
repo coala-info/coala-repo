@@ -2,15 +2,27 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: faithpd
 label: unifrac-binaries_faithpd
-doc: "The provided text does not contain help information or usage instructions. It
-  appears to be an error log from a container runtime (Apptainer/Singularity) indicating
-  a failure to fetch or build the OCI image.\n\nTool homepage: https://github.com/biocore/unifrac-binaries"
-inputs: []
+doc: "Calculates Faith's Phylogenetic Diversity for each sample in a BIOM table using
+  a provided phylogeny.\n\nTool homepage: https://github.com/biocore/unifrac-binaries"
+inputs:
+  - id: biom_table
+    type: File
+    doc: The input BIOM table.
+    inputBinding:
+      position: 101
+      prefix: -i
+  - id: newick_tree
+    type: File
+    doc: The input phylogeny in newick.
+    inputBinding:
+      position: 101
+      prefix: -t
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_file
+    type: File
+    doc: The output series.
+    outputBinding:
+      glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/unifrac-binaries:1.6--h9d55e78_0
-stdout: unifrac-binaries_faithpd.out

@@ -1,8 +1,9 @@
 ---
 name: r-bedtoolsr
-description: R package bedtoolsr (documentation from project home).
+description: bedtoolsr is an R wrapper for the bedtools suite that enables genomic interval analysis and manipulation directly within the R environment. Use when user asks to intersect genomic intervals, merge overlapping regions, find the closest features, or calculate coverage using R data frames or BED files.
 homepage: https://cran.r-project.org/web/packages/bedtoolsr/index.html
 ---
+
 
 # r-bedtoolsr
 

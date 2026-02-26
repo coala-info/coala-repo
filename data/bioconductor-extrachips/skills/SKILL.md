@@ -1,8 +1,9 @@
 ---
 name: bioconductor-extrachips
-description: the package is available on all platforms; click for details.
+description: This tool provides functions for differential binding and signal analysis of ChIP-seq data using sliding window or fixed-width approaches. Use when user asks to perform dual filtering of genomic windows, merge overlapping ranges using harmonic mean p-values, map peaks to genes via HiC or enhancers, and create specialized visualizations like HFGC plots or profile heatmaps.
 homepage: https://bioconductor.org/packages/release/bioc/html/extraChIPs.html
 ---
+
 
 # bioconductor-extrachips
 

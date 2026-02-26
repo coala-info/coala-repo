@@ -1,8 +1,9 @@
 ---
 name: perl-ensembl-variation
-description: The `perl-ensembl-variation` skill enables programmatic access to the Ensembl Variation database.
+description: This tool provides programmatic access to the Ensembl Variation database using an object-oriented Perl interface. Use when user asks to retrieve variant information, fetch genotypes or phenotypes, and calculate variant consequences on transcripts.
 homepage: https://www.ensembl.org/info/docs/api/index.html
 ---
+
 
 # perl-ensembl-variation
 

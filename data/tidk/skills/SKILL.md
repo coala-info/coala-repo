@@ -1,8 +1,11 @@
 ---
 name: tidk
-description: The Telomere Identification toolKit (`tidk`) is a specialized suite of tools designed to locate and analyze telomeric repeats in genomic data.
+description: tidk is a toolkit for identifying and analyzing telomeric repeats in genomic data. Use when user asks to discover unknown telomeric repeat motifs, search for clade-specific telomeric repeats, map a specific telomeric DNA string, or visualize telomere locations.
 homepage: https://github.com/tolkit/telomeric-identifier
 ---
+
+
+
 
 # tidk
 

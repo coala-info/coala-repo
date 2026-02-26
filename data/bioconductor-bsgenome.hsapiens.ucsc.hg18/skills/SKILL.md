@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.hsapiens.ucsc.hg18
-description: the package is available on all platforms; click for details.
+description: This package provides the complete genome sequences for the hg18 build of the human genome as Biostrings objects. Use when user asks to load hg18 genome sequences, extract DNA sequences for specific genomic coordinates, or perform genome-wide motif searching on the hg18 assembly.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Hsapiens.UCSC.hg18.html
 ---
+
 
 # bioconductor-bsgenome.hsapiens.ucsc.hg18
 

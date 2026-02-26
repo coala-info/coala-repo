@@ -1,8 +1,9 @@
 ---
 name: variantmap
-description: The `variantmap` tool provides an interactive, browser-based interface for exploring structural variant data across sample cohorts.
+description: Variantmap provides an interactive, browser-based interface for exploring structural variant data. Use when user asks to explore structural variant data, visualize variant patterns, filter variants by gene annotations, extract variant metrics, or capture heatmap images.
 homepage: https://github.com/cytham/variantmap
 ---
+
 
 # variantmap
 

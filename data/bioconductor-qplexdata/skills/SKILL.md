@@ -1,8 +1,9 @@
 ---
 name: bioconductor-qplexdata
-description: the package is available on all platforms; click for details.
+description: "This package provides example data sets for the qPLEXanalyzer R package to support quantitative proteomics analysis. Use when user asks to access example proteomics data, load qPLEXanalyzer datasets, or explore quantitative proteomics workflows."
 homepage: https://bioconductor.org/packages/release/data/experiment/html/qPLEXdata.html
 ---
+
 
 # bioconductor-qplexdata
 

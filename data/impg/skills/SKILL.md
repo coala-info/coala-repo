@@ -1,8 +1,9 @@
 ---
 name: impg
-description: `impg` (implicit pangenome graphs) is a specialized tool for rapidly navigating genomic variation across populations.
+description: impg navigates genomic variation by projecting target sequences through pairwise alignment networks to find homologous regions. Use when user asks to project genomic regions across pangenomes, find homologous sequences using transitive closure, or generate local pangenome graphs and multiple sequence alignments from PAF files.
 homepage: https://github.com/pangenome/impg
 ---
+
 
 # impg
 

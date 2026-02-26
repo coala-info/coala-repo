@@ -1,8 +1,9 @@
 ---
 name: bioconductor-carnival
-description: the package is available on all platforms; click for details.
+description: CARNIVAL identifies signaling network topologies that explain observed downstream changes by integrating prior knowledge networks with transcription factor or pathway activities using Integer Linear Programming. Use when user asks to infer upstream signaling paths, contextualize causal networks from gene expression footprints, or perform standard and inverse causal reasoning to identify perturbation targets.
 homepage: https://bioconductor.org/packages/release/bioc/html/CARNIVAL.html
 ---
+
 
 # bioconductor-carnival
 

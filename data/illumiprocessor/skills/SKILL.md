@@ -1,8 +1,9 @@
 ---
 name: illumiprocessor
-description: illumiprocessor is a high-throughput wrapper for the Trimmomatic package, designed to streamline the preprocessing of Illumina sequencing data.
+description: illumiprocessor is a high-throughput wrapper for Trimmomatic that automates adapter removal and quality trimming for large batches of Illumina sequencing data. Use when user asks to trim adapter sequences, remove low-quality bases, or preprocess raw fastq files into a standardized directory structure.
 homepage: https://github.com/faircloth-lab/illumiprocessor
 ---
+
 
 # illumiprocessor
 

@@ -1,8 +1,9 @@
 ---
 name: pypiper
-description: Pypiper is a development-oriented framework designed to wrap command-line tools into cohesive Python scripts.
+description: Pypiper is a Python framework for wrapping command-line tools into restartable pipelines with automatic checkpointing and resource tracking. Use when user asks to build a bioinformatics pipeline, manage shell command execution in Python, or implement automatic checkpointing and resource monitoring for data processing scripts.
 homepage: http://pypiper.readthedocs.io/en/latest/
 ---
+
 
 # pypiper
 

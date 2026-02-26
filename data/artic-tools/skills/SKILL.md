@@ -1,8 +1,9 @@
 ---
 name: artic-tools
-description: `artic-tools` is a high-performance C++ toolkit designed to handle the specialized file processing requirements of the ARTIC bioinformatic pipeline.
+description: "artic-tools is a high-performance C++ toolkit designed to process primer schemes and sequencing data for viral genomics pipelines. Use when user asks to download or validate primer schemes, softmask primer sequences in BAM files, or filter and check VCF files for amplicon-related artifacts."
 homepage: https://github.com/will-rowe/artic-tools
 ---
+
 
 # artic-tools
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-depinfer
-description: the package is available on all platforms; click for details.
+description: bioconductor-depinfer is a computational framework that uses regularized multivariate linear regression to infer protein dependencies from drug-protein affinity and phenotypic response data. Use when user asks to identify molecular protein dependencies, deconvolute drug inhibition effects, or prioritize pharmacological targets using LASSO regression.
 homepage: https://bioconductor.org/packages/release/bioc/html/DepInfeR.html
 ---
+
 
 # bioconductor-depinfer
 

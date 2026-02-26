@@ -1,16 +1,34 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: ptgaul_combine_gfa.py
+baseCommand: combine_gfa.py
 label: ptgaul_combine_gfa.py
-doc: "A tool to combine GFA files (Note: The provided text contains execution logs/errors
-  rather than help documentation, so specific arguments could not be parsed).\n\n
-  Tool homepage: https://github.com/Bean061/ptgaul"
-inputs: []
+doc: "This script is used to merge the edges from assembly graph.\n\nTool homepage:
+  https://github.com/Bean061/ptgaul"
+inputs:
+  - id: input_edges_file
+    type:
+      - 'null'
+      - File
+    doc: input edge fasta file
+    inputBinding:
+      position: 101
+      prefix: --input_edges_file
+  - id: sorted_depth
+    type:
+      - 'null'
+      - File
+    doc: input depth file
+    inputBinding:
+      position: 101
+      prefix: --sorted_depth
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outputdir
+    type:
+      - 'null'
+      - Directory
+    doc: output directory
+    outputBinding:
+      glob: $(inputs.outputdir)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/ptgaul:1.0.5--pyhdfd78af_1
-stdout: ptgaul_combine_gfa.py.out

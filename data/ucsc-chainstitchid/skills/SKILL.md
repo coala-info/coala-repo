@@ -1,8 +1,9 @@
 ---
 name: ucsc-chainstitchid
-description: The `chainStitchId` utility is a specialized tool within the UCSC Kent genome processing suite.
+description: The ucsc-chainstitchid tool stitches together fragmented alignment records in .chain files. Use when user asks to consolidate fragmented alignment chains, prepare chain files for chainNet, or ensure unique chain IDs after merging alignments.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chainstitchid
 

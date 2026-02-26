@@ -1,8 +1,9 @@
 ---
 name: niemagraphgen
-description: NiemaGraphGen (NGG) is a suite of C++ executables designed to generate various types of random and deterministic graphs.
+description: NiemaGraphGen generates various types of large-scale random and deterministic graphs using a memory-efficient streaming approach. Use when user asks to generate random networks, simulate global-scale graph topologies, or create scale-free and small-world models.
 homepage: https://github.com/niemasd/NiemaGraphGen
 ---
+
 
 # niemagraphgen
 

@@ -1,8 +1,9 @@
 ---
 name: metabat2
-description: MetaBAT2 is an automated binning algorithm that clusters metagenomic contigs into bins based on tetranucleotide frequency and differential abundance across samples.
+description: MetaBAT2 clusters metagenomic contigs into bins based on sequence composition and abundance to generate Metagenome-Assembled Genomes. Use when user asks to bin metagenomic contigs, generate Metagenome-Assembled Genomes, or cluster sequences using tetranucleotide frequency and coverage data.
 homepage: https://bitbucket.org/berkeleylab/metabat
 ---
+
 
 # metabat2
 

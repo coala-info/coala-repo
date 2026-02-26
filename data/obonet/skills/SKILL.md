@@ -1,8 +1,9 @@
 ---
 name: obonet
-description: obonet is a specialized Python library designed to bridge the gap between OBO-formatted biological ontologies and the NetworkX graph library.
+description: "obonet is a Python library that loads OBO-formatted biological ontologies into NetworkX graph objects. Use when user asks to parse OBO files, convert ontologies to graphs, or analyze hierarchical relationships between biological terms."
 homepage: https://github.com/dhimmel/obonet
 ---
+
 
 # obonet
 

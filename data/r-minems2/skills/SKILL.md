@@ -1,8 +1,9 @@
 ---
 name: r-minems2
-description: R package minems2 (documentation from project home).
+description: This tool extracts frequent fragmentation patterns from MS/MS spectra using graph-based mining to annotate spectral libraries. Use when user asks to extract shared m/z differences from MS/MS spectra, identify frequent fragmentation patterns, compute molecular formulas for m/z differences, or integrate fragmentation analysis with GNPS molecular networking.
 homepage: https://cran.r-project.org/web/packages/minems2/index.html
 ---
+
 
 # r-minems2
 

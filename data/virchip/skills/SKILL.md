@@ -1,8 +1,9 @@
 ---
 name: virchip
-description: The `virchip` tool implements a multi-layer perceptron model to predict TF binding sites without requiring new ChIP-seq experiments.
+description: virchip predicts transcription factor binding sites using a multi-layer perceptron model without requiring new ChIP-seq experiments. Use when user asks to predict transcription factor binding sites, predict TF binding for specific TFs, or predict binding for TFs without known sequence preferences.
 homepage: https://virchip.hoffmanlab.org
 ---
+
 
 # virchip
 

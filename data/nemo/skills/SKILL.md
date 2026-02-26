@@ -1,8 +1,9 @@
 ---
 name: nemo
-description: Nemo is a specialized simulation framework for evolutionary biology.
+description: Nemo is a specialized simulation framework for modeling evolutionary biology and complex meta-population dynamics. Use when user asks to configure life-cycle events, run individual-based genetic simulations, or model the evolution of multiple traits under varying environmental scenarios.
 homepage: http://nemo2.sourceforge.net
 ---
+
 
 # nemo
 

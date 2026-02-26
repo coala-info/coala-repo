@@ -1,8 +1,9 @@
 ---
 name: calisp
-description: Calisp (Calgary approach to isotopes in proteomics) is a high-precision tool designed to quantify the isotopic composition of peptides.
+description: Calisp quantifies the isotopic composition of peptides by processing mass spectrometry spectra and peptide identifications. Use when user asks to estimate natural isotope abundances, analyze stable isotope probing data, or calculate isotopic clumpiness from proteomics results.
 homepage: https://github.com/kinestetika/Calisp
 ---
+
 
 # calisp
 

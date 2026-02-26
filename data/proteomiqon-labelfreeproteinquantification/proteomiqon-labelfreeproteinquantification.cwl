@@ -1,17 +1,31 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proteomiqon-labelfreeproteinquantification
+baseCommand: ProteomIQon.LabelFreeProteinQuantification
 label: proteomiqon-labelfreeproteinquantification
-doc: "A tool for label-free protein quantification. Note: The provided text appears
-  to be a container engine error log rather than the tool's help documentation, so
-  no arguments could be extracted.\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
-inputs: []
+doc: "Label-Free Protein Quantification\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
+inputs:
+  - id: paramfile
+    type: File
+    doc: Specify parameter file.
+    inputBinding:
+      position: 101
+      prefix: --paramfile
+  - id: proteinassignedquantpepions
+    type:
+      type: array
+      items: File
+    doc: "Specify the a single, list or directory containing\n                   \
+      \       .quantAndProt files."
+    inputBinding:
+      position: 101
+      prefix: --proteinassignedquantpepions
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: outputdirectory
+    type: Directory
+    doc: Specify the output directory.
+    outputBinding:
+      glob: $(inputs.outputdirectory)
 hints:
   - class: DockerRequirement
     dockerPull: 
       quay.io/biocontainers/proteomiqon-labelfreeproteinquantification:0.0.3--hdfd78af_1
-stdout: proteomiqon-labelfreeproteinquantification.out

@@ -1,8 +1,9 @@
 ---
 name: perl-findbin-real
-description: The `FindBin::Real` module provides a reliable way for a Perl script to discover its own location on the filesystem.
+description: The perl-findbin-real module allows a Perl script to discover its own filesystem location at runtime, providing a reliable alternative to the standard FindBin module for persistent environments. Use when user asks to locate the directory of the original Perl script, resolve the physical path of a script symlink, or dynamically add library paths relative to the executable's location.
 homepage: https://metacpan.org/pod/FindBin::Real
 ---
+
 
 # perl-findbin-real
 

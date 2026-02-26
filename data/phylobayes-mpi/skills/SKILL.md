@@ -1,8 +1,9 @@
 ---
 name: phylobayes-mpi
-description: Phylobayes-MPI is a specialized Bayesian MCMC sampler designed for phylogenetic reconstruction under complex, site-heterogeneous models.
+description: Phylobayes-MPI is a Bayesian MCMC sampler that performs phylogenetic reconstruction using site-heterogeneous models on large protein alignments. Use when user asks to perform phylogenetic reconstruction, run Bayesian MCMC sampling with CAT models, or estimate marginal likelihoods using MPI parallelization.
 homepage: https://github.com/bayesiancook/pbmpi
 ---
+
 
 # phylobayes-mpi
 

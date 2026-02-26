@@ -1,8 +1,9 @@
 ---
 name: bioconductor-scater
-description: the package is available on all platforms; click for details.
+description: Bioconductor-scater provides tools for quality control, visualization, and preprocessing of single-cell RNA-sequencing data. Use when user asks to perform quality control on single-cell data, visualize gene expression patterns, or normalize single-cell RNA-seq datasets.
 homepage: https://bioconductor.org/packages/release/bioc/html/scater.html
 ---
+
 
 # bioconductor-scater
 

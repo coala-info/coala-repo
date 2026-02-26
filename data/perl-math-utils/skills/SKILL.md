@@ -1,8 +1,9 @@
 ---
 name: perl-math-utils
-description: The `Math::Utils` module provides a collection of frequently needed mathematical functions that are missing from the standard Perl distribution.
+description: This Perl module provides a collection of mathematical functions for rounding, sequence generation, floating-point comparison, and integer arithmetic. Use when user asks to round numbers with specific precision, generate uniform or logarithmic ranges, compare floating-point values, or calculate greatest common divisors and least common multiples.
 homepage: http://metacpan.org/pod/Math::Utils
 ---
+
 
 # perl-math-utils
 

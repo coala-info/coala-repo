@@ -1,8 +1,9 @@
 ---
 name: sure
-description: sure is a sophisticated testing utility for Python that provides a fluent, English-like syntax for assertions and a dedicated test runner.
+description: Sure is a Python testing utility that provides a fluent, English-like syntax for assertions and a dedicated test runner. Use when user asks to implement BDD-style assertions, write readable test cases using the expects or should patterns, or execute tests via the CLI.
 homepage: http://github.com/gabrielfalcao/sure
 ---
+
 
 # sure
 

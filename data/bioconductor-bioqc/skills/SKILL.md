@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bioqc
-description: the package is available on all platforms; click for details.
+description: BioQC detects tissue heterogeneity and performs gene-set enrichment analysis in gene expression data using an optimized Wilcoxon-Mann-Whitney test. Use when user asks to identify tissue contamination, perform fast gene-set enrichment analysis, or quality control transcriptomic data for unexpected tissue signals.
 homepage: https://bioconductor.org/packages/release/bioc/html/BioQC.html
 ---
+
 
 # bioconductor-bioqc
 

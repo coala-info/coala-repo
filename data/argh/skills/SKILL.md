@@ -1,8 +1,9 @@
 ---
 name: argh
-description: argh is an opinionated, derive-based argument parsing library for Rust, specifically optimized to minimize code size and binary bloat.
+description: argh is a derive-based Rust library used to create lightweight command-line argument parsers with minimal binary overhead. Use when user asks to implement CLI argument parsing, define subcommands, or create lightweight command-line tools in Rust.
 homepage: https://github.com/google/argh
 ---
+
 
 # argh
 

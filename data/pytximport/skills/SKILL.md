@@ -1,8 +1,9 @@
 ---
 name: pytximport
-description: `pytximport` is the Python implementation of the R Bioconductor package `tximport`.
+description: "pytximport summarizes transcript-level quantification data to the gene level for downstream statistical analysis. Use when user asks to summarize abundance estimates to the gene level, generate transcript-to-gene maps, or import quantification data from tools like Salmon and Kallisto."
 homepage: https://pytximport.readthedocs.io/en/latest/start.html
 ---
+
 
 # pytximport
 

@@ -1,8 +1,9 @@
 ---
 name: svision-pro
-description: SVision-pro is a structural variant caller that utilizes a neural-network-based instance segmentation framework.
+description: SVision-pro is a structural variant caller that uses a neural-network-based instance segmentation framework to identify simple and complex variants from sequencing data. Use when user asks to call germline structural variants, identify somatic mutations in tumor-normal pairs, detect de novo variants in trio analysis, or perform multi-sample genotyping.
 homepage: https://github.com/songbowang125/SVision-pro
 ---
+
 
 # svision-pro
 

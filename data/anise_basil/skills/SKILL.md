@@ -1,8 +1,9 @@
 ---
 name: anise_basil
-description: The `anise_basil` suite provides a specialized workflow for discovering and characterizing novel genomic sequences.
+description: The anise_basil suite identifies and assembles novel genomic insertion sequences by analyzing structural variant breakpoints and performing localized de novo assembly. Use when user asks to identify insertion sites, filter structural variant candidates, or assemble novel sequences not present in a reference genome.
 homepage: https://github.com/seqan/anise_basil
 ---
+
 
 # anise_basil
 

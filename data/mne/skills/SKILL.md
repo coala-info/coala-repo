@@ -1,8 +1,9 @@
 ---
 name: mne
-description: MNE-Python is a specialized library designed for the analysis of large-scale neurophysiological recordings.
+description: MNE-Python is a library designed for processing and analyzing neurophysiological data such as EEG, MEG, and fNIRS. Use when user asks to load raw sensor data, preprocess signals with filters, epoch events, or visualize brain activity maps and reports.
 homepage: https://github.com/mne-tools/mne-python
 ---
+
 
 # mne
 

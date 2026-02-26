@@ -1,8 +1,9 @@
 ---
 name: bioconductor-breastcancernki
-description: the package is available on all platforms; click for details.
+description: This package provides a standardized ExpressionSet containing gene expression data and clinical metadata from the van't Veer and van de Vijver breast cancer studies. Use when user asks to load the NKI breast cancer dataset, access MammaPrint-related expression data, or perform survival analysis on clinical prognostic indicators.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerNKI.html
 ---
+
 
 # bioconductor-breastcancernki
 

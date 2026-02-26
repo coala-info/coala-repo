@@ -3,27 +3,32 @@
 ## biomaj3-process
 
 ### Tool Description
-BioMAJ process management tool
+[Errno 2] No such file or directory: 'biomaj3-process'; fallback failed: [Errno 2] No such file or directory: 'biomaj3-process'
 
 ### Metadata
-- **Docker Image**: biocontainers/biomaj3-process:v3.0.11-1-deb-py3_cv1
+- **Docker Image**: Not found
 - **Homepage**: Not found
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/biomaj3-process/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'biomaj3-process'; fallback failed: [Errno 2] No such file or directory: 'biomaj3-process'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'biomaj3-process'; fallback failed: [Errno 2] No such file or directory: 'biomaj3-process'
+
+
+
 ### Original Help Text
 ```text
-WARNING: Couldn't use cached digest for registry: open /home/qhu/.singularity/cache/blob/blobs/sha256/2f4a5b584caef67b82b196aeb5d13a6d5799590982ea3f92149bcbf3a364ce00: no space left on device
-WARNING: Falling back to direct digest.
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/biomaj3-process:v3.0.11-1-deb-py3_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1233200698: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

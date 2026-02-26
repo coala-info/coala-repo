@@ -1,8 +1,9 @@
 ---
 name: r-metacoder
-description: Skill for using the CRAN R package r-metacoder.
+description: Metacoder is a bioinformatics toolset for parsing, manipulating, and visualizing large taxonomic datasets using hierarchical data structures. Use when user asks to parse taxonomic data, calculate taxon abundances, compare groups, or create heat tree visualizations.
 homepage: https://cloud.r-project.org/web/packages/metacoder/index.html
 ---
+
 
 # r-metacoder
 

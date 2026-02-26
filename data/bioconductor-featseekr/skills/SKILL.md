@@ -1,8 +1,9 @@
 ---
 name: bioconductor-featseekr
-description: the package is available on all platforms; click for details.
+description: "FeatSeekR performs feature selection and dimension reduction to identify non-redundant, reproducible features in high-dimensional datasets with replicates. Use when user asks to select features from high-dimensional data, rank features based on consistency across replicates, minimize feature redundancy, or visualize the correlation of selected features."
 homepage: https://bioconductor.org/packages/release/bioc/html/FeatSeekR.html
 ---
+
 
 # bioconductor-featseekr
 

@@ -1,8 +1,9 @@
 ---
 name: pcst-fast
-description: The `pcst-fast` library provides a high-performance implementation of the Goemans-Williamson approximation scheme for the Prize-Collecting Steiner Tree/Forest problem.
+description: pcst-fast provides a high-performance implementation of the Goemans-Williamson approximation scheme for solving the Prize-Collecting Steiner Tree and Forest problems. Use when user asks to find an optimal connected subgraph based on node prizes and edge costs, solve the Prize-Collecting Steiner Tree problem, or identify high-value clusters in large-scale networks.
 homepage: https://github.com/fraenkel-lab/pcst_fast
 ---
+
 
 # pcst-fast
 

@@ -1,8 +1,9 @@
 ---
 name: r-rbison
-description: Skill for using the CRAN R package r-rbison.
+description: The rbison package provides an R interface to the USGS BISON service for searching and retrieving species occurrence data within the United States. Use when user asks to search for species occurrences by name, filter data by county or spatial constraints, map occurrence points, or query taxonomic information using the BISON Solr API.
 homepage: https://cran.r-project.org/web/packages/rbison/index.html
 ---
+
 
 # r-rbison
 

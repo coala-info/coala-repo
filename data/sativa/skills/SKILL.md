@@ -1,8 +1,9 @@
 ---
 name: sativa
-description: SATIVA (Semi-Automatic Taxonomy Improvement and Validation Algorithm) is a specialized pipeline for bioinformaticians to audit and refine taxonomic metadata.
+description: SATIVA identifies and corrects mislabeled taxonomic metadata in sequence alignments using phylogenetic analysis. Use when user asks to audit taxonomic labels, identify mislabeled sequences, or suggest taxonomic corrections for phylogenetic data.
 homepage: https://github.com/amkozlov/sativa
 ---
+
 
 # sativa
 

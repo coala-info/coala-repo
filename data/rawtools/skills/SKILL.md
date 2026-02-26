@@ -1,8 +1,9 @@
 ---
 name: rawtools
-description: RawTools is a high-performance utility designed to process Thermo Orbitrap mass spectrometer data.
+description: RawTools processes Thermo Orbitrap mass spectrometer data to parse metadata, perform quantification, and generate quality control metrics. Use when user asks to parse raw files, perform TMT quantification, generate MGF files, extract ion chromatograms, or process FAIMS data.
 homepage: https://github.com/kevinkovalchik/RawTools
 ---
+
 
 # rawtools
 

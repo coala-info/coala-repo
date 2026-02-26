@@ -1,8 +1,9 @@
 ---
 name: bioconductor-seqlogo
-description: the package is available on all platforms; click for details.
+description: This R package generates sequence logos to visualize DNA, RNA, or protein sequence conservation. Use when user asks to create sequence logos, visualize position weight matrices, or represent sequence motifs graphically.
 homepage: https://bioconductor.org/packages/release/bioc/html/seqLogo.html
 ---
+
 
 # bioconductor-seqlogo
 

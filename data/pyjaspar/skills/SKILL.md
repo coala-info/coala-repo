@@ -1,8 +1,9 @@
 ---
 name: pyjaspar
-description: pyjaspar is a serverless Python interface that provides access to the JASPAR transcription factor motif database using a local SQLite backend.
+description: pyjaspar provides a serverless Python interface to access and query the JASPAR transcription factor motif database using a local SQLite backend. Use when user asks to fetch transcription factor motifs by ID or name, retrieve specific JASPAR collections, or access motif matrices as Biopython objects for sequence analysis.
 homepage: https://github.com/asntech/pyjaspar
 ---
+
 
 # pyjaspar
 

@@ -1,8 +1,9 @@
 ---
 name: nanoinsight
-description: NanoINSight is a specialized bioinformatics tool designed to characterize the content of genomic insertions.
+description: NanoINSight characterizes genomic insertions by generating consensus sequences and performing repeat annotation to identify transposable elements. Use when user asks to characterize insertion content, generate consensus sequences for structural variants, or perform repeat classification on VCF files.
 homepage: https://github.com/AsmaaSamyMohamedMahmoud/nanoinsight
 ---
+
 
 # nanoinsight
 

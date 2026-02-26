@@ -1,8 +1,9 @@
 ---
 name: coinfinder
-description: Coinfinder is a specialized tool designed for pangenomic comparative genomics.
+description: Coinfinder identifies coincident genes in pangenomes that appear together or apart more frequently than expected by chance. Use when user asks to find gene associations, identify dissociating genetic elements, or detect linked gene clusters while accounting for phylogenetic signal.
 homepage: https://github.com/fwhelan/coinfinder
 ---
+
 
 # coinfinder
 

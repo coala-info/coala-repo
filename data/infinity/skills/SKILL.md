@@ -1,8 +1,9 @@
 ---
 name: infinity
-description: The `infinity` package provides a specialized, all-in-one infinity object for Python.
+description: The infinity package provides a specialized object that enables consistent comparisons between infinity and any comparable Python type, including integers, strings, and datetimes. Use when user asks to compare infinity against non-numeric types, implement strict mathematical validation for undefined operations, or use infinity as a sentinel value in algorithms.
 homepage: https://github.com/kvesteri/infinity
 ---
+
 
 # infinity
 

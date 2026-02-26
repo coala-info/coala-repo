@@ -1,8 +1,9 @@
 ---
 name: bioconductor-betahmm
-description: the package is available on all platforms; click for details.
+description: This tool models DNA methylation beta values using Hidden Markov Models to identify differentially methylated CpG sites and regions. Use when user asks to identify differentially methylated CpG sites, identify differentially methylated regions, or model spatial dependencies in methylation array data.
 homepage: https://bioconductor.org/packages/release/bioc/html/betaHMM.html
 ---
+
 
 # bioconductor-betahmm
 

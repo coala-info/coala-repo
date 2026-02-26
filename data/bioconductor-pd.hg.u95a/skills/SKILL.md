@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.hg.u95a
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Human Genome U95A microarray. Use when user asks to process Affymetrix HG-U95A microarray data, annotate probes for the Human Genome U95A chip, or perform low-level analysis on this specific array.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.hg.u95a.html
 ---
+
 
 # bioconductor-pd.hg.u95a
 

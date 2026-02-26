@@ -1,8 +1,9 @@
 ---
 name: idba
-description: IDBA (Iterative de Bruijn Graph Assembler) is a specialized suite of tools for assembling short-read sequencing data (typically ~100bp).
+description: IDBA is an iterative de Bruijn graph assembler designed to assemble short-read sequencing data by iterating through a range of k-mer sizes. Use when user asks to assemble metagenomes, perform single-cell sequencing assembly, or reconstruct transcriptomes from RNA-Seq data.
 homepage: https://github.com/loneknightpy/idba
 ---
+
 
 # idba
 

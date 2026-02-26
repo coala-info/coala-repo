@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gviz
-description: the package is available on all platforms; click for details.
+description: This tool creates high-quality, track-based genomic visualizations in R by aligning diverse data types to a common coordinate system. Use when user asks to create genomic plots, visualize gene models, display sequencing coverage from BAM or BigWig files, or add chromosome ideograms and genome axes to a figure.
 homepage: https://bioconductor.org/packages/release/bioc/html/Gviz.html
 ---
+
 
 # bioconductor-gviz
 

@@ -3,26 +3,32 @@
 ## norsp
 
 ### Tool Description
-NOn-Regular Secondary Structure Predictor. (Note: The provided text contains container runtime errors and does not include usage instructions or argument definitions).
+[Errno 2] No such file or directory: 'norsp'; fallback failed: [Errno 2] No such file or directory: 'norsp'
 
 ### Metadata
-- **Docker Image**: biocontainers/norsp:v1.0.6-4-deb_cv1
-- **Homepage**: https://github.com/vansencool/NorsPaper
+- **Docker Image**: Not found
+- **Homepage**: https://github.com/MagicAyush/NorsPaper
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/norsp/overview
 - **Total Downloads**: N/A
 - **Last updated**: N/A
-- **GitHub**: https://github.com/vansencool/NorsPaper
+- **GitHub**: https://github.com/MagicAyush/NorsPaper
 - **Stars**: N/A
+### Generation Failed
+
+[Errno 2] No such file or directory: 'norsp'; fallback failed: [Errno 2] No such file or directory: 'norsp'
+
+
+### Validation Errors
+
+- [Errno 2] No such file or directory: 'norsp'; fallback failed: [Errno 2] No such file or directory: 'norsp'
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/norsp:v1.0.6-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4120042616: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

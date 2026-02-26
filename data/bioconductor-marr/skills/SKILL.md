@@ -1,8 +1,9 @@
 ---
 name: bioconductor-marr
-description: the package is available on all platforms; click for details.
+description: This package implements the Maximum Rank Reproducibility method to measure the consistency of high-dimensional biological data across replicates. Use when user asks to measure data reproducibility, calculate maximum rank reproducibility, or evaluate consistency between biological samples.
 homepage: https://bioconductor.org/packages/release/bioc/html/marr.html
 ---
+
 
 # bioconductor-marr
 

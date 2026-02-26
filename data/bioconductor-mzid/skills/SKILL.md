@@ -1,8 +1,9 @@
 ---
 name: bioconductor-mzid
-description: the package is available on all platforms; click for details.
+description: This package parses mzIdentML files to import proteomics identification data into R. Use when user asks to parse mzIdentML files, import peptide identification results, or read mass spectrometry identification data.
 homepage: https://bioconductor.org/packages/release/bioc/html/mzID.html
 ---
+
 
 # bioconductor-mzid
 

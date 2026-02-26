@@ -1,8 +1,9 @@
 ---
 name: blosum
-description: The `blosum` module is a lightweight Python utility designed for bioinformatics tasks that require protein substitution scores.
+description: The blosum module provides a lightweight utility for loading and querying protein substitution matrices without heavy dependencies. Use when user asks to load BLOSUM matrices, retrieve amino acid substitution scores, or perform sequence similarity calculations.
 homepage: https://github.com/not-a-feature/blosum
 ---
+
 
 # blosum
 

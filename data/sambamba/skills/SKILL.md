@@ -1,8 +1,9 @@
 ---
 name: sambamba
-description: Sambamba is a high-performance toolset designed for the efficient manipulation of SAM (Sequence Alignment/Map) and BAM (Binary Alignment/Map) files.
+description: Sambamba is a high-performance toolset for the efficient manipulation, filtering, and analysis of SAM and BAM files. Use when user asks to view or filter reads, sort and index BAM files, mark or remove duplicates, calculate coverage depth, or merge and slice genomic data.
 homepage: https://github.com/biod/sambamba
 ---
+
 
 # sambamba
 

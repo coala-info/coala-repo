@@ -1,8 +1,9 @@
 ---
 name: kin
-description: kin is a Hidden-Markov-Model (HMM) based toolset optimized for kinship inference in paleogenomics.
+description: kin is a Hidden-Markov-Model based toolset designed for kinship inference and relatedness estimation in ancient DNA data. Use when user asks to estimate degrees of relatedness, perform contamination-corrected kinship analysis, or process paleogenomic BAM files for IBD sharing.
 homepage: https://github.com/DivyaratanPopli/Kinship_Inference
 ---
+
 
 # kin
 

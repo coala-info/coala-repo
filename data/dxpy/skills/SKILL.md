@@ -1,8 +1,9 @@
 ---
 name: dxpy
-description: The `dxpy` toolkit is the official suite for interacting with the DNAnexus cloud platform.
+description: The dxpy toolkit provides a command-line interface and Python library for interacting with the DNAnexus cloud platform. Use when user asks to authenticate, manage projects, upload or download data, search for objects, and monitor cloud jobs.
 homepage: https://github.com/dnanexus/dx-toolkit
 ---
+
 
 # dxpy
 

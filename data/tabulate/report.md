@@ -3,7 +3,7 @@
 ## tabulate
 
 ### Tool Description
-The provided text does not contain help information for the 'tabulate' command; it is an error log from a container runtime (Apptainer/Singularity) failing to fetch a Docker image.
+Pretty-print tabular data.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tabulate:0.7.5--py36_0
@@ -18,13 +18,25 @@ The provided text does not contain help information for the 'tabulate' command; 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tabulate:0.7.5--py36_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+option --h not a unique prefix
+Usage: tabulate [options] [FILE ...]
+
+Pretty-print tabular data.
+See also https://bitbucket.org/astanin/python-tabulate
+
+FILE                      a filename of the file with tabular data;
+                          if "-" or missing, read data from stdin.
+
+Options:
+
+-h, --help                show this message
+-1, --header              use the first row of data as a table header
+-o FILE, --output FILE    print table to FILE (default: stdout)
+-s REGEXP, --sep REGEXP   use a custom column separator (default: whitespace)
+-F FPFMT, --float FPFMT   floating point number format (default: g)
+-f FMT, --format FMT      set output table format; supported formats:
+                          plain, simple, grid, fancy_grid, pipe, orgtbl,
+                          rst, mediawiki, html, latex, latex_booktabs, tsv
+                          (default: simple)
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fgnet
-description: The package includes a graphical user interface (GUI) and functions to perform the functional enrichment analysis through DAVID, GeneTerm Linker, gage (GSEA) and topGO.
+description: FGNet transforms functional enrichment analysis results into functional networks by grouping genes and terms into clusters. Use when user asks to perform functional enrichment analysis, generate HTML reports of enrichment results, create gene-term incidence matrices, or visualize functional networks and molecular modules.
 homepage: https://bioconductor.org/packages/release/bioc/html/FGNet.html
 ---
+
 
 # bioconductor-fgnet
 

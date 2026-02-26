@@ -1,8 +1,9 @@
 ---
 name: deepdetails
-description: DeepDETAILS (Deep-learning-based DEconvolution of Tissue profiles with Accurate Interpretation of Locus-specific Signals) is a computational framework that extracts cell-type-specific regulatory maps from bulk sequencing libraries.
+description: DeepDETAILS is a deep-learning framework that extracts cell-type-specific regulatory maps from bulk sequencing libraries. Use when user asks to deconvolve bulk tissue signals into single-cell resolution, generate cell-type-specific bigWig tracks, or analyze regulatory elements from bulk data.
 homepage: https://details.yulab.org
 ---
+
 
 # deepdetails
 

@@ -1,8 +1,9 @@
 ---
 name: raxml-ng
-description: RAxML-NG (Next Generation) is a high-performance phylogenetic inference tool that utilizes the maximum-likelihood optimality criterion.
+description: RAxML-NG is a high-performance phylogenetic inference tool that uses maximum likelihood to reconstruct evolutionary trees from molecular sequence data. Use when user asks to infer phylogenetic trees, perform bootstrap analysis, evaluate model parameters on a fixed topology, or map support values onto a tree.
 homepage: https://github.com/amkozlov/raxml-ng
 ---
+
 
 # raxml-ng
 

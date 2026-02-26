@@ -1,8 +1,9 @@
 ---
 name: bioconductor-genomicplot
-description: the package is available on all platforms; click for details.
+description: GenomicPlot is an R/Bioconductor package for visualizing and analyzing Next-Generation Sequencing data through profile plots, heatmaps, and statistical comparisons. Use when user asks to visualize metagene profiles, plot signals around genomic loci, annotate peaks, or evaluate sample correlation.
 homepage: https://bioconductor.org/packages/release/bioc/html/GenomicPlot.html
 ---
+
 
 # bioconductor-genomicplot
 

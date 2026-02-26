@@ -1,8 +1,9 @@
 ---
 name: kipoi_veff
-description: The `kipoi_veff` plugin extends the Kipoi framework to provide specialized tools for variant effect prediction.
+description: This tool predicts the functional impact of genetic variants by applying DNA-sequence models to VCF files. Use when user asks to predict variant effects, annotate VCF files with model scores, or calculate mutation impact using metrics like logit differences.
 homepage: https://github.com/kipoi/kipoi-veff
 ---
+
 
 # kipoi_veff
 

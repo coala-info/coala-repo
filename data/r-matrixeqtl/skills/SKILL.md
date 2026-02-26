@@ -1,8 +1,9 @@
 ---
 name: r-matrixeqtl
-description: R package matrixeqtl (documentation from project home).
+description: Matrix eQTL is an R package that performs efficient expression quantitative trait loci (eQTL) analysis using high-performance matrix operations. Use when user asks to identify associations between genetic variants and gene expression, perform cis and trans eQTL mapping, or analyze large genomic datasets using linear regression or ANOVA models.
 homepage: https://cran.r-project.org/web/packages/matrixeqtl/index.html
 ---
+
 
 # r-matrixeqtl
 

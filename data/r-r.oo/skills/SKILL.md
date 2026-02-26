@@ -1,8 +1,9 @@
 ---
 name: r-r.oo
-description: Methods and classes for object-oriented programming in R with or without references.  Large effort has been made on making definition of methods as simple as possible with a minimum of maintenance for package developers.  The package has been developed since 2001 and is now considered very stable.  This is a cross-platform package implemented in pure R that defines standard S3 classes without any tricks.</p>
+description: This tool enables formal S3-based object-oriented programming in R with support for inheritance, encapsulation, and reference semantics. Use when user asks to define S3 classes with mutable objects, create constructors and methods using R.oo, or implement inheritance and finalizers in R.
 homepage: https://cloud.r-project.org/web/packages/R.oo/index.html
 ---
+
 
 # r-r.oo
 

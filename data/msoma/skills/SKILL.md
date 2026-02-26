@@ -1,8 +1,9 @@
 ---
 name: msoma
-description: mSOMA is a specialized bioinformatics tool designed to identify somatic mutations by analyzing sequencing data across multiple tissues from the same individual.
+description: "mSOMA identifies somatic mutations by analyzing sequencing data across multiple tissues using a betabinomial null model. Use when user asks to extract allele counts from BAM files, merge multi-tissue count data, or perform statistical inference to call somatic variants."
 homepage: https://github.com/AkeyLab/mSOMA
 ---
+
 
 # msoma
 

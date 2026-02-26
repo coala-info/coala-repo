@@ -1,8 +1,9 @@
 ---
 name: bioconductor-miasim
-description: the package is available on all platforms; click for details.
+description: This Bioconductor package simulates microbial community dynamics using various ecological models. Use when user asks to simulate microbiome data, model microbial community interactions, or generate synthetic ecological time series.
 homepage: https://bioconductor.org/packages/release/bioc/html/miaSim.html
 ---
+
 
 # bioconductor-miasim
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-xhybcasneuf
-description: the package is available on all platforms; click for details.
+description: This package assesses cross-hybridization on Affymetrix GeneChip arrays. Use when user asks to identify cross-hybridizing probes or evaluate probe specificity in microarray experiments.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/XhybCasneuf.html
 ---
+
 
 # bioconductor-xhybcasneuf
 

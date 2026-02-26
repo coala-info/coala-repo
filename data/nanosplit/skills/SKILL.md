@@ -1,8 +1,9 @@
 ---
 name: nanosplit
-description: NanoSplit is a specialized utility for Oxford Nanopore Technologies (ONT) data management.
+description: NanoSplit categorizes Oxford Nanopore FASTQ reads into separate files based on their average quality score. Use when user asks to split FASTQ files by quality, filter nanopore reads into pass and fail categories, or adjust quality score thresholds for sequencing data.
 homepage: https://github.com/wdecoster/nanosplit
 ---
+
 
 # nanosplit
 

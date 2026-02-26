@@ -1,8 +1,9 @@
 ---
 name: virheat
-description: virheat is a specialized visualization tool for comparative genomics.
+description: virheat visualizes variant call data (VCF) as heatmaps to track SNP evolution across samples. Use when user asks to create heatmaps from VCF files, filter variants, zoom into genomic regions, customize heatmap visualization, mask low coverage regions, or overlay external scores on mutations.
 homepage: https://github.com/jonas-fuchs/virHEAT
 ---
+
 
 # virheat
 

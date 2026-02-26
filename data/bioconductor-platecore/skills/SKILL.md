@@ -1,8 +1,9 @@
 ---
 name: bioconductor-platecore
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This Bioconductor package automates the analysis and visualization of flow cytometry data from large-scale, plate-based experiments. Use when user asks to process flow cytometry plates, perform automated gating, or generate quality control summaries for plate-based assays.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/plateCore.html
 ---
+
 
 # bioconductor-platecore
 

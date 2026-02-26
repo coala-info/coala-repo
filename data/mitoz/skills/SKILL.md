@@ -1,8 +1,9 @@
 ---
 name: mitoz
-description: MitoZ is a comprehensive bioinformatic toolkit designed specifically for animal mitochondrial genomics.
+description: MitoZ is a comprehensive bioinformatic toolkit for the assembly, annotation, and visualization of animal mitochondrial genomes from sequencing reads. Use when user asks to perform end-to-end mitochondrial genome analysis, filter raw reads, assemble mitogenomes, identify mitochondrial scaffolds, or annotate and visualize genes.
 homepage: https://github.com/linzhi2013/MitoZ
 ---
+
 
 # mitoz
 

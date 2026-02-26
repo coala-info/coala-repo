@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.poplar
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Poplar genome array. Use when user asks to process Affymetrix Poplar microarray data, access platform design information for Poplar arrays, or use the pd.poplar annotation package.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.poplar.html
 ---
+
 
 # bioconductor-pd.poplar
 

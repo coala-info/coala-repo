@@ -1,8 +1,9 @@
 ---
 name: panaln
-description: The `panaln` tool provides a specialized workflow for genomic read alignment that incorporates known genetic variation into the reference structure.
+description: The panaln tool performs genomic read alignment against a pangenome index to reduce reference bias and improve mapping for non-reference alleles. Use when user asks to generate a pangenome from a reference and VCF, index a pangenome, or align FASTQ reads to a pangenome index.
 homepage: https://github.com/Lilu-guo/Panaln
 ---
+
 
 # panaln
 

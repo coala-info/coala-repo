@@ -1,8 +1,9 @@
 ---
 name: mvp
-description: The Motif-Variant Probe (mvp) is a specialized genomic tool used to quantify the impact of sequence variation on functional motifs.
+description: The Motif-Variant Probe quantifies the impact of sequence variation on functional motifs by identifying the gain or loss of specific binding sites. Use when user asks to analyze the functional impact of variants on motifs, determine if mutations disrupt or create binding sites, or prioritize non-coding variants based on motif changes.
 homepage: https://gitlab.com/LPCDRP/motif-variants
 ---
+
 
 # mvp
 

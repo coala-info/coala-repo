@@ -1,8 +1,9 @@
 ---
 name: clam
-description: `clam` is a bioinformatics tool designed for the classification of callable loci intervals and the accurate estimation of population genetic statistics.
+description: Clam classifies callable loci intervals and estimates population genetic statistics from sequencing depth and variant data. Use when user asks to identify callable genomic regions, generate callable loci maps, or calculate population diversity metrics in sliding windows.
 homepage: https://github.com/cademirch/clam
 ---
+
 
 # clam
 

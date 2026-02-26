@@ -1,9 +1,9 @@
 # crossfilt CWL Generation Report
 
-## crossfilt
+## crossfilt_crossfilt-lift
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool. It consists of system logs and a fatal error message related to a container build process (no space left on device).
+Converts genome coordinates and nucleotide sequence for othologous segments in a BAM file
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
@@ -18,75 +18,97 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2c9ed030d211cae0a2d6521b7c90dbf6143ac7bac03a1c5bb10c8244e8827773: unpack entry: usr/local/lib/libopenblasp-r0.3.30.so: unpack to regular file: short write: write /tmp/build-temp-2985570787/rootfs/usr/local/lib/libopenblasp-r0.3.30.so: no space left on device
+usage: crossfilt-lift [-h] -i INPUT -o OUTPUT -c CHAIN -t TARGET_FASTA -q
+                      QUERY_FASTA [-p] [-b] [--version]
+
+Converts genome coordinates and nucleotide sequence for othologous segments in
+a BAM file
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        The input BAM file to convert
+  -o OUTPUT, --output OUTPUT
+                        Name prefix for the output file
+  -c CHAIN, --chain CHAIN
+                        The UCSC chain file
+  -t TARGET_FASTA, --target-fasta TARGET_FASTA
+                        The genomic sequence of the target (the species we are
+                        converting from)
+  -q QUERY_FASTA, --query-fasta QUERY_FASTA
+                        The genomic sequence of the query (the species we are
+                        converting to)
+  -p, --paired          Add this flag if the reads are paired
+  -b, --best            Only attempt to lift using the best chain
+  --version             show program's version number and exit
 ```
 
-
-## Metadata
-- **Skill**: generated
-
-## crossfilt_crossfilt-lift
-
-### Tool Description
-The provided text contains error logs from a container runtime (Singularity/Apptainer) indicating a failure to build or run the image due to lack of disk space. It does not contain the help text or usage information for the tool itself.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
-- **Homepage**: https://github.com/kennethabarr/CrossFilt
-- **Package**: https://anaconda.org/channels/bioconda/packages/crossfilt/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2c9ed030d211cae0a2d6521b7c90dbf6143ac7bac03a1c5bb10c8244e8827773: unpack entry: usr/local/lib/libopenblasp-r0.3.30.so: unpack to regular file: short write: write /tmp/build-temp-4023202160/rootfs/usr/local/lib/libopenblasp-r0.3.30.so: no space left on device
-```
 
 ## crossfilt_crossfilt-split
 
 ### Tool Description
-The provided text does not contain help information or a description of the tool; it is an error log from a container runtime (Singularity/Apptainer) indicating a failure to build the image due to insufficient disk space.
+Splits a bam file into equal sized chunks, keeping paired reads together. This may return fewer files than expected if many reads are missing a pair.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
 - **Homepage**: https://github.com/kennethabarr/CrossFilt
 - **Package**: https://anaconda.org/channels/bioconda/packages/crossfilt/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2c9ed030d211cae0a2d6521b7c90dbf6143ac7bac03a1c5bb10c8244e8827773: unpack entry: usr/local/lib/libopenblasp-r0.3.30.so: unpack to regular file: short write: write /tmp/build-temp-4071092381/rootfs/usr/local/lib/libopenblasp-r0.3.30.so: no space left on device
+usage: crossfilt-split [-h] -i INPUT -o OUTPUT [-n NCPU] [-p]
+                       (-f NFILES | -s FILE_SIZE) [--version]
+
+Splits a bam file into equal sized chunks, keeping paired reads together. This
+may return fewer files than expected if many reads are missing a pair.
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        The input BAM file to split
+  -o OUTPUT, --output OUTPUT
+                        Prefix for the output files
+  -n NCPU, --ncpu NCPU  The number of CPU cores to use
+  -p, --paired          Add this flag if the reads are paired
+  -f NFILES, --nfiles NFILES
+                        The number of files to split this into
+  -s FILE_SIZE, --file-size FILE_SIZE
+                        The number of reads per file
+  --version             show program's version number and exit
 ```
+
 
 ## crossfilt_crossfilt-filter
 
 ### Tool Description
-The provided text does not contain help information for the tool. It appears to be a system error log indicating a failure to build or run a container due to insufficient disk space.
+Outputs reads from bam1 that that have identical contig, position, CIGAR string, and tag values (optional) in bam2
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0
 - **Homepage**: https://github.com/kennethabarr/CrossFilt
 - **Package**: https://anaconda.org/channels/bioconda/packages/crossfilt/overview
 - **Validation**: PASS
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/crossfilt:0.2.1--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:2c9ed030d211cae0a2d6521b7c90dbf6143ac7bac03a1c5bb10c8244e8827773: unpack entry: usr/local/lib/libopenblasp-r0.3.30.so: unpack to regular file: short write: write /tmp/build-temp-2222293711/rootfs/usr/local/lib/libopenblasp-r0.3.30.so: no space left on device
+usage: crossfilt-filter [-h] [-t TAG] [-x] [-@ THREADS] [--version] bam1 bam2
+
+Outputs reads from bam1 that that have identical contig, position, CIGAR
+string, and tag values (optional) in bam2
+
+positional arguments:
+  bam1                  Input bam file 1.
+  bam2                  Input bam file 2.
+
+options:
+  -h, --help            show this help message and exit
+  -t TAG, --tag TAG     Tag values to compare. Can be specified multiple times
+                        to compare multiple tags.
+  -x, --xf              Compare the XF tag. Equivalent to --tag XF
+  -@ THREADS, --threads THREADS
+                        Number of compression/decrpression threads when
+                        reading/writing bam files.
+  --version             show program's version number and exit
 ```
 

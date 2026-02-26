@@ -1,8 +1,9 @@
 ---
 name: perl-url-encode
-description: This skill provides guidance on using the `URL::Encode` Perl library to transform strings into a format suitable for URLs and web forms.
+description: This tool encodes and decodes strings into a format suitable for URLs and web forms using the Perl URL::Encode library. Use when user asks to encode special characters for URI structures, decode application/x-www-form-urlencoded data, or process strings for REST API interactions.
 homepage: http://metacpan.org/pod/URL-Encode
 ---
+
 
 # perl-url-encode
 

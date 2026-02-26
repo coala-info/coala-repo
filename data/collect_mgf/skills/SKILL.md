@@ -1,8 +1,9 @@
 ---
 name: collect_mgf
-description: The `collect_mgf` tool is a specialized utility for proteomics workflows that use the XMass software environment.
+description: This tool consolidates individual MS/MS spectra from a nested directory structure into a single MGF file while mapping precursor information from a results file. Use when user asks to collect spectra from XMass experiments, consolidate multiple MGF files, or aggregate proteomics data with precursor mass and charge state mapping.
 homepage: http://www.ms-utils.org/collect_mgf.c
 ---
+
 
 # collect_mgf
 

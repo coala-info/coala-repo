@@ -1,8 +1,9 @@
 ---
 name: ucsc-chaintoaxt
-description: The `chainToAxt` utility is a specialized tool from the UCSC Genome Browser "kent" source suite.
+description: `ucsc-chaintoaxt` converts alignment data from `.chain` format to `.axt` format. Use when user asks to convert alignment data from chain format to axt format.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-chaintoaxt
 

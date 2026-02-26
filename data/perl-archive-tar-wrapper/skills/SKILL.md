@@ -1,8 +1,9 @@
 ---
 name: perl-archive-tar-wrapper
-description: This skill provides guidance on using `Archive::Tar::Wrapper`, a Perl interface that executes the system's native `tar` binary rather than processing archives in-memory.
+description: This tool provides a Perl interface to the system's native tar binary for high-performance archive manipulation. Use when user asks to create, extract, or inspect tar archives while preserving file permissions and minimizing memory usage.
 homepage: http://metacpan.org/pod/Archive::Tar::Wrapper
 ---
+
 
 # perl-archive-tar-wrapper
 

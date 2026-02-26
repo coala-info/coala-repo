@@ -1,8 +1,9 @@
 ---
 name: esme_psmpi_5_10_0
-description: The Earth System Modelling Environment (ESME) is a specialized meta-package designed to simplify the complex installation of scientific computing libraries required for climate simulations.
+description: ESME manages the installation and compatibility of scientific computing libraries like netCDF, HDF5, and ESMF for climate simulations using ParaStationMPI. Use when user asks to verify environment health, locate bundled library headers, compile models with MPI-enabled libraries, or benchmark parallel interconnect performance.
 homepage: https://github.com/j34ni/bioconda-recipes
 ---
+
 
 # esme_psmpi_5_10_0
 

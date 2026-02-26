@@ -1,8 +1,9 @@
 ---
 name: revbayes
-description: RevBayes is a modular software package for Bayesian phylogenetic inference and general statistical modeling.
+description: RevBayes is a modular software package for Bayesian phylogenetic inference and general statistical modeling using the Rev probabilistic programming language. Use when user asks to perform phylogenetic analysis, execute Rev scripts, define graphical models, or run MCMC simulations for molecular and morphological data.
 homepage: https://revbayes.github.io/
 ---
+
 
 # revbayes
 

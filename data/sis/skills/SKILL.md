@@ -1,8 +1,9 @@
 ---
 name: sis
-description: The `sis` (Scaffold Independent of Synteny) tool is a specialized utility for the final stages of small genome assembly.
+description: The sis tool scaffolds de novo assembled contigs by mapping them to a related reference genome using the MUMmer alignment suite. Use when user asks to scaffold contigs, order and orient fragmented assemblies, or map contigs to a reference genome for small genome assembly.
 homepage: http://marte.ic.unicamp.br:8747/
 ---
+
 
 # sis
 

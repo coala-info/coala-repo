@@ -1,8 +1,9 @@
 ---
 name: viral-host-hunter
-description: Viral-Host-Hunter (VHH) is a protein-centered, alignment-free framework designed to decrypt "viral dark matter" by predicting phage-host interactions.
+description: Viral-Host-Hunter predicts phage-host interactions from protein and DNA sequences. Use when user asks to predict phage-host interactions, specify the protein type, define the phage source environment, or set the taxonomic prediction level.
 homepage: https://github.com/YuehuaOu/Viral-Host-Hunter
 ---
+
 
 # viral-host-hunter
 

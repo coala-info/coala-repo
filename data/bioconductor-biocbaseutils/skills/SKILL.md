@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biocbaseutils
-description: The package provides utility functions related to package development. These include functions that replace slots, and selectors for show methods. It aims to coalesce the various helper functions often re-used throughout the Bioconductor ecosystem.
+description: BiocBaseUtils provides low-level utility functions for input assertion, S4 slot replacement, and object display formatting in Bioconductor package development. Use when user asks to validate function inputs, update S4 object slots, or create concise show methods for custom classes.
 homepage: https://bioconductor.org/packages/release/bioc/html/BiocBaseUtils.html
 ---
+
 
 # bioconductor-biocbaseutils
 

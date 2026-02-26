@@ -3,7 +3,7 @@
 ## samclip
 
 ### Tool Description
-The provided text is an error log from a container runtime (Apptainer/Singularity) and does not contain the help text or usage information for the tool 'samclip'. As a result, no arguments could be extracted.
+Filter SAM file for soft & hard clipped alignments
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/samclip:0.4.0--hdfd78af_1
@@ -12,19 +12,28 @@ The provided text is an error log from a container runtime (Apptainer/Singularit
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/samclip/overview
-- **Total Downloads**: 50.7K
+- **Total Downloads**: 50.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: https://github.com/tseemann/samclip
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/samclip:0.4.0--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+SYNOPSIS
+  Filter SAM file for soft & hard clipped alignments
+AUTHOR
+  Torsten Seemann (@torstenseemann)
+USAGE
+  % samclip --ref ref.fa < in.sam > out.sam
+  % minimap2 ref.fa R1.fq R2.fq | samclip --ref ref.fa | samtools sort > out.bam
+OPTIONS
+  --help         This help
+  --version      Print version and exit
+  --ref FASTA    Reference genome - needs FASTA.fai index
+  --max NUM      Maximum clip length to allow (default=5)
+  --invert       Output rejected SAM lines and ignore good ones
+  --debug        Print verbose debug info to stderr
+  --progress N   Print progress every NUM records (default=100000,none=0)
+HOMEPAGE
+  https://github.com/tseemann/samclip
 ```
 
-
-## Metadata
-- **Skill**: generated

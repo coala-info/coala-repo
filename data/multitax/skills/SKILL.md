@@ -1,8 +1,9 @@
 ---
 name: multitax
-description: multitax is a Python package that provides a unified interface for interacting with diverse biological taxonomies.
+description: multitax is a Python package that provides a unified interface to interact with, explore, and translate between diverse biological taxonomies like NCBI, GTDB, and SILVA. Use when user asks to retrieve taxonomic lineages, navigate parent-child relationships, filter or prune taxonomic trees, and translate identifiers between different classification systems.
 homepage: https://github.com/pirovc/multitax
 ---
+
 
 # multitax
 

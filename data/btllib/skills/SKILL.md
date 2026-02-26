@@ -1,8 +1,9 @@
 ---
 name: btllib
-description: `btllib` is a high-performance C++ library with Python wrappers developed by the Bioinformatics Technology Lab.
+description: btllib is a high-performance bioinformatics library providing optimized C++ algorithms and Python wrappers for sequence processing and data structure management. Use when user asks to navigate the Python API, manage environment dependencies like SAMtools, configure Bloom filters, or integrate the library into C++ projects.
 homepage: https://github.com/bcgsc/btllib
 ---
+
 
 # btllib
 

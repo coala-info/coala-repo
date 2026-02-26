@@ -1,8 +1,9 @@
 ---
 name: gencore
-description: gencore is a high-performance bioinformatics tool used for deduplication and error correction in Next-Generation Sequencing (NGS) data.
+description: gencore performs deduplication and error correction on NGS data by clustering reads to generate high-fidelity consensus sequences. Use when user asks to deduplicate BAM files, generate consensus sequences, reduce sequencing errors, or process UMI-tagged data for cancer genomics.
 homepage: https://github.com/OpenGene/gencore
 ---
+
 
 # gencore
 

@@ -1,8 +1,9 @@
 ---
 name: r-spam
-description: "Set of functions for sparse matrix algebra.     Differences with other sparse matrix packages are:     (1) we only support (essentially) one sparse matrix format,     (2) based on transparent and simple structure(s),     (3) tailored for MCMC calculations within G(M)RF.     (4) and it is fast and scalable (with the extension package spam64)."
+description: The spam package provides functions for performing fast and scalable sparse matrix algebra using the Compressed Sparse Row format. Use when user asks to create sparse matrices, solve linear systems via Cholesky factorization, or perform efficient matrix operations within MCMC and GMRF frameworks.
 homepage: https://cloud.r-project.org/web/packages/spam/index.html
 ---
+
 
 # r-spam
 

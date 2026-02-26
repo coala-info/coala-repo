@@ -1,8 +1,9 @@
 ---
 name: bioconductor-gbscleanr
-description: the package is available on all platforms; click for details.
+description: GBScleanR performs error correction and genotype estimation for NGS-based genotyping data using a Hidden Markov Model. Use when user asks to filter genotype calls, estimate true genotypes from allele read counts, or correct errors in GBS and RAD-seq data for mapping populations.
 homepage: https://bioconductor.org/packages/release/bioc/html/GBScleanR.html
 ---
+
 
 # bioconductor-gbscleanr
 

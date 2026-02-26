@@ -1,8 +1,9 @@
 ---
 name: h5sparse
-description: h5sparse is a specialized library designed to bridge the gap between Scipy's sparse matrix formats and the HDF5 storage standard.
+description: "h5sparse provides a specialized interface for storing and managing Scipy sparse matrices in HDF5 format. Use when user asks to store sparse data in HDF5, perform partial reads via slicing, or append new rows to existing sparse datasets."
 homepage: https://github.com/appier/h5sparse
 ---
+
 
 # h5sparse
 

@@ -1,8 +1,9 @@
 ---
 name: r-adephylo
-description: Multivariate tools to analyze comparative data, i.e. a phylogeny and some traits measured for each taxa. The package contains functions to represent comparative data, compute phylogenetic proximities, perform multivariate analysis with phylogenetic constraints and test for the presence of phylogenetic autocorrelation.
+description: This tool provides multivariate methods for exploratory analysis and quantification of phylogenetic signals in biological trait data. Use when user asks to quantify phylogenetic signal, perform phylogenetic decomposition of trait variation, model signal using Moran's eigenvectors, or visualize comparative data on trees.
 homepage: https://cloud.r-project.org/web/packages/adephylo/index.html
 ---
+
 
 # r-adephylo
 

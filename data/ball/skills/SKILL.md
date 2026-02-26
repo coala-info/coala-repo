@@ -1,8 +1,9 @@
 ---
 name: ball
-description: The `ball` skill (based on balloon.css) allows for the creation of functional, accessible tooltips using only CSS.
+description: The ball skill creates accessible, CSS-only tooltips using HTML5 data attributes and CSS variables. Use when user asks to create tooltips, position tooltips, or style tooltips without using JavaScript.
 homepage: https://github.com/kazzkiq/balloon.css
 ---
+
 
 # ball
 

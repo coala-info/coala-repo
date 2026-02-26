@@ -1,8 +1,9 @@
 ---
 name: mhcflurry
-description: MHCflurry is a specialized toolset for predicting the interaction between peptides and Major Histocompatibility Complex (MHC) Class I molecules.
+description: MHCflurry predicts the binding affinity and presentation scores of peptides to MHC Class I molecules. Use when user asks to predict peptide-MHC interactions, scan protein sequences for epitopes, or simulate antigen processing.
 homepage: https://github.com/hammerlab/mhcflurry
 ---
+
 
 # mhcflurry
 

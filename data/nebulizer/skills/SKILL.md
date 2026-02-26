@@ -1,8 +1,9 @@
 ---
 name: nebulizer
-description: Nebulizer provides a suite of command-line utilities for remote Galaxy administration.
+description: Nebulizer provides a suite of command-line utilities for remote Galaxy administration and automation. Use when user asks to manage Galaxy users, install or update tools, organize data libraries, or configure storage quotas.
 homepage: https://github.com/pjbriggs/nebulizer
 ---
+
 
 # nebulizer
 

@@ -1,8 +1,9 @@
 ---
 name: vinalc
-description: VinaLC is a parallelized version of AutoDock Vina designed for high-performance computing environments.
+description: VinaLC performs parallelized molecular docking for high-throughput virtual screening. Use when user asks to prepare input files for docking, configure docking parameters, or execute high-throughput molecular docking.
 homepage: https://github.com/XiaohuaZhangLLNL/VinaLC
 ---
+
 
 # vinalc
 

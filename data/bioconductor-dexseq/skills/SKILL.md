@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dexseq
-description: The package is focused on finding differential exon usage using RNA-seq exon counts between samples with different experimental designs. It provides functions that allows the user to make the necessary statistical tests based on a model that uses the negative binomial distribution to estimate the variance between biological replicates and generalized linear models for testing. The package also provides functions for the visualization and exploration of the results.
+description: This Bioconductor package identifies differential exon usage in RNA-seq data by testing for changes in the relative expression of exons across experimental conditions. Use when user asks to detect alternative splicing, perform differential exon usage analysis, or visualize exon-level expression patterns using generalized linear models.
 homepage: https://bioconductor.org/packages/release/bioc/html/DEXSeq.html
 ---
+
 
 # bioconductor-dexseq
 

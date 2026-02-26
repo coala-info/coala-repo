@@ -3,26 +3,32 @@
 ## expat
 
 ### Tool Description
-The provided text does not contain help information for the expat tool; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to lack of disk space.
+FAIL to generate CWL: expat not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/expat:2.1.0--0
 - **Homepage**: https://github.com/xmppo/node-expat
 - **Package**: Not found
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/main/packages/expat/overview
-- **Total Downloads**: 866.2K
-- **Last updated**: 2026-02-14
+- **Total Downloads**: 873.9K
+- **Last updated**: 2026-02-24
 - **GitHub**: https://github.com/xmppo/node-expat
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: expat not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: expat not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/expat:2.1.0--0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1761526128: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: generated

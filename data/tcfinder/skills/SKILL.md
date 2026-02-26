@@ -1,8 +1,9 @@
 ---
 name: tcfinder
-description: tcfinder (Target Cluster Finder) is a lightweight, high-performance tool written in Rust designed to find clusters of interest within a phylogenetic tree.
+description: tcfinder identifies clusters of interest within a phylogenetic tree based on user-defined target samples and purity thresholds. Use when user asks to find transmission clusters, identify localized outbreaks, or search for specific evolutionary lineages in large phylogenetic datasets.
 homepage: https://github.com/PathoGenOmics-Lab/tcfinder
 ---
+
 
 # tcfinder
 

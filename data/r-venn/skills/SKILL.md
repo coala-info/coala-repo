@@ -1,8 +1,9 @@
 ---
 name: r-venn
-description: "A close to zero dependency package to draw and display Venn      diagrams up to 7 sets, and any Boolean union of set intersections.</p>"
+description: The r-venn package generates customizable Venn diagrams for up to seven sets using various input formats like lists, dataframes, or Boolean expressions. Use when user asks to create Venn diagrams, visualize set intersections, or represent logical relationships using SOP notation in R.
 homepage: https://cloud.r-project.org/web/packages/venn/index.html
 ---
+
 
 # r-venn
 

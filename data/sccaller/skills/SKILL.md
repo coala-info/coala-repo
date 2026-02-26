@@ -1,8 +1,9 @@
 ---
 name: sccaller
-description: sccaller (Single Cell Caller) is a specialized tool designed to accurately identify genomic variants in single cells.
+description: sccaller identifies genomic variants and somatic mutations in single-cell sequencing data while accounting for amplification errors and allelic dropout. Use when user asks to call germline variants in single cells, identify somatic mutations by comparing single-cell data to a matched bulk sample, or detect variants using known SNP databases.
 homepage: https://github.com/biosinodx/SCcaller
 ---
+
 
 # sccaller
 

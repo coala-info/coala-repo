@@ -1,8 +1,9 @@
 ---
 name: safesim
-description: SafeSim is a specialized toolkit for simulating variants in sequencing data that utilizes Safe-Sequencing System (Safe-SeqS) or similar UMI-based protocols.
+description: SafeSim simulates variants in UMI-based sequencing data by spiking specific mutations into BAM files or blending different samples. Use when user asks to spike variants into a background BAM file, blend two BAM files to simulate variant fractions, or simulate data for UMI-based protocols like Safe-SeqS.
 homepage: https://github.com/genetronhealth/safesim
 ---
+
 
 # safesim
 

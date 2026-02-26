@@ -1,8 +1,9 @@
 ---
 name: ngs-disambiguate
-description: The `ngs-disambiguate` tool provides a deterministic algorithm for resolving the species of origin for reads in mixed-species sequencing experiments.
+description: ngs-disambiguate resolves the species of origin for sequencing reads in mixed-species experiments by comparing alignment metrics between two BAM files. Use when user asks to disambiguate reads in PDX models, separate host and tumor sequences, or resolve species-specific reads from mixed-species sequencing data.
 homepage: https://github.com/AstraZeneca-NGS/disambiguate
 ---
+
 
 # ngs-disambiguate
 

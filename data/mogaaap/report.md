@@ -1,9 +1,9 @@
 # mogaaap CWL Generation Report
 
-## mogaaap
+## mogaaap_MoGAAAP
 
 ### Tool Description
-Multi-Omics Genome-Agnostic Annotation and Analysis Pipeline (Note: The provided text is a system error log and does not contain usage instructions or argument definitions).
+This is a wrapper script around the MoGAAAP Snakemake workflow.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/mogaaap:1.1.0--pyhdfd78af_0
@@ -12,17 +12,31 @@ Multi-Omics Genome-Agnostic Annotation and Analysis Pipeline (Note: The provided
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/mogaaap/overview
-- **Total Downloads**: 575
+- **Total Downloads**: 583
 - **Last updated**: 2025-12-05
 - **GitHub**: https://github.com/dirkjanvw/MoGAAAP
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/mogaaap:1.1.0--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-4160631478: no space left on device
+___  ___      _____   ___    ___    ___  ______
+        |  \/  |     |  __ \ / _ \  / _ \  / _ \ | ___ \
+        | .  . | ___ | |  \// /_\ \/ /_\ \/ /_\ \| |_/ /
+        | |\/| |/ _ \| | __ |  _  ||  _  ||  _  ||  __/
+        | |  | | (_) | |_\ \| | | || | | || | | || |
+        \_|  |_/\___/ \____/\_| |_/\_| |_/\_| |_/\_|
+        
+Usage: MoGAAAP [OPTIONS] COMMAND [ARGS]...
+
+  This is a wrapper script around the MoGAAAP Snakemake workflow.
+
+Options:
+  --version   Show the version and exit.
+  -h, --help  Show this message and exit.
+
+Commands:
+  init                Initialise a new MoGAAAP pipeline
+  download_databases  Download the necessary databases for MoGAAAP
+  configure           Configure the MoGAAAP pipeline
+  run                 Run the MoGAAAP pipeline and create a report
 ```
 
-
-## Metadata
-- **Skill**: generated

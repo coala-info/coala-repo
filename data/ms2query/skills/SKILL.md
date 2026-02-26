@@ -1,8 +1,9 @@
 ---
 name: ms2query
-description: MS2Query is a specialized tool for metabolite identification that leverages machine learning to improve the reliability of MS/MS library matching.
+description: MS2Query identifies metabolites by using machine learning to perform analogue searching and predict the reliability of MS/MS library matches. Use when user asks to identify metabolites, perform analogue searching, search MS/MS spectra against a library, or predict match quality scores.
 homepage: https://github.com/iomega/ms2query
 ---
+
 
 # ms2query
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-drosophila2.db
-description: the package is available on all platforms; click for details.
+description: This tool provides comprehensive biological identifier mappings and functional annotations for the Affymetrix Drosophila Genome 2.0 Array. Use when user asks to map probe identifiers to gene symbols, retrieve Entrez or Ensembl IDs, or access Gene Ontology and KEGG pathway information for fruit fly research.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/drosophila2.db.html
 ---
+
 
 # bioconductor-drosophila2.db
 

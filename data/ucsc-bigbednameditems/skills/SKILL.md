@@ -1,8 +1,9 @@
 ---
 name: ucsc-bigbednameditems
-description: The `bigBedNamedItems` utility is a specialized tool from the UCSC Genome Browser suite designed for efficient, name-based queries against bigBed files.
+description: The ucsc-bigbednameditems tool extracts specific features from a bigBed file by their names. Use when user asks to extract specific features from a bigBed file by name, retrieve multiple features from a list of names, or query a bigBed file for named items.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bigbednameditems
 

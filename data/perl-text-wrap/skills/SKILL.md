@@ -1,8 +1,9 @@
 ---
 name: perl-text-wrap
-description: The `perl-text-wrap` skill provides a mechanism for intelligent paragraph formatting.
+description: This tool formats text into paragraphs by wrapping lines at word boundaries with customizable indentation and column widths. Use when user asks to wrap text at specific widths, format paragraphs with first-line or hanging indents, or process text for fixed-width displays.
 homepage: http://metacpan.org/pod/Text::Wrap
 ---
+
 
 # perl-text-wrap
 

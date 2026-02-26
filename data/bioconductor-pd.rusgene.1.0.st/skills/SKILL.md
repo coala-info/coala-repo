@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.rusgene.1.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix RusGene 1.0 ST array. Use when user asks to process Affymetrix RusGene 1.0 ST array data or access annotation information for these microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.rusgene.1.0.st.html
 ---
+
 
 # bioconductor-pd.rusgene.1.0.st
 

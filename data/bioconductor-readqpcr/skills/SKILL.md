@@ -1,8 +1,9 @@
 ---
 name: bioconductor-readqpcr
-description: The package provides functions to read raw RT-qPCR data of different platforms.
+description: This Bioconductor package provides functions to read raw RT-qPCR data from various platforms. Use when user asks to read raw RT-qPCR data, import qPCR results into R, or handle data from different qPCR platforms.
 homepage: https://bioconductor.org/packages/release/bioc/html/ReadqPCR.html
 ---
+
 
 # bioconductor-readqpcr
 

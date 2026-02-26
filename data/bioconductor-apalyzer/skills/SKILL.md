@@ -1,8 +1,9 @@
 ---
 name: bioconductor-apalyzer
-description: the package is available on all platforms; click for details.
+description: "APAlyzer identifies and quantifies alternative polyadenylation events from RNA-seq BAM files. Use when user asks to quantify 3'UTR alternative polyadenylation, analyze intronic polyadenylation, calculate relative expression differences, or perform significance testing between experimental conditions."
 homepage: https://bioconductor.org/packages/release/bioc/html/APAlyzer.html
 ---
+
 
 # bioconductor-apalyzer
 

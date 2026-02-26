@@ -1,8 +1,9 @@
 ---
 name: python3-cutadapt
-description: Cutadapt is a specialized tool for cleaning high-throughput sequencing data by removing technical artifacts.
+description: "Cutadapt removes adapter sequences, primers, and low-quality bases from high-throughput sequencing reads. Use when user asks to trim adapters, strip PCR primers, filter reads by quality or length, or demultiplex sequencing data."
 homepage: https://cutadapt.readthedocs.io/
 ---
+
 
 # python3-cutadapt
 

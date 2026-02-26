@@ -1,8 +1,9 @@
 ---
 name: peaksql
-description: PeakSQL provides a specialized infrastructure for bridging the gap between raw genomic data formats (BED, BigWig, Fasta) and machine learning frameworks.
+description: PeakSQL creates a persistent SQL-based database to bridge genomic data formats with machine learning frameworks for efficient data loading. Use when user asks to initialize a genomic database, load data for machine learning training, or link reference genomes with experimental signals.
 homepage: https://vanheeringen-lab.github.io/peaksql/index.html
 ---
+
 
 # peaksql
 

@@ -1,8 +1,9 @@
 ---
 name: gw
-description: `gw` is a high-performance genome browser designed for speed and terminal-centric workflows.
+description: gw is a high-performance genome browser for visualizing sequencing alignments and variant calls in the terminal or via programmatic image generation. Use when user asks to visualize genomic regions, generate PNG or PDF snapshots of alignments, compare multiple BAM files, or annotate variants.
 homepage: https://github.com/kcleal/gw
 ---
+
 
 # gw
 

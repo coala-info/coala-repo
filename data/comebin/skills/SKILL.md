@@ -1,8 +1,9 @@
 ---
 name: comebin
-description: COMEBin is a specialized tool for the binning of metagenomic contigs.
+description: COMEBin is a tool for binning metagenomic contigs using contrastive multi-view representation learning and deep learning embeddings. Use when user asks to bin metagenomic contigs, recover genomes from microbial communities, or generate low-dimensional embeddings for contig clustering.
 homepage: https://github.com/ziyewang/COMEBin
 ---
+
 
 # comebin
 

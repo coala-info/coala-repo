@@ -1,8 +1,10 @@
 ---
 name: tmalign
-description: TM-align is a specialized tool for comparing the 3D shapes of proteins regardless of their sequence identity.
+description: TM-align compares the 3D shapes of proteins and quantifies their structural similarity using the TM-score. Use when user asks to align protein structures, compare protein 3D shapes, calculate TM-scores, superpose protein models, or visualize structural alignments.
 homepage: https://zhanglab.ccmb.med.umich.edu/TM-align/
 ---
+
+
 
 # tmalign
 

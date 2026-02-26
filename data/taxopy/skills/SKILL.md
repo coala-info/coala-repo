@@ -1,8 +1,9 @@
 ---
 name: taxopy
-description: The `taxopy` skill enables efficient interaction with NCBI-formatted taxonomic databases.
+description: taxopy interacts with NCBI-formatted taxonomic databases to manage TaxIds, scientific names, and lineages. Use when user asks to map TaxIds to names, retrieve taxonomic ranks, find the lowest common ancestor, or perform majority-vote consensus taxonomy.
 homepage: https://apcamargo.github.io/taxopy/
 ---
+
 
 # taxopy
 

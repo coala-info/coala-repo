@@ -1,8 +1,9 @@
 ---
 name: r-circrnafull
-description: R package circrnafull (documentation from project home).
+description: This tool reconstructs full-length circRNA sequences by integrating chimeric alignment data from STAR and circRNA predictions from CIRCexplorer. Use when user asks to process circRNA junction data, extract reads from BAM files, detect skipped exons, or reconstruct complete circular RNA sequences in FASTA format.
 homepage: https://cran.r-project.org/web/packages/circrnafull/index.html
 ---
+
 
 # r-circrnafull
 

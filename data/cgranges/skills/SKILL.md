@@ -1,8 +1,9 @@
 ---
 name: cgranges
-description: cgranges is a specialized library designed for the rapid identification of overlapping genomic regions.
+description: cgranges is a library and tool for the rapid identification of overlapping genomic regions using an implicit interval tree structure. Use when user asks to find genomic overlaps, calculate BED coverage, or perform high-performance interval queries in C or C++.
 homepage: https://github.com/lh3/cgranges
 ---
+
 
 # cgranges
 

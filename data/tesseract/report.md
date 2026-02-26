@@ -3,7 +3,7 @@
 ## tesseract
 
 ### Tool Description
-Tesseract Open Source OCR Engine
+Performs OCR on an image and outputs the recognized text.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/tesseract:5.5.1
@@ -18,13 +18,19 @@ Tesseract Open Source OCR Engine
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/tesseract:5.5.1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Usage:
+  tesseract --help | --help-extra | --version
+  tesseract --list-langs
+  tesseract imagename outputbase [options...] [configfile...]
+
+OCR options:
+  -l LANG[+LANG]        Specify language(s) used for OCR.
+NOTE: These options must occur before any configfile.
+
+Single options:
+  --help                Show this help message.
+  --help-extra          Show extra help for advanced users.
+  --version             Show version information.
+  --list-langs          List available languages for tesseract engine.
 ```
 
-
-## Metadata
-- **Skill**: generated

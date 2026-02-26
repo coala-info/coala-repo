@@ -1,9 +1,9 @@
 # graphicsmagick CWL Generation Report
 
-## graphicsmagick
+## graphicsmagick_gm
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for GraphicsMagick. It contains system log messages and a fatal error regarding a container build failure (no space left on device).
+GraphicsMagick 1.3.46 2025-10-29 Q8 http://www.GraphicsMagick.org/
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/graphicsmagick:1.3.46
@@ -18,29 +18,24 @@ The provided text does not contain help information or usage instructions for Gr
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphicsmagick:1.3.46 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2925730879: no space left on device
-```
+GraphicsMagick 1.3.46 2025-10-29 Q8 http://www.GraphicsMagick.org/
+Copyright (C) 2002-2025 GraphicsMagick Group.
+Additional copyrights and licenses apply to this software.
+See http://www.GraphicsMagick.org/www/Copyright.html for details.
+Usage: gm help command [options ...]
 
-
-## Metadata
-- **Skill**: generated
-
-## graphicsmagick_gm
-
-### Tool Description
-GraphicsMagick provides a set of command-line utilities to manipulate and operate on image files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/graphicsmagick:1.3.46
-- **Homepage**: http://www.graphicsmagick.org/
-- **Package**: https://anaconda.org/channels/bioconda/packages/graphicsmagick/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/graphicsmagick:1.3.46 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1018359722: no space left on device
+Where commands include:
+      batch - issue multiple commands in interactive or batch mode
+  benchmark - benchmark one of the other commands
+    compare - compare two images
+  composite - composite images together
+    conjure - execute a Magick Scripting Language (MSL) XML script
+    convert - convert an image or sequence of images
+       help - obtain usage message for named command
+   identify - describe an image or image sequence
+    mogrify - transform an image or sequence of images
+    montage - create a composite image (in a grid) from separate images
+       time - time one of the other commands
+    version - obtain release version
 ```
 

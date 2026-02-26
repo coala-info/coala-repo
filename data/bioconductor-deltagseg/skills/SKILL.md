@@ -1,8 +1,9 @@
 ---
 name: bioconductor-deltagseg
-description: the package is available on all platforms; click for details.
+description: This tool identifies subpopulations and macrostates in time-series data using multiscale analysis, segmentation, and clustering. Use when user asks to identify distinct states in molecular dynamics simulations, perform wavelet-based denoising on time-series, or detect regime shifts through data segmentation.
 homepage: https://bioconductor.org/packages/release/bioc/html/deltaGseg.html
 ---
+
 
 # bioconductor-deltagseg
 

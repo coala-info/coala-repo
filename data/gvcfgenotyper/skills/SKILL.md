@@ -1,8 +1,9 @@
 ---
 name: gvcfgenotyper
-description: `gvcfgenotyper` is a high-performance tool for cohort-level variant calling from individual Illumina GVCF files.
+description: gvcfgenotyper performs cohort-level variant calling by merging individual Illumina GVCF files into a unified multisample VCF or BCF. Use when user asks to perform joint genotyping, merge GVCF files into a cohort, or address the N+1 problem in genomics.
 homepage: https://github.com/Illumina/gvcfgenotyper
 ---
+
 
 # gvcfgenotyper
 

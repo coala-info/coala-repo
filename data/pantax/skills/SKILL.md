@@ -1,8 +1,9 @@
 ---
 name: pantax
-description: PanTax is a high-resolution taxonomic profiling tool designed to identify microbial strains in metagenomic samples.
+description: PanTax performs high-resolution taxonomic profiling of microbial strains in metagenomic samples using pangenome graphs and path abundance optimization. Use when user asks to preprocess reference genomes, construct pangenome databases, or perform species and strain-level profiling on metagenomic reads.
 homepage: https://github.com/LuoGroup2023/PanTax
 ---
+
 
 # pantax
 

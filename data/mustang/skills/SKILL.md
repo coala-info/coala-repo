@@ -1,8 +1,9 @@
 ---
 name: mustang
-description: Mustang (MUltiple STructural AligNment) is a specialized tool for comparing and aligning three-dimensional protein structures.
+description: Mustang performs multiple structural alignment of protein structures using spatial information to identify equivalent residues. Use when user asks to align three-dimensional protein structures, generate structural superpositions, or calculate RMSD tables for multiple PDB files.
 homepage: http://lcb.infotech.monash.edu.au/mustang/
 ---
+
 
 # mustang
 

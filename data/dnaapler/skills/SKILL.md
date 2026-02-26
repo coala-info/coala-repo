@@ -1,8 +1,9 @@
 ---
 name: dnaapler
-description: dnaapler is a bioinformatics utility designed to standardize the starting point of circular microbial sequences.
+description: "dnaapler reorients circular microbial sequences to a standardized starting point based on specific target genes. Use when user asks to reorient bacterial chromosomes, plasmids, or phages, standardize the start position of circular contigs, or rotate sequences to a specific gene."
 homepage: https://github.com/gbouras13/dnaapler
 ---
+
 
 # dnaapler
 

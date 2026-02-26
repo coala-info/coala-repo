@@ -1,8 +1,9 @@
 ---
 name: bioconductor-illuminahumanmethylation450kmanifest
-description: the package is available on all platforms; click for details.
+description: This package provides the manifest object containing the design specifications and probe information for the Illumina HumanMethylation450 microarray. Use when user asks to process 450k DNA methylation IDAT files, map intensities to probe types using minfi, or access control probe information for the 450k platform.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/IlluminaHumanMethylation450kmanifest.html
 ---
+
 
 # bioconductor-illuminahumanmethylation450kmanifest
 

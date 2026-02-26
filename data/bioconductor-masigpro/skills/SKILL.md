@@ -1,8 +1,9 @@
 ---
 name: bioconductor-masigpro
-description: the package is available on all platforms; click for details.
+description: maSigPro identifies genes with significant temporal expression profiles in time-course transcriptomics experiments. Use when user asks to analyze time-series gene expression data, identify differentially expressed genes over time, or compare temporal profiles across multiple experimental conditions.
 homepage: https://bioconductor.org/packages/release/bioc/html/maSigPro.html
 ---
+
 
 # bioconductor-masigpro
 

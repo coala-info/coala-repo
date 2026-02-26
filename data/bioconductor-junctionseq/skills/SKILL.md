@@ -1,8 +1,9 @@
 ---
 name: bioconductor-junctionseq
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: JunctionSeq is a Bioconductor package used to detect differential usage of exons and splice junctions in RNA-Seq data to identify alternative splicing. Use when user asks to perform differential exon usage analysis, identify alternative splicing events, or generate gene profile plots for transcript subunits.
 homepage: https://bioconductor.org/packages/3.6/bioc/html/JunctionSeq.html
 ---
+
 
 # bioconductor-junctionseq
 

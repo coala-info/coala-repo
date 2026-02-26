@@ -1,8 +1,9 @@
 ---
 name: vcf2tsvpy
-description: vcf2tsvpy is a high-performance Python utility designed to transform genomic variant data from VCF format into a flat TSV structure.
+description: vcf2tsvpy converts genomic variant data from VCF format into a flat TSV structure, automatically expanding INFO tags and genotype fields into distinct columns. Use when user asks to convert VCF to TSV, expand VCF INFO tags or genotype fields into separate columns, create a tidy dataset from VCF, skip genotype or INFO data, include data type headers, keep rejected calls, or compress the output TSV.
 homepage: https://github.com/sigven/vcf2tsvpy
 ---
+
 
 # vcf2tsvpy
 

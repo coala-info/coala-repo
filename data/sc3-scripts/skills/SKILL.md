@@ -1,8 +1,9 @@
 ---
 name: sc3-scripts
-description: The sc3-scripts package provides a suite of R-based CLI wrappers for the Single-Cell Consensus Clustering (SC3) framework.
+description: sc3-scripts provides a suite of command-line wrappers for performing unsupervised clustering on single-cell RNA-seq data using the SC3 framework. Use when user asks to prepare single-cell data for clustering, estimate the number of clusters, calculate distance matrices, or generate consensus clustering results.
 homepage: https://github.com/ebi-gene-expression-group/bioconductor-sc3-scripts
 ---
+
 
 # sc3-scripts
 

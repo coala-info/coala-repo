@@ -1,8 +1,9 @@
 ---
 name: indelible
-description: InDelible is a specialized genomic tool designed to bridge the gap between standard small InDel callers and large-scale CNV discovery tools.
+description: InDelible identifies intermediate-sized genomic insertions and deletions by leveraging split-read analysis and active learning quality control. Use when user asks to detect intermediate-sized variants, identify de novo mutations in clinical diagnostics, or perform structural variant calling on whole exome sequencing data.
 homepage: https://github.com/HurlesGroupSanger/indelible
 ---
+
 
 # indelible
 

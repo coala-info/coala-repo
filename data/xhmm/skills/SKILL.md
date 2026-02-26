@@ -1,8 +1,9 @@
 ---
 name: xhmm
-description: XHMM (eXome-Hidden Markov Model) is a specialized toolset designed to detect rare de novo or inherited copy number variations from targeted sequencing data.
+description: XHMM detects rare de novo or inherited copy number variations from targeted sequencing data. Use when user asks to filter sequencing data, normalize read depth, discover copy number variations, or genotype copy number variations.
 homepage: http://atgu.mgh.harvard.edu/xhmm/index.shtml
 ---
+
 
 # xhmm
 

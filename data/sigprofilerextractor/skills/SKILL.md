@@ -1,8 +1,9 @@
 ---
 name: sigprofilerextractor
-description: SigProfilerExtractor is a bioinformatics framework designed to identify and quantify mutational signatures.
+description: SigProfilerExtractor identifies and quantifies mutational signatures by extracting them de novo using non-negative matrix factorization and decomposing them into known COSMIC signatures. Use when user asks to extract mutational signatures from VCF or matrix files, perform de novo signature discovery, or decompose signatures into established biological processes.
 homepage: https://github.com/AlexandrovLab/SigProfilerExtractor
 ---
+
 
 # sigprofilerextractor
 

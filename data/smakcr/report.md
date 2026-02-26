@@ -3,7 +3,7 @@
 ## smakcr
 
 ### Tool Description
-The provided text does not contain help information for the tool 'smakcr'. It appears to be a log of a failed container build or image fetch process.
+Print counts of K-mers of a given size across one or more FASTA files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/smakcr:0.1.0--h4349ce8_0
@@ -18,13 +18,23 @@ The provided text does not contain help information for the tool 'smakcr'. It ap
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/smakcr:0.1.0--h4349ce8_0 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Print counts of K-mers of a given size across one or more FASTA files
+
+Usage: smakcr [OPTIONS] -k <SIZE> <FASTA>...
+
+Arguments:
+  <FASTA>...  Input FASTA file(s)
+
+Options:
+  -k <SIZE>           K-mer size [default: 3]
+  -t <THREADS>        Number of threads [default: 1]
+  -o, --output <OUT>  Output file
+  -c, --canonical     Output canonical k-mers
+  -z, --zero-counts   Also output k-mers with zero counts
+  -h, --help          Print help
+  -V, --version       Print version
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

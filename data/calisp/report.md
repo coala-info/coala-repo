@@ -3,7 +3,7 @@
 ## calisp
 
 ### Tool Description
-The provided text does not contain help information or usage instructions for the tool 'calisp'. It contains system log messages and a fatal error regarding disk space during a container build process.
+Calisp.py. (C) Marc Strous, Xiaoli Dong and Manuel Kleiner, 2018, 2021
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0
@@ -18,75 +18,43 @@ The provided text does not contain help information or usage instructions for th
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98d3af72214643d1cab163f5841a315e8558de1663cb9642f4f6cb1542ad7778: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-1068226171/rootfs/usr/local/bin/python3.9: no space left on device
-```
+[00h:00m:00s] This is calisp.py, version 3.1.4
+usage: calisp [-h] --spectrum_file SPECTRUM_FILE --peptide_file PEPTIDE_FILE
+              [--output_file OUTPUT_FILE] [--mass_accuracy MASS_ACCURACY]
+              [--bin_delimiter BIN_DELIMITER] [--threads THREADS]
+              [--isotope {13C,14C,15N,17O,18O,2H,3H,33S,34S,36S}]
+              [--compute_clumps]
+              [--isotope_abundance_matrix ISOTOPE_ABUNDANCE_MATRIX]
 
+Calisp.py. (C) Marc Strous, Xiaoli Dong and Manuel Kleiner, 2018, 2021
 
-## Metadata
-- **Skill**: generated
-
-## calisp_calisp.py
-
-### Tool Description
-The provided text is an error log from a failed container build process ('no space left on device') and does not contain the help text or usage information for calisp_calisp.py. As a result, arguments could not be extracted.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/kinestetika/Calisp
-- **Package**: https://anaconda.org/channels/bioconda/packages/calisp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98d3af72214643d1cab163f5841a315e8558de1663cb9642f4f6cb1542ad7778: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-3189871296/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## calisp_calisp_filter_patterns
-
-### Tool Description
-The provided text is an error log indicating a system failure (no space left on device) during a container build and does not contain help information for the tool.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/kinestetika/Calisp
-- **Package**: https://anaconda.org/channels/bioconda/packages/calisp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98d3af72214643d1cab163f5841a315e8558de1663cb9642f4f6cb1542ad7778: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-2367278135/rootfs/usr/local/bin/python3.9: no space left on device
-```
-
-## calisp_calisp_compute_medians
-
-### Tool Description
-The provided text does not contain help information for the tool. It is an error log indicating a failure to extract the container image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0
-- **Homepage**: https://github.com/kinestetika/Calisp
-- **Package**: https://anaconda.org/channels/bioconda/packages/calisp/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/calisp:3.1.4--pyhdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:98d3af72214643d1cab163f5841a315e8558de1663cb9642f4f6cb1542ad7778: unpack entry: usr/local/bin/python3.9: unpack to regular file: short write: write /tmp/build-temp-2238307688/rootfs/usr/local/bin/python3.9: no space left on device
+optional arguments:
+  -h, --help            show this help message and exit
+  --spectrum_file SPECTRUM_FILE
+                        [.mzML] file or folder with [.mzML] file(s).
+  --peptide_file PEPTIDE_FILE
+                        Search-engine-generated [.mzID] or [.target-peptide-
+                        spectrum-match] file or folder with these files.
+  --output_file OUTPUT_FILE
+                        The name of the folder the output gets written to.
+                        Default: calisp-output
+  --mass_accuracy MASS_ACCURACY
+                        The maximum mass difference between theoretical mass
+                        and experimental mass of a peptide
+  --bin_delimiter BIN_DELIMITER
+                        For metagenomic data, the delimiter that separates the
+                        bin ID from the protein ID [default "_"]. Use "--" to
+                        ignore bin ID entirely.
+  --threads THREADS     The number of (virtual) processors that calisp will
+                        use (default 4)
+  --isotope {13C,14C,15N,17O,18O,2H,3H,33S,34S,36S}
+                        The target isotope. Default: 13C
+  --compute_clumps      To compute clumpiness of carbon assimilation. Only use
+                        when samples are labeled tosaturation. Estimation of
+                        clumpiness takes much additional time.
+  --isotope_abundance_matrix ISOTOPE_ABUNDANCE_MATRIX
+                        To use a custom isotope abundance matrix. This is
+                        useful when estimating abundances of less abundant,
+                        non-C isotopes (e.g. H, O, N, S)
 ```
 

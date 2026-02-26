@@ -3,7 +3,7 @@
 ## grz-check
 
 ### Tool Description
-A tool for checking GRZ files (Note: The provided text is an error log and does not contain usage information or argument descriptions).
+Checks integrity of sequencing files (FASTQ, BAM).
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/grz-check:0.2.1--h3ec5717_0
@@ -18,29 +18,45 @@ A tool for checking GRZ files (Note: The provided text is an error log and does 
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/grz-check:0.2.1--h3ec5717_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3181201011: no space left on device
-```
+Checks integrity of sequencing files (FASTQ, BAM).
 
+Use --fastq-paired for paired-end FASTQ, --fastq-single for single-end FASTQ, --bam for BAM files, or --raw for only calculating checksums of any file. These flags can be used multiple times.
 
-## Metadata
-- **Skill**: generated
+By default, the tool will exit immediately after the first error is found. Use --continue-on-error to check all files regardless of errors.
 
-## grz-check_grz-cli
+Usage: grz-check [OPTIONS] --output <OUTPUT> <--fastq-paired <FQ1_PATH> <FQ2_PATH> <MIN_MEAN_READ_LEN>|--fastq-single <FQ_PATH> <MIN_MEAN_READ_LEN>|--bam <BAM_PATH>|--raw <FILE_PATH>>
 
-### Tool Description
-The provided text does not contain help information or a description of the tool; it contains container runtime error logs indicating a failure to build the SIF format due to lack of disk space.
+Options:
+      --show-progress <SHOW_PROGRESS>
+          Flag to show progress bars during processing
+          
+          [possible values: true, false]
 
-### Metadata
-- **Docker Image**: quay.io/biocontainers/grz-check:0.2.1--h3ec5717_0
-- **Homepage**: https://github.com/BfArM-MVH/grz-tools/packages/grz-check
-- **Package**: https://anaconda.org/channels/bioconda/packages/grz-check/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/grz-check:0.2.1--h3ec5717_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2245397810: no space left on device
+      --fastq-paired <FQ1_PATH> <FQ2_PATH> <MIN_MEAN_READ_LEN>
+          A paired-end FASTQ sample. Provide FQ1, FQ2, and minimum mean read length. Read Length: >0 for fixed, <0 to skip length check
+
+      --fastq-single <FQ_PATH> <MIN_MEAN_READ_LEN>
+          A single-end FASTQ sample. Provide the file path and minimum mean read length. Read Length: >0 for fixed, <0 to skip length check
+
+      --bam <BAM_PATH>
+          A single BAM file to validate
+
+      --raw <FILE_PATH>
+          A file for which to only calculate the SHA256 checksum, skipping all other validation
+
+      --output <OUTPUT>
+          Path to write the output JSONL report
+
+      --continue-on-error
+          Continue processing all files even if an error is found
+
+      --threads <THREADS>
+          Number of threads to use for processing
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
 ```
 

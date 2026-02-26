@@ -1,8 +1,9 @@
 ---
 name: bioconductor-harshlight
-description: The package is used to detect extended, diffuse and compact blemishes on microarray chips. Harshlight automatically marks the areas in a collection of chips (affybatch objects) and a corrected AffyBatch object is returned, in which the defected areas are substituted with NAs or the median of the values of the same probe in the other chips in the collection. The new version handle the substitute value as whole matrix to solve the memory problem.
+description: This tool detects and corrects spatial artifacts such as extended, diffuse, and compact blemishes in Affymetrix microarray data. Use when user asks to identify spatial defects in AffyBatch objects, mask microarray blemishes, or perform quality control on Affymetrix chips before normalization.
 homepage: https://bioconductor.org/packages/release/bioc/html/Harshlight.html
 ---
+
 
 # bioconductor-harshlight
 

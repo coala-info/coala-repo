@@ -1,8 +1,9 @@
 ---
 name: chromatiblock
-description: Chromatiblock is a comparative genomics tool designed to visualize colinear blocks across multiple prokaryotic genomes.
+description: "Chromatiblock visualizes colinear blocks and structural variations across multiple prokaryotic genomes. Use when user asks to visualize syntenic regions, identify large-scale genomic rearrangements, or annotate genes across multiple isolates using BLASTx."
 homepage: http://github.com/mjsull/chromatiblock/
 ---
+
 
 # chromatiblock
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-annotationhubdata
-description: the package is available on all platforms; click for details.
+description: AnnotationHubData provides the infrastructure for processing, annotating, and generating metadata for large-scale genomic data distributed via AnnotationHub. Use when user asks to create metadata objects for new resources, write data processing recipes, or validate genomic data for Bioconductor hub submission.
 homepage: https://bioconductor.org/packages/release/bioc/html/AnnotationHubData.html
 ---
+
 
 # bioconductor-annotationhubdata
 

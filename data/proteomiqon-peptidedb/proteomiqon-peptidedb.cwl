@@ -1,15 +1,33 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: proteomiqon-peptidedb
+baseCommand: ProteomIQon.PeptideDB
 label: proteomiqon-peptidedb
-doc: "A tool for creating peptide databases for proteomic analysis.\n\nTool homepage:
-  https://csbiology.github.io/ProteomIQon/"
-inputs: []
+doc: "Create a peptide database\n\nTool homepage: https://csbiology.github.io/ProteomIQon/"
+inputs:
+  - id: fasta_path
+    type:
+      - 'null'
+      - Directory
+    doc: Specify fasta file path
+    inputBinding:
+      position: 101
+      prefix: --fastapath
+  - id: param_file
+    type:
+      - 'null'
+      - File
+    doc: Specify param file for the creation of the
+    inputBinding:
+      position: 101
+      prefix: --paramfile
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_directory
+    type:
+      - 'null'
+      - Directory
+    doc: Specify peptide data base output directory
+    outputBinding:
+      glob: $(inputs.output_directory)
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/proteomiqon-peptidedb:0.0.7--hdfd78af_1
-stdout: proteomiqon-peptidedb.out

@@ -1,8 +1,9 @@
 ---
 name: gtfparse
-description: gtfparse is a high-performance Python library designed to transform GTF (Gene Transfer Format) files into tabular formats like Pandas or Polars DataFrames.
+description: gtfparse is a Python library that transforms GTF files into tabular formats like Pandas or Polars DataFrames while expanding attribute columns. Use when user asks to parse GTF files, convert genomic annotations to DataFrames, or extract specific gene attributes for data analysis.
 homepage: https://github.com/openvax/gtfparse
 ---
+
 
 # gtfparse
 

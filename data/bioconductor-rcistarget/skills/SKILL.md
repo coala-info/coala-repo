@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcistarget
-description: the package is available on all platforms; click for details.
+description: RcisTarget identifies enriched transcription factor binding motifs and predicts candidate transcription factors within a gene list. Use when user asks to identify enriched motifs, predict transcription factors, or analyze gene sets for regulatory elements.
 homepage: https://bioconductor.org/packages/release/bioc/html/RcisTarget.html
 ---
+
 
 # bioconductor-rcistarget
 

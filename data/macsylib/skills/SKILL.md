@@ -1,8 +1,9 @@
 ---
 name: macsylib
-description: `macsylib` is a specialized Python library and toolset designed for the detection of complex macromolecular systems (such as secretion systems or pili) in prokaryotic genomes.
+description: macsylib is a Python library and toolset for detecting complex macromolecular systems in prokaryotic genomes by managing and searching biological models. Use when user asks to list available models, search for or install model packages, validate model integrity, or retrieve citation information for specific models.
 homepage: https://github.com/gem-pasteur/macsylib
 ---
+
 
 # macsylib
 

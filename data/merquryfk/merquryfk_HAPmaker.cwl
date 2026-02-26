@@ -1,11 +1,41 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: merquryfk_HAPmaker
+baseCommand: HAPmaker
 label: merquryfk_HAPmaker
-doc: "The provided help text contains only system error messages related to a container
-  runtime failure (no space left on device) and does not contain usage information
-  or argument definitions for the tool.\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
-inputs: []
+doc: "HAPmaker\n\nTool homepage: https://github.com/thegenemyers/MERQURY.FK"
+inputs:
+  - id: mat
+    type: File
+    doc: mat file
+    inputBinding:
+      position: 1
+  - id: pat
+    type: File
+    doc: pat file
+    inputBinding:
+      position: 2
+  - id: child
+    type: File
+    doc: child file
+    inputBinding:
+      position: 3
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: number of threads to use
+    default: 4
+    inputBinding:
+      position: 104
+      prefix: -T
+  - id: verbose
+    type:
+      - 'null'
+      - boolean
+    doc: verbose output to stderr
+    inputBinding:
+      position: 104
+      prefix: -v
 outputs:
   - id: stdout
     type: stdout

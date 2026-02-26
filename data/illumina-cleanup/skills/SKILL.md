@@ -1,8 +1,9 @@
 ---
 name: illumina-cleanup
-description: The `illumina-cleanup` tool is a Nextflow-based pipeline designed to transform raw Illumina sequencing data into high-quality reads suitable for downstream analysis like de novo assembly or variant calling.
+description: This tool processes raw Illumina sequencing data through a standardized pipeline of quality assessment, adapter trimming, and error correction. Use when user asks to clean raw FASTQ files, remove sequencing artifacts, perform k-mer based error correction, or downsample reads to a specific coverage level.
 homepage: https://github.com/rpetit3/illumina-cleanup
 ---
+
 
 # illumina-cleanup
 

@@ -1,8 +1,9 @@
 ---
 name: carp
-description: CARP (Complexity of Arrangements in Pangenomes) is a specialized toolset for quantifying the rearrangement complexity of pangenomes.
+description: CARP quantifies the rearrangement complexity of pangenomes using the Single-Cut or Join model to identify evolutionary hotspots and structural variation. Use when user asks to calculate global complexity measures, scan for local regions of high complexity, generate colored GFAs for visualization, or extract specific subgraphs from a pangenome.
 homepage: https://github.com/gi-bielefeld/scj-carp
 ---
+
 
 # carp
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-crisprbowtie
-description: the package is available on all platforms; click for details.
+description: This package provides an R interface for aligning CRISPR guide RNA sequences to a reference genome using the Bowtie alignment tool. Use when user asks to align gRNA sequences, map CRISPR spacers, or identify potential off-target sites in a genome.
 homepage: https://bioconductor.org/packages/release/bioc/html/crisprBowtie.html
 ---
+
 
 # bioconductor-crisprbowtie
 

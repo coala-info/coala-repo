@@ -1,8 +1,9 @@
 ---
 name: d4binding
-description: The D4 format is designed for efficient storage and rapid analysis of quantitative genomics datasets, such as RNA-seq, ChIP-seq, and WGS depth profiles.
+description: d4binding provides a high-performance interface for converting, querying, and performing statistical analysis on quantitative genomics data in the D4 format. Use when user asks to convert alignment files to D4, extract genomic data, or calculate coverage statistics across specific intervals.
 homepage: https://github.com/38/d4-format
 ---
+
 
 # d4binding
 

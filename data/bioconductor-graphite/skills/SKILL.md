@@ -1,8 +1,9 @@
 ---
 name: bioconductor-graphite
-description: the package is available on all platforms; click for details.
+description: This tool retrieves biological pathways from multiple databases and performs topological pathway analyses on transcriptomic and metabolomic data. Use when user asks to retrieve pathways, convert node identifiers, or perform topological analyses like SPIA, clipper, and topologyGSA.
 homepage: https://bioconductor.org/packages/release/bioc/html/graphite.html
 ---
+
 
 # bioconductor-graphite
 

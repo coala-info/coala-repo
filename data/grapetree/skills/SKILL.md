@@ -1,8 +1,9 @@
 ---
 name: grapetree
-description: GrapeTree is a specialized tool for the visualization and analysis of phylogenetic trees, particularly optimized for genomic epidemiology.
+description: GrapeTree is a tool for the visualization and analysis of phylogenetic trees, specializing in creating Minimum Spanning Trees from allelic profiles or sequence alignments. Use when user asks to generate trees from MLST data, visualize genomic epidemiology results, or interactively explore tree topologies with integrated metadata.
 homepage: https://github.com/achtman-lab/GrapeTree
 ---
+
 
 # grapetree
 

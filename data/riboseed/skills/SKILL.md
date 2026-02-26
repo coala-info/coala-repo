@@ -1,8 +1,9 @@
 ---
 name: riboseed
-description: riboSeed is a bioinformatics pipeline that addresses the challenge of assembling across multiple, identical ribosomal RNA (rRNA) operons in bacterial genomes.
+description: riboSeed is a bioinformatics pipeline that uses reference-guided sub-assemblies to resolve and assemble multiple identical ribosomal RNA operons in bacterial genomes. Use when user asks to assemble rDNA regions, bridge gaps in genomic assemblies, or improve the resolution of rRNA operons using short-read sequencing data.
 homepage: https://github.com/nickp60/riboSeed
 ---
+
 
 # riboseed
 

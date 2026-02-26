@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cbioportaldata
-description: The package can provide data in either tabular format or with MultiAssayExperiment object that uses familiar Bioconductor data representations.
+description: The cBioPortalData package provides a programmatic interface to download and import cancer genomics data from cBioPortal into Bioconductor MultiAssayExperiment objects. Use when user asks to identify available cancer studies, download bulk genomic data packs, or perform granular API queries for specific genes and molecular profiles.
 homepage: https://bioconductor.org/packages/release/bioc/html/cBioPortalData.html
 ---
+
 
 # bioconductor-cbioportaldata
 

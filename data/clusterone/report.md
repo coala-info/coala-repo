@@ -3,7 +3,7 @@
 ## clusterone
 
 ### Tool Description
-The provided text does not contain help information for the tool 'clusterone'. It is an error log from a container runtime (Apptainer/Singularity) indicating a failure to build or extract the container image due to insufficient disk space ('no space left on device').
+ClusterONE (Clustering with Overlapping Neighborhood Expansion) is a tool for detecting overlapping protein complexes or functional modules in protein-protein interaction networks.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/clusterone:1.0--hdfd78af_0
@@ -12,20 +12,43 @@ The provided text does not contain help information for the tool 'clusterone'. I
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/clusterone/overview
-- **Total Downloads**: 4.8K
+- **Total Downloads**: 4.9K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-INFO:    Extracting OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/clusterone:1.0--hdfd78af_0 uri: while building SIF from layers: packer failed to pack: while unpacking rootfs: while unpacking layer sha256:c1a16a04cedd950c541fa85e64b62b17eb3b73a7f7e29ea3db23dc9b83dfcade: unpack entry: bin/bash: unpack to regular file: short write: write /tmp/build-temp-1372989678/rootfs/bin/bash: no space left on device
+ClusterONE 1.0
+
+usage: cl1 [-d <arg>] [--debug] [-f] [-F <arg>] [--fluff | --no-fluff]
+       [-h] [--haircut <arg>] [--k-core <arg>] [--max-overlap <arg>]
+       [--merge-method <arg>]  [--no-merge] [--penalty <arg>] [-s <arg>]
+       [--seed-method <arg>] [--similarity <arg>] [-v]
+ -d,--min-density <arg>     specifies the minimum density of clusters
+                            (default: auto)
+    --debug                 turns on the debug mode
+ -f,--input-format          specifies the format of the input file (sif or
+                            edge_list)
+ -F,--output-format <arg>   specifies the format of the output file
+                            (plain, genepro or csv)
+    --fluff                 fluffs the clusters
+ -h,--help                  shows this help message
+    --haircut <arg>         specifies the haircut threshold for clusters
+    --k-core <arg>          specifies the minimum k-core index of clusters
+    --max-overlap <arg>     specifies the maximum allowed overlap between
+                            two clusters
+    --merge-method <arg>    specifies the cluster merging method to use
+                            (single or multi)
+    --no-fluff              don't fluff the clusters (default)
+    --no-merge              don't merge highly overlapping clusters
+    --penalty <arg>         set the node penalty value
+ -s,--min-size <arg>        specifies the minimum size of clusters
+    --seed-method <arg>     specifies the seed generation method to use
+    --similarity <arg>      specifies the similarity function to use
+                            (match, simpson, jaccard or dice)
+ -v,--version               shows the version number
 ```
 
 
 ## Metadata
-- **Skill**: not generated
+- **Skill**: generated

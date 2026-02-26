@@ -1,8 +1,9 @@
 ---
 name: rnmr
-description: The rnmr skill facilitates the programmatic processing of 1D NMR spectra through the Rnmr1D R package.
+description: The rnmr tool facilitates the programmatic processing and analysis of 1D NMR spectra using the Rnmr1D package. Use when user asks to process raw NMR data, execute macro-command sequences for baseline correction, generate normalized bucket tables, or visualize spectral matrices.
 homepage: https://github.com/INRA/Rnmr1D
 ---
+
 
 # rnmr
 

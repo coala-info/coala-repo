@@ -1,8 +1,9 @@
 ---
 name: grequests
-description: `grequests` is a Python library that combines the power of the `requests` library with `gevent` to enable asynchronous HTTP requests.
+description: Grequests is a Python library that enables asynchronous HTTP requests by combining the requests library with gevent for concurrent execution. Use when user asks to send multiple HTTP requests concurrently, perform non-blocking network I/O, or stream responses as they arrive using imap.
 homepage: https://github.com/spyoungtech/grequests
 ---
+
 
 # grequests
 

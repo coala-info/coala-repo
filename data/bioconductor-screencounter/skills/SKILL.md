@@ -1,8 +1,9 @@
 ---
 name: bioconductor-screencounter
-description: the package is available on all platforms; click for details.
+description: "screenCounter counts reads mapped to barcodes or sequences in high-throughput screening experiments. Use when user asks to count barcode abundances, quantify CRISPR or shRNA screens, and process high-throughput screening data."
 homepage: https://bioconductor.org/packages/release/bioc/html/screenCounter.html
 ---
+
 
 # bioconductor-screencounter
 

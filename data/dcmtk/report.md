@@ -3,26 +3,32 @@
 ## dcmtk
 
 ### Tool Description
-The provided text does not contain help information for dcmtk; it contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the image due to insufficient disk space.
+FAIL to generate CWL: dcmtk not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: biocontainers/dcmtk:v3.6.120160216-4-deb_cv1
 - **Homepage**: http://dicom.offis.de
 - **Package**: https://anaconda.org/channels/bioconda/packages/dcmtk/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/dcmtk/overview
 - **Total Downloads**: 21.3K
 - **Last updated**: 2025-04-22
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: dcmtk not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: dcmtk not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://biocontainers/dcmtk:v3.6.120160216-4-deb_cv1 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1781606380: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

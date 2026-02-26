@@ -1,8 +1,9 @@
 ---
 name: ucsc-bedweedoverlapping
-description: The `bedWeedOverlapping` utility is a high-performance filtering tool from the UCSC Genome Browser "Kent" source tree.
+description: The `bedWeedOverlapping` tool removes genomic features from an input file that overlap with regions in a filter file. Use when user asks to filter out overlapping genomic regions, remove blacklisted regions, mask repeats, or isolate non-coding regions.
 homepage: https://hgdownload.cse.ucsc.edu/admin/exe
 ---
+
 
 # ucsc-bedweedoverlapping
 

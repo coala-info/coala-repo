@@ -1,8 +1,9 @@
 ---
 name: aniclustermap
-description: The `aniclustermap` tool is a specialized bioinformatics utility designed to streamline the comparative analysis of microbial genomes.
+description: ANIclustermap performs all-vs-all Average Nucleotide Identity calculations and generates clustered heatmaps and dendrograms for microbial genome comparison. Use when user asks to calculate ANI between genomes, generate a genomic clustermap, or perform hierarchical clustering of microbial sequences.
 homepage: https://github.com/moshi4/ANIclustermap/
 ---
+
 
 # aniclustermap
 

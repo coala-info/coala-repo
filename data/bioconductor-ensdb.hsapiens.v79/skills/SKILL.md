@@ -1,8 +1,9 @@
 ---
 name: bioconductor-ensdb.hsapiens.v79
-description: the package is available on all platforms; click for details.
+description: This package provides Ensembl-based genome annotations for Homo sapiens based on Ensembl release 79 and the GRCh38 assembly. Use when user asks to retrieve gene, transcript, or exon annotations, map biological identifiers, or filter genomic features by coordinates and biotypes.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/EnsDb.Hsapiens.v79.html
 ---
+
 
 # bioconductor-ensdb.hsapiens.v79
 

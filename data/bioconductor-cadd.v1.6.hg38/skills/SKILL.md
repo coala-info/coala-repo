@@ -1,8 +1,9 @@
 ---
 name: bioconductor-cadd.v1.6.hg38
-description: the package is available on all platforms; click for details.
+description: This tool retrieves CADD v1.6 pathogenicity scores for human genetic variants on the hg38 genome build. Use when user asks to annotate variants with pathogenicity scores, retrieve CADD scores for hg38, or prioritize functional variants using GenomicScores.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/cadd.v1.6.hg38.html
 ---
+
 
 # bioconductor-cadd.v1.6.hg38
 

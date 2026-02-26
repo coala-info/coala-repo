@@ -1,8 +1,9 @@
 ---
 name: parasail
-description: Parasail is a specialized library and toolset designed for rapid pairwise sequence alignment.
+description: Parasail is a library and command-line toolset that performs high-speed pairwise sequence alignment using vectorized SIMD implementations of Smith-Waterman, Needleman-Wunsch, and semi-global algorithms. Use when user asks to perform rapid local or global sequence alignments, execute optimized Smith-Waterman or Needleman-Wunsch algorithms via the command line, or generate alignment scores and statistics using specific substitution matrices.
 homepage: https://github.com/jeffdaily/parasail
 ---
+
 
 # parasail
 

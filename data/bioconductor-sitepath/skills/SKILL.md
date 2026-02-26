@@ -1,8 +1,9 @@
 ---
 name: bioconductor-sitepath
-description: the package is available on all platforms; click for details.
+description: The bioconductor-sitepath package identifies site-specific evolutionary changes and characterizes lineages within phylogenetic trees. Use when user asks to identify lineage-specific mutations, find site-specific evolutionary pathways, or analyze sequence substitutions along a phylogeny.
 homepage: https://bioconductor.org/packages/release/bioc/html/sitePath.html
 ---
+
 
 # bioconductor-sitepath
 

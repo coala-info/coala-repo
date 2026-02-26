@@ -2,8 +2,17 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: download-antismash-databases
 label: antismash-lite_download-antismash-databases
-doc: "Download antiSMASH databases\n\nTool homepage: https://docs.antismash.secondarymetabolites.org/intro/"
-inputs: []
+doc: "Base directory for the antiSMASH databases\n\nTool homepage: https://docs.antismash.secondarymetabolites.org/intro/"
+inputs:
+  - id: database_dir
+    type:
+      - 'null'
+      - Directory
+    doc: Base directory for the antiSMASH databases
+    default: /usr/local/lib/python3.11/site-packages/antismash/databases
+    inputBinding:
+      position: 101
+      prefix: --database-dir
 outputs:
   - id: stdout
     type: stdout

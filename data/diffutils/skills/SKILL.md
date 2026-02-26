@@ -1,8 +1,9 @@
 ---
 name: diffutils
-description: The diffutils skill provides a specialized workflow for using the Rust-based drop-in replacements for traditional GNU diff utilities.
+description: The diffutils tool compares files to identify differences or confirm identity using line-by-line text analysis or byte-by-byte binary comparison. Use when user asks to compare text files, generate unified patch files, identify differences in binary files, or check if two files are identical.
 homepage: https://github.com/uutils/diffutils
 ---
+
 
 # diffutils
 

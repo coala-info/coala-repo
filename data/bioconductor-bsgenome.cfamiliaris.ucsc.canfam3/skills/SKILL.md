@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bsgenome.cfamiliaris.ucsc.canfam3
-description: the package is available on all platforms; click for details.
+description: This package provides the full genome sequence for Canis lupus familiaris based on the UCSC canFam3 assembly for use in the Bioconductor ecosystem. Use when user asks to access dog genomic sequences, extract specific chromosome data, perform genome-wide motif searching, or retrieve upstream and downstream sequences for dog genes.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/BSgenome.Cfamiliaris.UCSC.canFam3.html
 ---
+
 
 # bioconductor-bsgenome.cfamiliaris.ucsc.canfam3
 

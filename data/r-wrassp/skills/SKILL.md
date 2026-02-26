@@ -1,8 +1,9 @@
 ---
 name: r-wrassp
-description: Skill for using the CRAN R package r-wrassp.
+description: The r-wrassp package provides high-performance signal processing functions for phonetic and speech science analysis within the R environment. Use when user asks to estimate formants, calculate fundamental frequency, perform spectral analysis, or read and write SSFF files.
 homepage: https://cloud.r-project.org/web/packages/wrassp/index.html
 ---
+
 
 # r-wrassp
 

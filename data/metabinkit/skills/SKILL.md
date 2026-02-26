@@ -1,8 +1,9 @@
 ---
 name: metabinkit
-description: Metabinkit is a specialized toolkit for taxonomic assignment that processes alignment data to determine the most likely origin of DNA sequences.
+description: Metabinkit is a toolkit for taxonomic assignment that processes alignment data to determine the origin of DNA sequences using identity thresholds and Lowest Common Ancestor calculations. Use when user asks to perform taxonomic binning, classify metagenomic sequences, or assign taxonomy to alignment files.
 homepage: https://github.com/envmetagen/metabinkit
 ---
+
 
 # metabinkit
 

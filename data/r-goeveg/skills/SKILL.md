@@ -1,8 +1,9 @@
 ---
 name: r-goeveg
-description: A collection of functions useful in (vegetation) community analyses and ordinations. Includes automatic species selection for ordination diagrams, NMDS stress/scree plots, species response curves, merging of taxa as well as calculation and sorting of synoptic tables.</p>
+description: The r-goeveg package provides utilities for community data analysis, including ordination diagnostics, species selection, and synoptic table generation. Use when user asks to create NMDS scree plots, select species for ordination plots, model species response curves, generate rank-abundance curves, or create synoptic tables for phytosociological studies.
 homepage: https://cloud.r-project.org/web/packages/goeveg/index.html
 ---
+
 
 # r-goeveg
 

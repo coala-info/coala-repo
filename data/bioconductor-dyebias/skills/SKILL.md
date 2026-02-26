@@ -1,8 +1,9 @@
 ---
 name: bioconductor-dyebias
-description: the package is available on all platforms; click for details.
+description: This tool corrects gene-specific dye bias in two-color microarray data using the GASSCO method. Use when user asks to estimate intrinsic gene-specific dye bias, apply slide-specific bias correction, or visualize dye bias reduction in marray objects.
 homepage: https://bioconductor.org/packages/release/bioc/html/dyebias.html
 ---
+
 
 # bioconductor-dyebias
 

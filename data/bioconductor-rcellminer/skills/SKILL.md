@@ -1,8 +1,9 @@
 ---
 name: bioconductor-rcellminer
-description: the package is available on all platforms; click for details.
+description: This R package provides tools for exploring and analyzing molecular and drug sensitivity data from the NCI-60 cell line panel. Use when user asks to analyze NCI-60 data, integrate molecular profiles with drug activity, or visualize drug sensitivity patterns across cell lines.
 homepage: https://bioconductor.org/packages/release/bioc/html/rcellminer.html
 ---
+
 
 # bioconductor-rcellminer
 

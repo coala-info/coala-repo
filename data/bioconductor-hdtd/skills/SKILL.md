@@ -1,8 +1,9 @@
 ---
 name: bioconductor-hdtd
-description: the package is available on all platforms; click for details.
+description: This tool provides statistical methods for hypothesis testing and estimation of mean matrices and covariance structures in high-dimensional transposable data. Use when user asks to test for constant mean matrices, estimate mean matrices, or perform shrinkage estimation and hypothesis testing for row and column covariance structures.
 homepage: https://bioconductor.org/packages/release/bioc/html/HDTD.html
 ---
+
 
 # bioconductor-hdtd
 

@@ -3,7 +3,7 @@
 ## titan-gc
 
 ### Tool Description
-A tool for calculating GC content and mappability for TitanCNA (Titan Genomic Characterization).
+Run Titan GC on a set of samples.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/titan-gc:1.5.3--hdfd78af_1
@@ -18,13 +18,22 @@ A tool for calculating GC content and mappability for TitanCNA (Titan Genomic Ch
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-INFO:    Starting build...
-INFO:    Fetching OCI image...
-FATAL:   Unable to handle docker://quay.io/biocontainers/titan-gc:1.5.3--hdfd78af_1 uri: while building SIF from layers: conveyor failed to get: invalid character '}' after top-level value
+Unknown parameter passed: -help
+usage: titan-gc [-h] [-i STR] [--inputs STR] [-o STR] [--outdir STR] [--options STR] [--quiet]
+
+titan-gc - Run Titan GC on a set of samples.
+
+required arguments:
+  -i STR, --inputs STR  The JSON file to be used with Cromwell for inputs.
+  -o STR, --outdir STR  Output directory to store the final results in.
+
+optional arguments:
+  -h, --help              Show this help message and exit
+  -v, --version           Print the version
+  --options STR           JSON file containing Cromwell options
+  --profile STR           The backend profile to use [options: docker, singularity]
+  --config STR            Custom backend profile to use
+  --cromwell_jar STR      Path to cromwell.jar (Default use conda install)
+  --quiet                 Silence all STDOUT from Cromwell and titan-gc-organize
 ```
 
-
-## Metadata
-- **Skill**: generated

@@ -1,8 +1,9 @@
 ---
 name: fastq-filter
-description: `fastq-filter` is a specialized tool designed for rapid quality control of sequencing data.
+description: fastq-filter performs rapid quality control and filtering of sequencing data based on average error rates or Phred scores. Use when user asks to filter FASTQ files by quality, remove short reads, or process paired-end genomic data.
 homepage: https://github.com/LUMC/fastq-filter
 ---
+
 
 # fastq-filter
 

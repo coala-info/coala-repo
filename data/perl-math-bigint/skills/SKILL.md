@@ -1,8 +1,9 @@
 ---
 name: perl-math-bigint
-description: The `perl-math-bigint` package provides the `Math::BigInt` and `Math::BigFloat` libraries, which allow for arbitrary-precision integer and floating-point arithmetic.
+description: This tool provides libraries for arbitrary-precision integer and floating-point arithmetic in Perl. Use when user asks to perform calculations with very large numbers, handle high-precision decimals, or avoid overflow and precision loss in mathematical operations.
 homepage: http://metacpan.org/pod/Math::BigInt
 ---
+
 
 # perl-math-bigint
 

@@ -3,26 +3,32 @@
 ## metawrap-quant-bins
 
 ### Tool Description
-The provided text contains a fatal error message from a container runtime (Singularity/Apptainer) and does not include the actual help text for the tool. As a result, no arguments could be extracted from the input.
+FAIL to generate CWL: metawrap-quant-bins not found in Docker image. The image may not provide this executable.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/metawrap-quant-bins:1.3.0--hdfd78af_3
 - **Homepage**: https://github.com/bxlab/metaWRAP
 - **Package**: https://anaconda.org/channels/bioconda/packages/metawrap-quant-bins/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/metawrap-quant-bins/overview
 - **Total Downloads**: 45
 - **Last updated**: 2025-10-30
 - **GitHub**: https://github.com/bxlab/metaWRAP
 - **Stars**: N/A
+### Generation Failed
+
+FAIL to generate CWL: metawrap-quant-bins not found in Docker image. The image may not provide this executable.
+
+
+### Validation Errors
+
+- FAIL to generate CWL: metawrap-quant-bins not found in Docker image. The image may not provide this executable.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/metawrap-quant-bins:1.3.0--hdfd78af_3 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2792029980: no space left on device
+
 ```
 
-
-## Metadata
-- **Skill**: not generated

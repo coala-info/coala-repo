@@ -1,8 +1,9 @@
 ---
 name: biopython
-description: Biopython is the industry-standard library for bioinformatics in Python.
+description: "Biopython provides a comprehensive suite of Python tools for biological computation, sequence analysis, and structural biology. Use when user asks to parse sequence files, retrieve data from NCBI Entrez, perform sequence alignments, or manipulate macromolecular structures."
 homepage: http://www.biopython.org/
 ---
+
 
 # biopython
 

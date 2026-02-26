@@ -1,8 +1,9 @@
 ---
 name: r-nam
-description: R package nam (documentation from project home).
+description: This tool performs association mapping and genomic prediction in nested association mapping panels and multi-population structured datasets. Use when user asks to perform marker quality control, conduct multi-family genome-wide association studies, implement whole genome regression for genomic selection, or estimate variance components using REML or Bayesian methods.
 homepage: https://cran.r-project.org/web/packages/nam/index.html
 ---
+
 
 # r-nam
 

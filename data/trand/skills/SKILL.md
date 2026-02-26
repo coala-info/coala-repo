@@ -1,8 +1,9 @@
 ---
 name: trand
-description: TranD (Transcript Distances) is a specialized toolkit designed to pinpoint structural variations in genomic annotations at the nucleotide level.
+description: TranD quantifies structural variations and alternative splicing events in genomic annotations at the nucleotide level. Use when user asks to generate a transcriptome complexity profile, compare transcript models, identify internal transcriptome diversity, benchmark annotations, or quantify alternative splicing events like intron retention and alternative exon usage.
 homepage: https://github.com/McIntyre-Lab/TranD
 ---
+
 
 # trand
 

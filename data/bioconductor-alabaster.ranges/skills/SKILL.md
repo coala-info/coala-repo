@@ -1,8 +1,9 @@
 ---
 name: bioconductor-alabaster.ranges
-description: the package is available on all platforms; click for details.
+description: This package serializes genomic ranges and associated metadata into language-agnostic file artifacts for persistent storage and retrieval. Use when user asks to save GRanges objects to disk, load genomic range artifacts, or preserve metadata and sequence information across different programming environments.
 homepage: https://bioconductor.org/packages/release/bioc/html/alabaster.ranges.html
 ---
+
 
 # bioconductor-alabaster.ranges
 

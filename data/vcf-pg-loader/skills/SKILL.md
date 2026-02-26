@@ -1,8 +1,9 @@
 ---
 name: vcf-pg-loader
-description: The `vcf-pg-loader` is a high-performance CLI tool designed to bridge the gap between genomic flat files and relational databases.
+description: vcf-pg-loader loads genomic variant data from VCF files into a PostgreSQL database. Use when user asks to load VCF data, initialize a database schema, import GWAS summary statistics, validate loaded data, query the database, or verify installation.
 homepage: https://github.com/Zacharyr41/vcf-pg-loader
 ---
+
 
 # vcf-pg-loader
 

@@ -1,8 +1,9 @@
 ---
 name: smashpp
-description: Smash++ is a high-performance genomic tool designed for the rapid identification of rearrangements in DNA sequences.
+description: Smash++ identifies genomic rearrangements and similarities between DNA sequences using compression-based algorithms to generate position-based mapping data. Use when user asks to find rearrangements between a reference and target sequence, generate genomic similarity maps, or visualize genomic relationships in SVG format.
 homepage: https://github.com/smortezah/smashpp
 ---
+
 
 # smashpp
 

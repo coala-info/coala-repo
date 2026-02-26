@@ -1,8 +1,9 @@
 ---
 name: bioconductor-adaptest
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: The adaptest package performs a two-stage data-adaptive procedure to identify significant biomarkers in high-dimensional biological data while controlling the false discovery rate. Use when user asks to perform differential expression analysis, reduce biomarker dimensionality based on exposure variables, or conduct multiple testing with FDR control on SummarizedExperiment objects.
 homepage: https://bioconductor.org/packages/3.8/bioc/html/adaptest.html
 ---
+
 
 # bioconductor-adaptest
 

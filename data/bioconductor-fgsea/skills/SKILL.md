@@ -1,8 +1,9 @@
 ---
 name: bioconductor-fgsea
-description: The package implements an algorithm for fast gene set enrichment analysis. Using the fast algorithm allows to make more permutations and get more fine grained p-values, which allows to use accurate stantard approaches to multiple hypothesis correction.
+description: The fgsea package provides a fast implementation of the Gene Set Enrichment Analysis algorithm for calculating accurate p-values using a Monte Carlo scheme. Use when user asks to perform fast preranked GSEA, conduct over-representation analysis with fora, identify co-regulated gene sets with geseca, or visualize enrichment results.
 homepage: https://bioconductor.org/packages/release/bioc/html/fgsea.html
 ---
+
 
 # bioconductor-fgsea
 

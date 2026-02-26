@@ -1,8 +1,9 @@
 ---
 name: bioconductor-geuvstore2
-description: The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists.
+description: This tool manages and retrieves sharded cis-eQTL association statistics from the GEUVADIS project. Use when user asks to access large-scale genomic association data, query results by gene identifier or genomic coordinates, and perform parallelized operations on sharded result stores.
 homepage: https://bioconductor.org/packages/3.8/data/experiment/html/geuvStore2.html
 ---
+
 
 # bioconductor-geuvstore2
 

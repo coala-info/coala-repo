@@ -1,8 +1,9 @@
 ---
 name: bftools
-description: This skill provides guidance on using the Bio-Formats command-line utilities to bridge the gap between proprietary imaging formats and open standards.
+description: This tool provides command-line utilities for converting, inspecting, and validating biological imaging data across various proprietary formats. Use when user asks to convert image formats, extract metadata, validate OME-XML schemas, or inspect biological imaging files.
 homepage: https://docs.openmicroscopy.org/bio-formats/5.7.1/users/comlinetools/index.html
 ---
+
 
 # bftools
 

@@ -1,8 +1,9 @@
 ---
 name: r-spring
-description: R package spring (documentation from project home).
+description: The r-spring tool estimates sparse microbial association networks from quantitative or compositional microbiome data using a semi-parametric rank-based approach. Use when user asks to infer graphical models, estimate latent correlations, or perform rank-based network analysis on microbiome datasets.
 homepage: https://cran.r-project.org/web/packages/spring/index.html
 ---
+
 
 # r-spring
 

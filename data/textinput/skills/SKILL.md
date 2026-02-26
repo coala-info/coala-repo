@@ -1,8 +1,9 @@
 ---
 name: textinput
-description: The `textinput` package provides a more efficient and simplified interface for iterating over lines from multiple input streams.
+description: The textinput package provides an efficient interface for iterating over lines from multiple input streams or standard input. Use when user asks to iterate over file lines, perform in-place file editing, or create Unix-like text processing scripts.
 homepage: http://www.ebi.ac.uk/~hoffman/software/textinput/
 ---
+
 
 # textinput
 

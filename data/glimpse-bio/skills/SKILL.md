@@ -1,8 +1,9 @@
 ---
 name: glimpse-bio
-description: GLIMPSE2 is a specialized suite of tools designed for population-scale genetics.
+description: GLIMPSE2 is a suite of tools for phasing and imputing missing genotypes from low-coverage sequencing data using large reference panels. Use when user asks to chunk the genome, prepare binary reference panels, perform genotype imputation from reads or likelihoods, or ligate imputed genomic chunks.
 homepage: https://odelaneau.github.io/GLIMPSE/
 ---
+
 
 # glimpse-bio
 

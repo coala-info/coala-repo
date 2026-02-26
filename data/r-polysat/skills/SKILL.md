@@ -1,8 +1,9 @@
 ---
 name: r-polysat
-description: "A collection of tools to handle microsatellite data of  any ploidy (and samples of mixed ploidy) where allele copy number is not  known in partially heterozygous genotypes.  It can import and export data in  ABI 'GeneMapper', 'Structure', 'ATetra', 'Tetrasat'/'Tetra', 'GenoDive', 'SPAGeDi',  'POPDIST', 'STRand', and binary presence/absence formats.  It can calculate  pairwise distances between individuals using a stepwise mutation model or  infinite alleles model, with or without taking ploidies and allele frequencies  into account.  These distances can be used for the calculation of clonal  diversity statistics or used for further analysis in R.  Allelic diversity  statistics and Polymorphic Information Content are also available.  polysat can   assist the user in estimating the ploidy of samples, and it can estimate allele   frequencies in populations, calculate pairwise or global differentiation statistics   based on those frequencies, and export allele frequencies to 'SPAGeDi' and 'adegenet'.    Functions are also included for assigning alleles to isoloci in cases where one pair   of microsatellite primers amplifies alleles from two or more independently  segregating isoloci."
+description: The r-polysat tool provides a suite of R functions for analyzing polyploid microsatellite data with ambiguous allele copy numbers and mixed ploidy levels. Use when user asks to import or export microsatellite data, estimate ploidy, calculate genetic distances using Bruvo or Lynch metrics, estimate allele frequencies, or assign alleles to isoloci in allopolyploids.
 homepage: https://cloud.r-project.org/web/packages/polysat/index.html
 ---
+
 
 # r-polysat
 

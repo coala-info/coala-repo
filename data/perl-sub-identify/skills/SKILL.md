@@ -1,8 +1,9 @@
 ---
 name: perl-sub-identify
-description: The `perl-sub-identify` skill provides the ability to look "inside" Perl code references to determine their identity.
+description: This tool retrieves the original name, package, and source location of Perl code references. Use when user asks to identify the origin of a subroutine, find the file and line number where a function is defined, or check if a subroutine is a constant.
 homepage: http://metacpan.org/pod/Sub::Identify
 ---
+
 
 # perl-sub-identify
 

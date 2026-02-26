@@ -1,8 +1,9 @@
 ---
 name: bioconductor-pd.mogene.2.0.st
-description: the package is available on all platforms; click for details.
+description: This package provides platform design information for the Affymetrix Mouse Gene 2.0 ST expression microarray. Use when user asks to analyze Affymetrix Mouse Gene 2.0 ST array data, access platform design metadata, or process these specific mouse expression microarrays.
 homepage: https://bioconductor.org/packages/release/data/annotation/html/pd.mogene.2.0.st.html
 ---
+
 
 # bioconductor-pd.mogene.2.0.st
 

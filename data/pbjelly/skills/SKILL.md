@@ -1,8 +1,9 @@
 ---
 name: pbjelly
-description: PBJelly is a specialized pipeline designed to improve genome assemblies by filling "N" gaps with long-read data.
+description: PBJelly is a genome assembly improvement pipeline that fills gaps in scaffolds using long-read sequencing data. Use when user asks to fill gaps in a reference genome, improve assembly contiguity, or run the sequential stages of the PBJelly pipeline.
 homepage: https://github.com/esrice/PBJelly
 ---
+
 
 # pbjelly
 

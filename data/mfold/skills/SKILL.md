@@ -1,8 +1,9 @@
 ---
 name: mfold
-description: mfold is a specialized tool for predicting the secondary structure of single-stranded RNA or DNA.
+description: mfold predicts the secondary structure of single-stranded RNA or DNA sequences using a minimum free energy approach. Use when user asks to predict molecular folding, specify thermodynamic parameters like temperature, or generate structural visualizations and connectivity tables.
 homepage: http://www.unafold.org/mfold/software/download-mfold.php
 ---
+
 
 # mfold
 

@@ -1,8 +1,9 @@
 ---
 name: bioconductor-vegamc
-description: the package is available on all platforms; click for details.
+description: VegaMC performs variational segmentation to identify copy number variations and genomic aberrations in multi-channel data. Use when user asks to detect copy number alterations, perform genomic segmentation, or analyze array CGH and SNP data.
 homepage: https://bioconductor.org/packages/release/bioc/html/VegaMC.html
 ---
+
 
 # bioconductor-vegamc
 

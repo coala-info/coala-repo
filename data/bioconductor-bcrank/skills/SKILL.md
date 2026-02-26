@@ -1,8 +1,9 @@
 ---
 name: bioconductor-bcrank
-description: the package is available on all platforms; click for details.
+description: This tool predicts binding site consensus motifs from ranked DNA sequences using a heuristic search algorithm. Use when user asks to perform de novo motif discovery, score consensus sequences in ranked genomic regions, or identify overrepresented DNA motifs in ChIP-chip and ChIP-seq data.
 homepage: https://bioconductor.org/packages/release/bioc/html/BCRANK.html
 ---
+
 
 # bioconductor-bcrank
 

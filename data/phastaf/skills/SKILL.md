@@ -1,8 +1,9 @@
 ---
 name: phastaf
-description: phastaf is a specialized bioinformatics tool designed to detect phage-like regions within bacterial genomes.
+description: Phastaf identifies phage-like regions within bacterial genome sequences. Use when user asks to detect phage-like regions, mask phage sequences, or identify prophage coordinates in bacterial genomes.
 homepage: https://github.com/tseemann/phastaf
 ---
+
 
 # phastaf
 

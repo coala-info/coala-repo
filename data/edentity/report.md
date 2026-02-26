@@ -3,26 +3,39 @@
 ## edentity
 
 ### Tool Description
-The provided text does not contain help information for the tool 'edentity'. It contains error logs from a container runtime (Apptainer/Singularity) indicating a failure to build the container image due to insufficient disk space.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/edentity:1.5.4--pyhdfd78af_0
+- **Docker Image**: quay.io/biocontainers/edentity:1.5.5--pyhdfd78af_0
 - **Homepage**: https://pypi.org/project/edentity/
 - **Package**: https://anaconda.org/channels/bioconda/packages/edentity/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/edentity/overview
-- **Total Downloads**: 740
+- **Total Downloads**: 752
 - **Last updated**: 2026-02-20
 - **GitHub**: N/A
 - **Stars**: N/A
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
+
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/edentity:1.5.4--pyhdfd78af_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1424248725: no space left on device
+Traceback (most recent call last):
+  File "/usr/local/bin/edentity", line 5, in <module>
+    from edentity.__main__ import main
+  File "/usr/local/lib/python3.12/site-packages/edentity/__main__.py", line 7, in <module>
+    from edentity.workflow.scripts.custom_multiqc_module import run_qc_mode_multiqc
+  File "/usr/local/lib/python3.12/site-packages/edentity/workflow/scripts/custom_multiqc_module.py", line 4, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
 ```
 
-
-## Metadata
-- **Skill**: not generated

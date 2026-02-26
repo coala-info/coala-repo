@@ -1,8 +1,9 @@
 ---
 name: bioconductor-biobase
-description: the package is available on all platforms; click for details.
+description: This package provides standardized data structures and functions for managing high-throughput genomic data in R. Use when user asks to create ExpressionSet objects, access sample or feature metadata, subset genomic datasets, or apply functions across features using esApply.
 homepage: https://bioconductor.org/packages/release/bioc/html/Biobase.html
 ---
+
 
 # bioconductor-biobase
 

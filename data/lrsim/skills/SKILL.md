@@ -1,8 +1,9 @@
 ---
 name: lrsim
-description: The `lrsim` skill enables the simulation of whole genome sequencing data using 10X Genomics Linked Read technology.
+description: lrsim simulates 10X Genomics Linked Read sequencing data from a reference genome or specific haplotypes. Use when user asks to simulate whole genome sequencing data, model 10X Genomics barcoding protocols, or generate synthetic linked reads for benchmarking genomic algorithms.
 homepage: https://github.com/aquaskyline/LRSIM
 ---
+
 
 # lrsim
 

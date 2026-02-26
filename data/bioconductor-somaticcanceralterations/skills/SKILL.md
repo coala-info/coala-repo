@@ -1,8 +1,9 @@
 ---
 name: bioconductor-somaticcanceralterations
-description: the package is available on all platforms; click for details.
+description: This package provides a curated collection of somatic mutations from various cancer studies for large-scale analysis. Use when user asks to access somatic mutation data, perform meta-analysis of cancer alterations, or retrieve curated cancer genomics datasets.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/SomaticCancerAlterations.html
 ---
+
 
 # bioconductor-somaticcanceralterations
 

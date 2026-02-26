@@ -1,8 +1,9 @@
 ---
 name: bioconductor-swath2stats
-description: the package is available on all platforms; click for details.
+description: SWATH2stats transforms and filters SWATH-MS data for downstream statistical analysis. Use when user asks to convert OpenSWATH results, filter proteomic data, or prepare mass spectrometry data for statistical tools like MSstats.
 homepage: https://bioconductor.org/packages/release/bioc/html/SWATH2stats.html
 ---
+
 
 # bioconductor-swath2stats
 

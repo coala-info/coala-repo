@@ -1,8 +1,9 @@
 ---
 name: smncopynumbercaller
-description: The `smncopynumbercaller` is a specialized bioinformatics tool designed to resolve the copy number of the highly homologous SMN1 and SMN2 genes.
+description: This tool determines the copy number of SMN1 and SMN2 genes from whole-genome sequencing data to identify Spinal Muscular Atrophy carriers and affected individuals. Use when user asks to call SMN1 and SMN2 copy numbers, identify SMA carriers, or generate diagnostic visualizations for SMN gene analysis.
 homepage: https://github.com/Illumina/SMNCopyNumberCaller
 ---
+
 
 # smncopynumbercaller
 

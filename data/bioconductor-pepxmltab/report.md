@@ -11,10 +11,6 @@ The package tries to handle pepXML files generated from different softwares. The
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pepxmltab/overview
-- **Total Downloads**: 43.2K
-- **Last updated**: 2026-02-06
-- **Stars**: N/A
 

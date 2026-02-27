@@ -81,15 +81,15 @@ NA18486 NA18498 NA18499 NA18501 NA18502
 
 0
 0
-22
-22
-5
-
-0
-0
 55
 53
 18
+
+0
+0
+22
+22
+5
 
 > genderNigerian <- pData(pickrell.eset)[,"gender"]
 > head(genderNigerian)
@@ -306,13 +306,13 @@ female sample that produces the heavy tail on the distribution
 
 2
 
+3
+
 2
 
 2
 
 1
-
-3
 
 NA19137 NA18855 NA19127 NA19159 NA19225 NA19257 NA18508 NA18511 NA18858 NA18912
 3
@@ -345,25 +345,19 @@ NA19147 NA18852 NA19209 NA18502 NA19238 NA19190 NA19204 NA18916 NA19172 NA19193
 
 8
 
+5
+
+3
+
 6
 
 3
-
-3
-
-5
 
 5
 
 9
 
-4
-
-4
-
-4
-
-4
+2
 
 3
 
@@ -372,10 +366,16 @@ NA19147 NA18852 NA19209 NA18502 NA19238 NA19190 NA19204 NA18916 NA19172 NA19193
 3
 
 4
-
-2
 
 6
+
+4
+
+4
+
+4
+
+4
 
 6
 
@@ -420,43 +420,43 @@ NA18516 NA19101 NA18501 NA19130 NA18504 NA19200 NA19203 NA19119 NA19144
 
 3
 
-7
+8
 
 3
 
-8
+7
+
+3
 
 1
 
-3
-
-3
-
 7
 
-4
+3
 
-4
-
-2
+3
 
 9
 
-1
-
 8
 
+3
+
 4
 
 4
+
+4
+
+4
+
+1
 
 2
 
-3
+2
 
 1
-
-3
 
 and realize that by just removing that sample, the large overexpression in females just vanishes:
 

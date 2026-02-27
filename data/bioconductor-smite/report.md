@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/GreallyLab/SMITE
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-smite/overview
-- **Total Downloads**: 33.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

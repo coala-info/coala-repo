@@ -421,15 +421,15 @@ facilitate gene read count calculation from a ReadCountSet object.
 
 > head(geneCounts)
 
-3
-
-4
-
-4
+7
 
 1
 
-7
+4
+
+3
+
+4
 
 2
 
@@ -437,9 +437,9 @@ facilitate gene read count calculation from a ReadCountSet object.
 
 0
 
-C1
-
 C4
+
+C1
 
 S4
 
@@ -449,9 +449,9 @@ S1
 
 S5 S6
 
-S2 S3
-
 C2 C3
+
+S2 S3
 
 S8 S9 S10
 
@@ -514,15 +514,15 @@ C7 C8
 
 90
 
-1
-
 3
+
+1
 
 2
 
-0
-
 4
+
+0
 
 This function results in a matrix of 182 rows and 20 columns, corresponding to 182 genes and 20
 samples.
@@ -568,9 +568,9 @@ same as used in DS analysis on the permutation data sets.
 > DEpermNBstat <- DENBStatPermut4GSEA(dds, permuteMat)
 > DEpermNBstat[1:5, 1:10]
 
-result.2
-
 result.1
+
+result.2
 
 result.3
 
@@ -618,9 +618,9 @@ will also be used in integrated GSEA runs (Section 4).
 
 result.2
 
-result.1
-
 result.3
+
+result.1
 
 result.6
 [1,] 0.3513920 1.087503833 5.4542779 0.03310701 0.642891579 0.80296998
@@ -629,9 +629,9 @@ result.6
 [4,] 0.7806656 1.825209113 2.4891218 0.11836938 3.834489685 0.33365566
 [5,] 0.2841748 0.004961773 2.4912400 0.40503141 0.042125671 0.03830417
 
-result.5
-
 result.4
+
+result.5
 
 result.9
 

@@ -105,9 +105,9 @@ class(GetAssay(d))    # SCArrayAssay, derived from Assay
 ```
 
 ```
-## [1] "SCArrayAssay"
+## [1] "Assay5"
 ## attr(,"package")
-## [1] "SCArray.sat"
+## [1] "SeuratObject"
 ```
 
 ```
@@ -148,7 +148,7 @@ scGetFiles(d)
 
 ```
 # raw counts
-m <- GetAssayData(d, slot="counts")
+m <- GetAssayData(d, layer="counts")
 scGetFiles(m)    # the file name storing raw count data
 ```
 
@@ -163,35 +163,35 @@ m
 ```
 ## <1000 x 850> sparse SC_GDSMatrix object of type "double":
 ##              1772122_301_C02 1772122_180_E05 ... 1772122_180_B06
-##       MRPL20        2.133695        1.423133   .        0.000000
-##         GNB1        3.342935        2.346631   .        0.000000
-##        RPL22        2.133695        2.183267   .        2.982560
-##        PARK7        1.247608        2.487018   .        1.980463
-##         ENO1        3.037644        3.431596   .        3.129447
+##       MRPL20               3               2   .               0
+##         GNB1              11               6   .               0
+##        RPL22               3               5   .               6
+##        PARK7               1               7   .               2
+##         ENO1               8              19   .               7
 ##          ...               .               .   .               .
-##         SSR4        0.000000        2.346631   .        2.810320
-##        RPL10        3.342935        1.987902   .        1.416593
-## SLC25A6-loc1        2.391330        2.183267   .        2.338835
-##       RPS4Y1        0.000000        2.183267   .        1.980463
-##         CD24        3.821575        1.744869   .        0.000000
+##         SSR4               0               6   .               5
+##        RPL10              11               4   .               1
+## SLC25A6-loc1               4               5   .               3
+##       RPS4Y1               0               5   .               2
+##         CD24              18               3   .               0
 ##              1772122_180_D09
-##       MRPL20        1.757196
-##         GNB1        0.000000
-##        RPL22        2.733620
-##        PARK7        1.757196
-##         ENO1        2.360130
+##       MRPL20               2
+##         GNB1               0
+##        RPL22               6
+##        PARK7               2
+##         ENO1               4
 ##          ...               .
-##         SSR4        1.223211
-##        RPL10        2.103432
-## SLC25A6-loc1        1.223211
-##       RPS4Y1        2.360130
-##         CD24        1.757196
+##         SSR4               1
+##        RPL10               3
+## SLC25A6-loc1               1
+##       RPS4Y1               4
+##         CD24               2
 ```
 
 ```
 # normalized expression
 # the normalized data does not save in neither the file nor the memory
-GetAssayData(d, slot="data")
+GetAssayData(d, layer="data")
 ```
 
 ```
@@ -225,74 +225,35 @@ GetAssayData(d, slot="data")
 ```
 # scaled and centered data matrix
 # in this example, the scaled data does not save in neither the file nor the memory
-GetAssayData(d, slot="scale.data")
+GetAssayData(d, layer="scale.data")
 ```
 
 ```
-## <1000 x 850> sparse SC_GDSMatrix object of type "double":
-##              1772122_301_C02 1772122_180_E05 ... 1772122_180_B06
-##       MRPL20        2.133695        1.423133   .        0.000000
-##         GNB1        3.342935        2.346631   .        0.000000
-##        RPL22        2.133695        2.183267   .        2.982560
-##        PARK7        1.247608        2.487018   .        1.980463
-##         ENO1        3.037644        3.431596   .        3.129447
-##          ...               .               .   .               .
-##         SSR4        0.000000        2.346631   .        2.810320
-##        RPL10        3.342935        1.987902   .        1.416593
-## SLC25A6-loc1        2.391330        2.183267   .        2.338835
-##       RPS4Y1        0.000000        2.183267   .        1.980463
-##         CD24        3.821575        1.744869   .        0.000000
-##              1772122_180_D09
-##       MRPL20        1.757196
-##         GNB1        0.000000
-##        RPL22        2.733620
-##        PARK7        1.757196
-##         ENO1        2.360130
-##          ...               .
-##         SSR4        1.223211
-##        RPL10        2.103432
-## SLC25A6-loc1        1.223211
-##       RPS4Y1        2.360130
-##         CD24        1.757196
+## <500 x 850> SC_GDSMatrix object of type "double":
+##        1772122_301_C02 1772122_180_E05 ... 1772122_180_B06 1772122_180_D09
+## MRPL20       1.0698786       0.2495111   .     -1.39354354      0.63519819
+##   GNB1       1.9986433       0.9319892   .     -1.58034238     -1.58034238
+##  PARK7      -0.7051228       0.7692228   .      0.16664801     -0.09894006
+## MINOS1       0.8386726       0.8972573   .      1.08110724     -0.23734026
+##    ID3      -1.2795653      -1.2795653   .      1.26163229     -0.17349183
+##    ...               .               .   .               .               .
+##  CETN2       0.4491348      -1.5497391   .       0.6670945       2.2490430
+## SLC6A8      -0.9531097       0.1969921   .      -0.9531097      -0.9531097
+##  RPL10       1.5151657       0.0120144   .      -0.6217454       0.1401726
+## RPS4Y1      -0.8929986       0.9293677   .       0.7600876       1.0769944
+##   CD24       2.2493072       0.1059022   .      -1.6950086       0.1186249
 ```
 
 **Perform PCA and UMAP:**
 
 ```
+{r fig.wide=TRUE}
 d <- RunPCA(d, ndims.print=1:2)
-```
-
-```
-## Run PCA on the scaled data matrix ...
-## Calculating the covariance matrix [500x500] ...
-## PC_ 1
-## Positive:  NPM1, RPLP1, RPL35, HNRNPA1P10, RPS20, RPS6, RPS19, RPS3, HMGB2, RPL32
-##     RPL31P11-p1, HSPE1-MOB4, RPS23, HMGN2, RPS10-NUDT3, SNRPE, RPS24, CKS1B, H2AFZ, RPS14
-##     RPA3, RPL18A, RPS18-loc6, EEF1B2, SHFM1, TMA7, KIAA0101, RPS3A, RPL37A, SNRPG
-## Negative:  DCX, STMN2, MAP1B, NCAM1, GAP43, RTN1, BASP1, KIF5C, DPYSL3, DCC
-##     MIAT, TTC3, MALAT1, CRMP1, SOX11, TUBB3, GPM6A, TUBA1A, WSB1, TUBB2B
-##     RTN4, NNAT, SCG2, TUBB2A, MAP2, SEZ6L2, ONECUT2, MAP6, ENO2, CNTN2
-## PC_ 2
-## Positive:  TUBA1B, NUCKS1, HNRNPA2B1, MARCKSL1, MARCKS, HNRNPD, NES, HNRNPA1, KHDRBS1, LOC644936-p1
-##     CKB, SET, MIR1244-3-loc4, TUBA1C, SNORD38A, DEK, SOX11, SFPQ, HNRNPU, IGF2BP1
-##     CBX5, NASP, RPS17-loc1, SMC4, RPS17-loc2, RPL41, CENPF, HMGB1, HDAC2, RRM1
-## Negative:  RPL13AP5, RPL31P11-p1, RPS14, RPS3A, TTR, RPL37A, RPL18A, PMCH, RPLP1, RPS19
-##     RPL23A, RPS3, OLFM3, ANXA2, RPL32, RPS13, SULF1, CDO1, TRPM3, COL1A1
-##     RPL18, MTRNR2L8, RNA5-8S5-loc2, MIR611, MALAT1, HTR2C, RNA5-8S5-loc1, RPS25, HES1, LDHA
-```
-
-```
 DimPlot(d, reduction="pca")
-```
 
-![](data:image/png;base64...)
-
-```
 d <- RunUMAP(d, dims=1:50)    # use all PCs calculated by RunPCA()
 DimPlot(d, reduction="umap")
 ```
-
-![](data:image/png;base64...)
 
 ~
 
@@ -428,8 +389,7 @@ d    # the example for the small dataset
 ## An object of class Seurat
 ## 1000 features across 850 samples within 1 assay
 ## Active assay: RNA (1000 features, 500 variable features)
-##  2 layers present: counts, data
-##  2 dimensional reductions calculated: pca, umap
+##  3 layers present: counts, data, scale.data
 ```
 
 ```
@@ -438,7 +398,7 @@ save_fn
 ```
 
 ```
-## [1] "/tmp/Rtmpbd1KIb/file284b7d2f228a53.rds"
+## [1] "/tmp/RtmpWD7iYb/file219c41a9e1384.rds"
 ```
 
 ```
@@ -450,8 +410,8 @@ gc()       # trigger a garbage collection
 
 ```
 ##            used  (Mb) gc trigger  (Mb) max used  (Mb)
-## Ncells 10049295 536.7   16805521 897.6 14305992 764.1
-## Vcells 18034135 137.6   31802057 242.7 31802056 242.7
+## Ncells  9739716 520.2   14219025 759.4 12520877 668.7
+## Vcells 17373023 132.6   31887087 243.3 31775999 242.5
 ```
 
 ```
@@ -463,40 +423,39 @@ d
 ## An object of class Seurat
 ## 1000 features across 850 samples within 1 assay
 ## Active assay: RNA (1000 features, 500 variable features)
-##  2 layers present: counts, data
-##  2 dimensional reductions calculated: pca, umap
+##  3 layers present: counts, data, scale.data
 ```
 
 ```
-GetAssayData(d, slot="counts")  # reopens the GDS file automatically
+GetAssayData(d, layer="counts")  # reopens the GDS file automatically
 ```
 
 ```
 ## <1000 x 850> sparse SC_GDSMatrix object of type "double":
 ##              1772122_301_C02 1772122_180_E05 ... 1772122_180_B06
-##       MRPL20        2.133695        1.423133   .        0.000000
-##         GNB1        3.342935        2.346631   .        0.000000
-##        RPL22        2.133695        2.183267   .        2.982560
-##        PARK7        1.247608        2.487018   .        1.980463
-##         ENO1        3.037644        3.431596   .        3.129447
+##       MRPL20               3               2   .               0
+##         GNB1              11               6   .               0
+##        RPL22               3               5   .               6
+##        PARK7               1               7   .               2
+##         ENO1               8              19   .               7
 ##          ...               .               .   .               .
-##         SSR4        0.000000        2.346631   .        2.810320
-##        RPL10        3.342935        1.987902   .        1.416593
-## SLC25A6-loc1        2.391330        2.183267   .        2.338835
-##       RPS4Y1        0.000000        2.183267   .        1.980463
-##         CD24        3.821575        1.744869   .        0.000000
+##         SSR4               0               6   .               5
+##        RPL10              11               4   .               1
+## SLC25A6-loc1               4               5   .               3
+##       RPS4Y1               0               5   .               2
+##         CD24              18               3   .               0
 ##              1772122_180_D09
-##       MRPL20        1.757196
-##         GNB1        0.000000
-##        RPL22        2.733620
-##        PARK7        1.757196
-##         ENO1        2.360130
+##       MRPL20               2
+##         GNB1               0
+##        RPL22               6
+##        PARK7               2
+##         ENO1               4
 ##          ...               .
-##         SSR4        1.223211
-##        RPL10        2.103432
-## SLC25A6-loc1        1.223211
-##       RPS4Y1        2.360130
-##         CD24        1.757196
+##         SSR4               1
+##        RPL10               3
+## SLC25A6-loc1               1
+##       RPS4Y1               4
+##         CD24               2
 ```
 
 ~
@@ -522,7 +481,7 @@ is(GetAssay(d))
 ```
 
 ```
-## [1] "SCArrayAssay" "Assay"        "KeyMixin"
+## [1] "Assay5"   "StdAssay" "KeyMixin"
 ```
 
 ```
@@ -531,13 +490,13 @@ is(GetAssay(new_d))
 ```
 
 ```
-## [1] "Assay"    "KeyMixin"
+## [1] "Assay5"   "StdAssay" "KeyMixin"
 ```
 
 If users only want to ‘downgrade’ the scaled data matrix, then
 
 ```
-is(GetAssayData(d, slot="scale.data"))  # it is a DelayedMatrix
+is(GetAssayData(d, layer="scale.data"))  # it is a DelayedMatrix
 ```
 
 ```
@@ -548,23 +507,16 @@ is(GetAssayData(d, slot="scale.data"))  # it is a DelayedMatrix
 ```
 
 ```
-new_d <- scMemory(d, slot="scale.data")  # downgrade "scale.data" in the active assay
+# new_d <- scMemory(d, "scale.data")  # downgrade "scale.data" in the active assay
 is(GetAssay(new_d))  # it is still SCArrayAssay
 ```
 
 ```
-## [1] "SCArrayAssay" "Assay"        "KeyMixin"
+## [1] "Assay5"   "StdAssay" "KeyMixin"
 ```
 
 ```
-is(GetAssayData(new_d, slot="scale.data"))  # in-memory matrix
-```
-
-```
-##  [1] "SC_GDSMatrix"      "DelayedMatrix"     "SC_GDSArray"
-##  [4] "UnionMatrix"       "UnionMatrix2"      "DelayedArray"
-##  [7] "DelayedUnaryIsoOp" "DelayedUnaryOp"    "DelayedOp"
-## [10] "Array"             "RectangularData"
+# is(GetAssayData(new_d, layer="scale.data"))  # in-memory matrix
 ```
 
 ~
@@ -601,13 +553,13 @@ sce
 ## class: SingleCellExperiment
 ## dim: 1000 850
 ## metadata(0):
-## assays(3): counts logcounts scaledata
+## assays(2): counts logcounts
 ## rownames(1000): MRPL20 GNB1 ... RPS4Y1 CD24
 ## rowData names(0):
 ## colnames(850): 1772122_301_C02 1772122_180_E05 ... 1772122_180_B06
 ##   1772122_180_D09
 ## colData names(7): orig.ident nCount_RNA ... Timepoint ident
-## reducedDimNames(2): PCA UMAP
+## reducedDimNames(0):
 ## mainExpName: RNA
 ## altExpNames(0):
 ```
@@ -619,29 +571,29 @@ counts(sce)  # raw counts
 ```
 ## <1000 x 850> sparse SC_GDSMatrix object of type "double":
 ##              1772122_301_C02 1772122_180_E05 ... 1772122_180_B06
-##       MRPL20        2.133695        1.423133   .        0.000000
-##         GNB1        3.342935        2.346631   .        0.000000
-##        RPL22        2.133695        2.183267   .        2.982560
-##        PARK7        1.247608        2.487018   .        1.980463
-##         ENO1        3.037644        3.431596   .        3.129447
+##       MRPL20               3               2   .               0
+##         GNB1              11               6   .               0
+##        RPL22               3               5   .               6
+##        PARK7               1               7   .               2
+##         ENO1               8              19   .               7
 ##          ...               .               .   .               .
-##         SSR4        0.000000        2.346631   .        2.810320
-##        RPL10        3.342935        1.987902   .        1.416593
-## SLC25A6-loc1        2.391330        2.183267   .        2.338835
-##       RPS4Y1        0.000000        2.183267   .        1.980463
-##         CD24        3.821575        1.744869   .        0.000000
+##         SSR4               0               6   .               5
+##        RPL10              11               4   .               1
+## SLC25A6-loc1               4               5   .               3
+##       RPS4Y1               0               5   .               2
+##         CD24              18               3   .               0
 ##              1772122_180_D09
-##       MRPL20        1.757196
-##         GNB1        0.000000
-##        RPL22        2.733620
-##        PARK7        1.757196
-##         ENO1        2.360130
+##       MRPL20               2
+##         GNB1               0
+##        RPL22               6
+##        PARK7               2
+##         ENO1               4
 ##          ...               .
-##         SSR4        1.223211
-##        RPL10        2.103432
-## SLC25A6-loc1        1.223211
-##       RPS4Y1        2.360130
-##         CD24        1.757196
+##         SSR4               1
+##        RPL10               3
+## SLC25A6-loc1               1
+##       RPS4Y1               4
+##         CD24               2
 ```
 
 ~
@@ -711,7 +663,7 @@ sessionInfo()
 ```
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -735,76 +687,74 @@ sessionInfo()
 ## [8] base
 ##
 ## other attached packages:
-##  [1] SCArray.sat_1.9.0     SCArray_1.17.0        DelayedArray_0.35.3
-##  [4] SparseArray_1.9.1     S4Arrays_1.9.1        abind_1.4-8
-##  [7] IRanges_2.43.5        S4Vectors_0.47.4      MatrixGenerics_1.21.0
-## [10] matrixStats_1.5.0     BiocGenerics_0.55.1   generics_0.1.4
-## [13] Matrix_1.7-4          gdsfmt_1.45.1         Seurat_5.3.0
-## [16] SeuratObject_5.2.0    sp_2.2-0              BiocStyle_2.37.1
+##  [1] SCArray.sat_1.10.1    SCArray_1.18.0        DelayedArray_0.36.0
+##  [4] SparseArray_1.10.8    S4Arrays_1.10.1       abind_1.4-8
+##  [7] IRanges_2.44.0        S4Vectors_0.48.0      MatrixGenerics_1.22.0
+## [10] matrixStats_1.5.0     BiocGenerics_0.56.0   generics_0.1.4
+## [13] Matrix_1.7-4          gdsfmt_1.46.0         Seurat_5.4.0
+## [16] SeuratObject_5.3.0    sp_2.2-1              BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
 ##   [1] RColorBrewer_1.1-3          jsonlite_2.0.0
-##   [3] magrittr_2.0.4              magick_2.9.0
-##   [5] spatstat.utils_3.2-0        farver_2.1.2
-##   [7] rmarkdown_2.30              vctrs_0.6.5
-##   [9] ROCR_1.0-11                 DelayedMatrixStats_1.31.0
-##  [11] spatstat.explore_3.5-3      tinytex_0.57
-##  [13] htmltools_0.5.8.1           sass_0.4.10
-##  [15] sctransform_0.4.2           parallelly_1.45.1
-##  [17] KernSmooth_2.23-26          bslib_0.9.0
-##  [19] htmlwidgets_1.6.4           ica_1.0-3
-##  [21] plyr_1.8.9                  plotly_4.11.0
-##  [23] zoo_1.8-14                  cachem_1.1.0
-##  [25] igraph_2.1.4                mime_0.13
-##  [27] lifecycle_1.0.4             pkgconfig_2.0.3
-##  [29] rsvd_1.0.5                  R6_2.6.1
-##  [31] fastmap_1.2.0               fitdistrplus_1.2-4
-##  [33] future_1.67.0               shiny_1.11.1
-##  [35] digest_0.6.37               patchwork_1.3.2
-##  [37] tensor_1.5.1                RSpectra_0.16-2
-##  [39] irlba_2.3.5.1               GenomicRanges_1.61.5
-##  [41] beachmat_2.25.5             labeling_0.4.3
-##  [43] progressr_0.16.0            spatstat.sparse_3.1-0
-##  [45] httr_1.4.7                  polyclip_1.10-7
-##  [47] compiler_4.5.1              withr_3.0.2
-##  [49] S7_0.2.0                    BiocParallel_1.43.4
-##  [51] fastDummies_1.7.5           MASS_7.3-65
-##  [53] tools_4.5.1                 lmtest_0.9-40
-##  [55] httpuv_1.6.16               future.apply_1.20.0
-##  [57] goftest_1.2-3               glue_1.8.0
-##  [59] nlme_3.1-168                promises_1.3.3
-##  [61] grid_4.5.1                  Rtsne_0.17
-##  [63] cluster_2.1.8.1             reshape2_1.4.4
-##  [65] gtable_0.3.6                spatstat.data_3.1-8
-##  [67] tidyr_1.3.1                 data.table_1.17.8
-##  [69] ScaledMatrix_1.17.0         BiocSingular_1.25.0
-##  [71] XVector_0.49.1              spatstat.geom_3.6-0
-##  [73] RcppAnnoy_0.0.22            ggrepel_0.9.6
-##  [75] RANN_2.6.2                  pillar_1.11.1
-##  [77] stringr_1.5.2               spam_2.11-1
-##  [79] RcppHNSW_0.6.0              later_1.4.4
-##  [81] splines_4.5.1               dplyr_1.1.4
-##  [83] lattice_0.22-7              survival_3.8-3
-##  [85] deldir_2.0-4                tidyselect_1.2.1
-##  [87] SingleCellExperiment_1.31.1 miniUI_0.1.2
-##  [89] pbapply_1.7-4               knitr_1.50
-##  [91] gridExtra_2.3               bookdown_0.45
-##  [93] Seqinfo_0.99.2              SummarizedExperiment_1.39.2
-##  [95] scattermore_1.2             xfun_0.53
-##  [97] Biobase_2.69.1              stringi_1.8.7
-##  [99] lazyeval_0.2.2              yaml_2.3.10
-## [101] evaluate_1.0.5              codetools_0.2-20
-## [103] tibble_3.3.0                BiocManager_1.30.26
-## [105] cli_3.6.5                   uwot_0.2.3
-## [107] xtable_1.8-4                reticulate_1.43.0
-## [109] jquerylib_0.1.4             dichromat_2.0-0.1
-## [111] Rcpp_1.1.0                  globals_0.18.0
-## [113] spatstat.random_3.4-2       png_0.1-8
-## [115] spatstat.univar_3.1-4       parallel_4.5.1
-## [117] ggplot2_4.0.0               dotCall64_1.2
-## [119] sparseMatrixStats_1.21.0    listenv_0.9.1
-## [121] viridisLite_0.4.2           scales_1.4.0
-## [123] ggridges_0.5.7              purrr_1.1.0
-## [125] crayon_1.5.3                rlang_1.1.6
-## [127] cowplot_1.2.0
+##   [3] magrittr_2.0.4              spatstat.utils_3.2-1
+##   [5] farver_2.1.2                rmarkdown_2.30
+##   [7] vctrs_0.7.1                 ROCR_1.0-12
+##   [9] DelayedMatrixStats_1.32.0   spatstat.explore_3.7-0
+##  [11] htmltools_0.5.9             sass_0.4.10
+##  [13] sctransform_0.4.3           parallelly_1.46.1
+##  [15] KernSmooth_2.23-26          bslib_0.10.0
+##  [17] htmlwidgets_1.6.4           ica_1.0-3
+##  [19] plyr_1.8.9                  plotly_4.12.0
+##  [21] zoo_1.8-15                  cachem_1.1.0
+##  [23] igraph_2.2.2                mime_0.13
+##  [25] lifecycle_1.0.5             pkgconfig_2.0.3
+##  [27] rsvd_1.0.5                  R6_2.6.1
+##  [29] fastmap_1.2.0               fitdistrplus_1.2-6
+##  [31] future_1.69.0               shiny_1.13.0
+##  [33] digest_0.6.39               patchwork_1.3.2
+##  [35] tensor_1.5.1                RSpectra_0.16-2
+##  [37] irlba_2.3.7                 GenomicRanges_1.62.1
+##  [39] beachmat_2.26.0             progressr_0.18.0
+##  [41] spatstat.sparse_3.1-0       httr_1.4.8
+##  [43] polyclip_1.10-7             compiler_4.5.2
+##  [45] S7_0.2.1                    BiocParallel_1.44.0
+##  [47] fastDummies_1.7.5           MASS_7.3-65
+##  [49] tools_4.5.2                 lmtest_0.9-40
+##  [51] otel_0.2.0                  httpuv_1.6.16
+##  [53] future.apply_1.20.2         goftest_1.2-3
+##  [55] glue_1.8.0                  nlme_3.1-168
+##  [57] promises_1.5.0              grid_4.5.2
+##  [59] Rtsne_0.17                  cluster_2.1.8.2
+##  [61] reshape2_1.4.5              gtable_0.3.6
+##  [63] spatstat.data_3.1-9         tidyr_1.3.2
+##  [65] data.table_1.18.2.1         ScaledMatrix_1.18.0
+##  [67] BiocSingular_1.26.1         XVector_0.50.0
+##  [69] spatstat.geom_3.7-0         RcppAnnoy_0.0.23
+##  [71] ggrepel_0.9.7               RANN_2.6.2
+##  [73] pillar_1.11.1               stringr_1.6.0
+##  [75] spam_2.11-3                 RcppHNSW_0.6.0
+##  [77] later_1.4.7                 splines_4.5.2
+##  [79] dplyr_1.2.0                 lattice_0.22-9
+##  [81] survival_3.8-6              deldir_2.0-4
+##  [83] tidyselect_1.2.1            SingleCellExperiment_1.32.0
+##  [85] miniUI_0.1.2                pbapply_1.7-4
+##  [87] knitr_1.51                  gridExtra_2.3
+##  [89] bookdown_0.46               Seqinfo_1.0.0
+##  [91] SummarizedExperiment_1.40.0 scattermore_1.2
+##  [93] xfun_0.56                   Biobase_2.70.0
+##  [95] stringi_1.8.7               lazyeval_0.2.2
+##  [97] yaml_2.3.12                 evaluate_1.0.5
+##  [99] codetools_0.2-20            tibble_3.3.1
+## [101] BiocManager_1.30.27         cli_3.6.5
+## [103] uwot_0.2.4                  xtable_1.8-8
+## [105] reticulate_1.45.0           jquerylib_0.1.4
+## [107] dichromat_2.0-0.1           Rcpp_1.1.1
+## [109] globals_0.19.0              spatstat.random_3.4-4
+## [111] png_0.1-8                   spatstat.univar_3.1-6
+## [113] parallel_4.5.2              ggplot2_4.0.2
+## [115] dotCall64_1.2               sparseMatrixStats_1.22.0
+## [117] listenv_0.10.0              viridisLite_0.4.3
+## [119] scales_1.4.0                ggridges_0.5.7
+## [121] crayon_1.5.3                purrr_1.2.1
+## [123] rlang_1.1.7                 cowplot_1.2.0
 ```

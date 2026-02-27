@@ -317,9 +317,9 @@ aprt
 
 den
 
-dada
-
 asli
+
+dada
 
 arna
 
@@ -606,21 +606,21 @@ PRPP
 10 19.417928 167.86461 0.007564062
 dGTP
 
-GTP
-
-RNA
-
-XMP
-
 DNA
 
-HX
+XMP
 
 Xa
 24.79300 410.2230 6.014130 3.025810 28680.50 5179.340 9.5178500 5.059410
 24.79299 410.2223 6.014135 3.025813 28680.50 5179.340 9.5198361 5.059734
 
 dATP
+
+RNA
+
+GTP
+
+HX
 
 1
 2
@@ -890,9 +890,9 @@ mat
 1323.533 1.154381 3.684001 0.047312868 1.1913333 1.595752 2.642416 14.988496
 1323.533 1.154359 3.683961 0.047311346 1.1913111 1.595753 2.642422 14.988496
 
-impd
-
 inuc
+
+impd
 
 hxd
 
@@ -925,11 +925,11 @@ hxd
 21 1062.375 1.918902 2.949563 0.003056118 0.2324434 1.507258 3.650163 9.073411
 rnaa
 
-trans
+pyr
 
 rnag
 
-pyr
+trans
 
 polyam
 
@@ -1116,15 +1116,15 @@ dATP
 
 ATP
 
+GTP
+
 XMP
 
 R5P
 
-GTP
+SAM
 
 RNA
-
-SAM
 
 Gua
 
@@ -1145,6 +1145,8 @@ dATP dGTP
 
 IMP SAMP
 
+GTP
+
 ATP
 
 SAM
@@ -1152,8 +1154,6 @@ SAM
 Ade
 
 XMP
-
-GTP
 
 RNA
 
@@ -1188,9 +1188,9 @@ DNA
 
 dGTP
 
-SAMP
-
 dATP
+
+SAMP
 
 ATP
 
@@ -1198,18 +1198,18 @@ GTP
 
 XMP
 
-SAM
-
 RNA
+
+SAM
 
 UA
 9.51785e+00 5.05941e+00 5.50638e+00 1.00293e+02
 
 Gua
 
-Xa
-
 HX
+
+Xa
 
 $nReactions
 [1] 37
@@ -1355,9 +1355,9 @@ ampd
 
 asuc
 
-dnaa
-
 arna
+
+dnaa
 
 dada
 
@@ -1380,9 +1380,9 @@ x
 
 polyam
 
-trans
-
 gdrnr
+
+trans
 
 gnuc
 
@@ -1390,29 +1390,29 @@ rnaa
 
 impd
 
-dnag
-
 gprt
 
-hprt
+dnag
 
 gmpr
 
+hprt
+
 gdna
+
+grna
 
 inuc
 
 rnag
 
-grna
-
 gua
 
 mat
 
-hxd
-
 pyr
+
+hxd
 
 den
 
@@ -1798,6 +1798,13 @@ HX
 0
 0
 
+0
+0
+0
+0
+0
+0
+0
 -1
 0
 0
@@ -1806,22 +1813,8 @@ HX
 0
 0
 1
-0
-0
-0
-0
-0
-0
--1
 0
 
-0
-0
-0
-0
-0
-0
-0
 -1
 0
 0
@@ -1830,6 +1823,13 @@ HX
 0
 0
 1
+0
+0
+0
+0
+0
+0
+-1
 0
 
 0
@@ -3552,6 +3552,8 @@ $reactions$den$products
 $reactions$den$parameters
 fden1
 
+fden2
+
 aden
 5.2728
 
@@ -3560,8 +3562,6 @@ fden4
 2.0000 -0.0600 -0.2500 -0.2000 -0.0800
 
 fden8
-
-fden2
 
 $reactions$den$mathmlLaw
 <apply>

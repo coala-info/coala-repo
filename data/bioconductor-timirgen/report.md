@@ -13,8 +13,4 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Krutik6/TimiRGeN
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-timirgen/overview
-- **Total Downloads**: 13.2K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

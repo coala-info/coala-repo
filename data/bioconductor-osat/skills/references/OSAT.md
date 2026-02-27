@@ -1361,13 +1361,6 @@ plates chipRows chipColumns chips rows columns wells chipID rowID wellID
 48
 48
 
-2
-2
-2
-2
-2
-2
-
 6
 6
 6
@@ -1382,12 +1375,12 @@ plates chipRows chipColumns chips rows columns wells chipID rowID wellID
 2
 2
 
-4
-4
-4
-4
-4
-4
+2
+2
+2
+2
+2
+2
 
 1
 2
@@ -1402,6 +1395,13 @@ plates chipRows chipColumns chips rows columns wells chipID rowID wellID
 8
 8
 8
+
+4
+4
+4
+4
+4
+4
 
 cFactor
 6
@@ -1625,10 +1625,10 @@ chipRows chipColumns chips rows columns wells
 1
 
 1
-2
+1
 
 1
-1
+2
 
 1
 2

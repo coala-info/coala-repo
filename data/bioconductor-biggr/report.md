@@ -11,10 +11,6 @@ The package facilitates flux balance analysis (FBA) and the sampling of feasible
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-biggr/overview
-- **Total Downloads**: 10.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

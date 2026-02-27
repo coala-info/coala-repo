@@ -1083,9 +1083,9 @@ Training6.Bad
 Training2.Bad Training3.Good Training4.Good
 6
 
-1
-
 6
+
+1
 
 Training5.Bad
 3

@@ -164,9 +164,9 @@ Number of Outliers:
 90%
 1
 
-99%
-
 95%
+
+99%
 
 1
 

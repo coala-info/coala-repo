@@ -164,9 +164,9 @@ Epitopes
 
 ,
 
-4
-
 ,
+
+4
 
 ,
 
@@ -633,17 +633,17 @@ prioritization values. P ipeline can simply be called by a matrix including the
 
 ,
 
-,
-
-,
+4
 
 2
 
 ,
 
-4
-
 1
+
+,
+
+,
 
 )
 

@@ -13,8 +13,4 @@ The package ptairData contains two raw datasets from Proton-Transfer-Reaction Ti
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/camilleroquencourt/ptairData
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ptairdata/overview
-- **Total Downloads**: 11.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

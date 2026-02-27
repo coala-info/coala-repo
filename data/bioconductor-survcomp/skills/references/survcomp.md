@@ -17,7 +17,7 @@ Dana-Farber Cancer Institute, Harvard School of Public Health
 6Center for Cancer Computational Biology, Dana-Farber Cancer
 Institute
 
-October 30, 2025
+February 20, 2026
 
 Contents
 
@@ -929,10 +929,10 @@ tt <- concordance.index(x=x, surv.time=y, surv.event=z, method="noether", na.rm=
 return(tt); }, y=pData(unt7g)[ ,"t.dmfs"], z=pData(unt7g)[ ,"e.dmfs"]))
 
 tt <- concordance.index(x=x, surv.time=y, surv.event=z, method="noether", na.rm=TRUE);
-return(tt); }, y=pData(mainz7g)[ ,"t.dmfs"], z=pData(mainz7g)[ ,"e.dmfs"]))
+return(tt); }, y=pData(upp7g)[ ,"t.rfs"], z=pData(upp7g)[ ,"e.rfs"]))
 
 tt <- concordance.index(x=x, surv.time=y, surv.event=z, method="noether", na.rm=TRUE);
-return(tt); }, y=pData(upp7g)[ ,"t.rfs"], z=pData(upp7g)[ ,"e.rfs"]))
+return(tt); }, y=pData(mainz7g)[ ,"t.dmfs"], z=pData(mainz7g)[ ,"e.dmfs"]))
 
 tt <- concordance.index(x=x, surv.time=y, surv.event=z, method="noether", na.rm=TRUE);
 return(tt); }, y=pData(transbig7g)[ ,"t.dmfs"], z=pData(transbig7g)[ ,"e.dmfs"]))
@@ -1043,7 +1043,7 @@ ccmData <- rbind(ccmData, tt)
 
 3 Session Info
 
-• R version 4.5.1 Patched (2025-08-23 r88802), x86_64-pc-linux-gnu
+• R version 4.5.2 (2025-10-31), x86_64-pc-linux-gnu
 
 • Locale: LC_CTYPE=en_US.UTF-8, LC_NUMERIC=C, LC_TIME=en_GB, LC_COLLATE=C,
 
@@ -1067,15 +1067,15 @@ LC_MEASUREMENT=en_US.UTF-8, LC_IDENTIFICATION=C
 
 • Other packages: Biobase 2.70.0, BiocGenerics 0.56.0, generics 0.1.4,
 
-prodlim 2025.04.28, rmeta 3.0, survcomp 1.60.0, survival 3.8-3, xtable 1.8-4
+prodlim 2025.04.28, rmeta 3.0, survcomp 1.60.1, survival 3.8-6, xtable 1.8-4
 
 • Loaded via a namespace (and not attached): KernSmooth 2.23-26,
 
-Matrix 1.7-4, Rcpp 1.1.0, SuppDists 1.1-9.9, bootstrap 2019.6,
-codetools 0.2-20, compiler 4.5.1, data.table 1.17.8, digest 0.6.37, future 1.67.0,
-future.apply 1.20.0, globals 0.18.0, grid 4.5.1, lattice 0.22-7, lava 1.8.1,
-listenv 0.9.1, parallel 4.5.1, parallelly 1.45.1, splines 4.5.1,
-survivalROC 1.0.3.1, tools 4.5.1
+Matrix 1.7-4, Rcpp 1.1.1, SuppDists 1.1-9.9, bootstrap 2019.6,
+codetools 0.2-20, compiler 4.5.2, data.table 1.18.2.1, digest 0.6.39,
+future 1.69.0, future.apply 1.20.2, globals 0.19.0, grid 4.5.2, lattice 0.22-9,
+lava 1.8.2, listenv 0.10.0, parallel 4.5.2, parallelly 1.46.1, splines 4.5.2,
+survivalROC 1.0.3.1, tools 4.5.2
 
 24
 

@@ -1,5 +1,5 @@
 Package ‘multtest’
-February 13, 2026
+February 26, 2026
 
 Title Resampling-based multiple hypothesis testing
 
@@ -53,7 +53,7 @@ git_last_commit_date 2025-10-29
 
 Repository Bioconductor 3.22
 
-Date/Publication 2026-02-12
+Date/Publication 2026-02-25
 
 1
 

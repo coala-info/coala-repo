@@ -7,7 +7,7 @@ Code
 
 Author: FirstName LastName
 
-#### Last update: 22 January, 2026
+#### Last update: 24 February, 2026
 
 #### Package
 
@@ -709,7 +709,7 @@ sessionInfo()
 ## [11] lifecycle_1.0.5     cli_3.6.5
 ## [13] sass_0.4.10         jquerylib_0.1.4
 ## [15] compiler_4.5.2      tools_4.5.2
-## [17] evaluate_1.0.5      bslib_0.9.0
+## [17] evaluate_1.0.5      bslib_0.10.0
 ## [19] yaml_2.3.12         formatR_1.14
 ## [21] otel_0.2.0          BiocManager_1.30.27
 ## [23] crayon_1.5.3        jsonlite_2.0.0

@@ -328,11 +328,11 @@ point contours in scale-space [Witkin, 1983].
 > scaleSpace(liverData) = calculateScaleSpace(liverData, maxSQSigma = 10)
 > head(t(assay(scaleSpace(liverData), 1))[,1:5])
 
-[,1]
+[,3]
 
 [,2]
 
-[,3]
+[,1]
 
 [,5]
 [1,] 1817.604 900.245 853.245 2241.585 1463.276

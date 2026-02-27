@@ -11,10 +11,6 @@ The package contains wrapper functions that allow for genome indexing and alignm
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rbowtie2/overview
-- **Total Downloads**: 36.0K
-- **Last updated**: 2025-07-17
-- **Stars**: N/A
 

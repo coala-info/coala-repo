@@ -358,6 +358,10 @@ FALSE
 37 chr1
 38 chr2
 
+2
+25
+9
+
 6
 29
 13
@@ -365,10 +369,6 @@ FALSE
 13
 33
 34
-
-2
-25
-9
 
 5
 5
@@ -432,13 +432,13 @@ TRUE
 TRUE
 FALSE
 
-2
-25
-9
-
 6
 29
 13
+
+2
+25
+9
 
 13
 33
@@ -605,9 +605,9 @@ TRUE AAAGGG TTTCCC
 
 3 chr1
 
-37
-
 40
+
+37
 
 1
 
@@ -653,15 +653,15 @@ TTTCCC
 
 FALSE
 
-37
-
 40
+
+37
 
 1
 
-3
-
 4
+
+3
 
 The sequence from chr1:1-19 is lost, while there are now two copies of the translocated (inverted) segment
 from chr2:38-40. The breakpoint sequence for chr2 (denoted by chrA in general) is not reported, since this
@@ -854,6 +854,9 @@ ranges strand
 *
 *
 
+21-40
+1-20
+
 chr1
 chr2
 
@@ -861,9 +864,6 @@ chr2
 [2]
 -------
 seqinfo: 2 sequences from an unspecified genome; no seqlengths
-
-21-40
-1-20
 
 > sim = simulateSV(output=NA, genome=genome, invs=4, sizeInvs=5,
 
@@ -956,8 +956,6 @@ seqnames
 <Rle> <IRanges>
 16-25
 
-chr2
-
 ranges strand
 <Rle>
 *
@@ -965,6 +963,8 @@ ranges strand
 myDeletion
 -------
 seqinfo: 1 sequence from an unspecified genome; no seqlengths
+
+chr2
 
 > sim = simulateSV(output=NA, genome=genome, regionsDels=knownDeletion,
 
@@ -1419,11 +1419,11 @@ NA
 CCCCCTTTT
 2
 
+NA
+NA
+
 13
 40
-
-NA
-NA
 
 7 Setting structural variation sizes
 

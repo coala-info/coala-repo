@@ -212,17 +212,17 @@ pen
 
 i0 score
 
-tim
-
 tmi
+
+tim
 
 tmp
 
 rss
 
-hmi
-
 hmp
+
+hmi
 
 ha
 

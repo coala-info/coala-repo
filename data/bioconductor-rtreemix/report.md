@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Jasmina Bogojeska
 - **Maintainer**: Jasmina Bogojeska &#x3c;&#x6a;&#x61;&#x73;&#x6d;&#x69;&#x6e;&#x61;&#x2e;&#x62;&#x6f;&#x67;&#x6f;&#x6a;&#x65;&#x73;&#x6b;&#x61;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rtreemix/overview
-- **Total Downloads**: 49.6K
-- **Last updated**: 2025-04-30
-- **Stars**: N/A
 

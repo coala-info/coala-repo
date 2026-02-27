@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/nuno-agostinho/psichomics
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-psichomics/overview
-- **Total Downloads**: 37.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

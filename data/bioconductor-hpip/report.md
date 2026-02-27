@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/mrbakhsh/HPiP
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-hpip/overview
-- **Total Downloads**: 8.0K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

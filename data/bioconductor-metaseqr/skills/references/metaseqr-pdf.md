@@ -651,14 +651,14 @@ Diagnostic Test
 ##
 ##
 
+e14.5_vs_adult_8_weeks
+
 Plotting deheatmap...
 Contrast:
 Plotting volcano...
 Contrast:
 Plotting biodist...
 Contrast:
-
-e14.5_vs_adult_8_weeks
 
 e14.5_vs_adult_8_weeks
 
@@ -1181,19 +1181,19 @@ BH
 
 rRNA
 
-101.5
-
 edger
 
 deseq
+
+101.5
 
 edaseq
 
 Contrast:
 
-found 333 genes
-
 found 925 genes
+
+found 333 genes
 
 Biotypes ignored:
 
@@ -1757,17 +1757,17 @@ png
 
 mm9
 
-gene
-
-gene
-
 none
+
+gene
+
+gene
 
 edaseq
 
-edger:
-
 limma:
+
+edger:
 
 G1, G2
 

@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RGLab/COMPASS
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-compass/overview
-- **Total Downloads**: 56.7K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

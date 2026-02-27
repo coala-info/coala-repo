@@ -206,11 +206,11 @@ abs(dataColorectal9348$logFC) > foldThreshold
 
 2
 
-dataColorectal32323$adj.P.Val < pvThreshold &
-abs(dataColorectal32323$logFC) > foldThreshold
-
-dataColorectal21510$adj.P.Val < pvThreshold &
+dataColorectal21510$adj.P.Val < pvThreshold &
 abs(dataColorectal21510$logFC) > foldThreshold
+
+dataColorectal32323$adj.P.Val < pvThreshold &
+abs(dataColorectal32323$logFC) > foldThreshold
 
 > de3 <- dataColorectal21510$EntrezID [
 +

@@ -446,19 +446,19 @@ run_id transition_group_id FullPeptideName ProteinName
 9
 9
 
-354
-370
-373
-354
-369
-373
-
 250
 260
 262
 250
 259
 262
+
+354
+370
+373
+354
+369
+373
 
 3.2 Plot correlation between samples
 

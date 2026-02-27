@@ -13,8 +13,4 @@ The package provides parallel implementation of algorithms that process binary m
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIMIB-DISCo/TRONCO
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tronco/overview
-- **Total Downloads**: 25.2K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

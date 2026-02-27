@@ -13,8 +13,4 @@ the package BUSpaRse, which can load BUS format into R as a sparse matrix, and w
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BUStools/TENxBUSData
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tenxbusdata/overview
-- **Total Downloads**: 19.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

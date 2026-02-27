@@ -348,17 +348,17 @@ heatmapCluster(clen_res, "pam", "10", maintitle="Psoriasis")
 ##
 ## 158 65 38 92
 
-9
-61
-
-7
-63
-
 5
 50
 
 8
 94
+
+7
+63
+
+9
+61
 
 6
 67

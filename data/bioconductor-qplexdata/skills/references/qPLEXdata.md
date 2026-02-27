@@ -312,10 +312,10 @@ transform = FALSE)
 diffexp1 <- diffexp1[which(diffexp1$adj.P.Val < 0.05 & abs(diffexp1$log2FC) > 0.5),]
 diffexp2 <- getContrastResults(diffstats=diffstats, contrast=contrasts[2],
 
-transform = FALSE)
-
 diffexp2 <- diffexp2[which(diffexp2$adj.P.Val < 0.05 & abs(diffexp2$log2FC) > 0.5),]
 diffexp3 <- getContrastResults(diffstats=diffstats, contrast=contrasts[3],
+
+transform = FALSE)
 
 transform = FALSE)
 

@@ -79,7 +79,7 @@ snpset <- snpgdsLDpruning(gds)
 ```
 ## SNV pruning based on LD:
 ## Calculating allele counts/frequencies (19773 variants) ...
-## [..................................................]  0%, ETC: --- (1/1)    [==================================================] 100%, used 1s (1/1)    [==================================================] 100%, complete, 0s
+## [..................................................]  0%, ETC: --- (1/1)    [==================================================] 100%, used 0s (1/1)    [==================================================] 100%, complete, 0s
 ## # of selected variants: 9,043
 ## Excluding 10,730 SNVs (monomorphic: TRUE, MAF: 0.005, missing rate: 0.01)
 ##     # of samples: 1,092
@@ -89,7 +89,7 @@ snpset <- snpgdsLDpruning(gds)
 ##     |LD| threshold: 0.2
 ##     method: composite
 ## Chrom 22: |====================|====================|
-##     14.58%, 2,883 / 19,773 (Thu Oct 30 02:13:32 2025)
+##     14.58%, 2,883 / 19,773 (Fri Feb 20 19:51:09 2026)
 ## 2,883 markers are selected in total.
 ```
 
@@ -128,7 +128,7 @@ seqExport(gds, grm_fn, info.var=character(), fmt.var=character(), samp.var=chara
 ```
 
 ```
-## ##< 2025-10-30 02:13:33
+## ##< 2026-02-20 19:51:09
 ## Export to 'grm_geno.gds':
 ##     sample.id (1,092)    [md5: bd2a93b49750ae227793ed23c575b620]
 ##     variant.id (2,883)    [md5: 37e34ffd0328a6bb5bcedb53dddad2e3]
@@ -140,7 +140,7 @@ seqExport(gds, grm_fn, info.var=character(), fmt.var=character(), samp.var=chara
 ##     annotation/id    [md5: 2020922f9380eddb5e5f8e271ade54e2]
 ##     annotation/qual    [md5: 5d14e0a74e09172e9192c42b646c1559]
 ##     annotation/filter    [md5: 9bcb8f5aa38515d50d47129d3c57a542]
-## Done.  # 2025-10-30 02:13:35
+## Done.  # 2026-02-20 19:51:10
 ## Optimize the access efficiency ...
 ## Clean up the fragments of GDS file:
 ##     open the file 'grm_geno.gds' (343.3K)
@@ -148,7 +148,7 @@ seqExport(gds, grm_fn, info.var=character(), fmt.var=character(), samp.var=chara
 ##     save to 'grm_geno.gds.tmp'
 ##     rename 'grm_geno.gds.tmp' (342.9K, reduced: 444B)
 ##     # of fragments: 54
-## ##> 2025-10-30 02:13:35
+## ##> 2026-02-20 19:51:10
 ```
 
 If genotypes are split by chromosomes, `seqMerge()` in the SeqArray package can be used to combine the LD-pruned SNP sets.
@@ -220,7 +220,7 @@ assoc <- seqAssocGLMM_SPA(geno_fn, glmm, mac=10, parallel=2)
 
 ```
 ## SAIGE association analysis:
-## 2025-10-30 02:13:35
+## 2026-02-20 19:51:10
 ##     open '1KG_phase1_release_v3_chr22.gds'
 ##     trait type: binary
 ##     # of samples: 1,092
@@ -242,7 +242,7 @@ assoc <- seqAssocGLMM_SPA(geno_fn, glmm, mac=10, parallel=2)
 ## P-value:
 ##      [0,5e-10]  (5e-10,5e-08]  (5e-08,5e-06] (5e-06,0.0005]     (0.0005,1]
 ##              0              0              0              3           9368
-## 2025-10-30 02:13:36
+## 2026-02-20 19:51:11
 ## Done.
 ```
 
@@ -292,7 +292,7 @@ seqAssocGLMM_SPA(geno_fn, glmm, mac=10, parallel=2, res.savefn="assoc.gds")
 
 ```
 ## SAIGE association analysis:
-## 2025-10-30 02:13:36
+## 2026-02-20 19:51:11
 ##     open '1KG_phase1_release_v3_chr22.gds'
 ##     trait type: binary
 ##     # of samples: 1,092
@@ -310,12 +310,12 @@ seqAssocGLMM_SPA(geno_fn, glmm, mac=10, parallel=2, res.savefn="assoc.gds")
 ```
 ##     # of processes: 2
 ## Save to 'assoc.gds' ...
-## [..................................................]  0%, ETC: --- (1/6)    [==================================================] 100%, used 0s (1/6)    [..................................................]  0%, ETC: --- (3/6)    [==================================================] 100%, used 0s (2/6)    [==================================================] 100%, used 0s (3/6)    [..................................................]  0%, ETC: --- (5/6)    [==================================================] 100%, used 0s (4/6)    [==================================================] 100%, used 0s (5/6)    [==================================================] 100%, used 0s (6/6)    [==================================================] 100%, complete, 0s
+## [..................................................]  0%, ETC: --- (1/6)    [==================================================] 100%, used 0s (1/6)    [==================================================] 100%, used 0s (2/6)    [..................................................]  0%, ETC: --- (3/6)    [==================================================] 100%, used 0s (3/6)    [..................................................]  0%, ETC: --- (5/6)    [==================================================] 100%, used 0s (4/6)    [==================================================] 100%, used 0s (5/6)    [==================================================] 100%, used 0s (6/6)    [==================================================] 100%, complete, 0s
 ## # of variants after filtering by MAF, MAC and missing thresholds: 9,371
 ## P-value:
 ##      [0,5e-10]  (5e-10,5e-08]  (5e-08,5e-06] (5e-06,0.0005]     (0.0005,1]
 ##              0              0              0              3           9368
-## 2025-10-30 02:13:37
+## 2026-02-20 19:51:12
 ## Done.
 ```
 
@@ -327,7 +327,7 @@ Open the output GDS file using the functions in the [gdsfmt](http://www.biocondu
 ```
 
 ```
-## File: /tmp/RtmpMzwHv7/Rbuild2c05ae745b67b3/SAIGEgds/vignettes/assoc.gds (506.4K)
+## File: /tmp/RtmpYcvC7A/Rbuild59d128207897/SAIGEgds/vignettes/assoc.gds (506.4K)
 ## +    [  ] *
 ## |--+ sample.id   { Str8 1092 ZIP(26.0%), 2.2K }
 ## |--+ id   { Int32 9371 ZIP(35.1%), 12.8K }
@@ -424,7 +424,7 @@ qqunif(assoc$pval)
 ## ℹ See also `vignette("ggplot2-in-packages")` for more information.
 ## ℹ The deprecated feature was likely used in the ggmanh package.
 ##   Please report the issue to the authors.
-## This warning is displayed once every 8 hours.
+## This warning is displayed once per session.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ```
 
@@ -439,7 +439,7 @@ sessionInfo()
 ```
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -460,24 +460,24 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-## [1] ggmanh_1.14.0    ggplot2_4.0.0    SNPRelate_1.44.0 SAIGEgds_2.10.0  Rcpp_1.1.0       SeqArray_1.50.0
+## [1] ggmanh_1.14.0    ggplot2_4.0.2    SNPRelate_1.44.0 SAIGEgds_2.10.1  Rcpp_1.1.1       SeqArray_1.50.1
 ## [7] gdsfmt_1.46.0
 ##
 ## loaded via a namespace (and not attached):
-##  [1] tidyr_1.3.1           sass_0.4.10           generics_0.1.4        lattice_0.22-7
-##  [5] digest_0.6.37         magrittr_2.0.4        evaluate_1.0.5        grid_4.5.1
+##  [1] tidyr_1.3.2           sass_0.4.10           generics_0.1.4        lattice_0.22-9
+##  [5] digest_0.6.39         magrittr_2.0.4        evaluate_1.0.5        grid_4.5.2
 ##  [9] RColorBrewer_1.1-3    CompQuadForm_1.4.4    fastmap_1.2.0         jsonlite_2.0.0
-## [13] Matrix_1.7-4          purrr_1.1.0           scales_1.4.0          RhpcBLASctl_0.23-42
-## [17] Biostrings_2.78.0     jquerylib_0.1.4       cli_3.6.5             rlang_1.1.6
+## [13] Matrix_1.7-4          purrr_1.2.1           scales_1.4.0          RhpcBLASctl_0.23-42
+## [17] Biostrings_2.78.0     jquerylib_0.1.4       cli_3.6.5             rlang_1.1.7
 ## [21] crayon_1.5.3          XVector_0.50.0        withr_3.0.2           cachem_1.1.0
-## [25] yaml_2.3.10           tools_4.5.1           parallel_4.5.1        dplyr_1.1.4
-## [29] BiocGenerics_0.56.0   vctrs_0.6.5           R6_2.6.1              stats4_4.5.1
-## [33] lifecycle_1.0.4       Seqinfo_1.0.0         S4Vectors_0.48.0      IRanges_2.44.0
-## [37] pkgconfig_2.0.3       RcppParallel_5.1.11-1 bslib_0.9.0           pillar_1.11.1
-## [41] gtable_0.3.6          glue_1.8.0            xfun_0.53             tibble_3.3.0
-## [45] GenomicRanges_1.62.0  tidyselect_1.2.1      knitr_1.50            dichromat_2.0-0.1
-## [49] farver_2.1.2          htmltools_0.5.8.1     labeling_0.4.3        rmarkdown_2.30
-## [53] compiler_4.5.1        S7_0.2.0
+## [25] yaml_2.3.12           otel_0.2.0            tools_4.5.2           parallel_4.5.2
+## [29] dplyr_1.2.0           BiocGenerics_0.56.0   vctrs_0.7.1           R6_2.6.1
+## [33] stats4_4.5.2          lifecycle_1.0.5       Seqinfo_1.0.0         S4Vectors_0.48.0
+## [37] IRanges_2.44.0        pkgconfig_2.0.3       RcppParallel_5.1.11-1 bslib_0.10.0
+## [41] pillar_1.11.1         gtable_0.3.6          glue_1.8.0            xfun_0.56
+## [45] tibble_3.3.1          GenomicRanges_1.62.1  tidyselect_1.2.1      knitr_1.51
+## [49] dichromat_2.0-0.1     farver_2.1.2          htmltools_0.5.9       labeling_0.4.3
+## [53] rmarkdown_2.30        compiler_4.5.2        S7_0.2.1
 ```
 
 .

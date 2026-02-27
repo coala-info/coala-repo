@@ -13,8 +13,4 @@ The package also includes functions for simulating data with these patterns from
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kdkorthauer/scDD
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scdd/overview
-- **Total Downloads**: 25.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

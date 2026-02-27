@@ -154,9 +154,9 @@ with a given number of outliers using the tableCopa function.
 
 > tableCopa(rslt)
 
-9
-
 8
+
+9
 
 6
 24 130 254 894

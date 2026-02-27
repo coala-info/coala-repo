@@ -1,6 +1,6 @@
 Package ‘yeastCC’
 
-February 17, 2026
+February 26, 2026
 
 Version 1.50.0
 
@@ -34,7 +34,7 @@ git_last_commit_date 2025-10-29
 
 Repository Bioconductor 3.22
 
-Date/Publication 2026-02-17
+Date/Publication 2026-02-26
 
 Contents
 

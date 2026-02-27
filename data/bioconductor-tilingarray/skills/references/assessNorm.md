@@ -442,11 +442,11 @@ return(c("S/N"=dmu/sig, "S"=dmu, "N"=sig))
 
 > sn = sapply(dat[2:6], withinAndBetween, dohist=TRUE)
 
-b
+c
 
 d
 
-c
+b
 
 f
 S/N 3.22 3.473 4.13 4.653 4.40

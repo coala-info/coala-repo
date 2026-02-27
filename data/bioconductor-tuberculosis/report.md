@@ -13,8 +13,4 @@ The package has more than 10,000 samples from both microarray and sequencing stu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/schifferl/tuberculosis
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tuberculosis/overview
-- **Total Downloads**: 7.2K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

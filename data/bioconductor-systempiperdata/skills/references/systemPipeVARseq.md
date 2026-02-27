@@ -7,7 +7,7 @@ Code
 
 Author: First Last Name
 
-#### Last update: 22 January, 2026
+#### Last update: 24 February, 2026
 
 #### Package
 
@@ -1369,7 +1369,7 @@ sessionInfo()
 ## [6] datasets  methods   base
 ##
 ## other attached packages:
-##  [1] magrittr_2.0.4              systemPipeRdata_2.14.4
+##  [1] magrittr_2.0.4              systemPipeRdata_2.14.5
 ##  [3] systemPipeR_2.16.3          ShortRead_1.68.0
 ##  [5] GenomicAlignments_1.46.0    SummarizedExperiment_1.40.0
 ##  [7] Biobase_2.70.0              MatrixGenerics_1.22.0
@@ -1382,11 +1382,11 @@ sessionInfo()
 ##
 ## loaded via a namespace (and not attached):
 ##  [1] gtable_0.3.6        xfun_0.56
-##  [3] bslib_0.9.0         hwriter_1.3.2.1
-##  [5] ggplot2_4.0.1       remotes_2.5.0
+##  [3] bslib_0.10.0        hwriter_1.3.2.1
+##  [5] ggplot2_4.0.2       remotes_2.5.0
 ##  [7] htmlwidgets_1.6.4   latticeExtra_0.6-31
-##  [9] lattice_0.22-7      crosstalk_1.2.2
-## [11] vctrs_0.7.0         tools_4.5.2
+##  [9] lattice_0.22-9      crosstalk_1.2.2
+## [11] vctrs_0.7.1         tools_4.5.2
 ## [13] bitops_1.0-9        parallel_4.5.2
 ## [15] tibble_3.3.1        pkgconfig_2.0.3
 ## [17] Matrix_1.7-4        RColorBrewer_1.1-3
@@ -1401,7 +1401,7 @@ sessionInfo()
 ## [35] DelayedArray_0.36.0 cachem_1.1.0
 ## [37] abind_1.4-8         tidyselect_1.2.1
 ## [39] digest_0.6.39       stringi_1.8.7
-## [41] dplyr_1.1.4         bookdown_0.46
+## [41] dplyr_1.2.0         bookdown_0.46
 ## [43] fastmap_1.2.0       grid_4.5.2
 ## [45] cli_3.6.5           SparseArray_1.10.8
 ## [47] S4Arrays_1.10.1     dichromat_2.0-0.1
@@ -1410,7 +1410,7 @@ sessionInfo()
 ## [53] interp_1.1-6        otel_0.2.0
 ## [55] png_0.1-8           kableExtra_1.4.0
 ## [57] evaluate_1.0.5      knitr_1.51
-## [59] viridisLite_0.4.2   rlang_1.1.7
+## [59] viridisLite_0.4.3   rlang_1.1.7
 ## [61] Rcpp_1.1.1          glue_1.8.0
 ## [63] xml2_1.5.2          BiocManager_1.30.27
 ## [65] formatR_1.14        svglite_2.2.2

@@ -11,10 +11,6 @@ the package provides different sets of mutational signatures, including the COSM
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-yapsa/overview
-- **Total Downloads**: 35.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

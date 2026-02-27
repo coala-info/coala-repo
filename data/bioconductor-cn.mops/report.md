@@ -11,10 +11,6 @@ The package supplies functions to convert BAM files into read count matrices or 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cn.mops/overview
-- **Total Downloads**: 75.9K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

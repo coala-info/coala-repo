@@ -417,12 +417,12 @@ N
 
 792 884
 
-G
-56
-
 Y
 62
 
+G
+56
+
 C
 0
 
@@ -435,14 +435,14 @@ C
 0
 
 N
-
-N
-
-N
-
-C
 
 S
+
+N
+
+N
+
+C
 
 S
 116
@@ -502,17 +502,17 @@ A
 #> G 0.02188546 0.02119039 0.02119039 0.02119039 1.64861232 0.03430887
 #> T 0.78058151 0.02119039 1.64861232 0.02119039 0.02119039 0.03430887
 
-C
-
 T
-
-T
-
-G
 
 G
 
 A
+
+C
+
+G
+
+T
 
 5
 
@@ -685,11 +685,11 @@ W
 A
 1.99
 
-T
-
-T
-
 A
+
+T
+
+T
 
 You can either change the pseudocount slot manually beforehand, or pass one to convert_type().
 convert_type(examplemotif, "PWM", pseudocount = 1)
@@ -727,17 +727,17 @@ PWM
 1
 TATAWAW
 
-W
-0.99
-
 A
 1.99
 
+W
+0.99
+
+T
+
 T
 
 A
-
-T
 
 7
 
@@ -831,15 +831,15 @@ W
 
 T
 
-A
-
-A
-
-A
-
 W
 
+A
+
+A
+
 T
+
+A
 
 examplemotif["bkg"] <- c(A = 0.4, C = 0.1, G = 0.1, T = 0.4)
 convert_type(examplemotif, "ICM", relative_entropy = TRUE)
@@ -889,9 +889,9 @@ W
 #> G 0.00 0.00 0.00 0.00 0.00 0.00 0.00
 #> T 1.32 0.00 1.32 0.00 0.16 0.00 0.16
 
-A
-
 W
+
+A
 
 4.2 Merging motifs
 
@@ -1105,21 +1105,21 @@ A U
 #> G 0.01 0.00 0.00 0.66 0.01 0.38 0.93 0.32 0.0 0
 #> U 0.99 0.18 0.96 0.10 0.49 0.21 0.00 0.58 0.1 1
 
-R
-
 G
 
+R
+
 U
-
-K
-
-C
 
 Y
 
-U
+C
+
+K
 
 G
+
+U
 
 motif
 DNA
@@ -1154,19 +1154,19 @@ A T
 #> G 0.01 0.00 0.00 0.66 0.01 0.38 0.93 0.32 0.0 0
 #> T 0.99 0.18 0.96 0.10 0.49 0.21 0.00 0.58 0.1 1
 
+Y
+
 T
 
-K
+C
 
 G
 
 R
 
-C
-
-Y
-
 T
+
+K
 
 G
 
@@ -1380,19 +1380,19 @@ U
 #> G 0.1 0.1 0.1 0.1 0.7 0.7 0.1 0.1
 #> U 0.1 0.1 0.1 0.1 0.1 0.1 0.7 0.7
 
+A
+
+A
+
 C
 
-A
+C
 
-A
+G
+
+G
 
 U
-
-C
-
-G
-
-G
 
 As a brief aside: if you have a motif formatted simply as a matrix, you can still use it with the universalmotif
 package functions natively without creating a motif with create_motif(), as convert_motifs() also has
@@ -1450,11 +1450,11 @@ C
 
 C
 
-G
-
 N
 
 S
+
+G
 
 5.3 Generating random motifs
 
@@ -1499,15 +1499,9 @@ R
 #> G 0.25 0.02 0.09 0.67 0.00 0.05 0.00 0.00 0.00 0.48
 #> T 0.00 0.02 0.43 0.02 0.18 0.93 0.80 0.00 0.35 0.02
 
+A
+
 W
-
-T
-
-A
-
-R
-
-A
 
 G
 
@@ -1515,7 +1509,13 @@ W
 
 T
 
+T
+
 A
+
+A
+
+R
 
 You can change the probabilities used to generate the values within the motif matrix:
 
@@ -1554,19 +1554,19 @@ S
 
 C
 
-G
-
-C
-
-Y
-
 C
 
 G
+
+C
 
 Y
 
 M
+
+G
+
+Y
 
 C
 
@@ -2374,13 +2374,13 @@ A
 #> G 0.02 0.01 0.01 0.01 0.97 0.02
 #> T 0.80 0.01 0.97 0.01 0.01 0.02
 
-G
+C
 
-T
+G
 
 A
 
-C
+T
 
 T
 
@@ -2426,9 +2426,9 @@ TCTAGA
 
 25
 
-T
+C
 
-C
+T
 
 A
 
@@ -2814,13 +2814,13 @@ Y
 #> [3,] 0.03 0.02 0.19 0.84 0.00 0.04 0.08 0.00 0.05 0.69
 #> [4,] 0.55 0.00 0.00 0.03 0.96 0.90 0.13 0.04 0.10 0.02
 
-A
-
-G
-
 T
 
 C
+
+G
+
+A
 
 A
 

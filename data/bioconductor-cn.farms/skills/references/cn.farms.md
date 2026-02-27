@@ -334,11 +334,11 @@ Annotation: pd.genomewidesnp.6
 
 > assayData(slData)$intensity[1:6, 1:5] ## intensity values
 
+[,3]
+
 [,2]
 
 [,1]
-
-[,3]
 
 [,4]
 
@@ -493,9 +493,9 @@ Summarization done
 
 3 Getting Started: cn.FARMS
 
-[,3]
-
 [,2]
+
+[,3]
 
 [,4]
 
@@ -511,9 +511,9 @@ Summarization done
 
 > assayData(mlData)$L_z[1:6, 1:5]
 
-[,2]
-
 [,1]
+
+[,2]
 
 [,3]
 

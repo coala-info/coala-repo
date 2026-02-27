@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/snaketron/scBubbletree
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scbubbletree/overview
-- **Total Downloads**: 4.2K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

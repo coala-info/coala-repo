@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/vjcitn/Rcollectl
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcollectl/overview
-- **Total Downloads**: 2.5K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

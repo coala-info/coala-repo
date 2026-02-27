@@ -11,10 +11,6 @@ The package contains BioGRID interactions for arabidopsis(thale cress), c.elegan
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-simpintlists/overview
-- **Total Downloads**: 37.0K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

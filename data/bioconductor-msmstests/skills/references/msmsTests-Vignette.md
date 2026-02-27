@@ -132,11 +132,11 @@ Y500U200_002 U200
 U100 U200 U400 U600
 6
 
+4
+
 3
 
 6
-
-4
 
 Although the mix is equimolar the signal strength of each protein is markedly different,
 allowing to cover the full range of SpC values, what makes it specially worth in this sort
@@ -214,9 +214,9 @@ treat
 U100 U200 U400 U600
 6
 
-6
-
 0
+
+6
 
 0
 
@@ -517,9 +517,9 @@ p.value
 
 58
 
-54
-
 47
+
+54
 
 44
 
@@ -1003,6 +1003,20 @@ Tot
 0
 0
 0
+10
+6
+1
+17
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
 7
 4
 1
@@ -1022,34 +1036,6 @@ Tot
 8
 81
 
-2
-0
-0
-0
-0
-1
-0
-0
-0
-11
-7
-1
-22
-
-0
-0
-0
-0
-0
-0
-0
-0
-0
-10
-6
-1
-17
-
 6
 0
 2
@@ -1063,6 +1049,20 @@ Tot
 11
 4
 54
+
+2
+0
+0
+0
+0
+1
+0
+0
+0
+11
+7
+1
+22
 
 > ### Filtering by minimal signal
 > fl <- ql.tbl$U600 > 2
@@ -1154,20 +1154,6 @@ Tot
 0
 0
 0
-1
-3
-10
-0
-0
-0
-16
-11
-1
-42
-
-0
-0
-0
 0
 0
 0
@@ -1178,6 +1164,20 @@ Tot
 4
 1
 12
+
+0
+0
+0
+1
+3
+10
+0
+0
+0
+16
+11
+1
+42
 
 1
 

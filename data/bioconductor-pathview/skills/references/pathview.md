@@ -1034,9 +1034,9 @@ cally (Figure 9). We only need to specify the external ID types using gene.idtyp
 that automatic mapping is limited to certain ID types. For details check: gene.idtype.list and data(rn.list);
 names(rn.list).
 
-nmol = 10000)
-
 nmol = 50000)
+
+nmol = 10000)
 
 > cpd.cas <- sim.mol.data(mol.type = "cpd", id.type = cpd.simtypes[2],
 +

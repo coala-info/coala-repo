@@ -828,9 +828,9 @@ plate7
 plate8
 plate9
 
--0.0057500
-
 -0.0226044
+
+-0.0057500
 
 Estimate Std. Error t value Pr(>|t|)
 0.161

@@ -4,7 +4,7 @@ Markus Riester
 
 Novartis Biomedical Research
 
-#### 30 October 2025
+#### 18 February 2026
 
 #### Abstract
 
@@ -14,7 +14,7 @@ the R package and more detailed information, see the main vignette.
 
 #### Package
 
-PureCN 2.16.0
+PureCN 2.16.1
 
 # 1 Prerequisites
 
@@ -98,7 +98,7 @@ system.file("extdata", package = "PureCN")
 ```
 
 ```
-## [1] "/tmp/RtmplCurbx/Rinst2704c43abb07dd/PureCN/extdata"
+## [1] "/tmp/RtmpLg5WGV/Rinst3b0b8949758d09/PureCN/extdata"
 ```
 
 * Exit R and store this path in an environment variable, for example in

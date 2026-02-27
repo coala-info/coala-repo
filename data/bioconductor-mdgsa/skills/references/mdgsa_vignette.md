@@ -101,10 +101,10 @@ ALL BCR E2A NEG NUP p15
 0
 0
 
-1
+0
+0
 0
 1
-0
 0
 0
 
@@ -115,9 +115,9 @@ ALL BCR E2A NEG NUP p15
 1
 1
 
+1
 0
-0
-0
+1
 0
 0
 0
@@ -125,7 +125,7 @@ ALL BCR E2A NEG NUP p15
 0
 0
 0
-1
+0
 0
 0
 

@@ -281,11 +281,11 @@ FWHM_C FWHM_G
 FWHM_T int_A int_C int_G int_T
 400
 
-180
-
 326
 
 357
+
+180
 
 2
 

@@ -254,9 +254,9 @@ A look at the first few P/A calls and p-values for the first chip shows some res
 
 1053_at
 
-117_at
-
 121_at
+
+117_at
 
 Finally, we can extract lists of probeset IDs that were called Present, Marginal and
 Absent. This must be done one sample at a time; here, we extract the lists for the first

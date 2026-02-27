@@ -470,19 +470,19 @@ S_3
 -------
 seqinfo: 1 sequence from an unspecified genome; no seqlengths
 
+* |
+* |
+* |
+* |
+* |
+* |
+
 102
 118
 85
 87
 87
 87
-
-* |
-* |
-* |
-* |
-* |
-* |
 
 93
 99
@@ -677,9 +677,9 @@ S_2
 
 S_1
 
-1
-
 2
+
+1
 
 [1]
 
@@ -855,11 +855,11 @@ Analyzing: Sample.1
 GRanges object with 4 ranges and 4 metadata columns:
 ranges strand |
 
-sampleName
-
 seqnames
 
 median
+
+sampleName
 
 mean
 <Rle> | <character> <numeric> <numeric>
@@ -926,8 +926,6 @@ ranges strand |
 
 seqnames
 
-S_1
-
 <Rle> <IRanges>
 1-500
 undef
@@ -938,11 +936,13 @@ CN1
 
 * |
 
+CN1
+
 S_2
 
 CN1
 
-CN1
+S_1
 
 [1]
 
@@ -1021,10 +1021,10 @@ S_38
 CN0
 
 CN1
-S_22
+S_32
 
 CN1
-S_32
+S_22
 
 CN2
 S_27
@@ -1048,10 +1048,10 @@ CN2
 S_30
 
 CN2
-S_25
+S_35
 
 CN2
-S_35
+S_25
 
 CN2
 S_29

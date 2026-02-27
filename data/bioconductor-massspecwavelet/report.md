@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/zeehio/MassSpecWavelet
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-massspecwavelet/overview
-- **Total Downloads**: 68.7K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

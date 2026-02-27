@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/metamaden/lute
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-lute/overview
-- **Total Downloads**: 460
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -1,6 +1,6 @@
 Package ‘CTDquerier’
 
-February 12, 2026
+February 25, 2026
 
 Title Package for CTDbase data query, visualization and downstream
 
@@ -45,7 +45,7 @@ git_last_commit_date 2025-10-29
 
 Repository Bioconductor 3.22
 
-Date/Publication 2026-02-12
+Date/Publication 2026-02-25
 
 Author Carles Hernandez-Ferrer [aut],
 

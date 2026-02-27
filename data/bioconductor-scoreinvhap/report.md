@@ -11,10 +11,6 @@ The package include this data for 21 inversions.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scoreinvhap/overview
-- **Total Downloads**: 26.2K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

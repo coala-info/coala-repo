@@ -11,10 +11,6 @@ The package offer different classifiers based on comparisons of pair of features
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-switchbox/overview
-- **Total Downloads**: 50.7K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

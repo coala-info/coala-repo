@@ -2,7 +2,7 @@
 
 Clarice S Groeneveld, Vinícius S Chagas, Gordon Robertson, Kerstin B Meyer, Mauro AA Castro.
 
-#### 30 October 2025
+#### 25 February 2026
 
 #### Abstract
 
@@ -10,7 +10,7 @@ This package provides classes and methods to perform survival analysis using tra
 
 #### Package
 
-RTNsurvival 1.34.0
+RTNsurvival 1.34.1
 
 # Contents
 
@@ -132,7 +132,7 @@ pheatmap(t(enrichmentScores$dif),
 # 5 Session information
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -155,56 +155,56 @@ pheatmap(t(enrichmentScores$dif),
 ## [1] stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-## [1] RTNsurvival_1.34.0 RTNduals_1.34.0    RTN_2.34.0         BiocStyle_2.38.0
+## [1] RTNsurvival_1.34.1 RTNduals_1.34.1    RTN_2.34.1         BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.2.1            viridisLite_0.4.2
-##  [3] dplyr_1.1.4                 farver_2.1.2
-##  [5] mixtools_2.0.0.1            S7_0.2.0
+##  [1] tidyselect_1.2.1            viridisLite_0.4.3
+##  [3] dplyr_1.2.0                 farver_2.1.2
+##  [5] mixtools_2.0.0.1            S7_0.2.1
 ##  [7] fastmap_1.2.0               lazyeval_0.2.2
-##  [9] egg_0.4.5                   digest_0.6.37
-## [11] lifecycle_1.0.4             survival_3.8-3
+##  [9] egg_0.4.5                   digest_0.6.39
+## [11] lifecycle_1.0.5             survival_3.8-6
 ## [13] statmod_1.5.1               magrittr_2.0.4
-## [15] kernlab_0.9-33              compiler_4.5.1
-## [17] rlang_1.1.6                 sass_0.4.10
-## [19] tools_4.5.1                 igraph_2.2.1
-## [21] yaml_2.3.10                 data.table_1.17.8
-## [23] knitr_1.50                  S4Arrays_1.10.0
+## [15] kernlab_0.9-33              compiler_4.5.2
+## [17] rlang_1.1.7                 sass_0.4.10
+## [19] tools_4.5.2                 igraph_2.2.2
+## [21] yaml_2.3.12                 data.table_1.18.2.1
+## [23] knitr_1.51                  S4Arrays_1.10.1
 ## [25] htmlwidgets_1.6.4           DelayedArray_0.36.0
 ## [27] RColorBrewer_1.1-3          abind_1.4-8
-## [29] KernSmooth_2.23-26          purrr_1.1.0
+## [29] KernSmooth_2.23-26          purrr_1.2.1
 ## [31] viper_1.44.0                BiocGenerics_0.56.0
-## [33] grid_4.5.1                  stats4_4.5.1
-## [35] dunn.test_1.3.6             e1071_1.7-16
-## [37] ggplot2_4.0.0               scales_1.4.0
-## [39] MASS_7.3-65                 tinytex_0.57
+## [33] grid_4.5.2                  stats4_4.5.2
+## [35] dunn.test_1.3.7             e1071_1.7-17
+## [37] ggplot2_4.0.2               scales_1.4.0
+## [39] MASS_7.3-65                 tinytex_0.58
 ## [41] dichromat_2.0-0.1           SummarizedExperiment_1.40.0
 ## [43] cli_3.6.5                   rmarkdown_2.30
-## [45] generics_0.1.4              httr_1.4.7
-## [47] cachem_1.1.0                proxy_0.4-27
-## [49] splines_4.5.1               parallel_4.5.1
-## [51] BiocManager_1.30.26         XVector_0.50.0
-## [53] matrixStats_1.5.0           vctrs_0.6.5
-## [55] Matrix_1.7-4                jsonlite_2.0.0
-## [57] carData_3.0-5               pwr_1.3-0
-## [59] bookdown_0.45               car_3.1-3
-## [61] IRanges_2.44.0              S4Vectors_0.48.0
-## [63] minet_3.68.0                Formula_1.2-5
-## [65] magick_2.9.0                limma_3.66.0
-## [67] plotly_4.11.0               tidyr_1.3.1
-## [69] jquerylib_0.1.4             snow_0.4-4
-## [71] glue_1.8.0                  gtable_0.3.6
-## [73] GenomicRanges_1.62.0        tibble_3.3.0
-## [75] pillar_1.11.1               htmltools_0.5.8.1
-## [77] Seqinfo_1.0.0               R6_2.6.1
-## [79] evaluate_1.0.5              lattice_0.22-7
-## [81] Biobase_2.70.0              segmented_2.1-4
-## [83] pheatmap_1.0.13             RedeR_3.6.0
-## [85] bslib_0.9.0                 class_7.3-23
-## [87] Rcpp_1.1.0                  gridExtra_2.3
-## [89] SparseArray_1.10.0          nlme_3.1-168
-## [91] xfun_0.53                   MatrixGenerics_1.22.0
-## [93] pkgconfig_2.0.3
+## [45] generics_0.1.4              otel_0.2.0
+## [47] httr_1.4.8                  cachem_1.1.0
+## [49] proxy_0.4-29                splines_4.5.2
+## [51] parallel_4.5.2              BiocManager_1.30.27
+## [53] XVector_0.50.0              matrixStats_1.5.0
+## [55] vctrs_0.7.1                 Matrix_1.7-4
+## [57] jsonlite_2.0.0              carData_3.0-6
+## [59] pwr_1.3-0                   bookdown_0.46
+## [61] car_3.1-5                   IRanges_2.44.0
+## [63] S4Vectors_0.48.0            minet_3.68.0
+## [65] Formula_1.2-5               magick_2.9.0
+## [67] limma_3.66.0                plotly_4.12.0
+## [69] tidyr_1.3.2                 jquerylib_0.1.4
+## [71] snow_0.4-4                  glue_1.8.0
+## [73] gtable_0.3.6                GenomicRanges_1.62.1
+## [75] tibble_3.3.1                pillar_1.11.1
+## [77] htmltools_0.5.9             Seqinfo_1.0.0
+## [79] R6_2.6.1                    evaluate_1.0.5
+## [81] lattice_0.22-9              Biobase_2.70.0
+## [83] segmented_2.2-1             pheatmap_1.0.13
+## [85] RedeR_3.6.2                 bslib_0.10.0
+## [87] class_7.3-23                Rcpp_1.1.1
+## [89] gridExtra_2.3               SparseArray_1.10.8
+## [91] nlme_3.1-168                xfun_0.56
+## [93] MatrixGenerics_1.22.0       pkgconfig_2.0.3
 ```
 
 # References

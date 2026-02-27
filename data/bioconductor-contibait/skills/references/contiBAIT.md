@@ -640,11 +640,11 @@ chr3_4chr3_15chr3_7chr3_5chr3_19chr3_11chr3_14chr3_6chr3_17chr3_10chr3_1chr3_18c
 LG1.1 LG1.10 LG1.11 LG1.12 LG1.2 LG1.3
 3
 
-1
-
-1
-
 2
+
+1
+
+1
 
 1
 
@@ -654,15 +654,15 @@ LG1.1 LG1.10 LG1.11 LG1.12 LG1.2 LG1.3
 LG1.4 LG1.5 LG1.6 LG1.7 LG1.8 LG1.9
 1
 
-3
-
-1
-
 1
 
 1
 
 2
+
+3
+
+1
 
 If the assembly is mostly complete and you wish to compare the actual
 location of the fragments in the assembly you’re working with against the output
@@ -691,27 +691,27 @@ A matrix of 5 LGs split into 14 sub-groups from 76 ordered fragments.
 LG1.1 LG1.10 LG1.11 LG1.12 LG1.2 LG1.3
 3
 
+1
+
+1
+
+1
+
 2
 
-1
-
-1
-
 2
-
-1
 
 ...
 LG4.5 LG4.6 LG4.7 LG4.8 LG4.9 LG5.1
 1
 
-2
-
-1
-
 1
 
 3
+
+2
+
+1
 
 1
 

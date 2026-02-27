@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Jing Wang &#x3c;&#x6a;&#x69;&#x6e;&#x67;&#x77;&#x61;&#x6e;&#x67;&#x2e;&#x75;&#x65;&#x73;&#x74;&#x63;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
 - **Maintainer**: Jing Wang &#x3c;&#x6a;&#x69;&#x6e;&#x67;&#x77;&#x61;&#x6e;&#x67;&#x2e;&#x75;&#x65;&#x73;&#x74;&#x63;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-multiomicsviz/overview
-- **Total Downloads**: 39.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

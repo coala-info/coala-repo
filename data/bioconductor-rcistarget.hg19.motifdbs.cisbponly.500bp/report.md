@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcistarget.hg19.motifdbs.cisbponly.500bp/overview
-- **Total Downloads**: 25.3K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

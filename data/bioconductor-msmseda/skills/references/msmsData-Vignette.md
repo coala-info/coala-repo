@@ -385,9 +385,9 @@ Standard deviation
 Proportion of Variance
 Cumulative Proportion
 
-PC2
-
 PC1
+
+PC2
 
 PC4
 163.82011 46.11827 32.26952 22.75380

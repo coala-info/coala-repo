@@ -1278,9 +1278,9 @@ data.frame.
 
 | ((Anno$dsRNA_1 == PIscreen[i,2]) & (Anno$dsRNA_2 == PIscreen[i,1])))
 
-singleRNAi2 <- which(((Anno$dsRNA_1 == "Fluc") & (Anno$dsRNA_2 == PIscreen[i,2]))
-
 singleRNAi1 <- which(((Anno$dsRNA_1 == PIscreen[i,1]) & (Anno$dsRNA_2 == "Fluc"))
+
+singleRNAi2 <- which(((Anno$dsRNA_1 == "Fluc") & (Anno$dsRNA_2 == PIscreen[i,2]))
 
 N <- which((Anno$dsRNA_1 == "Fluc") & (Anno$dsRNA_2 == "Fluc"))
 doubleRNAi <- which(((Anno$dsRNA_1 == PIscreen[i,1]) & (Anno$dsRNA_2 == PIscreen[i,2]))

@@ -11,10 +11,6 @@ the package implements the identify-then-annotate methodology that builds on the
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-srnadiff/overview
-- **Total Downloads**: 35.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

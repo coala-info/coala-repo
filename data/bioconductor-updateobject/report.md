@@ -13,8 +13,4 @@ The package is primarily useful to package maintainers who want to update the se
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/updateObject
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-updateobject/overview
-- **Total Downloads**: 5.2K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

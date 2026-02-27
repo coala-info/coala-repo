@@ -13,8 +13,4 @@ The package provides a framework for generic quality control of data. It permits
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lgatto/qcmetrics
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-qcmetrics/overview
-- **Total Downloads**: 37.3K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

@@ -11,10 +11,6 @@ The package applies a functional version of principal component analysis (FPCA) 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-narrowpeaks/overview
-- **Total Downloads**: 16.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

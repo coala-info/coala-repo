@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fls-bioinformatics-core/Motif2Site
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-motif2site/overview
-- **Total Downloads**: 4.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Alexandre Kuhn &#x3c;&#x61;&#x6c;&#x65;&#x78;&#x61;&#x6e;&#x64;&#x72;&#x65;&#x2e;&#x6d;&#x2e;&#x6b;&#x75;&#x68;&#x6e;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
 - **Maintainer**: Alexandre Kuhn &#x3c;&#x61;&#x6c;&#x65;&#x78;&#x61;&#x6e;&#x64;&#x72;&#x65;&#x2e;&#x6d;&#x2e;&#x6b;&#x75;&#x68;&#x6e;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-psea/overview
-- **Total Downloads**: 41.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

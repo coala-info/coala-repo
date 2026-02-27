@@ -467,13 +467,13 @@ AccuracySlope AccuracySD PrecisionSD PrecisionQuantile SNR POT
 0.37
 0.19
 
-0.10
-0.09
-0.06
-
 2.00
 8.78
 9.50
+
+0.10
+0.09
+0.06
 
 0.31
 0.35

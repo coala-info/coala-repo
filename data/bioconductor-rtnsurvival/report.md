@@ -3,7 +3,7 @@
 ## RTNsurvival
 
 ### Package Description
-the package is available on all platforms; click for details.
+The package supports both Cox proportional hazards models and Kaplan–Meier analyses, allowing users to identify regulons associated with prognosis and to stratify cohorts based on regulon activity.
 
 ### Metadata
 - **Homepage**: https://bioconductor.org/packages/release/bioc/html/RTNsurvival.html
@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rtnsurvival/overview
-- **Total Downloads**: 27.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

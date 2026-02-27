@@ -692,9 +692,9 @@ The classification task is started by calling classifyNewSamples.
 
 "V7" "V8"
 
-"V9"
-
 "V6"
+
+"V9"
 
 > poorPrognosis <-names(res)[res=="poorPronosis"]
 > poorPrognosis
@@ -724,9 +724,9 @@ The classification task is started by calling classifyNewSamples.
 
 "V7" "V8"
 
-"V6"
-
 "V9"
+
+"V6"
 
 > poorPrognosis <-names(res)[res=="poorPronosis"]
 

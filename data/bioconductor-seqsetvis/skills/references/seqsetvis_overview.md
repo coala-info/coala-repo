@@ -2,7 +2,7 @@
 
 Joseph R Boyd
 
-#### 30 October 2025
+#### 23 February 2026
 
 # 1 Synopsis
 
@@ -508,17 +508,17 @@ bw_clust
 ##   [4200]     chrX 138128577-138128626      * |      100   1.99878       325
 ##                 sample    facet_label cluster_id
 ##            <character>    <character>   <factor>
-##      [1]   MCF10A_CTCF   MCF10A\nCTCF          3
-##      [2]   MCF10A_CTCF   MCF10A\nCTCF          3
-##      [3]   MCF10A_CTCF   MCF10A\nCTCF          3
-##      [4]   MCF10A_CTCF   MCF10A\nCTCF          3
-##      [5]   MCF10A_CTCF   MCF10A\nCTCF          3
+##      [1]   MCF10A_CTCF   MCF10A\nCTCF          2
+##      [2]   MCF10A_CTCF   MCF10A\nCTCF          2
+##      [3]   MCF10A_CTCF   MCF10A\nCTCF          2
+##      [4]   MCF10A_CTCF   MCF10A\nCTCF          2
+##      [5]   MCF10A_CTCF   MCF10A\nCTCF          2
 ##      ...           ...            ...        ...
-##   [4196] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [4197] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [4198] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [4199] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [4200] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [4196] MCF10CA1_CTCF MCF10CA1\nCTCF          2
+##   [4197] MCF10CA1_CTCF MCF10CA1\nCTCF          2
+##   [4198] MCF10CA1_CTCF MCF10CA1\nCTCF          2
+##   [4199] MCF10CA1_CTCF MCF10CA1\nCTCF          2
+##   [4200] MCF10CA1_CTCF MCF10CA1\nCTCF          2
 ##   -------
 ##   seqinfo: 21 sequences from an unspecified genome; no seqlengths
 ```
@@ -527,20 +527,20 @@ Cluster selection:
 
 ```
 subset(bw_clust, cluster_id == 3)
-## GRanges object with 2478 ranges and 6 metadata columns:
-##          seqnames              ranges strand |       id         y         x
-##             <Rle>           <IRanges>  <Rle> | <factor> <numeric> <numeric>
-##      [1]     chr1   17507759-17507808      * |        1   1.10252      -325
-##      [2]     chr1   17507809-17507858      * |        1   1.16055      -275
-##      [3]     chr1   17507859-17507908      * |        1   2.12024      -225
-##      [4]     chr1   17507909-17507958      * |        1   3.03194      -175
-##      [5]     chr1   17507959-17508008      * |        1   9.86468      -125
-##      ...      ...                 ...    ... .      ...       ...       ...
-##   [2474]     chrX 138128377-138128426      * |      100   3.79769       125
-##   [2475]     chrX 138128427-138128476      * |      100   1.79891       175
-##   [2476]     chrX 138128477-138128526      * |      100   1.59903       225
-##   [2477]     chrX 138128527-138128576      * |      100   2.19866       275
-##   [2478]     chrX 138128577-138128626      * |      100   1.99878       325
+## GRanges object with 1050 ranges and 6 metadata columns:
+##          seqnames            ranges strand |       id         y         x
+##             <Rle>         <IRanges>  <Rle> | <factor> <numeric> <numeric>
+##      [1]     chr1 64136989-64137038      * |        4   1.80401      -325
+##      [2]     chr1 64137039-64137088      * |        4   2.31943      -275
+##      [3]     chr1 64137089-64137138      * |        4   5.06261      -225
+##      [4]     chr1 64137139-64137188      * |        4  23.78540      -175
+##      [5]     chr1 64137189-64137238      * |        4  42.46965      -125
+##      ...      ...               ...    ... .      ...       ...       ...
+##   [1046]     chrX 22748818-22748867      * |       99   5.79648       125
+##   [1047]     chrX 22748868-22748917      * |       99   3.39793       175
+##   [1048]     chrX 22748918-22748967      * |       99   2.20247       225
+##   [1049]     chrX 22748968-22749017      * |       99   1.79891       275
+##   [1050]     chrX 22749018-22749067      * |       99   1.39915       325
 ##                 sample    facet_label cluster_id
 ##            <character>    <character>   <factor>
 ##      [1]   MCF10A_CTCF   MCF10A\nCTCF          3
@@ -549,11 +549,11 @@ subset(bw_clust, cluster_id == 3)
 ##      [4]   MCF10A_CTCF   MCF10A\nCTCF          3
 ##      [5]   MCF10A_CTCF   MCF10A\nCTCF          3
 ##      ...           ...            ...        ...
-##   [2474] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [2475] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [2476] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [2477] MCF10CA1_CTCF MCF10CA1\nCTCF          3
-##   [2478] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [1046] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [1047] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [1048] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [1049] MCF10CA1_CTCF MCF10CA1\nCTCF          3
+##   [1050] MCF10CA1_CTCF MCF10CA1\nCTCF          3
 ##   -------
 ##   seqinfo: 21 sequences from an unspecified genome; no seqlengths
 ```
@@ -940,17 +940,18 @@ olap_clust_annot = subset(olap_clust_annot, cluster_id %in% 1:2)
 olap_clust_annot <- annotatePeakInBatch(olap_clust_annot,
                                         AnnotationData=TSS.human.GRCh38)
 olap_clust_annot$feature
-##  [1] "ENSG00000236253" "ENSG00000223949" "ENSG00000122406" "ENSG00000213088"
-##  [5] "ENSG00000217327" "ENSG00000223884" "ENSG00000199687" "ENSG00000078098"
-##  [9] "ENSG00000224132" "ENSG00000231304" "ENSG00000235424" "ENSG00000201288"
-## [13] "ENSG00000272620" "ENSG00000279496" "ENSG00000274541" "ENSG00000164483"
-## [17] "ENSG00000196275" "ENSG00000135164" "ENSG00000261451" "ENSG00000165060"
-## [21] "ENSG00000236060" "ENSG00000233933" "ENSG00000267026" "ENSG00000227482"
-## [25] "ENSG00000254542" "ENSG00000255320" "ENSG00000254975" "ENSG00000137474"
-## [29] "ENSG00000201788" "ENSG00000140319" "ENSG00000104093" "ENSG00000240874"
-## [33] "ENSG00000199448" "ENSG00000264695" "ENSG00000276174" "ENSG00000267187"
-## [37] "ENSG00000176641" "ENSG00000212224" "ENSG00000101203" "ENSG00000128159"
-## [41] "ENSG00000277735"
+##  [1] "ENSG00000236253" "ENSG00000223949" "ENSG00000235804" "ENSG00000122406"
+##  [5] "ENSG00000233473" "ENSG00000213088" "ENSG00000217327" "ENSG00000223884"
+##  [9] "ENSG00000199687" "ENSG00000078098" "ENSG00000224132" "ENSG00000231304"
+## [13] "ENSG00000235424" "ENSG00000201288" "ENSG00000272620" "ENSG00000272239"
+## [17] "ENSG00000279496" "ENSG00000274541" "ENSG00000164483" "ENSG00000270638"
+## [21] "ENSG00000196275" "ENSG00000135164" "ENSG00000261451" "ENSG00000165060"
+## [25] "ENSG00000236060" "ENSG00000233933" "ENSG00000267026" "ENSG00000227482"
+## [29] "ENSG00000254957" "ENSG00000254542" "ENSG00000255320" "ENSG00000254975"
+## [33] "ENSG00000137474" "ENSG00000201788" "ENSG00000140319" "ENSG00000104093"
+## [37] "ENSG00000240874" "ENSG00000199448" "ENSG00000264695" "ENSG00000276174"
+## [41] "ENSG00000267187" "ENSG00000176641" "ENSG00000212224" "ENSG00000201021"
+## [45] "ENSG00000101203" "ENSG00000128159" "ENSG00000277735"
 ```
 
 # 9 Use case: ChromHMM inspection

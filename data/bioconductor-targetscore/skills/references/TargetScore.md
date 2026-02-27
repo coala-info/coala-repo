@@ -221,9 +221,9 @@ curve as follows.
 
 auc <- unlist(slot(performance( pred, "auc" ), "y.values"))
 
-fpr <- unlist(slot(perf, "x.values"))
-
 tpr <- unlist(slot(perf, "y.values"))
+
+fpr <- unlist(slot(perf, "x.values"))
 
 perf <- performance( pred, "tpr", "fpr" )
 

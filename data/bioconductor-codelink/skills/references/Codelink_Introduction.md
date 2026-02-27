@@ -258,9 +258,9 @@ Sample-1 Sample-2 Sample-3 Sample-4
 
 31
 31
-32
 31
-30
+31
+32
 31
 
 31
@@ -272,9 +272,9 @@ Sample-1 Sample-2 Sample-3 Sample-4
 
 31
 31
-31
-31
 32
+31
+30
 31
 
 Sample-3

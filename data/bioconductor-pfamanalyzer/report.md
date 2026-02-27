@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kvittingseerup/pfamAnalyzeR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pfamanalyzer/overview
-- **Total Downloads**: 2.2K
-- **Last updated**: 2026-02-06
-- **Stars**: N/A
 

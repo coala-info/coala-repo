@@ -13,8 +13,4 @@ the package provides multiple methods for query, prepare and download network da
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/claudiacava/SpidermiR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-spidermir/overview
-- **Total Downloads**: 35.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

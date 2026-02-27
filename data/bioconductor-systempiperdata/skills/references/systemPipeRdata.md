@@ -7,11 +7,11 @@ Code
 
 Author: Le Zhang, Daniela Cassol, and Thomas Girke
 
-#### Last update: 22 January, 2026
+#### Last update: 24 February, 2026
 
 #### Package
 
-systemPipeRdata 2.14.4
+systemPipeRdata 2.14.5
 
 # 1 Introduction
 
@@ -251,10 +251,10 @@ pathList()[1:2]
 
 ```
 ## $targets
-## [1] "/tmp/RtmpUPnORU/Rinst77f2d207ba470/systemPipeRdata/extdata/param/targets.txt"
+## [1] "/tmp/RtmprrDnoW/Rinst364b47c88908/systemPipeRdata/extdata/param/targets.txt"
 ##
 ## $targetsPE
-## [1] "/tmp/RtmpUPnORU/Rinst77f2d207ba470/systemPipeRdata/extdata/param/targetsPE.txt"
+## [1] "/tmp/RtmprrDnoW/Rinst364b47c88908/systemPipeRdata/extdata/param/targetsPE.txt"
 ```
 
 # 7 Analysis steps in selected workflows
@@ -418,7 +418,7 @@ sessionInfo()
 ## [6] datasets  methods   base
 ##
 ## other attached packages:
-##  [1] magrittr_2.0.4              systemPipeRdata_2.14.4
+##  [1] magrittr_2.0.4              systemPipeRdata_2.14.5
 ##  [3] systemPipeR_2.16.3          ShortRead_1.68.0
 ##  [5] GenomicAlignments_1.46.0    SummarizedExperiment_1.40.0
 ##  [7] Biobase_2.70.0              MatrixGenerics_1.22.0
@@ -431,10 +431,10 @@ sessionInfo()
 ##
 ## loaded via a namespace (and not attached):
 ##  [1] gtable_0.3.6        xfun_0.56
-##  [3] bslib_0.9.0         hwriter_1.3.2.1
-##  [5] ggplot2_4.0.1       remotes_2.5.0
+##  [3] bslib_0.10.0        hwriter_1.3.2.1
+##  [5] ggplot2_4.0.2       remotes_2.5.0
 ##  [7] htmlwidgets_1.6.4   latticeExtra_0.6-31
-##  [9] lattice_0.22-7      vctrs_0.7.0
+##  [9] lattice_0.22-9      vctrs_0.7.1
 ## [11] tools_4.5.2         bitops_1.0-9
 ## [13] parallel_4.5.2      tibble_3.3.1
 ## [15] pkgconfig_2.0.3     Matrix_1.7-4
@@ -449,7 +449,7 @@ sessionInfo()
 ## [33] DelayedArray_0.36.0 cachem_1.1.0
 ## [35] abind_1.4-8         tidyselect_1.2.1
 ## [37] digest_0.6.39       stringi_1.8.7
-## [39] dplyr_1.1.4         bookdown_0.46
+## [39] dplyr_1.2.0         bookdown_0.46
 ## [41] fastmap_1.2.0       grid_4.5.2
 ## [43] cli_3.6.5           SparseArray_1.10.8
 ## [45] S4Arrays_1.10.1     dichromat_2.0-0.1
@@ -458,7 +458,7 @@ sessionInfo()
 ## [51] interp_1.1-6        otel_0.2.0
 ## [53] png_0.1-8           kableExtra_1.4.0
 ## [55] evaluate_1.0.5      knitr_1.51
-## [57] viridisLite_0.4.2   rlang_1.1.7
+## [57] viridisLite_0.4.3   rlang_1.1.7
 ## [59] Rcpp_1.1.1          glue_1.8.0
 ## [61] xml2_1.5.2          BiocManager_1.30.27
 ## [63] formatR_1.14        svglite_2.2.2

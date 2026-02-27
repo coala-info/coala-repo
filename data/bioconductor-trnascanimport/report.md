@@ -13,8 +13,4 @@ The package imports the result of tRNAscan-SE as a GRanges object.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FelixErnst/tRNAscanImport
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-trnascanimport/overview
-- **Total Downloads**: 24.5K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -6,7 +6,7 @@ Vinh Tran1\*
 
 \*tran@bio.uni-frankfurt.de
 
-#### 2025-11-20
+#### 2026-02-23
 
 #### Abstract
 
@@ -15,7 +15,7 @@ phylogenetic profiles
 
 #### Package
 
-PhyloProfile 2.2.2
+PhyloProfile 2.2.3
 
 # Introduction
 
@@ -747,47 +747,47 @@ compiles:
 #> character(0)
 #>
 #> other attached packages:
-#> [1] PhyloProfile_2.2.2
+#> [1] PhyloProfile_2.2.3
 #>
 #> loaded via a namespace (and not attached):
 #>   [1] bitops_1.0-9          pbapply_1.7-4         gridExtra_2.3
-#>   [4] rlang_1.1.6           magrittr_2.0.4        otel_0.2.0
+#>   [4] rlang_1.1.7           magrittr_2.0.4        otel_0.2.0
 #>   [7] compiler_4.5.2        png_0.1-8             systemfonts_1.3.1
-#>  [10] vctrs_0.6.5           gsl_2.1-9             stringr_1.6.0
+#>  [10] vctrs_0.7.1           gsl_2.1-9             stringr_1.6.0
 #>  [13] pkgconfig_2.0.3       crayon_1.5.3          fastmap_1.2.0
 #>  [16] XVector_0.50.0        energy_1.7-12         labeling_0.4.3
 #>  [19] utf8_1.2.6            promises_1.5.0        rmarkdown_2.30
-#>  [22] grDevices_4.5.2       purrr_1.2.0           xfun_0.54
+#>  [22] grDevices_4.5.2       purrr_1.2.1           xfun_0.56
 #>  [25] Rfast_2.1.5.2         cachem_1.1.0          graphics_4.5.2
-#>  [28] jsonlite_2.0.0        shinyFiles_0.9.3      later_1.4.4
-#>  [31] parallel_4.5.2        R6_2.6.1              stringi_1.8.7
-#>  [34] bslib_0.9.0           RColorBrewer_1.1-3    reticulate_1.44.1
-#>  [37] boot_1.3-32           bsplus_0.1.5          lubridate_1.9.4
-#>  [40] jquerylib_0.1.4       scattermore_1.2       Rcpp_1.1.0
-#>  [43] Seqinfo_1.0.0         bookdown_0.45         knitr_1.50
-#>  [46] zoo_1.8-14            IRanges_2.44.0        httpuv_1.6.16
-#>  [49] Matrix_1.7-4          timechange_0.3.0      tidyselect_1.2.1
-#>  [52] dichromat_2.0-0.1     yaml_2.3.10           miniUI_0.1.2
-#>  [55] lattice_0.22-7        tibble_3.3.0          withr_3.0.2
-#>  [58] Biobase_2.70.0        shiny_1.11.1          S7_0.2.1
+#>  [28] jsonlite_2.0.0        shinyFiles_0.9.3      later_1.4.6
+#>  [31] parallel_4.5.2        R6_2.6.1              bslib_0.10.0
+#>  [34] stringi_1.8.7         RColorBrewer_1.1-3    reticulate_1.45.0
+#>  [37] boot_1.3-32           bsplus_0.1.5          lubridate_1.9.5
+#>  [40] jquerylib_0.1.4       scattermore_1.2       Rcpp_1.1.1
+#>  [43] Seqinfo_1.0.0         bookdown_0.46         knitr_1.51
+#>  [46] zoo_1.8-15            IRanges_2.44.0        httpuv_1.6.16
+#>  [49] Matrix_1.7-4          timechange_0.4.0      tidyselect_1.2.1
+#>  [52] dichromat_2.0-0.1     yaml_2.3.12           miniUI_0.1.2
+#>  [55] lattice_0.22-9        tibble_3.3.1          withr_3.0.2
+#>  [58] Biobase_2.70.0        shiny_1.13.0          S7_0.2.1
 #>  [61] askpass_1.2.1         evaluate_1.0.5        base_4.5.2
-#>  [64] tsne_0.1-3.1          RcppParallel_5.1.11-1 xml2_1.5.0
+#>  [64] tsne_0.1-3.1          RcppParallel_5.1.11-1 xml2_1.5.2
 #>  [67] Biostrings_2.78.0     pillar_1.11.1         shinycssloaders_1.1.0
 #>  [70] BiocManager_1.30.27   DT_0.34.0             stats4_4.5.2
-#>  [73] shinyjs_2.1.0         plotly_4.11.0         generics_0.1.4
-#>  [76] RCurl_1.98-1.17       S4Vectors_0.48.0      ggplot2_4.0.1
+#>  [73] shinyjs_2.1.1         plotly_4.12.0         generics_0.1.4
+#>  [76] RCurl_1.98-1.17       S4Vectors_0.48.0      ggplot2_4.0.2
 #>  [79] scales_1.4.0          BiocStyle_2.38.0      stats_4.5.2
-#>  [82] xtable_1.8-4          glue_1.8.0            lazyeval_0.2.2
-#>  [85] tools_4.5.2           datasets_4.5.2        data.table_1.17.8
+#>  [82] xtable_1.8-8          glue_1.8.0            lazyeval_0.2.2
+#>  [85] tools_4.5.2           datasets_4.5.2        data.table_1.18.2.1
 #>  [88] RSpectra_0.16-2       colourpicker_1.3.0    bioDist_1.82.0
 #>  [91] fs_1.6.6              fastcluster_1.3.0     grid_4.5.2
-#>  [94] utils_4.5.2           tidyr_1.3.1           ape_5.8-1
+#>  [94] utils_4.5.2           tidyr_1.3.2           ape_5.8-1
 #>  [97] umap_0.2.10.0         methods_4.5.2         nlme_3.1-168
 #> [100] cli_3.6.5             zigg_0.0.2            textshaping_1.0.4
-#> [103] viridisLite_0.4.2     svglite_2.2.2         dplyr_1.1.4
+#> [103] viridisLite_0.4.3     svglite_2.2.2         dplyr_1.2.0
 #> [106] gtable_0.3.6          sass_0.4.10           digest_0.6.39
 #> [109] BiocGenerics_0.56.0   htmlwidgets_1.6.4     farver_2.1.2
-#> [112] htmltools_0.5.8.1     lifecycle_1.0.4       httr_1.4.7
+#> [112] htmltools_0.5.9       lifecycle_1.0.5       httr_1.4.8
 #> [115] mime_0.13             openssl_2.3.4
 ```
 

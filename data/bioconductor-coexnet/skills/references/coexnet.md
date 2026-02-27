@@ -275,9 +275,9 @@ head(case)
 
 1
 
-1.1
-
 1.3
+
+1.1
 
 1.5
 1.4
@@ -317,9 +317,9 @@ mean
 ## 6 1.741206 0.33046035 -0.8273213 1.19594278 1.1442638 0.9957911
 # Creating the boxplot to coefficient of variation results
 
-1.8
-
 1.9
+
+1.8
 
 boxplot(case$cv)
 
@@ -342,13 +342,13 @@ of variation of all samples at the same time to compare and to determine which o
 complete <- cofVar(norm)
 head(complete)
 
-V4
-
-V1
+V8
 
 V2
 
-V8
+V4
+
+V1
 
 V9
 1.0979009 3.9478285
@@ -418,9 +418,9 @@ V10
 3.53465476
 2.18448096 2.80731661
 
-V15
-
 V16
+
+V15
 
 V17
 

@@ -11,10 +11,6 @@ The package provides an integrated pipeline for the analysis of PAR-CLIP data. P
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-wavcluster/overview
-- **Total Downloads**: 35.5K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

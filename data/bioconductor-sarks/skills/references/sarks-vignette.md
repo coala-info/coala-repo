@@ -188,9 +188,9 @@ Take a look at the first few characters of each sequence:
 
 7
 
-6
-
 3
+
+6
 
 2
 
@@ -211,13 +211,13 @@ Take a look at the first few characters of each sequence:
 29
 "CATACTGAGA..." "ACCAACAGTC..." "GCACGACAAA..." "GAAACAGAGG..." "GTTGATCTCA..."
 
+17
+
 12
 
 13
 
 22
-
-17
 
 18
 
@@ -1052,9 +1052,9 @@ lower
 
 mean
 
-x
-
 n
+
+x
 
 1
 
@@ -1470,14 +1470,14 @@ CAGCCTGG CTGGAAC CACCTGC TGGCCTG CTGGTCTA GTCCTG
 0
 0
 0
-0
+1
 
 0
 0
 0
 0
 0
-1
+0
 
 0
 0

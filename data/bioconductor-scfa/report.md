@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/duct317/SCFA
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scfa/overview
-- **Total Downloads**: 13.8K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

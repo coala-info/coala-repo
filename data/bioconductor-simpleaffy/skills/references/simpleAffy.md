@@ -630,21 +630,21 @@ group
 
 ’’
 
+’’
+
+’’
+
+’’
+
+’’
+
 ‘‘
 
-’’
-
-’’
-
-’’
-
-’’
-
-b
+,
 
 a
 
-,
+b
 
 By default, this scales the colouring for each probeset in terms of its standard devi-
 

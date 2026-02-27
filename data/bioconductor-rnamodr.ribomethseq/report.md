@@ -13,8 +13,4 @@ The package builds on the core functionality of the RNAmodR package to detect sp
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/FelixErnst/RNAmodR.RiboMethSeq
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rnamodr.ribomethseq/overview
-- **Total Downloads**: 18.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

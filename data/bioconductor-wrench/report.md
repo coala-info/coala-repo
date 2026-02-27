@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/Wrench
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-wrench/overview
-- **Total Downloads**: 30.0K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

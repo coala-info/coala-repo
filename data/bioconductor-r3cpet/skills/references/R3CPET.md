@@ -1303,9 +1303,9 @@ the right side. if the number of the left side interactions is different from th
 >
 > head(petFile)
 
-V3
-
 V1
+
+V3
 
 ##
 V4

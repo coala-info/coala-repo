@@ -27,12 +27,7 @@ res <- amulet(fragfile, regionsToExclude=toExclude)
 res
 
 ## ----eval=FALSE---------------------------------------------------------------
-# # not run
 # d <- clamulet("path/to/fragments.tsv.gz")
-
-## -----------------------------------------------------------------------------
-d <- clamulet(fragfile, k=2, nfeatures=3)
-d
 
 ## ----eval=FALSE---------------------------------------------------------------
 # res$scDblFinder.p <- 1-colData(sce)[row.names(res), "scDblFinder.score"]

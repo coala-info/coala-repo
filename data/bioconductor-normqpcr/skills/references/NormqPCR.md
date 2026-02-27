@@ -208,9 +208,9 @@ fp.4.day.3.v fp.7.day.3.mia fp.8.day.3.mia
 fp2.day3.v
 40.00000
 
-40.00000
-
 35.93689
+
+40.00000
 
 fp6.day3.mia
 34.05922
@@ -400,8 +400,6 @@ ACTB
 0.6397969 0.7206013 0.7747634 0.8498739
 UBC
 
-YWHAZ
-
 HMBS
 
 B2M
@@ -413,6 +411,8 @@ SDHA
 
 RPL13A
 
+YWHAZ
+
 GAPD
 
 TBP
@@ -421,9 +421,9 @@ B2M
 0.6042110 0.6759176 0.7671985
 SDHA
 
-HPRT1
-
 HMBS
+
+HPRT1
 
 GAPD
 0.4391222 0.4733732 0.5243665 0.5253471 0.5403137 0.5560120
@@ -740,11 +740,11 @@ CLTC
 
 SUI1
 
+CFL1
+
 ACTB
 
 NACA
-
-CFL1
 
 TPT1
 
@@ -803,9 +803,9 @@ ATP5B
 
 RPS23
 
-TPT1
-
 CFL1
+
+TPT1
 
 UBC
 
@@ -1023,6 +1023,8 @@ CLTC
 0.11495336 0.12635109 0.13286210
 CFL1
 
+TUBA6
+
 RPS23
 
 ACTB
@@ -1031,8 +1033,6 @@ CLTC
 0.09215478 0.09499893 0.09674032 0.10528784 0.10718604 0.10879846
 
 FLJ20030
-
-TUBA6
 
 NACA
 
@@ -1854,9 +1854,9 @@ of the included features as reference/housekeeping genes.
 > ## NRQs
 > exprs(res)
 
-caseA
-
 caseB
+
+caseA
 
 controlA
 
@@ -1893,9 +1893,9 @@ gene_xz 0.7668030 1.0218209 0.6136038 1.6729352
 > ## SD of NRQs
 > se.exprs(res)
 
-caseB
-
 caseA
+
+caseB
 
 controlA
 

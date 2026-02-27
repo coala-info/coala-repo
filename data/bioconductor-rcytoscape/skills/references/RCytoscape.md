@@ -1175,8 +1175,8 @@ setNodeColorRule (cwm,
 ’
 
 ’
-
 ’
+
 ’
 
 ,
@@ -1253,8 +1253,6 @@ for (i in 1:5) { # run this loop 5 times
 
 setNodeAttributesDirect (cwm,
 
-,
-
 ’
 
 ’
@@ -1278,6 +1276,8 @@ sleep 1
 ’
 
 )
+
+,
 
 lfc
 lfc.timepoint.1)

@@ -618,11 +618,6 @@ reconstructed network’s sensitivity
 0
 1
 
-1
-0
-0
-0
-
 0
 0
 1
@@ -630,6 +625,11 @@ reconstructed network’s sensitivity
 
 0
 1
+0
+0
+
+1
+0
 0
 0
 

@@ -13,8 +13,4 @@ the package are pairwiseAlignment() and stringDist(). The former solves (Needlem
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/pwalign
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pwalign/overview
-- **Total Downloads**: 9.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

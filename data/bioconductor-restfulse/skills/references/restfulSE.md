@@ -970,11 +970,11 @@ Brain - Hypothalamus
 
 Brain - Putamen (basal ganglia)
 
-7
-
 4
 
 Brain - Spinal cord (cervical c-1)
+
+7
 
 Brain - Substantia nigra
 

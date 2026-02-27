@@ -1005,13 +1005,13 @@ Spinal_cord Fetal_brain Adrenal_cortex Pituitary
 0
 6
 
-1
+4
 0
-1
+4
 
-4
+1
 0
-4
+1
 
 13
 

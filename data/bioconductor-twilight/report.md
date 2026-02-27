@@ -11,10 +11,6 @@ The package further provides means to filter for permutations that describe the 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-twilight/overview
-- **Total Downloads**: 48.8K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

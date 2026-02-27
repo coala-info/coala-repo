@@ -13,8 +13,4 @@ The package is used by the QuasR bioconductor package. We recommend to use the Q
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fmicompbio/Rbowtie
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rbowtie/overview
-- **Total Downloads**: 54.6K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

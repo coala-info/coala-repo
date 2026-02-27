@@ -1402,13 +1402,13 @@ table(seedRegions(mmSeqs[idx.betaR]))
 AACACU AGCUGC CCCUGA GAGGUA GUAAAC UCAAGU UCCAGU UUGGUC
 2
 
-1
-
-1
-
-1
-
 4
+
+1
+
+1
+
+1
 
 1
 

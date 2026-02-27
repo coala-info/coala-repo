@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jdgagnon/plotGrouper
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-plotgrouper/overview
-- **Total Downloads**: 23.0K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

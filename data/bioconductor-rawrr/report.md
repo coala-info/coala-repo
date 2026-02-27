@@ -13,8 +13,4 @@ The package provides basic functions to download and install the required third-
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/rawrr
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rawrr/overview
-- **Total Downloads**: 6.4K
-- **Last updated**: 2026-02-04
-- **Stars**: N/A
 

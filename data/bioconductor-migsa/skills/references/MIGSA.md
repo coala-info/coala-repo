@@ -407,11 +407,11 @@ Efficiency 1.00 1.58 1.59 1.48 1.18 1.08 0.83 0.37
 
 10
 
+2
+
 4
 
 8
-
-2
 
 As it can be seen in Table 1, no matter the number of cores in which MIGSAmGSZ was tested,
 it outperformed mGSZ. Running in one core, it has shown a speedup of 1.6X, reaching for
@@ -1318,15 +1318,6 @@ vdx
 508 532
 424 451
 
-489
-464
-495
-460
-821
-550
-605
-573
-
 372
 419
 525
@@ -1335,6 +1326,15 @@ vdx
 457
 480
 434
+
+489
+464
+495
+460
+821
+550
+605
+573
 
 > ## We can see that 18,191 gene sets were not enriched, while 242 were
 > ## enriched in every dataset.

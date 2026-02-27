@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sagrikachugh/simPIC
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-simpic/overview
-- **Total Downloads**: 471
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

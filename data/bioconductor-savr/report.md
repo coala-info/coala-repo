@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: R. Brent Calder &#x3c;&#x62;&#x72;&#x65;&#x6e;&#x74;&#x2e;&#x63;&#x61;&#x6c;&#x64;&#x65;&#x72;&#x20;&#x61;&#x74;&#x20;&#x65;&#x69;&#x6e;&#x73;&#x74;&#x65;&#x69;&#x6e;&#x2e;&#x79;&#x75;&#x2e;&#x65;&#x64;&#x75;&#x3e;
 - **GitHub**: https://github.com/bcalder/savR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-savr/overview
-- **Total Downloads**: 40.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

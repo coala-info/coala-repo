@@ -11,10 +11,6 @@ The package outputs a combined table of feature pair alignments, organized into 
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-metabcombiner/overview
-- **Total Downloads**: 18.6K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

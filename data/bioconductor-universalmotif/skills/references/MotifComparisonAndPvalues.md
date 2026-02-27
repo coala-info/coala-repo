@@ -606,13 +606,13 @@ N
 
 0.11
 
-H
-
-S
-
 C
 
 R
+
+S
+
+H
 
 V
 0.04
@@ -886,20 +886,6 @@ Y
 
 T
 
-T
-
-Y
-
-T
-
-T
-
-Y
-
-T
-
-T
-
 Y
 
 T
@@ -908,7 +894,21 @@ T
 
 T
 
+T
+
+T
+
 Y
+
+T
+
+Y
+
+T
+
+Y
+
+T
 
 Using the motif_range() utility, we can get an idea of the possible range of scores:
 motif_range(ArabidopsisMotif)
@@ -934,13 +934,13 @@ behaviour:
 motif_pvalue(ArabidopsisMotif, score = c(-200, 100))
 #> [1] 1 0
 
-3
-
-2
+1
 
 4
 
-1
+2
+
+3
 
 We can also use this function for the higher-order multifreq motif representation.
 data(examplemotif2)

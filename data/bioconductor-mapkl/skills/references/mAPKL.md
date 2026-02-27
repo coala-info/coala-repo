@@ -699,9 +699,9 @@ R-HSA-1474228
 
 "Homo sapiens: Degradation of the extracellular matrix"
 
-"Homo sapiens: Extracellular matrix organization"
-
 R-HSA-1474244
+
+"Homo sapiens: Extracellular matrix organization"
 
 "Homo sapiens: Extracellular matrix organization"
 

@@ -125,11 +125,11 @@ are to be found in a slot named x) and calculating quartiles of their distributi
 100%
 0.0000000 0.1284461 0.2966520 0.6373923 1.0000000
 
+25%
+
 50%
 
 75%
-
-25%
 
 4
 
@@ -140,11 +140,11 @@ Dimensions: 603 x 603ColumnRow100200300400500100200300400500> quantile(ld.yri$D
 100%
 0.0000000 0.1066341 0.2438494 0.5098348 1.0000000
 
+75%
+
 25%
 
 50%
-
-75%
 
 If preferred, image can produce colour plots. We first create a set of 10 colours ranging
 

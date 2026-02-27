@@ -11,10 +11,6 @@ The package provides methods of combining the graph structure learning and gener
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sparsenetgls/overview
-- **Total Downloads**: 25.7K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

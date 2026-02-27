@@ -2,7 +2,7 @@
 
 Clarice Groeneveld [ctb], Gordon Robertson [ctb], Xin Wang [aut], Michael Fletcher [aut], Florian Markowetz [aut], Kerstin Meyer [aut], and Mauro Castro [aut].
 
-#### 30 October 2025
+#### 25 February 2026
 
 #### Abstract
 
@@ -10,7 +10,7 @@ A transcriptional regulatory network (TRN) consists of a collection of regulated
 
 #### Package
 
-RTN 2.34.0
+RTN 2.34.1
 
 # Contents
 
@@ -89,14 +89,14 @@ tni.regulon.summary(rtni)
 ## Regulatory network comprised of 5 regulons.
 ## -- DPI-filtered network:
 ## regulatoryElements            Targets              Edges
-##                  5               1207               1369
+##                  5               1126               1287
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
-##      75     241     341     274     347     365
+##      77     231     317     257     327     335
 ## -- Reference network:
 ## regulatoryElements            Targets              Edges
-##                  5               1207               2578
+##                  5               1126               2396
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
-##      75     482     622     516     669     730
+##      77     445     598     479     626     650
 ## ---
 ```
 
@@ -104,13 +104,13 @@ The `tni.regulon.summary()` function also lets us get detailed information about
 
 ```
 tni.regulon.summary(rtni, regulatoryElements = "FOXM1")
-## The FOXM1 regulon has 241 targets, it's a large and balanced regulon.
+## The FOXM1 regulon has 231 targets, it's a large and balanced regulon.
 ## -- DPI filtered network targets:
 ##    Total Positive Negative
-##      241      135      106
+##      231      126      105
 ## -- Reference network targets:
 ##    Total Positive Negative
-##      622      366      256
+##      598      353      245
 ## -- Regulators with mutual information:
 ## E2F2, E2F3, PTTG1
 ##
@@ -122,8 +122,8 @@ All results available in the `TNI-class` object can be retrieved using the `tni.
 ```
 regulons <- tni.get(rtni, what = "regulons.and.mode", idkey = "SYMBOL")
 head(regulons$FOXM1)
-##   C1orf106        HBB       MAPT      ADH1A      FSIP1       FOSB
-##  0.1321503 -0.1378999 -0.2063462 -0.1003659 -0.1021370 -0.1271561
+##   C1orf106        HBB       MAPT       HBA2       FOSB       CBX2
+##  0.1321503 -0.1378999 -0.2063462 -0.1029147 -0.1271561  0.1762198
 ```
 
 The absolute value of a weight represents the MI value, while the sign (+/-) indicates the predicted mode of action based on the Pearson’s correlation between the regulator and its targets.
@@ -159,17 +159,17 @@ All results available in the `TNA-class` object can be retrieved using the `tna.
 mra <- tna.get(rtna, what="mra", ntop = -1)
 head(mra)
 ##      Regulon Universe.Size Regulon.Size Total.Hits Expected.Hits Observed.Hits
-## 1870    E2F2          5304          341        660         42.43            83
-## 2305   FOXM1          5304          241        660         29.99            59
-## 9232   PTTG1          5304          365        660         45.42            73
-## 1871    E2F3          5304          347        660         43.18            60
-## 860    RUNX2          5304           75        660          9.33             7
+## 1870    E2F2          5304          317        660         39.45            80
+## 2305   FOXM1          5304          231        660         28.74            59
+## 9232   PTTG1          5304          335        660         41.69            73
+## 1871    E2F3          5304          327        660         40.69            58
+## 860    RUNX2          5304           77        660          9.58             7
 ##       Pvalue Adjusted.Pvalue
-## 1870 2.8e-10         1.4e-09
-## 2305 1.1e-07         2.7e-07
-## 9232 1.4e-05         2.4e-05
-## 1871 4.1e-03         5.1e-03
-## 860  8.4e-01         8.4e-01
+## 1870 9.3e-11         4.6e-10
+## 2305 2.1e-08         5.2e-08
+## 9232 5.0e-07         8.4e-07
+## 1871 2.6e-03         3.3e-03
+## 860  8.6e-01         8.6e-01
 ```
 
 As a complementary approach, the `tna.gsea1()` function runs the one-tailed gene set enrichment analysis (GSEA-1T) to find regulons associated with a particular ‘response’, which is represented by a ranked list of genes generated from a differential gene expression signature (*i.e.* the ‘phenotype’ included in the TNI-to-TNA preprocessing step). Here the regulon’s target genes are considered a gene set, which is evaluated against the phenotype. The GSEA-1T uses a rank-based scoring metric in order to test the association between the gene set and the phenotype (Subramanian et al. [2005](#ref-Subramanian2005)).
@@ -187,11 +187,11 @@ Setting `what = 'gsea1'` in the `tna.get()` accessory function will retrive a da
 gsea1 <- tna.get(rtna, what="gsea1", ntop = -1)
 head(gsea1)
 ##      Regulon Regulon.Size Observed.Score     Pvalue Adjusted.Pvalue
-## 1870    E2F2          341           0.67 2.8699e-25      1.3376e-24
-## 9232   PTTG1          364           0.65 5.3504e-25      1.3376e-24
-## 1871    E2F3          347           0.60 9.0295e-18      1.5049e-17
-## 2305   FOXM1          241           0.66 3.3220e-16      4.1525e-16
-## 860    RUNX2           75           0.45 7.9208e-02      7.9208e-02
+## 1870    E2F2          317           0.68 3.0071e-31      1.5036e-30
+## 2305   FOXM1          231           0.68 1.8643e-24      4.6607e-24
+## 9232   PTTG1          334           0.65 1.5674e-22      2.6123e-22
+## 1871    E2F3          327           0.61 2.2079e-19      2.7599e-19
+## 860    RUNX2           77           0.44 1.9802e-01      1.9802e-01
 ```
 
 ```
@@ -217,11 +217,11 @@ Setting `what = 'gsea2'` in the `tna.get()` accessory function will retrieve a d
 gsea2 <- tna.get(rtna, what = "gsea2", ntop = -1)
 head(gsea2$differential)
 ##      Regulon Regulon.Size Observed.Score     Pvalue Adjusted.Pvalue
-## 9232   PTTG1          364           1.11 0.00054242       0.0017433
-## 1870    E2F2          341           1.09 0.00069734       0.0017433
-## 2305   FOXM1          241           0.40 0.24752000       0.3564400
-## 860    RUNX2           75           0.67 0.28713000       0.3564400
-## 1871    E2F3          347           0.07 0.35644000       0.3564400
+## 9232   PTTG1          334           1.13 0.00040413       0.0020206
+## 1870    E2F2          317           0.43 0.16832000       0.3217800
+## 2305   FOXM1          231           0.41 0.20792000       0.3217800
+## 1871    E2F3          327           0.10 0.25743000       0.3217800
+## 860    RUNX2           77           0.33 0.45545000       0.4554500
 ```
 
 In GSEA-2T (**Figure 3**), a regulon’s positive and negative targets are each considered as separate *pos* and *neg* gene sets, which are then evaluated against the phenotype. For each gene set (*pos* and *neg*) a walk down the ranked list is performed, stepwise. When a gene in the gene set is found, its position is marked in the ranked list. A running sum, shown as the pink and blue (*pos* and *neg* gene sets, respectively) lines, increases when the gene at that position belongs to the gene set and decreases when it doesn’t. The maximum distance of each running sum from the x-axis represents the enrichment score. GSEA-2T produces two per-phenotype enrichment scores (ES), whose difference (dES = ES*pos* - ES*neg*) represents the regulon activity. The goal is to assess whether the target genes are overrepresented among the genes that are more positively or negatively differentially expressed. A large positive dES indicates an induced (activated) regulon, while a large negative dES indicates a repressed regulon. Please refer to Campbell et al. ([2016](#ref-Campbell2016)) and Campbell et al. ([2018](#ref-Campbell2018)) for cases illustrating the use of this approach; an extension of the GSEA-2T to single samples was implemented by Castro et al. ([2016](#ref-Castro2016)) and Groeneveld et al. ([2019](#ref-Groeneveld2019)).
@@ -517,7 +517,7 @@ When using the dual-regulon analysis pipeline to search for co-regulatory associ
 # 7 Session information
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -540,53 +540,53 @@ When using the dual-regulon analysis pipeline to search for co-regulatory associ
 ## [1] stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-## [1] RTN_2.34.0       BiocStyle_2.38.0
+## [1] RTN_2.34.1       BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
 ##  [1] SummarizedExperiment_1.40.0 gtable_0.3.6
-##  [3] xfun_0.53                   bslib_0.9.0
-##  [5] ggplot2_4.0.0               htmlwidgets_1.6.4
-##  [7] Biobase_2.70.0              lattice_0.22-7
-##  [9] vctrs_0.6.5                 tools_4.5.1
-## [11] generics_0.1.4              stats4_4.5.1
-## [13] parallel_4.5.1              tibble_3.3.0
-## [15] proxy_0.4-27                pkgconfig_2.0.3
+##  [3] xfun_0.56                   bslib_0.10.0
+##  [5] ggplot2_4.0.2               htmlwidgets_1.6.4
+##  [7] Biobase_2.70.0              lattice_0.22-9
+##  [9] vctrs_0.7.1                 tools_4.5.2
+## [11] generics_0.1.4              stats4_4.5.2
+## [13] parallel_4.5.2              tibble_3.3.1
+## [15] proxy_0.4-29                pkgconfig_2.0.3
 ## [17] pheatmap_1.0.13             Matrix_1.7-4
-## [19] KernSmooth_2.23-26          data.table_1.17.8
-## [21] RColorBrewer_1.1-3          S7_0.2.0
-## [23] S4Vectors_0.48.0            lifecycle_1.0.4
-## [25] compiler_4.5.1              farver_2.1.2
+## [19] KernSmooth_2.23-26          data.table_1.18.2.1
+## [21] RColorBrewer_1.1-3          S7_0.2.1
+## [23] S4Vectors_0.48.0            lifecycle_1.0.5
+## [25] compiler_4.5.2              farver_2.1.2
 ## [27] viper_1.44.0                mixtools_2.0.0.1
 ## [29] statmod_1.5.1               Seqinfo_1.0.0
-## [31] carData_3.0-5               snow_0.4-4
-## [33] htmltools_0.5.8.1           class_7.3-23
-## [35] sass_0.4.10                 yaml_2.3.10
+## [31] carData_3.0-6               snow_0.4-4
+## [33] htmltools_0.5.9             class_7.3-23
+## [35] sass_0.4.10                 yaml_2.3.12
 ## [37] lazyeval_0.2.2              Formula_1.2-5
-## [39] plotly_4.11.0               car_3.1-3
+## [39] plotly_4.12.0               car_3.1-5
 ## [41] pillar_1.11.1               jquerylib_0.1.4
-## [43] tidyr_1.3.1                 MASS_7.3-65
+## [43] tidyr_1.3.2                 MASS_7.3-65
 ## [45] DelayedArray_0.36.0         cachem_1.1.0
-## [47] limma_3.66.0                RedeR_3.6.0
+## [47] limma_3.66.0                RedeR_3.6.2
 ## [49] abind_1.4-8                 nlme_3.1-168
-## [51] tidyselect_1.2.1            digest_0.6.37
-## [53] dplyr_1.1.4                 purrr_1.1.0
-## [55] kernlab_0.9-33              bookdown_0.45
-## [57] splines_4.5.1               fastmap_1.2.0
-## [59] grid_4.5.1                  SparseArray_1.10.0
+## [51] tidyselect_1.2.1            digest_0.6.39
+## [53] dplyr_1.2.0                 purrr_1.2.1
+## [55] kernlab_0.9-33              bookdown_0.46
+## [57] splines_4.5.2               fastmap_1.2.0
+## [59] grid_4.5.2                  SparseArray_1.10.8
 ## [61] cli_3.6.5                   magrittr_2.0.4
-## [63] S4Arrays_1.10.0             dichromat_2.0-0.1
-## [65] survival_3.8-3              e1071_1.7-16
+## [63] S4Arrays_1.10.1             dichromat_2.0-0.1
+## [65] survival_3.8-6              e1071_1.7-17
 ## [67] scales_1.4.0                minet_3.68.0
-## [69] segmented_2.1-4             XVector_0.50.0
-## [71] rmarkdown_2.30              httr_1.4.7
-## [73] matrixStats_1.5.0           igraph_2.2.1
-## [75] evaluate_1.0.5              pwr_1.3-0
-## [77] knitr_1.50                  GenomicRanges_1.62.0
-## [79] IRanges_2.44.0              viridisLite_0.4.2
-## [81] rlang_1.1.6                 glue_1.8.0
-## [83] BiocManager_1.30.26         BiocGenerics_0.56.0
-## [85] jsonlite_2.0.0              R6_2.6.1
-## [87] MatrixGenerics_1.22.0
+## [69] segmented_2.2-1             XVector_0.50.0
+## [71] rmarkdown_2.30              httr_1.4.8
+## [73] matrixStats_1.5.0           igraph_2.2.2
+## [75] otel_0.2.0                  evaluate_1.0.5
+## [77] pwr_1.3-0                   knitr_1.51
+## [79] GenomicRanges_1.62.1        IRanges_2.44.0
+## [81] viridisLite_0.4.3           rlang_1.1.7
+## [83] glue_1.8.0                  BiocManager_1.30.27
+## [85] BiocGenerics_0.56.0         jsonlite_2.0.0
+## [87] R6_2.6.1                    MatrixGenerics_1.22.0
 ```
 
 # References

@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/compbiomed/singleCellTK
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-singlecelltk/overview
-- **Total Downloads**: 25.9K
-- **Last updated**: 2025-08-20
-- **Stars**: N/A
 

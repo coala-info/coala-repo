@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/csoneson/treeclimbR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-treeclimbr/overview
-- **Total Downloads**: 462
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

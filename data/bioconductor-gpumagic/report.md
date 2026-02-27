@@ -13,8 +13,4 @@ The package aims to help users write openCL code with little or no effort. It is
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Jiefei-Wang/gpuMagic
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-gpumagic/overview
-- **Total Downloads**: 19.0K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

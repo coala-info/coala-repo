@@ -13,8 +13,4 @@ the package is assisting in the creation of pangenome matrices where genes from 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/thomasp85/FindMyFriends
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-findmyfriends/overview
-- **Total Downloads**: 37.9K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

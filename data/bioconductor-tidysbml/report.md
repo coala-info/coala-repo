@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/veronicapaparozzi/tidysbml
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tidysbml/overview
-- **Total Downloads**: 508
-- **Last updated**: 2026-02-06
-- **Stars**: N/A
 

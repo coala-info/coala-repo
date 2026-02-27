@@ -13,8 +13,4 @@ The package provides `rlang` data masks for the SummarizedExperiment class. The 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jtlandis/plyxp
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-plyxp/overview
-- **Total Downloads**: 273
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

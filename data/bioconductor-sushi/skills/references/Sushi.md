@@ -580,9 +580,9 @@ head(Sushi_ChIPSeq_pol2.bed)
 
 end
 
-start
-
 chrom
+
+start
 
 name score strand
 -1

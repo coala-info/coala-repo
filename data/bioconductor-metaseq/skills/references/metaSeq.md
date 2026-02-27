@@ -203,11 +203,11 @@ A2M
 Study 1 Study 2 Study 3 Study 4
 3
 
-8
-
 5
 
 2
+
+8
 
 > head(S$Upper)
 
@@ -356,9 +356,9 @@ Gene4
 
 Gene5
 
-Gene2
-
 Gene3
+
+Gene2
 
 > head(F$Lower)
 
@@ -382,9 +382,9 @@ Gene2
 Exp 1 Exp 2 Exp 3
 8
 
-3
-
 6
+
+3
 
 > S <- Stouffer.test(result)
 > str(S)
@@ -410,13 +410,13 @@ Gene1
 Gene6
 0.4733269 0.6669196 0.3207565 0.3809677 0.6543542 0.9757633
 
-Gene4
-
 Gene5
 
-Gene2
+Gene4
 
 Gene3
+
+Gene2
 
 > head(S$Lower)
 
@@ -438,9 +438,9 @@ Gene2
 Exp 1 Exp 2 Exp 3
 8
 
-3
-
 6
+
+3
 
 8
 

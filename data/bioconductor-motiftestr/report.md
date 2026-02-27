@@ -13,8 +13,4 @@ The package also contains core functions to prepare data for analysis, and to vi
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/smped/motifTestR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-motiftestr/overview
-- **Total Downloads**: 464
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

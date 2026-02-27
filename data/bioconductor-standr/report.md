@@ -13,8 +13,4 @@ the package are built based on the SpatialExperiment object, allowing integratio
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/standR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-standr/overview
-- **Total Downloads**: 4.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

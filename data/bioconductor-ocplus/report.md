@@ -11,10 +11,6 @@ The package includes tools both for planned experiments (for sample size assessm
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ocplus/overview
-- **Total Downloads**: 24.5K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

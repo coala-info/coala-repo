@@ -1036,6 +1036,8 @@ head(elispot_l$zb_df)
 
 "suppzb_df"
 
+ZBTEST
+
 ZBCAT
 8675 Figure-4_ELISPOT Cellular Quantification
 8658 Figure-4_ELISPOT Cellular Quantification
@@ -1059,8 +1061,6 @@ Cell
 Cell
 
 IL-21
-
-ZBTEST
 
 USUBJID ZBSEQ
 

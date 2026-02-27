@@ -13,8 +13,4 @@ The package consists of three main functions. The first function, fitDTU, fits q
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/statOmics/satuRn
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-saturn/overview
-- **Total Downloads**: 11.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

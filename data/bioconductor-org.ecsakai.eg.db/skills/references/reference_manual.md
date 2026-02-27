@@ -1,6 +1,6 @@
 org.EcSakai.eg.db
 
-February 11, 2026
+February 25, 2026
 
 org.EcSakai.egACCNUM Map Entrez Gene identifiers to GenBank Accession Numbers
 

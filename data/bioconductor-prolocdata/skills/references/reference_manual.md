@@ -1,6 +1,6 @@
 Package ‘pRolocdata’
 
-February 17, 2026
+February 26, 2026
 
 Type Package
 
@@ -44,7 +44,7 @@ git_last_commit_date 2025-10-29
 
 Repository Bioconductor 3.22
 
-Date/Publication 2026-02-17
+Date/Publication 2026-02-26
 
 Author Laurent Gatto [aut] (ORCID: <https://orcid.org/0000-0002-1520-2268>),
 Oliver Crook [aut] (ORCID: <https://orcid.org/0000-0001-5669-8506>),

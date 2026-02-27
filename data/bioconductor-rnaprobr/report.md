@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Lukasz Jan Kielpinski [aut], Nikos Sidiropoulos [cre, aut], Jeppe Vinther [aut]
 - **Maintainer**: Nikos Sidiropoulos &#x3c;&#x6e;&#x69;&#x6b;&#x6f;&#x73;&#x2e;&#x73;&#x69;&#x64;&#x69;&#x72;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rnaprobr/overview
-- **Total Downloads**: 31.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

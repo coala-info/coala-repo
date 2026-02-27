@@ -11,10 +11,6 @@ The package contains functions for pre-processing Affymetrix data using the RMA+
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-refplus/overview
-- **Total Downloads**: 32.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

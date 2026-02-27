@@ -172,9 +172,9 @@ D
 
 ,
 
-,
-
 T
+
+,
 
 > property.cols <- paste0(c(
 B

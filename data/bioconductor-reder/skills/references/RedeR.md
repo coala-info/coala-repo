@@ -2,15 +2,15 @@
 
 Sysbiolab - Bioinformatics and Systems Biology Laboratory.
 
-#### 2025-10-30
+#### 2026-02-20
 
 #### Abstract
 
-*RedeR* is an R-based package combined with a stand-alone Java application for interactive visualization and manipulation of nested networks. Graph, node, and edge attributes are set either using graphical or command-line methods following *[igraph](https://CRAN.R-project.org/package%3Digraph)* syntax rules. The RedeR/R package sets all details to initialize the R-to-Java interface, which uses an interactive force-directed layout algorithm, adjusting the graph layout to the hierarchical levels of a nested network. Supporting information is available from [Castro et al. (2016)](https://doi.org/10.1186/gb-2012-13-4-r29).
+*RedeR* is an R-based package combined with a stand-alone Java application for interactive visualization and manipulation of nested networks. Graph, node, and edge attributes are set either using graphical or command-line methods following *[igraph](https://CRAN.R-project.org/package%3Digraph)* syntax rules. The RedeR/R package sets all details to initialize the R-to-Java interface, which uses an interactive force-directed layout algorithm, adjusting the graph layout to the hierarchical levels of a nested network. If you use RedeR, please cite [Castro et al. (2016)](https://doi.org/10.1186/gb-2012-13-4-r29).
 
 #### Package
 
-RedeR 3.6.0
+RedeR 3.6.2
 
 # 1 Overview
 
@@ -52,7 +52,7 @@ gtoy1 <- graph.lattice(c(3,3,3))
 ```
 ## Warning: `graph.lattice()` was deprecated in igraph 2.1.0.
 ## ℹ Please use `make_lattice()` instead.
-## This warning is displayed once every 8 hours.
+## This warning is displayed once per session.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 ## generated.
 ```
@@ -74,7 +74,7 @@ summary(gtoy2)
 ```
 
 ```
-## IGRAPH b14db3c U--- 0 0 --
+## IGRAPH 5c3d11c U--- 0 0 --
 ```
 
 ```
@@ -121,8 +121,8 @@ getGraphFromRedeR(status="selected")
 ```
 
 ```
-## IGRAPH 1e0abee U--- 0 0 --
-## + edges from 1e0abee:
+## IGRAPH 2b57cb9 U--- 0 0 --
+## + edges from 2b57cb9:
 ```
 
 ```
@@ -146,7 +146,7 @@ summary(g1)
 ```
 
 ```
-## IGRAPH 73c7e3b UN-- 100 99 -- Barabasi graph
+## IGRAPH 87bd178 UN-- 100 99 -- Barabasi graph
 ## + attr: name (g/c), power (g/n), m (g/n), zero.appeal (g/n), algorithm
 ## | (g/c), name (v/c)
 ```
@@ -196,26 +196,31 @@ summary(g1)
 ```
 
 ```
-## IGRAPH 73c7e3b UN-- 100 99 -- Barabasi graph
+## IGRAPH 87bd178 UN-- 100 99 -- Barabasi graph
 ## + attr: name (g/c), power (g/n), m (g/n), zero.appeal (g/n), algorithm
 ## | (g/c), bgcolor (g/c), name (v/c), nodeLineColor (v/c), nodeSize
 ## | (v/n), edgeLineColor (e/c), edgeLineWidth (e/n)
 ```
 
-Tables [1](#tab:tab1), [2](#tab:tab2), and [3](#tab:tab3) list all command-line attributes available for the current version (RedeR 3.6.0), including usage examples.
+Tables [1](#tab:tab1), [2](#tab:tab2), and [3](#tab:tab3) summarize all command-line attributes supported in the current version (RedeR 3.6.2), together with their usage descriptions. To display these attributes directly in the terminal, run:
+
+```
+# Display valid attributes
+rederInfo()
+```
 
 Table 1: **Graph attributes**.
 Examples of how to set *RedeR*'s graph attributes using *igraph* shortcuts.
 
 | RedeR attribute | Description | Value | Usage example |
 | --- | --- | --- | --- |
-| bgcolor | Background color of the app panel | Single color, hexadecimal or name | g$bgcolor <- 'white' |
-| gscale | Graph expansion factor in the app panel | Single number in [0, 100] | g$gscale <- 75 |
-| zoom | Zoom scale applied to the app panel | Single number in [0, 100] | g$zoom <- 100 |
-| nestShape | Container shapes | 'ELLIPSE', 'RECTANGLE', 'ROUNDED\_RECTANGLE', 'TRIANGLE', 'DIAMOND' | g$nestShape <- 'ELLIPSE' |
+| bgcolor | Background color | Single color, hexadecimal or name | g$bgcolor <- 'white' |
+| gscale | Graph expansion factor | Single number in [0, 100] | g$gscale <- 75 |
+| zoom | Zoom scale | Single number in [0, 100] | g$zoom <- 100 |
+| nestShape | Container shapes | Single string: 'ELLIPSE', 'RECTANGLE', 'ROUNDED\_RECTANGLE', 'TRIANGLE', 'DIAMOND' | g$nestShape <- 'ELLIPSE' |
 | nestSize | Container size | Single number >=0 | g$nestSize <- 500 |
 | nestColor | Container color | Single color, hexadecimal or name | g$nestColor <- 'grey' |
-| nestLineType | Container line types | 'SOLID', 'DOTTED', 'DASHED', 'LONG\_DASH' | g$nestLineType <- 'SOLID' |
+| nestLineType | Container line types | Single string: 'SOLID', 'DOTTED', 'DASHED', 'LONG\_DASH' | g$nestLineType <- 'SOLID' |
 | nestLineWidth | Container line width | Single number >=0 | g$nestLineWidth <- 2 |
 | nestLineColor | Container line color | Single color, hexadecimal or name | g$nestLineColor <- 'grey' |
 | nestLabel | Label of the container | Single string | g$nestLabel <- 'a\_name' |
@@ -228,33 +233,33 @@ Examples of how to set *RedeR*'s node attributes using *igraph* shortcuts.
 
 | RedeR attribute | Description | Value | Usage example |
 | --- | --- | --- | --- |
-| name | Node name | Character vector (unique IDs) | V(g)$name <- paste0('Node',1:vcount(g)) |
-| x | Node x-coordinate | Numeric vector in (-Inf, Inf) | V(g)$x <- runif(vcount(g)) |
-| y | Node y-coordinate | Numeric vector in (-Inf, Inf) | V(g)$y <- runif(vcount(g)) |
-| nodeShape | Node shapes | 'ELLIPSE', 'RECTANGLE', 'ROUNDED\_RECTANGLE', 'TRIANGLE', 'DIAMOND' | V(g)$nodeShape <- 'ELLIPSE' |
-| nodeSize | Node size | Numeric vector >=0 | V(g)$nodeSize <- 20 |
+| name | Node name | Character, unique IDs | V(g)$name <- paste0('Node',1:vcount(g)) |
+| x | Node x-coordinate | Numeric in (-Inf, Inf) | V(g)$x <- runif(vcount(g)) |
+| y | Node y-coordinate | Numeric in (-Inf, Inf) | V(g)$y <- runif(vcount(g)) |
+| nodeShape | Node shapes | Character: 'ELLIPSE', 'RECTANGLE', 'ROUNDED\_RECTANGLE', 'TRIANGLE', 'DIAMOND' | V(g)$nodeShape <- 'ELLIPSE' |
+| nodeSize | Node size | Numeric >=0 | V(g)$nodeSize <- 20 |
 | nodeColor | Node color | Hexadecimal or color name | V(g)$nodeColor <- 'white' |
-| nodeLineWidth | Line width | Numeric vector >=0 | V(g)$nodeLineWidth <- 1 |
+| nodeLineWidth | Line width | Numeric >=0 | V(g)$nodeLineWidth <- 1 |
 | nodeLineColor | Line color | Hexadecimal or color name | V(g)$nodeLineColor <- 'grey' |
-| nodeLabel | Node label | Character vector | V(g)$nodeLabel <- V(g)$name |
-| nodeLabelSize | Label size | Numeric vector >=0 | V(g)$nodeLabelSize <- 12 |
+| nodeLabel | Node label | Character | V(g)$nodeLabel <- V(g)$name |
+| nodeLabelSize | Label size | Numeric >=0 | V(g)$nodeLabelSize <- 12 |
 | nodeLabelColor | Label color | Hexadecimal or color name | V(g)$nodeLabelColor <- 'black' |
-| nodeBend | Node bend | Numeric vector in [0,100] | V(g)$nodeBend <- 50 |
-| nodeWeight | Node weight (not implemented) | Numeric vector >=0 | V(g)$nodeWeight <- 0 |
+| nodeBend | Node bend | Numeric in [0,100] | V(g)$nodeBend <- 50 |
+| nodeWeight | Node weight (not implemented) | Numeric >=0 | V(g)$nodeWeight <- 0 |
 
 Table 3: **Edge attributes**.
 Examples of how to set *RedeR*'s edge attributes using *igraph* shortcuts.
 
 | RedeR attribute | Description | Value | Usage example |
 | --- | --- | --- | --- |
-| edgeLineType | Line types | 'SOLID', 'DOTTED', 'DASHED', 'LONG\_DASH' | E(g)$edgeLineType <- 'SOLID' |
-| edgeLineWidth | Line width | Numeric vector >=0 | E(g)$edgeLineWidth <- 1 |
+| edgeLineType | Line types | Character: 'SOLID', 'DOTTED', 'DASHED', 'LONG\_DASH' | E(g)$edgeLineType <- 'SOLID' |
+| edgeLineWidth | Line width | Numeric >=0 | E(g)$edgeLineWidth <- 1 |
 | edgeLineColor | Line color | Hexadecimal or color name | E(g)$edgeLineColor <- 'grey' |
-| arrowType | Arrows in directed graphs | Integer vector: -1, 0, 1 | E(g)$arrowType <- 1 |
-| arrowType | Arrows in undirected graphs | Integer vector: 0 (A-B), 1 (A-> B), -1 (A-| B), 2 (A <-B), -2 (A |-B), 3 (A <-> B), -3 (A |-| B), 4 (A |-> B), -4 (A <-| B) | E(g)$arrowType <- 0 |
-| arrowLength | Arrow length | Numeric vector >=0 | E(g)$arrowLength <- 15 |
-| arrowAngle | Arrowhead angle in degrees | Numeric vector in [10, 90] | E(g)$arrowAngle <- 20 |
-| edgeWeight | Edge weight | Numeric vector >=0 | E(g)$edgeWeight <- 0 |
+| arrowType | Arrows in directed graphs | Integer: -1, 0, 1 | E(g)$arrowType <- 1 |
+| arrowType | Arrows in undirected graphs | Integer: 0 (A-B), 1 (->), -1 (-|), 2 (<-), -2 (|-), 3 (<->), -3 (|-|), 4 (|->), -4 (<-|) | E(g)$arrowType <- 0 |
+| arrowLength | Arrow length | Numeric >=0 | E(g)$arrowLength <- 15 |
+| arrowAngle | Arrowhead angle in degrees | Numeric in [10, 90] | E(g)$arrowAngle <- 20 |
+| edgeWeight | Edge weight | Numeric >=0 | E(g)$edgeWeight <- 0 |
 
 *RedeR* provides two wrapper functions to add fixed values to *igraph* graphs. The `att.addv()` function adds a new attribute with a fixed value to all nodes or selected nodes, while `att.adde()` function adds a new attribute with a fixed value to all edges. These functions will require that the vertices are named.
 
@@ -285,7 +290,7 @@ summary(g1)
 ```
 
 ```
-## IGRAPH 73c7e3b UN-- 100 99 -- Barabasi graph
+## IGRAPH 87bd178 UN-- 100 99 -- Barabasi graph
 ## + attr: name (g/c), power (g/n), m (g/n), zero.appeal (g/n), algorithm
 ## | (g/c), bgcolor (g/c), name (v/c), nodeLineColor (v/c), nodeSize
 ## | (v/n), nodeLabelSize (v/n), edgeLineColor (e/c), edgeLineWidth (e/n),
@@ -313,7 +318,7 @@ summary(g1)
 ```
 
 ```
-## IGRAPH 73c7e3b UN-- 100 99 -- Barabasi graph
+## IGRAPH 87bd178 UN-- 100 99 -- Barabasi graph
 ## + attr: name (g/c), power (g/n), m (g/n), zero.appeal (g/n), algorithm
 ## | (g/c), bgcolor (g/c), name (v/c), nodeLineColor (v/c), nodeSize
 ## | (v/n), nodeLabelSize (v/n), newAttr1 (v/n), newAttr2 (v/n),
@@ -336,7 +341,7 @@ summary(g1)
 ```
 
 ```
-## IGRAPH 73c7e3b UN-- 100 99 -- Barabasi graph
+## IGRAPH 87bd178 UN-- 100 99 -- Barabasi graph
 ## + attr: name (g/c), power (g/n), m (g/n), zero.appeal (g/n), algorithm
 ## | (g/c), bgcolor (g/c), legNodeColor (g/x), legNodeSize (g/x), name
 ## | (v/c), nodeLineColor (v/c), nodeSize (v/n), nodeLabelSize (v/n),
@@ -564,7 +569,7 @@ If you use *RedeR*, please cite:
 
 # 7 System requirements
 
-RedeR 3.6.0 will need the Java Runtime Environment (JRE) version 11 or higher (Java >=11). In order to check the Java on your system, please use the `RedPort()` function with `checkJava=TRUE`, for example:
+RedeR 3.6.2 will need the Java Runtime Environment (JRE) version 11 or higher (Java >=11). In order to check the Java on your system, please use the `RedPort()` function with `checkJava=TRUE`, for example:
 
 ```
 RedPort(checkJava=TRUE)
@@ -580,7 +585,7 @@ The exact output will vary, but you need to make sure the system meets the minim
 # 8 Session information
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -603,20 +608,20 @@ The exact output will vary, but you need to make sure the system meets the minim
 ## [1] stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-## [1] TreeAndLeaf_1.22.0 igraph_2.2.1       RedeR_3.6.0        BiocStyle_2.38.0
+## [1] TreeAndLeaf_1.22.2 igraph_2.2.2       RedeR_3.6.2        BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
-##  [1] crayon_1.5.3        vctrs_0.6.5         nlme_3.1-168
-##  [4] cli_3.6.5           knitr_1.50          rlang_1.1.6
-##  [7] xfun_0.53           jsonlite_2.0.0      glue_1.8.0
-## [10] htmltools_0.5.8.1   sass_0.4.10         scales_1.4.0
-## [13] rmarkdown_2.30      grid_4.5.1          evaluate_1.0.5
+##  [1] vctrs_0.7.1         nlme_3.1-168        cli_3.6.5
+##  [4] knitr_1.51          rlang_1.1.7         xfun_0.56
+##  [7] otel_0.2.0          jsonlite_2.0.0      glue_1.8.0
+## [10] htmltools_0.5.9     sass_0.4.10         scales_1.4.0
+## [13] rmarkdown_2.30      grid_4.5.2          evaluate_1.0.5
 ## [16] jquerylib_0.1.4     fastmap_1.2.0       ape_5.8-1
-## [19] yaml_2.3.10         lifecycle_1.0.4     bookdown_0.45
-## [22] BiocManager_1.30.26 compiler_4.5.1      RColorBrewer_1.1-3
-## [25] Rcpp_1.1.0          pkgconfig_2.0.3     lattice_0.22-7
-## [28] farver_2.1.2        digest_0.6.37       R6_2.6.1
-## [31] dichromat_2.0-0.1   parallel_4.5.1      pillar_1.11.1
-## [34] magrittr_2.0.4      bslib_0.9.0         tools_4.5.1
+## [19] yaml_2.3.12         lifecycle_1.0.5     bookdown_0.46
+## [22] BiocManager_1.30.27 compiler_4.5.2      RColorBrewer_1.1-3
+## [25] Rcpp_1.1.1          pkgconfig_2.0.3     lattice_0.22-9
+## [28] farver_2.1.2        digest_0.6.39       R6_2.6.1
+## [31] dichromat_2.0-0.1   parallel_4.5.2      pillar_1.11.1
+## [34] magrittr_2.0.4      bslib_0.10.0        tools_4.5.2
 ## [37] cachem_1.1.0
 ```

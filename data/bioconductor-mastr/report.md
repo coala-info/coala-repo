@@ -13,8 +13,4 @@ The package is developed for generating refined lists of signature genes from mu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/mastR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mastr/overview
-- **Total Downloads**: 2.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

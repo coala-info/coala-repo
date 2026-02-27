@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sydney-grant/compSPOT
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-compspot/overview
-- **Total Downloads**: 1.7K
-- **Last updated**: 2026-02-06
-- **Stars**: N/A
 

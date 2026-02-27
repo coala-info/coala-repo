@@ -311,10 +311,10 @@ FinalReport6872.txt FinalReport6903.txt
 0.488
 0.493
 
-0.549
+0.482
 0.000
 
-0.482
+0.549
 0.000
 
 > ## Use :: to avoid

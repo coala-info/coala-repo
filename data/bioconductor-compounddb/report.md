@@ -13,8 +13,4 @@ The package provides also a backend for Bioconductor's Spectra package and allow
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/RforMassSpectrometry/CompoundDb
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-compounddb/overview
-- **Total Downloads**: 5.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

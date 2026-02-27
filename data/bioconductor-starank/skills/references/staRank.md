@@ -672,9 +672,21 @@ lightgray
 
 topleft
 
+k*
+
 )
 
 )
+
+)
+
+’
+
+’
+
+’
+
+’
 
 ’
 
@@ -684,18 +696,6 @@ topleft
 
 ,xlim=c(0,length(down)),ylim=c(0,length(down)),
 stable genes
-
-k*
-
-)
-
-’
-
-’
-
-’
-
-’
 
 lines(stableSetSize(salmonellaStability[[i]]),lwd=2,col=mCol[i])
 

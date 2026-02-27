@@ -91,11 +91,11 @@ QAGES
 606.201097556558
 473.172903467545
 
+1
+1
+
 2
 4
-
-1
-1
 
 - rev_NP_001106882.1
 NP_004193.1
@@ -188,14 +188,14 @@ VAIGR
 401.240124
 659.379824
 
+1
+1
+
+1
+1
+
 2
 3
-
-1
-1
-
-1
-1
 
 peptide_prev_aa peptide_next_aa protein num_tot_proteins
 4
@@ -320,11 +320,11 @@ num_tol_term num_missed_cleavages is_rejected xcorr deltacn
 0 1.628
 0 1.440
 
-0
-0
+2
+2
 
-2
-2
+0
+0
 
 deltacnstar
 
@@ -516,9 +516,9 @@ peptide_prev_aa peptide_next_aa
 
 89
 
-K
-
 1
+
+K
 
 calc_neutral_pep_mass
 
@@ -530,9 +530,9 @@ massdiff num_tol_term
 num_missed_cleavages num_matched_ions tot_num_ions
 9
 
-3
-
 0
+
+3
 
 number of matched peaks number of unmatched peaks
 

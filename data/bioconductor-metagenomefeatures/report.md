@@ -13,8 +13,4 @@ The package can be used to explore the taxonomic composition of a marker-gene da
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HCBravoLab/metagenomeFeatures
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-metagenomefeatures/overview
-- **Total Downloads**: 14.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

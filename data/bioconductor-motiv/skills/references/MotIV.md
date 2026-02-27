@@ -385,11 +385,11 @@ seq
 match "-----TGCTNWGTCAY-----" "-NNRGGNCAAAGGKCA-----" "--GGGGCCNAAGGGGG-----"
 evalue "5.7277e-03"
 
-"1.0955e-02"
+"5.4587e-03"
 
 "1.4671e-02"
 
-"5.4587e-03"
+"1.0955e-02"
 
 PPARG::RXRA
 
@@ -756,21 +756,21 @@ seq
 match "NWRWGYAAACA-" "NNWRWGTAAACA-" "----GTAAACAN" "---TGTAAACA-" "--AAANAAACAWTN"
 evalue "4.4409e-15"
 
-"3.7576e-07"
+"8.7077e-07"
 
 "1.0647e-05"
 
-"8.7077e-07"
+"3.7576e-07"
 
 "9.9809e-14"
 
 FOXD1
 
-FOXO3
-
 Foxd3
 
 Foxa2
+
+FOXO3
 
 7.3 Distribution
 

@@ -1,24 +1,106 @@
 ---
 name: bioconductor-sctensor
-description: scTensor detects and visualizes cell-cell interactions from single-cell RNA-sequencing data using tensor decomposition. Use when user asks to identify cell-cell communication patterns, perform tensor decomposition on transcriptomic data, or analyze ligand-receptor interactions.
+description: scTensor detects and visualizes cell-cell interactions from single-cell RNA-Seq data using non-negative tensor decomposition. Use when user asks to perform ligand-receptor analysis, decompose communication tensors into patterns, generate interactive HTML reports, or simulate cell-cell interaction data.
 homepage: https://bioconductor.org/packages/release/bioc/html/scTensor.html
 ---
 
 
 # bioconductor-sctensor
 
+name: bioconductor-sctensor
+description: Detection and visualization of cell-cell interactions (CCI) from single-cell RNA-Seq data using tensor decomposition. Use this skill when you need to perform ligand-receptor analysis, decompose CCI tensors into patterns, generate interactive HTML reports, or simulate CCI data in R.
+
 ## Overview
+scTensor is a Bioconductor package designed to detect and visualize cell-cell interactions (CCI) by representing multi-cellular communication as a three-order tensor (Ligand-Cell x Receptor-Cell x L-R Pair). It uses Non-negative Tucker2 Decomposition (NTD2) to identify coordinated communication patterns across different cell types and ligand-receptor pairs.
 
-Use the Bioconductor R package **scTensor** for: the package is available on all platforms; click for details.
+## Core Workflow
 
-## Installation
+### 1. Database Retrieval (LRBase)
+scTensor relies on `LRBaseDb` objects for ligand-receptor pairing information. These are retrieved via `AnnotationHub`.
 
-```r
-if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("scTensor")
+```R
+library(AnnotationHub)
+library(LRBaseDbi)
+
+ah <- AnnotationHub()
+# Search for the appropriate organism database (e.g., Human)
+dbfile <- query(ah, c("LRBaseDb", "Homo sapiens"))[[1]]
+LRBase.Hsa.eg.db <- LRBaseDb(dbfile)
 ```
 
-## Reference documentation
+### 2. Data Preparation
+Input data must be a `SingleCellExperiment` (SCE) object. **Crucial:** Row names must be NCBI Gene IDs (Entrez IDs).
 
-See files in `references/` for vignettes and tutorials.
+```R
+library(scTensor)
+library(SingleCellExperiment)
+
+# Create SCE object
+sce <- SingleCellExperiment(assays=list(counts = exp_matrix))
+
+# Optional: Add reduced dimensions (PCA, t-SNE, UMAP) for the report
+reducedDims(sce) <- SimpleList(TSNE=tsne_results)
+
+# Initialize CCI settings
+# sce: SCE object
+# LRBase.Hsa.eg.db: The database object
+# cell_labels: A vector of cell type labels for each cell
+cellCellSetting(sce, LRBase.Hsa.eg.db, cell_labels)
+```
+
+### 3. Tensor Decomposition
+Decompose the CCI tensor into patterns. You can estimate optimal ranks or specify them manually.
+
+```R
+# Estimate ranks
+rks <- cellCellRanks(sce)
+selected_ranks <- rks$selected
+
+# Perform decomposition
+# ranks: c(ligand_patterns, receptor_patterns)
+cellCellDecomp(sce, ranks=selected_ranks)
+```
+
+### 4. Reporting and Visualization
+Generate an interactive HTML report for exploratory analysis.
+
+```R
+cellCellReport(sce, reducedDimNames="TSNE", out.dir="CCI_Report")
+```
+
+## ID Conversion and Normalization
+If your data uses Gene Symbols or Ensembl IDs, use `scTGIF::convertRowID` to convert them to Entrez IDs before running scTensor.
+
+```R
+# Example using OrganismDb
+library(Homo.sapiens)
+library(scTGIF)
+
+rowID <- rownames(exp_matrix)
+mapping <- select(Homo.sapiens, keys=rowID, columns=c("SYMBOL", "ENTREZID"), keytype="SYMBOL")
+converted <- convertRowID(exp_matrix, rowID, mapping)
+sce <- SingleCellExperiment(assays=list(counts = converted$output))
+```
+
+## Simulation
+Generate synthetic CCI data for benchmarking or testing.
+
+```R
+params <- newCCSParams()
+setParam(params, "nCell") <- c(50, 50, 50) # 3 cell types
+sim <- cellCellSimulate(params)
+# sim$input: expression matrix; sim$LR: L-R pairs; sim$celltypes: labels
+```
+
+## Tips for Success
+- **Gene IDs:** Always ensure row names are NCBI Gene IDs. The package will filter out non-numeric IDs.
+- **Ranks:** If the decomposition results are difficult to interpret, try adjusting the `ranks` parameter in `cellCellDecomp`.
+- **Memory:** For very large datasets, consider calculating cell-type level mean vectors first or using a subset of highly variable genes.
+- **Reanalysis:** The `cellCellReport` function saves a `reanalysis.RData` file in the output directory, which contains the processed SCE object and decomposition results for quick reloading.
+
+## Reference documentation
+- [Detection and visualization of cell-cell interactions using LRBase and scTensor](./references/scTensor.md)
+- [Roadmap to prepare the input matrix for scTensor](./references/scTensor_1_Data_format_ID_Conversion.md)
+- [How to interpret the HTML report generated by cellCellReport function](./references/scTensor_2_Report_Interpretation.md)
+- [How to perform CCI simulation by cellCellSimulate function](./references/scTensor_3_CCI_Simulation.md)
+- [How to reanalyze the results of scTensor](./references/scTensor_4_Reanalysis.md)

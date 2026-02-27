@@ -249,6 +249,10 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     cwl_files = sorted(f.name for f in tool_path.glob("*.cwl"))
     has_skill = skill_path.exists()
 
+    # Only index tools that have at least one CWL or skills/SKILL.md
+    if not cwl_files and not has_skill:
+        return None
+
     skill_meta = skill_metadata(skill_path) if has_skill else {}
     # Prefer skill name/description for card; fallback to report
     name = skill_meta.get("name") or tool_id

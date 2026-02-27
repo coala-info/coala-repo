@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Sandro Morganella
 - **Maintainer**: Sandro Morganella &#x3c;&#x73;&#x61;&#x6e;&#x64;&#x72;&#x6f;&#x20;&#x61;&#x74;&#x20;&#x65;&#x62;&#x69;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-vega/overview
-- **Total Downloads**: 34.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

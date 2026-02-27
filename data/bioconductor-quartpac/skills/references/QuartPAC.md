@@ -701,6 +701,25 @@ GLU
 recordName serial atom altLoc resName chainID resSeq iCode xCoord yCoord
 zCoord occupancy tempFactor element charge
 
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+CA
+
 60
 61
 62
@@ -719,25 +738,6 @@ zCoord occupancy tempFactor element charge
 75
 76
 77
-
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
-CA
 
 B
 B
@@ -1016,11 +1016,11 @@ P61769
 349
 UNP dbref protomer absPos
 
-2
-2
+1
+1
 
-1
-1
+2
+2
 
 31: 57.911
 32: 57.189

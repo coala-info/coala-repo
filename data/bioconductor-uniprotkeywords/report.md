@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/jokergoo/UniProtKeywords
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-uniprotkeywords/overview
-- **Total Downloads**: 2.0K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

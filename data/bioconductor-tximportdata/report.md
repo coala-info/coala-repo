@@ -11,10 +11,6 @@ the package vignette.
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tximportdata/overview
-- **Total Downloads**: 29.3K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

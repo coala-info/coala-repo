@@ -5,7 +5,7 @@ Markus Riester 1
 
 1Novartis Biomedical Research, Cambridge, MA
 
-October 30, 2025
+February 18, 2026
 
 Abstract
 
@@ -26,7 +26,7 @@ straightforward to generate input data from other pipelines.
 
 Package
 
-PureCN 2.16.0
+PureCN 2.16.1
 
 Contents
 
@@ -606,7 +606,7 @@ Coverage normalization.
 
 5
 
-5
+6
 
 6
 
@@ -1818,10 +1818,10 @@ FAQ .
 
 .
 
-8
+9
 9
 
-9
+10
 
 10
 
@@ -1968,13 +1968,17 @@ package="PureCN")
 
 vcf.ac <- readAllelicCountsFile(ac.file)
 
-## INFO [2025-10-30 01:51:44] Found 20 variants in VCF file.
-
-## INFO [2025-10-30 01:51:44] 20 (100.0%) variants annotated as likely germline (DB INFO flag).
-
-## WARN [2025-10-30 01:51:44] Did not find base quality scores, will use global error rate of 0.0010 instead.
+## INFO [2026-02-18 19:51:28] Found 20 variants in VCF file.
 
 2.2
+
+## INFO [2026-02-18 19:51:29] 20 (100.0%) variants annotated as likely germline
+
+(DB INFO flag).
+
+## WARN [2026-02-18 19:51:29] Did not find base quality scores, will use global
+
+error rate of 0.0010 instead.
 
 Target information
 For the default segmentation function provided by PureCN, the algorithm first needs to
@@ -1996,11 +2000,6 @@ PureCN will attempt to optimize the targets for copy number calling (similar to 
 
 • Targets in regions of low mappability are dropped
 
-• Optionally, accessible regions in-between the target (off-target) regions are included
-so that available coverage information in on- and off-target reads can be used by the
-segmentation function. In the following, we will use intervals when something applies
-to both on-target and off-target regions and targets when it only applies to on-target.
-
 3Only the RG header line is required for extracting the sample id
 4While PureCN can use a pool of normal samples to learn which intervals are reliable and which not, it is
 highly recommended to provide the correct intervals. Garbage in, garbage out.
@@ -2008,6 +2007,11 @@ highly recommended to provide the correct intervals. Garbage in, garbage out.
 4
 
 Copy number calling and SNV classification using targeted short read sequencing
+
+• Optionally, accessible regions in-between the target (off-target) regions are included
+so that available coverage information in on- and off-target reads can be used by the
+segmentation function. In the following, we will use intervals when something applies
+to both on-target and off-target regions and targets when it only applies to on-target.
 
 It further annotates intervals by GC-content (how coverage is normalized is described later
 in Section 3).
@@ -2034,13 +2038,17 @@ preprocessIntervals(intervals, reference.file,
 
 mappability = mappability, output.file = "ex2_gc_file.txt")
 
-## WARN [2025-10-30 01:51:44] Found small target regions (< 100bp). Will resize them.
+## WARN [2026-02-18 19:51:29] Found small target regions (< 100bp).
 
-## INFO [2025-10-30 01:51:45] Splitting 5 large targets to an average width of 400.
+Will resize
 
-## WARN [2025-10-30 01:51:45] No reptiming scores provided.
+them.
 
-## INFO [2025-10-30 01:51:45] Calculating GC-content...
+## INFO [2026-02-18 19:51:29] Splitting 5 large targets to an average width of 400.
+
+## WARN [2026-02-18 19:51:29] No reptiming scores provided.
+
+## INFO [2026-02-18 19:51:29] Calculating GC-content...
 
 A command line script described in a separate vignette provides convenient access to this
 function and also attempts to annotate the targets with gene symbols using the annotate
@@ -2064,6 +2072,10 @@ package = "PureCN", mustWork = TRUE)
 calculateBamCoverageByInterval(bam.file = bam.file,
 interval.file = interval.file, output.file = "ex1_coverage.txt")
 
+5
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 2.4
 
 Third-party coverage tools
@@ -2075,10 +2087,6 @@ detect the correct format and all following steps are the same for all tools. Yo
 ever, still need the interval file generated in Section 2.2 and the third-party tool must use
 the exact same intervals. See also FAQ Section 12.2 for recommended settings for GATK3
 DepthOfCoverage.
-
-5
-
-Copy number calling and SNV classification using targeted short read sequencing
 
 2.5
 
@@ -2134,6 +2142,10 @@ completely avoidable. The most important library-specific bias is due to GC-cont
 regions of high AT- or GC-content are not always captured with exactly the same efficiency
 in tumor and normals.
 
+6
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 We usually also observe that early replicating regions have a slightly higher coverage than late
 replicating regions [6, 7]. Since there is often a significant difference in proliferation rates of
 tumor and normal, the pool of normals might also not completely adjust for this small bias.
@@ -2146,10 +2158,6 @@ ization’s capability in removing library-specific biases.
 Sometimes it can be beneficial to remove library-specific biases explicitly, especially with
 smaller panels of normals that might show significant differences to tumors (FFPE vs blood,
 high vs low coverage, etc.).
-
-6
-
-Copy number calling and SNV classification using targeted short read sequencing
 
 In the following example, we correct the raw coverage of all samples, tumor and normal, for
 the two major sources of library-specific coverage biases mentioned above (Figure 1). For
@@ -2165,10 +2173,6 @@ coverage as a function of on- and off-target GC-content and replication timing b
 ization. Each dot is an interval. The example files are already GC-normalized; real data will show more
 dramatic differences.
 
-The example coverage files are already GC-normalized. We provide a convenient command
-line script for generating normalized coverage data from BAM files or from GATK coverage
-files (see Quick vignette).
-
 7
 
 on−targetPre−normalizedon−targetPost−normalized0.00.20.40.60.80.00.20.40.60.801002003004005000100200300400GC contentCoverageon−targetPre−normalizedon−targetPost−normalized255075255075−20246−20246Replication TimingLog−CoverageCopy number calling and SNV classification using targeted short read sequencing
@@ -2176,6 +2180,10 @@ on−targetPre−normalizedon−targetPost−normalized0.00.20.40.60.80.00.20.40
 4
 
 4.1
+
+The example coverage files are already GC-normalized. We provide a convenient command
+line script for generating normalized coverage data from BAM files or from GATK coverage
+files (see Quick vignette).
 
 Pool of normals
 
@@ -2191,19 +2199,21 @@ script providing this functionality is described in a separate vignette):
 
 normalDB <- createNormalDatabase(normal.coverage.files)
 
-## INFO [2025-10-30 01:51:54] 576 on-target bins with low coverage in all samples.
+## INFO [2026-02-18 19:51:39] 576 on-target bins with low coverage in all samples.
 
-## WARN [2025-10-30 01:51:54] You are likely not using the correct baits file!
+## WARN [2026-02-18 19:51:39] You are likely not using the correct baits file!
 
-## WARN [2025-10-30 01:51:54] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:51:39] Allosome coverage missing, cannot determine sex.
 
-## WARN [2025-10-30 01:51:54] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:51:39] Allosome coverage missing, cannot determine sex.
 
-## INFO [2025-10-30 01:51:54] Processing on-target regions...
+## INFO [2026-02-18 19:51:39] Processing on-target regions...
 
-## INFO [2025-10-30 01:51:54] Removing 930 intervals with low coverage in normalDB.
+## INFO [2026-02-18 19:51:39] Removing 930 intervals with low coverage in normalDB.
 
-## INFO [2025-10-30 01:51:54] Removing 1 intervals with zero coverage in more than 3% of normalDB.
+## INFO [2026-02-18 19:51:39] Removing 1 intervals with zero coverage in more than
+
+3% of normalDB.
 
 # serialize, so that we need to do this only once for each assay
 
@@ -2226,6 +2236,10 @@ artifacts; high or low copy number log2-ratios in these intervals are unlikely m
 copy number events. The segmentation function can use this information to skip over such
 noisy regions.
 
+8
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 4.2
 
 Artifact filtering
@@ -2234,10 +2248,6 @@ typically punished more by artifacts than high ploidy solutions. High ploidy sol
 complex and usually find ways of explaining artifacts reasonably well. The following steps
 in this section are optional, but recommended since they will reduce the number of samples
 requiring manual curation, especially when matching normal samples are not available.
-
-8
-
-Copy number calling and SNV classification using targeted short read sequencing
 
 4.2.1 VCF
 
@@ -2265,11 +2275,13 @@ package = "PureCN")
 
 bias <- calculateMappingBiasVcf(normal.panel.vcf.file, genome = "h19")
 
-## INFO [2025-10-30 01:51:57] Processing variants 1 to 50000...
+## INFO [2026-02-18 19:51:41] Processing variants 1 to 50000...
 
-## INFO [2025-10-30 01:51:58] Clustering beta binomial fits...
+## INFO [2026-02-18 19:51:42] Clustering beta binomial fits...
 
-## INFO [2025-10-30 01:51:58] Assigning (6/20) variants a clustered beta binomal fit.
+## INFO [2026-02-18 19:51:42] Assigning (6/20) variants a clustered beta binomal
+
+fit.
 
 saveRDS(bias, "mapping_bias.rds")
 mapping.bias.file <- "mapping_bias.rds"
@@ -2287,6 +2299,10 @@ the empirical Bayes estimate described in the original PureCN paper is used wher
 ence and alternate counts of an average high quality SNP is added to the observed counts,
 thus forcing the estimate to the average when position-specific information is limited.
 
+9
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 Note that variants with low median coverage (min.median.coverage.betafit, default 5) are
 not attempted to fit to beta-binomal distributions and instead the empirical Bayes method
 is used.
@@ -2300,11 +2316,6 @@ pool of normals, targets are filtered based on the coverage and variance in norm
 only). For variants in the provided VCF, the same 15X cutoff is applied. MuTect applies
 more sophisticated artifact tests and flags suspicious variants. If MuTect was run in matched
 normal mode, then both potential artifacts and germline variants are rejected, that means
-
-9
-
-Copy number calling and SNV classification using targeted short read sequencing
-
 we cannot just filter by the PASS/REJECT MuTect flags. The filterVcfMuTect function
 optionally reads the MuTect 1.1.7 stats file and will keep germline variants, while removing
 potential artifacts. Without the stats file, PureCN will use only the filters based on read
@@ -2372,6 +2383,10 @@ args.filterVcf=list(
 
 # stats.file = mutect.stats.file
 
+10
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 ),
 
 args.filterIntervals = list(
@@ -2382,17 +2397,13 @@ min.total.counts = 50
 
 post.optimize = FALSE, plot.cnv = FALSE, verbose = FALSE)
 
-## WARN [2025-10-30 01:51:59] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:51:43] Allosome coverage missing, cannot determine sex.
 
-## WARN [2025-10-30 01:51:59] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:51:43] Allosome coverage missing, cannot determine sex.
 
 The normal.coverage.file argument points to a coverage file obtained from either a matched
 or a process-matched normal sample, but can be also a small pool of best normals (Sec-
 tion 4.1).
-
-10
-
-Copy number calling and SNV classification using targeted short read sequencing
 
 The normalDB argument (Section 4.1) provides a pool of normal samples and for example
 allows the segmentation function to skip targets with low coverage or common germline
@@ -2441,7 +2452,16 @@ contains helpful plots for all local minima, sorted by likelihood. The first plo
 PDF is displayed in Figure 2 and shows the purity and ploidy local optima, sorted by final
 likelihood score after fitting both copy number and allelic fractions.
 
+11
+
+Copy number calling and SNV classification using targeted short read sequencing
+
 plotAbs(ret, type = "overview")
+
+Figure 2: Overview. The colors visualize the copy number fitting score from low (blue) to high (red). The
+numbers indicate the ranks of the local optima. Yellow fonts indicate that the corresponding solutions were
+flagged, which does not necessarily mean the solutions are wrong. The correct solution (number 1) of this
+toy example was flagged due to large amount of LOH.
 
 We now look at the main plots of the maximum likelihood solution in more detail.
 
@@ -2456,15 +2476,6 @@ It can be seen that most
 of the log2-ratios of the maximum likelihood solution align well to expected values for copy
 numbers of 0, 1, 2 and 4.
 
-11
-
-Copy number calling and SNV classification using targeted short read sequencing
-
-Figure 2: Overview. The colors visualize the copy number fitting score from low (blue) to high (red). The
-numbers indicate the ranks of the local optima. Yellow fonts indicate that the corresponding solutions were
-flagged, which does not necessarily mean the solutions are wrong. The correct solution (number 1) of this
-toy example was flagged due to large amount of LOH.
-
 plotAbs(ret, 1, type = "BAF")
 
 Germline variant data are informative for calculating integer copy number because unbalanced
@@ -2478,17 +2489,17 @@ panel, the corresponding copy number log2-ratios are shown. The lower panel disp
 calculated integer copy numbers, corrected for purity and ploidy. We can zoom into particular
 chromosomes (Figure 5).
 
-plotAbs(ret, 1, type = "BAF", chr = "chr19")
-
-plotAbs(ret, 1, type = "AF")
-
-Finally, Figure 6 provides more insight into how well the variants fit the expected values.
-
 12
 
 0.20.40.60.823456PurityPloidy−3710−3245−2780Copy number log−likelihood12345678910Copy number calling and SNV classification using targeted short read sequencing
 
 Figure 3: Log-ratio histogram.
+
+plotAbs(ret, 1, type = "BAF", chr = "chr19")
+
+plotAbs(ret, 1, type = "AF")
+
+Finally, Figure 6 provides more insight into how well the variants fit the expected values.
 
 13
 
@@ -3301,7 +3312,7 @@ columns explained in Table 3.
 
 gene.calls.zscore <- callAmplificationsInLowPurity(ret, normalDB)
 
-## WARN [2025-10-30 01:53:19] Extensive noise in tumor compared to normals.
+## WARN [2026-02-18 19:53:02] Extensive noise in tumor compared to normals.
 
 head(gene.calls.zscore)
 
@@ -3995,9 +4006,9 @@ test.purity = seq(0.3,0.7,by = 0.05), verbose = FALSE,
 
 plot.cnv = FALSE)
 
-## WARN [2025-10-30 01:53:59] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:53:41] Allosome coverage missing, cannot determine sex.
 
-## WARN [2025-10-30 01:53:59] Allosome coverage missing, cannot determine sex.
+## WARN [2026-02-18 19:53:41] Allosome coverage missing, cannot determine sex.
 
 The max.candidate.solutions and test.purity arguments are set to non-default values to
 reduce the runtime of this vignette.
@@ -4035,10 +4046,6 @@ max.candidate.solutions = 1, genome = "hg19",
 test.purity = seq(0.3, 0.7, by = 0.05), verbose = FALSE,
 
 normalDB = normalDB, plot.cnv = FALSE)
-
-## WARN [2025-10-30 01:54:18] Allosome coverage missing, cannot determine sex.
-
-## WARN [2025-10-30 01:54:18] Allosome coverage missing, cannot determine sex.
 
 Again, the max.candidate.solutions and test.purity arguments are set to non-default
 values to reduce the runtime of this vignette. Note that this example uses a pool of normals
@@ -4950,7 +4957,7 @@ mutation detection and clonal tracking in cancer. PLoS Comput. Biol.,
 
 Session Info
 
-• R version 4.5.1 Patched (2025-08-23 r88802), x86_64-pc-linux-gnu
+• R version 4.5.2 (2025-10-31), x86_64-pc-linux-gnu
 
 • Locale: LC_CTYPE=en_US.UTF-8, LC_NUMERIC=C, LC_TIME=en_GB, LC_COLLATE=C,
 LC_MONETARY=en_US.UTF-8, LC_MESSAGES=en_US.UTF-8, LC_PAPER=en_US.UTF-8,
@@ -4973,30 +4980,30 @@ LC_IDENTIFICATION=C
 
 • Other packages: Biobase 2.70.0, BiocGenerics 0.56.0, BiocStyle 2.38.0,
 
-Biostrings 2.78.0, DNAcopy 1.84.0, GenomicRanges 1.62.0, IRanges 2.44.0,
-MatrixGenerics 1.22.0, PureCN 2.16.0, Rsamtools 2.26.0, S4Vectors 0.48.0,
+Biostrings 2.78.0, DNAcopy 1.84.0, GenomicRanges 1.62.1, IRanges 2.44.0,
+MatrixGenerics 1.22.0, PureCN 2.16.1, Rsamtools 2.26.0, S4Vectors 0.48.0,
 Seqinfo 1.0.0, SummarizedExperiment 1.40.0, VariantAnnotation 1.56.0,
 XVector 0.50.0, generics 0.1.4, matrixStats 1.5.0
 
 • Loaded via a namespace (and not attached): AnnotationDbi 1.72.0,
 
-BSgenome 1.78.0, BiocIO 1.20.0, BiocManager 1.30.26, BiocParallel 1.44.0,
-DBI 1.2.3, DelayedArray 0.36.0, GenomeInfoDb 1.46.0, GenomicAlignments 1.46.0,
+BSgenome 1.78.0, BiocIO 1.20.0, BiocManager 1.30.27, BiocParallel 1.44.0,
+DBI 1.2.3, DelayedArray 0.36.0, GenomeInfoDb 1.46.2, GenomicAlignments 1.46.0,
 GenomicFeatures 1.62.0, KEGGREST 1.50.0, Matrix 1.7-4, R.methodsS3 1.8.2,
 R.oo 1.27.1, R.utils 2.13.0, R6 2.6.1, RColorBrewer 1.1-3, RCurl 1.98-1.17,
-RSQLite 2.4.3, Rhdf5lib 1.32.0, S4Arrays 1.10.0, S7 0.2.0, SparseArray 1.10.0,
-UCSC.utils 1.6.0, VGAM 1.1-13, XML 3.99-0.19, abind 1.4-8, bit 4.6.0, bit64 4.6.0-1,
-bitops 1.0-9, blob 1.2.4, bookdown 0.45, bslib 0.9.0, cachem 1.1.0, cigarillo 1.0.0,
-cli 3.6.5, codetools 0.2-20, compiler 4.5.1, crayon 1.5.3, curl 7.0.0, data.table 1.17.8,
-dichromat 2.0-0.1, digest 0.6.37, dplyr 1.1.4, evaluate 1.0.5, farver 2.1.2,
-fastmap 1.2.0, formatR 1.14, futile.logger 1.4.3, futile.options 1.0.1, ggplot2 4.0.0,
-glue 1.8.0, grid 4.5.1, gridExtra 2.3, gtable 0.3.6, highr 0.11, htmltools 0.5.8.1,
-httr 1.4.7, jquerylib 0.1.4, jsonlite 2.0.0, knitr 1.50, labeling 0.4.3, lambda.r 1.2.4,
-lattice 0.22-7, lifecycle 1.0.4, magrittr 2.0.4, mclust 6.1.1, memoise 2.0.1,
-parallel 4.5.1, pillar 1.11.1, pkgconfig 2.0.3, png 0.1-8, restfulr 0.0.16, rhdf5 2.54.0,
-rhdf5filters 1.22.0, rjson 0.2.23, rlang 1.1.6, rmarkdown 2.30, rtracklayer 1.70.0,
-sass 0.4.10, scales 1.4.0, splines 4.5.1, tibble 3.3.0, tidyselect 1.2.1, tinytex 0.57,
-tools 4.5.1, vctrs 0.6.5, withr 3.0.2, xfun 0.53, yaml 2.3.10
+RSQLite 2.4.6, Rhdf5lib 1.32.0, S4Arrays 1.10.1, S7 0.2.1, SparseArray 1.10.8,
+UCSC.utils 1.6.1, VGAM 1.1-14, XML 3.99-0.22, abind 1.4-8, bit 4.6.0, bit64 4.6.0-1,
+bitops 1.0-9, blob 1.3.0, bookdown 0.46, bslib 0.10.0, cachem 1.1.0, cigarillo 1.0.0,
+cli 3.6.5, codetools 0.2-20, compiler 4.5.2, crayon 1.5.3, curl 7.0.0, data.table 1.18.2.1,
+dichromat 2.0-0.1, digest 0.6.39, dplyr 1.2.0, evaluate 1.0.5, farver 2.1.2,
+fastmap 1.2.0, formatR 1.14, futile.logger 1.4.9, futile.options 1.0.1, ggplot2 4.0.2,
+glue 1.8.0, grid 4.5.2, gridExtra 2.3, gtable 0.3.6, highr 0.11, htmltools 0.5.9,
+httr 1.4.8, jquerylib 0.1.4, jsonlite 2.0.0, knitr 1.51, labeling 0.4.3, lambda.r 1.2.4,
+lattice 0.22-9, lifecycle 1.0.5, magrittr 2.0.4, mclust 6.1.2, memoise 2.0.1, otel 0.2.0,
+parallel 4.5.2, pillar 1.11.1, pkgconfig 2.0.3, png 0.1-8, restfulr 0.0.16, rhdf5 2.54.1,
+rhdf5filters 1.22.0, rjson 0.2.23, rlang 1.1.7, rmarkdown 2.30, rtracklayer 1.70.1,
+sass 0.4.10, scales 1.4.0, splines 4.5.2, tibble 3.3.1, tidyselect 1.2.1, tinytex 0.58,
+tools 4.5.2, vctrs 0.7.1, withr 3.0.2, xfun 0.56, yaml 2.3.12
 
 42
 

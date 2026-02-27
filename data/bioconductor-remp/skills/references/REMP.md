@@ -401,9 +401,9 @@ Min.
 Max.
 0.01178818 0.43739915 0.64585305 0.57035834 0.75523415 0.90391551
 
-1st Qu.
-
 3rd Qu.
+
+1st Qu.
 
 Median
 
@@ -619,9 +619,9 @@ chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16
 
 117
 
-107
-
 223
+
+107
 
 31
 
@@ -705,13 +705,13 @@ chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8
 
 18
 
-17
+21
 
-14
+17
 
 32
 
-21
+14
 
 14
 
@@ -1102,17 +1102,17 @@ Number of Alu-CpGs by chromosome:
 chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8
 18
 
-33
-
 17
 
-22
+33
 
 23
 
-59
-
 58
+
+22
+
+59
 
 26
 
@@ -1127,9 +1127,9 @@ chr9 chr10 chr11 chr12 chr13 chr14 chr15 chr16
 
 12
 
-20
-
 11
+
+20
 
 8
 
@@ -1190,11 +1190,11 @@ chr1 chr2 chr3 chr4 chr5 chr6 chr7 chr8
 
 13
 
-6
+1
 
 2
 
-1
+6
 
 2
 
@@ -1205,11 +1205,11 @@ chr10 chr11 chr12 chr14 chr15 chr16 chr17 chr18
 
 2
 
-3
+9
 
 1
 
-9
+3
 
 2
 

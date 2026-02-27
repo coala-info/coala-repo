@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/macs3-project/MACS
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-macsdata/overview
-- **Total Downloads**: 10.3K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

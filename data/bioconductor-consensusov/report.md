@@ -13,8 +13,4 @@ the package implements a consensus classifier, which consolidates and improves o
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/bhklab/consensusOV
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-consensusov/overview
-- **Total Downloads**: 32.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

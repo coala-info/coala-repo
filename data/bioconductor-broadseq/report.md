@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/dasroy/broadSeq
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-broadseq/overview
-- **Total Downloads**: 440
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

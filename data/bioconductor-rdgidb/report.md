@@ -11,10 +11,6 @@ the package is available on all platforms; click for details.
 - **Version**: N/A
 - **Author**: Thomas Thurnherr, Franziska Singer, Daniel J. Stekhoven, and Niko Beerenwinkel
 - **Maintainer**: Thomas Thurnherr &#x3c;&#x74;&#x68;&#x6f;&#x6d;&#x61;&#x73;&#x2e;&#x74;&#x68;&#x75;&#x72;&#x6e;&#x68;&#x65;&#x72;&#x72;&#x20;&#x61;&#x74;&#x20;&#x62;&#x73;&#x73;&#x65;&#x2e;&#x65;&#x74;&#x68;&#x7a;&#x2e;&#x63;&#x68;&#x3e;
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rdgidb/overview
-- **Total Downloads**: 43.5K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

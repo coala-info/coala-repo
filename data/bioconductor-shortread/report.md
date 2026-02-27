@@ -13,8 +13,4 @@ The package includes functions for filtering and trimming reads, and for generat
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/ShortRead
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-shortread/overview
-- **Total Downloads**: 702.8K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

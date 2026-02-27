@@ -13,8 +13,4 @@ The package document the data collection, pre-processing and processing. In addi
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/MahShaaban/curatedAdipoRNA
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-curatedadiporna/overview
-- **Total Downloads**: 22.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

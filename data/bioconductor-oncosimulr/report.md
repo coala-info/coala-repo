@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/rdiaz02/OncoSimul
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-oncosimulr/overview
-- **Total Downloads**: 43.9K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

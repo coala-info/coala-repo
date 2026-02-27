@@ -296,11 +296,11 @@ Positions2 MutsCount1 MutsCount2 MutsCountTotal Z.Score Within.Range1
 345
 345
 
-2
-2
+1
+1
 
-1
-1
+2
+2
 
 Within.Range2 Intersection
 
@@ -352,9 +352,9 @@ MutsCount2 MutsCount3 MutsCountTotal Z.Score Within.Range1 Within.Range2
 
 453
 
-1
-
 2
+
+1
 
 Within.Range3 Intersection
 

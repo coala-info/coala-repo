@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Lululuella/OVESEG
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-oveseg/overview
-- **Total Downloads**: 29.0K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

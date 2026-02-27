@@ -1,24 +1,92 @@
 ---
 name: bioconductor-sscu
-description: The bioconductor-sscu package calculates indexes for selective strength in codon usage and identifies optimal codons in bacterial species. Use when user asks to calculate the s-index, perform Akashi's test for translational accuracy, identify optimal codons, or compute codon usage statistics like RSCU and genomic GC3.
+description: This tool analyzes translational selection and codon usage bias in bacterial genomes. Use when user asks to calculate the S-index, identify optimal codons, perform Akashi’s test for translational accuracy, or analyze genomic GC3 and RSCU statistics.
 homepage: https://bioconductor.org/packages/release/bioc/html/sscu.html
 ---
 
 
 # bioconductor-sscu
 
+name: bioconductor-sscu
+description: Analysis of translational selection and codon usage bias in bacteria. Use this skill to calculate the S-index (sscu), perform Akashi's test for translational accuracy, identify optimal codons (via high-expression comparison or correlation methods), and analyze genomic GC3 and RSCU statistics.
+
+# bioconductor-sscu
+
 ## Overview
+The `sscu` package provides tools to quantify the strength of selective codon usage in bacterial species. It focuses on translational selection, allowing for comparisons across species by accounting for background mutation rates. Key features include calculating the S-index (sscu), identifying optimal codons, and performing Akashi’s test for translational accuracy.
 
-Use the Bioconductor R package **sscu** for: The package calculates the indexes for selective stength in codon usage in bacteria species. (1) The package can calculate the strength of selected codon usage bias (sscu, also named as s_index) based on Paul Sharp's method. The method take into account of background mutation rate, and focus only on four pairs of codons with universal translational advantages in all bacterial species. Thus the sscu index is comparable among different species. (2) The package can detect the strength of translational accuracy selection by Akashi's test. The test tabulating all codons into four categories with the feature as conserved/variable amino acids and optimal/non-optimal codons. (3) Optimal codon lists (selected codons) can be calculated by either op_highly function (by using the highly expressed genes compared with all genes to identify optimal codons), or op_corre_CodonW/op_corre_NCprime function (by correlative method developed by Hershberg & Petrov). Users will have a list of optimal codons for further analysis, such as input to the Akashi's test. (4) The detailed codon usage information, such as RSCU value, number of optimal codons in the highly/all gene set, as well as the genomic gc3 value, can be calculate by the optimal_codon_statistics and genomic_gc3 function. (5) Furthermore, we added one test function low_frequency_op in the package. The function try to find the low frequency optimal codons, among all the optimal codons identified by the op_highly function.
+## Core Workflows
 
-## Installation
+### 1. Calculating the S-index (Strength of Selected Codon Usage)
+The S-index (or s_index) measures the strength of translational selection. It specifically analyzes four pairs of codons (for Phe, Tyr, Ile, and Asn) where C-ending codons have universal translational advantages.
 
 ```r
-if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("sscu")
+library(sscu)
+
+# Method 1: Using a genomic CDS file to calculate background mutation
+s_val <- s_index(high_cds_file = "path/to/highly_expressed.ffn", 
+                 genomic_cds_file = "path/to/genome_cds.ffn")
+
+# Method 2: Providing a known genomic GC3 value
+s_val <- s_index(high_cds_file = "path/to/highly_expressed.ffn", 
+                 gc3 = 0.45)
+```
+*Note: The `high_cds_file` should ideally contain ~40 highly expressed genes (e.g., ribosomal proteins, elongation factors).*
+
+### 2. Identifying Optimal Codons
+Optimal codons are those significantly enriched in highly expressed genes compared to a reference set.
+
+**Using High Expression Comparison:**
+```r
+# Get a character vector of optimal codons
+opt_codons <- op_highly(high_cds_file = "highly.ffn", 
+                        ref_cds_file = "genome_cds.ffn", 
+                        p_cutoff = 0.01)
+
+# Get detailed statistics (RSCU, p-values, etc.)
+opt_stats <- op_highly_stats(high_cds_file = "highly.ffn", 
+                             ref_cds_file = "genome_cds.ffn")
 ```
 
-## Reference documentation
+**Using Correlation Methods (Hershberg & Petrov):**
+If you have output from external tools like CodonW or ENCprime:
+```r
+# Using CodonW output
+opt_corr <- op_corre_CodonW(genomic_cds_file = "genome_cds.ffn", 
+                            correspondence_file = "codonw_output.txt")
 
-See files in `references/` for vignettes and tutorials.
+# Using NCprime output
+opt_corr_nc <- op_corre_NCprime(genomic_cds_file = "genome_cds.ffn", 
+                                nc_file = "ncprime_output.txt")
+```
+
+### 3. Akashi's Test for Translational Accuracy
+This test determines if optimal codons are favored at evolutionary conserved sites.
+
+```r
+# Requires a contingency file (typically generated by the package's perl script)
+results <- akashi_test(contingency_file = "path/to/contingency_table")
+
+# Results include Z-value, p-value, and Odds Ratio
+print(results$Z)
+print(results$p)
+```
+
+### 4. Genomic GC3 and Low Frequency Optimal Codons
+```r
+# Calculate genomic GC3 from a multi-fasta CDS file
+g_gc3 <- genomic_gc3("genome_cds.ffn")
+
+# Identify "low frequency" optimal codons (common in mutation-shifting species like G. vaginalis)
+low_freq <- low_frequency_op(high_cds_file = "highly.ffn", 
+                             genomic_cds_file = "genome_cds.ffn")
+```
+
+## Usage Tips
+- **Input Formats**: Most functions require file paths to multi-fasta (.ffn or .fasta) files containing CDS sequences.
+- **Highly Expressed Genes**: For the S-index, use the standard set of 40 genes (ribosomal proteins L1-L6, L9-L20, S2-S20, and Elongation Factors Tu, Ts, G).
+- **Akashi's Test Preparation**: The `akashi_test` function expects a specific contingency table format. While the package includes a Perl script (`make_contingency_table.pl`) for this, you must ensure your environment can execute it or provide a manually formatted file.
+- **Interpretation**: In `op_highly_stats`, the `symbol` column indicates enrichment: `+` (optimal), `-` (non-optimal), or `NA` (not significant).
+
+## Reference documentation
+- [Reference Manual](./references/reference_manual.md)

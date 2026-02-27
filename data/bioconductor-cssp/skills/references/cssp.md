@@ -185,9 +185,9 @@ cbind( paste("chr", i, sep="" ), mapdat[[i]] ))
 
 ndat[[i]] <- data.frame( pos = ( 0:( numBins[i]-1 ) ) * 100,
 
-gcdat[[i]] <- data.frame( pos = ( 0:( numBins[i]-1 ) ) * 100,
-
 mapdat[[i]] <- data.frame( pos = ( 0:(numBins[i]-1 ) ) * 100,
+
+gcdat[[i]] <- data.frame( pos = ( 0:( numBins[i]-1 ) ) * 100,
 
 > data( tagdat_input )
 > dat_chip <- tag2bin( tagdat_chip, binS = 100, fragL = 100 )
@@ -396,11 +396,11 @@ in the ChIP sample, respectively.
 6
 116.7774 116.5289 116.6533 117.0278 117.0273 117.4633
 
+1
+
 2
 
 3
-
-1
 
 4
 

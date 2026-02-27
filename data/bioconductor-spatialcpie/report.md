@@ -11,10 +11,6 @@ The package is built around a shiny "gadget" to allow the exploration of the dat
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-spatialcpie/overview
-- **Total Downloads**: 21.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

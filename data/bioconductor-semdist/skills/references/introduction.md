@@ -411,9 +411,9 @@ package="SemDist")
 
 package="SemDist")
 
-V2
-
 V1
+
+V2
 
 V3
 1 INO4_YEAST GO:0003674 0.464

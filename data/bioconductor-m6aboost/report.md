@@ -13,8 +13,4 @@ The package includes functions to assign the read counts and get the features to
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ZarnackGroup/m6Aboost
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-m6aboost/overview
-- **Total Downloads**: 7.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

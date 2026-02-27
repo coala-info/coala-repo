@@ -13,8 +13,4 @@ the package offers a set of further analysis features to gain insights like the 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/BIONF/PhyloProfile
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-phyloprofile/overview
-- **Total Downloads**: 30.6K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

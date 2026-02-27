@@ -23,6 +23,9 @@ sce <- scDblFinder(sce, dbr=0.1)
 table(truth=sce$type, call=sce$scDblFinder.class)
 
 ## -----------------------------------------------------------------------------
+hist(sce$scDblFinder.score)
+
+## -----------------------------------------------------------------------------
 sce <- scDblFinder(sce, clusters="cluster")
 table(truth=sce$type, call=sce$scDblFinder.class)
 

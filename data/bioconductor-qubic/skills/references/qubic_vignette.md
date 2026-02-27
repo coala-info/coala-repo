@@ -229,26 +229,23 @@ biclust::biclust(x = test, method = BCQU())
 ## Number of Rows:
 ## Number of Columns:
 
-10
-9
+5
+3
 
-2
+3
+5
+
+3
 5
 
 9
 8
 
-3
-5
-
-3
-5
-
-5
-3
-
 9
 7
+
+10
+9
 
 10
 9
@@ -282,7 +279,7 @@ BC 28 BC 29 BC 30 BC 31 BC 32 BC 33 BC 34 BC 35 BC 36 BC 37 BC 38 BC 39 BC 40
 5
 
 2
-6
+5
 
 2
 6
@@ -292,6 +289,27 @@ BC 28 BC 29 BC 30 BC 31 BC 32 BC 33 BC 34 BC 35 BC 36 BC 37 BC 38 BC 39 BC 40
 
 2
 6
+
+2
+5
+
+2
+5
+
+2
+5
+
+2
+5
+
+2
+5
+
+2
+6
+
+2
+5
 
 2
 5
@@ -331,24 +349,6 @@ BC 28 BC 29 BC 30 BC 31 BC 32 BC 33 BC 34 BC 35 BC 36 BC 37 BC 38 BC 39 BC 40
 
 2
 6
-
-2
-5
-
-2
-5
-
-2
-5
-
-2
-5
-
-2
-5
-
-2
-5
 
 3
 
@@ -902,14 +902,6 @@ dinI_U_N0025 dinP_U_N0025 lexA_U_N0025 lon_U_N0025
 0
 -1
 
-0
--1
-0
--1
--1
-0
-0
-
 -1
 0
 -1
@@ -917,6 +909,14 @@ dinI_U_N0025 dinP_U_N0025 lexA_U_N0025 lon_U_N0025
 0
 -1
 1
+
+0
+-1
+0
+-1
+-1
+0
+0
 
 # QUBIC
 res <- biclust::biclust(ecoli, method = BCQU(), r = 1, q = 0.06, c = 0.95, o = 100,
@@ -1014,11 +1014,11 @@ BC 15 BC 16 BC 17 BC 18 BC 19 BC 20
 41
 31
 
-5
-32
-
 13
 22
+
+5
+32
 
 11
 25
@@ -1135,11 +1135,11 @@ BC 1 BC 2 BC 3 BC 4 BC 5
 180
 50
 
-437
-29
-
 519
 22
+
+437
+29
 
 res4 <- biclust(ecoli, method = BCQU(), weight = ecoli.weight, verbose = FALSE)
 res4
@@ -1161,9 +1161,6 @@ biclust(x = ecoli, method = BCQU(), weight = ecoli.weight, verbose = FALSE)
 
 Cluster sizes:
 
-437
-29
-
 5
 
 100
@@ -1179,6 +1176,9 @@ BC 1 BC 2 BC 3 BC 4 BC 5
 
 519
 22
+
+437
+29
 
 Bicluster-expanding
 
@@ -1205,8 +1205,8 @@ biclust(x = ecoli, method = BCQU(), seedbicluster = res, f = 0.25, verbose = FAL
 ## Number of Rows:
 ## Number of Columns:
 
-14
-26
+593
+29
 
 20
 
@@ -1214,35 +1214,29 @@ BC 1 BC 2 BC 3 BC 4 BC 5 BC 6 BC 7 BC 8 BC 9 BC 10 BC 11 BC 12 BC 13 BC 14
 19
 21
 
-117
-38
-
-593
-29
-
-151
-45
-
 30
 20
-
-36
-19
-
-43
-31
-
-20
-27
 
 17
 23
 
+43
+31
+
 27
 33
 
+36
+19
+
+20
+27
+
 51
 94
+
+151
+45
 
 110
 44
@@ -1250,23 +1244,29 @@ BC 15 BC 16 BC 17 BC 18 BC 19 BC 20
 6
 23
 
-84
-31
+117
+38
 
 68
 38
 
-16
-20
+84
+31
 
 16
 22
 
-5
-32
+14
+26
+
+16
+20
 
 11
 25
+
+5
+32
 
 Biclusters comparison
 
@@ -1306,13 +1306,13 @@ showinfo (test, c(res6, res7, res8))
 
 12
 
-5
+2
 
 4
 
 3
 
-2
+5
 
 6
 

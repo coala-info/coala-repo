@@ -13,8 +13,4 @@ The package is helpful for researchers to find the biomarkers and its function.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/aib-group/PFP
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-pfp/overview
-- **Total Downloads**: 6.5K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

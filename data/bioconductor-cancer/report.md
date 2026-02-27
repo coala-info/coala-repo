@@ -13,8 +13,4 @@ The package is user friendly interface based on the cgdsr and other modeling pac
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kmezhoud/canceR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cancer/overview
-- **Total Downloads**: 2.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

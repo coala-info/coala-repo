@@ -706,9 +706,9 @@ R> abf1 <- read.madata(datafile, designfile=designfile)
 
 B6xAJ
 
-B6
-
 AJ
+
+B6
 
 ,
 

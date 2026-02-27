@@ -100,9 +100,12 @@ E(g1)$edgeLineWidth <- 10
 #--- Check the new attributes in 'g1'
 summary(g1)
 
+## ----label='Display attributes', eval=FALSE-----------------------------------
+# # Display valid attributes
+# rederInfo()
+
 ## ----table1, eval=TRUE, echo=FALSE--------------------------------------------
-rdp <- RedPort()
-attribs <- attributes(rdp)
+attribs <- rederInfo("All")
 attribs$GraphAttr$Usage <- gsub("$","\\$",attribs$GraphAttr$Usage, fixed=TRUE)
 colnames(attribs$GraphAttr)[1] <- "RedeR attribute"
 colnames(attribs$GraphAttr)[4] <- "Usage example"
@@ -112,8 +115,7 @@ knitr::kable(attribs$GraphAttr, format="html", valign='t', linesep='', label="ta
              Examples of how to set *RedeR*'s graph attributes using *igraph* shortcuts.")
 
 ## ----table2, eval=TRUE, echo=FALSE--------------------------------------------
-rdp <- RedPort()
-attribs <- attributes(rdp)
+attribs <- rederInfo("All")
 attribs$VertexAttr$Usage <- gsub("$","\\$",attribs$VertexAttr$Usage, fixed=TRUE)
 colnames(attribs$VertexAttr)[1] <- "RedeR attribute"
 colnames(attribs$VertexAttr)[4] <- "Usage example"
@@ -123,8 +125,7 @@ knitr::kable(attribs$VertexAttr, format="html", valign = 't',linesep='', label="
              Examples of how to set *RedeR*'s node attributes using *igraph* shortcuts.")
 
 ## ----table3, eval=TRUE, echo=FALSE--------------------------------------------
-rdp <- RedPort()
-attribs <- attributes(rdp)
+attribs <- rederInfo("All")
 attribs$EdgeAttr$Usage <- gsub("$","\\$",attribs$EdgeAttr$Usage, fixed=TRUE)
 colnames(attribs$EdgeAttr)[1] <- "RedeR attribute"
 colnames(attribs$EdgeAttr)[4] <- "Usage example"

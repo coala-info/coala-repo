@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/sydney-grant/seq.hotSPOT
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-seq.hotspot/overview
-- **Total Downloads**: 3.3K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

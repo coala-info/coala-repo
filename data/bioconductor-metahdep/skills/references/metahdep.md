@@ -365,11 +365,11 @@ mean effect size) from several meta-analysis models applied to the gene expressi
 
 8
 
-FEMA0.000.150.300.000.150.000.150.300.000.150.30REMAREMA.ds0.000.150.300.000.15HBLM0.000.150.300.000.150.300.000.100.200.000.100.20HBLM.dsComparison of Intercept P−values from Meta−Analysiss2
-
-y2
+FEMA0.000.150.300.000.150.000.150.300.000.150.30REMAREMA.ds0.000.150.300.000.15HBLM0.000.150.300.000.150.300.000.100.200.000.100.20HBLM.dsComparison of Intercept P−values from Meta−Analysisy2
 
 y1
+
+s2
 
 8.69
 
@@ -478,42 +478,42 @@ s1 Rec Time Part Pct dfE
 7.59
 7.59
 
-2
-2
-2
-2
-2
-1
-2
-2
-1
-1
 1
 1
 2
 1
 2
+2
+3
+2
+2
 1
 1
+2
+2
+3
+3
+2
+3
 2
 
+2
+2
+2
+2
+2
+1
+2
+2
+1
+1
 1
 1
 2
 1
 2
-2
-3
-2
-2
 1
 1
-2
-2
-3
-3
-2
-3
 2
 
 1

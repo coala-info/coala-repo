@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/ressomlab/INDEED
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-indeed/overview
-- **Total Downloads**: 23.9K
-- **Last updated**: 2026-02-06
-- **Stars**: N/A
 

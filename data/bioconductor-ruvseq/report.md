@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/drisso/RUVSeq
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ruvseq/overview
-- **Total Downloads**: 53.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

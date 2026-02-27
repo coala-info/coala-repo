@@ -13,8 +13,4 @@ The package provides a unified testing interface to rapidly run and benchmark mu
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/xanibas/granulator
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-granulator/overview
-- **Total Downloads**: 10.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

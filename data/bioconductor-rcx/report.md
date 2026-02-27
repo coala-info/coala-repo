@@ -13,8 +13,4 @@ The package also provides conversion to and from objects of iGraph and graphNEL.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/frankkramer-lab/RCX
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcx/overview
-- **Total Downloads**: 5.0K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

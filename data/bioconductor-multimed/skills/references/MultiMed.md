@@ -187,11 +187,11 @@ values of σ2
 
 Y were chosen so that the marginal variances of E, Mi, Y are 1.
 
+, and σ2
+
 E, σ2
 Mi
 We first simulate the data:
-
-, and σ2
 
 > K <- length(alpha)
 > ## exposure:

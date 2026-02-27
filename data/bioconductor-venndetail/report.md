@@ -13,8 +13,4 @@ The package is particularly useful for bioinformatics applications but can be us
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/guokai8/VennDetail
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-venndetail/overview
-- **Total Downloads**: 24.2K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

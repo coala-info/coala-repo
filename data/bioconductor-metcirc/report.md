@@ -11,10 +11,6 @@ the package Spectra that stores MS/MS spectra. MetCirc offers functionality to c
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-metcirc/overview
-- **Total Downloads**: 41.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

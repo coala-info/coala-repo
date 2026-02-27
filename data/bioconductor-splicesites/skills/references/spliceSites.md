@@ -359,19 +359,19 @@ id seqid lstart lend rstart rend gaplen nAligns nProbes nlstart qsm nmcl
 5 95
 8 172
 
-553
-201
-29
-4
-5
-34
-
 140
 757
 659
 579
 88
 92
+
+553
+201
+29
+4
+5
+34
 
 1
 1
@@ -1598,9 +1598,9 @@ frames and add DNA-sequence:
 > lrjc<-c(lrCodons(lrj,1),lrCodons(lrj,2),lrCodons(lrj,3))
 > jlrd<-dnaRanges(ljc,dna_small)
 
-)
-
 +
+
+)
 
 +
 
@@ -1927,19 +1927,19 @@ gptm
 1
 1
 
-553
-201
-29
-4
-5
-34
-
 140
 757
 659
 579
 88
 92
+
+553
+201
+29
+4
+5
+34
 
 8 200
 8 181
@@ -2226,11 +2226,11 @@ gender nAligns nAlignGaps nSites cSites
 46
 71
 
-3107
-4064
-
 3368
 4297
+
+3107
+4064
 
 46
 64
@@ -2350,15 +2350,15 @@ We the create artiﬁcial align-count data for several some gap-sites. The input
 key allows for multipe entries for the same site. For the output the sites are merged
 (and align numbers summed) into ku.
 
-seqid=c(1,1,2,2,4),
-lend=c(10,20,10,30,50),
-rstart=c(20,30,20,40,70),
-nAligns=c(21,22,23,24,25))
-
 seqid=c(1,1,2,2,3),
 lend=c(10,20,10,30,10),
 rstart=c(20,30,20,40,20),
 nAligns=c(11,21,31,41,51))
+
+seqid=c(1,1,2,2,4),
+lend=c(10,20,10,30,50),
+rstart=c(20,30,20,40,70),
+nAligns=c(21,22,23,24,25))
 
 > key1<-data.frame(id=1:5,
 +
@@ -2429,16 +2429,6 @@ seqid lend rstart nAligns c.gen.m c.gen.w c.loc.thx c.loc.abd c.ag.y c.ag.m
 20
 30
 
-63
-43
-86
-65
-51
-25
-33
-34
-35
-
 10
 20
 10
@@ -2449,11 +2439,31 @@ seqid lend rstart nAligns c.gen.m c.gen.w c.loc.thx c.loc.abd c.ag.y c.ag.m
 10
 20
 
-1
-1
+63
+43
+86
+65
+51
+25
+33
+34
+35
+
+2
+2
+2
+2
 1
 1
 0
+0
+0
+
+2
+2
+2
+2
+1
 1
 0
 0
@@ -2464,6 +2474,16 @@ seqid lend rstart nAligns c.gen.m c.gen.w c.loc.thx c.loc.abd c.ag.y c.ag.m
 2
 1
 1
+0
+1
+1
+1
+
+1
+0
+1
+0
+0
 0
 1
 1
@@ -2480,30 +2500,10 @@ seqid lend rstart nAligns c.gen.m c.gen.w c.loc.thx c.loc.abd c.ag.y c.ag.m
 5
 
 1
-0
-1
-0
-0
-0
 1
 1
 1
-
-2
-2
-2
-2
-1
-1
 0
-0
-0
-
-2
-2
-2
-2
-1
 1
 0
 0
@@ -2565,23 +2565,29 @@ seqid lend rstart gen.m gen.w loc.thx loc.abd ag.y ag.m ag.o
 41
 51
 
-11
-21
-31
-41
-51
-
 20
 30
 20
 40
 20
 
+11
+21
+31
+41
+51
+
 10
 20
 10
 30
 10
+
+0
+0
+0
+0
+0
 
 0
 0
@@ -2594,12 +2600,6 @@ seqid lend rstart gen.m gen.w loc.thx loc.abd ag.y ag.m ag.o
 2
 2
 3
-
-0
-0
-0
-0
-0
 
 0
 0
@@ -2636,15 +2636,6 @@ seqid lend rstart nAligns aln.gen.m aln.gen.w aln.loc.thx aln.loc.abd
 34
 0
 
-32
-43
-54
-65
-51
-25
-0
-0
-
 20
 30
 20
@@ -2663,14 +2654,14 @@ seqid lend rstart nAligns aln.gen.m aln.gen.w aln.loc.thx aln.loc.abd
 33
 34
 
-10
-20
-10
-30
-10
-50
-60
-10
+32
+43
+54
+65
+51
+25
+0
+0
 
 63
 43
@@ -2680,6 +2671,15 @@ seqid lend rstart nAligns aln.gen.m aln.gen.w aln.loc.thx aln.loc.abd
 25
 33
 34
+
+10
+20
+10
+30
+10
+50
+60
+10
 
 1
 1

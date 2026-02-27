@@ -342,18 +342,18 @@ verbose=!F);
 
 7
 
-137
-
 157
+
+137
 
 2
 72
 
 Her2
-77
+81
 
 Her2
-81
+77
 
 LumA
 165
@@ -362,10 +362,10 @@ LumA
 150
 
 LumB Normal
-62
+63
 
 LumB Normal
-63
+62
 
 Basal
 Her2

@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/shooshtarilab/scATACseq
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-scatac.explorer/overview
-- **Total Downloads**: 9.7K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

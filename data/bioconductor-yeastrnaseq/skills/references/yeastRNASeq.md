@@ -173,10 +173,10 @@ mut_1 mut_2 wt_1 wt_2
 39
 
 0
-38
+35
 
 0
-35
+38
 
 Such a matrix may be constructed from yeastAligned and yeastAnno using
 either the functionality in the IRanges and ShortRead packages or by using

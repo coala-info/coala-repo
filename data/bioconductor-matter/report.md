@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kuwisdelu/matter
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-matter/overview
-- **Total Downloads**: 57.6K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

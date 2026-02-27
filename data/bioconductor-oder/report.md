@@ -13,8 +13,4 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/eolagbaju/ODER
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-oder/overview
-- **Total Downloads**: 3.9K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

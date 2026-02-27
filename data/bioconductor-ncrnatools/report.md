@@ -13,8 +13,4 @@ The package also provides tools to read, write and interconvert the file formats
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/LaraSellesVidal/ncRNAtools
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-ncrnatools/overview
-- **Total Downloads**: 13.0K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

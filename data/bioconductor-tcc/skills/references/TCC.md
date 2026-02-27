@@ -900,9 +900,9 @@ G1_rep1
 G2_rep3
 0.8804811 0.8712588 0.8207842 1.0784376 1.1570976 1.1919407
 
-G2_rep1
-
 G2_rep2
+
+G2_rep1
 
 G1_rep3
 
@@ -1008,9 +1008,9 @@ T_dogA
 N_dogC
 0.8916175 0.8466086 0.8332711 1.0704552 1.1498406 1.2082070
 
-N_dogA
-
 N_dogB
+
+N_dogA
 
 T_dogB
 
@@ -1069,9 +1069,9 @@ N_dogA
 
 N_dogB
 
-T_dogB
-
 T_dogC
+
+T_dogB
 
 3.3 Normalization of multi-group count data with replicates
 
@@ -1188,22 +1188,22 @@ group norm.factors lib.sizes
 1
 1
 1
-2
-2
-2
-3
-3
-3
+1
+1
+1
+1
+1
+1
 
 1
 1
 1
-1
-1
-1
-1
-1
-1
+2
+2
+2
+3
+3
+3
 
 > dim(tcc$count)
 
@@ -1249,17 +1249,17 @@ G1_rep1
 G3_rep2
 1.0203839 0.9119700 0.7810479 0.8330077 1.1751542 1.2022200 1.0218448 1.0290122
 
-G1_rep3
+G2_rep1
 
 G2_rep2
 
-G2_rep1
+G1_rep3
 
 G1_rep2
 
-G3_rep1
-
 G2_rep3
+
+G3_rep1
 
 G3_rep3
 1.0253592
@@ -1283,17 +1283,17 @@ G1_rep1
 G3_rep2
 1.0203839 0.9119700 0.7810479 0.8330077 1.1751542 1.2022200 1.0218448 1.0290122
 
-G1_rep2
+G1_rep3
 
 G2_rep2
 
 G2_rep1
 
-G1_rep3
-
-G3_rep1
+G1_rep2
 
 G2_rep3
+
+G3_rep1
 
 G3_rep3
 1.0253592
@@ -1350,17 +1350,17 @@ colSums(hypoData_mg)
 G3_rep2
 1.0203839 0.9119700 0.7810479 0.8330077 1.1751542 1.2022200 1.0218448 1.0290122
 
-G2_rep2
+G1_rep2
 
 G2_rep1
 
+G2_rep2
+
 G1_rep3
 
-G1_rep2
+G2_rep3
 
 G3_rep1
-
-G2_rep3
 
 G3_rep3
 1.0253592
@@ -1490,9 +1490,9 @@ From now on, we will display only the median values for simplicity, i.e.,
 
 21.0
 
-21.0
-
 20.0
+
+21.0
 
 20.5
 
@@ -1642,9 +1642,9 @@ N_dogC
 
 N_dogA
 
-T_dogC
-
 N_dogB
+
+T_dogC
 
 T_dogB
 
@@ -1876,13 +1876,13 @@ G1_rep1 G1_rep2 G1_rep3 G2_rep1 G2_rep2 G2_rep3 G3_rep1 G3_rep2 G3_rep3
 
 13.0
 
-14.0
-
-13.0
-
 14.5
 
 14.0
+
+14.0
+
+13.0
 
 14.0
 
@@ -2404,11 +2404,11 @@ G1_rep1
 G2_rep3
 0.9271692 0.9147550 0.8753592 1.0217885 1.1069052 1.1540229
 
+G1_rep3
+
 G2_rep2
 
 G2_rep1
-
-G1_rep3
 
 G1_rep2
 
@@ -3223,19 +3223,19 @@ G1_rep1 G1_rep2 G2_rep1 G2_rep2 G2_rep3 G2_rep4 G3_rep1 G3_rep2 G3_rep3
 4
 81
 
-66
-22
-20
-8
-5
-87
-
 5
 13
 14
 24
 3
 82
+
+66
+22
+20
+8
+5
+87
 
 4
 0
@@ -3519,19 +3519,19 @@ WT1d_rep1 WT1d_rep2 WT2d_rep1 WT2d_rep2 KO1d_rep1 KO1d_rep2 KO2d_rep1
 2
 115
 
-14
-1
-26
-47
-1
-197
-
 33
 23
 64
 36
 0
 110
+
+14
+1
+26
+47
+1
+197
 
 39
 13

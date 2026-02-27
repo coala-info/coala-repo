@@ -7,7 +7,7 @@ Code
 
 Author: First Last Name
 
-#### Last update: 22 January, 2026
+#### Last update: 24 February, 2026
 
 #### Package
 
@@ -982,10 +982,10 @@ sessionInfo()
 ##
 ## loaded via a namespace (and not attached):
 ##  [1] gtable_0.3.6        xfun_0.56
-##  [3] bslib_0.9.0         hwriter_1.3.2.1
-##  [5] ggplot2_4.0.1       htmlwidgets_1.6.4
-##  [7] latticeExtra_0.6-31 lattice_0.22-7
-##  [9] vctrs_0.7.0         tools_4.5.2
+##  [3] bslib_0.10.0        hwriter_1.3.2.1
+##  [5] ggplot2_4.0.2       htmlwidgets_1.6.4
+##  [7] latticeExtra_0.6-31 lattice_0.22-9
+##  [9] vctrs_0.7.1         tools_4.5.2
 ## [11] bitops_1.0-9        parallel_4.5.2
 ## [13] tibble_3.3.1        pkgconfig_2.0.3
 ## [15] Matrix_1.7-4        RColorBrewer_1.1-3
@@ -999,7 +999,7 @@ sessionInfo()
 ## [31] DelayedArray_0.36.0 cachem_1.1.0
 ## [33] abind_1.4-8         tidyselect_1.2.1
 ## [35] digest_0.6.39       stringi_1.8.7
-## [37] dplyr_1.1.4         bookdown_0.46
+## [37] dplyr_1.2.0         bookdown_0.46
 ## [39] fastmap_1.2.0       grid_4.5.2
 ## [41] cli_3.6.5           SparseArray_1.10.8
 ## [43] magrittr_2.0.4      S4Arrays_1.10.1

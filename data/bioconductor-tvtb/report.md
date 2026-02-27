@@ -13,8 +13,4 @@ The package provides S4 classes and methods to filter, summarise and visualise g
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/kevinrue/TVTB
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tvtb/overview
-- **Total Downloads**: 34.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

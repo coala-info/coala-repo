@@ -13,8 +13,4 @@ The package is developed for generating specifc lists of signature genes based o
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/DavisLaboratory/smartid
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-smartid/overview
-- **Total Downloads**: 460
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

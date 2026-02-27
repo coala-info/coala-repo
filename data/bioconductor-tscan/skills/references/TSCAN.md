@@ -251,6 +251,8 @@ IQR, mad, sd, var, xtabs
 ##
 ## Loading required package:
 
+To cite Bioconductor, see
+
 IRanges
 Seqinfo
 Biobase
@@ -270,8 +272,6 @@ rowMedians
 Vignettes contain introductory material; view with
 ’browseVignettes()’.
 ’citation("Biobase")’, and for packages ’citation("pkgname")’.
-
-To cite Bioconductor, see
 
 data(lpsdata)
 procdata <- preprocess(lpsdata)

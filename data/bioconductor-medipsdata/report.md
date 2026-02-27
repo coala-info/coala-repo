@@ -11,10 +11,6 @@ the package contains MeDIP seq data from 3 NSCLC samples and adjacent normal tis
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-medipsdata/overview
-- **Total Downloads**: 27.0K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

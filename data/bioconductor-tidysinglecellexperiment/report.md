@@ -13,8 +13,4 @@ the package provides various utility functions specific to single-cell omics dat
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/stemangiola/tidySingleCellExperiment
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-tidysinglecellexperiment/overview
-- **Total Downloads**: 13.2K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

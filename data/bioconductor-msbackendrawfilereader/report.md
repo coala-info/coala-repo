@@ -13,8 +13,4 @@ The package is generalizing the functionality introduced by the rawrr package Me
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/MsBackendRawFileReader
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-msbackendrawfilereader/overview
-- **Total Downloads**: 7.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

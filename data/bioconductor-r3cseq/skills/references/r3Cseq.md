@@ -921,19 +921,19 @@ Gm5506
 Aldh8a1
 Gm5801
 
+chr10
+chr10
+chr10
+chr4
+chr10
+chr4
+
 43217
 34310
 29738
 16480
 9422
 14170
-
-chr10
-chr10
-chr10
-chr4
-chr10
-chr4
 
 177
 146

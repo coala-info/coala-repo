@@ -498,13 +498,13 @@ tritype
 
 pvalue
 
-chr1
-
 - |
 
 3
 
 [1]
+
+chr1
 
 lend
 

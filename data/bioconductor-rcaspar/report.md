@@ -11,10 +11,6 @@ The package is the R-version of the C-based software \bold{CASPAR} (Kaderali,200
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcaspar/overview
-- **Total Downloads**: 43.2K
-- **Last updated**: 2026-02-04
-- **Stars**: N/A
 

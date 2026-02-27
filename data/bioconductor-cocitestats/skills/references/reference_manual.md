@@ -1,6 +1,6 @@
 Package ‘CoCiteStats’
 
-February 12, 2026
+February 25, 2026
 
 Title Different test statistics based on co-citation.
 
@@ -34,7 +34,7 @@ git_last_commit_date 2025-10-29
 
 Repository Bioconductor 3.22
 
-Date/Publication 2026-02-12
+Date/Publication 2026-02-25
 
 Contents
 

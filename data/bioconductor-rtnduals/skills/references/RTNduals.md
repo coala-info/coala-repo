@@ -2,7 +2,7 @@
 
 Vinicius S. Chagas, Clarice S. Groeneveld, Kerstin B. Meyer, A. Gordon Robertson, Mauro A. A. Castro.
 
-#### 30 October 2025
+#### 25 February 2026
 
 #### Abstract
 
@@ -10,7 +10,7 @@ RTNduals is a tool derived from the [RTN](http://bioconductor.org/packages/RTN/)
 
 #### Package
 
-RTNduals 1.34.0
+RTNduals 1.34.1
 
 # Contents
 
@@ -114,19 +114,19 @@ mbrGet(rmbr, what="summary")
 ## $MBR
 ## $MBR$Duals
 ##       Tested Predicted
-## Duals     21         5
+## Duals     21         4
 ##
 ##
 ## $TNI
 ## $TNI$tnet
 ##          Regulators Targets Edges
-## tnet.ref          7    2329  6555
-## tnet.dpi          7    2329  3740
+## tnet.ref          7    2350  6511
+## tnet.dpi          7    2350  3893
 ##
 ## $TNI$regulonSize
 ##          Min. 1st Qu. Median     Mean 3rd Qu. Max.
-## tnet.ref  717   822.0    911 936.4286    1077 1129
-## tnet.dpi  364   417.5    520 534.2857     646  729
+## tnet.ref  719   793.5    956 930.1429  1069.5 1110
+## tnet.dpi  377   444.0    581 556.1429   655.5  736
 ```
 
 ```
@@ -140,7 +140,7 @@ Also, when prior evidences are available this method can add a ‘supplementaryT
 # 3 Session information
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -163,53 +163,53 @@ Also, when prior evidences are available this method can add a ‘supplementaryT
 ## [1] stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-## [1] RTNduals_1.34.0  RTN_2.34.0       BiocStyle_2.38.0
+## [1] RTNduals_1.34.1  RTN_2.34.1       BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.2.1            viridisLite_0.4.2
-##  [3] dplyr_1.1.4                 farver_2.1.2
-##  [5] mixtools_2.0.0.1            S7_0.2.0
+##  [1] tidyselect_1.2.1            viridisLite_0.4.3
+##  [3] dplyr_1.2.0                 farver_2.1.2
+##  [5] mixtools_2.0.0.1            S7_0.2.1
 ##  [7] fastmap_1.2.0               lazyeval_0.2.2
-##  [9] digest_0.6.37               lifecycle_1.0.4
-## [11] survival_3.8-3              statmod_1.5.1
+##  [9] digest_0.6.39               lifecycle_1.0.5
+## [11] survival_3.8-6              statmod_1.5.1
 ## [13] magrittr_2.0.4              kernlab_0.9-33
-## [15] compiler_4.5.1              rlang_1.1.6
-## [17] sass_0.4.10                 tools_4.5.1
-## [19] igraph_2.2.1                yaml_2.3.10
-## [21] data.table_1.17.8           knitr_1.50
-## [23] S4Arrays_1.10.0             htmlwidgets_1.6.4
+## [15] compiler_4.5.2              rlang_1.1.7
+## [17] sass_0.4.10                 tools_4.5.2
+## [19] igraph_2.2.2                yaml_2.3.12
+## [21] data.table_1.18.2.1         knitr_1.51
+## [23] S4Arrays_1.10.1             htmlwidgets_1.6.4
 ## [25] DelayedArray_0.36.0         RColorBrewer_1.1-3
 ## [27] abind_1.4-8                 KernSmooth_2.23-26
-## [29] purrr_1.1.0                 viper_1.44.0
-## [31] BiocGenerics_0.56.0         grid_4.5.1
-## [33] stats4_4.5.1                e1071_1.7-16
-## [35] ggplot2_4.0.0               scales_1.4.0
+## [29] purrr_1.2.1                 viper_1.44.0
+## [31] BiocGenerics_0.56.0         grid_4.5.2
+## [33] stats4_4.5.2                e1071_1.7-17
+## [35] ggplot2_4.0.2               scales_1.4.0
 ## [37] MASS_7.3-65                 dichromat_2.0-0.1
 ## [39] SummarizedExperiment_1.40.0 cli_3.6.5
 ## [41] rmarkdown_2.30              generics_0.1.4
-## [43] httr_1.4.7                  cachem_1.1.0
-## [45] proxy_0.4-27                splines_4.5.1
-## [47] parallel_4.5.1              BiocManager_1.30.26
-## [49] XVector_0.50.0              matrixStats_1.5.0
-## [51] vctrs_0.6.5                 Matrix_1.7-4
-## [53] jsonlite_2.0.0              carData_3.0-5
-## [55] pwr_1.3-0                   bookdown_0.45
-## [57] car_3.1-3                   IRanges_2.44.0
-## [59] S4Vectors_0.48.0            minet_3.68.0
-## [61] Formula_1.2-5               limma_3.66.0
-## [63] plotly_4.11.0               tidyr_1.3.1
-## [65] jquerylib_0.1.4             snow_0.4-4
-## [67] glue_1.8.0                  gtable_0.3.6
-## [69] GenomicRanges_1.62.0        tibble_3.3.0
-## [71] pillar_1.11.1               htmltools_0.5.8.1
-## [73] Seqinfo_1.0.0               R6_2.6.1
-## [75] evaluate_1.0.5              lattice_0.22-7
-## [77] Biobase_2.70.0              segmented_2.1-4
-## [79] pheatmap_1.0.13             RedeR_3.6.0
-## [81] bslib_0.9.0                 class_7.3-23
-## [83] SparseArray_1.10.0          nlme_3.1-168
-## [85] xfun_0.53                   MatrixGenerics_1.22.0
-## [87] pkgconfig_2.0.3
+## [43] otel_0.2.0                  httr_1.4.8
+## [45] cachem_1.1.0                proxy_0.4-29
+## [47] splines_4.5.2               parallel_4.5.2
+## [49] BiocManager_1.30.27         XVector_0.50.0
+## [51] matrixStats_1.5.0           vctrs_0.7.1
+## [53] Matrix_1.7-4                jsonlite_2.0.0
+## [55] carData_3.0-6               pwr_1.3-0
+## [57] bookdown_0.46               car_3.1-5
+## [59] IRanges_2.44.0              S4Vectors_0.48.0
+## [61] minet_3.68.0                Formula_1.2-5
+## [63] limma_3.66.0                plotly_4.12.0
+## [65] tidyr_1.3.2                 jquerylib_0.1.4
+## [67] snow_0.4-4                  glue_1.8.0
+## [69] gtable_0.3.6                GenomicRanges_1.62.1
+## [71] tibble_3.3.1                pillar_1.11.1
+## [73] htmltools_0.5.9             Seqinfo_1.0.0
+## [75] R6_2.6.1                    evaluate_1.0.5
+## [77] lattice_0.22-9              Biobase_2.70.0
+## [79] segmented_2.2-1             pheatmap_1.0.13
+## [81] RedeR_3.6.2                 bslib_0.10.0
+## [83] class_7.3-23                SparseArray_1.10.8
+## [85] nlme_3.1-168                xfun_0.56
+## [87] MatrixGenerics_1.22.0       pkgconfig_2.0.3
 ```
 
 # References

@@ -13,8 +13,4 @@ The package can be used to import microbial data for instance into TreeSummarize
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/EBI-Metagenomics/MGnifyR
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mgnifyr/overview
-- **Total Downloads**: 196
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

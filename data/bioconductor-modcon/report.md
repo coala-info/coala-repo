@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/caggtaagtat/ModCon
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-modcon/overview
-- **Total Downloads**: 10.3K
-- **Last updated**: 2026-02-04
-- **Stars**: N/A
 

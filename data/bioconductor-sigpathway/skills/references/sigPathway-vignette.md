@@ -358,6 +358,17 @@ NTk Stat NTk q-value NTk Rank NEk Stat NEk q-value NEk Rank
 0
 0
 
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
 3
 6
 6
@@ -368,17 +379,6 @@ NTk Stat NTk q-value NTk Rank NEk Stat NEk q-value NEk Rank
 7
 8
 9
-
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
 
 1
 2

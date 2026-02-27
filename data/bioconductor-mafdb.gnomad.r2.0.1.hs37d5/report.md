@@ -11,10 +11,6 @@ The Bioconductor project aims to develop and share open source software for prec
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-mafdb.gnomad.r2.0.1.hs37d5/overview
-- **Total Downloads**: 2.9K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

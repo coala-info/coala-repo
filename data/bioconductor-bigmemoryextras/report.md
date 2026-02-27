@@ -13,8 +13,4 @@ the package provides a "BigMatrixFactor" class, a file-backed matrix with factor
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/phaverty/bigmemoryExtras
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-bigmemoryextras/overview
-- **Total Downloads**: 12.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

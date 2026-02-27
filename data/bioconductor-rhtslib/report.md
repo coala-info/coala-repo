@@ -13,8 +13,4 @@ The package is primarily useful to developers of other R packages who wish to ma
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/Bioconductor/Rhtslib
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rhtslib/overview
-- **Total Downloads**: 927.2K
-- **Last updated**: 2026-02-08
-- **Stars**: N/A
 

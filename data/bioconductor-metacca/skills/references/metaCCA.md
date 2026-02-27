@@ -213,19 +213,19 @@ allele_0 allele_1 trait1_b trait1_se trait2_b trait2_se
 0.0481
 0.0479
 
+G
+G
+A
+A
+A
+T
+
 T
 T
 C
 T
 T
 G
-
-G
-G
-A
-A
-A
-T
 
 3
 
@@ -348,19 +348,19 @@ trait1 trait2 trait3 trait4 trait5 trait6
 0.977
 0.807
 
-0.977
-0.991
-0.977
-0.996
-1.000
-0.898
-
 0.991
 0.998
 0.955
 1.000
 0.996
 0.922
+
+0.977
+0.991
+0.977
+0.996
+1.000
+0.898
 
 3.2 Genotype-phenotype association analysis
 

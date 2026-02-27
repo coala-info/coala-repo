@@ -537,13 +537,13 @@ parallel group design
 
 metabolite profiling
 
-mass spectrometry
-
 sample collection
 
 10.1021/bi0480335
 
 sample collection
+
+mass spectrometry
 
 a_metabolite.txt
 

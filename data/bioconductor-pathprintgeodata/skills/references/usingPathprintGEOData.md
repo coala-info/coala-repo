@@ -60,11 +60,11 @@ required to extract the two matrices from the SummarizedExperiment object.
 
 "pluripotents.frame")
 
+"GPL96"
+
 "GPL81"
 
 "GPL72"
-
-"GPL96"
 
 "GPL1261" "GPL339"
 
@@ -151,9 +151,9 @@ rownames(GEO.metadata.matrix)),
 
 GSM
 
-GSE
-
 GPL
+
+GSE
 
 Species
 <character> <character> <character> <character>

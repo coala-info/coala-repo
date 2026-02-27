@@ -13,8 +13,4 @@ The package provides a BiblioSpec reader, a function which can add the protein i
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/fgcz/specL
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-specl/overview
-- **Total Downloads**: 36.6K
-- **Last updated**: 2026-02-07
-- **Stars**: N/A
 

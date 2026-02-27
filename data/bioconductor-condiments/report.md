@@ -13,8 +13,4 @@ the package is mostly geared toward scRNASeq, it does not place any restriction 
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/HectorRDB/condiments
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-condiments/overview
-- **Total Downloads**: 9.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

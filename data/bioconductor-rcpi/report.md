@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/nanxstats/Rcpi
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rcpi/overview
-- **Total Downloads**: 22.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -120,9 +120,9 @@ following elements:
 > #For .example, the top five rows and columns of results for k=2:
 > results[[2]][["consensusMatrix"]][1:5,1:5]
 
-[,3]
-
 [,2]
+
+[,3]
 
 [,1]
 

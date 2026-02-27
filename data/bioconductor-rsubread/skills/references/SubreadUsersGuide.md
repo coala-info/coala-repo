@@ -2768,17 +2768,17 @@ A_1.bam A_2.bam B_1.bam B_2.bam
 0
 72
 
-591
-0
-0
-0
-30
-
 642
 1
 5
 0
 82
+
+591
+0
+0
+0
+30
 
 fc$annotation[1:5,c("GeneID","Length")]
 

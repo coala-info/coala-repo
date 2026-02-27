@@ -41,24 +41,17 @@ d <- ScaleData(d)
 scGetFiles(d)
 
 # raw counts
-m <- GetAssayData(d, slot="counts")
+m <- GetAssayData(d, layer="counts")
 scGetFiles(m)    # the file name storing raw count data
 m
 
 # normalized expression
 # the normalized data does not save in neither the file nor the memory
-GetAssayData(d, slot="data")
+GetAssayData(d, layer="data")
 
 # scaled and centered data matrix
 # in this example, the scaled data does not save in neither the file nor the memory
-GetAssayData(d, slot="scale.data")
-
-## ----fig.wide=TRUE------------------------------------------------------------
-d <- RunPCA(d, ndims.print=1:2)
-DimPlot(d, reduction="pca")
-
-d <- RunUMAP(d, dims=1:50)    # use all PCs calculated by RunPCA()
-DimPlot(d, reduction="umap")
+GetAssayData(d, layer="scale.data")
 
 ## ----benchmark, echo=FALSE, fig.cap="The benchmark on PCA & UMAP with large datasets (CPU: Intel Xeon Gold 6248 @2.50GHz, RAM: 176GB).", fig.wide=TRUE----
 knitr::include_graphics("benchmark.svg")
@@ -75,7 +68,7 @@ gc()       # trigger a garbage collection
 
 d <- readRDS(save_fn)  # load from a RDS file
 d
-GetAssayData(d, slot="counts")  # reopens the GDS file automatically
+GetAssayData(d, layer="counts")  # reopens the GDS file automatically
 
 ## -----------------------------------------------------------------------------
 is(GetAssay(d))
@@ -84,11 +77,11 @@ new_d <- scMemory(d)  # downgrade the active assay
 is(GetAssay(new_d))
 
 ## -----------------------------------------------------------------------------
-is(GetAssayData(d, slot="scale.data"))  # it is a DelayedMatrix
+is(GetAssayData(d, layer="scale.data"))  # it is a DelayedMatrix
 
-new_d <- scMemory(d, slot="scale.data")  # downgrade "scale.data" in the active assay
+# new_d <- scMemory(d, "scale.data")  # downgrade "scale.data" in the active assay
 is(GetAssay(new_d))  # it is still SCArrayAssay
-is(GetAssayData(new_d, slot="scale.data"))  # in-memory matrix
+# is(GetAssayData(new_d, layer="scale.data"))  # in-memory matrix
 
 ## -----------------------------------------------------------------------------
 is(d)

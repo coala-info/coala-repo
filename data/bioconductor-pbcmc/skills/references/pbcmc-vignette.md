@@ -591,9 +591,9 @@ R> head(exprs(object))
 
 ##The gene expression values for each subject
 
-LumA
-
 Her2
+
+LumA
 
 Basal
 
@@ -673,11 +673,11 @@ BPPARAM=bpparam())
 |
 |============================================================| 100%
 
-| 75%
-
 | 50%
 
 | 25%
+
+| 75%
 
 0%
 

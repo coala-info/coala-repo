@@ -13,8 +13,4 @@ The package provides segmentation, statistics, summary table, fragments visualiz
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/CyanolabFreiburg/rifiComparative
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-rificomparative/overview
-- **Total Downloads**: 3.1K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -189,9 +189,9 @@ ID pSize NDE
 
 74
 
-pG
-
 tA
+
+pG
 
 pNDE
 
@@ -674,8 +674,8 @@ as the one shown in the hsaSPIA.RData file. In this file, each pathway data is i
 0
 0
 0
-0
-0
+1
+1
 
 0
 0
@@ -686,8 +686,8 @@ as the one shown in the hsaSPIA.RData file. In this file, each pathway data is i
 0
 0
 0
-1
-1
+0
+0
 
 0
 0

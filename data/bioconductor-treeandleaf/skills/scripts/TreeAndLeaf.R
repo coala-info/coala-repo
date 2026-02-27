@@ -6,6 +6,9 @@ knitr::opts_chunk$set(
     comment = "#>"
 )
 
+## ----fig_overview, echo=FALSE, out.width = '100%'-----------------------------
+knitr::include_graphics("overview.png")
+
 ## ----eval=TRUE, message=FALSE-------------------------------------------------
 #-- Libraries required in this section:
 #-- TreeAndLeaf(>=1.4.2), RedeR(>=1.40.4), Bioconductor >= 3.13 (R >= 4.0)
@@ -13,10 +16,10 @@ knitr::opts_chunk$set(
 # install.packages(c("igraph","RColorBrewer"))
 
 #-- Load packages
-library("TreeAndLeaf")
-library("RedeR")
-library("igraph")
-library("RColorBrewer")
+library(TreeAndLeaf)
+library(RedeR)
+library(igraph)
+library(RColorBrewer)
 
 ## ----eval=TRUE, message=FALSE-------------------------------------------------
 #-- Check data
@@ -46,46 +49,45 @@ plot(hc, main="Dendrogram for the 'USArrests' dataset",
 #                 xlim = c(10, 50, 5), nquant = 5)
 # 
 # #--- Set graph attributes using 'att.addv' and 'att.adde' functions
-# tal <- att.addv(tal, "nodeFontSize", value = 15, index = V(tal)$isLeaf)
+# tal <- att.addv(tal, "nodeLabelSize", value = 15, index = V(tal)$isLeaf)
 # tal <- att.adde(tal, "edgeWidth", value = 3)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Call RedeR application
-# rdp <- RedPort()
-# calld(rdp)
-# resetd(rdp)
+# startRedeR()
+# resetRedeR()
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Send the tree-and-leaf to the interactive R/Java interface
-# addGraph(obj = rdp, g = tal, gzoom=75)
+# addGraphToRedeR(g = tal, zoom=75)
 # 
 # #--- Call 'relax' to fine-tune the leaf nodes
-# relax(rdp, p1=25, p2=200, p3=5, p5=5, ps=TRUE)
+# relaxRedeR(p1=25, p2=200, p3=5, p5=5)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Add legends
-# addLegend.color(obj = rdp, tal, title = "Murder Rate",
-#                 position = "topright")
-# addLegend.size(obj = rdp, tal, title = "Urban Population Size",
-#                position = "bottomright")
+# addLegendToRedeR(tal, type = "nodecolor")
+# addLegendToRedeR(tal, type = "nodesize")
+
+## ----figUSAReds, echo=FALSE, out.width = '80%'--------------------------------
+knitr::include_graphics("USAReds.png")
 
 ## ----eval=FALSE, message=FALSE------------------------------------------------
 # #-- Libraries required in this section:
-# #-- TreeAndLeaf(>=1.4.2), RedeR(>=1.40.4), Bioconductor >= 3.13 (R >= 4.0)
 # # BiocManager::install(c("TreeAndLeaf","RedeR","ggtree))
 # # install.packages(c("igraph","ape", "dendextend", "dplyr",
 # #                    "ggplot2", "RColorBrewer"))
 # 
 # #-- Load packages
-# library("TreeAndLeaf")
-# library("RedeR")
-# library("igraph")
-# library("ape")
-# library("ggtree")
-# library("dendextend")
-# library("dplyr")
-# library("ggplot2")
-# library("RColorBrewer")
+# library(TreeAndLeaf)
+# library(RedeR)
+# library(igraph)
+# library(ape)
+# library(ggtree)
+# library(dendextend)
+# library(dplyr)
+# library(ggplot2)
+# library(RColorBrewer)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Generate a random phylo tree
@@ -121,7 +123,7 @@ plot(hc, main="Dendrogram for the 'USArrests' dataset",
 #                 xlim = c(10, 50, 5))
 # 
 # #--- Set graph attributes using 'att.addv' and 'att.adde' functions
-# tal <- att.addv(tal, "nodeFontSize", value = 1)
+# tal <- att.addv(tal, "nodeLabelSize", value = 1)
 # tal <- att.addv(tal, "nodeLineWidth", value = 0)
 # tal <- att.addv(tal, "nodeColor", value = "black", index=!V(tal)$isLeaf)
 # tal <- att.adde(tal, "edgeWidth", value = 3)
@@ -129,30 +131,28 @@ plot(hc, main="Dendrogram for the 'USArrests' dataset",
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Call RedeR application
-# rdp <- RedPort()
-# calld(rdp)
-# resetd(rdp)
+# startRedeR()
+# resetRedeR()
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Send the tree-and-leaf to the interactive R/Java interface
-# addGraph(obj = rdp, g = tal, gzoom=50)
+# addGraphToRedeR(g = tal, zoom=50)
 # 
 # #--- Select inner nodes, preventing them from relaxing
-# selectNodes(rdp, V(tal)$name[!V(tal)$isLeaf], anchor=TRUE)
+# selectNodes(V(tal)$name[!V(tal)$isLeaf], anchor=TRUE)
 # 
 # #--- Call 'relax' to fine-tune the leaf nodes
-# relax(rdp, p1=25, p2=100, p3=5, p5=1, p8=5, ps=TRUE)
+# relaxRedeR(p1=25, p2=100, p3=5, p5=1, p8=5)
 # 
 # #--- Add legends
-# addLegend.color(obj = rdp, tal, title = "Group",
-#                 position = "topright",vertical=T)
-# addLegend.size(obj = rdp, tal, title = "Size",
-#                position = "topleft",
-#                vertical=T, dxtitle=10)
+# addLegendToRedeR(tal, type = "nodecolor", title = "Group", stretch = 0.2)
+# addLegendToRedeR(tal, type = "nodesize", title = "Size")
+
+## ----fig_ggtree_tal, echo=FALSE, out.width = '100%'---------------------------
+knitr::include_graphics("ggtree_tal.png")
 
 ## ----eval=FALSE, message=FALSE------------------------------------------------
 # #-- Libraries required in this section:
-# #-- TreeAndLeaf(>=1.4.2), RedeR(>=1.40.4), Bioconductor >= 3.13 (R >= 4.0)
 # # BiocManager::install(c("TreeAndLeaf","RedeR"))
 # # install.packages(c("igraph", "RColorBrewer"))
 # 
@@ -190,113 +190,39 @@ plot(hc, main="Dendrogram for the 'quakes' dataset",
 #                 xlim = c(40, 120, 20), nquant = 5)
 # 
 # #--- Set graph attributes using 'att.addv' and 'att.adde' functions
-# tal <- att.addv(tal, "nodeFontSize", value = 1)
+# tal <- att.addv(tal, "nodeLabelSize", value = 1)
 # tal <- att.adde(tal, "edgeWidth", value = 10)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Call RedeR application
-# rdp <- RedPort()
-# calld(rdp)
-# resetd(rdp)
+# startRedeR()
+# resetRedeR()
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Send the tree-and-leaf to the interactive R/Java interface
-# addGraph(obj = rdp, g = tal, gzoom=10)
+# addGraphToRedeR(g = tal, zoom=10)
 # 
 # #--- Call 'relax' to fine-tune the leaf nodes
-# relax(rdp, p1=25, p2=200, p3=10, p4=100, p5=10, ps=TRUE)
+# relaxRedeR(p1=25, p2=200, p3=10, p4=100, p5=10)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Add legends
-# addLegend.color(obj = rdp, tal, title = "Richter Magnitude",
-#                 position = "bottomright")
-# addLegend.size(obj = rdp, tal, title = "Depth (km)")
+# addLegendToRedeR(tal, type = "nodecolor", title = "Richter Magnitude")
+# addLegendToRedeR(tal, type = "nodesize", title = "Depth (km)")
 
-## ----eval=TRUE, message=FALSE-------------------------------------------------
-#-- Libraries required in this section:
-#-- TreeAndLeaf(>=1.4.2), RedeR(>=1.40.4), Bioconductor >= 3.13 (R >= 4.0)
-# BiocManager::install(c("TreeAndLeaf","RedeR","geneplast))
-# install.packages(c("igraph","ape", "RColorBrewer"))
-
-#-- Load packages
-library(TreeAndLeaf)
-library(RedeR)
-library(igraph)
-library(ape)
-library(geneplast)
-library(RColorBrewer)
-
-## ----eval=TRUE, message=FALSE-------------------------------------------------
-#-- Load data and plot the phylogenetic tree
-data("spdata")
-data("gpdata.gs")
-plot(phyloTree)
-
-## ----eval=FALSE---------------------------------------------------------------
-# #--- Drop organisms not listed in the 'spdata' annotation
-# phyloTree$tip.label <- as.character(phyloTree$tip.label)
-# tokeep <- phyloTree$tip.label %in% spdata$tax_id
-# pruned.phylo <- drop.tip(phyloTree, phyloTree$tip.label[!tokeep])
-
-## ----eval=FALSE---------------------------------------------------------------
-# #-- Convert the phylogenetic tree into a 'tree-and-leaf' object
-# tal <- treeAndLeaf(pruned.phylo)
-# 
-# #--- Map attributes to the tree-and-leaf
-# #Note: 'refcol = 1' indicates that 'dat' col 1 will be used as mapping IDs
-# tal <- att.mapv(g = tal, dat = spdata, refcol = 1)
-# 
-# #--- Set graph attributes using the 'att.setv' wrapper function
-# pal <- brewer.pal(9, "Purples")
-# tal <- att.setv(g = tal, from = "genome_size_Mb",
-#                 to = "nodeSize", xlim = c(120, 250, 1), nquant = 5)
-# tal <- att.setv (g = tal, from = "proteins",
-#                  to = "nodeColor", nquant = 5,
-#                  cols = pal, na.col = "black")
-
-## ----eval=FALSE---------------------------------------------------------------
-# #--- Add graph attributes using 'att.adde' and 'att.addv' functions
-# tal <- att.addv(tal, "nodeFontSize", value = 10)
-# tal <- att.adde(tal, "edgeWidth", value = 20)
-# 
-# # Set species names to 'nodeAlias' attribute
-# tal <- att.setv(tal, from = "sp_name", to = "nodeAlias")
-# 
-# # Select a few names to highlight in the graph
-# tal <- att.addv(tal, "nodeFontSize", value = 100,
-#        filter=list('name'=sample(pruned.phylo$tip.label,30)))
-# tal <- att.addv(tal, "nodeFontSize", value = 100,
-#                 filter=list('name'="9606")) #Homo sapiens
-
-## ----eval=FALSE---------------------------------------------------------------
-# # Call RedeR
-# rdp <- RedPort()
-# calld(rdp)
-# resetd(rdp)
-# 
-# #--- Send the tree-and-leaf to the interactive R/Java interface
-# addGraph(obj = rdp, g = tal, gzoom=10)
-# 
-# #--- Call 'relax' to fine-tune the leaf nodes
-# relax(rdp, ps=TRUE)
-
-## ----eval=FALSE---------------------------------------------------------------
-# #--- Add legends
-# addLegend.color(rdp, tal, title = "Proteome Size (n)")
-# addLegend.size(rdp, tal, title = "Genome Size (Mb)")
+## ----fig_QuakesTree, echo=FALSE, out.width = '90%'----------------------------
+knitr::include_graphics("QuakesTree.png")
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #-- Libraries required in this section:
-# #-- TreeAndLeaf(>=1.4.2), RedeR(>=1.40.4), Bioconductor >= 3.13 (R >= 4.0)
-# # BiocManager::install(c("TreeAndLeaf","RedeR","geneplast))
-# # install.packages(c("igraph","ape", "RColorBrewer"))
+# # BiocManager::install(c("TreeAndLeaf","RedeR"))
+# # install.packages(c("igraph", "ape", "RColorBrewer"))
 # 
 # #-- Load packages
 # library(TreeAndLeaf)
 # library(RedeR)
 # library(igraph)
 # library(ape)
-# library(geneplast)
 # library(RColorBrewer)
 
 ## ----eval=FALSE, message=FALSE------------------------------------------------
@@ -307,44 +233,46 @@ plot(phyloTree)
 ## ----eval=FALSE, message=FALSE------------------------------------------------
 # #--- Drop organisms not listed in the 'spdata' annotation
 # tokeep <- phylo_tree$tip.label %in% spdata$tax_id
-# pruned.phylo <- drop.tip(phylo_tree, phylo_tree$tip.label[!tokeep])
+# phylo_tree <- drop.tip(phylo_tree, phylo_tree$tip.label[!tokeep])
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #-- Convert the phylogenetic tree into a 'tree-and-leaf' object
-# tal <- treeAndLeaf(pruned.phylo)
+# tal <- treeAndLeaf(phylo_tree)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Map attributes to the tree-and-leaf using "%>%" operator
 # tal <- tal %>%
 #   att.mapv(dat = spdata, refcol = 1) %>%
 #   att.setv(from = "genome_size_Mb", to = "nodeSize",
-#            xlim = c(120, 250, 1), nquant = 5) %>%
+#            xlim = c(10, 50, 1), nquant = 5) %>%
 #   att.setv(from = "proteins", to = "nodeColor", nquant = 5,
 #            cols = brewer.pal(9, "Blues"), na.col = "black") %>%
-#   att.setv(from = "sp_name", to = "nodeAlias") %>%
+#   att.setv(from = "sp_name", to = "nodeLabel") %>%
 #   att.adde(to = "edgeWidth", value = 20) %>%
-#   att.addv(to = "nodeFontSize", value = 10) %>%
-#   att.addv(to = "nodeFontSize", value = 100,
-#       filter = list("name" = sample(pruned.phylo$tip.label, 30))) %>%
-#   att.addv(to = "nodeFontSize", value = 100,
+#   att.addv(to = "nodeLabelSize", value = 1) %>%
+#   att.addv(to = "nodeLabelSize", value = 20,
+#       filter = list("name" = sample(phylo_tree$tip.label, 30))) %>%
+#   att.addv(to = "nodeLabelSize", value = 20,
 #            filter = list("name" = "9606"))
 
 ## ----eval=FALSE---------------------------------------------------------------
 # # Call RedeR
-# rdp <- RedPort()
-# calld(rdp)
-# resetd(rdp)
+# startRedeR()
+# resetRedeR()
 # 
 # #--- Send the tree-and-leaf to the interactive R/Java interface
-# addGraph(obj = rdp, g = tal, gzoom=5)
+# addGraphToRedeR(g = tal, zoom=50)
 # 
 # #--- Call 'relax' to fine-tune the leaf nodes
-# relax(rdp, ps=TRUE)
+# relaxRedeR(p1=25, p2=200, p3=10, p4=100, p5=10)
 
 ## ----eval=FALSE---------------------------------------------------------------
 # #--- Add legends
-# addLegend.color(rdp, tal, title = "Proteome Size (n)")
-# addLegend.size(rdp, tal, title = "Genome size (Mb)")
+# addLegendToRedeR(tal, type = "nodecolor", title = "Proteome Size (n)", stretch = 0.5)
+# addLegendToRedeR(tal, type = "nodesize", title = "Genome size (Mb)")
+
+## ----fig_nBinPhylo, echo=FALSE, out.width = '100%'----------------------------
+knitr::include_graphics("nBinPhylo.png")
 
 ## ----label='Session information', eval=TRUE, echo=FALSE-----------------------
 sessionInfo()

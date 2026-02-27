@@ -11,10 +11,6 @@ The package has functions for handling the occupancy distribution for a multinom
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-occugene/overview
-- **Total Downloads**: 42.0K
-- **Last updated**: 2026-02-04
-- **Stars**: N/A
 

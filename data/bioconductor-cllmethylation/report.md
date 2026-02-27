@@ -11,10 +11,6 @@ The package includes DNA methylation data for the primary Chronic Lymphocytic Le
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-cllmethylation/overview
-- **Total Downloads**: 22.4K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

@@ -460,9 +460,9 @@ Score Class
 
 0.03698699
 
-Pos 1
-
 Pos 2
+
+Pos 1
 
 dimer
 

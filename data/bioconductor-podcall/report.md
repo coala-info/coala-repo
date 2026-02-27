@@ -11,10 +11,6 @@ The package includes a shiny application which provides an interactive and user-
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-podcall/overview
-- **Total Downloads**: 10.9K
-- **Last updated**: 2026-02-04
-- **Stars**: N/A
 

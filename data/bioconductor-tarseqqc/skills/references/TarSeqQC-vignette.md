@@ -576,15 +576,15 @@ medianCounts IQRCounts
 14
 27
 
+326
+574
+463
+
 AMPL1
 AMPL2
 AMPL3
 -------
 seqinfo: 4 sequences from an unspecified genome; no seqlengths
-
-326
-574
-463
 
 gene panel:
 
@@ -1279,8 +1279,6 @@ name is necessary:
 GRanges object with 1 range and 6 metadata columns:
 gene
 
-ranges strand |
-
 seqnames
 <Rle>
 chr10 [4866, 4928]
@@ -1289,9 +1287,11 @@ gc coverage sdCoverage
 <IRanges> <Rle> | <character> <numeric> <numeric> <numeric>
 1
 
-gene7
+ranges strand |
 
 0.587
+
+gene7
 
 * |
 

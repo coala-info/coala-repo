@@ -1764,7 +1764,7 @@ J K L M N O
 0
 0
 0
-0
+1
 
 0
 0
@@ -1780,7 +1780,7 @@ J K L M N O
 0
 0
 0
-1
+0
 
 Table 2: 15x15 Adjacency matrix
 

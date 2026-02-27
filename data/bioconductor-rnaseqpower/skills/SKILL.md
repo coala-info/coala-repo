@@ -1,24 +1,78 @@
 ---
 name: bioconductor-rnaseqpower
-description: RNASeqPower performs power analysis and sample size estimation for RNA-seq experiments. Use when user asks to calculate statistical power, estimate required sample sizes, or evaluate the impact of sequencing depth and biological variation on study design.
+description: This tool performs statistical power and sample size calculations for RNA-Seq experiments using the negative binomial distribution. Use when user asks to calculate required sample sizes, estimate statistical power, determine detectable fold changes, or evaluate the impact of sequencing depth on experimental design.
 homepage: https://bioconductor.org/packages/release/bioc/html/RNASeqPower.html
 ---
 
 
 # bioconductor-rnaseqpower
 
+name: bioconductor-rnaseqpower
+description: Statistical power and sample size calculations for RNA-Seq experiments. Use this skill when planning RNA-Seq studies to determine the required number of biological replicates, sequencing depth, or detectable effect size based on the negative binomial distribution model.
+
+# bioconductor-rnaseqpower
+
 ## Overview
 
-Use the Bioconductor R package **RNASeqPower** for: the package is available on all platforms; click for details.
+The `RNASeqPower` package provides a specialized tool for power analysis in high-throughput sequencing studies. It models the variance of RNA-Seq counts using a negative binomial distribution, accounting for both Poisson variation (sequencing depth) and biological variation (coefficient of variation between subjects). It is primarily used during the experimental design phase to balance the trade-offs between the number of samples, sequencing depth, and the biological effect size one wishes to detect.
 
-## Installation
+## Core Functionality
+
+The primary function in the package is `rnapower()`. It relates five key parameters:
+1. **n**: Number of samples per group.
+2. **cv**: Biological coefficient of variation (BCV).
+3. **effect**: The relative expression (fold change) to detect (e.g., 1.5 for a 50% increase).
+4. **alpha**: Type I error rate (false positive rate, typically 0.05).
+5. **power**: Statistical power (1 - Type II error rate, typically 0.8 or 0.9).
+6. **depth**: Expected count for a given transcript (sequencing depth).
+
+### Basic Usage
+
+To use the package, you must provide the `depth` and any four of the other five parameters. The function will solve for the missing parameter.
 
 ```r
-if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("RNASeqPower")
+library(RNASeqPower)
+
+# Calculate required sample size (n) to detect a 2-fold change
+# with 80% power, alpha 0.05, CV of 0.4, and depth of 20
+rnapower(depth=20, cv=0.4, effect=2, alpha=0.05, power=0.8)
+
+# Calculate power for a fixed sample size (n=10)
+rnapower(depth=20, cv=0.4, effect=2, alpha=0.05, n=10)
 ```
+
+## Workflows and Examples
+
+### 1. Comparing Multiple Scenarios
+You can pass vectors to parameters to generate a matrix of results, which is useful for visualizing trade-offs.
+
+```r
+# Compare sample sizes across different effect sizes and power targets
+rnapower(depth=20, 
+         cv=0.4, 
+         effect=c(1.25, 1.5, 1.75, 2), 
+         alpha=0.05, 
+         power=c(0.8, 0.9))
+```
+
+### 2. Unbalanced Designs
+If groups have different sample sizes or different biological variability, use the `n2` and `cv2` arguments.
+
+```r
+# Group 1 has CV 0.3, Group 2 has CV 0.5
+rnapower(depth=50, n=10, cv=0.3, cv2=0.5, effect=2, alpha=0.05)
+```
+
+### 3. Estimating Parameters
+*   **Depth**: A total depth of 40 million reads often yields a coverage of $\ge 4$ for the majority of targets.
+*   **CV**: Human studies typically show an average CV $\le 0.4$ for 90% of genes. Inbred animal models (like lab mice) often have a much lower CV, around 0.1.
+
+## Tips for Interpretation
+
+*   **Diminishing Returns of Depth**: Increasing sequencing depth (e.g., from 100 to 1000) often has a negligible effect on power compared to increasing the number of biological replicates (n) or reducing biological CV.
+*   **CV Dominance**: In most RNA-Seq experiments, between-subject variability (CV) is the major component of error, not the assay/sequencing variation.
+*   **Log-Scale Logic**: The power calculation is based on the variance of the log-counts: $Var(\log(y)) \approx 1/\mu + \psi^2$, where $\mu$ is depth and $\psi$ is CV.
 
 ## Reference documentation
 
-See files in `references/` for vignettes and tutorials.
+- [Sample Size for RNA-Seq and similar Studies](./references/samplesize.md)

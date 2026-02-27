@@ -1,6 +1,6 @@
 ---
 name: bioconductor-breastcancermainz
-description: This tool provides access to the Schmidt et al. (2008) breast cancer gene expression dataset containing microarray data for 200 node-negative patients. Use when user asks to load the MAINZ cohort, analyze metastasis-free survival data, or access Affymetrix hgu133a expression profiles for breast cancer research.
+description: This package provides access to the Schmidt et al. (2008) breast cancer gene expression dataset containing clinical and microarray data for 200 node-negative patients. Use when user asks to load the MAINZ ExpressionSet, analyze metastasis-free survival in untreated breast cancer cohorts, or access clinical metadata and Affymetrix hgu133a expression profiles.
 homepage: https://bioconductor.org/packages/release/data/experiment/html/breastCancerMAINZ.html
 ---
 
@@ -8,90 +8,77 @@ homepage: https://bioconductor.org/packages/release/data/experiment/html/breastC
 # bioconductor-breastcancermainz
 
 name: bioconductor-breastcancermainz
-description: A specialized skill for accessing and analyzing the Schmidt et al. (2008) breast cancer gene expression dataset (MAINZ). Use this skill when a user needs to load, subset, or perform bioinformatic analysis on the MAINZ cohort, which contains microarray data (Affymetrix hgu133a) for 200 node-negative breast cancer patients.
-
-# bioconductor-breastcancermainz
+description: Access and analyze the Schmidt et al. (2008) breast cancer gene expression dataset (MAINZ). Use this skill when you need to load, subset, or analyze the MAINZ clinical and microarray data (200 samples, Affymetrix hgu133a) for breast cancer research, specifically focusing on node-negative patients and immune system prognostic factors.
 
 ## Overview
 
-The `breastCancerMAINZ` package is a Bioconductor experiment data package providing an `ExpressionSet` (eSet) object named `mainz`. This dataset represents a study of 200 breast cancer patients who were not treated by systemic therapy after surgery. It is particularly useful for research involving prognostic motifs, proliferation-associated genes, and the role of the immune system (B-cell and T-cell infiltration) in metastasis-free survival.
+The `breastCancerMAINZ` package is a Bioconductor ExperimentData package providing a curated `ExpressionSet` (eSet) from a landmark study by Schmidt et al. (2008). The dataset contains gene expression profiles for 200 breast cancer patients who did not receive systemic therapy after surgery. It is particularly valuable for studying metastasis-free survival (MFS) and the prognostic impact of metagenes related to proliferation, steroid hormone receptors, and B-cell/T-cell infiltration.
 
-## Data Access and Loading
+## Loading and Initializing Data
 
-To use this dataset, you must load the package and the data object explicitly.
+To use the dataset, you must load the package and the specific data object named `mainz`.
 
 ```r
-# Load the package
+# Load the necessary libraries
+library(Biobase)
 library(breastCancerMAINZ)
 
-# Load the dataset into the environment
+# Load the dataset
 data(mainz)
 
 # View the object summary
 mainz
 ```
 
-## Working with the ExpressionSet
+## Data Structure and Access
 
-The `mainz` object is a standard Bioconductor `ExpressionSet`. You can interact with it using the following methods:
+The `mainz` object is an `ExpressionSet`. Use standard `Biobase` methods to access its components:
 
-### 1. Expression Data
-Access the normalized gene expression matrix (22,283 features x 200 samples).
-```r
-exp_matrix <- exprs(mainz)
-# Example: View first 5 rows and columns
-exp_matrix[1:5, 1:5]
-```
+- **Expression Data**: Access the normalized log2 intensity values.
+  ```r
+  exp_matrix <- exprs(mainz)
+  # Dimensions: 22283 features x 200 samples
+  ```
+- **Phenotypic (Clinical) Data**: Access patient metadata, including survival time and ER status.
+  ```r
+  clinical_data <- pData(mainz)
+  head(clinical_data)
+  ```
+- **Feature Data**: Access probe annotations for the Affymetrix hgu133a platform.
+  ```r
+  feature_info <- fData(mainz)
+  ```
 
-### 2. Phenotypic (Clinical) Data
-Access patient metadata, including survival information and clinical markers.
-```r
-clinical_data <- pData(mainz)
-head(clinical_data)
+## Key Clinical Variables
 
-# Common columns include:
-# samplename, dataset, series, id, title, outcome, 
-# age, size, grade, er, pgr, her2, brca.mutation, 
-# t.rfs, e.rfs, t.os, e.os, etc.
-```
-
-### 3. Feature Metadata
-Access information about the Affymetrix hgu133a platform probes.
-```r
-feature_info <- fData(mainz)
-head(feature_info)
-```
-
-### 4. Experiment Metadata
-Retrieve the study abstract and MIAME (Minimum Information About a Microarray Experiment) details.
-```r
-abstract(mainz)
-experimentData(mainz)
-```
+The `pData(mainz)` contains several critical columns for survival analysis and stratification:
+- `samplename`: Unique identifier.
+- `er`: Estrogen receptor status (1 = positive, 0 = negative).
+- `age`: Patient age at diagnosis.
+- `size`: Tumor size.
+- `grade`: Histological grade.
+- `t.dmfs`: Time to distant metastasis-free survival (days).
+- `e.dmfs`: Event indicator for distant metastasis (1 = event, 0 = censored).
 
 ## Typical Workflow: Survival Analysis
 
-A common use case for this dataset is validating a prognostic gene signature using the metastasis-free survival data provided in the phenotype metadata.
+A common use case is evaluating the prognostic value of a specific gene or metagene using the `survcomp` or `survival` packages.
 
 ```r
-library(Biobase)
 library(survival)
 
-# Extract survival time and event
-surv_time <- pData(mainz)$t.rfs  # Time to relapse/metastasis
-surv_event <- pData(mainz)$e.rfs # Event indicator
-
-# Example: Compare survival based on ER status
-surv_fit <- survfit(Surv(surv_time, surv_event) ~ er, data = pData(mainz))
-plot(surv_fit, col = c("red", "blue"), lty = 1:2)
-legend("bottomleft", legend = c("ER-", "ER+"), col = c("red", "blue"), lty = 1:2)
+# Example: Stratify by ER status and plot survival
+surv_obj <- Surv(mainz$t.dmfs / 365, mainz$e.dmfs) # Convert days to years
+fit <- survfit(surv_obj ~ er, data = pData(mainz))
+plot(fit, col = c("red", "blue"), xlab = "Years", ylab = "Metastasis-free Survival")
 ```
 
 ## Usage Tips
-- **Platform**: The data uses the `hgu133a` annotation. If you need to map probes to Gene Symbols, use the `hgu133a.db` package.
-- **Patient Cohort**: Note that these 200 patients were node-negative and did not receive systemic therapy, making this dataset ideal for studying the natural progression of the disease and endogenous prognostic markers.
-- **Metagenes**: The original study focused on "metagenes" for proliferation and B-cell/T-cell infiltration. You can recreate these by averaging the expression of genes within those specific biological clusters.
+
+- **Platform**: The data uses the `hgu133a` chip. If you need to map probes to Gene Symbols, use the `hgu133a.db` annotation package.
+- **Untreated Cohort**: Remember that this specific cohort consists of patients who were **not** treated with systemic therapy (chemotherapy or hormone therapy), making it ideal for studying the natural history of the disease and pure prognostic markers.
+- **Metagenes**: The original study emphasizes "metagenes" (clusters of co-regulated genes). You can recreate these by averaging the expression of genes associated with proliferation or B-cell infiltration.
 
 ## Reference documentation
 
-- [Gene expression dataset published by Schmidt et al. [2008] (MAINZ)](./references/reference_manual.md)
+- [Reference Manual](./references/reference_manual.md)

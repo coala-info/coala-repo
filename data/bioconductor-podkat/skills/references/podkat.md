@@ -1586,9 +1586,9 @@ hg38basic$chrX <- reduce(unlist(hg38Unmasked[c("chrX", "X.PAR1",
 
 hg38basic$chrY <- reduce(unlist(hg38Unmasked[c("chrY", "Y.PAR1",
 
-"X.PAR2", "X.XTR")]))
-
 "Y.PAR2", "Y.XTR")]))
+
+"X.PAR2", "X.XTR")]))
 
 hg38basic
 
@@ -3063,15 +3063,15 @@ chr1
 chr1
 chr1
 
-* |
-* |
-* |
-* |
-
 428
 501
 607
 739
+
+* |
+* |
+* |
+* |
 
 6 Performing an Association Test
 
@@ -3975,14 +3975,14 @@ seqnames start
 
 end width
 
+n
+
 p.value
 chr1 7501 12500
 5000 31 769748.3 1.294084e-07
 chr1 10001 15000 5000 33 764828.8 4.874460e-06
 
 Q
-
-n
 
 7.4 Contributions of Individual Variants
 

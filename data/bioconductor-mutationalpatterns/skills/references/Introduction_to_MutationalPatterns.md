@@ -8,11 +8,11 @@ Freek Manders1\*, Francis Blokzijl2, Roel Janssen2, Rurika Oka1, Jurrian de Kant
 \*F.M.Manders@prinsesmaximacentrum.nl
 \*\*vanBoxtelBioinformatics@prinsesmaximacentrum.nl
 
-#### 7 October 2025
+#### 24 February 2026
 
 #### Package
 
-MutationalPatterns 3.19.1
+MutationalPatterns 3.20.1
 
 # Contents
 
@@ -759,7 +759,7 @@ plot(estimate)
 ## ℹ See also `vignette("ggplot2-in-packages")` for more information.
 ## ℹ The deprecated feature was likely used in the NMF package.
 ##   Please report the issue to the authors.
-## This warning is displayed once every 8 hours.
+## This warning is displayed once per session.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ```
 
@@ -790,7 +790,7 @@ nmf_res <- extract_signatures(mut_mat, rank = 2, nrun = 10, single_core = TRUE)
 ## Runs: 1* 2 3 4 5* 6 7 8* 9 10 ... DONE
 ## System time:
 ##    user  system elapsed
-##  11.156   0.130  11.460
+##   9.956   0.027   9.984
 ```
 
 NMF also works on other mutation types like indels and DBS. You can even combine
@@ -818,7 +818,7 @@ nmf_res_combi <- extract_signatures(combi_mat, rank = 2, nrun = 10, single_core 
 ## Runs: 1* 2 3 4 5 6 7* 8 9 10 ... DONE
 ## System time:
 ##    user  system elapsed
-##  11.304   0.165  11.635
+##   9.819   0.056   9.875
 ```
 
 ### 5.1.2 Bayesian NMF
@@ -1303,7 +1303,7 @@ fig_list <- plot_correlation_bootstrap(contri_boots)
 ## ℹ Please use the `linewidth` argument instead.
 ## ℹ The deprecated feature was likely used in the MutationalPatterns package.
 ##   Please report the issue to the authors.
-## This warning is displayed once every 8 hours.
+## This warning is displayed once per session.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ```
 
@@ -1432,19 +1432,26 @@ More dissimilar amino acids are more likely to have a detrimental effect.
 ```
 contexts <- rownames(mut_mat)
 context_mismatches <- context_potential_damage_analysis(contexts, txdb, ref_genome, gene_ids)
+```
+
+```
+## Warning in .set_group_names(grl, use.names, txdb, by): some group names are NAs or duplicated
+```
+
+```
 head(context_mismatches)
 ```
 
 ```
 ## # A tibble: 6 × 5
-##   type        context     n  ratio blosum62
-##   <fct>       <fct>   <dbl>  <dbl>    <dbl>
-## 1 Stop_gain   A[C>A]A    46 0.0480  NA
-## 2 Missense    A[C>A]A   879 0.918    0.0501
-## 3 Synonymous  A[C>A]A    23 0.0240  NA
-## 4 splice_site A[C>A]A    10 0.0104  NA
-## 5 Stop_gain   A[C>G]A    46 0.0480  NA
-## 6 Missense    A[C>G]A   879 0.918    0.379
+##   type        context     n   ratio blosum62
+##   <fct>       <fct>   <dbl>   <dbl>    <dbl>
+## 1 Stop_gain   A[C>A]A    46 0.0475   NA
+## 2 Missense    A[C>A]A   889 0.917     0.0439
+## 3 Synonymous  A[C>A]A    25 0.0258   NA
+## 4 splice_site A[C>A]A     9 0.00929  NA
+## 5 Stop_gain   A[C>G]A    46 0.0475   NA
+## 6 Missense    A[C>G]A   889 0.917     0.376
 ```
 
 The ratios per context can then be used to get the ratios per signature.
@@ -1465,12 +1472,12 @@ head(sig_damage)
 ## # A tibble: 6 × 7
 ##   type        sig     ratio ratio_by_background      n blosum62 blosum62_min_background
 ##   <fct>       <chr>   <dbl>               <dbl>  <dbl>    <dbl>                   <dbl>
-## 1 Stop_gain   SBS1   0.0352               0.814  17.3    NA                      NA
-## 2 Missense    SBS1   0.612                0.862 282.     -0.387                   0.113
-## 3 Synonymous  SBS1   0.340                1.57  149.     NA                      NA
-## 4 splice_site SBS1   0.0122               0.405   5.98   NA                      NA
-## 5 Stop_gain   SBS10a 0.156                3.60  166.     NA                      NA
-## 6 Missense    SBS10a 0.690                0.971 725.     -0.846                  -0.346
+## 1 Stop_gain   SBS1   0.0344               0.797  17.6    NA                      NA
+## 2 Missense    SBS1   0.614                0.864 296.     -0.391                   0.109
+## 3 Synonymous  SBS1   0.340                1.57  157.     NA                      NA
+## 4 splice_site SBS1   0.0118               0.391   6.00   NA                      NA
+## 5 Stop_gain   SBS10a 0.155                3.59  169.     NA                      NA
+## 6 Missense    SBS10a 0.689                0.971 742.     -0.839                  -0.339
 ```
 
 ## 5.5 Using other signature matrixes
@@ -1651,7 +1658,7 @@ genes_hg19 <- genes(TxDb.Hsapiens.UCSC.hg19.knownGene)
 ```
 
 ```
-##   403 genes were dropped because they have exons located on both strands of the same reference
+##   24 genes were dropped because they have exons located on both strands of the same reference
 ##   sequence or on more than one reference sequence, so cannot be represented by a single genomic
 ##   range.
 ##   Use 'single.strand.genes.only=FALSE' to get all the genes in a GRangesList object, or use
@@ -1663,22 +1670,22 @@ genes_hg19
 ```
 
 ```
-## GRanges object with 23056 ranges and 1 metadata column:
+## GRanges object with 28622 ranges and 1 metadata column:
 ##         seqnames              ranges strand |     gene_id
 ##            <Rle>           <IRanges>  <Rle> | <character>
-##       1    chr19   58858172-58874214      - |           1
-##      10     chr8   18248755-18258723      + |          10
-##     100    chr20   43248163-43280376      - |         100
-##    1000    chr18   25530930-25757445      - |        1000
-##   10000     chr1 243651535-244006886      - |       10000
+##       1    chr19   58856544-58874117      - |           1
+##      10     chr8   18248792-18258728      + |          10
+##     100    chr20   43213537-43280893      - |         100
+##    1000    chr18   25512843-25757910      - |        1000
+##   10000     chr1 243651535-244014381      - |       10000
 ##     ...      ...                 ...    ... .         ...
-##    9991     chr9 114979995-115095944      - |        9991
-##    9992    chr21   35736323-35743440      + |        9992
+##    9991     chr9 114977351-115095933      - |        9991
+##    9992    chr21   35553030-35743680      + |        9992
 ##    9993    chr22   19023795-19109967      - |        9993
-##    9994     chr6   90539619-90584155      + |        9994
-##    9997    chr22   50961997-50964905      - |        9997
+##    9994     chr6   90539613-90584155      + |        9994
+##    9997    chr22   50961997-50964890      - |        9997
 ##   -------
-##   seqinfo: 93 sequences (1 circular) from hg19 genome
+##   seqinfo: 298 sequences (2 circular) from hg19 genome
 ```
 
 ### 6.1.2 Strand bias profile
@@ -1711,10 +1718,10 @@ mut_mat_s[1:5, 1:5]
 ```
 ##                       colon1 colon2 colon3 intestine1 intestine2
 ## A[C>A]A-untranscribed      0      0      0          0          4
-## A[C>A]A-transcribed        1      1      2          4          3
+## A[C>A]A-transcribed        1      2      3          4          4
 ## A[C>A]C-untranscribed      0      0      1          1          1
-## A[C>A]C-transcribed        0      0      0          0          1
-## A[C>A]G-untranscribed      1      0      0          0          0
+## A[C>A]C-transcribed        0      1      0          0          2
+## A[C>A]G-untranscribed      1      2      0          0          0
 ```
 
 You can visualize samples from this matrix like this:
@@ -1744,12 +1751,12 @@ head(strand_counts)
 ## # A tibble: 6 × 5
 ##   group type  strand        no_mutations relative_contribution
 ##   <fct> <chr> <chr>                <dbl>                 <dbl>
-## 1 colon C>A   transcribed             32                0.0731
-## 2 colon C>A   untranscribed           23                0.0525
-## 3 colon C>G   transcribed             11                0.0251
-## 4 colon C>G   untranscribed           10                0.0228
-## 5 colon C>T   transcribed            134                0.306
-## 6 colon C>T   untranscribed          115                0.263
+## 1 colon C>A   transcribed             37                0.0649
+## 2 colon C>A   untranscribed           31                0.0544
+## 3 colon C>G   transcribed             12                0.0211
+## 4 colon C>G   untranscribed           15                0.0263
+## 5 colon C>T   transcribed            184                0.323
+## 6 colon C>T   untranscribed          147                0.258
 ```
 
 Next, you can use these counts to perform a Poisson test for strand asymmetry.
@@ -1764,12 +1771,12 @@ head(strand_bias)
 ## # A tibble: 6 × 10
 ##   group type  transcribed untranscribed total ratio p_poisson significant   fdr significant_fdr
 ##   <fct> <chr>       <dbl>         <dbl> <dbl> <dbl>     <dbl> <chr>       <dbl> <chr>
-## 1 colon C>A            32            23    55  1.39     0.281 ""          0.692 ""
-## 2 colon C>G            11            10    21  1.1      1     ""          1     ""
-## 3 colon C>T           134           115   249  1.17     0.254 ""          0.692 ""
-## 4 colon T>A            12             9    21  1.33     0.664 ""          0.910 ""
-## 5 colon T>C            36            32    68  1.12     0.716 ""          0.910 ""
-## 6 colon T>G            15             9    24  1.67     0.307 ""          0.692 ""
+## 1 colon C>A            37            31    68  1.19    0.545  ""          0.744 ""
+## 2 colon C>G            12            15    27  0.8     0.701  ""          0.789 ""
+## 3 colon C>T           184           147   331  1.25    0.0477 "*"         0.286 ""
+## 4 colon T>A            18            12    30  1.5     0.362  ""          0.723 ""
+## 5 colon T>C            50            38    88  1.32    0.241  ""          0.700 ""
+## 6 colon T>G            18             8    26  2.25    0.0755 ""          0.340 ""
 ```
 
 Plot the mutation spectrum with strand distinction:
@@ -1943,10 +1950,10 @@ nmf_res_strand <- extract_signatures(mut_mat_s, rank = 2, single_core = TRUE)
 ```
 
 ```
-## Runs: 1* 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23* 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50% 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65* 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100% 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150% 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200% ... DONE
+## Runs: 1* 2 3 4* 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50% 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89* 90 91 92 93 94 95 96 97 98 99 100% 101 102* 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150% 151 152 153 154 155 156 157* 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200% ... DONE
 ## System time:
 ##    user  system elapsed
-## 216.914   0.305 217.219
+## 226.516   0.646 227.165
 ```
 
 ```
@@ -2222,7 +2229,7 @@ nmf_res_region <- extract_signatures(mut_mat_region, rank = 2, nrun = 10, single
 ## Runs: 1* 2 3* 4 5 6 7 8 9 10 ... DONE
 ## System time:
 ##    user  system elapsed
-##  12.821   0.001  12.847
+##  12.729   0.104  12.833
 ```
 
 ```
@@ -2422,7 +2429,7 @@ plot_lesion_segregation(grl[1:2])
 ## ℹ Please use `linewidth` instead.
 ## ℹ The deprecated feature was likely used in the MutationalPatterns package.
 ##   Please report the issue to the authors.
-## This warning is displayed once every 8 hours.
+## This warning is displayed once per session.
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ```
 
@@ -2588,7 +2595,7 @@ sessionInfo()
 ```
 
 ```
-## R version 4.5.1 Patched (2025-08-23 r88802)
+## R version 4.5.2 (2025-10-31)
 ## Platform: x86_64-pc-linux-gnu
 ## Running under: Ubuntu 24.04.3 LTS
 ##
@@ -2609,57 +2616,57 @@ sessionInfo()
 ## [1] stats4    stats     graphics  grDevices utils     datasets  methods   base
 ##
 ## other attached packages:
-##  [1] biomaRt_2.65.16                         GenomeInfoDb_1.45.12
-##  [3] TxDb.Hsapiens.UCSC.hg19.knownGene_3.2.2 GenomicFeatures_1.61.6
-##  [5] AnnotationDbi_1.71.1                    ccfindR_1.29.0
-##  [7] gridExtra_2.3                           BSgenome.Hsapiens.UCSC.hg19_1.4.3
-##  [9] BSgenome_1.77.2                         rtracklayer_1.69.1
-## [11] BiocIO_1.19.0                           Biostrings_2.77.2
-## [13] XVector_0.49.1                          MutationalPatterns_3.19.1
-## [15] NMF_0.28                                bigmemory_4.6.4
-## [17] Biobase_2.69.1                          cluster_2.1.8.1
-## [19] rngtools_1.5.2                          registry_0.5-1
-## [21] GenomicRanges_1.61.5                    Seqinfo_0.99.2
-## [23] IRanges_2.43.5                          S4Vectors_0.47.4
-## [25] BiocGenerics_0.55.1                     generics_0.1.4
-## [27] ggplot2_4.0.0                           BiocStyle_2.37.1
+##  [1] biomaRt_2.66.1                           GenomeInfoDb_1.46.2
+##  [3] TxDb.Hsapiens.UCSC.hg19.knownGene_3.22.1 GenomicFeatures_1.62.0
+##  [5] AnnotationDbi_1.72.0                     ccfindR_1.30.0
+##  [7] gridExtra_2.3                            BSgenome.Hsapiens.UCSC.hg19_1.4.3
+##  [9] BSgenome_1.78.0                          rtracklayer_1.70.1
+## [11] BiocIO_1.20.0                            Biostrings_2.78.0
+## [13] XVector_0.50.0                           MutationalPatterns_3.20.1
+## [15] NMF_0.28                                 bigmemory_4.6.4
+## [17] Biobase_2.70.0                           cluster_2.1.8.2
+## [19] rngtools_1.5.2                           registry_0.5-1
+## [21] GenomicRanges_1.62.1                     Seqinfo_1.0.0
+## [23] IRanges_2.44.0                           S4Vectors_0.48.0
+## [25] BiocGenerics_0.56.0                      generics_0.1.4
+## [27] ggplot2_4.0.2                            BiocStyle_2.38.0
 ##
 ## loaded via a namespace (and not attached):
 ##   [1] RColorBrewer_1.1-3          ggdendro_0.2.0              jsonlite_2.0.0
 ##   [4] magrittr_2.0.4              magick_2.9.0                farver_2.1.2
-##   [7] rmarkdown_2.30              vctrs_0.6.5                 memoise_2.0.1
-##  [10] Rsamtools_2.25.3            RCurl_1.98-1.17             tinytex_0.57
-##  [13] progress_1.2.3              htmltools_0.5.8.1           S4Arrays_1.9.1
-##  [16] curl_7.0.0                  SparseArray_1.9.1           sass_0.4.10
-##  [19] pracma_2.4.4                bslib_0.9.0                 plyr_1.8.9
-##  [22] httr2_1.2.1                 cachem_1.1.0                uuid_1.2-1
-##  [25] GenomicAlignments_1.45.4    lifecycle_1.0.4             iterators_1.0.14
+##   [7] rmarkdown_2.30              vctrs_0.7.1                 memoise_2.0.1
+##  [10] Rsamtools_2.26.0            RCurl_1.98-1.17             tinytex_0.58
+##  [13] progress_1.2.3              htmltools_0.5.9             S4Arrays_1.10.1
+##  [16] curl_7.0.0                  SparseArray_1.10.8          sass_0.4.10
+##  [19] pracma_2.4.6                bslib_0.10.0                httr2_1.2.2
+##  [22] plyr_1.8.9                  cachem_1.1.0                uuid_1.2-2
+##  [25] GenomicAlignments_1.46.0    lifecycle_1.0.5             iterators_1.0.14
 ##  [28] pkgconfig_2.0.3             Matrix_1.7-4                R6_2.6.1
-##  [31] fastmap_1.2.0               rbibutils_2.3               MatrixGenerics_1.21.0
-##  [34] digest_0.6.37               colorspace_2.1-2            RSQLite_2.4.3
-##  [37] filelock_1.0.3              labeling_0.4.3              httr_1.4.7
-##  [40] abind_1.4-8                 compiler_4.5.1              bit64_4.6.0-1
-##  [43] withr_3.0.2                 doParallel_1.0.17           S7_0.2.0
-##  [46] BiocParallel_1.43.4         DBI_1.2.3                   MASS_7.3-65
-##  [49] rappdirs_0.3.3              DelayedArray_0.35.3         rjson_0.2.23
-##  [52] tools_4.5.1                 glue_1.8.0                  restfulr_0.0.16
-##  [55] grid_4.5.1                  gridBase_0.4-7              reshape2_1.4.4
-##  [58] gtable_0.3.6                tidyr_1.3.1                 hms_1.1.3
-##  [61] utf8_1.2.6                  foreach_1.5.2               pillar_1.11.1
-##  [64] stringr_1.5.2               dplyr_1.1.4                 BiocFileCache_2.99.6
-##  [67] lattice_0.22-7              bit_4.6.0                   tidyselect_1.2.1
-##  [70] SingleCellExperiment_1.31.1 knitr_1.50                  bigmemory.sri_0.1.8
-##  [73] bookdown_0.45               SummarizedExperiment_1.39.2 xfun_0.53
-##  [76] matrixStats_1.5.0           stringi_1.8.7               UCSC.utils_1.5.0
-##  [79] yaml_2.3.10                 evaluate_1.0.5              codetools_0.2-20
-##  [82] tibble_3.3.0                BiocManager_1.30.26         cli_3.6.5
-##  [85] Rdpack_2.6.4                jquerylib_0.1.4             dichromat_2.0-0.1
-##  [88] Rcpp_1.1.0                  dbplyr_2.5.1                png_0.1-8
-##  [91] XML_3.99-0.19               parallel_4.5.1              blob_1.2.4
-##  [94] prettyunits_1.2.0           ggalluvial_0.12.5           bitops_1.0-9
-##  [97] VariantAnnotation_1.55.1    scales_1.4.0                purrr_1.1.0
-## [100] crayon_1.5.3                rlang_1.1.6                 cowplot_1.2.0
-## [103] KEGGREST_1.49.1
+##  [31] fastmap_1.2.0               rbibutils_2.4.1             MatrixGenerics_1.22.0
+##  [34] digest_0.6.39               colorspace_2.1-2            RSQLite_2.4.6
+##  [37] filelock_1.0.3              labeling_0.4.3              httr_1.4.8
+##  [40] abind_1.4-8                 compiler_4.5.2              bit64_4.6.0-1
+##  [43] withr_3.0.2                 doParallel_1.0.17           S7_0.2.1
+##  [46] BiocParallel_1.44.0         DBI_1.2.3                   MASS_7.3-65
+##  [49] rappdirs_0.3.4              DelayedArray_0.36.0         rjson_0.2.23
+##  [52] tools_4.5.2                 otel_0.2.0                  glue_1.8.0
+##  [55] restfulr_0.0.16             grid_4.5.2                  gridBase_0.4-7
+##  [58] reshape2_1.4.5              gtable_0.3.6                tidyr_1.3.2
+##  [61] hms_1.1.4                   utf8_1.2.6                  foreach_1.5.2
+##  [64] pillar_1.11.1               stringr_1.6.0               dplyr_1.2.0
+##  [67] BiocFileCache_3.0.0         lattice_0.22-9              bit_4.6.0
+##  [70] tidyselect_1.2.1            SingleCellExperiment_1.32.0 knitr_1.51
+##  [73] bigmemory.sri_0.1.8         bookdown_0.46               SummarizedExperiment_1.40.0
+##  [76] xfun_0.56                   matrixStats_1.5.0           stringi_1.8.7
+##  [79] UCSC.utils_1.6.1            yaml_2.3.12                 evaluate_1.0.5
+##  [82] codetools_0.2-20            cigarillo_1.0.0             tibble_3.3.1
+##  [85] BiocManager_1.30.27         cli_3.6.5                   Rdpack_2.6.6
+##  [88] jquerylib_0.1.4             dichromat_2.0-0.1           Rcpp_1.1.1
+##  [91] dbplyr_2.5.2                png_0.1-8                   XML_3.99-0.22
+##  [94] parallel_4.5.2              blob_1.3.0                  prettyunits_1.2.0
+##  [97] ggalluvial_0.12.6           bitops_1.0-9                VariantAnnotation_1.56.0
+## [100] scales_1.4.0                purrr_1.2.1                 crayon_1.5.3
+## [103] rlang_1.1.7                 cowplot_1.2.0               KEGGREST_1.50.0
 ```
 
 # References

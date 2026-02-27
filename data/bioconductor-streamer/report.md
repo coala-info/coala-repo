@@ -11,10 +11,6 @@ The package provides useful Producer and Consumer stream components for operatio
 - **Version**: N/A
 - **Author**: N/A
 - **Maintainer**: N/A
-- **GitHub**: N/A
+- **GitHub**: Not found
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-streamer/overview
-- **Total Downloads**: 47.6K
-- **Last updated**: 2026-02-09
-- **Stars**: N/A
 

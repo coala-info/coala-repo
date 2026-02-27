@@ -341,6 +341,13 @@ Strep10
 Strep10
 Strep0
 
+NA
+NA
+NA
+NA
+NA
+NA
+
 2
 1
 2
@@ -360,13 +367,6 @@ light
 light
 light
 light
-
-NA
-NA
-NA
-NA
-NA
-NA
 
 8
 

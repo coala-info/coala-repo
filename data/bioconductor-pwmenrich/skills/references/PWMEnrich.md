@@ -1084,13 +1084,13 @@ report
 
 rank target
 
-2
-
-4
-
 1
 
 3
+
+2
+
+4
 
 br
 
@@ -1112,9 +1112,9 @@ tin
 Vnd_Cell_FBgn0003986
 vnd
 
-tin
-
 vnd
+
+tin
 
 vnd
 
@@ -1385,9 +1385,9 @@ M5232_1.02
 10 CG16778 CG16778_SANGER_5_FBgn0003715
 ...
 
-...
-
 tgo
+
+...
 
 1.03769610508571
 

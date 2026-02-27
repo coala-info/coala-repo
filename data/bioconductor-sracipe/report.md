@@ -13,8 +13,4 @@ the package is available on all platforms; click for details.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/lusystemsbio/sRACIPE
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-sracipe/overview
-- **Total Downloads**: 28.8K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

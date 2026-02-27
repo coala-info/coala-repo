@@ -728,9 +728,9 @@ transc_length orf_start orf_end orf_length CDS_counts fiveUTR_counts
 
 2554
 
-2126
-
 2046
+
+2126
 
 81
 

@@ -13,8 +13,4 @@ the package is is to provide data for benchmarking and analysis.
 - **Maintainer**: N/A
 - **GitHub**: https://github.com/waldronlab/SingleCellMultiModal
 - **Skill**: generated
-- **Conda**: https://anaconda.org/channels/bioconda/packages/bioconductor-singlecellmultimodal/overview
-- **Total Downloads**: 18.3K
-- **Last updated**: 2025-04-22
-- **Stars**: N/A
 

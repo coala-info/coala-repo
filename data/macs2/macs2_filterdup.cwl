@@ -94,15 +94,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level. 0: critical, 1: warning, 2: process info, 3: debug.'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: output_file
     type:

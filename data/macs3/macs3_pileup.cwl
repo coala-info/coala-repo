@@ -4,7 +4,8 @@ baseCommand:
   - macs3
   - pileup
 label: macs3_pileup
-doc: "Create a pileup bedGraph file from alignment files.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: "Create a bedGraph file by piling up alignment files with a given extension size.\n\
+  \nTool homepage: https://pypi.org/project/MACS3/"
 inputs:
   - id: barcodes
     type:
@@ -82,16 +83,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outdir
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level. 0: only show critical message, 1: show additional warning
-      message, 2: show process information, 3: show debug messages.'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outputfile
     type: File
@@ -101,4 +92,4 @@ outputs:
       glob: $(inputs.outputfile)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

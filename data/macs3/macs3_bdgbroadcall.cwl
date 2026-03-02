@@ -4,7 +4,7 @@ baseCommand:
   - macs3
   - bdgbroadcall
 label: macs3_bdgbroadcall
-doc: "MACS3 tool for calling broad peaks from bedGraph score tracks\n\nTool homepage:
+doc: "MACS3 tool to call broad peaks from bedGraph score tracks\n\nTool homepage:
   https://pypi.org/project/MACS3/"
 inputs:
   - id: cutoff_link
@@ -91,17 +91,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outdir
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level of runtime message. 0: only show critical message, 1:
-      show additional warning message, 2: show process information, 3: show debug
-      messages. DEFAULT:2'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: ofile
     type:
@@ -112,4 +101,4 @@ outputs:
       glob: $(inputs.ofile)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

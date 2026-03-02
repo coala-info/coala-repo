@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - cmbreps
 label: macs3_cmbreps
-doc: "Combine scores from replicates using different methods like Fisher's, max, or
-  mean.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: "Combine scores from replicates using different methods such as Fisher's, max,
+  or mean.\n\nTool homepage: https://pypi.org/project/MACS3/"
 inputs:
   - id: ifile
     type:
@@ -23,21 +23,9 @@ inputs:
     doc: "Method to use while combining scores from replicates. 1) fisher: Fisher's
       combined probability test. 2) max: take the maximum value. 3) mean: take the
       average value."
-    default: fisher
     inputBinding:
       position: 101
       prefix: --method
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level of runtime message. 0: only show critical message, 1:
-      show additional warning message, 2: show process information, 3: show debug
-      messages.'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:
@@ -54,4 +42,4 @@ outputs:
       glob: $(inputs.ofile)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

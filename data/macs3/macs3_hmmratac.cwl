@@ -4,10 +4,19 @@ baseCommand:
   - macs3
   - hmmratac
 label: macs3_hmmratac
-doc: "HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data
-  using a Hidden Markov Model to learn the nucleosome structure around open chromatin
+doc: "HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data,
+  utilizing a Hidden Markov Model to learn the nucleosome structure around open chromatin
   regions.\n\nTool homepage: https://pypi.org/project/MACS3/"
 inputs:
+  - id: barcodes
+    type:
+      - 'null'
+      - File
+    doc: A plain text file containing the barcodes for the fragment file while 
+      the format is 'FRAG'.
+    inputBinding:
+      position: 101
+      prefix: --barcodes
   - id: binsize
     type:
       - 'null'
@@ -49,8 +58,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Only run the cutoff analysis and output a report. After generating the 
-      report, the process will stop.
+    doc: Only run the cutoff analysis and output a report.
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-only
@@ -68,7 +76,7 @@ inputs:
       - 'null'
       - int
     doc: Number of candidate regions to be decoded at a time.
-    default: 1000
+    default: 5000
     inputBinding:
       position: 101
       prefix: --decoding-steps
@@ -76,7 +84,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Format of input files, 'BAMPE' or 'BEDPE'.
+    doc: Format of input files, 'BAMPE', 'BEDPE', or 'FRAG'.
     default: BAMPE
     inputBinding:
       position: 101
@@ -96,7 +104,7 @@ inputs:
       type: array
       items: File
     doc: Input files containing the alignment results for ATAC-seq paired end 
-      reads. The file should be in BAMPE or BEDPE format.
+      reads (BAMPE, BEDPE, or FRAG format).
     inputBinding:
       position: 101
       prefix: --input
@@ -109,6 +117,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: --lower
+  - id: max_count
+    type:
+      - 'null'
+      - int
+    doc: In the FRAG format file, the maximum count of fragments to keep at the 
+      exact same location from the same barcode.
+    inputBinding:
+      position: 101
+      prefix: --max-count
   - id: max_train
     type:
       - 'null'
@@ -151,7 +168,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: --minlen
-  - id: model_file
+  - id: model
     type:
       - 'null'
       - File
@@ -160,12 +177,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --model
-  - id: model_only
+  - id: modelonly
     type:
       - 'null'
       - boolean
     doc: Stop the program after generating model.
-    default: false
     inputBinding:
       position: 101
       prefix: --modelonly
@@ -184,7 +200,6 @@ inputs:
       - 'null'
       - boolean
     doc: Do not perform EM training on the fragment distribution.
-    default: false
     inputBinding:
       position: 101
       prefix: --no-fragem
@@ -192,9 +207,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Pileup only the short fragments to identify regions for training and 
-      candidate regions for decoding.
-    default: false
+    doc: When this option is on, it will pileup only the short fragments to 
+      identify regions for training and candidate regions.
     inputBinding:
       position: 101
       prefix: --pileup-short
@@ -222,7 +236,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove duplicated fragments from analysis.
-    default: false
     inputBinding:
       position: 101
       prefix: --remove-dup
@@ -232,7 +245,6 @@ inputs:
       - boolean
     doc: Save the digested ATAC signals of short-, mono-, di-, and tri- signals 
       in three BedGraph files.
-    default: false
     inputBinding:
       position: 101
       prefix: --save-digested
@@ -241,7 +253,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save the likelihoods to each state annotation in three BedGraph files.
-    default: false
     inputBinding:
       position: 101
       prefix: --save-likelihoods
@@ -250,7 +261,6 @@ inputs:
       - 'null'
       - boolean
     doc: Save all open and nucleosomal state annotations into a BED file.
-    default: false
     inputBinding:
       position: 101
       prefix: --save-states
@@ -258,9 +268,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Save the training regions and training data into 
-      NAME_training_regions.bed and NAME_training_data.txt.
-    default: false
+    doc: Save the training regions and training data.
     inputBinding:
       position: 101
       prefix: --save-training-data
@@ -306,15 +314,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --upper
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: Set verbose level of runtime message.
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:
@@ -325,4 +324,4 @@ outputs:
       glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

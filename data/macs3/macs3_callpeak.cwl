@@ -40,8 +40,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Cutoff for broad region. This option is not available unless --broad is
-      set.
+    doc: Cutoff for broad region. Only available if --broad is set.
     default: 0.1
     inputBinding:
       position: 101
@@ -90,7 +89,7 @@ inputs:
       - 'null'
       - boolean
     doc: While set, MACS3 will analyze number or total length of peaks that can 
-      be called by different p-value cutoff.
+      be called by different p-value cutoffs.
     default: false
     inputBinding:
       position: 101
@@ -117,7 +116,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The arbitrary extension size in bp.
+    doc: The arbitrary extension size in bp. Used when nomodel is true.
     default: 200
     inputBinding:
       position: 101
@@ -126,8 +125,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: When set, the value will be used as the minimum requirement to filter 
-      out peaks with low fold-enrichment.
+    doc: Minimum requirement to filter out peaks with low fold-enrichment.
     default: 1.0
     inputBinding:
       position: 101
@@ -249,7 +247,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Pvalue cutoff for peak detection.
+    doc: Pvalue cutoff for peak detection. Mutually exclusive with -q.
     inputBinding:
       position: 101
       prefix: --pvalue
@@ -257,7 +255,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum FDR (q-value) cutoff for peak detection.
+    doc: Minimum FDR (q-value) cutoff for peak detection. Mutually exclusive 
+      with -p.
     default: 0.05
     inputBinding:
       position: 101
@@ -266,8 +265,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: When set to 'small', scale the larger sample up to the smaller sample. 
-      When set to 'large', scale the smaller sample up to the bigger sample.
+    doc: When set to 'small', scale the larger sample down to the smaller 
+      sample. Choice is 'small' or 'large'.
     default: small
     inputBinding:
       position: 101
@@ -303,8 +302,7 @@ inputs:
       - 'null'
       - boolean
     doc: If True, MACS will save signal per million reads for fragment pileup 
-      profiles.
-    default: false
+      profiles. Requires -B.
     inputBinding:
       position: 101
       prefix: --SPMR
@@ -342,15 +340,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: Set verbose level of runtime message (0-3).
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:
@@ -361,4 +350,4 @@ outputs:
       glob: $(inputs.outdir)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

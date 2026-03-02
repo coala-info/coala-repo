@@ -6,14 +6,14 @@
 Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor binding sites.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macs3/overview
-- **Total Downloads**: 19.5K
-- **Last updated**: 2025-04-22
+- **Total Downloads**: 20.3K
+- **Last updated**: 2026-02-26
 - **GitHub**: https://github.com/macs3-project/MACS
 - **Stars**: N/A
 ### Original Help Text
@@ -34,7 +34,7 @@ usage: macs3 callpeak [-h] -t TFILE [TFILE ...] [-c [CFILE ...]]
                       [--call-summits] [--fe-cutoff FECUTOFF] [--to-large]
                       [--ratio RATIO] [--buffer-size BUFFER_SIZE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
 
 Input files arguments:
@@ -51,10 +51,10 @@ Input files arguments:
                         "ELANDMULTI" or "ELANDEXPORT" or "SAM" or "BAM" or
                         "BOWTIE" or "BAMPE" or "BEDPE" or "FRAG". The default
                         AUTO option will let MACS decide which format (except
-                        for BAMPE, BEDPE, and FRAG which should be implicitly
+                        for BAMPE, BEDPE, and FRAG which should be explicitly
                         set) the file is. Please check the definition in
                         README. Please note that if the format is set as
-                        BAMPE, BEDPE or FRAG, MACS3 will call its special
+                        BAMPE, BEDPE, or FRAG, MACS3 will call its special
                         Paired-end mode to call peaks by piling up the actual
                         ChIPed fragments defined by both aligned ends, instead
                         of predicting the fragment size first and extending
@@ -101,22 +101,22 @@ Input files arguments:
   --barcodes BARCODEFILE
                         A plain text file containing the barcodes for the
                         fragment file while the format is 'FRAG'. Won't have
-                        any effect if the fromat is not 'FRAG'. Each row in
+                        any effect if the format is not 'FRAG'. Each row in
                         the file should only have the barcode string. MACS3
                         will extract only the fragments for the specified
                         barcodes.
   --max-count MAXCOUNT  In the FRAG format file, the fifth column indicates
                         the count of fragments found at the exact same
                         location from the same barcode. By default, MACS3
-                        treats each fragment count as indicated in this
-                        column. However, if this option is enabled and set as
-                        a positive integer, MACS3 will not count more than the
-                        specified number. If this is set as 0, MACS3 will
-                        behave as the default setting to keep all counts.
-                        Please note that `callpeak -f FRAG --max-count 1` is
-                        supposed to generate the same result as `callpeak -f
-                        BEDPE --keep-dup all` on fragment files. This option
-                        will be ignored if the format is not FRAG.
+                        treats each fragment count as indicated. However, if
+                        this option is enabled and set as a positive integer,
+                        MACS3 will not count more than the specified number.
+                        If this is set as 0, MACS3 will behave as the default
+                        setting to keep all counts. Please note that `callpeak
+                        -f FRAG --max-count 1` is supposed to generate the
+                        same result as `callpeak -f BEDPE --keep-dup all` on
+                        fragment files. This option will be ignored if the
+                        format is not FRAG.
 
 Output arguments:
   --outdir OUTDIR       If specified all output files will be written to that
@@ -345,11 +345,11 @@ Examples:
 4. Peak calling on ATAC-seq (focusing on insertion sites, and using single-end mode):
     $ macs3 callpeak -f BAM -t ATAC.bam -g hs -n test -B -q 0.01 --shift -50 --extension 100
 5. Peak calling on scATAC-seq (paired-end mode):
-    $ macs3 callpeak -f BEDPE -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01 -n test
+    $ macs3 callpeak -f BEDPE -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01
 6. Peak calling on scATAC-seq (paired-end mode):
-    $ macs3 callpeak -f FRAG -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01 -n test
+    $ macs3 callpeak -f FRAG -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01
 7. Peak calling on scATAC-seq (paired-end mode) and only for given barcodes:
-    $ macs3 callpeak -f FRAG -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01 -n test --barcodes barcodes.txt
+    $ macs3 callpeak -f FRAG -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01 --barcodes barcodes.txt
 ```
 
 
@@ -359,7 +359,7 @@ Examples:
 Call peaks from bedGraph output of MACS3
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -373,7 +373,7 @@ usage: macs3 bdgpeakcall [-h] -i IFILE [-c CUTOFF] [-l MINLEN] [-g MAXGAP]
                          [--no-trackline] [--verbose VERBOSE]
                          [--outdir OUTDIR] (-o OFILE | --o-prefix OPREFIX)
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE, --ifile IFILE
                         MACS score in bedGraph. REQUIRED
@@ -435,10 +435,10 @@ optional arguments:
 ## macs3_bdgbroadcall
 
 ### Tool Description
-MACS3 tool for calling broad peaks from bedGraph score tracks
+MACS3 tool to call broad peaks from bedGraph score tracks
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -450,7 +450,7 @@ usage: macs3 bdgbroadcall [-h] -i IFILE [-c CUTOFFPEAK] [-C CUTOFFLINK]
                           [--no-trackline] [--verbose VERBOSE]
                           [--outdir OUTDIR] (-o OFILE | --o-prefix OPREFIX)
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE, --ifile IFILE
                         MACS score in bedGraph. REQUIRED
@@ -496,7 +496,7 @@ optional arguments:
 Deduct noise by comparing treatment and control bedGraph files using various methods.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -508,7 +508,7 @@ usage: macs3 bdgcmp [-h] -t TFILE -c CFILE [-S SFACTOR] [-p PSEUDOCOUNT]
                     [--verbose VERBOSE] [--outdir OUTDIR]
                     (--o-prefix OPREFIX | -o OFILE [OFILE ...])
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -t TFILE, --tfile TFILE
                         Treatment bedGraph file, e.g. *_treat_pileup.bdg from
@@ -567,10 +567,10 @@ optional arguments:
 ## macs3_bdgopt
 
 ### Tool Description
-Modify the score column of a bedGraph file using various methods like multiply, add, max, min, or p2q conversion.
+Modify the score column of a bedGraph file using various methods.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -581,7 +581,7 @@ usage: macs3 bdgopt [-h] -i IFILE [-m {multiply,add,p2q,max,min}]
                     [-p [EXTRAPARAM ...]] [--outdir OUTDIR] -o OFILE
                     [--verbose VERBOSE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE, --ifile IFILE
                         MACS score in bedGraph. Note: this must be a bedGraph
@@ -621,10 +621,10 @@ optional arguments:
 ## macs3_cmbreps
 
 ### Tool Description
-Combine scores from replicates using different methods like Fisher's, max, or mean.
+Combine scores from replicates using different methods such as Fisher's, max, or mean.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -634,7 +634,7 @@ Combine scores from replicates using different methods like Fisher's, max, or me
 usage: macs3 cmbreps [-h] -i IFILE [IFILE ...] [-m {fisher,max,mean}]
                      [--outdir OUTDIR] -o OFILE [--verbose VERBOSE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE [IFILE ...]  MACS score in bedGraph for each replicate. Require at
                         least 2 files such as '-i A B C D'. REQUIRED
@@ -666,7 +666,7 @@ optional arguments:
 Differential peak detection based on paired bedGraph files
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -678,7 +678,7 @@ usage: macs3 bdgdiff [-h] --t1 T1BDG --t2 T2BDG --c1 C1BDG --c2 C2BDG
                      [--d2 DEPTH2] [--verbose VERBOSE] [--outdir OUTDIR]
                      (--o-prefix OPREFIX | -o OFILE OFILE OFILE)
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   --t1 T1BDG            MACS pileup bedGraph for condition 1. Incompatible
                         with callpeak --SPMR output. REQUIRED
@@ -735,10 +735,10 @@ optional arguments:
 ## macs3_filterdup
 
 ### Tool Description
-MACS3 filterdup is used to remove duplicate reads at the same location based on a binomial distribution test or a fixed number.
+MACS3 filterdup tool to remove duplicate reads at the same location based on binomial distribution.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -752,7 +752,7 @@ usage: macs3 filterdup [-h] -i IFILE [IFILE ...]
                        [--verbose VERBOSE] [--outdir OUTDIR] [-o OUTPUTFILE]
                        [-d]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE [IFILE ...], --ifile IFILE [IFILE ...]
                         Alignment file. If multiple files are given as '-t A B
@@ -831,7 +831,7 @@ optional arguments:
 Predict d or fragment size from alignment files
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -844,7 +844,7 @@ usage: macs3 predictd [-h] -i IFILE [IFILE ...]
                       [-m MFOLD MFOLD] [--outdir OUTDIR] [--rfile RFILE]
                       [--buffer-size BUFFER_SIZE] [--verbose VERBOSE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE [IFILE ...], --ifile IFILE [IFILE ...]
                         ChIP-seq alignment file. If multiple files are given
@@ -913,10 +913,10 @@ optional arguments:
 ## macs3_pileup
 
 ### Tool Description
-Create a pileup bedGraph file from alignment files.
+Create a bedGraph file by piling up alignment files with a given extension size.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -929,7 +929,7 @@ usage: macs3 pileup [-h] -i IFILE [IFILE ...] -o OUTPUTFILE [--outdir OUTDIR]
                     [--extsize EXTSIZE] [--buffer-size BUFFER_SIZE]
                     [--verbose VERBOSE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE [IFILE ...], --ifile IFILE [IFILE ...]
                         Alignment file. If multiple files are given as '-t A B
@@ -954,22 +954,22 @@ optional arguments:
   --barcodes BARCODEFILE
                         A plain text file containing the barcodes for the
                         fragment file while the format is 'FRAG'. Won't have
-                        any effect if the fromat is not 'FRAG'. Each row in
+                        any effect if the format is not 'FRAG'. Each row in
                         the file should only have the barcode string. MACS3
                         will extract only the fragments for the specified
                         barcodes.
   --max-count MAXCOUNT  In the FRAG format file, the fifth column indicates
                         the count of fragments found at the exact same
                         location from the same barcode. By default, MACS3
-                        treats each fragment count as indicated in this
-                        column. However, if this option is enabled and set as
-                        a positive integer, MACS3 will not count more than the
-                        specified number. If this is set as 0, MACS3 will
-                        behave as the default setting to keep all counts.
-                        Please note that `callpeak -f FRAG --max-count 1` is
-                        supposed to generate the same result as `callpeak -f
-                        BEDPE --keep-dup all` on fragment files. This option
-                        will be ignored if the format is not FRAG.
+                        treats each fragment count as indicated. However, if
+                        this option is enabled and set as a positive integer,
+                        MACS3 will not count more than the specified number.
+                        If this is set as 0, MACS3 will behave as the default
+                        setting to keep all counts. Please note that `callpeak
+                        -f FRAG --max-count 1` is supposed to generate the
+                        same result as `callpeak -f BEDPE --keep-dup all` on
+                        fragment files. This option will be ignored if the
+                        format is not FRAG.
   -B, --both-direction  By default, any read will be extended towards
                         downstream direction by extension size. So it's
                         [0,size-1] (1-based index system) for plus strand read
@@ -1017,7 +1017,7 @@ optional arguments:
 Randomly sample tags from alignment files to a specified percentage or number.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -1030,7 +1030,7 @@ usage: macs3 randsample [-h] -i IFILE [IFILE ...] (-p PERCENTAGE | -n NUMBER)
                         [-f {AUTO,BAM,SAM,BED,ELAND,ELANDMULTI,ELANDEXPORT,BOWTIE,BAMPE,BEDPE}]
                         [--buffer-size BUFFER_SIZE] [--verbose VERBOSE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -i IFILE [IFILE ...], --ifile IFILE [IFILE ...]
                         Alignment file. If multiple files are given as '-t A B
@@ -1093,7 +1093,7 @@ optional arguments:
 Refine peak summits and compute enrichment scores using MACS3
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -1106,7 +1106,7 @@ usage: macs3 refinepeak [-h] -b BEDFILE -i IFILE [IFILE ...]
                         [--buffer-size BUFFER_SIZE] [--verbose VERBOSE]
                         [--outdir OUTDIR] (-o OFILE | --o-prefix OPREFIX)
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -b BEDFILE            Candidate peak file in BED format. REQUIRED.
   -i IFILE [IFILE ...], --ifile IFILE [IFILE ...]
@@ -1155,10 +1155,10 @@ optional arguments:
 ## macs3_callvar
 
 ### Tool Description
-Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM files within specified peak regions.
+Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM files within peak regions.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
@@ -1173,7 +1173,7 @@ usage: macs3 callvar [-h] -b PEAKBED -t TFILE [-c CFILE] [--outdir OUTDIR] -o
                      [--altallele-count ALTALLELEMINCOUNT] [--max-ar MAXAR]
                      [-m NP]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
 
 Input files arguments:
@@ -1288,18 +1288,20 @@ To call variants:
 ## macs3_hmmratac
 
 ### Tool Description
-HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data using a Hidden Markov Model to learn the nucleosome structure around open chromatin regions.
+HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data, utilizing a Hidden Markov Model to learn the nucleosome structure around open chromatin regions.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+- **Docker Image**: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
 - **Homepage**: https://pypi.org/project/MACS3/
 - **Package**: https://anaconda.org/channels/bioconda/packages/macs3/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-usage: macs3 hmmratac [-h] -i INPUT_FILE [INPUT_FILE ...] [-f {BAMPE,BEDPE}]
-                      [--outdir OUTDIR] [-n NAME] [--cutoff-analysis-only]
+usage: macs3 hmmratac [-h] -i INPUT_FILE [INPUT_FILE ...]
+                      [-f {BAMPE,BEDPE,FRAG}] [--barcodes BARCODEFILE]
+                      [--max-count MAXCOUNT] [--outdir OUTDIR] [-n NAME]
+                      [--cutoff-analysis-only]
                       [--cutoff-analysis-max CUTOFF_ANALYSIS_MAX]
                       [--cutoff-analysis-steps CUTOFF_ANALYSIS_STEPS]
                       [--save-digested] [--save-states] [--save-likelihoods]
@@ -1317,7 +1319,7 @@ usage: macs3 hmmratac [-h] -i INPUT_FILE [INPUT_FILE ...] [-f {BAMPE,BEDPE}]
                       [--remove-dup] [--verbose VERBOSE]
                       [--buffer-size BUFFER_SIZE]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
 
 Input files arguments:
@@ -1325,21 +1327,39 @@ Input files arguments:
                         Input files containing the aligment results for ATAC-
                         seq paired end reads. If multiple files are given as
                         '-t A B C', then they will all be read and pooled
-                        together. The file should be in BAMPE or BEDPE format
-                        (aligned in paired end mode). Files can be gzipped.
-                        Note: all files should be in the same format!
-                        REQUIRED.
-  -f {BAMPE,BEDPE}, --format {BAMPE,BEDPE}
-                        Format of input files, "BAMPE" or "BEDPE". If there
-                        are multiple files, they should be in the same format
-                        -- either BAMPE or BEDPE. Please check the definition
-                        in README. Also please note that the BEDPE only
-                        contains three columns -- chromosome, left position of
-                        the whole pair, right position of the whole pair-- and
-                        is NOT the same BEDPE format used by BEDTOOLS. To
-                        convert BAMPE to BEDPE, you can use this command
-                        `macs3 filterdup --keep-dup all -f BAMPE -i input.bam
-                        -o output.bedpe`. DEFAULT: "BAMPE"
+                        together. The file should be in BAMPE, BEDPE format
+                        (aligned in paired end mode) or FRAG format (from
+                        scATAC analysis). Files can be gzipped. Note: all
+                        files should be in the same format! REQUIRED.
+  -f {BAMPE,BEDPE,FRAG}, --format {BAMPE,BEDPE,FRAG}
+                        Format of input files, "BAMPE", "BEDPE", or "FRAG". If
+                        there are multiple files, they should be in the same
+                        format -- either BAMPE, BEDPE or FRAG. Please check
+                        the definition in README. Also please note that the
+                        BEDPE only contains three columns -- chromosome, left
+                        position of the whole pair, right position of the
+                        whole pair-- and is NOT the same BEDPE format used by
+                        BEDTOOLS. To convert BAMPE to BEDPE, you can use this
+                        command `macs3 filterdup --keep-dup all -f BAMPE -i
+                        input.bam -o output.bedpe`. And the FRAG format is a
+                        five columns BEDPE with extra barcode and fragment
+                        count columns. DEFAULT: "BAMPE"
+  --barcodes BARCODEFILE
+                        A plain text file containing the barcodes for the
+                        fragment file while the format is 'FRAG'. Won't have
+                        any effect if the format is not 'FRAG'. Each row in
+                        the file should only have the barcode string. MACS3
+                        will extract only the fragments for the specified
+                        barcodes.
+  --max-count MAXCOUNT  In the FRAG format file, the fifth column indicates
+                        the count of fragments found at the exact same
+                        location from the same barcode. By default, MACS3
+                        treats each fragment count as indicated in this
+                        column. However, if this option is enabled and set as
+                        a positive integer, MACS3 will not count more than the
+                        specified number. If this is set as 0, MACS3 will
+                        behave as the default setting to keep all counts. This
+                        option will be ignored if the format is not FRAG.
 
 Output arguments:
   --outdir OUTDIR       If specified all output files will be written to that
@@ -1415,15 +1435,14 @@ EM algorithm arguments:
                         use EM to find the means and stddevs of the four
                         distributions, we will calculate the likelihood that a
                         given fragment length fit any of the four using normal
-                        distribution. The criteria we will use is that if a
-                        fragment length has less than MIN_FRAG_P probability
-                        to be like either of short, mono, di, or tri-nuc
-                        fragment, we will exclude it while generating the four
-                        signal tracks for later HMM training and prediction.
-                        The value should be between 0 and 1. Larger the value,
-                        more abnormal fragments will be allowed. So if you
-                        want to include more 'ideal' fragments, make this
-                        value smaller. Default=0.001
+                        distribution. If a fragment length is not like ('not
+                        like' means the probability is lower than MIN_FRAG_P)
+                        any of short, mono, di, or tri-nuc fragment, we will
+                        exclude it while generating the four signal tracks for
+                        later HMM training and prediction. The value should be
+                        between 0 and 1. Smaller the value, more 'abnormal'
+                        fragments will be allowed. So if you want to include
+                        more fragments, make this value smaller. Default=0.001
 
 Hidden Markov Model arguments:
   --binsize HMM_BINSIZE
@@ -1525,9 +1544,10 @@ Misc arguments:
   --decoding-steps DECODING_STEPS
                         Number of candidate regions to be decoded at a time.
                         The HMM model will be applied with Viterbi to find the
-                        optimal state path in each region. bigger the number,
-                        'possibly' faster the decoding process, 'definitely'
-                        larger the memory usage. Default: 1000.
+                        optimal state path in each region. By increasing the
+                        number, the decoding process can be faster but the
+                        memory usage can be higher. Choose wisely according to
+                        the computer memory you can access. Default: 5000.
   -e BLACKLIST, --blacklist BLACKLIST
                         Filename of blacklisted regions to exclude. Fragments
                         aligned to such regions will be excluded from
@@ -1553,7 +1573,7 @@ Misc arguments:
                         reading an alignment file is about # of CHROMOSOME *
                         BUFFER_SIZE * 8 Bytes. DEFAULT: 100000
 
-HMMRATAC is a dedicated tool for processing ATAC-seq data
+HMMRATAC is a dedicated tool for processing ATAC-seq or scATAC-seq data
 
 HMMRATAC, first released as a JAVA program in 2019, is a dedicated
 tool specifically designed for processing ATAC-seq data. In MACS3, it
@@ -1579,6 +1599,13 @@ Note: you can convert BAMPE to BEDPE by using
 
 ```
 $ macs3 filterdup --keep-dup all -f BAMPE -i yeast.bam -o yeast.bedpe
+```
+
+`hmmratac` can call accessible regions directly on the fragment files
+from scATAC-seq analysis:
+
+```
+$ macs3 hmmratac -i yeast.scATAC.frag.gz -f FRAG --barcodes selected_barcodes.txt --max-count 1
 ```
 
 The final output from `hmmratac` is in narrowPeak format containing

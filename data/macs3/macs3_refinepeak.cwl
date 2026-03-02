@@ -18,8 +18,7 @@ inputs:
       - 'null'
       - int
     doc: Buffer size for incrementally increasing internal array size to store 
-      reads alignment information. In most cases, you don't have to change this 
-      parameter.
+      reads alignment information.
     default: 100000
     inputBinding:
       position: 101
@@ -27,7 +26,7 @@ inputs:
   - id: cutoff
     type:
       - 'null'
-      - float
+      - int
     doc: Cutoff. Regions with SPP wtd score lower than cutoff will not be 
       considerred.
     default: 5
@@ -39,8 +38,7 @@ inputs:
       - 'null'
       - string
     doc: Format of tag file, "AUTO", "BED" or "ELAND" or "ELANDMULTI" or 
-      "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE". The default AUTO option will 
-      let 'macs3 refinepeak' decide which format the file is.
+      "ELANDEXPORT" or "SAM" or "BAM" or "BOWTIE".
     default: AUTO
     inputBinding:
       position: 101
@@ -55,16 +53,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ifile
-  - id: verbose
+  - id: o_prefix
     type:
       - 'null'
-      - int
-    doc: 'Set verbose level. 0: only show critical message, 1: show additional warning
-      message, 2: show process information, 3: show debug messages.'
-    default: 2
+      - string
+    doc: Output file prefix. Mutually exclusive with -o/--ofile.
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: --o-prefix
   - id: window_size
     type:
       - 'null'
@@ -90,13 +86,6 @@ outputs:
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
       glob: $(inputs.ofile)
-  - id: o_prefix
-    type:
-      - 'null'
-      - File
-    doc: Output file prefix. Mutually exclusive with -o/--ofile.
-    outputBinding:
-      glob: $(inputs.o_prefix)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

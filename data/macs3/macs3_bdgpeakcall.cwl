@@ -13,7 +13,7 @@ inputs:
     doc: Cutoff depends on which method you used for score track. If the file 
       contains pvalue scores from MACS3, score 5 means pvalue 1e-5. Regions with
       signals lower than cutoff will not be considerred as enriched regions.
-    default: 5.0
+    default: 5
     inputBinding:
       position: 101
       prefix: --cutoff
@@ -33,7 +33,7 @@ inputs:
       - 'null'
       - float
     doc: The maximum cutoff score for performing cutoff analysis.
-    default: 100.0
+    default: 100
     inputBinding:
       position: 101
       prefix: --cutoff-analysis-max
@@ -81,27 +81,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-trackline
+outputs:
   - id: outdir
     type:
       - 'null'
       - Directory
-    doc: 'If specified all output files will be written to that directory. Default:
-      the current working directory'
-    inputBinding:
-      position: 101
-      prefix: --outdir
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level of runtime message. 0: only show critical message, 1:
-      show additional warning message, 2: show process information, 3: show debug
-      messages.'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
-outputs:
+    doc: If specified all output files will be written to that directory.
+    outputBinding:
+      glob: $(inputs.outdir)
   - id: ofile
     type:
       - 'null'
@@ -118,4 +105,4 @@ outputs:
       glob: $(inputs.o_prefix)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

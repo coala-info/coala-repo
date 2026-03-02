@@ -324,15 +324,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: Set verbose level of runtime message (0-3).
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:

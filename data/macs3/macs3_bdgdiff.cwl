@@ -7,17 +7,17 @@ label: macs3_bdgdiff
 doc: "Differential peak detection based on paired bedGraph files\n\nTool homepage:
   https://pypi.org/project/MACS3/"
 inputs:
-  - id: c1
+  - id: c1_bdg
     type: File
     doc: MACS control lambda bedGraph for condition 1. Incompatible with 
-      callpeak --SPMR output. REQUIRED
+      callpeak --SPMR output.
     inputBinding:
       position: 101
       prefix: --c1
-  - id: c2
+  - id: c2_bdg
     type: File
     doc: MACS control lambda bedGraph for condition 2. Incompatible with 
-      callpeak --SPMR output. REQUIRED
+      callpeak --SPMR output.
     inputBinding:
       position: 101
       prefix: --c2
@@ -25,8 +25,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: 'log10LR cutoff. Regions with signals lower than cutoff will not be considerred
-      as enriched regions. DEFAULT: 3 (likelihood ratio=1000)'
+    doc: log10LR cutoff. Regions with signals lower than cutoff will not be 
+      considerred as enriched regions.
     default: 3.0
     inputBinding:
       position: 101
@@ -57,9 +57,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Maximum gap to merge nearby differential regions. Consider a wider gap for
-      broad marks. Maximum gap should be smaller than minimum length (-g). DEFAULT:
-      100'
+    doc: Maximum gap to merge nearby differential regions. Consider a wider gap 
+      for broad marks. Maximum gap should be smaller than minimum length (-g).
     default: 100
     inputBinding:
       position: 101
@@ -68,55 +67,44 @@ inputs:
     type:
       - 'null'
       - int
-    doc: 'Minimum length of differential region. Try bigger value to remove small
-      regions. DEFAULT: 200'
+    doc: Minimum length of differential region. Try bigger value to remove small
+      regions.
     default: 200
     inputBinding:
       position: 101
       prefix: --min-len
-  - id: t1
+  - id: o_prefix
+    type:
+      - 'null'
+      - string
+    doc: Output file prefix. Actual files will be named as PREFIX_cond1.bed, 
+      PREFIX_cond2.bed and PREFIX_common.bed. Mutually exclusive with 
+      -o/--ofile.
+    inputBinding:
+      position: 101
+      prefix: --o-prefix
+  - id: t1_bdg
     type: File
     doc: MACS pileup bedGraph for condition 1. Incompatible with callpeak --SPMR
-      output. REQUIRED
+      output.
     inputBinding:
       position: 101
       prefix: --t1
-  - id: t2
+  - id: t2_bdg
     type: File
     doc: MACS pileup bedGraph for condition 2. Incompatible with callpeak --SPMR
-      output. REQUIRED
+      output.
     inputBinding:
       position: 101
       prefix: --t2
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level of runtime message. 0: only show critical message, 1:
-      show additional warning message, 2: show process information, 3: show debug
-      messages. DEFAULT:2'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:
       - 'null'
       - Directory
-    doc: 'If specified all output files will be written to that directory. Default:
-      the current working directory'
+    doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
-  - id: o_prefix
-    type:
-      - 'null'
-      - File
-    doc: Output file prefix. Actual files will be named as PREFIX_cond1.bed, 
-      PREFIX_cond2.bed and PREFIX_common.bed. Mutually exclusive with 
-      -o/--ofile.
-    outputBinding:
-      glob: $(inputs.o_prefix)
   - id: ofile
     type:
       - 'null'
@@ -128,4 +116,4 @@ outputs:
       glob: $(inputs.ofile)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

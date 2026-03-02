@@ -12,7 +12,7 @@ Model-based Analysis of ChIP-Seq (MACS2) for identifying transcript factor bindi
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macs2/overview
-- **Total Downloads**: 194.1K
+- **Total Downloads**: 194.9K
 - **Last updated**: 2025-10-05
 - **GitHub**: https://github.com/macs3-project/MACS
 - **Stars**: N/A

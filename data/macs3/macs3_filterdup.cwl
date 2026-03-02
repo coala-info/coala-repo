@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - filterdup
 label: macs3_filterdup
-doc: "MACS3 filterdup is used to remove duplicate reads at the same location based
-  on a binomial distribution test or a fixed number.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: "MACS3 filterdup tool to remove duplicate reads at the same location based on
+  binomial distribution.\n\nTool homepage: https://pypi.org/project/MACS3/"
 inputs:
   - id: buffer_size
     type:
@@ -52,7 +52,7 @@ inputs:
       type: array
       items: File
     doc: Alignment file. If multiple files are given as '-t A B C', then they 
-      will all be read and combined.
+      will all be read and combined. REQUIRED.
     inputBinding:
       position: 101
       prefix: --ifile
@@ -83,15 +83,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tsize
-  - id: verbose
-    type:
-      - 'null'
-      - int
-    doc: 'Set verbose level. 0: critical, 1: warning, 2: process info, 3: debug.'
-    default: 2
-    inputBinding:
-      position: 101
-      prefix: --verbose
 outputs:
   - id: outdir
     type:
@@ -109,4 +100,4 @@ outputs:
       glob: $(inputs.output_file)
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/macs3:3.0.3--py39h0699b22_0
+    dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0

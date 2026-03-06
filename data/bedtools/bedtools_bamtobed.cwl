@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - bamtobed
 label: bedtools_bamtobed
-doc: "Converts BAM alignments to BED6 or BEDPE format.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Converts BAM alignments to BED6 or BEDPE format.
 inputs:
   - id: bed12
     type:
@@ -35,7 +35,6 @@ inputs:
       - 'null'
       - string
     doc: An R,G,B string for the color used with BED12 format.
-    default: 255,0,0
     inputBinding:
       position: 101
       prefix: -color
@@ -96,3 +95,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_bamtobed.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

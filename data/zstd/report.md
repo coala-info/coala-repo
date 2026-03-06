@@ -1,252 +1,80 @@
 # zstd CWL Generation Report
 
-## zstd_64-bit
+## zstd
 
 ### Tool Description
-Compress or decompress the INPUT file(s); reads from STDIN if INPUT is `-` or not provided.
+zstd command line interface for compression and decompression
 
 ### Metadata
-- **Docker Image**: Not found
+- **Docker Image**: biocontainers/zstd:v1.3.8dfsg-3-deb_cv1
 - **Homepage**: https://github.com/facebook/zstd
 - **Package**: Not found
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/main/packages/zstd/overview
-- **Total Downloads**: 716.6K
+- **Total Downloads**: 729.1K
 - **Last updated**: 2025-09-16
 - **GitHub**: https://github.com/facebook/zstd
 - **Stars**: N/A
 ### Original Help Text
 ```text
-*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***
+*** zstd command line interface 64-bits v1.3.8, by Yann Collet ***
+Usage : 
+      zstd [args] [FILE(s)] [-o file] 
 
-Compress or decompress the INPUT file(s); reads from STDIN if INPUT is `-` or not provided.
+FILE    : a filename 
+          with no FILE, or when FILE is - , read standard input
+Arguments : 
+ -#     : # compression level (1-19, default: 3) 
+ -d     : decompression 
+ -D file: use `file` as Dictionary 
+ -o file: result stored into `file` (only if 1 input file) 
+ -f     : overwrite output without prompting and (de)compress links 
+--rm    : remove source file(s) after successful de/compression 
+ -k     : preserve source file(s) (default) 
+ -h/-H  : display help/long help and exit 
 
-Usage: zstd [OPTIONS...] [INPUT... | -] [-o OUTPUT]
+Advanced arguments : 
+ -V     : display Version number and exit 
+ -v     : verbose mode; specify multiple times to increase verbosity
+ -q     : suppress warnings; specify twice to suppress errors too
+ -c     : force write to standard output, even if it is the console
+ -l     : print information about zstd compressed files 
+--ultra : enable levels beyond 19, up to 22 (requires more memory)
+--long[=#]: enable long distance matching with given window log (default: 27)
+--fast[=#]: switch to ultra fast compression level (default: 1)
+--adapt : dynamically adapt compression level to I/O conditions 
+ -T#    : spawns # compression threads (default: 1, 0==# cores) 
+ -B#    : select size of each job (default: 0==automatic) 
+ --rsyncable : compress using a rsync-friendly method (-B sets block size) 
+--no-dictID : don't write dictID into header (dictionary compression)
+--[no-]check : integrity check (default: enabled) 
+ -r     : operate recursively on directories 
+--format=zstd : compress files to the .zst format (default) 
+--format=gzip : compress files to the .gz format 
+--format=xz : compress files to the .xz format 
+--format=lzma : compress files to the .lzma format 
+--format=lz4 : compress files to the .lz4 format 
+--test  : test compressed file integrity 
+--[no-]sparse : sparse mode (default: enabled on file, disabled on stdout)
+ -M#    : Set a memory usage limit for decompression 
+--no-progress : do not display the progress bar 
+--      : All arguments after "--" are treated as files 
 
-Options:
-  -o OUTPUT                     Write output to a single file, OUTPUT.
-  -k, --keep                    Preserve INPUT file(s). [Default] 
-  --rm                          Remove INPUT file(s) after successful (de)compression.
+Dictionary builder : 
+--train ## : create a dictionary from a training set of files 
+--train-cover[=k=#,d=#,steps=#,split=#] : use the cover algorithm with optional args
+--train-fastcover[=k=#,d=#,f=#,steps=#,split=#,accel=#] : use the fast cover algorithm with optional args
+--train-legacy[=s=#] : use the legacy algorithm with selectivity (default: 9)
+ -o file : `file` is dictionary name (default: dictionary) 
+--maxdict=# : limit dictionary to specified size (default: 112640) 
+--dictID=# : force dictionary ID to specified value (default: random)
 
-  -#                            Desired compression level, where `#` is a number between 1 and 19;
-                                lower numbers provide faster compression, higher numbers yield
-                                better compression ratios. [Default: 3]
-
-  -d, --decompress              Perform decompression.
-  -D DICT                       Use DICT as the dictionary for compression or decompression.
-
-  -f, --force                   Disable input and output checks. Allows overwriting existing files,
-                                receiving input from the console, printing output to STDOUT, and
-                                operating on links, block devices, etc. Unrecognized formats will be
-                                passed-through through as-is.
-
-  -h                            Display short usage and exit.
-  -H, --help                    Display full help and exit.
-  -V, --version                 Display the program version and exit.
-
-Advanced options:
-  -c, --stdout                  Write to STDOUT (even if it is a console) and keep the INPUT file(s).
-
-  -v, --verbose                 Enable verbose output; pass multiple times to increase verbosity.
-  -q, --quiet                   Suppress warnings; pass twice to suppress errors.
-  --trace LOG                   Log tracing information to LOG.
-
-  --[no-]progress               Forcibly show/hide the progress counter. NOTE: Any (de)compressed
-                                output to terminal will mix with progress counter text.
-
-  -r                            Operate recursively on directories.
-  --filelist LIST               Read a list of files to operate on from LIST.
-  --output-dir-flat DIR         Store processed files in DIR.
-  --output-dir-mirror DIR       Store processed files in DIR, respecting original directory structure.
-  --[no-]asyncio                Use asynchronous IO. [Default: Enabled]
-
-  --[no-]check                  Add XXH64 integrity checksums during compression. [Default: Add, Validate]
-                                If `-d` is present, ignore/validate checksums during decompression.
-
-  --                            Treat remaining arguments after `--` as files.
-
-Advanced compression options:
-  --ultra                       Enable levels beyond 19, up to 22; requires more memory.
-  --fast[=#]                    Use to very fast compression levels. [Default: 1]
-  --adapt                       Dynamically adapt compression level to I/O conditions.
-  --long[=#]                    Enable long distance matching with window log #. [Default: 27]
-  --patch-from=REF              Use REF as the reference point for Zstandard's diff engine. 
-
-  -T#                           Spawn # compression threads. [Default: 1; pass 0 for core count.]
-  --single-thread               Share a single thread for I/O and compression (slightly different than `-T1`).
-  --auto-threads={physical|logical}
-                                Use physical/logical cores when using `-T0`. [Default: Physical]
-
-  -B#                           Set job size to #. [Default: 0 (automatic)]
-  --rsyncable                   Compress using a rsync-friendly method (`-B` sets block size). 
-
-  --exclude-compressed          Only compress files that are not already compressed.
-
-  --stream-size=#               Specify size of streaming input from STDIN.
-  --size-hint=#                 Optimize compression parameters for streaming input of approximately size #.
-  --target-compressed-block-size=#
-                                Generate compressed blocks of approximately # size.
-
-  --no-dictID                   Don't write `dictID` into the header (dictionary compression only).
-  --[no-]compress-literals      Force (un)compressed literals.
-  --[no-]row-match-finder       Explicitly enable/disable the fast, row-based matchfinder for
-                                the 'greedy', 'lazy', and 'lazy2' strategies.
-
-  --format=zstd                 Compress files to the `.zst` format. [Default]
-  --[no-]mmap-dict              Memory-map dictionary file rather than mallocing and loading all at once
-  --format=gzip                 Compress files to the `.gz` format.
-
-Advanced decompression options:
-  -l                            Print information about Zstandard-compressed files.
-  --test                        Test compressed file integrity.
-  -M#                           Set the memory usage limit to # megabytes.
-  --[no-]sparse                 Enable sparse mode. [Default: Enabled for files, disabled for STDOUT.]
-  --[no-]pass-through           Pass through uncompressed files as-is. [Default: Disabled]
-
-Dictionary builder:
-  --train                       Create a dictionary from a training set of files.
-
-  --train-cover[=k=#,d=#,steps=#,split=#,shrink[=#]]
-                                Use the cover algorithm (with optional arguments).
-  --train-fastcover[=k=#,d=#,f=#,steps=#,split=#,accel=#,shrink[=#]]
-                                Use the fast cover algorithm (with optional arguments).
-
-  --train-legacy[=s=#]          Use the legacy algorithm with selectivity #. [Default: 9]
-  -o NAME                       Use NAME as dictionary name. [Default: dictionary]
-  --maxdict=#                   Limit dictionary to specified size #. [Default: 112640]
-  --dictID=#                    Force dictionary ID to #. [Default: Random]
-
-Benchmark options:
-  -b#                           Perform benchmarking with compression level #. [Default: 3]
-  -e#                           Test all compression levels up to #; starting level is `-b#`. [Default: 1]
-  -i#                           Set the minimum evaluation to time # seconds. [Default: 3]
-  -B#                           Cut file into independent chunks of size #. [Default: No chunking]
-  -S                            Output one benchmark result per input file. [Default: Consolidated result]
-  -D dictionary                 Benchmark using dictionary 
-  --priority=rt                 Set process priority to real-time.
-```
-
-
-## zstd_de
-
-### Tool Description
-Compress or decompress the INPUT file(s); reads from STDIN if INPUT is `-` or not provided.
-
-### Metadata
-- **Docker Image**: Not found
-- **Homepage**: https://github.com/facebook/zstd
-- **Package**: Not found
-- **Validation**: PASS
-
-### Original Help Text
-```text
-*** Zstandard CLI (64-bit) v1.5.7, by Yann Collet ***
-
-Compress or decompress the INPUT file(s); reads from STDIN if INPUT is `-` or not provided.
-
-Usage: zstd [OPTIONS...] [INPUT... | -] [-o OUTPUT]
-
-Options:
-  -o OUTPUT                     Write output to a single file, OUTPUT.
-  -k, --keep                    Preserve INPUT file(s). [Default] 
-  --rm                          Remove INPUT file(s) after successful (de)compression.
-
-  -#                            Desired compression level, where `#` is a number between 1 and 19;
-                                lower numbers provide faster compression, higher numbers yield
-                                better compression ratios. [Default: 3]
-
-  -d, --decompress              Perform decompression.
-  -D DICT                       Use DICT as the dictionary for compression or decompression.
-
-  -f, --force                   Disable input and output checks. Allows overwriting existing files,
-                                receiving input from the console, printing output to STDOUT, and
-                                operating on links, block devices, etc. Unrecognized formats will be
-                                passed-through through as-is.
-
-  -h                            Display short usage and exit.
-  -H, --help                    Display full help and exit.
-  -V, --version                 Display the program version and exit.
-
-Advanced options:
-  -c, --stdout                  Write to STDOUT (even if it is a console) and keep the INPUT file(s).
-
-  -v, --verbose                 Enable verbose output; pass multiple times to increase verbosity.
-  -q, --quiet                   Suppress warnings; pass twice to suppress errors.
-  --trace LOG                   Log tracing information to LOG.
-
-  --[no-]progress               Forcibly show/hide the progress counter. NOTE: Any (de)compressed
-                                output to terminal will mix with progress counter text.
-
-  -r                            Operate recursively on directories.
-  --filelist LIST               Read a list of files to operate on from LIST.
-  --output-dir-flat DIR         Store processed files in DIR.
-  --output-dir-mirror DIR       Store processed files in DIR, respecting original directory structure.
-  --[no-]asyncio                Use asynchronous IO. [Default: Enabled]
-
-  --[no-]check                  Add XXH64 integrity checksums during compression. [Default: Add, Validate]
-                                If `-d` is present, ignore/validate checksums during decompression.
-
-  --                            Treat remaining arguments after `--` as files.
-
-Advanced compression options:
-  --ultra                       Enable levels beyond 19, up to 22; requires more memory.
-  --fast[=#]                    Use to very fast compression levels. [Default: 1]
-  --adapt                       Dynamically adapt compression level to I/O conditions.
-  --long[=#]                    Enable long distance matching with window log #. [Default: 27]
-  --patch-from=REF              Use REF as the reference point for Zstandard's diff engine. 
-
-  -T#                           Spawn # compression threads. [Default: 1; pass 0 for core count.]
-  --single-thread               Share a single thread for I/O and compression (slightly different than `-T1`).
-  --auto-threads={physical|logical}
-                                Use physical/logical cores when using `-T0`. [Default: Physical]
-
-  -B#                           Set job size to #. [Default: 0 (automatic)]
-  --rsyncable                   Compress using a rsync-friendly method (`-B` sets block size). 
-
-  --exclude-compressed          Only compress files that are not already compressed.
-
-  --stream-size=#               Specify size of streaming input from STDIN.
-  --size-hint=#                 Optimize compression parameters for streaming input of approximately size #.
-  --target-compressed-block-size=#
-                                Generate compressed blocks of approximately # size.
-
-  --no-dictID                   Don't write `dictID` into the header (dictionary compression only).
-  --[no-]compress-literals      Force (un)compressed literals.
-  --[no-]row-match-finder       Explicitly enable/disable the fast, row-based matchfinder for
-                                the 'greedy', 'lazy', and 'lazy2' strategies.
-
-  --format=zstd                 Compress files to the `.zst` format. [Default]
-  --[no-]mmap-dict              Memory-map dictionary file rather than mallocing and loading all at once
-  --format=gzip                 Compress files to the `.gz` format.
-
-Advanced decompression options:
-  -l                            Print information about Zstandard-compressed files.
-  --test                        Test compressed file integrity.
-  -M#                           Set the memory usage limit to # megabytes.
-  --[no-]sparse                 Enable sparse mode. [Default: Enabled for files, disabled for STDOUT.]
-  --[no-]pass-through           Pass through uncompressed files as-is. [Default: Disabled]
-
-Dictionary builder:
-  --train                       Create a dictionary from a training set of files.
-
-  --train-cover[=k=#,d=#,steps=#,split=#,shrink[=#]]
-                                Use the cover algorithm (with optional arguments).
-  --train-fastcover[=k=#,d=#,f=#,steps=#,split=#,accel=#,shrink[=#]]
-                                Use the fast cover algorithm (with optional arguments).
-
-  --train-legacy[=s=#]          Use the legacy algorithm with selectivity #. [Default: 9]
-  -o NAME                       Use NAME as dictionary name. [Default: dictionary]
-  --maxdict=#                   Limit dictionary to specified size #. [Default: 112640]
-  --dictID=#                    Force dictionary ID to #. [Default: Random]
-
-Benchmark options:
-  -b#                           Perform benchmarking with compression level #. [Default: 3]
-  -e#                           Test all compression levels up to #; starting level is `-b#`. [Default: 1]
-  -i#                           Set the minimum evaluation to time # seconds. [Default: 3]
-  -B#                           Cut file into independent chunks of size #. [Default: No chunking]
-  -S                            Output one benchmark result per input file. [Default: Consolidated result]
-  -D dictionary                 Benchmark using dictionary 
-  --priority=rt                 Set process priority to real-time.
+Benchmark arguments : 
+ -b#    : benchmark file(s), using # compression level (default: 3) 
+ -e#    : test all compression levels from -bX to # (default: 1)
+ -i#    : minimum evaluation time in seconds (default: 3s) 
+ -B#    : cut file into independent blocks of size # (default: no block)
+--priority=rt : set process priority to real-time
 ```
 

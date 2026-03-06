@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - multicov
 label: bedtools_multicov
-doc: "Counts sequence coverage for multiple bams at specific loci.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Counts sequence coverage for multiple bams at specific loci.
 inputs:
   - id: bams
     type:
@@ -16,20 +15,13 @@ inputs:
       position: 101
       prefix: -bams
   - id: bed
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The bed file (bed/gff/vcf).
     inputBinding:
       position: 101
       prefix: -bed
-  - id: different_strand
-    type:
-      - 'null'
-      - boolean
-    doc: Require different strandedness. That is, only report hits in B that 
-      overlap A on the _opposite_ strand.
-    inputBinding:
-      position: 101
-      prefix: -S
   - id: include_duplicates
     type:
       - 'null'
@@ -50,18 +42,22 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum mapping quality allowed. Default is 0.
-    default: 0
+    doc: Minimum mapping quality allowed.
     inputBinding:
       position: 101
       prefix: -q
-  - id: min_overlap
+  - id: opposite_strand
     type:
       - 'null'
-      - float
-    doc: Minimum overlap required as a fraction of each -bed record. Default is 
-      1E-9 (i.e., 1bp).
-    default: '1E-9'
+      - boolean
+    doc: Require different strandedness. That is, only report hits in B that 
+      overlap A on the _opposite_ strand.
+    inputBinding:
+      position: 101
+      prefix: -S
+  - id: overlap_fraction
+    type: float
+    doc: Minimum overlap required as a fraction of each -bed record.
     inputBinding:
       position: 101
       prefix: -f
@@ -74,7 +70,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -p
-  - id: reciprocal
+  - id: reciprocal_overlap
     type:
       - 'null'
       - boolean
@@ -107,3 +103,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_multicov.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

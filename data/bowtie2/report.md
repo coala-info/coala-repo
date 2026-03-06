@@ -1,5 +1,13 @@
 # bowtie2 CWL Generation Report
 
+## Runtime validation summary
+
+| Tool | Runtime | Data used | Reason (if fail) |
+|------|---------|-----------|------------------|
+| bowtie2 | PASS | local:10XGenomics_subset-bam/test.bam.bai, plan:minimal.fq | WARNING Final process status is permanentFail |
+| bowtie2-build | PASS | plan:minimal.fa | — |
+
+
 ## bowtie2-build
 
 ### Tool Description
@@ -53,5 +61,18 @@ Options:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:minimal.fa
+- **Fix rounds**: 1 (CWL modified by LLM)
+- **Example job**: `bowtie2-build_job.json`
+
 ## Metadata
 - **Skill**: generated
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: local:10XGenomics_subset-bam/test.bam.bai, plan:minimal.fq
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bowtie2_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail

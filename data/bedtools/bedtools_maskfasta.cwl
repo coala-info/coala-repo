@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - maskfasta
 label: bedtools_maskfasta
-doc: "Mask a fasta file based on feature coordinates.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Mask a fasta file based on feature coordinates.
 inputs:
   - id: bed_file
     type: File
@@ -13,11 +13,19 @@ inputs:
       position: 101
       prefix: -bed
   - id: fasta_input
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input FASTA file
     inputBinding:
       position: 101
       prefix: -fi
+  - id: fasta_output
+    type: string
+    doc: Output FASTA file
+    inputBinding:
+      position: 101
+      prefix: -fo
   - id: full_header
     type:
       - 'null'
@@ -46,11 +54,16 @@ inputs:
       position: 101
       prefix: -soft
 outputs:
-  - id: fasta_output
+  - id: output_fasta_output
     type: File
     doc: Output FASTA file
     outputBinding:
       glob: $(inputs.fasta_output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

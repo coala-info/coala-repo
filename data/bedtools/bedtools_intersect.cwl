@@ -4,26 +4,37 @@ baseCommand:
   - bedtools
   - intersect
 label: bedtools_intersect
-doc: "Report overlaps between two feature files.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Report overlaps between two feature files.
 inputs:
   - id: count
     type:
       - 'null'
       - boolean
     doc: For each entry in A, report the number of overlaps with B. Reports 0 
-      for A entries that have no overlap with B.
+      for A entries that have no overlap with B. Overlaps restricted by -f, -F, 
+      -r, and -s.
     inputBinding:
       position: 101
       prefix: -c
-  - id: count_per_file
+  - id: count_separate
     type:
       - 'null'
       - boolean
     doc: For each entry in A, separately report the number of overlaps with each
-      B file on a distinct line.
+      B file on a distinct line. Reports 0 for A entries that have no overlap 
+      with B. Overlaps restricted by -f, -F, -r, and -s.
     inputBinding:
       position: 101
       prefix: -C
+  - id: diff_strandedness
+    type:
+      - 'null'
+      - boolean
+    doc: Require different strandedness. That is, only report hits in B that 
+      overlap A on the opposite strand.
+    inputBinding:
+      position: 101
+      prefix: -S
   - id: either_fraction
     type:
       - 'null'
@@ -42,9 +53,7 @@ inputs:
       position: 101
       prefix: -filenames
   - id: genome_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -59,35 +68,39 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input file A (bed/gff/vcf/bam)
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: One or more input files B (bed/gff/vcf/bam)
     inputBinding:
       position: 101
       prefix: -b
+  - id: input_buffer_size
+    type:
+      - 'null'
+      - string
+    doc: Specify amount of memory to use for input buffer. Takes an integer 
+      argument. Optional suffixes K/M/G supported.
+    inputBinding:
+      position: 101
+      prefix: -iobuf
   - id: invert_match
     type:
       - 'null'
       - boolean
-    doc: Only report those entries in A that have _no overlaps_ with B.
+    doc: Only report those entries in A that have no overlaps with B.
     inputBinding:
       position: 101
       prefix: -v
-  - id: io_buf
-    type:
-      - 'null'
-      - string
-    doc: Specify amount of memory to use for input buffer (e.g. 10M, 1G).
-    inputBinding:
-      position: 101
-      prefix: -iobuf
   - id: left_outer_join
     type:
       - 'null'
@@ -97,6 +110,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: -loj
+  - id: min_overlap_a
+    type: float
+    doc: Minimum overlap required as a fraction of A.
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: min_overlap_b
+    type: float
+    doc: Minimum overlap required as a fraction of B.
+    inputBinding:
+      position: 101
+      prefix: -F
   - id: names
     type:
       - 'null'
@@ -124,15 +149,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nonamecheck
-  - id: opposite_strand
-    type:
-      - 'null'
-      - boolean
-    doc: Require different strandedness. That is, only report hits in B that 
-      overlap A on the _opposite_ strand.
-    inputBinding:
-      position: 101
-      prefix: -S
   - id: output_bed
     type:
       - 'null'
@@ -141,24 +157,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
-  - id: overlap_fraction_a
-    type:
-      - 'null'
-      - float
-    doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
-    inputBinding:
-      position: 101
-      prefix: -f
-  - id: overlap_fraction_b
-    type:
-      - 'null'
-      - float
-    doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
-    inputBinding:
-      position: 101
-      prefix: -F
   - id: reciprocal
     type:
       - 'null'
@@ -167,16 +165,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
-  - id: same_strand
+  - id: same_strandedness
     type:
       - 'null'
       - boolean
     doc: Require same strandedness. That is, only report hits in B that overlap 
-      A on the _same_ strand.
+      A on the same strand.
     inputBinding:
       position: 101
       prefix: -s
-  - id: sort_output
+  - id: sort_out
     type:
       - 'null'
       - boolean
@@ -212,7 +210,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Write the original A entry _once_ if _any_ overlaps found in B.
+    doc: Write the original A entry once if any overlaps found in B.
     inputBinding:
       position: 101
       prefix: -u
@@ -224,12 +222,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: -wa
+  - id: write_all_overlap
+    type:
+      - 'null'
+      - boolean
+    doc: Write the original A and B entries plus the number of base pairs of 
+      overlap between the two features. Overlapping features restricted by -f 
+      and -r. However, A features w/o overlap are also reported with a NULL B 
+      feature and overlap = 0.
+    inputBinding:
+      position: 101
+      prefix: -wao
   - id: write_b
     type:
       - 'null'
       - boolean
-    doc: Write the original entry in B for each overlap. Useful for knowing 
-      _what_ A overlaps. Restricted by -f and -r.
+    doc: Write the original entry in B for each overlap. Useful for knowing what
+      A overlaps. Restricted by -f and -r.
     inputBinding:
       position: 101
       prefix: -wb
@@ -243,17 +252,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -wo
-  - id: write_overlap_all
-    type:
-      - 'null'
-      - boolean
-    doc: Write the original A and B entries plus the number of base pairs of 
-      overlap between the two features. Overlapping features restricted by -f 
-      and -r. However, A features w/o overlap are also reported with a NULL B 
-      feature and overlap = 0.
-    inputBinding:
-      position: 101
-      prefix: -wao
 outputs:
   - id: stdout
     type: stdout
@@ -262,3 +260,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_intersect.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

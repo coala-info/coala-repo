@@ -4,15 +4,16 @@ baseCommand:
   - bedtools
   - closest
 label: bedtools_closest
-doc: "For each feature in A, finds the closest feature (upstream or downstream) in
-  B.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: For each feature in A, finds the closest feature (upstream or downstream) 
+  in B.
 inputs:
-  - id: database_names
+  - id: aliases
     type:
       - 'null'
       - type: array
         items: string
-    doc: When using multiple databases, provide an alias for each.
+    doc: When using multiple databases, provide an alias for each that will 
+      appear instead of a fileId.
     inputBinding:
       position: 101
       prefix: -names
@@ -37,7 +38,7 @@ inputs:
       - 'null'
       - boolean
     doc: Choose first from features in B that are downstream of features in A. 
-      Requires -D.
+      This option requires -D.
     inputBinding:
       position: 101
       prefix: -fd
@@ -46,24 +47,31 @@ inputs:
       - 'null'
       - boolean
     doc: Choose first from features in B that are upstream of features in A. 
-      Requires -D.
+      This option requires -D.
     inputBinding:
       position: 101
       prefix: -fu
   - id: genome_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
-      across input files.
+      across input files. Only applies when used with -sorted option.
     inputBinding:
       position: 101
       prefix: -g
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Print the header from the A file prior to results.
+    inputBinding:
+      position: 101
+      prefix: -header
   - id: ignore_downstream
     type:
       - 'null'
       - boolean
-    doc: Ignore features in B that are downstream of features in A. Requires -D.
+    doc: Ignore features in B that are downstream of features in A. This option 
+      requires -D.
     inputBinding:
       position: 101
       prefix: -id
@@ -71,7 +79,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Ignore features in B that overlap A.
+    doc: Ignore features in B that overlap A. That is, we want close, yet not 
+      touching features only.
     inputBinding:
       position: 101
       prefix: -io
@@ -79,21 +88,25 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Ignore features in B that are upstream of features in A. Requires -D.
+    doc: Ignore features in B that are upstream of features in A. This option 
+      requires -D.
     inputBinding:
       position: 101
       prefix: -iu
   - id: input_a
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input BED/GFF/VCF file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
     type:
-      type: array
-      items: File
-    doc: One or more BED/GFF/VCF file(s) B (databases)
+      - 'null'
+      - type: array
+        items: File
+    doc: Input BED/GFF/VCF file(s) B (database)
     inputBinding:
       position: 101
       prefix: -b
@@ -110,34 +123,26 @@ inputs:
       - 'null'
       - int
     doc: Report the k closest hits.
-    default: 1
     inputBinding:
       position: 101
       prefix: -k
   - id: min_overlap_a
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
   - id: min_overlap_b
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
-  - id: multiple_databases_mode
+  - id: multiple_databases
     type:
       - 'null'
       - string
     doc: How multiple databases are resolved (each, all).
-    default: each
     inputBinding:
       position: 101
       prefix: -mdb
@@ -174,14 +179,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
-  - id: print_header
-    type:
-      - 'null'
-      - boolean
-    doc: Print the header from the A file prior to results.
-    inputBinding:
-      position: 101
-      prefix: -header
   - id: reciprocal_overlap
     type:
       - 'null'
@@ -195,7 +192,7 @@ inputs:
       - 'null'
       - boolean
     doc: In addition to the closest feature in B, report its distance to A as an
-      extra column.
+      extra column. The reported distance for overlapping features will be 0.
     inputBinding:
       position: 101
       prefix: -d
@@ -247,7 +244,6 @@ inputs:
       - 'null'
       - string
     doc: How ties for closest feature are handled (all, first, last).
-    default: all
     inputBinding:
       position: 101
       prefix: -t
@@ -259,3 +255,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_closest.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

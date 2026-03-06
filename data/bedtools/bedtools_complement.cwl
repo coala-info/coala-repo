@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - complement
 label: bedtools_complement
-doc: "Returns the base pair complement of a feature file.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Returns the base pair complement of a feature file.
 inputs:
   - id: genome_file
     type: File
@@ -13,12 +13,14 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type: File
-    doc: Input feature file (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input BED/GFF/VCF file
     inputBinding:
       position: 101
       prefix: -i
-  - id: limit_chromosomes
+  - id: limit_output
     type:
       - 'null'
       - boolean
@@ -34,3 +36,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_complement.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

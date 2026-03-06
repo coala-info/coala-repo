@@ -4,17 +4,14 @@ baseCommand:
   - bedtools
   - merge
 label: bedtools_merge
-doc: "Merges overlapping BED/GFF/VCF entries into a single interval.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Merges overlapping BED/GFF/VCF entries into a single interval.
 inputs:
   - id: columns
     type:
       - 'null'
-      - type: array
-        items: string
+      - string
     doc: Specify columns from the B file to map onto intervals in A. Multiple 
       columns can be specified in a comma-delimited list.
-    default: '5'
     inputBinding:
       position: 101
       prefix: -c
@@ -23,10 +20,18 @@ inputs:
       - 'null'
       - string
     doc: Specify a custom delimiter for the collapse operations.
-    default: ','
     inputBinding:
       position: 101
       prefix: -delim
+  - id: force_specific_strand
+    type:
+      - 'null'
+      - string
+    doc: Force merge for one specific strand only. Follow with + or - to force 
+      merge from only the forward or reverse strand, respectively.
+    inputBinding:
+      position: 101
+      prefix: -S
   - id: force_strandedness
     type:
       - 'null'
@@ -36,6 +41,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Print the header from the A file prior to results.
+    inputBinding:
+      position: 101
+      prefix: -header
   - id: input_buffer_size
     type:
       - 'null'
@@ -52,12 +65,9 @@ inputs:
       position: 101
       prefix: -i
   - id: max_distance
-    type:
-      - 'null'
-      - int
-    doc: 'Maximum distance between features allowed for features to be merged. Note:
-      negative values enforce the number of b.p. required for overlap.'
-    default: 0
+    type: int
+    doc: Maximum distance between features allowed for features to be merged. 
+      Negative values enforce the number of b.p. required for overlap.
     inputBinding:
       position: 101
       prefix: -d
@@ -65,25 +75,22 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable buffered output. Using this option will cause each line of 
-      output to be printed as it is generated.
+    doc: Disable buffered output. Each line of output is printed as it is 
+      generated.
     inputBinding:
       position: 101
       prefix: -nobuf
   - id: operations
     type:
       - 'null'
-      - type: array
-        items: string
-    doc: 'Specify the operation that should be applied to -c. Valid operations: sum,
-      min, max, absmin, absmax, mean, median, mode, antimode, stdev, sstdev, collapse,
-      distinct, distinct_sort_num, distinct_sort_num_desc, distinct_only, count, count_distinct,
-      first, last.'
-    default: sum
+      - string
+    doc: Specify the operation that should be applied to -c (sum, min, max, 
+      mean, etc.). Multiple operations can be specified in a comma-delimited 
+      list.
     inputBinding:
       position: 101
       prefix: -o
-  - id: output_as_bed
+  - id: output_bed
     type:
       - 'null'
       - boolean
@@ -96,27 +103,9 @@ inputs:
       - 'null'
       - int
     doc: Sets the decimal precision for output
-    default: 5
     inputBinding:
       position: 101
       prefix: -prec
-  - id: print_header
-    type:
-      - 'null'
-      - boolean
-    doc: Print the header from the A file prior to results.
-    inputBinding:
-      position: 101
-      prefix: -header
-  - id: specific_strand
-    type:
-      - 'null'
-      - string
-    doc: Force merge for one specific strand only. Follow with + or - to force 
-      merge from only the forward or reverse strand, respectively.
-    inputBinding:
-      position: 101
-      prefix: -S
 outputs:
   - id: stdout
     type: stdout
@@ -125,3 +114,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_merge.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

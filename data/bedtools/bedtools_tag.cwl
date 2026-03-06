@@ -4,8 +4,8 @@ baseCommand:
   - bedtools
   - tag
 label: bedtools_tag
-doc: "Annotates a BAM file based on overlaps with multiple BED/GFF/VCF files on the
-  intervals in -i.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Annotates a BAM file based on overlaps with multiple BED/GFF/VCF files on 
+  the intervals in -i.
 inputs:
   - id: files
     type:
@@ -16,7 +16,9 @@ inputs:
       position: 101
       prefix: -files
   - id: input_bam
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input BAM file
     inputBinding:
       position: 101
@@ -30,12 +32,9 @@ inputs:
     inputBinding:
       position: 101
       prefix: -labels
-  - id: min_overlap_fraction
-    type:
-      - 'null'
-      - float
+  - id: min_overlap
+    type: float
     doc: Minimum overlap required as a fraction of the alignment.
-    default: 1e-09
     inputBinding:
       position: 101
       prefix: -f
@@ -62,7 +61,6 @@ inputs:
       - 'null'
       - string
     doc: Dictate what the tag should be (two characters, e.g., YK).
-    default: YB
     inputBinding:
       position: 101
       prefix: -tag
@@ -102,3 +100,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_tag.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

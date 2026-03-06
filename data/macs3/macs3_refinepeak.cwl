@@ -4,8 +4,7 @@ baseCommand:
   - macs3
   - refinepeak
 label: macs3_refinepeak
-doc: "Refine peak summits and compute enrichment scores using MACS3\n\nTool homepage:
-  https://pypi.org/project/MACS3/"
+doc: Refine peak summits and compute enrichment scores using MACS3
 inputs:
   - id: bed_file
     type: File
@@ -61,6 +60,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --o-prefix
+  - id: ofile
+    type: string
+    doc: Output file name. Mutually exclusive with --o-prefix.
+    inputBinding:
+      position: 101
+      prefix: --ofile
+  - id: outdir
+    type: string
+    doc: 'If specified all output files will be written to that directory. Default:
+      the current working directory'
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: window_size
     type:
       - 'null'
@@ -71,7 +83,7 @@ inputs:
       position: 101
       prefix: --window-size
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
@@ -79,13 +91,18 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: ofile
+  - id: output_ofile
     type:
       - 'null'
       - File
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
       glob: $(inputs.ofile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

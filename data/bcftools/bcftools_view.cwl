@@ -4,8 +4,7 @@ baseCommand:
   - bcftools
   - view
 label: bcftools_view
-doc: "VCF/BCF conversion, view, subset and filter VCF/BCF files.\n\nTool homepage:
-  https://github.com/samtools/bcftools"
+doc: VCF/BCF conversion, view, subset and filter VCF/BCF files.
 inputs:
   - id: input_file
     type: File
@@ -24,7 +23,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Require at least one of the listed FILTER strings
+    doc: Require at least one of the listed FILTER strings (e.g. "PASS,.")
     inputBinding:
       position: 103
       prefix: --apply-filters
@@ -33,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: 'Compression level: 0 uncompressed, 1 best speed, 9 best compression'
-    default: -1
     inputBinding:
       position: 103
       prefix: --compression-level
@@ -41,7 +39,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Drop individual genotype information
+    doc: Drop individual genotype information (after subsetting if -s option 
+      set)
     inputBinding:
       position: 103
       prefix: --drop-genotypes
@@ -65,8 +64,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Exclude sites where the non-reference alleles are exclusive to the 
-      subset samples
+    doc: Exclude sites where the non-reference alleles are exclusive (private) 
+      to the subset samples
     inputBinding:
       position: 103
       prefix: --exclude-private
@@ -74,7 +73,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Exclude comma-separated list of variant types
+    doc: 'Exclude comma-separated list of variant types: snps,indels,mnps,ref,bnd,other'
     inputBinding:
       position: 103
       prefix: --exclude-types
@@ -98,7 +97,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Require one or more hom/het/missing genotype
+    doc: Require one or more hom/het/missing genotype or, if prefixed with "^", 
+      exclude such sites
     inputBinding:
       position: 103
       prefix: --genotype
@@ -106,7 +106,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Print only the header in VCF output
+    doc: Print only the header in VCF output (equivalent to bcftools head)
     inputBinding:
       position: 103
       prefix: --header-only
@@ -130,7 +130,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Maximum count for non-reference alleles
+    doc: Maximum count for non-reference (nref), 1st alternate (alt1), least 
+      frequent (minor), most frequent (major) or sum of all but most frequent 
+      (nonmajor) alleles
     inputBinding:
       position: 103
       prefix: --max-ac
@@ -138,7 +140,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Maximum frequency for non-reference alleles
+    doc: Maximum frequency for non-reference (nref), 1st alternate (alt1), least
+      frequent (minor), most frequent (major) or sum of all but most frequent 
+      (nonmajor) alleles
     inputBinding:
       position: 103
       prefix: --max-af
@@ -154,7 +158,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Minimum count for non-reference alleles
+    doc: Minimum count for non-reference (nref), 1st alternate (alt1), least 
+      frequent (minor), most frequent (major) or sum of all but most frequent 
+      (nonmajor) alleles
     inputBinding:
       position: 103
       prefix: --min-ac
@@ -162,7 +168,9 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Minimum frequency for non-reference alleles
+    doc: Minimum frequency for non-reference (nref), 1st alternate (alt1), least
+      frequent (minor), most frequent (major) or sum of all but most frequent 
+      (nonmajor) alleles
     inputBinding:
       position: 103
       prefix: --min-af
@@ -186,7 +194,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Do not (re)calculate INFO fields for the subset
+    doc: Do not (re)calculate INFO fields for the subset (currently INFO/AC and 
+      INFO/AN)
     inputBinding:
       position: 103
       prefix: --no-update
@@ -206,12 +215,17 @@ inputs:
     inputBinding:
       position: 103
       prefix: --novel
+  - id: output_file
+    type: string
+    doc: Output file name [stdout]
+    inputBinding:
+      position: 103
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 'u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level'
-    default: v
     inputBinding:
       position: 103
       prefix: --output-type
@@ -227,8 +241,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Select sites where the non-reference alleles are exclusive to the 
-      subset samples
+    doc: Select sites where the non-reference alleles are exclusive (private) to
+      the subset samples
     inputBinding:
       position: 103
       prefix: --private
@@ -254,7 +268,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 103
       prefix: --regions-overlap
@@ -278,7 +291,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Similar to -r but streams rather than index-jumps
+    doc: Similar to -r but streams rather than index-jumps. Exclude regions with
+      "^" prefix
     inputBinding:
       position: 103
       prefix: --targets
@@ -286,7 +300,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Similar to -R but streams rather than index-jumps
+    doc: Similar to -R but streams rather than index-jumps. Exclude regions with
+      "^" prefix
     inputBinding:
       position: 103
       prefix: --targets-file
@@ -296,7 +311,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 0
     inputBinding:
       position: 103
       prefix: --targets-overlap
@@ -305,7 +319,6 @@ inputs:
       - 'null'
       - int
     doc: Use multithreading with INT worker threads
-    default: 0
     inputBinding:
       position: 103
       prefix: --threads
@@ -313,7 +326,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Trim ALT alleles not seen in the genotype fields
+    doc: Trim ALT alleles not seen in the genotype fields (or their subset with 
+      -s/-S)
     inputBinding:
       position: 103
       prefix: --trim-alt-alleles
@@ -329,7 +343,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Select comma-separated list of variant types
+    doc: 'Select comma-separated list of variant types: snps,indels,mnps,ref,bnd,other'
     inputBinding:
       position: 103
       prefix: --types
@@ -341,19 +355,11 @@ inputs:
     inputBinding:
       position: 103
       prefix: --uncalled
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 103
-      prefix: --verbosity
   - id: with_header
     type:
       - 'null'
       - boolean
-    doc: Print both header and records in VCF output
+    doc: Print both header and records in VCF output [default]
     inputBinding:
       position: 103
       prefix: --with-header
@@ -361,18 +367,23 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Automatically index the output files
+    doc: Automatically index the output files [off]
     inputBinding:
       position: 103
       prefix: --write-index
 outputs:
-  - id: output_file
+  - id: output_output_file
     type:
       - 'null'
       - File
-    doc: Output file name
+    doc: Output file name [stdout]
     outputBinding:
       glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

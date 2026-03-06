@@ -4,7 +4,7 @@ baseCommand:
   - bcftools
   - plugin
 label: bcftools_plugin
-doc: "Run user defined plugin\n\nTool homepage: https://github.com/samtools/bcftools"
+doc: Run user defined plugin
 inputs:
   - id: plugin_name
     type: string
@@ -56,12 +56,17 @@ inputs:
     inputBinding:
       position: 104
       prefix: --no-version
+  - id: output
+    type: string
+    doc: Write output to a file
+    inputBinding:
+      position: 104
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 'u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level'
-    default: v
     inputBinding:
       position: 104
       prefix: --output-type
@@ -87,7 +92,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 104
       prefix: --regions-overlap
@@ -113,7 +117,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 0
     inputBinding:
       position: 104
       prefix: --targets-overlap
@@ -122,34 +125,30 @@ inputs:
       - 'null'
       - int
     doc: Use multithreading with <int> worker threads
-    default: 0
     inputBinding:
       position: 104
       prefix: --threads
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 104
-      prefix: --verbosity
   - id: write_index
     type:
       - 'null'
       - string
-    doc: Automatically index the output files [off]
+    doc: Automatically index the output files
     inputBinding:
       position: 104
       prefix: --write-index
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Write output to a file
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

@@ -1,0 +1,14 @@
+{
+  "format": "1.0",
+  "entries": [
+    {
+      "path": "macs3/output/refined_refinepeak.bed",
+      "format": "bed",
+      "description": "Found in project",
+      "source": "local",
+      "tags": [
+        "local"
+      ]
+    }
+  ]
+}

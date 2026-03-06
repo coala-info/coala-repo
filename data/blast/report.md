@@ -1,15 +1,14 @@
 # blast CWL Generation Report
 
-## tblastx
+## blast_segmasker
 
 ### Tool Description
-Translated Query-Translated Subject BLAST 2.17.0+
+Application to create BLAST databases
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/blast:2.17.0--h66d330f_0
 - **Homepage**: https://blast.ncbi.nlm.nih.gov/doc/blast-help/
 - **Package**: https://anaconda.org/channels/bioconda/packages/blast/overview
-- **Quick start**: https://www.ncbi.nlm.nih.gov/books/NBK569856/
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/blast/overview
@@ -20,31 +19,81 @@ Translated Query-Translated Subject BLAST 2.17.0+
 ### Original Help Text
 ```text
 USAGE
-  tblastx [-h] [-help] [-import_search_strategy filename]
-    [-export_search_strategy filename] [-db database_name]
-    [-dbsize num_letters] [-gilist filename] [-seqidlist filename]
-    [-negative_gilist filename] [-negative_seqidlist filename]
-    [-taxids taxids] [-negative_taxids taxids] [-taxidlist filename]
-    [-negative_taxidlist filename] [-no_taxid_expansion]
-    [-entrez_query entrez_query] [-db_soft_mask filtering_algorithm]
-    [-db_hard_mask filtering_algorithm] [-subject subject_input_file]
-    [-subject_loc range] [-query input_file] [-out output_file]
-    [-evalue evalue] [-word_size int_value] [-qcov_hsp_perc float_value]
-    [-max_hsps int_value] [-xdrop_ungap float_value] [-searchsp int_value]
-    [-sum_stats bool_value] [-max_intron_length length] [-seg SEG_options]
-    [-soft_masking soft_masking] [-matrix matrix_name]
-    [-threshold float_value] [-culling_limit int_value]
-    [-best_hit_overhang float_value] [-best_hit_score_edge float_value]
-    [-subject_besthit] [-window_size int_value] [-lcase_masking]
-    [-query_loc range] [-strand strand] [-parse_deflines]
-    [-query_gencode int_value] [-db_gencode int_value] [-outfmt format]
-    [-show_gis] [-num_descriptions int_value] [-num_alignments int_value]
-    [-line_length line_length] [-html] [-sorthits sort_hits]
-    [-sorthsps sort_hsps] [-max_target_seqs num_sequences]
-    [-num_threads int_value] [-remote] [-version]
+  makeblastdb [-h] [-help] [-help-full] [-in input_file] [-input_type type]
+    -dbtype molecule_type [-title database_title] [-parse_seqids]
+    [-hash_index] [-mask_data mask_data_files] [-mask_id mask_algo_ids]
+    [-mask_desc mask_algo_descriptions] [-gi_mask]
+    [-gi_mask_name gi_based_mask_names] [-out database_name]
+    [-blastdb_version version] [-max_file_sz number_of_bytes]
+    [-metadata_output_prefix ] [-logfile File_Name] [-taxid TaxID]
+    [-taxid_map TaxIDMapFile] [-oid_masks oid_masks] [-version]
 
 DESCRIPTION
-   Translated Query-Translated Subject BLAST 2.17.0+
+   Application to create BLAST databases, version 2.17.0+
+
+Use '-help' to print detailed descriptions of command line arguments
+========================================================================
+
+Error: Too many positional arguments (1), the offending value: segmasker
+Error:  (CArgException::eSynopsis) Too many positional arguments (1), the offending value: segmasker
+```
+
+
+## blast_windowmasker
+
+### Tool Description
+Application to create BLAST databases
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/blast:2.17.0--h66d330f_0
+- **Homepage**: https://blast.ncbi.nlm.nih.gov/doc/blast-help/
+- **Package**: https://anaconda.org/channels/bioconda/packages/blast/overview
+- **Validation**: PASS
+
+### Original Help Text
+```text
+USAGE
+  makeblastdb [-h] [-help] [-help-full] [-in input_file] [-input_type type]
+    -dbtype molecule_type [-title database_title] [-parse_seqids]
+    [-hash_index] [-mask_data mask_data_files] [-mask_id mask_algo_ids]
+    [-mask_desc mask_algo_descriptions] [-gi_mask]
+    [-gi_mask_name gi_based_mask_names] [-out database_name]
+    [-blastdb_version version] [-max_file_sz number_of_bytes]
+    [-metadata_output_prefix ] [-logfile File_Name] [-taxid TaxID]
+    [-taxid_map TaxIDMapFile] [-oid_masks oid_masks] [-version]
+
+DESCRIPTION
+   Application to create BLAST databases, version 2.17.0+
+
+Use '-help' to print detailed descriptions of command line arguments
+========================================================================
+
+Error: Too many positional arguments (1), the offending value: windowmasker
+Error:  (CArgException::eSynopsis) Too many positional arguments (1), the offending value: windowmasker
+```
+
+## blast_blast_formatter
+
+### Tool Description
+Stand-alone BLAST formatter client, version 2.17.0+
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/blast:2.17.0--h66d330f_0
+- **Homepage**: https://blast.ncbi.nlm.nih.gov/doc/blast-help/
+- **Package**: https://anaconda.org/channels/bioconda/packages/blast/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+USAGE
+  blast_formatter [-h] [-help] [-rid BLAST_RID] [-archive ArchiveFile]
+    [-outfmt format] [-show_gis] [-num_descriptions int_value]
+    [-num_alignments int_value] [-line_length line_length] [-html]
+    [-sorthits sort_hits] [-sorthsps sort_hsps]
+    [-max_target_seqs num_sequences] [-out output_file] [-parse_deflines]
+    [-version]
+
+DESCRIPTION
+   Stand-alone BLAST formatter client, version 2.17.0+
 
 OPTIONAL ARGUMENTS
  -h
@@ -54,56 +103,13 @@ OPTIONAL ARGUMENTS
  -version
    Print version number;  ignore other arguments
 
- *** Input query options
- -query <File_In>
-   Input file name
-   Default = `-'
- -query_loc <String>
-   Location on the query sequence in 1-based offsets (Format: start-stop)
- -strand <String, `both', `minus', `plus'>
-   Query strand(s) to search against database/subject
-   Default = `both'
- -query_gencode <Integer, values between: 1-6, 9-16, 21-31, 33>
-   Genetic code to use to translate query (see
-   https://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=
-   cgencodes for details)
-   Default = `1'
-
- *** General search options
- -db <String>
-   BLAST database name
-    * Incompatible with:  subject, subject_loc
- -out <File_Out, file name length < 256>
-   Output file name
-   Default = `-'
- -evalue <Real>
-   Expectation value (E) threshold for saving hits. Default = 10
- -word_size <Integer, >=2>
-   Word size for wordfinder algorithm
- -max_intron_length <Integer, >=0>
-   Length of the largest intron allowed in a translated nucleotide sequence
-   when linking multiple distinct alignments
-   Default = `0'
- -matrix <String>
-   Scoring matrix name (normally BLOSUM62)
- -threshold <Real, >=0>
-   Minimum word score such that the word is added to the BLAST lookup table
- -db_gencode <Integer, values between: 1-6, 9-16, 21-31, 33>
-   Genetic code to use to translate database/subjects (see user manual for
-   details)
-   Default = `1'
-
- *** BLAST-2-Sequences options
- -subject <File_In>
-   Subject sequence(s) to search
-    * Incompatible with:  no_taxid_expansion, db, gilist, seqidlist,
-   negative_gilist, negative_seqidlist, taxids, taxidlist, negative_taxids,
-   negative_taxidlist, no_taxid_expansion, db_soft_mask, db_hard_mask
- -subject_loc <String>
-   Location on the subject sequence in 1-based offsets (Format: start-stop)
-    * Incompatible with:  no_taxid_expansion, db, gilist, seqidlist,
-   negative_gilist, negative_seqidlist, taxids, taxidlist, negative_taxids,
-   negative_taxidlist, no_taxid_expansion, db_soft_mask, db_hard_mask, remote
+ *** Input options
+ -rid <String>
+   BLAST Request ID (RID)
+    * Incompatible with:  archive
+ -archive <File_In>
+   File containing BLAST Archive format in ASN.1 (i.e.: output format 11)
+    * Incompatible with:  rid
 
  *** Formatting options
  -outfmt <String>
@@ -125,16 +131,17 @@ OPTIONAL ARGUMENTS
     14 = Multiple-file BLAST XML2,
     15 = Single-file BLAST JSON,
     16 = Single-file BLAST XML2,
+    17 = Sequence Alignment/Map (SAM),
     18 = Organism Report,
     20 = Comma-separated values with header lines
    
-   Options 6, 7, 10 and 20 can be additionally configured to produce
+   Options 6, 7, 10, 17 and 20 can be additionally configured to produce
    a custom format specified by space delimited format specifiers,
-   or by a token specified by the delim keyword.
-    E.g.: "10 delim=@ qacc sacc score".
+   or in the case of options 6, 7, and 10, by a token specified
+   by the delim keyword. E.g.: "17 delim=@ qacc sacc score".
    The delim keyword must appear after the numeric output format
    specification.
-   The supported format specifiers are:
+   The supported format specifiers for options 6, 7 and 10 are:
    	    qseqid means Query Seq-id
    	       qgi means Query GI
    	      qacc means Query accession
@@ -191,6 +198,9 @@ OPTIONAL ARGUMENTS
    When not provided, the default value is:
    'qaccver saccver pident length mismatch gapopen qstart qend sstart send
    evalue bitscore', which is equivalent to the keyword 'std'
+   The supported format specifier for option 17 is:
+   	        SQ means Include Sequence Data
+   	        SR means Subject as Reference Seq
    Default = `0'
  -show_gis
    Show NCBI GIs in deflines?
@@ -227,133 +237,20 @@ OPTIONAL ARGUMENTS
      4 = Sort by hsp subject start
    Not applicable for outfmt != 0
 
- *** Query filtering options
- -seg <String>
-   Filter query sequence with SEG (Format: 'yes', 'window locut hicut', or
-   'no' to disable)
-   Default = `12 2.2 2.5'
- -soft_masking <Boolean>
-   Apply filtering locations as soft masks
-   Default = `false'
- -lcase_masking
-   Use lower case filtering in query and subject sequence(s)?
-
  *** Restrict search or results
- -gilist <String>
-   Restrict search of database to list of GIs
-    * Incompatible with:  no_taxid_expansion, seqidlist, taxids, taxidlist,
-   negative_gilist, negative_seqidlist, negative_taxids, negative_taxidlist,
-   remote, subject, subject_loc
- -seqidlist <String>
-   Restrict search of database to list of SeqIDs
-    * Incompatible with:  no_taxid_expansion, gilist, taxids, taxidlist,
-   negative_gilist, negative_seqidlist, negative_taxids, negative_taxidlist,
-   remote, subject, subject_loc
- -negative_gilist <String>
-   Restrict search of database to everything except the specified GIs
-    * Incompatible with:  no_taxid_expansion, gilist, seqidlist, taxids,
-   taxidlist, negative_seqidlist, negative_taxids, negative_taxidlist, remote,
-   subject, subject_loc
- -negative_seqidlist <String>
-   Restrict search of database to everything except the specified SeqIDs
-    * Incompatible with:  no_taxid_expansion, gilist, seqidlist, taxids,
-   taxidlist, negative_gilist, negative_taxids, negative_taxidlist, remote,
-   subject, subject_loc
- -taxids <String>
-   Restrict search of database to include only the specified taxonomy IDs and
-   their descendants (multiple IDs delimited by ',')
-    * Incompatible with:  gilist, seqidlist, taxidlist, negative_gilist,
-   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
-   subject_loc
- -negative_taxids <String>
-   Restrict search of database to everything except the specified taxonomy IDs
-   and their descendants (multiple IDs delimited by ',')
-    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
-   negative_gilist, negative_seqidlist, negative_taxidlist, remote, subject,
-   subject_loc
- -taxidlist <String>
-   Restrict search of database to include only the specified taxonomy IDs and
-   their descendants 
-    * Incompatible with:  gilist, seqidlist, taxids, negative_gilist,
-   negative_seqidlist, negative_taxids, negative_taxidlist, remote, subject,
-   subject_loc
- -negative_taxidlist <String>
-   Restrict search of database to everything except the specified taxonomy IDs
-   and their descendants 
-    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
-   negative_gilist, negative_seqidlist, negative_taxids, remote, subject,
-   subject_loc
- -no_taxid_expansion
-   Do not expand the taxonomy IDs provided to their descendant taxonomy IDs 
-    * Incompatible with:  subject, subject_loc, window_masker_taxid, gilist,
-   seqidlist, negative_gilist, negative_seqidlist, subject, subject_loc
- -entrez_query <String>
-   Restrict search with the given Entrez query
-    * Requires:  remote
- -db_soft_mask <String>
-   Filtering algorithm ID to apply to the BLAST database as soft masking
-    * Incompatible with:  db_hard_mask, subject, subject_loc
- -db_hard_mask <String>
-   Filtering algorithm ID to apply to the BLAST database as hard masking
-    * Incompatible with:  db_soft_mask, subject, subject_loc
- -qcov_hsp_perc <Real, 0..100>
-   Percent query coverage per hsp
- -max_hsps <Integer, >=1>
-   Set maximum number of HSPs per subject sequence to save for each query
- -culling_limit <Integer, >=0>
-   If the query range of a hit is enveloped by that of at least this many
-   higher-scoring hits, delete the hit
-    * Incompatible with:  best_hit_overhang, best_hit_score_edge
- -best_hit_overhang <Real, (>0 and <0.5)>
-   Best Hit algorithm overhang value (recommended value: 0.1)
-    * Incompatible with:  culling_limit
- -best_hit_score_edge <Real, (>0 and <0.5)>
-   Best Hit algorithm score edge value (recommended value: 0.1)
-    * Incompatible with:  culling_limit
- -subject_besthit
-   Return only the best HSP for each non overlapping query region
  -max_target_seqs <Integer, >=1>
    Maximum number of aligned sequences to keep 
    (value of 5 or more is recommended)
    Default = `500'
     * Incompatible with:  num_descriptions, num_alignments
 
- *** Statistical options
- -dbsize <Int8>
-   Effective length of the database 
- -searchsp <Int8, >=0>
-   Effective length of the search space
- -sum_stats <Boolean>
-   Use sum statistics
-
- *** Search strategy options
- -import_search_strategy <File_In>
-   Search strategy to use
-    * Incompatible with:  export_search_strategy
- -export_search_strategy <File_Out>
-   File name to record the search strategy used
-    * Incompatible with:  import_search_strategy
-
- *** Extension options
- -xdrop_ungap <Real>
-   X-dropoff value (in bits) for ungapped extensions
- -window_size <Integer, >=0>
-   Multiple hits window size, use 0 to specify 1-hit algorithm
+ *** Output configuration options
+ -out <File_Out>
+   Output file name
+   Default = `-'
 
  *** Miscellaneous options
  -parse_deflines
    Should the query and subject defline(s) be parsed?
- -num_threads <Integer, >=1>
-   Number of threads (CPUs) to use in the BLAST search
-   Default = `1'
-    * Incompatible with:  remote
- -remote
-   Execute search remotely?
-    * Incompatible with:  gilist, seqidlist, taxids, taxidlist,
-   negative_gilist, negative_seqidlist, negative_taxids, negative_taxidlist,
-   subject_loc, num_threads
 ```
 
-
-## Metadata
-- **Skill**: generated

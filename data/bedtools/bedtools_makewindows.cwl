@@ -4,13 +4,10 @@ baseCommand:
   - bedtools
   - makewindows
 label: bedtools_makewindows
-doc: "Makes adjacent or sliding windows across a genome or BED file.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Makes adjacent or sliding windows across a genome or BED file.
 inputs:
   - id: bed
-    type:
-      - 'null'
-      - File
+    type: File
     doc: BED file (with chrom,start,end fields). Windows will be created for 
       each interval in the file.
     inputBinding:
@@ -30,8 +27,8 @@ inputs:
       - 'null'
       - string
     doc: "The default output is 3 columns: chrom, start, end. With this option, a
-      name column will be added. \"-i src\" - use the source interval's name; \"-i
-      winnum\" - use the window number as the ID; \"-i srcwinnum\" - use the source
+      name column will be added. \"-i src\" - use the source interval's name. \"-i
+      winnum\" - use the window number as the ID. \"-i srcwinnum\" - use the source
       interval's name with the window number."
     inputBinding:
       position: 101
@@ -60,7 +57,7 @@ inputs:
       - 'null'
       - int
     doc: 'Step size: i.e., how many base pairs to step before creating a new window.
-      Used to create "sliding" windows. Defaults to window size.'
+      Used to create "sliding" windows. Defaults to window size (non-sliding windows).'
     inputBinding:
       position: 101
       prefix: -s
@@ -82,3 +79,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_makewindows.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

@@ -4,9 +4,9 @@ baseCommand:
   - bcftools
   - annotate
 label: bcftools_annotate
-doc: "Annotate and edit VCF/BCF files.\n\nTool homepage: https://github.com/samtools/bcftools"
+doc: Annotate and edit VCF/BCF files.
 inputs:
-  - id: input_vcf
+  - id: input_file
     type: File
     doc: Input VCF/BCF file
     inputBinding:
@@ -24,7 +24,7 @@ inputs:
       - 'null'
       - string
     doc: List of columns in the annotation file, e.g. 
-      CHROM,POS,REF,ALT,-,INFO/TAG
+      CHROM,POS,REF,ALT,-,INFO/TAG.
     inputBinding:
       position: 102
       prefix: --columns
@@ -105,9 +105,7 @@ inputs:
       position: 102
       prefix: --merge-logic
   - id: min_overlap
-    type:
-      - 'null'
-      - string
+    type: string
     doc: Required overlap as a fraction of variant in the -a file (ANN), the VCF
       (:VCF), or reciprocal (ANN:VCF)
     inputBinding:
@@ -120,13 +118,18 @@ inputs:
     doc: Do not append version and command line to the header
     inputBinding:
       position: 102
-      prefix: --no_version
+      prefix: --no-version
+  - id: output
+    type: string
+    doc: Write output to a file [standard output]
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 'u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level'
-    default: v
     inputBinding:
       position: 102
       prefix: --output-type
@@ -135,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: Matching records by <snps|indels|both|all|some|exact|id>
-    default: some
     inputBinding:
       position: 102
       prefix: --pair-logic
@@ -161,7 +163,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 102
       prefix: --regions-overlap
@@ -229,18 +230,9 @@ inputs:
       - 'null'
       - int
     doc: Number of extra output compression threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 102
-      prefix: --verbosity
   - id: write_index
     type:
       - 'null'
@@ -250,13 +242,18 @@ inputs:
       position: 102
       prefix: --write-index
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
-    doc: Write output to a file
+    doc: Write output to a file [standard output]
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

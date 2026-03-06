@@ -4,8 +4,7 @@ baseCommand:
   - macs3
   - bdgbroadcall
 label: macs3_bdgbroadcall
-doc: "MACS3 tool to call broad peaks from bedGraph score tracks\n\nTool homepage:
-  https://pypi.org/project/MACS3/"
+doc: MACS3 tool to call broad peaks from bedGraph score tracks
 inputs:
   - id: cutoff_link
     type:
@@ -66,9 +65,7 @@ inputs:
       position: 101
       prefix: --min-length
   - id: no_trackline
-    type:
-      - 'null'
-      - boolean
+    type: boolean
     doc: Tells MACS not to include trackline with bedGraph files. The trackline 
       is required by UCSC.
     inputBinding:
@@ -82,23 +79,32 @@ inputs:
     inputBinding:
       position: 101
       prefix: --o-prefix
+  - id: ofile
+    type: string
+    doc: Output file name. Mutually exclusive with --o-prefix.
+    inputBinding:
+      position: 101
+      prefix: --ofile
   - id: outdir
-    type:
-      - 'null'
-      - Directory
+    type: Directory
     doc: 'If specified all output files will be written to that directory. Default:
       the current working directory'
     inputBinding:
       position: 101
       prefix: --outdir
 outputs:
-  - id: ofile
+  - id: output_ofile
     type:
       - 'null'
       - File
     doc: Output file name. Mutually exclusive with --o-prefix.
     outputBinding:
       glob: $(inputs.ofile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

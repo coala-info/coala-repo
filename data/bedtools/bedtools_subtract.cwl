@@ -4,15 +4,15 @@ baseCommand:
   - bedtools
   - subtract
 label: bedtools_subtract
-doc: "Removes the portion(s) of an interval that is overlapped by another feature(s).\n\
-  \nTool homepage: http://bedtools.readthedocs.org/"
+doc: Removes the portion(s) of an interval that is overlapped by another 
+  feature(s).
 inputs:
   - id: diff_strand
     type:
       - 'null'
       - boolean
     doc: Require different strandedness. That is, only report hits in B that 
-      overlap A on the opposite strand.
+      overlap A on the _opposite_ strand.
     inputBinding:
       position: 101
       prefix: -S
@@ -25,9 +25,7 @@ inputs:
       position: 101
       prefix: -e
   - id: genome
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -42,18 +40,22 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type: File
-    doc: Input file A (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input BED/GFF/VCF file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
-    doc: Input file B (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input BED/GFF/VCF file B
     inputBinding:
       position: 101
       prefix: -b
-  - id: io_buf
+  - id: input_buffer_size
     type:
       - 'null'
       - string
@@ -63,20 +65,14 @@ inputs:
       position: 101
       prefix: -iobuf
   - id: min_overlap_a
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
   - id: min_overlap_b
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
@@ -114,7 +110,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -r
-  - id: remove_entire_feature
+  - id: remove_entire
     type:
       - 'null'
       - boolean
@@ -124,7 +120,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -A
-  - id: remove_entire_feature_sum
+  - id: remove_entire_sum
     type:
       - 'null'
       - boolean
@@ -138,7 +134,7 @@ inputs:
       - 'null'
       - boolean
     doc: Require same strandedness. That is, only report hits in B that overlap 
-      A on the same strand.
+      A on the _same_ strand.
     inputBinding:
       position: 101
       prefix: -s
@@ -185,3 +181,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_subtract.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

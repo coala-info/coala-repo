@@ -4,9 +4,9 @@ baseCommand:
   - bedtools
   - bed12tobed6
 label: bedtools_bed12tobed6
-doc: "Splits BED12 features into discrete BED6 features.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Splits BED12 features into discrete BED6 features.
 inputs:
-  - id: force_score
+  - id: force_score_block_number
     type:
       - 'null'
       - boolean
@@ -14,7 +14,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -n
-  - id: input_file
+  - id: input_bed12
     type: File
     doc: Input BED12 file
     inputBinding:
@@ -28,3 +28,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_bed12tobed6.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - randsample
 label: macs3_randsample
-doc: "Randomly sample tags from alignment files to a specified percentage or number.\n\
-  \nTool homepage: https://pypi.org/project/MACS3/"
+doc: Randomly sample tags from alignment files to a specified percentage or 
+  number.
 inputs:
   - id: buffer_size
     type:
@@ -37,14 +37,24 @@ inputs:
       position: 101
       prefix: --ifile
   - id: number
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Number of tags you want to keep. Input 8000000 or 8e+6 for 8 million. 
       This option can't be used at the same time with -p/--percent.
     inputBinding:
       position: 101
       prefix: --number
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: outputfile
+    type: string
+    doc: Output BED file name. If not specified, will write to standard output.
+    inputBinding:
+      position: 101
+      prefix: --ofile
   - id: percentage
     type:
       - 'null'
@@ -72,20 +82,25 @@ inputs:
       position: 101
       prefix: --tsize
 outputs:
-  - id: outputfile
+  - id: output_outputfile
     type:
       - 'null'
       - File
     doc: Output BED file name. If not specified, will write to standard output.
     outputBinding:
       glob: $(inputs.outputfile)
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

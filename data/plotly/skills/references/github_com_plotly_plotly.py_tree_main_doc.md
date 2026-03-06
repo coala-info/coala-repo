@@ -1,1 +1,363 @@
-plotly.py/doc at main · plotly/plotly.py · GitHub Skip to content Navigation Menu Toggle navigation Sign in Appearance settings Platform AI CODE CREATION GitHub Copilot Write better code with AI GitHub Spark Build and deploy intelligent apps GitHub Models Manage and compare prompts MCP Registry New Integrate external tools DEVELOPER WORKFLOWS Actions Automate any workflow Codespaces Instant dev environments Issues Plan and track work Code Review Manage code changes APPLICATION SECURITY GitHub Advanced Security Find and fix vulnerabilities Code security Secure your code as you build Secret protection Stop leaks before they start EXPLORE Why GitHub Documentation Blog Changelog Marketplace View all features Solutions BY COMPANY SIZE Enterprises Small and medium teams Startups Nonprofits BY USE CASE App Modernization DevSecOps DevOps CI/CD View all use cases BY INDUSTRY Healthcare Financial services Manufacturing Government View all industries View all solutions Resources EXPLORE BY TOPIC AI Software Development DevOps Security View all topics EXPLORE BY TYPE Customer stories Events &amp; webinars Ebooks &amp; reports Business insights GitHub Skills SUPPORT &amp; SERVICES Documentation Customer support Community forum Trust center Partners Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search or jump to... Search code, repositories, users, issues, pull requests... Search Clear Search syntax tips Provide feedback We read every piece of feedback, and take your input very seriously. Include my email address so I can be contacted Cancel Submit feedback Saved searches Use saved searches to filter your results more quickly Name Query To see all available qualifiers, see our documentation . Cancel Create saved search Sign in Sign up Appearance settings Resetting focus You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session. Dismiss alert {{ message }} plotly / plotly.py Public Uh oh! There was an error while loading. Please reload this page . Notifications You must be signed in to change notification settings Fork 2.8k Star 18.3k Code Issues 717 Pull requests 63 Actions Security 0 Insights Additional navigation options Code Issues Pull requests Actions Security Insights Footer &copy; 2026 GitHub,&nbsp;Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fplotly%2Fplotly.py%2Ftree%2Fmain%2Fdoc)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fplotly%2Fplotly.py%2Ftree%2Fmain%2Fdoc)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Ffiles%2Fdisambiguate&source=header-repo&source_repo=plotly%2Fplotly.py)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[plotly](/plotly)
+/
+**[plotly.py](/plotly/plotly.py)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Fplotly%2Fplotly.py) You must be signed in to change notification settings
+* [Fork
+  2.8k](/login?return_to=%2Fplotly%2Fplotly.py)
+* [Star
+   18.3k](/login?return_to=%2Fplotly%2Fplotly.py)
+
+* [Code](/plotly/plotly.py)
+* [Issues
+  716](/plotly/plotly.py/issues)
+* [Pull requests
+  61](/plotly/plotly.py/pulls)
+* [Actions](/plotly/plotly.py/actions)
+* [Security
+  0](/plotly/plotly.py/security)
+* [Insights](/plotly/plotly.py/pulse)
+
+Additional navigation options
+
+* [Code](/plotly/plotly.py)
+* [Issues](/plotly/plotly.py/issues)
+* [Pull requests](/plotly/plotly.py/pulls)
+* [Actions](/plotly/plotly.py/actions)
+* [Security](/plotly/plotly.py/security)
+* [Insights](/plotly/plotly.py/pulse)
+
+## FilesExpand file tree
+
+main
+
+## Breadcrumbs
+
+1. [plotly.py](/plotly/plotly.py/tree/main)
+
+/
+
+# doc
+
+/
+
+Copy path
+
+## Directory actions
+
+## More options
+
+More options
+
+## Directory actions
+
+## More options
+
+More options
+
+## Latest commit
+
+## History
+
+[History](/plotly/plotly.py/commits/main/doc)
+
+History
+
+main
+
+## Breadcrumbs
+
+1. [plotly.py](/plotly/plotly.py/tree/main)
+
+/
+
+# doc
+
+/
+
+Top
+
+## Folders and files
+
+| Name | | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- | --- |
+| parent directory [..](/plotly/plotly.py/tree/main) | | |
+| [apidoc](/plotly/plotly.py/tree/main/doc/apidoc "apidoc") | | [apidoc](/plotly/plotly.py/tree/main/doc/apidoc "apidoc") |  |  |
+| [python](/plotly/plotly.py/tree/main/doc/python "python") | | [python](/plotly/plotly.py/tree/main/doc/python "python") |  |  |
+| [unconverted/python](/plotly/plotly.py/tree/main/doc/unconverted/python "This path skips through empty directories") | | [unconverted/python](/plotly/plotly.py/tree/main/doc/unconverted/python "This path skips through empty directories") |  |  |
+| [Makefile](/plotly/plotly.py/blob/main/doc/Makefile "Makefile") | | [Makefile](/plotly/plotly.py/blob/main/doc/Makefile "Makefile") |  |  |
+| [README.md](/plotly/plotly.py/blob/main/doc/README.md "README.md") | | [README.md](/plotly/plotly.py/blob/main/doc/README.md "README.md") |  |  |
+| [nb.tpl](/plotly/plotly.py/blob/main/doc/nb.tpl "nb.tpl") | | [nb.tpl](/plotly/plotly.py/blob/main/doc/nb.tpl "nb.tpl") |  |  |
+| [next\_redirect.tpl](/plotly/plotly.py/blob/main/doc/next_redirect.tpl "next_redirect.tpl") | | [next\_redirect.tpl](/plotly/plotly.py/blob/main/doc/next_redirect.tpl "next_redirect.tpl") |  |  |
+| [requirements.txt](/plotly/plotly.py/blob/main/doc/requirements.txt "requirements.txt") | | [requirements.txt](/plotly/plotly.py/blob/main/doc/requirements.txt "requirements.txt") |  |  |
+| [what\_about\_dash.md](/plotly/plotly.py/blob/main/doc/what_about_dash.md "what_about_dash.md") | | [what\_about\_dash.md](/plotly/plotly.py/blob/main/doc/what_about_dash.md "what_about_dash.md") |  |  |
+| View all files | | |
+
+## [README.md](#readme)
+
+Outline
+
+# Documentation of plotly.py
+
+## Introduction: structure and required packages
+
+The `doc` directory contains the source files of the documentation of plotly.py.
+It is composed of two parts:
+
+* inside the [`python/` directory](/plotly/plotly.py/blob/main/doc/python), tutorials corresponding to <https://plot.ly/python/>
+* inside the [`apidoc/` directory](/plotly/plotly.py/blob/main/doc/apidoc), configuration files for generating
+  the API reference documentation (hosted on <https://plot.ly/python-api-reference/>)
+
+Python packages required to build the doc are listed in
+[`requirements.txt`](/plotly/plotly.py/blob/main/doc/requirements.txt) in the `doc` directory.
+
+## Tutorials (`python` directory)
+
+Each tutorial is a markdown (`.md`) file, which can be opened in the Jupyter
+notebook or in Jupyterlab by installing [jupytext](https://jupytext.readthedocs.io/en/latest/install.html).
+
+For small edits (e.g., correcting typos) to an existing tutorial, you can simply click on the "edit this
+page on Github" link at the top right of the page (e.g. clicking on this link
+on <https://plot.ly/python/bar-charts/> will take you to
+<https://github.com/plotly/plotly.py/edit/doc-prod/doc/python/bar-charts.md>,
+where you can edit the page on Github).
+
+For more important edits where you need to run the notebook to check the output,
+clone the repository and setup an environment as described in the [main
+contributing notes](/plotly/plotly.py/blob/main/CONTRIBUTING.md). If you're writing documentation at the
+same time as you are developing a feature, make sure to install with editable
+install (`pip install -e`, as described in [main
+contributing notes](/plotly/plotly.py/blob/main/CONTRIBUTING.md)), so that you only need to restart
+the Jupyter kernel when you have changed the source code of the feature.
+
+### Branches
+
+Two different cases exist, whether you are documenting a feature already
+released, or which has just been included but not yet released.
+
+* Case of an already released feature: your changes can be deployed to the
+  documentation website as soon as they have been merged, and you should start
+  your branch off the `doc-prod` branch and open your pull request against this
+  `doc-prod` branch.
+* Case of a new (not released yet) feature: start your branch / pull request
+  against the `main` branch. `main` and `doc-prod` will be synchronized at
+  release time, so that the documentation of the feature is only deployed when
+  it is available in a released version of `plotly.py`.
+
+### Guidelines
+
+We try to write short, standalone and (almost) self-explaining examples. Most
+examples should focus on a single feature.
+
+Checklist
+
+* Each example should have a clear title (titles are used for the navigation
+  bar and indexed by search engines)
+* Package imports should be called in the same cell as the example, so that it
+  is possible to copy-paste a single cell to reproduce the example.
+* Variable names should be consistent with other examples, for example use
+  `fig` for a `Figure` object, `df` for a pandas dataframe, etc.
+* Examples should not be too long to execute (typically < 10s), since the doc is
+  built as part of the continuous integration (CI) process. Examples taking
+  longer to execute should be discussed in a new issue to decide whether they
+  can be accepted.
+
+### Build process
+
+This build process requries a free personal public mapbox token to work.
+
+First, create an account at <https://account.mapbox.com/auth/signup> Once that is done, navigate to <https://account.mapbox.com/> and copy your "Default public token" to the file `doc/python/.mapbox_token`
+
+Next, run `make` to build html pages for the tutorials. This uses `jupytext` to
+execute the notebooks and `nbconvert` to convert notebook files to static html
+pages. Note that the CI will build the doc, so you don't have to build it
+yourself, it is enough to check that the markdown file runs correctly in
+Jupyter.
+
+The output of the `Makefile` is stored by CI in the `built` branch of the `plotly.py-docs` repo which is then used by the `documentation` repo to generate <https://plot.ly/python>.
+
+## API reference documentation (`apidoc` directory)
+
+We use [sphinx](http://www.sphinx-doc.org/en/master/) and its [`autodoc`
+extension](http://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+in order to generate the documentation of the API. Sphinx uses the [reST markup
+language](https://www.sphinx-doc.org/en/2.0/usage/restructuredtext/basics.html).
+
+Run `make html` inside `apidoc` to build the API doc in the `_build/html`
+directory.
+
+Lists of objects to be documented are found in files corresponding to
+submodules, such as [`plotly.express.rst`](/plotly/plotly.py/blob/main/doc/plotly.express.rst). When a new
+object is added to the exposed API, it needs to be added to the corresponding
+file to appear in the API doc.
+
+Other files
+
+* `css` files are found in `_static`
+* Template files are found in `_templates`. `.rst` templates describe how the
+  autodoc of the different objects should look like.
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

@@ -4,9 +4,9 @@ baseCommand:
   - bcftools
   - stats
 label: bcftools_stats
-doc: "Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats.
-  When two files are given, the program generates separate stats for intersection
-  and the complements.\n\nTool homepage: https://github.com/samtools/bcftools"
+doc: Parses VCF or BCF and produces stats which can be plotted using 
+  plot-vcfstats. When two files are given, the program generates separate stats 
+  for intersection and the complements.
 inputs:
   - id: input_file_a
     type: File
@@ -17,7 +17,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Optional input VCF or BCF file B for comparison
+    doc: Optional second input VCF or BCF file B for comparison
     inputBinding:
       position: 2
   - id: af_bins
@@ -49,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Treat as identical records with <snps|indels|both|all|some|none>
-    default: none
     inputBinding:
       position: 103
       prefix: --collapse
@@ -58,7 +57,6 @@ inputs:
       - 'null'
       - string
     doc: 'Depth distribution: min,max,bin size'
-    default: 0,500,1
     inputBinding:
       position: 103
       prefix: --depth
@@ -125,7 +123,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 103
       prefix: --regions-overlap
@@ -175,7 +172,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 0
     inputBinding:
       position: 103
       prefix: --targets-overlap
@@ -184,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Use multithreading with <int> worker threads
-    default: 0
     inputBinding:
       position: 103
       prefix: --threads
@@ -193,18 +188,9 @@ inputs:
       - 'null'
       - string
     doc: Collect Ts/Tv stats for any tag using the given binning
-    default: 0:1:100
     inputBinding:
       position: 103
       prefix: --user-tstv
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 103
-      prefix: --verbosity
 outputs:
   - id: stdout
     type: stdout
@@ -213,3 +199,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
 stdout: bcftools_stats.out
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

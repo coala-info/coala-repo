@@ -12,7 +12,7 @@ Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor bindin
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macs3/overview
-- **Total Downloads**: 20.3K
+- **Total Downloads**: 20.4K
 - **Last updated**: 2026-02-26
 - **GitHub**: https://github.com/macs3-project/MACS
 - **Stars**: N/A
@@ -1739,6 +1739,3 @@ plus an extra option for the HMM model file like `macs3 hmmratac
 --model new_model.json`
 ```
 
-
-## Metadata
-- **Skill**: generated

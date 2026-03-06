@@ -4,9 +4,16 @@ baseCommand:
   - bedtools
   - spacing
 label: bedtools_spacing
-doc: "Report (last col.) the gap lengths between intervals in a file.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Report (last col.) the gap lengths between intervals in a file.
 inputs:
+  - id: header
+    type:
+      - 'null'
+      - boolean
+    doc: Print the header from the A file prior to results.
+    inputBinding:
+      position: 101
+      prefix: -header
   - id: input_buffer_size
     type:
       - 'null'
@@ -18,7 +25,7 @@ inputs:
       prefix: -iobuf
   - id: input_file
     type: File
-    doc: Input BED, GFF, VCF, or BAM file.
+    doc: Input file (bed/gff/vcf/bam). Must be sorted by chrom, start.
     inputBinding:
       position: 101
       prefix: -i
@@ -31,7 +38,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nobuf
-  - id: output_as_bed
+  - id: output_bed
     type:
       - 'null'
       - boolean
@@ -39,14 +46,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
-  - id: print_header
-    type:
-      - 'null'
-      - boolean
-    doc: Print the header from the A file prior to results.
-    inputBinding:
-      position: 101
-      prefix: -header
 outputs:
   - id: stdout
     type: stdout
@@ -55,3 +54,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_spacing.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

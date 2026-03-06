@@ -4,18 +4,19 @@ baseCommand:
   - bedtools
   - pairtopair
 label: bedtools_pairtopair
-doc: "Report overlaps between two paired-end BED files (BEDPE).\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Report overlaps between two paired-end BED files (BEDPE).
 inputs:
   - id: bedpe_a
     type: File
-    doc: BEDPE file A
+    doc: The first BEDPE file.
     inputBinding:
       position: 101
       prefix: -a
   - id: bedpe_b
-    type: File
-    doc: BEDPE file B
+    type:
+      - 'null'
+      - File
+    doc: The second BEDPE file.
     inputBinding:
       position: 101
       prefix: -b
@@ -29,12 +30,9 @@ inputs:
       position: 101
       prefix: -is
   - id: min_overlap_fraction
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as fraction of A (e.g. 0.05). Default is 1E-9 
       (effectively 1bp).
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
@@ -44,7 +42,6 @@ inputs:
       - string
     doc: 'Approach to reporting overlaps between A and B. Options: neither, either,
       both, notboth.'
-    default: both
     inputBinding:
       position: 101
       prefix: -type
@@ -61,9 +58,8 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The amount of slop (in b.p.). to be added to each footprint of A. Slop 
+    doc: The amount of slop (in b.p.) to be added to each footprint of A. Slop 
       is subtracted from start1 and start2 and added to end1 and end2.
-    default: 0
     inputBinding:
       position: 101
       prefix: -slop
@@ -85,3 +81,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_pairtopair.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

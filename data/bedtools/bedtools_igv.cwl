@@ -4,8 +4,8 @@ baseCommand:
   - bedtools
   - igv
 label: bedtools_igv
-doc: "Creates a batch script to create IGV images at each interval defined in a BED/GFF/VCF
-  file.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Creates a batch script to create IGV images at each interval defined in a 
+  BED/GFF/VCF file.
 inputs:
   - id: collapse
     type:
@@ -20,17 +20,22 @@ inputs:
       - 'null'
       - string
     doc: 'The type of image to be created. Options: png, eps, svg'
-    default: png
     inputBinding:
       position: 101
       prefix: -img
   - id: input_file
     type: File
-    doc: The input BED/GFF/VCF file.
+    doc: Input BED/GFF/VCF file
     inputBinding:
       position: 101
       prefix: -i
-  - id: session
+  - id: output_path
+    type: string
+    doc: The full path to which the IGV snapshots should be written.
+    inputBinding:
+      position: 101
+      prefix: -path
+  - id: session_file
     type:
       - 'null'
       - File
@@ -44,11 +49,10 @@ inputs:
       - 'null'
       - int
     doc: Number of flanking base pairs on the left & right of the image.
-    default: 0
     inputBinding:
       position: 101
       prefix: -slop
-  - id: sort
+  - id: sort_type
     type:
       - 'null'
       - string
@@ -61,19 +65,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use the "name" field (column 4) for each image's filename. Default is 
-      to use the "chr:start-pos.ext".
+    doc: Use the "name" field (column 4) for each image's filename.
     inputBinding:
       position: 101
       prefix: -name
 outputs:
-  - id: path
+  - id: output_output_path
     type:
       - 'null'
       - Directory
     doc: The full path to which the IGV snapshots should be written.
     outputBinding:
-      glob: $(inputs.path)
+      glob: $(inputs.output_path)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

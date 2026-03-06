@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - expand
 label: bedtools_expand
-doc: "Replicate lines in a file based on columns of comma-separated values.\n\nTool
-  homepage: http://bedtools.readthedocs.org/"
+doc: Replicate lines in a file based on columns of comma-separated values.
 inputs:
   - id: columns
     type: string
@@ -30,3 +29,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_expand.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

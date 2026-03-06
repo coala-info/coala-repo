@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - cluster
 label: bedtools_cluster
-doc: "Clusters overlapping/nearby BED/GFF/VCF intervals.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Clusters overlapping/nearby BED/GFF/VCF intervals.
 inputs:
   - id: force_strandedness
     type:
@@ -27,7 +27,6 @@ inputs:
       - int
     doc: Maximum distance between features allowed for features to be merged. 
       Def. 0. That is, overlapping & book-ended features are merged.
-    default: 0
     inputBinding:
       position: 101
       prefix: -d
@@ -39,3 +38,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_cluster.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

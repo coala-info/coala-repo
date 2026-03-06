@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - callvar
 label: macs3_callvar
-doc: "Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM files
-  within peak regions.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: Call variants from ChIP-seq/ATAC-seq treatment and optional control BAM 
+  files within peak regions.
 inputs:
   - id: altallele_count
     type:
@@ -103,6 +103,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --multiple-processing
+  - id: outdir
+    type: string
+    doc: 'If specified all output files will be written to that directory. Default:
+      the current working directory'
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: output_vcf
+    type: string
+    doc: Output VCF file name.
+    inputBinding:
+      position: 101
+      prefix: --ofile
   - id: peak_bed
     type: File
     doc: Peak regions in BED format, sorted by coordinates.
@@ -127,7 +140,7 @@ inputs:
       position: 101
       prefix: --treatment
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
@@ -135,11 +148,16 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: output_vcf
+  - id: output_output_vcf
     type: File
     doc: Output VCF file name.
     outputBinding:
       glob: $(inputs.output_vcf)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

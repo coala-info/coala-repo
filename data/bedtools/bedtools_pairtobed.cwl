@@ -4,53 +4,24 @@ baseCommand:
   - bedtools
   - pairtobed
 label: bedtools_pairtobed
-doc: "Report overlaps between a BEDPE file and a BED/GFF/VCF file.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Report overlaps between a BEDPE file and a BED/GFF/VCF file.
 inputs:
-  - id: diff_strand
-    type:
-      - 'null'
-      - boolean
-    doc: Require different strandedness when finding overlaps. Default is to 
-      ignore strand. Not applicable with -type inspan or -type outspan.
-    inputBinding:
-      position: 101
-      prefix: -S
-  - id: edit_distance
-    type:
-      - 'null'
-      - boolean
-    doc: Use BAM total edit distance (NM tag) for BEDPE score. Default for BEDPE
-      is to use the minimum of the two mapping qualities for the pair. When -ed 
-      is used the total edit distance from the two mates is reported as the 
-      score.
-    inputBinding:
-      position: 101
-      prefix: -ed
-  - id: input_a
-    type:
-      - 'null'
-      - File
-    doc: The A input file (BEDPE format).
-    inputBinding:
-      position: 101
-      prefix: -a
-  - id: input_b
+  - id: abam
     type: File
-    doc: The B input file (BED/GFF/VCF format).
-    inputBinding:
-      position: 101
-      prefix: -b
-  - id: input_bam
-    type:
-      - 'null'
-      - File
     doc: The A input file is in BAM format. Output will be BAM as well. Replaces
       -a.
     inputBinding:
       position: 101
       prefix: -abam
-  - id: output_bedpe
+  - id: bedpe_file
+    type:
+      - 'null'
+      - File
+    doc: The A input file in BEDPE format.
+    inputBinding:
+      position: 101
+      prefix: -a
+  - id: bedpe_output
     type:
       - 'null'
       - boolean
@@ -59,23 +30,43 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bedpe
-  - id: overlap_fraction
+  - id: diff_strand
     type:
       - 'null'
-      - float
-    doc: Minimum overlap required as fraction of A (e.g. 0.05). Default is 1E-9 
-      (effectively 1bp).
-    default: '1E-9'
+      - boolean
+    doc: Require different strandedness when finding overlaps. Default is to 
+      ignore strand.
+    inputBinding:
+      position: 101
+      prefix: -S
+  - id: edit_distance
+    type:
+      - 'null'
+      - boolean
+    doc: Use BAM total edit distance (NM tag) for BEDPE score.
+    inputBinding:
+      position: 101
+      prefix: -ed
+  - id: min_overlap_fraction
+    type: float
+    doc: Minimum overlap required as fraction of A (e.g. 0.05).
     inputBinding:
       position: 101
       prefix: -f
+  - id: overlap_file
+    type:
+      - 'null'
+      - File
+    doc: The B input file (BED/GFF/VCF format).
+    inputBinding:
+      position: 101
+      prefix: -b
   - id: overlap_type
     type:
       - 'null'
       - string
-    doc: 'Approach to reporting overlaps between BEDPE and BED. Options: either, neither,
-      both, xor, notboth, ispan, ospan, notispan, notospan.'
-    default: either
+    doc: Approach to reporting overlaps between BEDPE and BED (either, neither, 
+      both, xor, notboth, ispan, ospan, notispan, notospan).
     inputBinding:
       position: 101
       prefix: -type
@@ -84,11 +75,11 @@ inputs:
       - 'null'
       - boolean
     doc: Require same strandedness when finding overlaps. Default is to ignore 
-      strand. Not applicable with -type inspan or -type outspan.
+      strand.
     inputBinding:
       position: 101
       prefix: -s
-  - id: uncompressed_bam
+  - id: ubam
     type:
       - 'null'
       - boolean
@@ -104,3 +95,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_pairtobed.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

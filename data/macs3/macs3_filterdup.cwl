@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - filterdup
 label: macs3_filterdup
-doc: "MACS3 filterdup tool to remove duplicate reads at the same location based on
-  binomial distribution.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: MACS3 filterdup tool to remove duplicate reads at the same location based 
+  on binomial distribution.
 inputs:
   - id: buffer_size
     type:
@@ -66,6 +66,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --keep-dup
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: output_file
+    type: string
+    doc: Output BED file name. If not specified, will write to standard output.
+    inputBinding:
+      position: 101
+      prefix: --ofile
   - id: pvalue
     type:
       - 'null'
@@ -84,20 +96,25 @@ inputs:
       position: 101
       prefix: --tsize
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
-  - id: output_file
+  - id: output_output_file
     type:
       - 'null'
       - File
     doc: Output BED file name. If not specified, will write to standard output.
     outputBinding:
       glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

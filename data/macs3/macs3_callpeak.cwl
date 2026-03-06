@@ -4,13 +4,11 @@ baseCommand:
   - macs3
   - callpeak
 label: macs3_callpeak
-doc: "Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor binding
-  sites.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor 
+  binding sites.
 inputs:
   - id: barcodes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: A plain text file containing the barcodes for the fragment file while 
       the format is 'FRAG'.
     inputBinding:
@@ -40,7 +38,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Cutoff for broad region. Only available if --broad is set.
+    doc: Cutoff for broad region. This option is not available unless --broad is
+      set.
     default: 0.1
     inputBinding:
       position: 101
@@ -89,7 +88,7 @@ inputs:
       - 'null'
       - boolean
     doc: While set, MACS3 will analyze number or total length of peaks that can 
-      be called by different p-value cutoffs.
+      be called by different p-value cutoff.
     default: false
     inputBinding:
       position: 101
@@ -116,7 +115,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: The arbitrary extension size in bp. Used when nomodel is true.
+    doc: The arbitrary extension size in bp.
     default: 200
     inputBinding:
       position: 101
@@ -125,7 +124,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum requirement to filter out peaks with low fold-enrichment.
+    doc: When set, the value will be used as the minimum requirement to filter 
+      out peaks with low fold-enrichment.
     default: 1.0
     inputBinding:
       position: 101
@@ -243,11 +243,17 @@ inputs:
     inputBinding:
       position: 101
       prefix: --nomodel
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: pvalue
     type:
       - 'null'
       - float
-    doc: Pvalue cutoff for peak detection. Mutually exclusive with -q.
+    doc: Pvalue cutoff for peak detection.
     inputBinding:
       position: 101
       prefix: --pvalue
@@ -255,8 +261,7 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Minimum FDR (q-value) cutoff for peak detection. Mutually exclusive 
-      with -p.
+    doc: Minimum FDR (q-value) cutoff for peak detection.
     default: 0.05
     inputBinding:
       position: 101
@@ -265,8 +270,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: When set to 'small', scale the larger sample down to the smaller 
-      sample. Choice is 'small' or 'large'.
+    doc: When set to 'small', scale the larger sample up to the smaller sample. 
+      When set to 'large', scale the smaller sample up to the bigger sample.
     default: small
     inputBinding:
       position: 101
@@ -301,8 +306,8 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If True, MACS will save signal per million reads for fragment pileup 
-      profiles. Requires -B.
+    doc: If True, MACS will SAVE signal per million reads for fragment pileup 
+      profiles.
     inputBinding:
       position: 101
       prefix: --SPMR
@@ -311,7 +316,6 @@ inputs:
       - 'null'
       - Directory
     doc: Optional directory to store temp files.
-    default: /tmp
     inputBinding:
       position: 101
       prefix: --tempdir
@@ -341,13 +345,18 @@ inputs:
       position: 101
       prefix: --tsize
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

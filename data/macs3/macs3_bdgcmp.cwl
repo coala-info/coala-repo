@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - bdgcmp
 label: macs3_bdgcmp
-doc: "Deduct noise by comparing treatment and control bedGraph files using various
-  methods.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: Deduct noise by comparing treatment and control bedGraph files using 
+  various methods.
 inputs:
   - id: cfile
     type: File
@@ -35,6 +35,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --o-prefix
+  - id: ofile
+    type: string
+    doc: Output filename. Mutually exclusive with --o-prefix. The number and the
+      order of arguments for --ofile must be the same as for -m.
+    inputBinding:
+      position: 101
+      prefix: --ofile
+  - id: outdir
+    type: string
+    doc: 'If specified all output files will be written to that directory. Default:
+      the current working directory'
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: pseudocount
     type:
       - 'null'
@@ -63,7 +77,7 @@ inputs:
       position: 101
       prefix: --tfile
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
@@ -71,7 +85,7 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: ofile
+  - id: output_ofile
     type:
       - 'null'
       - File
@@ -79,6 +93,11 @@ outputs:
       order of arguments for --ofile must be the same as for -m.
     outputBinding:
       glob: $(inputs.ofile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

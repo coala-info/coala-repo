@@ -4,13 +4,9 @@ baseCommand:
   - bcftools
   - concat
 label: bcftools_concat
-doc: "Concatenate or combine VCF/BCF files. All source files must have the same sample
-  columns appearing in the same order. The program can be used, for example, to concatenate
-  chromosome VCFs into one VCF, or combine a SNP VCF and an indel VCF into one. The
-  input files must be sorted by chr and position. The files must be given in the correct
-  order to produce sorted VCF on output unless the -a, --allow-overlaps option is
-  specified. With the --naive option, the files are concatenated without being recompressed,
-  which is very fast.\n\nTool homepage: https://github.com/samtools/bcftools"
+doc: Concatenate or combine VCF/BCF files. All source files must have the same 
+  sample columns appearing in the same order. The input files must be sorted by 
+  chr and position.
 inputs:
   - id: input_files
     type:
@@ -82,7 +78,6 @@ inputs:
       - 'null'
       - int
     doc: Break phase set if phasing quality is lower than <int>
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-PQ
@@ -112,12 +107,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-version
+  - id: output
+    type: string
+    doc: Write output to a file [standard output]
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 'u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level'
-    default: v
     inputBinding:
       position: 102
       prefix: --output-type
@@ -143,7 +143,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 102
       prefix: --regions-overlap
@@ -168,18 +167,9 @@ inputs:
       - 'null'
       - int
     doc: Use multithreading with <int> worker threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Set verbosity level
-    inputBinding:
-      position: 102
-      prefix: --verbosity
   - id: write_index
     type:
       - 'null'
@@ -189,13 +179,18 @@ inputs:
       position: 102
       prefix: --write-index
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Write output to a file [standard output]
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

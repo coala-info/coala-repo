@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - random
 label: bedtools_random
-doc: "Generate random intervals among a genome.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Generate random intervals among a genome.
 inputs:
   - id: genome
     type: File
@@ -17,16 +17,14 @@ inputs:
       - 'null'
       - int
     doc: The length of the intervals to generate.
-    default: 100
     inputBinding:
       position: 101
       prefix: -l
-  - id: number_of_intervals
+  - id: number
     type:
       - 'null'
       - int
     doc: The number of intervals to generate.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -n
@@ -47,3 +45,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_random.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

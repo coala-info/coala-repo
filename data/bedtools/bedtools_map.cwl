@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - map
 label: bedtools_map
-doc: "Apply a function to a column from B intervals that overlap A.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Apply a function to a column from B intervals that overlap A.
 inputs:
   - id: columns
     type:
@@ -13,7 +12,6 @@ inputs:
       - string
     doc: Specify columns from the B file to map onto intervals in A. Multiple 
       columns can be specified in a comma-delimited list.
-    default: '5'
     inputBinding:
       position: 101
       prefix: -c
@@ -22,7 +20,6 @@ inputs:
       - 'null'
       - string
     doc: Specify a custom delimiter for the collapse operations.
-    default: ','
     inputBinding:
       position: 101
       prefix: -delim
@@ -35,9 +32,7 @@ inputs:
       position: 101
       prefix: -e
   - id: genome
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -52,14 +47,19 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type: File
-    doc: Input BED/GFF/VCF file A
+    type:
+      - 'null'
+      - File
+    doc: Information from B is mapped onto the intervals in this file. Supports 
+      BED/GFF/VCF.
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
-    doc: Input BED/GFF/VCF file B
+    type:
+      - 'null'
+      - File
+    doc: File containing intervals to be mapped onto A. Supports BED/GFF/VCF.
     inputBinding:
       position: 101
       prefix: -b
@@ -67,7 +67,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Specify amount of memory to use for input buffer (e.g. 10M).
+    doc: Specify amount of memory to use for input buffer (e.g. 10M, 1G).
     inputBinding:
       position: 101
       prefix: -iobuf
@@ -95,7 +95,6 @@ inputs:
     doc: Specify the operation that should be applied to -c (sum, min, max, 
       mean, etc.). Multiple operations can be specified in a comma-delimited 
       list.
-    default: sum
     inputBinding:
       position: 101
       prefix: -o
@@ -117,20 +116,14 @@ inputs:
       position: 101
       prefix: -bed
   - id: overlap_fraction_a
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
   - id: overlap_fraction_b
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
@@ -139,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the decimal precision for output
-    default: 5
     inputBinding:
       position: 101
       prefix: -prec
@@ -176,3 +168,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_map.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

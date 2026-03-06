@@ -4,9 +4,9 @@ baseCommand:
   - bedtools
   - overlap
 label: bedtools_overlap
-doc: "Computes the amount of overlap (positive values) or distance (negative values)
-  between genome features and reports the result at the end of the same line.\n\n\
-  Tool homepage: http://bedtools.readthedocs.org/"
+doc: Computes the amount of overlap (positive values) or distance (negative 
+  values) between genome features and reports the result at the end of the same 
+  line.
 inputs:
   - id: columns
     type: string
@@ -17,7 +17,9 @@ inputs:
       position: 101
       prefix: -cols
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input file. Use "stdin" for pipes.
     inputBinding:
       position: 101
@@ -30,3 +32,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_overlap.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

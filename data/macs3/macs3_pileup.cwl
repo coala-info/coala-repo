@@ -4,8 +4,8 @@ baseCommand:
   - macs3
   - pileup
 label: macs3_pileup
-doc: "Create a bedGraph file by piling up alignment files with a given extension size.\n\
-  \nTool homepage: https://pypi.org/project/MACS3/"
+doc: Create a bedGraph file by piling up alignment files with a given extension 
+  size.
 inputs:
   - id: barcodes
     type:
@@ -83,13 +83,25 @@ inputs:
     inputBinding:
       position: 101
       prefix: --outdir
-outputs:
   - id: outputfile
+    type: string
+    doc: Output bedGraph file name. If not specified, will write to standard 
+      output.
+    inputBinding:
+      position: 101
+      prefix: --ofile
+outputs:
+  - id: output_outputfile
     type: File
     doc: Output bedGraph file name. If not specified, will write to standard 
       output.
     outputBinding:
       glob: $(inputs.outputfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

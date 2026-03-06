@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - shuffle
 label: bedtools_shuffle
-doc: "Randomly permute the locations of a feature file among a genome.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Randomly permute the locations of a feature file among a genome.
 inputs:
   - id: allow_beyond_chrom_end
     type:
@@ -25,6 +24,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bedpe
+  - id: chrom
+    type:
+      - 'null'
+      - boolean
+    doc: Keep features in -i on the same chromosome. Forces use of -chromFirst.
+    inputBinding:
+      position: 101
+      prefix: -chrom
   - id: chrom_first
     type:
       - 'null'
@@ -35,22 +42,22 @@ inputs:
     inputBinding:
       position: 101
       prefix: -chromFirst
-  - id: exclude_file
-    type:
-      - 'null'
-      - File
+  - id: exclude
+    type: File
     doc: A BED/GFF/VCF file of coordinates in which features in -i should not be
       placed (e.g. gaps.bed).
     inputBinding:
       position: 101
       prefix: -excl
-  - id: genome_file
-    type: File
+  - id: genome
+    type:
+      - 'null'
+      - File
     doc: 'A genome file (tab delimited: <chromName><TAB><chromSize>).'
     inputBinding:
       position: 101
       prefix: -g
-  - id: include_file
+  - id: include
     type:
       - 'null'
       - File
@@ -60,37 +67,19 @@ inputs:
       position: 101
       prefix: -incl
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: A BED/GFF/VCF file of features to be shuffled.
     inputBinding:
       position: 101
       prefix: -i
-  - id: keep_chromosome
-    type:
-      - 'null'
-      - boolean
-    doc: Keep features in -i on the same chromosome. Forces use of -chromFirst.
-    inputBinding:
-      position: 101
-      prefix: -chrom
-  - id: max_overlap_fraction
-    type:
-      - 'null'
-      - float
-    doc: Maximum overlap (as a fraction of the -i feature) with an -excl feature
-      that is tolerated before searching for a new, randomized locus. Cannot be 
-      used with -incl file.
-    default: 1e-09
-    inputBinding:
-      position: 101
-      prefix: -f
   - id: max_tries
     type:
       - 'null'
       - int
     doc: Max. number of attempts to find a home for a shuffled interval in the 
       presence of -incl or -excl.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -maxTries
@@ -102,6 +91,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -noOverlapping
+  - id: overlap_fraction
+    type:
+      - 'null'
+      - float
+    doc: Maximum overlap (as a fraction of the -i feature) with an -excl feature
+      that is tolerated before searching for a new, randomized locus. Cannot be 
+      used with -incl file.
+    inputBinding:
+      position: 101
+      prefix: -f
   - id: seed
     type:
       - 'null'
@@ -119,3 +118,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_shuffle.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

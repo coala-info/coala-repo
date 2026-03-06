@@ -4,24 +4,17 @@ baseCommand:
   - bedtools
   - genomecov
 label: bedtools_genomecov
-doc: "Compute the coverage of a feature file among a genome.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Compute the coverage of a feature file among a genome.
 inputs:
-  - id: bedgraph
+  - id: change_mate_strand
     type:
       - 'null'
       - boolean
-    doc: Report depth in BedGraph format.
+    doc: Change strand of the mate read (so both reads from the same strand) 
+      useful for strand specific. Works for BAM files only
     inputBinding:
       position: 101
-      prefix: -bg
-  - id: bedgraph_all
-    type:
-      - 'null'
-      - boolean
-    doc: Report depth in BedGraph format, including regions with zero coverage.
-    inputBinding:
-      position: 101
-      prefix: -bga
+      prefix: -du
   - id: five_prime
     type:
       - 'null'
@@ -33,16 +26,14 @@ inputs:
   - id: fragment_size
     type:
       - 'null'
-      - int
+      - boolean
     doc: Force to use provided fragment size instead of read length. Works for 
-      BAM files only.
+      BAM files only
     inputBinding:
       position: 101
       prefix: -fs
   - id: genome_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Provide a genome file to define chromosome lengths. Required when not 
       using -ibam option.
     inputBinding:
@@ -61,7 +52,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: 'The input file is in BAM format. Note: BAM must be sorted by position.'
+    doc: 'The input file is in BAM format. Note: BAM _must_ be sorted by position'
     inputBinding:
       position: 101
       prefix: -ibam
@@ -73,15 +64,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
-  - id: mate_strand_change
-    type:
-      - 'null'
-      - boolean
-    doc: Change strand of the mate read (so both reads from the same strand) 
-      useful for strand specific. Works for BAM files only.
-    inputBinding:
-      position: 101
-      prefix: -du
   - id: max_depth
     type:
       - 'null'
@@ -95,10 +77,26 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Calculate coverage of pair-end fragments. Works for BAM files only.
+    doc: Calculate coverage of pair-end fragments. Works for BAM files only
     inputBinding:
       position: 101
       prefix: -pc
+  - id: report_bedgraph
+    type:
+      - 'null'
+      - boolean
+    doc: Report depth in BedGraph format.
+    inputBinding:
+      position: 101
+      prefix: -bg
+  - id: report_bedgraph_all
+    type:
+      - 'null'
+      - boolean
+    doc: Report depth in BedGraph format, including regions with zero coverage.
+    inputBinding:
+      position: 101
+      prefix: -bga
   - id: report_depth_one_based
     type:
       - 'null'
@@ -122,7 +120,6 @@ inputs:
       - 'null'
       - float
     doc: Scale the coverage by a constant factor.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: -scale
@@ -139,7 +136,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Calculate coverage of intervals from a specific strand. Can be + or -.
+    doc: Calculate coverage of intervals from a specific strand. Can be + or -
     inputBinding:
       position: 101
       prefix: -strand
@@ -176,3 +173,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_genomecov.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

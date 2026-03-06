@@ -4,9 +4,9 @@ baseCommand:
   - bedtools
   - slop
 label: bedtools_slop
-doc: "Add requested base pairs of \"slop\" to each feature.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Add requested base pairs of "slop" to each feature.
 inputs:
-  - id: both
+  - id: both_directions
     type:
       - 'null'
       - float
@@ -17,7 +17,7 @@ inputs:
       prefix: -b
   - id: genome_file
     type: File
-    doc: 'Genome file (tab delimited: <chromName><TAB><chromSize>)'
+    doc: 'The genome file (tab delimited: <chromName><TAB><chromSize>).'
     inputBinding:
       position: 101
       prefix: -g
@@ -30,12 +30,14 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type: File
-    doc: Input BED/GFF/VCF file
+    type:
+      - 'null'
+      - File
+    doc: The BED/GFF/VCF entry to be slopped.
     inputBinding:
       position: 101
       prefix: -i
-  - id: left
+  - id: left_slop
     type:
       - 'null'
       - float
@@ -48,12 +50,12 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Define -l and -r as a fraction of the feature's length.
-    default: false
+    doc: Define -l and -r as a fraction of the feature's length. E.g. if used on
+      a 1000bp feature, -l 0.50, will add 500 bp "upstream".
     inputBinding:
       position: 101
       prefix: -pct
-  - id: right
+  - id: right_slop
     type:
       - 'null'
       - float
@@ -68,7 +70,6 @@ inputs:
       - boolean
     doc: Define -l and -r based on strand. E.g. if used, -l 500 for a 
       negative-stranded feature, it will add 500 bp downstream.
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -80,3 +81,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_slop.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

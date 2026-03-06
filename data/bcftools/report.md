@@ -1,9 +1,38 @@
 # bcftools CWL Generation Report
 
+## Runtime validation summary
+
+| Tool | Runtime | Data used | Reason (if fail) |
+|------|---------|-----------|------------------|
+| bcftools_annotate | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_call | FAIL | plan:pileup.vcf | WARNING Final process status is permanentFail |
+| bcftools_cnv | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_concat | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_consensus | FAIL | plan:vcf_file.vcf.gz | } |
+| bcftools_convert | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_csq | FAIL | plan:vcf_file.vcf.gz, plan:minimal.fa, plan:gff_file.gff | WARNING Final process status is permanentFail |
+| bcftools_filter | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_gtcheck | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_head | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_index | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_isec | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_merge | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_mpileup | PASS | plan:mpileup.1.bam | — |
+| bcftools_norm | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_plugin | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_polysomy | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_query | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_reheader | FAIL | plan:vcf_file.vcf.gz | WARNING Final process status is permanentFail |
+| bcftools_roh | FAIL | plan:vcf_file.vcf.gz | baseCommand 'bcftools' not found in container; the image may… |
+| bcftools_sort | FAIL | plan:vcf_file.vcf | WARNING Final process status is permanentFail |
+| bcftools_stats | PASS | plan:vcf_file.vcf.gz | — |
+| bcftools_view | PASS | plan:vcf_file.vcf.gz | — |
+
+
 ## bcftools_index
 
 ### Tool Description
-Index bgzip compressed VCF/BCF files for random access.
+Index VCF or BCF files for random access.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
@@ -15,33 +44,17 @@ Index bgzip compressed VCF/BCF files for random access.
 - **Total Downloads**: 3.9M
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/samtools/bcftools
-- **Stars**: 846
+- **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-index: unrecognized option '--help'
-
-About:   Index bgzip compressed VCF/BCF files for random access.
-Usage:   bcftools index [options] <in.bcf>|<in.vcf.gz>
-
-Indexing options:
-    -c, --csi                generate CSI-format index for VCF/BCF files [default]
-    -f, --force              overwrite index if it already exists
-    -m, --min-shift INT      set minimal interval size for CSI indices to 2^INT [14]
-    -o, --output FILE        optional output index file name
-    -t, --tbi                generate TBI-format index for VCF files
-        --threads INT        use multithreading with INT worker threads [0]
-    -v, --verbosity INT      verbosity level
-
-Stats options:
-    -a, --all            with --stats, print stats for all contigs even when zero
-    -n, --nrecords       print number of records based on existing index file
-    -s, --stats          print per contig stats based on existing index file
-
-
+[E::main_vcfindex] must specify an output path for index file when reading VCF/BCF from stdin
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_index_job.json`
 
 ## bcftools_annotate
 
@@ -56,9 +69,7 @@ Annotate and edit VCF/BCF files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-annotate: unrecognized option '--help'
+annotate: option '--h' is ambiguous; possibilities: '--header-lines' '--header-line'
 
 About:   Annotate and edit VCF/BCF files.
 Usage:   bcftools annotate [options] VCF
@@ -80,14 +91,34 @@ Options:
        --no-version                Do not append version and command line to the header
    -o, --output FILE               Write output to a file [standard output]
    -O, --output-type u|b|v|z[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level [v]
-       --pair...
+       --pair-logic STR            Matching records by <snps|indels|both|all|some|exact|id>, see man page for details [some]
+   -r, --regions REGION            Restrict to comma-separated list of regions
+   -R, --regions-file FILE         Restrict to regions listed in FILE
+       --regions-overlap 0|1|2     Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+       --rename-annots FILE        Rename annotations: TYPE/old\tnew, where TYPE is one of FILTER,INFO,FORMAT
+       --rename-chrs FILE          Rename sequences according to the mapping: old\tnew
+   -s, --samples [^]LIST           Comma separated list of samples to annotate (or exclude with "^" prefix)
+   -S, --samples-file [^]FILE      File of samples to annotate (or exclude with "^" prefix)
+       --single-overlaps           Keep memory low by avoiding complexities arising from handling multiple overlapping intervals
+   -x, --remove LIST               List of annotations (e.g. ID,INFO/DP,FORMAT/DP,FILTER) to remove (or keep with "^" prefix). See man page for details
+       --threads INT               Number of extra output compression threads [0]
+   -v, --verbosity INT             Verbosity level
+   -W, --write-index[=FMT]         Automatically index the output files [off]
+
+Examples:
+   http://samtools.github.io/bcftools/howtos/annotate.html
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_annotate_job.json`
 
 ## bcftools_concat
 
 ### Tool Description
-Concatenate or combine VCF/BCF files. All source files must have the same sample columns appearing in the same order. The program can be used, for example, to concatenate chromosome VCFs into one VCF, or combine a SNP VCF and an indel VCF into one. The input files must be sorted by chr and position. The files must be given in the correct order to produce sorted VCF on output unless the -a, --allow-overlaps option is specified. With the --naive option, the files are concatenated without being recompressed, which is very fast.
+Concatenate or combine VCF/BCF files. All source files must have the same sample columns appearing in the same order. The input files must be sorted by chr and position.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
@@ -97,9 +128,7 @@ Concatenate or combine VCF/BCF files. All source files must have the same sample
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-concat: unrecognized option '--help'
+concat: option requires an argument -- 'h'
 
 About:   Concatenate or combine VCF/BCF files. All source files must have the same sample
          columns appearing in the same order. The program can be used, for example, to
@@ -123,14 +152,27 @@ Options:
        --no-version               Do not append version and command line to the header
    -n, --naive                    Concatenate files without recompression, a header check compatibility is performed
        --naive-force              Same as --naive, but header compatibility is not checked. Dangerous, use with caution.
-   -o, --output FILE              Write output...
+   -o, --output FILE              Write output to a file [standard output]
+   -O, --output-type u|b|v|z[0-9] u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level [v]
+   -q, --min-PQ INT               Break phase set if phasing quality is lower than <int> [30]
+   -r, --regions REGION           Restrict to comma-separated list of regions
+   -R, --regions-file FILE        Restrict to regions listed in a file
+       --regions-overlap 0|1|2    Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+       --threads INT              Use multithreading with <int> worker threads [0]
+   -v, --verbosity INT            Set verbosity level
+   -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_concat_job.json`
 
 ## bcftools_convert
 
 ### Tool Description
-Converts VCF/BCF to other formats and back. When specifying output files explicitly instead of with PREFIX, one can use '-' for stdout and '.' to suppress.
+Converts VCF/BCF to other formats and back.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
@@ -140,9 +182,7 @@ Converts VCF/BCF to other formats and back. When specifying output files explici
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-convert: unrecognized option '--help'
+convert: option '--h' is ambiguous; possibilities: '--hapsample' '--hapsample2vcf' '--haploid2diploid' '--haplegendsample' '--haplegendsample2vcf'
 
 About:   Converts VCF/BCF to other formats and back. See man page for file
          formats details. When specifying output files explicitly instead
@@ -172,9 +212,44 @@ General options:
 GEN/SAMPLE conversion (input/output from IMPUTE2):
    -G, --gensample2vcf ...        <PREFIX>|<GEN-FILE>,<SAMPLE-FILE>
    -g, --gensample ...            <PREFIX>|<GEN-FILE>,<SAMPLE-FILE>
-       --3N6                      Use 3*N+6 col...
+       --3N6                      Use 3*N+6 column format instead of the old 3*N+5 column format
+       --tag STRING               Tag to take values for .gen file: GT,PL,GL,GP [GT]
+       --chrom                    Output chromosome in first column instead of CHROM:POS_REF_ALT
+       --keep-duplicates          Keep duplicate positions
+       --sex FILE                 Output sex column in the sample-file, input format is: Sample\t[MF]
+       --vcf-ids                  Output VCF IDs in second column instead of CHROM:POS_REF_ALT
+
+gVCF conversion:
+       --gvcf2vcf                 Expand gVCF reference blocks
+   -f, --fasta-ref FILE           Reference sequence in fasta format
+
+HAP/SAMPLE conversion (output from SHAPEIT):
+       --hapsample2vcf ...        <PREFIX>|<HAP-FILE>,<SAMPLE-FILE>
+       --hapsample ...            <PREFIX>|<HAP-FILE>,<SAMPLE-FILE>
+       --haploid2diploid          Convert haploid genotypes to diploid homozygotes
+       --sex FILE                 Output sex column in the sample-file, input format is: Sample\t[MF]
+       --vcf-ids                  Output VCF IDs instead of CHROM:POS_REF_ALT
+
+HAP/LEGEND/SAMPLE conversion:
+   -H, --haplegendsample2vcf ...  <PREFIX>|<HAP-FILE>,<LEGEND-FILE>,<SAMPLE-FILE>
+   -h, --haplegendsample ...      <PREFIX>|<HAP-FILE>,<LEGEND-FILE>,<SAMPLE-FILE>
+       --haploid2diploid          Convert haploid genotypes to diploid homozygotes
+       --sex FILE                 Output sex column in the sample-file, input format is: Sample\t[MF]
+       --vcf-ids                  Output VCF IDs instead of CHROM:POS_REF_ALT
+
+TSV conversion:
+       --tsv2vcf FILE
+   -c, --columns STRING           Columns of the input tsv file, see man page for details [ID,CHROM,POS,AA]
+   -f, --fasta-ref FILE           Reference sequence in fasta format
+   -s, --samples LIST             List of sample names
+   -S, --samples-file FILE        File of sample names
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_convert_job.json`
 
 ## bcftools_head
 
@@ -189,9 +264,7 @@ Displays VCF/BCF headers and optionally the first few variant records
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-head: unrecognized option '--help'
+head: option '--headers' requires an argument
 
 About: Displays VCF/BCF headers and optionally the first few variant records
 Usage: bcftools head [OPTION]... [FILE]
@@ -201,10 +274,14 @@ Options:
   -n, --records INT      Display INT variant record lines [none]
   -s, --samples INT      Display INT records starting with the #CHROM header line [none]
   -v, --verbosity INT    Verbosity level
-
-
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 1 (CWL modified by LLM)
+- **Example job**: `bcftools_head_job.json`
 
 ## bcftools_isec
 
@@ -219,9 +296,6 @@ Create intersections, unions and complements of VCF files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Create intersections, unions and complements of VCF files.
 Usage:   bcftools isec [options] <A.vcf.gz> <B.vcf.gz> [...]
 
@@ -243,9 +317,35 @@ Options:
     -t, --targets REGION           Similar to -r but streams rather than index-jumps
     -T, --targets-file FILE        Similar to -R but streams rather than index-jumps
         --targets-overlap 0|1|2    Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
-        --threads INT              Use multithreading with INT worker th...
+        --threads INT              Use multithreading with INT worker threads [0]
+    -v, --verbosity INT            Verbosity level
+    -w, --write LIST               List of files to write with -p given as 1-based indexes. By default, all files are written
+    -W, --write-index[=FMT]        Automatically index the output files [off]
+
+Examples:
+   # Create intersection and complements of two sets saving the output in dir/*
+   bcftools isec A.vcf.gz B.vcf.gz -p dir
+
+   # Filter sites in A and B (but not in C) and create intersection
+   bcftools isec -e'MAF<0.01' -i'dbSNP=1' -e - A.vcf.gz B.vcf.gz C.vcf.gz -p dir
+
+   # Extract and write records from A shared by both A and B using exact allele match
+   bcftools isec A.vcf.gz B.vcf.gz -p dir -n =2 -w 1
+
+   # Extract and write records from C found in A and C but not in B
+   bcftools isec A.vcf.gz B.vcf.gz C.vcf.gz -p dir -n~101 -w 3
+
+   # Extract records private to A or B comparing by position only
+   bcftools isec A.vcf.gz B.vcf.gz -p dir -n -1 -c all
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_isec_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_merge
 
@@ -260,9 +360,6 @@ Merge multiple VCF/BCF files from non-overlapping sample sets to create one mult
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Merge multiple VCF/BCF files from non-overlapping sample sets to create one multi-sample file.
          Note that only records from different files can be merged, never from the same file. For
          "vertical" merge take a look at "bcftools norm" instead.
@@ -283,9 +380,25 @@ Options:
     -L, --local-alleles INT           If more than INT alt alleles are encountered, drop FMT/PL and output LAA+LPL instead; 0=unlimited [0]
     -m, --merge STRING[*|**]          Allow multiallelic records for snps,indels,both,snp-ins-del,all,none,id,*,**; see man page for details [both]
     -M, --missing-rules TAG:METHOD    Rules for replacing missing values in numeric vectors (.,0,max) when unknown allele <*> is not present [.]
-        --no-index                    Merg...
+        --no-index                    Merge unindexed files, the same chromosomal order is required and -r/-R are not allowed
+        --no-version                  Do not append version and command line to the header
+    -o, --output FILE                 Write output to a file [standard output]
+    -O, --output-type u|b|v|z[0-9]    u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level [v]
+    -r, --regions REGION              Restrict to comma-separated list of regions
+    -R, --regions-file FILE           Restrict to regions listed in a file
+        --regions-overlap 0|1|2       Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+        --threads INT                 Use multithreading with INT worker threads [0]
+    -v, --verbosity INT               Verbosity level
+    -W, --write-index[=FMT]           Automatically index the output files [off]
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_merge_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_norm
 
@@ -300,9 +413,6 @@ Left-align and normalize indels; check if REF alleles match the reference; split
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Left-align and normalize indels; check if REF alleles match the reference;
          split multiallelic sites into multiple rows; recover multiallelics from
          multiple rows.
@@ -324,9 +434,37 @@ Options:
         --multi-overlaps 0|.        Fill in the reference (0) or missing (.) allele when splitting multiallelics [0]
         --no-version                Do not append version and command line to the header
     -N, --do-not-normalize          Do not normalize indels (with -m or -c s)
-        --old-rec-tag STR           Annotate modified records with INFO/STR indicating the o...
+        --old-rec-tag STR           Annotate modified records with INFO/STR indicating the original variant
+    -o, --output FILE               Write output to a file [standard output]
+    -O, --output-type u|b|v|z[0-9]  u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level [v]
+    -r, --regions REGION            Restrict to comma-separated list of regions
+    -R, --regions-file FILE         Restrict to regions listed in a file
+        --regions-overlap 0|1|2     Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+    -s, --strict-filter             When merging (-m+), merged site is PASS only if all sites being merged PASS
+    -S, --sort METHOD               Sort order: chr_pos,lex [chr_pos]
+    -t, --targets REGION            Similar to -r but streams rather than index-jumps
+    -T, --targets-file FILE         Similar to -R but streams rather than index-jumps
+        --targets-overlap 0|1|2     Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+        --threads INT               Use multithreading with INT worker threads [0]
+    -v, --verbosity INT             Verbosity level
+    -w, --site-win INT              Buffer for sorting lines which changed position during realignment [1000]
+    -W, --write-index[=FMT]         Automatically index the output files [off]
+
+Examples:
+   # normalize and left-align indels
+   bcftools norm -f ref.fa in.vcf
+
+   # split multi-allelic sites
+   bcftools norm -m- in.vcf
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_norm_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_plugin
 
@@ -341,9 +479,6 @@ Run user defined plugin
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Run user defined plugin
 Usage:   bcftools plugin <name> [OPTIONS] <file> [-- PLUGIN_OPTIONS]
          bcftools +name [OPTIONS] <file>  [-- PLUGIN_OPTIONS]
@@ -368,10 +503,13 @@ Plugin options:
    -v, --verbosity INT            Verbosity level
    -V, --version                  Print version string and exit
    -W, --write-index[=FMT]        Automatically index the output files [off]
-
-
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_plugin_job.json`
 
 ## bcftools_query
 
@@ -386,9 +524,6 @@ Extracts fields from VCF/BCF file and prints them in user-defined format
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Extracts fields from VCF/BCF file and prints them in user-defined format
 Usage:   bcftools query [options] <A.vcf.gz> [<B.vcf.gz> [...]]
 
@@ -415,9 +550,16 @@ Options:
         --verbosity INT               Verbosity level
 
 Examples:
-	bcftools query -f '%CHR...
+	bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%SAMPLE=%GT]\n' file.vcf.gz
+	# For more examples see http://samtools.github.io/bcftools/bcftools.html#query
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_query_job.json`
 
 ## bcftools_reheader
 
@@ -432,9 +574,7 @@ Modify header of VCF/BCF files, change sample names.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-reheader: unrecognized option '--help'
+reheader: option '--header' requires an argument
 
 About:   Modify header of VCF/BCF files, change sample names.
 Usage:   bcftools reheader [OPTIONS] <in.vcf.gz>
@@ -458,10 +598,15 @@ Example:
 
    # Reheader the file
    bcftools reheader -h header.txt -o new.bcf old.bcf
-
-
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_reheader_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_sort
 
@@ -476,9 +621,6 @@ Sort VCF/BCF file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Sort VCF/BCF file.
 Usage:   bcftools sort [OPTIONS] <FILE.vcf>
 
@@ -489,10 +631,15 @@ Options:
     -T, --temp-dir DIR             Temporary files [/tmp/bcftools.XXXXXX]
     -v, --verbosity INT            Verbosity level
     -W, --write-index[=FMT]        Automatically index the output files [off]
-
-
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_sort_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_view
 
@@ -507,8 +654,6 @@ VCF/BCF conversion, view, subset and filter VCF/BCF files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 view: unrecognized option '--help'
 
 About:   VCF/BCF conversion, view, subset and filter VCF/BCF files.
@@ -534,14 +679,41 @@ Output options:
 
 Subset options:
     -A, --trim-unseen-allele          Remove '<*>' or '<NON_REF>' at variant (-A) or at all (-AA) sites
-    -a, --trim-alt-alleles            Tr...
+    -a, --trim-alt-alleles            Trim ALT alleles not seen in the genotype fields (or their subset with -s/-S)
+    -I, --no-update                   Do not (re)calculate INFO fields for the subset (currently INFO/AC and INFO/AN)
+    -s, --samples [^]LIST             Comma separated list of samples to include (or exclude with "^" prefix). Be careful
+                                        when combining filtering with sample subsetting as filtering comes (usually) first.
+                                        If unsure, split sample subsetting and filtering in two commands, using -Ou when piping.
+    -S, --samples-file [^]FILE        File of samples to include (or exclude with "^" prefix)
+        --force-samples               Only warn about unknown subset samples
+
+Filter options:
+    -c/C, --min-ac/--max-ac INT[:TYPE]     Minimum/maximum count for non-reference (nref), 1st alternate (alt1), least frequent
+                                               (minor), most frequent (major) or sum of all but most frequent (nonmajor) alleles [nref]
+    -f,   --apply-filters LIST             Require at least one of the listed FILTER strings (e.g. "PASS,.")
+    -g,   --genotype [^]hom|het|miss       Require one or more hom/het/missing genotype or, if prefixed with "^", exclude such sites
+    -i/e, --include/--exclude EXPR         Select/exclude sites for which the expression is true (see man page for details)
+    -k/n, --known/--novel                  Select known/novel sites only (ID is not/is '.')
+    -m/M, --min-alleles/--max-alleles INT  Minimum/maximum number of alleles listed in REF and ALT (e.g. -m2 -M2 for biallelic sites)
+    -p/P, --phased/--exclude-phased        Select/exclude sites where all samples are phased
+    -q/Q, --min-af/--max-af FLOAT[:TYPE]   Minimum/maximum frequency for non-reference (nref), 1st alternate (alt1), least frequent
+                                               (minor), most frequent (major) or sum of all but most frequent (nonmajor) alleles [nref]
+    -u/U, --uncalled/--exclude-uncalled    Select/exclude sites without a called genotype
+    -v/V, --types/--exclude-types LIST     Select/exclude comma-separated list of variant types: snps,indels,mnps,ref,bnd,other [null]
+    -x/X, --private/--exclude-private      Select/exclude sites where the non-reference alleles are exclusive (private) to the subset samples
+    -W,   --write-index[=FMT]              Automatically index the output files [off]
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_view_job.json`
 
 ## bcftools_call
 
 ### Tool Description
-SNP/indel variant calling from VCF/BCF. To be used in conjunction with bcftools mpileup.
+SNP/indel variant calling from VCF/BCF. To be used in conjunction with bcftools mpileup. This command replaces the former 'bcftools view' caller.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
@@ -551,9 +723,6 @@ SNP/indel variant calling from VCF/BCF. To be used in conjunction with bcftools 
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   SNP/indel variant calling from VCF/BCF. To be used in conjunction with bcftools mpileup.
          This command replaces the former "bcftools view" caller. Some of the original
          functionality has been temporarily lost in the process of transition to htslib,
@@ -578,9 +747,41 @@ File format options:
        --threads INT               Use multithreading with INT worker threads [0]
 
 Input/output options:
-   -A, --keep-alts                 Keep all possib...
+   -A, --keep-alts                 Keep all possible alternate alleles at variant sites
+   -*, --keep-unseen-allele        Keep the unobserved allele <*> or <NON_REF>
+   -a, --annotate LIST             Optional tags to output (lowercase allowed); '?' to list available tags
+   -F, --prior-freqs AN,AC         Use prior allele frequencies, determined from these pre-filled tags
+   -G, --group-samples FILE|-      Group samples by population (file with "sample\tgroup") or "-" for single-sample calling.
+                                   This requires FORMAT/QS or other Number=R,Type=Integer tag such as FORMAT/AD
+       --group-samples-tag TAG     The tag to use with -G, by default FORMAT/QS and FORMAT/AD are checked automatically
+   -g, --gvcf INT,[...]            Group non-variant sites into gVCF blocks by minimum per-sample DP
+   -i, --insert-missed             Output also sites missed by mpileup but present in -T
+   -M, --keep-masked-ref           Keep sites with masked reference allele (REF=N)
+   -V, --skip-variants TYPE        Skip indels/snps
+   -v, --variants-only             Output variant sites only
+       --verbosity INT             Verbosity level
+   -W, --write-index[=FMT]         Automatically index the output files [off]
+
+Consensus/variant calling options:
+   -c, --consensus-caller          The original calling method (conflicts with -m)
+   -C, --constrain STR             One of: alleles, trio (see manual)
+   -m, --multiallelic-caller       Alternative model for multiallelic and rare-variant calling (conflicts with -c)
+   -n, --novel-rate FLOAT,[...]    Likelihood of novel mutation for constrained trio calling, see man page for details [1e-8,1e-9,1e-9]
+   -p, --pval-threshold FLOAT      Variant if P(ref|D)<FLOAT with -c [0.5]
+   -P, --prior FLOAT               Mutation rate (use bigger for greater sensitivity), use with -m [1.1e-3]
+
+Example:
+   # See also http://samtools.github.io/bcftools/howtos/variant-calling.html
+   bcftools mpileup -Ou -f reference.fa alignments.bam | bcftools call -mv -Ob -o calls.bcf
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:pileup.vcf
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_call_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_consensus
 
@@ -595,9 +796,7 @@ Create consensus sequence by applying VCF variants to a reference fasta file. By
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-consensus: unrecognized option '--help'
+consensus: option '--haplotype' requires an argument
 
 About: Create consensus sequence by applying VCF variants to a reference fasta
        file. By default, the program will apply all ALT variants. Using the
@@ -622,9 +821,32 @@ Options:
     -i, --include EXPR             Select sites for which the expression is true (see man page for details)
     -I, --iupac-codes              Output IUPAC codes based on FORMAT/GT, use -s/-S to subset samples
         --mark-del CHAR            Instead of removing sequence, insert character CHAR for deletions
-  ...
+        --mark-ins uc|lc|CHAR      Highlight insertions in uppercase (uc), lowercase (lc), or use CHAR, leaving the rest as is
+        --mark-snv uc|lc|CHAR      Highlight substitutions in uppercase (uc), lowercase (lc), or use CHAR, leaving the rest as is
+    -m, --mask FILE                Replace regions according to the next --mask-with option. The default is --mask-with N
+        --mask-with CHAR|uc|lc     Replace with CHAR (skips overlapping variants); change to uppercase (uc) or lowercase (lc)
+    -M, --missing CHAR             Output CHAR instead of skipping a missing genotype "./."
+    -o, --output FILE              Write output to a file [standard output]
+    -p, --prefix STRING            Prefix to add to output sequence names
+        --regions-overlap 0|1|2    Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+    -s, --samples LIST             Comma-separated list of samples to include, "-" to ignore samples and use REF,ALT
+    -S, --samples-file FILE        File of samples to include
+    -v, --verbosity INT            Verbosity level
+Examples:
+   # Get the consensus for one region. The fasta header lines are then expected
+   # in the form ">chr:from-to".
+   samtools faidx ref.fa 8:11870-11890 | bcftools consensus in.vcf.gz > out.fa
+
+   # See also http://samtools.github.io/bcftools/howtos/consensus-sequence.html
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_consensus_job.json`
+- **Reason (not pass)**:                              }
 
 ## bcftools_cnv
 
@@ -639,10 +861,6 @@ Copy number variation caller, requires Illumina's B-allele frequency (BAF) and L
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-cnv: unrecognized option '--help'
-
 About:   Copy number variation caller, requires Illumina's B-allele frequency (BAF) and Log R
          Ratio intensity (LRR). The HMM considers the following copy number states: CN 2
          (normal), 1 (single-copy loss), 0 (complete loss), 3 (single-copy gain)
@@ -667,9 +885,19 @@ HMM Options:
     -e, --err-prob FLOAT             Uniform error probability [1e-4]
     -k, --LRR-dev FLOAT[,FLOAT]      Expected LRR deviation [0.2,0.2]
     -l, --LRR-weight FLOAT           Relative contribution from LRR [0.2]
-    -L, --LRR-smooth-win INT         Window...
+    -L, --LRR-smooth-win INT         Window of LRR moving average smoothing [10]
+    -O, --optimize FLOAT             Estimate fraction of aberrant cells down to FLOAT [1.0]
+    -P, --same-prob FLOA>            Prior probability of -s/-c being the same [0.5]
+    -x, --xy-prob FLOAT              P(x|y) transition probability [1e-9]
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_cnv_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_csq
 
@@ -684,9 +912,6 @@ Haplotype-aware consequence caller.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About: Haplotype-aware consequence caller.
 Usage: bcftools csq [OPTIONS] in.vcf
 
@@ -713,9 +938,38 @@ GFF options:
                                      (e.g., "chr,Chr,-" trims "chr" in VCF and "Chr" in GFF, fasta is unchanged)
 General options:
    -e, --exclude EXPR                Exclude sites for which the expression is true
-   -i, --include EXPR                Select sites for which the expres...
+   -i, --include EXPR                Select sites for which the expression is true
+       --no-version                  Do not append version and command line to the header
+   -o, --output FILE                 Write output to a file [standard output]
+   -O, --output-type b|u|z|v|t[0-9]  b: compressed BCF, u: uncompressed BCF, z: compressed VCF
+                                     v: uncompressed VCF, t: plain tab-delimited text output, 0-9: compression level [v]
+   -r, --regions REGION              Restrict to comma-separated list of regions
+   -R, --regions-file FILE           Restrict to regions listed in a file
+       --regions-overlap 0|1|2       Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+   -s, --samples -|LIST              Samples to include or "-" to apply all variants and ignore samples
+   -S, --samples-file FILE           Samples to include
+   -t, --targets REGION              Similar to -r but streams rather than index-jumps
+   -T, --targets-file FILE           Similar to -R but streams rather than index-jumps
+       --targets-overlap 0|1|2       Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+       --threads INT                 Use multithreading with <int> worker threads [0]
+   -v, --verbosity INT               Verbosity level 0-6 [1]
+   -W, --write-index[=FMT]           Automatically index the output files [off]
+
+Example:
+   bcftools csq -f hs37d5.fa -g Homo_sapiens.GRCh37.87.gff3.gz in.vcf
+
+   # GFF3 annotation files can be downloaded from Ensembl. e.g. for human:
+   http://ftp.ensembl.org/pub/current_gff3/homo_sapiens/
+   http://ftp.ensembl.org/pub/grch37/current/gff3/homo_sapiens/
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz, plan:minimal.fa, plan:gff_file.gff
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_csq_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_filter
 
@@ -730,10 +984,6 @@ Apply fixed-threshold filters.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-filter: unrecognized option '--help'
-
 About:   Apply fixed-threshold filters.
 Usage:   bcftools filter [options] <in.vcf.gz>
 
@@ -754,9 +1004,19 @@ Options:
         --regions-overlap 0|1|2    Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
     -s, --soft-filter STRING       Annotate FILTER column with <string> or unique filter name ("Filter%d") made up by the program ("+")
     -S, --set-GTs .|0              Set genotypes of failed samples to missing (.) or ref (0)
-    -t, --targets REGION           Similar to -r but streams rather than index-jump...
+    -t, --targets REGION           Similar to -r but streams rather than index-jumps
+    -T, --targets-file FILE        Similar to -R but streams rather than index-jumps
+        --targets-overlap 0|1|2    Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+        --threads INT              Use multithreading with <int> worker threads [0]
+    -v, --verbosity INT            Verbosity level
+    -W, --write-index[=FMT]        Automatically index the output files [off]
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_filter_job.json`
 
 ## bcftools_gtcheck
 
@@ -771,8 +1031,7 @@ Check sample identity. With no -g BCF given, multi-sample cross-check is perform
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
+gtcheck: option '--h' is ambiguous; possibilities: '--homs-only' '--help'
 
 About:   Check sample identity. With no -g BCF given, multi-sample cross-check is performed.
 Usage:   bcftools gtcheck [options] [-g <genotypes.vcf.gz>] <query.vcf.gz>
@@ -794,9 +1053,34 @@ Options:
         --no-HWE-prob                  Disable calculation of HWE probability
     -o, --output FILE                  Write output to a file [standard output]
     -O, --output-type t|z              t: plain tab-delimited text output, z: compressed [t]
-    -p, --pairs LIST                   Comma-separated...
+    -p, --pairs LIST                   Comma-separated sample pairs to compare (qry,gt[,qry,gt..] with -g or qry,qry[,qry,qry..] w/o)
+    -P, --pairs-file FILE              File with tab-delimited sample pairs to compare (qry,gt with -g or qry,qry w/o)
+    -r, --regions REGION               Restrict to comma-separated list of regions
+    -R, --regions-file FILE            Restrict to regions listed in a file
+        --regions-overlap 0|1|2        Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+    -s, --samples [qry|gt]:LIST        List of query or -g samples, "-" to select all samples (by default all samples are compared)
+    -S, --samples-file [qry|gt]:FILE   File with the query or -g samples to compare
+    -t, --targets REGION               Similar to -r but streams rather than index-jumps
+    -T, --targets-file FILE            Similar to -R but streams rather than index-jumps
+        --targets-overlap 0|1|2        Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+    -u, --use TAG1[,TAG2]              Which tag to use in the query file (TAG1) and the -g file (TAG2) [PL,GT]
+    -v, --verbosity INT                Verbosity level
+Examples:
+   # Check discordance of all samples from B against all samples in A
+   bcftools gtcheck -g A.bcf B.bcf
+
+   # Limit comparisons to the given list of samples
+   bcftools gtcheck -s gt:a1,a2,a3 -s qry:b1,b2 -g A.bcf B.bcf
+
+   # Compare only two pairs a1,b1 and a1,b2
+   bcftools gtcheck -p a1,b1,a1,b2 -g A.bcf B.bcf
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_gtcheck_job.json`
 
 ## bcftools_mpileup
 
@@ -811,9 +1095,6 @@ Generate VCF or BCF containing genotype likelihoods for one or multiple BAM file
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Usage: bcftools mpileup [options] in1.bam [in2.bam [...]]
 
 Input options:
@@ -841,9 +1122,60 @@ Input options:
   --nu, --skip-any-unset STR|INT  Skip reads with any of the bits unset []
   -s, --samples LIST      Comma separated list of samples to include
   -S, --samples-file FILE File of samples to include
-  -t, --targets REG[,...] Similar to -r but streams rather than ...
+  -t, --targets REG[,...] Similar to -r but streams rather than index-jumps
+  -T, --targets-file FILE Similar to -R but streams rather than index-jumps
+  -x, --ignore-overlaps   Disable read-pair overlap detection
+      --seed INT          Random number seed used for sampling deep regions [0]
+
+Output options:
+  -a, --annotate LIST     Optional tags to output; '\?' to list available tags []
+  -g, --gvcf INT[,...]    Group non-variant sites into gVCF blocks according
+                          To minimum per-sample DP
+      --no-version        Do not append version and command line to the header
+  -o, --output FILE       Write output to FILE [standard output]
+  -O, --output-type TYPE  'b' compressed BCF; 'u' uncompressed BCF;
+                          'z' compressed VCF; 'v' uncompressed VCF; 0-9 compression level [v]
+      --threads INT       Use multithreading with INT worker threads [0]
+  -v, --verbosity INT     Verbosity level
+  -W, --write-index[=FMT] Automatically index the output files [off]
+
+SNP/INDEL genotype likelihoods options:
+  -X, --config STR        Specify platform profile (use "-X list" for details)
+  -e, --ext-prob INT      Phred-scaled gap extension seq error probability [20]
+  -F, --gap-frac FLOAT    Minimum fraction of gapped reads [0.05]
+  -h, --tandem-qual INT   Coefficient for homopolymer errors [500]
+  -I, --skip-indels       Do not perform indel calling
+  -L, --max-idepth INT    Maximum per-file depth for INDEL calling [250]
+  -m, --min-ireads INT    Minimum number gapped reads for indel candidates [2]
+  -M, --max-read-len INT  Maximum length of read to pass to BAQ algorithm [500]
+  -o, --open-prob INT     Phred-scaled gap open seq error probability [40]
+  -p, --per-sample-mF     Apply -m and -F per-sample for increased sensitivity
+  -P, --platforms STR     Comma separated list of platforms for indels [all]
+  --ar, --ambig-reads STR   What to do with ambiguous indel reads: drop,incAD,incAD0 [drop]
+      --indel-bias FLOAT  Raise to favour recall over precision [1.00]
+      --del-bias FLOAT    Relative likelihood of insertion to deletion [0.00]
+      --score-vs-ref FLOAT
+                          Ratio of score vs ref (1) or 2nd-best allele (0) [0.00]
+      --indel-size INT    Approximate maximum indel size considered [110]
+      --indels-2.0        New EXPERIMENTAL indel calling model (diploid reference consensus)
+      --indels-cns        New EXPERIMENTAL indel calling model with edlib
+      --seqq-offset       Indel-cns tuning for indel seq-qual scores [120]
+      --no-indels-cns     Disable CNS mode, to use after a -X profile
+      --poly-mqual        (Edlib mode) Use minimum quality within homopolymers
+
+Notes: Assuming diploid individuals.
+
+Example:
+   # See also http://samtools.github.io/bcftools/howtos/variant-calling.html
+   bcftools mpileup -Ou -f reference.fa alignments.bam | bcftools call -mv -Ob -o calls.bcf
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:mpileup.1.bam
+- **Fix rounds**: 1 (CWL modified by LLM)
+- **Example job**: `bcftools_mpileup_job.json`
 
 ## bcftools_polysomy
 
@@ -858,10 +1190,6 @@ Detect number of chromosomal copies from Illumina's B-allele frequency (BAF)
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-polysomy: unrecognized option '--help'
-
 About:   Detect number of chromosomal copies from Illumina's B-allele frequency (BAF)
 Usage:   bcftools polysomy [OPTIONS] FILE.vcf
 
@@ -883,10 +1211,15 @@ Algorithm options:
     -i, --include-aa               Include the AA peak in CN2 and CN3 evaluation
     -m, --min-fraction FLOAT       Minimum distinguishable fraction of aberrant cells [0.1]
     -p, --peak-symmetry FLOAT      Peak symmetry threshold (0-1, larger is stricter) [0.5]
-
-
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_polysomy_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## bcftools_roh
 
@@ -901,9 +1234,7 @@ HMM model for detecting runs of autozygosity.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-roh: unrecognized option '--help'
+roh: option '--hw-to-az' requires an argument
 
 About:   HMM model for detecting runs of autozygosity.
 Usage:   bcftools roh [options] <in.vcf.gz>
@@ -927,9 +1258,40 @@ General Options:
     -m, --genetic-map FILE           Genetic map in IMPUTE2 format, single file or mask, where string "{CHROM}"
                                        is replaced with chromosome name
     -M, --rec-rate FLOAT             Constant recombination rate per bp
-    -o, --output FILE  ...
+    -o, --output FILE                Write output to a file [standard output]
+    -O, --output-type [srz]          Output s:per-site, r:regions, z:compressed [sr]
+    -r, --regions REGION             Restrict to comma-separated list of regions
+    -R, --regions-file FILE          Restrict to regions listed in a file
+        --regions-overlap 0|1|2      include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
+    -s, --samples LIST               List of samples to analyze [all samples]
+    -S, --samples-file FILE          File of samples to analyze [all samples]
+    -t, --targets REGION             Similar to -r but streams rather than index-jumps
+    -T, --targets-file FILE          Similar to -R but streams rather than index-jumps
+        --targets-overlap 0|1|2      Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+        --threads INT                Use multithreading with <int> worker threads [0]
+    -v, --verbosity INT              Verbosity level
+
+HMM Options:
+    -a, --hw-to-az FLOAT             P(AZ|HW) transition probability from HW (Hardy-Weinberg) to AZ (autozygous) state [6.7e-8]
+    -H, --az-to-hw FLOAT             P(HW|AZ) transition probability from AZ to HW state [5e-9]
+    -V, --viterbi-training FLOAT     Estimate HMM parameters, FLOAT is the convergence threshold, e.g. 1e-10 (experimental)
+
+Example:
+   # Find RoH regions assuming default allele frequency 0.4
+   bcftools roh -G30 --AF-dflt 0.4 test.vcf -o out.txt
+
+   # Create HTML/JavaScript visualization with the accompanied roh-viz script
+   misc/roh-viz -i out.txt -v test.vcf -o out.html
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:vcf_file.vcf.gz
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `bcftools_roh_job.json`
+- **Reason (not pass)**: baseCommand 'bcftools' not found in container; the image may not provide this executable. CWL generation/validation failed. Original error: INFO /media/qhu/slim/Workspace/cwlagent/.venv/bin/cwltool 3.1.20260108082145
+INFO Resolved '/media
 
 ## bcftools_stats
 
@@ -944,9 +1306,6 @@ Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats. W
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 About:   Parses VCF or BCF and produces stats which can be plotted using plot-vcfstats.
          When two files are given, the program generates separate stats for intersection
          and the complements. By default only sites are compared, -s/-S must given to include
@@ -968,29 +1327,19 @@ Options:
     -r, --regions REGION             Restrict to comma-separated list of regions
     -R, --regions-file FILE          Restrict to regions listed in a file
         --regions-overlap 0|1|2      Include if POS in the region (0), record overlaps (1), variant overlaps (2) [1]
-    -s, --samples LIST               List of samples for s...
+    -s, --samples LIST               List of samples for sample stats, "-" to include all samples
+    -S, --samples-file FILE          File of samples to include
+    -t, --targets REGION             Similar to -r but streams rather than index-jumps
+    -T, --targets-file FILE          Similar to -R but streams rather than index-jumps
+        --targets-overlap 0|1|2      Include if POS in the region (0), record overlaps (1), variant overlaps (2) [0]
+    -u, --user-tstv TAG[:min:max:n]  Collect Ts/Tv stats for any tag using the given binning [0:1:100]
+                                       A subfield can be selected as e.g. 'PV4[0]', here the first value of the PV4 tag
+        --threads INT                Use multithreading with <int> worker threads [0]
+    -v, --verbosity INT              Verbosity level
 ```
 
 
-## bcftools_41
-
-### Tool Description
-BCFtools (Note: The provided help text indicates an unrecognized command error for '41')
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
-- **Homepage**: https://github.com/samtools/bcftools
-- **Package**: https://anaconda.org/channels/bioconda/packages/bcftools/overview
-- **Validation**: PASS
-
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-[E::main] unrecognized command '41'
-
-```
-
-
-## Metadata
-- **Skill**: generated
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `bcftools_stats_job.json`

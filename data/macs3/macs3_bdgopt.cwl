@@ -4,8 +4,7 @@ baseCommand:
   - macs3
   - bdgopt
 label: macs3_bdgopt
-doc: "Modify the score column of a bedGraph file using various methods.\n\nTool homepage:
-  https://pypi.org/project/MACS3/"
+doc: Modify the score column of a bedGraph file using various methods.
 inputs:
   - id: extra_param
     type:
@@ -24,16 +23,27 @@ inputs:
       position: 101
       prefix: --ifile
   - id: method
-    type:
-      - 'null'
-      - string
+    type: string
     doc: 'Method to modify the score column of bedGraph file. Available choices are:
       multiply, add, max, min, or p2q.'
     inputBinding:
       position: 101
       prefix: --method
-outputs:
+  - id: ofile
+    type: string
+    doc: Output BEDGraph filename.
+    inputBinding:
+      position: 101
+      prefix: --ofile
   - id: outdir
+    type: string
+    doc: 'If specified all output files will be written to that directory. Default:
+      the current working directory'
+    inputBinding:
+      position: 101
+      prefix: --outdir
+outputs:
+  - id: output_outdir
     type:
       - 'null'
       - Directory
@@ -41,11 +51,16 @@ outputs:
       the current working directory'
     outputBinding:
       glob: $(inputs.outdir)
-  - id: ofile
+  - id: output_ofile
     type: File
     doc: Output BEDGraph filename.
     outputBinding:
       glob: $(inputs.ofile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

@@ -4,10 +4,10 @@ baseCommand:
   - bedtools
   - coverage
 label: bedtools_coverage
-doc: "Returns the depth and breadth of coverage of features from B on the intervals
-  in A.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Returns the depth and breadth of coverage of features from B on the 
+  intervals in A.
 inputs:
-  - id: counts
+  - id: counts_only
     type:
       - 'null'
       - boolean
@@ -24,10 +24,16 @@ inputs:
     inputBinding:
       position: 101
       prefix: -d
-  - id: genome_file
+  - id: either_fraction
     type:
       - 'null'
-      - File
+      - boolean
+    doc: Require that the minimum fraction be satisfied for A OR B.
+    inputBinding:
+      position: 101
+      prefix: -e
+  - id: genome_file
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -51,13 +57,17 @@ inputs:
       position: 101
       prefix: -hist
   - id: input_a
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input BED/GFF/VCF file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input BED/GFF/VCF file B
     inputBinding:
       position: 101
@@ -70,7 +80,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -iobuf
-  - id: mean
+  - id: mean_depth
     type:
       - 'null'
       - boolean
@@ -79,20 +89,14 @@ inputs:
       position: 101
       prefix: -mean
   - id: min_overlap_a
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
   - id: min_overlap_b
-    type:
-      - 'null'
-      - float
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
@@ -130,14 +134,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
-  - id: overlap_either
-    type:
-      - 'null'
-      - boolean
-    doc: Require that the minimum fraction be satisfied for A OR B.
-    inputBinding:
-      position: 101
-      prefix: -e
   - id: reciprocal
     type:
       - 'null'
@@ -179,3 +175,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_coverage.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

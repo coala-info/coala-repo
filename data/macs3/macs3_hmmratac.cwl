@@ -4,14 +4,12 @@ baseCommand:
   - macs3
   - hmmratac
 label: macs3_hmmratac
-doc: "HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq data,
-  utilizing a Hidden Markov Model to learn the nucleosome structure around open chromatin
-  regions.\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: HMMRATAC is a dedicated tool specifically designed for processing ATAC-seq 
+  data, utilizing a Hidden Markov Model to learn the nucleosome structure around
+  open chromatin regions.
 inputs:
   - id: barcodes
-    type:
-      - 'null'
-      - File
+    type: File
     doc: A plain text file containing the barcodes for the fragment file while 
       the format is 'FRAG'.
     inputBinding:
@@ -28,9 +26,7 @@ inputs:
       position: 101
       prefix: --binsize
   - id: blacklist
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Filename of blacklisted regions to exclude.
     inputBinding:
       position: 101
@@ -169,9 +165,7 @@ inputs:
       position: 101
       prefix: --minlen
   - id: model
-    type:
-      - 'null'
-      - File
+    type: File
     doc: A JSON file generated from previous HMMRATAC run to use instead of 
       creating new one.
     inputBinding:
@@ -203,6 +197,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --no-fragem
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: pileup_short
     type:
       - 'null'
@@ -298,9 +298,7 @@ inputs:
       position: 101
       prefix: --training-flanking
   - id: training_regions
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Filename of training regions to use for training HMM.
     inputBinding:
       position: 101
@@ -315,13 +313,18 @@ inputs:
       position: 101
       prefix: --upper
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

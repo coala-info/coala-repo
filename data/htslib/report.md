@@ -1,9 +1,18 @@
 # htslib CWL Generation Report
 
-## htslib
+## Runtime validation summary
+
+| Tool | Runtime | Data used | Reason (if fail) |
+|------|---------|-----------|------------------|
+| htslib_bgzip | PASS | plan:callvar_testing.narrowPeak, local:10XGenomics_subset-ba… | — |
+| htslib_htsfile | PASS | plan:test.bam | — |
+| htslib_tabix | PASS | plan:vcf_file.vcf.gz | — |
+
+
+## htsfile
 
 ### Tool Description
-The provided text does not contain help information for htslib; it is an error log from a container runtime (Apptainer/Singularity) indicating a failure to pull the htslib image due to insufficient disk space ('no space left on device').
+Identify file formats and view or copy HTS files
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/htslib:1.23--h566b1c6_0
@@ -12,69 +21,44 @@ The provided text does not contain help information for htslib; it is an error l
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/htslib/overview
-- **Total Downloads**: 7.1M
+- **Total Downloads**: 7.2M
 - **Last updated**: 2025-12-16
 - **GitHub**: https://github.com/samtools/htslib
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/htslib:1.23--h566b1c6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-2077166768: no space left on device
+htsfile: option '--h' is ambiguous; possibilities: '--header-only' '--help'
+Usage: htsfile [-chHv] FILE...
+       htsfile --copy [-v] FILE DESTFILE
+Options:
+  -c, --view         Write textual form of FILEs to standard output
+  -C, --copy         Copy the exact contents of FILE to DESTFILE
+  -h, --header-only  Display only headers in view mode, not records
+  -H, --no-header    Suppress header display in view mode
+  -v, --verbose      Increase verbosity of warnings and diagnostics
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:test.bam
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:test.bam
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:callvar_testing.narrowPeak, local:10XGenomics_subset-ba…
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:test.bam
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:vcf_file.vcf.gz
+- **Example job**: `htslib_tabix_job.json`
 
 ## Metadata
-- **Skill**: generated
-
-## htslib_bgzip
-
-### Tool Description
-Block compression/decompression utility using BGZF
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/htslib:1.23--h566b1c6_0
-- **Homepage**: https://github.com/samtools/htslib
-- **Package**: https://anaconda.org/channels/bioconda/packages/htslib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/htslib:1.23--h566b1c6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3120502054: no space left on device
-```
-
-## htslib_tabix
-
-### Tool Description
-The provided text does not contain help information for the tool. It contains system error messages related to a container runtime (Apptainer/Singularity) failing to build an image due to lack of disk space.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/htslib:1.23--h566b1c6_0
-- **Homepage**: https://github.com/samtools/htslib
-- **Package**: https://anaconda.org/channels/bioconda/packages/htslib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/htslib:1.23--h566b1c6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-1849201246: no space left on device
-```
-
-## htslib_htsfile
-
-### Tool Description
-Identify file formats and check hashes of genomic data files.
-
-### Metadata
-- **Docker Image**: quay.io/biocontainers/htslib:1.23--h566b1c6_0
-- **Homepage**: https://github.com/samtools/htslib
-- **Package**: https://anaconda.org/channels/bioconda/packages/htslib/overview
-- **Validation**: PASS
-### Original Help Text
-```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Converting OCI blobs to SIF format
-FATAL:   Unable to handle docker://quay.io/biocontainers/htslib:1.23--h566b1c6_0 uri: while building SIF from layers: unable to create new build: failed to create build parent dir: mkdir /tmp/build-temp-3971631432: no space left on device
-```
-
+- **Validation-run**: PASS

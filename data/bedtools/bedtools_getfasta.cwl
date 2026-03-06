@@ -4,10 +4,9 @@ baseCommand:
   - bedtools
   - getfasta
 label: bedtools_getfasta
-doc: "Extract DNA sequences from a fasta file based on feature coordinates.\n\nTool
-  homepage: http://bedtools.readthedocs.org/"
+doc: Extract DNA sequences from a fasta file based on feature coordinates.
 inputs:
-  - id: bed_file
+  - id: bed
     type: File
     doc: BED/GFF/VCF file of ranges to extract from -fi
     inputBinding:
@@ -22,8 +21,10 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bedOut
-  - id: fasta_file
-    type: File
+  - id: fasta
+    type:
+      - 'null'
+      - File
     doc: Input FASTA file
     inputBinding:
       position: 101
@@ -32,7 +33,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Force strandedness. If the feature occupies the antisense strand, the 
+    doc: Force strandedness. If the feature occupies the antisense, strand, the 
       sequence will be reverse complemented.
     inputBinding:
       position: 101
@@ -41,19 +42,18 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Use full fasta header. By default, only the word before the first space
-      or tab is used.
+    doc: Use full fasta header.
     inputBinding:
       position: 101
       prefix: -fullHeader
-  - id: is_rna
+  - id: name
     type:
       - 'null'
       - boolean
-    doc: The FASTA is RNA not DNA. Reverse complementation handled accordingly.
+    doc: Use the name field and coordinates for the FASTA header
     inputBinding:
       position: 101
-      prefix: -rna
+      prefix: -name
   - id: name_only
     type:
       - 'null'
@@ -62,6 +62,28 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nameOnly
+  - id: name_plus
+    type:
+      - 'null'
+      - boolean
+    doc: (deprecated) Use the name field and coordinates for the FASTA header
+    inputBinding:
+      position: 101
+      prefix: -name+
+  - id: output
+    type: string
+    doc: Output file (opt., default is STDOUT)
+    inputBinding:
+      position: 101
+      prefix: -fo
+  - id: rna
+    type:
+      - 'null'
+      - boolean
+    doc: The FASTA is RNA not DNA. Reverse complementation handled accordingly.
+    inputBinding:
+      position: 101
+      prefix: -rna
   - id: split
     type:
       - 'null'
@@ -71,7 +93,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -split
-  - id: tab_format
+  - id: tab
     type:
       - 'null'
       - boolean
@@ -79,30 +101,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: -tab
-  - id: use_name_and_coords
-    type:
-      - 'null'
-      - boolean
-    doc: Use the name field and coordinates for the FASTA header
-    inputBinding:
-      position: 101
-      prefix: -name
-  - id: use_name_and_coords_deprecated
-    type:
-      - 'null'
-      - boolean
-    doc: (deprecated) Use the name field and coordinates for the FASTA header
-    inputBinding:
-      position: 101
-      prefix: -name+
 outputs:
-  - id: output_file
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Output file (opt., default is STDOUT)
     outputBinding:
-      glob: $(inputs.output_file)
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

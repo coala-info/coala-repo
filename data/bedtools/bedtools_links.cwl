@@ -4,15 +4,13 @@ baseCommand:
   - bedtools
   - links
 label: bedtools_links
-doc: "Creates HTML links to an UCSC Genome Browser from a feature file.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Creates HTML links to an UCSC Genome Browser from a feature file.
 inputs:
   - id: base_url
     type:
       - 'null'
       - string
     doc: The browser basename.
-    default: http://genome.ucsc.edu
     inputBinding:
       position: 101
       prefix: -base
@@ -21,13 +19,12 @@ inputs:
       - 'null'
       - string
     doc: The build.
-    default: hg18
     inputBinding:
       position: 101
       prefix: -db
   - id: input_file
     type: File
-    doc: The input bed/gff/vcf file
+    doc: Input bed/gff/vcf file
     inputBinding:
       position: 101
       prefix: -i
@@ -36,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: The organism.
-    default: human
     inputBinding:
       position: 101
       prefix: -org
@@ -48,3 +44,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_links.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

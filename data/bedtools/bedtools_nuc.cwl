@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - nuc
 label: bedtools_nuc
-doc: "Profiles the nucleotide content of intervals in a fasta file.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Profiles the nucleotide content of intervals in a fasta file.
 inputs:
   - id: bed_file
     type: File
@@ -14,7 +13,9 @@ inputs:
       position: 101
       prefix: -bed
   - id: fasta_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input FASTA file
     inputBinding:
       position: 101
@@ -45,7 +46,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -pattern
-  - id: print_seq
+  - id: print_sequence
     type:
       - 'null'
       - boolean
@@ -69,3 +70,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_nuc.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

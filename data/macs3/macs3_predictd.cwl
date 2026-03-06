@@ -4,7 +4,7 @@ baseCommand:
   - macs3
   - predictd
 label: macs3_predictd
-doc: "Predict d or fragment size from alignment files\n\nTool homepage: https://pypi.org/project/MACS3/"
+doc: Predict d or fragment size from alignment files
 inputs:
   - id: buffer_size
     type:
@@ -79,6 +79,18 @@ inputs:
     inputBinding:
       position: 101
       prefix: --mfold
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
+  - id: rfile
+    type: string
+    doc: PREFIX of filename of R script for drawing X-correlation figure.
+    inputBinding:
+      position: 101
+      prefix: --rfile
   - id: tsize
     type:
       - 'null'
@@ -88,20 +100,25 @@ inputs:
       position: 101
       prefix: --tsize
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
-  - id: rfile
+  - id: output_rfile
     type:
       - 'null'
       - File
     doc: PREFIX of filename of R script for drawing X-correlation figure.
     outputBinding:
       glob: $(inputs.rfile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

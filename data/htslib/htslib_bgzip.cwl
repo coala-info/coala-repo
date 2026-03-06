@@ -2,20 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: bgzip
 label: htslib_bgzip
-doc: "Block compression/decompression utility using BGZF\n\nTool homepage: https://github.com/samtools/htslib"
+doc: Block compression/decompression utility
 inputs:
   - id: input_file
     type:
       - 'null'
-      - File
-    doc: Input file to compress or decompress
+      - type: array
+        items: File
+    doc: Input file(s) to process
     inputBinding:
       position: 1
+  - id: binary
+    type:
+      - 'null'
+      - boolean
+    doc: Don't align blocks with text lines
+    inputBinding:
+      position: 102
+      prefix: --binary
   - id: compress_level
     type:
       - 'null'
       - int
-    doc: Compression level to use [0-9]
+    doc: Compression level to use when compressing; 0 to 9, or -1 for default
+    default: -1
     inputBinding:
       position: 102
       prefix: --compress-level
@@ -23,7 +33,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Decompress
+    doc: decompress
     inputBinding:
       position: 102
       prefix: --decompress
@@ -31,7 +41,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Overwrite files without asking
+    doc: overwrite files without asking
     inputBinding:
       position: 102
       prefix: --force
@@ -39,31 +49,43 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Compress and create a BGZF index
+    doc: compress and create BGZF index
     inputBinding:
       position: 102
       prefix: --index
   - id: index_name
-    type:
-      - 'null'
-      - File
-    doc: Name of the index file
+    type: File
+    doc: name of BGZF index file [file.gz.gzi]
     inputBinding:
       position: 102
       prefix: --index-name
+  - id: keep
+    type:
+      - 'null'
+      - boolean
+    doc: don't delete input files during operation
+    inputBinding:
+      position: 102
+      prefix: --keep
   - id: offset
     type:
       - 'null'
       - int
-    doc: Decompress at virtual offset
+    doc: decompress at virtual file pointer (0-based uncompressed offset)
     inputBinding:
       position: 102
       prefix: --offset
+  - id: output
+    type: string
+    doc: write to file, keep original files unchanged
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: rebgzip
     type:
       - 'null'
       - boolean
-    doc: Use an existing index to create a new one
+    doc: use an index file to bgzip a file
     inputBinding:
       position: 102
       prefix: --rebgzip
@@ -71,7 +93,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Reindex or add index to an existing file
+    doc: (re)index compressed file
     inputBinding:
       position: 102
       prefix: --reindex
@@ -79,7 +101,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Decompress a specific number of bytes
+    doc: decompress INT bytes (uncompressed size)
     inputBinding:
       position: 102
       prefix: --size
@@ -87,7 +109,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Write on standard output, keep original files unchanged
+    doc: write on standard output, keep original files unchanged
     inputBinding:
       position: 102
       prefix: --stdout
@@ -95,7 +117,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Test integrity of compressed file
+    doc: test integrity of compressed file
     inputBinding:
       position: 102
       prefix: --test
@@ -103,15 +125,24 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Number of threads to use
+    doc: number of compression threads to use
+    default: 1
     inputBinding:
       position: 102
       prefix: --threads
 outputs:
-  - id: stdout
-    type: stdout
-    doc: Standard output
+  - id: output_output
+    type:
+      - 'null'
+      - File
+    doc: write to file, keep original files unchanged
+    outputBinding:
+      glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/htslib:1.23--h566b1c6_0
-stdout: htslib_bgzip.out
+s:url: https://github.com/samtools/htslib
+$namespaces:
+  s: https://schema.org/

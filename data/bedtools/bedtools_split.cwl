@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - split
 label: bedtools_split
-doc: "Split a Bed file.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Split a Bed file.
 inputs:
   - id: algorithm
     type:
@@ -14,30 +14,42 @@ inputs:
       to group the items so all files contain the ~ same number of bases; simple :
       route records such that each split file has approximately equal records (like
       Unix split).'
-    default: size
     inputBinding:
       position: 101
       prefix: --algorithm
-  - id: input
+  - id: input_file
     type: File
     doc: BED input file (req'd).
     inputBinding:
       position: 101
       prefix: --input
-  - id: number
+  - id: number_of_files
     type: int
     doc: Number of files to create (req'd).
     inputBinding:
       position: 101
       prefix: --number
-outputs:
   - id: prefix
+    type:
+      - 'null'
+      - string
+    doc: Output BED file prefix.
+    inputBinding:
+      position: 101
+      prefix: --prefix
+outputs:
+  - id: output_prefix
     type:
       - 'null'
       - File
     doc: Output BED file prefix.
     outputBinding:
       glob: $(inputs.prefix)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

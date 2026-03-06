@@ -4,26 +4,18 @@ baseCommand:
   - bcftools
   - index
 label: bcftools_index
-doc: "Index bgzip compressed VCF/BCF files for random access.\n\nTool homepage: https://github.com/samtools/bcftools"
+doc: Index VCF or BCF files for random access.
 inputs:
   - id: input_file
     type: File
-    doc: Input bgzip compressed VCF or BCF file
+    doc: Input VCF or BCF file
     inputBinding:
       position: 1
-  - id: all
-    type:
-      - 'null'
-      - boolean
-    doc: with --stats, print stats for all contigs even when zero
-    inputBinding:
-      position: 102
-      prefix: --all
   - id: csi
     type:
       - 'null'
       - boolean
-    doc: generate CSI-format index for VCF/BCF files [default]
+    doc: Generate CSI format index (default)
     inputBinding:
       position: 102
       prefix: --csi
@@ -31,7 +23,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: overwrite index if it already exists
+    doc: Overwrite index if it already exists
     inputBinding:
       position: 102
       prefix: --force
@@ -39,24 +31,29 @@ inputs:
     type:
       - 'null'
       - int
-    doc: set minimal interval size for CSI indices to 2^INT
-    default: 14
+    doc: Set minimum interval size for CSI indices to 2^INT
     inputBinding:
       position: 102
       prefix: --min-shift
-  - id: nrecords
+  - id: nthreads
     type:
       - 'null'
-      - boolean
-    doc: print number of records based on existing index file
+      - int
+    doc: Number of additional threads to use
     inputBinding:
       position: 102
-      prefix: --nrecords
+      prefix: --nthreads
+  - id: output_file
+    type: string
+    doc: Specify an output path for the index file
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: stats
     type:
       - 'null'
       - boolean
-    doc: print per contig stats based on existing index file
+    doc: Print per-contig stats
     inputBinding:
       position: 102
       prefix: --stats
@@ -64,35 +61,23 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: generate TBI-format index for VCF files
+    doc: Generate TBI format index
     inputBinding:
       position: 102
       prefix: --tbi
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: use multithreading with INT worker threads
-    default: 0
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: verbosity level
-    inputBinding:
-      position: 102
-      prefix: --verbosity
 outputs:
-  - id: output_file
+  - id: output_output_file
     type:
       - 'null'
       - File
-    doc: optional output index file name
+    doc: Specify an output path for the index file
     outputBinding:
       glob: $(inputs.output_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

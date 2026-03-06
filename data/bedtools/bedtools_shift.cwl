@@ -4,11 +4,11 @@ baseCommand:
   - bedtools
   - shift
 label: bedtools_shift
-doc: "Shift each feature by requested number of base pairs.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Shift each feature by requested number of base pairs.
 inputs:
   - id: genome_file
     type: File
-    doc: 'The genome file (tab delimited: <chromName><TAB><chromSize>).'
+    doc: 'Genome file (tab delimited: <chromName><TAB><chromSize>)'
     inputBinding:
       position: 101
       prefix: -g
@@ -21,8 +21,10 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type: File
-    doc: The input BED/GFF/VCF file to shift.
+    type:
+      - 'null'
+      - File
+    doc: Input BED/GFF/VCF file
     inputBinding:
       position: 101
       prefix: -i
@@ -30,8 +32,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Shift the BED/GFF/VCF entry -s base pairs. (Integer) or (Float) if used
-      with -pct.
+    doc: Shift the BED/GFF/VCF entry -s base pairs. (Integer) or (Float, e.g. 
+      0.1) if used with -pct.
     inputBinding:
       position: 101
       prefix: -s
@@ -39,8 +41,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Shift features on the - strand by -m base pairs. (Integer) or (Float) 
-      if used with -pct.
+    doc: Shift features on the - strand by -m base pairs. (Integer) or (Float, 
+      e.g. 0.1) if used with -pct.
     inputBinding:
       position: 101
       prefix: -m
@@ -48,8 +50,8 @@ inputs:
     type:
       - 'null'
       - float
-    doc: Shift features on the + strand by -p base pairs. (Integer) or (Float) 
-      if used with -pct.
+    doc: Shift features on the + strand by -p base pairs. (Integer) or (Float, 
+      e.g. 0.1) if used with -pct.
     inputBinding:
       position: 101
       prefix: -p
@@ -58,7 +60,6 @@ inputs:
       - 'null'
       - boolean
     doc: Define -s, -m and -p as a fraction of the feature's length.
-    default: false
     inputBinding:
       position: 101
       prefix: -pct
@@ -70,3 +71,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_shift.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

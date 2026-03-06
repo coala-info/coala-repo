@@ -4,15 +4,14 @@ baseCommand:
   - bedtools
   - groupby
 label: bedtools_groupby
-doc: "Summarizes a dataset column based upon common column groupings. Akin to the
-  SQL \"group by\" command.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Summarizes a dataset column based upon common column groupings. Akin to the
+  SQL "group by" command.
 inputs:
   - id: delimiter
     type:
       - 'null'
       - string
     doc: Specify a custom delimiter for the collapse operations.
-    default: ','
     inputBinding:
       position: 101
       prefix: -delim
@@ -30,7 +29,6 @@ inputs:
       - string
     doc: Specify the columns (1-based) for the grouping. The columns must be 
       comma separated.
-    default: 1,2,3
     inputBinding:
       position: 101
       prefix: -grp
@@ -66,7 +64,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -i
-  - id: op_columns
+  - id: operation_columns
     type: string
     doc: Specify the column (1-based) that should be summarized.
     inputBinding:
@@ -80,7 +78,6 @@ inputs:
       count_distinct, min, max, mean, median, mode, antimode, stdev, sstdev, 
       collapse, distinct, distinct_sort_num, distinct_sort_num_desc, concat, 
       freqdesc, freqasc, first, last).
-    default: sum
     inputBinding:
       position: 101
       prefix: -ops
@@ -97,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Sets the decimal precision for output
-    default: 5
     inputBinding:
       position: 101
       prefix: -prec
@@ -109,3 +105,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_groupby.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

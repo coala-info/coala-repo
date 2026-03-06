@@ -4,9 +4,7 @@ baseCommand:
   - bcftools
   - convert
 label: bcftools_convert
-doc: "Converts VCF/BCF to other formats and back. When specifying output files explicitly
-  instead of with PREFIX, one can use '-' for stdout and '.' to suppress.\n\nTool
-  homepage: https://github.com/samtools/bcftools"
+doc: Converts VCF/BCF to other formats and back.
 inputs:
   - id: input_file
     type: File
@@ -26,7 +24,6 @@ inputs:
       - 'null'
       - string
     doc: Columns of the input tsv file
-    default: ID,CHROM,POS,AA
     inputBinding:
       position: 102
       prefix: --columns
@@ -140,12 +137,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-version
+  - id: output
+    type: string
+    doc: Output file name
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 'u/b: un/compressed BCF, v/z: un/compressed VCF, 0-9: compression level'
-    default: v
     inputBinding:
       position: 102
       prefix: --output-type
@@ -171,7 +173,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 102
       prefix: --regions-overlap
@@ -204,7 +205,6 @@ inputs:
       - 'null'
       - string
     doc: 'Tag to take values for .gen file: GT,PL,GL,GP'
-    default: GT
     inputBinding:
       position: 102
       prefix: --tag
@@ -230,7 +230,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 0
     inputBinding:
       position: 102
       prefix: --targets-overlap
@@ -239,7 +238,6 @@ inputs:
       - 'null'
       - int
     doc: Use multithreading with INT worker threads
-    default: 0
     inputBinding:
       position: 102
       prefix: --threads
@@ -255,7 +253,7 @@ inputs:
     type:
       - 'null'
       - File
-    doc: Convert TSV file to VCF
+    doc: Convert TSV to VCF
     inputBinding:
       position: 102
       prefix: --tsv2vcf
@@ -267,14 +265,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --vcf-ids
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 102
-      prefix: --verbosity
   - id: write_index
     type:
       - 'null'
@@ -284,13 +274,18 @@ inputs:
       position: 102
       prefix: --write-index
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Output file name
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

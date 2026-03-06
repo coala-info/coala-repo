@@ -4,8 +4,8 @@ baseCommand:
   - samtools
   - stats
 label: samtools_stats
-doc: "The program collects statistics from BAM files. The output can be visualized
-  using plot-bamstats.\n\nTool homepage: https://github.com/samtools/samtools"
+doc: The program collects statistics from BAM files. The output can be 
+  visualized using plot-bamstats.
 inputs:
   - id: input_file
     type: File
@@ -25,7 +25,6 @@ inputs:
       - int
     doc: Only bases with coverage above this value will be included in the 
       target percentage computation
-    default: 0
     inputBinding:
       position: 103
       prefix: --cov-threshold
@@ -34,7 +33,6 @@ inputs:
       - 'null'
       - string
     doc: Coverage distribution min,max,step
-    default: 1,1000,1
     inputBinding:
       position: 103
       prefix: --coverage
@@ -51,7 +49,6 @@ inputs:
       - 'null'
       - string
     doc: Filtering flag, 0 for unset. See also `samtools flags`
-    default: '0'
     inputBinding:
       position: 103
       prefix: --filtering-flag
@@ -61,7 +58,6 @@ inputs:
       - float
     doc: the size of GC-depth bins (decreasing bin size increases memory 
       requirement)
-    default: 20000.0
     inputBinding:
       position: 103
       prefix: --GC-depth
@@ -88,7 +84,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum insert size
-    default: 8000
     inputBinding:
       position: 103
       prefix: --insert-size
@@ -97,7 +92,6 @@ inputs:
       - 'null'
       - float
     doc: Report only the main part of inserts
-    default: 0.99
     inputBinding:
       position: 103
       prefix: --most-inserts
@@ -106,14 +100,11 @@ inputs:
       - 'null'
       - int
     doc: Include in the statistics only reads with the given read length
-    default: -1
     inputBinding:
       position: 103
       prefix: --read-length
   - id: ref_seq
-    type:
-      - 'null'
-      - File
+    type: File?
     doc: Reference sequence (required for GC-depth and mismatches-per-cycle 
       calculation).
     inputBinding:
@@ -132,14 +123,11 @@ inputs:
       - 'null'
       - int
     doc: Reference retrival chunk size, in Mbs, for reference statistics
-    default: 1
     inputBinding:
       position: 103
       prefix: --ref-stats-chunk
   - id: reference
-    type:
-      - 'null'
-      - File
+    type: File?
     doc: Reference sequence FASTA FILE
     inputBinding:
       position: 103
@@ -162,11 +150,8 @@ inputs:
       position: 103
       prefix: --remove-overlaps
   - id: required_flag
-    type:
-      - 'null'
-      - string
+    type: string?
     doc: Required flag, 0 for unset. See also `samtools flags`
-    default: '0'
     inputBinding:
       position: 103
       prefix: --required-flag
@@ -204,9 +189,7 @@ inputs:
       position: 103
       prefix: --split-prefix
   - id: target_regions
-    type:
-      - 'null'
-      - File
+    type: File?
     doc: Do stats in these regions only. Tab-delimited file chr,from,to, 
       1-based, inclusive.
     inputBinding:
@@ -217,7 +200,6 @@ inputs:
       - 'null'
       - int
     doc: Number of additional threads to use
-    default: 0
     inputBinding:
       position: 103
       prefix: --threads
@@ -226,18 +208,9 @@ inputs:
       - 'null'
       - int
     doc: The BWA trimming parameter
-    default: 0
     inputBinding:
       position: 103
       prefix: --trim-quality
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Set level of verbosity
-    inputBinding:
-      position: 103
-      prefix: --verbosity
 outputs:
   - id: stdout
     type: stdout
@@ -246,3 +219,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
 stdout: samtools_stats.out
+s:url: https://github.com/samtools/samtools
+$namespaces:
+  s: https://schema.org/

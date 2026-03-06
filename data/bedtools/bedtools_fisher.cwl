@@ -4,18 +4,26 @@ baseCommand:
   - bedtools
   - fisher
 label: bedtools_fisher
-doc: "Calculate Fisher statistic b/w two feature files.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Calculate Fisher statistic b/w two feature files.
 inputs:
+  - id: bed_output
+    type:
+      - 'null'
+      - boolean
+    doc: If using BAM input, write output as BED.
+    inputBinding:
+      position: 101
+      prefix: -bed
   - id: diff_strand
     type:
       - 'null'
       - boolean
     doc: Require different strandedness. That is, only report hits in B that 
-      overlap A on the _opposite_ strand.
+      overlap A on the opposite strand.
     inputBinding:
       position: 101
       prefix: -S
-  - id: either
+  - id: either_fraction
     type:
       - 'null'
       - boolean
@@ -39,18 +47,22 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type: File
-    doc: Input file A (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input bed/gff/vcf file A
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
-    doc: Input file B (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input bed/gff/vcf file B
     inputBinding:
       position: 101
       prefix: -b
-  - id: io_buf
+  - id: input_buffer_size
     type:
       - 'null'
       - string
@@ -80,33 +92,19 @@ inputs:
       - 'null'
       - boolean
     doc: For sorted data, don't throw an error if the file has different naming 
-      conventions for the same chromosome.
+      conventions for the same chromosome. ex. "chr1" vs "chr01".
     inputBinding:
       position: 101
       prefix: -nonamecheck
-  - id: output_bed
-    type:
-      - 'null'
-      - boolean
-    doc: If using BAM input, write output as BED.
-    inputBinding:
-      position: 101
-      prefix: -bed
-  - id: overlap_a
-    type:
-      - 'null'
-      - float
+  - id: overlap_fraction_a
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
-  - id: overlap_b
-    type:
-      - 'null'
-      - float
+  - id: overlap_fraction_b
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
@@ -123,7 +121,7 @@ inputs:
       - 'null'
       - boolean
     doc: Require same strandedness. That is, only report hits in B that overlap 
-      A on the _same_ strand.
+      A on the same strand.
     inputBinding:
       position: 101
       prefix: -s
@@ -143,3 +141,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_fisher.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

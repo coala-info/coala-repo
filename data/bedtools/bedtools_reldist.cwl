@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - reldist
 label: bedtools_reldist
-doc: "Calculate the relative distance distribution b/w two feature files.\n\nTool
-  homepage: http://bedtools.readthedocs.org/"
+doc: Calculate the relative distance distribution b/w two feature files.
 inputs:
   - id: detail
     type:
@@ -17,13 +16,15 @@ inputs:
       prefix: -detail
   - id: input_a
     type: File
-    doc: BED/GFF/VCF file A
+    doc: Input feature file A (bed/gff/vcf)
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
-    doc: BED/GFF/VCF file B
+    type:
+      - 'null'
+      - File
+    doc: Input feature file B (bed/gff/vcf)
     inputBinding:
       position: 101
       prefix: -b
@@ -35,3 +36,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_reldist.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

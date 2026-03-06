@@ -4,8 +4,8 @@ baseCommand:
   - bedtools
   - annotate
 label: bedtools_annotate
-doc: "Annotates the depth & breadth of coverage of features from mult. files on the
-  intervals in -i.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Annotates the depth & breadth of coverage of features from multiple files 
+  on the intervals in -i.
 inputs:
   - id: both
     type:
@@ -29,13 +29,15 @@ inputs:
     type:
       type: array
       items: File
-    doc: A list of files to use for annotation.
+    doc: A list of files to use for annotating the -i file.
     inputBinding:
       position: 101
       prefix: -files
   - id: input_file
-    type: File
-    doc: The intervals to be annotated (bed/gff/vcf).
+    type:
+      - 'null'
+      - File
+    doc: Input bed/gff/vcf file to be annotated.
     inputBinding:
       position: 101
       prefix: -i
@@ -54,7 +56,7 @@ inputs:
       - 'null'
       - boolean
     doc: Require different strandedness. That is, only count overlaps on the 
-      _opposite_ strand.
+      opposite strand.
     inputBinding:
       position: 101
       prefix: -S
@@ -62,7 +64,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Require same strandedness. That is, only counts overlaps on the _same_ 
+    doc: Require same strandedness. That is, only counts overlaps on the same 
       strand.
     inputBinding:
       position: 101
@@ -75,3 +77,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_annotate.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

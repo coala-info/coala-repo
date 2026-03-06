@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - summary
 label: bedtools_summary
-doc: "Report summary statistics of the intervals in a file\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Report summary statistics of the intervals in a file
 inputs:
   - id: genome_file
     type: File
@@ -13,7 +13,9 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input intervals file (bed/gff/vcf/bam)
     inputBinding:
       position: 101
@@ -26,3 +28,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_summary.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

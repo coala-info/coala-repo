@@ -1,117 +1,122 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand:
-  - samtools
-  - fqidx
 label: samtools_fqidx
 doc: "Index and retrieve sequences from FASTQ files\n\nTool homepage: https://github.com/samtools/samtools"
+requirements:
+- class: InitialWorkDirRequirement
+  listing:
+  - entryname: $(inputs.input_file.basename)
+    entry: $(inputs.input_file)
+- class: InlineJavascriptRequirement
 inputs:
-  - id: input_file
-    type: File
-    doc: Input FASTQ file (can be gzipped)
-    inputBinding:
-      position: 1
-  - id: regions
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Region(s) to retrieve
-    inputBinding:
-      position: 2
-  - id: continue
-    type:
-      - 'null'
-      - boolean
-    doc: Continue after trying to retrieve missing region.
-    inputBinding:
-      position: 103
-      prefix: --continue
-  - id: fai_idx
-    type:
-      - 'null'
-      - File
-    doc: name of the index file (default file.fq.fai).
-    inputBinding:
-      position: 103
-      prefix: --fai-idx
-  - id: gzi_idx
-    type:
-      - 'null'
-      - File
-    doc: name of compressed file index (default file.fq.gz.gzi).
-    inputBinding:
-      position: 103
-      prefix: --gzi-idx
-  - id: length
-    type:
-      - 'null'
-      - int
-    doc: Length of FASTQ sequence line.
-    default: 60
-    inputBinding:
-      position: 103
-      prefix: --length
-  - id: mark_strand
-    type:
-      - 'null'
-      - string
-    doc: Add strand indicator to sequence name (rc, no, sign, or 
-      custom,<pos>,<neg>)
-    inputBinding:
-      position: 103
-      prefix: --mark-strand
-  - id: output_fmt_option
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Specify a single output file format option in the form of OPTION or 
-      OPTION=VALUE
-    inputBinding:
-      position: 103
-      prefix: --output-fmt-option
-  - id: region_file
-    type:
-      - 'null'
-      - File
-    doc: File of regions. Format is chr:from-to. One per line.
-    inputBinding:
-      position: 103
-      prefix: --region-file
-  - id: reverse_complement
-    type:
-      - 'null'
-      - boolean
-    doc: Reverse complement sequences.
-    inputBinding:
-      position: 103
-      prefix: --reverse-complement
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of additional threads to use
-    default: 0
-    inputBinding:
-      position: 103
-      prefix: --threads
-  - id: write_index
-    type:
-      - 'null'
-      - boolean
-    doc: Automatically index the output files
-    inputBinding:
-      position: 103
-      prefix: --write-index
+- id: input_file
+  type: File
+  doc: Input FASTQ file (can be gzipped)
+  inputBinding:
+    position: 1
+    valueFrom: $(self.basename)
+- id: regions
+  type:
+  - 'null'
+  - type: array
+    items: string
+  doc: Region(s) to retrieve
+  inputBinding:
+    position: 2
+- id: continue
+  type:
+  - 'null'
+  - boolean
+  doc: Continue after trying to retrieve missing region.
+  inputBinding:
+    position: 103
+    prefix: --continue
+- id: fai_idx
+  type:
+  - 'null'
+  - File
+  doc: name of the index file (default file.fq.fai).
+  inputBinding:
+    position: 103
+    prefix: --fai-idx
+- id: gzi_idx
+  type:
+  - 'null'
+  - File
+  doc: name of compressed file index (default file.fq.gz.gzi).
+  inputBinding:
+    position: 103
+    prefix: --gzi-idx
+- id: length
+  type:
+  - 'null'
+  - int
+  doc: Length of FASTQ sequence line.
+  default: 60
+  inputBinding:
+    position: 103
+    prefix: --length
+- id: mark_strand
+  type:
+  - 'null'
+  - string
+  doc: Add strand indicator to sequence name (rc, no, sign, or 
+    custom,<pos>,<neg>)
+  inputBinding:
+    position: 103
+    prefix: --mark-strand
+- id: output_fmt_option
+  type:
+  - 'null'
+  - type: array
+    items: string
+  doc: Specify a single output file format option in the form of OPTION or 
+    OPTION=VALUE
+  inputBinding:
+    position: 103
+    prefix: --output-fmt-option
+- id: region_file
+  type:
+  - 'null'
+  - File
+  doc: File of regions. Format is chr:from-to. One per line.
+  inputBinding:
+    position: 103
+    prefix: --region-file
+- id: reverse_complement
+  type:
+  - 'null'
+  - boolean
+  doc: Reverse complement sequences.
+  inputBinding:
+    position: 103
+    prefix: --reverse-complement
+- id: threads
+  type:
+  - 'null'
+  - int
+  doc: Number of additional threads to use
+  default: 0
+  inputBinding:
+    position: 103
+    prefix: --threads
+- id: write_index
+  type:
+  - 'null'
+  - boolean
+  doc: Automatically index the output files
+  inputBinding:
+    position: 103
+    prefix: --write-index
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
-    doc: Write FASTQ to file.
-    outputBinding:
-      glob: $(inputs.output)
+- id: output_fai
+  type: File
+  doc: The generated FASTQ index file.
+  outputBinding:
+    glob: $(inputs.input_file.basename).fai
+baseCommand:
+- samtools
+- fqidx
 hints:
-  - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0
+- class: DockerRequirement
+  dockerPull: quay.io/biocontainers/samtools:1.23--h96c455f_0

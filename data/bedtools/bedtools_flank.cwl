@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - flank
 label: bedtools_flank
-doc: "Creates flanking interval(s) for each BED/GFF/VCF feature.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Creates flanking interval(s) for each BED/GFF/VCF feature.
 inputs:
   - id: both
     type:
@@ -18,7 +17,7 @@ inputs:
       prefix: -b
   - id: genome_file
     type: File
-    doc: 'Genome file (tab delimited: <chromName><TAB><chromSize>).'
+    doc: 'Genome file (tab delimited: <chromName><TAB><chromSize>)'
     inputBinding:
       position: 101
       prefix: -g
@@ -31,8 +30,10 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type: File
-    doc: Input BED/GFF/VCF file.
+    type:
+      - 'null'
+      - File
+    doc: Input BED/GFF/VCF file
     inputBinding:
       position: 101
       prefix: -i
@@ -49,9 +50,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Define -l and -r as a fraction of the feature's length. E.g. if used on
-      a 1000bp feature, -l 0.50, will add 500 bp 'upstream'.
-    default: false
+    doc: Define -l and -r as a fraction of the feature's length.
     inputBinding:
       position: 101
       prefix: -pct
@@ -70,7 +69,6 @@ inputs:
       - boolean
     doc: Define -l and -r based on strand. E.g. if used, -l 500 for a 
       negative-stranded feature, it will start the flank 500 bp downstream.
-    default: false
     inputBinding:
       position: 101
       prefix: -s
@@ -82,3 +80,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_flank.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

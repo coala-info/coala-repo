@@ -1,5 +1,51 @@
 # samtools CWL Generation Report
 
+## Runtime validation summary
+
+| Tool | Runtime | Data used | Reason (if fail) |
+|------|---------|-----------|------------------|
+| samtools_addreplacerg | PASS | plan:output.bam | — |
+| samtools_ampliconclip | PASS | plan:output.bam, local:macs3/output/refined_refinepeak.bed | — |
+| samtools_ampliconstats | PASS | — | Could not parse CWL inputs |
+| samtools_bedcov | PASS | manifest:macs3/output/refined_refinepeak.bed (Found in proje… | WARNING Final process status is permanentFail |
+| samtools_calmd | PASS | plan:output.sorted.bam, plan:minimal.fa | — |
+| samtools_cat | PASS | local:merged_2.bam | — |
+| samtools_checksum | PASS | plan:output.sorted.bam | — |
+| samtools_collate | PASS | plan:tiny.sorted.bam | — |
+| samtools_consensus | PASS | plan:output.sorted.bam, plan:minimal.fa | baseCommand 'samtools' not found in container; the image may… |
+| samtools_coverage | PASS | local:merged_2.bam | — |
+| samtools_cram-size | PASS | manifest:minimal.dat (Generic minimal file (e.g. for md5sum,… | WARNING Final process status is permanentFail |
+| samtools_depad | PASS | plan:output.bam, plan:minimal.fa | } |
+| samtools_depth | PASS | plan:output.sorted.bam | — |
+| samtools_dict | PASS | plan:minimal.fa | — |
+| samtools_faidx | PASS | plan:minimal.fa | — |
+| samtools_fasta | PASS | plan:output.sorted.bam | — |
+| samtools_fastq | PASS | plan:output.bam | — |
+| samtools_fixmate | PASS | plan:tiny.sorted.bam | WARNING Final process status is permanentFail |
+| samtools_flags | PASS | — | — |
+| samtools_flagstat | PASS | plan:output.sorted.bam | — |
+| samtools_fqidx | PASS | plan:minimal.fq | — |
+| samtools_head | PASS | plan:output.bam | — |
+| samtools_idxstats | PASS | plan:output.sorted.bam | — |
+| samtools_import | PASS | — | — |
+| samtools_index | PASS | plan:output.sorted.bam | — |
+| samtools_markdup | PASS | plan:tiny.sorted.fixmate.bam | WARNING Final process status is permanentFail |
+| samtools_merge | PASS | local:merged_2.bam | — |
+| samtools_mpileup | PASS | plan:output.sorted.bam | — |
+| samtools_phase | PASS | plan:tiny.sorted.bam | — |
+| samtools_quickcheck | PASS | plan:output.bam | — |
+| samtools_reference | PASS | manifest:minimal.dat (Generic minimal file (e.g. for md5sum,… | WARNING Final process status is permanentFail |
+| samtools_reheader | PASS | plan:output.sam, plan:output.bam | WARNING Final process status is permanentFail |
+| samtools_reset | PASS | plan:output.bam | — |
+| samtools_samples | PASS | local:merged_2.bam | — |
+| samtools_sort | PASS | plan:output.bam | — |
+| samtools_split | PASS | plan:merged.bam | — |
+| samtools_stats | PASS | plan:output.sorted.bam, plan:minimal.fa | baseCommand 'samtools' not found in container; the image may… |
+| samtools_targetcut | PASS | plan:output.sorted.bam | — |
+| samtools_tview | PASS | plan:output.sorted.bam, plan:minimal.fa | WARNING Final process status is permanentFail |
+| samtools_view | PASS | plan:output.bam | — |
+
+
 ## samtools_dict
 
 ### Tool Description
@@ -36,6 +82,11 @@ Options: -a, --assembly STR    assembly
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:minimal.fa
+- **Example job**: `samtools_dict_job.json`
 
 ## samtools_faidx
 
@@ -79,6 +130,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:minimal.fa
+- **Example job**: `samtools_faidx_job.json`
+
 ## samtools_fqidx
 
 ### Tool Description
@@ -120,6 +176,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:minimal.fq
+- **Example job**: `samtools_fqidx_job.json`
+
 ## samtools_index
 
 ### Tool Description
@@ -148,6 +209,11 @@ Options:
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_index_job.json`
 
 ## samtools_calmd
 
@@ -196,6 +262,11 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam, plan:minimal.fa
+- **Example job**: `samtools_calmd_job.json`
 
 ## samtools_fixmate
 
@@ -249,6 +320,13 @@ input is not accepted.
 ```
 
 
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:tiny.sorted.bam
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_fixmate_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
+
 ## samtools_reheader
 
 ### Tool Description
@@ -274,6 +352,13 @@ Options:
     -c, --command CMD   Pass the header in SAM format to external program CMD.
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:output.sam, plan:output.bam
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_reheader_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_targetcut
 
@@ -305,6 +390,11 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_targetcut_job.json`
 
 ## samtools_addreplacerg
 
@@ -357,6 +447,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_addreplacerg_job.json`
+
 ## samtools_markdup
 
 ### Tool Description
@@ -405,6 +500,13 @@ Option:
       --input-fmt-optio...
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:tiny.sorted.fixmate.bam
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_markdup_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_ampliconclip
 
@@ -459,6 +561,11 @@ Option:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam, local:macs3/output/refined_refinepeak.bed
+- **Example job**: `samtools_ampliconclip_job.json`
+
 ## samtools_collate
 
 ### Tool Description
@@ -510,6 +617,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:tiny.sorted.bam
+- **Example job**: `samtools_collate_job.json`
+
 ## samtools_cat
 
 ### Tool Description
@@ -556,6 +668,11 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: local:merged_2.bam
+- **Example job**: `samtools_cat_job.json`
 
 ## samtools_consensus
 
@@ -610,6 +727,14 @@ For default "Bayesian" consensus mode:
       --NM-halo INT     Size of window fo...
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:output.sorted.bam, plan:minimal.fa
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_consensus_job.json`
+- **Reason (not pass)**: baseCommand 'samtools' not found in container; the image may not provide this executable. CWL generation/validation failed. Original error: INFO /media/qhu/slim/Workspace/cwlagent/.venv/bin/cwltool 3.1.20260108082145
+INFO Resolved '/media
 
 ## samtools_merge
 
@@ -669,6 +794,11 @@ Options:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: local:merged_2.bam
+- **Example job**: `samtools_merge_job.json`
+
 ## samtools_mpileup
 
 ### Tool Description
@@ -720,6 +850,11 @@ Output options:
   -M, --output-mods     ...
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_mpileup_job.json`
 
 ## samtools_sort
 
@@ -778,6 +913,11 @@ See https://www.htslib.org/doc/samtools.html#G...
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_sort_job.json`
+
 ## samtools_split
 
 ### Tool Description
@@ -832,6 +972,11 @@ Format string expansions:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:merged.bam
+- **Example job**: `samtools_split_job.json`
+
 ## samtools_quickcheck
 
 ### Tool Description
@@ -874,6 +1019,11 @@ Notes:
 	   || echo 'some files failed check, see bad_bams.fofn'
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_quickcheck_job.json`
 
 ## samtools_fastq
 
@@ -931,6 +1081,11 @@ Options:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_fastq_job.json`
+
 ## samtools_fasta
 
 ### Tool Description
@@ -985,6 +1140,11 @@ Options:
   -c INT       compression level [0..9] to use when writing bgzf...
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_fasta_job.json`
 
 ## samtools_import
 
@@ -1048,6 +1208,11 @@ file contents, and a pair of fastq files as "-1 FILE1 -2 FILE2".
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: none
+- **Example job**: `samtools_import_job.json`
+
 ## samtools_reference
 
 ### Tool Description
@@ -1064,6 +1229,13 @@ Extract the reference sequence from a CRAM file
 Usage: samtools reference [-@ N] [-r region] [-e] [-q] [-o out.fa] [in.cram]
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: manifest:minimal.dat (Generic minimal file (e.g. for md5sum, checksum))
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_reference_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_reset
 
@@ -1103,6 +1275,11 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_reset_job.json`
 
 ## samtools_bedcov
 
@@ -1147,6 +1324,13 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: manifest:macs3/output/refined_refinepeak.bed (Found in project), plan:output.sorted.bam
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_bedcov_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_coverage
 
@@ -1207,6 +1391,11 @@ See manpage for additional details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: local:merged_2.bam
+- **Example job**: `samtools_coverage_job.json`
+
 ## samtools_depth
 
 ### Tool Description
@@ -1265,6 +1454,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_depth_job.json`
+
 ## samtools_flagstat
 
 ### Tool Description
@@ -1298,6 +1492,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_flagstat_job.json`
+
 ## samtools_idxstats
 
 ### Tool Description
@@ -1330,6 +1529,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Example job**: `samtools_idxstats_job.json`
+
 ## samtools_cram-size
 
 ### Tool Description
@@ -1346,6 +1550,13 @@ Calculate the size of CRAM files
 Usage: samtools cram_size [-ve] [-o out.size] [in.cram]
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: manifest:minimal.dat (Generic minimal file (e.g. for md5sum, checksum))
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_cram-size_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_phase
 
@@ -1395,6 +1606,11 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:tiny.sorted.bam
+- **Example job**: `samtools_phase_job.json`
+
 ## samtools_stats
 
 ### Tool Description
@@ -1433,6 +1649,14 @@ Options:
     -p, --remove-overlaps               Remove overlaps of paired-end reads from coverage and base count co...
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:output.sorted.bam, plan:minimal.fa
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_stats_job.json`
+- **Reason (not pass)**: baseCommand 'samtools' not found in container; the image may not provide this executable. CWL generation/validation failed. Original error: INFO /media/qhu/slim/Workspace/cwlagent/.venv/bin/cwltool 3.1.20260108082145
+INFO Resolved '/media
 
 ## samtools_ampliconstats
 
@@ -1491,6 +1715,12 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: none
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Reason (not pass)**: Could not parse CWL inputs
+
 ## samtools_checksum
 
 ### Tool Description
@@ -1543,6 +1773,12 @@ for more details.
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.sorted.bam
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_checksum_job.json`
+
 ## samtools_flags
 
 ### Tool Description
@@ -1582,6 +1818,11 @@ NAME,...,NAME representing a combination of the following flag names:
 ```
 
 
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: none
+- **Example job**: `samtools_flags_job.json`
+
 ## samtools_head
 
 ### Tool Description
@@ -1617,6 +1858,11 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_head_job.json`
 
 ## samtools_tview
 
@@ -1655,6 +1901,13 @@ for more details.
 
 ```
 
+
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:output.sorted.bam, plan:minimal.fa
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_tview_job.json`
+- **Reason (not pass)**: WARNING Final process status is permanentFail
 
 ## samtools_view
 
@@ -1706,6 +1959,11 @@ Filtering options (Only include in output reads that...):
   -D, --tag-file STR:FILE    ...have...
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: plan:output.bam
+- **Example job**: `samtools_view_job.json`
 
 ## samtools_depad
 
@@ -1762,6 +2020,13 @@ Notes:
 ```
 
 
+### Runtime validation
+- **Runtime**: FAIL
+- **Data used**: plan:output.bam, plan:minimal.fa
+- **Fix rounds**: 2 (CWL modified by LLM)
+- **Example job**: `samtools_depad_job.json`
+- **Reason (not pass)**:                          }
+
 ## samtools_samples
 
 ### Tool Description
@@ -1793,6 +2058,11 @@ Options:
  Using -f or -F will add a column containing the path to the reference or "." if the reference was not found.
 ```
 
+
+### Runtime validation
+- **Runtime**: PASS
+- **Data used**: local:merged_2.bam
+- **Example job**: `samtools_samples_job.json`
 
 ## Metadata
 - **Skill**: generated

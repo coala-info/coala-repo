@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - bedtobam
 label: bedtools_bedtobam
-doc: "Converts feature records to BAM format.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Converts feature records to BAM format.
 inputs:
   - id: bed12
     type:
@@ -22,7 +22,9 @@ inputs:
       position: 101
       prefix: -g
   - id: input_file
-    type: File
+    type:
+      - 'null'
+      - File
     doc: Input bed/gff/vcf file
     inputBinding:
       position: 101
@@ -31,8 +33,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Set the mapping quality for the BAM records.
-    default: 255
+    doc: Set the mappinq quality for the BAM records.
     inputBinding:
       position: 101
       prefix: -mapq
@@ -52,3 +53,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_bedtobam.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

@@ -4,8 +4,7 @@ baseCommand:
   - bedtools
   - sample
 label: bedtools_sample
-doc: "Take sample of input file(s) using reservoir sampling algorithm.\n\nTool homepage:
-  http://bedtools.readthedocs.org/"
+doc: Take sample of input file(s) using reservoir sampling algorithm.
 inputs:
   - id: header
     type:
@@ -39,16 +38,24 @@ inputs:
     inputBinding:
       position: 101
       prefix: -nobuf
-  - id: number_of_records
+  - id: num_records
     type:
       - 'null'
       - int
     doc: The number of records to generate.
-    default: 1000000
     inputBinding:
       position: 101
       prefix: -n
-  - id: same_strandedness
+  - id: seed
+    type:
+      - 'null'
+      - int
+    doc: Supply an integer seed for the shuffling. By default, the seed is 
+      chosen automatically.
+    inputBinding:
+      position: 101
+      prefix: -seed
+  - id: strandedness
     type:
       - 'null'
       - string
@@ -58,14 +65,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
-  - id: seed
-    type:
-      - 'null'
-      - int
-    doc: Supply an integer seed for the shuffling.
-    inputBinding:
-      position: 101
-      prefix: -seed
   - id: uncompressed_bam
     type:
       - 'null'
@@ -74,7 +73,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ubam
-  - id: write_as_bed
+  - id: write_bed
     type:
       - 'null'
       - boolean
@@ -90,3 +89,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_sample.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

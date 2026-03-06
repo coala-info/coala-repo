@@ -4,9 +4,9 @@ baseCommand:
   - bedtools
   - jaccard
 label: bedtools_jaccard
-doc: "Calculate Jaccard statistic b/w two feature files. Jaccard is the length of
-  the intersection over the union. Values range from 0 (no intersection) to 1 (self
-  intersection).\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Calculate Jaccard statistic b/w two feature files. Jaccard is the length of
+  the intersection over the union. Values range from 0 (no intersection) to 1 
+  (self intersection).
 inputs:
   - id: diff_strand
     type:
@@ -25,10 +25,8 @@ inputs:
     inputBinding:
       position: 101
       prefix: -e
-  - id: genome
-    type:
-      - 'null'
-      - File
+  - id: genome_file
+    type: File
     doc: Provide a genome file to enforce consistent chromosome sort order 
       across input files. Only applies when used with -sorted option.
     inputBinding:
@@ -43,18 +41,22 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type: File
-    doc: Input file A (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input feature file A (bed/gff/vcf)
     inputBinding:
       position: 101
       prefix: -a
   - id: input_b
-    type: File
-    doc: Input file B (bed/gff/vcf)
+    type:
+      - 'null'
+      - File
+    doc: Input feature file B (bed/gff/vcf)
     inputBinding:
       position: 101
       prefix: -b
-  - id: io_buf
+  - id: input_buffer_size
     type:
       - 'null'
       - string
@@ -67,8 +69,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: Disable buffered output. Using this option will cause each line of 
-      output to be printed as it is generated, rather than saved in a buffer.
+    doc: Disable buffered output.
     inputBinding:
       position: 101
       prefix: -nobuf
@@ -89,21 +90,15 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
-  - id: overlap_a
-    type:
-      - 'null'
-      - float
+  - id: overlap_fraction_a
+    type: float
     doc: Minimum overlap required as a fraction of A.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -f
-  - id: overlap_b
-    type:
-      - 'null'
-      - float
+  - id: overlap_fraction_b
+    type: float
     doc: Minimum overlap required as a fraction of B.
-    default: '1E-9'
     inputBinding:
       position: 101
       prefix: -F
@@ -140,3 +135,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_jaccard.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

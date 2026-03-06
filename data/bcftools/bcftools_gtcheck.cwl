@@ -4,8 +4,8 @@ baseCommand:
   - bcftools
   - gtcheck
 label: bcftools_gtcheck
-doc: "Check sample identity. With no -g BCF given, multi-sample cross-check is performed.\n\
-  \nTool homepage: https://github.com/samtools/bcftools"
+doc: Check sample identity. With no -g BCF given, multi-sample cross-check is 
+  performed.
 inputs:
   - id: query_vcf
     type: File
@@ -22,9 +22,7 @@ inputs:
       position: 102
       prefix: --distinctive-sites
   - id: dry_run
-    type:
-      - 'null'
-      - boolean
+    type: boolean
     doc: Stop after first record to estimate required time
     inputBinding:
       position: 102
@@ -35,7 +33,6 @@ inputs:
       - int
     doc: Phred-scaled probability of genotyping error, 0 for faster but less 
       accurate results
-    default: 40
     inputBinding:
       position: 102
       prefix: --error-probability
@@ -86,7 +83,6 @@ inputs:
     doc: Print only top INT matches for each sample (sorted by average score), 0
       for unlimited. Use negative value to sort by HWE probability rather than 
       by discordance
-    default: 0
     inputBinding:
       position: 102
       prefix: --n-matches
@@ -98,12 +94,17 @@ inputs:
     inputBinding:
       position: 102
       prefix: --no-HWE-prob
+  - id: output
+    type: string
+    doc: Write output to a file [standard output]
+    inputBinding:
+      position: 102
+      prefix: --output
   - id: output_type
     type:
       - 'null'
       - string
     doc: 't: plain tab-delimited text output, z: compressed'
-    default: t
     inputBinding:
       position: 102
       prefix: --output-type
@@ -147,7 +148,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 1
     inputBinding:
       position: 102
       prefix: --regions-overlap
@@ -156,15 +156,15 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: List of query or -g samples, "-" to select all samples
+    doc: List of query or -g samples, "-" to select all samples (by default all 
+      samples are compared)
     inputBinding:
       position: 102
       prefix: --samples
   - id: samples_file
     type:
       - 'null'
-      - type: array
-        items: File
+      - File
     doc: File with the query or -g samples to compare
     inputBinding:
       position: 102
@@ -191,7 +191,6 @@ inputs:
       - int
     doc: Include if POS in the region (0), record overlaps (1), variant overlaps
       (2)
-    default: 0
     inputBinding:
       position: 102
       prefix: --targets-overlap
@@ -200,26 +199,22 @@ inputs:
       - 'null'
       - string
     doc: Which tag to use in the query file (TAG1) and the -g file (TAG2)
-    default: PL,GT
     inputBinding:
       position: 102
       prefix: --use
-  - id: verbosity
-    type:
-      - 'null'
-      - int
-    doc: Verbosity level
-    inputBinding:
-      position: 102
-      prefix: --verbosity
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
-    doc: Write output to a file
+    doc: Write output to a file [standard output]
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bcftools:1.23--h3a4d415_0
+s:url: https://github.com/samtools/bcftools
+$namespaces:
+  s: https://schema.org/

@@ -18,9 +18,6 @@ Report overlaps between two feature files.
 - **Stars**: N/A
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools intersect (aka intersectBed)
 Version: v2.31.1
 Summary: Report overlaps between two feature files.
@@ -69,7 +66,73 @@ Options:
 	-ubam	Write uncompressed BAM output. Default writes compressed BAM.
 
 	-s	Require same strandedness.  That is, only report hits in B
-		that ...
+		that overlap A on the _same_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-S	Require different strandedness.  That is, only report hits in B
+		that overlap A on the _opposite_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-f	Minimum overlap required as a fraction of A.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-F	Minimum overlap required as a fraction of B.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-r	Require that the fraction overlap be reciprocal for A AND B.
+		- In other words, if -f is 0.90 and -r is used, this requires
+		  that B overlap 90% of A and A _also_ overlaps 90% of B.
+
+	-e	Require that the minimum fraction be satisfied for A OR B.
+		- In other words, if -e is used with -f 0.90 and -F 0.10 this requires
+		  that either 90% of A is covered OR 10% of  B is covered.
+		  Without -e, both fractions would have to be satisfied.
+
+	-split	Treat "split" BAM or BED12 entries as distinct BED intervals.
+
+	-g	Provide a genome file to enforce consistent chromosome sort order
+		across input files. Only applies when used with -sorted option.
+
+	-nonamecheck	For sorted data, don't throw an error if the file has different naming conventions
+			for the same chromosome. ex. "chr1" vs "chr01".
+
+	-sorted	Use the "chromsweep" algorithm for sorted (-k1,1 -k2,2n) input.
+
+	-names	When using multiple databases, provide an alias for each that
+		will appear instead of a fileId when also printing the DB record.
+
+	-filenames	When using multiple databases, show each complete filename
+			instead of a fileId when also printing the DB record.
+
+	-sortout	When using multiple databases, sort the output DB hits
+			for each record.
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	(1) When a BAM file is used for the A file, the alignment is retained if overlaps exist,
+	and excluded if an overlap cannot be found.  If multiple overlaps exist, they are not
+	reported, as we are only testing for one or more overlaps.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -86,9 +149,6 @@ Examines a "window" around each feature in A and reports all features in B that 
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -144,7 +204,13 @@ Options:
 		- In other words, just report the fact >=1 hit was found.
 
 	-c	For each entry in A, report the number of overlaps with B.
-		- Reports 0 for A entries ...
+		- Reports 0 for A entries that have no overlap with B.
+		- Overlaps restricted by -w, -l, and -r.
+
+	-v	Only report those entries in A that have _no overlaps_ with B.
+		- Similar to "grep -v."
+
+	-header	Print the header from the A file prior to results.
 ```
 
 
@@ -161,9 +227,6 @@ For each feature in A, finds the closest feature (upstream or downstream) in B.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools closest (aka closestBed)
 Version: v2.31.1
 Summary: For each feature in A, finds the closest 
@@ -208,7 +271,90 @@ Options:
 		This option requires -D and follows its orientation
 		rules for determining what is "downstream".
 
-	-t	How ties for closest feature are handled.  This occurs...
+	-t	How ties for closest feature are handled.  This occurs when two
+		features in B have exactly the same "closeness" with A.
+		By default, all such features in B are reported.
+		Here are all the options:
+		- "all"    Report all ties (default).
+		- "first"  Report the first tie that occurred in the B file.
+		- "last"   Report the last tie that occurred in the B file.
+
+	-mdb	How multiple databases are resolved.
+		- "each"    Report closest records for each database (default).
+		- "all"  Report closest records among all databases.
+
+	-k	Report the k closest hits. Default is 1. If tieMode = "all", 
+		- all ties will still be reported.
+
+	-N	Require that the query and the closest hit have different names.
+		For BED, the 4th column is compared.
+
+	-s	Require same strandedness.  That is, only report hits in B
+		that overlap A on the _same_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-S	Require different strandedness.  That is, only report hits in B
+		that overlap A on the _opposite_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-f	Minimum overlap required as a fraction of A.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-F	Minimum overlap required as a fraction of B.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-r	Require that the fraction overlap be reciprocal for A AND B.
+		- In other words, if -f is 0.90 and -r is used, this requires
+		  that B overlap 90% of A and A _also_ overlaps 90% of B.
+
+	-e	Require that the minimum fraction be satisfied for A OR B.
+		- In other words, if -e is used with -f 0.90 and -F 0.10 this requires
+		  that either 90% of A is covered OR 10% of  B is covered.
+		  Without -e, both fractions would have to be satisfied.
+
+	-split	Treat "split" BAM or BED12 entries as distinct BED intervals.
+
+	-g	Provide a genome file to enforce consistent chromosome sort order
+		across input files. Only applies when used with -sorted option.
+
+	-nonamecheck	For sorted data, don't throw an error if the file has different naming conventions
+			for the same chromosome. ex. "chr1" vs "chr01".
+
+	-names	When using multiple databases, provide an alias for each that
+		will appear instead of a fileId when also printing the DB record.
+
+	-filenames	When using multiple databases, show each complete filename
+			instead of a fileId when also printing the DB record.
+
+	-sortout	When using multiple databases, sort the output DB hits
+			for each record.
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	Reports "none" for chrom and "-1" for all other fields when a feature
+	is not found in B on the same chromosome as the feature in A.
+	E.g. none	-1	-1
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -225,9 +371,6 @@ Returns the depth and breadth of coverage of features from B on the intervals in
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools coverage (aka coverageBed)
 Version: v2.31.1
 Summary: Returns the depth and breadth of coverage of features from B
@@ -280,7 +423,40 @@ Options:
 
 	-split	Treat "split" BAM or BED12 entries as distinct BED intervals.
 
-	-g	Provide a genome...
+	-g	Provide a genome file to enforce consistent chromosome sort order
+		across input files. Only applies when used with -sorted option.
+
+	-nonamecheck	For sorted data, don't throw an error if the file has different naming conventions
+			for the same chromosome. ex. "chr1" vs "chr01".
+
+	-sorted	Use the "chromsweep" algorithm for sorted (-k1,1 -k2,2n) input.
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Default Output:  
+	 After each entry in A, reports: 
+	   1) The number of features in B that overlapped the A interval.
+	   2) The number of bases in A that had non-zero coverage.
+	   3) The length of the entry in A.
+	   4) The fraction of bases in A that had non-zero coverage.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -297,9 +473,6 @@ Apply a function to a column from B intervals that overlap A.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools map (aka mapBed)
 Version: v2.31.1
 Summary: Apply a function to a column from B intervals that overlap A.
@@ -344,7 +517,61 @@ Options:
 
 	-prec	Sets the decimal precision for output (Default: 5)
 
-	-s	Require same strandedness.  That ...
+	-s	Require same strandedness.  That is, only report hits in B
+		that overlap A on the _same_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-S	Require different strandedness.  That is, only report hits in B
+		that overlap A on the _opposite_ strand.
+		- By default, overlaps are reported without respect to strand.
+
+	-f	Minimum overlap required as a fraction of A.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-F	Minimum overlap required as a fraction of B.
+		- Default is 1E-9 (i.e., 1bp).
+		- FLOAT (e.g. 0.50)
+
+	-r	Require that the fraction overlap be reciprocal for A AND B.
+		- In other words, if -f is 0.90 and -r is used, this requires
+		  that B overlap 90% of A and A _also_ overlaps 90% of B.
+
+	-e	Require that the minimum fraction be satisfied for A OR B.
+		- In other words, if -e is used with -f 0.90 and -F 0.10 this requires
+		  that either 90% of A is covered OR 10% of  B is covered.
+		  Without -e, both fractions would have to be satisfied.
+
+	-split	Treat "split" BAM or BED12 entries as distinct BED intervals.
+
+	-g	Provide a genome file to enforce consistent chromosome sort order
+		across input files. Only applies when used with -sorted option.
+
+	-nonamecheck	For sorted data, don't throw an error if the file has different naming conventions
+			for the same chromosome. ex. "chr1" vs "chr01".
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	(1) Both input files must be sorted by chrom, then start.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -361,9 +588,6 @@ Compute the coverage of a feature file among a genome.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -416,7 +640,70 @@ Options:
 
 	-pc		Calculate coverage of pair-end fragments.
 			Works for BAM files only
-	-fs		Force to use pro...
+	-fs		Force to use provided fragment size instead of read length
+			Works for BAM files only
+	-du		Change strand af the mate read (so both reads from the same strand) useful for strand specific
+			Works for BAM files only
+	-5		Calculate coverage of 5" positions (instead of entire interval).
+
+	-3		Calculate coverage of 3" positions (instead of entire interval).
+
+	-max		Combine all positions with a depth >= max into
+			a single bin in the histogram. Irrelevant
+			for -d and -bedGraph
+			- (INTEGER)
+
+	-scale		Scale the coverage by a constant factor.
+			Each coverage value is multiplied by this factor before being reported.
+			Useful for normalizing coverage by, e.g., reads per million (RPM).
+			- Default is 1.0; i.e., unscaled.
+			- (FLOAT)
+
+	-trackline	Adds a UCSC/Genome-Browser track line definition in the first line of the output.
+			- See here for more details about track line definition:
+			      http://genome.ucsc.edu/goldenPath/help/bedgraph.html
+			- NOTE: When adding a trackline definition, the output BedGraph can be easily
+			      uploaded to the Genome Browser as a custom track,
+			      BUT CAN NOT be converted into a BigWig file (w/o removing the first line).
+
+	-trackopts	Writes additional track line definition parameters in the first line.
+			- Example:
+			   -trackopts 'name="My Track" visibility=2 color=255,30,30'
+			   Note the use of single-quotes if you have spaces in your parameters.
+			- (TEXT)
+
+Notes: 
+	(1) The genome file should tab delimited and structured as follows:
+	 <chromName><TAB><chromSize>
+
+	For example, Human (hg19):
+	chr1	249250621
+	chr2	243199373
+	...
+	chr18_gl000207_random	4262
+
+	(2) The input BED (-i) file must be grouped by chromosome.
+	 A simple "sort -k 1,1 <BED> > <BED>.sorted" will suffice.
+
+	(3) The input BAM (-ibam) file must be sorted by position.
+	 A "samtools sort <BAM>" should suffice.
+
+Tip 1. Use samtools faidx to create a genome file from a FASTA: 
+	One can the samtools faidx command to index a FASTA file.
+	The resulting .fai index is suitable as a genome file, 
+	as bedtools will only look at the first two, relevant columns
+	of the .fai file.
+
+	For example:
+	samtools faidx GRCh38.fa
+	bedtools genomecov -i my.bed -g GRCh38.fa.fai
+
+Tip 2. Use UCSC Table Browser to create a genome file: 
+	One can use the UCSC Genome Browser's MySQL database to extract
+	chromosome sizes. For example, H. sapiens:
+
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
 ```
 
 
@@ -433,9 +720,6 @@ Merges overlapping BED/GFF/VCF entries into a single interval.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools merge (aka mergeBed)
 Version: v2.31.1
 Summary: Merges overlapping BED/GFF/VCF entries into a single interval.
@@ -481,7 +765,42 @@ Options:
 
 		If there is only column, but multiple operations, all operations will be
 		applied on that column. Likewise, if there is only one operation, but
-		multiple columns, ...
+		multiple columns, that operation will be applied to all columns.
+		Otherwise, the number of columns must match the the number of operations,
+		and will be applied in respective order.
+		E.g., "-c 5,4,6 -o sum,mean,count" will give the sum of column 5,
+		the mean of column 4, and the count of column 6.
+		The order of output columns will match the ordering given in the command.
+
+
+	-delim	Specify a custom delimiter for the collapse operations.
+		- Example: -delim "|"
+		- Default: ",".
+
+	-prec	Sets the decimal precision for output (Default: 5)
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	(1) The input file (-i) file must be sorted by chrom, then start.
+
+
+
+
+***** ERROR: Unrecognized parameter: -help *****
 ```
 
 
@@ -498,15 +817,8 @@ Clusters overlapping/nearby BED/GFF/VCF intervals.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
-
-*****
-*****ERROR: Need -i BED file. 
-*****
 
 Tool:    bedtools cluster
 Version: v2.31.1
@@ -523,8 +835,6 @@ Options:
 		to be merged.
 		- Def. 0. That is, overlapping & book-ended features are merged.
 		- (INTEGER)
-
-
 ```
 
 
@@ -541,9 +851,6 @@ Returns the base pair complement of a feature file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools complement (aka complementBed)
 Version: v2.31.1
 Summary: Returns the base pair complement of a feature file.
@@ -583,7 +890,7 @@ Tip 2. Use UCSC Table Browser to create a genome file:
 
 
 
-
+***** ERROR: no -g genome file provided. *****
 ```
 
 
@@ -600,9 +907,6 @@ Shift each feature by requested number of base pairs.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -664,7 +968,8 @@ Tip 2. Use UCSC Table Browser to create a genome file:
 	One can use the UCSC Genome Browser's MySQL database to extract
 	chromosome sizes. For example, H. sapiens:
 
-	mysql --user=ge...
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
 ```
 
 
@@ -681,9 +986,6 @@ Removes the portion(s) of an interval that is overlapped by another feature(s).
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools subtract (aka subtractBed)
 Version: v2.31.1
 Summary: Removes the portion(s) of an interval that is overlapped
@@ -732,7 +1034,35 @@ Options:
 		  that either 90% of A is covered OR 10% of  B is covered.
 		  Without -e, both fractions would have to be satisfied.
 
-	-split	Treat "s...
+	-split	Treat "split" BAM or BED12 entries as distinct BED intervals.
+
+	-g	Provide a genome file to enforce consistent chromosome sort order
+		across input files. Only applies when used with -sorted option.
+
+	-nonamecheck	For sorted data, don't throw an error if the file has different naming conventions
+			for the same chromosome. ex. "chr1" vs "chr01".
+
+	-sorted	Use the "chromsweep" algorithm for sorted (-k1,1 -k2,2n) input.
+
+	-bed	If using BAM input, write output as BED.
+
+	-header	Print the header from the A file prior to results.
+
+	-nobuf	Disable buffered output. Using this option will cause each line
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -749,9 +1079,6 @@ Add requested base pairs of "slop" to each feature.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -813,7 +1140,12 @@ Tip 1. Use samtools faidx to create a genome file from a FASTA:
 	samtools faidx GRCh38.fa
 	bedtools slop -b 10 -i my.bed -g GRCh38.fa.fai
 
-Tip 2. Us...
+Tip 2. Use UCSC Table Browser to create a genome file: 
+	One can use the UCSC Genome Browser's MySQL database to extract
+	chromosome sizes. For example, H. sapiens:
+
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
 ```
 
 
@@ -830,9 +1162,6 @@ Creates flanking interval(s) for each BED/GFF/VCF feature.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -891,7 +1220,20 @@ Notes:
 
 Tip 1. Use samtools faidx to create a genome file from a FASTA: 
 	One can the samtools faidx command to index a FASTA file.
-	The result...
+	The resulting .fai index is suitable as a genome file, 
+	as bedtools will only look at the first two, relevant columns
+	of the .fai file.
+
+	For example:
+	samtools faidx GRCh38.fa
+	bedtools flank -i my.bed -g GRCh38.fa.fai
+
+Tip 2. Use UCSC Table Browser to create a genome file: 
+	One can use the UCSC Genome Browser's MySQL database to extract
+	chromosome sizes. For example, H. sapiens:
+
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
 ```
 
 
@@ -908,15 +1250,8 @@ Sorts a feature file in various and useful ways.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
-
-*****
-*****ERROR: Need -i BED file. 
-*****
 
 Tool:    bedtools sort (aka sortBed)
 Version: v2.31.1
@@ -934,8 +1269,6 @@ Options:
 	-g (names.txt)	Sort according to the chromosomes declared in "genome.txt"
 	-faidx (names.txt)	Sort according to the chromosomes declared in "names.txt"
 	-header	Print the header from the A file prior to results.
-
-
 ```
 
 
@@ -952,9 +1285,6 @@ Generate random intervals among a genome.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1007,8 +1337,6 @@ Tip 2. Use UCSC Table Browser to create a genome file:
 
 	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
 	"select chrom, size from hg19.chromInfo"  > hg19.genome
-
-
 ```
 
 
@@ -1025,9 +1353,6 @@ Randomly permute the locations of a feature file among a genome.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1078,7 +1403,42 @@ Options:
 	-maxTries	
 		Max. number of attempts to find a home for a shuffled interval
 		in the presence of -incl or -excl.
-		Default = 1...
+		Default = 1000.
+	-noOverlapping	
+		Don't allow shuffled intervals to overlap.
+	-allowBeyondChromEnd	
+		Allow shuffled intervals to be relocated to a position
+		in which the entire original interval cannot fit w/o exceeding
+		the end of the chromosome.  In this case, the end coordinate of the
+		shuffled interval will be set to the chromosome's length.
+		By default, an interval's original length must be fully-contained
+		within the chromosome.
+Notes: 
+	(1)  The genome file should tab delimited and structured as follows:
+	     <chromName><TAB><chromSize>
+
+	For example, Human (hg19):
+	chr1	249250621
+	chr2	243199373
+	...
+	chr18_gl000207_random	4262
+
+Tip 1. Use samtools faidx to create a genome file from a FASTA: 
+	One can the samtools faidx command to index a FASTA file.
+	The resulting .fai index is suitable as a genome file, 
+	as bedtools will only look at the first two, relevant columns
+	of the .fai file.
+
+	For example:
+	samtools faidx GRCh38.fa
+	bedtools shift -i my.bed -l 100 -g GRCh38.fa.fai
+
+Tip 2. Use UCSC Table Browser to create a genome file: 
+	One can use the UCSC Genome Browser's MySQL database to extract
+	chromosome sizes. For example, H. sapiens:
+
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
 ```
 
 
@@ -1095,9 +1455,6 @@ Take sample of input file(s) using reservoir sampling algorithm.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools sample (aka sampleFile)
 Version: v2.31.1
 Summary: Take sample of input file(s) using reservoir sampling algorithm.
@@ -1144,7 +1501,7 @@ Notes:
 
 
 
-
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -1161,9 +1518,6 @@ Report (last col.) the gap lengths between intervals in a file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools spacing
 Version: v2.31.1
 Summary: Report (last col.) the gap lengths between intervals in a file.
@@ -1208,14 +1562,14 @@ Example:
 
 
 
-
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
 ## bedtools_annotate
 
 ### Tool Description
-Annotates the depth & breadth of coverage of features from mult. files on the intervals in -i.
+Annotates the depth & breadth of coverage of features from multiple files on the intervals in -i.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
@@ -1225,9 +1579,6 @@ Annotates the depth & breadth of coverage of features from mult. files on the in
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1259,15 +1610,13 @@ Options:
 	-S	Require different strandedness.  That is, only count overlaps
 		on the _opposite_ strand.
 		- By default, overlaps are counted without respect to strand.
-
-
 ```
 
 
 ## bedtools_multiinter
 
 ### Tool Description
-Identifies common intervals among multiple BED/GFF/VCF files.
+Identifies common intervals among multiple BED/GFF/VCF files. Requires that each interval file is sorted by chrom/start.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
@@ -1277,17 +1626,43 @@ Identifies common intervals among multiple BED/GFF/VCF files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: missing file names (-i) to combine.
+Tool:    bedtools multiinter (aka multiIntersectBed)
+Version: v2.31.1
+Summary: Identifies common intervals among multiple
+	 BED/GFF/VCF files.
 
+Usage:   bedtools multiinter [OPTIONS] -i FILE1 FILE2 .. FILEn
+	 Requires that each interval file is sorted by chrom/start. 
+
+Options: 
+	-cluster	Invoke Ryan Layers's clustering algorithm.
+
+	-header		Print a header line.
+			(chrom/start/end + names of each file).
+
+	-names		A list of names (one/file) to describe each file in -i.
+			These names will be printed in the header line.
+
+	-g		Use genome file to calculate empty regions.
+			- STRING.
+
+	-empty		Report empty regions (i.e., start/end intervals w/o
+			values in all files).
+			- Requires the '-g FILE' parameter.
+
+	-filler TEXT	Use TEXT when representing intervals having no value.
+			- Default is '0', but you can use 'N/A' or any text.
+
+	-examples	Show detailed usage examples.
+
+Error: missing file names (-i) to combine.
 ```
 
 
 ## bedtools_unionbedg
 
 ### Tool Description
-Combines multiple BedGraph files into a single file, allowing for direct comparison of coverage across multiple samples.
+Combines multiple BedGraph files into a single file, allowing coverage comparisons between them.
 
 ### Metadata
 - **Docker Image**: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
@@ -1297,10 +1672,35 @@ Combines multiple BedGraph files into a single file, allowing for direct compari
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Error: missing BedGraph file names (-i) to combine.
+Tool:    bedtools unionbedg (aka unionBedGraphs)
+Version: v2.31.1
+Summary: Combines multiple BedGraph files into a single file,
+	 allowing coverage comparisons between them.
 
+Usage:   bedtools unionbedg [OPTIONS] -i FILE1 FILE2 .. FILEn
+	 Assumes that each BedGraph file is sorted by chrom/start 
+	 and that the intervals in each are non-overlapping.
+
+Options: 
+	-header		Print a header line.
+			(chrom/start/end + names of each file).
+
+	-names		A list of names (one/file) to describe each file in -i.
+			These names will be printed in the header line.
+
+	-g		Use genome file to calculate empty regions.
+			- STRING.
+
+	-empty		Report empty regions (i.e., start/end intervals w/o
+			values in all files).
+			- Requires the '-g FILE' parameter.
+
+	-filler TEXT	Use TEXT when representing intervals having no value.
+			- Default is '0', but you can use 'N/A' or any text.
+
+	-examples	Show detailed usage examples.
+
+Error: missing BedGraph file names (-i) to combine.
 ```
 
 
@@ -1317,9 +1717,6 @@ Report overlaps between a BEDPE file and a BED/GFF/VCF file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1374,7 +1771,16 @@ Options:
 		ispan	Report overlaps between [end1, start2] of A and B.
 			- Note: If chrom1 <> chrom2, entry is ignored.
 
-		ospan	Report overlaps between [start1, end2]...
+		ospan	Report overlaps between [start1, end2] of A and B.
+			- Note: If chrom1 <> chrom2, entry is ignored.
+
+		notispan	Report A if ispan of A doesn't overlap B.
+				- Note: If chrom1 <> chrom2, entry is ignored.
+
+		notospan	Report A if ospan of A doesn't overlap B.
+				- Note: If chrom1 <> chrom2, entry is ignored.
+
+Refer to the BEDTools manual for BEDPE format.
 ```
 
 
@@ -1391,9 +1797,6 @@ Report overlaps between two paired-end BED files (BEDPE).
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1437,8 +1840,6 @@ Options:
 		- By default, same names are allowed.
 
 Refer to the BEDTools manual for BEDPE format.
-
-
 ```
 
 
@@ -1455,9 +1856,6 @@ Converts BAM alignments to BED6 or BEDPE format.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1499,8 +1897,6 @@ Options:
 		Default is (255,0,0).
 
 	-cigar	Add the CIGAR string to the BED entry as a 7th column.
-
-
 ```
 
 
@@ -1517,9 +1913,6 @@ Converts feature records to BAM format.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1544,8 +1937,6 @@ Options:
 
 Notes: 
 	(1)  BED files must be at least BED4 to create BAM (needs name field).
-
-
 ```
 
 
@@ -1562,9 +1953,6 @@ Convert BAM alignments to FASTQ files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1596,8 +1984,6 @@ Tips:
 	bedtools bamtofastq -i x.bam -fq /dev/stdout -fq2 /dev/stdout > x.ilv.fq
 
 	Also, the samtools fastq command has more fucntionality and is a useful alternative.
-
-
 ```
 
 
@@ -1614,9 +2000,6 @@ Converts feature records to BAM format.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1638,8 +2021,6 @@ Options:
 
 Notes: 
 	(1)  BED files must be at least BED4 to create BAM (needs name field).
-
-
 ```
 
 
@@ -1656,9 +2037,6 @@ Splits BED12 features into discrete BED6 features.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1670,8 +2048,6 @@ Usage:   bedtools bed12tobed6 [OPTIONS] -i <bed12>
 
 Options: 
 	-n	Force the score to be the (1-based) block number from the BED12.
-
-
 ```
 
 
@@ -1688,8 +2064,6 @@ Extract DNA sequences from a fasta file based on feature coordinates.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1718,8 +2092,6 @@ Options:
 			- By default, only the word before the first space or tab 
 			is used.
 	-rna	The FASTA is RNA not DNA. Reverse complementation handled accordingly.
-
-
 ```
 
 
@@ -1736,8 +2108,6 @@ Mask a fasta file based on feature coordinates.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1758,8 +2128,6 @@ Options:
 	-fullHeader	Use full fasta header.
 			By default, only the word before the first space or tab
 			is used.
-
-
 ```
 
 
@@ -1776,8 +2144,6 @@ Profiles the nucleotide content of intervals in a fasta file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1818,8 +2184,6 @@ Output format:
 	    10) The seq. extracted from the FASTA file. (opt., if -seq is used)
 	    11) The number of times a user's pattern was observed.
 	        (opt., if -pattern is used.)
-
-
 ```
 
 
@@ -1836,9 +2200,6 @@ Counts sequence coverage for multiple bams at specific loci.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1879,8 +2240,6 @@ Options:
 
 	-p	Only count proper pairs.  Default counts all alignments with
 		MAPQ > -q argument, regardless of the BAM FLAG field.
-
-
 ```
 
 
@@ -1897,9 +2256,6 @@ Annotates a BAM file based on overlaps with multiple BED/GFF/VCF files on the in
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -1940,8 +2296,6 @@ Options:
 
 	-intervals	Use the full interval (including name, score, and strand) to populate tags.
 			Requires the -labels option to identify from which file the interval came.
-
-
 ```
 
 
@@ -1958,9 +2312,6 @@ Calculate Jaccard statistic b/w two feature files. Jaccard is the length of the 
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools jaccard (aka jaccard)
 Version: v2.31.1
 Summary: Calculate Jaccard statistic b/w two feature files.
@@ -2008,7 +2359,23 @@ Options:
 	-header	Print the header from the A file prior to results.
 
 	-nobuf	Disable buffered output. Using this option will cause each line
-		of ou...
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	(1) Input files must be sorted by chrom, then start position.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -2025,9 +2392,6 @@ Calculate the relative distance distribution b/w two feature files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -2043,8 +2407,6 @@ Usage:   bedtools reldist [OPTIONS] -a <bed/gff/vcf> -b <bed/gff/vcf>
 
 Options: 
 	-detail	Report the relativedistance for each interval in A
-
-
 ```
 
 
@@ -2061,9 +2423,6 @@ Calculate Fisher statistic b/w two feature files.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools fisher (aka fisher)
 Version: v2.31.1
 Summary: Calculate Fisher statistic b/w two feature files.
@@ -2112,7 +2471,23 @@ Options:
 	-header	Print the header from the A file prior to results.
 
 	-nobuf	Disable buffered output. Using this option will cause each line
-		of output to be printed as it is generated, rather tha...
+		of output to be printed as it is generated, rather than saved
+		in a buffer. This will make printing large output files 
+		noticeably slower, but can be useful in conjunction with
+		other software tools and scripts that need to process one
+		line of bedtools output at a time.
+
+	-iobuf	Specify amount of memory to use for input buffer.
+		Takes an integer argument. Optional suffixes K/M/G supported.
+		Note: currently has no effect with compressed files.
+
+Notes: 
+	(1) Input files must be sorted by chrom, then start position.
+
+
+
+
+***** ERROR: No input file given. Exiting. *****
 ```
 
 
@@ -2129,11 +2504,9 @@ Computes the amount of overlap (positive values) or distance (negative values) b
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
-*****ERROR: Unrecognized parameter: --help *****
-
+*****
+*****ERROR: Please specify 4, comma-separated position columns. 
+*****
 
 Tool:    bedtools overlap (aka getOverlap)
 Version: v2.31.1
@@ -2158,7 +2531,6 @@ Example:
 	$ bedtools window -a A.bed -b B.bed -w 10 | bedtools overlap -i stdin -cols 2,3,6,7
 	chr1 10  20  A   chr1    15  25  B   5
 	chr1 10  20  C   chr1    25  35  D   -5
-
 ```
 
 
@@ -2175,9 +2547,6 @@ Creates a batch script to create IGV images at each interval defined in a BED/GF
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -2218,8 +2587,6 @@ Notes:
 	(1)  The resulting script is meant to be run from within IGV.
 	(2)  Unless you use the -sess option, it is assumed that prior to 
 		running the script, you've loaded the proper genome and tracks.
-
-
 ```
 
 
@@ -2236,9 +2603,6 @@ Creates HTML links to an UCSC Genome Browser from a feature file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -2263,7 +2627,6 @@ Example:
 	-base http://mymirror.myuniversity.edu
 	-org mouse
 	-db mm9
-
 ```
 
 
@@ -2280,8 +2643,16 @@ Makes adjacent or sliding windows across a genome or BED file.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
+*****ERROR: Unrecognized parameter: -help *****
+
+
+*****
+*****ERROR: Need -g (genome file) or -b (BED file) for interval source. 
+*****
+
+*****
+*****ERROR: Need -w (window size) or -n (number of windows). 
+*****
 
 Tool: bedtools makewindows
 Version: v2.31.1
@@ -2340,7 +2711,112 @@ Notes:
 
 Tip 1. Use samtools faidx to create a genome file from a FASTA: 
 	One can the samtools faidx command to index a FASTA file.
-	The resulting .f...
+	The resulting .fai index is suitable as a genome file, 
+	as bedtools will only look at the first two, relevant columns
+	of the .fai file.
+
+	For example:
+	samtools faidx GRCh38.fa
+	bedtools makewindows -w 100 -g GRCh38.fa.fai
+
+Tip 2. Use UCSC Table Browser to create a genome file: 
+	One can use the UCSC Genome Browser's MySQL database to extract
+	chromosome sizes. For example, H. sapiens:
+
+	mysql --user=genome --host=genome-mysql.cse.ucsc.edu -A -e \
+	"select chrom, size from hg19.chromInfo"  > hg19.genome
+
+Examples: 
+ # Divide the human genome into windows of 1MB:
+ $ bedtools makewindows -g hg19.txt -w 1000000
+ chr1 0 1000000
+ chr1 1000000 2000000
+ chr1 2000000 3000000
+ chr1 3000000 4000000
+ chr1 4000000 5000000
+ ...
+
+ # Divide the human genome into sliding (=overlapping) windows of 1MB, with 500KB overlap:
+ $ bedtools makewindows -g hg19.txt -w 1000000 -s 500000
+ chr1 0 1000000
+ chr1 500000 1500000
+ chr1 1000000 2000000
+ chr1 1500000 2500000
+ chr1 2000000 3000000
+ ...
+
+ # Divide each chromosome in human genome to 1000 windows of equal size:
+ $ bedtools makewindows -g hg19.txt -n 1000
+ chr1 0 249251
+ chr1 249251 498502
+ chr1 498502 747753
+ chr1 747753 997004
+ chr1 997004 1246255
+ ...
+
+ # Divide each interval in the given BED file into 10 equal-sized windows:
+ $ cat input.bed
+ chr5 60000 70000
+ chr5 73000 90000
+ chr5 100000 101000
+ $ bedtools makewindows -b input.bed -n 10
+ chr5 60000 61000
+ chr5 61000 62000
+ chr5 62000 63000
+ chr5 63000 64000
+ chr5 64000 65000
+ ...
+
+ # Add a name column, based on the window number: 
+ $ cat input.bed
+ chr5  60000  70000 AAA
+ chr5  73000  90000 BBB
+ chr5 100000 101000 CCC
+ $ bedtools makewindows -b input.bed -n 3 -i winnum
+ chr5        60000   63334   1
+ chr5        63334   66668   2
+ chr5        66668   70000   3
+ chr5        73000   78667   1
+ chr5        78667   84334   2
+ chr5        84334   90000   3
+ chr5        100000  100334  1
+ chr5        100334  100668  2
+ chr5        100668  101000  3
+ ...
+
+ # Reverse window numbers: 
+ $ cat input.bed
+ chr5  60000  70000 AAA
+ chr5  73000  90000 BBB
+ chr5 100000 101000 CCC
+ $ bedtools makewindows -b input.bed -n 3 -i winnum -reverse
+ chr5        60000   63334   3
+ chr5        63334   66668   2
+ chr5        66668   70000   1
+ chr5        73000   78667   3
+ chr5        78667   84334   2
+ chr5        84334   90000   1
+ chr5        100000  100334  3
+ chr5        100334  100668  2
+ chr5        100668  101000  1
+ ...
+
+ # Add a name column, based on the source ID + window number: 
+ $ cat input.bed
+ chr5  60000  70000 AAA
+ chr5  73000  90000 BBB
+ chr5 100000 101000 CCC
+ $ bedtools makewindows -b input.bed -n 3 -i srcwinnum
+ chr5        60000   63334   AAA_1
+ chr5        63334   66668   AAA_2
+ chr5        66668   70000   AAA_3
+ chr5        73000   78667   BBB_1
+ chr5        78667   84334   BBB_2
+ chr5        84334   90000   BBB_3
+ chr5        100000  100334  CCC_1
+ chr5        100334  100668  CCC_2
+ chr5        100668  101000  CCC_3
+ ...
 ```
 
 
@@ -2357,9 +2833,6 @@ Summarizes a dataset column based upon common column groupings. Akin to the SQL 
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools groupby 
 Version: v2.31.1
 Summary: Summarizes a dataset column based upon
@@ -2401,7 +2874,53 @@ Options:
 		and will be applied in respective order.
 		E.g., "-c 5,4,6 -o sum,mean,count" will give the sum of column 5,
 		the mean of column 4, and the count of column 6.
-		The order of output columns will match th...
+		The order of output columns will match the ordering given in the command.
+
+
+	-full		Print all columns from input file.  The first line in the group is used.
+			Default: print only grouped columns.
+
+	-inheader	Input file has a header line - the first line will be ignored.
+
+	-outheader	Print header line in the output, detailing the column names. 
+			If the input file has headers (-inheader), the output file
+			will use the input's column names.
+			If the input file has no headers, the output file
+			will use "col_1", "col_2", etc. as the column names.
+
+	-header		same as '-inheader -outheader'
+
+	-ignorecase	Group values regardless of upper/lower case.
+
+	-prec	Sets the decimal precision for output (Default: 5)
+
+	-delim	Specify a custom delimiter for the collapse operations.
+		- Example: -delim "|"
+		- Default: ",".
+
+Examples: 
+	$ cat ex1.out
+	chr1 10  20  A   chr1    15  25  B.1 1000    ATAT
+	chr1 10  20  A   chr1    25  35  B.2 10000   CGCG
+
+	$ groupBy -i ex1.out -g 1,2,3,4 -c 9 -o sum
+	chr1 10  20  A   11000
+
+	$ groupBy -i ex1.out -grp 1,2,3,4 -opCols 9,9 -ops sum,max
+	chr1 10  20  A   11000   10000
+
+	$ groupBy -i ex1.out -g 1,2,3,4 -c 8,9 -o collapse,mean
+	chr1 10  20  A   B.1,B.2,    5500
+
+	$ cat ex1.out | groupBy -g 1,2,3,4 -c 8,9 -o collapse,mean
+	chr1 10  20  A   B.1,B.2,    5500
+
+	$ cat ex1.out | groupBy -g 1,2,3,4 -c 10 -o concat
+	chr1 10  20  A   ATATCGCG
+
+Notes: 
+	(1)  The input file/stream should be sorted/grouped by the -grp. columns
+	(2)  If -i is unspecified, input is assumed to come from stdin.
 ```
 
 
@@ -2418,9 +2937,6 @@ Replicate lines in a file based on columns of comma-separated values.
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 *****ERROR: Unrecognized parameter: --help *****
 
 
@@ -2458,7 +2974,6 @@ Examples:
   chr1	40	50	4	40
   chr1	40	50	5	50
   chr1	40	50	6	60
-
 ```
 
 
@@ -2475,6 +2990,9 @@ Split a Bed file.
 
 ### Original Help Text
 ```text
+Error: num_chunks==0.
+
+
 Tool:    bedtools split
 Version: v2.31.1
 Summary: Split a Bed file.
@@ -2512,9 +3030,6 @@ Report summary statistics of the intervals in a file
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-
 Tool:    bedtools sammary
 Version: v2.31.1
 Summary: Report summary statistics of the intervals in a file 
@@ -2534,9 +3049,6 @@ Notes:
 
 
 
-
+***** ERROR: no -g genome file provided. *****
 ```
 
-
-## Metadata
-- **Skill**: generated

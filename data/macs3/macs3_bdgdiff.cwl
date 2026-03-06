@@ -4,8 +4,7 @@ baseCommand:
   - macs3
   - bdgdiff
 label: macs3_bdgdiff
-doc: "Differential peak detection based on paired bedGraph files\n\nTool homepage:
-  https://pypi.org/project/MACS3/"
+doc: Differential peak detection based on paired bedGraph files
 inputs:
   - id: c1_bdg
     type: File
@@ -83,6 +82,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --o-prefix
+  - id: ofile
+    type: string
+    doc: 'Output filenames. Must give three arguments in order: 1. file for unique
+      regions in condition 1; 2. file for unique regions in condition 2; 3. file for
+      common regions in both conditions. Note: mutually exclusive with --o-prefix.'
+    inputBinding:
+      position: 101
+      prefix: --ofile
+  - id: outdir
+    type: string
+    doc: If specified all output files will be written to that directory.
+    inputBinding:
+      position: 101
+      prefix: --outdir
   - id: t1_bdg
     type: File
     doc: MACS pileup bedGraph for condition 1. Incompatible with callpeak --SPMR
@@ -98,14 +111,14 @@ inputs:
       position: 101
       prefix: --t2
 outputs:
-  - id: outdir
+  - id: output_outdir
     type:
       - 'null'
       - Directory
     doc: If specified all output files will be written to that directory.
     outputBinding:
       glob: $(inputs.outdir)
-  - id: ofile
+  - id: output_ofile
     type:
       - 'null'
       - File
@@ -114,6 +127,11 @@ outputs:
       common regions in both conditions. Note: mutually exclusive with --o-prefix.'
     outputBinding:
       glob: $(inputs.ofile)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/macs3:3.0.4--py310h5a5e57a_0
+s:url: https://pypi.org/project/MACS3/
+$namespaces:
+  s: https://schema.org/

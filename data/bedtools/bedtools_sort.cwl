@@ -4,7 +4,7 @@ baseCommand:
   - bedtools
   - sort
 label: bedtools_sort
-doc: "Sorts a feature file in various and useful ways.\n\nTool homepage: http://bedtools.readthedocs.org/"
+doc: Sorts a feature file in various and useful ways.
 inputs:
   - id: chr_then_score_a
     type:
@@ -39,9 +39,7 @@ inputs:
       position: 101
       prefix: -chrThenSizeD
   - id: faidx_file
-    type:
-      - 'null'
-      - File
+    type: File
     doc: Sort according to the chromosomes declared in "names.txt"
     inputBinding:
       position: 101
@@ -63,8 +61,10 @@ inputs:
       position: 101
       prefix: -header
   - id: input_file
-    type: File
-    doc: Input bed/gff/vcf file to be sorted
+    type:
+      - 'null'
+      - File
+    doc: Input bed/gff/vcf file
     inputBinding:
       position: 101
       prefix: -i
@@ -92,3 +92,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_sort.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

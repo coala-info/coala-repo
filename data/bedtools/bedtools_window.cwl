@@ -4,9 +4,9 @@ baseCommand:
   - bedtools
   - window
 label: bedtools_window
-doc: "Examines a \"window\" around each feature in A and reports all features in B
-  that overlap the window. For each overlap the entire entry in A and B are reported.\n\
-  \nTool homepage: http://bedtools.readthedocs.org/"
+doc: Examines a "window" around each feature in A and reports all features in B 
+  that overlap the window. For each overlap the entire entry in A and B are 
+  reported.
 inputs:
   - id: count
     type:
@@ -25,9 +25,7 @@ inputs:
       position: 101
       prefix: -header
   - id: input_a
-    type:
-      - 'null'
-      - File
+    type: File
     doc: The A input file (bed/gff/vcf).
     inputBinding:
       position: 101
@@ -42,7 +40,9 @@ inputs:
       position: 101
       prefix: -abam
   - id: input_b
-    type: File
+    type:
+      - 'null'
+      - File
     doc: The B input file (bed/gff/vcf).
     inputBinding:
       position: 101
@@ -61,7 +61,6 @@ inputs:
       - int
     doc: Base pairs added upstream (left of) of each entry in A when searching 
       for overlaps in B. Allows one to define asymmetrical "windows".
-    default: 1000
     inputBinding:
       position: 101
       prefix: -l
@@ -82,13 +81,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: -bed
+  - id: report_once
+    type:
+      - 'null'
+      - boolean
+    doc: Write the original A entry _once_ if _any_ overlaps found in B.
+    inputBinding:
+      position: 101
+      prefix: -u
   - id: right_window
     type:
       - 'null'
       - int
     doc: Base pairs added downstream (right of) of each entry in A when 
       searching for overlaps in B. Allows one to define asymmetrical "windows".
-    default: 1000
     inputBinding:
       position: 101
       prefix: -r
@@ -100,7 +106,7 @@ inputs:
     inputBinding:
       position: 101
       prefix: -sm
-  - id: strand_windows
+  - id: strand_window
     type:
       - 'null'
       - boolean
@@ -117,21 +123,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: -ubam
-  - id: unique_a
-    type:
-      - 'null'
-      - boolean
-    doc: Write the original A entry _once_ if _any_ overlaps found in B.
-    inputBinding:
-      position: 101
-      prefix: -u
   - id: window_size
     type:
       - 'null'
       - int
     doc: Base pairs added upstream and downstream of each entry in A when 
       searching for overlaps in B. Creates symmetrical "windows" around A.
-    default: 1000
     inputBinding:
       position: 101
       prefix: -w
@@ -143,3 +140,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/bedtools:2.31.1--h13024bc_3
 stdout: bedtools_window.out
+s:url: http://bedtools.readthedocs.org/
+$namespaces:
+  s: https://schema.org/

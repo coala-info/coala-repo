@@ -32,3 +32,6 @@ FAIL to generate CWL: plotly not found in Docker image. The image may not provid
 
 ```
 
+
+## Metadata
+- **Skill**: generated

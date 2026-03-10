@@ -4,12 +4,6 @@ description: This tool performs differential expression analysis of RNA-Seq and 
 homepage: https://bioconductor.org/packages/3.11/bioc/html/DESeq.html
 ---
 
-
-# bioconductor-deseq
-
-name: bioconductor-deseq
-description: Differential expression analysis of RNA-Seq and other count data using the negative binomial distribution. Use this skill when you need to perform statistical analysis on biological count tables to identify differentially expressed genes, normalize sequencing data, or visualize sample relationships (PCA, heatmaps).
-
 # bioconductor-deseq
 
 ## Overview

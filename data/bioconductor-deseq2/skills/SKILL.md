@@ -1,97 +1,81 @@
 ---
 name: bioconductor-deseq2
-description: DESeq2 performs differential expression analysis of RNA-seq and other count-based data using the negative binomial distribution. Use when user asks to perform statistical inference on gene expression changes, normalize count data, estimate dispersions, or apply log fold change shrinkage.
+description: This tool performs statistical analysis of high-throughput sequencing count data to identify differentially expressed genes between experimental conditions. Use when user asks to perform differential expression analysis, estimate log fold change shrinkage, or generate variance-stabilized transformations for RNA-seq data visualization.
 homepage: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 ---
 
 
 # bioconductor-deseq2
 
-name: bioconductor-deseq2
-description: Expert guidance for differential expression analysis of RNA-seq (and other count-based) data using the DESeq2 R package. Use this skill when performing statistical inference on systematic changes between conditions, including data normalization, dispersion estimation, Wald tests, Likelihood Ratio Tests (LRT), and effect size shrinkage.
-
-# bioconductor-deseq2
-
 ## Overview
-DESeq2 is a Bioconductor package designed for differential gene expression analysis based on the negative binomial distribution. It is the industry standard for analyzing un-normalized RNA-seq read counts. The package estimates variance-mean dependence (dispersion) and uses shrinkage estimators for fold changes to improve the stability and interpretability of results, especially for genes with low counts.
+
+The `bioconductor-deseq2` skill provides a standardized framework for the statistical analysis of high-throughput sequencing count data. It is primarily used to identify systematic changes between experimental conditions while accounting for within-condition variability. This skill covers the end-to-end R-based workflow, from importing raw counts and defining experimental designs to performing statistical tests and generating shrunken fold-change estimates for robust visualization.
 
 ## Core Workflow
 
-### 1. Data Input and Object Construction
-DESeq2 requires un-normalized integer counts. The primary object is the `DESeqDataSet`.
+### 1. Data Import and Object Construction
 
-- **From Matrix**: Use when you have a count matrix and a sample metadata data frame.
-  ```R
-  dds <- DESeqDataSetFromMatrix(countData = cts, colData = coldata, design = ~ condition)
-  ```
-- **From Tximport**: Recommended for Salmon/Kallisto/RSEM outputs to account for gene length changes.
-  ```R
-  dds <- DESeqDataSetFromTximport(txi, colData = samples, design = ~ condition)
-  ```
-- **From SummarizedExperiment**:
-  ```R
-  dds <- DESeqDataSet(se, design = ~ condition)
-  ```
+DESeq2 requires un-normalized integer counts. Use the appropriate constructor based on your upstream pipeline:
+
+- **From Matrix**: Use `DESeqDataSetFromMatrix()` if you have a count matrix and a sample metadata dataframe.
+- **From tximport**: Use `DESeqDataSetFromTximport()` for transcript-level estimates (Salmon/Kallisto).
+- **From HTSeq**: Use `DESeqDataSetFromHTSeqCount()` for `.txt` count files.
+
+```r
+# Basic matrix construction
+dds <- DESeqDataSetFromMatrix(countData = cts,
+                              colData = coldata,
+                              design = ~ batch + condition)
+```
 
 ### 2. Differential Expression Analysis
-The `DESeq()` function wraps size factor estimation, dispersion estimation, and GLM fitting into one call.
 
-```R
-# Standard analysis
+The `DESeq()` function wraps size factor estimation, dispersion estimation, and the Wald test into a single call.
+
+```r
+# Run the standard pipeline
 dds <- DESeq(dds)
 
-# Access results
-res <- results(dds, name="condition_treated_vs_untreated")
-# Or using contrasts for specific comparisons
-res <- results(dds, contrast=c("condition", "level_A", "level_B"))
+# Extract results for a specific comparison
+res <- results(dds, contrast=c("condition", "treated", "untreated"))
 ```
 
 ### 3. Log Fold Change (LFC) Shrinkage
-Essential for ranking and visualization (MA-plots). It reduces noise from low-count genes.
 
-```R
-# 'apeglm' is the recommended default (requires the apeglm package)
+Shrinkage is essential for ranking and visualization (MA-plots), as it reduces noise from low-count genes. The `apeglm` method is the recommended default.
+
+```r
+# List available coefficients
+resultsNames(dds)
+
+# Apply shrinkage to a specific coefficient
 resLFC <- lfcShrink(dds, coef="condition_treated_vs_untreated", type="apeglm")
 ```
 
 ### 4. Data Transformation for Visualization
-For PCA or clustering, use transformations that stabilize variance across the dynamic range. Do NOT use these for differential testing.
 
-- **VST (Variance Stabilizing Transformation)**: Fast, recommended for large datasets (n > 30).
-  ```R
-  vsd <- vst(dds, blind=FALSE)
-  ```
-- **rlog (Regularized Log)**: Robust for small datasets (n < 30).
-  ```R
-  rld <- rlog(dds, blind=FALSE)
-  ```
+For PCA or heatmaps, use transformations that stabilize variance across the dynamic range. Do NOT use these transformed values for differential testing.
 
-## Advanced Features
+- **vst()**: Fast; recommended for large datasets (n > 30).
+- **rlog()**: Robust; recommended for smaller datasets.
 
-### Multi-factor Designs
-To control for batch effects or other covariates:
-```R
-design(dds) <- ~ batch + condition
+```r
+# Variance Stabilizing Transformation
+vsd <- vst(dds, blind=FALSE)
+
+# Principal Component Analysis
+plotPCA(vsd, intgroup=c("condition", "batch"))
 ```
 
-### Likelihood Ratio Test (LRT)
-Use for time-series or to test any change across a factor with more than two levels (ANOVA-like).
-```R
-dds <- DESeq(dds, test="LRT", reduced=~batch)
-res <- results(dds)
-```
+## Expert Tips and Best Practices
 
-### Single-Cell Recommendations
-For sparse single-cell data:
-- Use `test="LRT"`.
-- Set `useT=TRUE`, `minmu=1e-6`, and `minReplicatesForReplace=Inf`.
-- Use `fitType="glmGamPoi"` for significant speed improvements.
-
-## Tips and Best Practices
-- **Pre-filtering**: Remove rows with very low counts (e.g., `rowSums(counts(dds)) < 10`) to speed up computation and reduce memory.
-- **Factor Levels**: Ensure the reference level (e.g., "control") is set correctly using `relevel(dds$condition, ref="untreated")`.
-- **Independent Filtering**: `results()` automatically filters genes with low mean counts to optimize power; these will appear as `NA` in the `padj` column.
-- **Outliers**: Cook's distance is used to flag outliers. If a gene has an outlier, `pvalue` and `padj` will be `NA`.
+- **Factor Levels**: R assigns reference levels alphabetically by default. Explicitly set your control group using `relevel(dds$condition, ref="untreated")` before running `DESeq()`.
+- **Pre-filtering**: While not strictly required, removing rows with very low counts (e.g., `keep <- rowSums(counts(dds)) >= 10`) improves speed and reduces memory overhead.
+- **Multi-factor Designs**: Put the variable of interest at the end of the design formula (e.g., `~ batch + condition`).
+- **Independent Filtering**: `results()` automatically performs independent filtering to maximize the number of rejections at a given FDR. If you change your target alpha, specify it in the call: `results(dds, alpha=0.05)`.
+- **Outliers**: For experiments with 7+ replicates, DESeq2 automatically replaces outliers detected by Cook's distance. For smaller cohorts, genes with outliers are flagged as `NA`.
 
 ## Reference documentation
+
 - [Analyzing RNA-seq data with DESeq2](./references/DESeq2.md)
+- [DESeq2 Bioconductor Page](./references/bioconductor_org_packages_release_bioc_html_DESeq2.html.md)

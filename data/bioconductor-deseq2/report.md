@@ -18,3 +18,6 @@ the package is available on all platforms; click for details.
 - **Last updated**: 2026-02-09
 - **Stars**: N/A
 
+
+## Metadata
+- **Skill**: generated

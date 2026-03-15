@@ -4,15 +4,52 @@ baseCommand:
   - picard
   - LiftoverVcf
 label: picard_LiftoverVcf
-doc: "Lifts over a VCF file from one reference build to another, producing a properly
-  headered, sorted and indexed VCF in one go.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Lifts over a VCF file from one reference build to another, producing a 
+  properly headered, sorted and indexed VCF in one go.
 inputs:
+  - id: chain
+    type: File
+    doc: The liftover chain file. See 
+      https://genome.ucsc.edu/goldenPath/help/chain.html for a description of 
+      chain files.
+    inputBinding:
+      position: 101
+      prefix: --CHAIN
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: The input VCF/BCF file to be lifted over.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The output location for the lifted over VCF/BCF.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: reference_sequence
+    type:
+      - 'null'
+      - File
+    doc: The reference sequence (fasta) for the TARGET genome build (i.e., the 
+      new one. The fasta file must have an accompanying sequence dictionary 
+      (.dict file).
+    inputBinding:
+      position: 101
+      prefix: --REFERENCE_SEQUENCE
+  - id: reject
+    type: string
+    doc: File to which to write rejected records.
+    inputBinding:
+      position: 101
+      prefix: --REJECT
   - id: allow_missing_fields_in_header
     type:
       - 'null'
       - boolean
     doc: Allow INFO and FORMAT in the records that are not found in the header
-    default: false
     inputBinding:
       position: 101
       prefix: --ALLOW_MISSING_FIELDS_IN_HEADER
@@ -25,20 +62,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --arguments_file
-  - id: chain
-    type: File
-    doc: The liftover chain file. See 
-      https://genome.ucsc.edu/goldenPath/help/chain.html for a description of 
-      chain files.
-    inputBinding:
-      position: 101
-      prefix: --CHAIN
   - id: compression_level
     type:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -48,7 +76,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -57,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -67,22 +93,14 @@ inputs:
       - boolean
     doc: Output VCF file will be written on the fly but it won't be sorted and 
       indexed.
-    default: false
     inputBinding:
       position: 101
       prefix: --DISABLE_SORT
-  - id: input
-    type: File
-    doc: The input VCF/BCF file to be lifted over.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: liftover_min_match
     type:
       - 'null'
       - float
     doc: The minimum percent match required for a variant to be lifted.
-    default: 1.0
     inputBinding:
       position: 101
       prefix: --LIFTOVER_MIN_MATCH
@@ -92,7 +110,6 @@ inputs:
       - boolean
     doc: If true, intervals failing due to match below LIFTOVER_MIN_MATCH will 
       be logged as a warning to the console.
-    default: true
     inputBinding:
       position: 101
       prefix: --LOG_FAILED_INTERVALS
@@ -102,7 +119,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -111,7 +127,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -123,27 +138,9 @@ inputs:
       that variant is normally rejected. For bi-allelic SNPs, if this is set to 
       true and the ALT allele equals the new REF allele, the REF and ALT alleles
       will be swapped.
-    default: false
     inputBinding:
       position: 101
       prefix: --RECOVER_SWAPPED_REF_ALT
-  - id: reference_sequence
-    type: File
-    doc: The reference sequence (fasta) for the TARGET genome build (i.e., the 
-      new one. The fasta file must have an accompanying sequence dictionary 
-      (.dict file).
-    inputBinding:
-      position: 101
-      prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tags_to_drop
     type:
       - 'null'
@@ -151,7 +148,6 @@ inputs:
         items: string
     doc: INFO field annotations that should be deleted when swapping reference 
       with variant alleles.
-    default: MAX_AF
     inputBinding:
       position: 101
       prefix: --TAGS_TO_DROP
@@ -162,7 +158,6 @@ inputs:
         items: string
     doc: INFO field annotations that behave like an Allele Frequency and should 
       be transformed with x->1-x when swapping reference with variant alleles.
-    default: AF
     inputBinding:
       position: 101
       prefix: --TAGS_TO_REVERSE
@@ -182,7 +177,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -192,7 +186,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -202,25 +195,14 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
-    type:
-      - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
-    inputBinding:
-      position: 101
-      prefix: --VERBOSITY
   - id: warn_on_missing_contig
     type:
       - 'null'
       - boolean
     doc: Warn on missing contig.
-    default: false
     inputBinding:
       position: 101
       prefix: --WARN_ON_MISSING_CONTIG
@@ -229,7 +211,6 @@ inputs:
       - 'null'
       - boolean
     doc: Write the original alleles for lifted variants to the INFO field.
-    default: false
     inputBinding:
       position: 101
       prefix: --WRITE_ORIGINAL_ALLELES
@@ -239,21 +220,33 @@ inputs:
       - boolean
     doc: Write the original contig/position for lifted variants to the INFO 
       field.
-    default: false
     inputBinding:
       position: 101
       prefix: --WRITE_ORIGINAL_POSITION
+  - id: show_hidden
+    type:
+      - 'null'
+      - boolean
+    doc: display hidden arguments
+    inputBinding:
+      position: 101
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: The output location for the lifted over VCF/BCF.
     outputBinding:
       glob: $(inputs.output)
-  - id: reject
+  - id: output_reject
     type: File
     doc: File to which to write rejected records.
     outputBinding:
       glob: $(inputs.reject)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

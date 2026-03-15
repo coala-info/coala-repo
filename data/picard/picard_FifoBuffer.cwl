@@ -4,17 +4,16 @@ baseCommand:
   - picard
   - FifoBuffer
 label: picard_FifoBuffer
-doc: "Acts as a large memory buffer between processes that are connected with unix
-  pipes for the case that one or more processes produces or consumes their input or
-  output in bursts. By inserting a large memory buffer between such processes each
-  process can run at full speed and the bursts can be smoothed out by the memory buffer.\n\
-  \nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Acts as a large memory buffer between processes that are connected with 
+  unix pipes for the case that one or more processes produces or consumes their 
+  input or output in bursts. By inserting a large memory buffer between such 
+  processes each process can run at full speed and the bursts can be smoothed 
+  out by the memory buffer.
 inputs:
   - id: arguments_file
     type:
-      - 'null'
-      - type: array
-        items: File
+      type: array
+      items: File
     doc: read one or more arguments files and add them to the command line
     inputBinding:
       position: 101
@@ -24,7 +23,6 @@ inputs:
       - 'null'
       - int
     doc: The size of the memory buffer in bytes.
-    default: 536870912
     inputBinding:
       position: 101
       prefix: --BUFFER_SIZE
@@ -33,7 +31,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -43,7 +40,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -52,7 +48,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -62,7 +57,6 @@ inputs:
       - int
     doc: How frequently, in seconds, to report debugging statistics. Set to zero
       for never.
-    default: 0
     inputBinding:
       position: 101
       prefix: --DEBUG_FREQUENCY
@@ -72,7 +66,6 @@ inputs:
       - int
     doc: The size, in bytes, to read/write atomically to the input and output 
       streams.
-    default: 65536
     inputBinding:
       position: 101
       prefix: --IO_SIZE
@@ -82,7 +75,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -99,7 +91,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: true
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -111,15 +102,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -136,7 +118,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -146,7 +127,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -156,19 +136,17 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
   - id: stdout
     type: stdout
@@ -177,3 +155,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
 stdout: picard_FifoBuffer.out
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

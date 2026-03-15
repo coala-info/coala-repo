@@ -4,24 +4,29 @@ baseCommand:
   - picard
   - CollectAlignmentSummaryMetrics
 label: picard_CollectAlignmentSummaryMetrics
-doc: "Produces a summary of alignment metrics from a SAM or BAM file. This tool takes
-  a SAM/BAM file input and produces metrics detailing the quality of the read alignments
-  as well as the proportion of the reads that passed machine signal-to-noise threshold
-  quality filters.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Produces a summary of alignment metrics from a SAM or BAM file. This tool 
+  takes a SAM/BAM file input and produces metrics detailing the quality of the 
+  read alignments as well as the proportion of the reads that passed machine 
+  signal-to-noise threshold quality filters.
 inputs:
+  - id: input
+    type: File
+    doc: Input SAM/BAM/CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The file to write the output to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: adapter_sequence
     type:
       - 'null'
       - type: array
         items: string
     doc: List of adapter sequences to use when processing the alignment metrics.
-    default:
-      - AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT
-      - AGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG
-      - AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT
-      - AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG
-      - AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT
-      - AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNNNATCTCGTATGCCGTCTTCTGCTTG
     inputBinding:
       position: 101
       prefix: --ADAPTER_SEQUENCE
@@ -40,7 +45,6 @@ inputs:
       - boolean
     doc: If true (default), then the sort order in the header file will be 
       ignored.
-    default: true
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
@@ -50,7 +54,6 @@ inputs:
       - boolean
     doc: A flag to disable the collection of actual alignment information. If 
       false, tool will only count READS, PF_READS, and NOISE_READS.
-    default: true
     inputBinding:
       position: 101
       prefix: --COLLECT_ALIGNMENT_INFORMATION
@@ -59,7 +62,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -69,7 +71,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -78,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -89,23 +89,20 @@ inputs:
         items: string
     doc: Paired-end reads that do not have this expected orientation will be 
       considered chimeric.
-    default:
-      - FR
     inputBinding:
       position: 101
       prefix: --EXPECTED_PAIR_ORIENTATIONS
-  - id: input
-    type: File
-    doc: Input SAM/BAM/CRAM file.
+  - id: histogram_file
+    type: string
+    doc: If Provided, file to write read-length chart pdf.
     inputBinding:
       position: 101
-      prefix: --INPUT
+      prefix: --HISTOGRAM_FILE
   - id: is_bisulfite_sequenced
     type:
       - 'null'
       - boolean
     doc: Whether the SAM or BAM file consists of bisulfite sequenced reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --IS_BISULFITE_SEQUENCED
@@ -115,7 +112,6 @@ inputs:
       - int
     doc: Paired-end reads above this insert size will be considered chimeric 
       along with inter-chromosomal pairs.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --MAX_INSERT_SIZE
@@ -125,7 +121,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -135,8 +130,6 @@ inputs:
       - type: array
         items: string
     doc: The level(s) at which to accumulate metrics.
-    default:
-      - ALL_READS
     inputBinding:
       position: 101
       prefix: --METRIC_ACCUMULATION_LEVEL
@@ -145,7 +138,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -159,21 +151,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: stop_after
     type:
       - 'null'
       - int
     doc: Stop after processing N reads, mainly for debugging.
-    default: 0
     inputBinding:
       position: 101
       prefix: --STOP_AFTER
@@ -193,7 +175,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -203,7 +184,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -212,32 +192,35 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for all SAM files read by this program.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: The file to write the output to.
     outputBinding:
       glob: $(inputs.output)
-  - id: histogram_file
+  - id: output_histogram_file
     type:
       - 'null'
       - File
     doc: If Provided, file to write read-length chart pdf.
     outputBinding:
       glob: $(inputs.histogram_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

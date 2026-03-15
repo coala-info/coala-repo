@@ -4,11 +4,17 @@ baseCommand:
   - picard
   - CreateSequenceDictionary
 label: picard_CreateSequenceDictionary
-doc: "Creates a sequence dictionary for a reference sequence. This tool creates a
-  sequence dictionary file (with \".dict\" extension) from a reference sequence provided
-  in FASTA format, which is required by many processing and analysis tools.\n\nTool
-  homepage: http://broadinstitute.github.io/picard/"
+doc: Creates a sequence dictionary for a reference sequence. This tool creates a
+  sequence dictionary file (with ".dict" extension) from a reference sequence 
+  provided in FASTA format, which is required by many processing and analysis 
+  tools.
 inputs:
+  - id: reference
+    type: File
+    doc: Input reference fasta or fasta.gz
+    inputBinding:
+      position: 101
+      prefix: --REFERENCE
   - id: alt_names
     type:
       - 'null'
@@ -33,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -43,7 +48,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -52,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -70,7 +73,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -79,34 +81,24 @@ inputs:
       - 'null'
       - int
     doc: Stop after writing this many sequences. For testing.
-    default: 2147483647
     inputBinding:
       position: 101
       prefix: --NUM_SEQUENCES
+  - id: output
+    type: string
+    doc: Output SAM file containing only the sequence dictionary. By default it 
+      will use the base name of the input reference with the .dict extension
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
-  - id: reference
-    type: File
-    doc: Input reference fasta or fasta.gz
-    inputBinding:
-      position: 101
-      prefix: --REFERENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: species
     type:
       - 'null'
@@ -130,7 +122,6 @@ inputs:
       - 'null'
       - boolean
     doc: Make sequence name the first word from the > line in the fasta file.
-    default: true
     inputBinding:
       position: 101
       prefix: --TRUNCATE_NAMES_AT_WHITESPACE
@@ -149,7 +140,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -159,7 +149,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -169,21 +158,19 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
@@ -191,6 +178,11 @@ outputs:
       will use the base name of the input reference with the .dict extension
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

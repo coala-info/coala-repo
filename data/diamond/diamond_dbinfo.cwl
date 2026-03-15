@@ -1,17 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diamond dbinfo
+baseCommand:
+  - diamond
+  - dbinfo
 label: diamond_dbinfo
-doc: "Display information about a DIAMOND database file\n\nTool homepage: https://github.com/bbuchfink/diamond"
+doc: Display information about a DIAMOND database file
 inputs:
-  - id: db
+  - id: threads
     type:
       - 'null'
-      - File
-    doc: database file
+      - int
+    doc: number of CPU threads
     inputBinding:
       position: 101
-      prefix: --db
+      prefix: --threads
   - id: log
     type:
       - 'null'
@@ -28,14 +30,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of CPU threads
-    inputBinding:
-      position: 101
-      prefix: --threads
   - id: tmpdir
     type:
       - 'null'
@@ -44,19 +38,20 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmpdir
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: verbose console output
+  - id: db
+    type: File
+    doc: database file
     inputBinding:
       position: 101
-      prefix: --verbose
+      prefix: --db
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/diamond:2.1.21--h13889ed_0
+    dockerPull: quay.io/biocontainers/diamond:2.1.24--hf93d47f_0
 stdout: diamond_dbinfo.out
+s:url: https://github.com/bbuchfink/diamond
+$namespaces:
+  s: https://schema.org/

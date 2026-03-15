@@ -4,22 +4,81 @@ baseCommand:
   - picard
   - IlluminaBasecallsToSam
 label: picard_IlluminaBasecallsToSam
-doc: "Transforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM file.
-  The IlluminaBaseCallsToSam program collects, demultiplexes, and sorts reads across
-  all of the tiles of a lane via barcode to produce an unmapped SAM, BAM or CRAM file.\n\
-  \nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Transforms raw Illumina sequencing data into an unmapped SAM, BAM or CRAM 
+  file. The IlluminaBaseCallsToSam program collects, demultiplexes, and sorts 
+  reads across all of the tiles of a lane via barcode to produce an unmapped 
+  SAM, BAM or CRAM file.
 inputs:
+  - id: barcode_params
+    type: File
+    doc: Deprecated (use LIBRARY_PARAMS). Tab-separated file for creating all 
+      output SAM, BAM or CRAM files for barcoded run with single 
+      IlluminaBasecallsToSam invocation.
+    inputBinding:
+      position: 101
+      prefix: --BARCODE_PARAMS
+  - id: basecalls_dir
+    type:
+      - 'null'
+      - Directory
+    doc: The Illumina basecalls directory.
+    inputBinding:
+      position: 101
+      prefix: --BASECALLS_DIR
+  - id: lane
+    type:
+      type: array
+      items: int
+    doc: Lane number. This can be specified multiple times.
+    inputBinding:
+      position: 101
+      prefix: --LANE
+  - id: library_params
+    type:
+      - 'null'
+      - File
+    doc: Tab-separated file for creating all output SAM, BAM or CRAM files for a
+      lane with single IlluminaBasecallsToSam invocation.
+    inputBinding:
+      position: 101
+      prefix: --LIBRARY_PARAMS
+  - id: output
+    type: string
+    doc: Deprecated (use LIBRARY_PARAMS). The output SAM, BAM or CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: read_structure
+    type: string
+    doc: A description of the logical structure of clusters in an Illumina Run.
+    inputBinding:
+      position: 101
+      prefix: --READ_STRUCTURE
+  - id: run_barcode
+    type: string
+    doc: The barcode of the run. Prefixed to read names.
+    inputBinding:
+      position: 101
+      prefix: --RUN_BARCODE
+  - id: sample_alias
+    type: string
+    doc: Deprecated (use LIBRARY_PARAMS). The name of the sequenced sample.
+    inputBinding:
+      position: 101
+      prefix: --SAMPLE_ALIAS
+  - id: sequencing_center
+    type: string
+    doc: The name of the sequencing center that produced the reads. Used to set 
+      the @RG->CN header tag.
+    inputBinding:
+      position: 101
+      prefix: --SEQUENCING_CENTER
   - id: adapters_to_check
     type:
       - 'null'
       - type: array
         items: string
     doc: Which adapters to look for in the read.
-    default:
-      - INDEXED
-      - DUAL_INDEXED
-      - NEXTERA_V2
-      - FLUIDIGM
     inputBinding:
       position: 101
       prefix: --ADAPTERS_TO_CHECK
@@ -29,7 +88,6 @@ inputs:
       - boolean
     doc: Apply EAMSS filtering to identify inappropriately quality scored bases 
       towards the ends of reads.
-    default: true
     inputBinding:
       position: 101
       prefix: --APPLY_EAMSS_FILTER
@@ -42,21 +100,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --arguments_file
-  - id: barcode_params
-    type: File
-    doc: Deprecated (use LIBRARY_PARAMS). Tab-separated file for creating all 
-      output SAM, BAM or CRAM files for barcoded run with single 
-      IlluminaBasecallsToSam invocation.
-    inputBinding:
-      position: 101
-      prefix: --BARCODE_PARAMS
   - id: barcode_population_strategy
     type:
       - 'null'
       - string
     doc: When should the sample barcode (as read by the sequencer) be placed on 
       the reads in the BC tag?
-    default: ORPHANS_ONLY
     inputBinding:
       position: 101
       prefix: --BARCODE_POPULATION_STRATEGY
@@ -69,19 +118,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --BARCODES_DIR
-  - id: basecalls_dir
-    type: Directory
-    doc: The Illumina basecalls directory.
-    inputBinding:
-      position: 101
-      prefix: --BASECALLS_DIR
   - id: compress_outputs
     type:
       - 'null'
       - boolean
     doc: Compress output FASTQ files using gzip and append a .gz extension to 
       the file names.
-    default: false
     inputBinding:
       position: 101
       prefix: --COMPRESS_OUTPUTS
@@ -90,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -100,7 +141,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -109,7 +149,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -119,7 +158,6 @@ inputs:
       - string
     doc: The distance metric that should be used to compare the barcode-reads 
       and the provided barcodes.
-    default: HAMMING
     inputBinding:
       position: 101
       prefix: --DISTANCE_MODE
@@ -144,7 +182,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to ignore reads whose barcodes are not found in LIBRARY_PARAMS.
-    default: false
     inputBinding:
       position: 101
       prefix: --IGNORE_UNEXPECTED_BARCODES
@@ -154,7 +191,6 @@ inputs:
       - boolean
     doc: Should the barcode quality be included when the sample barcode is 
       included?
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_BARCODE_QUALITY
@@ -163,7 +199,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to include the barcode information in the @RG->BC header tag.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_BC_IN_RG_TAG
@@ -172,7 +207,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to include non-PF reads
-    default: true
     inputBinding:
       position: 101
       prefix: --INCLUDE_NON_PF_READS
@@ -184,14 +218,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --INPUT_PARAMS_FILE
-  - id: lane
-    type:
-      type: array
-      items: int
-    doc: Lane number. This can be specified multiple times.
-    inputBinding:
-      position: 101
-      prefix: --LANE
   - id: library_name
     type:
       - 'null'
@@ -200,20 +226,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --LIBRARY_NAME
-  - id: library_params
-    type: File
-    doc: Tab-separated file for creating all output SAM, BAM or CRAM files for a
-      lane with single IlluminaBasecallsToSam invocation.
-    inputBinding:
-      position: 101
-      prefix: --LIBRARY_PARAMS
   - id: match_barcodes_inline
     type:
       - 'null'
       - boolean
     doc: If true, match barcodes on the fly. Otherwise parse the barcodes from 
       the barcodes file.
-    default: false
     inputBinding:
       position: 101
       prefix: --MATCH_BARCODES_INLINE
@@ -222,7 +240,6 @@ inputs:
       - 'null'
       - int
     doc: Maximum mismatches for a barcode to be considered a match.
-    default: 1
     inputBinding:
       position: 101
       prefix: --MAX_MISMATCHES
@@ -232,7 +249,6 @@ inputs:
       - int
     doc: Maximum allowable number of no-calls in a barcode read before it is 
       considered unmatchable.
-    default: 2
     inputBinding:
       position: 101
       prefix: --MAX_NO_CALLS
@@ -242,17 +258,21 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
+  - id: metrics_file
+    type: string
+    doc: Per-barcode and per-lane metrics written to this file.
+    inputBinding:
+      position: 101
+      prefix: --METRICS_FILE
   - id: min_mismatch_delta
     type:
       - 'null'
       - int
     doc: Minimum difference between number of mismatches in the best and second 
       best barcodes for a barcode to be considered a match.
-    default: 1
     inputBinding:
       position: 101
       prefix: --MIN_MISMATCH_DELTA
@@ -262,7 +282,6 @@ inputs:
       - int
     doc: Minimum base quality. Any barcode bases falling below this quality will
       be considered a mismatch even if the bases match.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MINIMUM_BASE_QUALITY
@@ -271,7 +290,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum quality (after transforming 0s to 1s) expected from reads.
-    default: 2
     inputBinding:
       position: 101
       prefix: --MINIMUM_QUALITY
@@ -280,7 +298,6 @@ inputs:
       - 'null'
       - string
     doc: The tag to use to store any molecular index base qualities.
-    default: QX
     inputBinding:
       position: 101
       prefix: --MOLECULAR_INDEX_BASE_QUALITY_TAG
@@ -289,7 +306,6 @@ inputs:
       - 'null'
       - string
     doc: The tag to use to store any molecular indexes.
-    default: RX
     inputBinding:
       position: 101
       prefix: --MOLECULAR_INDEX_TAG
@@ -298,7 +314,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads to run in parallel.
-    default: 0
     inputBinding:
       position: 101
       prefix: --NUM_PROCESSORS
@@ -307,7 +322,6 @@ inputs:
       - 'null'
       - string
     doc: The name of the sequencing technology that produced the read.
-    default: ILLUMINA
     inputBinding:
       position: 101
       prefix: --PLATFORM
@@ -325,7 +339,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -337,12 +350,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --READ_GROUP_ID
-  - id: read_structure
-    type: string
-    doc: A description of the logical structure of clusters in an Illumina Run.
-    inputBinding:
-      position: 101
-      prefix: --READ_STRUCTURE
   - id: reference_sequence
     type:
       - 'null'
@@ -351,40 +358,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: run_barcode
-    type: string
-    doc: The barcode of the run. Prefixed to read names.
-    inputBinding:
-      position: 101
-      prefix: --RUN_BARCODE
-  - id: sample_alias
-    type: string
-    doc: Deprecated (use LIBRARY_PARAMS). The name of the sequenced sample
-    inputBinding:
-      position: 101
-      prefix: --SAMPLE_ALIAS
-  - id: sequencing_center
-    type: string
-    doc: The name of the sequencing center that produced the reads.
-    inputBinding:
-      position: 101
-      prefix: --SEQUENCING_CENTER
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sort
     type:
       - 'null'
       - boolean
     doc: If true, the output records are sorted by read name. Otherwise they are
       unsorted.
-    default: true
     inputBinding:
       position: 101
       prefix: --SORT
@@ -429,7 +408,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -439,7 +417,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -448,32 +425,35 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for all SAM files read by this program.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Deprecated (use LIBRARY_PARAMS). The output SAM, BAM or CRAM file.
     outputBinding:
       glob: $(inputs.output)
-  - id: metrics_file
+  - id: output_metrics_file
     type:
       - 'null'
       - File
     doc: Per-barcode and per-lane metrics written to this file.
     outputBinding:
       glob: $(inputs.metrics_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

@@ -1,6 +1,6 @@
 ---
 name: meme
-description: The MEME Suite discovers novel motifs and analyzes known patterns within DNA, RNA, or protein sequences. Use when user asks to discover ungapped motifs, search for known motifs in new sequences, or perform motif enrichment analysis.
+description: "MEME discovers novel motifs in sets of related DNA, RNA, or protein sequences. Use when user asks to discover novel patterns, identify regulatory elements, or find conserved protein domains in biological sequence data."
 homepage: https://meme-suite.org
 ---
 
@@ -8,82 +8,83 @@ homepage: https://meme-suite.org
 # meme
 
 ## Overview
-The MEME Suite is a collection of tools designed for the analysis of sequence motifs. It is primarily used to discover novel, ungapped patterns in sets of related sequences (MEME, STREME), search for known motifs in new sequences (FIMO, MAST), and determine if specific motifs are enriched in a dataset relative to a control (AME, CentriMo). It supports DNA, RNA, and protein sequences and is a standard in bioinformatics for studying transcription factor binding sites and protein domains.
 
-## Core Tool Workflows
+The MEME Suite is a comprehensive toolkit for motif-based sequence analysis. It is used to discover novel patterns (motifs) in sets of related DNA, RNA, or protein sequences, search for known motifs within new sequences, and determine the statistical enrichment of motifs in specific datasets. This skill should be used when you need to process biological sequence data to identify regulatory elements, binding sites, or conserved protein domains.
 
-### 1. Motif Discovery with MEME
-Use `meme` for discovery in smaller datasets or when precise statistical modeling of motif distribution is required.
+## Core Tool Selection
 
-*   **Distribution Models (`-mod`):**
-    *   `oops`: One Occurrence Per Sequence. Fastest, but sensitive to "noise" sequences without the motif.
-    *   `zoops`: Zero or One Occurrence Per Sequence. Best for most discovery tasks where the motif might not be in every sequence.
-    *   `anr`: Any Number of Repetitions. Use for finding repeats or motifs that appear multiple times per sequence.
-*   **Common CLI Pattern:**
-    ```bash
-    meme sequences.fasta -dna -mod zoops -nmotifs 3 -minw 6 -maxw 15 -oc output_dir
-    ```
-*   **Expert Tip:** Use `-revcomp` for DNA sequences unless the motif is known to be strand-specific (e.g., RNA-binding protein sites).
+Choose the specific tool based on the analytical goal:
 
-### 2. Rapid Discovery with STREME
-Use `streme` for large datasets (e.g., ChIP-seq peaks) where `meme` would be too slow. It is designed to find motifs enriched in a primary set relative to a control set.
-
-*   **Common CLI Pattern:**
-    ```bash
-    streme --p primary.fasta --n control.fasta --dna --minw 8 --maxw 15 --oc streme_out
-    ```
-*   **Expert Tip:** If no control file is provided, STREME will automatically generate one by shuffling the primary sequences.
-
-### 3. Motif Scanning with FIMO
-Use `fimo` to locate occurrences of known motifs (in MEME format) within a genome or sequence set.
-
-*   **Common CLI Pattern:**
-    ```bash
-    fimo --thresh 1e-4 --oc fimo_out motifs.meme sequences.fasta
-    ```
-*   **Expert Tip:** The default p-value threshold is `1e-4`. For large genomes, consider a more stringent threshold (e.g., `1e-6`) to reduce false positives.
-
-### 4. Enrichment Analysis (AME & CentriMo)
-*   **AME:** Tests for general enrichment of motifs anywhere in the sequences.
-    ```bash
-    ame --control control.fasta primary.fasta motif_database.meme
-    ```
-*   **CentriMo:** Tests for local enrichment, specifically looking for motifs clustered in the center of sequences (ideal for ChIP-seq).
-    ```bash
-    centrimo --oc centrimo_out sequences.fasta motif_database.meme
-    ```
+- **Motif Discovery**:
+  - `meme`: Best for small to medium datasets where high sensitivity is required.
+  - `streme`: Optimized for large datasets (e.g., ChIP-seq) and identifies motifs of varying lengths quickly.
+  - `dreme`: Specifically for short motifs in large DNA datasets.
+- **Motif Scanning (Searching)**:
+  - `fimo`: Finds individual occurrences of motifs in a sequence database.
+  - `mast`: Searches a sequence database for matches to a set of motifs, treating the motifs as a group.
+  - `mcast`: Searches for clusters of motifs.
+- **Enrichment Analysis**:
+  - `ame`: Tests a set of sequences for enrichment of known motifs from a database.
+  - `centrimo`: Identifies motifs that are locally enriched (e.g., in the center of ChIP-seq peaks).
+- **Comparison & Conversion**:
+  - `tomtom`: Compares discovered motifs against databases of known motifs (like JASPAR or HOCOMOCO).
+  - `bed2fasta`: Converts genomic coordinates (BED) into sequence files (FASTA) for analysis.
 
 ## Input Format Requirements
 
 ### FASTA Sequences
-*   Must be plain text.
-*   Sequence IDs must follow the `>` character without whitespace.
-*   For `meme`, use the `-dna`, `-rna`, or `-protein` flags to specify the alphabet.
+- Must be plain text.
+- Header line starts with `>` followed by an ID.
+- Sequences can be DNA, RNA, or Protein.
 
-### MEME Motif Format
-*   A minimal MEME file requires: `MEME version`, `ALPHABET`, and a `MOTIF` line followed by a `letter-probability matrix`.
-*   **Example Minimal Header:**
-    ```text
-    MEME version 5
-    ALPHABET= ACGT
-    strands: + -
-    Background letter frequencies
-    A 0.25 C 0.25 G 0.25 T 0.25
-    ```
+### BED Files (Genomic Loci)
+- Tab-delimited plain text.
+- Required fields: `chrom`, `chromStart` (0-indexed), `chromEnd`.
+- Optional field 6 (`strand`) is used by many MEME tools to determine orientation.
 
-## Expert Best Practices
-*   **Sequence Length:** For ChIP-seq discovery, use centered 100bp-200bp regions. Longer sequences increase noise and computation time.
-*   **Background Models:** Use `fasta-get-markov` to create a background model from your specific genome/organism. This significantly improves the accuracy of p-values and E-values.
-    ```bash
-    fasta-get-markov -m 1 < genome.fasta > genome.bg
-    meme sequences.fasta -bg genome.bg [options]
-    ```
-*   **Handling RNA:** When using RNA, convert `U` to `T` or ensure the tool is explicitly set to RNA mode. Many MEME tools treat RNA as DNA internally but ignore the reverse strand if specified.
+### Minimal MEME Motif Format
+If creating a motif file manually, it must follow this structure:
+1. **Version**: `MEME version 5` (or current version).
+2. **Alphabet**: `ALPHABET= ACGT` (DNA), `ACGU` (RNA), or `ACDEFGHIKLMNPQRSTVWY` (Protein).
+3. **Background**: `Background letter frequencies` (e.g., `A 0.25 C 0.25 G 0.25 T 0.25`).
+4. **Motif Header**: `MOTIF [Identifier] [Alternate Name]`.
+5. **Matrix**: `letter-probability matrix:` followed by rows of probabilities summing to 1.
+
+## CLI Best Practices
+
+- **Installation**: Use Conda for the most stable environment: `conda install bioconda::meme`.
+- **Output Directories**: Most tools use the `-o <dir>` (overwrite) or `-oc <dir>` (create if missing) flags. Always specify an output directory to avoid cluttering the workspace.
+- **Background Models**: For better statistical accuracy, provide a background model file (`--bgfile`) that reflects the global composition of the genome or organism being studied.
+- **Parallelization**: For `meme`, use the `-p <n>` flag to specify the number of processors for parallel execution.
+- **Handling Large Data**: When working with ChIP-seq data, prefer `meme-chip`, which runs a pipeline including `meme`, `streme`, and `centrimo` automatically.
+
+## Expert Tips
+
+- **Sequence Weights**: In `meme`, you can add a `>WEIGHTS` line in the FASTA file to down-weight redundant or highly similar sequences.
+- **Ambiguity Codes**: MEME tools support standard IUPAC ambiguity codes (e.g., N, R, Y, W, S).
+- **E-values vs. P-values**: Focus on the E-value for motif discovery; it represents the expected number of motifs of the same width and site count that one would find in a similarly sized set of random sequences.
+- **Custom Alphabets**: If working with modified bases (e.g., methylcytosine), define a custom alphabet at the start of the motif or sequence file.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| ame | AME (Analysis of Motif Enrichment) finds known motifs that are enriched in a set of sequences. |
+| centrimo | CentriMo (Local Motif Enrichment Analysis) - identifies motifs that are enriched in the center of sequences. |
+| dreme | Finds discriminative regular expressions in two sets of DNA sequences. It can also find motifs in a single set of DNA sequences, in which case it uses a dinucleotide shuffled version of the first set of sequences as the second set. |
+| fasta-get-markov | Estimate a Markov model from a FASTA file of sequences. Skips tuples containing ambiguous symbols. Combines both strands of complementable alphabets unless -norc is set. |
+| fimo | Find Individual Motif Occurrences (FIMO) searches a sequence database for occurrences of known motifs. |
+| glam2 | Gapped Local Alignment of Motifs (GLAM2) finds motifs in sequences, allowing for insertions and deletions. |
+| mast | Motif Alignment and Search Tool (MAST) - searches for motifs in sequence databases. |
+| sea | Simple Enrichment Analysis (SEA) for motifs in sequences. |
+| streme | STREME (Sensitive, Thorough, Rapid, Enriched Motif Elicitation) discovers motifs in a set of sequences. |
+| tomtom | Compare a query motif database against one or more target motif databases. |
 
 ## Reference documentation
-- [MEME Tool Documentation](./references/meme-suite_org_meme_tools_meme.md)
-- [STREME Tool Documentation](./references/meme-suite_org_meme_tools_streme.md)
-- [MEME Motif Format Specification](./references/meme-suite_org_meme_doc_meme-format.html.md)
-- [FASTA Format Specification](./references/meme-suite_org_meme_doc_fasta-format.html.md)
-- [AME Enrichment Analysis](./references/meme-suite_org_meme_tools_ame.md)
-- [CentriMo Local Enrichment](./references/meme-suite_org_meme_tools_centrimo.md)
+- [MEME Motif Format](./references/meme_doc_meme-format.html.md)
+- [FASTA Sequence Format](./references/meme_doc_fasta-format.html.md)
+- [BED Genomic Loci Format](./references/meme-suite_org_meme_doc_bed-format.html.md)
+- [AME Tool Details](./references/meme_tools_ame.md)
+- [BED2FASTA Tool Details](./references/meme-suite_org_meme_tools_bed2fasta.md)

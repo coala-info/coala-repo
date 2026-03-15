@@ -89,8 +89,6 @@ Other options:
   --w_length <n>     : window length 
   --maxinsertlen <n> : pretend all inserts are length <= <n>
 ```
-
-
 ## hmmer_hmmsearch
 
 ### Tool Description
@@ -606,3 +604,72 @@ Special options:
 
 ## Metadata
 - **Skill**: generated
+
+## hmmer_hmmstat
+
+### Tool Description
+display summary statistics for a profile file
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+# hmmstat :: display summary statistics for a profile file
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmstat [-options] <hmmfile>
+
+Options:
+  -h : show brief help on version and usage
+```
+
+## hmmer_hmmemit
+
+### Tool Description
+sample sequence(s) from a profile HMM
+
+### Metadata
+- **Docker Image**: quay.io/biocontainers/hmmer:3.4--hb6cb901_4
+- **Homepage**: http://hmmer.org/
+- **Package**: https://anaconda.org/channels/bioconda/packages/hmmer/overview
+- **Validation**: PASS
+### Original Help Text
+```text
+# hmmemit :: sample sequence(s) from a profile HMM
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: hmmemit [-options] <hmmfile (single)>
+
+Common options are:
+  -h     : show brief help on version and usage
+  -o <f> : send sequence output to file <f>, not stdout
+  -N <n> : number of seqs to sample  [1]  (n>0)
+
+Options controlling what to emit:
+  -a : emit alignment
+  -c : emit simple majority-rule consensus sequence
+  -C : emit fancier consensus sequence (req's --minl, --minu)
+  -p : sample sequences from profile, not core model
+
+Options controlling emission from profiles with -p:
+  -L <n>      : set expected length from profile to <n>  [400]
+  --local     : configure profile in multihit local mode  [default]
+  --unilocal  : configure profile in unilocal mode
+  --glocal    : configure profile in multihit glocal mode
+  --uniglocal : configure profile in unihit glocal mode
+
+Options controlling fancy consensus emission with -C:
+  --minl <x> : show consensus as 'any' (X/N) unless >= this fraction  [0.0]
+  --minu <x> : show consensus as upper case if >= this fraction  [0.0]
+
+Other options::
+  --seed <n> : set RNG seed to <n>  [0]  (n>=0)
+```
+

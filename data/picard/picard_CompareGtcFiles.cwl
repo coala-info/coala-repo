@@ -4,11 +4,27 @@ baseCommand:
   - picard
   - CompareGtcFiles
 label: picard_CompareGtcFiles
-doc: "CompareGtcFiles takes two Illumina GTC file and compares their contents to ensure
-  that fields expected to be the same are in fact the same. This will exclude any
-  variable field, such as a date. The GTC files must be generated on the same chip
-  type.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: CompareGtcFiles takes two Illumina GTC file and compares their contents to 
+  ensure that fields expected to be the same are in fact the same. This will 
+  exclude any variable field, such as a date. The GTC files must be generated on
+  the same chip type.
 inputs:
+  - id: illumina_bead_pool_manifest_file
+    type: File
+    doc: The Illumina Bead Pool Manifest (.bpm) file
+    inputBinding:
+      position: 101
+      prefix: --ILLUMINA_BEAD_POOL_MANIFEST_FILE
+  - id: input
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: GTC input files to compare. This argument must be specified at least 
+      once.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -33,7 +48,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -42,32 +56,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: illumina_bead_pool_manifest_file
-    type: File
-    doc: The Illumina Bead Pool Manifest (.bpm) file
-    inputBinding:
-      position: 101
-      prefix: --ILLUMINA_BEAD_POOL_MANIFEST_FILE
-  - id: input
-    type:
-      type: array
-      items: File
-    doc: GTC input files to compare. This argument must be specified at least 
-      once.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -76,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -88,15 +84,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -113,7 +100,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -123,7 +109,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -133,19 +118,17 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
   - id: stdout
     type: stdout
@@ -154,3 +137,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
 stdout: picard_CompareGtcFiles.out
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

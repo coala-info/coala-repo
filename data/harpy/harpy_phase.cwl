@@ -4,21 +4,103 @@ baseCommand:
   - harpy
   - phase
 label: harpy_phase
-doc: "Phase SNPs into haplotypes. Provide the vcf file followed by the input alignment
-  (.bam) files and/or directories.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: Phase SNPs into haplotypes. Provide the vcf file followed by the input 
+  alignment (.bam) files and/or directories.
 inputs:
   - id: vcf
     type: File
-    doc: Input VCF file
+    doc: The vcf file to phase
     inputBinding:
       position: 1
   - id: inputs
     type:
-      type: array
-      items: File
+      - 'null'
+      - type: array
+        items: File
     doc: Input alignment (.bam) files and/or directories
     inputBinding:
       position: 2
+  - id: extra_params
+    type:
+      - 'null'
+      - string
+    doc: Additional HapCut2 parameters, in quotes
+    inputBinding:
+      position: 103
+      prefix: --extra-params
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: Path to reference genome if wanting to also extract reads spanning 
+      indels
+    inputBinding:
+      position: 103
+      prefix: --reference
+  - id: min_map_quality
+    type:
+      - 'null'
+      - int
+    doc: Minimum mapping quality for phasing
+    inputBinding:
+      position: 103
+      prefix: --min-map-quality
+  - id: min_base_quality
+    type:
+      - 'null'
+      - int
+    doc: Minimum base quality for phasing
+    inputBinding:
+      position: 103
+      prefix: --min-base-quality
+  - id: molecule_distance
+    type:
+      - 'null'
+      - int
+    doc: Distance cutoff to split molecules (bp)
+    inputBinding:
+      position: 103
+      prefix: --molecule-distance
+  - id: prune_threshold
+    type:
+      - 'null'
+      - int
+    doc: PHRED-scale threshold (%) for pruning low-confidence SNPs (larger 
+      prunes more.)
+    inputBinding:
+      position: 103
+      prefix: --prune-threshold
+  - id: unlinked
+    type:
+      - 'null'
+      - boolean
+    doc: Treat input data as not linked reads
+    inputBinding:
+      position: 103
+      prefix: --unlinked
+  - id: vcf_samples
+    type:
+      - 'null'
+      - boolean
+    doc: Use samples present in vcf file for phasing rather than those found in 
+      the inputs
+    inputBinding:
+      position: 103
+      prefix: --vcf-samples
+  - id: output_dir
+    type: string
+    doc: Output directory name
+    inputBinding:
+      position: 103
+      prefix: --output-dir
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    inputBinding:
+      position: 103
+      prefix: --threads
   - id: container
     type:
       - 'null'
@@ -30,19 +112,11 @@ inputs:
   - id: contigs
     type:
       - 'null'
-      - string
+      - File
     doc: File or list of contigs to plot
     inputBinding:
       position: 103
       prefix: --contigs
-  - id: extra_params
-    type:
-      - 'null'
-      - string
-    doc: Additional HapCut2 parameters, in quotes
-    inputBinding:
-      position: 103
-      prefix: --extra-params
   - id: hpc
     type:
       - 'null'
@@ -51,43 +125,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --hpc
-  - id: min_base_quality
-    type:
-      - 'null'
-      - int
-    doc: Minimum base quality for phasing
-    default: 13
-    inputBinding:
-      position: 103
-      prefix: --min-base-quality
-  - id: min_map_quality
-    type:
-      - 'null'
-      - int
-    doc: Minimum mapping quality for phasing
-    default: 20
-    inputBinding:
-      position: 103
-      prefix: --min-map-quality
-  - id: molecule_distance
-    type:
-      - 'null'
-      - int
-    doc: Distance cutoff to split molecules (bp)
-    default: 100000
-    inputBinding:
-      position: 103
-      prefix: --molecule-distance
-  - id: prune_threshold
-    type:
-      - 'null'
-      - int
-    doc: PHRED-scale threshold (%) for pruning low-confidence SNPs (larger prunes
-      more.)
-    default: 30
-    inputBinding:
-      position: 103
-      prefix: --prune-threshold
   - id: quiet
     type:
       - 'null'
@@ -96,14 +133,6 @@ inputs:
     inputBinding:
       position: 103
       prefix: --quiet
-  - id: reference
-    type:
-      - 'null'
-      - File
-    doc: Path to reference genome if wanting to also extract reads spanning indels
-    inputBinding:
-      position: 103
-      prefix: --reference
   - id: skip_reports
     type:
       - 'null'
@@ -120,40 +149,19 @@ inputs:
     inputBinding:
       position: 103
       prefix: --snakemake
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    default: 4
-    inputBinding:
-      position: 103
-      prefix: --threads
-  - id: unlinked
-    type:
-      - 'null'
-      - boolean
-    doc: Treat input data as not linked reads
-    inputBinding:
-      position: 103
-      prefix: --unlinked
-  - id: vcf_samples
-    type:
-      - 'null'
-      - boolean
-    doc: Use samples present in vcf file for phasing rather than those found in the
-      inputs
-    inputBinding:
-      position: 103
-      prefix: --vcf-samples
 outputs:
-  - id: output_dir
+  - id: output_output_dir
     type:
       - 'null'
       - Directory
     doc: Output directory name
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

@@ -4,11 +4,31 @@ baseCommand:
   - picard
   - CollectInsertSizeMetrics
 label: picard_CollectInsertSizeMetrics
-doc: "Collect metrics about the insert size distribution of a paired-end library.
-  This tool provides useful metrics for validating library construction including
-  the insert size distribution and read orientation of paired-end libraries.\n\nTool
-  homepage: http://broadinstitute.github.io/picard/"
+doc: Collect metrics about the insert size distribution of a paired-end library.
+  This tool provides useful metrics for validating library construction 
+  including the insert size distribution and read orientation of paired-end 
+  libraries.
 inputs:
+  - id: histogram_file
+    type: string
+    doc: File to write insert size Histogram chart to.
+    inputBinding:
+      position: 101
+      prefix: --Histogram_FILE
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: Input SAM/BAM/CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The file to write the output to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +44,6 @@ inputs:
       - boolean
     doc: If true (default), then the sort order in the header file will be 
       ignored.
-    default: true
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
@@ -33,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -43,7 +61,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -52,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -62,7 +78,6 @@ inputs:
       - float
     doc: Generate mean, sd and plots by trimming the data down to MEDIAN + 
       DEVIATIONS*MEDIAN_ABSOLUTE_DEVIATION.
-    default: 10.0
     inputBinding:
       position: 101
       prefix: --DEVIATIONS
@@ -81,23 +96,15 @@ inputs:
       - boolean
     doc: If true, also include reads marked as duplicates in the insert size 
       histogram.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_DUPLICATES
-  - id: input
-    type: File
-    doc: Input SAM/BAM/CRAM file.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -108,7 +115,6 @@ inputs:
         items: string
     doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
       SAMPLE, LIBRARY, READ_GROUP}'
-    default: ALL_READS
     inputBinding:
       position: 101
       prefix: --METRIC_ACCUMULATION_LEVEL
@@ -126,7 +132,6 @@ inputs:
       - float
     doc: 'When generating the Histogram, discard any data categories (out of FR, TANDEM,
       RF) that have fewer than this percentage of overall reads. (Range: 0 to 1).'
-    default: 0.05
     inputBinding:
       position: 101
       prefix: --MINIMUM_PCT
@@ -135,7 +140,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -147,21 +151,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: stop_after
     type:
       - 'null'
       - int
     doc: Stop after processing N reads, mainly for debugging.
-    default: 0
     inputBinding:
       position: 101
       prefix: --STOP_AFTER
@@ -181,7 +175,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -191,7 +184,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -201,30 +193,33 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: histogram_file
+  - id: output_histogram_file
     type: File
     doc: File to write insert size Histogram chart to.
     outputBinding:
       glob: $(inputs.histogram_file)
-  - id: output
+  - id: output_output
     type: File
     doc: The file to write the output to.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

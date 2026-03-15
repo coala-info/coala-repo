@@ -1,1 +1,94 @@
-picard - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / picard picard Community Java tools for working with NGS data in the BAM format Overview Files 320 Labels 2 Badges Versions 3.4.0 Installation To install this package, run one of the following: Conda $ conda install bioconda::picard Usage Tracking Monthly Downloads Updates Version 3.4.0 3.3.0 3.2.0 3.1.1 3.1.0 5 / 8 versions selected Downloads (Last 6 months): 0 Description Java tools for working with NGS data in the BAM format. This package depends on 'r-base' because Picard requires R to run some of its metrics commands. The 'picard-slim' package offers an installation of Picard without the 'r-base' dependency. About Summary Java tools for working with NGS data in the BAM format Last Updated Apr 13, 2025 at 22:06 License MIT Total Downloads 2.8M Version Downloads 28.5K Supported Platforms noarch Unsupported Platforms linux-64 Last supported version: 2.18.7 macOS-64 Last supported version: 2.18.7 Home http://broadinstitute.github.io/picard/ GitHub Repository https://github.com/broadinstitute/picard
+[![Anaconda Logo](images/anaconda_org_logo.svg)](/)
+
+CMD + K
+
+Sign In Sign Up
+
+[bioconda](/bioconda)/picard
+
+### picard
+
+Community
+
+Java tools for working with NGS data in the BAM format
+
+* [Overview](/channels/bioconda/packages/picard/overview)
+* [Files 320](/channels/bioconda/packages/picard/files)
+* [Labels 2](/channels/bioconda/packages/picard/labels)
+* [Badges](/bioconda/picard/badges)
+
+Versions3.4.0
+
+#### Installation
+
+To install this package, run one of the following:
+
+##### Conda
+
+$`conda install bioconda::picard`
+
+#### Usage Tracking
+
+Monthly
+
+ Downloads  Updates
+
+Version
+
+3.4.0
+
+3.3.0
+
+3.2.0
+
+3.1.1
+
+3.1.0
+
+5 / 8 versions selected
+
+Downloads (Last 6 months): 0
+
+#### Description
+
+Java tools for working with NGS data in the BAM format. This package depends on 'r-base' because Picard requires R to run some of its metrics commands. The 'picard-slim' package offers an installation of Picard without the 'r-base' dependency.
+
+#### About
+
+Summary
+
+Java tools for working with NGS data in the BAM format
+
+Last Updated
+
+Apr 13, 2025 at 22:06
+
+License
+
+MIT
+
+Total Downloads
+
+2.8M
+
+Version Downloads
+
+39.1K
+
+Supported Platforms
+
+noarch
+
+Unsupported Platforms
+
+linux-64 Last supported version: 2.18.7
+
+macOS-64 Last supported version: 2.18.7
+
+Home
+
+<http://broadinstitute.github.io/picard/>
+
+GitHub Repository
+
+<https://github.com/broadinstitute/picard>

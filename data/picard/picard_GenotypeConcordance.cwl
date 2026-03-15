@@ -4,11 +4,34 @@ baseCommand:
   - picard
   - GenotypeConcordance
 label: picard_GenotypeConcordance
-doc: "Calculates the concordance between genotype data of one sample in each of two
-  VCFs - truth (or reference) vs. calls. The concordance is broken into separate results
-  sections for SNPs and indels. Summary and detailed statistics are reported.\n\n\
-  Tool homepage: http://broadinstitute.github.io/picard/"
+doc: Calculates the concordance between genotype data of one sample in each of 
+  two VCFs - truth (or reference) vs. calls. The concordance is broken into 
+  separate results sections for SNPs and indels. Summary and detailed statistics
+  are reported.
 inputs:
+  - id: call_vcf
+    type: File
+    doc: The VCF containing the call sample
+    inputBinding:
+      position: 101
+      prefix: --CALL_VCF
+  - id: output
+    type: string
+    doc: Basename for the three metrics files that are to be written. Resulting 
+      files will be <OUTPUT>.genotype_concordance_summary_metrics, 
+      <OUTPUT>.genotype_concordance_detail_metrics, and 
+      <OUTPUT>.genotype_concordance_contingency_metrics.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: truth_vcf
+    type:
+      - 'null'
+      - File
+    doc: The VCF containing the truth sample
+    inputBinding:
+      position: 101
+      prefix: --TRUTH_VCF
   - id: arguments_file
     type:
       - 'null'
@@ -27,18 +50,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --CALL_SAMPLE
-  - id: call_vcf
-    type: File
-    doc: The VCF containing the call sample
-    inputBinding:
-      position: 101
-      prefix: --CALL_VCF
   - id: compression_level
     type:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -48,7 +64,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -57,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -67,7 +81,6 @@ inputs:
       - boolean
     doc: Default is false. If true, filter status of sites will be ignored so 
       that we include filtered sites when calculating genotype concordance.
-    default: false
     inputBinding:
       position: 101
       prefix: --IGNORE_FILTER_STATUS
@@ -77,7 +90,6 @@ inputs:
       - boolean
     doc: If true, multiple interval lists will be intersected. If false multiple
       lists will be unioned.
-    default: true
     inputBinding:
       position: 101
       prefix: --INTERSECT_INTERVALS
@@ -98,7 +110,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -107,7 +118,6 @@ inputs:
       - 'null'
       - int
     doc: Genotypes below this depth will have genotypes classified as LowDp.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MIN_DP
@@ -117,7 +127,6 @@ inputs:
       - int
     doc: Genotypes below this genotype quality will have genotypes classified as
       LowGq.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MIN_GQ
@@ -128,7 +137,6 @@ inputs:
     doc: Default is false, which follows the GA4GH Scheme. If true, missing 
       sites in the truth set will be treated as HOM_REF sites and sites missing 
       in both the truth and call sets will be true negatives.
-    default: false
     inputBinding:
       position: 101
       prefix: --MISSING_SITES_HOM_REF
@@ -138,7 +146,6 @@ inputs:
       - boolean
     doc: If true, output all rows in detailed statistics even when count == 0. 
       When false only output rows with non-zero counts.
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_ALL_ROWS
@@ -147,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: Output a VCF annotated with concordance information.
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_VCF
@@ -156,7 +162,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -168,15 +173,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -196,19 +192,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --TRUTH_SAMPLE
-  - id: truth_vcf
-    type: File
-    doc: The VCF containing the truth sample
-    inputBinding:
-      position: 101
-      prefix: --TRUTH_VCF
   - id: use_jdk_deflater
     type:
       - 'null'
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -218,7 +207,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -227,7 +215,6 @@ inputs:
       - 'null'
       - boolean
     doc: If true, use the VCF index, else iterate over the entire VCF.
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_VCF_INDEX
@@ -237,21 +224,19 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Basename for the three metrics files that are to be written. Resulting 
       files will be <OUTPUT>.genotype_concordance_summary_metrics, 
@@ -259,6 +244,11 @@ outputs:
       <OUTPUT>.genotype_concordance_contingency_metrics.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

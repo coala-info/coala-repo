@@ -4,17 +4,34 @@ baseCommand:
   - picard
   - FastqToSam
 label: picard_FastqToSam
-doc: "Converts a FASTQ file to an unaligned BAM or SAM file. Output read records will
+doc: 'Converts a FASTQ file to an unaligned BAM or SAM file. Output read records will
   contain the original base calls and quality scores will be translated depending
-  on the base quality score encoding: FastqSanger, FastqSolexa and FastqIllumina.\n\
-  \nTool homepage: http://broadinstitute.github.io/picard/"
+  on the base quality score encoding: FastqSanger, FastqSolexa and FastqIllumina.'
 inputs:
+  - id: fastq
+    type: File
+    doc: Input fastq file (optionally gzipped) for single end data, or first 
+      read in paired end data.
+    inputBinding:
+      position: 101
+      prefix: --FASTQ
+  - id: output
+    type: string
+    doc: Output BAM/SAM/CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: sample_name
+    type: string
+    doc: Sample name to insert into the read group header
+    inputBinding:
+      position: 101
+      prefix: --SAMPLE_NAME
   - id: allow_and_ignore_empty_lines
     type:
       - 'null'
       - boolean
     doc: Allow (and ignore) empty lines
-    default: false
     inputBinding:
       position: 101
       prefix: --ALLOW_AND_IGNORE_EMPTY_LINES
@@ -23,7 +40,6 @@ inputs:
       - 'null'
       - boolean
     doc: Allow empty input fastq
-    default: false
     inputBinding:
       position: 101
       prefix: --ALLOW_EMPTY_FASTQ
@@ -50,7 +66,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -60,7 +75,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -69,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -81,13 +94,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --DESCRIPTION
-  - id: fastq
-    type: File
-    doc: Input fastq file (optionally gzipped) for single end data, or first 
-      read in paired end data.
-    inputBinding:
-      position: 101
-      prefix: --FASTQ
   - id: fastq2
     type:
       - 'null'
@@ -110,9 +116,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Maximum quality allowed in the input fastq. An exception will be thrown
-      if a quality is greater than this value.
-    default: 93
+    doc: Maximum quality allowed in the input fastq.
     inputBinding:
       position: 101
       prefix: --MAX_Q
@@ -122,7 +126,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -130,9 +133,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Minimum quality allowed in the input fastq. An exception will be thrown
-      if a quality is less than this value.
-    default: 0
+    doc: Minimum quality allowed in the input fastq.
     inputBinding:
       position: 101
       prefix: --MIN_Q
@@ -179,11 +180,9 @@ inputs:
       position: 101
       prefix: --PROGRAM_GROUP
   - id: quality_format
-    type:
-      - 'null'
-      - string
+    type: string
     doc: A value describing how the quality values are encoded in the input 
-      FASTQ file. Either Solexa, Illumina or Standard.
+      FASTQ file (Solexa, Illumina, or Standard).
     inputBinding:
       position: 101
       prefix: --QUALITY_FORMAT
@@ -192,7 +191,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -201,7 +199,6 @@ inputs:
       - 'null'
       - string
     doc: Read group name
-    default: A
     inputBinding:
       position: 101
       prefix: --READ_GROUP_NAME
@@ -221,12 +218,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RUN_DATE
-  - id: sample_name
-    type: string
-    doc: Sample name to insert into the read group header
-    inputBinding:
-      position: 101
-      prefix: --SAMPLE_NAME
   - id: sequencing_center
     type:
       - 'null'
@@ -235,21 +226,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SEQUENCING_CENTER
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sort_order
     type:
       - 'null'
       - string
     doc: The sort order for the output BAM/SAM/CRAM file.
-    default: queryname
     inputBinding:
       position: 101
       prefix: --SORT_ORDER
@@ -259,7 +240,6 @@ inputs:
       - boolean
     doc: Deprecated (No longer used). If true and this is an unpaired fastq any 
       occurrence of '/1' or '/2' will be removed from the end of a read name.
-    default: false
     inputBinding:
       position: 101
       prefix: --STRIP_UNPAIRED_MATE_NUMBER
@@ -279,7 +259,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -289,7 +268,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -298,7 +276,6 @@ inputs:
       - 'null'
       - boolean
     doc: Use sequential fastq files with the suffix <prefix>_###.fastq[.gz].
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_SEQUENTIAL_FASTQS
@@ -307,25 +284,28 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for all SAM files read by this program.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output BAM/SAM/CRAM file.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

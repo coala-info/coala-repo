@@ -4,9 +4,44 @@ baseCommand:
   - picard
   - AddOrReplaceReadGroups
 label: picard_AddOrReplaceReadGroups
-doc: "Assigns all the reads in a file to a single new read-group.\n\nTool homepage:
-  http://broadinstitute.github.io/picard/"
+doc: Assigns all the reads in a file to a single new read-group.
 inputs:
+  - id: input
+    type: File
+    doc: Input file (BAM or SAM or a GA4GH url).
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Output file (SAM, BAM or CRAM).
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: rglb
+    type: string
+    doc: Read-Group library
+    inputBinding:
+      position: 101
+      prefix: --RGLB
+  - id: rgpl
+    type: string
+    doc: Read-Group platform (e.g. ILLUMINA, SOLID)
+    inputBinding:
+      position: 101
+      prefix: --RGPL
+  - id: rgpu
+    type: string
+    doc: Read-Group platform unit (eg. run barcode)
+    inputBinding:
+      position: 101
+      prefix: --RGPU
+  - id: rgsm
+    type: string
+    doc: Read-Group sample name
+    inputBinding:
+      position: 101
+      prefix: --RGSM
   - id: arguments_file
     type:
       - 'null'
@@ -21,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -31,7 +65,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -40,23 +73,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: input
-    type: File
-    doc: Input file (BAM or SAM or a GA4GH url).
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -65,7 +90,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -114,7 +138,6 @@ inputs:
       - 'null'
       - string
     doc: Read-Group ID
-    default: '1'
     inputBinding:
       position: 101
       prefix: --RGID
@@ -126,12 +149,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RGKS
-  - id: rglb
-    type: string
-    doc: Read-Group library
-    inputBinding:
-      position: 101
-      prefix: --RGLB
   - id: rgpg
     type:
       - 'null'
@@ -148,12 +165,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RGPI
-  - id: rgpl
-    type: string
-    doc: Read-Group platform (e.g. ILLUMINA, SOLID)
-    inputBinding:
-      position: 101
-      prefix: --RGPL
   - id: rgpm
     type:
       - 'null'
@@ -162,27 +173,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RGPM
-  - id: rgpu
-    type: string
-    doc: Read-Group platform unit (eg. run barcode)
-    inputBinding:
-      position: 101
-      prefix: --RGPU
-  - id: rgsm
-    type: string
-    doc: Read-Group sample name
-    inputBinding:
-      position: 101
-      prefix: --RGSM
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sort_order
     type:
       - 'null'
@@ -208,7 +198,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -218,7 +207,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -227,25 +215,28 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for all SAM files read by this program.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output file (SAM, BAM or CRAM).
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

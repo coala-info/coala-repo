@@ -1,18 +1,39 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
+  - picard
   - SimpleMarkDuplicatesWithMateCigar
 label: picard_SimpleMarkDuplicatesWithMateCigar
-doc: "Examines aligned records in the supplied SAM/BAM/CRAM file to locate duplicate
-  molecules. All records are then written to the output file with the duplicate records
-  flagged.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Examines aligned records in the supplied SAM/BAM/CRAM file to locate 
+  duplicate molecules. All records are then written to the output file with the 
+  duplicate records flagged.
 inputs:
+  - id: input
+    type:
+      type: array
+      items: File
+    doc: One or more input SAM, BAM or CRAM files to analyze. Must be coordinate
+      sorted.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: metrics_file
+    type: string
+    doc: File to write duplication metrics to
+    inputBinding:
+      position: 101
+      prefix: --METRICS_FILE
+  - id: output
+    type: string
+    doc: The output file to write marked records to
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: add_pg_tag_to_reads
     type:
       - 'null'
       - boolean
     doc: Add PG tag to each read in a SAM or BAM
-    default: true
     inputBinding:
       position: 101
       prefix: --ADD_PG_TAG_TO_READS
@@ -41,7 +62,6 @@ inputs:
     doc: If true, assume that the input file is coordinate sorted even if the 
       header says otherwise. Deprecated, used ASSUME_SORT_ORDER=coordinate 
       instead.
-    default: false
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
@@ -59,7 +79,6 @@ inputs:
       - boolean
     doc: Clear DT tag from input SAM records. Should be set to false if input 
       SAM doesn't have this tag.
-    default: true
     inputBinding:
       position: 101
       prefix: --CLEAR_DT
@@ -77,7 +96,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -87,7 +105,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -96,7 +113,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -105,7 +121,6 @@ inputs:
       - 'null'
       - boolean
     doc: Treat UMIs as being duplex stranded.
-    default: false
     inputBinding:
       position: 101
       prefix: --DUPLEX_UMI
@@ -114,7 +129,6 @@ inputs:
       - 'null'
       - string
     doc: The scoring strategy for choosing the non-duplicate among candidates.
-    default: SUM_OF_BASE_QUALITIES
     inputBinding:
       position: 101
       prefix: --DUPLICATE_SCORING_STRATEGY
@@ -123,7 +137,6 @@ inputs:
       - 'null'
       - string
     doc: Use specific quality summing strategy for flow based reads.
-    default: FLOW_QUALITY_SUM_STRATEGY
     inputBinding:
       position: 101
       prefix: --FLOW_DUP_STRATEGY
@@ -133,7 +146,6 @@ inputs:
       - int
     doc: Threshold for considering a quality value high enough to be included 
       when calculating FLOW_QUALITY_SUM_STRATEGY calculation.
-    default: 15
     inputBinding:
       position: 101
       prefix: --FLOW_EFFECTIVE_QUALITY_THRESHOLD
@@ -142,7 +154,6 @@ inputs:
       - 'null'
       - boolean
     doc: enable parameters and behavior specific to flow based reads.
-    default: false
     inputBinding:
       position: 101
       prefix: --FLOW_MODE
@@ -152,7 +163,6 @@ inputs:
       - boolean
     doc: Treat position of read trimming based on quality as the known end 
       (relevant for flow based reads).
-    default: false
     inputBinding:
       position: 101
       prefix: --FLOW_Q_IS_KNOWN_END
@@ -162,7 +172,6 @@ inputs:
       - int
     doc: Skip first N flows, starting from the read's start, when considering 
       duplicates.
-    default: 0
     inputBinding:
       position: 101
       prefix: --FLOW_SKIP_FIRST_N_FLOWS
@@ -171,7 +180,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference of the read end position that counted as equal.
-    default: 0
     inputBinding:
       position: 101
       prefix: --FLOW_UNPAIRED_END_UNCERTAINTY
@@ -180,7 +188,6 @@ inputs:
       - 'null'
       - int
     doc: Maximal difference of the read start position that counted as equal.
-    default: 0
     inputBinding:
       position: 101
       prefix: --FLOW_UNPAIRED_START_UNCERTAINTY
@@ -189,8 +196,7 @@ inputs:
       - 'null'
       - boolean
     doc: Make the end location of single end read be significant when 
-      considering duplicates.
-    default: false
+      considering duplicates, in addition to the start location.
     inputBinding:
       position: 101
       prefix: --FLOW_USE_END_IN_UNPAIRED_READS
@@ -199,27 +205,16 @@ inputs:
       - 'null'
       - boolean
     doc: Use position of the clipping as the end position, when considering 
-      duplicates.
-    default: false
+      duplicates (or use the unclipped end position).
     inputBinding:
       position: 101
       prefix: --FLOW_USE_UNPAIRED_CLIPPED_END
-  - id: input
-    type:
-      type: array
-      items: File
-    doc: One or more input SAM, BAM or CRAM files to analyze. Must be coordinate
-      sorted.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_file_handles_for_read_ends_map
     type:
       - 'null'
       - int
     doc: Maximum number of file handles to keep open when spilling read ends to 
       disk.
-    default: 8000
     inputBinding:
       position: 101
       prefix: --MAX_FILE_HANDLES_FOR_READ_ENDS_MAP
@@ -229,7 +224,6 @@ inputs:
       - int
     doc: This number is the maximum size of a set of duplicate reads for which 
       we will attempt to determine which are optical duplicates.
-    default: 300000
     inputBinding:
       position: 101
       prefix: --MAX_OPTICAL_DUPLICATE_SET_SIZE
@@ -239,7 +233,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -248,7 +241,6 @@ inputs:
       - 'null'
       - int
     doc: This option is obsolete. ReadEnds will always be spilled to disk.
-    default: 50000
     inputBinding:
       position: 101
       prefix: --MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP
@@ -267,7 +259,6 @@ inputs:
       - int
     doc: The maximum offset between two duplicate clusters in order to consider 
       them optical duplicates.
-    default: 100
     inputBinding:
       position: 101
       prefix: --OPTICAL_DUPLICATE_PIXEL_DISTANCE
@@ -284,7 +275,6 @@ inputs:
       - 'null'
       - string
     doc: Value of PN tag of PG record to be created.
-    default: SimpleMarkDuplicatesWithMateCigar
     inputBinding:
       position: 101
       prefix: --PROGRAM_GROUP_NAME
@@ -301,7 +291,6 @@ inputs:
       - 'null'
       - string
     doc: The program record ID for the @PG record(s) created by this program.
-    default: MarkDuplicates
     inputBinding:
       position: 101
       prefix: --PROGRAM_RECORD_ID
@@ -310,7 +299,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -318,8 +306,8 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Regular expression to extract tile and x,y coordinates from a read 
-      name.
+    doc: Regular expression to extract tile/region, x coordinate and y 
+      coordinate from a read name.
     inputBinding:
       position: 101
       prefix: --READ_NAME_REGEX
@@ -353,7 +341,6 @@ inputs:
       - boolean
     doc: If true do not write duplicates to the output file instead of writing 
       them with appropriate flags set.
-    default: false
     inputBinding:
       position: 101
       prefix: --REMOVE_DUPLICATES
@@ -363,26 +350,15 @@ inputs:
       - boolean
     doc: If true remove 'optical' duplicates and other duplicates that appear to
       have arisen from the sequencing process.
-    default: false
     inputBinding:
       position: 101
       prefix: --REMOVE_SEQUENCING_DUPLICATES
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sorting_collection_size_ratio
     type:
       - 'null'
       - float
     doc: This number, plus the maximum RAM available to the JVM, determine the 
       memory footprint used by some of the sorting collections.
-    default: 0.25
     inputBinding:
       position: 101
       prefix: --SORTING_COLLECTION_SIZE_RATIO
@@ -391,7 +367,6 @@ inputs:
       - 'null'
       - boolean
     doc: If a read appears in a duplicate set, add two tags (DS and DI).
-    default: false
     inputBinding:
       position: 101
       prefix: --TAG_DUPLICATE_SET_MEMBERS
@@ -401,7 +376,6 @@ inputs:
       - string
     doc: Determines how duplicate types are recorded in the DT optional 
       attribute.
-    default: DontTag
     inputBinding:
       position: 101
       prefix: --TAGGING_POLICY
@@ -421,7 +395,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -431,7 +404,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -440,30 +412,33 @@ inputs:
       - 'null'
       - string
     doc: Validation stringency for all SAM files read by this program.
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: metrics_file
+  - id: output_metrics_file
     type: File
     doc: File to write duplication metrics to
     outputBinding:
       glob: $(inputs.metrics_file)
-  - id: output
+  - id: output_output
     type: File
     doc: The output file to write marked records to
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

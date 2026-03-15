@@ -1,0 +1,368 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Flh3%2Fbwa%2Fblob%2Fmaster%2FREADME-alt.md)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Flh3%2Fbwa%2Fblob%2Fmaster%2FREADME-alt.md)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fblob%2Fshow&source=header-repo&source_repo=lh3%2Fbwa)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[lh3](/lh3)
+/
+**[bwa](/lh3/bwa)**
+Public
+
+* [Notifications](/login?return_to=%2Flh3%2Fbwa) You must be signed in to change notification settings
+* [Fork
+  575](/login?return_to=%2Flh3%2Fbwa)
+* [Star
+   1.7k](/login?return_to=%2Flh3%2Fbwa)
+
+* [Code](/lh3/bwa)
+* [Issues
+  72](/lh3/bwa/issues)
+* [Pull requests
+  25](/lh3/bwa/pulls)
+* [Actions](/lh3/bwa/actions)
+* [Security
+  0](/lh3/bwa/security)
+* [Insights](/lh3/bwa/pulse)
+
+Additional navigation options
+
+* [Code](/lh3/bwa)
+* [Issues](/lh3/bwa/issues)
+* [Pull requests](/lh3/bwa/pulls)
+* [Actions](/lh3/bwa/actions)
+* [Security](/lh3/bwa/security)
+* [Insights](/lh3/bwa/pulse)
+
+## FilesExpand file tree
+
+master
+
+## Breadcrumbs
+
+1. [bwa](/lh3/bwa/tree/master)
+
+/
+
+# README-alt.md
+
+Copy path
+
+BlameMore file actions
+
+BlameMore file actions
+
+## Latest commit
+
+## History
+
+[History](/lh3/bwa/commits/master/README-alt.md)
+
+History
+
+178 lines (144 loc) · 9.17 KB
+
+master
+
+## Breadcrumbs
+
+1. [bwa](/lh3/bwa/tree/master)
+
+/
+
+# README-alt.md
+
+Top
+
+## File metadata and controls
+
+* Preview
+* Code
+* Blame
+
+178 lines (144 loc) · 9.17 KB
+
+[Raw](https://github.com/lh3/bwa/raw/refs/heads/master/README-alt.md)
+
+Copy raw file
+
+Download raw file
+
+Outline
+
+Edit and raw actions
+
+## For the Impatient
+
+```
+# Download bwakit (or from <http://sourceforge.net/projects/bio-bwa/files/bwakit/> manually)
+wget -O- http://sourceforge.net/projects/bio-bwa/files/bwakit/bwakit-0.7.12_x64-linux.tar.bz2/download \
+  | gzip -dc | tar xf -
+# Generate the GRCh38+ALT+decoy+HLA and create the BWA index
+bwa.kit/run-gen-ref hs38DH   # download GRCh38 and write hs38DH.fa
+bwa.kit/bwa index hs38DH.fa  # create BWA index
+# mapping
+bwa.kit/run-bwamem -o out -H hs38DH.fa read1.fq read2.fq | sh  # skip "|sh" to show command lines
+```
+
+This generates `out.aln.bam` as the final alignment, `out.hla.top` for best HLA
+genotypes on each gene and `out.hla.all` for other possible HLA genotypes.
+Please check out [bwa/bwakit/README.md](https://github.com/lh3/bwa/tree/master/bwakit) for details.
+
+## Background
+
+GRCh38 consists of several components: chromosomal assembly, unlocalized contigs
+(chromosome known but location unknown), unplaced contigs (chromosome unknown)
+and ALT contigs (long clustered variations). The combination of the first three
+components is called the *primary assembly*. It is recommended to use the
+complete primary assembly for all analyses. Using ALT contigs in read mapping is
+tricky.
+
+GRCh38 ALT contigs are totaled 109Mb in length, spanning 60Mbp of the primary
+assembly. However, sequences that are highly diverged from the primary assembly
+only contribute a few million bp. Most subsequences of ALT contigs are nearly
+identical to the primary assembly. If we align sequence reads to GRCh38+ALT
+blindly, we will get many additional reads with zero mapping quality and miss
+variants on them. It is crucial to make mappers aware of ALTs.
+
+BWA-MEM is ALT-aware. It essentially computes mapping quality across the
+non-redundant content of the primary assembly plus the ALT contigs and is free
+of the problem above.
+
+## Methods
+
+### Sequence alignment
+
+As of now, ALT mapping is done in two separate steps: BWA-MEM mapping and
+postprocessing. The `bwa.kit/run-bwamem` script performs the two steps when ALT
+contigs are present. The following picture shows an example about how BWA-MEM
+infers mapping quality and reports alignment after step 2:
+
+[![](https://camo.githubusercontent.com/ae20434b6895d10aa604109c584538beb8a8af906a6e20802ce3d4b85dfb2f50/687474703a2f2f6c68336c68332e75736572732e736f75726365666f7267652e6e65742f696d616765732f616c742d64656d6f2e706e67)](https://camo.githubusercontent.com/ae20434b6895d10aa604109c584538beb8a8af906a6e20802ce3d4b85dfb2f50/687474703a2f2f6c68336c68332e75736572732e736f75726365666f7267652e6e65742f696d616765732f616c742d64656d6f2e706e67)
+
+#### Step 1: BWA-MEM mapping
+
+At this step, BWA-MEM reads the ALT contig names from "*idxbase*.alt", ignoring
+the ALT-to-ref alignment, and labels a potential hit as *ALT* or *non-ALT*,
+depending on whether the hit lands on an ALT contig or not. BWA-MEM then reports
+alignments and assigns mapQ following these two rules:
+
+1. The mapQ of a non-ALT hit is computed across non-ALT hits only. The mapQ of
+   an ALT hit is computed across all hits.
+2. If there are no non-ALT hits, the best ALT hit is outputted as the primary
+   alignment. If there are both ALT and non-ALT hits, non-ALT hits will be
+   primary and ALT hits be supplementary (SAM flag 0x800).
+
+In theory, non-ALT alignments from step 1 should be identical to alignments
+against the reference genome with ALT contigs. In practice, the two types of
+alignments may differ in rare cases due to seeding heuristics. When an ALT hit
+is significantly better than non-ALT hits, BWA-MEM may miss seeds on the
+non-ALT hits.
+
+If we don't care about ALT hits, we may skip postprocessing (step 2).
+Nonetheless, postprocessing is recommended as it improves mapQ and gives more
+information about ALT hits.
+
+#### Step 2: Postprocessing
+
+Postprocessing is done with a separate script `bwa-postalt.js`. It reads all
+potential hits reported in the XA tag, lifts ALT hits to the chromosomal
+positions using the ALT-to-ref alignment, groups them based on overlaps between
+their lifted positions, and then re-estimates mapQ across the best scoring hit
+in each group. Being aware of the ALT-to-ref alignment, this script can greatly
+improve mapQ of ALT hits and occasionally improve mapQ of non-ALT hits. It also
+writes each hit overlapping the reported hit into a separate SAM line. This
+enables variant calling on each ALT contig independent of others.
+
+### On the completeness of GRCh38+ALT
+
+While GRCh38 is much more complete than GRCh37, it is still missing some true
+human sequences. To make sure every piece of sequence in the reference assembly
+is correct, the [Genome Reference Consortium](http://www.ncbi.nlm.nih.gov/projects/genome/assembly/grc/) (GRC) require each ALT contig
+to have enough support from multiple sources before considering to add it to the
+reference assembly. This careful and sophisticated procedure has left out some
+sequences, one of which is [this example](https://gist.github.com/lh3/9935148b71f04ba1a8cc), a 10kb contig assembled from
+CHM1 short reads and present also in NA12878. You can try [BLAT](https://genome.ucsc.edu/cgi-bin/hgBlat) or
+[BLAST](http://blast.st-va.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome) to see where it maps.
+
+For a more complete reference genome, we compiled a new set of decoy sequences
+from GenBank clones and the de novo assembly of 254 public [SGDP](http://www.simonsfoundation.org/life-sciences/simons-genome-diversity-project/) samples.
+The sequences are included in `hs38DH-extra.fa` from the [BWA binary
+package](https://sourceforge.net/projects/bio-bwa/files/bwakit).
+
+In addition to decoy, we also put multiple alleles of HLA genes in
+`hs38DH-extra.fa`. These genomic sequences were acquired from [IMGT/HLA](http://www.ebi.ac.uk/ipd/imgt/hla/),
+version 3.18.0 and are used to collect reads sequenced from these genes.
+
+### HLA typing
+
+HLA genes are known to be associated with many autoimmune diseases, infectious
+diseases and drug responses. They are among the most important genes but are
+rarely studied by WGS projects due to the high sequence divergence between
+HLA genes and the reference genome in these regions.
+
+By including the HLA gene regions in the reference assembly as ALT contigs, we
+are able to effectively identify reads coming from these genes. We also provide
+a pipeline, which is included in the [BWA binary package](https://sourceforge.net/projects/bio-bwa/files/bwakit), to type the
+several classic HLA genes. The pipeline is conceptually simple. It de novo
+assembles sequence reads mapped to each gene, aligns exon sequences of each
+allele to the assembled contigs and then finds the pairs of alleles that best
+explain the contigs. In practice, however, the completeness of IMGT/HLA and
+copy-number changes related to these genes are not so straightforward to
+resolve. HLA typing may not always be successful. Users may also consider to use
+other programs for typing such as [Warren et al (2012)](http://genomemedicine.com/content/4/12/95), [Liu et al
+(2013)](http://nar.oxfordjournals.org/content/41/14/e142.full.pdf%2Bhtml), [Bai et al (2014)](http://www.biomedcentral.com/1471-2164/15/325) and [Dilthey et al (2014)](http://biorxiv.org/content/early/2014/07/08/006973), though
+most of them are distributed under restrictive licenses.
+
+## Preliminary Evaluation
+
+To check whether GRCh38 is better than GRCh37, we mapped the CHM1 and NA12878
+unitigs to GRCh37 primary (hs37), GRCh38 primary (hs38) and GRCh38+ALT+decoy
+(hs38DH), and called small variants from the alignment. CHM1 is haploid.
+Ideally, heterozygous calls are false positives (FP). NA12878 is diploid. The
+true positive (TP) heterozygous calls from NA12878 are approximately equal
+to the difference between NA12878 and CHM1 heterozygous calls. A better assembly
+should yield higher TP and lower FP. The following table shows the numbers for
+these assemblies:
+
+| Assembly | hs37 | hs38 | hs38DH | CHM1\_1.1 | huref |
+| --- | --- | --- | --- | --- | --- |
+| FP | 255706 | 168068 | 142516 | 307172 | 575634 |
+| T

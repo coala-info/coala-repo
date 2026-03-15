@@ -4,35 +4,49 @@ baseCommand:
   - picard
   - CollectTargetedPcrMetrics
 label: picard_CollectTargetedPcrMetrics
-doc: "Calculate PCR-related metrics from targeted sequencing data. This tool calculates
-  a set of PCR-related metrics from an aligned SAM or BAM file containing targeted
-  sequencing data.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Calculate PCR-related metrics from targeted sequencing data. This tool 
+  calculates a set of PCR-related metrics from an aligned SAM or BAM file 
+  containing targeted sequencing data.
 inputs:
-  - id: allele_fraction
-    type:
-      - 'null'
-      - type: array
-        items: float
-    doc: Allele fraction for which to calculate theoretical sensitivity.
-    default:
-      - 0.001
-      - 0.005
-      - 0.01
-      - 0.02
-      - 0.05
-      - 0.1
-      - 0.2
-      - 0.3
-      - 0.5
-    inputBinding:
-      position: 101
-      prefix: --ALLELE_FRACTION
   - id: amplicon_intervals
     type: File
     doc: An interval list file that contains the locations of the baits used.
     inputBinding:
       position: 101
       prefix: --AMPLICON_INTERVALS
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: An aligned SAM/BAM/CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The output file to write the metrics to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: target_intervals
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: An interval list file that contains the locations of the targets. This 
+      argument must be specified at least once.
+    inputBinding:
+      position: 101
+      prefix: --TARGET_INTERVALS
+  - id: allele_fraction
+    type:
+      - 'null'
+      - type: array
+        items: float
+    doc: Allele fraction for which to calculate theoretical sensitivity.
+    inputBinding:
+      position: 101
+      prefix: --ALLELE_FRACTION
   - id: arguments_file
     type:
       - 'null'
@@ -47,7 +61,6 @@ inputs:
       - 'null'
       - boolean
     doc: True if we are to clip overlapping reads, false otherwise.
-    default: false
     inputBinding:
       position: 101
       prefix: --CLIP_OVERLAPPING_READS
@@ -56,7 +69,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -66,7 +78,6 @@ inputs:
       - int
     doc: Parameter to set a max coverage limit for Theoretical Sensitivity 
       calculations.
-    default: 200
     inputBinding:
       position: 101
       prefix: --COVERAGE_CAP
@@ -76,7 +87,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -85,7 +95,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -104,23 +113,15 @@ inputs:
       - boolean
     doc: If true count inserted bases as on target and deleted bases as covered 
       by a read.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_INDELS
-  - id: input
-    type: File
-    doc: An aligned SAM/BAM/CRAM file.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -129,10 +130,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: 'The level(s) at which to accumulate metrics. Possible values: {ALL_READS,
-      SAMPLE, LIBRARY, READ_GROUP}'
-    default:
-      - ALL_READS
+    doc: The level(s) at which to accumulate metrics.
     inputBinding:
       position: 101
       prefix: --METRIC_ACCUMULATION_LEVEL
@@ -141,7 +139,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum base quality for a base to contribute coverage.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MINIMUM_BASE_QUALITY
@@ -150,7 +147,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum mapping quality for a read to contribute coverage.
-    default: 1
     inputBinding:
       position: 101
       prefix: --MINIMUM_MAPPING_QUALITY
@@ -160,16 +156,26 @@ inputs:
       - int
     doc: The maximum distance between a read and the nearest probe/bait/amplicon
       for the read to be considered 'near probe'.
-    default: 250
     inputBinding:
       position: 101
       prefix: --NEAR_DISTANCE
+  - id: per_base_coverage
+    type: string
+    doc: An optional file to output per base coverage information to.
+    inputBinding:
+      position: 101
+      prefix: --PER_BASE_COVERAGE
+  - id: per_target_coverage
+    type: string
+    doc: An optional file to output per target coverage information to.
+    inputBinding:
+      position: 101
+      prefix: --PER_TARGET_COVERAGE
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -186,28 +192,16 @@ inputs:
       - 'null'
       - int
     doc: Sample Size used for Theoretical Het Sensitivity sampling.
-    default: 10000
     inputBinding:
       position: 101
       prefix: --SAMPLE_SIZE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
+  - id: theoretical_sensitivity_output
+    type: string
+    doc: Output for Theoretical Sensitivity metrics where the allele fractions 
+      are provided by the ALLELE_FRACTION argument.
     inputBinding:
       position: 101
-      prefix: --showHidden
-  - id: target_intervals
-    type:
-      type: array
-      items: File
-    doc: An interval list file that contains the locations of the targets. This 
-      argument must be specified at least once.
-    inputBinding:
-      position: 101
-      prefix: --TARGET_INTERVALS
+      prefix: --THEORETICAL_SENSITIVITY_OUTPUT
   - id: tmp_dir
     type:
       - 'null'
@@ -224,7 +218,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -234,7 +227,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -242,42 +234,39 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Validation stringency for all SAM files read by this program. Possible values:
-      {STRICT, LENIENT, SILENT}'
-    default: STRICT
+    doc: Validation stringency for all SAM files read by this program.
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: The output file to write the metrics to.
     outputBinding:
       glob: $(inputs.output)
-  - id: per_base_coverage
+  - id: output_per_base_coverage
     type:
       - 'null'
       - File
     doc: An optional file to output per base coverage information to.
     outputBinding:
       glob: $(inputs.per_base_coverage)
-  - id: per_target_coverage
+  - id: output_per_target_coverage
     type:
       - 'null'
       - File
     doc: An optional file to output per target coverage information to.
     outputBinding:
       glob: $(inputs.per_target_coverage)
-  - id: theoretical_sensitivity_output
+  - id: output_theoretical_sensitivity_output
     type:
       - 'null'
       - File
@@ -285,6 +274,11 @@ outputs:
       are provided by the ALLELE_FRACTION argument.
     outputBinding:
       glob: $(inputs.theoretical_sensitivity_output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

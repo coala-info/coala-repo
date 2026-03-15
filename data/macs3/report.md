@@ -12,7 +12,7 @@ Model-based Analysis of ChIP-Seq (MACS) for identifying transcript factor bindin
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/macs3/overview
-- **Total Downloads**: 20.4K
+- **Total Downloads**: 21.2K
 - **Last updated**: 2026-02-26
 - **GitHub**: https://github.com/macs3-project/MACS
 - **Stars**: N/A
@@ -351,8 +351,6 @@ Examples:
 7. Peak calling on scATAC-seq (paired-end mode) and only for given barcodes:
     $ macs3 callpeak -f FRAG -t scATAC.fragments.tsv.gz -g hs -n test -B -q 0.01 --barcodes barcodes.txt
 ```
-
-
 ## macs3_bdgpeakcall
 
 ### Tool Description

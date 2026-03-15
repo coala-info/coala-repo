@@ -4,11 +4,24 @@ baseCommand:
   - picard
   - SplitSamByNumberOfReads
 label: picard_SplitSamByNumberOfReads
-doc: "Splits a SAM/BAM/CRAM file to multiple files. This tool splits the input query-grouped
-  SAM/BAM/CRAM file into multiple files while maintaining the sort order. This can
-  be used to split a large unmapped input in order to parallelize alignment.\n\nTool
-  homepage: http://broadinstitute.github.io/picard/"
+doc: Splits a SAM/BAM/CRAM file to multiple files. This tool splits the input 
+  query-grouped SAM/BAM/CRAM file into multiple files while maintaining the sort
+  order. This can be used to split a large unmapped input in order to 
+  parallelize alignment. It will traverse the input twice unless 
+  TOTAL_READS_IN_INPUT is provided.
 inputs:
+  - id: input
+    type: File
+    doc: Input SAM/BAM/CRAM file to split
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Directory in which to output the split BAM files.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -33,7 +45,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -42,23 +53,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: input
-    type: File
-    doc: Input SAM/BAM/CRAM file to split
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -68,7 +71,6 @@ inputs:
       - string
     doc: Output files will be named <OUT_PREFIX>_N.EXT, where N enumerates the 
       output file and EXT is the same as that of the input.
-    default: shard
     inputBinding:
       position: 101
       prefix: --OUT_PREFIX
@@ -77,7 +79,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -89,22 +90,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: split_to_n_files
     type:
       - 'null'
       - int
     doc: Split to N files. Cannot be used in conjunction with argument(s) 
       SPLIT_TO_N_READS (N_READS)
-    default: 0
     inputBinding:
       position: 101
       prefix: --SPLIT_TO_N_FILES
@@ -112,9 +103,7 @@ inputs:
     type:
       - 'null'
       - int
-    doc: Split to have approximately N reads per output file. Cannot be used in 
-      conjunction with argument(s) SPLIT_TO_N_FILES (N_FILES)
-    default: 0
+    doc: Split to have approximately N reads per output file.
     inputBinding:
       position: 101
       prefix: --SPLIT_TO_N_READS
@@ -134,7 +123,6 @@ inputs:
       - int
     doc: Total number of reads in the input file. If this is not provided, the 
       input will be read twice.
-    default: 0
     inputBinding:
       position: 101
       prefix: --TOTAL_READS_IN_INPUT
@@ -144,7 +132,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -154,7 +141,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -164,25 +150,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: Directory
     doc: Directory in which to output the split BAM files.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

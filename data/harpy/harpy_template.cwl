@@ -4,13 +4,13 @@ baseCommand:
   - harpy
   - template
 label: harpy_template
-doc: "Create files and HPC configs for workflows. All commands write to stdout.\n\n
-  Tool homepage: https://github.com/pdimens/harpy/"
+doc: Create files and HPC configs for workflows. All commands write to stdout. 
+  Use hpc-* and impute without arguments.
 inputs:
   - id: command
     type: string
-    doc: The specific template command to run (groupings, impute, hpc-generic, hpc-googlebatch,
-      hpc-lsf, or hpc-slurm)
+    doc: The specific template command to run (groupings, impute, hpc-generic, 
+      hpc-googlebatch, hpc-lsf, or hpc-slurm)
     inputBinding:
       position: 1
   - id: args
@@ -18,7 +18,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Additional arguments for the selected command
+    doc: Additional arguments for the command
     inputBinding:
       position: 2
 outputs:
@@ -27,5 +27,8 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 stdout: harpy_template.out
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

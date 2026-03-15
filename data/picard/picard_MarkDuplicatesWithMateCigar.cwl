@@ -1,19 +1,40 @@
 cwlVersion: v1.2
 class: CommandLineTool
 baseCommand:
+  - picard
   - MarkDuplicatesWithMateCigar
 label: picard_MarkDuplicatesWithMateCigar
-doc: "Identifies duplicate reads, accounting for mate CIGAR. This tool locates and
-  tags duplicate reads (both PCR and optical) in a BAM, SAM or CRAM file, where duplicate
-  reads are defined as originating from the same original fragment of DNA, taking
-  into account the CIGAR string of read mates.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Identifies duplicate reads, accounting for mate CIGAR. This tool locates 
+  and tags duplicate reads (both PCR and optical) in a BAM, SAM or CRAM file, 
+  where duplicate reads are defined as originating from the same original 
+  fragment of DNA, taking into account the CIGAR string of read mates.
 inputs:
+  - id: input
+    type:
+      type: array
+      items: File
+    doc: One or more input SAM, BAM or CRAM files to analyze. Must be coordinate
+      sorted.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: metrics_file
+    type: string
+    doc: File to write duplication metrics to
+    inputBinding:
+      position: 101
+      prefix: --METRICS_FILE
+  - id: output
+    type: string
+    doc: The output file to write marked records to
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: add_pg_tag_to_reads
     type:
       - 'null'
       - boolean
     doc: Add PG tag to each read in a SAM or BAM
-    default: true
     inputBinding:
       position: 101
       prefix: --ADD_PG_TAG_TO_READS
@@ -43,7 +64,6 @@ inputs:
     doc: If true, assume that the input file is coordinate sorted even if the 
       header says otherwise. Deprecated, used ASSUME_SORT_ORDER=coordinate 
       instead.
-    default: false
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
@@ -52,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: The block size for use in the coordinate-sorted record buffer.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --BLOCK_SIZE
@@ -70,7 +89,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -80,7 +98,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -89,7 +106,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -99,26 +115,15 @@ inputs:
       - string
     doc: 'The scoring strategy for choosing the non-duplicate among candidates. Possible
       values: {SUM_OF_BASE_QUALITIES, TOTAL_MAPPED_REFERENCE_LENGTH, RANDOM}'
-    default: TOTAL_MAPPED_REFERENCE_LENGTH
     inputBinding:
       position: 101
       prefix: --DUPLICATE_SCORING_STRATEGY
-  - id: input
-    type:
-      type: array
-      items: File
-    doc: One or more input SAM, BAM or CRAM files to analyze. Must be coordinate
-      sorted.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_optical_duplicate_set_size
     type:
       - 'null'
       - int
     doc: This number is the maximum size of a set of duplicate reads for which 
       we will attempt to determine which are optical duplicates.
-    default: 300000
     inputBinding:
       position: 101
       prefix: --MAX_OPTICAL_DUPLICATE_SET_SIZE
@@ -128,7 +133,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -138,7 +142,6 @@ inputs:
       - int
     doc: The minimum distance to buffer records to account for clipping on the 
       5' end of the records.
-    default: -1
     inputBinding:
       position: 101
       prefix: --MINIMUM_DISTANCE
@@ -148,7 +151,6 @@ inputs:
       - int
     doc: The maximum offset between two duplicate clusters in order to consider 
       them optical duplicates.
-    default: 100
     inputBinding:
       position: 101
       prefix: --OPTICAL_DUPLICATE_PIXEL_DISTANCE
@@ -166,7 +168,6 @@ inputs:
       - 'null'
       - string
     doc: Value of PN tag of PG record to be created.
-    default: MarkDuplicatesWithMateCigar
     inputBinding:
       position: 101
       prefix: --PROGRAM_GROUP_NAME
@@ -174,8 +175,7 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Value of VN tag of PG record to be created. If not specified, the 
-      version will be detected automatically.
+    doc: Value of VN tag of PG record to be created.
     inputBinding:
       position: 101
       prefix: --PROGRAM_GROUP_VERSION
@@ -184,7 +184,6 @@ inputs:
       - 'null'
       - string
     doc: The program record ID for the @PG record(s) created by this program.
-    default: MarkDuplicates
     inputBinding:
       position: 101
       prefix: --PROGRAM_RECORD_ID
@@ -193,7 +192,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -220,25 +218,14 @@ inputs:
       - boolean
     doc: If true do not write duplicates to the output file instead of writing 
       them with appropriate flags set.
-    default: false
     inputBinding:
       position: 101
       prefix: --REMOVE_DUPLICATES
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: skip_pairs_with_no_mate_cigar
     type:
       - 'null'
       - boolean
     doc: Skip record pairs with no mate cigar and include them in the output.
-    default: true
     inputBinding:
       position: 101
       prefix: --SKIP_PAIRS_WITH_NO_MATE_CIGAR
@@ -258,7 +245,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -268,7 +254,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -278,30 +263,33 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: metrics_file
+  - id: output_metrics_file
     type: File
     doc: File to write duplication metrics to
     outputBinding:
       glob: $(inputs.metrics_file)
-  - id: output
+  - id: output_output
     type: File
     doc: The output file to write marked records to
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

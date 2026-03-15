@@ -4,17 +4,32 @@ baseCommand:
   - picard
   - CrosscheckFingerprints
 label: picard_CrosscheckFingerprints
-doc: "Checks the odds that all data in the set of input files come from the same individual.
-  Can be used to cross-check readgroups, libraries, samples, or files. Acceptable
-  inputs include BAM/SAM/CRAM and VCF/GVCF files. Output delivers LOD scores in the
-  form of a CrosscheckMetric file.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Checks the odds that all data in the set of input files come from the same 
+  individual. Can be used to cross-check readgroups, libraries, samples, or 
+  files. Acceptable inputs include BAM/SAM/CRAM and VCF/GVCF files. Output 
+  delivers LOD scores in the form of a CrosscheckMetric file.
 inputs:
+  - id: haplotype_map
+    type: File
+    doc: The file lists a set of SNPs, optionally arranged in high-LD blocks, to
+      be used for fingerprinting.
+    inputBinding:
+      position: 101
+      prefix: --HAPLOTYPE_MAP
+  - id: input
+    type:
+      type: array
+      items: string
+    doc: One or more input files (or lists of files) with which to compare 
+      fingerprints.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
   - id: allow_duplicate_reads
     type:
       - 'null'
       - boolean
     doc: Allow the use of duplicate reads in performing the comparison.
-    default: false
     inputBinding:
       position: 101
       prefix: --ALLOW_DUPLICATE_READS
@@ -32,7 +47,6 @@ inputs:
       - 'null'
       - boolean
     doc: Specifies whether the Tumor-aware result should be calculated.
-    default: true
     inputBinding:
       position: 101
       prefix: --CALCULATE_TUMOR_AWARE_RESULTS
@@ -41,7 +55,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -51,7 +64,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -60,7 +72,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -70,7 +81,6 @@ inputs:
       - string
     doc: Specifies which data-type should be used as the basic comparison unit 
       (FILE, SAMPLE, LIBRARY, READGROUP).
-    default: READGROUP
     inputBinding:
       position: 101
       prefix: --CROSSCHECK_BY
@@ -80,7 +90,6 @@ inputs:
       - string
     doc: An argument that controls how crosschecking with both INPUT and 
       SECOND_INPUT should occur.
-    default: CHECK_SAME_SAMPLE
     inputBinding:
       position: 101
       prefix: --CROSSCHECK_MODE
@@ -90,7 +99,6 @@ inputs:
       - int
     doc: When one or more mismatches between groups is detected, exit with this 
       value instead of 0.
-    default: 1
     inputBinding:
       position: 101
       prefix: --EXIT_CODE_WHEN_MISMATCH
@@ -99,7 +107,6 @@ inputs:
       - 'null'
       - int
     doc: When all LOD scores are zero, exit with this value.
-    default: 1
     inputBinding:
       position: 101
       prefix: --EXIT_CODE_WHEN_NO_VALID_CHECKS
@@ -109,7 +116,6 @@ inputs:
       - boolean
     doc: Expect all groups' fingerprints to match, irrespective of their sample 
       names.
-    default: false
     inputBinding:
       position: 101
       prefix: --EXPECT_ALL_GROUPS_TO_MATCH
@@ -118,26 +124,9 @@ inputs:
       - 'null'
       - float
     doc: DEPRECATED. Assumed genotyping error rate.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --GENOTYPING_ERROR_RATE
-  - id: haplotype_map
-    type: File
-    doc: The file lists a set of SNPs, optionally arranged in high-LD blocks, to
-      be used for fingerprinting.
-    inputBinding:
-      position: 101
-      prefix: --HAPLOTYPE_MAP
-  - id: input
-    type:
-      type: array
-      items: string
-    doc: One or more input files (or lists of files) with which to compare 
-      fingerprints.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: input_index_map
     type:
       - 'null'
@@ -159,8 +148,8 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A tsv mapping the sample as it appears in INPUT to the sample as it 
-      should be used for comparisons.
+    doc: A tsv mapping the sample as it appears in INPUT to how it should be 
+      used for comparisons.
     inputBinding:
       position: 101
       prefix: --INPUT_SAMPLE_MAP
@@ -169,7 +158,6 @@ inputs:
       - 'null'
       - float
     doc: LOD score threshold for determining matches/mismatches.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --LOD_THRESHOLD
@@ -179,16 +167,20 @@ inputs:
       - float
     doc: The rate at which a heterozygous genotype in a normal sample turns into
       a homozygous in the tumor.
-    default: 0.5
     inputBinding:
       position: 101
       prefix: --LOSS_OF_HET_RATE
+  - id: matrix_output
+    type: string
+    doc: Optional output file to write matrix of LOD scores to.
+    inputBinding:
+      position: 101
+      prefix: --MATRIX_OUTPUT
   - id: max_effect_of_each_haplotype_block
     type:
       - 'null'
       - float
     doc: Maximal effect of any single haplotype block on outcome.
-    default: 3.0
     inputBinding:
       position: 101
       prefix: --MAX_EFFECT_OF_EACH_HAPLOTYPE_BLOCK
@@ -197,7 +189,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -207,17 +198,21 @@ inputs:
       - int
     doc: The number of threads to use to process files and generate 
       fingerprints.
-    default: 1
     inputBinding:
       position: 101
       prefix: --NUM_THREADS
+  - id: output
+    type: string
+    doc: Optional output file to write metrics to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: output_errors_only
     type:
       - 'null'
       - boolean
     doc: If true, then only groups that do not relate to each other as expected 
       will have their LODs reported.
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_ERRORS_ONLY
@@ -226,7 +221,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -242,9 +236,7 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: A boolean value to determine whether input files should only be parsed 
-      if index files are available.
-    default: false
+    doc: Whether input files should only be parsed if index files are available.
     inputBinding:
       position: 101
       prefix: --REQUIRE_INDEX_FILES
@@ -279,20 +271,11 @@ inputs:
     type:
       - 'null'
       - File
-    doc: A tsv mapping the sample as it appears in SECOND_INPUT to the sample as
-      it should be used for comparisons.
+    doc: A tsv mapping the sample as it appears in SECOND_INPUT to how it should
+      be used for comparisons.
     inputBinding:
       position: 101
       prefix: --SECOND_INPUT_SAMPLE_MAP
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -309,7 +292,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output.
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -319,7 +301,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input.
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -329,34 +310,37 @@ inputs:
       - string
     doc: Validation stringency for all SAM files read by this program (STRICT, 
       LENIENT, SILENT).
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging (ERROR, WARNING, INFO, DEBUG).
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: matrix_output
+  - id: output_matrix_output
     type:
       - 'null'
       - File
     doc: Optional output file to write matrix of LOD scores to.
     outputBinding:
       glob: $(inputs.matrix_output)
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Optional output file to write metrics to.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

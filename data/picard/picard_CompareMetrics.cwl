@@ -4,12 +4,20 @@ baseCommand:
   - picard
   - CompareMetrics
 label: picard_CompareMetrics
-doc: "Compare two metrics files. This tool compares the metrics and histograms generated
-  from metric tools to determine if the generated results are identical. Note that
-  if there are differences in metric values, this tool describes those differences
-  as the change of the second input metric relative to the first.\n\nTool homepage:
-  http://broadinstitute.github.io/picard/"
+doc: Compare two metrics files. This tool compares the metrics and histograms 
+  generated from metric tools to determine if the generated results are 
+  identical. Note that if there are differences in metric values, this tool 
+  describes those differences as the change of the second input metric relative 
+  to the first.
 inputs:
+  - id: input
+    type:
+      type: array
+      items: File
+    doc: Metric files to compare. This argument must be specified at least once.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +32,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -34,7 +41,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -43,7 +49,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -53,18 +58,9 @@ inputs:
       - boolean
     doc: Ignore any differences between the two metric file's histograms (useful
       if using the 'METRIC_ALLOWABLE_RELATIVE_CHANGE')
-    default: false
     inputBinding:
       position: 101
       prefix: --IGNORE_HISTOGRAM_DIFFERENCES
-  - id: input
-    type:
-      type: array
-      items: File
-    doc: Metric files to compare. This argument must be specified at least once.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: key
     type:
       - 'null'
@@ -81,7 +77,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -97,9 +92,8 @@ inputs:
       prefix: --METRIC_ALLOWABLE_RELATIVE_CHANGE
   - id: metrics_not_required
     type:
-      - 'null'
-      - type: array
-        items: string
+      type: array
+      items: string
     doc: Metrics which are not required. Any metrics specified here may be 
       missing from either of the files in the comparison, and this will not 
       affect the result of the comparison.
@@ -116,12 +110,23 @@ inputs:
     inputBinding:
       position: 101
       prefix: --METRICS_TO_IGNORE
+  - id: output
+    type: string
+    doc: Output file to write comparison results to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: output_table
+    type: string
+    doc: Output file to write table of differences to.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_TABLE
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -133,15 +138,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -158,7 +154,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -168,7 +163,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -178,34 +172,37 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: Output file to write comparison results to.
     outputBinding:
       glob: $(inputs.output)
-  - id: output_table
+  - id: output_output_table
     type:
       - 'null'
       - File
     doc: Output file to write table of differences to.
     outputBinding:
       glob: $(inputs.output_table)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

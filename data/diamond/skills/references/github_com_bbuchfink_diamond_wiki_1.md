@@ -1,0 +1,383 @@
+[Skip to content](#start-of-content)
+
+## Navigation Menu
+
+Toggle navigation
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbbuchfink%2Fdiamond%2Fwiki%2F)
+
+Appearance settings
+
+* Platform
+
+  + AI CODE CREATION
+    - [GitHub CopilotWrite better code with AI](https://github.com/features/copilot)
+    - [GitHub SparkBuild and deploy intelligent apps](https://github.com/features/spark)
+    - [GitHub ModelsManage and compare prompts](https://github.com/features/models)
+    - [MCP RegistryNewIntegrate external tools](https://github.com/mcp)
+  + DEVELOPER WORKFLOWS
+    - [ActionsAutomate any workflow](https://github.com/features/actions)
+    - [CodespacesInstant dev environments](https://github.com/features/codespaces)
+    - [IssuesPlan and track work](https://github.com/features/issues)
+    - [Code ReviewManage code changes](https://github.com/features/code-review)
+  + APPLICATION SECURITY
+    - [GitHub Advanced SecurityFind and fix vulnerabilities](https://github.com/security/advanced-security)
+    - [Code securitySecure your code as you build](https://github.com/security/advanced-security/code-security)
+    - [Secret protectionStop leaks before they start](https://github.com/security/advanced-security/secret-protection)
+  + EXPLORE
+    - [Why GitHub](https://github.com/why-github)
+    - [Documentation](https://docs.github.com)
+    - [Blog](https://github.blog)
+    - [Changelog](https://github.blog/changelog)
+    - [Marketplace](https://github.com/marketplace)
+
+  [View all features](https://github.com/features)
+* Solutions
+
+  + BY COMPANY SIZE
+    - [Enterprises](https://github.com/enterprise)
+    - [Small and medium teams](https://github.com/team)
+    - [Startups](https://github.com/enterprise/startups)
+    - [Nonprofits](https://github.com/solutions/industry/nonprofits)
+  + BY USE CASE
+    - [App Modernization](https://github.com/solutions/use-case/app-modernization)
+    - [DevSecOps](https://github.com/solutions/use-case/devsecops)
+    - [DevOps](https://github.com/solutions/use-case/devops)
+    - [CI/CD](https://github.com/solutions/use-case/ci-cd)
+    - [View all use cases](https://github.com/solutions/use-case)
+  + BY INDUSTRY
+    - [Healthcare](https://github.com/solutions/industry/healthcare)
+    - [Financial services](https://github.com/solutions/industry/financial-services)
+    - [Manufacturing](https://github.com/solutions/industry/manufacturing)
+    - [Government](https://github.com/solutions/industry/government)
+    - [View all industries](https://github.com/solutions/industry)
+
+  [View all solutions](https://github.com/solutions)
+* Resources
+
+  + EXPLORE BY TOPIC
+    - [AI](https://github.com/resources/articles?topic=ai)
+    - [Software Development](https://github.com/resources/articles?topic=software-development)
+    - [DevOps](https://github.com/resources/articles?topic=devops)
+    - [Security](https://github.com/resources/articles?topic=security)
+    - [View all topics](https://github.com/resources/articles)
+  + EXPLORE BY TYPE
+    - [Customer stories](https://github.com/customer-stories)
+    - [Events & webinars](https://github.com/resources/events)
+    - [Ebooks & reports](https://github.com/resources/whitepapers)
+    - [Business insights](https://github.com/solutions/executive-insights)
+    - [GitHub Skills](https://skills.github.com)
+  + SUPPORT & SERVICES
+    - [Documentation](https://docs.github.com)
+    - [Customer support](https://support.github.com)
+    - [Community forum](https://github.com/orgs/community/discussions)
+    - [Trust center](https://github.com/trust-center)
+    - [Partners](https://github.com/partners)
+
+  [View all resources](https://github.com/resources)
+* Open Source
+
+  + COMMUNITY
+    - [GitHub SponsorsFund open source developers](https://github.com/sponsors)
+  + PROGRAMS
+    - [Security Lab](https://securitylab.github.com)
+    - [Maintainer Community](https://maintainers.github.com)
+    - [Accelerator](https://github.com/accelerator)
+    - [Archive Program](https://archiveprogram.github.com)
+  + REPOSITORIES
+    - [Topics](https://github.com/topics)
+    - [Trending](https://github.com/trending)
+    - [Collections](https://github.com/collections)
+* Enterprise
+
+  + ENTERPRISE SOLUTIONS
+    - [Enterprise platformAI-powered developer platform](https://github.com/enterprise)
+  + AVAILABLE ADD-ONS
+    - [GitHub Advanced SecurityEnterprise-grade security features](https://github.com/security/advanced-security)
+    - [Copilot for BusinessEnterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+    - [Premium SupportEnterprise-grade 24/7 support](https://github.com/premium-support)
+* [Pricing](https://github.com/pricing)
+
+Search or jump to...
+
+# Search code, repositories, users, issues, pull requests...
+
+Search
+
+Clear
+
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+
+We read every piece of feedback, and take your input very seriously.
+
+[ ]
+Include my email address so I can be contacted
+
+Cancel
+ Submit feedback
+
+# Saved searches
+
+## Use saved searches to filter your results more quickly
+
+Cancel
+ Create saved search
+
+[Sign in](/login?return_to=https%3A%2F%2Fgithub.com%2Fbbuchfink%2Fdiamond%2Fwiki%2F)
+
+[Sign up](/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Fwiki%2Findex&source=header-repo&source_repo=bbuchfink%2Fdiamond)
+
+Appearance settings
+
+Resetting focus
+
+You signed in with another tab or window. Reload to refresh your session.
+You signed out in another tab or window. Reload to refresh your session.
+You switched accounts on another tab or window. Reload to refresh your session.
+
+Dismiss alert
+
+{{ message }}
+
+[bbuchfink](/bbuchfink)
+/
+**[diamond](/bbuchfink/diamond)**
+Public
+
+* ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* [Notifications](/login?return_to=%2Fbbuchfink%2Fdiamond) You must be signed in to change notification settings
+* [Fork
+  189](/login?return_to=%2Fbbuchfink%2Fdiamond)
+* [Star
+   1.3k](/login?return_to=%2Fbbuchfink%2Fdiamond)
+
+* [Code](/bbuchfink/diamond)
+* [Issues
+  207](/bbuchfink/diamond/issues)
+* [Pull requests
+  0](/bbuchfink/diamond/pulls)
+* [Discussions](/bbuchfink/diamond/discussions)
+* [Actions](/bbuchfink/diamond/actions)
+* [Wiki](/bbuchfink/diamond/wiki)
+* [Security
+  0](/bbuchfink/diamond/security)
+* [Insights](/bbuchfink/diamond/pulse)
+
+Additional navigation options
+
+* [Code](/bbuchfink/diamond)
+* [Issues](/bbuchfink/diamond/issues)
+* [Pull requests](/bbuchfink/diamond/pulls)
+* [Discussions](/bbuchfink/diamond/discussions)
+* [Actions](/bbuchfink/diamond/actions)
+* [Wiki](/bbuchfink/diamond/wiki)
+* [Security](/bbuchfink/diamond/security)
+* [Insights](/bbuchfink/diamond/pulse)
+
+# Home
+
+[Jump to bottom](#wiki-pages-box)
+
+Benjamin Buchfink edited this page Mar 7, 2026
+·
+[45 revisions](/bbuchfink/diamond/wiki/Home/_history)
+
+# Synopsis
+
+```
+# downloading the tool
+wget http://github.com/bbuchfink/diamond/releases/download/v2.1.24/diamond-linux64.tar.gz
+tar xzf diamond-linux64.tar.gz
+# creating a diamond-formatted database file
+./diamond makedb --in reference.fasta -d reference
+# running a search in blastp mode
+./diamond blastp -d reference -q queries.fasta -o matches.tsv
+# running a search in blastx mode
+./diamond blastx -d reference -q reads.fasta -o matches.tsv
+# downloading and using a BLAST database (use DIAMOND >= v2.1.14)
+update_blastdb.pl --decompress --blastdb_version 5 swissprot
+./diamond blastp -d swissprot -q queries.fasta -o matches.tsv
+
+# running fast clustering with linear scaling (30% identity threshold)
+diamond linclust -d reference.fasta -o clusters.tsv --approx-id 30 -M 64G
+# running sensitive clustering using all-vs-all alignment (30% identity threshold)
+diamond cluster -d reference.fasta -o clusters.tsv --approx-id 30 -M 64G
+```
+
+Important
+
+* **Repeat masking is applied to the query and reference
+  sequences by default**. To disable it, use `--masking 0`.
+* DIAMOND is optimized for large input files of >1 million proteins.
+  Naturally the tool can be used for smaller files as well, but the
+  algorithm will not reach its full efficiency.
+* The program may use quite a lot of memory and also temporary
+  disk space. Should the program fail due to running out of either
+  one, you need to set a lower value for the
+  [block size parameter](https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options#memory--performance-options)
+  `-b`.
+* The sensitivity can be adjusted using the options `--faster`, `--fast`,
+  `--mid-sensitive`, `--sensitive`, `--more-sensitive`, `--very-sensitive`
+  and `--ultra-sensitive`.
+
+## Toggle table of contents Pages 17
+
+* Loading
+
+  [Home](/bbuchfink/diamond/wiki)
+
+  + [Synopsis](/bbuchfink/diamond/wiki#synopsis)
+* Loading
+
+  [1. Tutorial](/bbuchfink/diamond/wiki/1.-Tutorial)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [2. Installation](/bbuchfink/diamond/wiki/2.-Installation)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [3. Command line options](/bbuchfink/diamond/wiki/3.-Command-line-options)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [4. Support & FAQ](/bbuchfink/diamond/wiki/4.-Support-%26-FAQ)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [5. Advanced topics](/bbuchfink/diamond/wiki/5.-Advanced-topics)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [6. Distributed computing](/bbuchfink/diamond/wiki/6.-Distributed-computing)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Advanced options](/bbuchfink/diamond/wiki/Advanced-options)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Applications](/bbuchfink/diamond/wiki/Applications)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Benchmarks](/bbuchfink/diamond/wiki/Benchmarks)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Clustering](/bbuchfink/diamond/wiki/Clustering)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [DeepClust database](/bbuchfink/diamond/wiki/DeepClust-database)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Deprecated options](/bbuchfink/diamond/wiki/Deprecated-options)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [File formats](/bbuchfink/diamond/wiki/File-formats)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [How to cluster huge datasets](/bbuchfink/diamond/wiki/How-to-cluster-huge-datasets)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Repeat masking benchmark](/bbuchfink/diamond/wiki/Repeat-masking-benchmark)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Loading
+
+  [Small query benchmark](/bbuchfink/diamond/wiki/Small-query-benchmark)
+
+  ### Uh oh!
+
+  There was an error while loading. Please reload this page.
+* Show 2 more pages…
+
+* [Home](https://github.com/bbuchfink/diamond/wiki)
+* [Tutorial](https://github.com/bbuchfink/diamond/wiki/1.-Tutorial)
+* [Installation](https://github.com/bbuchfink/diamond/wiki/2.-Installation)
+* [Command line options](https://github.com/bbuchfink/diamond/wiki/3.-Command-line-options)
+  + [Advanced options](https://github.com/bbuchfink/diamond/wiki/Advanced-options)
+* [Clustering](https://github.com/bbuchfink/diamond/wiki/Clustering)
+  + [How to cluster huge datasets](https://github.com/bbuchfink/diamond/wiki/How-to-cluster-huge-datasets)
+* [Support & FAQ](https://github.com/bbuchfink/diamond/wiki/4.-Support-%26-FAQ)
+* Advanced topics
+  + [File formats](https://github.com/bbuchfink/diamond/wiki/File-formats)
+  + [Distributed computing](https://github.com/bbuchfink/diamond/wiki/6.-Distributed-computing)
+  + [Miscellaneous](https://github.com/bbuchfink/diamond/wiki/5.-Advanced-topics)
+  + [Deprecated options](https://github.com/bbuchfink/diamond/wiki/Deprecated-options)
+* [Benchmarks](https://github.com/bbuchfink/diamond/wiki/Benchmarks)
+  + [Small query](https://github.com/bbuchfink/diamond/wiki/Small-query-benchmark)
+  + [Repeat masking](https://github.com/bbuchfink/diamond/wiki/Repeat-masking-benchmark)
+
+### Clone this wiki locally
+
+## Footer
+
+© 2026 GitHub, Inc.
+
+### Footer navigation
+
+* [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+* [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+* [Security](https://github.com/security)
+* [Status](https://www.githubstatus.com/)
+* [Community](https://github.community/)
+* [Docs](https://docs.github.com/)
+* [Contact](https://support.github.com?tags=dotcom-footer)
+* Manage cookies
+* Do not share my personal information
+
+You can’t perform that action at this time.

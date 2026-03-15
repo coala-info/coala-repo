@@ -4,148 +4,17 @@ baseCommand:
   - diamond
   - blastp
 label: diamond_blastp
-doc: "DIAMOND is a sequence aligner for protein and translated DNA searches, designed
-  for high performance analysis of big sequence data.\n\nTool homepage: https://github.com/bbuchfink/diamond"
+doc: DIAMOND is a sequence aligner for protein and translated DNA searches, 
+  designed for high performance analysis of big sequence data.
 inputs:
-  - id: alfmt
-    type:
-      - 'null'
-      - string
-    doc: format of aligned query file (fasta/fastq)
-    inputBinding:
-      position: 101
-      prefix: --alfmt
-  - id: approx_id
-    type:
-      - 'null'
-      - float
-    doc: minimum approx. identity% to report an alignment/to cluster sequences
-    inputBinding:
-      position: 101
-      prefix: --approx-id
-  - id: block_size
-    type:
-      - 'null'
-      - float
-    doc: sequence block size in billions of letters
-    default: 2.0
-    inputBinding:
-      position: 101
-      prefix: --block-size
-  - id: comp_based_stats
+  - id: threads
     type:
       - 'null'
       - int
-    doc: composition based statistics mode (0-4)
+    doc: number of CPU threads
     inputBinding:
       position: 101
-      prefix: --comp-based-stats
-  - id: compress
-    type:
-      - 'null'
-      - int
-    doc: compression for output files (0=none, 1=gzip, zstd)
-    inputBinding:
-      position: 101
-      prefix: --compress
-  - id: custom_matrix
-    type:
-      - 'null'
-      - File
-    doc: file containing custom scoring matrix
-    inputBinding:
-      position: 101
-      prefix: --custom-matrix
-  - id: db
-    type:
-      - 'null'
-      - File
-    doc: database file
-    inputBinding:
-      position: 101
-      prefix: --db
-  - id: evalue
-    type:
-      - 'null'
-      - float
-    doc: maximum e-value to report alignments
-    default: 0.001
-    inputBinding:
-      position: 101
-      prefix: --evalue
-  - id: ext
-    type:
-      - 'null'
-      - string
-    doc: Extension mode (banded-fast/banded-slow/full)
-    inputBinding:
-      position: 101
-      prefix: --ext
-  - id: fast
-    type:
-      - 'null'
-      - boolean
-    doc: enable fast mode
-    inputBinding:
-      position: 101
-      prefix: --fast
-  - id: faster
-    type:
-      - 'null'
-      - boolean
-    doc: enable faster mode
-    inputBinding:
-      position: 101
-      prefix: --faster
-  - id: gapextend
-    type:
-      - 'null'
-      - int
-    doc: gap extension penalty
-    inputBinding:
-      position: 101
-      prefix: --gapextend
-  - id: gapopen
-    type:
-      - 'null'
-      - int
-    doc: gap open penalty
-    inputBinding:
-      position: 101
-      prefix: --gapopen
-  - id: header
-    type:
-      - 'null'
-      - string
-    doc: Use header lines in tabular output format (0/simple/verbose).
-    inputBinding:
-      position: 101
-      prefix: --header
-  - id: id
-    type:
-      - 'null'
-      - float
-    doc: minimum identity% to report an alignment
-    inputBinding:
-      position: 101
-      prefix: --id
-  - id: index_chunks
-    type:
-      - 'null'
-      - int
-    doc: number of chunks for index processing
-    default: 4
-    inputBinding:
-      position: 101
-      prefix: --index-chunks
-  - id: iterate
-    type:
-      - 'null'
-      - boolean
-    doc: iterated search with increasing sensitivity
-    inputBinding:
-      position: 101
-      prefix: --iterate
+      prefix: --threads
   - id: log
     type:
       - 'null'
@@ -154,116 +23,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --log
-  - id: masking
-    type:
-      - 'null'
-      - string
-    doc: masking algorithm (none, seg, tantan=default)
-    inputBinding:
-      position: 101
-      prefix: --masking
-  - id: matrix
-    type:
-      - 'null'
-      - string
-    doc: score matrix for protein alignment
-    default: BLOSUM62
-    inputBinding:
-      position: 101
-      prefix: --matrix
-  - id: max_hsps
-    type:
-      - 'null'
-      - int
-    doc: maximum number of HSPs per target sequence to report for each query
-    default: 1
-    inputBinding:
-      position: 101
-      prefix: --max-hsps
-  - id: max_target_seqs
-    type:
-      - 'null'
-      - int
-    doc: maximum number of target sequences to report alignments for
-    default: 25
-    inputBinding:
-      position: 101
-      prefix: --max-target-seqs
-  - id: mid_sensitive
-    type:
-      - 'null'
-      - boolean
-    doc: enable mid-sensitive mode
-    inputBinding:
-      position: 101
-      prefix: --mid-sensitive
-  - id: min_orf
-    type:
-      - 'null'
-      - int
-    doc: ignore translated sequences without an open reading frame of at least 
-      this length
-    inputBinding:
-      position: 101
-      prefix: --min-orf
-  - id: min_score
-    type:
-      - 'null'
-      - float
-    doc: minimum bit score to report alignments (overrides e-value setting)
-    inputBinding:
-      position: 101
-      prefix: --min-score
-  - id: more_sensitive
-    type:
-      - 'null'
-      - boolean
-    doc: enable more sensitive mode
-    inputBinding:
-      position: 101
-      prefix: --more-sensitive
-  - id: motif_masking
-    type:
-      - 'null'
-      - int
-    doc: softmask abundant motifs (0/1)
-    inputBinding:
-      position: 101
-      prefix: --motif-masking
-  - id: no_self_hits
-    type:
-      - 'null'
-      - boolean
-    doc: suppress reporting of identical self hits
-    inputBinding:
-      position: 101
-      prefix: --no-self-hits
-  - id: outfmt
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: output format (0, 5, 6, 100, 101, 102, 103, 104) followed by optional 
-      keywords
-    inputBinding:
-      position: 101
-      prefix: --outfmt
-  - id: query
-    type:
-      - 'null'
-      - File
-    doc: input query file
-    inputBinding:
-      position: 101
-      prefix: --query
-  - id: query_cover
-    type:
-      - 'null'
-      - float
-    doc: minimum query cover% to report an alignment
-    inputBinding:
-      position: 101
-      prefix: --query-cover
   - id: quiet
     type:
       - 'null'
@@ -272,38 +31,50 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: range_culling
+  - id: tmpdir
     type:
       - 'null'
-      - boolean
-    doc: restrict hit culling to overlapping query ranges
+      - Directory
+    doc: directory for temporary files
     inputBinding:
       position: 101
-      prefix: --range-culling
-  - id: sensitive
+      prefix: --tmpdir
+  - id: db
+    type: File
+    doc: database file
+    inputBinding:
+      position: 101
+      prefix: --db
+  - id: out
+    type: string
+    doc: output file
+    inputBinding:
+      position: 101
+      prefix: --out
+  - id: header
     type:
       - 'null'
-      - boolean
-    doc: enable sensitive mode
+      - string
+    doc: Use header lines in tabular output format (0/simple/verbose).
     inputBinding:
       position: 101
-      prefix: --sensitive
-  - id: seqidlist
-    type:
-      - 'null'
-      - File
-    doc: filter the database by list of accessions
-    inputBinding:
-      position: 101
-      prefix: --seqidlist
-  - id: shapes
+      prefix: --header
+  - id: comp_based_stats
     type:
       - 'null'
       - int
-    doc: number of seed shapes (default=all available)
+    doc: composition based statistics mode (0-4)
     inputBinding:
       position: 101
-      prefix: --shapes
+      prefix: --comp-based-stats
+  - id: masking
+    type:
+      - 'null'
+      - string
+    doc: masking algorithm (none, seg, tantan=default)
+    inputBinding:
+      position: 101
+      prefix: --masking
   - id: soft_masking
     type:
       - 'null'
@@ -312,6 +83,151 @@ inputs:
     inputBinding:
       position: 101
       prefix: --soft-masking
+  - id: gapopen
+    type:
+      - 'null'
+      - int
+    doc: gap open penalty
+    inputBinding:
+      position: 101
+      prefix: --gapopen
+  - id: gapextend
+    type:
+      - 'null'
+      - int
+    doc: gap extension penalty
+    inputBinding:
+      position: 101
+      prefix: --gapextend
+  - id: matrix
+    type:
+      - 'null'
+      - string
+    doc: score matrix for protein alignment
+    inputBinding:
+      position: 101
+      prefix: --matrix
+  - id: custom_matrix
+    type:
+      - 'null'
+      - File
+    doc: file containing custom scoring matrix
+    inputBinding:
+      position: 101
+      prefix: --custom-matrix
+  - id: evalue
+    type:
+      - 'null'
+      - float
+    doc: maximum e-value to report alignments
+    inputBinding:
+      position: 101
+      prefix: --evalue
+  - id: motif_masking
+    type:
+      - 'null'
+      - int
+    doc: softmask abundant motifs (0/1)
+    inputBinding:
+      position: 101
+      prefix: --motif-masking
+  - id: approx_id
+    type:
+      - 'null'
+      - float
+    doc: minimum approx. identity% to report an alignment/to cluster sequences
+    inputBinding:
+      position: 101
+      prefix: --approx-id
+  - id: ext
+    type:
+      - 'null'
+      - string
+    doc: Extension mode (banded-fast/banded-slow/full)
+    inputBinding:
+      position: 101
+      prefix: --ext
+  - id: max_target_seqs
+    type:
+      - 'null'
+      - int
+    doc: maximum number of target sequences to report alignments for
+    inputBinding:
+      position: 101
+      prefix: --max-target-seqs
+  - id: top
+    type:
+      - 'null'
+      - float
+    doc: report alignments within this percentage range of top alignment score 
+      (overrides --max-target-seqs)
+    inputBinding:
+      position: 101
+      prefix: --top
+  - id: faster
+    type:
+      - 'null'
+      - boolean
+    doc: enable faster mode
+    inputBinding:
+      position: 101
+      prefix: --faster
+  - id: fast
+    type:
+      - 'null'
+      - boolean
+    doc: enable fast mode
+    inputBinding:
+      position: 101
+      prefix: --fast
+  - id: mid_sensitive
+    type:
+      - 'null'
+      - boolean
+    doc: enable mid-sensitive mode
+    inputBinding:
+      position: 101
+      prefix: --mid-sensitive
+  - id: sensitive
+    type:
+      - 'null'
+      - boolean
+    doc: enable sensitive mode
+    inputBinding:
+      position: 101
+      prefix: --sensitive
+  - id: more_sensitive
+    type:
+      - 'null'
+      - boolean
+    doc: enable more sensitive mode
+    inputBinding:
+      position: 101
+      prefix: --more-sensitive
+  - id: very_sensitive
+    type:
+      - 'null'
+      - boolean
+    doc: enable very sensitive mode
+    inputBinding:
+      position: 101
+      prefix: --very-sensitive
+  - id: ultra_sensitive
+    type:
+      - 'null'
+      - boolean
+    doc: enable ultra sensitive mode
+    inputBinding:
+      position: 101
+      prefix: --ultra-sensitive
+  - id: query
+    type:
+      - 'null'
+      - File
+    doc: input query file
+    inputBinding:
+      position: 101
+      prefix: --query
   - id: strand
     type:
       - 'null'
@@ -320,6 +236,90 @@ inputs:
     inputBinding:
       position: 101
       prefix: --strand
+  - id: un
+    type: string
+    doc: file for unaligned queries
+    inputBinding:
+      position: 101
+      prefix: --un
+  - id: al
+    type: string
+    doc: file or aligned queries
+    inputBinding:
+      position: 101
+      prefix: --al
+  - id: unfmt
+    type:
+      - 'null'
+      - string
+    doc: format of unaligned query file (fasta/fastq)
+    inputBinding:
+      position: 101
+      prefix: --unfmt
+  - id: alfmt
+    type:
+      - 'null'
+      - string
+    doc: format of aligned query file (fasta/fastq)
+    inputBinding:
+      position: 101
+      prefix: --alfmt
+  - id: unal
+    type:
+      - 'null'
+      - int
+    doc: report unaligned queries (0=no, 1=yes)
+    inputBinding:
+      position: 101
+      prefix: --unal
+  - id: max_hsps
+    type:
+      - 'null'
+      - int
+    doc: maximum number of HSPs per target sequence to report for each query
+    inputBinding:
+      position: 101
+      prefix: --max-hsps
+  - id: range_culling
+    type:
+      - 'null'
+      - boolean
+    doc: restrict hit culling to overlapping query ranges
+    inputBinding:
+      position: 101
+      prefix: --range-culling
+  - id: compress
+    type:
+      - 'null'
+      - int
+    doc: compression for output files (0=none, 1=gzip, zstd)
+    inputBinding:
+      position: 101
+      prefix: --compress
+  - id: min_score
+    type:
+      - 'null'
+      - float
+    doc: minimum bit score to report alignments (overrides e-value setting)
+    inputBinding:
+      position: 101
+      prefix: --min-score
+  - id: id
+    type:
+      - 'null'
+      - float
+    doc: minimum identity% to report an alignment
+    inputBinding:
+      position: 101
+      prefix: --id
+  - id: query_cover
+    type:
+      - 'null'
+      - float
+    doc: minimum query cover% to report an alignment
+    inputBinding:
+      position: 101
+      prefix: --query-cover
   - id: subject_cover
     type:
       - 'null'
@@ -336,6 +336,30 @@ inputs:
     inputBinding:
       position: 101
       prefix: --swipe
+  - id: iterate
+    type:
+      - 'null'
+      - boolean
+    doc: iterated search with increasing sensitivity
+    inputBinding:
+      position: 101
+      prefix: --iterate
+  - id: block_size
+    type:
+      - 'null'
+      - float
+    doc: sequence block size in billions of letters
+    inputBinding:
+      position: 101
+      prefix: --block-size
+  - id: outfmt
+    type:
+      - 'null'
+      - string
+    doc: output format (0, 5, 6, 100, 101, 102, 103, 104)
+    inputBinding:
+      position: 101
+      prefix: --outfmt
   - id: taxonlist
     type:
       - 'null'
@@ -344,93 +368,57 @@ inputs:
     inputBinding:
       position: 101
       prefix: --taxonlist
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of CPU threads
-    inputBinding:
-      position: 101
-      prefix: --threads
-  - id: tmpdir
-    type:
-      - 'null'
-      - Directory
-    doc: directory for temporary files
-    inputBinding:
-      position: 101
-      prefix: --tmpdir
-  - id: top
-    type:
-      - 'null'
-      - float
-    doc: report alignments within this percentage range of top alignment score 
-      (overrides --max-target-seqs)
-    inputBinding:
-      position: 101
-      prefix: --top
-  - id: ultra_sensitive
-    type:
-      - 'null'
-      - boolean
-    doc: enable ultra sensitive mode
-    inputBinding:
-      position: 101
-      prefix: --ultra-sensitive
-  - id: unal
-    type:
-      - 'null'
-      - int
-    doc: report unaligned queries (0=no, 1=yes)
-    inputBinding:
-      position: 101
-      prefix: --unal
-  - id: unfmt
+  - id: taxon_exclude
     type:
       - 'null'
       - string
-    doc: format of unaligned query file (fasta/fastq)
+    doc: exclude list of taxon ids (comma-separated)
     inputBinding:
       position: 101
-      prefix: --unfmt
-  - id: verbose
+      prefix: --taxon-exclude
+  - id: seqidlist
+    type:
+      - 'null'
+      - File
+    doc: filter the database by list of accessions
+    inputBinding:
+      position: 101
+      prefix: --seqidlist
+  - id: no_self_hits
     type:
       - 'null'
       - boolean
-    doc: verbose console output
+    doc: suppress reporting of identical self hits
     inputBinding:
       position: 101
-      prefix: --verbose
-  - id: very_sensitive
-    type:
-      - 'null'
-      - boolean
-    doc: enable very sensitive mode
-    inputBinding:
-      position: 101
-      prefix: --very-sensitive
+      prefix: --no-self-hits
 outputs:
-  - id: out
+  - id: output_out
     type:
       - 'null'
       - File
     doc: output file
     outputBinding:
       glob: $(inputs.out)
-  - id: un
+  - id: output_un
     type:
       - 'null'
       - File
     doc: file for unaligned queries
     outputBinding:
       glob: $(inputs.un)
-  - id: al
+  - id: output_al
     type:
       - 'null'
       - File
     doc: file or aligned queries
     outputBinding:
       glob: $(inputs.al)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/diamond:2.1.21--h13889ed_0
+    dockerPull: quay.io/biocontainers/diamond:2.1.24--hf93d47f_0
+s:url: https://github.com/bbuchfink/diamond
+$namespaces:
+  s: https://schema.org/

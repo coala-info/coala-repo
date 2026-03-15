@@ -4,12 +4,12 @@ baseCommand:
   - harpy
   - resume
 label: harpy_resume
-doc: "Continue an incomplete Harpy workflow. Bypasses preprocessing steps and executes
-  the Snakemake command present in the directory.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: Continue an incomplete Harpy workflow by bypassing preprocessing steps and 
+  executing the Snakemake command present in the target directory.
 inputs:
   - id: directory
     type: Directory
-    doc: Harpy output directory containing the workflow to resume
+    doc: The Harpy output directory containing the workflow to resume
     inputBinding:
       position: 1
   - id: absolute
@@ -20,22 +20,14 @@ inputs:
     inputBinding:
       position: 102
       prefix: --absolute
-  - id: conda
+  - id: direct
     type:
       - 'null'
       - boolean
-    doc: Recreate the conda environments
+    doc: Call Snakemake directly without Harpy intervention
     inputBinding:
       position: 102
-      prefix: --conda
-  - id: quiet
-    type:
-      - 'null'
-      - int
-    doc: 0 all output, 1 progress bar, 2 no output
-    inputBinding:
-      position: 102
-      prefix: --quiet
+      prefix: --direct
   - id: threads
     type:
       - 'null'
@@ -44,11 +36,22 @@ inputs:
     inputBinding:
       position: 102
       prefix: --threads
+  - id: quiet
+    type:
+      - 'null'
+      - int
+    doc: 0 all output, 1 progress bar, 2 no output
+    inputBinding:
+      position: 102
+      prefix: --quiet
 outputs:
   - id: stdout
     type: stdout
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 stdout: harpy_resume.out
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

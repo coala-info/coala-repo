@@ -4,48 +4,10 @@ baseCommand:
   - picard
   - AccumulateQualityYieldMetrics
 label: picard_AccumulateQualityYieldMetrics
-doc: "Combines multiple QualityYieldMetrics files into a single file. This tool is
-  used in cases where the metrics are calculated separately on shards of the same
-  read-group.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Combines multiple QualityYieldMetrics files into a single file. This tool 
+  is used in cases where the metrics are calculated separately on shards of the 
+  same read-group.
 inputs:
-  - id: arguments_file
-    type:
-      - 'null'
-      - type: array
-        items: File
-    doc: read one or more arguments files and add them to the command line This 
-      argument may be specified 0 or more times.
-    inputBinding:
-      position: 101
-      prefix: --arguments_file
-  - id: compression_level
-    type:
-      - 'null'
-      - int
-    doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
-    inputBinding:
-      position: 101
-      prefix: --COMPRESSION_LEVEL
-  - id: create_index
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to create an index when writing VCF or coordinate sorted BAM 
-      output.
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --CREATE_INDEX
-  - id: create_md5_file
-    type:
-      - 'null'
-      - boolean
-    doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --CREATE_MD5_FILE
   - id: input
     type:
       type: array
@@ -55,15 +17,52 @@ inputs:
     inputBinding:
       position: 101
       prefix: --INPUT
+  - id: output
+    type: string
+    doc: Output QualityYieldMetric file to write.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: arguments_file
+    type:
+      - 'null'
+      - type: array
+        items: File
+    doc: read one or more arguments files and add them to the command line
+    inputBinding:
+      position: 101
+      prefix: --arguments_file
+  - id: compression_level
+    type:
+      - 'null'
+      - int
+    doc: Compression level for all compressed files created (e.g. BAM and VCF).
+    inputBinding:
+      position: 101
+      prefix: --COMPRESSION_LEVEL
+  - id: create_index
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to create an index when writing VCF or coordinate sorted BAM 
+      output.
+    inputBinding:
+      position: 101
+      prefix: --CREATE_INDEX
+  - id: create_md5_file
+    type:
+      - 'null'
+      - boolean
+    doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
+    inputBinding:
+      position: 101
+      prefix: --CREATE_MD5_FILE
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
-      of records stored in RAM before spilling to disk. Increasing this number 
-      reduces the number of file handles needed to sort the file, and increases 
-      the amount of RAM needed.
-    default: 500000
+      of records stored in RAM before spilling to disk.
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -72,7 +71,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -84,23 +82,13 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
       - type: array
         items: Directory
     doc: One or more directories with space available to be used by this program
-      for temporary storage of working files This argument may be specified 0 or
-      more times.
+      for temporary storage of working files
     inputBinding:
       position: 101
       prefix: --TMP_DIR
@@ -110,7 +98,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -120,7 +107,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -128,29 +114,30 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Validation stringency for all SAM files read by this program. Setting 
-      stringency to SILENT can improve performance when processing a BAM file in
-      which variable-length data (read, qualities, tags) do not otherwise need 
-      to be decoded.
-    default: STRICT
+    doc: 'Validation stringency for all SAM files read by this program. Possible values:
+      {STRICT, LENIENT, SILENT}'
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging.
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output QualityYieldMetric file to write.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

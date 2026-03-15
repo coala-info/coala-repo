@@ -4,12 +4,27 @@ baseCommand:
   - picard
   - ScatterIntervalsByNs
 label: picard_ScatterIntervalsByNs
-doc: "Writes an interval list created by splitting a reference at Ns. A Program for
-  breaking up a reference into intervals of alternating regions of N and ACGT bases.
-  Used for creating a broken-up interval list that can be used for scattering a variant-calling
-  pipeline in a way that will not cause problems at the edges of the intervals.\n\n\
-  Tool homepage: http://broadinstitute.github.io/picard/"
+doc: Writes an interval list created by splitting a reference at Ns. A Program 
+  for breaking up a reference into intervals of alternating regions of N and 
+  ACGT bases. Used for creating a broken-up interval list that can be used for 
+  scattering a variant-calling pipeline in a way that will not cause problems at
+  the edges of the intervals.
 inputs:
+  - id: output
+    type: string
+    doc: Output file for interval list.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: reference
+    type:
+      - 'null'
+      - File
+    doc: 'Reference sequence to use. Note: this tool requires that the reference fasta
+      has both an associated index and a dictionary.'
+    inputBinding:
+      position: 101
+      prefix: --REFERENCE
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +39,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -34,7 +48,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -43,7 +56,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -53,7 +65,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -63,7 +74,6 @@ inputs:
       - int
     doc: Maximal number of contiguous N bases to tolerate, thereby continuing 
       the current ACGT interval.
-    default: 1
     inputBinding:
       position: 101
       prefix: --MAX_TO_MERGE
@@ -72,7 +82,6 @@ inputs:
       - 'null'
       - string
     doc: 'Type of intervals to output. Possible values: {N, ACGT, BOTH}'
-    default: BOTH
     inputBinding:
       position: 101
       prefix: --OUTPUT_TYPE
@@ -81,26 +90,9 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
-  - id: reference
-    type: File
-    doc: 'Reference sequence to use. Note: this tool requires that the reference fasta
-      has both an associated index and a dictionary.'
-    inputBinding:
-      position: 101
-      prefix: --REFERENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -117,7 +109,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -127,7 +118,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -137,25 +127,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output file for interval list.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

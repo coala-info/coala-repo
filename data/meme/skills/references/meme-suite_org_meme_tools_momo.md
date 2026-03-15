@@ -1,1 +1,376 @@
-MoMo - Submission form Click on the menu at the left to see which of the following sequence input methods are available. Type in sequences When this option is available you may directly input multiple sequences by typing them. Sequences must be input in FASTA format . Upload sequences When this option is available you may upload a file containing sequences in FASTA format . Upload BED file When this option is available you may upload a file containing sequence coordinates in BED format . Databases (select category) When this option is available you may first select a category of sequence database from the list below it. Two additional menus will then appear where you can select the particular database and version desired, respectively. The full list of available sequence databases and their descriptions can be viewed HERE . Submitted sequences This option is only available when you have invoked the current program by clicking on a button in the output report of a different MEME Suite program. By selecting this option you will input the sequences sent by that program. [ close ] Specify a file to upload containing sequence coordinates in BED format . The file must be based on the exact genome version you specified in the menus above. [ close ] Select an available sequence database from this menu. [ close ] Select an available version of the sequence database from this menu. [ close ] Select an available tissue/cell-specificity from this menu. [ close ] Selecting this option will filter the sequence menu to only contain databases that have additional information that is specific to a tissue or cell line. This option causes MEME Suite to use tissue/cell-specific information (typically from DNase I or histone modification ChIP-seq data) encoded as a position specific prior that has been created by the MEME Suite create-priors utility. You can see a description of the sequence databases for which we provide tissue/cell-specific priors here . Note that you cannot upload or type in your own sequences when tissue/cell-specific scanning is selected. [ close ] Enter the email address where you want the job notification email to be sent. Please check that this is a valid email address! The notification email will include a link to your job results. Note: You can also access your jobs via the Recent Jobs menu on the left of all MEME Suite input pages. That menu only keeps track of jobs submitted during the current session of your internet browser. Note: Most MEME Suite servers only store results for a couple of days. So be sure to download any results you wish to keep. [ close ] Enter text naming or describing this analysis. The job description will be included in the notification email you receive and in the job output. [ close ] [ close ] Select the PTM file(s) that you wish to analyze. The PTM file(s) should all use the same format. This can be in either a Peptide-Spectrum Match (PSM) format or a pure-sequence format (FASTA or Raw). For PSM formats, which contain tab-separated columns and a header line giving the column names, you must specify the name of the column that contains the modified peptides in the provided field. The website will attempt to guess the file format based on what appears in the first (non-blank) line in the file, and will indicate the its guess in the 'Format?' column. The website will also indicate the correct value of the 'Modified Peptide Column Name' for that format, which you can change if your files use a slightly different format. If the first (non-empty) line in the file contains one or more tab characters, but none of the known values for 'Modified Peptide Column Name' are found (see Peptide-Spectrum Match (PSM) format ), the website will display 'unknown PSM format' in the 'Format?' column. This will allow you to use PSM formats that have different column names than the known formats, as long as modified amino acids are indicated using a one of the 'Modified Peptide Formats' described in the last column of the table in Peptide-Spectrum Match (PSM) format . For pure-sequence formats, you may not specify a 'Modified Peptide Column Name', the peptides must use the standard IUPAC protein alphabet , and must all be the same length. The pure-sequence formats are: FASTA: List of fixed width peptides centered around the modification site in FASTA format. Raw: List of fixed width peptides centered around the modification site, one per line. For example, the following is a (partial) list of length-7 peptides centered around a (modified) serine residue: EGKSLGI KKQSGLA GALSRTH RMHSAGK ELKSEGL ... [ close ] Protein database (in FASTA format) to use for filling in any missing flanking amino acids, and to use as background sequences. [ close ] Minimum occurrences of modification required to output a motif. This threshold is applied after filtering and eliminating repeats (if applicable). [ close ] The p -value threshold used by motif-x for selecting significant residue/position pairs in the motif. [ close ] MoDL will stop after it finds the given number of motifs. [ close ] MoDL will stop after the given number of iterations is reached. [ close ] MoDL will stop if there is no decrease in its objective function, the minumum description length (MDL), for the given number of iterations. [ close ] The width of motifs to discover. Because motifs will be symmetric around the central, modified residue, width must be odd . The behavior of MoMo depends on the format of the PTM input file(s). PTM file format MoMo Behavior FASTA or Raw format No effect. An error is reported if the length of any sequence in the input files differs from Width . PSM format If a modified peptide is shorter than Width , MoMo will first attempt to expand it by looking up its context in the protein database file , if given (see option --protein-database , below.) If the modified peptide is still shorter than Width , MoMo will pad it on either side as required using the Protein IUPAC 'X' character. If the longest modified peptide is still shorter than Width , MoMo will set the motif width to the length of the longest (expanded and padded) modified peptide. [ close ] The background peptides will be extracted from the context sequences. By default, background peptides are generated by shuffling each foreground peptide while conserving its central residue. [ close ] Mimic the behavior of (the Harvard version of) motif-x more closely by only calculating binomial p -values no smaller than 10 -16 for residue/position pairs. Smaller p -values are set to 10 -16 , and ties are broken by sorting residue/position pairs by decreasing number of peptides that match them. [ close ] All peptides that contain an 'X' (after expansion and padding, see option 'Width:', above) will be removed from the analysis. [ close ] Create one motif per mass instead of one motif per mass and central peptide. (The modification mass is given as a number following the modified amino acid in the modified peptide as described in the PSM format documentation.) For example, phosphorylation is typically specified as a mass of 79.97 added to the residues S, T or Y. If this option is not checked, then three separate motifs are generated, each with a perfectly conserved central residue. If this option is checked, then all the phosphorylation events are combined into a single motif, with a mixture of S, T and Y in the central position. [ close ] Any groups of modified peptides whose &lt;width&gt; central residues, after expansion and padding, are identical will be replaced with a single copy. Note: Since shorter peptides will be padded with the 'X' character, which matches any other character, shorter peptides will match longer ones that contain them, and will be subject to elimination. [ close ] Filter the entries in the PSM-formatted input file based on one of its fields. Select the check box and then specify the Field, Test and Threshold in the three columns that will be provided. (Not available with FASTA and Raw formatted input files.) [ close ] Choose the algorithm to use to discover motifs: Simple Creates a maximum-likelihood position weight matrix (PWM) motif for each distinct central residue present in the modified peptides in the input PTM file(s). The weights in the PWM are the observed frequencies of the amino acids in the equal-length modified peptides, aligned on their central residue (the modified amino acid). If the modified peptides in the input PTM file(s) have differing lengths, their lengths are adjusted to be equal, as described below under the advanced option "How wide will the motifs be?". motif-x The motif-x algorithm utilizes a greedy iterative search to discover motifs by recursively picking the most statistically significant position/residue pair according to binomial probabilility, reducing the dataset to only sequences containing that pair, and continuing until no more position/residue pairs are significant according to a user-defined threshold. If this motif has at least one statistically significant position/residue pair, all instances of the pattern are removed, and the algorithm continues to generate motifs until this condition fails. The motif-x algorithm is described in the paper Schwartz, D. and Gygi, S. P. (2005). "An iterative statistical approach to the identification of protein phosphorylation motifs from large-scale data sets". Nature Biotechnology , 23(11), 1391-1398. MoDL The MoDL algorithm is based on the principle of minimum description length (MDL). It searches for a set of motifs that minimizes the number of bits to encode the set of modified peptides and motifs, using a greedy and iterative approach. The algorithm uses a list of candidate single-residued motifs (excluding the modified site) that exist in the modification dataset. Starting with an empty set of motifs, at each iteration, a set of potential motif sets are generated by either removing a candidate motif, adding a candidate motif, adding a candidate motif then removing a
+**Click on the menu at the left to see which of the following sequence input methods are available.**
+
+**Type in sequences**
+:   When this option is available you may directly input multiple
+    sequences by typing them. Sequences must be input in
+    [FASTA format](../doc/fasta-format.html).
+
+**Upload sequences**
+:   When this option is available you may upload a file containing
+    sequences in [FASTA format](../doc/fasta-format.html).
+
+**Upload BED file** ![new](../doc/images/new_icon.png)
+:   When this option is available you may upload a file containing
+    sequence coordinates in [BED format](../doc/bed-format.html).
+
+**Databases (select category)**
+:   When this option is available you may first select a category of
+    sequence database from the list below it. Two additional menus will then appear
+    where you can select the particular database and version desired, respectively.
+    The full list of available sequence databases and their descriptions
+    can be viewed [HERE](../db/sequences).
+
+**Submitted sequences**
+:   This option is only available when you have invoked the current
+    program by clicking on a button in the output report of a different MEME Suite program.
+    By selecting this option you will input the sequences sent by that program.
+
+[ close ]
+
+Specify a file to upload containing
+sequence coordinates in [BED format](../doc/bed-format.html).
+The file must be based on the exact genome version you specified in the
+menus above.
+
+[ close ]
+
+Select an available sequence database from this menu.
+
+[ close ]
+
+Select an available version of the sequence database from this menu.
+
+[ close ]
+
+Select an available tissue/cell-specificity from this menu.
+
+[ close ]
+
+Selecting this option will filter the sequence menu to only contain
+databases that have additional information that is specific to a tissue
+or cell line.
+
+This option causes MEME Suite to use tissue/cell-specific information
+(typically from DNase I or histone modification ChIP-seq data) encoded
+as a [position specific prior](../doc/psp-format.html) that
+has been created by the MEME Suite [create-priors](../doc/create-priors.html)
+utility. You can see a description of the sequence databases
+for which we provide tissue/cell-specific priors
+[here](../doc/FixMe.html).
+
+**Note that you cannot upload or type in your own sequences
+when tissue/cell-specific scanning is selected.**
+
+[ close ]
+
+Enter the email address where you want the job notification email to
+be sent. Please check that this is a valid email address!
+
+The notification email will include a link to your job results.
+
+**Note:** You can also access your jobs via the **Recent Jobs**
+menu on the left of all MEME Suite input pages. That menu only
+keeps track of jobs submitted during the current session of your internet browser.
+
+**Note:** Most MEME Suite servers only store results for a couple of days.
+So be sure to download any results you wish to keep.
+
+[ close ]
+
+Enter text naming or describing this analysis. The job description will be included in the notification email you
+receive and in the job output.
+
+[ close ]
+
+[ close ]
+
+Select the PTM file(s) that you wish to analyze. The PTM file(s) should
+all use the same format. This can be in either a
+[Peptide-Spectrum Match (PSM) format](../doc/psm-format.html)
+or a pure-sequence format (FASTA or Raw).
+
+For PSM formats, which contain tab-separated columns and a header line
+giving the column names, you must specify the **name of the column**
+that contains the modified peptides in the provided field.
+The website will attempt to guess the file format based on
+what appears in the first (non-blank) line in the file, and will indicate
+the its guess in the 'Format?' column. The website will also indicate
+the correct value of the 'Modified Peptide Column Name' for that format,
+which you can change if your files use a slightly different format.
+
+If the first (non-empty) line in the file contains one or more
+tab characters, but none of the known values for 'Modified Peptide Column Name'
+are found (see [Peptide-Spectrum Match (PSM) format](../doc/psm-format.html)),
+the website will display 'unknown PSM format' in the 'Format?' column.
+This will allow you to use PSM formats that have different column names
+than the known formats, as long as modified amino acids are indicated using a
+one of the 'Modified Peptide Formats' described in the last column of the table in
+[Peptide-Spectrum Match (PSM) format](../doc/psm-format.html).
+
+For pure-sequence formats, you may not specify a 'Modified Peptide Column Name',
+the peptides must use the standard [IUPAC protein alphabet](../doc/iupac.html),
+and must all be the same length. The pure-sequence formats are:
+
+* **FASTA:** List of fixed width peptides centered around the modification site in [FASTA](../doc/fasta-format.html) format.
+* **Raw:** List of fixed width peptides centered around the modification site,
+  one per line. For example,
+  the following is a (partial) list of length-7 peptides centered around a (modified)
+  serine residue:
+
+  ```
+  	      EGKSLGI
+  	      KKQSGLA
+  	      GALSRTH
+  	      RMHSAGK
+  	      ELKSEGL
+  	      ...
+
+  ```
+
+[ close ]
+
+Protein database (in [FASTA](../doc/fasta-format.html) format)
+to use for filling in any missing flanking amino acids, and to use as background sequences.
+
+[ close ]
+
+Minimum occurrences of modification required to output a motif. This threshold is applied after filtering and eliminating repeats (if applicable).
+
+[ close ]
+
+The *p*-value threshold used by motif-x for selecting significant residue/position pairs in the motif.
+
+[ close ]
+
+MoDL will stop after it finds the given number of motifs.
+
+[ close ]
+
+MoDL will stop after the given number of iterations is reached.
+
+[ close ]
+
+MoDL will stop if there is no decrease in its objective function,
+the minumum description length (MDL), for the given number of iterations.
+
+[ close ]
+
+The width of motifs to discover.
+Because motifs will be symmetric around the central, modified residue, width
+must be **odd**. The behavior of MoMo depends on the format of the PTM input file(s).
+
+| PTM file format | MoMo Behavior |
+| --- | --- |
+| FASTA or Raw format | No effect. An error is reported if the length of any sequence in the input files differs from Width. |
+| PSM format | If a modified peptide is shorter than Width, MoMo will first attempt to expand it by looking up its context in the protein database file, if given (see option --protein-database, below.) If the modified peptide is still shorter than Width, MoMo will pad it on either side as required using the [Protein IUPAC](../doc/iupac.html) 'X' character. If the longest modified peptide is still shorter than Width, MoMo will set the motif width to the length of the longest (expanded and padded) modified peptide. |
+
+[ close ]
+
+The background peptides will be extracted from the context sequences.
+By default, background peptides are generated by shuffling each foreground
+peptide while conserving its central residue.
+
+[ close ]
+
+Mimic the behavior of (the Harvard version of)
+[motif-x](http://motif-x.med.harvard.edu/motif-x.html)
+more closely by only calculating binomial *p*-values no smaller than
+10-16 for residue/position pairs.
+Smaller *p*-values are set to 10-16,
+and ties are broken by sorting residue/position pairs by decreasing number of peptides
+that match them.
+
+[ close ]
+
+All peptides that contain an 'X' (after expansion and padding, see option 'Width:', above)
+will be removed from the analysis.
+
+[ close ]
+
+Create one motif per mass instead of one motif per mass and central peptide.
+(The modification mass is given as a number following
+the modified amino acid in the modified peptide as described in the
+[PSM format](../doc/psm-format.html) documentation.)
+For example, phosphorylation is typically specified
+as a mass of 79.97 added to the residues S, T or Y. If this option
+is not checked, then three separate motifs are generated, each with a perfectly
+conserved central residue. If this option is checked,
+then all the phosphorylation events are combined into a single
+motif, with a mixture of S, T and Y in the central position.
+
+[ close ]
+
+Any groups of modified peptides whose <width> central residues, after expansion and padding,
+are identical will be replaced with a single copy. Note: Since shorter peptides will be
+padded with the 'X' character, which matches any other character, shorter peptides will
+match longer ones that contain them, and will be subject to elimination.
+
+[ close ]
+
+Filter the entries in the PSM-formatted input file based on one of its fields.
+Select the check box and then specify the Field, Test and Threshold in the three columns that will be provided.
+(Not available with FASTA and Raw formatted input files.)
+
+[ close ]
+
+Choose the algorithm to use to discover motifs:
+
+|  |  |
+| --- | --- |
+| Simple | Creates a maximum-likelihood position weight matrix (PWM) motif for each distinct central residue present in the modified peptides in the input PTM file(s). The weights in the PWM are the observed frequencies of the amino acids in the equal-length modified peptides, aligned on their central residue (the modified amino acid). If the modified peptides in the input PTM file(s) have differing lengths, their lengths are adjusted to be equal, as described below under the advanced option "How wide will the motifs be?". |
+| motif-x | The motif-x algorithm utilizes a greedy iterative search to discover motifs by recursively picking the most statistically significant position/residue pair according to binomial probabilility, reducing the dataset to only sequences containing that pair, and continuing until no more position/residue pairs are significant according to a user-defined threshold. If this motif has at least one statistically significant position/residue pair, all instances of the pattern are removed, and the algorithm continues to generate motifs until this condition fails. The [motif-x algorithm](http://motif-x.med.harvard.edu) is described in the paper Schwartz, D. and Gygi, S. P. (2005). "An iterative statistical approach to the identification of protein phosphorylation motifs from large-scale data sets". *Nature Biotechnology*, 23(11), 1391-1398. |
+| MoDL | The MoDL algorithm is based on the principle of minimum description length (MDL). It searches for a set of motifs that minimizes the number of bits to encode the set of modified peptides and motifs, using a greedy and iterative approach. The algorithm uses a list of candidate single-residued motifs (excluding the modified site) that exist in the modification dataset. Starting with an empty set of motifs, at each iteration, a set of potential motif sets are generated by either removing a candidate motif, adding a candidate motif, adding a candidate motif then removing a motif, merging a motif with a candidate motif, or merging a motif with a candidate motif and then removing a motif. From this set of potential motifs, the algorithm chooses the motif set with the minimum description length, and repeats the algorithm a specified number of times *t*, or until the description length does not change for *L* iterations (*t=50* and *L=10* by default). Finally, the algorithm returns the motif with the minimum description length among all motifs found. The [MoDL algorithm](http://compbio.cs.brown.edu/projects/modl) described in the paper Ritz, A., Shakhnarovich, G., Salomon, A., and Raphael, B. (2009). "Discovery of phosphorylation motif mixtures in phosphoproteomics data". *Bioinformatics*, 25(1), 14-21. |
+
+[ close ]
+
+# Javascript is disabled! ☹
+
+The MEME Suite web application requires the use of JavaScript but
+Javascript doesn't seem to be available on your browser.
+
+Please re-enable Javascript to use the MEME Suite.
+
+![MOMO Logo](../doc/images/momo_icon.png)
+
+# MoMo
+
+## Modification Motifs
+
+Version 5.5.9
+
+Data Submission Form
+
+Perform motif discovery on peptide-spectrum matches.
+
+## Choose an algorithm
+
+Simple
+
+motif-x
+
+MoDL
+
+## Input the PTM files
+
+#### Enter the file(s) with post-translational modifications (PTMs) in which to discover motifs.
+
+| PTM File(s) | Format? | Modified Peptide Column Name |
+| --- | --- | --- |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+## Input the context sequences
+
+#### (Optional) Enter sequences or select the [database](../db/sequences) to use for expanding PTMs.
+
+No sequences
+
+Type in sequences
+Upload sequences
+
+Ensembl Bacteria Genomes and Proteins
+Ensembl Fungi Genomes and Proteins
+Ensembl Metazoa Genomes and Proteins
+Ensembl Plants Genomes and Proteins
+Ensembl Protists Genomes and Proteins
+Ensembl Vertebrates Genomes and Proteins
+Ensembl Vertebrates Proteins (Ab Initio)
+GenBank Bacteria Genomes and Proteins
+GenBank Fungi Genomes and Proteins
+NCBI Genomes and Proteins
+Other Databases
+Other Genomes and Proteins
+
+### Get background peptides from the context sequences?
+
+[ ]
+Extract the set of background peptides from the context sequences?
+
+## Input job details
+
+#### (Optional) Enter your email address.
+
+#### (Optional) Enter a job description.
+
+▶
+▼
+Advanced options
+hidden modifications!
+[Reset]
+
+### How wide will the motifs be?
+
+Width:
+
+### Filter Sequences?
+
+| [ ]  Filter? | Field | Test | Threshold |
+| --- | --- | --- | --- |
+|  |  | < ≤ = ≥ > |  |
+
+### Remove ambiguous peptides?
+
+[ ]
+Remove peptides that contain an 'X' character.
+
+### Eliminate duplicate peptides?
+
+[x]
+Eliminate peptides whose central regions are identical for width:
+
+### How many occurrences are required for a motif?
+
+  Mininum number of occurrences:
+
+### Create single motif per modification mass?
+
+[ ]
+Combine motifs with different central residues with the same modification mass.
+
+### Thresholds for motif-x?
+
+  *P*-value Threshold:
+
+  [ ]
+Emulate original motif-x (with inaccurate *p*-values for large datasets).
+
+### Thresholds for MoDL?
+
+  Maximum number of motifs to find:
+
+  Maximum number of iterations:
+
+  Maximum number of iterations with no decrease in MDL:
+
+**Warning:**
+Your maximum job quota has been reached! You will need to wait until
+one of your jobs completes or 1 second has
+elapsed before submitting another job.
+
+This server has the job quota set to 10 unfinished jobs
+every 1 hour.
+
+Note: if the combined form inputs exceed 80MB the job will be rejected.
+
+Version 5.5.9
+
+Powered by [Opal](http://sourceforge.net/projects/opaltoolkit/)
+
+Please send comments and questions to:
+meme-suite@uw.edu
+
+---
+
+* [Home](../index.html)
+* [Documentation](../doc/overview.html)
+* [Downloads](../doc/download.html)
+* [Authors](../doc/authors.html)
+* [Citing](../doc/cite.html)

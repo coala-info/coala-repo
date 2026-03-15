@@ -1,6 +1,6 @@
 ---
 name: hmmer
-description: HMMER is a suite for biosequence analysis that uses profile hidden Markov models to detect remote homologs and identify protein domains. Use when user asks to build profiles from alignments, search sequence databases for homologs, scan sequences for known domains, or perform iterative protein searches.
+description: HMMER is a suite of tools for biological sequence analysis that uses profile hidden Markov models to detect remote homologs and annotate protein domains. Use when user asks to build profile HMMs from alignments, search databases for sequence homologs, scan sequences for known domains, or align sequences to an existing profile.
 homepage: http://hmmer.org/
 ---
 
@@ -8,60 +8,66 @@ homepage: http://hmmer.org/
 # hmmer
 
 ## Overview
-HMMER is a specialized suite for biosequence analysis that uses probabilistic models (profile HMMs) rather than simple pairwise alignments. It is significantly more sensitive than BLAST for detecting remote homologs because it considers the position-specific conservation patterns within a sequence family. Use this skill to identify protein domains, search genomic data for specific motifs, or align large sets of sequences to a known family consensus.
+HMMER is a specialized suite for biological sequence analysis that uses probabilistic profile HMMs rather than simple pairwise alignments. While tools like BLAST look for optimal local alignments, HMMER considers the entire ensemble of possible alignments, making it significantly more sensitive for detecting distant homologs (remote homology). It is the engine behind major databases like Pfam and is used for both protein and DNA analysis.
 
 ## Core Workflows
 
-### 1. Profile Construction and Database Searching
-The standard pipeline for finding new members of a protein family.
-*   **Build a profile:** `hmmbuild <output.hmm> <input_alignment.sto>`
-    *   *Tip:* Use Stockholm (.sto) format for best results, though aligned FASTA is supported.
-*   **Search a database:** `hmmsearch <query.hmm> <database.fasta> > <results.out>`
-    *   *Tip:* Use `--cpu <n>` to specify the number of worker threads (default is usually 2).
+### 1. Building and Searching with Profiles
+The standard pipeline for finding new members of a protein family starting from a known alignment.
+- **Build**: `hmmbuild <output.hmm> <input_alignment.sto>`
+- **Search**: `hmmsearch <query.hmm> <target_database.fasta>`
+- **Tip**: Use Stockholm (.sto) format for input alignments to preserve metadata.
 
 ### 2. Single Sequence Queries (BLAST-like)
-When you have a single protein sequence and want to find homologs without a pre-built alignment.
-*   **Standard search:** `phmmer <query.fasta> <database.fasta>`
-*   **Iterative search (PSI-BLAST style):** `jackhmmer <query.fasta> <database.fasta>`
-    *   This automatically builds a profile from hits and re-searches through multiple iterations.
+When you have a single sequence and want to search a database without manually building an alignment first.
+- **Protein**: `phmmer <query.fasta> <target_db.fasta>` (Faster and often more sensitive than BLASTP).
+- **Iterative**: `jackhmmer <query.fasta> <target_db.fasta>` (Automated iterative search similar to PSI-BLAST).
 
 ### 3. Domain Annotation (Scanning)
-When you have a new sequence and want to know what known domains (e.g., from Pfam) it contains.
-*   **Prepare the database:** `hmmpress <pfam.hmm>` (Required once to create binary indices).
-*   **Scan the sequence:** `hmmscan <pfam.hmm> <query.fasta>`
+When you have a new sequence and want to identify which known domains it contains.
+- **Prepare DB**: `hmmpress <database.hmm>` (Required once to index the HMM database).
+- **Scan**: `hmmscan <database.hmm> <query.fasta>`
 
 ### 4. DNA Analysis
-For searching nucleotide sequences against DNA profiles or other DNA sequences.
-*   **Search DNA:** `nhmmer <query.fasta_or_hmm> <target_dna.fasta>`
-    *   *Note:* `nhmmer` handles long, chromosome-scale target sequences efficiently.
+For nucleotide-to-nucleotide searches, specifically optimized for long, chromosome-scale sequences.
+- **Search**: `nhmmer <query.fasta_or_hmm> <target_dna.fasta>`
+- **Scan**: `nhmmscan <dna_database.hmm> <query_dna.fasta>`
 
 ## Expert Tips and Best Practices
 
-### Interpreting E-values
-*   **Sequence E-value:** The expected number of false positives in the entire database search. Values < 0.001 are generally considered significant.
-*   **Domain E-value (Conditional):** The significance of a specific domain match given that the sequence is already a hit. Use this to distinguish between multiple domains in a single protein.
+### Interpreting Results
+- **E-values**: Focus on the "Full Sequence" E-value for homology. Generally, $E < 10^{-3}$ is considered significant.
+- **Bias Correction**: HMMER uses a "null2" model to correct for biased composition (e.g., hydrophobic-rich regions). If you suspect a true homolog is being masked by composition, try the `--nonull2` flag.
+- **Envelopes vs. Alignments**: In `hmmsearch` output, the "envelope" defines the region where the domain probability is concentrated, while the "alignment" is the specific residue-to-residue mapping.
 
-### Handling Biased Composition
-If you are getting "junk" hits in low-complexity regions (e.g., proline-rich areas):
-*   The **Bias Filter** is on by default. If you suspect it is too aggressive and hiding true homologs, use `--nobias`.
-*   To turn off the null2 score correction entirely, use `--nonull2`.
+### Performance Optimization
+- **CPU Usage**: Most HMMER tools use multi-threading by default. Control this with `--cpu <n>`.
+- **Memory**: For extremely long sequences (e.g., Titin), HMMER3 can be memory-intensive. If a search fails on a massive sequence, ensure the system has sufficient RAM (HMMER4, currently in development, addresses this).
+- **Tabular Output**: For pipeline integration, use `--tblout <file>` (sequence hits) or `--domtblout <file>` (domain hits) to get easily parsable space-delimited files.
 
-### Output Management
-*   **Tabular Output:** For downstream scripting, use `--tblout <file>` (sequence hits) or `--domtblout <file>` (domain-specific coordinates). These are much easier to parse than the standard human-readable output.
-*   **Alignment Extraction:** Use `hmmalign --mapali <alignment.sto> <query.hmm> <new_sequences.fasta>` to align new sequences to an existing structural alignment.
+### Alignment Generation
+- Use `hmmalign` to align a large number of sequences to an existing profile:
+  `hmmalign <model.hmm> <sequences.fasta> > <output.sto>`
+- This is significantly faster than de novo multiple sequence alignment for large datasets.
 
-## Common CLI Patterns
 
-| Task | Command |
-| :--- | :--- |
-| **Build HMM** | `hmmbuild family.hmm seed.sto` |
-| **Search Protein DB** | `hmmsearch family.hmm nr.fasta` |
-| **Search DNA DB** | `nhmmer query.fasta genome.fasta` |
-| **Iterative Search** | `jackhmmer -N 5 query.fasta swissprot.fasta` |
-| **Get Stats** | `hmmstat family.hmm` |
-| **Generate Sequences** | `hmmemit -N 10 family.hmm` |
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| hmmalign | align sequences to a profile HMM |
+| hmmbuild | profile HMM construction from multiple sequence alignments |
+| hmmemit | sample sequence(s) from a profile HMM |
+| hmmpress | prepare an HMM database for faster hmmscan searches |
+| hmmscan | search sequence(s) against a profile database |
+| hmmsearch | search profile(s) against a sequence database |
+| hmmstat | display summary statistics for a profile file |
+| jackhmmer | iteratively search a protein sequence against a protein database |
+| makehmmerdb | build a HMMER binary-formatted database from an input sequence file |
+| nhmmer | search a DNA model, alignment, or sequence against a DNA database |
+| phmmer | search a protein sequence against a protein database |
 
 ## Reference documentation
 - [HMMER User's Guide](./references/eddylab_org_software_hmmer_Userguide.md)
 - [HMMER Documentation Overview](./references/hmmer_org_documentation.html.md)
-- [Input Formats and Stockholm Syntax](./references/index.html.md)

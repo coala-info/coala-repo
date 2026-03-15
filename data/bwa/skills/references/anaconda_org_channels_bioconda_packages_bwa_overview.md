@@ -1,1 +1,86 @@
-bwa - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / bwa bwa Community The BWA read mapper. Overview Files 133 Labels 2 Badges Versions 0.7.19 Installation To install this package, run one of the following: Conda $ conda install bioconda::bwa Usage Tracking Monthly Downloads Updates Version 0.7.19 0.7.18 0.7.17 0.7.16 0.7.15 5 / 8 versions selected Downloads (Last 6 months): 0 About Summary The BWA read mapper. Last Updated Mar 22, 2025 at 20:42 License GPL3 Total Downloads 2.0M Version Downloads 153.6K Supported Platforms linux-64 macOS-64 linux-aarch64 macOS-arm64 Home https://github.com/lh3/bwa
+[![Anaconda Logo](images/anaconda_org_logo.svg)](/)
+
+CMD + K
+
+Sign In Sign Up
+
+[bioconda](/bioconda)/bwa
+
+### bwa
+
+Community
+
+The BWA read mapper.
+
+* [Overview](/channels/bioconda/packages/bwa/overview)
+* [Files 133](/channels/bioconda/packages/bwa/files)
+* [Labels 2](/channels/bioconda/packages/bwa/labels)
+* [Badges](/bioconda/bwa/badges)
+
+Versions0.7.19
+
+#### Installation
+
+To install this package, run one of the following:
+
+##### Conda
+
+$`conda install bioconda::bwa`
+
+#### Usage Tracking
+
+Monthly
+
+ Downloads  Updates
+
+Version
+
+0.7.19
+
+0.7.18
+
+0.7.17
+
+0.7.16
+
+0.7.15
+
+5 / 8 versions selected
+
+Downloads (Last 6 months): 0
+
+#### About
+
+Summary
+
+The BWA read mapper.
+
+Last Updated
+
+Mar 22, 2025 at 20:42
+
+License
+
+GPL3
+
+Total Downloads
+
+2.0M
+
+Version Downloads
+
+171.8K
+
+Supported Platforms
+
+linux-64
+
+macOS-64
+
+linux-aarch64
+
+macOS-arm64
+
+Home
+
+<https://github.com/lh3/bwa>

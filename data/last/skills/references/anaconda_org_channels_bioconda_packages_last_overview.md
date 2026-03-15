@@ -1,1 +1,98 @@
-last - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / last last Community LAST finds &amp; aligns related regions of sequences. Overview Files 313 Labels 2 Badges Versions 1650 Installation To install this package, run one of the following: Conda $ conda install bioconda::last Usage Tracking Monthly Downloads Updates Version 1650 1648 1642 1639 1615 5 / 8 versions selected Downloads (Last 6 months): 0 Description LAST finds &amp; aligns related regions of sequences. It is designed for moderately large data (e.g. genomes, DNA reads, proteomes). It's especially good at: finding rearrangements and recombinations; finding DNA-versus-protein related regions; unusual data like AT-rich DNA; sensitive DNA-DNA search. About Summary LAST finds &amp; aligns related regions of sequences. Last Updated Nov 19, 2025 at 23:23 License GPL-3.0-or-later Total Downloads 2.3M Version Downloads 20.1K Supported Platforms linux-64 macOS-64 linux-aarch64 macOS-arm64 Home https://gitlab.com/mcfrith/last GitHub Repository https://gitlab.com/mcfrith/last Documentation https://gitlab.com/mcfrith/last/-/blob/1650/doc/last-cookbook.rst
+[![Anaconda Logo](images/anaconda_org_logo.svg)](/)
+
+CMD + K
+
+Sign In Sign Up
+
+[bioconda](/bioconda)/last
+
+### last
+
+Community
+
+LAST finds & aligns related regions of sequences.
+
+* [Overview](/channels/bioconda/packages/last/overview)
+* [Files 313](/channels/bioconda/packages/last/files)
+* [Labels 2](/channels/bioconda/packages/last/labels)
+* [Badges](/bioconda/last/badges)
+
+Versions1650
+
+#### Installation
+
+To install this package, run one of the following:
+
+##### Conda
+
+$`conda install bioconda::last`
+
+#### Usage Tracking
+
+Monthly
+
+ Downloads  Updates
+
+Version
+
+1650
+
+1648
+
+1642
+
+1639
+
+1615
+
+5 / 8 versions selected
+
+Downloads (Last 6 months): 0
+
+#### Description
+
+LAST finds & aligns related regions of sequences. It is designed for moderately large data (e.g. genomes, DNA reads, proteomes). It's especially good at: finding rearrangements and recombinations; finding DNA-versus-protein related regions; unusual data like AT-rich DNA; sensitive DNA-DNA search.
+
+#### About
+
+Summary
+
+LAST finds & aligns related regions of sequences.
+
+Last Updated
+
+Nov 19, 2025 at 23:23
+
+License
+
+GPL-3.0-or-later
+
+Total Downloads
+
+2.5M
+
+Version Downloads
+
+27.6K
+
+Supported Platforms
+
+linux-64
+
+macOS-64
+
+linux-aarch64
+
+macOS-arm64
+
+Home
+
+<https://gitlab.com/mcfrith/last>
+
+GitHub Repository
+
+<https://gitlab.com/mcfrith/last>
+
+Documentation
+
+<https://gitlab.com/mcfrith/last/-/blob/1650/doc/last-cookbook.rst>

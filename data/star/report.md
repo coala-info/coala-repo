@@ -12,7 +12,7 @@ Spliced Transcripts Alignment to a Reference
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/star/overview
-- **Total Downloads**: 1.5M
+- **Total Downloads**: 1.6M
 - **Last updated**: 2025-11-14
 - **GitHub**: https://github.com/alexdobin/STAR
 - **Stars**: N/A
@@ -742,3 +742,5 @@ soloOutFileNames            Solo.out/ genes.tsv barcodes.tsv matrix.mtx matrixSJ
                             5th word    ... cell/splice junction counts matrix
 ```
 
+## Metadata
+- **Skill**: generated

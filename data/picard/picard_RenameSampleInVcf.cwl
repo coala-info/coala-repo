@@ -4,12 +4,29 @@ baseCommand:
   - picard
   - RenameSampleInVcf
 label: picard_RenameSampleInVcf
-doc: "This tool enables the user to rename a sample in either a VCF or BCF file. It
-  is intended to change the name of a sample in a VCF prior to merging with VCF files
-  in which one or more samples have similar names. Note that the input VCF file must
-  be single-sample VCF and that the NEW_SAMPLE_NAME is required.\n\nTool homepage:
-  http://broadinstitute.github.io/picard/"
+doc: This tool enables the user to rename a sample in either a VCF or BCF file. 
+  It is intended to change the name of a sample in a VCF prior to merging with 
+  VCF files in which one or more samples have similar names. Note that the input
+  VCF file must be single-sample VCF and that the NEW_SAMPLE_NAME is required.
 inputs:
+  - id: input
+    type: File
+    doc: Input single sample VCF or BCF file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: new_sample_name
+    type: string
+    doc: New name to give sample in output VCF.
+    inputBinding:
+      position: 101
+      prefix: --NEW_SAMPLE_NAME
+  - id: output
+    type: string
+    doc: Output single sample VCF.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -34,7 +50,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -43,32 +58,18 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: input
-    type: File
-    doc: Input single sample VCF or BCF file.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
-  - id: new_sample_name
-    type: string
-    doc: New name to give sample in output VCF.
-    inputBinding:
-      position: 101
-      prefix: --NEW_SAMPLE_NAME
   - id: old_sample_name
     type:
       - 'null'
@@ -83,7 +84,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -95,15 +95,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -120,7 +111,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -130,7 +120,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -140,25 +129,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output single sample VCF.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

@@ -4,8 +4,8 @@ baseCommand:
   - harpy
   - qc
 label: harpy_qc
-doc: "FASTQ adapter removal, quality filtering, etc. Linked-read presence and type
-  is auto-detected.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: FASTQ adapter removal, quality filtering, etc. Linked-read presence and 
+  type is auto-detected.
 inputs:
   - id: inputs
     type:
@@ -14,14 +14,6 @@ inputs:
     doc: Input fastq files and/or directories
     inputBinding:
       position: 1
-  - id: container
-    type:
-      - 'null'
-      - boolean
-    doc: Use a container instead of conda
-    inputBinding:
-      position: 102
-      prefix: --container
   - id: deduplicate
     type:
       - 'null'
@@ -38,20 +30,11 @@ inputs:
     inputBinding:
       position: 102
       prefix: --extra-params
-  - id: hpc
-    type:
-      - 'null'
-      - File
-    doc: HPC submission YAML configuration file
-    inputBinding:
-      position: 102
-      prefix: --hpc
   - id: max_length
     type:
       - 'null'
       - int
     doc: Maximum length to trim sequences down to
-    default: 150
     inputBinding:
       position: 102
       prefix: --max-length
@@ -60,10 +43,55 @@ inputs:
       - 'null'
       - int
     doc: Discard reads shorter than this length
-    default: 30
     inputBinding:
       position: 102
       prefix: --min-length
+  - id: trim_adapters
+    type:
+      - 'null'
+      - string
+    doc: Detect and trim adapters; accepts 'auto' or a FASTA file
+    inputBinding:
+      position: 102
+      prefix: --trim-adapters
+  - id: unlinked
+    type:
+      - 'null'
+      - boolean
+    doc: Treat input data as not linked reads
+    inputBinding:
+      position: 102
+      prefix: --unlinked
+  - id: output_dir
+    type: string
+    doc: Output directory name
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    inputBinding:
+      position: 102
+      prefix: --threads
+  - id: container
+    type:
+      - 'null'
+      - boolean
+    doc: Use a container instead of conda
+    inputBinding:
+      position: 102
+      prefix: --container
+  - id: hpc
+    type:
+      - 'null'
+      - File
+    doc: HPC submission YAML configuration file
+    inputBinding:
+      position: 102
+      prefix: --hpc
   - id: quiet
     type:
       - 'null'
@@ -88,39 +116,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --snakemake
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    default: 4
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: trim_adapters
-    type:
-      - 'null'
-      - string
-    doc: Detect and trim adapters; accepts 'auto' or a FASTA file
-    inputBinding:
-      position: 102
-      prefix: --trim-adapters
-  - id: unlinked
-    type:
-      - 'null'
-      - boolean
-    doc: Treat input data as not linked reads
-    inputBinding:
-      position: 102
-      prefix: --unlinked
 outputs:
-  - id: output_dir
+  - id: output_output_dir
     type:
       - 'null'
       - Directory
     doc: Output directory name
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

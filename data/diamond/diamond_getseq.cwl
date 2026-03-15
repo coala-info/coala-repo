@@ -1,18 +1,19 @@
 cwlVersion: v1.2
 class: CommandLineTool
-baseCommand: diamond_getseq
+baseCommand:
+  - diamond
+  - getseq
 label: diamond_getseq
-doc: "Display sequences from a DIAMOND database file by their sequence numbers.\n\n\
-  Tool homepage: https://github.com/bbuchfink/diamond"
+doc: Retrieve sequences from a DIAMOND database file.
 inputs:
-  - id: db
+  - id: threads
     type:
       - 'null'
-      - File
-    doc: database file
+      - int
+    doc: number of CPU threads
     inputBinding:
       position: 101
-      prefix: --db
+      prefix: --threads
   - id: log
     type:
       - 'null'
@@ -29,23 +30,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --quiet
-  - id: seq
-    type:
-      - 'null'
-      - type: array
-        items: string
-    doc: Space-separated list of sequence numbers to display.
-    inputBinding:
-      position: 101
-      prefix: --seq
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: number of CPU threads
-    inputBinding:
-      position: 101
-      prefix: --threads
   - id: tmpdir
     type:
       - 'null'
@@ -54,22 +38,40 @@ inputs:
     inputBinding:
       position: 101
       prefix: --tmpdir
-  - id: verbose
-    type:
-      - 'null'
-      - boolean
-    doc: verbose console output
+  - id: db
+    type: File
+    doc: database file
     inputBinding:
       position: 101
-      prefix: --verbose
-outputs:
+      prefix: --db
   - id: out
+    type: string
+    doc: output file
+    inputBinding:
+      position: 101
+      prefix: --out
+  - id: seq
+    type:
+      - 'null'
+      - type: array
+        items: int
+    doc: Space-separated list of sequence numbers to display.
+    inputBinding:
+      position: 101
+      prefix: --seq
+outputs:
+  - id: output_out
     type:
       - 'null'
       - File
     doc: output file
     outputBinding:
       glob: $(inputs.out)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/diamond:2.1.21--h13889ed_0
+    dockerPull: quay.io/biocontainers/diamond:2.1.24--hf93d47f_0
+s:url: https://github.com/bbuchfink/diamond
+$namespaces:
+  s: https://schema.org/

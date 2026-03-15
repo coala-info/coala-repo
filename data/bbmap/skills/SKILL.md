@@ -1,6 +1,6 @@
 ---
 name: bbmap
-description: BBMap is a high-performance bioinformatics suite used for mapping, trimming, merging, and normalizing high-throughput sequencing data. Use when user asks to map reads to a reference genome, trim adapters, filter contaminants, merge paired-end reads, or normalize sequence coverage.
+description: BBMap is a versatile bioinformatics suite used for fast, splice-aware sequence alignment and comprehensive genomic data processing. Use when user asks to align reads to a reference, trim adapters, filter contaminants, merge overlapping reads, normalize coverage, or reformat sequencing files.
 homepage: https://sourceforge.net/projects/bbmap
 ---
 
@@ -8,70 +8,76 @@ homepage: https://sourceforge.net/projects/bbmap
 # bbmap
 
 ## Overview
-BBTools is a high-performance suite of Java-based bioinformatics tools designed for processing high-throughput sequencing data. It is widely used for its speed, memory efficiency, and versatility in handling large genomic datasets. This skill enables the execution of critical preprocessing and analysis steps, such as mapping reads to a reference genome, removing adapter sequences and contaminants, merging overlapping paired-end reads, and normalizing coverage to facilitate assembly.
+BBMap is a versatile suite of bioinformatics tools (BBTools) centered around a fast, splice-aware global aligner. It is designed to handle massive datasets with high sensitivity for indels and mutations. Beyond alignment, the suite provides essential utilities for the entire sequencing pipeline: decontamination, error correction, read merging, and data normalization. It is particularly effective for Illumina, PacBio, and Nanopore data, offering deterministic performance and efficient memory management.
 
-## Core Tool Usage and Patterns
+## Core CLI Patterns
 
-### General Syntax and Configuration
-Most BBTools follow a standard parameter syntax: `tool.sh in=<input> out=<output> [options]`.
+### 1. Alignment (bbmap.sh)
+Use for mapping DNA or RNA reads to a reference genome.
+*   **Indexing and Mapping:** `bbmap.sh ref=genome.fa in=reads.fq out=mapped.sam`
+*   **RNA-seq (Splice-aware):** Set `maxindel=200k` for organisms with long introns (e.g., humans).
+*   **Memory Management:** Use `nodisk` to prevent writing the index to disk if you only need it for a single run.
+*   **Sensitivity:** Use the `fast` flag for speed or `slow` for maximum sensitivity with highly mutated genomes.
 
-- **Memory Management**: BBTools automatically detects available memory, but you can override it using the `-Xmx` flag (e.g., `bbmap.sh -Xmx20g in=reads.fq`).
-- **Threading**: Use `t=<integer>` to cap the number of worker threads on shared systems.
-- **Paired Reads**: Handle paired files using `in1=` and `in2=` or the `#` wildcard (e.g., `in=reads_#.fq`).
-- **Piping**: Use `in=stdin.fq` and `out=stdout.fq` for streaming. Specify extensions so the tool knows the format (e.g., `in=stdin.fastq.gz`).
+### 2. Quality Control and Trimming (bbduk.sh)
+"Duk" stands for Decontamination Using Kmers. Use this for adapter trimming and filtering.
+*   **Adapter Trimming:** `bbduk.sh in=reads.fq out=clean.fq ref=adapters.fa ktrim=r k=23 mink=11 hdist=1 tpe tbo`
+    *   `tpe`: Trims pairs to the same length.
+    *   `tbo`: Trims adapters based on overlap.
+*   **Contaminant Filtering:** `bbduk.sh in=reads.fq out=unmatched.fq outm=matched.fq ref=phix.fa k=31 hdist=1`
+*   **Quality Trimming:** `bbduk.sh in=reads.fq out=trimmed.fq qtrim=rl trimq=10`
 
-### BBMap: Short Read Aligner
-Use for DNA/RNA-seq alignment. It is splice-aware and handles long indels well.
-- **Basic Alignment**: `bbmap.sh in=reads.fq ref=reference.fa out=mapped.sam`
-- **Indexing**: BBMap indexes the reference on the fly. To save the index to a specific location, use `path=/path/to/index/`.
-- **RNA-seq**: For organisms with long introns (like humans), set `maxindel=200k`.
+### 3. Read Merging (bbmerge.sh)
+Use to merge overlapping paired-end reads into single reads.
+*   **Standard Merging:** `bbmerge.sh in1=r1.fq in2=r2.fq out=merged.fq outu=unmerged.fq`
+*   **Error Correction via Overlap:** `bbmerge.sh in=reads.fq out=corrected.fq ecco mix` (Corrects bases in the overlap region without merging).
 
-### BBDuk: Decontamination and Trimming
-"Duk" stands for Decontamination Using Kmers. Use this for quality/adapter trimming and filtering.
-- **Adapter Trimming**: `bbduk.sh in=reads.fq out=clean.fq ref=adapters.fa ktrim=r k=23 mink=11 hdist=1`
-- **Contaminant Filtering**: `bbduk.sh in=reads.fq out=unmatched.fq ref=phix.fa k=31 hdist=1`
-- **Quality Trimming**: `bbduk.sh in=reads.fq out=trimmed.fq qtrim=rl trimq=10`
+### 4. Normalization (bbnorm.sh)
+Use to reduce coverage in high-depth areas to speed up assembly.
+*   **Targeted Normalization:** `bbnorm.sh in=reads.fq out=norm.fq target=100 min=5` (Aims for 100x coverage, discards reads with <5x depth).
 
-### BBMerge: Paired-Read Merging
-Merges overlapping paired-end reads into single reads.
-- **Standard Merge**: `bbmerge.sh in1=r1.fq in2=r2.fq out=merged.fq outu=unmerged.fq`
-- **Strictness**: Adjust merging stringency with flags like `strict`, `vstrict`, or `loose`.
-- **Insert Size**: Use `ihist=histogram.txt` to generate an insert size distribution.
-
-### BBNorm: Coverage Normalization
-Reduces coverage in high-depth areas to a target level, useful for speeding up assemblies.
-- **Normalization**: `bbnorm.sh in=reads.fq out=norm.fq target=100 min=5`
-- **Error Correction**: Use `ecc=t` to perform k-mer based error correction during normalization.
-
-### Reformat: Data Manipulation
-A lightweight tool for format conversion and subsampling.
-- **Format Conversion**: `reformat.sh in=reads.fastq out=reads.fasta`
-- **Subsampling**: `reformat.sh in=reads.fq out=sampled.fq sampledfraction=0.1`
-- **Interleaving**: `reformat.sh in1=r1.fq in2=r2.fq out=interleaved.fq`
-
-### Clumpify: Compression and Deduplication
-Groups overlapping reads to improve compression or find duplicates.
-- **Compression**: `clumpify.sh in=reads.fq.gz out=clumped.fq.gz reorder`
-- **Deduplication**: `clumpify.sh in=reads.fq.gz out=deduped.fq.gz dedupe`
+### 5. Format Conversion and Utility (reformat.sh)
+The "Swiss Army Knife" for file manipulation.
+*   **Conversion:** `reformat.sh in=reads.fq out=reads.fa`
+*   **Subsampling:** `reformat.sh in=reads.fq out=sampled.fq samplecount=1000000`
+*   **Interleaving:** `reformat.sh in1=r1.fq in2=r2.fq out=interleaved.fq`
+*   **Verification:** `reformat.sh in=reads.fq vint` (Verifies paired-read synchronization).
 
 ## Expert Tips and Best Practices
-1. **Order of Operations**: For best results, follow the JGI recommended preprocessing order: 
-   1. Adapter trimming (`BBDuk`)
-   2. Contaminant filtering (`BBDuk`)
-   3. Human/Host removal (`BBMap`)
-   4. Normalization (`BBNorm`)
-   5. Error correction (`Tadpole` or `BBNorm`)
-   6. Merging (`BBMerge`)
-2. **Pigz/Unpigz**: If installed, BBTools will use `pigz` for multi-threaded gzip compression/decompression, significantly increasing speed.
-3. **Validation**: Use `reformat.sh in=reads.fq vpair` to verify that paired-end files are correctly synchronized.
-4. **K-mer Length**: For most filtering tasks, `k=31` is the standard for high specificity. For adapter trimming, shorter k-mers (e.g., `k=23` with `mink=11`) are preferred.
+
+### Memory and Performance
+*   **Java Heap Space:** BBTools are Java-based. Use the `-Xmx` flag to manually set memory (e.g., `bbmap.sh -Xmx20g ...`). By default, scripts attempt to autodetect available memory.
+*   **Threading:** Tools use all available cores by default. Use `t=N` to restrict thread usage on shared systems.
+*   **Piping:** Most tools support piping via `in=stdin.fq` and `out=stdout.fq`. Note that `bbnorm.sh` and `tadpole.sh` cannot accept piped input in certain modes because they require multiple passes.
+
+### File Handling
+*   **Automatic Compression:** BBTools automatically detects `.gz` and `.bz2` extensions. If `pigz` is installed, it will be used for parallel compression/decompression.
+*   **Wildcards:** Use the `#` symbol for paired files: `in=reads_#.fq` expands to `reads_1.fq` and `reads_2.fq`.
+*   **Wildcard Output:** Use the `%` symbol in tools like `bbsplit.sh` to generate files based on reference names: `pattern=out_%.fq`.
+
+### Data Integrity
+*   **Repairing Pairs:** If paired files become disordered (e.g., after filtering one file independently), use `repair.sh in1=broken1.fq in2=broken2.fq out1=fixed1.fq out2=fixed2.fq outs=singletons.fq`.
+*   **Deduplication:** Use `clumpify.sh` to group similar reads. This significantly improves Gzip compression ratios and can remove optical/PCR duplicates with the `dedupe` flag.
+
+
+
+## Subcommands
+
+| Command | Description |
+|---------|-------------|
+| bbduk.sh | Compares reads to the kmers in a reference dataset, optionally allowing an edit distance. Splits the reads into two outputs - those that match the reference, and those that don't. Can also trim (remove) the matching parts of the reads rather than binning the reads. |
+| bbmap.sh | Fast and accurate splice-aware read aligner. |
+| bbmap_khist.sh | Kmer normalization and histogram generation tool (jgi.KmerNormalize) |
+| bbmerge.sh | Merges paired reads into single reads by overlap detection. With sufficient coverage, can merge nonoverlapping reads by kmer extension. |
+| bbnorm.sh | Normalizes read depth based on kmer counts. Can also error-correct, bin reads by kmer depth, and generate a kmer depth histogram. |
+| dedupe.sh | Accepts one or more files containing sets of sequences (reads or scaffolds). Removes duplicate sequences, which may be specified to be exact matches, subsequences, or sequences within some percent identity. Can also find overlapping sequences and group them into clusters. |
+| reformat.sh | Reformats reads to change ASCII quality encoding, interleaving, file format, or compression format. Optionally performs additional functions such as quality trimming, subsetting, and subsampling. |
 
 ## Reference documentation
-- [BBTools User Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide.md)
-- [General Usage Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_usage-guide.md)
 - [BBMap Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_bbmap-guide.md)
 - [BBDuk Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_bbduk-guide.md)
 - [BBMerge Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_bbmerge-guide.md)
 - [BBNorm Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_bbnorm-guide.md)
 - [Reformat Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_reformat-guide.md)
-- [Data Preprocessing Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_data-preprocessing.md)
+- [Usage Guide](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_usage-guide.md)
+- [Data Preprocessing](./references/archive_jgi_doe_gov_data-and-tools_software-tools_bbtools_bb-tools-user-guide_data-preprocessing.md)

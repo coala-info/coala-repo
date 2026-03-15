@@ -4,11 +4,40 @@ baseCommand:
   - picard
   - IdentifyContaminant
 label: picard_IdentifyContaminant
-doc: "Computes the fingerprint genotype likelihoods from the supplied SAM/BAM file
-  and a contamination estimate. NOTA BENE: the fingerprint is provided for the contamination
-  (by default) for the main sample. It is given as a list of PLs at the fingerprinting
-  sites.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Computes the fingerprint genotype likelihoods from the supplied SAM/BAM 
+  file and a contamination estimate. The fingerprint is provided for the 
+  contamination (by default) for the main sample. It is given as a list of PLs 
+  at the fingerprinting sites.
 inputs:
+  - id: haplotype_map
+    type: File
+    doc: A file of haplotype information. The file lists a set of SNPs, 
+      optionally arranged in high-LD blocks, to be used for fingerprinting.
+    inputBinding:
+      position: 101
+      prefix: --HAPLOTYPE_MAP
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: Input SAM or BAM file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Output fingerprint file (VCF).
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: reference_sequence
+    type:
+      - 'null'
+      - File
+    doc: Reference sequence file.
+    inputBinding:
+      position: 101
+      prefix: --REFERENCE_SEQUENCE
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -32,7 +60,6 @@ inputs:
       - 'null'
       - float
     doc: A value of estimated contamination in the input.
-    default: 0.0
     inputBinding:
       position: 101
       prefix: --CONTAMINATION
@@ -42,7 +69,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -51,7 +77,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -63,23 +88,9 @@ inputs:
       contaminant). Setting to true changes the effect of SAMPLE_ALIAS when 
       null. It names the sample in the VCF <SAMPLE>, using the SM value from the
       SAM header.
-    default: false
     inputBinding:
       position: 101
       prefix: --EXTRACT_CONTAMINATED
-  - id: haplotype_map
-    type: File
-    doc: A file of haplotype information. The file lists a set of SNPs, 
-      optionally arranged in high-LD blocks, to be used for fingerprinting.
-    inputBinding:
-      position: 101
-      prefix: --HAPLOTYPE_MAP
-  - id: input
-    type: File
-    doc: Input SAM or BAM file.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: locus_max_reads
     type:
       - 'null'
@@ -87,7 +98,6 @@ inputs:
     doc: The maximum number of reads to use as evidence for any given locus. 
       This is provided as a way to limit the effect that any given locus may 
       have.
-    default: 200
     inputBinding:
       position: 101
       prefix: --LOCUS_MAX_READS
@@ -96,10 +106,7 @@ inputs:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
-      of records stored in RAM before spilling to disk. Increasing this number 
-      reduces the number of file handles needed to sort the file, and increases 
-      the amount of RAM needed.
-    default: 500000
+      of records stored in RAM before spilling to disk.
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -108,16 +115,9 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
-  - id: reference_sequence
-    type: File
-    doc: Reference sequence file.
-    inputBinding:
-      position: 101
-      prefix: --REFERENCE_SEQUENCE
   - id: sample_alias
     type:
       - 'null'
@@ -128,15 +128,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SAMPLE_ALIAS
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -153,7 +144,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -163,7 +153,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -173,25 +162,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output fingerprint file (VCF).
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

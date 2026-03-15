@@ -4,12 +4,12 @@ baseCommand:
   - harpy
   - sv
 label: harpy_sv
-doc: "Call inversions, deletions, and duplications from alignments using LEVIATHAN
-  or NAIBR.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: Call inversions, deletions, and duplications from alignments using 
+  LEVIATHAN or NAIBR.
 inputs:
   - id: command
     type: string
-    doc: The variant caller subcommand to use (leviathan or naibr)
+    doc: The subcommand to execute (leviathan or naibr)
     inputBinding:
       position: 1
   - id: args
@@ -17,7 +17,7 @@ inputs:
       - 'null'
       - type: array
         items: string
-    doc: Arguments for the specified subcommand
+    doc: Arguments for the selected subcommand
     inputBinding:
       position: 2
 outputs:
@@ -26,5 +26,8 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 stdout: harpy_sv.out
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

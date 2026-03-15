@@ -1,1 +1,86 @@
-star - bioconda | Anaconda.org CMD + K Sign In Sign Up bioconda / star star Community An RNA-seq read aligner. Overview Files 115 Labels 2 Badges Versions 2.7.11b Installation To install this package, run one of the following: Conda $ conda install bioconda::star Usage Tracking Monthly Downloads Updates Version 2.7.11b 2.7.11a 2.7.10b 2.7.10a 2.7.9a 5 / 8 versions selected Downloads (Last 6 months): 0 About Summary An RNA-seq read aligner. Last Updated Jan 29, 2024 at 19:40 License GPLv3 Total Downloads 1.5M Version Downloads 353.9K Supported Platforms linux-64 macOS-64 linux-aarch64 macOS-arm64 Home https://github.com/alexdobin/STAR
+[![Anaconda Logo](images/anaconda_org_logo.svg)](/)
+
+CMD + K
+
+Sign In Sign Up
+
+[bioconda](/bioconda)/star
+
+### star
+
+Community
+
+An RNA-seq read aligner.
+
+* [Overview](/channels/bioconda/packages/star/overview)
+* [Files 115](/channels/bioconda/packages/star/files)
+* [Labels 2](/channels/bioconda/packages/star/labels)
+* [Badges](/bioconda/star/badges)
+
+Versions2.7.11b
+
+#### Installation
+
+To install this package, run one of the following:
+
+##### Conda
+
+$`conda install bioconda::star`
+
+#### Usage Tracking
+
+Monthly
+
+ Downloads  Updates
+
+Version
+
+2.7.11b
+
+2.7.11a
+
+2.7.10b
+
+2.7.10a
+
+2.7.9a
+
+5 / 8 versions selected
+
+Downloads (Last 6 months): 0
+
+#### About
+
+Summary
+
+An RNA-seq read aligner.
+
+Last Updated
+
+Jan 29, 2024 at 19:40
+
+License
+
+GPLv3
+
+Total Downloads
+
+1.6M
+
+Version Downloads
+
+367.8K
+
+Supported Platforms
+
+linux-64
+
+macOS-64
+
+linux-aarch64
+
+macOS-arm64
+
+Home
+
+<https://github.com/alexdobin/STAR>

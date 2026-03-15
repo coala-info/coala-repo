@@ -4,19 +4,30 @@ baseCommand:
   - picard
   - MarkIlluminaAdapters
 label: picard_MarkIlluminaAdapters
-doc: "Reads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags. This
-  tool clears any existing adapter-trimming tags (XT:i:) in the optional tag region
-  of the input file. The SAM/BAM/CRAM file must be sorted by query name. Outputs a
-  metrics file histogram showing counts of bases_clipped per read.\n\nTool homepage:
-  http://broadinstitute.github.io/picard/"
+doc: Reads a SAM/BAM/CRAM file and rewrites it with new adapter-trimming tags. 
+  This tool clears any existing adapter-trimming tags (XT:i:) in the optional 
+  tag region of the input file. The SAM/BAM/CRAM file must be sorted by query 
+  name. Outputs a metrics file histogram showing counts of bases_clipped per 
+  read.
 inputs:
+  - id: input
+    type: File
+    doc: Undocumented option
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: metrics
+    type: string
+    doc: Histogram showing counts of bases_clipped in how many reads
+    inputBinding:
+      position: 101
+      prefix: --METRICS
   - id: adapter_truncation_length
     type:
       - 'null'
       - int
     doc: Adapters are truncated to this length to speed adapter matching. Set to
       a large number to effectively disable truncation.
-    default: 30
     inputBinding:
       position: 101
       prefix: --ADAPTER_TRUNCATION_LENGTH
@@ -28,10 +39,6 @@ inputs:
     doc: 'Which adapters sequences to attempt to identify and clip. Possible values:
       {PAIRED_END, INDEXED, SINGLE_END, NEXTERA_V1, NEXTERA_V2, DUAL_INDEXED, FLUIDIGM,
       TRUSEQ_SMALLRNA, ALTERNATIVE_SINGLE_END}'
-    default:
-      - INDEXED
-      - DUAL_INDEXED
-      - PAIRED_END
     inputBinding:
       position: 101
       prefix: --ADAPTERS
@@ -49,7 +56,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -59,7 +65,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -68,7 +73,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -80,19 +84,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --FIVE_PRIME_ADAPTER
-  - id: input
-    type: File
-    doc: Undocumented option
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_error_rate_pe
     type:
       - 'null'
       - float
     doc: The maximum mismatch error rate to tolerate when clipping paired-end 
       reads.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --MAX_ERROR_RATE_PE
@@ -102,7 +99,6 @@ inputs:
       - float
     doc: The maximum mismatch error rate to tolerate when clipping single-end 
       reads.
-    default: 0.1
     inputBinding:
       position: 101
       prefix: --MAX_ERROR_RATE_SE
@@ -112,7 +108,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -122,7 +117,6 @@ inputs:
       - int
     doc: The minimum number of bases to match over (per-read) when clipping 
       paired-end reads.
-    default: 6
     inputBinding:
       position: 101
       prefix: --MIN_MATCH_BASES_PE
@@ -132,7 +126,6 @@ inputs:
       - int
     doc: The minimum number of bases to match over when clipping single-end 
       reads.
-    default: 12
     inputBinding:
       position: 101
       prefix: --MIN_MATCH_BASES_SE
@@ -141,12 +134,16 @@ inputs:
       - 'null'
       - int
     doc: If pruning the adapter list, keep only this many adapter sequences when
-      pruning the list (plus any adapters that were tied with the adapters being
-      kept).
-    default: 1
+      pruning the list.
     inputBinding:
       position: 101
       prefix: --NUM_ADAPTERS_TO_KEEP
+  - id: output
+    type: string
+    doc: If output is not specified, just the metrics are generated
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: paired_run
     type:
       - 'null'
@@ -160,9 +157,7 @@ inputs:
       - 'null'
       - int
     doc: If looking for multiple adapter sequences, then after having seen this 
-      many adapters, shorten the list of sequences. Keep the adapters that were 
-      found most frequently in the input so far.
-    default: 100
+      many adapters, shorten the list of sequences.
     inputBinding:
       position: 101
       prefix: --PRUNE_ADAPTER_LIST_AFTER_THIS_MANY_ADAPTERS_SEEN
@@ -171,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -183,15 +177,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: three_prime_adapter
     type:
       - 'null'
@@ -216,7 +201,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -226,7 +210,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -236,32 +219,35 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: metrics
+  - id: output_metrics
     type: File
     doc: Histogram showing counts of bases_clipped in how many reads
     outputBinding:
       glob: $(inputs.metrics)
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
     doc: If output is not specified, just the metrics are generated
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

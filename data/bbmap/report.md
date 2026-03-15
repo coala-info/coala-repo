@@ -6,14 +6,14 @@
 Fast and accurate splice-aware read aligner.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/bbmap:39.52--he5f24ec_0
+- **Docker Image**: quay.io/biocontainers/bbmap:39.79--h9b5c0a0_0
 - **Homepage**: https://sourceforge.net/projects/bbmap
 - **Package**: https://anaconda.org/channels/bioconda/packages/bbmap/overview
 - **Validation**: PASS
 
 - **Conda**: https://anaconda.org/channels/bioconda/packages/bbmap/overview
 - **Total Downloads**: 1.8M
-- **Last updated**: 2025-11-24
+- **Last updated**: 2026-03-10
 - **GitHub**: N/A
 - **Stars**: N/A
 ### Original Help Text
@@ -323,8 +323,6 @@ Please contact Brian Bushnell at bbushnell@lbl.gov if you encounter
 any problems, or post at: http://seqanswers.com/forums/showthread.php?t=41057
 For documentation and the latest version, visit: https://bbmap.org
 ```
-
-
 ## bbmap_bbduk.sh
 
 ### Tool Description

@@ -4,17 +4,28 @@ baseCommand:
   - picard
   - FixMateInformation
 label: picard_FixMateInformation
-doc: "Verify mate-pair information between mates and fix if needed. This tool ensures
-  that all mate-pair information is in sync between each read and its mate pair. If
-  no OUTPUT file is supplied then the output is written to a temporary file and then
-  copied over the INPUT file.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Verify mate-pair information between mates and fix if needed. This tool 
+  ensures that all mate-pair information is in sync between each read and its 
+  mate pair. If no OUTPUT file is supplied then the output is written to a 
+  temporary file and then copied over the INPUT file (with the original placed 
+  in a .old file.) Reads marked with the secondary alignment flag are written to
+  the output file unchanged. However supplementary reads are corrected so that 
+  they point to the primary, non-supplemental mate record.
 inputs:
+  - id: input
+    type:
+      type: array
+      items: File
+    doc: The SAM/BAM/CRAM input files to check and fix. Multiple files will be 
+      merged and sorted. This argument must be specified at least once.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
   - id: add_mate_cigar
     type:
       - 'null'
       - boolean
     doc: Adds the mate CIGAR tag (MC) if true, does not if false.
-    default: true
     inputBinding:
       position: 101
       prefix: --ADD_MATE_CIGAR
@@ -33,7 +44,6 @@ inputs:
       - boolean
     doc: If true, assume that the input file is queryname sorted, even if the 
       header says otherwise.
-    default: false
     inputBinding:
       position: 101
       prefix: --ASSUME_SORTED
@@ -42,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -52,7 +61,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -61,7 +69,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -71,35 +78,30 @@ inputs:
       - boolean
     doc: If true, ignore missing mates, otherwise will throw an exception when 
       missing mates are found.
-    default: true
     inputBinding:
       position: 101
       prefix: --IGNORE_MISSING_MATES
-  - id: input
-    type:
-      type: array
-      items: File
-    doc: The SAM/BAM/CRAM input files to check and fix. Multiple files will be 
-      merged and sorted. This argument must be specified at least once.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
+  - id: output
+    type: string
+    doc: The output file to write to. If no output file is supplied, the input 
+      file is overwritten (only available with single input file).
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -111,15 +113,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sort_order
     type:
       - 'null'
@@ -146,7 +139,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -156,7 +148,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -166,21 +157,19 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type:
       - 'null'
       - File
@@ -188,6 +177,11 @@ outputs:
       file is overwritten (only available with single input file).
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

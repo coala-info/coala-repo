@@ -4,9 +4,29 @@ baseCommand:
   - picard
   - CollectVariantCallingMetrics
 label: picard_CollectVariantCallingMetrics
-doc: "Collects per-sample and aggregate (spanning all samples) metrics from the provided
-  VCF file.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Collects per-sample and aggregate (spanning all samples) metrics from the 
+  provided VCF file.
 inputs:
+  - id: dbsnp
+    type: File
+    doc: Reference dbSNP file in dbSNP or VCF format.
+    inputBinding:
+      position: 101
+      prefix: --DBSNP
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: Input vcf file for analysis
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Path (except for the file extension) of output metrics files to write.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -21,7 +41,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -31,7 +50,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -40,38 +58,23 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: dbsnp
-    type: File
-    doc: Reference dbSNP file in dbSNP or VCF format.
-    inputBinding:
-      position: 101
-      prefix: --DBSNP
   - id: gvcf_input
     type:
       - 'null'
       - boolean
     doc: Set to true if running on a single-sample gvcf.
-    default: false
     inputBinding:
       position: 101
       prefix: --GVCF_INPUT
-  - id: input
-    type: File
-    doc: Input vcf file for analysis
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -80,7 +83,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -101,15 +103,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SEQUENCE_DICTIONARY
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: target_intervals
     type:
       - 'null'
@@ -123,7 +116,6 @@ inputs:
       - 'null'
       - int
     doc: Undocumented option
-    default: 1
     inputBinding:
       position: 101
       prefix: --THREAD_COUNT
@@ -143,7 +135,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -153,7 +144,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -163,25 +153,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Path (except for the file extension) of output metrics files to write.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

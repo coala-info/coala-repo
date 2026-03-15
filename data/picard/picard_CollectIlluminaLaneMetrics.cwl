@@ -4,11 +4,33 @@ baseCommand:
   - picard
   - CollectIlluminaLaneMetrics
 label: picard_CollectIlluminaLaneMetrics
-doc: "Collects Illumina lane metrics for the given BaseCalling analysis directory.
-  This tool produces quality control metrics on cluster density for each lane of an
-  Illumina flowcell. This tool takes Illumina TileMetrics data and places them into
-  directories containing lane- and phasing-level metrics.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Collects Illumina lane metrics for the given BaseCalling analysis 
+  directory. This tool produces quality control metrics on cluster density for 
+  each lane of an Illumina flowcell. This tool takes Illumina TileMetrics data 
+  and places them into directories containing lane- and phasing-level metrics.
 inputs:
+  - id: output_directory
+    type: string
+    doc: The directory to which the output file will be written
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_DIRECTORY
+  - id: output_prefix
+    type: string
+    doc: The prefix to be prepended to the file name of the output file; an 
+      appropriate suffix will be applied
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_PREFIX
+  - id: run_directory
+    type:
+      - 'null'
+      - Directory
+    doc: The Illumina run directory of the run for which the lane metrics are to
+      be generated
+    inputBinding:
+      position: 101
+      prefix: --RUN_DIRECTORY
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +45,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -33,7 +54,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -42,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -61,23 +80,14 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
-  - id: output_prefix
-    type: string
-    doc: The prefix to be prepended to the file name of the output file; an 
-      appropriate suffix will be applied
-    inputBinding:
-      position: 101
-      prefix: --OUTPUT_PREFIX
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -100,22 +110,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: run_directory
-    type: Directory
-    doc: The Illumina run directory of the run for which the lane metrics are to
-      be generated
-    inputBinding:
-      position: 101
-      prefix: --RUN_DIRECTORY
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -132,7 +126,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -142,7 +135,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -152,25 +144,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output_directory
+  - id: output_output_directory
     type: Directory
     doc: The directory to which the output file will be written
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

@@ -4,13 +4,13 @@ baseCommand:
   - harpy
   - demultiplex
 label: harpy_demultiplex
-doc: "Demultiplex haplotagged FASTQ files. Check that you are using the correct haplotagging
-  method/technology, since the different barcoding approaches have very different
-  demultiplexing strategies.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: Demultiplex haplotagged FASTQ files. Check that you are using the correct 
+  haplotagging method/technology, since the different barcoding approaches have 
+  very different demultiplexing strategies.
 inputs:
   - id: command
     type: string
-    doc: The haplotagging technology/command to use (e.g., meier2021)
+    doc: The demultiplexing command/technology to use (e.g., meier2021)
     inputBinding:
       position: 1
   - id: args
@@ -27,5 +27,8 @@ outputs:
     doc: Standard output
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 stdout: harpy_demultiplex.out
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

@@ -4,10 +4,25 @@ baseCommand:
   - picard
   - SamToFastq
 label: picard_SamToFastq
-doc: "Converts a SAM/BAM/CRAM file to FASTQ. Extracts read sequences and qualities
-  from the input SAM/BAM/CRAM file and writes them into the output file in Sanger
-  FASTQ format.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Converts a SAM/BAM/CRAM file to FASTQ. Extracts read sequences and 
+  qualities from the input SAM/BAM/CRAM file and writes them into the output 
+  file in Sanger FASTQ format.
 inputs:
+  - id: fastq
+    type: string
+    doc: Output FASTQ file (single-end fastq or, if paired, first end of the 
+      pair FASTQ).
+    inputBinding:
+      position: 101
+      prefix: --FASTQ
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: Input SAM/BAM/CRAM file to extract reads from
+    inputBinding:
+      position: 101
+      prefix: --INPUT
   - id: arguments_file
     type:
       - 'null'
@@ -44,7 +59,6 @@ inputs:
     doc: When performing clipping with the CLIPPING_ATTRIBUTE and 
       CLIPPING_ACTION parameters, ensure that the resulting reads after clipping
       are at least CLIPPING_MIN_LENGTH bases long.
-    default: 0
     inputBinding:
       position: 101
       prefix: --CLIPPING_MIN_LENGTH
@@ -54,7 +68,6 @@ inputs:
       - boolean
     doc: Compress output FASTQ files per read group using gzip and append a .gz 
       extension to the file names.
-    default: false
     inputBinding:
       position: 101
       prefix: --COMPRESS_OUTPUTS_PER_RG
@@ -63,7 +76,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -73,7 +85,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -82,7 +93,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -91,7 +101,6 @@ inputs:
       - 'null'
       - boolean
     doc: Include non-PF reads from the SAM file into the output FASTQ files.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_NON_PF_READS
@@ -100,23 +109,15 @@ inputs:
       - 'null'
       - boolean
     doc: If true, include non-primary alignments in the output.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_NON_PRIMARY_ALIGNMENTS
-  - id: input
-    type: File
-    doc: Input SAM/BAM/CRAM file to extract reads from
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: interleave
     type:
       - 'null'
       - boolean
     doc: Will generate an interleaved fastq if paired, each line will have /1 or
       /2 to describe which end it came from
-    default: false
     inputBinding:
       position: 101
       prefix: --INTERLEAVE
@@ -126,17 +127,22 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
+  - id: output_dir
+    type: string
+    doc: Directory in which to output the FASTQ file(s). Used only when 
+      OUTPUT_PER_RG is true.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_DIR
   - id: output_per_rg
     type:
       - 'null'
       - boolean
     doc: Output a FASTQ file per read group (two FASTQ files per read group if 
       the group is paired).
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_PER_RG
@@ -154,7 +160,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -164,7 +169,6 @@ inputs:
       - boolean
     doc: Re-reverse bases and qualities of reads with negative strand flag set 
       before writing them to FASTQ
-    default: true
     inputBinding:
       position: 101
       prefix: --RE_REVERSE
@@ -181,7 +185,6 @@ inputs:
       - 'null'
       - int
     doc: The number of bases to trim from the beginning of read 1.
-    default: 0
     inputBinding:
       position: 101
       prefix: --READ1_TRIM
@@ -198,7 +201,6 @@ inputs:
       - 'null'
       - int
     doc: The number of bases to trim from the beginning of read 2.
-    default: 0
     inputBinding:
       position: 101
       prefix: --READ2_TRIM
@@ -216,19 +218,15 @@ inputs:
       - string
     doc: The read group tag (PU or ID) to be used to output a FASTQ file per 
       read group.
-    default: PU
     inputBinding:
       position: 101
       prefix: --RG_TAG
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
+  - id: second_end_fastq
+    type: string
+    doc: Output FASTQ file (if paired, second end of the pair FASTQ).
     inputBinding:
       position: 101
-      prefix: --showHidden
+      prefix: --SECOND_END_FASTQ
   - id: tmp_dir
     type:
       - 'null'
@@ -239,13 +237,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --TMP_DIR
+  - id: unpaired_fastq
+    type: string
+    doc: Output FASTQ file for unpaired reads; may only be provided in 
+      paired-FASTQ mode
+    inputBinding:
+      position: 101
+      prefix: --UNPAIRED_FASTQ
   - id: use_jdk_deflater
     type:
       - 'null'
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -255,7 +259,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -265,27 +268,25 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: fastq
+  - id: output_fastq
     type: File
     doc: Output FASTQ file (single-end fastq or, if paired, first end of the 
       pair FASTQ).
     outputBinding:
       glob: $(inputs.fastq)
-  - id: output_dir
+  - id: output_output_dir
     type:
       - 'null'
       - Directory
@@ -293,14 +294,14 @@ outputs:
       OUTPUT_PER_RG is true.
     outputBinding:
       glob: $(inputs.output_dir)
-  - id: second_end_fastq
+  - id: output_second_end_fastq
     type:
       - 'null'
       - File
     doc: Output FASTQ file (if paired, second end of the pair FASTQ).
     outputBinding:
       glob: $(inputs.second_end_fastq)
-  - id: unpaired_fastq
+  - id: output_unpaired_fastq
     type:
       - 'null'
       - File
@@ -308,6 +309,11 @@ outputs:
       paired-FASTQ mode
     outputBinding:
       glob: $(inputs.unpaired_fastq)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

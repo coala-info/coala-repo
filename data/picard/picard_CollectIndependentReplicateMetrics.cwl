@@ -4,11 +4,31 @@ baseCommand:
   - picard
   - CollectIndependentReplicateMetrics
 label: picard_CollectIndependentReplicateMetrics
-doc: "Estimates the rate of independent replication rate of reads within a bam. This
-  tool estimates the fraction of the input reads which would be marked as duplicates
-  but are actually biological replicates, independent observations of the data.\n\n\
-  Tool homepage: http://broadinstitute.github.io/picard/"
+doc: Estimates the rate of independent replication rate of reads within a bam. 
+  This tool estimates the fraction of the input reads which would be marked as 
+  duplicates but are actually biological replicates, independent observations of
+  the data.
 inputs:
+  - id: input
+    type: File
+    doc: Input (indexed) BAM/CRAM file.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Write metrics to this file
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: vcf
+    type:
+      - 'null'
+      - File
+    doc: Input VCF file
+    inputBinding:
+      position: 101
+      prefix: --VCF
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +43,6 @@ inputs:
       - 'null'
       - string
     doc: Barcode Quality SAM tag.
-    default: QX
     inputBinding:
       position: 101
       prefix: --BARCODE_BQ
@@ -32,7 +51,6 @@ inputs:
       - 'null'
       - string
     doc: Barcode SAM tag.
-    default: RX
     inputBinding:
       position: 101
       prefix: --BARCODE_TAG
@@ -41,7 +59,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -51,7 +68,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -60,7 +76,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -69,23 +84,21 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to filter unpaired reads from the input.
-    default: true
     inputBinding:
       position: 101
       prefix: --FILTER_UNPAIRED_READS
-  - id: input
-    type: File
-    doc: Input (indexed) BAM/CRAM file.
+  - id: matrix_output
+    type: string
+    doc: Write the confusion matrix (of UMIs) to this file
     inputBinding:
       position: 101
-      prefix: --INPUT
+      prefix: --MATRIX_OUTPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -95,7 +108,6 @@ inputs:
       - int
     doc: minimal value for the base quality of all the bases in a molecular 
       barcode, for it to be used.
-    default: 30
     inputBinding:
       position: 101
       prefix: --MINIMUM_BARCODE_BQ
@@ -105,7 +117,6 @@ inputs:
       - int
     doc: minimal value for the base quality of a base to be used in the 
       estimation.
-    default: 17
     inputBinding:
       position: 101
       prefix: --MINIMUM_BQ
@@ -114,7 +125,6 @@ inputs:
       - 'null'
       - int
     doc: minimal value for the GQ field in the VCF to use variant site.
-    default: 90
     inputBinding:
       position: 101
       prefix: --MINIMUM_GQ
@@ -124,7 +134,6 @@ inputs:
       - int
     doc: minimal value for the mapping quality of the reads to be used in the 
       estimation.
-    default: 40
     inputBinding:
       position: 101
       prefix: --MINIMUM_MQ
@@ -133,7 +142,6 @@ inputs:
       - 'null'
       - int
     doc: The interval between which progress will be displayed.
-    default: 100000
     inputBinding:
       position: 101
       prefix: --PROGRESS_STEP_INTERVAL
@@ -142,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -163,21 +170,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SAMPLE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: stop_after
     type:
       - 'null'
       - int
     doc: Number of sets to examine before stopping.
-    default: 0
     inputBinding:
       position: 101
       prefix: --STOP_AFTER
@@ -197,7 +194,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -207,7 +203,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -217,38 +212,35 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: vcf
-    type: File
-    doc: Input VCF file
-    inputBinding:
-      position: 101
-      prefix: --VCF
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Write metrics to this file
     outputBinding:
       glob: $(inputs.output)
-  - id: matrix_output
+  - id: output_matrix_output
     type:
       - 'null'
       - File
     doc: Write the confusion matrix (of UMIs) to this file
     outputBinding:
       glob: $(inputs.matrix_output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

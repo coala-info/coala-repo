@@ -4,8 +4,8 @@ baseCommand:
   - harpy
   - deconvolve
 label: harpy_deconvolve
-doc: "Resolve barcode sharing in unrelated molecules. Provide the input fastq files
-  and/or directories at the end of the command.\n\nTool homepage: https://github.com/pdimens/harpy/"
+doc: Resolve barcode sharing in unrelated molecules. Provide the input fastq 
+  files and/or directories at the end of the command.
 inputs:
   - id: inputs
     type:
@@ -14,20 +14,27 @@ inputs:
     doc: Input fastq files and/or directories
     inputBinding:
       position: 1
-  - id: container
+  - id: kmer_length
     type:
       - 'null'
-      - boolean
-    doc: Use a container instead of conda
+      - int
+    doc: Size of kmers
     inputBinding:
       position: 102
-      prefix: --container
+      prefix: --kmer-length
+  - id: window_size
+    type:
+      - 'null'
+      - int
+    doc: Size of window guaranteed to contain at least one kmer
+    inputBinding:
+      position: 102
+      prefix: --window-size
   - id: density
     type:
       - 'null'
       - int
     doc: On average, 1/2^d kmers are indexed
-    default: 3
     inputBinding:
       position: 102
       prefix: --density
@@ -36,10 +43,31 @@ inputs:
       - 'null'
       - int
     doc: Minimum cloud size to deconvolve
-    default: 0
     inputBinding:
       position: 102
       prefix: --dropout
+  - id: threads
+    type:
+      - 'null'
+      - int
+    doc: Number of threads to use
+    inputBinding:
+      position: 102
+      prefix: --threads
+  - id: output_dir
+    type: string
+    doc: Output directory name
+    inputBinding:
+      position: 102
+      prefix: --output-dir
+  - id: container
+    type:
+      - 'null'
+      - boolean
+    doc: Use a container instead of conda
+    inputBinding:
+      position: 102
+      prefix: --container
   - id: hpc
     type:
       - 'null'
@@ -48,15 +76,6 @@ inputs:
     inputBinding:
       position: 102
       prefix: --hpc
-  - id: kmer_length
-    type:
-      - 'null'
-      - int
-    doc: Size of kmers
-    default: 21
-    inputBinding:
-      position: 102
-      prefix: --kmer-length
   - id: quiet
     type:
       - 'null'
@@ -73,32 +92,19 @@ inputs:
     inputBinding:
       position: 102
       prefix: --snakemake
-  - id: threads
-    type:
-      - 'null'
-      - int
-    doc: Number of threads to use
-    default: 4
-    inputBinding:
-      position: 102
-      prefix: --threads
-  - id: window_size
-    type:
-      - 'null'
-      - int
-    doc: Size of window guaranteed to contain at least one kmer
-    default: 40
-    inputBinding:
-      position: 102
-      prefix: --window-size
 outputs:
-  - id: output_dir
+  - id: output_output_dir
     type:
       - 'null'
       - Directory
     doc: Output directory name
     outputBinding:
       glob: $(inputs.output_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+    dockerPull: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
+s:url: https://github.com/pdimens/harpy/
+$namespaces:
+  s: https://schema.org/

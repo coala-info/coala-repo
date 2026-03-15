@@ -4,12 +4,24 @@ baseCommand:
   - picard
   - SortGff
 label: picard_SortGff
-doc: "This tool sorts a gff3 file by coordinates, so that it can be indexed. It additionally
-  adds flush directives where possible, which can significantly reduce the memory
-  footprint of downstream tools. Sorting of multiple contigs can be specified by a
-  sequence dictionary; if no sequence dictionary is specified, contigs are sorted
-  lexicographically.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: This tool sorts a gff3 file by coordinates, so that it can be indexed. It 
+  additionally adds flush directives where possible, which can significantly 
+  reduce the memory footprint of downstream tools. Sorting of multiple contigs 
+  can be specified by a sequence dictionary; if no sequence dictionary is 
+  specified, contigs are sorted lexicographically.
 inputs:
+  - id: input
+    type: File
+    doc: Input Gff3 file to sort.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Sorted Gff3 output file.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -34,7 +45,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -43,23 +53,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: input
-    type: File
-    doc: Input Gff3 file to sort.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -68,7 +70,6 @@ inputs:
       - 'null'
       - int
     doc: Number of records to hold in memory before spilling to disk
-    default: 50000
     inputBinding:
       position: 101
       prefix: --nRecordsInMemory
@@ -77,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -98,15 +98,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --SEQUENCE_DICTIONARY
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -123,7 +114,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -133,7 +123,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -143,25 +132,28 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Sorted Gff3 output file.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

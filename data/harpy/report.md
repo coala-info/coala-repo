@@ -6,7 +6,7 @@
 Align sequences to a reference genome. Provide an additional subcommand bwa or strobe to get more information on using those aligners. Both have comparable performance, but strobe is typically faster. The aligners are not linked-read aware, but the workflows ensure linked-read information is carried over to the alignment records.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -38,7 +38,7 @@ Commands:
 Assemble linked reads into a genome. The linked-read barcodes must be in BX:Z or BC:Z FASTQ header tags. It is strongly recommended to first deconvolve the input FASTQ files with harpy deconvolve.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -107,7 +107,7 @@ Documentation: https://pdimens.github.io/harpy/workflows/assembly
 Demultiplex haplotagged FASTQ files. Check that you are using the correct haplotagging method/technology, since the different barcoding approaches have very different demultiplexing strategies.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -137,7 +137,7 @@ Commands:
 Impute variant genotypes from alignments. Provide the parameter file followed by the input VCF and the input alignment files/directories (.bam) at the end of the command.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -190,7 +190,7 @@ Documentation: https://pdimens.github.io/harpy/workflows/impute/
 Assemble linked reads into a metagenome. The linked-read barcodes must be in BX:Z or BC:Z FASTQ header tags. It is strongly recommended to first deconvolve the input FASTQ files with harpy deconvolve.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -239,7 +239,7 @@ Documentation: https://pdimens.github.io/harpy/workflows/metassembly
 Phase SNPs into haplotypes. Provide the vcf file followed by the input alignment (.bam) files and/or directories.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -297,7 +297,7 @@ Documentation: https://pdimens.github.io/harpy/workflows/phase
 FASTQ adapter removal, quality filtering, etc. Linked-read presence and type is auto-detected.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -353,10 +353,10 @@ Documentation: https://pdimens.github.io/harpy/workflows/qc
 ## harpy_simulate
 
 ### Tool Description
-Simulate genomic variants. The variant simulator (simuG) can only simulate one type of variant at a time, so you may need to run it a few times if you want multiple variant types.
+Simulate genomic variants. To simulate genomic variants, provide an additional subcommand {snpindel,inversion,cnv,translocation} to get more information about that workflow. The variant simulator (simuG) can only simulate one type of variant at a time, so you may need to run it a few times if you want multiple variant types.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -390,7 +390,7 @@ Genomic Variants:
 Call SNPs and small indels from alignments. Provide an additional subcommand mpileup or freebayes to get more information on using those variant callers. They are both robust variant callers, but freebayes is recommended when ploidy is greater than 2.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -416,7 +416,7 @@ Commands:
 Call inversions, deletions, and duplications from alignments using LEVIATHAN or NAIBR.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -447,23 +447,23 @@ Commands:
 ## harpy_convert
 
 ### Tool Description
-Convert data formats using the harpy toolset
+[deprecated] Convert between linked-read formats. This module of Harpy has been deprecated and its function has been moved to the Djinn package.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 Usage: harpy convert [OPTIONS] COMMAND [ARGS]...                                
                                                                                 
-╭─ Usage Error ────────────────────────────────────────────────────────────────╮
-│ No such option: -h                                                           │
-╰──────────────────────────────────────────────────────────────────────────────╯
+[deprecated]                                                                    
+Convert between linked-read formats                                             
+This module of Harpy has been deprecated and its function has been moved to the 
+Djinn package, which should be provided with the standard conda-based Harpy     
+installation.
 ```
 
 
@@ -473,7 +473,7 @@ Usage: harpy convert [OPTIONS] COMMAND [ARGS]...
 Resolve barcode sharing in unrelated molecules. Provide the input fastq files and/or directories at the end of the command.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -518,33 +518,44 @@ Documentation: https://pdimens.github.io/harpy/workflows/deconvolve
 ## harpy_downsample
 
 ### Tool Description
-Downsample data using the harpy tool suite.
+No inputs — do not generate CWL.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
-- **Validation**: PASS
+- **Validation**: FAIL (generation failed)
+
+### Generation Failed
+
+No inputs — do not generate CWL.
+
+
+### Validation Errors
+
+- No inputs — do not generate CWL.
+
+
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
 Usage: harpy downsample [OPTIONS]                                               
                                                                                 
-╭─ Usage Error ────────────────────────────────────────────────────────────────╮
-│ No such option: -h                                                           │
-╰──────────────────────────────────────────────────────────────────────────────╯
+[deprecated]                                                                    
+Downsample data by barcode                                                      
+This module of Harpy has been deprecated and its function has been moved to the 
+Djinn package, which should be provided with the standard conda-based Harpy     
+installation.
 ```
 
 
 ## harpy_template
 
 ### Tool Description
-Create files and HPC configs for workflows. All commands write to stdout.
+Create files and HPC configs for workflows. All commands write to stdout. Use hpc-* and impute without arguments.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -574,7 +585,7 @@ HPC Configurations:
 Locally install workflow dependencies. These commands are intended only for situations on HPCs where conda cannot be installed or the worker nodes do not have internet access to download conda/apptainer workflow dependencies.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -590,40 +601,40 @@ conda/apptainer workflow dependencies.
                                                                                 
 Commands:                                                                       
   conda      Install workflow dependencies via conda                            
-  container  Install workflow dependency container
+  container  Install workflow dependency containers
 ```
 
 
 ## harpy_diagnose
 
 ### Tool Description
-Diagnose issues within a harpy directory
+Attempt to resolve workflow errors
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
 
 ### Original Help Text
 ```text
-INFO:    Environment variable SINGULARITY_CACHEDIR is set, but APPTAINER_CACHEDIR is preferred
-INFO:    Using cached SIF image
-Usage: harpy diagnose [OPTIONS] DIRECTORY                                       
+Usage: harpy diagnose COMMAND [ARGS]...                                         
                                                                                 
-╭─ Usage Error ────────────────────────────────────────────────────────────────╮
-│ No such option: -h                                                           │
-╰──────────────────────────────────────────────────────────────────────────────╯
+Attempt to resolve workflow errors                                              
+                                                                                
+Commands:                                                                       
+  rule   Directly run the first rule that caused the workflow failure           
+  stall  Run the Snakemake debugger to identify why a workflow stalled
 ```
 
 
 ## harpy_resume
 
 ### Tool Description
-Continue an incomplete Harpy workflow. Bypasses preprocessing steps and executes the Snakemake command present in the directory.
+Continue an incomplete Harpy workflow by bypassing preprocessing steps and executing the Snakemake command present in the target directory.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -637,18 +648,17 @@ In the event you need to run the Snakemake workflow present in a Harpy output
 directory (e.g. Align/bwa) without Harpy redoing validations and rewriting any  
 of the configuration files, this command bypasses all the preprocessing steps of
 Harpy workflows and executes the Snakemake command present in                   
-directory/workflow/workflow.yaml. It will reuse an existing workflow/envs/      
-folder to validate software dependencies, otherwise use --conda to create a     
-populated one.                                                                  
+directory/workflow/workflow.yaml.                                               
                                                                                 
 The only requirements are:                                                      
                                                                                 
  • the target directory has workflow/config.yaml present in it                  
- • the targest directory has workflow/envs/*.yaml present in it                 
+ • the target directory has workflow/workflow.yaml present in it                
+ • the targest directory has workflow/envs/*.yaml present in it (if using conda)
                                                                                 
 Options:                                                                        
-  --conda     -c  Recreate the conda environments                               
   --absolute  -a  Call Snakemake with absolute paths                            
+  --direct    -d  Call Snakemake directly without Harpy intervention            
   --threads   -t  Change the number of threads (>1)                             
   --quiet         0 all output, 1 progress bar, 2 no output                     
                                                                                 
@@ -662,7 +672,7 @@ Documentation: https://pdimens.github.io/harpy/workflows/other
 File format checks for linked-read data. This is useful to make sure your input files are formatted correctly for the processing pipeline before you are surprised by errors hours into an analysis.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -688,7 +698,7 @@ Commands:
 View a workflow's components. These convenient commands let you view/edit the latest workflow log file, snakefile, snakemake parameter file, workflow config file in a directory that was used for the output of a Harpy run.
 
 ### Metadata
-- **Docker Image**: quay.io/biocontainers/harpy:3.1--pyhdfd78af_2
+- **Docker Image**: quay.io/biocontainers/harpy:3.2--pyhdfd78af_0
 - **Homepage**: https://github.com/pdimens/harpy/
 - **Package**: https://anaconda.org/channels/bioconda/packages/harpy/overview
 - **Validation**: PASS
@@ -702,17 +712,11 @@ These convenient commands let you view/edit the latest workflow log file,
 snakefile, snakemake parameter file, workflow config file in a directory that   
 was used for the output of a Harpy run.                                         
                                                                                 
-Options:                                                                        
-  --help  -h  Show this message and exit.                                       
-                                                                                
 Commands:                                                                       
   config        View/edit a workflow's config file                              
   environments  View the Snakemake-managed conda environments                   
-  log           View a workflow's last log file                                 
-  snakefile     View/edit a workflow's snakefile                                
-  snakeparams   View/edit a workflow's snakemake configurations
+  log           View a workflow's Snakemake log file                            
+  snakefile     View/edit a workflow's Snakefile                                
+  snakeparams   View/edit a workflow's Snakemake configurations
 ```
 
-
-## Metadata
-- **Skill**: generated

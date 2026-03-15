@@ -4,11 +4,9 @@ baseCommand:
   - picard
   - ViewSam
 label: picard_ViewSam
-doc: "Very simple command that just reads a SAM or BAM file and writes out the header
-  and each record to standard out. When an (optional) intervals file is specified,
-  only records overlapping those intervals will be output. All reads, just the aligned
-  reads, or just the unaligned reads can be printed out by setting AlignmentStatus
-  accordingly.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Very simple command that just reads a SAM or BAM file and writes out the 
+  header and each record to standard out. When an (optional) intervals file is 
+  specified, only records overlapping those intervals will be output.
 inputs:
   - id: alignment_status
     type: string
@@ -17,6 +15,19 @@ inputs:
     inputBinding:
       position: 101
       prefix: --ALIGNMENT_STATUS
+  - id: input
+    type: File
+    doc: The SAM or BAM file or GA4GH url to view.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: pf_status
+    type: string
+    doc: 'Print out all reads, just the PF reads or just the non-PF reads. Possible
+      values: {PF, NonPF, All}'
+    inputBinding:
+      position: 101
+      prefix: --PF_STATUS
   - id: arguments_file
     type:
       - 'null'
@@ -31,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -41,7 +51,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -50,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -59,16 +67,9 @@ inputs:
       - 'null'
       - boolean
     doc: Print the SAM header only.
-    default: false
     inputBinding:
       position: 101
       prefix: --HEADER_ONLY
-  - id: input
-    type: File
-    doc: The SAM or BAM file or GA4GH url to view.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: interval_list
     type:
       - 'null'
@@ -83,23 +84,14 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
-  - id: pf_status
-    type: string
-    doc: 'Print out all reads, just the PF reads or just the non-PF reads. Possible
-      values: {PF, NonPF, All}'
-    inputBinding:
-      position: 101
-      prefix: --PF_STATUS
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -108,7 +100,6 @@ inputs:
       - 'null'
       - boolean
     doc: Print the alignment records only.
-    default: false
     inputBinding:
       position: 101
       prefix: --RECORDS_ONLY
@@ -120,15 +111,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -145,7 +127,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -155,7 +136,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -165,19 +145,17 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
   - id: stdout
     type: stdout
@@ -186,3 +164,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
 stdout: picard_ViewSam.out
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

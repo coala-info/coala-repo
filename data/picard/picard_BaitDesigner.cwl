@@ -4,11 +4,31 @@ baseCommand:
   - picard
   - BaitDesigner
 label: picard_BaitDesigner
-doc: "Designs oligonucleotide baits for hybrid selection reactions. This tool is used
-  to design custom bait sets for hybrid selection experiments. It outputs interval_list
-  files of both bait and target sequences as well as the actual bait sequences in
-  FastA format.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Designs oligonucleotide baits for hybrid selection reactions. This tool is 
+  used to design custom bait sets for hybrid selection experiments. It outputs 
+  interval_list files of both bait and target sequences as well as the actual 
+  bait sequences in FastA format.
 inputs:
+  - id: design_name
+    type: string
+    doc: The name of the bait design
+    inputBinding:
+      position: 101
+      prefix: --DESIGN_NAME
+  - id: reference_sequence
+    type: File
+    doc: Reference sequence file.
+    inputBinding:
+      position: 101
+      prefix: --REFERENCE_SEQUENCE
+  - id: targets
+    type:
+      - 'null'
+      - File
+    doc: The file with design parameters and targets
+    inputBinding:
+      position: 101
+      prefix: --TARGETS
   - id: arguments_file
     type:
       - 'null'
@@ -24,7 +44,6 @@ inputs:
       - int
     doc: The desired offset between the start of one bait and the start of 
       another bait for the same target.
-    default: 80
     inputBinding:
       position: 101
       prefix: --BAIT_OFFSET
@@ -33,7 +52,6 @@ inputs:
       - 'null'
       - int
     doc: The length of each individual bait to design
-    default: 120
     inputBinding:
       position: 101
       prefix: --BAIT_SIZE
@@ -42,7 +60,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -52,7 +69,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -61,23 +77,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: design_name
-    type: string
-    doc: The name of the bait design
-    inputBinding:
-      position: 101
-      prefix: --DESIGN_NAME
   - id: design_on_target_strand
     type:
       - 'null'
       - boolean
     doc: If true design baits on the strand of the target feature, if false 
       always design on the + strand of the genome.
-    default: false
     inputBinding:
       position: 101
       prefix: --DESIGN_ON_TARGET_STRAND
@@ -87,7 +95,6 @@ inputs:
       - string
     doc: 'The design strategy to use to layout baits across each target. Possible
       values: {CenteredConstrained, FixedOffset, Simple}'
-    default: FixedOffset
     inputBinding:
       position: 101
       prefix: --DESIGN_STRATEGY
@@ -96,8 +103,7 @@ inputs:
       - 'null'
       - boolean
     doc: If true, fill up the pools with alternating fwd and rc copies of all 
-      baits.
-    default: true
+      baits. Equal copies of all baits will always be maintained
     inputBinding:
       position: 101
       prefix: --FILL_POOLS
@@ -106,7 +112,6 @@ inputs:
       - 'null'
       - string
     doc: The left amplification primer to prepend to all baits for synthesis
-    default: ATCGCACCAGCGTGT
     inputBinding:
       position: 101
       prefix: --LEFT_PRIMER
@@ -116,7 +121,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -126,7 +130,6 @@ inputs:
       - boolean
     doc: If true merge targets that are 'close enough' that designing against a 
       merged target would be more efficient.
-    default: true
     inputBinding:
       position: 101
       prefix: --MERGE_NEARBY_TARGETS
@@ -135,7 +138,6 @@ inputs:
       - 'null'
       - int
     doc: The minimum number of baits to design per target.
-    default: 2
     inputBinding:
       position: 101
       prefix: --MINIMUM_BAITS_PER_TARGET
@@ -145,16 +147,22 @@ inputs:
       - boolean
     doc: If true also output .design.txt files per pool with one line per bait 
       sequence
-    default: true
     inputBinding:
       position: 101
       prefix: --OUTPUT_AGILENT_FILES
+  - id: output_directory
+    type: string
+    doc: The output directory. If not provided then the DESIGN_NAME will be used
+      as the output directory
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_DIRECTORY
   - id: padding
     type:
       - 'null'
       - int
-    doc: Pad the input targets by this amount when designing baits.
-    default: 0
+    doc: Pad the input targets by this amount when designing baits. Padding is 
+      applied on both sides in this amount.
     inputBinding:
       position: 101
       prefix: --PADDING
@@ -164,7 +172,6 @@ inputs:
       - int
     doc: The size of pools or arrays for synthesis. If no pool files are 
       desired, can be set to 0.
-    default: 55000
     inputBinding:
       position: 101
       prefix: --POOL_SIZE
@@ -173,23 +180,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
-  - id: reference_sequence
-    type: File
-    doc: Reference sequence file.
-    inputBinding:
-      position: 101
-      prefix: --REFERENCE_SEQUENCE
   - id: repeat_tolerance
     type:
       - 'null'
       - int
     doc: Baits that have more than REPEAT_TOLERANCE soft or hard masked bases 
       will not be allowed
-    default: 50
     inputBinding:
       position: 101
       prefix: --REPEAT_TOLERANCE
@@ -198,25 +197,9 @@ inputs:
       - 'null'
       - string
     doc: The right amplification primer to prepend to all baits for synthesis
-    default: CACTGCGGCTCCTCA
     inputBinding:
       position: 101
       prefix: --RIGHT_PRIMER
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
-  - id: targets
-    type: File
-    doc: The file with design parameters and targets
-    inputBinding:
-      position: 101
-      prefix: --TARGETS
   - id: tmp_dir
     type:
       - 'null'
@@ -233,7 +216,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -243,7 +225,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -253,21 +234,19 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output_directory
+  - id: output_output_directory
     type:
       - 'null'
       - Directory
@@ -275,6 +254,11 @@ outputs:
       as the output directory
     outputBinding:
       glob: $(inputs.output_directory)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

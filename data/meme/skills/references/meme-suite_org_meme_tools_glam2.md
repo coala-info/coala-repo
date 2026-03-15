@@ -1,1 +1,273 @@
-GLAM2 - Submission form Click on the menu at the left to see which of the following sequence input methods are available. Type in sequences When this option is available you may directly input multiple sequences by typing them. Sequences must be input in FASTA format . Upload sequences When this option is available you may upload a file containing sequences in FASTA format . Upload BED file When this option is available you may upload a file containing sequence coordinates in BED format . Databases (select category) When this option is available you may first select a category of sequence database from the list below it. Two additional menus will then appear where you can select the particular database and version desired, respectively. The full list of available sequence databases and their descriptions can be viewed HERE . Submitted sequences This option is only available when you have invoked the current program by clicking on a button in the output report of a different MEME Suite program. By selecting this option you will input the sequences sent by that program. [ close ] Specify a file to upload containing sequence coordinates in BED format . The file must be based on the exact genome version you specified in the menus above. [ close ] Select an available sequence database from this menu. [ close ] Select an available version of the sequence database from this menu. [ close ] Select an available tissue/cell-specificity from this menu. [ close ] Selecting this option will filter the sequence menu to only contain databases that have additional information that is specific to a tissue or cell line. This option causes MEME Suite to use tissue/cell-specific information (typically from DNase I or histone modification ChIP-seq data) encoded as a position specific prior that has been created by the MEME Suite create-priors utility. You can see a description of the sequence databases for which we provide tissue/cell-specific priors here . Note that you cannot upload or type in your own sequences when tissue/cell-specific scanning is selected. [ close ] Enter the email address where you want the job notification email to be sent. Please check that this is a valid email address! The notification email will include a link to your job results. Note: You can also access your jobs via the Recent Jobs menu on the left of all MEME Suite input pages. That menu only keeps track of jobs submitted during the current session of your internet browser. Note: Most MEME Suite servers only store results for a couple of days. So be sure to download any results you wish to keep. [ close ] Enter text naming or describing this analysis. The job description will be included in the notification email you receive and in the job output. [ close ] Please enter the sequences which you believe share one or more motifs. The sequences may contain no more than 60,000 characters total and must be in FASTA format . See the example protein sequences which were used to create the sample_output . [ close ] This is the minimum aligned sequence count. It must be at least 2. [ close ] GLAM2 allows you to set limits on the number of "key positions" (the aligned columns) in motifs. GLAM2 automatically adjusts the number of key positions so as to maximize the alignment score, but it sometimes has trouble with this. You can help GLAM2 by changing the initial number of aligned columns to a ballpark value. You can also set lower and upper bounds on the number of aligned columns in the motif. Note that the minimum possible value for aligned columns is 2 and the maximum possible value is 300. Both protein and DNA motifs are often shorter than the default maximum number of aligned columns (50). It is often advisable for you to reduce that parameter to a much smaller value (in the range 10 - 20). [ close ] This is the deletion pseudocount. It must be larger than zero. [ close ] This is the no-deletion pseudocount. It must be larger than zero. [ close ] This is the insertion pseudocount. It must be larger than zero. [ close ] This is the no-insertion pseudocount. It must be larger than zero. [ close ] The number of alignment replicates performed. [ close ] The maximum number of iterations without improvement that GLAM2 attempts. [ close ] Checking this box instructs GLAM2 to NOT check the reverse complement of the input sequences for motif sites when reading sequences using the DNA or RNA alphabet. Note: When your sequences are RNA, you should select this option to ensure that only the given strand is searched for motifs. [ close ] Checking this box causes GLAM2 to shuffle each of the primary sequences individually. The sequences will still be the same length and have the same character frequencies but any existing patterns will be obliterated. Using this option repeatedly you can get an idea of the E -values of motifs discovered in "random" sequence datasets similar to your primary dataset. This can help you determine a reasonable E -value cutoff for motifs discovered in your unshuffled primary sequence dataset. [ close ] Checking this box causes GLAM2 to include the input sequences in the output so that your query can be easily resubmitted and modified. This will increase the size of your output HTML file substantially if your sequence data is large! [ close ] Javascript is disabled! &#9785; The MEME Suite web application requires the use of JavaScript but Javascript doesn't seem to be available on your browser. Please re-enable Javascript to use the MEME Suite. GLAM2 Gapped Local Alignment of Motifs Version 5.5.9 Data Submission Form Perform motif discovery for gapped motifs on DNA or protein datasets. Input the sequences Enter sequences in which you want to find motifs. Type in sequences Upload sequences Input job details (Optional) Enter your email address. (Optional) Enter a job description. &#x25B6; &#x25BC; Advanced options hidden modifications! [Reset] &nbsp;&nbsp; How many sequences are needed in each alignment? Minimum Sequences: How many columns should be aligned? Initial: Minimum:&nbsp; Maximum:&nbsp; What should the pseudocounts be? For Delete:&nbsp; For No-delete:&nbsp; For Insert:&nbsp; For No-insert:&nbsp; How many alignment replicates? Replicates: How many iterations without improvement needed to give up? Iterations: Can motif sites be on both strands? (DNA/RNA only) Search given strand only. Should GLAM2 shuffle the sequences? Shuffle the sequences. Should GLAM2 embed the sequences? Embed the sequences. Warning: Your maximum job quota has been reached! You will need to wait until one of your jobs completes or 1 second has elapsed before submitting another job. This server has the job quota set to 10 unfinished jobs every 1 hour . Note: if the combined form inputs exceed 80MB the job will be rejected. &nbsp;&nbsp;&nbsp; Version 5.5.9 Powered by Opal Please send comments and questions to: meme-suite@uw.edu Home Documentation Downloads Authors Citing
+**Click on the menu at the left to see which of the following sequence input methods are available.**
+
+**Type in sequences**
+:   When this option is available you may directly input multiple
+    sequences by typing them. Sequences must be input in
+    [FASTA format](../doc/fasta-format.html).
+
+**Upload sequences**
+:   When this option is available you may upload a file containing
+    sequences in [FASTA format](../doc/fasta-format.html).
+
+**Upload BED file** ![new](../doc/images/new_icon.png)
+:   When this option is available you may upload a file containing
+    sequence coordinates in [BED format](../doc/bed-format.html).
+
+**Databases (select category)**
+:   When this option is available you may first select a category of
+    sequence database from the list below it. Two additional menus will then appear
+    where you can select the particular database and version desired, respectively.
+    The full list of available sequence databases and their descriptions
+    can be viewed [HERE](../db/sequences).
+
+**Submitted sequences**
+:   This option is only available when you have invoked the current
+    program by clicking on a button in the output report of a different MEME Suite program.
+    By selecting this option you will input the sequences sent by that program.
+
+[ close ]
+
+Specify a file to upload containing
+sequence coordinates in [BED format](../doc/bed-format.html).
+The file must be based on the exact genome version you specified in the
+menus above.
+
+[ close ]
+
+Select an available sequence database from this menu.
+
+[ close ]
+
+Select an available version of the sequence database from this menu.
+
+[ close ]
+
+Select an available tissue/cell-specificity from this menu.
+
+[ close ]
+
+Selecting this option will filter the sequence menu to only contain
+databases that have additional information that is specific to a tissue
+or cell line.
+
+This option causes MEME Suite to use tissue/cell-specific information
+(typically from DNase I or histone modification ChIP-seq data) encoded
+as a [position specific prior](../doc/psp-format.html) that
+has been created by the MEME Suite [create-priors](../doc/create-priors.html)
+utility. You can see a description of the sequence databases
+for which we provide tissue/cell-specific priors
+[here](../doc/FixMe.html).
+
+**Note that you cannot upload or type in your own sequences
+when tissue/cell-specific scanning is selected.**
+
+[ close ]
+
+Enter the email address where you want the job notification email to
+be sent. Please check that this is a valid email address!
+
+The notification email will include a link to your job results.
+
+**Note:** You can also access your jobs via the **Recent Jobs**
+menu on the left of all MEME Suite input pages. That menu only
+keeps track of jobs submitted during the current session of your internet browser.
+
+**Note:** Most MEME Suite servers only store results for a couple of days.
+So be sure to download any results you wish to keep.
+
+[ close ]
+
+Enter text naming or describing this analysis. The job description will be included in the notification email you
+receive and in the job output.
+
+[ close ]
+
+Please enter the sequences which you believe share one or more motifs.
+
+The sequences may contain no more than **60,000 characters total**
+and must be in [FASTA format](../doc/fasta-format.html).
+
+See the [example protein sequences](https://meme-suite.org/meme/doc/examples/example-datasets/At.faa) which were used to create the [sample\_output](../doc/examples/glam2_example_output_files/glam2.html).
+
+[ close ]
+
+This is the minimum aligned sequence count. It must be at least 2.
+
+[ close ]
+
+GLAM2 allows you to set limits on the number of "key positions"
+(the aligned columns) in motifs. GLAM2 automatically adjusts the number
+of key positions so as to maximize the alignment score, but it sometimes
+has trouble with this. You can help GLAM2 by changing the initial number
+of aligned columns to a ballpark value. You can also set lower and upper
+bounds on the number of aligned columns in the motif.
+
+Note that the minimum possible value for aligned columns is 2 and the
+maximum possible value is 300.
+
+Both protein and DNA motifs are often shorter than the default
+maximum number of aligned columns (50). It is often advisable for you to
+reduce that parameter to a much smaller value (in the range
+10 - 20).
+
+[ close ]
+
+This is the deletion pseudocount. It must be larger than zero.
+
+[ close ]
+
+This is the no-deletion pseudocount. It must be larger than zero.
+
+[ close ]
+
+This is the insertion pseudocount. It must be larger than zero.
+
+[ close ]
+
+This is the no-insertion pseudocount. It must be larger than zero.
+
+[ close ]
+
+The number of alignment replicates performed.
+
+[ close ]
+
+The maximum number of iterations without improvement that GLAM2 attempts.
+
+[ close ]
+
+Checking this box instructs GLAM2 to **NOT** check the reverse
+complement of the input sequences for motif sites when reading sequences
+using the DNA or RNA alphabet.
+
+**Note:** When your sequences are RNA, you should select this option
+to ensure that only the given strand is searched for motifs.
+
+[ close ]
+
+Checking this box causes GLAM2 to shuffle each of the primary sequences
+individually. The sequences will still be the same length and have
+the same character frequencies but any existing patterns will be obliterated.
+
+Using this option repeatedly you can get an idea of the *E*-values of motifs
+discovered in "random" sequence datasets similar to your primary dataset.
+This can help you determine a reasonable *E*-value cutoff
+for motifs discovered in your unshuffled primary sequence dataset.
+
+[ close ]
+
+Checking this box causes GLAM2 to include the input sequences in the
+output so that your query can be easily resubmitted and modified. This
+will increase the size of your output HTML file substantially if your
+sequence data is large!
+
+[ close ]
+
+# Javascript is disabled! ☹
+
+The MEME Suite web application requires the use of JavaScript but
+Javascript doesn't seem to be available on your browser.
+
+Please re-enable Javascript to use the MEME Suite.
+
+![GLAM2 Logo](../doc/images/glam2_icon.png)
+
+# GLAM2
+
+## Gapped Local Alignment of Motifs
+
+Version 5.5.9
+
+Data Submission Form
+
+Perform motif discovery for **gapped motifs** on
+DNA or protein datasets.
+
+## Input the sequences
+
+#### Enter sequences in which you want to find motifs.
+
+Type in sequences
+Upload sequences
+
+## Input job details
+
+#### (Optional) Enter your email address.
+
+#### (Optional) Enter a job description.
+
+▶
+▼
+Advanced options
+hidden modifications!
+[Reset]
+
+### How many sequences are needed in each alignment?
+
+Minimum Sequences:
+
+### How many columns should be aligned?
+
+Initial:
+
+Minimum:
+
+Maximum:
+
+### What should the pseudocounts be?
+
+For Delete:
+
+For No-delete:
+
+For Insert:
+
+For No-insert:
+
+### How many alignment replicates?
+
+Replicates:
+
+### How many iterations without improvement needed to give up?
+
+Iterations:
+
+### Can motif sites be on both strands? (DNA/RNA only)
+
+[ ]
+Search given strand only.
+
+### Should GLAM2 shuffle the sequences?
+
+[ ]
+Shuffle the sequences.
+
+### Should GLAM2 embed the sequences?
+
+[x]
+Embed the sequences.
+
+**Warning:**
+Your maximum job quota has been reached! You will need to wait until
+one of your jobs completes or 1 second has
+elapsed before submitting another job.
+
+This server has the job quota set to 10 unfinished jobs
+every 1 hour.
+
+Note: if the combined form inputs exceed 80MB the job will be rejected.
+
+Version 5.5.9
+
+Powered by [Opal](http://sourceforge.net/projects/opaltoolkit/)
+
+Please send comments and questions to:
+meme-suite@uw.edu
+
+---
+
+* [Home](../index.html)
+* [Documentation](../doc/overview.html)
+* [Downloads](../doc/download.html)
+* [Authors](../doc/authors.html)
+* [Citing](../doc/cite.html)

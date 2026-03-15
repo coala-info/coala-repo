@@ -4,9 +4,43 @@ baseCommand:
   - picard
   - BamToBfq
 label: picard_BamToBfq
-doc: "Converts a BAM file into a BFQ (binary fastq formatted) file. The BFQ format
-  is the input format to some tools like Maq aligner.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Converts a BAM file into a BFQ (binary fastq formatted) file. The BFQ 
+  format is the input format to some tools like Maq aligner.
 inputs:
+  - id: analysis_dir
+    type: string
+    doc: The analysis directory for the binary output file.
+    inputBinding:
+      position: 101
+      prefix: --ANALYSIS_DIR
+  - id: flowcell_barcode
+    type: string
+    doc: Flowcell barcode (e.g. 30PYMAAXX). Cannot be used in conjunction with 
+      argument(s) OUTPUT_FILE_PREFIX
+    inputBinding:
+      position: 101
+      prefix: --FLOWCELL_BARCODE
+  - id: input
+    type:
+      - 'null'
+      - File
+    doc: The BAM file to parse.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output_file_prefix
+    type: string
+    doc: Prefix for all output files. Cannot be used in conjunction with 
+      argument(s) FLOWCELL_BARCODE (F) LANE (L)
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_FILE_PREFIX
+  - id: paired_run
+    type: boolean
+    doc: 'Whether this is a paired-end run. Possible values: {true, false}'
+    inputBinding:
+      position: 101
+      prefix: --PAIRED_RUN
   - id: arguments_file
     type:
       - 'null'
@@ -31,7 +65,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to clip adapters from the reads
-    default: true
     inputBinding:
       position: 101
       prefix: --CLIP_ADAPTERS
@@ -40,7 +73,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -50,7 +82,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -59,32 +90,17 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: flowcell_barcode
-    type: string
-    doc: Flowcell barcode (e.g. 30PYMAAXX). Cannot be used in conjunction with 
-      argument(s) OUTPUT_FILE_PREFIX
-    inputBinding:
-      position: 101
-      prefix: --FLOWCELL_BARCODE
   - id: include_non_pf_reads
     type:
       - 'null'
       - boolean
     doc: Whether to include non-PF reads
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_NON_PF_READS
-  - id: input
-    type: File
-    doc: The BAM file to parse.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: lane
     type:
       - 'null'
@@ -100,22 +116,14 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
-  - id: paired_run
-    type: boolean
-    doc: 'Whether this is a paired-end run. Possible values: {true, false}'
-    inputBinding:
-      position: 101
-      prefix: --PAIRED_RUN
   - id: quiet
     type:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -124,7 +132,6 @@ inputs:
       - 'null'
       - int
     doc: Number of reads to break into individual groups for alignment
-    default: 2000000
     inputBinding:
       position: 101
       prefix: --READ_CHUNK_SIZE
@@ -163,15 +170,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --RUN_BARCODE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -188,7 +186,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -198,7 +195,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -208,31 +204,34 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: analysis_dir
+  - id: output_analysis_dir
     type: Directory
     doc: The analysis directory for the binary output file.
     outputBinding:
       glob: $(inputs.analysis_dir)
-  - id: output_file_prefix
+  - id: output_output_file_prefix
     type: File
     doc: Prefix for all output files. Cannot be used in conjunction with 
       argument(s) FLOWCELL_BARCODE (F) LANE (L)
     outputBinding:
       glob: $(inputs.output_file_prefix)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

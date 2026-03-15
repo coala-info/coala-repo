@@ -4,11 +4,24 @@ baseCommand:
   - picard
   - VcfToIntervalList
 label: picard_VcfToIntervalList
-doc: "This tool creates a Picard Interval List from a VCF or BCF. It is important
-  that the file extension is included as the file format is determined by the file
-  extension. Variants that were filtered can be included in the output interval list
-  by setting INCLUDE_FILTERED to true.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: This tool creates a Picard Interval List from a VCF or BCF. It is important
+  that the file extension is included as the file format is determined by the 
+  file extension. Variants that were filtered can be included in the output 
+  interval list by setting INCLUDE_FILTERED to true.
 inputs:
+  - id: input
+    type: File
+    doc: The BCF or VCF input file. The file format is determined by file 
+      extension.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The output Picard Interval List.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
   - id: arguments_file
     type:
       - 'null'
@@ -23,7 +36,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -33,7 +45,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -42,7 +53,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -51,24 +61,15 @@ inputs:
       - 'null'
       - boolean
     doc: Include variants that were filtered in the output interval list.
-    default: false
     inputBinding:
       position: 101
       prefix: --INCLUDE_FILTERED
-  - id: input
-    type: File
-    doc: The BCF or VCF input file. The file format is determined by file 
-      extension.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: max_records_in_ram
     type:
       - 'null'
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -77,7 +78,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -89,15 +89,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tmp_dir
     type:
       - 'null'
@@ -114,7 +105,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -124,7 +114,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -134,7 +123,6 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
@@ -144,25 +132,28 @@ inputs:
       - string
     doc: 'Controls the naming of the resulting intervals. Possible values: {CONCAT_ALL,
       USE_FIRST}'
-    default: CONCAT_ALL
     inputBinding:
       position: 101
       prefix: --VARIANT_ID_METHOD
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: The output Picard Interval List.
     outputBinding:
       glob: $(inputs.output)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

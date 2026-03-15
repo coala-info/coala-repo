@@ -4,10 +4,33 @@ baseCommand:
   - picard
   - CheckIlluminaDirectory
 label: picard_CheckIlluminaDirectory
-doc: "Asserts the validity for specified Illumina basecalling data. This tool will
-  check that the basecall directory and the internal files are available, exist, and
-  are reasonably sized for every tile and cycle.\n\nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Asserts the validity for specified Illumina basecalling data. This tool 
+  will check that the basecall directory and the internal files are available, 
+  exist, and are reasonably sized for every tile and cycle.
 inputs:
+  - id: basecalls_dir
+    type: Directory
+    doc: The basecalls output directory.
+    inputBinding:
+      position: 101
+      prefix: --BASECALLS_DIR
+  - id: lanes
+    type:
+      type: array
+      items: int
+    doc: The number of the lane(s) to check. This argument must be specified at 
+      least once.
+    inputBinding:
+      position: 101
+      prefix: --LANES
+  - id: read_structure
+    type: string
+    doc: A description of the logical structure of clusters in an Illumina Run, 
+      i.e. a description of the structure IlluminaBasecallsToSam assumes the 
+      data to be in.
+    inputBinding:
+      position: 101
+      prefix: --READ_STRUCTURE
   - id: arguments_file
     type:
       - 'null'
@@ -17,18 +40,11 @@ inputs:
     inputBinding:
       position: 101
       prefix: --arguments_file
-  - id: basecalls_dir
-    type: Directory
-    doc: The basecalls output directory.
-    inputBinding:
-      position: 101
-      prefix: --BASECALLS_DIR
   - id: compression_level
     type:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -38,7 +54,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -47,7 +62,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -67,26 +81,15 @@ inputs:
       - boolean
     doc: A flag to determine whether or not to create fake versions of the 
       missing files.
-    default: false
     inputBinding:
       position: 101
       prefix: --FAKE_FILES
-  - id: lanes
-    type:
-      type: array
-      items: int
-    doc: The number of the lane(s) to check. This argument must be specified at 
-      least once.
-    inputBinding:
-      position: 101
-      prefix: --LANES
   - id: link_locs
     type:
       - 'null'
       - boolean
     doc: A flag to create symlinks to the loc file for the X Ten for each tile. 
       @deprecated It is no longer necessary to create locs file symlinks.
-    default: false
     inputBinding:
       position: 101
       prefix: --LINK_LOCS
@@ -96,7 +99,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -105,18 +107,9 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
-  - id: read_structure
-    type: string
-    doc: A description of the logical structure of clusters in an Illumina Run, 
-      i.e. a description of the structure IlluminaBasecallsToSam assumes the 
-      data to be in.
-    inputBinding:
-      position: 101
-      prefix: --READ_STRUCTURE
   - id: reference_sequence
     type:
       - 'null'
@@ -125,15 +118,6 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: tile_numbers
     type:
       - 'null'
@@ -159,7 +143,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -169,7 +152,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -179,19 +161,17 @@ inputs:
       - string
     doc: 'Validation stringency for all SAM files read by this program. Possible values:
       {STRICT, LENIENT, SILENT}'
-    default: STRICT
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
   - id: stdout
     type: stdout
@@ -200,3 +180,6 @@ hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
 stdout: picard_CheckIlluminaDirectory.out
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

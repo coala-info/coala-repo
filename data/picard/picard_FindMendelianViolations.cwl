@@ -4,10 +4,30 @@ baseCommand:
   - picard
   - FindMendelianViolations
 label: picard_FindMendelianViolations
-doc: "Takes in VCF or BCF and a pedigree file and looks for high confidence calls
-  where the genotype of the offspring is incompatible with the genotypes of the parents.\n\
-  \nTool homepage: http://broadinstitute.github.io/picard/"
+doc: Takes in VCF or BCF and a pedigree file and looks for high confidence calls
+  where the genotype of the offspring is incompatible with the genotypes of the 
+  parents.
 inputs:
+  - id: input
+    type: File
+    doc: Input VCF or BCF with genotypes.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: Output metrics file.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: trios
+    type:
+      - 'null'
+      - File
+    doc: File of Trio information in PED format (with no genotype columns).
+    inputBinding:
+      position: 101
+      prefix: --TRIOS
   - id: arguments_file
     type:
       - 'null'
@@ -22,7 +42,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -32,7 +51,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -41,7 +59,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
@@ -51,27 +68,15 @@ inputs:
       - type: array
         items: string
     doc: List of possible names for female sex chromosome(s)
-    default:
-      - chrX
-      - X
     inputBinding:
       position: 101
       prefix: --FEMALE_CHROMS
-  - id: input
-    type: File
-    doc: Input VCF or BCF with genotypes.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: male_chroms
     type:
       - 'null'
       - type: array
         items: string
     doc: List of possible names for male sex chromosome(s)
-    default:
-      - chrY
-      - Y
     inputBinding:
       position: 101
       prefix: --MALE_CHROMS
@@ -81,7 +86,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -90,7 +94,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum depth in each sample to consider possible mendelian violations.
-    default: 0
     inputBinding:
       position: 101
       prefix: --MIN_DP
@@ -99,7 +102,6 @@ inputs:
       - 'null'
       - int
     doc: Minimum genotyping quality (or non-ref likelihood) to perform tests.
-    default: 30
     inputBinding:
       position: 101
       prefix: --MIN_GQ
@@ -108,7 +110,6 @@ inputs:
       - 'null'
       - float
     doc: Minimum allele balance at sites that are heterozygous in the offspring.
-    default: 0.3
     inputBinding:
       position: 101
       prefix: --MIN_HET_FRACTION
@@ -119,11 +120,6 @@ inputs:
         items: string
     doc: List of chr:start-end for pseudo-autosomal regions on the female sex 
       chromosome.
-    default:
-      - X:154931044-155260560
-      - X:60001-2699520
-      - chrX:10001-2781479
-      - chrX:155701383-156030895
     inputBinding:
       position: 101
       prefix: --PSEUDO_AUTOSOMAL_REGIONS
@@ -132,7 +128,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -144,24 +139,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --REFERENCE_SEQUENCE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: skip_chroms
     type:
       - 'null'
       - type: array
         items: string
     doc: List of chromosome names to skip entirely.
-    default:
-      - MT
-      - chrM
     inputBinding:
       position: 101
       prefix: --SKIP_CHROMS
@@ -171,7 +154,6 @@ inputs:
       - boolean
     doc: If true then fields need to be delimited by a single tab. If false the 
       delimiter is one or more whitespace characters.
-    default: false
     inputBinding:
       position: 101
       prefix: --TAB_MODE
@@ -180,7 +162,6 @@ inputs:
       - 'null'
       - int
     doc: The number of threads that will be used to collect the metrics.
-    default: 1
     inputBinding:
       position: 101
       prefix: --THREAD_COUNT
@@ -194,19 +175,12 @@ inputs:
     inputBinding:
       position: 101
       prefix: --TMP_DIR
-  - id: trios
-    type: File
-    doc: File of Trio information in PED format (with no genotype columns).
-    inputBinding:
-      position: 101
-      prefix: --TRIOS
   - id: use_jdk_deflater
     type:
       - 'null'
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -216,7 +190,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -224,28 +197,32 @@ inputs:
     type:
       - 'null'
       - string
-    doc: 'Validation stringency for all SAM files read by this program. Possible values:
-      {STRICT, LENIENT, SILENT}'
-    default: STRICT
+    doc: Validation stringency for all SAM files read by this program.
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
-    type:
-      - 'null'
-      - string
-    doc: 'Control verbosity of logging. Possible values: {ERROR, WARNING, INFO, DEBUG}'
-    default: INFO
+  - id: vcf_dir
+    type: string
+    doc: If provided, output per-family VCFs of mendelian violations into this 
+      directory.
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --VCF_DIR
+  - id: show_hidden
+    type:
+      - 'null'
+      - boolean
+    doc: display hidden arguments
+    inputBinding:
+      position: 101
+      prefix: --showHidden
 outputs:
-  - id: output
+  - id: output_output
     type: File
     doc: Output metrics file.
     outputBinding:
       glob: $(inputs.output)
-  - id: vcf_dir
+  - id: output_vcf_dir
     type:
       - 'null'
       - Directory
@@ -253,6 +230,11 @@ outputs:
       directory.
     outputBinding:
       glob: $(inputs.vcf_dir)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

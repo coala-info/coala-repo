@@ -4,11 +4,31 @@ baseCommand:
   - picard
   - RevertSam
 label: picard_RevertSam
-doc: "Reverts SAM/BAM/CRAM files to a previous state. This tool removes or restores
-  certain properties of the SAM records, including alignment information, which can
-  be used to produce an unmapped BAM (uBAM) from a previously aligned BAM.\n\nTool
-  homepage: http://broadinstitute.github.io/picard/"
+doc: Reverts SAM/BAM/CRAM files to a previous state. This tool removes or 
+  restores certain properties of the SAM records, including alignment 
+  information, which can be used to produce an unmapped BAM (uBAM) from a 
+  previously aligned BAM.
 inputs:
+  - id: input
+    type: File
+    doc: The input SAM/BAM/CRAM file to revert the state of.
+    inputBinding:
+      position: 101
+      prefix: --INPUT
+  - id: output
+    type: string
+    doc: The output SAM/BAM/CRAM file to create, or an output directory if 
+      OUTPUT_BY_READGROUP is true. Required unless OUTPUT_MAP is used.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT
+  - id: output_map
+    type: string
+    doc: Tab separated file with two columns, READ_GROUP_ID and OUTPUT, 
+      providing file mapping only used if OUTPUT_BY_READGROUP is true.
+    inputBinding:
+      position: 101
+      prefix: --OUTPUT_MAP
   - id: arguments_file
     type:
       - 'null'
@@ -25,15 +45,6 @@ inputs:
         items: string
     doc: When removing alignment information, the set of optional tags to 
       remove.
-    default:
-      - NM
-      - UQ
-      - PG
-      - MD
-      - MQ
-      - SA
-      - MC
-      - AS
     inputBinding:
       position: 101
       prefix: --ATTRIBUTE_TO_CLEAR
@@ -43,9 +54,6 @@ inputs:
       - type: array
         items: string
     doc: Attributes on negative strand reads that need to be reversed.
-    default:
-      - OQ
-      - U2
     inputBinding:
       position: 101
       prefix: --ATTRIBUTE_TO_REVERSE
@@ -56,9 +64,6 @@ inputs:
         items: string
     doc: Attributes on negative strand reads that need to be reverse 
       complemented.
-    default:
-      - E2
-      - SQ
     inputBinding:
       position: 101
       prefix: --ATTRIBUTE_TO_REVERSE_COMPLEMENT
@@ -67,7 +72,6 @@ inputs:
       - 'null'
       - int
     doc: Compression level for all compressed files created (e.g. BAM and VCF).
-    default: 5
     inputBinding:
       position: 101
       prefix: --COMPRESSION_LEVEL
@@ -77,7 +81,6 @@ inputs:
       - boolean
     doc: Whether to create an index when writing VCF or coordinate sorted BAM 
       output.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_INDEX
@@ -86,23 +89,15 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to create an MD5 digest for any BAM or FASTQ files created.
-    default: false
     inputBinding:
       position: 101
       prefix: --CREATE_MD5_FILE
-  - id: input
-    type: File
-    doc: The input SAM/BAM/CRAM file to revert the state of.
-    inputBinding:
-      position: 101
-      prefix: --INPUT
   - id: keep_first_duplicate
     type:
       - 'null'
       - boolean
     doc: If SANITIZE=true keep the first record when we find more than one 
       record with the same name for R1/R2/unpaired reads respectively.
-    default: false
     inputBinding:
       position: 101
       prefix: --KEEP_FIRST_DUPLICATE
@@ -121,7 +116,6 @@ inputs:
     doc: If SANITIZE=true and higher than MAX_DISCARD_FRACTION reads are 
       discarded due to sanitization then the program will exit with an 
       Exception.
-    default: 0.01
     inputBinding:
       position: 101
       prefix: --MAX_DISCARD_FRACTION
@@ -131,7 +125,6 @@ inputs:
       - int
     doc: When writing files that need to be sorted, this will specify the number
       of records stored in RAM before spilling to disk.
-    default: 500000
     inputBinding:
       position: 101
       prefix: --MAX_RECORDS_IN_RAM
@@ -140,7 +133,6 @@ inputs:
       - 'null'
       - boolean
     doc: When true, outputs each read group in a separate file.
-    default: false
     inputBinding:
       position: 101
       prefix: --OUTPUT_BY_READGROUP
@@ -150,7 +142,6 @@ inputs:
       - string
     doc: When using OUTPUT_BY_READGROUP, the output file format can be set to a 
       certain format (sam, bam, cram, dynamic).
-    default: dynamic
     inputBinding:
       position: 101
       prefix: --OUTPUT_BY_READGROUP_FILE_FORMAT
@@ -159,7 +150,6 @@ inputs:
       - 'null'
       - boolean
     doc: Whether to suppress job-summary info on System.err.
-    default: false
     inputBinding:
       position: 101
       prefix: --QUIET
@@ -176,7 +166,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove all alignment information from the file.
-    default: true
     inputBinding:
       position: 101
       prefix: --REMOVE_ALIGNMENT_INFORMATION
@@ -185,7 +174,6 @@ inputs:
       - 'null'
       - boolean
     doc: Remove duplicate read flags from all reads.
-    default: true
     inputBinding:
       position: 101
       prefix: --REMOVE_DUPLICATE_INFORMATION
@@ -195,7 +183,6 @@ inputs:
       - boolean
     doc: When true, restores reads and qualities of records with hard-clips 
       containing XB and XQ tags.
-    default: true
     inputBinding:
       position: 101
       prefix: --RESTORE_HARDCLIPS
@@ -205,7 +192,6 @@ inputs:
       - boolean
     doc: True to restore original qualities from the OQ field to the QUAL field 
       if available.
-    default: true
     inputBinding:
       position: 101
       prefix: --RESTORE_ORIGINAL_QUALITIES
@@ -221,28 +207,16 @@ inputs:
     type:
       - 'null'
       - boolean
-    doc: If enabled will discard reads in order to produce a consistent output 
-      BAM.
-    default: false
+    doc: 'WARNING: This option is potentially destructive. If enabled will discard
+      reads in order to produce a consistent output BAM.'
     inputBinding:
       position: 101
       prefix: --SANITIZE
-  - id: show_hidden
-    type:
-      - 'null'
-      - boolean
-    doc: display hidden arguments
-    default: false
-    inputBinding:
-      position: 101
-      prefix: --showHidden
   - id: sort_order
     type:
       - 'null'
       - string
-    doc: The sort order to create the reverted output file with (unsorted, 
-      queryname, coordinate, duplicate, unknown).
-    default: queryname
+    doc: The sort order to create the reverted output file with.
     inputBinding:
       position: 101
       prefix: --SORT_ORDER
@@ -262,7 +236,6 @@ inputs:
       - boolean
     doc: Use the JDK Deflater instead of the Intel Deflater for writing 
       compressed output
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_DEFLATER
@@ -272,7 +245,6 @@ inputs:
       - boolean
     doc: Use the JDK Inflater instead of the Intel Inflater for reading 
       compressed input
-    default: false
     inputBinding:
       position: 101
       prefix: --USE_JDK_INFLATER
@@ -280,39 +252,36 @@ inputs:
     type:
       - 'null'
       - string
-    doc: Validation stringency for all SAM files read by this program (STRICT, 
-      LENIENT, SILENT).
-    default: STRICT
+    doc: Validation stringency for all SAM files read by this program.
     inputBinding:
       position: 101
       prefix: --VALIDATION_STRINGENCY
-  - id: verbosity
+  - id: show_hidden
     type:
       - 'null'
-      - string
-    doc: Control verbosity of logging (ERROR, WARNING, INFO, DEBUG).
-    default: INFO
+      - boolean
+    doc: display hidden arguments
     inputBinding:
       position: 101
-      prefix: --VERBOSITY
+      prefix: --showHidden
 outputs:
-  - id: output
-    type:
-      - 'null'
-      - File
+  - id: output_output
+    type: File
     doc: The output SAM/BAM/CRAM file to create, or an output directory if 
       OUTPUT_BY_READGROUP is true. Required unless OUTPUT_MAP is used.
     outputBinding:
       glob: $(inputs.output)
-  - id: output_map
-    type:
-      - 'null'
-      - File
+  - id: output_output_map
+    type: File
     doc: Tab separated file with two columns, READ_GROUP_ID and OUTPUT, 
-      providing file mapping only used if OUTPUT_BY_READGROUP is true. Required 
-      unless OUTPUT is used.
+      providing file mapping only used if OUTPUT_BY_READGROUP is true.
     outputBinding:
       glob: $(inputs.output_map)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: quay.io/biocontainers/picard:3.4.0--hdfd78af_0
+s:url: http://broadinstitute.github.io/picard/
+$namespaces:
+  s: https://schema.org/

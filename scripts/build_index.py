@@ -22,6 +22,23 @@ DATA_REPO_BRANCH = (os.environ.get("DATA_REPO_BRANCH") or "main").strip()
 DATA_REPO_DATA_PATH = (os.environ.get("DATA_REPO_DATA_PATH") or "data").strip().rstrip("/")
 
 
+def category_label(tool_id: str, cwl_count: int = 0) -> str:
+    """Map tool id to site category: R, bioconductor, python, perl, nextflow, CLI, or library."""
+    if tool_id.startswith("r-"):
+        return "R"
+    if tool_id.startswith("bioconductor-"):
+        return "bioconductor"
+    if tool_id.startswith("python3-"):
+        return "python"
+    if tool_id.startswith("perl-"):
+        return "perl"
+    if tool_id.startswith("nf-"):
+        return "nextflow"
+    if cwl_count > 0:
+        return "CLI"
+    return "library"
+
+
 def _parse_conda_downloads_num(s: str) -> int:
     """Parse conda download string to number, e.g. '6.3K' -> 6300, '1.2M' -> 1200000."""
     s = (s or "").strip().upper().replace(",", "")
@@ -173,6 +190,33 @@ def parse_report(report_path: Path) -> dict:
     }
 
 
+def _empty_parsed_report() -> dict:
+    """Same shape as parse_report for nf-* (and similar) entries without report.md."""
+    return {
+        "runtime_summary_table": [],
+        "tool_names": [],
+        "description": "",
+        "docker_image": "",
+        "homepage": "",
+        "validation": "",
+        "conda_home": "",
+        "github": "",
+        "conda_downloads": "",
+        "last_updated": "",
+        "skill_generated": False,
+        "validation_run": "not_done",
+        "report_raw": "",
+    }
+
+
+def resolve_skill_path(tool_path: Path) -> Path | None:
+    """Return skills/SKILL.md if present (standard layout for all tools including nf-*)."""
+    nested = tool_path / "skills" / "SKILL.md"
+    if nested.is_file():
+        return nested
+    return None
+
+
 def strip_front_matter(text: str) -> str:
     """Remove YAML front matter (--- ... ---) so only the skill body is shown."""
     if text.startswith("---"):
@@ -240,14 +284,17 @@ def skill_overview(skill_path: Path) -> str:
 def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     """Build per-tool data and copy static files. Returns tool record for index and full data for tools/{id}.json."""
     report_path = tool_path / "report.md"
-    skill_path = tool_path / "skills" / "SKILL.md"
+    skill_path = resolve_skill_path(tool_path)
 
-    if not report_path.exists():
+    if report_path.exists():
+        parsed = parse_report(report_path)
+    elif tool_id.startswith("nf-"):
+        parsed = _empty_parsed_report()
+    else:
         return None
 
-    parsed = parse_report(report_path)
     cwl_files = sorted(f.name for f in tool_path.glob("*.cwl"))
-    has_skill = skill_path.exists()
+    has_skill = skill_path is not None
 
     # Only index tools that have at least one CWL or skills/SKILL.md
     if not cwl_files and not has_skill:
@@ -264,6 +311,7 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
 
     index_entry = {
         "id": tool_id,
+        "category": category_label(tool_id, len(cwl_files)),
         "name": name,
         "description": description[:500] if description else "",
         "overview": overview[:500] if overview else "",
@@ -285,17 +333,31 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     if DATA_REPO_URL:
         base = DATA_REPO_URL.rstrip("/")
         tree = f"{base}/tree/{DATA_REPO_BRANCH}/{DATA_REPO_DATA_PATH}/{tool_id}"
-        if has_skill:
-            skills_repo_link = f"{tree}/skills"
+        if has_skill and skill_path is not None:
+            try:
+                skill_rel_for_link = skill_path.relative_to(tool_path).as_posix()
+            except ValueError:
+                skill_rel_for_link = "skills/SKILL.md"
+            if skill_rel_for_link == "SKILL.md":
+                skills_repo_link = tree
+            else:
+                skills_repo_link = f"{tree}/skills"
         if cwl_files:
             cwls_repo_link = tree
 
+    skill_relpath: str | None = None
+    if has_skill and skill_path is not None:
+        try:
+            skill_relpath = skill_path.relative_to(tool_path).as_posix()
+        except ValueError:
+            skill_relpath = "SKILL.md"
+
     skill_markdown = (
         strip_front_matter(skill_path.read_text(encoding="utf-8", errors="replace"))
-        if has_skill
+        if has_skill and skill_path is not None
         else None
     )
-    skill_front_matter_dict = skill_front_matter(skill_path) if has_skill else {}
+    skill_front_matter_dict = skill_front_matter(skill_path) if has_skill and skill_path is not None else {}
 
     full_data = {
         **index_entry,
@@ -314,7 +376,7 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
             "validation_run": parsed["validation_run"],
         },
         "cwl_files": cwl_files,
-        "skill_file": "SKILL.md" if has_skill else None,
+        "skill_file": skill_relpath,
         "skills_repo_link": skills_repo_link,
         "cwls_repo_link": cwls_repo_link,
         "skill_markdown": skill_markdown,
@@ -338,9 +400,20 @@ def main() -> None:
     TOOLS_JSON_DIR.mkdir(parents=True, exist_ok=True)
 
     index_list: list[dict] = []
-    tool_ids = sorted(
-        d.name for d in DATA_DIR.iterdir() if d.is_dir() and (d / "report.md").exists()
-    )
+
+    def _data_subdir_is_index_candidate(d: Path) -> bool:
+        if not d.is_dir():
+            return False
+        if (d / "report.md").is_file():
+            return True
+        if d.name.startswith("nf-"):
+            if (d / "skills" / "SKILL.md").is_file():
+                return True
+            if any(d.glob("*.cwl")):
+                return True
+        return False
+
+    tool_ids = sorted(d.name for d in DATA_DIR.iterdir() if _data_subdir_is_index_candidate(d))
 
     for tool_id in tool_ids:
         tool_path = DATA_DIR / tool_id

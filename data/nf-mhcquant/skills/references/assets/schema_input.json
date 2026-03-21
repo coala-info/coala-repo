@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/nf-core/mhcquant/master/assets/schema_input.json",
+    "title": "nf-core/mhcquant pipeline - params.input schema",
+    "description": "Schema for the file provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "ID": {
+                "type": "integer",
+                "errorMessage": "Provide an unique identifier for the replicate, must be a numeric value",
+                "meta": ["id"]
+            },
+            "Sample": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Sample name must be provided and cannot contain spaces",
+                "meta": ["sample"]
+            },
+            "Condition": {
+                "type": "string",
+                "pattern": "^\\S+-?",
+                "errorMessage": "Sample condition must be provided and cannot contain spaces",
+                "meta": ["condition"]
+            },
+            "ReplicateFileName": {
+                "type": "string",
+                "format": "path",
+                "exists": true,
+                "pattern": "^\\S+\\.(raw|RAW|mzML|mzML.gz|d|d.tar|d.tar.gz|d.zip)$",
+                "errorMessage": "MS file cannot contain spaces and must have one of the extensions: raw | RAW | mzML | mzML.gz | d | d.tar | d.tar.gz | d.zip"
+            },
+            "Fasta": {
+                "type": "string",
+                "format": "path",
+                "exists": true,
+                "pattern": "^\\S+\\.(fasta|fa|fas|fna|faa|ffn)$",
+                "errorMessage": "FASTA file cannot contain spaces and must have one of the extensions: fasta | fa | fas | fna | faa | ffn"
+            }
+        },
+        "required": ["ID", "Sample", "Condition", "ReplicateFileName"]
+    }
+}

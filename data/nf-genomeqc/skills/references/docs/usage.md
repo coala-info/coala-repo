@@ -1,0 +1,304 @@
+# nf-core/genomeqc: Usage
+
+## :warning: Please read this documentation on the nf-core website: [https://nf-co.re/genomeqc/usage](https://nf-co.re/genomeqc/usage)
+
+> _Documentation of pipeline parameters is generated automatically from the pipeline schema and can no longer be found in markdown files._
+
+## Introduction
+
+<!-- TODO nf-core: Add documentation about anything specific to running your pipeline. For general topics, please point to (and add to) the main nf-core website. -->
+
+**nf-core/genomeqc** is a pipeline build to aid in the diagnosis of the quality of genome assemblies. It inputs several genomes and/or their annotations, and generates metrics such as completness, contiguity, GC% or number of overlapping genes, which can be later used to assess their quality. Additionally, if both genome and annotation are provided, it will output a phylogenetic tree with the summary metrics. The tree building method uses orthologous genes for a quick comparision of metrics among species/samples. This pipeline should not be used for phylogenetic inference.
+
+## Samplesheet input
+
+Before running the pipeline, you will need to create a samplesheet with information about the samples you would like to analyse. Use this parameter to specify its location. It has to be a comma-separated file with 5 columns, and a header row as shown in the examples below.
+
+```bash
+--input '[path to samplesheet file]'
+```
+
+The pipeline can be run using NCBI accessions (RefSeq or GenBank) or local files. It needs at least an **genome** (GenBank accession or local file in FASTA format) per species to run. If annotations (RefSeq accession or local file in GTF/GFF format) are added, the pipeline will on both **genomes and annotations**, and will use the sequences in the **annotation** to run BUSCO (this can be changed in the parameters). If you provide local FASTQ reads for an assembly, the pipeline will run Merqury. If you provide taxids in NCBI format, it will run the decontamination subworkflow.
+
+If running the pipeline on **local** files, point to the location these files using the **fasta** and/or **gff** fields:
+
+```csv title="samplesheet.csv"
+species,fasta,gff
+species_1,/path/to/genome.fasta,/path/to/annotation.gxf
+species_2,/path/to/genome.fasta,/path/to/annotation.gxf
+species_3,/path/to/genome.fasta,/path/to/annotation.gxf
+```
+
+If running the pipeline using **ncbi accessions (GenBank and/or RefSeq)**, indicate the corresponding ID using the **refseq** field:
+
+```csv title="samplesheet.csv"
+species,refseq
+species_1,GCF_000000001.1
+species_2,GCF_000000002.1
+species_3,GCF_000000003.1
+```
+
+<!-- If running with **Merqury**, you must point to the location of fastq files using the **fastq** field:
+
+```csv title="samplesheet.csv"
+species,fasta,gxf,fastq
+species_1,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq
+species_2,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq
+species_3,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq
+```
+-->
+
+This is what the complete samplesheet would look like if using NCBI accessions:
+
+```csv title="samplesheet.csv"
+species,fasta,gff,fastq,taxid
+species_1,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq,1234
+species_2,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq,1245
+species_3,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq,4321
+```
+
+This is what the complete samplesheet would look like if using local files:
+
+```csv title="samplesheet.csv"
+species,refseq,fastq,taxid
+species_1,GCF_000000001.1,/path/to/reads.fastq,1234
+species_2,GCF_000000002.1,/path/to/reads.fastq,1245
+species_3,GCF_000000003.1,/path/to/reads.fastq,4321
+```
+
+You can mix different input types in the same samplesheet. If a specific field doesn’t apply to a row, leave it empty (as shown below). The pipeline will automatically detect the input type for each species and run accordingly:
+
+```csv title="samplesheet.csv"
+species,refseq,fasta,gff,fastq,taxid
+species_1,,/path/to/genome.fasta,/path/to/annotation.gxf,/path/to/reads.fastq,1234
+species_2,,/path/to/genome.fasta,/path/to/annotation.gxf,,4321
+species_3,,/path/to/genome.fasta,/path/to/annotation.gxf,
+species_4,,/path/to/genome.fasta,,/path/to/reads.fastq,1245
+species_5,,/path/to/genome.fasta,,
+species_6,,/path/to/genome.fassta,,
+species_7,GCF_000000007.1,,,/path/to/reads.fastq
+species_8,GCF_000000008.1,,,
+species_9,GCA_000000009.1,,,/path/to/reads.fastq
+species_10,GCA_000000010.1,,,,1324
+```
+
+As for now, the pipeline doesn't support SRA accession for **Merqury**. We will consider this option the future.
+
+| Column    | Description                                                                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `species` | Species name or custom sample name. Spaces in sample names are automatically converted to underscores (`_`) (not sure if this is an option right now). |
+| `refseq`  | ncbi acession. Can be GenBank (starts with "GCA") or RefSeq (starts with "GCF").                                                                       |
+| `fasta`   | Full path to the genome fasta file. Can be compressed or uncompressed.                                                                                 |
+| `gff`     | Full path to the genome annotation gff/gtf file. Can be compressed or uncompressed.                                                                    |
+| `fastq`   | Full path to FastQ file for long reads (e.g. PacBio or ONT). File has to be gzipped and have the extension ".fastq.gz" or ".fq.gz".                    |
+| `taxid`   | Species taxid for decontamination screening, must be a valid NCBI taxid (numeric string without spaces).                                               |
+
+An [example samplesheet](../assets/samplesheet.csv) has been provided with the pipeline.
+
+## Running the pipeline
+
+The typical command for running the pipeline is as follows:
+
+```bash
+nextflow run nf-core/genomeqc --input ./samplesheet.csv --outdir ./results -profile docker
+```
+
+This will launch the pipeline with the `docker` configuration profile. See below for more information about profiles.
+
+Note that the pipeline will create the following files in your working directory:
+
+```bash
+work                # Directory containing the nextflow working files
+<OUTDIR>            # Finished results in specified location (defined with --outdir)
+.nextflow_log       # Log file from Nextflow
+# Other nextflow hidden files, eg. history of pipeline runs and old logs.
+```
+
+If you wish to repeatedly use the same parameters for multiple runs, rather than specifying each flag in the command, you can specify these in a params file.
+
+Pipeline settings can be provided in a `yaml` or `json` file via `-params-file <file>`.
+
+> [!WARNING]
+> Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/usage/configuration#tuning-workflow-resources), other infrastructural tweaks (such as output directories), or module arguments (args).
+
+The above pipeline run specified with a params file in yaml format:
+
+```bash
+nextflow run nf-core/genomeqc -profile docker -params-file params.yaml
+```
+
+with:
+
+```yaml title="params.yaml"
+input: './samplesheet.csv'
+outdir: './results/'
+<...>
+```
+
+You can also generate such `YAML`/`JSON` files via [nf-core/launch](https://nf-co.re/launch).
+
+### Modes
+
+#### Genome only
+
+This is the minimal run. The pipeline will run on genome only mode if these inputs are provided in the samplesheet:
+
+1. Path to **fasta** OR
+2. **ncbi** GenaBank accession.
+
+The pipeline will produce a tree plot summary alonside a MultiQC report with quality statistics.
+
+#### Genome and annotation
+
+The pipeline will run on genome and annotation mode if these inputs are provided in the samplesheet:
+
+1. Path to **fasta** AND
+2. Path to **gff** OR
+3. **ncbi** RefSeq accession.
+
+The pipeline will produce a tree plot summary alonside a MultiQC report with quality statistics.
+
+### Running Merqury
+
+Users can also run the pipeline using Merqury by supplying the path to sequencing reads under the **fastq** field. Merqury needs both **fasta** and **fastq** to run. Refer the [GitHub page](https://github.com/marbl/merqury) for more information on Merqury.
+
+### Running the Decontamination subworkflow
+
+If, in the samplesheet, a NCBI taxid is provided for an assembly, and a path pointing to the FCS-GX database or a manifest to download and build it (check the Parameters tab in this page), the pipeline will run the decontamination subworkflow.
+
+The decontamination subsworkflow consists of three modules:
+
+- [FCS-GX](https://github.com/ncbi/fcs/wiki/FCS-GX-quickstart): Detection and removal of foreign organisms contamination. Requires the FCS-GX database.
+- [FCS-adaptor](https://github.com/ncbi/fcs/wiki/FCS-adaptor-quickstart): Detection and removal of adaptor and vector contamination.
+- [Tiara](https://ibe-uw.github.io/tiara/): For DNA sequence classification in two stages:
+  1. The sequences are classified to either archaea, bacteria, prokarya, eukarya, organelle or unknown.
+  2. The sequences labeled as organelle in the first stage are classified to either mitochondria, plastid or unknown.
+
+### Running tests
+
+The pipeline can be ran using different test profiles:
+
+1. `-profile test` Will run on genome and annotation and Merqury using **RefSeq accessions** and local **fastqs**.
+2. `-profile test_local` Will run on genome and annotation on local files (**fasta** and **gff**).
+3. `-profile test_genomeonly` Will run genome only on local files (**fasta**).
+4. `-profile test_nofastq` Will run genome and annotation using **RefSeq accessions**.
+
+Test files are stored in the genomeqc branch of the [test-dataset repository](https://github.com/nf-core/test-datasets/tree/genomeqc).
+
+### Updating the pipeline
+
+When you run the above command, Nextflow automatically pulls the pipeline code from GitHub and stores it as a cached version. When running the pipeline after this, it will always use the cached version if available - even if the pipeline has been updated since. To make sure that you're running the latest version of the pipeline, make sure that you regularly update the cached version of the pipeline:
+
+```bash
+nextflow pull nf-core/genomeqc
+```
+
+### Reproducibility
+
+It is a good idea to specify the pipeline version when running the pipeline on your data. This ensures that a specific version of the pipeline code and software are used when you run your pipeline. If you keep using the same tag, you'll be running the same version of the pipeline, even if there have been changes to the code since.
+
+First, go to the [nf-core/genomeqc releases page](https://github.com/nf-core/genomeqc/releases) and find the latest pipeline version - numeric only (eg. `1.3.1`). Then specify this when running the pipeline with `-r` (one hyphen) - eg. `-r 1.3.1`. Of course, you can switch to another version by changing the number after the `-r` flag.
+
+This version number will be logged in reports when you run the pipeline, so that you'll know what you used when you look back in the future. For example, at the bottom of the MultiQC reports.
+
+To further assist in reproducibility, you can use share and reuse [parameter files](#running-the-pipeline) to repeat pipeline runs with the same settings without having to write out a command with every single parameter.
+
+> [!TIP]
+> If you wish to share such profile (such as upload as supplementary material for academic publications), make sure to NOT include cluster specific paths to files, nor institutional specific profiles.
+
+## Core Nextflow arguments
+
+> [!NOTE]
+> These options are part of Nextflow and use a _single_ hyphen (pipeline parameters use a double-hyphen)
+
+### `-profile`
+
+Use this parameter to choose a configuration profile. Profiles can give configuration presets for different compute environments.
+
+Several generic profiles are bundled with the pipeline which instruct the pipeline to use software packaged using different methods (Docker, Singularity, Podman, Shifter, Charliecloud, Apptainer, Conda) - see below.
+
+> [!IMPORTANT]
+> We highly recommend the use of Docker or Singularity containers for full pipeline reproducibility, however when this is not possible, Conda is also supported.
+
+The pipeline also dynamically loads configurations from [https://github.com/nf-core/configs](https://github.com/nf-core/configs) when it runs, making multiple config profiles for various institutional clusters available at run time. For more information and to check if your system is supported, please see the [nf-core/configs documentation](https://github.com/nf-core/configs#documentation).
+
+Note that multiple profiles can be loaded, for example: `-profile test,docker` - the order of arguments is important!
+They are loaded in sequence, so later profiles can overwrite earlier profiles.
+
+If `-profile` is not specified, the pipeline will run locally and expect all software to be installed and available on the `PATH`. This is _not_ recommended, since it can lead to different results on different machines dependent on the computer environment.
+
+- `test`
+  - A profile with a complete configuration for automated testing
+  - Includes links to test data so needs no other parameters
+- `docker`
+  - A generic configuration profile to be used with [Docker](https://docker.com/)
+- `singularity`
+  - A generic configuration profile to be used with [Singularity](https://sylabs.io/docs/)
+- `podman`
+  - A generic configuration profile to be used with [Podman](https://podman.io/)
+- `shifter`
+  - A generic configuration profile to be used with [Shifter](https://nersc.gitlab.io/development/shifter/how-to-use/)
+- `charliecloud`
+  - A generic configuration profile to be used with [Charliecloud](https://charliecloud.io/)
+- `apptainer`
+  - A generic configuration profile to be used with [Apptainer](https://apptainer.org/)
+- `wave`
+  - A generic configuration profile to enable [Wave](https://seqera.io/wave/) containers. Use together with one of the above (requires Nextflow ` 24.03.0-edge` or later).
+- `conda`
+  - A generic configuration profile to be used with [Conda](https://conda.io/docs/). Please only use Conda as a last resort i.e. when it's not possible to run the pipeline with Docker, Singularity, Podman, Shifter, Charliecloud, or Apptainer.
+
+### `-resume`
+
+Specify this when restarting a pipeline. Nextflow will use cached results from any pipeline steps where the inputs are the same, continuing from where it got to previously. For input to be considered the same, not only the names must be identical but the files' contents as well. For more info about this parameter, see [this blog post](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html).
+
+You can also supply a run name to resume a specific run: `-resume [run-name]`. Use the `nextflow log` command to show previous run names.
+
+### `-c`
+
+Specify the path to a specific config file (this is a core Nextflow command). See the [nf-core website documentation](https://nf-co.re/usage/configuration) for more information.
+
+## Custom configuration
+
+### Resource requests
+
+Whilst the default requirements set within the pipeline will hopefully work for most people and with most input data, you may find that you want to customise the compute resources that the pipeline requests. Each step in the pipeline has a default set of requirements for number of CPUs, memory and time. For most of the pipeline steps, if the job exits with any of the error codes specified [here](https://github.com/nf-core/rnaseq/blob/4c27ef5610c87db00c3c5a3eed10b1d161abf575/conf/base.config#L18) it will automatically be resubmitted with higher resources request (2 x original, then 3 x original). If it still fails after the third attempt then the pipeline execution is stopped.
+
+To change the resource requests, please see the [max resources](https://nf-co.re/docs/usage/configuration#max-resources) and [tuning workflow resources](https://nf-co.re/docs/usage/configuration#tuning-workflow-resources) section of the nf-core website.
+
+### Custom Containers
+
+In some cases, you may wish to change the container or conda environment used by a pipeline steps for a particular tool. By default, nf-core pipelines use containers and software from the [biocontainers](https://biocontainers.pro/) or [bioconda](https://bioconda.github.io/) projects. However, in some cases the pipeline specified version maybe out of date.
+
+To use a different container from the default container or conda environment specified in a pipeline, please see the [updating tool versions](https://nf-co.re/docs/usage/configuration#updating-tool-versions) section of the nf-core website.
+
+### Custom Tool Arguments
+
+A pipeline might not always support every possible argument or option of a particular tool used in pipeline. Fortunately, nf-core pipelines provide some freedom to users to insert additional parameters that the pipeline does not include by default.
+
+To learn how to provide additional arguments to a particular tool of the pipeline, please see the [customising tool arguments](https://nf-co.re/docs/usage/configuration#customising-tool-arguments) section of the nf-core website.
+
+### nf-core/configs
+
+In most cases, you will only need to create a custom config as a one-off but if you and others within your organisation are likely to be running nf-core pipelines regularly and need to use the same settings regularly it may be a good idea to request that your custom config file is uploaded to the `nf-core/configs` git repository. Before you do this please can you test that the config file works with your pipeline of choice using the `-c` parameter. You can then create a pull request to the `nf-core/configs` repository with the addition of your config file, associated documentation file (see examples in [`nf-core/configs/docs`](https://github.com/nf-core/configs/tree/master/docs)), and amending [`nfcore_custom.config`](https://github.com/nf-core/configs/blob/master/nfcore_custom.config) to include your custom profile.
+
+See the main [Nextflow documentation](https://www.nextflow.io/docs/latest/config.html) for more information about creating your own configuration files.
+
+If you have any questions or issues please send us a message on [Slack](https://nf-co.re/join/slack) on the [`#configs` channel](https://nfcore.slack.com/channels/configs).
+
+## Running in the background
+
+Nextflow handles job submissions and supervises the running jobs. The Nextflow process must run until the pipeline is finished.
+
+The Nextflow `-bg` flag launches Nextflow in the background, detached from your terminal so that the workflow does not stop if you log out of your session. The logs are saved to a file.
+
+Alternatively, you can use `screen` / `tmux` or similar tool to create a detached session which you can log back into at a later time.
+Some HPC setups also allow you to run nextflow within a cluster job submitted your job scheduler (from where it submits more jobs).
+
+## Nextflow memory requirements
+
+In some cases, the Nextflow Java virtual machines can start to request a large amount of memory.
+We recommend adding the following line to your environment to limit this (typically in `~/.bashrc` or `~./bash_profile`):
+
+```bash
+NXF_OPTS='-Xms1g -Xmx4g'
+```

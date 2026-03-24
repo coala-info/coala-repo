@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Apollo Load Test</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/workflows/main_workflow.html"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/workflows/main_workflow.html",
+      "@type": "Dataset",
+      "name": "Apollo Load Test",
+      "description": "Refining Genome Annotations with Apollo\n\n## Associated Tutorial\n\nThis workflows is part of the tutorial [Refining Genome Annotations with Apollo (prokaryotes)](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/tutorial.html), available in the [GTN](https://training.galaxyproject.org)\n\n\n\n\n\n## Thanks to...\n\n**Tutorial Author(s)**: [Anthony Bretaudeau](https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/), [Helena Rasche](https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/), [Nathan Dunn](https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/), [Mateo Boudet](https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/)\n\n**Tutorial Contributor(s)**: [Anthony Bretaudeau](https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/), [Björn Grüning](https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Helena Rasche](https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Stéphanie Robin](https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/), [Simon Bray](https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/)\n\n**Grants(s)**: [Gallantries: Bridging Training Communities in Life Science, Environment and Health](https://training.galaxyproject.org/training-material/hall-of-fame/gallantries/), [EuroScienceGateway](https://training.galaxyproject.org/training-material/hall-of-fame/eurosciencegateway/)\n\n[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)",
+      "version": "1.0",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "datePublished": "2025-06-02T09:46:41.643+00:00",
+      "mainEntity": {
+        "@id": "main-workflow.ga"
+      },
+      "hasPart": [
+        {
+          "@id": "main-workflow.ga"
+        },
+        {
+          "@id": "graph.png"
+        }
+      ]
+    },
+    {
+      "@id": "main-workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "author": [
+
+      ],
+      "name": "Apollo Load Test",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "image": {
+        "@id": "graph.png"
+      }
+    },
+    {
+      "@id": "graph.png",
+      "@type": [
+        "File",
+        "ImageObject",
+        "WorkflowSketch"
+      ],
+      "contentSize": 64192
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "23.1"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Apollo Load Test</h1>
+  
+  <p>
+    Refining Genome Annotations with Apollo
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Refining Genome Annotations with Apollo (prokaryotes)](https://training.galaxyproject.org/training-material/topics/genome-annotation/tutorials/apollo/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+
+
+
+
+## Thanks to...
+
+**Tutorial Author(s)**: [Anthony Bretaudeau](https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/), [Helena Rasche](https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/), [Nathan Dunn](https://training.galaxyproject.org/training-material/hall-of-fame/nathandunn/), [Mateo Boudet](https://training.galaxyproject.org/training-material/hall-of-fame/mboudet/)
+
+**Tutorial Contributor(s)**: [Anthony Bretaudeau](https://training.galaxyproject.org/training-material/hall-of-fame/abretaud/), [Björn Grüning](https://training.galaxyproject.org/training-material/hall-of-fame/bgruening/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Helena Rasche](https://training.galaxyproject.org/training-material/hall-of-fame/hexylena/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/), [Stéphanie Robin](https://training.galaxyproject.org/training-material/hall-of-fame/stephanierobin/), [Simon Bray](https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/)
+
+**Grants(s)**: [Gallantries: Bridging Training Communities in Life Science, Environment and Health](https://training.galaxyproject.org/training-material/hall-of-fame/gallantries/), [EuroScienceGateway](https://training.galaxyproject.org/training-material/hall-of-fame/eurosciencegateway/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>https://spdx.org/licenses/CC-BY-4.0</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>Apollo Load Test</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>graph.png</strong>
+        
+          <br/>Size: 64192
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

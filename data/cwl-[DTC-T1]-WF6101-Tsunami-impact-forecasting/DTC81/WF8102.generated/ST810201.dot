@@ -1,0 +1,34 @@
+strict digraph {
+
+
+	"model_weights" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"model_weights" -> "ST810201" [ label="is input to", labeltooltip="model_weights - is input to - ST810201",  weight=0 ];
+
+	"blinding" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"blinding" -> "ST810201" [ label="is input to", labeltooltip="blinding - is input to - ST810201",  weight=0 ];
+
+	"P_phase_threshold" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"P_phase_threshold" -> "ST810201" [ label="is input to", labeltooltip="P_phase_threshold - is input to - ST810201",  weight=0 ];
+
+	"S_phase_threshold" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"S_phase_threshold" -> "ST810201" [ label="is input to", labeltooltip="S_phase_threshold - is input to - ST810201",  weight=0 ];
+
+	"DT810201" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810201" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810201" -> "DT810201" [ label="is output from", labeltooltip="DT810201 - is output from - ST810201",  weight=0 ];
+
+	"waveform_miniseed" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"waveform_miniseed" -> "ST810201" [ label="is input to", labeltooltip="waveform_miniseed - is input to - ST810201",  weight=0 ];
+
+	"model" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"model" -> "ST810201" [ label="is input to", labeltooltip="model - is input to - ST810201",  weight=0 ];
+
+}

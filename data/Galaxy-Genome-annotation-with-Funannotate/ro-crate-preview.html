@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Genome annotation with Funannotate</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Genome%20annotation%20with%20Funannotate.ga"
+      },
+      "datePublished": "2024-02-15 11:39:03 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/754?version=1",
+      "url": "https://workflowhub.eu/workflows/754/ro_crate?version=1",
+      "name": "Research Object Crate for Genome annotation with Funannotate",
+      "description": "Structural and functional genome annotation with Funannotate",
+      "sdDatePublished": "2026-03-24 17:51:03 +0000",
+      "hasPart": [
+        {
+          "@id": "Genome%20annotation%20with%20Funannotate.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Genome%20annotation%20with%20Funannotate.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 46764,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Structural and functional genome annotation with Funannotate",
+      "name": "Genome annotation with Funannotate",
+      "url": "https://workflowhub.eu/workflows/754?version=1",
+      "keywords": "genome-annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-0914-2470"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2024-02-15T11:39:50Z",
+      "dateModified": "2025-11-06T13:19:21Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "input": [
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/Alternate%20annotation%20gbk"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/Alternate%20annotation%20gff3"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/Genome%20assembly"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/NCBI%20submission%20template"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/Protein%20evidence%20sequences"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/RNASeq%20reads%20forward"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-inputs-%23main/RNASeq%20reads%20reverse"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/AEGeAN%20report"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Busco%20image"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Busco%20summary"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Final%20annotation%20(CDS%20sequences)"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Final%20annotation%20(GFF3)"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Final%20annotation%20(genbank)"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Final%20annotation%20(mRNA%20sequences)"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Final%20annotation%20(protein%20sequences)"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Funannotate%20compare%20report"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/JBrowse"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/Mapped%20RNASeq"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#genome_annotation_with_funannotate-outputs-%23main/_anonymous_output_5"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0914-2470",
+      "@type": "Person",
+      "name": "Anthony Bretaudeau"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/Alternate annotation gbk",
+      "@type": "FormalParameter",
+      "name": "#main/Alternate annotation gbk",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/Alternate annotation gff3",
+      "@type": "FormalParameter",
+      "name": "#main/Alternate annotation gff3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/Genome assembly",
+      "@type": "FormalParameter",
+      "name": "#main/Genome assembly",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/NCBI submission template",
+      "@type": "FormalParameter",
+      "name": "#main/NCBI submission template",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/Protein evidence sequences",
+      "@type": "FormalParameter",
+      "name": "#main/Protein evidence sequences",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/RNASeq reads forward",
+      "@type": "FormalParameter",
+      "name": "#main/RNASeq reads forward",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-inputs-#main/RNASeq reads reverse",
+      "@type": "FormalParameter",
+      "name": "#main/RNASeq reads reverse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/AEGeAN report",
+      "@type": "FormalParameter",
+      "name": "#main/AEGeAN report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Busco image",
+      "@type": "FormalParameter",
+      "name": "#main/Busco image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Busco summary",
+      "@type": "FormalParameter",
+      "name": "#main/Busco summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Final annotation (CDS sequences)",
+      "@type": "FormalParameter",
+      "name": "#main/Final annotation (CDS sequences)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Final annotation (GFF3)",
+      "@type": "FormalParameter",
+      "name": "#main/Final annotation (GFF3)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Final annotation (genbank)",
+      "@type": "FormalParameter",
+      "name": "#main/Final annotation (genbank)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Final annotation (mRNA sequences)",
+      "@type": "FormalParameter",
+      "name": "#main/Final annotation (mRNA sequences)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Final annotation (protein sequences)",
+      "@type": "FormalParameter",
+      "name": "#main/Final annotation (protein sequences)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Funannotate compare report",
+      "@type": "FormalParameter",
+      "name": "#main/Funannotate compare report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/JBrowse",
+      "@type": "FormalParameter",
+      "name": "#main/JBrowse",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/Mapped RNASeq",
+      "@type": "FormalParameter",
+      "name": "#main/Mapped RNASeq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_annotation_with_funannotate-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Genome annotation with Funannotate</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/754/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/754/ro_crate?version=1</a>
+
+
+<p>
+  Structural and functional genome annotation with Funannotate
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Genome%20annotation%20with%20Funannotate.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Genome annotation with Funannotate.ga">Genome annotation with Funannotate</a>
+      
+        <br/>Size: 46764 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

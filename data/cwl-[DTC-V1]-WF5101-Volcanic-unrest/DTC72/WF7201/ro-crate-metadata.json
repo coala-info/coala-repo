@@ -1,0 +1,151 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "AI based seismic catalogue generation based on QuakeFlow",
+      "datePublished": "2025-03-17",
+      "description": "This workflow integrates waveform ingestion, AI-based picking, event association, event location, and high-resolution catalog generation into a single computational pipeline.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": [
+        { "@id": "https://orcid.org/0000-0002-8207-1464" },
+        { "@id": "https://orcid.org/0000-0001-8119-4019" }
+      ],
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7201.cwl" },
+        { "@id": "SS7205" },
+        { "@id": "DT7205/" }
+      ],
+      "mainEntity": { "@id": "WF7201.cwl" }
+    },
+    {
+      "@id": "WF7201.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "QuakeFlow (WF7201)",
+      "description": "Computational workflow integrating waveform ingestion, AI-based picking, event association, event location, and high-resolution catalog generation.",
+      "author": [
+        { "@id": "https://orcid.org/0000-0002-8207-1464" },
+        { "@id": "https://orcid.org/0000-0001-8119-4019" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#WAVEFORMS->WF7201.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7201.cwl->HIGH_RESOLUTION_CATALOG" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "SS7205",
+      "@type": "SoftwareSourceCode",
+      "name": "QuakeFlow",
+      "description": "A scalable deep-learning-based earthquake monitoring workflow with cloud computing resources. It applies state-of-the-art deep learning models for earthquake detection and monitoring.",
+      "license": "https://spdx.org/licenses/MIT-Modern-Variant.html",
+      "programmingLanguage": [
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "url": "https://github.com/AI4EPS/QuakeFlow",
+      "creator": [
+        { "@id": "https://orcid.org/0000-0003-2889-1493" },
+        { "@id": "https://ror.org/01an7q238" }
+      ]
+    },
+    {
+      "@id": "DT7205/",
+      "@type": "Dataset",
+      "name": "AlpArray catalogue",
+      "description": "Catalogue of waveform data of different stations of the AlpArray Network. Side demonstrator 11 dataset. EIDA downloaded by obspy.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "https://doi.org/10.1093/gji/ggac226",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0001-8119-4019" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2889-1493",
+      "@type": "Person",
+      "name": "Weiqiang Zhu",
+      "email": "zhuwq@berkeley.edu",
+      "affiliation": {
+        "@id": "https://ror.org/01an7q238"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8119-4019",
+      "@type": "Person",
+      "name": "Margarita Segou",
+      "email": "msegou@bgs.ac.uk",
+      "affiliation": {
+         "@id": "https://ror.org/001aqnf71"
+      }
+    },
+    {
+      "@id": "https://ror.org/01an7q238",
+      "@type": "Organization",
+      "name": "University of California, Berkeley"
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "ETH Zurich (ETH)"
+    },
+    {
+      "@id": "https://ror.org/001aqnf71",
+      "@type": "Organization",
+      "name": "UK Research and Innovation (UKRI)"
+    }
+  ]
+}

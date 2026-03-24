@@ -1,0 +1,588 @@
+{
+    "a_galaxy_workflow": "true",
+    "format-version": "0.1",
+    "name": "Paper_2_Diphosphine-WF",
+    "annotation": "",
+    "tags": [],
+    "uuid": "99fff2a1-c07a-4925-8bda-07e8b4b24497",
+    "steps": {
+        "0": {
+            "id": 0,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "5fde7139-950b-4571-8f06-921a9f676474",
+            "label": "A data",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "A data",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 42.289842319197234,
+                "top": 0
+            }
+        },
+        "1": {
+            "id": 1,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "491bc141-b1c8-4a73-aed2-c9462c35d523",
+            "label": "B data",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "B data",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 11,
+                "top": 211.54998779296875
+            }
+        },
+        "2": {
+            "id": 2,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "7d0c871d-e45d-4925-9513-009aa94df28d",
+            "label": "C data",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "C data",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 355.04998779296875
+            }
+        },
+        "3": {
+            "id": 3,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "4652a6e9-6669-4623-a636-b25e8e5acdc5",
+            "label": "D data",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "D data",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 29.083312988281023,
+                "top": 590.0499877929688
+            }
+        },
+        "4": {
+            "id": 4,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "da1b2c67-eb59-4ce2-b306-9c1507b6a4f1",
+            "label": "Fe Metal",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Fe Metal",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 54.08331298828125,
+                "top": 743.0333251953125
+            }
+        },
+        "5": {
+            "id": 5,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "c76c227c-5f66-4965-8141-0525b083922e",
+            "label": "FeBr",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "FeBr",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 43.08331298828125,
+                "top": 924.0333251953125
+            }
+        },
+        "6": {
+            "id": 6,
+            "type": "data_collection_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset collection",
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "errors": null,
+            "uuid": "57538668-4fd5-4583-add0-2f8f74c9c217",
+            "label": "7a",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "7a",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 62.08331298828125,
+                "top": 1110.0333251953125
+            }
+        },
+        "7": {
+            "id": 7,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"A\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": [\"edge\", \"flat\", \"dmude\"], \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "606bb857-269b-43af-be02-3860daa5cb46",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 319.5742642976979,
+                "top": 29.572705974413502
+            }
+        },
+        "8": {
+            "id": 8,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"B\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": [\"edge\", \"flat\", \"dmude\"], \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "6e2733b0-4caf-4726-b9c8-2c349f8043f1",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 327.79189406542696,
+                "top": 215.50856543702102
+            }
+        },
+        "9": {
+            "id": 9,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"C\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": [\"edge\", \"flat\", \"dmude\"], \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "929ea25d-f66a-42a9-973b-40edf6f28272",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 329.3418818583957,
+                "top": 412.99193335694287
+            }
+        },
+        "10": {
+            "id": 10,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"D\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "b4fab59e-d5f8-4f94-b410-59a3bb1aa734",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 332.3752070537082,
+                "top": 607.4418845288179
+            }
+        },
+        "11": {
+            "id": 11,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"Fe metal\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "1f5923aa-40d8-4ffa-85ea-17f5727c19ab",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 334.72524367480196,
+                "top": 754.4752097241304
+            }
+        },
+        "12": {
+            "id": 12,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"FeBr\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": [\"edge\", \"flat\", \"dmude\"], \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "b108eb81-bf34-486d-bd72-04dff6860471",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 328.4425884725722,
+                "top": 945.8037968264279
+            }
+        },
+        "13": {
+            "id": 13,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"7a\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 1, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 4, \"mu_column\": \"other\", \"mu_column_text\": \"lnItIref\"}}, \"merge_inputs\": \"true\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "8fb38830-9cba-45a6-98f3-4518866fd8e6",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 324.25929989835345,
+                "top": 1132.770410595959
+            }
+        },
+        "14": {
+            "id": 14,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 2, \"variable\": \"chir_mag\", \"x_limit_max\": \"6.0\", \"x_limit_min\": \"0.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "7af97e11-ae4c-4a4e-ad7c-283c9d2be1d6",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": [
+                    {
+                        "id": 7,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 8,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 9,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 10,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 11,
+                        "output_name": "athena_project_file"
+                    }
+                ]
+            },
+            "position": {
+                "left": 749.0079879528298,
+                "top": 91.83766685149425
+            }
+        },
+        "15": {
+            "id": 15,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"7160.0\", \"x_limit_min\": \"7100.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "e4bf6e59-8eb0-48bd-9e49-9fe3baf08da9",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": [
+                    {
+                        "id": 7,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 8,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 9,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 10,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 11,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 12,
+                        "output_name": "athena_project_file"
+                    }
+                ]
+            },
+            "position": {
+                "left": 1021.9012284470878,
+                "top": 427.61265084388543
+            }
+        },
+        "16": {
+            "id": 16,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 1, \"variable\": \"dmude\", \"x_limit_max\": \"7160.0\", \"x_limit_min\": \"7100.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "ee2525ad-fc26-4a66-9086-448ef877aa8f",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": [
+                    {
+                        "id": 7,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 8,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 9,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 10,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 11,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 12,
+                        "output_name": "athena_project_file"
+                    }
+                ]
+            },
+            "position": {
+                "left": 920.3595575655033,
+                "top": 1029.3529137729458
+            }
+        },
+        "17": {
+            "id": 17,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"7135.0\", \"x_limit_min\": \"7100.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "68b61854-b3bd-4396-8a74-d869f0e5759e",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": [
+                    {
+                        "id": 7,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 8,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 9,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 10,
+                        "output_name": "athena_project_file"
+                    },
+                    {
+                        "id": 13,
+                        "output_name": "athena_project_file"
+                    }
+                ]
+            },
+            "position": {
+                "left": 974.3035702213451,
+                "top": 766.56090888901
+            }
+        }
+    },
+    "comments": []
+}

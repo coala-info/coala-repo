@@ -1,0 +1,432 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "ONT -- Assembly-Flye-AhrensLab",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "PkorrP19E3_ONT_fast5.tar.gz"
+                }
+            ],
+            "label": "PkorrP19E3_ONT_fast5.tar.gz",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 215,
+                "top": 280
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7b6f67a8-9ad6-411a-8c4a-64011086ab29",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "ftp://biftp.informatik.uni-freiburg.de/pub/T0/Ahrens/SRR6982805.fastq"
+                }
+            ],
+            "label": "ftp://biftp.informatik.uni-freiburg.de/pub/T0/Ahrens/SRR6982805.fastq",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 215,
+                "top": 401
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "e4e6c89f-4fb9-4e9d-8578-3c8f6502652b",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/filtlong/filtlong/0.2.0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool filtlong",
+                    "name": "external_references"
+                },
+                {
+                    "description": "runtime parameter for tool filtlong",
+                    "name": "external_references"
+                },
+                {
+                    "description": "runtime parameter for tool filtlong",
+                    "name": "external_references"
+                },
+                {
+                    "description": "runtime parameter for tool filtlong",
+                    "name": "input_file"
+                }
+            ],
+            "label": null,
+            "name": "filtlong",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "fastqsanger"
+                }
+            ],
+            "position": {
+                "left": 562,
+                "top": 439
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutfile": {
+                    "action_arguments": {
+                        "newtype": "fastq"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/filtlong/filtlong/0.2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "8880fb74ef56",
+                "name": "filtlong",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"external_references\": {\"assembly\": {\"__class__\": \"RuntimeValue\"}, \"illumina_1\": {\"__class__\": \"RuntimeValue\"}, \"illumina_2\": {\"__class__\": \"RuntimeValue\"}}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"other\": {\"window_size\": \"250\"}, \"output_thresholds\": {\"target_bases\": \"\", \"keep_percent\": \"\", \"min_length\": \"30000\", \"min_mean_q\": \"\", \"min_window_q\": \"\"}, \"read_manipulation\": {\"trim\": \"false\", \"split\": \"\"}, \"score_weights\": {\"length_weight\": \"1.0\", \"mean_q_weight\": \"1.0\", \"window_q_weight\": \"1.0\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.0",
+            "type": "tool",
+            "uuid": "513fb204-780c-45bf-abb7-7dbcdf2687a5",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/flye/flye/2.3.5",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "inputs": {
+                    "id": 2,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Assembly",
+                    "name": "inputs"
+                }
+            ],
+            "label": null,
+            "name": "Assembly",
+            "outputs": [
+                {
+                    "name": "contigs",
+                    "type": "fasta"
+                },
+                {
+                    "name": "scaffolds",
+                    "type": "fasta"
+                },
+                {
+                    "name": "assembly_info",
+                    "type": "tabular"
+                },
+                {
+                    "name": "assembly_graph",
+                    "type": "graph_dot"
+                },
+                {
+                    "name": "flye_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 981,
+                "top": 748
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/flye/flye/2.3.5",
+            "tool_shed_repository": {
+                "changeset_revision": "cd256484eb1a",
+                "name": "flye",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"chromInfo\": \"/usr/local/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"g\": \"7.7m\", \"i\": \"3\", \"inputs\": {\"__class__\": \"RuntimeValue\"}, \"m\": \"\", \"mode\": \"--nano-raw\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.3.5",
+            "type": "tool",
+            "uuid": "a0e95079-06e9-49ab-ad45-21b4f1e08f67",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.12",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "reference_source|ref_file": {
+                    "id": 3,
+                    "output_name": "contigs"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "Map with minimap2",
+            "outputs": [
+                {
+                    "name": "alignment_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 1283,
+                "top": 292
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.12",
+            "tool_shed_repository": {
+                "changeset_revision": "17e61517c166",
+                "name": "minimap2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignment_options\": {\"A\": \"\", \"B\": \"\", \"O\": \"\", \"-O2\": \"\", \"E\": \"\", \"E2\": \"\", \"z\": \"\", \"s\": \"\", \"u\": null}, \"analysis_type_selector\": \"map-ont\", \"chromInfo\": \"/usr/local/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"fastq_input\": {\"fastq_input_selector\": \"single\", \"__current_case__\": 1, \"fastq_input1\": {\"__class__\": \"RuntimeValue\"}}, \"indexing_options\": {\"H\": \"false\", \"k\": \"\", \"w\": \"\", \"I\": \"\"}, \"io_options\": {\"output_format\": \"BAM\", \"Q\": \"false\", \"L\": \"false\", \"K\": \"\", \"cs\": null, \"eqx\": \"false\", \"Y\": \"false\"}, \"mapping_options\": {\"f\": \"\", \"min_occ_floor\": \"\", \"g\": \"\", \"G\": \"\", \"F\": \"\", \"r\": \"\", \"n\": \"\", \"m\": \"\", \"X\": \"false\", \"p\": \"\", \"N\": \"\"}, \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"ref_file\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.12",
+            "type": "tool",
+            "uuid": "9976c896-dbb7-421c-a362-fdd8e4acc69f",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bam_to_sam/bam_to_sam/2.0.1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input1": {
+                    "id": 4,
+                    "output_name": "alignment_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool BAM-to-SAM",
+                    "name": "input1"
+                }
+            ],
+            "label": null,
+            "name": "BAM-to-SAM",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "sam"
+                }
+            ],
+            "position": {
+                "left": 1557,
+                "top": 623
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bam_to_sam/bam_to_sam/2.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "88eedb4abea0",
+                "name": "bam_to_sam",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"chromInfo\": \"/usr/local/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"header\": \"-h\", \"input1\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.1",
+            "type": "tool",
+            "uuid": "423b0ce5-0aff-481d-9f3b-1c929ff7df7d",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/racon/racon/1.3.1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "corrected_reads": {
+                    "id": 3,
+                    "output_name": "contigs"
+                },
+                "overlaps": {
+                    "id": 5,
+                    "output_name": "output1"
+                },
+                "reads": {
+                    "id": 2,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Racon",
+                    "name": "corrected_reads"
+                },
+                {
+                    "description": "runtime parameter for tool Racon",
+                    "name": "overlaps"
+                },
+                {
+                    "description": "runtime parameter for tool Racon",
+                    "name": "reads"
+                }
+            ],
+            "label": null,
+            "name": "Racon",
+            "outputs": [
+                {
+                    "name": "consensus",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 1792,
+                "top": 882
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/racon/racon/1.3.1",
+            "tool_shed_repository": {
+                "changeset_revision": "51fd3136069d",
+                "name": "racon",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"chromInfo\": \"/usr/local/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"corrected_reads\": {\"__class__\": \"RuntimeValue\"}, \"e\": \"0.3\", \"f\": \"false\", \"g\": \"-8\", \"m\": \"5\", \"overlaps\": {\"__class__\": \"RuntimeValue\"}, \"q\": \"10.0\", \"reads\": {\"__class__\": \"RuntimeValue\"}, \"u\": \"false\", \"w\": \"500\", \"x\": \"-4\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.1",
+            "type": "tool",
+            "uuid": "6fbfd0cb-36b2-4cef-89f8-b97d0be95b5b",
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/nanopolish_variants/nanopolish_variants/0.1.0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "b": {
+                    "id": 4,
+                    "output_name": "alignment_output"
+                },
+                "input_merged": {
+                    "id": 2,
+                    "output_name": "outfile"
+                },
+                "input_reads_raw": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "reference_source|ref_file": {
+                    "id": 6,
+                    "output_name": "consensus"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "adv"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "b"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "input_merged"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "input_reads_raw"
+                },
+                {
+                    "description": "runtime parameter for tool Nanopolish variants",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "Nanopolish variants",
+            "outputs": [
+                {
+                    "name": "output_polished",
+                    "type": "fasta"
+                },
+                {
+                    "name": "output_variants",
+                    "type": "vcf"
+                }
+            ],
+            "position": {
+                "left": 2183,
+                "top": 489
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/nanopolish_variants/nanopolish_variants/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "bc79b5b0fe04",
+                "name": "nanopolish_variants",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"input_seq_summary\": {\"__class__\": \"RuntimeValue\"}, \"input_events_bam\": {\"__class__\": \"RuntimeValue\"}, \"input_genotype\": {\"__class__\": \"RuntimeValue\"}, \"input_candidates\": {\"__class__\": \"RuntimeValue\"}, \"input_alt_bc_bam\": {\"__class__\": \"RuntimeValue\"}, \"input_models_fofn\": {\"__class__\": \"RuntimeValue\"}}, \"all_bases\": \"false\", \"b\": {\"__class__\": \"RuntimeValue\"}, \"chromInfo\": \"/usr/local/galaxy/galaxy-dist/tool-data/shared/ucsc/chrom/?.len\", \"consensus\": \"true\", \"faster\": \"false\", \"homopolymer\": \"false\", \"input_merged\": {\"__class__\": \"RuntimeValue\"}, \"input_reads_raw\": {\"__class__\": \"RuntimeValue\"}, \"max_haplotypes\": \"1000\", \"max_rounds\": \"50\", \"methylation_aware\": \"dcm,dam\", \"min_candidate_depth\": \"20\", \"min_candidate_frequency\": \"0.1\", \"min_flanking_sequence\": \"\", \"ploidy\": \"-1\", \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"ref_file\": {\"__class__\": \"RuntimeValue\"}}, \"snps\": \"false\", \"verbose\": \"true\", \"w\": \"contig_1:1000:2000\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "58d9da19-5daa-46d4-8c41-efa0c2f0b4e5",
+            "workflow_outputs": []
+        }
+    },
+    "tags": [
+        "name:ONT",
+        "ONT"
+    ],
+    "uuid": "ed402aa6-c6e4-4a21-9859-427a1016c9dd",
+    "version": 2
+}

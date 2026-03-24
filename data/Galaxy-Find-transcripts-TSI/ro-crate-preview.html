@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Find transcripts - TSI</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Find-transcripts-TSI.ga"
+      },
+      "datePublished": "2024-05-08 07:48:07 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.877.1",
+      "url": "https://workflowhub.eu/workflows/877/ro_crate?version=1",
+      "name": "Research Object Crate for Find transcripts - TSI",
+      "description": "This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. \nThese workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. \n\nThe workflows can be run in this order: \n* Repeat masking\n* RNAseq QC and read trimming\n* Find transcripts\n* Combine transcripts\n* Extract transcripts\n* Convert formats\n* Fgenesh annotation\n\n****\n\nAbout this workflow:\n\n* Run this workflow per tissue. \n* Inputs: masked_genome.fasta and the trimmed RNAseq reads (R1 and R2) from one type of tissue. \n* Index genome and align reads to genome with HISAT2, with default settings except for: Advanced options: spliced alignment options: specify options: Transcriptome assembly reporting: selected option: Report alignments tailored for transcript assemblers including StringTie (equivalent to -dta flag). \n* Runs samtools sort to sort bam by coordinate. \n* Runs StringTie to generate gtf from sorted bam. \n* Output: transcripts.gtf from a single tissue.",
+      "sdDatePublished": "2026-03-24 17:47:45 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Find-transcripts-TSI.ga"
+        },
+        {
+          "@id": "Workflow-find-transcripts.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Find-transcripts-TSI.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 11408,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Workflow-find-transcripts.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. \nThese workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. \n\nThe workflows can be run in this order: \n* Repeat masking\n* RNAseq QC and read trimming\n* Find transcripts\n* Combine transcripts\n* Extract transcripts\n* Convert formats\n* Fgenesh annotation\n\n****\n\nAbout this workflow:\n\n* Run this workflow per tissue. \n* Inputs: masked_genome.fasta and the trimmed RNAseq reads (R1 and R2) from one type of tissue. \n* Index genome and align reads to genome with HISAT2, with default settings except for: Advanced options: spliced alignment options: specify options: Transcriptome assembly reporting: selected option: Report alignments tailored for transcript assemblers including StringTie (equivalent to -dta flag). \n* Runs samtools sort to sort bam by coordinate. \n* Runs StringTie to generate gtf from sorted bam. \n* Output: transcripts.gtf from a single tissue.",
+      "name": "Find transcripts - TSI",
+      "url": "https://workflowhub.eu/workflows/877?version=1",
+      "keywords": "TSI-annotation",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "#Luke%20Silver"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/200"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        }
+      ],
+      "dateCreated": "2024-05-08T06:51:41Z",
+      "dateModified": "2024-05-09T04:05:20Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/23"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.877.1",
+      "input": [
+        {
+          "@id": "#find_transcripts___tsi-inputs-%23main/Trimmed,%20merged%20R1%20files"
+        },
+        {
+          "@id": "#find_transcripts___tsi-inputs-%23main/Trimmed,%20merged%20R2%20files"
+        },
+        {
+          "@id": "#find_transcripts___tsi-inputs-%23main/genome.fasta%20(use%20masked%20if%20available)"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#find_transcripts___tsi-outputs-%23main/hisat2_summary_file"
+        },
+        {
+          "@id": "#find_transcripts___tsi-outputs-%23main/output_alignments"
+        },
+        {
+          "@id": "#find_transcripts___tsi-outputs-%23main/output_gtf"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Workflow-find-transcripts.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 299849
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "#Luke Silver",
+      "@type": "Person",
+      "name": "Luke Silver"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/23",
+      "@type": "Collection",
+      "name": "TSI annotation workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-inputs-#main/Trimmed, merged R1 files",
+      "@type": "FormalParameter",
+      "name": "#main/Trimmed, merged R1 files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-inputs-#main/Trimmed, merged R2 files",
+      "@type": "FormalParameter",
+      "name": "#main/Trimmed, merged R2 files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-inputs-#main/genome.fasta (use masked if available)",
+      "@type": "FormalParameter",
+      "name": "#main/genome.fasta (use masked if available)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-outputs-#main/hisat2_summary_file",
+      "@type": "FormalParameter",
+      "name": "#main/hisat2_summary_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-outputs-#main/output_alignments",
+      "@type": "FormalParameter",
+      "name": "#main/output_alignments",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#find_transcripts___tsi-outputs-#main/output_gtf",
+      "@type": "FormalParameter",
+      "name": "#main/output_gtf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Find transcripts - TSI</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/877/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/877/ro_crate?version=1</a>
+
+
+  <img src="Workflow-find-transcripts.png" style="width: 100%;"/>
+
+<p>
+  This is part of a series of workflows to annotate a genome, tagged with `TSI-annotation`. 
+These workflows are based on command-line code by Luke Silver, converted into Galaxy Australia workflows. 
+
+The workflows can be run in this order: 
+* Repeat masking
+* RNAseq QC and read trimming
+* Find transcripts
+* Combine transcripts
+* Extract transcripts
+* Convert formats
+* Fgenesh annotation
+
+****
+
+About this workflow:
+
+* Run this workflow per tissue. 
+* Inputs: masked_genome.fasta and the trimmed RNAseq reads (R1 and R2) from one type of tissue. 
+* Index genome and align reads to genome with HISAT2, with default settings except for: Advanced options: spliced alignment options: specify options: Transcriptome assembly reporting: selected option: Report alignments tailored for transcript assemblers including StringTie (equivalent to -dta flag). 
+* Runs samtools sort to sort bam by coordinate. 
+* Runs StringTie to generate gtf from sorted bam. 
+* Output: transcripts.gtf from a single tissue.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Find-transcripts-TSI.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Find-transcripts-TSI.ga">Find transcripts - TSI</a>
+      
+        <br/>Size: 11408 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Workflow-find-transcripts.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Workflow-find-transcripts.png">Workflow-find-transcripts.png</a>
+      
+        <br/>Size: 299849 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1915 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2023-06-06 11:37:51 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "other-open",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.488.2",
+      "url": "https://workflowhub.eu/workflows/488/ro_crate?version=2",
+      "name": "Research Object Crate for CWL Protein conformational ensembles generation",
+      "description": "# Protein Conformational ensembles generation\n\n## Workflow included in the [ELIXIR 3D-Bioinfo](https://elixir-europe.org/communities/3d-bioinfo) Implementation Study:\n\n### Building on PDBe-KB to chart and characterize the conformation landscape of native proteins\n\nThis tutorial aims to illustrate the process of generating **protein conformational ensembles** from** 3D structures **and analysing its **molecular flexibility**, step by step, using the **BioExcel Building Blocks library (biobb)**.\n\n## Conformational landscape of native proteins\n**Proteins** are **dynamic** systems that adopt multiple **conformational states**, a property essential for many **biological processes** (e.g. binding other proteins, nucleic acids, small molecule ligands, or switching between functionaly active and inactive states). Characterizing the different **conformational states** of proteins and the transitions between them is therefore critical for gaining insight into their **biological function** and can help explain the effects of genetic variants in **health** and **disease** and the action of drugs.\n\n**Structural biology** has become increasingly efficient in sampling the different **conformational states** of proteins. The **PDB** has currently archived more than **170,000 individual structures**, but over two thirds of these structures represent **multiple conformations** of the same or related protein, observed in different crystal forms, when interacting with other proteins or other macromolecules, or upon binding small molecule ligands. Charting this conformational diversity across the PDB can therefore be employed to build a useful approximation of the **conformational landscape** of native proteins.\n\nA number of resources and **tools** describing and characterizing various often complementary aspects of protein **conformational diversity** in known structures have been developed, notably by groups in Europe. These tools include algorithms with varying degree of sophistication, for aligning the 3D structures of individual protein chains or domains, of protein assemblies, and evaluating their degree of **structural similarity**. Using such tools one can **align structures pairwise**, compute the corresponding **similarity matrix**, and identify ensembles of **structures/conformations** with a defined **similarity level** that tend to recur in different PDB entries, an operation typically performed using **clustering** methods. Such workflows are at the basis of resources such as **CATH, Contemplate, or PDBflex** that offer access to **conformational ensembles** comprised of similar **conformations** clustered according to various criteria. Other types of tools focus on differences between **protein conformations**, identifying regions of proteins that undergo large **collective displacements** in different PDB entries, those that act as **hinges or linkers**, or regions that are inherently **flexible**.\n\nTo build a meaningful approximation of the **conformational landscape** of native proteins, the **conformational ensembles** (and the differences between them), identified on the basis of **structural similarity/dissimilarity** measures alone, need to be **biophysically characterized**. This may be approached at **two different levels**. \n- At the **biological level**, it is important to link observed **conformational ensembles**, to their **functional roles** by evaluating the correspondence with **protein family classifications** based on sequence information and **functional annotations** in public databases e.g. Uniprot, PDKe-Knowledge Base (KB). These links should provide valuable mechanistic insights into how the **conformational and dynamic properties** of proteins are exploited by evolution to regulate their **biological function**. <br><br>\n\n- At the **physical level** one needs to introduce **energetic consideration** to evaluate the likelihood that the identified **conformational ensembles** represent **conformational states** that the protein (or domain under study) samples in isolation. Such evaluation is notoriously **challenging** and can only be roughly approximated by using **computational methods** to evaluate the extent to which the observed **conformational ensembles** can be reproduced by algorithms that simulate the **dynamic behavior** of protein systems. These algorithms include the computationally expensive **classical molecular dynamics (MD) simulations** to sample local thermal fluctuations but also faster more approximate methods such as **Elastic Network Models** and **Normal Node Analysis** (NMA) to model low energy **collective motions**. Alternatively, **enhanced sampling molecular dynamics** can be used to model complex types of **conformational changes** but at a very high computational cost. \n\nThe **ELIXIR 3D-Bioinfo Implementation Study** *Building on PDBe-KB to chart and characterize the conformation landscape of native proteins* focuses on:\n\n1. Mapping the **conformational diversity** of proteins and their homologs across the PDB. \n2. Characterize the different **flexibility properties** of protein regions, and link this information to sequence and functional annotation.\n3. Benchmark **computational methods** that can predict a biophysical description of protein motions.\n\nThis notebook is part of the third objective, where a list of **computational resources** that are able to predict **protein flexibility** and **conformational ensembles** have been collected, evaluated, and integrated in reproducible and interoperable workflows using the **BioExcel Building Blocks library**. Note that the list is not meant to be exhaustive, it is built following the expertise of the implementation study partners.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_flexdyn/cwl",
+      "sdDatePublished": "2026-03-24 01:07:09 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-488-70eb3d2d531277c64dc8aeebdaee3295286267b9-diagram.svg"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/README.md"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/structure.pdb"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/bd_run.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/concoord_disco.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/concoord_dist.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_convert.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_mask.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_rms.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/dmd_run.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/extract_chain.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/extract_model.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/gmx_cluster.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/imod_imc.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/imod_imode.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/make_ndx.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/nma_run.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/nolb_nma.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_animate.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_bfactor.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_collectivity.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_evecs.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_hinges.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_info.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_stiffness.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_zip.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/prody_anm.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/workflow_input_descriptions.yml"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/workflow.cwl",
+      "contentSize": 39465,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-488-70eb3d2d531277c64dc8aeebdaee3295286267b9-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Protein Conformational ensembles generation\n\n## Workflow included in the [ELIXIR 3D-Bioinfo](https://elixir-europe.org/communities/3d-bioinfo) Implementation Study:\n\n### Building on PDBe-KB to chart and characterize the conformation landscape of native proteins\n\nThis tutorial aims to illustrate the process of generating **protein conformational ensembles** from** 3D structures **and analysing its **molecular flexibility**, step by step, using the **BioExcel Building Blocks library (biobb)**.\n\n## Conformational landscape of native proteins\n**Proteins** are **dynamic** systems that adopt multiple **conformational states**, a property essential for many **biological processes** (e.g. binding other proteins, nucleic acids, small molecule ligands, or switching between functionaly active and inactive states). Characterizing the different **conformational states** of proteins and the transitions between them is therefore critical for gaining insight into their **biological function** and can help explain the effects of genetic variants in **health** and **disease** and the action of drugs.\n\n**Structural biology** has become increasingly efficient in sampling the different **conformational states** of proteins. The **PDB** has currently archived more than **170,000 individual structures**, but over two thirds of these structures represent **multiple conformations** of the same or related protein, observed in different crystal forms, when interacting with other proteins or other macromolecules, or upon binding small molecule ligands. Charting this conformational diversity across the PDB can therefore be employed to build a useful approximation of the **conformational landscape** of native proteins.\n\nA number of resources and **tools** describing and characterizing various often complementary aspects of protein **conformational diversity** in known structures have been developed, notably by groups in Europe. These tools include algorithms with varying degree of sophistication, for aligning the 3D structures of individual protein chains or domains, of protein assemblies, and evaluating their degree of **structural similarity**. Using such tools one can **align structures pairwise**, compute the corresponding **similarity matrix**, and identify ensembles of **structures/conformations** with a defined **similarity level** that tend to recur in different PDB entries, an operation typically performed using **clustering** methods. Such workflows are at the basis of resources such as **CATH, Contemplate, or PDBflex** that offer access to **conformational ensembles** comprised of similar **conformations** clustered according to various criteria. Other types of tools focus on differences between **protein conformations**, identifying regions of proteins that undergo large **collective displacements** in different PDB entries, those that act as **hinges or linkers**, or regions that are inherently **flexible**.\n\nTo build a meaningful approximation of the **conformational landscape** of native proteins, the **conformational ensembles** (and the differences between them), identified on the basis of **structural similarity/dissimilarity** measures alone, need to be **biophysically characterized**. This may be approached at **two different levels**. \n- At the **biological level**, it is important to link observed **conformational ensembles**, to their **functional roles** by evaluating the correspondence with **protein family classifications** based on sequence information and **functional annotations** in public databases e.g. Uniprot, PDKe-Knowledge Base (KB). These links should provide valuable mechanistic insights into how the **conformational and dynamic properties** of proteins are exploited by evolution to regulate their **biological function**. <br><br>\n\n- At the **physical level** one needs to introduce **energetic consideration** to evaluate the likelihood that the identified **conformational ensembles** represent **conformational states** that the protein (or domain under study) samples in isolation. Such evaluation is notoriously **challenging** and can only be roughly approximated by using **computational methods** to evaluate the extent to which the observed **conformational ensembles** can be reproduced by algorithms that simulate the **dynamic behavior** of protein systems. These algorithms include the computationally expensive **classical molecular dynamics (MD) simulations** to sample local thermal fluctuations but also faster more approximate methods such as **Elastic Network Models** and **Normal Node Analysis** (NMA) to model low energy **collective motions**. Alternatively, **enhanced sampling molecular dynamics** can be used to model complex types of **conformational changes** but at a very high computational cost. \n\nThe **ELIXIR 3D-Bioinfo Implementation Study** *Building on PDBe-KB to chart and characterize the conformation landscape of native proteins* focuses on:\n\n1. Mapping the **conformational diversity** of proteins and their homologs across the PDB. \n2. Characterize the different **flexibility properties** of protein regions, and link this information to sequence and functional annotation.\n3. Benchmark **computational methods** that can predict a biophysical description of protein motions.\n\nThis notebook is part of the third objective, where a list of **computational resources** that are able to predict **protein flexibility** and **conformational ensembles** have been collected, evaluated, and integrated in reproducible and interoperable workflows using the **BioExcel Building Blocks library**. Note that the list is not meant to be exhaustive, it is built following the expertise of the implementation study partners.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "CWL Protein conformational ensembles generation",
+      "keywords": "",
+      "version": 2,
+      "license": "",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-06-06T10:10:37Z",
+      "dateModified": "2024-04-22T10:41:26Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.488.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/488?version=1",
+      "input": [
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_input_structure_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_output_structure_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step1_extract_chain_output_structure_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step1_extract_chain_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step2_cpptraj_mask_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step2_cpptraj_mask_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step3_cpptraj_mask_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step3_cpptraj_mask_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_gro_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_dat_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_traj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_rmsd_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_bfactor_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_disco_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step6_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step6_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step7_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step7_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step8_prody_anm_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step8_prody_anm_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step9_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step9_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step10_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step10_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_output_crd_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_output_log_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_output_traj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_output_crd_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_output_log_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_output_traj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_output_crd_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_output_log_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step16_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step16_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step17_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step17_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step18_nolb_nma_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step18_nolb_nma_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step19_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step19_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step20_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step20_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step21_imod_imode_output_dat_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step21_imod_imode_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step22_imod_imc_output_traj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step22_imod_imc_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step23_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step23_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step24_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step24_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step26_make_ndx_output_ndx_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step26_make_ndx_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step27_gmx_cluster_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step27_gmx_cluster_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_output_traj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step29_pcz_zip_output_pcz_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step29_pcz_zip_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step30_pcz_zip_output_pcz_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step30_pcz_zip_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step31_pcz_info_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step32_pcz_evecs_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step32_pcz_evecs_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step33_pcz_animate_output_crd_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step33_pcz_animate_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step34_cpptraj_convert_output_cpptraj_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step34_cpptraj_convert_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_output_dat_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step36_pcz_hinges_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step36_pcz_hinges_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step37_pcz_hinges_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step37_pcz_hinges_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step38_pcz_hinges_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step38_pcz_hinges_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step39_pcz_stiffness_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step39_pcz_stiffness_config"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step40_pcz_collectivity_output_json_path"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step40_pcz_collectivity_config"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step0_extract_model_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step1_extract_chain_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step2_cpptraj_mask_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step3_cpptraj_mask_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out3"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out3"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step6_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step7_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step8_prody_anm_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step9_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step10_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step11_bd_run_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step11_bd_run_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step12_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step12_cpptraj_rms_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step13_dmd_run_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step13_dmd_run_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step14_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step14_cpptraj_rms_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step15_nma_run_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step15_nma_run_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step16_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step17_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step18_nolb_nma_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step19_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step20_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step21_imod_imode_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step22_imod_imc_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step23_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step24_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step26_make_ndx_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step27_gmx_cluster_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step28_cpptraj_rms_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step28_cpptraj_rms_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step29_pcz_zip_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step30_pcz_zip_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step31_pcz_info_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step32_pcz_evecs_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step33_pcz_animate_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step34_cpptraj_convert_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step35_pcz_bfactor_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step35_pcz_bfactor_out2"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step36_pcz_hinges_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step37_pcz_hinges_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step38_pcz_hinges_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step39_pcz_stiffness_out1"
+        },
+        {
+          "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step40_pcz_collectivity_out1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-488-70eb3d2d531277c64dc8aeebdaee3295286267b9-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 203809
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/structure.pdb",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/bd_run.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/concoord_disco.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/concoord_dist.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_convert.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_mask.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/cpptraj_rms.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/dmd_run.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/extract_chain.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/extract_model.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/gmx_cluster.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/imod_imc.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/imod_imode.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/make_ndx.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/nma_run.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/nolb_nma.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_animate.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_bfactor.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_collectivity.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_evecs.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_hinges.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_info.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_stiffness.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/pcz_zip.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/biobb_adapters/prody_anm.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_flexdyn/cwl/workflow_input_descriptions.yml",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_input_structure_path",
+      "@type": "FormalParameter",
+      "name": "step0_extract_model_input_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_output_structure_path",
+      "@type": "FormalParameter",
+      "name": "step0_extract_model_output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step0_extract_model_config",
+      "@type": "FormalParameter",
+      "name": "step0_extract_model_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step1_extract_chain_output_structure_path",
+      "@type": "FormalParameter",
+      "name": "step1_extract_chain_output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step1_extract_chain_config",
+      "@type": "FormalParameter",
+      "name": "step1_extract_chain_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step2_cpptraj_mask_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step2_cpptraj_mask_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step2_cpptraj_mask_config",
+      "@type": "FormalParameter",
+      "name": "step2_cpptraj_mask_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step3_cpptraj_mask_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step3_cpptraj_mask_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step3_cpptraj_mask_config",
+      "@type": "FormalParameter",
+      "name": "step3_cpptraj_mask_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "step4_concoord_dist_output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_gro_path",
+      "@type": "FormalParameter",
+      "name": "step4_concoord_dist_output_gro_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "step4_concoord_dist_output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_dist_config",
+      "@type": "FormalParameter",
+      "name": "step4_concoord_dist_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "step5_concoord_disco_output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_rmsd_path",
+      "@type": "FormalParameter",
+      "name": "step5_concoord_disco_output_rmsd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step5_concoord_disco_output_bfactor_path",
+      "@type": "FormalParameter",
+      "name": "step5_concoord_disco_output_bfactor_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step4_concoord_disco_config",
+      "@type": "FormalParameter",
+      "name": "step4_concoord_disco_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step6_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step6_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step6_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step6_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step7_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step7_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step7_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step7_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step8_prody_anm_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "step8_prody_anm_output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step8_prody_anm_config",
+      "@type": "FormalParameter",
+      "name": "step8_prody_anm_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step9_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step9_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step9_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step9_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step10_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step10_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step10_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step10_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "step11_bd_run_output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_output_log_path",
+      "@type": "FormalParameter",
+      "name": "step11_bd_run_output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step11_bd_run_config",
+      "@type": "FormalParameter",
+      "name": "step11_bd_run_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step12_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "step12_cpptraj_rms_output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step12_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step12_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "step13_dmd_run_output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_output_log_path",
+      "@type": "FormalParameter",
+      "name": "step13_dmd_run_output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step13_dmd_run_config",
+      "@type": "FormalParameter",
+      "name": "step13_dmd_run_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step14_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "step14_cpptraj_rms_output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step14_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step14_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "step15_nma_run_output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_output_log_path",
+      "@type": "FormalParameter",
+      "name": "step15_nma_run_output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step15_nma_run_config",
+      "@type": "FormalParameter",
+      "name": "step15_nma_run_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step16_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step16_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step16_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step16_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step17_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step17_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step17_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step17_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step18_nolb_nma_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "step18_nolb_nma_output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step18_nolb_nma_config",
+      "@type": "FormalParameter",
+      "name": "step18_nolb_nma_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step19_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step19_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step19_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step19_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step20_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step20_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step20_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step20_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step21_imod_imode_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "step21_imod_imode_output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step21_imod_imode_config",
+      "@type": "FormalParameter",
+      "name": "step21_imod_imode_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step22_imod_imc_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "step22_imod_imc_output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step22_imod_imc_config",
+      "@type": "FormalParameter",
+      "name": "step22_imod_imc_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step23_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step23_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step23_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step23_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step24_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step24_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step24_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step24_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step26_make_ndx_output_ndx_path",
+      "@type": "FormalParameter",
+      "name": "step26_make_ndx_output_ndx_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step26_make_ndx_config",
+      "@type": "FormalParameter",
+      "name": "step26_make_ndx_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step27_gmx_cluster_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "step27_gmx_cluster_output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step27_gmx_cluster_config",
+      "@type": "FormalParameter",
+      "name": "step27_gmx_cluster_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step28_cpptraj_rms_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "step28_cpptraj_rms_output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step28_cpptraj_rms_config",
+      "@type": "FormalParameter",
+      "name": "step28_cpptraj_rms_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step29_pcz_zip_output_pcz_path",
+      "@type": "FormalParameter",
+      "name": "step29_pcz_zip_output_pcz_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step29_pcz_zip_config",
+      "@type": "FormalParameter",
+      "name": "step29_pcz_zip_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step30_pcz_zip_output_pcz_path",
+      "@type": "FormalParameter",
+      "name": "step30_pcz_zip_output_pcz_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step30_pcz_zip_config",
+      "@type": "FormalParameter",
+      "name": "step30_pcz_zip_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step31_pcz_info_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step31_pcz_info_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step32_pcz_evecs_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step32_pcz_evecs_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step32_pcz_evecs_config",
+      "@type": "FormalParameter",
+      "name": "step32_pcz_evecs_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step33_pcz_animate_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "step33_pcz_animate_output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step33_pcz_animate_config",
+      "@type": "FormalParameter",
+      "name": "step33_pcz_animate_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step34_cpptraj_convert_output_cpptraj_path",
+      "@type": "FormalParameter",
+      "name": "step34_cpptraj_convert_output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step34_cpptraj_convert_config",
+      "@type": "FormalParameter",
+      "name": "step34_cpptraj_convert_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_output_dat_path",
+      "@type": "FormalParameter",
+      "name": "step35_pcz_bfactor_output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "step35_pcz_bfactor_output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step35_pcz_bfactor_config",
+      "@type": "FormalParameter",
+      "name": "step35_pcz_bfactor_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step36_pcz_hinges_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step36_pcz_hinges_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step36_pcz_hinges_config",
+      "@type": "FormalParameter",
+      "name": "step36_pcz_hinges_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step37_pcz_hinges_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step37_pcz_hinges_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step37_pcz_hinges_config",
+      "@type": "FormalParameter",
+      "name": "step37_pcz_hinges_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step38_pcz_hinges_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step38_pcz_hinges_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step38_pcz_hinges_config",
+      "@type": "FormalParameter",
+      "name": "step38_pcz_hinges_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step39_pcz_stiffness_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step39_pcz_stiffness_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step39_pcz_stiffness_config",
+      "@type": "FormalParameter",
+      "name": "step39_pcz_stiffness_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step40_pcz_collectivity_output_json_path",
+      "@type": "FormalParameter",
+      "name": "step40_pcz_collectivity_output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-inputs-step40_pcz_collectivity_config",
+      "@type": "FormalParameter",
+      "name": "step40_pcz_collectivity_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step0_extract_model_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step1_extract_chain_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step2_cpptraj_mask_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step3_cpptraj_mask_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out2",
+      "@type": "FormalParameter",
+      "name": "output_gro_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step4_concoord_dist_out3",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out2",
+      "@type": "FormalParameter",
+      "name": "output_rmsd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step5_concoord_disco_out3",
+      "@type": "FormalParameter",
+      "name": "output_bfactor_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step6_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step7_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step8_prody_anm_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step9_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step10_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step11_bd_run_out1",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step11_bd_run_out2",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step12_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step12_cpptraj_rms_out2",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step13_dmd_run_out1",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step13_dmd_run_out2",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step14_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step14_cpptraj_rms_out2",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step15_nma_run_out1",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step15_nma_run_out2",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step16_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step17_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step18_nolb_nma_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step19_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step20_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step21_imod_imode_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step22_imod_imc_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step23_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step24_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step26_make_ndx_out1",
+      "@type": "FormalParameter",
+      "name": "output_ndx_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step27_gmx_cluster_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step28_cpptraj_rms_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step28_cpptraj_rms_out2",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step29_pcz_zip_out1",
+      "@type": "FormalParameter",
+      "name": "output_pcz_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step30_pcz_zip_out1",
+      "@type": "FormalParameter",
+      "name": "output_pcz_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step31_pcz_info_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step32_pcz_evecs_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step33_pcz_animate_out1",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step34_cpptraj_convert_out1",
+      "@type": "FormalParameter",
+      "name": "output_cpptraj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step35_pcz_bfactor_out1",
+      "@type": "FormalParameter",
+      "name": "output_dat_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step35_pcz_bfactor_out2",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step36_pcz_hinges_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step37_pcz_hinges_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step38_pcz_hinges_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step39_pcz_stiffness_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_conformational_ensembles_generation-outputs-step40_pcz_collectivity_out1",
+      "@type": "FormalParameter",
+      "name": "output_json_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

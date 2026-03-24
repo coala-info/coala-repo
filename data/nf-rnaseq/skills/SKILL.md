@@ -1,58 +1,56 @@
 ---
 name: rnaseq
-description: nf-core/rnaseq performs quality control, trimming, and (pseudo-)alignment of RNA sequencing data using a samplesheet of FASTQ or BAM files alongside a reference genome and GTF/GFF annotation. It generates gene and transcript expression matrices, normalized coverage tracks, and comprehensive QC reports through multiple quantification routes including STAR, Salmon, and RSEM. Use when analyzing transcriptomic data from organisms with available reference assemblies to obtain quantification and quality metrics. This pipeline does not perform statistical differential expression testing but provides the necessary matrices for downstream analysis.
+description: The pipeline processes RNA sequencing data from FASTQ or pre-aligned BAM files using a samplesheet to perform quality control, trimming, and quantification via multiple routes including STAR, Salmon, RSEM, or HISAT2. Use when analyzing transcriptomes of organisms with a reference genome and annotation to generate gene expression matrices and extensive QC reports, noting that it does not perform statistical differential expression testing.
 homepage: https://github.com/nf-core/rnaseq
 ---
 
 ## Overview
-The nf-core/rnaseq pipeline provides an end-to-end solution for processing raw RNA-seq data into quantified expression levels. It addresses the complexity of read cleaning, alignment to a reference genome, and transcript-level quantification while providing extensive quality metrics to ensure data integrity.
+nf-core/rnaseq is designed for the end-to-end analysis of RNA sequencing data, focusing on gene and transcript quantification and comprehensive quality control. It addresses the need for reproducible processing of raw reads into expression matrices suitable for downstream statistical analysis in environments like R or Julia.
 
-Users provide raw sequencing reads or pre-aligned BAM files, which the pipeline transforms into gene-level count matrices and genomic coverage files. These outputs serve as the foundation for downstream biological interpretation, such as differential gene expression or functional enrichment analysis.
+The workflow supports various alignment and pseudo-alignment strategies, including STAR, Salmon, RSEM, and HISAT2. It handles common tasks such as UMI deduplication, ribosomal RNA removal, and contamination screening, ultimately producing normalized data and a consolidated MultiQC report.
 
 ## Data preparation
-A CSV samplesheet is required to define input data. The file must include headers and columns for `sample`, `fastq_1`, and `strandedness`. Technical replicates with the same sample ID are merged automatically.
+Users must provide a CSV samplesheet and reference genome files (FASTA and GTF/GFF3). The samplesheet defines the experimental design, including technical replicates which are merged automatically if they share the same sample identifier.
 
-**Example samplesheet.csv**:
+**samplesheet.csv example:**
 ```csv
-sample,fastq_1,fastq_2,strandedness
-CONTROL_REP1,AEG588A1_R1.fastq.gz,AEG588A1_R2.fastq.gz,auto
-CONTROL_REP2,AEG588A2_R1.fastq.gz,AEG588A2_R2.fastq.gz,auto
+sample,fastq_1,fastq_2,strandedness,seq_platform
+CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz,auto,ILLUMINA
+CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz,auto,ILLUMINA
 ```
 
-**Constraints and References**:
-- **Strandedness**: Must be `forward`, `reverse`, `unstranded`, or `auto` (inferred via Salmon).
-- **Reference Files**: Requires `--fasta` (genome) and either `--gtf` or `--gff` (annotation).
-- **Indices**: If pre-built indices (e.g., `--star_index`, `--salmon_index`) are not provided, the pipeline will generate them.
-- **Prokaryotes**: Use `-profile prokaryotic` to handle CDS-based annotations and use splice-unaware alignment.
+*   **Required Columns:** `sample`, `fastq_1`, and `strandedness` (options: `auto`, `forward`, `reverse`, or `unstranded`).
+*   **Optional Columns:** `fastq_2` (for paired-end data), `seq_platform`, and `seq_center`.
+*   **Reference Files:** Mandatory `--fasta` and either `--gtf` or `--gff`. Pre-built indices for STAR, Salmon, RSEM, or HISAT2 can be provided via specific parameters to reduce processing time.
+*   **Constraints:** File paths must not contain spaces and must exist at the specified locations.
 
 ## How to run
-Run the pipeline using the `nextflow run` command. It is recommended to pin a specific version using `-r`.
+Execute the pipeline using the `nextflow run` command. It is recommended to use `-profile` to specify the execution environment and `-r` to pin a specific pipeline release.
 
 ```bash
 nextflow run nf-core/rnaseq \
     -r 3.14.0 \
-    -profile <docker/singularity/institute> \
+    -profile docker \
     --input samplesheet.csv \
     --outdir ./results \
     --fasta genome.fasta \
     --gtf genes.gtf
 ```
 
-**Common Parameters**:
-- `--aligner`: Choose between `star_salmon` (default), `star_rsem`, `hisat2`, or `bowtie2_salmon`.
-- `--pseudo_aligner`: Optionally run `salmon` or `kallisto` in addition to the main aligner.
-- `--remove_ribo_rna`: Enable rRNA removal using SortMeRNA or Bowtie2.
-- `-resume`: Restart a run from the last successful step.
+*   **Aligner Choice:** Use `--aligner` to select `star_salmon` (default), `star_rsem`, `hisat2`, or `bowtie2_salmon`.
+*   **UMI Support:** Enable UMI-based deduplication with `--with_umi`.
+*   **Prokaryotic Data:** Use `-profile prokaryotic` to enable settings tailored for bacterial or archaeal genomes.
+*   **Resuming:** Use the `-resume` flag to restart a run from the last successful step if it was interrupted.
 
 ## Outputs
-Results are saved to the directory specified by `--outdir`. 
+Results are saved to the directory specified by `--outdir`. The primary deliverables include:
 
-- **MultiQC Report**: Found in `multiqc/multiqc_report.html`, this is the primary file to inspect for a summary of all QC metrics.
-- **Quantification**: Gene and transcript-level count matrices are located in tool-specific folders (e.g., `star_salmon/` or `rsem/`).
-- **Alignments**: BAM files and indices are provided in the alignment subdirectories.
-- **Visualization**: BigWig coverage tracks are generated for genome browser visualization.
+*   **MultiQC Report:** A comprehensive summary of QC metrics from all stages (FastQC, STAR, Salmon, etc.), found in the `multiqc/` subfolder.
+*   **Quantification Results:** Gene and transcript-level expression matrices generated by Salmon, RSEM, or StringTie.
+*   **Alignments:** Sorted and indexed BAM files, along with bigWig coverage files for visualization.
+*   **QC Metrics:** Detailed reports from RSeQC, Qualimap, and dupRadar.
 
-For a detailed description of all output files, refer to the [official output documentation](https://nf-co.re/rnaseq/output).
+For a complete list of output files and their formats, refer to the official [output documentation](https://nf-co.re/rnaseq/output).
 
 ## References
 

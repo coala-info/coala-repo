@@ -1,0 +1,1 @@
+../../../../docker/scripts_python3/give_pathways.py

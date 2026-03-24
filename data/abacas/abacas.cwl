@@ -2,25 +2,30 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: abacas
 label: abacas
-doc: "Algorithm Based Automatic Contiguation of Assembled Sequences. Used for ordering
-  and orienting contigs against a reference genome.\n\nTool homepage: http://abacas.sourceforge.net/"
+doc: Algorithm Based Automatic Contiguation of Assembled Sequences
 inputs:
-  - id: append_bin_contigs
-    type:
-      - 'null'
-      - boolean
-    doc: append contigs in bin to the pseudomolecule
+  - id: reference_file
+    type: File
+    doc: reference sequence in a single fasta file
     inputBinding:
       position: 101
-      prefix: -a
-  - id: circular_reference
+      prefix: -r
+  - id: query_sequence_file
     type:
       - 'null'
-      - boolean
-    doc: Reference sequence is circular
+      - File
+    doc: contigs in multi-fasta format or pseudomolecule/ordered sequence file
     inputBinding:
       position: 101
-      prefix: -c
+      prefix: -q
+  - id: mummer_program
+    type:
+      - 'null'
+      - string
+    doc: "MUMmer program to use: 'nucmer' or 'promer'"
+    inputBinding:
+      position: 101
+      prefix: -p
   - id: escape_ordering
     type:
       - 'null'
@@ -29,51 +34,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -e
-  - id: flanking_bases
+  - id: use_default_parameters
     type:
       - 'null'
-      - int
-    doc: number of flanking bases on either side of a gap for primer design
-    default: 350
+      - boolean
+    doc: use default nucmer/promer parameters
     inputBinding:
       position: 101
-      prefix: -f
-  - id: min_contig_length
-    type:
-      - 'null'
-      - int
-    doc: minimum contig length
-    default: 1
-    inputBinding:
-      position: 101
-      prefix: -l
-  - id: min_coverage
-    type:
-      - 'null'
-      - int
-    doc: mimimum contig coverage
-    default: 40
-    inputBinding:
-      position: 101
-      prefix: -v
-  - id: min_coverage_diff
-    type:
-      - 'null'
-      - int
-    doc: minimum contig coverage difference
-    default: 1
-    inputBinding:
-      position: 101
-      prefix: -V
-  - id: min_identity
-    type:
-      - 'null'
-      - int
-    doc: mimimum percent identity
-    default: 40
-    inputBinding:
-      position: 101
-      prefix: -i
+      prefix: -d
   - id: min_match_length
     type:
       - 'null'
@@ -83,38 +51,14 @@ inputs:
     inputBinding:
       position: 101
       prefix: -s
-  - id: mummer_program
-    type:
-      - 'null'
-      - string
-    doc: "MUMmer program to use: 'nucmer' or 'promer'"
-    inputBinding:
-      position: 101
-      prefix: -p
-  - id: no_n_pseudomolecule
+  - id: print_ordered_multifasta
     type:
       - 'null'
       - boolean
-    doc: print a pseudomolecule without 'N's
+    doc: print ordered contigs to file in multifasta format
     inputBinding:
       position: 101
-      prefix: -N
-  - id: output_prefix
-    type:
-      - 'null'
-      - string
-    doc: output files will have this prefix
-    inputBinding:
-      position: 101
-      prefix: -o
-  - id: pick_primers
-    type:
-      - 'null'
-      - boolean
-    doc: pick primer sets to close gaps
-    inputBinding:
-      position: 101
-      prefix: -P
+      prefix: -m
   - id: print_bin_contigs
     type:
       - 'null'
@@ -123,35 +67,46 @@ inputs:
     inputBinding:
       position: 101
       prefix: -b
-  - id: print_ordered_contigs
+  - id: no_n_pseudomolecule
     type:
       - 'null'
       - boolean
-    doc: print ordered contigs to file in multifasta format
+    doc: print a pseudomolecule without 'N's
     inputBinding:
       position: 101
-      prefix: -m
-  - id: query_file
-    type: File
-    doc: contigs in multi-fasta format or pseudomolecule/ordered sequence file
-    inputBinding:
-      position: 101
-      prefix: -q
-  - id: reference_file
-    type: File
-    doc: reference sequence in a single fasta file
-    inputBinding:
-      position: 101
-      prefix: -r
-  - id: run_mummer
+      prefix: -N
+  - id: min_percent_identity
     type:
       - 'null'
       - int
-    doc: Run mummer [default 1, use -R 0 to avoid running mummer]
-    default: 1
+    doc: mimimum percent identity
     inputBinding:
       position: 101
-      prefix: -R
+      prefix: -i
+  - id: min_contig_coverage
+    type:
+      - 'null'
+      - int
+    doc: mimimum contig coverage
+    inputBinding:
+      position: 101
+      prefix: -v
+  - id: min_contig_coverage_diff
+    type:
+      - 'null'
+      - int
+    doc: minimum contig coverage difference
+    inputBinding:
+      position: 101
+      prefix: -V
+  - id: min_contig_length
+    type:
+      - 'null'
+      - int
+    doc: minimum contig length
+    inputBinding:
+      position: 101
+      prefix: -l
   - id: run_tblastx
     type:
       - 'null'
@@ -160,22 +115,73 @@ inputs:
     inputBinding:
       position: 101
       prefix: -t
-  - id: use_defaults
+  - id: uncovered_regions_file
+    type: string
+    doc: print uncovered regions (gaps) on reference to file name
+    inputBinding:
+      position: 101
+      prefix: -g
+  - id: append_bin_contigs
     type:
       - 'null'
       - boolean
-    doc: use default nucmer/promer parameters
+    doc: append contigs in bin to the pseudomolecule
     inputBinding:
       position: 101
-      prefix: -d
+      prefix: -a
+  - id: output_prefix
+    type:
+      - 'null'
+      - string
+    doc: output files will have this prefix
+    inputBinding:
+      position: 101
+      prefix: -o
+  - id: pick_primer_sets
+    type:
+      - 'null'
+      - boolean
+    doc: pick primer sets to close gaps
+    inputBinding:
+      position: 101
+      prefix: -P
+  - id: flanking_bases
+    type:
+      - 'null'
+      - int
+    doc: number of flanking bases on either side of a gap for primer design
+    inputBinding:
+      position: 101
+      prefix: -f
+  - id: run_mummer
+    type:
+      - 'null'
+      - int
+    doc: Run mummer [default 1, use -R 0 to avoid running mummer]
+    inputBinding:
+      position: 101
+      prefix: -R
+  - id: circular_reference
+    type:
+      - 'null'
+      - boolean
+    doc: Reference sequence is circular
+    inputBinding:
+      position: 101
+      prefix: -c
 outputs:
-  - id: gap_file
+  - id: output_uncovered_regions_file
     type:
       - 'null'
       - File
     doc: print uncovered regions (gaps) on reference to file name
     outputBinding:
-      glob: $(inputs.gap_file)
+      glob: $(inputs.uncovered_regions_file)
+requirements:
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: biocontainers/abacas:v1.3.1-5-deb_cv1
+s:url: http://abacas.sourceforge.net/
+$namespaces:
+  s: https://schema.org/

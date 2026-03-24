@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ML phylogenetic reconstruction</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ML_phylogenetic_reconstruction.ga"
+      },
+      "datePublished": "2022-06-06 15:09:23 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/359?version=1",
+      "url": "https://workflowhub.eu/workflows/359/ro_crate?version=1",
+      "name": "Research Object Crate for ML phylogenetic reconstruction",
+      "description": "Phylogenetic reconstruction using genome-wide and single-gene alignment data. Here we use maximum likelihood reconstruction program IQTree. \nData can be prepared using the [phylogenetic data preparation workflow](http://workflowhub.eu/workflows/358) prior to phylogenetic reconstruction.\nResulting trees can be viewed interactively using Galaxy's 'Phyloviz' or 'Phylogenetic Tree Visualization'",
+      "sdDatePublished": "2026-03-24 18:03:09 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ML_phylogenetic_reconstruction.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ML_phylogenetic_reconstruction.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 21956,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Phylogenetic reconstruction using genome-wide and single-gene alignment data. Here we use maximum likelihood reconstruction program IQTree. \nData can be prepared using the [phylogenetic data preparation workflow](http://workflowhub.eu/workflows/358) prior to phylogenetic reconstruction.\nResulting trees can be viewed interactively using Galaxy's 'Phyloviz' or 'Phylogenetic Tree Visualization'",
+      "name": "ML phylogenetic reconstruction",
+      "url": "https://workflowhub.eu/workflows/359?version=1",
+      "keywords": "phylogenetics, phylogenomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "#Miguel%20Roncoroni"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/97"
+      },
+      "dateCreated": "2022-06-06T14:14:25Z",
+      "dateModified": "2023-02-13T14:06:44Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#ml_phylogenetic_reconstruction-inputs-Input%20alignment%20collection"
+      },
+      "output": [
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-Trimmed%20alignment."
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-Output%20tree%20file"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-Astral%20log."
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-An%20occupancy%20file%20that%20summarizes%20the%20taxon%20occupancy%20per%20sequence"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-Concatenated%20fasta%20alignment%20file"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-A%20partition%20file%20ready%20for%20input%20into%20RAxML%20or%20IQ-tree"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20BIONJ%20Tree"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20MaxLikelihood%20Tree"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20Consensus%20Tree"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20MaxLikelihood%20Distance%20Matrix"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20Report%20and%20Final%20Tree"
+        },
+        {
+          "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE%20on%20input%20dataset(s):%20Occurence%20Frequencies%20in%20Bootstrap%20Trees"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Miguel Roncoroni"
+    },
+    {
+      "@id": "#Miguel Roncoroni",
+      "@type": "Person",
+      "name": "Miguel Roncoroni"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/97",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy.be workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-inputs-Input alignment collection",
+      "@type": "FormalParameter",
+      "name": "Input alignment collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-Trimmed alignment.",
+      "@type": "FormalParameter",
+      "name": "Trimmed alignment.",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-Output tree file",
+      "@type": "FormalParameter",
+      "name": "Output tree file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-Astral log.",
+      "@type": "FormalParameter",
+      "name": "Astral log.",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-An occupancy file that summarizes the taxon occupancy per sequence",
+      "@type": "FormalParameter",
+      "name": "An occupancy file that summarizes the taxon occupancy per sequence",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-Concatenated fasta alignment file",
+      "@type": "FormalParameter",
+      "name": "Concatenated fasta alignment file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-A partition file ready for input into RAxML or IQ-tree",
+      "@type": "FormalParameter",
+      "name": "A partition file ready for input into RAxML or IQ-tree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): BIONJ Tree",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): BIONJ Tree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): MaxLikelihood Tree",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): MaxLikelihood Tree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): Consensus Tree",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): Consensus Tree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): MaxLikelihood Distance Matrix",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): MaxLikelihood Distance Matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): Report and Final Tree",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): Report and Final Tree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ml_phylogenetic_reconstruction-outputs-IQ-TREE on input dataset(s): Occurence Frequencies in Bootstrap Trees",
+      "@type": "FormalParameter",
+      "name": "IQ-TREE on input dataset(s): Occurence Frequencies in Bootstrap Trees",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ML phylogenetic reconstruction</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/359/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/359/ro_crate?version=1</a>
+
+
+<p>
+  Phylogenetic reconstruction using genome-wide and single-gene alignment data. Here we use maximum likelihood reconstruction program IQTree. 
+Data can be prepared using the [phylogenetic data preparation workflow](http://workflowhub.eu/workflows/358) prior to phylogenetic reconstruction.
+Resulting trees can be viewed interactively using Galaxy's 'Phyloviz' or 'Phylogenetic Tree Visualization'
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Miguel Roncoroni</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ML_phylogenetic_reconstruction.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ML_phylogenetic_reconstruction.ga">ML phylogenetic reconstruction</a>
+      
+        <br/>Size: 21956 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

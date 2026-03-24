@@ -1,0 +1,1269 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0000-0001-6553-5274",
+            "name": "Peter van Heusden"
+        },
+        {
+            "class": "Person",
+            "identifier": "0000-0001-7390-1094",
+            "name": "Bradley W. Langhorst"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "SARS-CoV-2 Illumina Amplicon pipeline - SANBI - v1.2",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Paired read collection for samples"
+                }
+            ],
+            "label": "Paired read collection for samples",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 39.975020939493504
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list:paired\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "156b5479-dfed-4995-bbf2-b5dc3684ae12",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reference FASTA"
+                }
+            ],
+            "label": "Reference FASTA",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 31.64996337890625,
+                "top": 280.6624904219154
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "5f146264-40ed-47ed-b091-958b395c0ab0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Primer BED"
+                }
+            ],
+            "label": "Primer BED",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 30.36248779296875,
+                "top": 434.60005145707163
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"bed\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "796841c2-87bc-4987-a591-e8e568f5b1f8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Read fraction to call variant"
+                }
+            ],
+            "label": "Read fraction to call variant",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 323.53902876519095,
+                "top": 653.5890482584635
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 0.7, \"parameter_type\": \"float\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "73d88118-c4a4-4afe-9666-604896220f85",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Minimum quality score to call base"
+                }
+            ],
+            "label": "Minimum quality score to call base",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 318.56246626519095,
+                "top": 819.6281107584635
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 20, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "5304b4d2-d801-4475-9b69-68f8726b369f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Max Viz. Coverage Threshold"
+                }
+            ],
+            "label": "Max Viz. Coverage Threshold",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1827.101528765191,
+                "top": 1424.8468607584637
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 0, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "00be5034-a5e7-4b1f-8886-8e3062b19252",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/read_it_and_keep/read_it_and_keep/0.2.2+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "reads|paired_reads": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "ref_source|ref_fasta": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Read It and Keep",
+            "outputs": [
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 356.8374938964844,
+                "top": 60.31246905961069
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_collection": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_collection"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/read_it_and_keep/read_it_and_keep/0.2.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "1563b58905f4",
+                "name": "read_it_and_keep",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"min_map_length\": \"50\", \"min_map_length_pc\": \"50.0\", \"enumerate_names\": false}, \"reads\": {\"read_type\": \"paired_collection\", \"__current_case__\": 1, \"paired_reads\": {\"__class__\": \"ConnectedValue\"}}, \"ref_source\": {\"source\": \"history\", \"__current_case__\": 0, \"ref_fasta\": {\"__class__\": \"ConnectedValue\"}}, \"sequencing_tech\": \"illumina\", \"trim_reference\": true, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.2+galaxy0",
+            "type": "tool",
+            "uuid": "93b00397-4df7-47a6-bbd5-17a1fed8ea7a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "infile": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Rename reference to NC_045512.2",
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 572.499966265191,
+                "top": 327.15154825846355
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"code\": \"/^>/s/^>.*/>NC_045512.2/\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "fd1b77bc-6d2e-4dfe-bfdf-9a4c5d676e94",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "infile": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "rename bed entries to NC_045512.2",
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 570.546841265191,
+                "top": 461.08123575846355
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"code\": \"s/MN908947.3/NC_045512.2/\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "6789e421-dac2-410f-a70c-4eb385237333",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/compose_text_param/compose_text_param/0.1.1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "components_1|param_type|component_value": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "components_3|param_type|component_value": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Compose text parameter value",
+            "outputs": [
+                {
+                    "name": "out1",
+                    "type": "expression.json"
+                }
+            ],
+            "position": {
+                "left": 2099.664028765191,
+                "top": 1377.9796732584637
+            },
+            "post_job_actions": {
+                "HideDatasetActionout1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/compose_text_param/compose_text_param/0.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "e188c9826e0f",
+                "name": "compose_text_param",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"components\": [{\"__index__\": 0, \"param_type\": {\"select_param_type\": \"text\", \"__current_case__\": 0, \"component_value\": \"{FS = \\\"\\\\t\\\"; OFS=\\\"\\\\t\\\"; tcov=($5 >\"}}, {\"__index__\": 1, \"param_type\": {\"select_param_type\": \"integer\", \"__current_case__\": 1, \"component_value\": {\"__class__\": \"ConnectedValue\"}}}, {\"__index__\": 2, \"param_type\": {\"select_param_type\": \"text\", \"__current_case__\": 0, \"component_value\": \"  ? \"}}, {\"__index__\": 3, \"param_type\": {\"select_param_type\": \"integer\", \"__current_case__\": 1, \"component_value\": {\"__class__\": \"ConnectedValue\"}}}, {\"__index__\": 4, \"param_type\": {\"select_param_type\": \"text\", \"__current_case__\": 0, \"component_value\": \" : $5); print $1,$2,$3,$4,tcov}\"}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.1",
+            "type": "tool",
+            "uuid": "0cfaf3e1-bc21-479d-bf24-b83aced6c5c8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "single_paired|paired_input": {
+                    "id": 6,
+                    "output_name": "output_collection"
+                }
+            },
+            "inputs": [],
+            "label": "fastp: Trimmed Illumina Reads",
+            "name": "fastp",
+            "outputs": [
+                {
+                    "name": "output_paired_coll",
+                    "type": "input"
+                },
+                {
+                    "name": "report_html",
+                    "type": "html"
+                },
+                {
+                    "name": "report_json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 670.0624866102431,
+                "top": 14.712493896484375
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_paired_coll": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_paired_coll"
+                },
+                "HideDatasetActionreport_html": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report_html"
+                },
+                "HideDatasetActionreport_json": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report_json"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "dbf9c561ef29",
+                "name": "fastp",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__current_case__\": 0, \"__job_resource__select\": \"no\"}, \"filter_options\": {\"quality_filtering_options\": {\"disable_quality_filtering\": false, \"qualified_quality_phred\": null, \"unqualified_percent_limit\": null, \"n_base_limit\": null}, \"length_filtering_options\": {\"disable_length_filtering\": false, \"length_required\": null, \"length_limit\": null}, \"low_complexity_filter\": {\"enable_low_complexity_filter\": false, \"complexity_threshold\": null}}, \"output_options\": {\"report_html\": true, \"report_json\": true}, \"overrepresented_sequence_analysis\": {\"overrepresentation_analysis\": false, \"overrepresentation_sampling\": null}, \"read_mod_options\": {\"polyg_tail_trimming\": {\"trimming_select\": \"\", \"__current_case__\": 1, \"poly_g_min_len\": null}, \"polyx_tail_trimming\": {\"polyx_trimming_select\": \"\", \"__current_case__\": 1}, \"umi_processing\": {\"umi\": false, \"umi_loc\": \"\", \"umi_len\": null, \"umi_prefix\": \"\"}, \"cutting_by_quality_options\": {\"cut_by_quality5\": false, \"cut_by_quality3\": false, \"cut_window_size\": null, \"cut_mean_quality\": null}, \"base_correction_options\": {\"correction\": false}}, \"single_paired\": {\"single_paired_selector\": \"paired_collection\", \"__current_case__\": 2, \"paired_input\": {\"__class__\": \"ConnectedValue\"}, \"adapter_trimming_options\": {\"disable_adapter_trimming\": false, \"adapter_sequence1\": \"\", \"adapter_sequence2\": \"\"}, \"global_trimming_options\": {\"trim_front1\": null, \"trim_tail1\": null, \"trim_front2\": null, \"trim_tail2\": null}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.20.1+galaxy0",
+            "type": "tool",
+            "uuid": "b4535ab6-6893-48cf-959f-4d05de3d9361",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bbtools_bbmap/bbtools_bbmap/1.0.0+galaxy4",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input_type_cond|reads_collection": {
+                    "id": 10,
+                    "output_name": "output_paired_coll"
+                },
+                "ref_source_cond|reference": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "BBTools: BBMap",
+            "outputs": [
+                {
+                    "name": "output_all_reads",
+                    "type": "bam"
+                },
+                {
+                    "name": "output_unmapped_reads",
+                    "type": "bam"
+                },
+                {
+                    "name": "output_mapped_reads",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 959.6249866102432,
+                "top": 137.22500610351562
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_all_reads": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_all_reads"
+                },
+                "HideDatasetActionoutput_mapped_reads": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_mapped_reads"
+                },
+                "HideDatasetActionoutput_unmapped_reads": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_unmapped_reads"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bbtools_bbmap/bbtools_bbmap/1.0.0+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "858a65b52cf9",
+                "name": "bbtools_bbmap",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_type_cond\": {\"input_type\": \"paired\", \"__current_case__\": 2, \"reads_collection\": {\"__class__\": \"ConnectedValue\"}}, \"mapping_options\": {\"maxindel\": \"500\", \"strictmaxindel\": false, \"tipsearch\": \"100\", \"minid\": \"0.76\", \"minhits\": \"1\", \"local\": false, \"perfectmode\": false, \"semiperfectmode\": false, \"ambiguous\": \"best\", \"samestrandpairs\": false, \"requirecorrectstrand\": true, \"killbadpairs\": false, \"pairedonly\": false, \"rcomp\": false, \"rcompmate\": false, \"pairlen\": \"32000\", \"rescuedist\": \"1200\", \"rescuemismatches\": \"32\", \"averagepairdist\": \"100\", \"deterministic\": false, \"bandwidthratio\": \"0\", \"bandwidth\": \"0\", \"maxsites2\": \"800\", \"ignorefrequentkmers\": true, \"excludefraction\": \"0.03\", \"greedy\": true, \"kfilter\": \"0\"}, \"output_options\": {\"secondary\": false, \"maxsites\": \"5\", \"sssr\": \"0.95\", \"ssao\": false, \"quickmatch\": false, \"trimreaddescriptions\": false, \"machineout\": false, \"printunmappedcount\": false, \"renamebyinsert\": false, \"output_sort\": \"coordinate\"}, \"pf_options\": {\"idfilter\": \"0\", \"subfilter\": \"-1\", \"insfilter\": \"-1\", \"delfilter\": \"-1\", \"indelfilter\": \"-1\", \"editfilter\": \"-1\", \"inslenfilter\": \"-1\", \"dellenfilter\": \"500\", \"nfilter\": \"-1\"}, \"qt_options\": {\"qtrim\": \"f\", \"untrim\": false, \"trimq\": \"6\", \"mintrimlength\": \"60\", \"fakefastaquality\": \"-1\", \"ignorebadquality\": false, \"usequality\": true, \"minaveragequality\": \"0\", \"maqb\": \"0\"}, \"ref_source_cond\": {\"ref_source\": \"history\", \"__current_case__\": 1, \"reference\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0+galaxy4",
+            "type": "tool",
+            "uuid": "fde21476-19a8-4940-bbba-6830c2a6d3f1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.2+galaxy2",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 11,
+                    "output_name": "output_all_reads"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Samtools stats",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1247.874925575087,
+                "top": 0
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.2+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "145f6d74ff5e",
+                "name": "samtools_stats",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"addref_cond\": {\"addref_select\": \"no\", \"__current_case__\": 0}, \"cond_region\": {\"select_region\": \"no\", \"__current_case__\": 0}, \"cov_threshold\": null, \"coverage_cond\": {\"coverage_select\": \"no\", \"__current_case__\": 0}, \"filter_by_flags\": {\"filter_flags\": \"nofilter\", \"__current_case__\": 1}, \"gc_depth\": null, \"input\": {\"__class__\": \"ConnectedValue\"}, \"insert_size\": null, \"most_inserts\": null, \"read_length\": null, \"remove_dups\": false, \"remove_overlaps\": false, \"sparse\": false, \"split_output_cond\": {\"split_output_selector\": \"no\", \"__current_case__\": 0}, \"trim_quality\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.2+galaxy2",
+            "type": "tool",
+            "uuid": "35f91e73-6b22-4bee-b508-af4cbb8036f2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.9+galaxy3",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input": {
+                    "id": 11,
+                    "output_name": "output_all_reads"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Samtools view",
+            "outputs": [
+                {
+                    "name": "outputsam",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1239.7123889539932,
+                "top": 308.4500427246094
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutputsam": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outputsam"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.9+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "b72793637686",
+                "name": "samtools_view",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"addref_cond\": {\"addref_select\": \"no\", \"__current_case__\": 0}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"mode\": {\"outtype\": \"selected_reads\", \"__current_case__\": 1, \"filter_config\": {\"cond_region\": {\"select_region\": \"no\", \"__current_case__\": 0}, \"cond_rg\": {\"select_rg\": \"no\", \"__current_case__\": 0}, \"quality\": \"20\", \"library\": \"\", \"cigarcons\": null, \"inclusive_filter\": [\"1\", \"2\"], \"exclusive_filter\": null, \"exclusive_filter_all\": null}, \"subsample_config\": {\"subsampling_mode\": {\"select_subsample\": \"fraction\", \"__current_case__\": 0, \"factor\": \"1.0\", \"seed\": null}}, \"output_options\": {\"reads_report_type\": \"retained\", \"__current_case__\": 0, \"complementary_output\": false, \"adv_output\": {\"readtags\": [], \"collapsecigar\": false}, \"output_format\": {\"oformat\": \"bam\", \"__current_case__\": 2}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9+galaxy3",
+            "type": "tool",
+            "uuid": "b12e740c-a9eb-4dec-9a9a-07b17d0de5cf",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/qualimap_bamqc/2.2.2d+galaxy3",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input1": {
+                    "id": 13,
+                    "output_name": "outputsam"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "QualiMap BamQC",
+            "outputs": [
+                {
+                    "name": "raw_data",
+                    "type": "input"
+                },
+                {
+                    "name": "output_html",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 1470.437482541233,
+                "top": 182.25000813802083
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_html": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_html"
+                },
+                "HideDatasetActionraw_data": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "raw_data"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/qualimap_bamqc/qualimap_bamqc/2.2.2d+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "19ece8afbaab",
+                "name": "qualimap_bamqc",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__current_case__\": 0, \"__job_resource__select\": \"no\"}, \"duplicate_skipping\": [\"0\"], \"input1\": {\"__class__\": \"ConnectedValue\"}, \"per_base_coverage\": false, \"plot_specific\": {\"n_bins\": \"400\", \"paint_chromosome_limits\": true, \"genome_gc_distr\": null, \"homopolymer_size\": \"3\"}, \"stats_regions\": {\"region_select\": \"all\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.2.2d+galaxy3",
+            "type": "tool",
+            "uuid": "bf959a89-9f94-4a57-ab53-d5d45df17dfb",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_ampliconclip/samtools_ampliconclip/1.13",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input_bam": {
+                    "id": 13,
+                    "output_name": "outputsam"
+                },
+                "input_bed": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Final Processed BAM files",
+            "name": "Samtools ampliconclip",
+            "outputs": [
+                {
+                    "name": "output_bam",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 1546.062466541894,
+                "top": 462.66248780235384
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput_bam": {
+                    "action_arguments": {
+                        "newname": "Primer Trimmed BAM"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_bam"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_ampliconclip/samtools_ampliconclip/1.13",
+            "tool_shed_repository": {
+                "changeset_revision": "a941babb9268",
+                "name": "samtools_ampliconclip",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"both_ends\": true, \"hard_clip_mode\": false, \"input_bam\": {\"__class__\": \"ConnectedValue\"}, \"input_bed\": {\"__class__\": \"ConnectedValue\"}, \"min_length\": \"30\", \"no_excluded\": true, \"strand\": false, \"tolerance\": \"5\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.13",
+            "type": "tool",
+            "uuid": "3ea59c42-ad1e-4eb7-8d3a-bc2b2ff682b8",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "primer_trimmed_bam",
+                    "output_name": "output_bam",
+                    "uuid": "b4595373-fceb-4e12-869f-5bf2f029cc93"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "__FLATTEN__",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "input": {
+                    "id": 14,
+                    "output_name": "raw_data"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Flatten collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1732.374982541233,
+                "top": 229.31250813802083
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__FLATTEN__",
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"join_identifier\": \"_\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "c2bb0955-9fc6-493e-afc5-9f69ebc32068",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.3.1+galaxy2",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "input_bam": {
+                    "id": 15,
+                    "output_name": "output_bam"
+                },
+                "min_freq": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "min_qual": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "ref": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ivar variants",
+            "outputs": [
+                {
+                    "name": "output_variants_tabular",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_variants_vcf",
+                    "type": "vcf"
+                }
+            ],
+            "position": {
+                "left": 1843.8124866102444,
+                "top": 434.6874918619799
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_variants_vcf": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_variants_vcf"
+                },
+                "RenameDatasetActionoutput_variants_tabular": {
+                    "action_arguments": {
+                        "newname": "ivar variants tabular output on #{input}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_variants_tabular"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.3.1+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "584beffa972b",
+                "name": "ivar_variants",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_bam\": {\"__class__\": \"ConnectedValue\"}, \"min_freq\": {\"__class__\": \"ConnectedValue\"}, \"min_qual\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": {\"choice\": \"tabular_and_vcf\", \"__current_case__\": 1, \"pass_only\": false}, \"ref\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.1+galaxy2",
+            "type": "tool",
+            "uuid": "05e04979-9218-4d4f-a44e-cd7d00be6a91",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "ivar_variants_tabular",
+                    "output_name": "output_variants_tabular",
+                    "uuid": "83f54816-b7a8-4aaa-b730-52e12b4333b2"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.3.1+galaxy0",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "input_bam": {
+                    "id": 15,
+                    "output_name": "output_bam"
+                },
+                "min_freq": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "min_qual": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ivar consensus",
+            "outputs": [
+                {
+                    "name": "consensus",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 1885.2124301553074,
+                "top": 785.6124789428717
+            },
+            "post_job_actions": {
+                "HideDatasetActionconsensus": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "consensus"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.3.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "e319b5b65879",
+                "name": "ivar_consensus",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter_depth\": false, \"gap\": true, \"input_bam\": {\"__class__\": \"ConnectedValue\"}, \"min_depth\": \"50\", \"min_freq\": {\"__class__\": \"ConnectedValue\"}, \"min_qual\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.3.1+galaxy0",
+            "type": "tool",
+            "uuid": "4936bead-add3-467d-9148-bb2454f75822",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/deeptools_bam_coverage/3.5.1.0.0",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "bamInput": {
+                    "id": 15,
+                    "output_name": "output_bam"
+                }
+            },
+            "inputs": [],
+            "label": "coverage",
+            "name": "bamCoverage",
+            "outputs": [
+                {
+                    "name": "outFileName",
+                    "type": "bigwig"
+                }
+            ],
+            "position": {
+                "left": 1887.5874789834313,
+                "top": 1088.512572937012
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutFileName": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "outFileName"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/deeptools_bam_coverage/deeptools_bam_coverage/3.5.1.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "12af64f93288",
+                "name": "deeptools_bam_coverage",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__job_resource\": {\"__current_case__\": 0, \"__job_resource__select\": \"no\"}, \"advancedOpt\": {\"showAdvancedOpt\": \"no\", \"__current_case__\": 0}, \"bamInput\": {\"__class__\": \"ConnectedValue\"}, \"binSize\": \"20\", \"exactScaling\": false, \"outFileFormat\": \"bedgraph\", \"region\": \"\", \"scaling\": {\"type\": \"no\", \"__current_case__\": 3}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.5.1.0.0",
+            "type": "tool",
+            "uuid": "877307ec-8073-4ef8-9e23-bbf196eb54cd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "results_0|software_cond|input": {
+                    "id": 10,
+                    "output_name": "report_json"
+                },
+                "results_1|software_cond|output_0|type|input": {
+                    "id": 12,
+                    "output_name": "output"
+                },
+                "results_2|software_cond|input": {
+                    "id": 16,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Quality Control Report",
+            "name": "MultiQC",
+            "outputs": [
+                {
+                    "name": "stats",
+                    "type": "input"
+                },
+                {
+                    "name": "html_report",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 1959.976528765191,
+                "top": 115.29998575846355
+            },
+            "post_job_actions": {
+                "HideDatasetActionstats": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "stats"
+                },
+                "RenameDatasetActionhtml_report": {
+                    "action_arguments": {
+                        "newname": "Quality Control report"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "html_report"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/multiqc/multiqc/1.11+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "9a913cdee30e",
+                "name": "multiqc",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"comment\": \"\", \"export\": false, \"flat\": false, \"results\": [{\"__index__\": 0, \"software_cond\": {\"software\": \"fastp\", \"__current_case__\": 7, \"input\": {\"__class__\": \"ConnectedValue\"}}}, {\"__index__\": 1, \"software_cond\": {\"software\": \"samtools\", \"__current_case__\": 24, \"output\": [{\"__index__\": 0, \"type\": {\"type\": \"stats\", \"__current_case__\": 0, \"input\": {\"__class__\": \"ConnectedValue\"}}}]}}, {\"__index__\": 2, \"software_cond\": {\"software\": \"qualimap\", \"__current_case__\": 20, \"input\": {\"__class__\": \"ConnectedValue\"}}}], \"saveLog\": false, \"title\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.11+galaxy0",
+            "type": "tool",
+            "uuid": "234c9c7b-0d54-42dc-9939-29e71a478628",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "bamqc_report_html",
+                    "output_name": "html_report",
+                    "uuid": "0cbca76e-791d-4515-baac-faa635ed79e6"
+                }
+            ]
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snpeff_sars_cov_2/snpeff_sars_cov_2/4.5covid19",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "input": {
+                    "id": 17,
+                    "output_name": "output_variants_vcf"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnpEff eff:",
+                    "name": "intervals"
+                },
+                {
+                    "description": "runtime parameter for tool SnpEff eff:",
+                    "name": "transcripts"
+                }
+            ],
+            "label": "Annotated variants",
+            "name": "SnpEff eff:",
+            "outputs": [
+                {
+                    "name": "snpeff_output",
+                    "type": "vcf"
+                },
+                {
+                    "name": "statsFile",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 2426.4750012923905,
+                "top": 470.38749344609437
+            },
+            "post_job_actions": {
+                "HideDatasetActionstatsFile": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "statsFile"
+                },
+                "RenameDatasetActionsnpeff_output": {
+                    "action_arguments": {
+                        "newname": "Annotated variants"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "snpeff_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snpeff_sars_cov_2/snpeff_sars_cov_2/4.5covid19",
+            "tool_shed_repository": {
+                "changeset_revision": "2a3a00c1fa0a",
+                "name": "snpeff_sars_cov_2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"annotations\": null, \"chr\": \"\", \"csvStats\": false, \"filter\": {\"specificEffects\": \"no\", \"__current_case__\": 0}, \"filterOut\": null, \"generate_stats\": true, \"genome_version\": \"NC_045512.2\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"inputFormat\": \"vcf\", \"intervals\": {\"__class__\": \"RuntimeValue\"}, \"noLog\": true, \"offset\": \"default\", \"outputConditional\": {\"outputFormat\": \"vcf\", \"__current_case__\": 0}, \"transcripts\": {\"__class__\": \"RuntimeValue\"}, \"udLength\": \"0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.5covid19",
+            "type": "tool",
+            "uuid": "938e64d9-339e-482d-9d34-2dbadcbfbe6c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "snpeff_annotated_vcf",
+                    "output_name": "snpeff_output",
+                    "uuid": "78240506-b921-4b10-93cb-55e7cb1a9986"
+                }
+            ]
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "infile": {
+                    "id": 18,
+                    "output_name": "consensus"
+                }
+            },
+            "inputs": [],
+            "label": "Consensus genome (masked for depth)",
+            "name": "Text transformation",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2136.762417948276,
+                "top": 860.4249789428717
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput": {
+                    "action_arguments": {
+                        "newname": "Consensus genome"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_sed_tool/1.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"code\": \"/^>/s/Consensus_(.*)_threshold_.*/\\\\1/\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "c22fee55-3633-45a2-b332-00cf24d3d1ca",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "ivar_consensus_genome",
+                    "output_name": "output",
+                    "uuid": "7ddd176e-6dc1-46b2-b794-7943aea3cea2"
+                }
+            ]
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "input_list": {
+                    "id": 19,
+                    "output_name": "outFileName"
+                }
+            },
+            "inputs": [],
+            "label": "combined_coverage",
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2190.984341265191,
+                "top": 1181.3390482584637
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": true, \"__current_case__\": 0, \"place_name\": \"same_multiple\"}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "b70aec46-424d-4fb4-a77d-ffc93dafb06e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "combined_coverage",
+                    "output_name": "output",
+                    "uuid": "85913443-0dc7-4b7f-93a1-51fa43438689"
+                }
+            ]
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/0.1.1",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "inputs": {
+                    "id": 22,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Concatenate datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2422.2749081826496,
+                "top": 947.987540384929
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "Combined Consensus genomes"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cat/0.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "d698c222f354",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"inputs\": {\"__class__\": \"ConnectedValue\"}, \"queries\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.1",
+            "type": "tool",
+            "uuid": "d067862b-a203-4892-a185-52a001c2bda5",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "combined_multifasta",
+                    "output_name": "out_file1",
+                    "uuid": "d12ee549-517a-4e46-81db-ee8b352ef37f"
+                }
+            ]
+        },
+        "25": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "code": {
+                    "id": 9,
+                    "output_name": "out1"
+                },
+                "infile": {
+                    "id": 23,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "threshold coverage",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2458.093716265191,
+                "top": 1266.5421732584637
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "threshold coverage"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": {\"__class__\": \"ConnectedValue\"}, \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "fc1553f5-f8f9-4a2e-a95a-481a520fe7c5",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "97485d3f-3d83-43b0-880d-323a542d1886"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "COVID-19",
+        "ARTIC",
+        "iwc"
+    ],
+    "uuid": "18998e17-fae2-4ec9-8a0c-44477b043c0b",
+    "version": 7
+}

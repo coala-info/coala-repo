@@ -1,0 +1,262 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "A workflow to show how material from DaSch can be processed in Galaxy.\nThe example used is a optical character recognition of a German newspaper from DaSch which will be made machine-readable, cleaned, stripped of punctuation and visualised in a Wordcloud.",
+    "comments": [],
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": " 0000-0002-1281-9609",
+            "name": "Johannes Nussbaum"
+        },
+        {
+            "class": "Person",
+            "identifier": "0000-0001-9536-5587",
+            "name": "Daniela Schneider"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "CC-BY-4.0",
+    "logo_url": "https://dasch.swiss/icons/logo.png",
+    "name": "OCR Test DaSch",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "Upload of images to make OCR readable",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Upload of images to make OCR readable",
+                    "name": "Input Image"
+                }
+            ],
+            "label": "Input Image",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "48699114-c8eb-458a-880a-0319f6e68e5b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Upload Stopwords"
+                }
+            ],
+            "label": "Upload Stopwords",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 585.8735676323658,
+                "top": 180.79074570289708
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "849a361a-0513-4d02-94ed-0ce48245b85c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/tesseract/tesseract/5.5.1+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Tesseract",
+            "outputs": [
+                {
+                    "name": "output_text",
+                    "type": "txt"
+                },
+                {
+                    "name": "output_pdf",
+                    "type": "pdf"
+                }
+            ],
+            "position": {
+                "left": 220,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/tesseract/tesseract/5.5.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "d39f16771b62",
+                "name": "tesseract",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"dpi\": null, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"language\": [\"deu\"], \"output_formats\": [\"tessedit_create_txt\", \"tessedit_create_pdf\"], \"psm\": \"3\", \"tessdata\": \"tessdata\", \"user_patterns\": null, \"user_words\": null, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.5.1+galaxy0",
+            "type": "tool",
+            "uuid": "466458bc-b867-4f6c-af99-2b22678cf86f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "Remove single items shown at the beginning or end of the line",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output_text"
+                }
+            },
+            "inputs": [],
+            "label": "Text cleaning",
+            "name": "Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 440,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.3",
+            "tool_shed_repository": {
+                "changeset_revision": "503bcd6ebe4b",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"checks\": [{\"__index__\": 0, \"pattern\": \"^. \", \"replacement\": \"\"}, {\"__index__\": 1, \"pattern\": \" .$\", \"replacement\": \"\"}], \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "3929df64-96de-4d41-a7d7-da29ec4d5b03",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "out_file1",
+                    "output_name": "out_file1",
+                    "uuid": "feec6437-0315-46fb-ab9a-c968b4fb857c"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "infile": {
+                    "id": 3,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Remove Punctuation for later Visualisation",
+            "name": "Replace Text",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 660,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/9.5+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "c41d78ae5fee",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"replacements\": [{\"__index__\": 0, \"find_pattern\": \"[[:punct:]]\", \"replace_pattern\": null, \"sed_options\": null}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.5+galaxy2",
+            "type": "tool",
+            "uuid": "5a4b1398-7a8c-4c39-92be-77e49101e732",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy3",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "stopwords": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "text": {
+                    "id": 4,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Generate a word cloud",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 880,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/wordcloud/wordcloud/1.9.4+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "7b583659453b",
+                "name": "wordcloud",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"background_options\": {\"mode\": \"RGB\", \"__current_case__\": 0, \"background_color\": \"#000000\", \"cloud_shape\": {\"cloud_shape_options\": \"rectangle\", \"__current_case__\": 0}}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"color_choice\": {\"color_option\": \"color\", \"__current_case__\": 0, \"color\": \"#00ff00\"}, \"colormap\": \"inferno\", \"font_step\": \"1\", \"fonts\": {\"fonts_selector\": \"none\", \"__current_case__\": 0}, \"height\": \"200\", \"include_numbers\": false, \"margin\": \"2\", \"max_font_size\": null, \"max_words\": \"100\", \"min_font_size\": \"4\", \"min_word_length\": \"0\", \"no_collocations\": false, \"no_normalize_plurals\": false, \"prefer_horizontal\": \"0.9\", \"random_state\": \"10\", \"relative_scaling\": \"0.8\", \"repeat\": false, \"scale\": \"1.0\", \"stopwords\": {\"__class__\": \"ConnectedValue\"}, \"text\": {\"__class__\": \"ConnectedValue\"}, \"width\": \"400\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.4+galaxy3",
+            "type": "tool",
+            "uuid": "df4947b5-a185-4f95-8f5c-52c94c341a85",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "output",
+                    "output_name": "output",
+                    "uuid": "3dad1bd0-03a5-4e6c-a3b0-302ce08cfda6"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "DaSch",
+        "ocr"
+    ],
+    "uuid": "9705b8fb-8896-4421-9ed7-a4e5786a666c",
+    "version": 8
+}

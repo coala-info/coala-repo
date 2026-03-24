@@ -1,0 +1,377 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflows/workflow.cwl"
+      },
+      "datePublished": "2023-11-27 16:17:41 +0000",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.681.7",
+      "url": "https://workflowhub.eu/workflows/681/ro_crate?version=7",
+      "name": "Research Object Crate for Inclusion Body Myositis Active Subnetwork Identification Workflow",
+      "description": "Workflow for Creating a large disease network from various datasets and databases for IBM, and applying the active subnetwork identification method MOGAMUN.",
+      "isBasedOn": "https://github.com/jdwijnbergen/IBM_ASI_workflow.git",
+      "sdDatePublished": "2026-03-24 01:05:06 +0000",
+      "hasPart": [
+        {
+          "@id": "workflows/workflow.cwl"
+        },
+        {
+          "@id": "workflow-681-7e4122fc690aef90cafdd96758c561f2dde60555-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 8257,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-681-7e4122fc690aef90cafdd96758c561f2dde60555-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow for Creating a large disease network from various datasets and databases for IBM, and applying the active subnetwork identification method MOGAMUN.",
+      "name": "Inclusion Body Myositis Active Subnetwork Identification Workflow",
+      "url": "https://workflowhub.eu/workflows/681?version=7",
+      "keywords": "Bioinformatics, CWL, Genomics, Transcriptomics, Protein-Protein Interaction",
+      "version": 7,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-7449-6657"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3549-558X"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/40"
+      },
+      "dateCreated": "2023-11-27T16:19:23Z",
+      "dateModified": "2024-02-01T11:27:19Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.681.7",
+      "isBasedOn": "https://workflowhub.eu/workflows/681?version=6",
+      "input": [
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_input_file"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mirtarbase_input_file"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-entrez2string"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-bridgedb"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mRNA-mRNA_bicor"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-miRNA-mRNA_bicor"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-de_mRNA"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-de_miRNA"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-variant_burden"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_number_of_edges"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_min_weight"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mirtarbase_number_of_edges"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-max_cor_edges"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_generations"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_runs"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_cores"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_min_size"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_max_size"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_merge_threshold"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-outputs-full_graph"
+        },
+        {
+          "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-outputs-subnetworks"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-681-7e4122fc690aef90cafdd96758c561f2dde60555-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 26610
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7449-6657",
+      "@type": "Person",
+      "name": "Daphne Wijnbergen"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3549-558X",
+      "@type": "Person",
+      "name": "Mridul Johari"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/40",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EJPRD WP13 case-studies workflows"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_input_file",
+      "@type": "FormalParameter",
+      "name": "STRING data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mirtarbase_input_file",
+      "@type": "FormalParameter",
+      "name": "miRTarBase data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-entrez2string",
+      "@type": "FormalParameter",
+      "name": "STRING identifier mapping",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-bridgedb",
+      "@type": "FormalParameter",
+      "name": "BridgeDB cache",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mRNA-mRNA_bicor",
+      "@type": "FormalParameter",
+      "name": "mRNA expression correlation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-miRNA-mRNA_bicor",
+      "@type": "FormalParameter",
+      "name": "miRNA mRNA correlation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-de_mRNA",
+      "@type": "FormalParameter",
+      "name": "Differential gene expression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-de_miRNA",
+      "@type": "FormalParameter",
+      "name": "Differential miRNA expression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-variant_burden",
+      "@type": "FormalParameter",
+      "name": "Variant Burden",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_number_of_edges",
+      "@type": "FormalParameter",
+      "name": "STRING limit",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-stringdb_min_weight",
+      "@type": "FormalParameter",
+      "name": "STRING filter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mirtarbase_number_of_edges",
+      "@type": "FormalParameter",
+      "name": "miRTarBase limit",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-max_cor_edges",
+      "@type": "FormalParameter",
+      "name": "Correlation limit",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_generations",
+      "@type": "FormalParameter",
+      "name": "MOGAMUN generations",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_runs",
+      "@type": "FormalParameter",
+      "name": "MOGAMUN runs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_cores",
+      "@type": "FormalParameter",
+      "name": "MOGAMUN cores",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_min_size",
+      "@type": "FormalParameter",
+      "name": "Minimum subnetwork size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_max_size",
+      "@type": "FormalParameter",
+      "name": "Maximum subnetwork size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-inputs-mogamun_merge_threshold",
+      "@type": "FormalParameter",
+      "name": "Subnetwork merge threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-outputs-full_graph",
+      "@type": "FormalParameter",
+      "name": "Full network",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#inclusion_body_myositis_active_subnetwork_identification_workflow-outputs-subnetworks",
+      "@type": "FormalParameter",
+      "name": "Subnetworks",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

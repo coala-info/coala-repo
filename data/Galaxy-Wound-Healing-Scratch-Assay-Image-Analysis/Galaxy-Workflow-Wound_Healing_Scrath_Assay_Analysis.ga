@@ -1,0 +1,92 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Wound Healing Scrath Assay Analysis",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 78.37693786621094
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "abe919d8-ccf0-491e-b311-6445d86586af",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/woundhealing_scratch_assay/woundhealing_scratch_assay/1.6.1+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "con_input_type|input_images": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Wound healing scratch assay",
+                    "name": "con_input_type"
+                }
+            ],
+            "label": null,
+            "name": "Wound healing scratch assay",
+            "outputs": [
+                {
+                    "name": "tif_output",
+                    "type": "tif"
+                },
+                {
+                    "name": "csv_output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 429.27740478515625,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/woundhealing_scratch_assay/woundhealing_scratch_assay/1.6.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "8948cc562b7c",
+                "name": "woundhealing_scratch_assay",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"con_input_type\": {\"input_type\": \"no\", \"__current_case__\": 0, \"input_images\": {\"__class__\": \"RuntimeValue\"}}, \"dataset_id\": \"A3ROI2_Slow\", \"threshold\": \"-1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.6.1+galaxy0",
+            "type": "tool",
+            "uuid": "307e3e74-d9a6-462c-b762-34eb6f57ea47",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "tif_output",
+                    "output_name": "tif_output",
+                    "uuid": "57fe01c7-1049-4564-bac0-02375fd72062"
+                },
+                {
+                    "label": "csv_output",
+                    "output_name": "csv_output",
+                    "uuid": "17d8403a-0f35-4f73-b1a7-7a9ffb9b9989"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "74fde4e5-91ab-4153-8789-18dd42ce1121",
+    "version": 17
+}

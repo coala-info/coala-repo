@@ -1,0 +1,7 @@
+results/
+*.jp2
+*.tif
+*.tiff
+*.log
+!example/algae-usecase-workflow-copernicus.log
+!example/algae-usecase-workflow-earth-search.log

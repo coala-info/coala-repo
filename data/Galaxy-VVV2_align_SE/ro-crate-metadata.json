@@ -1,0 +1,242 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "20231016_Galaxy-Workflow-VVV2_align_SE.ga"
+      },
+      "datePublished": "2023-10-16 13:03:00 +0100",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/517?version=1",
+      "url": "https://workflowhub.eu/workflows/517/ro_crate?version=1",
+      "name": "Research Object Crate for VVV2_align_SE",
+      "description": "SINGLE-END workflow. \nAlign reads on fasta reference/assembly using bwa mem, get a consensus, variants, mutation explanations. \n\nIMPORTANT: \n* For \"bcftools call\" consensus step, the --ploidy file is in \"Données partagées\" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). \n* SELECT the mot ADAPTED VADR MODEL for annotation (see vadr parameters).",
+      "isBasedOn": "https://github.com/ANSES-Ploufragan/vvv2_display",
+      "sdDatePublished": "2026-03-24 16:47:05 +0000",
+      "creativeWorkStatus": "Deprecated",
+      "hasPart": [
+        {
+          "@id": "20231016_Galaxy-Workflow-VVV2_align_SE.ga"
+        },
+        {
+          "@id": "vvv2_align_SE.png"
+        }
+      ]
+    },
+    {
+      "@id": "20231016_Galaxy-Workflow-VVV2_align_SE.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 30291,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "vvv2_align_SE.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "SINGLE-END workflow. \nAlign reads on fasta reference/assembly using bwa mem, get a consensus, variants, mutation explanations. \n\nIMPORTANT: \n* For \"bcftools call\" consensus step, the --ploidy file is in \"Données partagées\" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). \n* SELECT the mot ADAPTED VADR MODEL for annotation (see vadr parameters).",
+      "name": "VVV2_align_SE",
+      "url": "https://workflowhub.eu/workflows/517?version=1",
+      "keywords": "single-end, Annotation, variant, Virus, variant_calling, high-throughput_sequencing_analysis, Galaxy, Bioinformatics, SNPs, variant calling",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0002-1103-2425"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/170"
+      },
+      "dateCreated": "2023-06-27T14:41:53Z",
+      "dateModified": "2025-06-19T10:24:37Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#vvv2_align_se-inputs-Ploidy%20file%20(Y%20for%20happloid)"
+      },
+      "output": [
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#vvv2_align_se-outputs-_anonymous_output_10"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "vvv2_align_SE.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 222967
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1103-2425",
+      "@type": "Person",
+      "name": "Fabrice Touzain"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/170",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ANSES-Ploufragan"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-inputs-Ploidy file (Y for happloid)",
+      "@type": "FormalParameter",
+      "name": "Ploidy file (Y for happloid)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

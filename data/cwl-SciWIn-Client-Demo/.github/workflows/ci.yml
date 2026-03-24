@@ -1,0 +1,57 @@
+name: 🦀 Continuous Integration
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "**"
+      - "!docs/**"
+      - "!mkdocs.yml"
+      - "!**/*.md"
+      - "!LICENSE-*"
+      - "!paper/**"
+      - "!.github/workflows/draft-pdf.yml"
+
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "**"
+      - "!docs/**"
+      - "!mkdocs.yml"
+      - "!**/*.md"
+      - "!LICENSE-*"
+      - "!paper/**"
+      - "!.github/workflows/draft-pdf.yml"
+
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust_checks:
+    name: 📎 Clippy
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/clippy.yml
+  build:
+    name: 🏗️ Build and Test
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/build.yml
+  coverage:
+    name: 🦺 Coverage
+    permissions:
+      contents: read
+      pull-requests: write
+      actions: read
+    needs: build
+    uses: ./.github/workflows/tarpaulin.yml
+  conformance:
+    name: 🦆 CWL Conformance Tests
+    permissions:
+      contents: read
+      actions: read
+    needs: build
+    uses: ./.github/workflows/cwl.yml

@@ -1,0 +1,3 @@
+2025-03-03 17:46:06.1322 ProteinInference_createClassItemCollection TRACE Reading GFF3 file 
+2025-03-03 17:46:06.3225 ProteinInference_createClassItemCollection TRACE Assigning FastA sequences to protein model info 
+2025-03-03 17:46:06.3225 ProteinInference_createClassItemCollection TRACE Build classification map 

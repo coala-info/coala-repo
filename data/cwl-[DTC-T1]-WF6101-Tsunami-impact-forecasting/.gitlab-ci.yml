@@ -1,0 +1,16 @@
+stages:
+  - validation
+
+cwl validation:
+  image: python:3.9
+  stage: validation
+  script:
+    - pip install --quiet cwltool
+    - ./validation/cwl-validation.sh
+
+ro-crate validation:
+  image: python:3.9
+  stage: validation
+  script:
+    - pip install --quiet roc-validator
+    - ./validation/ro-crate-validation.sh

@@ -1,0 +1,211 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "20250619_Galaxy-Workflow-vvv2_align_SE_bwamem2_nanopore.ga"
+      },
+      "datePublished": "2025-06-19 11:11:46 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        }
+      ],
+      "license": "GPL-3.0-or-later",
+      "identifier": "https://workflowhub.eu/workflows/1740?version=1",
+      "url": "https://workflowhub.eu/workflows/1740/ro_crate?version=1",
+      "name": "Research Object Crate for vvv2_align_SE_bwamem2_nanopore",
+      "description": "Using:\n- vadr annotation (**virus model must be selected** in options)\n- vardict variant caller\n- coverage depth\nProvides summarizing files:\n- **png** image of **variant calling** with **annotations** and **coverage depths**\n- **tsv** file with **all information of significant variants only**",
+      "sdDatePublished": "2026-03-24 16:47:19 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "20250619_Galaxy-Workflow-vvv2_align_SE_bwamem2_nanopore.ga"
+        },
+        {
+          "@id": "20250619_vvv2_align_PE_bwamem2_nanopore.png"
+        }
+      ]
+    },
+    {
+      "@id": "20250619_Galaxy-Workflow-vvv2_align_SE_bwamem2_nanopore.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 36040,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "20250619_vvv2_align_PE_bwamem2_nanopore.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Using:\n- vadr annotation (**virus model must be selected** in options)\n- vardict variant caller\n- coverage depth\nProvides summarizing files:\n- **png** image of **variant calling** with **annotations** and **coverage depths**\n- **tsv** file with **all information of significant variants only**",
+      "name": "vvv2_align_SE_bwamem2_nanopore",
+      "url": "https://workflowhub.eu/workflows/1740?version=1",
+      "keywords": "display, variant_calling, Virus, bbmap, vvv2_display, vadr, vardict, nanopore",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-1103-2425"
+        },
+        {
+          "@id": "#This%20study%20was%20founded%20by%20the%20French%20National%20Research%20Agency%20and%20by%20Sant%C3%A9%20publique%20France%20as%20part%20of%20the%20project%20%22EMERGEN%22.%20Anses%20Ploufragan%20research%20was%20also%20supported%20by%20Agglom%C3%A9ration%20de%20Saint-Brieuc"
+        },
+        {
+          "@id": "#D%C3%A9partement%20des%20C%C3%B4tes%20d'Armor%20and%20R%C3%A9gion%20Bretagne"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/170"
+      },
+      "dateCreated": "2025-06-19T10:14:02Z",
+      "dateModified": "2025-06-19T10:23:01Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-%23main/IUPAC_consensus"
+        },
+        {
+          "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-%23main/Majority_consensus"
+        },
+        {
+          "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-%23main/image%20of%20all%20variants,%20genes,%20proteins%20and%20coverage%20depth"
+        },
+        {
+          "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-%23main/tsv%20file%20of%20information%20for%20significant%20variants"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "20250619_vvv2_align_PE_bwamem2_nanopore.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 279454
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "This study was founded by the French National Research Agency and by Santé publique France as part of the project \"EMERGEN\". Anses Ploufragan research was also supported by Agglomération de Saint-Brieuc"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Département des Côtes d'Armor and Région Bretagne"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1103-2425",
+      "@type": "Person",
+      "name": "Fabrice Touzain"
+    },
+    {
+      "@id": "#This study was founded by the French National Research Agency and by Santé publique France as part of the project \"EMERGEN\". Anses Ploufragan research was also supported by Agglomération de Saint-Brieuc",
+      "@type": "Person",
+      "name": "This study was founded by the French National Research Agency and by Santé publique France as part of the project \"EMERGEN\". Anses Ploufragan research was also supported by Agglomération de Saint-Brieuc"
+    },
+    {
+      "@id": "#Département des Côtes d'Armor and Région Bretagne",
+      "@type": "Person",
+      "name": "Département des Côtes d'Armor and Région Bretagne"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/170",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ANSES-Ploufragan"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-#main/IUPAC_consensus",
+      "@type": "FormalParameter",
+      "name": "#main/IUPAC_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-#main/Majority_consensus",
+      "@type": "FormalParameter",
+      "name": "#main/Majority_consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-#main/image of all variants, genes, proteins and coverage depth",
+      "@type": "FormalParameter",
+      "name": "#main/image of all variants, genes, proteins and coverage depth",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vvv2_align_se_bwamem2_nanopore-outputs-#main/tsv file of information for significant variants",
+      "@type": "FormalParameter",
+      "name": "#main/tsv file of information for significant variants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

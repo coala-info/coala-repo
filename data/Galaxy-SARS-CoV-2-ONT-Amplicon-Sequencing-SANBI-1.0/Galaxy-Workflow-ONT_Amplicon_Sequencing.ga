@@ -1,0 +1,515 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "ONT Amplicon Sequencing",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Sequence Reads"
+                }
+            ],
+            "label": "Sequence Reads",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "left": 15.311820444848095,
+                "top": 42.79346438686023
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "7bf120b5-2099-4fc3-b85d-d801277e91ea",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reference genome"
+                }
+            ],
+            "label": "Reference genome",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10.311820444848095,
+                "top": 208.58093997279772
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"fasta\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "c37c4bf6-ee83-4ce0-91cb-e9bef7fc8f54",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Primer BED file"
+                }
+            ],
+            "label": "Primer BED file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 17.699332651879345,
+                "top": 390.9934765938915
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"bed\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "112a53c9-9f04-4930-805f-fd5c72fffec1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Minimum read length"
+                }
+            ],
+            "label": "Minimum read length",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 9.91182654836372,
+                "top": 532.581001007954
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 400, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "ed97498b-a5f7-4af9-8430-bd21d2b53ff4",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "2e7bb5c5-fdbd-4061-9efa-157f610bc31d"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Maximum read length"
+                }
+            ],
+            "label": "Maximum read length",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 5.641585838177434,
+                "top": 647.9156550493698
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 700, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "84b610b4-c260-470d-a59b-2f175987c9ce",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "019b542a-bd05-4d4c-94ef-d7beab625723"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Medaka model"
+                }
+            ],
+            "label": "Medaka model",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 773.8125446576813
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"r941_min_high_g303\", \"suggestions\": [\"r941_min_high_g303\", \"r941_min_fast_g303\"], \"parameter_type\": \"text\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "b5e25ccb-d2d2-4a95-82e6-58f5e529a63c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "f8d23613-e8cf-44f3-bc77-825b5eefd5a9"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "mode|reads|files": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NanoPlot",
+            "outputs": [
+                {
+                    "name": "output_html",
+                    "type": "html"
+                },
+                {
+                    "name": "nanostats",
+                    "type": "tabular"
+                },
+                {
+                    "name": "nanostats_post_filtering",
+                    "type": "tabular"
+                },
+                {
+                    "name": "read_length",
+                    "type": "png"
+                },
+                {
+                    "name": "log_read_length",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 364.3118204448481,
+                "top": 81.79346438686022
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog_read_length": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log_read_length"
+                },
+                "HideDatasetActionnanostats": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "nanostats"
+                },
+                "HideDatasetActionnanostats_post_filtering": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "nanostats_post_filtering"
+                },
+                "HideDatasetActionread_length": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "read_length"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "0f1c34698076",
+                "name": "nanoplot",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"customization\": {\"color\": null, \"plots\": null, \"N50\": false}, \"filter\": {\"maxlength\": null, \"minlength\": null, \"drop_outliers\": false, \"downsample\": null, \"loglength\": false, \"percentqual\": false, \"alength\": false, \"minqual\": null, \"runtime_until\": null, \"readtype\": null, \"barcoded\": false, \"no_supplementary\": false}, \"mode\": {\"choice\": \"batch\", \"__current_case__\": 0, \"reads\": {\"type\": \"fastq\", \"__current_case__\": 0, \"files\": {\"__class__\": \"ConnectedValue\"}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.41.0+galaxy0",
+            "type": "tool",
+            "uuid": "6ba4a305-7a35-4d70-9f8d-52a506d01d63",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/read_it_and_keep/read_it_and_keep/0.2.2+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "reads|read1": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "ref_source|ref_fasta": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Read It and Keep",
+            "outputs": [
+                {
+                    "name": "output_reads1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 373.51183265187933,
+                "top": 345.79346438686025
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/read_it_and_keep/read_it_and_keep/0.2.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "1563b58905f4",
+                "name": "read_it_and_keep",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"min_map_length\": \"50\", \"min_map_length_pc\": \"50.0\", \"enumerate_names\": false}, \"reads\": {\"read_type\": \"single\", \"__current_case__\": 2, \"read1\": {\"__class__\": \"ConnectedValue\"}}, \"ref_source\": {\"source\": \"history\", \"__current_case__\": 0, \"ref_fasta\": {\"__class__\": \"ConnectedValue\"}}, \"sequencing_tech\": \"ont\", \"trim_reference\": true, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.2+galaxy0",
+            "type": "tool",
+            "uuid": "e5209d6f-c6e0-40e7-88a6-ae187d30d338",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/artic_guppyplex/artic_guppyplex/1.2.1+galaxy2",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input|reads": {
+                    "id": 7,
+                    "output_name": "output_reads1"
+                },
+                "max_length": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "min_length": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ARTIC guppyplex",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 640.9118570659418,
+                "top": 180.99347659389147
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/artic_guppyplex/artic_guppyplex/1.2.1+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "372def2f8fd6",
+                "name": "artic_guppyplex",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"structure\": \"one_to_one\", \"__current_case__\": 0, \"reads\": {\"__class__\": \"ConnectedValue\"}}, \"max_length\": {\"__class__\": \"ConnectedValue\"}, \"min_length\": {\"__class__\": \"ConnectedValue\"}, \"min_quality\": \"7\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.1+galaxy2",
+            "type": "tool",
+            "uuid": "c787fdc8-20cf-48df-9170-308117aa59fc",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "mode|reads|files": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NanoPlot",
+            "outputs": [
+                {
+                    "name": "output_html",
+                    "type": "html"
+                },
+                {
+                    "name": "nanostats",
+                    "type": "tabular"
+                },
+                {
+                    "name": "nanostats_post_filtering",
+                    "type": "tabular"
+                },
+                {
+                    "name": "read_length",
+                    "type": "png"
+                },
+                {
+                    "name": "log_read_length",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 990.7634350918156,
+                "top": 0
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog_read_length": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log_read_length"
+                },
+                "HideDatasetActionread_length": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "read_length"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/nanoplot/nanoplot/1.41.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "0f1c34698076",
+                "name": "nanoplot",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"customization\": {\"color\": null, \"plots\": null, \"N50\": false}, \"filter\": {\"maxlength\": null, \"minlength\": null, \"drop_outliers\": false, \"downsample\": null, \"loglength\": false, \"percentqual\": false, \"alength\": false, \"minqual\": null, \"runtime_until\": null, \"readtype\": null, \"barcoded\": false, \"no_supplementary\": false}, \"mode\": {\"choice\": \"batch\", \"__current_case__\": 0, \"reads\": {\"type\": \"fastq\", \"__current_case__\": 0, \"files\": {\"__class__\": \"ConnectedValue\"}}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.41.0+galaxy0",
+            "type": "tool",
+            "uuid": "22253a67-151c-46e0-9c07-6232f91683cf",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/artic_minion/artic_minion/1.2.1+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "medaka_model": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "primer_scheme_source|primer_scheme_bedfile": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "read_file": {
+                    "id": 8,
+                    "output_name": "output"
+                },
+                "reference_source|reference": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool ARTIC minion",
+                    "name": "primer_scheme_source"
+                },
+                {
+                    "description": "runtime parameter for tool ARTIC minion",
+                    "name": "read_file"
+                },
+                {
+                    "description": "runtime parameter for tool ARTIC minion",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "ARTIC minion",
+            "outputs": [
+                {
+                    "name": "alignment_trimmed",
+                    "type": "bam"
+                },
+                {
+                    "name": "alignment_report",
+                    "type": "tabular"
+                },
+                {
+                    "name": "variants_merged_vcf",
+                    "type": "vcf_bgzip"
+                },
+                {
+                    "name": "variants_fail_vcf",
+                    "type": "vcf_bgzip"
+                },
+                {
+                    "name": "variants_pass_vcf",
+                    "type": "vcf_bgzip"
+                },
+                {
+                    "name": "consensus_fasta",
+                    "type": "fasta"
+                },
+                {
+                    "name": "coverage_mask",
+                    "type": "tabular"
+                },
+                {
+                    "name": "analysis_log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 996.597042222832,
+                "top": 273.08311747208325
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/artic_minion/artic_minion/1.2.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "6f52ebc01098",
+                "name": "artic_minion",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"bwa\": false, \"medaka_model\": {\"__class__\": \"ConnectedValue\"}, \"normalise\": \"0\", \"primer_scheme_source\": {\"primer_scheme_source_selector\": \"history\", \"__current_case__\": 1, \"primer_scheme_bedfile\": {\"__class__\": \"RuntimeValue\"}}, \"read_file\": {\"__class__\": \"RuntimeValue\"}, \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"reference\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.1+galaxy0",
+            "type": "tool",
+            "uuid": "34da8f1f-b440-418e-94d7-62f8eb49928f",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "921846e8-8fd5-4605-bba1-a2008a8af7bc",
+    "version": 2
+}

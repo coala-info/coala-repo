@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ENA Reads and Assembly Submission Workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ENA_Reads_and_Assembly_Submission_Workflow.ga"
+      },
+      "datePublished": "2025-10-24 14:29:59 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-0522-5674"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.2008.1",
+      "url": "https://workflowhub.eu/workflows/2008/ro_crate?version=1",
+      "name": "Research Object Crate for ENA Reads and Assembly Submission Workflow",
+      "description": "# ENA Reads &amp; Assembly Submission Workflow\n\nOriginally developed within the [EVORA project](https://evora-project.eu/), this two-step Galaxy workflow streamlines submissions to the [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena). The workflow first submits raw sequencing reads via the **Galaxy ENA upload tool**, then submits assembled sequences using the **Galaxy ENA Webin CLI tool**. The process is fully interactive and GUI-driven while retaining ENA’s required validations leveraging the user-scoped credential management system and the data upload/management from Galaxy.\n\n\n## Step 1 — Raw reads: Galaxy ENA upload tool\n\nA Galaxy wrapper around the [ENA-upload-cli](https://github.com/usegalaxy-eu/ena-upload-cli) that brings a graphical interface and interactive checks to standard ENA read submissions.\n\n**Key features**\n\n- Raw read submission with  ENA-upload-cli at its core\n- Use [tabular or excel sheet templates](https://github.com/ELIXIR-Belgium/ENA-metadata-templates) to easily capture the metadata\n- Client side validation using ENA checklists\n- Create, add, and modify ENA objects (e.g., studies, experiments, samples, runs)\n\n## Step 2 — Consensus sequences: Galaxy ENA Webin CLI\n\nA Galaxy wrapper around ENA’s [Webin-CLI](https://github.com/enasequence/webin-cli) for interactive submission of consensus sequences, with full checklist coverage.\n\n**Key features**\n\n- Seamless integration with the Galaxy ENA upload tool to fetch and reuse metadata\n- Interactive metadata submission and validation\n- Support for all assembly levels (contig, scaffold and chromosome)\n\n## Funding\n\nThe EVORA project has received funding from the European Union's HORIZON programme under grant agreement No 101131959\n",
+      "sdDatePublished": "2026-03-24 16:29:36 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ENA_Reads_and_Assembly_Submission_Workflow.ga"
+        },
+        {
+          "@id": "Screenshot%202025-10-24%20at%2013.48.01.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ENA_Reads_and_Assembly_Submission_Workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 20203,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Screenshot%202025-10-24%20at%2013.48.01.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# ENA Reads &amp; Assembly Submission Workflow\n\nOriginally developed within the [EVORA project](https://evora-project.eu/), this two-step Galaxy workflow streamlines submissions to the [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena). The workflow first submits raw sequencing reads via the **Galaxy ENA upload tool**, then submits assembled sequences using the **Galaxy ENA Webin CLI tool**. The process is fully interactive and GUI-driven while retaining ENA’s required validations leveraging the user-scoped credential management system and the data upload/management from Galaxy.\n\n\n## Step 1 — Raw reads: Galaxy ENA upload tool\n\nA Galaxy wrapper around the [ENA-upload-cli](https://github.com/usegalaxy-eu/ena-upload-cli) that brings a graphical interface and interactive checks to standard ENA read submissions.\n\n**Key features**\n\n- Raw read submission with  ENA-upload-cli at its core\n- Use [tabular or excel sheet templates](https://github.com/ELIXIR-Belgium/ENA-metadata-templates) to easily capture the metadata\n- Client side validation using ENA checklists\n- Create, add, and modify ENA objects (e.g., studies, experiments, samples, runs)\n\n## Step 2 — Consensus sequences: Galaxy ENA Webin CLI\n\nA Galaxy wrapper around ENA’s [Webin-CLI](https://github.com/enasequence/webin-cli) for interactive submission of consensus sequences, with full checklist coverage.\n\n**Key features**\n\n- Seamless integration with the Galaxy ENA upload tool to fetch and reuse metadata\n- Interactive metadata submission and validation\n- Support for all assembly levels (contig, scaffold and chromosome)\n\n## Funding\n\nThe EVORA project has received funding from the European Union's HORIZON programme under grant agreement No 101131959\n",
+      "name": "ENA Reads and Assembly Submission Workflow",
+      "url": "https://workflowhub.eu/workflows/2008?version=1",
+      "keywords": "EVORA, ena, submission, FAIR, publication, brokering",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/9"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/96"
+      },
+      "dateCreated": "2025-10-24T13:32:02Z",
+      "dateModified": "2025-10-24T13:51:34Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.2008.1",
+      "input": [
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Affiliation%20center"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Assembly%20program"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Assembly%20type"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Chromosome%20List%20file"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Consensus%20sequences"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Coverage"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/ENA%20sample%20checklist"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Excel%20file%20from%20template"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Molecule%20type"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Raw%20reads%20as%20dataset%20lists"
+        },
+        {
+          "@id": "#ena_reads_and_assembly_submission_workflow-inputs-%23main/Submit%20to%20ENA%20test%20server"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Screenshot%202025-10-24%20at%2013.48.01.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 762491
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0522-5674",
+      "@type": "Person",
+      "name": "Bert Droesbeke",
+      "identifier": "https://orcid.org/0000-0003-0522-5674"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/9",
+      "@type": "Person",
+      "name": "Bert Droesbeke"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/96",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ELIXIR Belgium"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Affiliation center",
+      "@type": "FormalParameter",
+      "name": "#main/Affiliation center",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Assembly program",
+      "@type": "FormalParameter",
+      "name": "#main/Assembly program",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Assembly type",
+      "@type": "FormalParameter",
+      "name": "#main/Assembly type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Chromosome List file",
+      "@type": "FormalParameter",
+      "name": "#main/Chromosome List file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Consensus sequences",
+      "@type": "FormalParameter",
+      "name": "#main/Consensus sequences",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Coverage",
+      "@type": "FormalParameter",
+      "name": "#main/Coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/ENA sample checklist",
+      "@type": "FormalParameter",
+      "name": "#main/ENA sample checklist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Excel file from template",
+      "@type": "FormalParameter",
+      "name": "#main/Excel file from template",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Molecule type",
+      "@type": "FormalParameter",
+      "name": "#main/Molecule type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Raw reads as dataset lists",
+      "@type": "FormalParameter",
+      "name": "#main/Raw reads as dataset lists",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ena_reads_and_assembly_submission_workflow-inputs-#main/Submit to ENA test server",
+      "@type": "FormalParameter",
+      "name": "#main/Submit to ENA test server",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ENA Reads and Assembly Submission Workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2008/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2008/ro_crate?version=1</a>
+
+
+  <img src="Screenshot 2025-10-24 at 13.48.01.png" style="width: 100%;"/>
+
+<p>
+  # ENA Reads &amp; Assembly Submission Workflow
+
+Originally developed within the [EVORA project](https://evora-project.eu/), this two-step Galaxy workflow streamlines submissions to the [European Nucleotide Archive (ENA)](https://www.ebi.ac.uk/ena). The workflow first submits raw sequencing reads via the **Galaxy ENA upload tool**, then submits assembled sequences using the **Galaxy ENA Webin CLI tool**. The process is fully interactive and GUI-driven while retaining ENA’s required validations leveraging the user-scoped credential management system and the data upload/management from Galaxy.
+
+
+## Step 1 — Raw reads: Galaxy ENA upload tool
+
+A Galaxy wrapper around the [ENA-upload-cli](https://github.com/usegalaxy-eu/ena-upload-cli) that brings a graphical interface and interactive checks to standard ENA read submissions.
+
+**Key features**
+
+- Raw read submission with  ENA-upload-cli at its core
+- Use [tabular or excel sheet templates](https://github.com/ELIXIR-Belgium/ENA-metadata-templates) to easily capture the metadata
+- Client side validation using ENA checklists
+- Create, add, and modify ENA objects (e.g., studies, experiments, samples, runs)
+
+## Step 2 — Consensus sequences: Galaxy ENA Webin CLI
+
+A Galaxy wrapper around ENA’s [Webin-CLI](https://github.com/enasequence/webin-cli) for interactive submission of consensus sequences, with full checklist coverage.
+
+**Key features**
+
+- Seamless integration with the Galaxy ENA upload tool to fetch and reuse metadata
+- Interactive metadata submission and validation
+- Support for all assembly levels (contig, scaffold and chromosome)
+
+## Funding
+
+The EVORA project has received funding from the European Union's HORIZON programme under grant agreement No 101131959
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-0522-5674" target="_blank">Bert Droesbeke</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ENA_Reads_and_Assembly_Submission_Workflow.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ENA_Reads_and_Assembly_Submission_Workflow.ga">ENA Reads and Assembly Submission Workflow</a>
+      
+        <br/>Size: 20203 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Screenshot%202025-10-24%20at%2013.48.01.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Screenshot 2025-10-24 at 13.48.01.png">Screenshot%202025-10-24%20at%2013.48.01.png</a>
+      
+        <br/>Size: 762491 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

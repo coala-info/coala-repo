@@ -1,0 +1,307 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflows/QC_to_BasicProcessing.ga"
+      },
+      "datePublished": "2024-05-30 06:00:44 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/468?version=3",
+      "url": "https://workflowhub.eu/workflows/468/ro_crate?version=3",
+      "name": "Research Object Crate for scRNAseq_QCtoBasicProcessing",
+      "description": "Basic processing of a QC-filtered Anndata Object. UMAP, clustering e.t.c ",
+      "isBasedOn": "https://github.com/swbioinf/scrnaseq_howto_ga_workflows.git",
+      "sdDatePublished": "2026-03-24 19:29:58 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflows/QC_to_BasicProcessing.ga"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/QC_to_BasicProcessing.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 33510,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Basic processing of a QC-filtered Anndata Object. UMAP, clustering e.t.c ",
+      "name": "scRNAseq_QCtoBasicProcessing",
+      "url": "https://workflowhub.eu/workflows/468?version=3",
+      "keywords": "scRNAseq",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Sarah%20Williams"
+        },
+        {
+          "@id": "#Mike%20Thang"
+        },
+        {
+          "@id": "#Valentine%20Murigneaux"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/41"
+      },
+      "dateCreated": "2024-05-30T05:52:35Z",
+      "dateModified": "2024-05-30T05:52:35Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/9"
+      },
+      "isBasedOn": "https://workflowhub.eu/workflows/468?version=2",
+      "input": {
+        "@id": "#scrnaseq_qctobasicprocessing-inputs-%23main/QCFilteredAnnDataObject"
+      },
+      "output": [
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/1k_cell_table"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/1k_gene_table"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/Scanpy%20FindCluster%20on%20input%20dataset(s):%20Clusters%20AnnData"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/Scanpy%20RunUMAP%20on%20input%20dataset(s):%20UMAP%20object%20AnnData"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/marker_dot_plot"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/marker_table"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/processed_anndata_object"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/umap_cluster_plot"
+        },
+        {
+          "@id": "#scrnaseq_qctobasicprocessing-outputs-%23main/umap_sample_plot"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Sarah Williams",
+      "@type": "Person",
+      "name": "Sarah Williams"
+    },
+    {
+      "@id": "#Mike Thang",
+      "@type": "Person",
+      "name": "Mike Thang"
+    },
+    {
+      "@id": "#Valentine Murigneaux",
+      "@type": "Person",
+      "name": "Valentine Murigneaux"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/41",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "QCIF Bioinformatics"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/9",
+      "@type": "Collection",
+      "name": "scRNAseq processing in galaxy"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-inputs-#main/QCFilteredAnnDataObject",
+      "@type": "FormalParameter",
+      "name": "#main/QCFilteredAnnDataObject",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/1k_cell_table",
+      "@type": "FormalParameter",
+      "name": "#main/1k_cell_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/1k_gene_table",
+      "@type": "FormalParameter",
+      "name": "#main/1k_gene_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/Scanpy FindCluster on input dataset(s): Clusters AnnData",
+      "@type": "FormalParameter",
+      "name": "#main/Scanpy FindCluster on input dataset(s): Clusters AnnData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/Scanpy RunUMAP on input dataset(s): UMAP object AnnData",
+      "@type": "FormalParameter",
+      "name": "#main/Scanpy RunUMAP on input dataset(s): UMAP object AnnData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/marker_dot_plot",
+      "@type": "FormalParameter",
+      "name": "#main/marker_dot_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/marker_table",
+      "@type": "FormalParameter",
+      "name": "#main/marker_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/processed_anndata_object",
+      "@type": "FormalParameter",
+      "name": "#main/processed_anndata_object",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/umap_cluster_plot",
+      "@type": "FormalParameter",
+      "name": "#main/umap_cluster_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#scrnaseq_qctobasicprocessing-outputs-#main/umap_sample_plot",
+      "@type": "FormalParameter",
+      "name": "#main/umap_sample_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

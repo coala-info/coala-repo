@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New RO-Crate</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.1"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "datePublished": "2024-10-18T13:27:50+00:00",
+      "hasPart": [
+        {
+          "@id": "workflows/5b86c89aab9bfac8.gxwf.yml"
+        },
+        {
+          "@id": "workflows/5b86c89aab9bfac8.abstract.cwl"
+        },
+        {
+          "@id": "workflows/5b86c89aab9bfac8.ga"
+        },
+        {
+          "@id": "workflows/5b86c89aab9bfac8.html"
+        },
+        {
+          "@id": "datasets/Water_body_Phosphate_Mediterranean.nc_31e7840b5aedca438a95825a20cd0652.netcdf"
+        },
+        {
+          "@id": "datasets/data_from_Eutrophication_Med_profiles_2022_unrestricted.png_31e7840b5aedca432fa9de7f0aac22e9.png"
+        },
+        {
+          "@id": "datasets/Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip_31e7840b5aedca43510d1a4bea6cc5cb.zip"
+        },
+        {
+          "@id": "datasets/gebco_30sec_8.nc_31e7840b5aedca43d4a97ce7e6fc5880.netcdf"
+        },
+        {
+          "@id": "datasets_attrs.txt"
+        },
+        {
+          "@id": "jobs_attrs.txt"
+        },
+        {
+          "@id": "implicit_collection_jobs_attrs.txt"
+        },
+        {
+          "@id": "collections_attrs.txt"
+        },
+        {
+          "@id": "export_attrs.txt"
+        },
+        {
+          "@id": "libraries_attrs.txt"
+        },
+        {
+          "@id": "library_folders_attrs.txt"
+        },
+        {
+          "@id": "invocation_attrs.txt"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "mainEntity": {
+        "@id": "workflows/5b86c89aab9bfac8.gxwf.yml"
+      },
+      "mentions": [
+        {
+          "@id": "#66967cae-a1e8-49d6-9a3b-61cf566c85a6"
+        },
+        {
+          "@id": "#dataset_collection-2994624"
+        },
+        {
+          "@id": "#dataset_collection-2994626"
+        },
+        {
+          "@id": "#dataset_collection-2994692"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/5b86c89aab9bfac8.gxwf.yml",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "input": [
+        {
+          "@id": "#5a8a5612-0a92-457f-b9c2-979013b61ace"
+        },
+        {
+          "@id": "#5b68ff74-3b59-4cfd-90c4-3ce3fc098b8e"
+        },
+        {
+          "@id": "#Workflow fully interactive-param"
+        },
+        {
+          "@id": "#Workflow semi automatic-param"
+        }
+      ],
+      "name": "Ocean's variables 2.0",
+      "output": [
+        {
+          "@id": "#dataset_collection-2994624-param"
+        },
+        {
+          "@id": "#dataset_collection-2994626-param"
+        },
+        {
+          "@id": "#dataset_collection-2994692-param"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "subjectOf": {
+        "@id": "workflows/5b86c89aab9bfac8.abstract.cwl"
+      }
+    },
+    {
+      "@id": "workflows/5b86c89aab9bfac8.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "name": "workflows/5b86c89aab9bfac8.abstract",
+      "programmingLanguage": {
+        "@id": "#cwl"
+      }
+    },
+    {
+      "@id": "workflows/5b86c89aab9bfac8.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "workflows/5b86c89aab9bfac8",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      }
+    },
+    {
+      "@id": "workflows/5b86c89aab9bfac8.html",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "workflows/5b86c89aab9bfac8",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      }
+    },
+    {
+      "@id": "datasets/Water_body_Phosphate_Mediterranean.nc_31e7840b5aedca438a95825a20cd0652.netcdf",
+      "@type": "File",
+      "encodingFormat": "application/octet-stream",
+      "name": "Water_body_Phosphate_Mediterranean.nc"
+    },
+    {
+      "@id": "datasets/data_from_Eutrophication_Med_profiles_2022_unrestricted.png_31e7840b5aedca432fa9de7f0aac22e9.png",
+      "@type": "File",
+      "encodingFormat": "application/octet-stream",
+      "name": "data_from_Eutrophication_Med_profiles_2022_unrestricted.png"
+    },
+    {
+      "@id": "datasets/Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip_31e7840b5aedca43510d1a4bea6cc5cb.zip",
+      "@type": "File",
+      "encodingFormat": "application/octet-stream",
+      "exampleOfWork": {
+        "@id": "#5a8a5612-0a92-457f-b9c2-979013b61ace"
+      },
+      "name": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip"
+    },
+    {
+      "@id": "datasets/gebco_30sec_8.nc_31e7840b5aedca43d4a97ce7e6fc5880.netcdf",
+      "@type": "File",
+      "encodingFormat": "application/octet-stream",
+      "exampleOfWork": {
+        "@id": "#5b68ff74-3b59-4cfd-90c4-3ce3fc098b8e"
+      },
+      "name": "gebco_30sec_8.nc"
+    },
+    {
+      "@id": "datasets_attrs.txt",
+      "@type": "File",
+      "description": "datasets properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "jobs_attrs.txt",
+      "@type": "File",
+      "description": "jobs properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "implicit_collection_jobs_attrs.txt",
+      "@type": "File",
+      "description": "implicit collection jobs properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "collections_attrs.txt",
+      "@type": "File",
+      "description": "collections properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "export_attrs.txt",
+      "@type": "File",
+      "description": "export properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "libraries_attrs.txt",
+      "@type": "File",
+      "description": "libraries properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "library_folders_attrs.txt",
+      "@type": "File",
+      "description": "library folders properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "invocation_attrs.txt",
+      "@type": "File",
+      "description": "invocation properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/"
+      },
+      "name": "Common Workflow Language",
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#bc320692-888a-453e-8b03-555a274b94ae",
+      "@type": "SoftwareApplication",
+      "name": "Galaxy workflow engine"
+    },
+    {
+      "@id": "#768e3603-a64f-4b82-bc65-8c1e08c931ec",
+      "@type": "OrganizeAction",
+      "endTime": "2024-10-18T13:17:47.876025",
+      "instrument": {
+        "@id": "#bc320692-888a-453e-8b03-555a274b94ae"
+      },
+      "name": "Run of Galaxy workflow engine",
+      "startTime": "2024-10-18T13:10:07.757584"
+    },
+    {
+      "@id": "#66967cae-a1e8-49d6-9a3b-61cf566c85a6",
+      "@type": "CreateAction",
+      "endTime": "2024-10-17T15:01:18.798861",
+      "instrument": {
+        "@id": "workflows/5b86c89aab9bfac8.gxwf.yml"
+      },
+      "name": "Ocean's variables 2.0",
+      "object": [
+        {
+          "@id": "datasets/Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip_31e7840b5aedca43510d1a4bea6cc5cb.zip"
+        },
+        {
+          "@id": "datasets/gebco_30sec_8.nc_31e7840b5aedca43d4a97ce7e6fc5880.netcdf"
+        },
+        {
+          "@id": "#Workflow fully interactive-pv"
+        },
+        {
+          "@id": "#Workflow semi automatic-pv"
+        }
+      ],
+      "result": [
+        {
+          "@id": "#dataset_collection-2994624"
+        },
+        {
+          "@id": "#dataset_collection-2994626"
+        },
+        {
+          "@id": "#dataset_collection-2994692"
+        }
+      ],
+      "startTime": "2024-10-17T15:01:18.798858"
+    },
+    {
+      "@id": "#dataset_collection-2994624",
+      "@type": "Collection",
+      "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+      "exampleOfWork": {
+        "@id": "#dataset_collection-2994624-param"
+      },
+      "hasPart": [
+        {
+          "@id": "datasets/Water_body_Phosphate_Mediterranean.nc_31e7840b5aedca438a95825a20cd0652.netcdf"
+        }
+      ],
+      "name": "Water_body_Phosphate_Mediterranean.nc"
+    },
+    {
+      "@id": "#dataset_collection-2994624-param",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "description": "",
+      "name": "Water_body_Phosphate_Mediterranean.nc"
+    },
+    {
+      "@id": "#dataset_collection-2994626",
+      "@type": "Collection",
+      "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+      "exampleOfWork": {
+        "@id": "#dataset_collection-2994626-param"
+      },
+      "hasPart": [
+
+      ],
+      "name": "ODV all outputs"
+    },
+    {
+      "@id": "#dataset_collection-2994626-param",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "description": "",
+      "name": "ODV all outputs"
+    },
+    {
+      "@id": "#dataset_collection-2994692",
+      "@type": "Collection",
+      "additionalType": "https://training.galaxyproject.org/training-material/faqs/galaxy/collections_build_list.html",
+      "exampleOfWork": {
+        "@id": "#dataset_collection-2994692-param"
+      },
+      "hasPart": [
+        {
+          "@id": "datasets/data_from_Eutrophication_Med_profiles_2022_unrestricted.png_31e7840b5aedca432fa9de7f0aac22e9.png"
+        }
+      ],
+      "name": "ODV all outputs"
+    },
+    {
+      "@id": "#dataset_collection-2994692-param",
+      "@type": "FormalParameter",
+      "additionalType": "Collection",
+      "description": "",
+      "name": "ODV all outputs"
+    },
+    {
+      "@id": "#5a8a5612-0a92-457f-b9c2-979013b61ace",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip"
+    },
+    {
+      "@id": "#5b68ff74-3b59-4cfd-90c4-3ce3fc098b8e",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "gebco_30sec_8.nc"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.1",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "#Workflow%20fully%20interactive-pv",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "#Workflow fully interactive-param"
+      },
+      "name": "Workflow fully interactive",
+      "value": false
+    },
+    {
+      "@id": "#Workflow%20fully%20interactive-param",
+      "@type": "FormalParameter",
+      "additionalType": "Boolean",
+      "description": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)",
+      "name": "Workflow fully interactive",
+      "valueRequired": "True"
+    },
+    {
+      "@id": "#Workflow%20semi%20automatic-pv",
+      "@type": "PropertyValue",
+      "exampleOfWork": {
+        "@id": "#Workflow semi automatic-param"
+      },
+      "name": "Workflow semi automatic",
+      "value": true
+    },
+    {
+      "@id": "#Workflow%20semi%20automatic-param",
+      "@type": "FormalParameter",
+      "additionalType": "Boolean",
+      "description": "Choose whether you want to have only interactive tools (for more experimented user) or if you want a workflow hat combines interactive and non-interactive tools (easier)",
+      "name": "Workflow semi automatic",
+      "valueRequired": "True"
+    },
+    {
+      "@id": "#datasets_attrs.txt.provenance",
+      "@type": "CreativeWork",
+      "description": "datasets provenance properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>New RO-Crate</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>CC-BY-4.0</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li id="__data_entity_workflows/5b86c89aab9bfac8.gxwf.yml">
+        
+          <strong>Ocean's variables 2.0</strong>
+        
+        
+        
+      </li>
+    
+      <li id="__data_entity_workflows/5b86c89aab9bfac8.abstract.cwl">
+        
+          <strong>workflows/5b86c89aab9bfac8.abstract</strong>
+        
+        
+        
+      </li>
+    
+      <li id="__data_entity_workflows/5b86c89aab9bfac8.ga">
+        
+          <strong>workflows/5b86c89aab9bfac8</strong>
+        
+        
+        
+      </li>
+    
+      <li id="__data_entity_workflows/5b86c89aab9bfac8.html">
+        
+          <strong>workflows/5b86c89aab9bfac8</strong>
+        
+        
+        
+      </li>
+    
+      <li id="__data_entity_datasets/Water_body_Phosphate_Mediterranean.nc_31e7840b5aedca438a95825a20cd0652.netcdf">
+        
+          <strong>Water_body_Phosphate_Mediterranean.nc</strong>
+        
+        
+        
+          <br/>Format: application/octet-stream
+        
+      </li>
+    
+      <li id="__data_entity_datasets/data_from_Eutrophication_Med_profiles_2022_unrestricted.png_31e7840b5aedca432fa9de7f0aac22e9.png">
+        
+          <strong>data_from_Eutrophication_Med_profiles_2022_unrestricted.png</strong>
+        
+        
+        
+          <br/>Format: application/octet-stream
+        
+      </li>
+    
+      <li id="__data_entity_datasets/Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip_31e7840b5aedca43510d1a4bea6cc5cb.zip">
+        
+          <strong>Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip</strong>
+        
+        
+        
+          <br/>Format: application/octet-stream
+        
+      </li>
+    
+      <li id="__data_entity_datasets/gebco_30sec_8.nc_31e7840b5aedca43d4a97ce7e6fc5880.netcdf">
+        
+          <strong>gebco_30sec_8.nc</strong>
+        
+        
+        
+          <br/>Format: application/octet-stream
+        
+      </li>
+    
+      <li id="__data_entity_datasets_attrs.txt">
+        
+          <strong>datasets_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_jobs_attrs.txt">
+        
+          <strong>jobs_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_implicit_collection_jobs_attrs.txt">
+        
+          <strong>implicit_collection_jobs_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_collections_attrs.txt">
+        
+          <strong>collections_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_export_attrs.txt">
+        
+          <strong>export_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_libraries_attrs.txt">
+        
+          <strong>libraries_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_library_folders_attrs.txt">
+        
+          <strong>library_folders_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+      <li id="__data_entity_invocation_attrs.txt">
+        
+          <strong>invocation_attrs.txt</strong>
+        
+        
+        
+          <br/>Format: application/json
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

@@ -1,0 +1,678 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Annotation: Perform mapping to confirm kraken prediction. Make contig out of mapped read then blast them to get a another confirmation and to find the closest reference",
+    "format-version": "0.1",
+    "name": "2: Plant virus confirmation",
+    "steps": {
+        "0": {
+            "annotation": "Merge several fasta in a multi-fasta file to be use as reference for mapping. WARNING: If two fasta with the same header are provided only one will be kept",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/fasta_merge_files_and_filter_unique_sequences/fasta_merge_files_and_filter_unique_sequences/1.2.0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FASTA Merge Files and Filter Unique Sequences",
+                    "name": "batchmode"
+                }
+            ],
+            "label": "Merge fasta together",
+            "name": "FASTA Merge Files and Filter Unique Sequences",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "bottom": 15.421875,
+                "height": 112,
+                "left": -570.8125,
+                "right": -370.8125,
+                "top": -96.578125,
+                "width": 200,
+                "x": -570.8125,
+                "y": -96.578125
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput": {
+                    "action_arguments": {
+                        "newname": "Reference_list.fasta"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output"
+                },
+                "TagDatasetActionoutput": {
+                    "action_arguments": {
+                        "tags": "Reference"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/fasta_merge_files_and_filter_unique_sequences/fasta_merge_files_and_filter_unique_sequences/1.2.0",
+            "tool_shed_repository": {
+                "changeset_revision": "f546e7278f04",
+                "name": "fasta_merge_files_and_filter_unique_sequences",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"accession_parser\": \"^>([^ ]+).*$\", \"batchmode\": {\"processmode\": \"merge\", \"__current_case__\": 1, \"input_fastas\": {\"__class__\": \"RuntimeValue\"}}, \"uniqueness_criterion\": \"accession\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.0",
+            "type": "tool",
+            "uuid": "b71bbc6d-8b3b-4e75-a9ae-740944bd0053",
+            "workflow_outputs": [
+                {
+                    "label": "reference_fasta",
+                    "output_name": "output",
+                    "uuid": "dcefbc5d-1ac8-450f-bdbd-508dfc38713b"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Data_R1.fastq"
+                }
+            ],
+            "label": "Data_R1.fastq",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 146.65625,
+                "height": 81,
+                "left": -582.59375,
+                "right": -382.59375,
+                "top": 65.65625,
+                "width": 200,
+                "x": -582.59375,
+                "y": 65.65625
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2691944e-b4cd-46af-a455-9105291437ec",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "51d3831e-4cdb-423c-8de0-f83d64a37c21"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Data_R2.fastq"
+                }
+            ],
+            "label": "Data_R2.fastq",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 237.609375,
+                "height": 81,
+                "left": -587.5,
+                "right": -387.5,
+                "top": 156.609375,
+                "width": 200,
+                "x": -587.5,
+                "y": 156.609375
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4abed6ba-4805-4ab4-86bb-d95224d4ef27",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "3322ed73-6037-4999-93e2-c4ccb5637114"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "Map the input reads against the chosen reference fasta file. Multiple mapping The correct placement of a read may be ambiguous, e.g. due to repeats. In this case, there may be multiple read alignments for the same read. One of these alignments is considered primary. All the other alignments have the secondary alignment flag set in the SAM records that represent them. All the SAM records have the same QNAME and the same values for 0x40 and 0x80 flags. Typically the alignment designated primary is the best alignment, but the decision may be arbitrary.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "fastq_input|fastq_input1": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "fastq_input|fastq_input2": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "reference_source|ref_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with minimap2",
+                    "name": "reference_source"
+                }
+            ],
+            "label": null,
+            "name": "Map with minimap2",
+            "outputs": [
+                {
+                    "name": "alignment_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "bottom": 209.796875,
+                "height": 212,
+                "left": -329.53125,
+                "right": -129.53125,
+                "top": -2.203125,
+                "width": 200,
+                "x": -329.53125,
+                "y": -2.203125
+            },
+            "post_job_actions": {
+                "RenameDatasetActionalignment_output": {
+                    "action_arguments": {
+                        "newname": "Mapping_of_#{ fastq_input1 | basename}_VS_#{ ref_file | basename}.bam"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "alignment_output"
+                },
+                "TagDatasetActionalignment_output": {
+                    "action_arguments": {
+                        "tags": "Raw_mapping"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "alignment_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.17+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "8c6cd2650d1f",
+                "name": "minimap2",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignment_options\": {\"splicing\": {\"splice_mode\": \"preset\", \"__current_case__\": 0}, \"A\": \"\", \"B\": \"\", \"O\": \"\", \"O2\": \"\", \"E\": \"\", \"E2\": \"\", \"z\": \"\", \"z2\": \"\", \"s\": \"\", \"no_end_flt\": \"true\"}, \"fastq_input\": {\"fastq_input_selector\": \"paired\", \"__current_case__\": 1, \"fastq_input1\": {\"__class__\": \"RuntimeValue\"}, \"fastq_input2\": {\"__class__\": \"RuntimeValue\"}, \"analysis_type_selector\": \"sr\"}, \"indexing_options\": {\"H\": \"false\", \"k\": \"\", \"w\": \"\", \"I\": \"\"}, \"io_options\": {\"output_format\": \"BAM\", \"Q\": \"false\", \"L\": \"false\", \"K\": \"\", \"cs\": null, \"c\": \"false\", \"eqx\": \"false\", \"Y\": \"false\"}, \"mapping_options\": {\"N\": \"\", \"F\": \"\", \"f\": \"\", \"min_occ_floor\": \"\", \"g\": \"\", \"r\": \"\", \"n\": \"\", \"m\": \"\", \"max_chain_skip\": \"\", \"max_chain_iter\": \"\", \"X\": \"false\", \"p\": \"\"}, \"reference_source\": {\"reference_source_selector\": \"history\", \"__current_case__\": 1, \"ref_file\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.17+galaxy2",
+            "type": "tool",
+            "uuid": "dfe93f11-4e54-48d4-9ecc-d35df99f90cf",
+            "workflow_outputs": [
+                {
+                    "label": "Read_mapping_alignement",
+                    "output_name": "alignment_output",
+                    "uuid": "fcccb157-7c56-4696-aae5-f094553dcb62"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "Keep only mapped read to perform faster assembly later.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ngsutils_bam_filter/ngsutils_bam_filter/0.5.9",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "infile": {
+                    "id": 3,
+                    "output_name": "alignment_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool BAM filter",
+                    "name": "excludebed"
+                },
+                {
+                    "description": "runtime parameter for tool BAM filter",
+                    "name": "includebed"
+                },
+                {
+                    "description": "runtime parameter for tool BAM filter",
+                    "name": "infile"
+                }
+            ],
+            "label": null,
+            "name": "BAM filter",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "bottom": 259.21875,
+                "height": 192,
+                "left": -57.953125,
+                "right": 142.046875,
+                "top": 67.21875,
+                "width": 200,
+                "x": -57.953125,
+                "y": 67.21875
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "filtered_#{infile}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                },
+                "TagDatasetActionoutfile": {
+                    "action_arguments": {
+                        "tags": "Filtered_mapping"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ngsutils_bam_filter/ngsutils_bam_filter/0.5.9",
+            "tool_shed_repository": {
+                "changeset_revision": "2e957d4c4b95",
+                "name": "ngsutils_bam_filter",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"excludebed\": {\"__class__\": \"RuntimeValue\"}, \"excluderef\": \"\", \"ignore_strand\": \"false\", \"includebed\": {\"__class__\": \"RuntimeValue\"}, \"includeref\": \"\", \"infile\": {\"__class__\": \"RuntimeValue\"}, \"mapped\": \"true\", \"mask\": \"\", \"maximum_mismatch_ratio\": \"\", \"maxlen\": \"\", \"minlen\": \"\", \"mismatch\": \"\", \"nopcrdup\": \"false\", \"noproperpair\": \"false\", \"noqcfail\": \"false\", \"nosecondary\": \"false\", \"properpair\": \"false\", \"uniq\": \"-1\", \"uniq_start\": \"false\", \"unmapped\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.5.9",
+            "type": "tool",
+            "uuid": "c32bb3bb-fbc8-4006-bfab-706f39ea5820",
+            "workflow_outputs": [
+                {
+                    "label": "mapped_read",
+                    "output_name": "outfile",
+                    "uuid": "bc59b1e5-cd96-4098-9204-54057828da8b"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "Obtain stats on the bam file",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.2+galaxy2",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "alignment_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Samtools stats",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Samtools stats",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": -16.5,
+                "height": 132,
+                "left": -58.265625,
+                "right": 141.734375,
+                "top": -148.5,
+                "width": 200,
+                "x": -58.265625,
+                "y": -148.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtools_stats/samtools_stats/2.0.2+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "145f6d74ff5e",
+                "name": "samtools_stats",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"addref_cond\": {\"addref_select\": \"no\", \"__current_case__\": 0}, \"cond_region\": {\"select_region\": \"no\", \"__current_case__\": 0}, \"cov_threshold\": \"\", \"coverage_cond\": {\"coverage_select\": \"yes\", \"__current_case__\": 1, \"coverage_min\": \"1\", \"coverage_max\": \"9999\", \"coverage_step\": \"1\"}, \"filter_by_flags\": {\"filter_flags\": \"nofilter\", \"__current_case__\": 1}, \"gc_depth\": \"\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"insert_size\": \"\", \"most_inserts\": \"\", \"read_length\": \"\", \"remove_dups\": \"false\", \"remove_overlaps\": \"false\", \"sparse\": \"false\", \"split_output_cond\": {\"split_output_selector\": \"no\", \"__current_case__\": 0}, \"trim_quality\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.0.2+galaxy2",
+            "type": "tool",
+            "uuid": "92f0b57b-f6ef-4a95-830e-d41a3d86cb24",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "Extract read from bam as fastq sequence. Remove secondary alignement reads (that are mapped several time)",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "inputFile": {
+                    "id": 4,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SamToFastq",
+                    "name": "inputFile"
+                }
+            ],
+            "label": null,
+            "name": "SamToFastq",
+            "outputs": [
+                {
+                    "name": "fq_single",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "interleaved_fastq",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq1",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq2",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "fq_u",
+                    "type": "fastqsanger"
+                }
+            ],
+            "position": {
+                "bottom": 477.859375,
+                "height": 412,
+                "left": 197.5625,
+                "right": 397.5625,
+                "top": 65.859375,
+                "width": 200,
+                "x": 197.5625,
+                "y": 65.859375
+            },
+            "post_job_actions": {
+                "DeleteIntermediatesActionfq_single": {
+                    "action_arguments": {},
+                    "action_type": "DeleteIntermediatesAction",
+                    "output_name": "fq_single"
+                },
+                "HideDatasetActionfq_single": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "fq_single"
+                },
+                "HideDatasetActionfq_u": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "fq_u"
+                },
+                "HideDatasetActioninterleaved_fastq": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "interleaved_fastq"
+                },
+                "RenameDatasetActionfq1": {
+                    "action_arguments": {
+                        "newname": "Reads_R1_#{inputFile | basename }.fastq"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "fq1"
+                },
+                "RenameDatasetActionfq2": {
+                    "action_arguments": {
+                        "newname": "Reads_R2_#{inputFile | basename }.fastq"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "fq2"
+                },
+                "RenameDatasetActioninterleaved_fastq": {
+                    "action_arguments": {
+                        "newname": "Reads_#{inputFile | basename }.fastq"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "interleaved_fastq"
+                },
+                "TagDatasetActioninterleaved_fastq": {
+                    "action_arguments": {
+                        "tags": "Read_selected"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "interleaved_fastq"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/picard/picard_SamToFastq/2.18.2.2",
+            "tool_shed_repository": {
+                "changeset_revision": "a1f0b3f4b781",
+                "name": "picard",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"clipping_action\": \"\", \"clipping_attribute\": \"\", \"include_non_pf_reads\": \"false\", \"include_non_primary_alignments\": \"false\", \"inputFile\": {\"__class__\": \"RuntimeValue\"}, \"re_reverse\": \"false\", \"read1_max_bases_to_write\": \"-1\", \"read1_trim\": \"0\", \"read2_max_bases_to_write\": \"-1\", \"read2_trim\": \"0\", \"single_or_paired\": \"pe_sep\", \"validation_stringency\": \"LENIENT\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.18.2.2",
+            "type": "tool",
+            "uuid": "cc57d1d1-ae65-4d77-8075-2f076c30d4d1",
+            "workflow_outputs": [
+                {
+                    "label": "Paired-end forward",
+                    "output_name": "fq1",
+                    "uuid": "57184633-dddf-41db-861e-97e9dc10fbc8"
+                },
+                {
+                    "label": "Paired-end reverse",
+                    "output_name": "fq2",
+                    "uuid": "676fb6c0-8935-4133-92dd-df1eb51d938c"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "Make contig out of candidate read.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "library|R1": {
+                    "id": 6,
+                    "output_name": "fq1"
+                },
+                "library|R2": {
+                    "id": 6,
+                    "output_name": "fq2"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Shovill",
+                    "name": "library"
+                },
+                {
+                    "description": "runtime parameter for tool Shovill",
+                    "name": "library"
+                }
+            ],
+            "label": "Fast assembly (shovill => megahit)",
+            "name": "Shovill",
+            "outputs": [
+                {
+                    "name": "shovill_std_log",
+                    "type": "txt"
+                },
+                {
+                    "name": "contigs",
+                    "type": "fasta"
+                },
+                {
+                    "name": "contigs_graph",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 503.90625,
+                "height": 242,
+                "left": 504.453125,
+                "right": 704.453125,
+                "top": 261.90625,
+                "width": 200,
+                "x": 504.453125,
+                "y": 261.90625
+            },
+            "post_job_actions": {
+                "DeleteIntermediatesActionshovill_std_log": {
+                    "action_arguments": {},
+                    "action_type": "DeleteIntermediatesAction",
+                    "output_name": "shovill_std_log"
+                },
+                "HideDatasetActioncontigs_graph": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "contigs_graph"
+                },
+                "RenameDatasetActioncontigs": {
+                    "action_arguments": {
+                        "newname": "Contig_from_#{R1 | basename }.fasta"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "contigs"
+                },
+                "TagDatasetActioncontigs": {
+                    "action_arguments": {
+                        "tags": "Contig_from_mapping"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "contigs"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "83ead2be47b2",
+                "name": "shovill",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"namefmt\": \"contig%05d\", \"depth\": \"0\", \"gsize\": \"\", \"kmers\": \"\", \"opts\": \"\", \"nocorr\": \"true\", \"minlen\": \"0\", \"mincov\": \"2\"}, \"assembler\": \"megahit\", \"library\": {\"lib_type\": \"paired\", \"__current_case__\": 0, \"R1\": {\"__class__\": \"RuntimeValue\"}, \"R2\": {\"__class__\": \"RuntimeValue\"}}, \"log\": \"true\", \"trim\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "d178cdf6-0e1d-4d6f-994d-a4ce7b492ae3",
+            "workflow_outputs": [
+                {
+                    "label": "Contigs",
+                    "output_name": "contigs",
+                    "uuid": "502855ec-7a26-4d09-b948-f3a216319a75"
+                },
+                {
+                    "label": "Log file",
+                    "output_name": "shovill_std_log",
+                    "uuid": "8e58da04-28cd-4f47-94ee-802b4ceceff4"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "Blast contig against precise database to find closest reference",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/ncbi_blastn_wrapper/2.10.1+galaxy0",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "query": {
+                    "id": 7,
+                    "output_name": "contigs"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NCBI BLAST+ blastn",
+                    "name": "output"
+                },
+                {
+                    "description": "runtime parameter for tool NCBI BLAST+ blastn",
+                    "name": "output"
+                },
+                {
+                    "description": "runtime parameter for tool NCBI BLAST+ blastn",
+                    "name": "output"
+                },
+                {
+                    "description": "runtime parameter for tool NCBI BLAST+ blastn",
+                    "name": "query"
+                }
+            ],
+            "label": "BLASTn",
+            "name": "NCBI BLAST+ blastn",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 481.515625,
+                "height": 132,
+                "left": 789.453125,
+                "right": 989.453125,
+                "top": 349.515625,
+                "width": 200,
+                "x": 789.453125,
+                "y": 349.515625
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutput1": {
+                    "action_arguments": {
+                        "newname": "BLASTn_#{query | basename }.tab"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/ncbi_blastn_wrapper/2.10.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5edc472ec434",
+                "name": "ncbi_blast_plus",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_opts\": {\"adv_opts_selector\": \"advanced\", \"__current_case__\": 1, \"filter_query\": \"true\", \"strand\": \"-strand both\", \"max_hits\": \"1\", \"max_hsps\": \"\", \"identity_cutoff\": \"0.0\", \"word_size\": \"\", \"ungapped\": \"false\", \"parse_deflines\": \"false\", \"adv_optional_id_files_opts\": {\"adv_optional_id_files_opts_selector\": \"none\", \"__current_case__\": 0}, \"qcov_hsp_perc\": \"0.0\", \"window_size\": \"\", \"gapopen\": \"\", \"gapextend\": \"\"}, \"blast_type\": \"blastn\", \"db_opts\": {\"db_opts_selector\": \"db\", \"__current_case__\": 0, \"database\": [\"nt_2018-01-22\"], \"histdb\": \"\", \"subject\": \"\"}, \"evalue_cutoff\": \"0.001\", \"output\": {\"out_format\": \"cols\", \"__current_case__\": 2, \"std_cols\": [\"qseqid\", \"sseqid\", \"pident\", \"length\", \"mismatch\", \"gapopen\", \"qstart\", \"qend\", \"sstart\", \"send\", \"evalue\", \"bitscore\"], \"ext_cols\": {\"__class__\": \"RuntimeValue\"}, \"ids_cols\": {\"__class__\": \"RuntimeValue\"}, \"misc_cols\": {\"__class__\": \"RuntimeValue\"}, \"tax_cols\": [\"staxids\", \"sscinames\", \"scomnames\", \"sblastnames\", \"sskingdoms\"]}, \"query\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.1+galaxy0",
+            "type": "tool",
+            "uuid": "4228e2ba-29a0-4a0a-88d0-ef9ce6590cfb",
+            "workflow_outputs": [
+                {
+                    "label": "blastn result",
+                    "output_name": "output1",
+                    "uuid": "ac48cd2a-d7dc-4c83-ac06-467fcc0c0e71"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "virology",
+        "mapping",
+        "assembly",
+        "reads_selection",
+        "blast"
+    ],
+    "uuid": "0e76d7d9-308a-4807-9d17-064ed2ee6301",
+    "version": 2
+}

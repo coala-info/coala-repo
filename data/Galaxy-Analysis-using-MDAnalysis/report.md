@@ -1,0 +1,41 @@
+# Analysis using MDAnalysis CWL Workflow Report
+
+### Metadata
+- **Docker Image**: N/A
+- **Homepage**: https://training.galaxyproject.org
+- **Package**: https://workflowhub.eu/workflows/1694
+- **Validation**: N/A
+
+- **RO-Crate download**: https://workflowhub.eu/workflows/1694/ro_crate?version=1
+- **Conda**: N/A
+- **Total Downloads**: 285
+- **Last updated**: 2025-06-02
+- **GitHub**: N/A
+- **Stars**: N/A
+- **Version**: 1
+- **License**: MIT
+- **Workflow type**: Galaxy
+- **Main workflow (WorkflowHub):** `advanced-workflow.ga` (Main Workflow)
+- **Project**: Galaxy Training Network
+- **Views**: 2465
+- **Discussion / source**: https://matrix.to/#/%23galaxyproject_admin:gitter.im
+
+## Description
+
+Analysis of MD trajectories using MDAnalysis, generating a Ramachandran plot and various timeseries.
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Analysis of molecular dynamics simulations](https://training.galaxyproject.org/training-material/topics/computational-chemistry/tutorials/analysis-md-simulations/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+## Features
+
+* Includes [Galaxy Workflow Tests](https://training.galaxyproject.org/training-material/faqs/gtn/workflow_run_test.html)
+
+## Thanks to...
+
+**Workflow Author(s)**: Chris Barnett
+
+**Tutorial Author(s)**: [Christopher Barnett](https://training.galaxyproject.org/training-material/hall-of-fame/chrisbarnettster/), [Tharindu Senapathi](https://training.galaxyproject.org/training-material/hall-of-fame/tsenapathi/), [Simon Bray](https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/), [Nadia Goué](https://training.galaxyproject.org/training-material/hall-of-fame/nagoue/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)

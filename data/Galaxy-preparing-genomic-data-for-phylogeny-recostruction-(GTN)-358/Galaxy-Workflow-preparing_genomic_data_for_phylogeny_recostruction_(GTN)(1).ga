@@ -1,0 +1,831 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This workflow begins from a set of genome assemblies of different samples, strains, species. The genome is first annotated with Funnanotate. Predicted proteins are furtner annotated with Busco. Next, 'ProteinOrtho' finds orthologs across the samples and makes orthogroups. Orthogroups where all samples are represented are extracted. Orthologs in each orthogroup are aligned with ClustalW. \nTest dataset:\nhttps://zenodo.org/record/6610704#.Ypn3FzlBw5k",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Miguel Roncoroni"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "CC-BY-4.0",
+    "name": "preparing genomic data for phylogeny recostruction (GTN)",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Input genomes as collection"
+                }
+            ],
+            "label": "Input genomes as collection",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "bottom": 136.4499969482422,
+                "height": 81.94999694824219,
+                "left": -1009.5,
+                "right": -809.5,
+                "top": 54.5,
+                "width": 200,
+                "x": -1009.5,
+                "y": 54.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "3ae6fd26-b1ef-4339-b84b-82463a3575cf",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/1.1.2",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "infile": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Replace Text",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 186.76666259765625,
+                "height": 113.26666259765625,
+                "left": -616,
+                "right": -416,
+                "top": 73.5,
+                "width": 200,
+                "x": -616,
+                "y": 73.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionoutfile": {
+                    "action_arguments": {
+                        "newname": "#{infile}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "outfile"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_replace_in_line/1.1.2",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"infile\": {\"__class__\": \"ConnectedValue\"}, \"replacements\": [{\"__index__\": 0, \"find_pattern\": \"(>[^ ]+).+\", \"replace_pattern\": \"\\\\1\"}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.2",
+            "type": "tool",
+            "uuid": "2192525a-028a-4fb3-a772-5ccface42221",
+            "workflow_outputs": [
+                {
+                    "label": "headers_shortened",
+                    "output_name": "outfile",
+                    "uuid": "e81f0623-2d0b-4a4e-b6be-26472e74ed85"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/repeat_masker/repeatmasker_wrapper/4.1.2-p1+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_fasta": {
+                    "id": 1,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "RepeatMasker",
+            "outputs": [
+                {
+                    "name": "output_masked_genome",
+                    "type": "fasta"
+                },
+                {
+                    "name": "output_log",
+                    "type": "tabular"
+                },
+                {
+                    "name": "output_table",
+                    "type": "txt"
+                },
+                {
+                    "name": "output_repeat_catalog",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 496.566650390625,
+                "height": 286.066650390625,
+                "left": -318,
+                "right": -118,
+                "top": 210.5,
+                "width": 200,
+                "x": -318,
+                "y": 210.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_log": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_log"
+                },
+                "HideDatasetActionoutput_repeat_catalog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_repeat_catalog"
+                },
+                "HideDatasetActionoutput_table": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_table"
+                },
+                "RenameDatasetActionoutput_masked_genome": {
+                    "action_arguments": {
+                        "newname": "#{input_fasta}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output_masked_genome"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/repeat_masker/repeatmasker_wrapper/4.1.2-p1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "39b40a9a6296",
+                "name": "repeat_masker",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced\": {\"is_only\": \"false\", \"is_clip\": \"false\", \"no_is\": \"false\", \"rodspec\": \"false\", \"primspec\": \"false\", \"nolow\": \"false\", \"noint\": \"false\", \"norna\": \"false\", \"alu\": \"false\", \"div\": \"false\", \"search_speed\": \"\", \"frag\": \"40000\", \"gc\": null, \"gccalc\": \"false\", \"nocut\": \"false\", \"xout\": \"false\", \"keep_alignments\": \"false\", \"invert_alignments\": \"false\", \"xsmall\": \"false\", \"poly\": \"false\"}, \"excln\": \"true\", \"gff\": \"false\", \"input_fasta\": {\"__class__\": \"ConnectedValue\"}, \"repeat_source\": {\"source_type\": \"dfam\", \"__current_case__\": 0, \"species_source\": {\"species_from_list\": \"no\", \"__current_case__\": 1, \"species_name\": \"Saccharomyces cerevisiae\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.1.2-p1+galaxy0",
+            "type": "tool",
+            "uuid": "2c65b372-4d50-46a0-8a41-fc9e903956b8",
+            "workflow_outputs": [
+                {
+                    "label": "repeat_masked",
+                    "output_name": "output_masked_genome",
+                    "uuid": "e08d7c4a-c956-4c12-93b0-9a210b138cb2"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/funannotate_predict/funannotate_predict/1.8.9+galaxy2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output_masked_genome"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "evidences"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "evidences"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "genemark"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "genemark"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "other_predictors"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "other_predictors"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "other_predictors"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "other_predictors"
+                },
+                {
+                    "description": "runtime parameter for tool Funannotate predict annotation",
+                    "name": "parameters"
+                }
+            ],
+            "label": null,
+            "name": "Funannotate predict annotation",
+            "outputs": [
+                {
+                    "name": "annot_gbk",
+                    "type": "genbank"
+                }
+            ],
+            "position": {
+                "bottom": 805.36669921875,
+                "height": 590.86669921875,
+                "left": 21,
+                "right": 221,
+                "top": 214.5,
+                "width": 200,
+                "x": 21,
+                "y": 214.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionannot_gbk": {
+                    "action_arguments": {
+                        "newname": "#{input}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "annot_gbk"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/funannotate_predict/funannotate_predict/1.8.9+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "2bba2ff070d9",
+                "name": "funannotate_predict",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"augustus\": {\"augustus_species\": \"none\", \"min_training_models\": \"15\", \"optimize_augustus\": \"false\"}, \"busco\": {\"busco_db\": \"saccharomycetes\", \"busco_seed_species\": \"saccharomyces\"}, \"database\": \"2022-03-24-174412\", \"evidences\": {\"rna_bam\": {\"__class__\": \"RuntimeValue\"}, \"transcript_evidence\": {\"__class__\": \"RuntimeValue\"}, \"prot_evidence\": {\"prot_evidence_source\": \"uniprot\", \"__current_case__\": 0}, \"p2g_pident\": \"80\", \"p2g_prefilter\": \"diamond\"}, \"evm\": {\"repeats2evm\": \"false\", \"evm_partitioning\": {\"evm_partition\": \"yes\", \"__current_case__\": 0, \"evm_partition_interval\": \"1500\"}, \"weights\": \"\"}, \"filtering\": {\"min_intronlen\": \"10\", \"max_intronlen\": \"3000\", \"min_protlen\": \"50\", \"keep_no_stops\": \"false\", \"repeat_filter\": \"overlap blast\"}, \"force\": \"true\", \"genemark\": {\"genemark_license\": {\"__class__\": \"RuntimeValue\"}, \"genemark_mode\": \"ES\", \"genemark_mod\": {\"__class__\": \"RuntimeValue\"}, \"soft_mask\": \"2000\"}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"organism\": {\"species\": \"Saccharomyces cerevisiae\", \"isolate\": \"\", \"strain\": \"\", \"organism\": \"true\", \"ploidy\": \"1\", \"SeqCenter\": \"CFMR\", \"SeqAccession\": \"12345\", \"name\": \"FUN_\", \"numbering\": \"1\"}, \"other_predictors\": {\"stringtie\": {\"__class__\": \"RuntimeValue\"}, \"maker_gff\": {\"__class__\": \"RuntimeValue\"}, \"pasa_gff\": {\"__class__\": \"RuntimeValue\"}, \"pasa_gff_weight\": \"1\", \"other_gff\": {\"__class__\": \"RuntimeValue\"}, \"other_gff_weight\": \"1\"}, \"outputs\": [\"gbk\"], \"parameters\": {\"__class__\": \"RuntimeValue\"}, \"uglyTestingHack\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.8.9+galaxy2",
+            "type": "tool",
+            "uuid": "760b55d2-5e23-41f5-9766-e939fe5e6d9b",
+            "workflow_outputs": [
+                {
+                    "label": "funannotate_predicted_proteins",
+                    "output_name": "annot_gbk",
+                    "uuid": "a9306052-7605-440c-9cd9-fb46eaadb237"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/glimmer_gbk_to_orf/glimmer_gbk_to_orf/3.02",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "infile": {
+                    "id": 3,
+                    "output_name": "annot_gbk"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Extract ORF",
+            "outputs": [
+                {
+                    "name": "aa_output",
+                    "type": "fasta"
+                },
+                {
+                    "name": "nc_output",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "bottom": 590.7666625976562,
+                "height": 123.26666259765625,
+                "left": 309,
+                "right": 509,
+                "top": 467.5,
+                "width": 200,
+                "x": 309,
+                "y": 467.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionaa_output": {
+                    "action_arguments": {
+                        "newname": "#{infile}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "aa_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/glimmer_gbk_to_orf/glimmer_gbk_to_orf/3.02",
+            "tool_shed_repository": {
+                "changeset_revision": "04861c9bbf45",
+                "name": "glimmer_gbk_to_orf",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.02",
+            "type": "tool",
+            "uuid": "ac2baad9-7cdd-4c59-a260-492d4f54bed4",
+            "workflow_outputs": [
+                {
+                    "label": "extracted_ORFs",
+                    "output_name": "aa_output",
+                    "uuid": "d08b487e-4bcb-4aee-970a-d2ec1b5fe7cb"
+                },
+                {
+                    "label": null,
+                    "output_name": "nc_output",
+                    "uuid": "5aa391a6-1549-4887-bef6-b50c181b9451"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "aa_output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 621.5666656494141,
+                "height": 154.06666564941406,
+                "left": 595.5,
+                "right": 795.5,
+                "top": 467.5,
+                "width": 200,
+                "x": 595.5,
+                "y": 467.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "#{input}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ae8c4b2488e7",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \">([^ ]+).+\", \"replacement\": \">#{input_name}_\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "adaf4b62-fe6a-4881-a6af-1e2afb87bfe9",
+            "workflow_outputs": [
+                {
+                    "label": "sample_names_to_headers",
+                    "output_name": "out_file1",
+                    "uuid": "de3cb702-1967-4a7d-ae2b-e147bd21e991"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/4.2",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_list": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 321.56666564941406,
+                "height": 154.06666564941406,
+                "left": 918.4666748046875,
+                "right": 1118.4666748046875,
+                "top": 167.5,
+                "width": 200,
+                "x": 918.4666748046875,
+                "y": 167.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/4.2",
+            "tool_shed_repository": {
+                "changeset_revision": "830961c48e42",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": \"false\", \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.2",
+            "type": "tool",
+            "uuid": "ae4ddb2f-104b-409f-9d91-07c4410ba00a",
+            "workflow_outputs": [
+                {
+                    "label": "proteomes_to_one_file",
+                    "output_name": "output",
+                    "uuid": "fa8cefd7-c034-4055-8231-749efbdd2b4d"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/proteinortho/proteinortho/6.0.14+galaxy2.9.1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_files": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Proteinortho",
+            "outputs": [
+                {
+                    "name": "blastgraph",
+                    "type": "tabular"
+                },
+                {
+                    "name": "proteinortho",
+                    "type": "tabular"
+                },
+                {
+                    "name": "proteinorthograph",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 653.5,
+                "height": 296.4666748046875,
+                "left": 911.4666748046875,
+                "right": 1111.4666748046875,
+                "top": 357.0333251953125,
+                "width": 200,
+                "x": 911.4666748046875,
+                "y": 357.0333251953125
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/proteinortho/proteinortho/6.0.14+galaxy2.9.1",
+            "tool_shed_repository": {
+                "changeset_revision": "4850f0d15f01",
+                "name": "proteinortho",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"conn\": \"0.1\", \"evalue\": \"0.001\", \"input_files\": {\"__class__\": \"ConnectedValue\"}, \"more_options\": {\"cov\": \"50\", \"sim\": \"95\", \"identity\": \"25\", \"selfblast\": \"false\", \"singles\": \"false\", \"isoform\": \"no\"}, \"p\": \"diamond\", \"synteny\": {\"synteny_options\": \"no\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "6.0.14+galaxy2.9.1",
+            "type": "tool",
+            "uuid": "2d05e13f-4cb1-4d86-800f-3e743b50fab8",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "proteinorthograph",
+                    "uuid": "3ba625f3-c18d-4087-8f99-1668c91400c9"
+                },
+                {
+                    "label": "Proteinortho on input dataset(s): orthology-groups",
+                    "output_name": "proteinortho",
+                    "uuid": "a615a5ae-b9cd-4bfe-830c-65d8bd08a873"
+                },
+                {
+                    "label": null,
+                    "output_name": "blastgraph",
+                    "uuid": "10dc0ed1-10ed-44db-9ce2-2d3cd7eb27b2"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/busco/busco/4.1.4",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Busco",
+            "outputs": [
+                {
+                    "name": "busco_sum",
+                    "type": "txt"
+                },
+                {
+                    "name": "busco_table",
+                    "type": "tabular"
+                },
+                {
+                    "name": "busco_missing",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 949.566650390625,
+                "height": 276.066650390625,
+                "left": 919.9666748046875,
+                "right": 1119.9666748046875,
+                "top": 673.5,
+                "width": 200,
+                "x": 919.9666748046875,
+                "y": 673.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/busco/busco/4.1.4",
+            "tool_shed_repository": {
+                "changeset_revision": "602fb8e63aa7",
+                "name": "busco",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv\": {\"evalue\": \"0.01\", \"limit\": \"3\", \"aug_prediction\": {\"augustus_mode\": \"no\", \"__current_case__\": 0}, \"long\": \"false\"}, \"chromInfo\": \"/srv/galaxy/mutable-config/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"input|__identifier__\": \"CM005299.1\", \"lineage_dataset\": \"saccharomycetes_odb10\", \"mode\": \"prot\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.1.4",
+            "type": "tool",
+            "uuid": "174f50d8-09bd-48b9-afcd-44468e41a0c3",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "busco_sum",
+                    "uuid": "d9d668ef-c3a5-4d33-bad8-85e4a11e5a54"
+                },
+                {
+                    "label": null,
+                    "output_name": "busco_missing",
+                    "uuid": "805d2908-e94b-48ef-a23a-bc4e10722371"
+                },
+                {
+                    "label": null,
+                    "output_name": "busco_table",
+                    "uuid": "69cff726-568d-40e7-8c56-c4e9ae379549"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 7,
+                    "output_name": "proteinortho"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 612.8999786376953,
+                "height": 92.86665344238281,
+                "left": 1188.5,
+                "right": 1388.5,
+                "top": 520.0333251953125,
+                "width": 200,
+                "x": 1188.5,
+                "y": 520.0333251953125
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"cond\": \"c1==4 and c2==4\", \"header_lines\": \"0\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "b4758296-c3c9-4c3c-bb2d-2f637f8702b5",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out_file1",
+                    "uuid": "1cb52fee-f123-472e-a7ba-7f45a26228fd"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/proteinortho_grab_proteins/proteinortho_grab_proteins/6.0.14+galaxy2.9.1",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_files": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "query|queryfile": {
+                    "id": 9,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Proteinortho grab proteins",
+            "outputs": [
+                {
+                    "name": "listproteinorthograbproteins",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 424.96665954589844,
+                "height": 184.46665954589844,
+                "left": 1453.5,
+                "right": 1653.5,
+                "top": 240.5,
+                "width": 200,
+                "x": 1453.5,
+                "y": 240.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionlistproteinorthograbproteins": {
+                    "action_arguments": {
+                        "newname": "#{query.queryfile}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "listproteinorthograbproteins"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/proteinortho_grab_proteins/proteinortho_grab_proteins/6.0.14+galaxy2.9.1",
+            "tool_shed_repository": {
+                "changeset_revision": "d348c3a151d9",
+                "name": "proteinortho_grab_proteins",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input_files\": {\"__class__\": \"ConnectedValue\"}, \"query\": {\"querytype\": \"file\", \"__current_case__\": 1, \"queryfile\": {\"__class__\": \"ConnectedValue\"}}, \"regex\": \"false\", \"source\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "6.0.14+galaxy2.9.1",
+            "type": "tool",
+            "uuid": "78e25a29-21b2-47ab-ac0e-a5b958258086",
+            "workflow_outputs": [
+                {
+                    "label": "Proteinortho_extract_by_orthogroup",
+                    "output_name": "listproteinorthograbproteins",
+                    "uuid": "87623c51-367a-4d83-aa1f-d47a7889559f"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "listproteinorthograbproteins"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Regex Find And Replace",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 368.1666717529297,
+                "height": 133.6666717529297,
+                "left": 1754.5,
+                "right": 1954.5,
+                "top": 234.5,
+                "width": 200,
+                "x": 1754.5,
+                "y": 234.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "action_arguments": {
+                        "newname": "#{input}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/galaxyp/regex_find_replace/regex1/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "ae8c4b2488e7",
+                "name": "regex_find_replace",
+                "owner": "galaxyp",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"checks\": [{\"__index__\": 0, \"pattern\": \"(>[^_]+).+\", \"replacement\": \"\\\\1\"}], \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "c99a9988-fa6a-4366-8c9f-9195e7f77b19",
+            "workflow_outputs": [
+                {
+                    "label": "fasta_header_cleaned",
+                    "output_name": "out_file1",
+                    "uuid": "27fe9659-b326-4e18-afaa-8e6e92fab40b"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/clustalw/clustalw/2.1",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 11,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ClustalW",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "clustal"
+                },
+                {
+                    "name": "dnd",
+                    "type": "nhx"
+                }
+            ],
+            "position": {
+                "bottom": 420.5,
+                "height": 184.46665954589844,
+                "left": 2034.5,
+                "right": 2234.5,
+                "top": 236.03334045410156,
+                "width": 200,
+                "x": 2034.5,
+                "y": 236.03334045410156
+            },
+            "post_job_actions": {
+                "HideDatasetActiondnd": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "dnd"
+                },
+                "RenameDatasetActionoutput": {
+                    "action_arguments": {
+                        "newname": "#{input}"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/clustalw/clustalw/2.1",
+            "tool_shed_repository": {
+                "changeset_revision": "d6694932c5e0",
+                "name": "clustalw",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"dnarna\": \"PROTEIN\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"out_order\": \"ALIGNED\", \"outcontrol\": {\"outform\": \"fasta\", \"__current_case__\": 0}, \"range\": {\"mode\": \"complete\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1",
+            "type": "tool",
+            "uuid": "8ead7ee6-fe67-4479-a8dd-722e8247cb0e",
+            "workflow_outputs": [
+                {
+                    "label": "ClustalW on input dataset(s): clustal",
+                    "output_name": "output",
+                    "uuid": "fe22a917-c957-47f2-8f71-6f87669d0058"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "80fd7a44-6854-4ca2-8901-3d0a4ad0a6a9",
+    "version": 12
+}

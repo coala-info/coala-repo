@@ -1,0 +1,29 @@
+2025-03-03 17:21:37.1722 PSMStatistics TRACE CLIArguments: [PSMs
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm"];
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psmstats";
+ ParamFile
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\psmstats\pSMStatisticsParams.json";
+ Parallelism_Level 18;
+ PeptideDataBase
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\Chlamy.db"] 
+2025-03-03 17:21:37.2322 PSMStatistics TRACE Database found at given location (C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\Chlamy.db) 
+2025-03-03 17:21:37.5573 PSMStatistics TRACE Processing multiple files: [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3501.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3503.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3505.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3507.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3509.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3511.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3513.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3515.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3517.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3601.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3603.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3605.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3607.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3609.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3611.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3613.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3615.psm";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3617.psm"|] 
+2025-03-03 17:21:37.5573 PSMStatistics TRACE Program is running on 18 cores 

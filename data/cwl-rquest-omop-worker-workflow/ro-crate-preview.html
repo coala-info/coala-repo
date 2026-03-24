@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for rquest-omop-worker-workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "x86/workflow-entrypoint.cwl"
+      },
+      "datePublished": "2023-10-20 16:19:17 +0100",
+      "author": [
+        {
+          "@id": "#person-476"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.471.3",
+      "url": "https://workflowhub.eu/workflows/471/ro_crate?version=3",
+      "name": "Research Object Crate for rquest-omop-worker-workflow",
+      "description": "# rquest-omop-worker-workflows\n\nSource for workflow definitions for the open source RQuest OMOP Worker tool developed for Hutch/TRE-FX\n\nNote: ARM workflows are currently broken. x86 ones work.\n\n## Inputs\n\n###&nbsp;Body\nSample input payload:\n\n```json\n{\n  \"task_id\": \"job-2023-01-13-14: 20: 38-\",\n  \"project\": \"\",\n  \"owner\": \"\",\n  \"cohort\": {\n    \"groups\": [\n      {\n        \"rules\": [\n          {\n            \"varname\": \"OMOP\",\n            \"varcat\": \"Person\",\n            \"type\": \"TEXT\",\n            \"oper\": \"=\",\n            \"value\": \"8507\"\n          }\n        ],\n        \"rules_oper\": \"AND\"\n      }\n    ],\n    \"groups_oper\": \"OR\"\n  },\n  \"collection\": \"\",\n  \"protocol_version\": \"\",\n  \"char_salt\": \"\",\n  \"uuid\": \"\"\n}\n```\n\n### Database access\n\nCurrently this workflow requires inputs for connecting to the database it will run queries against.\n\nIn future this may be moved to environment variables.",
+      "isBasedOn": "https://github.com/HDRUK/rquest-omop-worker-workflows",
+      "sdDatePublished": "2026-03-24 01:05:17 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "x86/workflow-entrypoint.cwl"
+        },
+        {
+          "@id": "workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "x86/workflow-entrypoint.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 607,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# rquest-omop-worker-workflows\n\nSource for workflow definitions for the open source RQuest OMOP Worker tool developed for Hutch/TRE-FX\n\nNote: ARM workflows are currently broken. x86 ones work.\n\n## Inputs\n\n###&nbsp;Body\nSample input payload:\n\n```json\n{\n  \"task_id\": \"job-2023-01-13-14: 20: 38-\",\n  \"project\": \"\",\n  \"owner\": \"\",\n  \"cohort\": {\n    \"groups\": [\n      {\n        \"rules\": [\n          {\n            \"varname\": \"OMOP\",\n            \"varcat\": \"Person\",\n            \"type\": \"TEXT\",\n            \"oper\": \"=\",\n            \"value\": \"8507\"\n          }\n        ],\n        \"rules_oper\": \"AND\"\n      }\n    ],\n    \"groups_oper\": \"OR\"\n  },\n  \"collection\": \"\",\n  \"protocol_version\": \"\",\n  \"char_salt\": \"\",\n  \"uuid\": \"\"\n}\n```\n\n### Database access\n\nCurrently this workflow requires inputs for connecting to the database it will run queries against.\n\nIn future this may be moved to environment variables.",
+      "name": "rquest-omop-worker-workflow",
+      "url": "https://workflowhub.eu/workflows/471?version=3",
+      "keywords": "",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/476"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/129"
+      },
+      "dateCreated": "2023-10-23T13:58:11Z",
+      "dateModified": "2024-11-12T12:55:51Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.471.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/471?version=2",
+      "input": [
+        {
+          "@id": "#rquest_omop_worker_workflow-inputs-body"
+        },
+        {
+          "@id": "#rquest_omop_worker_workflow-inputs-result_modifiers"
+        },
+        {
+          "@id": "#rquest_omop_worker_workflow-inputs-is_availability"
+        },
+        {
+          "@id": "#rquest_omop_worker_workflow-inputs-results"
+        }
+      ],
+      "output": {
+        "@id": "#rquest_omop_worker_workflow-outputs-output_file"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 5257
+    },
+    {
+      "@id": "#person-476",
+      "@type": "Person",
+      "name": "Vasiliki Panagi",
+      "identifier": "https://workflowhub.eu/people/476"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/476",
+      "@type": "Person",
+      "name": "Vasiliki Panagi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/129",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "TRE-FX"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#rquest_omop_worker_workflow-inputs-body",
+      "@type": "FormalParameter",
+      "name": "body",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rquest_omop_worker_workflow-inputs-result_modifiers",
+      "@type": "FormalParameter",
+      "name": "result_modifiers",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rquest_omop_worker_workflow-inputs-is_availability",
+      "@type": "FormalParameter",
+      "name": "is_availability",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rquest_omop_worker_workflow-inputs-results",
+      "@type": "FormalParameter",
+      "name": "results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rquest_omop_worker_workflow-outputs-output_file",
+      "@type": "FormalParameter",
+      "name": "output_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for rquest-omop-worker-workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/471/ro_crate?version=3" target="_blank">https://workflowhub.eu/workflows/471/ro_crate?version=3</a>
+
+
+  <img src="workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg" style="width: 100%;"/>
+
+<p>
+  # rquest-omop-worker-workflows
+
+Source for workflow definitions for the open source RQuest OMOP Worker tool developed for Hutch/TRE-FX
+
+Note: ARM workflows are currently broken. x86 ones work.
+
+## Inputs
+
+###&nbsp;Body
+Sample input payload:
+
+```json
+{
+  "task_id": "job-2023-01-13-14: 20: 38-",
+  "project": "",
+  "owner": "",
+  "cohort": {
+    "groups": [
+      {
+        "rules": [
+          {
+            "varname": "OMOP",
+            "varcat": "Person",
+            "type": "TEXT",
+            "oper": "=",
+            "value": "8507"
+          }
+        ],
+        "rules_oper": "AND"
+      }
+    ],
+    "groups_oper": "OR"
+  },
+  "collection": "",
+  "protocol_version": "",
+  "char_salt": "",
+  "uuid": ""
+}
+```
+
+### Database access
+
+Currently this workflow requires inputs for connecting to the database it will run queries against.
+
+In future this may be moved to environment variables.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/476" target="_blank">Vasiliki Panagi</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_x86/workflow-entrypoint.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="x86/workflow-entrypoint.cwl">rquest-omop-worker-workflow</a>
+      
+        <br/>Size: 607 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg">workflow-471-724775ab48bff4ae6da6c39da4ad1619abcf8518-diagram.svg</a>
+      
+        <br/>Size: 5257 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

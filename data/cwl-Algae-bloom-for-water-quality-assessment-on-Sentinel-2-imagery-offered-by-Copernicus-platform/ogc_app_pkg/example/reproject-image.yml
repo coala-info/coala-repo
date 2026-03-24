@@ -1,0 +1,6 @@
+input_image:
+  class: File
+  path: "/tmp/B01.tif"  # adjust this path to where the retrieved B01 10m GeoTiff is located
+  format: "ogc:geotiff"
+output_name: B01_60m
+output_resolution: [60, 60]

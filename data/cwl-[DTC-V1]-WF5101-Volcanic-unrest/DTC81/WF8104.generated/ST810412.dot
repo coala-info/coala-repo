@@ -1,0 +1,26 @@
+strict digraph {
+
+
+	"ST810412" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810412" -> "DT810412" [ label="is output from", labeltooltip="DT810412 - is output from - ST810412",  weight=0 ];
+
+	"ground_motion_params" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ground_motion_params" -> "ST810412" [ label="is input to", labeltooltip="ground_motion_params - is input to - ST810412",  weight=0 ];
+
+	"source_char_param" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_char_param" -> "ST810412" [ label="is input to", labeltooltip="source_char_param - is input to - ST810412",  weight=0 ];
+
+	"path_char" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"path_char" -> "ST810412" [ label="is input to", labeltooltip="path_char - is input to - ST810412",  weight=0 ];
+
+	"site_char" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"site_char" -> "ST810412" [ label="is input to", labeltooltip="site_char - is input to - ST810412",  weight=0 ];
+
+	"DT810412" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+}

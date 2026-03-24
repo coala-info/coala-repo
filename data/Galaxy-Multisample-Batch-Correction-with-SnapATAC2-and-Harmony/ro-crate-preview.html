@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Multisample Batch Correction with SnapATAC2 and Harmony</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scatac-batch-correction-snapatac2/workflows/main_workflow.html"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scatac-batch-correction-snapatac2/workflows/main_workflow.html",
+      "@type": "Dataset",
+      "name": "Multisample Batch Correction with SnapATAC2 and Harmony",
+      "description": "This Workflow takes a dataset collection of single-cell ATAC-seq fragments and performs:\n- preprocessing\n- filtering\n- concatenation\n- dimension reduction\n- batch correction\n- leiden clustering\n\n## Associated Tutorial\n\nThis workflows is part of the tutorial [Multi-sample batch correction with Harmony and SnapATAC2](https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scatac-batch-correction-snapatac2/tutorial.html), available in the [GTN](https://training.galaxyproject.org)\n\n## Features\n\n* Includes a [Galaxy Workflow Report](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_report_view.html)\n* Uses [Galaxy Workflow Comments](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_comments.html)\n\n## Thanks to...\n\n**Workflow Author(s)**: Timon Schlegel\n\n**Tutorial Author(s)**: [Timon Schlegel](https://training.galaxyproject.org/training-material/hall-of-fame/timonschlegel/)\n\n**Tutorial Contributor(s)**: [Diana Chiang Jurado](https://training.galaxyproject.org/training-material/hall-of-fame/dianichj/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Timon Schlegel](https://training.galaxyproject.org/training-material/hall-of-fame/timonschlegel/)\n\n[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)",
+      "version": "1.0",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "datePublished": "2025-06-02T09:46:43.220+00:00",
+      "mainEntity": {
+        "@id": "main-workflow.ga"
+      },
+      "hasPart": [
+        {
+          "@id": "main-workflow.ga"
+        },
+        {
+          "@id": "graph.png"
+        }
+      ]
+    },
+    {
+      "@id": "main-workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "author": [
+        {
+          "@id": "https://orcid.org/0009-0001-3228-105X"
+        }
+      ],
+      "name": "Multisample Batch Correction with SnapATAC2 and Harmony",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "image": {
+        "@id": "graph.png"
+      }
+    },
+    {
+      "@id": "graph.png",
+      "@type": [
+        "File",
+        "ImageObject",
+        "WorkflowSketch"
+      ],
+      "contentSize": 230567
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "23.1"
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-3228-105X",
+      "@type": "Person",
+      "name": "Timon Schlegel"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Multisample Batch Correction with SnapATAC2 and Harmony</h1>
+  
+  <p>
+    This Workflow takes a dataset collection of single-cell ATAC-seq fragments and performs:
+- preprocessing
+- filtering
+- concatenation
+- dimension reduction
+- batch correction
+- leiden clustering
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Multi-sample batch correction with Harmony and SnapATAC2](https://training.galaxyproject.org/training-material/topics/single-cell/tutorials/scatac-batch-correction-snapatac2/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+## Features
+
+* Includes a [Galaxy Workflow Report](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_report_view.html)
+* Uses [Galaxy Workflow Comments](https://training.galaxyproject.org/training-material/faqs/galaxy/workflows_comments.html)
+
+## Thanks to...
+
+**Workflow Author(s)**: Timon Schlegel
+
+**Tutorial Author(s)**: [Timon Schlegel](https://training.galaxyproject.org/training-material/hall-of-fame/timonschlegel/)
+
+**Tutorial Contributor(s)**: [Diana Chiang Jurado](https://training.galaxyproject.org/training-material/hall-of-fame/dianichj/), [Saskia Hiltemann](https://training.galaxyproject.org/training-material/hall-of-fame/shiltemann/), [Timon Schlegel](https://training.galaxyproject.org/training-material/hall-of-fame/timonschlegel/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>https://spdx.org/licenses/CC-BY-4.0</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>Multisample Batch Correction with SnapATAC2 and Harmony</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>graph.png</strong>
+        
+          <br/>Size: 230567
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

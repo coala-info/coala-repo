@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Example of setting up a simulation system</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "md_list.cwl"
+      },
+      "datePublished": "2021-01-29 16:56:33 +0000",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/98?version=2",
+      "url": "https://workflowhub.eu/workflows/98/ro_crate?version=2",
+      "name": "Research Object Crate for Example of setting up a simulation system",
+      "description": "CWL version of the md_list.cwl workflow for HPC.\n",
+      "isBasedOn": "https://github.com/douglowe/biobb_hpc_cwl_md_list",
+      "sdDatePublished": "2026-03-24 01:20:17 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "md_list.cwl"
+        },
+        {
+          "@id": "graph.svg"
+        }
+      ]
+    },
+    {
+      "@id": "md_list.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 6609,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "graph.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "CWL version of the md_list.cwl workflow for HPC.\n",
+      "name": "Example of setting up a simulation system",
+      "url": "https://workflowhub.eu/workflows/98?version=2",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2021-01-29T16:56:33Z",
+      "dateModified": "2023-01-16T13:46:36Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/98?version=1",
+      "input": [
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step1_pdb_file"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step2_editconf_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step4_grompp_genion_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step5_genion_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step6_grompp_min_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step8_make_ndx_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step9_grompp_nvt_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step11_grompp_npt_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step13_grompp_md_config"
+        },
+        {
+          "@id": "#example_of_setting_up_a_simulation_system-inputs-step14_mdrun_md_config"
+        }
+      ],
+      "output": {
+        "@id": "#example_of_setting_up_a_simulation_system-outputs-dir"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "graph.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 33936
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step1_pdb_file",
+      "@type": "FormalParameter",
+      "name": "step1_pdb_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step2_editconf_config",
+      "@type": "FormalParameter",
+      "name": "step2_editconf_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step4_grompp_genion_config",
+      "@type": "FormalParameter",
+      "name": "step4_grompp_genion_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step5_genion_config",
+      "@type": "FormalParameter",
+      "name": "step5_genion_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step6_grompp_min_config",
+      "@type": "FormalParameter",
+      "name": "step6_grompp_min_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step8_make_ndx_config",
+      "@type": "FormalParameter",
+      "name": "step8_make_ndx_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step9_grompp_nvt_config",
+      "@type": "FormalParameter",
+      "name": "step9_grompp_nvt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step11_grompp_npt_config",
+      "@type": "FormalParameter",
+      "name": "step11_grompp_npt_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step13_grompp_md_config",
+      "@type": "FormalParameter",
+      "name": "step13_grompp_md_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-inputs-step14_mdrun_md_config",
+      "@type": "FormalParameter",
+      "name": "step14_mdrun_md_config",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#example_of_setting_up_a_simulation_system-outputs-dir",
+      "@type": "FormalParameter",
+      "name": "whole workflow output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Example of setting up a simulation system</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/98/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/98/ro_crate?version=2</a>
+
+
+  <img src="graph.svg" style="width: 100%;"/>
+
+<p>
+  CWL version of the md_list.cwl workflow for HPC.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_md_list.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="md_list.cwl">Example of setting up a simulation system</a>
+      
+        <br/>Size: 6609 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_graph.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="graph.svg">graph.svg</a>
+      
+        <br/>Size: 33936 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

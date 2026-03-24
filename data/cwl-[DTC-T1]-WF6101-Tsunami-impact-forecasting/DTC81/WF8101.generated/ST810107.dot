@@ -1,0 +1,18 @@
+strict digraph {
+
+
+	"DT810106" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810106" -> "ST810107" [ label="is input to", labeltooltip="DT810106 - is input to - ST810107",  weight=0 ];
+
+	"DT810107" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810107" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810107" -> "DT810107" [ label="is output from", labeltooltip="DT810107 - is output from - ST810107",  weight=0 ];
+
+	"DT810105" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810105" -> "ST810107" [ label="is input to", labeltooltip="DT810105 - is input to - ST810107",  weight=0 ];
+
+}

@@ -1,0 +1,23 @@
+{
+    "license": "Apache-2.0", 
+    "title": "Highly portable workflows for processing of ATAC-seq data based on the Common Workflow Language", 
+    "description": "Highly portable workflows for processing of ATAC-seq data based on the Common Workflow Language",
+    "creators": [
+        {
+            "affiliation": "German Cancer Research Center", 
+            "name": "Kersten Breuer"
+        },
+        {
+            "affiliation": "German Cancer Research Center", 
+            "name": "Yassen Assenov"
+        },
+        {
+            "affiliation": "German Cancer Research Center", 
+            "name": "Christoph Plass"
+        },
+        {
+            "affiliation": "German Cancer Research Center", 
+            "name": "Pavlo Lutsik"
+        }
+    ]
+}

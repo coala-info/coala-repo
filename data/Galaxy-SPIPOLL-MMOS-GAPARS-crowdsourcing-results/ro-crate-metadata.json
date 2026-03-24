@@ -1,0 +1,174 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-SPIPOLL_MMOS_GAPARS_crowdsourcing_results.ga"
+      },
+      "datePublished": "2023-11-10 08:38:12 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.660.1",
+      "url": "https://workflowhub.eu/workflows/660/ro_crate?version=1",
+      "name": "Research Object Crate for SPIPOLL MMOS GAPARS crowdsourcing results",
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, to analyze crowdsourcing results of the SPIPOLL hoverflies GAPARS European project activity on MMOS server.\n",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/workflow-constructed-from-history-spipoll-mmos-gapars-results-2020---30-05-2023",
+      "sdDatePublished": "2026-03-24 17:53:51 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-SPIPOLL_MMOS_GAPARS_crowdsourcing_results.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-SPIPOLL_MMOS_GAPARS_crowdsourcing_results.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 20142,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy Workflow created on Galaxy-E european instance, ecology.usegalaxy.eu, to analyze crowdsourcing results of the SPIPOLL hoverflies GAPARS European project activity on MMOS server.\n",
+      "name": "SPIPOLL MMOS GAPARS crowdsourcing results",
+      "url": "https://workflowhub.eu/workflows/660?version=1",
+      "keywords": "Biodiversity, Ecology, citizen science",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/51"
+        },
+        {
+          "@id": "#GAPARS%20Horizon%202020%20European%20project"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2023-11-10T08:41:20Z",
+      "dateModified": "2024-12-09T08:23:38Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/33"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.660.1",
+      "input": [
+        {
+          "@id": "#spipoll_mmos_gapars_crowdsourcing_results-inputs-Input%20Dataset%20Collection"
+        },
+        {
+          "@id": "#spipoll_mmos_gapars_crowdsourcing_results-inputs-classifications-000312899389-000316591628.csv.part_00000"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "GAPARS Horizon 2020 European project"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "#GAPARS Horizon 2020 European project",
+      "@type": "Person",
+      "name": "GAPARS Horizon 2020 European project"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#spipoll_mmos_gapars_crowdsourcing_results-inputs-Input Dataset Collection",
+      "@type": "FormalParameter",
+      "name": "Input Dataset Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#spipoll_mmos_gapars_crowdsourcing_results-inputs-classifications-000312899389-000316591628.csv.part_00000",
+      "@type": "FormalParameter",
+      "name": "classifications-000312899389-000316591628.csv.part_00000",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

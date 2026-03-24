@@ -1,0 +1,39 @@
+# Species Distribution Modeling With Wallace From GBIF - Training Material CWL Workflow Report
+
+### Metadata
+- **Docker Image**: N/A
+- **Homepage**: https://training.galaxyproject.org
+- **Package**: https://workflowhub.eu/workflows/1687
+- **Validation**: N/A
+
+- **RO-Crate download**: https://workflowhub.eu/workflows/1687/ro_crate?version=1
+- **Conda**: N/A
+- **Total Downloads**: 257
+- **Last updated**: 2025-06-02
+- **GitHub**: N/A
+- **Stars**: N/A
+- **Version**: 1
+- **License**: CC-BY-4.0
+- **Workflow type**: Galaxy
+- **Main workflow (WorkflowHub):** `galaxy-workflow-species-distribution-modeling-with-wallace-from-gbif---training-material.ga` (Main Workflow)
+- **Project**: Galaxy Training Network
+- **Views**: 2201
+- **Discussion / source**: https://matrix.to/#/%23galaxyproject_admin:gitter.im
+
+## Description
+
+Species distribution modeling
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Species distribution modeling](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/species-distribution-modeling/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+
+
+
+
+## Thanks to...
+
+**Tutorial Author(s)**: [Elisa Michon](https://training.galaxyproject.org/training-material/hall-of-fame/emichn/), [Yvan Le Bras](https://training.galaxyproject.org/training-material/hall-of-fame/yvanlebras/), [Bérénice Batut](https://training.galaxyproject.org/training-material/hall-of-fame/bebatut/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)

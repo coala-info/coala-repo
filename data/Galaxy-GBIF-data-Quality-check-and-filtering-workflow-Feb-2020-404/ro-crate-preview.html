@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for GBIF data Quality check and filtering workflow Feb-2020</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-GBIF_data_Quality_check_and_filtering_workflow_Feb-2020.ga"
+      },
+      "datePublished": "2022-11-18 14:19:07 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.404.1",
+      "url": "https://workflowhub.eu/workflows/404/ro_crate?version=1",
+      "name": "Research Object Crate for GBIF data Quality check and filtering workflow Feb-2020",
+      "description": "This Galaxy-E workflow was made from the [\"Cleaning GBIF data for the use in biogeography\" tutorial](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) and allows to:\n- Use CoordinateCleaner to automatically flag problematic records\n- Use GBIF provided meta-data to improve coordinate quality, tailored to your downstream analyses\n- Use automated cleaning algorithms of CoordinateCleaner to identify problematic contributing datasets\n- Visualize data on a map",
+      "isBasedOn": "https://ecology.usegalaxy.eu/u/ylebras/w/gbif-data-quality-check-and-filtering-workflow-feb-2020",
+      "sdDatePublished": "2026-03-24 18:01:26 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-GBIF_data_Quality_check_and_filtering_workflow_Feb-2020.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-GBIF_data_Quality_check_and_filtering_workflow_Feb-2020.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 16297,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This Galaxy-E workflow was made from the [\"Cleaning GBIF data for the use in biogeography\" tutorial](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) and allows to:\n- Use CoordinateCleaner to automatically flag problematic records\n- Use GBIF provided meta-data to improve coordinate quality, tailored to your downstream analyses\n- Use automated cleaning algorithms of CoordinateCleaner to identify problematic contributing datasets\n- Visualize data on a map",
+      "name": "GBIF data Quality check and filtering workflow Feb-2020",
+      "url": "https://workflowhub.eu/workflows/404?version=1",
+      "keywords": "Biodiversity, Ecology",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/51"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2022-11-18T14:39:27Z",
+      "dateModified": "2024-12-09T08:45:44Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.404.1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for GBIF data Quality check and filtering workflow Feb-2020</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/404/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/404/ro_crate?version=1</a>
+
+
+<p>
+  This Galaxy-E workflow was made from the ["Cleaning GBIF data for the use in biogeography" tutorial](https://ropensci.github.io/CoordinateCleaner/articles/Cleaning_GBIF_data_with_CoordinateCleaner.html) and allows to:
+- Use CoordinateCleaner to automatically flag problematic records
+- Use GBIF provided meta-data to improve coordinate quality, tailored to your downstream analyses
+- Use automated cleaning algorithms of CoordinateCleaner to identify problematic contributing datasets
+- Visualize data on a map
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-8504-068X" target="_blank">Yvan Le Bras</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-GBIF_data_Quality_check_and_filtering_workflow_Feb-2020.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-GBIF_data_Quality_check_and_filtering_workflow_Feb-2020.ga">GBIF data Quality check and filtering workflow Feb-2020</a>
+      
+        <br/>Size: 16297 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

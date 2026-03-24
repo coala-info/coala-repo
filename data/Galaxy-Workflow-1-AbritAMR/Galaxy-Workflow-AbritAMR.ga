@@ -1,0 +1,63 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "AbritAMR",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/abritamr/abritamr/1.0.14+galaxy1",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool abriTAMR",
+                    "name": "contig"
+                }
+            ],
+            "label": null,
+            "name": "abriTAMR",
+            "outputs": [
+                {
+                    "name": "abriTAMR_output",
+                    "type": "txt"
+                },
+                {
+                    "name": "matches_summary",
+                    "type": "txt"
+                },
+                {
+                    "name": "partials_summary",
+                    "type": "txt"
+                },
+                {
+                    "name": "virulence_summary",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 0.0,
+                "top": 0.0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/abritamr/abritamr/1.0.14+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "5aaffb8d8161",
+                "name": "abritamr",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"contig\": {\"__class__\": \"RuntimeValue\"}, \"identity\": null, \"log_file\": false, \"species\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.14+galaxy1",
+            "type": "tool",
+            "uuid": "3aa8a5d1-c46d-414c-8b6d-4371048d7450",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "e43ca8c3-a5b3-457b-b016-e8d142e850a7",
+    "version": 2
+}

@@ -1,0 +1,111 @@
+2025-03-03 15:04:21.9496 20170519 TM FScon3613 TRACE Input file: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\mzlite\20170519 TM FScon3613.mzlite 
+2025-03-03 15:04:21.9496 20170519 TM FScon3613 TRACE Output directory: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm 
+2025-03-03 15:04:21.9597 20170519 TM FScon3613 TRACE Parameters: { ChargeStateDeterminationParams = { ExpectedMinimalCharge = 2
+                                     ExpectedMaximumCharge = 5
+                                     Width = 1.1
+                                     MinIntensity = 0.15
+                                     DeltaMinIntensity = 0.3
+                                     NrOfRndSpectra = 10000 }
+  LookUpPPM = 30.0
+  nTerminalSeries = <fun:toDomain@150-6>
+  cTerminalSeries = <fun:toDomain@170-13>
+  AndromedaParams = { PMinPMax = (4, 10)
+                      MatchingIonTolerancePPM = 100.0 } } 
+2025-03-03 15:04:21.9597 20170519 TM FScon3613 TRACE Result file path: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\psm\20170519 TM FScon3613.psm 
+2025-03-03 15:04:21.9597 20170519 TM FScon3613 TRACE Copy peptide DB into Memory. 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Copy peptide DB into Memory: finished. 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Prepare processing functions. 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Charge parameters: { ExpectedMinimalCharge = 2
+  ExpectedMaximumCharge = 5
+  Width = 1.1
+  MinIntensity = 0.15
+  DeltaMinIntensity = 0.3
+  NrOfRndSpectra = 10000 } 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE DB parameters: { Name = "Chlamy"
+  DbFolder = "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db"
+  FastaPath =
+   "C:\Users\ottj\repos\RatioLFQComparisons\studies\DilutionSeries\resources\Chlamy_JGI5_5Cp_Mp_gen.fasta"
+  FastaHeaderToName = <fun:getSDBParams@907>
+  Protease = { Name = "Trypsin"
+               Expression = <fun:Trypsin@175> }
+  MinMissedCleavages = 0
+  MaxMissedCleavages = 2
+  MaxMass = 15000.0
+  MinPepLength = 4
+  MaxPepLength = 65
+  IsotopicMod = [{ Name = "N15"
+                   SourceEl = Di { Symbol = "N"
+                                   X = { AtomicSymbol = "N"
+                                         AtomicNumberZ = 7
+                                         MassNumber = 14
+                                         Mass = 14.003074
+                                         NatAbundance = 0.99636
+                                         RelAtomicMass = 14.0067 }
+                                   Xcomp = 0.99636
+                                   X1 = { AtomicSymbol = "N"
+                                          AtomicNumberZ = 7
+                                          MassNumber = 15
+                                          Mass = 15.0001089
+                                          NatAbundance = 0.00364
+                                          RelAtomicMass = 14.0067 }
+                                   X1comp = 0.00364
+                                   Root = -273.7252747 }
+                   TargetEl = Di { Symbol = "N15"
+                                   X = { AtomicSymbol = "N"
+                                         AtomicNumberZ = 7
+                                         MassNumber = 15
+                                         Mass = 15.0001089
+                                         NatAbundance = 0.00364
+                                         RelAtomicMass = 14.0067 }
+                                   Xcomp = 0.99636
+                                   X1 = { AtomicSymbol = "N"
+                                          AtomicNumberZ = 7
+                                          MassNumber = 14
+                                          Mass = 14.003074
+                                          NatAbundance = 0.99636
+                                          RelAtomicMass = 14.0067 }
+                                   X1comp = 0.00364
+                                   Root = -273.7252747 } }]
+  MassMode = Monoisotopic
+  MassFunction = <fun:memoizeP@25>
+  FixedMods = []
+  VariableMods = [{ Name = "Acetyl(Protein N-Term)"
+                    Accession = "1"
+                    Description = "Acetylation of the protein N-terminus"
+                    IsBiological = true
+                    Composition = "C2H2O"
+                    Site = [Any ProteinNterm]
+                    MType = Plus
+                    XModCode = "ac" }; { Name = "Oxidation'Met'"
+                                         Accession = "35"
+                                         Description = "Oxidation"
+                                         IsBiological = true
+                                         Composition = "O"
+                                         Site = [Specific (Met, Residual)]
+                                         MType = Plus
+                                         XModCode = "ox" }]
+  VarModThreshold = 4 } 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Finished preparing processing functions. 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Init connection to input data base. 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Run ID: sample=0 
+2025-03-03 15:04:45.2499 20170519 TM FScon3613 TRACE Starting charge state determination. 
+2025-03-03 15:08:29.4734 20170519 TM FScon3613 TRACE Finished charge state determination. 
+2025-03-03 15:08:29.4734 20170519 TM FScon3613 TRACE ProteomIQon.PeptideSpectrumMatching+scoreSpectra@372 
+2025-03-03 15:08:29.4749 20170519 TM FScon3613 TRACE Starting peptide spectrum matching. 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 34083 spectra with charge 2 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 9995 spectra with charge 3 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 1737 spectra with charge 4 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 137 spectra with charge 5 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 34083 spectra with charge 2 processed 
+2025-03-03 15:08:29.5167 20170519 TM FScon3613 TRACE 0 
+2025-03-03 15:24:24.1857 20170519 TM FScon3613 TRACE 10000 
+2025-03-03 15:44:45.9705 20170519 TM FScon3613 TRACE 20000 
+2025-03-03 16:12:14.6192 20170519 TM FScon3613 TRACE 30000 
+2025-03-03 16:27:33.0863 20170519 TM FScon3613 TRACE 9995 spectra with charge 3 processed 
+2025-03-03 16:27:33.0863 20170519 TM FScon3613 TRACE 0 
+2025-03-03 17:01:04.8717 20170519 TM FScon3613 TRACE 1737 spectra with charge 4 processed 
+2025-03-03 17:01:04.8717 20170519 TM FScon3613 TRACE 0 
+2025-03-03 17:07:27.2268 20170519 TM FScon3613 TRACE 137 spectra with charge 5 processed 
+2025-03-03 17:07:27.2268 20170519 TM FScon3613 TRACE 0 
+2025-03-03 17:07:38.4626 20170519 TM FScon3613 TRACE Finished peptide spectrum matching. 
+2025-03-03 17:07:38.4626 20170519 TM FScon3613 TRACE Done. 

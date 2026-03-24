@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for mRNA-Seq BY-COVID Pipeline: Analysis</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Analysis.ga"
+      },
+      "datePublished": "2024-01-23 10:24:13 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/689?version=1",
+      "url": "https://workflowhub.eu/workflows/689/ro_crate?version=1",
+      "name": "Research Object Crate for mRNA-Seq BY-COVID Pipeline: Analysis",
+      "description": "Analyse Bulk RNA-Seq data in preparation for downstream Pathways analysis with MINERVA",
+      "sdDatePublished": "2026-03-24 17:52:08 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Analysis.ga"
+        },
+        {
+          "@id": "workflow-screenshot.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Analysis.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 31727,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-screenshot.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Analyse Bulk RNA-Seq data in preparation for downstream Pathways analysis with MINERVA",
+      "name": "mRNA-Seq BY-COVID Pipeline: Analysis",
+      "url": "https://workflowhub.eu/workflows/689?version=1",
+      "keywords": "BY-COVID, covid-19",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": [
+        {
+          "@id": "#Iacopo%20Cristoferi"
+        },
+        {
+          "@id": "#Helena%20Rasche"
+        },
+        {
+          "@id": "#Clinical%20Bioinformatics%20Unit"
+        },
+        {
+          "@id": "#Pathology%20Department"
+        },
+        {
+          "@id": "#Eramus%20Medical%20Center"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/12"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/215"
+        }
+      ],
+      "dateCreated": "2023-12-19T10:10:54Z",
+      "dateModified": "2024-01-24T09:43:21Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/16"
+      },
+      "input": [
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-factordata"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-featureCounts:%20Counts"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-featureCounts:%20Lengths"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-count_data"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-limma_report"
+        },
+        {
+          "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-minerva_table"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-screenshot.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 945135
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Clinical Bioinformatics Unit"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Pathology Department"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "Eramus Medical Center"
+    },
+    {
+      "@id": "#Iacopo Cristoferi",
+      "@type": "Person",
+      "name": "Iacopo Cristoferi"
+    },
+    {
+      "@id": "#Helena Rasche",
+      "@type": "Person",
+      "name": "Helena Rasche"
+    },
+    {
+      "@id": "#Clinical Bioinformatics Unit",
+      "@type": "Person",
+      "name": "Clinical Bioinformatics Unit"
+    },
+    {
+      "@id": "#Pathology Department",
+      "@type": "Person",
+      "name": "Pathology Department"
+    },
+    {
+      "@id": "#Eramus Medical Center",
+      "@type": "Person",
+      "name": "Eramus Medical Center"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/215",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BY-COVID (general)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/16",
+      "@type": "Collection",
+      "name": "BY-COVID related workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-factordata",
+      "@type": "FormalParameter",
+      "name": "factordata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-featureCounts: Counts",
+      "@type": "FormalParameter",
+      "name": "featureCounts: Counts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-inputs-featureCounts: Lengths",
+      "@type": "FormalParameter",
+      "name": "featureCounts: Lengths",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-count_data",
+      "@type": "FormalParameter",
+      "name": "count_data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-limma_report",
+      "@type": "FormalParameter",
+      "name": "limma_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#mrna_seq_by_covid_pipeline__analysis-outputs-minerva_table",
+      "@type": "FormalParameter",
+      "name": "minerva_table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for mRNA-Seq BY-COVID Pipeline: Analysis</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/689/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/689/ro_crate?version=1</a>
+
+
+  <img src="workflow-screenshot.png" style="width: 100%;"/>
+
+<p>
+  Analyse Bulk RNA-Seq data in preparation for downstream Pathways analysis with MINERVA
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Clinical Bioinformatics Unit, Pathology Department, Eramus Medical Center</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Analysis.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-mRNA-Seq_BY-COVID_Pipeline__Analysis.ga">mRNA-Seq BY-COVID Pipeline: Analysis</a>
+      
+        <br/>Size: 31727 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-screenshot.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-screenshot.png">workflow-screenshot.png</a>
+      
+        <br/>Size: 945135 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

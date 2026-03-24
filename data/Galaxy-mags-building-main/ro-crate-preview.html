@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>mags-building/main</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2025-11-21T13:50:15.919960",
+      "hasPart": [
+        {
+          "@id": "MAGs-generation.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "MAGs-generation-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/mags-building",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "MAGs-generation.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "mags-building/main"
+    },
+    {
+      "@id": "MAGs-generation.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0001-9852-1987"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2982-388X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-3602-7884"
+        },
+        {
+          "@id": "#f3e77617-488f-40c4-9c3d-225322a0032f"
+        },
+        {
+          "@id": "https://orcid.org/0009-0004-0382-2023"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-3813-0823"
+        }
+      ],
+      "name": "mags-building/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/mags-building",
+      "version": "0.4"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "MAGs-generation-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.33"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9852-1987",
+      "@type": "Person",
+      "name": "Bérénice Batut"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2982-388X",
+      "@type": "Person",
+      "name": "Paul Zierep"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3602-7884",
+      "@type": "Person",
+      "name": "Mina Hojat Ansari"
+    },
+    {
+      "@id": "#f3e77617-488f-40c4-9c3d-225322a0032f",
+      "@type": "Person",
+      "name": "Patrick Bühler"
+    },
+    {
+      "@id": "https://orcid.org/0009-0004-0382-2023",
+      "@type": "Person",
+      "name": "Santino Faack"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3813-0823",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "MAGs-generation-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "MAGs-generation.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/mags-building/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>mags-building/main</h1>
+  
+  <p>
+    
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>MIT</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>mags-building/main</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>README.md</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>MAGs-generation-tests.yml</strong>
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

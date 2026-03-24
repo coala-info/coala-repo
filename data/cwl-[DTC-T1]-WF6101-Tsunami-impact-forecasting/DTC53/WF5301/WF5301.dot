@@ -1,0 +1,82 @@
+strict digraph {
+
+
+	"DT5306" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5306" -> "ST530104" [ label="is input to", labeltooltip="DT5306 - is input to - ST530104",  weight=0 ];
+
+	"DT5306" -> "ST530105" [ label="is input to", labeltooltip="DT5306 - is input to - ST530105",  weight=0 ];
+
+	"ST530102" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530102" -> "DT5305" [ label="is output from", labeltooltip="DT5305 - is output from - ST530102",  weight=0 ];
+
+	"DT5308" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5308" -> "ST530102" [ label="is input to", labeltooltip="DT5308 - is input to - ST530102",  weight=0 ];
+
+	"DT5308" -> "ST530104" [ label="is input to", labeltooltip="DT5308 - is input to - ST530104",  weight=0 ];
+
+	"DT5308" -> "ST530105" [ label="is input to", labeltooltip="DT5308 - is input to - ST530105",  weight=0 ];
+
+	"DT5308" -> "ST530101" [ label="is input to", labeltooltip="DT5308 - is input to - ST530101",  weight=0 ];
+
+	"DT5309" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5309" -> "ST530101" [ label="is input to", labeltooltip="DT5309 - is input to - ST530101",  weight=0 ];
+
+	"DT5309" -> "ST530102" [ label="is input to", labeltooltip="DT5309 - is input to - ST530102",  weight=0 ];
+
+	"DT5309" -> "ST530104" [ label="is input to", labeltooltip="DT5309 - is input to - ST530104",  weight=0 ];
+
+	"DT5309" -> "ST530105" [ label="is input to", labeltooltip="DT5309 - is input to - ST530105",  weight=0 ];
+
+	"DT5310" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530104" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5302" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5302" -> "ST530102" [ label="is input to", labeltooltip="DT5302 - is input to - ST530102",  weight=0 ];
+
+	"DT5302" -> "ST530101" [ label="is input to", labeltooltip="DT5302 - is input to - ST530101",  weight=0 ];
+
+	"DT5304" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5304" -> "ST530101" [ label="is input to", labeltooltip="DT5304 - is input to - ST530101",  weight=0 ];
+
+	"DT5304" -> "ST530102" [ label="is input to", labeltooltip="DT5304 - is input to - ST530102",  weight=0 ];
+
+	"ST530101" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530101" -> "DT5310" [ label="is output from", labeltooltip="DT5310 - is output from - ST530101",  weight=0 ];
+
+	"DT5301" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5301" -> "ST530101" [ label="is input to", labeltooltip="DT5301 - is input to - ST530101",  weight=0 ];
+
+	"DT5305" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5305" -> "ST530103" [ label="is input to", labeltooltip="DT5305 - is input to - ST530103",  weight=0 ];
+
+	"DT5307" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530103" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530103" -> "DT5306" [ label="is output from", labeltooltip="DT5306 - is output from - ST530103",  weight=0 ];
+
+	"DT5311" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5311" -> "ST530105" [ label="is input to", labeltooltip="DT5311 - is input to - ST530105",  weight=0 ];
+
+	"ST530105" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST530105" -> "DT5307" [ label="is output from", labeltooltip="DT5307 - is output from - ST530105",  weight=0 ];
+
+	"DT5303" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5303" -> "ST530101" [ label="is input to", labeltooltip="DT5303 - is input to - ST530101",  weight=0 ];
+
+	"DT5303" -> "ST530103" [ label="is input to", labeltooltip="DT5303 - is input to - ST530103",  weight=0 ];
+
+}

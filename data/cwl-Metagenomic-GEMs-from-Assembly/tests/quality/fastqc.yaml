@@ -1,0 +1,10 @@
+cwl:tool: ../../tools/fastqc/fastqc.cwl
+fastq: 
+   - class: File
+     path: forward.fastq.gz
+   - class: File
+     path: reverse.fastq.gz
+identifier: illumina_quality_test
+source:
+  - http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon2/
+  - http://download.systemsbiology.nl/unlock/cwl/test_data/amplicon/

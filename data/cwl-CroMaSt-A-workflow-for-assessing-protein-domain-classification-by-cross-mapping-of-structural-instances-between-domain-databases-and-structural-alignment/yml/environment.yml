@@ -1,0 +1,17 @@
+name: CroMaSt
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas=1.5.2
+  - nodejs=18.15.0
+  - pip=23.0.1
+  - pip:
+    - beautifulsoup4==4.12.2
+    - biopython==1.81
+    - cwltool==3.1.20211103193132
+    - cwlref-runner==1.0
+    - wget==3.2
+    - sh==2.0.4
+    - pyyaml==6.0
+prefix: /users/hdhondge/conda/envs/CroMaSt

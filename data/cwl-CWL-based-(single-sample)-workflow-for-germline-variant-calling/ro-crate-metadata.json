@@ -1,0 +1,1383 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "gatk_single-sample_bqsr_cnn_hard-filtering.cwl"
+      },
+      "datePublished": "2023-07-05 10:45:45 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8035-341X"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.527.1",
+      "url": "https://workflowhub.eu/workflows/527/ro_crate?version=1",
+      "name": "Research Object Crate for CWL-based (single-sample) workflow for germline variant calling",
+      "description": "A CWL-based pipeline for calling small germline variants, namely SNPs and small INDELs, by processing data from Whole-genome Sequencing (WGS) or Targeted Sequencing (e.g., Whole-exome sequencing; WES) experiments.\n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers and subworkflows for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of Illumina reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trim galore)\n3. Mapping to reference genome (BWA-MEM)\n4. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n5. Sorting mapped reads based on read names (samtools)\n6. Adding information regarding paired end reads (e.g., CIGAR field information) (samtools)\n7. Re-sorting mapped reads based on chromosomal coordinates (samtools)\n8. Adding basic Read-Group information regarding sample name, platform unit, platform (e.g., ILLUMINA), library and identifier (picard AddOrReplaceReadGroups)\n9. Marking PCR and/or optical duplicate reads (picard MarkDuplicates)\n10. Collection of summary statistics (samtools) \n11. Creation of indexes for coordinate-sorted BAM files to enable fast random access (samtools)\n12. Splitting the reference genome into a predefined number of intervals for parallel processing (GATK SplitIntervals)\n\nAt this point the application of single-sample workflow follows, during which multiple samples are accepted as input and they are not merged into a unified VCF file but are rather processed separately in each step of the workflow, leading to the production of a VCF file for each sample:\n\n13. Application of Base Quality Score Recalibration (BQSR) (GATK BaseRecalibrator, GatherBQSRReports and ApplyBQSR tools)\n14. Variant calling (GATK HaplotypeCaller)  \n15. Merging of all genomic interval-split gVCF files for each sample (GATK MergeVCFs)\n16. Separate annotation of SNPs and INDELs based on pretrained Convolutional Neural Network (CNN) models (GATK SelectVariants, CNNScoreVariants and FilterVariantTranches tools)\n17. (Optional) Independent step of hard-filtering (GATK VariantFiltration)\n18. Variant filtering based on the information added during VQSR and/or custom filters (bcftools)\n19. Normalization of INDELs (split multiallelic sites) (bcftools)\n20. Annotation of the final dataset of filtered variants with genomic, population-related and/or clinical information (ANNOVAR)\n",
+      "isBasedOn": "https://github.com/BiodataAnalysisGroup/CWL_HTS_pipelines/tree/main/Germline_Variant_calling/single-sample_analysis/with_BQSR_CNN_%26_hard_filtering",
+      "sdDatePublished": "2026-03-24 01:06:07 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "gatk_single-sample_bqsr_cnn_hard-filtering.cwl"
+        },
+        {
+          "@id": "workflow-527-be8c585e8676f30e2626c6b3ad92fc6f93648cf3-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "gatk_single-sample_bqsr_cnn_hard-filtering.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 36026,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-527-be8c585e8676f30e2626c6b3ad92fc6f93648cf3-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "A CWL-based pipeline for calling small germline variants, namely SNPs and small INDELs, by processing data from Whole-genome Sequencing (WGS) or Targeted Sequencing (e.g., Whole-exome sequencing; WES) experiments.\n\nOn the respective GitHub folder are available:\n\n- The CWL wrappers and subworkflows for the workflow\n- A pre-configured YAML template, based on validation analysis of publicly available HTS data\n\nBriefly, the workflow performs the following steps:\n\n1. Quality control of Illumina reads (FastQC)\n2. Trimming of the reads (e.g., removal of adapter and/or low quality sequences) (Trim galore)\n3. Mapping to reference genome (BWA-MEM)\n4. Convertion of mapped reads from SAM (Sequence Alignment Map) to BAM (Binary Alignment Map) format (samtools)\n5. Sorting mapped reads based on read names (samtools)\n6. Adding information regarding paired end reads (e.g., CIGAR field information) (samtools)\n7. Re-sorting mapped reads based on chromosomal coordinates (samtools)\n8. Adding basic Read-Group information regarding sample name, platform unit, platform (e.g., ILLUMINA), library and identifier (picard AddOrReplaceReadGroups)\n9. Marking PCR and/or optical duplicate reads (picard MarkDuplicates)\n10. Collection of summary statistics (samtools) \n11. Creation of indexes for coordinate-sorted BAM files to enable fast random access (samtools)\n12. Splitting the reference genome into a predefined number of intervals for parallel processing (GATK SplitIntervals)\n\nAt this point the application of single-sample workflow follows, during which multiple samples are accepted as input and they are not merged into a unified VCF file but are rather processed separately in each step of the workflow, leading to the production of a VCF file for each sample:\n\n13. Application of Base Quality Score Recalibration (BQSR) (GATK BaseRecalibrator, GatherBQSRReports and ApplyBQSR tools)\n14. Variant calling (GATK HaplotypeCaller)  \n15. Merging of all genomic interval-split gVCF files for each sample (GATK MergeVCFs)\n16. Separate annotation of SNPs and INDELs based on pretrained Convolutional Neural Network (CNN) models (GATK SelectVariants, CNNScoreVariants and FilterVariantTranches tools)\n17. (Optional) Independent step of hard-filtering (GATK VariantFiltration)\n18. Variant filtering based on the information added during VQSR and/or custom filters (bcftools)\n19. Normalization of INDELs (split multiallelic sites) (bcftools)\n20. Annotation of the final dataset of filtered variants with genomic, population-related and/or clinical information (ANNOVAR)\n",
+      "name": "CWL-based (single-sample) workflow for germline variant calling",
+      "url": "https://workflowhub.eu/workflows/527?version=1",
+      "keywords": "CWL, workflow, Germline, variant calling, Genomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/515"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2502-612X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0222-4273"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/173"
+      },
+      "dateCreated": "2023-07-05T09:48:09Z",
+      "dateModified": "2023-07-05T09:49:33Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.527.1",
+      "input": [
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-raw_files_directory"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split_fwd_single"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split_rev"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_qc_check"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_trimming_check"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_quality"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_length"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_compression"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_do_not_compress"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_strigency"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_trim_suffix"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-reference_genome"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bwa_mem_sec_shorter_split_hits"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bwa_mem_num_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_uncompressed"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_collapsecigar"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readswithoutbits"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_fastcompression"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_samheader"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_count"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsingroup"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readtagtostrip"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsquality"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readswithbits"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_cigar"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_iscram"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_randomseed"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_region"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsinlibrary"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_fixmate_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_fixmate_output_format"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_compression_level"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_memory"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_flagstat_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-picard_addorreplacereadgroups_rgpl"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_include_intervalList"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_exclude_intervalList"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_scatter_count"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_1"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_2"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_3"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_interval_padding"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_hc_native_pairHMM_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_hc_java_options"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_window"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_cluster"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_name_snp"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_snp"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_name_indel"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_indel"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_1"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_2"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_3"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_include_hard_filters"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_include_CNN_filters"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_norm_threads"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftoomls_norm_multiallelics"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_database_location"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_build_over"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_remove"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_protocol"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_operation"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_na_string"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_vcfinput"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_otherinfo"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_convert_arg"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_single_fq"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_single_reports"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_paired_fq"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_paired_reports"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_raw_html"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_single_html"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_paired_html"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_raw_zip"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_single_zip"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_paired_zip"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gather_bwa_sam_files"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_view_conversion"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_sort_by_name"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_fixmate"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_sort"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_addorreplacereadgroups"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_markduplicates"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_markduplicates_metrics"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_flagstat"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_view_count_total"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_index"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_bqsr_subworkflow"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_ApplyBQSR"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_index_2"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_splitintervals"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_HaplotypeCaller"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_tabix_snps"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_tabix_indels"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_concat"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_view_hard_filter"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_norm_hard_filter"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_CNNScoreVariants"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_FilterVariantTranches"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_view_filter_cnn"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_norm_cnn"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_multianno_vcf"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_multianno_txt"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_avinput"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_multianno_vcf"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_multianno_txt"
+        },
+        {
+          "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_avinput"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-527-be8c585e8676f30e2626c6b3ad92fc6f93648cf3-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 221255
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8035-341X",
+      "@type": "Person",
+      "name": "Konstantinos Kyritsis",
+      "identifier": "https://orcid.org/0000-0001-8035-341X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/515",
+      "@type": "Person",
+      "name": "Konstantinos Kyritsis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2502-612X",
+      "@type": "Person",
+      "name": "Nikolaos Pechlivanis"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0222-4273",
+      "@type": "Person",
+      "name": "Fotis Psomopoulos"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/173",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Biodata Analysis Group"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-raw_files_directory",
+      "@type": "FormalParameter",
+      "name": "raw_files_directory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split",
+      "@type": "FormalParameter",
+      "name": "input_file_split",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split_fwd_single",
+      "@type": "FormalParameter",
+      "name": "input_file_split_fwd_single",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_file_split_rev",
+      "@type": "FormalParameter",
+      "name": "input_file_split_rev",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_qc_check",
+      "@type": "FormalParameter",
+      "name": "input_qc_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-input_trimming_check",
+      "@type": "FormalParameter",
+      "name": "input_trimming_check",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_quality",
+      "@type": "FormalParameter",
+      "name": "tg_quality",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_length",
+      "@type": "FormalParameter",
+      "name": "tg_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_compression",
+      "@type": "FormalParameter",
+      "name": "tg_compression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_do_not_compress",
+      "@type": "FormalParameter",
+      "name": "tg_do_not_compress",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_strigency",
+      "@type": "FormalParameter",
+      "name": "tg_strigency",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-tg_trim_suffix",
+      "@type": "FormalParameter",
+      "name": "tg_trim_suffix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-reference_genome",
+      "@type": "FormalParameter",
+      "name": "reference_genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bwa_mem_sec_shorter_split_hits",
+      "@type": "FormalParameter",
+      "name": "bwa_mem_sec_shorter_split_hits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bwa_mem_num_threads",
+      "@type": "FormalParameter",
+      "name": "bwa_mem_num_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_uncompressed",
+      "@type": "FormalParameter",
+      "name": "samtools_view_uncompressed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_collapsecigar",
+      "@type": "FormalParameter",
+      "name": "samtools_view_collapsecigar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readswithoutbits",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readswithoutbits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_fastcompression",
+      "@type": "FormalParameter",
+      "name": "samtools_view_fastcompression",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_samheader",
+      "@type": "FormalParameter",
+      "name": "samtools_view_samheader",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_count",
+      "@type": "FormalParameter",
+      "name": "samtools_view_count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsingroup",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsingroup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readtagtostrip",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readtagtostrip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsquality",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsquality",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readswithbits",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readswithbits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_cigar",
+      "@type": "FormalParameter",
+      "name": "samtools_view_cigar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_iscram",
+      "@type": "FormalParameter",
+      "name": "samtools_view_iscram",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_view_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_randomseed",
+      "@type": "FormalParameter",
+      "name": "samtools_view_randomseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_region",
+      "@type": "FormalParameter",
+      "name": "samtools_view_region",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_view_readsinlibrary",
+      "@type": "FormalParameter",
+      "name": "samtools_view_readsinlibrary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_fixmate_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_fixmate_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_fixmate_output_format",
+      "@type": "FormalParameter",
+      "name": "samtools_fixmate_output_format",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_compression_level",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_compression_level",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_sort_memory",
+      "@type": "FormalParameter",
+      "name": "samtools_sort_memory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-samtools_flagstat_threads",
+      "@type": "FormalParameter",
+      "name": "samtools_flagstat_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-picard_addorreplacereadgroups_rgpl",
+      "@type": "FormalParameter",
+      "name": "picard_addorreplacereadgroups_rgpl",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_include_intervalList",
+      "@type": "FormalParameter",
+      "name": "gatk_splitintervals_include_intervalList",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_exclude_intervalList",
+      "@type": "FormalParameter",
+      "name": "gatk_splitintervals_exclude_intervalList",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-gatk_splitintervals_scatter_count",
+      "@type": "FormalParameter",
+      "name": "gatk_splitintervals_scatter_count",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_1",
+      "@type": "FormalParameter",
+      "name": "sub_bqsr_known_sites_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_2",
+      "@type": "FormalParameter",
+      "name": "sub_bqsr_known_sites_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_known_sites_3",
+      "@type": "FormalParameter",
+      "name": "sub_bqsr_known_sites_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_bqsr_interval_padding",
+      "@type": "FormalParameter",
+      "name": "sub_bqsr_interval_padding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_hc_native_pairHMM_threads",
+      "@type": "FormalParameter",
+      "name": "sub_hc_native_pairHMM_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-sub_hc_java_options",
+      "@type": "FormalParameter",
+      "name": "sub_hc_java_options",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_window",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_window",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_cluster",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_cluster",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_name_snp",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_filter_name_snp",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_snp",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_filter_snp",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_name_indel",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_filter_name_indel",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-VariantFiltration_filter_indel",
+      "@type": "FormalParameter",
+      "name": "VariantFiltration_filter_indel",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_1",
+      "@type": "FormalParameter",
+      "name": "FilterVariantTranches_resource_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_2",
+      "@type": "FormalParameter",
+      "name": "FilterVariantTranches_resource_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-FilterVariantTranches_resource_3",
+      "@type": "FormalParameter",
+      "name": "FilterVariantTranches_resource_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_include_hard_filters",
+      "@type": "FormalParameter",
+      "name": "bcftools_view_include_hard_filters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_include_CNN_filters",
+      "@type": "FormalParameter",
+      "name": "bcftools_view_include_CNN_filters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_view_threads",
+      "@type": "FormalParameter",
+      "name": "bcftools_view_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftools_norm_threads",
+      "@type": "FormalParameter",
+      "name": "bcftools_norm_threads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-bcftoomls_norm_multiallelics",
+      "@type": "FormalParameter",
+      "name": "bcftoomls_norm_multiallelics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_database_location",
+      "@type": "FormalParameter",
+      "name": "table_annovar_database_location",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_build_over",
+      "@type": "FormalParameter",
+      "name": "table_annovar_build_over",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_remove",
+      "@type": "FormalParameter",
+      "name": "table_annovar_remove",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_protocol",
+      "@type": "FormalParameter",
+      "name": "table_annovar_protocol",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_operation",
+      "@type": "FormalParameter",
+      "name": "table_annovar_operation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_na_string",
+      "@type": "FormalParameter",
+      "name": "table_annovar_na_string",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_vcfinput",
+      "@type": "FormalParameter",
+      "name": "table_annovar_vcfinput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_otherinfo",
+      "@type": "FormalParameter",
+      "name": "table_annovar_otherinfo",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-inputs-table_annovar_convert_arg",
+      "@type": "FormalParameter",
+      "name": "table_annovar_convert_arg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_single_fq",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_single_fq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_single_reports",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_single_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_paired_fq",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_paired_fq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_trim_galore_paired_reports",
+      "@type": "FormalParameter",
+      "name": "o_trim_galore_paired_reports",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_raw_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_single_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_paired_html",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_raw_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_raw_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_single_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_single_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_fastqc_paired_zip",
+      "@type": "FormalParameter",
+      "name": "o_fastqc_paired_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gather_bwa_sam_files",
+      "@type": "FormalParameter",
+      "name": "o_gather_bwa_sam_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_view_conversion",
+      "@type": "FormalParameter",
+      "name": "o_samtools_view_conversion",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_sort_by_name",
+      "@type": "FormalParameter",
+      "name": "o_samtools_sort_by_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_fixmate",
+      "@type": "FormalParameter",
+      "name": "o_samtools_fixmate",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_sort",
+      "@type": "FormalParameter",
+      "name": "o_samtools_sort",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_addorreplacereadgroups",
+      "@type": "FormalParameter",
+      "name": "o_picard_addorreplacereadgroups",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_markduplicates",
+      "@type": "FormalParameter",
+      "name": "o_picard_markduplicates",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_picard_markduplicates_metrics",
+      "@type": "FormalParameter",
+      "name": "o_picard_markduplicates_metrics",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_flagstat",
+      "@type": "FormalParameter",
+      "name": "o_samtools_flagstat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_view_count_total",
+      "@type": "FormalParameter",
+      "name": "o_samtools_view_count_total",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_index",
+      "@type": "FormalParameter",
+      "name": "o_samtools_index",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_bqsr_subworkflow",
+      "@type": "FormalParameter",
+      "name": "o_gatk_bqsr_subworkflow",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_ApplyBQSR",
+      "@type": "FormalParameter",
+      "name": "o_gatk_ApplyBQSR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_samtools_index_2",
+      "@type": "FormalParameter",
+      "name": "o_samtools_index_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_splitintervals",
+      "@type": "FormalParameter",
+      "name": "o_gatk_splitintervals",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_HaplotypeCaller",
+      "@type": "FormalParameter",
+      "name": "o_gatk_HaplotypeCaller",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_tabix_snps",
+      "@type": "FormalParameter",
+      "name": "o_tabix_snps",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_tabix_indels",
+      "@type": "FormalParameter",
+      "name": "o_tabix_indels",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_concat",
+      "@type": "FormalParameter",
+      "name": "o_bcftools_concat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_view_hard_filter",
+      "@type": "FormalParameter",
+      "name": "o_bcftools_view_hard_filter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_norm_hard_filter",
+      "@type": "FormalParameter",
+      "name": "o_bcftools_norm_hard_filter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_CNNScoreVariants",
+      "@type": "FormalParameter",
+      "name": "o_gatk_CNNScoreVariants",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_gatk_FilterVariantTranches",
+      "@type": "FormalParameter",
+      "name": "o_gatk_FilterVariantTranches",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_view_filter_cnn",
+      "@type": "FormalParameter",
+      "name": "o_bcftools_view_filter_cnn",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_bcftools_norm_cnn",
+      "@type": "FormalParameter",
+      "name": "o_bcftools_norm_cnn",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_multianno_vcf",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_cnn_filtered_multianno_vcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_multianno_txt",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_cnn_filtered_multianno_txt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_cnn_filtered_avinput",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_cnn_filtered_avinput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_multianno_vcf",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_hard_filtered_multianno_vcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_multianno_txt",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_hard_filtered_multianno_txt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_based__single_sample__workflow_for_germline_variant_calling-outputs-o_table_annovar_hard_filtered_avinput",
+      "@type": "FormalParameter",
+      "name": "o_table_annovar_hard_filtered_avinput",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

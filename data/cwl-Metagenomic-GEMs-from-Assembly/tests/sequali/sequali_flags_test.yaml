@@ -1,0 +1,26 @@
+cwl:tool: sequali.cwl
+input_file: # download fairly small illumina samples (783 MB in total)
+  class: File
+  location: https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/024/ERR11204024/ERR11204024_1.fastq.gz
+paired_input:
+  class: File
+  location: https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/024/ERR11204024/ERR11204024_2.fastq.gz
+json_output: testname.json
+html_output: testname.html
+threads: 8
+#adapter_file:  # This file is present in the container: /usr/local/lib/python3.11/site-packages/sequali/adapters/adapter_list.tsv
+#  class: File
+#  path: ../data/adapter_list.tsv
+overrep_threshold_fraction: 0.01
+overrep_min_threshold: 101
+overrep_max_threshold: 1000000000
+overrep_max_unique_fragments: 5000001
+overrep_fragment_length: 21
+overrep_sample_every: 7
+# overrep_bases_from_end: 101 # these flags are not properly implemented as of sequali v0.12.0
+# overrep_bases_from_start: 99
+duplication_max_stored_fingerprints: 1000099
+fingerprint_front_length: 9
+fingerprint_back_length: 9
+fingerprint_front_offset: 63
+fingerprint_back_offset: 63

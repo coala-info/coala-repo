@@ -1,0 +1,158 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ATel_Follow-up_Photometric_data_Legacy_Survey_Photo-z.ga"
+      },
+      "datePublished": "2025-06-16 15:48:17 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-8615-602X"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1353.2",
+      "url": "https://workflowhub.eu/workflows/1353/ro_crate?version=2",
+      "name": "Research Object Crate for ATel Follow-up Photometric data Legacy Survey Photo-z",
+      "description": "This workflow analyses a given astrophysics text (e.g. Astronomer's Telegram https://astronomerstelegram.org/). It extracts positions of mentioned astronomical sources and provides possible optical counter-parts with photometric data. The corresponding photometric data can be further used to estimate the redshit of the optical sources, that is a measure of the distance between the Earth and the optical source.\n\nGiven the fact that the the tool that estimates the photometric redshift is still in staging mode on a local instance, due to non-standard package channels, the entire workflow can be found on the local galaxy instance:\nhttps://galaxy.odahub.fr/u/andreiv/w/atel-follow-up-photometric-data-legacy-survey-photoz\n\nThe workflow withtout the last tool can be found on the usegalaxy.eu instance:\nhttps://usegalaxy.eu/u/avariu/w/atel-follow-up-photometric-data-legacy-survey",
+      "isBasedOn": "https://galaxy.odahub.fr/u/andreiv/w/atel-follow-up-photometric-data-legacy-survey-photoz",
+      "sdDatePublished": "2026-03-24 16:35:44 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ATel_Follow-up_Photometric_data_Legacy_Survey_Photo-z.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ATel_Follow-up_Photometric_data_Legacy_Survey_Photo-z.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 26770,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow analyses a given astrophysics text (e.g. Astronomer's Telegram https://astronomerstelegram.org/). It extracts positions of mentioned astronomical sources and provides possible optical counter-parts with photometric data. The corresponding photometric data can be further used to estimate the redshit of the optical sources, that is a measure of the distance between the Earth and the optical source.\n\nGiven the fact that the the tool that estimates the photometric redshift is still in staging mode on a local instance, due to non-standard package channels, the entire workflow can be found on the local galaxy instance:\nhttps://galaxy.odahub.fr/u/andreiv/w/atel-follow-up-photometric-data-legacy-survey-photoz\n\nThe workflow withtout the last tool can be found on the usegalaxy.eu instance:\nhttps://usegalaxy.eu/u/avariu/w/atel-follow-up-photometric-data-legacy-survey",
+      "name": "ATel Follow-up Photometric data Legacy Survey Photo-z",
+      "url": "https://workflowhub.eu/workflows/1353?version=2",
+      "keywords": "astronomy, scientific publication text mining",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/1038"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-06-16T14:18:29Z",
+      "dateModified": "2025-08-14T14:39:28Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1353.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/1353?version=1",
+      "input": [
+        {
+          "@id": "#atel_follow_up_photometric_data_legacy_survey_photo_z-inputs-Text"
+        },
+        {
+          "@id": "#atel_follow_up_photometric_data_legacy_survey_photo_z-inputs-Text%20ID"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8615-602X",
+      "@type": "Person",
+      "name": "Andrei Variu",
+      "identifier": "https://orcid.org/0000-0001-8615-602X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/1038",
+      "@type": "Person",
+      "name": "Andrei Variu"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#atel_follow_up_photometric_data_legacy_survey_photo_z-inputs-Text",
+      "@type": "FormalParameter",
+      "name": "Text",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#atel_follow_up_photometric_data_legacy_survey_photo_z-inputs-Text ID",
+      "@type": "FormalParameter",
+      "name": "Text ID",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

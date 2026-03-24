@@ -1,0 +1,14 @@
+strict digraph {
+
+
+	"relevant_surfaces_points" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"relevant_surfaces_points" -> "ST810109" [ label="is input to", labeltooltip="relevant_surfaces_points - is input to - ST810109",  weight=0 ];
+
+	"DT810109" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810109" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810109" -> "DT810109" [ label="is output from", labeltooltip="DT810109 - is output from - ST810109",  weight=0 ];
+
+}

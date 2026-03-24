@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus.cwl"
+      },
+      "datePublished": "2025-03-05 23:13:21 +0000",
+      "author": [
+
+      ],
+      "license": "CC-BY-NC-SA-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2032?version=1",
+      "url": "https://workflowhub.eu/workflows/2032/ro_crate?version=1",
+      "name": "Research Object Crate for Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform",
+      "description": "Finds Sentinel-2 products on Copernicus using filtering parameters and performs band calculation on retrieved Sentinel-2 products to evaluate algae bloom for water quality assessment.\n",
+      "isBasedOn": "https://github.com/crim-ca/ogc-ospd-phase1",
+      "sdDatePublished": "2026-03-24 00:56:49 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus.cwl"
+        },
+        {
+          "@id": "workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg"
+        },
+        {
+          "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 4061,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Finds Sentinel-2 products on Copernicus using filtering parameters and performs band calculation on retrieved Sentinel-2 products to evaluate algae bloom for water quality assessment.\n",
+      "name": "Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform",
+      "url": "https://workflowhub.eu/workflows/2032?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-NC-SA-4.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-4862-3349"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/263"
+      },
+      "dateCreated": "2025-12-11T15:59:14Z",
+      "dateModified": "2025-12-11T16:14:28Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/35"
+      },
+      "input": [
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-date"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-delta"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-aoi"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-collection"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-cloud_cover"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-s3_access_key"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-s3_secret_key"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a_color"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a_plot"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria_color"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria_plot"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity_color"
+        },
+        {
+          "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity_plot"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 13544
+    },
+    {
+      "@id": "ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 8473
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4862-3349",
+      "@type": "Person",
+      "name": "Francis Charette-Migneault"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/263",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "CRIM - Computer Research Institute of Montréal"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/35",
+      "@type": "Collection",
+      "name": "OGC CWL Application Packages"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-date",
+      "@type": "FormalParameter",
+      "name": "date",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-delta",
+      "@type": "FormalParameter",
+      "name": "delta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-aoi",
+      "@type": "FormalParameter",
+      "name": "aoi",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-collection",
+      "@type": "FormalParameter",
+      "name": "collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-cloud_cover",
+      "@type": "FormalParameter",
+      "name": "cloud_cover",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-s3_access_key",
+      "@type": "FormalParameter",
+      "name": "S3 access key required to retrieve products hosted on a protected S3 location.",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-inputs-s3_secret_key",
+      "@type": "FormalParameter",
+      "name": "S3 secret key required to retrieve products hosted on a protected S3 location.",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a",
+      "@type": "FormalParameter",
+      "name": "chlorophyll_a",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a_color",
+      "@type": "FormalParameter",
+      "name": "chlorophyll_a_color",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-chlorophyll_a_plot",
+      "@type": "FormalParameter",
+      "name": "chlorophyll_a_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria",
+      "@type": "FormalParameter",
+      "name": "cyanobacteria",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria_color",
+      "@type": "FormalParameter",
+      "name": "cyanobacteria_color",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-cyanobacteria_plot",
+      "@type": "FormalParameter",
+      "name": "cyanobacteria_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity",
+      "@type": "FormalParameter",
+      "name": "turbidity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity_color",
+      "@type": "FormalParameter",
+      "name": "turbidity_color",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#algae_bloom_for_water_quality_assessment_on_sentinel_2_imagery_offered_by_copernicus_platform-outputs-turbidity_plot",
+      "@type": "FormalParameter",
+      "name": "turbidity_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2032/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2032/ro_crate?version=1</a>
+
+
+  <img src="workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg" style="width: 100%;"/>
+
+<p>
+  Finds Sentinel-2 products on Copernicus using filtering parameters and performs band calculation on retrieved Sentinel-2 products to evaluate algae bloom for water quality assessment.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-NC-SA-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_ogc_app_pkg/algae-usecase-workflow-copernicus.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="ogc_app_pkg/algae-usecase-workflow-copernicus.cwl">Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform</a>
+      
+        <br/>Size: 4061 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg">workflow-2032-5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea-diagram.svg</a>
+      
+        <br/>Size: 13544 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl">ogc_app_pkg/algae-usecase-workflow-copernicus-process.cwl</a>
+      
+        <br/>Size: 8473 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+2025-03-04 14:20:38.5690 LabeledProteinQuantification TRACE CLIArguments: [ProteinAssignedQuantPepIons
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantandprot"];
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\labeledQuant";
+ ParamFile
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\labeledQuant\LabeledQuantificationParams_CorrFilter_ChargeAgg_ModAgg.json"] 

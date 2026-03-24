@@ -1,0 +1,145 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow_entrypoint.cwl"
+      },
+      "datePublished": "2024-10-03 14:50:36 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/882?version=3",
+      "url": "https://workflowhub.eu/workflows/882/ro_crate?version=3",
+      "name": "Research Object Crate for beacon-workflow",
+      "description": "# beacon-omop-worker-workflows",
+      "isBasedOn": "https://github.com/Health-Informatics-UoN/beacon-omop-worker-workflows.git",
+      "sdDatePublished": "2026-03-24 01:04:01 +0000",
+      "hasPart": [
+        {
+          "@id": "workflow_entrypoint.cwl"
+        },
+        {
+          "@id": "workflow-882-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflow_entrypoint.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 361,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-882-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# beacon-omop-worker-workflows",
+      "name": "beacon-workflow",
+      "url": "https://workflowhub.eu/workflows/882?version=3",
+      "keywords": "",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/129"
+      },
+      "dateCreated": "2024-10-10T12:34:54Z",
+      "dateModified": "2024-10-10T12:34:54Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/882?version=2",
+      "input": {
+        "@id": "#beacon_workflow-inputs-filters"
+      },
+      "output": {
+        "@id": "#beacon_workflow-outputs-output_file"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-882-8f28313e98c028e2ceeb813c1ea623a95a6e50ed-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 2831
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/129",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "TRE-FX"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#beacon_workflow-inputs-filters",
+      "@type": "FormalParameter",
+      "name": "filters",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#beacon_workflow-outputs-output_file",
+      "@type": "FormalParameter",
+      "name": "output_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

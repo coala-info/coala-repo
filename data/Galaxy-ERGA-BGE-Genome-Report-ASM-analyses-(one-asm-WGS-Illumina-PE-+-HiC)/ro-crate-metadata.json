@@ -1,0 +1,298 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA-BGE_Genome_Report_ASM_analyses_(one-asm_WGS_Illumina_PE___HiC).ga"
+      },
+      "datePublished": "2024-11-04 14:28:20 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/1103?version=3",
+      "url": "https://workflowhub.eu/workflows/1103/ro_crate?version=3",
+      "name": "Research Object Crate for ERGA-BGE Genome Report ASM analyses (one-asm WGS Illumina PE + HiC)",
+      "description": "**Assembly Evaluation for ERGA-BGE Reports**\n\n_One Assembly, Illumina WGS reads + HiC reads_\n\nThe workflow requires the following:\n* Species Taxonomy ID number\n* NCBI Genome assembly accession code\n* BUSCO Lineage\n* WGS accurate reads accession code\n* NCBI HiC reads accession code\n\nThe workflow will get the data and process it to generate genome profiling (genomescope, smudgeplot -optional-), assembly stats (gfastats), merqury stats (QV, completeness), BUSCO, snailplot, contamination blobplot, and HiC heatmap.\n\n**Use this workflow for ONT-based assemblies where the WGS accurate reads are Illumina PE**",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines",
+      "sdDatePublished": "2026-03-24 17:38:48 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA-BGE_Genome_Report_ASM_analyses_(one-asm_WGS_Illumina_PE___HiC).ga"
+        },
+        {
+          "@id": "asm_rev_1.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA-BGE_Genome_Report_ASM_analyses_(one-asm_WGS_Illumina_PE___HiC).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/Review_QC/Galaxy-Workflow-ERGA-BGE_Genome_Report_ASM_analyses_(one-asm_WGS_Illumina_PE___HiC).ga",
+      "contentSize": 123483,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "asm_rev_1.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "**Assembly Evaluation for ERGA-BGE Reports**\n\n_One Assembly, Illumina WGS reads + HiC reads_\n\nThe workflow requires the following:\n* Species Taxonomy ID number\n* NCBI Genome assembly accession code\n* BUSCO Lineage\n* WGS accurate reads accession code\n* NCBI HiC reads accession code\n\nThe workflow will get the data and process it to generate genome profiling (genomescope, smudgeplot -optional-), assembly stats (gfastats), merqury stats (QV, completeness), BUSCO, snailplot, contamination blobplot, and HiC heatmap.\n\n**Use this workflow for ONT-based assemblies where the WGS accurate reads are Illumina PE**",
+      "name": "ERGA-BGE Genome Report ASM analyses (one-asm WGS Illumina PE + HiC)",
+      "keywords": "Genomics, QC, Genome assembly, Biodiversity",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-11-04T14:27:24Z",
+      "dateModified": "2024-12-05T16:48:02Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/24"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/33"
+        }
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/1103?version=2",
+      "input": [
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-BUSCO%20Lineage"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Multiple%20HiC%20paired-end%20files?"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI%20Genome%20assembly%20accession%20code"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI%20HiC%20reads%20accession%20code"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI%20Illumina%20WGS%20PE%20reads%20accession%20code"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Ploidy"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Run%20Smudgeplot?"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Species%20Taxonomy%20ID%20number"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-kmer%20length"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-outputs-Busco%20on%20input%20dataset(s):%20short%20summary"
+        },
+        {
+          "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-outputs-Busco%20on%20input%20dataset(s):%20full%20table"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "asm_rev_1.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/Review_QC/pics/asm_rev_1.png",
+      "contentSize": 406454
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/24",
+      "@type": "Collection",
+      "name": "Genome Evaluation for ERGA-BGE Reports"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-BUSCO Lineage",
+      "@type": "FormalParameter",
+      "name": "BUSCO Lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Multiple HiC paired-end files?",
+      "@type": "FormalParameter",
+      "name": "Multiple HiC paired-end files?",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI Genome assembly accession code",
+      "@type": "FormalParameter",
+      "name": "NCBI Genome assembly accession code",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI HiC reads accession code",
+      "@type": "FormalParameter",
+      "name": "NCBI HiC reads accession code",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-NCBI Illumina WGS PE reads accession code",
+      "@type": "FormalParameter",
+      "name": "NCBI Illumina WGS PE reads accession code",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Ploidy",
+      "@type": "FormalParameter",
+      "name": "Ploidy",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Run Smudgeplot?",
+      "@type": "FormalParameter",
+      "name": "Run Smudgeplot?",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-Species Taxonomy ID number",
+      "@type": "FormalParameter",
+      "name": "Species Taxonomy ID number",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-inputs-kmer length",
+      "@type": "FormalParameter",
+      "name": "kmer length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-outputs-Busco on input dataset(s): short summary",
+      "@type": "FormalParameter",
+      "name": "Busco on input dataset(s): short summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_bge_genome_report_asm_analyses__one_asm_wgs_illumina_pe___hic_-outputs-Busco on input dataset(s): full table",
+      "@type": "FormalParameter",
+      "name": "Busco on input dataset(s): full table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

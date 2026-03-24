@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Pt3Sn nanoparticle electrocatalysts</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "bf972370cf6dfa23.ga"
+      },
+      "datePublished": "2025-07-11 11:20:21 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-6279-7823"
+        },
+        {
+          "@id": "#person-742"
+        },
+        {
+          "@id": "#person-649"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1798.1",
+      "url": "https://workflowhub.eu/workflows/1798/ro_crate?version=1",
+      "name": "Research Object Crate for Pt3Sn nanoparticle electrocatalysts",
+      "description": "Galaxy workflow for the reproduction of the results published in: H. Huang, A. B. A. A. Nassr, V. Celorrio, S. F. R. Taylor, V. K. Puthiyapura, C. Hardacre, D. J. L. Brett, A. E. Russell. (2018) Effects of heat treatment atmosphere on the structure and activity of Pt3Sn nanoparticle electrocatalysts: a characterisation case study. Faraday Discussions. V. 208. pp. 555-573. DOI: 10.1039/c7fd00221a. \n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.\n",
+      "isBasedOn": "https://zenodo.org/records/13940793",
+      "sdDatePublished": "2026-03-24 16:43:53 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "bf972370cf6dfa23.ga"
+        },
+        {
+          "@id": "bf972370cf6dfa23.abstract.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "bf972370cf6dfa23.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 79957,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "bf972370cf6dfa23.abstract.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy workflow for the reproduction of the results published in: H. Huang, A. B. A. A. Nassr, V. Celorrio, S. F. R. Taylor, V. K. Puthiyapura, C. Hardacre, D. J. L. Brett, A. E. Russell. (2018) Effects of heat treatment atmosphere on the structure and activity of Pt3Sn nanoparticle electrocatalysts: a characterisation case study. Faraday Discussions. V. 208. pp. 555-573. DOI: 10.1039/c7fd00221a. \n\nThis workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.\n",
+      "name": "Pt3Sn nanoparticle electrocatalysts",
+      "url": "https://workflowhub.eu/workflows/1798?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/1121"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/742"
+        },
+        {
+          "@id": "https://orcid.org/0009-0001-1723-4394"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2777-5167"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7348-7612"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/649"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/166"
+      },
+      "dateCreated": "2025-07-11T10:31:07Z",
+      "dateModified": "2025-11-11T12:31:13Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1798.1",
+      "input": [
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20Foil"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20foil%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20K%20edge%20H2%20under%20H2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20K%20edge%20under%20H2%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20K%20edge%20H2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20K%20edge%20Ar"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn%20K%20edge%20Air"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn3Pt%20Sn%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt%20L3%20edge%20H2%20under%20H2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt%20L3%20edge%20under%20H2%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt%20L3%20edge%20H2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt%20L3%20edge%20Ar"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt%20L3%20edge%20Air"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn3Pt%20Pt%20Calibration"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt3Sn%20Cif"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2%20Cif"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-PtO2%20Cif"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_6"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "bf972370cf6dfa23.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 11297
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6279-7823",
+      "@type": "Person",
+      "name": "Patrick Austin",
+      "identifier": "https://orcid.org/0000-0002-6279-7823"
+    },
+    {
+      "@id": "#person-742",
+      "@type": "Person",
+      "name": "Alexander Belozerov",
+      "identifier": "https://workflowhub.eu/people/742"
+    },
+    {
+      "@id": "#person-649",
+      "@type": "Person",
+      "name": "Tom Underwood",
+      "identifier": "https://workflowhub.eu/people/649"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/1121",
+      "@type": "Person",
+      "name": "Patrick Austin"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/742",
+      "@type": "Person",
+      "name": "Alexander Belozerov"
+    },
+    {
+      "@id": "https://orcid.org/0009-0001-1723-4394",
+      "@type": "Person",
+      "name": "Subindev Devadasan"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2777-5167",
+      "@type": "Person",
+      "name": "Leandro Liborio"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-7348-7612",
+      "@type": "Person",
+      "name": "Abraham Nieva de la Hidalga"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/649",
+      "@type": "Person",
+      "name": "Tom Underwood"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/166",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EuroScienceGateway"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn Foil",
+      "@type": "FormalParameter",
+      "name": "Sn Foil",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn foil Calibration",
+      "@type": "FormalParameter",
+      "name": "Sn foil Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2",
+      "@type": "FormalParameter",
+      "name": "SnO2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2 Calibration",
+      "@type": "FormalParameter",
+      "name": "SnO2 Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn K edge H2 under H2",
+      "@type": "FormalParameter",
+      "name": "Sn K edge H2 under H2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn K edge under H2 Calibration",
+      "@type": "FormalParameter",
+      "name": "Sn K edge under H2 Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn K edge H2",
+      "@type": "FormalParameter",
+      "name": "Sn K edge H2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn K edge Ar",
+      "@type": "FormalParameter",
+      "name": "Sn K edge Ar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn K edge Air",
+      "@type": "FormalParameter",
+      "name": "Sn K edge Air",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn3Pt Sn Calibration",
+      "@type": "FormalParameter",
+      "name": "Sn3Pt Sn Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt L3 edge H2 under H2",
+      "@type": "FormalParameter",
+      "name": "Pt L3 edge H2 under H2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt L3 edge under H2 Calibration",
+      "@type": "FormalParameter",
+      "name": "Pt L3 edge under H2 Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt L3 edge H2",
+      "@type": "FormalParameter",
+      "name": "Pt L3 edge H2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt L3 edge Ar",
+      "@type": "FormalParameter",
+      "name": "Pt L3 edge Ar",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt L3 edge Air",
+      "@type": "FormalParameter",
+      "name": "Pt L3 edge Air",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Sn3Pt Pt Calibration",
+      "@type": "FormalParameter",
+      "name": "Sn3Pt Pt Calibration",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-Pt3Sn Cif",
+      "@type": "FormalParameter",
+      "name": "Pt3Sn Cif",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-SnO2 Cif",
+      "@type": "FormalParameter",
+      "name": "SnO2 Cif",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-inputs-PtO2 Cif",
+      "@type": "FormalParameter",
+      "name": "PtO2 Cif",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pt3sn_nanoparticle_electrocatalysts-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Pt3Sn nanoparticle electrocatalysts</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1798/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1798/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy workflow for the reproduction of the results published in: H. Huang, A. B. A. A. Nassr, V. Celorrio, S. F. R. Taylor, V. K. Puthiyapura, C. Hardacre, D. J. L. Brett, A. E. Russell. (2018) Effects of heat treatment atmosphere on the structure and activity of Pt3Sn nanoparticle electrocatalysts: a characterisation case study. Faraday Discussions. V. 208. pp. 555-573. DOI: 10.1039/c7fd00221a. 
+
+This workflow is published as part of the research data submitted for the paper Facilitating Reproducibility in Catalysis Research with Managed Workflows and RO-Crates: A Galaxy Case Study, ChemCatChem, DOI: 10.1002/cctc.202401676.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-6279-7823" target="_blank">Patrick Austin</a>, <a href="https://workflowhub.eu/people/742" target="_blank">Alexander Belozerov</a>, <a href="https://workflowhub.eu/people/649" target="_blank">Tom Underwood</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_bf972370cf6dfa23.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="bf972370cf6dfa23.ga">Pt3Sn nanoparticle electrocatalysts</a>
+      
+        <br/>Size: 79957 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_bf972370cf6dfa23.abstract.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="bf972370cf6dfa23.abstract.cwl">bf972370cf6dfa23.abstract.cwl</a>
+      
+        <br/>Size: 11297 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,678 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "PAIRED-END workflow. A\nlign on ref, consensus, variants, coverage depth, mutation explanations. IMPORTANT: For \"bcftools call\" consensus step, the --ploidy file is in \"Donn\u00e9es partag\u00e9es\" (Shared Data) and must be imported in your history to use the worflow by providing this file (tells bcftools to consider haploid variant calling). SELECT THE MOST ADAPTED VADR MODEL for annotation (see vadr parameters).\n",
+    "format-version": "0.1",
+    "name": "VVV2_align_PE",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fasta_formatter/cshl_fasta_formatter/1.0.1",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FASTA Width",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "FASTA Width",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "left": 200,
+                "top": 354.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fasta_formatter/cshl_fasta_formatter/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "859422bcb689",
+                "name": "fasta_formatter",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__page__\": null, \"input\": {\"__class__\": \"RuntimeValue\"}, \"width\": \"0\", \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "e97b98c3-70a2-44fa-b2b2-ea95d21c6993",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "0468a821-a701-49e0-8711-9942b93f712b"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool fastp",
+                    "name": "single_paired"
+                },
+                {
+                    "description": "runtime parameter for tool fastp",
+                    "name": "single_paired"
+                }
+            ],
+            "label": null,
+            "name": "fastp",
+            "outputs": [
+                {
+                    "name": "out1",
+                    "type": "input"
+                },
+                {
+                    "name": "out2",
+                    "type": "input"
+                },
+                {
+                    "name": "report_html",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 322.5,
+                "top": 591.6666870117188
+            },
+            "post_job_actions": {
+                "HideDatasetActionout1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out1"
+                },
+                "HideDatasetActionout2": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "out2"
+                },
+                "HideDatasetActionreport_html": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report_html"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.23.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "65b93b623c77",
+                "name": "fastp",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"read_mod_options\": {\"cutting_by_quality_options\": {\"cut_by_quality5\": \"false\", \"cut_mean_quality\": \"\", \"cut_window_size\": \"\", \"cut_by_quality3\": \"false\"}, \"polyg_tail_trimming\": {\"poly_g_min_len\": \"\", \"__current_case__\": 1, \"trimming_select\": \"\"}, \"base_correction_options\": {\"correction\": \"false\"}, \"polyx_tail_trimming\": {\"__current_case__\": 1, \"polyx_trimming_select\": \"\"}, \"umi_processing\": {\"umi\": \"false\", \"umi_prefix\": \"\", \"umi_loc\": \"\", \"umi_len\": \"\"}}, \"overrepresented_sequence_analysis\": {\"overrepresentation_sampling\": \"\", \"overrepresentation_analysis\": \"false\"}, \"single_paired\": {\"adapter_trimming_options\": {\"adapter_sequence2\": \"\", \"adapter_sequence1\": \"\", \"disable_adapter_trimming\": \"false\"}, \"in2\": {\"__class__\": \"RuntimeValue\"}, \"__current_case__\": 1, \"global_trimming_options\": {\"trim_front1\": \"\", \"trim_front2\": \"\", \"trim_tail2\": \"\", \"trim_tail1\": \"\"}, \"in1\": {\"__class__\": \"RuntimeValue\"}, \"single_paired_selector\": \"paired\"}, \"filter_options\": {\"quality_filtering_options\": {\"unqualified_percent_limit\": \"\", \"n_base_limit\": \"\", \"disable_quality_filtering\": \"false\", \"qualified_quality_phred\": \"\"}, \"length_filtering_options\": {\"length_limit\": \"\", \"disable_length_filtering\": \"false\", \"length_required\": \"\"}, \"low_complexity_filter\": {\"enable_low_complexity_filter\": \"false\", \"complexity_threshold\": \"\"}}, \"__rerun_remap_job_id__\": null, \"output_options\": {\"report_html\": \"true\", \"report_json\": \"false\"}, \"__page__\": null}",
+            "tool_version": "0.23.2+galaxy0",
+            "type": "tool",
+            "uuid": "8a7be5ff-2fe6-44bf-8b8e-13e80dd2bd1d",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Ploidy file (Y for happloid)"
+                }
+            ],
+            "label": "Ploidy file (Y for happloid)",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 378.04998779296875,
+                "top": 990.5333251953125
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d309427d-e403-407e-929e-759e17fd677b",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "a1a5e799-7cf9-4def-8b1d-bca27cfccf23"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vadr/vadr/0.1.1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "assembly": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "VADR - Viral Annotation DefineR",
+            "outputs": [
+                {
+                    "name": "fail_annotation",
+                    "type": "tabular"
+                },
+                {
+                    "name": "pass_annotation",
+                    "type": "tabular"
+                },
+                {
+                    "name": "seqstat",
+                    "type": "txt"
+                },
+                {
+                    "name": "log",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 606.5,
+                "top": 200
+            },
+            "post_job_actions": {
+                "HideDatasetActionlog": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "log"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vadr/vadr/0.1.1",
+            "tool_shed_repository": {
+                "changeset_revision": "0f28f8c9361e",
+                "name": "vadr",
+                "owner": "ftouzain",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"assembly\": {\"__class__\": \"ConnectedValue\"}, \"__rerun_remap_job_id__\": null, \"__page__\": null, \"vadr_model\": \"/nfs/data/db/vadr_db/vadr-models-calici/calici.fa\"}",
+            "tool_version": "0.1.1",
+            "type": "tool",
+            "uuid": "66cb9a9c-9208-444e-811f-4b5cc81be0d3",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "seqstat",
+                    "uuid": "d2624af4-61df-4f33-abd8-87d609fd21fb"
+                },
+                {
+                    "label": null,
+                    "output_name": "pass_annotation",
+                    "uuid": "498ab2a2-baf8-4134-8fc9-d436cccbe54a"
+                },
+                {
+                    "label": null,
+                    "output_name": "fail_annotation",
+                    "uuid": "a3d3c629-f565-48b5-9f55-944e06fa06c3"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12.1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "fastq_input|fastq_input1": {
+                    "id": 1,
+                    "output_name": "out1"
+                },
+                "fastq_input|fastq_input2": {
+                    "id": 1,
+                    "output_name": "out2"
+                },
+                "reference_source|ref_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Map with BWA-MEM",
+            "outputs": [
+                {
+                    "name": "bam_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "left": 650,
+                "top": 610.6666870117188
+            },
+            "post_job_actions": {
+                "HideDatasetActionbam_output": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "bam_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.12.1",
+            "tool_shed_repository": {
+                "changeset_revision": "546ada4a9f43",
+                "name": "bwa",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"analysis_type\": {\"analysis_type_selector\": \"full\", \"io_options\": {\"__current_case__\": 1, \"io_options_selector\": \"do_not_set\"}, \"__current_case__\": 2, \"algorithmic_options\": {\"algorithmic_options_selector\": \"do_not_set\", \"__current_case__\": 1}, \"scoring_options\": {\"__current_case__\": 1, \"scoring_options_selector\": \"do_not_set\"}}, \"__page__\": null, \"reference_source\": {\"__current_case__\": 1, \"reference_source_selector\": \"history\", \"index_a\": \"auto\", \"ref_file\": {\"__class__\": \"ConnectedValue\"}}, \"__rerun_remap_job_id__\": null, \"rg\": {\"__current_case__\": 3, \"rg_selector\": \"do_not_set\"}, \"fastq_input\": {\"fastq_input2\": {\"__class__\": \"ConnectedValue\"}, \"fastq_input_selector\": \"paired\", \"iset_stats\": \"\", \"__current_case__\": 0, \"fastq_input1\": {\"__class__\": \"ConnectedValue\"}}}",
+            "tool_version": "0.7.12.1",
+            "type": "tool",
+            "uuid": "1dacd433-c1d8-4564-a5b5-1b6774242a72",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bcftools_mpileup/bcftools_mpileup/1.4.0.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input|input_bam": {
+                    "id": 4,
+                    "output_name": "bam_output"
+                },
+                "reference_source|ref_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool bcftools mpileup",
+                    "name": "sec_subset"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools mpileup",
+                    "name": "sec_subset"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools mpileup",
+                    "name": "sec_output_options"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools mpileup",
+                    "name": "output_type"
+                }
+            ],
+            "label": null,
+            "name": "bcftools mpileup",
+            "outputs": [
+                {
+                    "name": "output_file",
+                    "type": "vcf"
+                }
+            ],
+            "position": {
+                "left": 326.5,
+                "top": 819.6666870117188
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bcftools_mpileup/bcftools_mpileup/1.4.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "9c711df3258d",
+                "name": "bcftools_mpileup",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"sec_indel\": {\"perform_indel_calling\": {\"open_seq_error_probability\": \"40\", \"gapped_read_per_sample\": \"false\", \"minimum_gapped_read_fraction\": \"0.002\", \"gap_open_sequencing_error_probability\": \"40\", \"coefficient_for_modeling_homopolymer_errors\": \"100\", \"gap_extension_sequencing_error_probability\": \"20\", \"perform_indel_calling_selector\": \"perform_indel_calling\", \"__current_case__\": 1, \"minimum_gapped_reads_for_indel_candidates\": \"1\", \"skip_indel_calling_above_sample_depth\": \"250\", \"platform_list_repeat\": []}}, \"sec_restrict\": {\"regions\": {\"__current_case__\": 0, \"regions_src\": \"__none__\"}, \"targets\": {\"__current_case__\": 0, \"targets_src\": \"__none__\"}}, \"sec_filtering\": {\"read_groups\": {\"read_groups_selector\": \"no_limit\", \"__current_case__\": 3}, \"max_reads_per_bam\": \"1000\", \"ignore_overlaps\": \"false\", \"skip_anomalous_read_pairs\": \"true\", \"quality\": {\"minimum_base_quality\": \"1\", \"baq\": \"--redo-BAQ\", \"quality_settings\": \"adjust\", \"minimum_mapping_quality\": \"0\", \"__current_case__\": 0, \"coefficient_for_downgrading\": \"0\"}, \"filter_by_flags\": {\"filter_flags\": \"nofilter\", \"__current_case__\": 1}}, \"__rerun_remap_job_id__\": null, \"reference_source\": {\"__current_case__\": 1, \"reference_source_selector\": \"history\", \"ref_file\": {\"__class__\": \"ConnectedValue\"}}, \"sec_output_options\": {\"output_tags\": [\"DP\", \"SP\"], \"gvcf\": {\"__class__\": \"RuntimeValue\"}}, \"output_type\": {\"__class__\": \"RuntimeValue\"}, \"sec_subset\": {\"invert_samples_file\": \"false\", \"invert_samples\": \"false\", \"samples\": {\"__class__\": \"RuntimeValue\"}, \"samples_file\": {\"__class__\": \"RuntimeValue\"}}, \"input\": {\"input_number\": \"single\", \"__current_case__\": 0, \"input_bam\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null}",
+            "tool_version": "1.4.0.0",
+            "type": "tool",
+            "uuid": "c3ca4963-86d6-4e4d-84fc-f68b98f239e4",
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/vardict_java/vardict_java/1.8.3+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "reference_source|ref_file": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "select_mode|tumor": {
+                    "id": 4,
+                    "output_name": "bam_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool VarDict",
+                    "name": "select_mode"
+                }
+            ],
+            "label": "VarDict on virus",
+            "name": "VarDict",
+            "outputs": [
+                {
+                    "name": "all_variants",
+                    "type": "vcf"
+                },
+                {
+                    "name": "passed_variants",
+                    "type": "vcf"
+                }
+            ],
+            "position": {
+                "left": 975.5,
+                "top": 616.6666870117188
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/vardict_java/vardict_java/1.8.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e0734e88a104",
+                "name": "vardict_java",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"reference_source\": {\"__current_case__\": 1, \"reference_source_selector\": \"history\", \"ref_file\": {\"__class__\": \"ConnectedValue\"}}, \"advancedsettings\": {\"V\": \"0.05\", \"o\": \"1.5\", \"X\": \"3\", \"T\": \"0\", \"k\": \"true\", \"f\": \"0.01\", \"B\": \"2\", \"Q\": \"1\", \"P\": \"5\", \"m\": \"8\", \"q\": \"25\", \"O\": \"0.0\", \"r\": \"2\"}, \"__page__\": null, \"select_mode\": {\"mode\": \"single\", \"__current_case__\": 0, \"tumor\": {\"__class__\": \"ConnectedValue\"}, \"interval_file\": {\"__class__\": \"RuntimeValue\"}}, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.8.3+galaxy1",
+            "type": "tool",
+            "uuid": "161e6de9-b7d9-4954-bda4-1b06b48f6294",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "passed_variants",
+                    "uuid": "ed8a3573-a063-4026-a473-118cb511ff50"
+                },
+                {
+                    "label": null,
+                    "output_name": "all_variants",
+                    "uuid": "c0c88c92-1ff3-49a6-8bb4-ebc72a7ad1ca"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.4.0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_file": {
+                    "id": 5,
+                    "output_name": "output_file"
+                },
+                "sec_file_format|ploidy_file": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool bcftools call",
+                    "name": "sec_file_format"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools call",
+                    "name": "sec_restrict"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools call",
+                    "name": "sec_restrict"
+                },
+                {
+                    "description": "runtime parameter for tool bcftools call",
+                    "name": "sec_restrict"
+                }
+            ],
+            "label": null,
+            "name": "bcftools call",
+            "outputs": [
+                {
+                    "name": "output_file",
+                    "type": "vcf"
+                }
+            ],
+            "position": {
+                "left": 651.5,
+                "top": 863.6666870117188
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/bcftools_call/bcftools_call/1.4.0",
+            "tool_shed_repository": {
+                "changeset_revision": "b03984136ce4",
+                "name": "bcftools_call",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"sec_input_output\": {\"keep_masked_ref\": \"true\", \"keep_alts\": \"true\", \"variants_only\": \"false\", \"skip_variants\": null, \"format_fields\": \"\"}, \"output_type\": \"v\", \"__page__\": null, \"sec_consensus_variant_calling\": {\"prior\": \"0.0011\", \"variant_calling\": {\"genotypes\": {\"__current_case__\": 0, \"constrain\": \"none\"}, \"method\": \"consensus\", \"__current_case__\": 1, \"targets\": {\"__current_case__\": 0, \"targets_src\": \"__none__\"}}, \"pval_threshold\": \"0.5\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"sec_file_format\": {\"invert_samples_file\": \"false\", \"ploidy_file\": {\"__class__\": \"ConnectedValue\"}, \"samples_file\": {\"__class__\": \"RuntimeValue\"}, \"samples\": \"\", \"regions\": {\"__current_case__\": 0, \"regions_src\": \"__none__\"}, \"invert_samples\": \"false\", \"ploidy\": \"1\"}, \"sec_restrict\": {\"invert_samples_file\": \"false\", \"regions\": {\"__current_case__\": 0, \"regions_src\": \"__none__\"}, \"invert_samples\": {\"__class__\": \"RuntimeValue\"}, \"samples\": {\"__class__\": \"RuntimeValue\"}, \"samples_file\": {\"__class__\": \"RuntimeValue\"}}, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.0",
+            "type": "tool",
+            "uuid": "0cb262a6-c57d-4375-b845-9bcb81418008",
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vvv2_display/vvv2_display/0.1.10",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "seqstat": {
+                    "id": 3,
+                    "output_name": "seqstat"
+                },
+                "vadr_fail_annotation": {
+                    "id": 3,
+                    "output_name": "fail_annotation"
+                },
+                "vadr_pass_annotation": {
+                    "id": 3,
+                    "output_name": "pass_annotation"
+                },
+                "vardict_vcf": {
+                    "id": 6,
+                    "output_name": "all_variants"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "vvv2_display: Display SNP proportions and CDS of an assembly in png image",
+            "outputs": [
+                {
+                    "name": "snp_img",
+                    "type": "png"
+                },
+                {
+                    "name": "snp_loc_summary",
+                    "type": "txt"
+                },
+                {
+                    "name": "snp_loc",
+                    "type": "txt"
+                },
+                {
+                    "name": "json_annot",
+                    "type": "json"
+                },
+                {
+                    "name": "bed_annot",
+                    "type": "bed"
+                },
+                {
+                    "name": "correct_vcf",
+                    "type": "vcf"
+                },
+                {
+                    "name": "contig_limits",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 957.5,
+                "top": 191
+            },
+            "post_job_actions": {
+                "HideDatasetActionbed_annot": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "bed_annot"
+                },
+                "HideDatasetActioncontig_limits": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "contig_limits"
+                },
+                "HideDatasetActioncorrect_vcf": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "correct_vcf"
+                },
+                "HideDatasetActionjson_annot": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "json_annot"
+                },
+                "HideDatasetActionsnp_loc": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "snp_loc"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vvv2_display/vvv2_display/0.1.10",
+            "tool_shed_repository": {
+                "changeset_revision": "3890b114183a",
+                "name": "vvv2_display",
+                "owner": "ftouzain",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"seqstat\": {\"__class__\": \"ConnectedValue\"}, \"vadr_pass_annotation\": {\"__class__\": \"ConnectedValue\"}, \"vardict_vcf\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"vadr_fail_annotation\": {\"__class__\": \"ConnectedValue\"}, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.10",
+            "type": "tool",
+            "uuid": "867f74f7-cc14-4b86-b068-09fcbf2c6184",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "snp_img",
+                    "uuid": "0f911025-5cf3-4d16-bad4-a4dcf07e0fa7"
+                },
+                {
+                    "label": null,
+                    "output_name": "snp_loc_summary",
+                    "uuid": "4414b1cf-8bcf-4b50-9706-e075e5255bff"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vcfutils_vcf2fq/vcfutils_vcf2fq/1.16",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "all_sites_vcf_f": {
+                    "id": 7,
+                    "output_name": "output_file"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "vcfutils_vcf2fq: convert vcf file to fastq file",
+            "outputs": [
+                {
+                    "name": "fastq_f",
+                    "type": "fastq"
+                }
+            ],
+            "position": {
+                "left": 955.0333251953125,
+                "top": 890.9666748046875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ftouzain/vcfutils_vcf2fq/vcfutils_vcf2fq/1.16",
+            "tool_shed_repository": {
+                "changeset_revision": "921286a54e95",
+                "name": "vcfutils_vcf2fq",
+                "owner": "ftouzain",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"min_RMS_mapQ\": \"10\", \"min_depth\": \"3\", \"all_sites_vcf_f\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"max_depth\": \"100000\", \"filtering_window\": \"5\", \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.16",
+            "type": "tool",
+            "uuid": "d8ebb4bc-3593-4ca4-9413-3c9aaa635b2c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "fastq_f",
+                    "uuid": "6b10420b-3792-4f6e-abc2-eba229bc0872"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "fastq2fasta conversion",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/seqtk/seqtk_seq/1.3.3",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "in_file": {
+                    "id": 9,
+                    "output_name": "fastq_f"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool seqtk_seq",
+                    "name": "M"
+                }
+            ],
+            "label": "seqtk_seq fq2fa",
+            "name": "seqtk_seq",
+            "outputs": [
+                {
+                    "name": "default",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1258.38330078125,
+                "top": 866.88330078125
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/seqtk/seqtk_seq/1.3.3",
+            "tool_shed_repository": {
+                "changeset_revision": "3da72230c066",
+                "name": "seqtk",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"N\": \"false\", \"n\": \"0\", \"C\": \"false\", \"M\": {\"__class__\": \"RuntimeValue\"}, \"X\": \"255\", \"A\": \"true\", \"s\": \"11\", \"c\": \"false\", \"f\": \"1.0\", \"L\": \"0\", \"l\": \"0\", \"Q\": \"33\", \"__rerun_remap_job_id__\": null, \"x2\": \"false\", \"__page__\": null, \"in_file\": {\"__class__\": \"ConnectedValue\"}, \"q\": \"0\", \"x1\": \"false\", \"r\": \"false\"}",
+            "tool_version": "1.3.3",
+            "type": "tool",
+            "uuid": "483a77b7-f058-4e87-adb3-7d12f90fdfbe",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "default",
+                    "uuid": "8e86a4d8-f24f-447d-8939-329b58f63bde"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "paired-end",
+        "variant_calling",
+        "annotation",
+        "virus"
+    ],
+    "uuid": "dc3746a2-8913-4b5d-b8f5-9b1b71ed3297",
+    "version": 10
+}

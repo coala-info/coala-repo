@@ -1,0 +1,177 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ONT_Amplicon_Sequencing.ga"
+      },
+      "datePublished": "2023-06-29 13:06:38 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/521?version=1",
+      "url": "https://workflowhub.eu/workflows/521/ro_crate?version=1",
+      "name": "Research Object Crate for SARS-CoV-2 ONT Amplicon Sequencing SANBI 1.0",
+      "description": "",
+      "sdDatePublished": "2026-03-24 17:57:35 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ONT_Amplicon_Sequencing.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ONT_Amplicon_Sequencing.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 19807,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "SARS-CoV-2 ONT Amplicon Sequencing SANBI 1.0",
+      "url": "https://workflowhub.eu/workflows/521?version=1",
+      "keywords": "SARS-CoV-2, SANBI, nanopore",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/171"
+      },
+      "dateCreated": "2023-06-29T12:07:19Z",
+      "dateModified": "2023-06-29T12:07:19Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Maximum%20read%20length"
+        },
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Medaka%20model"
+        },
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Minimum%20read%20length"
+        },
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Primer%20BED%20file"
+        },
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Reference%20genome"
+        },
+        {
+          "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Sequence%20Reads"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/171",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "SANBI Pathogen Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Maximum read length",
+      "@type": "FormalParameter",
+      "name": "Maximum read length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Medaka model",
+      "@type": "FormalParameter",
+      "name": "Medaka model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Minimum read length",
+      "@type": "FormalParameter",
+      "name": "Minimum read length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Primer BED file",
+      "@type": "FormalParameter",
+      "name": "Primer BED file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Reference genome",
+      "@type": "FormalParameter",
+      "name": "Reference genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_ont_amplicon_sequencing_sanbi_1_0-inputs-Sequence Reads",
+      "@type": "FormalParameter",
+      "name": "Sequence Reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

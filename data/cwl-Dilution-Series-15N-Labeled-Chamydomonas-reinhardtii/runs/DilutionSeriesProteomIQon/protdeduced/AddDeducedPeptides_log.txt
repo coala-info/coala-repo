@@ -1,0 +1,43 @@
+2025-03-04 12:45:37.3211 AddDeducedPeptides TRACE CLIArguments: [QuantFiles
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats"];
+ ProtFiles
+   ["C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot"];
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\protdeduced"] 
+2025-03-04 12:45:37.3346 AddDeducedPeptides TRACE Inputfiles: 
+[|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3501.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3503.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3505.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3507.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3509.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3511.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3513.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3515.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3517.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3601.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3603.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3605.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3607.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3609.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3611.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3613.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3615.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalignresultstats\20170519 TM FScon3617.quant"|]
+[|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3501.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3503.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3505.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3507.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3509.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3511.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3513.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3515.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3517.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3601.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3603.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3605.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3607.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3609.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3611.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3613.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3615.prot";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\prot\20170519 TM FScon3617.prot"|] 

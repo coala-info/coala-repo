@@ -1,0 +1,9 @@
+	
+venv
+tests/OUT
+tests/PROV
+tests/ROC
+tests/*/*_local.yaml
+graphs
+
+.code-workspace

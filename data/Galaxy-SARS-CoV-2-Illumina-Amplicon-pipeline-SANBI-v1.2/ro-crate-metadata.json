@@ -1,0 +1,282 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-SARS-CoV-2_Illumina_Amplicon_pipeline_-_SANBI_-_v1.2.ga"
+      },
+      "datePublished": "2023-06-30 06:13:56 +0100",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/519?version=1",
+      "url": "https://workflowhub.eu/workflows/519/ro_crate?version=1",
+      "name": "Research Object Crate for SARS-CoV-2 Illumina Amplicon pipeline - SANBI - v1.2",
+      "description": "SARS-CoV-2 variant prediction using Read It And Keep, fastp, bbmap and iVar",
+      "sdDatePublished": "2026-03-24 17:57:26 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-SARS-CoV-2_Illumina_Amplicon_pipeline_-_SANBI_-_v1.2.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-SARS-CoV-2_Illumina_Amplicon_pipeline_-_SANBI_-_v1.2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 55051,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "SARS-CoV-2 variant prediction using Read It And Keep, fastp, bbmap and iVar",
+      "name": "SARS-CoV-2 Illumina Amplicon pipeline - SANBI - v1.2",
+      "url": "https://workflowhub.eu/workflows/519?version=1",
+      "keywords": "covid-19, ARTIC, SARS-CoV-2, SANBI",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "#Peter%20van%20Heusden"
+        },
+        {
+          "@id": "#Bradley%20W.%20Langhorst"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/171"
+      },
+      "dateCreated": "2023-06-28T11:42:46Z",
+      "dateModified": "2023-06-30T05:14:33Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Max%20Viz.%20Coverage%20Threshold"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Minimum%20quality%20score%20to%20call%20base"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Paired%20read%20collection%20for%20samples"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Primer%20BED"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Read%20fraction%20to%20call%20variant"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Reference%20FASTA"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-primer_trimmed_bam"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-ivar_variants_tabular"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-bamqc_report_html"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-snpeff_annotated_vcf"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-ivar_consensus_genome"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-combined_coverage"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-combined_multifasta"
+        },
+        {
+          "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-_anonymous_output_1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Peter van Heusden",
+      "@type": "Person",
+      "name": "Peter van Heusden"
+    },
+    {
+      "@id": "#Bradley W. Langhorst",
+      "@type": "Person",
+      "name": "Bradley W. Langhorst"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/171",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "SANBI Pathogen Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Max Viz. Coverage Threshold",
+      "@type": "FormalParameter",
+      "name": "Max Viz. Coverage Threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Minimum quality score to call base",
+      "@type": "FormalParameter",
+      "name": "Minimum quality score to call base",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Paired read collection for samples",
+      "@type": "FormalParameter",
+      "name": "Paired read collection for samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Primer BED",
+      "@type": "FormalParameter",
+      "name": "Primer BED",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Read fraction to call variant",
+      "@type": "FormalParameter",
+      "name": "Read fraction to call variant",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-inputs-Reference FASTA",
+      "@type": "FormalParameter",
+      "name": "Reference FASTA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-primer_trimmed_bam",
+      "@type": "FormalParameter",
+      "name": "primer_trimmed_bam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-ivar_variants_tabular",
+      "@type": "FormalParameter",
+      "name": "ivar_variants_tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-bamqc_report_html",
+      "@type": "FormalParameter",
+      "name": "bamqc_report_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-snpeff_annotated_vcf",
+      "@type": "FormalParameter",
+      "name": "snpeff_annotated_vcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-ivar_consensus_genome",
+      "@type": "FormalParameter",
+      "name": "ivar_consensus_genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-combined_coverage",
+      "@type": "FormalParameter",
+      "name": "combined_coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-combined_multifasta",
+      "@type": "FormalParameter",
+      "name": "combined_multifasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#sars_cov_2_illumina_amplicon_pipeline___sanbi___v1_2-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

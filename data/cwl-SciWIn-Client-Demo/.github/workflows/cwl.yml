@@ -1,0 +1,76 @@
+name: 🦆 CWL Conformance Tests
+on:
+  workflow_call:
+
+jobs:
+  run_tests:
+    name: 👀 Run Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Cache Cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+      - run: |
+          git config --global user.name "Derp Derpson"
+          git config --global user.email "derp.derpson@derpipedia.org"
+      - run: |
+          sudo apt-get update 
+          sudo apt-get install -y \
+          libgtk-3-dev \
+          libglib2.0-dev \
+          libwebkit2gtk-4.1-dev \
+          build-essential \
+          curl \
+          wget \
+          file \
+          libxdo-dev \
+          libssl-dev \
+          libayatana-appindicator3-dev \
+          librsvg2-dev
+      - name: build
+        run: cargo build --release
+      - name: Clone CWL
+        run: git clone https://github.com/common-workflow-language/cwl-v1.2
+      - name: Create Wrapper
+        run: |
+          mv target/release/s4n s4n
+          echo '#!/bin/bash
+          s4n execute local "$@"' > s4n_wrapper.sh
+          chmod +x s4n
+          chmod +x s4n_wrapper.sh
+      - name: Run Tests
+        continue-on-error: true
+        run: |
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install cwltest
+          export PATH=$PATH:$(pwd)
+          cd cwl-v1.2
+          cwltest --tool s4n_wrapper.sh --test conformance_tests.yaml --badgedir badges
+          exit 0
+      - name: Generate Summary
+        run: |
+          TABLE="| Subject        | Status | Badge                                      |"
+          TABLE="$TABLE\n|----------------|--------|--------------------------------------------|"
+
+          for file in cwl-v1.2/badges/*.json; do
+                  SUBJECT=$(jq -r '.subject' $file)
+                  STATUS=$(jq -r '.status' $file)
+                  COLOR=$(jq -r '.color' $file)
+                  BADGE_URL="https://img.shields.io/badge/$SUBJECT-${STATUS}25-$COLOR"
+                  TABLE="$TABLE\n| $SUBJECT       | $STATUS | ![$SUBJECT]( $BADGE_URL )                  |"
+          done
+
+          echo -e "$TABLE" 
+          echo -e "$TABLE" >> $GITHUB_STEP_SUMMARY

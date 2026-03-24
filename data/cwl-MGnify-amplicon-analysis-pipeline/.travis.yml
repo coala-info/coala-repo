@@ -1,0 +1,23 @@
+os: linux
+
+sudo: true
+language: python
+python: 3.6
+services:
+  - docker
+
+env:
+  - TOOL="Validate" CONF_SCRIPT="travis/conformance-tests.sh"
+#  - TOOL="SUPPRESS" TEST_SUPPRESS_SUBWF="travis/cwltest.sh"
+
+install:
+  - travis/install-nodejs.sh
+  - pip install -r travis/requirements.txt
+
+before_script:
+  - pip freeze
+  - pwd
+
+script:
+  - bash ${CONF_SCRIPT}
+#  - bash  ${TEST_SUPPRESS_SUBWF} travis/tests/amplicon-suppress/1.yml

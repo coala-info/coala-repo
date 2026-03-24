@@ -1,0 +1,157 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Workflow_of_BioTranslator_Comparative_Analysis.ga"
+      },
+      "datePublished": "2021-09-26 19:20:05 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/193?version=1",
+      "url": "https://workflowhub.eu/workflows/193/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow of BioTranslator Comparative Analysis",
+      "description": "This workflow is based on the idea of comparing different gene sets through their semantic interpretation. In many cases, the user studies a specific phenotype (e.g. disease) by analyzing lists of genes resulting from different samples or patients. Their pathway analysis could result in different semantic networks, revealing mechanistic and phenotypic divergence between these gene sets. The workflow of BioTranslator Comparative Analysis compares quantitatively the outputs of pathway analysis, based on the topology of the underlying ontological graph, in order to derive a semantic similarity value for each pair of the initial gene sets. The workflow is available in a Galaxy application and can be used for 14 species. The algorithm accepts as input a batch of gene sets, such as BioTranslator, for the same organism. It performs pathway analysis according to the user-selected ontology and then it compares the derived semantic networks and extracts a matrix with their distances, as well as a respective heatmap.",
+      "isBasedOn": "http://www.biotranslator.gr:8080/u/thodk/w/workflow-of-biotranslator-comparative-analysis",
+      "sdDatePublished": "2026-03-24 18:09:13 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Workflow_of_BioTranslator_Comparative_Analysis.ga"
+        },
+        {
+          "@id": "Screenshot%20from%202021-09-26%2021-09-50.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Workflow_of_BioTranslator_Comparative_Analysis.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 3984,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Screenshot%20from%202021-09-26%2021-09-50.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow is based on the idea of comparing different gene sets through their semantic interpretation. In many cases, the user studies a specific phenotype (e.g. disease) by analyzing lists of genes resulting from different samples or patients. Their pathway analysis could result in different semantic networks, revealing mechanistic and phenotypic divergence between these gene sets. The workflow of BioTranslator Comparative Analysis compares quantitatively the outputs of pathway analysis, based on the topology of the underlying ontological graph, in order to derive a semantic similarity value for each pair of the initial gene sets. The workflow is available in a Galaxy application and can be used for 14 species. The algorithm accepts as input a batch of gene sets, such as BioTranslator, for the same organism. It performs pathway analysis according to the user-selected ontology and then it compares the derived semantic networks and extracts a matrix with their distances, as well as a respective heatmap.",
+      "name": "Workflow of BioTranslator Comparative Analysis",
+      "url": "https://workflowhub.eu/workflows/193?version=1",
+      "keywords": "Semantic Network Analysis, Semantic Comparison, Pathway Analysis",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/58"
+      },
+      "dateCreated": "2021-09-26T18:20:05Z",
+      "dateModified": "2023-01-16T13:53:00Z",
+      "isPartOf": [
+
+      ],
+      "input": {
+        "@id": "#workflow_of_biotranslator_comparative_analysis-inputs-Input%20sets%20of%20genes"
+      },
+      "output": [
+        {
+          "@id": "#workflow_of_biotranslator_comparative_analysis-outputs-Distances%20Matrix"
+        },
+        {
+          "@id": "#workflow_of_biotranslator_comparative_analysis-outputs-Heatmap"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Screenshot%20from%202021-09-26%2021-09-50.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 29724
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/58",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "CO2MICS Lab"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_of_biotranslator_comparative_analysis-inputs-Input sets of genes",
+      "@type": "FormalParameter",
+      "name": "Input sets of genes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_of_biotranslator_comparative_analysis-outputs-Distances Matrix",
+      "@type": "FormalParameter",
+      "name": "Distances Matrix",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_of_biotranslator_comparative_analysis-outputs-Heatmap",
+      "@type": "FormalParameter",
+      "name": "Heatmap",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

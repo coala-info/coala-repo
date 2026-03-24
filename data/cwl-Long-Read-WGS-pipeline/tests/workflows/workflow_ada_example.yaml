@@ -1,0 +1,7 @@
+cwl:workflow: workflow_ada.cwl
+cwl:tool: https://git.wur.nl/ssb/automated-data-analysis/cwl/-/raw/main/workflows/workflow_ada.cwl?ref_type=heads
+input_read:
+  class: File
+  path: https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR248/073/SRR24834173/SRR24834173_1.fastq.gz
+NCBI_identifier: CP127255
+threads: 8

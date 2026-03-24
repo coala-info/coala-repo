@@ -1,0 +1,18 @@
+{
+  "local": {
+    "path": "/workspace/"
+  },
+  "BSC_DT":{
+    "user": "<your_bsc_hpc_user>",
+    "url": "glogin2.bsc.es",
+    "path": "/gpfs/projects/bsc21/WPG/Earthquake/Ucis4eq/Resources/Runs",
+    "datamapping": "/gpfs/projects/bsc21/WPG/Earthquake/Ucis4eq/Resources/StaticDataMappingV3.json",
+    "output": "/gpfs/projects/bsc21/WPG/Earthquake/Ucis4eq/Resources/Runs"
+  },
+  "ETH_DAINT":{
+    "user": "your_pd_hpc_username",
+    "url": "daint.cscs.ch",
+    "proxy": "your_pd_hpc_username@ela.cscs.ch",
+    "path": "/path/on/Piz-Daint/to/UCIS4EQ/"
+  }
+}

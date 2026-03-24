@@ -1,0 +1,177 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Workflow to compute seismic hazard results.",
+      "datePublished": "2025-05-14",
+      "description": "Computes seismic hazard results using input datasets and computational steps.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": [
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7104.cwl" },
+        { "@id": "DT7105/" },
+        { "@id": "DT7108/" },
+        { "@id": "DT7110/" }
+      ],
+      "mainEntity": {
+        "@id": "WF7104.cwl"
+      }
+    },
+    {
+      "@id": "WF7104.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Seismic Hazard Computation Workflow",
+      "description": "Computes seismic hazard results using input datasets and computational steps.",
+      "author": [
+        { "@id": "https://orcid.org/0000-0002-8207-1464" },
+        { "@id": "https://orcid.org/0009-0009-4291-2503" },
+        { "@id": "https://orcid.org/0000-0003-4086-8755" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7105->WF7104.cwl" },
+        { "@id": "#DT7108->WF7104.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7104.cwl->DT7110" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "DT7105/",
+      "@type": "Dataset",
+      "name": "Input files for computing the 2020 European Seismic Risk Model (ESRM20)",
+      "description": "Input dataset for the Seismic Risk Computation Workflow.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": {
+        "@id": "./"
+      },
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-4086-8755"
+      }
+    },
+    {
+      "@id": "DT7108/",
+      "@type": "Dataset",
+      "name": "Updated Seismogenic Source Model",
+      "description": "Input dataset for the Seismic Hazard Computation Workflow.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": {
+        "@id": "./"
+      },
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-4086-8755"
+      }
+    },
+    {
+      "@id": "DT7110/",
+      "@type": "Dataset",
+      "name": "Seismic Risk Results: Loss Maps, Loss Curves",
+      "description": "Output dataset of the Seismic Risk Computation Workflow.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": {
+        "@id": "./"
+      },
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-4086-8755"
+      }
+    },
+    {
+      "@id": "SS7102",
+      "@type": "SoftwareSourceCode",
+      "name": "OpenQuake",
+      "description": "The OpenQuake Engine is an open source application that allows users to compute seismic hazard and seismic risk of earthquakes on a regional scale.",
+      "license": "https://spdx.org/licenses/AGPL-3.0",
+      "programmingLanguage": [
+      "Python",
+      "Numpy",
+      "Matplotlib"
+      ],
+      "url": "https://github.com/gem/oq-engine/",
+      "organization": { "@id": "https://ror.org/02xh1tf3" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-4291-2503",
+      "@type": "Person",
+      "name": "Nicolas Schmid",
+      "email": "nicolas.schmid@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4086-8755",
+      "@type": "Person",
+      "name": "Laurentiu Danciu",
+      "email": "laurentiu.danciu@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH Zürich)"
+    },
+    {
+      "@id": "https://ror.org/02xh1tf34",
+      "@type": "Organization",
+      "name": "Global Earthquake Model Foundation (GEM)"
+    }
+  ]
+}

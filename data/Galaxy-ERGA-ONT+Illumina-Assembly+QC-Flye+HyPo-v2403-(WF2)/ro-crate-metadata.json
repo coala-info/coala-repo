@@ -1,0 +1,485 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_ONT_Illumina_Assembly_QC_Flye_HyPo_v2403_(WF2).ga"
+      },
+      "datePublished": "2024-03-11 12:35:39 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/788?version=1",
+      "url": "https://workflowhub.eu/workflows/788/ro_crate?version=1",
+      "name": "Research Object Crate for ERGA ONT+Illumina Assembly+QC Flye+HyPo v2403 (WF2)",
+      "description": "The workflow takes raw ONT reads and trimmed Illumina WGS paired reads collections, and the estimated genome size and Max depth (both calculated from WF1) to run Flye and subsequently polish the assembly with HyPo. It produces collapsed assemblies (unpolished and polished) and runs all the QC analyses (gfastats, BUSCO, and Merqury).",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:48:52 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_ONT_Illumina_Assembly_QC_Flye_HyPo_v2403_(WF2).ga"
+        },
+        {
+          "@id": "Cont_ONTflye_2403.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_ONT_Illumina_Assembly_QC_Flye_HyPo_v2403_(WF2).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/2.Contigging/Galaxy-Workflow-ERGA_ONT_Illumina_Assembly_QC_Flye_HyPo_v2403_(WF2).ga",
+      "contentSize": 55231,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Cont_ONTflye_2403.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes raw ONT reads and trimmed Illumina WGS paired reads collections, and the estimated genome size and Max depth (both calculated from WF1) to run Flye and subsequently polish the assembly with HyPo. It produces collapsed assemblies (unpolished and polished) and runs all the QC analyses (gfastats, BUSCO, and Merqury).",
+      "name": "ERGA ONT+Illumina Assembly+QC Flye+HyPo v2403 (WF2)",
+      "keywords": "name:ERGA, name:ASSEMBLY+QC, name:ONT, name:ILLUMINA",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-03-11T12:41:58Z",
+      "dateModified": "2024-03-11T12:41:58Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/18"
+      },
+      "input": [
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Estimated%20genome%20size"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Illumina%20trimmed%20reads"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Max%20depth"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-ONT%20reads"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-lineage"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-meryl%20db"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-consensus"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-assembly_gfa"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Map%20with%20minimap2%20on%20input%20dataset(s)%20(mapped%20reads%20in%20BAM%20format)"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Busco%20on%20input%20dataset(s):%20short%20summary"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Merqury%20on%20input%20dataset(s):%20plots"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-QV%20stats"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Merqury%20on%20input%20dataset(s):%20stats"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-output1"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-HyPo%20on%20input%20dataset(s):%20polished%20assembly"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_14"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Cont_ONTflye_2403.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/2.Contigging/pics/Cont_ONTflye_2403.png",
+      "contentSize": 283740
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/18",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (Flye-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Estimated genome size",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Illumina trimmed reads",
+      "@type": "FormalParameter",
+      "name": "Illumina trimmed reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-Max depth",
+      "@type": "FormalParameter",
+      "name": "Max depth",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-ONT reads",
+      "@type": "FormalParameter",
+      "name": "ONT reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-lineage",
+      "@type": "FormalParameter",
+      "name": "lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-inputs-meryl db",
+      "@type": "FormalParameter",
+      "name": "meryl db",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-consensus",
+      "@type": "FormalParameter",
+      "name": "consensus",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-assembly_gfa",
+      "@type": "FormalParameter",
+      "name": "assembly_gfa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Map with minimap2 on input dataset(s) (mapped reads in BAM format)",
+      "@type": "FormalParameter",
+      "name": "Map with minimap2 on input dataset(s) (mapped reads in BAM format)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Busco on input dataset(s): short summary",
+      "@type": "FormalParameter",
+      "name": "Busco on input dataset(s): short summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Merqury on input dataset(s): plots",
+      "@type": "FormalParameter",
+      "name": "Merqury on input dataset(s): plots",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-QV stats",
+      "@type": "FormalParameter",
+      "name": "QV stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-Merqury on input dataset(s): stats",
+      "@type": "FormalParameter",
+      "name": "Merqury on input dataset(s): stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-output1",
+      "@type": "FormalParameter",
+      "name": "output1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-HyPo on input dataset(s): polished assembly",
+      "@type": "FormalParameter",
+      "name": "HyPo on input dataset(s): polished assembly",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_ont_illumina_assembly_qc_flye_hypo_v2403__wf2_-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

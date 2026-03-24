@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Galaxy Workflow - ARC2OMERO</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ARC2OMERO.ga"
+      },
+      "datePublished": "2026-03-23 12:53:09 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2104-9519"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/2116?version=1",
+      "url": "https://workflowhub.eu/workflows/2116/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy Workflow - ARC2OMERO",
+      "description": "## Workflow Overview\nThis Galaxy workflow allows transferring ARC imaging data stored as .ZIP file to a target OMERO instance by 1) keeping the ARC structure and 2) automatize the metadata annotation of the assay.\n\n### How does it works\nThe workflow extract all the **./assays/experiment/dataset/** file path and create an OMERO dataset containing the images. The **\"isa.assay.xlsx\"** file is used to add key-value pairs to the dataset.\n\n### Workflow Inputs\nThe workflow as three different data inputs:\n1) **ARC .ZIP file:** A zip file with the whole ARC. Can be downloaded from the DataPLANT ARC repo\n2) **Image File Extension:** Image formats (e.g. TIFF, PNG, JPEG) to upload into OMERO\n3) **Target OMERO instance:** OMERO instance where to upload the data\n4) **Depth of the ARC dataset folder:** How depth after **./assays/experiment/dataset/** images are stored. As example if images are **assays/CLSM-stacks_oryzalin/dataset/treated** the depth need to be set to 1. If **assays/CLSM-stacks_oryzalin/dataset** the depth need to be set to 0\n\n### Test Dataset\nhttps://git.nfdi4plants.org/natural-variation-and-evolution/microscopy_collection/map-by-seq_clsm-stacks/-/tree/main?ref_type=heads",
+      "sdDatePublished": "2026-03-24 16:19:41 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ARC2OMERO.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ARC2OMERO.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 31503,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "## Workflow Overview\nThis Galaxy workflow allows transferring ARC imaging data stored as .ZIP file to a target OMERO instance by 1) keeping the ARC structure and 2) automatize the metadata annotation of the assay.\n\n### How does it works\nThe workflow extract all the **./assays/experiment/dataset/** file path and create an OMERO dataset containing the images. The **\"isa.assay.xlsx\"** file is used to add key-value pairs to the dataset.\n\n### Workflow Inputs\nThe workflow as three different data inputs:\n1) **ARC .ZIP file:** A zip file with the whole ARC. Can be downloaded from the DataPLANT ARC repo\n2) **Image File Extension:** Image formats (e.g. TIFF, PNG, JPEG) to upload into OMERO\n3) **Target OMERO instance:** OMERO instance where to upload the data\n4) **Depth of the ARC dataset folder:** How depth after **./assays/experiment/dataset/** images are stored. As example if images are **assays/CLSM-stacks_oryzalin/dataset/treated** the depth need to be set to 1. If **assays/CLSM-stacks_oryzalin/dataset** the depth need to be set to 0\n\n### Test Dataset\nhttps://git.nfdi4plants.org/natural-variation-and-evolution/microscopy_collection/map-by-seq_clsm-stacks/-/tree/main?ref_type=heads",
+      "name": "Galaxy Workflow - ARC2OMERO",
+      "url": "https://workflowhub.eu/workflows/2116?version=1",
+      "keywords": "NFDI4BIOIMAGE, OMERO, RDM, ARC",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/916"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/311"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/293"
+        }
+      ],
+      "dateCreated": "2026-03-23T12:58:26Z",
+      "dateModified": "2026-03-23T12:59:31Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#galaxy_workflow___arc2omero-inputs-Deepth%20of%20the%20folder%20under%20%22dataset%22%20where%20the%20image%20are%20stored"
+        },
+        {
+          "@id": "#galaxy_workflow___arc2omero-inputs-Image%20File%20Extension"
+        },
+        {
+          "@id": "#galaxy_workflow___arc2omero-inputs-Input%20ARC%20.zip%20file"
+        },
+        {
+          "@id": "#galaxy_workflow___arc2omero-inputs-OMERO%20server%20URL"
+        }
+      ],
+      "output": {
+        "@id": "#galaxy_workflow___arc2omero-outputs-log"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2104-9519",
+      "@type": "Person",
+      "name": "Riccardo Massei",
+      "identifier": "https://orcid.org/0000-0003-2104-9519"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/916",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/311",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioImage Informatics and Analysis Workflows"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/293",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "UFZ - Image Data Management and Processing Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow___arc2omero-inputs-Deepth of the folder under \"dataset\" where the image are stored",
+      "@type": "FormalParameter",
+      "name": "Deepth of the folder under \"dataset\" where the image are stored",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow___arc2omero-inputs-Image File Extension",
+      "@type": "FormalParameter",
+      "name": "Image File Extension",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow___arc2omero-inputs-Input ARC .zip file",
+      "@type": "FormalParameter",
+      "name": "Input ARC .zip file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow___arc2omero-inputs-OMERO server URL",
+      "@type": "FormalParameter",
+      "name": "OMERO server URL",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_workflow___arc2omero-outputs-log",
+      "@type": "FormalParameter",
+      "name": "log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Galaxy Workflow - ARC2OMERO</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/2116/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/2116/ro_crate?version=1</a>
+
+
+<p>
+  ## Workflow Overview
+This Galaxy workflow allows transferring ARC imaging data stored as .ZIP file to a target OMERO instance by 1) keeping the ARC structure and 2) automatize the metadata annotation of the assay.
+
+### How does it works
+The workflow extract all the **./assays/experiment/dataset/** file path and create an OMERO dataset containing the images. The **"isa.assay.xlsx"** file is used to add key-value pairs to the dataset.
+
+### Workflow Inputs
+The workflow as three different data inputs:
+1) **ARC .ZIP file:** A zip file with the whole ARC. Can be downloaded from the DataPLANT ARC repo
+2) **Image File Extension:** Image formats (e.g. TIFF, PNG, JPEG) to upload into OMERO
+3) **Target OMERO instance:** OMERO instance where to upload the data
+4) **Depth of the ARC dataset folder:** How depth after **./assays/experiment/dataset/** images are stored. As example if images are **assays/CLSM-stacks_oryzalin/dataset/treated** the depth need to be set to 1. If **assays/CLSM-stacks_oryzalin/dataset** the depth need to be set to 0
+
+### Test Dataset
+https://git.nfdi4plants.org/natural-variation-and-evolution/microscopy_collection/map-by-seq_clsm-stacks/-/tree/main?ref_type=heads
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-2104-9519" target="_blank">Riccardo Massei</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ARC2OMERO.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ARC2OMERO.ga">Galaxy Workflow - ARC2OMERO</a>
+      
+        <br/>Size: 31503 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

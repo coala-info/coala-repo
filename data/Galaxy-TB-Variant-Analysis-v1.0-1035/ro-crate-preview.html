@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for TB Variant Analysis v1.0</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-TB_Variant_Analysis_v1.0.ga"
+      },
+      "datePublished": "2024-06-12 14:37:44 +0100",
+      "author": [
+
+      ],
+      "license": "AGPL-3.0-or-later",
+      "identifier": "https://workflowhub.eu/workflows/1035?version=1",
+      "url": "https://workflowhub.eu/workflows/1035/ro_crate?version=1",
+      "name": "Research Object Crate for TB Variant Analysis v1.0",
+      "description": "Predict variants and drug resistance from M. tuberculosis sequence samples (Illumina)",
+      "sdDatePublished": "2026-03-24 17:46:13 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-TB_Variant_Analysis_v1.0.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-TB_Variant_Analysis_v1.0.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 46378,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Predict variants and drug resistance from M. tuberculosis sequence samples (Illumina)",
+      "name": "TB Variant Analysis v1.0",
+      "url": "https://workflowhub.eu/workflows/1035?version=1",
+      "keywords": "pathogen, tuberculosis",
+      "version": 1,
+      "license": "https://spdx.org/licenses/AGPL-3.0-or-later",
+      "creator": {
+        "@id": "#Peter%20van%20Heusden"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/171"
+      },
+      "dateCreated": "2024-06-07T19:07:04Z",
+      "dateModified": "2024-06-12T13:38:29Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#tb_variant_analysis_v1_0-inputs-Additional%20BWA-MEM%20options"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-inputs-Minimum%20depth%20of%20coverage"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-inputs-Minimum%20variant%20allele%20frequency"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-inputs-Reads"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-inputs-Reference%20Genome"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-output"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-report_output"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-output_txt"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-Final%20annotated%20VCF"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-html_report"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-consensus_genome"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-drug_resistance_report_html"
+        },
+        {
+          "@id": "#tb_variant_analysis_v1_0-outputs-variants_report_html"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Peter van Heusden",
+      "@type": "Person",
+      "name": "Peter van Heusden"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/171",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "SANBI Pathogen Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-inputs-Additional BWA-MEM options",
+      "@type": "FormalParameter",
+      "name": "Additional BWA-MEM options",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-inputs-Minimum depth of coverage",
+      "@type": "FormalParameter",
+      "name": "Minimum depth of coverage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-inputs-Minimum variant allele frequency",
+      "@type": "FormalParameter",
+      "name": "Minimum variant allele frequency",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-inputs-Reads",
+      "@type": "FormalParameter",
+      "name": "Reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-inputs-Reference Genome",
+      "@type": "FormalParameter",
+      "name": "Reference Genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-report_output",
+      "@type": "FormalParameter",
+      "name": "report_output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-output_txt",
+      "@type": "FormalParameter",
+      "name": "output_txt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-Final annotated VCF",
+      "@type": "FormalParameter",
+      "name": "Final annotated VCF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-html_report",
+      "@type": "FormalParameter",
+      "name": "html_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-consensus_genome",
+      "@type": "FormalParameter",
+      "name": "consensus_genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-drug_resistance_report_html",
+      "@type": "FormalParameter",
+      "name": "drug_resistance_report_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tb_variant_analysis_v1_0-outputs-variants_report_html",
+      "@type": "FormalParameter",
+      "name": "variants_report_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for TB Variant Analysis v1.0</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1035/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1035/ro_crate?version=1</a>
+
+
+<p>
+  Predict variants and drug resistance from M. tuberculosis sequence samples (Illumina)
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>AGPL-3.0-or-later</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-TB_Variant_Analysis_v1.0.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-TB_Variant_Analysis_v1.0.ga">TB Variant Analysis v1.0</a>
+      
+        <br/>Size: 46378 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

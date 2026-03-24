@@ -1,0 +1,326 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Workflow 3 [gucfg2galaxy]: Classification [Galaxy Training: 16S Microbial Analysis With Mothur]",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Cleaned Sequences"
+                }
+            ],
+            "label": "Cleaned Sequences",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 26.902191162109375,
+                "top": 123.6548957824707
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "817445c0-3b76-4949-bbed-34c88e2a0c59",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Count Table"
+                }
+            ],
+            "label": "Count Table",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 304.68750381469727
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7b43d972-886f-4aae-ab0e-2fd188655cbd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Training set FASTA"
+                }
+            ],
+            "label": "Training set FASTA",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3.89947509765625,
+                "top": 515.6793556213379
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f2ee2034-e7ce-43b0-82c9-905c2dd0745c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Training set Taxonomy"
+                }
+            ],
+            "label": "Training set Taxonomy",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 29.959259033203125,
+                "top": 693.8179664611816
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "f1a29c9e-a70e-4d8c-b7b4-1236da5245a1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_classify_seqs/mothur_classify_seqs/1.39.5.0",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "alignment|template": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "count": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "fasta": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "tax|taxonomy": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Classify.seqs",
+                    "name": "name"
+                }
+            ],
+            "label": null,
+            "name": "Classify.seqs",
+            "outputs": [
+                {
+                    "name": "taxonomy_out",
+                    "type": "mothur.seq.taxonomy"
+                },
+                {
+                    "name": "tax_summary",
+                    "type": "mothur.tax.summary"
+                },
+                {
+                    "name": "tree_sum",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 538.0435180664062,
+                "top": 0.0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_classify_seqs/mothur_classify_seqs/1.39.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "09bf9e496c64",
+                "name": "mothur_classify_seqs",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignment\": {\"source\": \"hist\", \"__current_case__\": 1, \"template\": {\"__class__\": \"ConnectedValue\"}}, \"classify\": {\"method\": \"wang\", \"__current_case__\": 0, \"ksize\": \"8\", \"iters\": \"100\", \"cutoff\": \"80\", \"probs\": true}, \"count\": {\"__class__\": \"ConnectedValue\"}, \"fasta\": {\"__class__\": \"ConnectedValue\"}, \"name\": {\"__class__\": \"RuntimeValue\"}, \"output\": \"simple\", \"printlevel\": \"-1\", \"relabund\": false, \"savelog\": false, \"tax\": {\"source2\": \"hist\", \"__current_case__\": 1, \"taxonomy\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.39.5.0",
+            "type": "tool",
+            "uuid": "d57e48c7-34ce-4742-8545-31b9d5c4a53d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "taxonomy_out",
+                    "uuid": "00dbeed6-f5e7-4236-a52d-97919def6e30"
+                },
+                {
+                    "label": null,
+                    "output_name": "tree_sum",
+                    "uuid": "7f007128-e1e6-4c8e-a76e-eb2f3b3fa08a"
+                },
+                {
+                    "label": null,
+                    "output_name": "tax_summary",
+                    "uuid": "4f0ecafa-b06b-4202-b288-3906c5ee40c5"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_remove_lineage/mothur_remove_lineage/1.39.5.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "count": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "fasta_in": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "file|taxonomy": {
+                    "id": 4,
+                    "output_name": "taxonomy_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Remove.lineage",
+                    "name": "alignreport_in"
+                },
+                {
+                    "description": "runtime parameter for tool Remove.lineage",
+                    "name": "group_in"
+                },
+                {
+                    "description": "runtime parameter for tool Remove.lineage",
+                    "name": "list_in"
+                },
+                {
+                    "description": "runtime parameter for tool Remove.lineage",
+                    "name": "name_in"
+                }
+            ],
+            "label": null,
+            "name": "Remove.lineage",
+            "outputs": [
+                {
+                    "name": "list_out",
+                    "type": "input"
+                },
+                {
+                    "name": "taxonomy_out",
+                    "type": "mothur.seq.taxonomy"
+                },
+                {
+                    "name": "fasta_out",
+                    "type": "input"
+                },
+                {
+                    "name": "group_out",
+                    "type": "mothur.groups"
+                },
+                {
+                    "name": "count_out",
+                    "type": "mothur.count_table"
+                },
+                {
+                    "name": "name_out",
+                    "type": "mothur.names"
+                },
+                {
+                    "name": "alignreport_out",
+                    "type": "mothur.align.report"
+                }
+            ],
+            "position": {
+                "left": 790.4483642578125,
+                "top": 381.7527198791504
+            },
+            "post_job_actions": {
+                "HideDatasetActionalignreport_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "alignreport_out"
+                },
+                "HideDatasetActiongroup_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "group_out"
+                },
+                "HideDatasetActionlist_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "list_out"
+                },
+                "HideDatasetActionname_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "name_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_remove_lineage/mothur_remove_lineage/1.39.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "947faa8b3205",
+                "name": "mothur_remove_lineage",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignreport_in\": {\"__class__\": \"RuntimeValue\"}, \"count\": {\"__class__\": \"ConnectedValue\"}, \"dups\": true, \"fasta_in\": {\"__class__\": \"ConnectedValue\"}, \"file\": {\"filetype\": \"usetaxonomy\", \"__current_case__\": 0, \"taxonomy\": {\"__class__\": \"ConnectedValue\"}, \"taxons\": null}, \"group_in\": {\"__class__\": \"RuntimeValue\"}, \"list_in\": {\"__class__\": \"RuntimeValue\"}, \"name_in\": {\"__class__\": \"RuntimeValue\"}, \"savelog\": false, \"taxon\": \"Chloroplast-Mitochondria-unknown-Archaea-Eukaryota\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.39.5.0",
+            "type": "tool",
+            "uuid": "61870655-5bd1-45bc-a8fe-81b1cf8018a2",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "taxonomy_out",
+                    "uuid": "a866cbb1-8521-486e-927a-566ddf8e9eda"
+                },
+                {
+                    "label": null,
+                    "output_name": "fasta_out",
+                    "uuid": "157a5706-f674-45c4-8733-4f2a6f442299"
+                },
+                {
+                    "label": null,
+                    "output_name": "count_out",
+                    "uuid": "01c564c3-5eb7-434a-bc88-29ed1c776afd"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "metagenomics"
+    ],
+    "uuid": "af336284-7f56-4adb-a939-d772a8ac7d51",
+    "version": 5
+}

@@ -1,0 +1,131 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Workflow permettant de prendre en entr\u00e9e les r\u00e9sultats du challenge IA-biodiv par t\u00e2che, le fichier de r\u00e9f\u00e9rence par t\u00e2che afin de faire tourner un jupyter notebook produisant les scores pour chaque consortium participant.",
+    "comments": [],
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "https://orcid.org/0000-0002-8504-068X",
+            "name": "Yvan Le Bras"
+        },
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Daniel Caon (LNE)"
+        }
+    ],
+    "format-version": "0.1",
+    "name": "Evaluation IA-Biodiv workflow",
+    "steps": {
+        "0": {
+            "annotation": "AI submission file, participants results to evaluate",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "AI submission file, participants results to evaluate",
+                    "name": "IABiodiv_DryRun_participant_v.tsv"
+                }
+            ],
+            "label": "IABiodiv_DryRun_participant_v.tsv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 3.744059271925474,
+                "top": 160.87208395625862
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "615c07b6-a205-4c19-9bb4-51dc6e4221ab",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "AI evaluation reference file",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "AI evaluation reference file",
+                    "name": "Tn_attributes_REF.tsv"
+                }
+            ],
+            "label": "Tn_attributes_REF.tsv",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 532.8464872781781
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7e139fc5-ac80-4bcb-b110-52ba524e9c46",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "interactive_tool_jupyter_notebook",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "user_inputs_0|input_type|input_value": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "user_inputs_1|input_type|input_value": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Interactive JupyterLab Notebook",
+                    "name": "mode"
+                }
+            ],
+            "label": "Evaluation on task",
+            "name": "Interactive JupyterLab Notebook",
+            "outputs": [
+                {
+                    "name": "output_collection",
+                    "type": "input"
+                },
+                {
+                    "name": "jupyter_notebook",
+                    "type": "ipynb"
+                },
+                {
+                    "name": "output_dataset",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "left": 851.2149181580689,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "interactive_tool_jupyter_notebook",
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"mode\": {\"mode_select\": \"previous\", \"__current_case__\": 1, \"ipynb\": {\"__class__\": \"ConnectedValue\"}, \"run_it\": true}, \"user_inputs\": [{\"__index__\": 0, \"input_name\": \"submission\", \"description\": \"results from AI challenge participant\", \"input_type\": {\"input_type_selector\": \"dataset\", \"__current_case__\": 0, \"input_value\": {\"__class__\": \"ConnectedValue\"}}}, {\"__index__\": 1, \"input_name\": \"reference\", \"description\": \"reference from AI challenge organizer\", \"input_type\": {\"input_type_selector\": \"dataset\", \"__current_case__\": 0, \"input_value\": {\"__class__\": \"ConnectedValue\"}}}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "5f580141-d2a0-455b-84ee-a9748ace0084",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [
+        "IA",
+        "Evaluation"
+    ],
+    "uuid": "dbc8e5d0-2eb7-4ec5-b189-d2bad48d0247",
+    "version": 5
+}

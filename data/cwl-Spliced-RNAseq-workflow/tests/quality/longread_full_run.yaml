@@ -1,0 +1,15 @@
+cwl:tool: ../../workflows/workflow_longread_quality.cwl
+identifier: TEST
+readtype: Nanopore
+fastq_rich: true
+threads: 6
+memory: 4000
+longreads:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/ont_guppy_reads.fq.gz
+filter_references:
+   - class: File
+     path: http://download.systemsbiology.nl/unlock/cwl/test_data/human_small.fa.gz
+kraken2_database:
+   - class: Directory
+     path: /unlock/references/databases/Kraken2/k2_standard_08gb_20230314

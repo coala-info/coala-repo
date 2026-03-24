@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Taxonomy classification using Kraken2 and Bracken</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Taxonomy_classification_using_Kraken2_and_Bracken.ga"
+      },
+      "datePublished": "2024-12-08 19:50:13 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-1235-9462"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-1480-3563"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1199.2",
+      "url": "https://workflowhub.eu/workflows/1199/ro_crate?version=2",
+      "name": "Research Object Crate for Taxonomy classification using Kraken2 and Bracken",
+      "description": "The aim of this workflow is to handle the routine part of shotgun metagenomics data processing. The workflow is using the tools Kraken2 and Bracken for taxonomy classification and the KrakenTools to evaluate diversity metrics. This workflow was tested on Galaxy Australia. \nA How-to guide for the workflow can be found at:  https://github.com/vmurigneu/kraken_howto_ga_workflows/blob/main/pages/taxonomy_kraken2_wf_guide.md  ",
+      "isBasedOn": "https://usegalaxy.org.au/published/workflow?id=a335b9c9103b57ad",
+      "sdDatePublished": "2026-03-24 19:27:51 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Taxonomy_classification_using_Kraken2_and_Bracken.ga"
+        },
+        {
+          "@id": "shotgun_kraken_workflow_scheme.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Taxonomy_classification_using_Kraken2_and_Bracken.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.org.au/published/workflow?id=a335b9c9103b57ad",
+      "contentSize": 0,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "shotgun_kraken_workflow_scheme.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The aim of this workflow is to handle the routine part of shotgun metagenomics data processing. The workflow is using the tools Kraken2 and Bracken for taxonomy classification and the KrakenTools to evaluate diversity metrics. This workflow was tested on Galaxy Australia. \nA How-to guide for the workflow can be found at:  https://github.com/vmurigneu/kraken_howto_ga_workflows/blob/main/pages/taxonomy_kraken2_wf_guide.md  ",
+      "name": "Taxonomy classification using Kraken2 and Bracken",
+      "keywords": "Metagenomics, shotgun, GUCFG2galaxy, name:Collection",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/140"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/162"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/41"
+      },
+      "dateCreated": "2024-12-10T23:58:19Z",
+      "dateModified": "2024-12-10T23:59:35Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1199.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/1199?version=1",
+      "input": [
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-inputs-Input%20fastq%20collection"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-inputs-Input%20samplesheet%20file"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Input%20fastq%20collection%20renamed"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Kraken2%20combined%20report"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken%20combined%20report%20"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken%20krona%20text"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Beta%20diversity%20summary%20text%20file"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken%20species%20abundance%20combined%20results"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Krona%20pie%20chart"
+        },
+        {
+          "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Alpha%20diversity%20summary%20text%20file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "shotgun_kraken_workflow_scheme.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 53500
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1235-9462",
+      "@type": "Person",
+      "name": "Valentine Murigneux",
+      "identifier": "https://orcid.org/0000-0002-1235-9462"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-1480-3563",
+      "@type": "Person",
+      "name": "Mike Thang",
+      "identifier": "https://orcid.org/0000-0002-1480-3563"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/140",
+      "@type": "Person",
+      "name": "Valentine Murigneux"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/162",
+      "@type": "Person",
+      "name": "Mike Thang"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/41",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "QCIF Bioinformatics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-inputs-Input fastq collection",
+      "@type": "FormalParameter",
+      "name": "Input fastq collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-inputs-Input samplesheet file",
+      "@type": "FormalParameter",
+      "name": "Input samplesheet file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Input fastq collection renamed",
+      "@type": "FormalParameter",
+      "name": "Input fastq collection renamed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Kraken2 combined report",
+      "@type": "FormalParameter",
+      "name": "Kraken2 combined report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken combined report ",
+      "@type": "FormalParameter",
+      "name": "Bracken combined report ",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken krona text",
+      "@type": "FormalParameter",
+      "name": "Bracken krona text",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Beta diversity summary text file",
+      "@type": "FormalParameter",
+      "name": "Beta diversity summary text file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Bracken species abundance combined results",
+      "@type": "FormalParameter",
+      "name": "Bracken species abundance combined results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Krona pie chart",
+      "@type": "FormalParameter",
+      "name": "Krona pie chart",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#taxonomy_classification_using_kraken2_and_bracken-outputs-Alpha diversity summary text file",
+      "@type": "FormalParameter",
+      "name": "Alpha diversity summary text file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Taxonomy classification using Kraken2 and Bracken</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1199/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/1199/ro_crate?version=2</a>
+
+
+  <img src="shotgun_kraken_workflow_scheme.png" style="width: 100%;"/>
+
+<p>
+  The aim of this workflow is to handle the routine part of shotgun metagenomics data processing. The workflow is using the tools Kraken2 and Bracken for taxonomy classification and the KrakenTools to evaluate diversity metrics. This workflow was tested on Galaxy Australia. 
+A How-to guide for the workflow can be found at:  https://github.com/vmurigneu/kraken_howto_ga_workflows/blob/main/pages/taxonomy_kraken2_wf_guide.md  
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-1235-9462" target="_blank">Valentine Murigneux</a>, <a href="https://orcid.org/0000-0002-1480-3563" target="_blank">Mike Thang</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Taxonomy_classification_using_Kraken2_and_Bracken.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Taxonomy_classification_using_Kraken2_and_Bracken.ga">Taxonomy classification using Kraken2 and Bracken</a>
+      
+        <br/>Size: 0 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_shotgun_kraken_workflow_scheme.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="shotgun_kraken_workflow_scheme.png">shotgun_kraken_workflow_scheme.png</a>
+      
+        <br/>Size: 53500 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

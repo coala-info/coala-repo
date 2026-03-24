@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ERGA DataQC ONT v2505 (WF0)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga"
+      },
+      "datePublished": "2025-06-01 13:11:00 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/697?version=1",
+      "url": "https://workflowhub.eu/workflows/697/ro_crate?version=1",
+      "name": "Research Object Crate for ERGA DataQC ONT v2505 (WF0)",
+      "description": "The workflow takes ONT reads collection, runs SeqKit and Nanoplot. The main outputs are a table and plots of raw reads stats.",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:33:47 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga"
+        },
+        {
+          "@id": "QC_ont_2505.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/0.Data_QC/Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga",
+      "contentSize": 9014,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "QC_ont_2505.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes ONT reads collection, runs SeqKit and Nanoplot. The main outputs are a table and plots of raw reads stats.",
+      "name": "ERGA DataQC ONT v2505 (WF0)",
+      "keywords": "ONT, ERGA, DataQC",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-01-08T15:25:44Z",
+      "dateModified": "2025-06-01T12:11:10Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/17"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/18"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/27"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/33"
+        }
+      ],
+      "input": {
+        "@id": "#erga_dataqc_ont_v2505__wf0_-inputs-%23main/ONT%20raw%20reads%20collection"
+      },
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "QC_ont_2505.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/0.Data_QC/pics/QC_ont_2505.png",
+      "contentSize": 903560
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/17",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (NextDenovo-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/18",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (Flye-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/27",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-solo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/33",
+      "@type": "Collection",
+      "name": "Biodiversity &amp; ecology workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_dataqc_ont_v2505__wf0_-inputs-#main/ONT raw reads collection",
+      "@type": "FormalParameter",
+      "name": "#main/ONT raw reads collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ERGA DataQC ONT v2505 (WF0)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/697/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/697/ro_crate?version=1</a>
+
+
+  <img src="QC_ont_2505.png" style="width: 100%;"/>
+
+<p>
+  The workflow takes ONT reads collection, runs SeqKit and Nanoplot. The main outputs are a table and plots of raw reads stats.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-3679-9585" target="_blank">Diego De Panis</a>, ERGA</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ERGA_DataQC_ONT_v2505_(WF0).ga">ERGA DataQC ONT v2505 (WF0)</a>
+      
+        <br/>Size: 9014 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_QC_ont_2505.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="QC_ont_2505.png">QC_ont_2505.png</a>
+      
+        <br/>Size: 903560 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

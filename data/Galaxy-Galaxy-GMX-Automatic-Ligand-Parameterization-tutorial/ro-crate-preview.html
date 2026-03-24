@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Galaxy GMX Automatic Ligand Parameterization tutorial</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "biobb_wf_ligand_parameterization.ga"
+      },
+      "datePublished": "2023-05-03 14:44:40 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.294.3",
+      "url": "https://workflowhub.eu/workflows/294/ro_crate?version=3",
+      "name": "Research Object Crate for Galaxy GMX Automatic Ligand Parameterization tutorial",
+      "description": "# Automatic Ligand parameterization tutorial using BioExcel Building Blocks (biobb)\n\n***\n## This workflow must be run in **biobb.usegalaxy.es**. Please, [click here to access](https://biobb.usegalaxy.es/u/gbayarri/w/gmx-ligand-parameterization).\n***\n\nThis tutorial aims to illustrate the process of **ligand parameterization** for a **small molecule**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular example used is the **Sulfasalazine** protein (3-letter code SAS), used to treat rheumatoid arthritis, ulcerative colitis, and Crohn's disease.\n\n**OpenBabel and ACPype** packages are used to **add hydrogens, energetically minimize the structure**, and **generate parameters** for the **GROMACS** package. With *Generalized Amber Force Field (GAFF) forcefield and AM1-BCC* charges.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_ligand_parameterization/galaxy",
+      "sdDatePublished": "2026-03-24 17:59:04 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "biobb_wf_ligand_parameterization.ga"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/README.md"
+        }
+      ]
+    },
+    {
+      "@id": "biobb_wf_ligand_parameterization.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/biobb_wf_ligand_parameterization.ga",
+      "contentSize": 8541,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Automatic Ligand parameterization tutorial using BioExcel Building Blocks (biobb)\n\n***\n## This workflow must be run in **biobb.usegalaxy.es**. Please, [click here to access](https://biobb.usegalaxy.es/u/gbayarri/w/gmx-ligand-parameterization).\n***\n\nThis tutorial aims to illustrate the process of **ligand parameterization** for a **small molecule**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular example used is the **Sulfasalazine** protein (3-letter code SAS), used to treat rheumatoid arthritis, ulcerative colitis, and Crohn's disease.\n\n**OpenBabel and ACPype** packages are used to **add hydrogens, energetically minimize the structure**, and **generate parameters** for the **GROMACS** package. With *Generalized Amber Force Field (GAFF) forcefield and AM1-BCC* charges.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "Galaxy GMX Automatic Ligand Parameterization tutorial",
+      "keywords": "",
+      "version": 3,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-05-03T13:44:01Z",
+      "dateModified": "2023-05-03T13:45:13Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.294.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/294?version=2",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myligand.pdb"
+        },
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-mybabel_minimize.pdb"
+        },
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.itp"
+        },
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.top"
+        },
+        {
+          "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.gro"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myligand.pdb",
+      "@type": "FormalParameter",
+      "name": "myligand.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-mybabel_minimize.pdb",
+      "@type": "FormalParameter",
+      "name": "mybabel_minimize.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.itp",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_gmx.itp",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.top",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_gmx.top",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_gmx_automatic_ligand_parameterization_tutorial-outputs-myacpype_params_gmx.gro",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_gmx.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Galaxy GMX Automatic Ligand Parameterization tutorial</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/294/ro_crate?version=3" target="_blank">https://workflowhub.eu/workflows/294/ro_crate?version=3</a>
+
+
+<p>
+  # Automatic Ligand parameterization tutorial using BioExcel Building Blocks (biobb)
+
+***
+## This workflow must be run in **biobb.usegalaxy.es**. Please, [click here to access](https://biobb.usegalaxy.es/u/gbayarri/w/gmx-ligand-parameterization).
+***
+
+This tutorial aims to illustrate the process of **ligand parameterization** for a **small molecule**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular example used is the **Sulfasalazine** protein (3-letter code SAS), used to treat rheumatoid arthritis, ulcerative colitis, and Crohn's disease.
+
+**OpenBabel and ACPype** packages are used to **add hydrogens, energetically minimize the structure**, and **generate parameters** for the **GROMACS** package. With *Generalized Amber Force Field (GAFF) forcefield and AM1-BCC* charges.
+
+***
+
+## Copyright &amp; Licensing
+This software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).
+
+* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)
+* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)
+
+Licensed under the
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.
+
+![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png "Bioexcel")
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-8291-8071" target="_blank">Adam Hospital</a>, <a href="https://orcid.org/0000-0003-0513-0288" target="_blank">Genís Bayarri</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_biobb_wf_ligand_parameterization.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="biobb_wf_ligand_parameterization.ga">Galaxy GMX Automatic Ligand Parameterization tutorial</a>
+      
+        <br/>Size: 8541 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/README.md">
+      
+      
+      
+      <a class="data-entity-link" href="https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/README.md">https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_ligand_parameterization/galaxy/README.md</a>
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+../../docker/scripts_python3/split_to_chunks.py

@@ -1,0 +1,24 @@
+strict digraph {
+
+
+	"SS8103" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810405" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810405" -> "DT810405" [ label="is output from", labeltooltip="DT810405 - is output from - ST810405",  weight=0 ];
+
+	"catalog" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"catalog" -> "ST810405" [ label="is input to", labeltooltip="catalog - is input to - ST810405",  weight=0 ];
+
+	"map_selection" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"map_selection" -> "ST810405" [ label="is input to", labeltooltip="map_selection - is input to - ST810405",  weight=0 ];
+
+	"attribute_range" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"attribute_range" -> "ST810405" [ label="is input to", labeltooltip="attribute_range - is input to - ST810405",  weight=0 ];
+
+	"DT810405" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+}

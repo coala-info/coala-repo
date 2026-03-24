@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Gravitational Wave source Cone Search</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "conesearch.cwl"
+      },
+      "datePublished": "2023-01-11 12:19:29 +0000",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.415.1",
+      "url": "https://workflowhub.eu/workflows/415/ro_crate?version=1",
+      "name": "Research Object Crate for Gravitational Wave source Cone Search",
+      "description": "",
+      "isBasedOn": "https://renkulab.io/gitlab/dsavchenko/gw-backend/-/raw/master/notebooks/conesearch.ipynb",
+      "sdDatePublished": "2026-03-24 01:10:45 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "conesearch.cwl"
+        },
+        {
+          "@id": "workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "conesearch.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 1406,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "",
+      "name": "Gravitational Wave source Cone Search",
+      "url": "https://workflowhub.eu/workflows/415?version=1",
+      "keywords": "astronomy, Gravitational Waves, FAIR workflows",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0002-7664-8490"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/56"
+      },
+      "dateCreated": "2023-01-11T12:22:37Z",
+      "dateModified": "2023-01-16T14:05:00Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/13"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.415.1",
+      "input": [
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-t1"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-t2"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-do_cone_search"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-ra"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-dec"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-radius"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-level_threshold"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-inputs-contour_levels"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#gravitational_wave_source_cone_search-outputs-asciicat"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-outputs-skymap_files"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-outputs-image"
+        },
+        {
+          "@id": "#gravitational_wave_source_cone_search-outputs-contours"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 4924
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7664-8490",
+      "@type": "Person",
+      "name": "Denys Savchenko"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/56",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ODA"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/13",
+      "@type": "Collection",
+      "name": "Workflows in EuroScienceGateway"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-t1",
+      "@type": "FormalParameter",
+      "name": "t1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-t2",
+      "@type": "FormalParameter",
+      "name": "t2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-do_cone_search",
+      "@type": "FormalParameter",
+      "name": "do_cone_search",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-ra",
+      "@type": "FormalParameter",
+      "name": "ra",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-dec",
+      "@type": "FormalParameter",
+      "name": "dec",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-radius",
+      "@type": "FormalParameter",
+      "name": "radius",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-level_threshold",
+      "@type": "FormalParameter",
+      "name": "level_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-inputs-contour_levels",
+      "@type": "FormalParameter",
+      "name": "contour_levels",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-outputs-asciicat",
+      "@type": "FormalParameter",
+      "name": "asciicat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-outputs-skymap_files",
+      "@type": "FormalParameter",
+      "name": "skymap_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-outputs-image",
+      "@type": "FormalParameter",
+      "name": "image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#gravitational_wave_source_cone_search-outputs-contours",
+      "@type": "FormalParameter",
+      "name": "contours",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Gravitational Wave source Cone Search</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/415/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/415/ro_crate?version=1</a>
+
+
+  <img src="workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg" style="width: 100%;"/>
+
+<p>
+  
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_conesearch.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="conesearch.cwl">Gravitational Wave source Cone Search</a>
+      
+        <br/>Size: 1406 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg">workflow-415-43d629f622c65165f7515f676d8c476a1a27a394-diagram.svg</a>
+      
+        <br/>Size: 4924 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

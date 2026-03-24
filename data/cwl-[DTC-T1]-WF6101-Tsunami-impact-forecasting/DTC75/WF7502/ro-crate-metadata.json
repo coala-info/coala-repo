@@ -1,0 +1,365 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Event DT (WF7502)",
+      "datePublished": "2025-03-17",
+      "description": "A workflow to produce synthetic shaking simulations for historic events simulated by UCIS4EQ.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": { "@id": "https://orcid.org/0000-0002-8207-1464" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7502.cwl" },
+        { "@id": "DT7501/" },
+        { "@id": "DT7502/" },
+        { "@id": "ST750207" },
+        { "@id": "SS7501" },
+        { "@id": "SS7502" },
+        { "@id": "SS7503" },
+        { "@id": "SS7504" }
+      ],
+      "mainEntity": {
+          "@id": "WF7502.cwl"
+      }
+    },    
+    {
+      "@id": "WF7502.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Synthetic Shaking Workflow",
+      "author": [
+          {
+              "@id": "https://ror.org/05a28rw58"
+          },
+          {
+              "@id": "https://ror.org/05sd8tv9"
+          },
+          {
+              "@id": "Mondaic"
+          }
+      ],
+      "programmingLanguage": [
+          {
+              "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+          }
+      ],
+      "hasPart": [
+        { "@id": "DT7501/" },
+        { "@id": "DT7502/" },
+        { "@id": "ST750207"},
+        { "@id": "SS7501" },
+        { "@id": "SS7502" },
+        { "@id": "SS7503" },
+        { "@id": "SS7504" }
+      ],
+      "input": [
+        {
+            "@id": "#DT7501->WF7502.cwl"
+        }
+      ],
+      "output": [
+        {
+            "@id": "#WF7502.cwl->SHAKE_MAP_LIBRARY"
+        }
+      ],
+      "conformsTo": [
+      {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+      }]
+    },
+    {
+      "@id": "#DT7501->WF7502.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": { "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE" },
+      "workExample": { "@id": "DT7501/" },
+      "name": "INPUT_DIR",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF7502.cwl->SHAKE_MAP_LIBRARY",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": { "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE" },
+      "workExample": { "@id": "DT7502/" },
+      "name": "SHAKE_MAP_LIBRARY",
+      "valueRequired": true
+    },
+    {
+      "@id": "DT7501/",
+      "@type": "Dataset",
+      "name": "CSEMv3",
+      "description": "CSEM or REVEAL model used as input.",
+      "license": "",
+      "url": "https://ds.iris.edu/ds/products/emc-csem2_globe/",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0000-0003-0499-4893" },
+      { "@id": "https://orcid.org/0000-0002-2622-1843" },
+      { "@id": "https://orcid.org/0000-0002-8207-1464" }
+      ]
+    },
+    {
+      "@id": "DT7502/",
+      "@type": "Dataset",
+      "name": "Synthetic Shaking Simulations Data",
+      "description": "HDF5 dataset containing synthetic shake maps, ground motions, and intensity measures.",
+      "license": "",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0003-0499-4893" },
+        { "@id": "https://orcid.org/0000-0001-5867-6634" },
+        { "@id": "https://orcid.org/0000-0002-3854-6784" }
+      ]
+    },
+    {
+      "@id": "SS7501",
+      "@type": "SoftwareSourceCode",
+      "name": "Salvus",
+      "description": "High-performance software and services for the simulation, analysis, and inversion of mechanical and sound waves across all scales.",
+      "license": "Proprietary",
+      "programmingLanguage": [
+        "Python >= 3.9",
+        "C++ 14",
+        "CUDA"
+      ],
+      "url": "https://mondaic.com/docs",
+      "organization": [{"@id": "Mondaic"}],
+      "person": [
+        {"@id": "https://orcid.org/0000-0003-1325-6884"},
+        {"@id": "https://orcid.org/0000-0001-5867-6634"},
+        {"@id": "https://orcid.org/0000-0002-5050-7454"}
+      ],
+      "licenseConstraints": {"@id": "license-ss7501"}
+    },
+        {
+          "@id": "SS7502",
+          "@type": "SoftwareSourceCode",
+          "name": "Graves Pitarka (GP) rupture generator",
+          "description": "The Graves & Pitarka (2019) rupture generator (synthetic finite faults)",
+          "url": "https://gitlab.bsc.es/wavephenomenagroup/ucis4eq",
+          "person": [
+            {"@id": "https://orcid.org/0000-0002-8207-1464"},
+            {"@id": "https://orcid.org/0000-0003-2608-1526"}
+          ],
+      "licenseConstraints": {"@id": "license-ss7502"}
+    },
+    {
+      "@id": "SS7503",
+      "@type": "SoftwareSourceCode",
+      "name": "MUSIC-BP",
+      "description": "Back-projection of high-frequency teleseismic P wave data recorded by seismic arrays. Provides independent constraints on rupture speed, direction and size.",
+      "url": "https://github.com/lsmeng/MUSICBP",
+      "person": [
+        {"@id": "https://orcid.org/0000-0002-4827-7987"}],
+      "license": "MIT"
+    },
+    {
+      "@id": "SS7504",
+      "@type": "SoftwareSourceCode",
+      "name": "SLIPNEAR",
+      "description": "Rapid, automated kinematic finite-fault source inversion based on local and regional broadband and strong motion seismic data.",
+      "url": "none",
+      "person": [
+        {"@id": "https://orcid.org/0000-0003-1147-5872"}],
+      "license": "https://spdx.org/licenses/Proprietary"
+    },
+    {
+      "@id": "ST750207",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "MLESMap",
+      "author": [
+        {"@id": "https://orcid.org/0000-0002-8207-1464"},
+        {"@id": "https://orcid.org/0009-0007-3520-0618"}
+      ],
+      "url": "ST750207.cwl",
+      "programmingLanguage": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0499-4893",
+      "@type": "Person",
+      "name": "Andreas Fichtner",
+      "email": "andreas.fichtner@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2622-1843",
+      "@type": "Person",
+      "name": "Sebastian Noe",
+      "email": "sebastian.noe@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Marta Pienkowska",
+      "email": "marta.pienkowska@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2608-1526",
+      "@type": "Person",
+      "name": "Josep de la Puente",
+      "email": "josep.delapuente@bsc.es",
+      "affiliation": {
+         "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0007-3520-0618",
+      "@type": "Person",
+      "name": "Georgina Díez",
+      "email": "georgina.diezventura@bsc.es",
+      "affiliation": {
+         "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3854-6784",
+      "@type": "Person",
+      "name": "Cedric Bhihe",
+      "email": "cedric.bhihe@bsc.es",
+      "affiliation": {
+         "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5867-6634",
+      "@type": "Person",
+      "name": "Lion Krischer",
+      "email": "lion.krischer@mondaic.com",
+      "affiliation": {
+        "@id": "Mondaic"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1325-6884",
+      "@type": "Person",
+      "name": "Christian Boehm",
+      "email": "christian.boehm@mondaic.com",
+      "affiliation": {
+        "@id": "Mondaic"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5050-7454",
+      "@type": "Person",
+      "name": "Michael Afanasiev",
+      "email": "michael.afanasiev@mondaic.com",
+      "affiliation": {
+        "@id": "Mondaic"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4827-7987",
+      "@type": "Person",
+      "name": "Jean Paul Ampuero",
+      "email": "ampuero@geoazur.unice.fr",
+      "affiliation": {
+        "@id": "https://ror.org/02feahw73"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1147-5872",
+      "@type": "Person",
+      "name": "Bertrand Delouis",
+      "email": "delouis@geoazur.unice.fr",
+      "affiliation": {
+        "@id": "https://ror.org/02feahw73"
+      }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zurich (ETH)"
+    },
+    {
+      "@id": "Mondaic",
+      "@type": "Organization",
+      "name": "Mondaic AG"
+    },
+    {
+      "@id": "https://ror.org/05sd8tv96",
+      "@type": "Organization",
+      "name": "Barcelona Supercomputing Center (BSC)"
+    },
+    {
+      "@id": "https://ror.org/02feahw73",
+      "@type": "Organization",
+      "name": "Centre National de la Recherche Scientifique (CNRS)"
+    },
+    {
+      "@id": "license-ss7501",
+      "@type": "CreativeWork",
+      "name": "Salvus License Constraints",
+      "description": "Salvus is commercial software, typically licensed under a license agreement for academic or non-academic use.",
+      "license": "Proprietary",
+      "url": "https://mondaic.com/ala.pdf"
+    },
+    {
+      "@id": "license-ss7502",
+      "@type": "CreativeWork",
+      "name": "MusicBP License Constraints",
+      "license": "Apache License 2.0",
+      "url": "https://spdx.org/licenses/Apache-2.0"
+    }
+
+  ]
+}

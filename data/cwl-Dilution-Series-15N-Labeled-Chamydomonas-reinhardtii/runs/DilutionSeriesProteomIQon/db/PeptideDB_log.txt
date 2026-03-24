@@ -1,0 +1,6 @@
+2025-02-25 22:27:58.2532 PeptideDB TRACE CLIArguments [FastaPath
+   "C:\Users\ottj\repos\RatioLFQComparisons\studies\DilutionSeries\resources\Chlamy_JGI5_5Cp_Mp_gen.fasta";
+ OutputDirectory
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db";
+ ParamFile
+   "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeries\db\peptideDBParams.json"] 

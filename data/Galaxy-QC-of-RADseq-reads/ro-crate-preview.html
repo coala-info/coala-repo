@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for QC of RADseq reads</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-QC_of_RADseq_reads.ga"
+      },
+      "datePublished": "2022-05-31 07:38:53 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/346?version=1",
+      "url": "https://workflowhub.eu/workflows/346/ro_crate?version=1",
+      "name": "Research Object Crate for QC of RADseq reads",
+      "description": "# workflow-qc-of-radseq-reads\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\n## Inputs\n* demultiplexed reads in fastq format, in a collection\n* two adapter sequences in fasta format, for input into cutadapt\n\n## Steps and outputs\n\nThe workflow can be modified to suit your own parameters. \n\nThe workflow steps are:\n* Run FastQC to get statistics on the raw reads, send to MultiQC to create a nice output. This is tagged as \"Report 1\" in the Galaxy history. \n* Run Cutadapt on the reads to cut adapters - enter two files with adapter sequence at the workflow option for \"Choose file containing 3' adapters\". The default settings are on except that the \"Maximum error rate\" for the adapters is set to 0.2 instead of 0.1. Send output statistics to MulitQC, this is \"Report 2\" in the Galaxy history. Note that you may have different requirements here in terms of how many adapter sequences you want to enter. We recommend copying the workflow and modifying as needed. \n* Send these reads to fastp for additional filtering or trimming. Default settings are on but can be modified as needed. Send output statistics to MultiQC, this is \"Report 3\" in the Galaxy history. \n* The filtered and trimmed reads are then ready for the stacks workflows. \n\n![qc-wf](wf-image-qc.png)\n",
+      "isBasedOn": "https://github.com/AnnaSyme/workflow-qc-of-radseq-reads.git",
+      "sdDatePublished": "2026-03-24 18:04:54 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-QC_of_RADseq_reads.ga"
+        },
+        {
+          "@id": "wf-image-qc.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-QC_of_RADseq_reads.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 20279,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "wf-image-qc.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# workflow-qc-of-radseq-reads\n\nThese workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. \n\nGalaxy Australia: https://usegalaxy.org.au/\n\nStacks: http://catchenlab.life.illinois.edu/stacks/\n\n## Inputs\n* demultiplexed reads in fastq format, in a collection\n* two adapter sequences in fasta format, for input into cutadapt\n\n## Steps and outputs\n\nThe workflow can be modified to suit your own parameters. \n\nThe workflow steps are:\n* Run FastQC to get statistics on the raw reads, send to MultiQC to create a nice output. This is tagged as \"Report 1\" in the Galaxy history. \n* Run Cutadapt on the reads to cut adapters - enter two files with adapter sequence at the workflow option for \"Choose file containing 3' adapters\". The default settings are on except that the \"Maximum error rate\" for the adapters is set to 0.2 instead of 0.1. Send output statistics to MulitQC, this is \"Report 2\" in the Galaxy history. Note that you may have different requirements here in terms of how many adapter sequences you want to enter. We recommend copying the workflow and modifying as needed. \n* Send these reads to fastp for additional filtering or trimming. Default settings are on but can be modified as needed. Send output statistics to MultiQC, this is \"Report 3\" in the Galaxy history. \n* The filtered and trimmed reads are then ready for the stacks workflows. \n\n![qc-wf](wf-image-qc.png)\n",
+      "name": "QC of RADseq reads",
+      "url": "https://workflowhub.eu/workflows/346?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2022-05-31T06:55:21Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "input": {
+        "@id": "#qc_of_radseq_reads-inputs-Demultiplexed%20reads"
+      },
+      "output": [
+        {
+          "@id": "#qc_of_radseq_reads-outputs-FastQC%20on%20input%20dataset(s):%20Webpage"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-FastQC%20on%20input%20dataset(s):%20RawData"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-Cutadapt%20on%20input%20dataset(s):%20Read%201%20Output"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-MultiQC%20on%20input%20dataset(s):%20Webpage"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-MultiQC%20on%20input%20dataset(s):%20Stats"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-fastp%20on%20input%20dataset(s):%20Read%201%20output"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-fastp%20on%20input%20dataset(s):%20HTML%20report"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_6"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "wf-image-qc.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 267910
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-inputs-Demultiplexed reads",
+      "@type": "FormalParameter",
+      "name": "Demultiplexed reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-FastQC on input dataset(s): Webpage",
+      "@type": "FormalParameter",
+      "name": "FastQC on input dataset(s): Webpage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-FastQC on input dataset(s): RawData",
+      "@type": "FormalParameter",
+      "name": "FastQC on input dataset(s): RawData",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-Cutadapt on input dataset(s): Read 1 Output",
+      "@type": "FormalParameter",
+      "name": "Cutadapt on input dataset(s): Read 1 Output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-MultiQC on input dataset(s): Webpage",
+      "@type": "FormalParameter",
+      "name": "MultiQC on input dataset(s): Webpage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-MultiQC on input dataset(s): Stats",
+      "@type": "FormalParameter",
+      "name": "MultiQC on input dataset(s): Stats",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-fastp on input dataset(s): Read 1 output",
+      "@type": "FormalParameter",
+      "name": "fastp on input dataset(s): Read 1 output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-fastp on input dataset(s): HTML report",
+      "@type": "FormalParameter",
+      "name": "fastp on input dataset(s): HTML report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#qc_of_radseq_reads-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for QC of RADseq reads</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/346/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/346/ro_crate?version=1</a>
+
+
+  <img src="wf-image-qc.png" style="width: 100%;"/>
+
+<p>
+  # workflow-qc-of-radseq-reads
+
+These workflows are part of a set designed to work for RAD-seq data on the Galaxy platform, using the tools from the Stacks program. 
+
+Galaxy Australia: https://usegalaxy.org.au/
+
+Stacks: http://catchenlab.life.illinois.edu/stacks/
+
+## Inputs
+* demultiplexed reads in fastq format, in a collection
+* two adapter sequences in fasta format, for input into cutadapt
+
+## Steps and outputs
+
+The workflow can be modified to suit your own parameters. 
+
+The workflow steps are:
+* Run FastQC to get statistics on the raw reads, send to MultiQC to create a nice output. This is tagged as "Report 1" in the Galaxy history. 
+* Run Cutadapt on the reads to cut adapters - enter two files with adapter sequence at the workflow option for "Choose file containing 3' adapters". The default settings are on except that the "Maximum error rate" for the adapters is set to 0.2 instead of 0.1. Send output statistics to MulitQC, this is "Report 2" in the Galaxy history. Note that you may have different requirements here in terms of how many adapter sequences you want to enter. We recommend copying the workflow and modifying as needed. 
+* Send these reads to fastp for additional filtering or trimming. Default settings are on but can be modified as needed. Send output statistics to MultiQC, this is "Report 3" in the Galaxy history. 
+* The filtered and trimmed reads are then ready for the stacks workflows. 
+
+![qc-wf](wf-image-qc.png)
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-QC_of_RADseq_reads.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-QC_of_RADseq_reads.ga">QC of RADseq reads</a>
+      
+        <br/>Size: 20279 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_wf-image-qc.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="wf-image-qc.png">wf-image-qc.png</a>
+      
+        <br/>Size: 267910 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

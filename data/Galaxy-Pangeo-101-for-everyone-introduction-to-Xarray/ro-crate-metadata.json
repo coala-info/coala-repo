@@ -1,0 +1,277 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "main_workflow.ga"
+      },
+      "datePublished": "2021-12-29 07:57:46 +0000",
+      "author": [
+
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/252?version=1",
+      "url": "https://workflowhub.eu/workflows/252/ro_crate?version=1",
+      "name": "Research Object Crate for Pangeo 101 for everyone - introduction to Xarray",
+      "description": "Abstract CWL Automatically generated from the Galaxy workflow file: GTN 'Pangeo 101 for everyone - Introduction to Xarray'.\n\nIn this tutorial, we analyze particle matter &lt; 2.5 μm/m3 data from Copernicus Atmosphere Monitoring Service to understand Xarray Galaxy Tools:\n- Understand how an Xarray dataset is organized;\n- Get metadata from Xarray dataset such as variable names, units, coordinates (latitude, longitude, level), etc;\n- Plot an Xarray dataset on a geographical map and learn to customize it;\n- Select/Subset an Xarray dataset from coordinates values such as time selection or a subset over a geographical area;\n- Mask an Xarray dataset with a Where statement, for instance to only see PM2.5 &gt; 30 μm/m and highlight on a map regions with \"high\" values;\n- Convert an Xarray dataset to Tabular data (pandas dataframe);\n- Plot tabular data to visualize the forecast PM2.5 over a single point (here Naples) using a scatterplot and/or climate stripes.",
+      "sdDatePublished": "2026-03-24 18:06:39 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "main_workflow.ga"
+        },
+        {
+          "@id": "workflow-252-ff0da2cb2c7a1b5630d0b9b8a4803bb7bda353fb-diagram.svg"
+        },
+        {
+          "@id": "main_workflow.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "main_workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 124667,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "workflow-252-ff0da2cb2c7a1b5630d0b9b8a4803bb7bda353fb-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "main_workflow.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Abstract CWL Automatically generated from the Galaxy workflow file: GTN 'Pangeo 101 for everyone - Introduction to Xarray'.\n\nIn this tutorial, we analyze particle matter &lt; 2.5 μm/m3 data from Copernicus Atmosphere Monitoring Service to understand Xarray Galaxy Tools:\n- Understand how an Xarray dataset is organized;\n- Get metadata from Xarray dataset such as variable names, units, coordinates (latitude, longitude, level), etc;\n- Plot an Xarray dataset on a geographical map and learn to customize it;\n- Select/Subset an Xarray dataset from coordinates values such as time selection or a subset over a geographical area;\n- Mask an Xarray dataset with a Where statement, for instance to only see PM2.5 &gt; 30 μm/m and highlight on a map regions with \"high\" values;\n- Convert an Xarray dataset to Tabular data (pandas dataframe);\n- Plot tabular data to visualize the forecast PM2.5 over a single point (here Naples) using a scatterplot and/or climate stripes.",
+      "name": "Pangeo 101 for everyone - introduction to Xarray",
+      "url": "https://workflowhub.eu/workflows/252?version=1",
+      "keywords": "GTN, Climate, copernicus, pangeo",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/18"
+      },
+      "dateCreated": "2021-12-29T07:57:46Z",
+      "dateModified": "2023-01-16T13:56:30Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-0_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-10_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-2_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-3_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-4_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-5_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-6_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-7_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-8_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-9_Input%20Parameter"
+        },
+        {
+          "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-CAMS-PM2_5-20211222_netcdf"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-252-ff0da2cb2c7a1b5630d0b9b8a4803bb7bda353fb-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 101858
+    },
+    {
+      "@id": "main_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 27957
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/18",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Climate"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-0_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "0_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-10_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "10_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-2_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "2_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-3_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "3_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-4_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "4_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-5_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "5_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-6_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "6_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-7_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "7_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-8_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "8_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-9_Input Parameter",
+      "@type": "FormalParameter",
+      "name": "9_Input Parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#pangeo_101_for_everyone___introduction_to_xarray-inputs-CAMS-PM2_5-20211222_netcdf",
+      "@type": "FormalParameter",
+      "name": "CAMS-PM2_5-20211222_netcdf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

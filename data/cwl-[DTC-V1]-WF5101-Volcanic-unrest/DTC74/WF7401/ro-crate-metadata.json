@@ -1,0 +1,150 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Dynamic Source Inversion Workflow (WF7401)",
+      "datePublished": "2025-05-16",
+      "description": "A CWL-based workflow for dynamic source inversion of earthquakes. This workflow prepares input data, executes HPC-based inversion, and extracts rupture models.",
+      "license": "https://spdx.org/licenses/GPL-3.0-only",
+      "author": { "@id": "https://orcid.org/0009-0004-7825-9458" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7401.cwl" },
+        { "@id": "DT7401/" },
+        { "@id": "DT7402/" },
+        { "@id": "SS7402" }
+      ],
+      "mainEntity": { "@id": "WF7401.cwl" }
+    },
+    {
+      "@id": "WF7401.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Dynamic Source Inversion Workflow",
+      "description": "A CWL-based computational workflow to invert for dynamic parameters of earthquakes using seismic and geodetic data.",
+      "author": [
+        { "@id": "https://orcid.org/0009-0004-7825-9458" },
+        { "@id": "https://orcid.org/0000-0002-8207-1464" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7401->WF7401.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7401.cwl->DT7402" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "DT7401/",
+      "@type": "Dataset",
+      "name": "Dynamic Source Inversion Input",
+      "description": "This dataset contains all the input data needed for the dynamic source inversion, such as the fault geometry, the velocity model, as well as the seismic and geodetic data transmitted from an array of seismic and GPS stations.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0009-0004-7825-9458" }
+      ]
+    },
+    {
+      "@id": "DT7402/",
+      "@type": "Dataset",
+      "name": "Dynamic Source Inversion Output",
+      "description": "Text files of accepted models' input parameters (prestress and friction parameters) and their misfits. Text and binary files of important rupture parameters.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0009-0004-7825-9458" }
+      ]
+    },
+    {
+      "@id": "SS7402",
+      "@type": "SoftwareSourceCode",
+      "name": "FD3D_TSN",
+      "description": "FD3D_TSN is a highly-efficient finite-difference dynamic rupture code including a quasi-dynamic boundary element solver and a Bayesian inversion framework with Parallel Tempering Monte Carlo.",
+      "license": "https://spdx.org/licenses/GPL-3.0-only",
+      "programmingLanguage": [
+      "Fortran"
+      ],
+      "url": "https://github.com/JanPremus/fd3d_TSN",
+      "organization": [{ "@id": "https://ror.org/024d6js02" }],
+      "person": [
+      { "@id": "https://orcid.org/0000-0002-9268-3923" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0009-0004-7825-9458",
+      "@type": "Person",
+      "name": "Nico Schliwa",
+      "email": "nico.schliwa@lmu.de",
+      "affiliation": { "@id": "https://ror.org/05591te55" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9268-3923",
+      "@type": "Person",
+      "name": "Frantisek Gallovic",
+      "email": "gallovic@karel.troja.mff.cuni.cz",
+      "affiliation": { "@id": "https://ror.org/024d6js02" }
+    },
+    {
+      "@id": "https://ror.org/05591te55",
+      "@type": "Organization",
+      "name": "Ludwig-Maximilians-Universität München"
+    },
+    {
+      "@id": "https://ror.org/024d6js02",
+      "@type": "Organization",
+      "name": "Charles University (Prague)"
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "cwl/maw.cwl"
+      },
+      "datePublished": "2023-08-01 15:15:02 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8330-4071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2961-9670"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-8122-9522"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.510.2",
+      "url": "https://workflowhub.eu/workflows/510/ro_crate?version=2",
+      "name": "Research Object Crate for Metabolome Annotation Workflow (MAW)",
+      "description": "\nThis repository hosts Metabolome Annotation Workflow (MAW). The workflow takes MS2 .mzML format data files as an input in R. It performs spectral database dereplication using R Package Spectra and compound database dereplication using SIRIUS OR MetFrag . Final candidate selection is done in Python using RDKit and PubChemPy.",
+      "isBasedOn": "https://github.com/zmahnoor14/MAW",
+      "sdDatePublished": "2026-03-24 01:05:50 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "cwl/maw.cwl"
+        },
+        {
+          "@id": "workflow-510-2da7fbaab0e2e4ebbff3f36d631336690fb318b0-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "cwl/maw.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 1506,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-510-2da7fbaab0e2e4ebbff3f36d631336690fb318b0-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "\nThis repository hosts Metabolome Annotation Workflow (MAW). The workflow takes MS2 .mzML format data files as an input in R. It performs spectral database dereplication using R Package Spectra and compound database dereplication using SIRIUS OR MetFrag . Final candidate selection is done in Python using RDKit and PubChemPy.",
+      "name": "Metabolome Annotation Workflow (MAW)",
+      "url": "https://workflowhub.eu/workflows/510?version=2",
+      "keywords": "Metabolomics, Annotation, mass-spectrometry, identification, Bioinformatics, FAIR workflows, workflow, gnps, massbank, hmdb, spectra, rdkit, Cheminformatics",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/423"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/70"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/469"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6966-0814"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9359-7149"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-4321-0257"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/151"
+      },
+      "dateCreated": "2023-08-01T14:21:50Z",
+      "dateModified": "2023-08-01T14:22:09Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.510.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/510?version=1",
+      "input": [
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-python_script"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-r_script"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-mzml_files"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-gnps_file"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-hmdb_file"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-mbank_file"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-ppmx"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-collision_info"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-db_name"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-inputs-db_path"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-outputs-candidate_files"
+        },
+        {
+          "@id": "#metabolome_annotation_workflow__maw_-outputs-result"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-510-2da7fbaab0e2e4ebbff3f36d631336690fb318b0-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 10427
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8330-4071",
+      "@type": "Person",
+      "name": "Mahnoor Zulfiqar",
+      "identifier": "https://orcid.org/0000-0002-8330-4071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2961-9670",
+      "@type": "Person",
+      "name": "Michael R. Crusoe",
+      "identifier": "https://orcid.org/0000-0002-2961-9670"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8122-9522",
+      "@type": "Person",
+      "name": "Luiz Gadelha",
+      "identifier": "https://orcid.org/0000-0002-8122-9522"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/423",
+      "@type": "Person",
+      "name": "Mahnoor Zulfiqar"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/70",
+      "@type": "Person",
+      "name": "Michael R. Crusoe"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/469",
+      "@type": "Person",
+      "name": "Luiz Gadelha"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6966-0814",
+      "@type": "Person",
+      "name": "Christoph  Steinbeck"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9359-7149",
+      "@type": "Person",
+      "name": "Maria Sorokina"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4321-0257",
+      "@type": "Person",
+      "name": "Kristian Peters"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/151",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Metabolomics-Reproducibility"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-python_script",
+      "@type": "FormalParameter",
+      "name": "python_script",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-r_script",
+      "@type": "FormalParameter",
+      "name": "r_script",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-mzml_files",
+      "@type": "FormalParameter",
+      "name": "mzml_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-gnps_file",
+      "@type": "FormalParameter",
+      "name": "gnps_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-hmdb_file",
+      "@type": "FormalParameter",
+      "name": "hmdb_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-mbank_file",
+      "@type": "FormalParameter",
+      "name": "mbank_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-ppmx",
+      "@type": "FormalParameter",
+      "name": "ppmx",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-collision_info",
+      "@type": "FormalParameter",
+      "name": "collision_info",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-db_name",
+      "@type": "FormalParameter",
+      "name": "db_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-inputs-db_path",
+      "@type": "FormalParameter",
+      "name": "db_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-outputs-candidate_files",
+      "@type": "FormalParameter",
+      "name": "candidate_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#metabolome_annotation_workflow__maw_-outputs-result",
+      "@type": "FormalParameter",
+      "name": "result",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

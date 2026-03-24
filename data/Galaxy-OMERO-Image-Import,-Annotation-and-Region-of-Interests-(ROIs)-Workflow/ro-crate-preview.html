@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for OMERO Image Import, Annotation and Region of Interests (ROIs) Workflow</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-2024_OMERO_Basic_Upload.ga"
+      },
+      "datePublished": "2025-01-28 13:08:52 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2104-9519"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1258.1",
+      "url": "https://workflowhub.eu/workflows/1258/ro_crate?version=1",
+      "name": "Research Object Crate for OMERO Image Import, Annotation and Region of Interests (ROIs) Workflow",
+      "description": "General workflow to upload data into OMERO using Galaxy\n\nA dataset for testing can be found at: https://zenodo.org/records/14205500\n\n**Important Security Note:** It is crucial to be aware that storing credentials as variables can pose security risks, particularly if accessed by administrators. Therefore, it is essential to handle user credentials securely and in accordance with best practices.\n",
+      "isBasedOn": "https://github.com/Helmholtz-UFZ/galaxy-tools",
+      "sdDatePublished": "2026-03-24 17:38:20 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-2024_OMERO_Basic_Upload.ga"
+        },
+        {
+          "@id": "Screenshot%20from%202025-01-28%2014-08-37.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-2024_OMERO_Basic_Upload.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 21492,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Screenshot%20from%202025-01-28%2014-08-37.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "General workflow to upload data into OMERO using Galaxy\n\nA dataset for testing can be found at: https://zenodo.org/records/14205500\n\n**Important Security Note:** It is crucial to be aware that storing credentials as variables can pose security risks, particularly if accessed by administrators. Therefore, it is essential to handle user credentials securely and in accordance with best practices.\n",
+      "name": "OMERO Image Import, Annotation and Region of Interests (ROIs) Workflow",
+      "url": "https://workflowhub.eu/workflows/1258?version=1",
+      "keywords": "OMERO, RDM, Workflows, bioimaging, imaging, FAIR workflows, FAIR",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/916"
+        },
+        {
+          "@id": "#Matthias%20Bernt"
+        },
+        {
+          "@id": "#Riccardo%20Massei"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/293"
+      },
+      "dateCreated": "2025-01-28T13:17:47Z",
+      "dateModified": "2025-03-03T20:24:54Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.1258.1",
+      "input": [
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Image%20to%20Upload%20in%20OMERO"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Metadata%20File"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-OMERO%20server%20address"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-ROIs%20File"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Select%20Metadata%20Type"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Target%20Dataset"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-image_upload_log"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-metadata_import_log"
+        },
+        {
+          "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-log"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Screenshot%20from%202025-01-28%2014-08-37.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 191916
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2104-9519",
+      "@type": "Person",
+      "name": "Riccardo Massei",
+      "identifier": "https://orcid.org/0000-0003-2104-9519"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/916",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "#Matthias Bernt",
+      "@type": "Person",
+      "name": "Matthias Bernt"
+    },
+    {
+      "@id": "#Riccardo Massei",
+      "@type": "Person",
+      "name": "Riccardo Massei"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/293",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "UFZ - Image Data Management and Processing Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Image to Upload in OMERO",
+      "@type": "FormalParameter",
+      "name": "Image to Upload in OMERO",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Metadata File",
+      "@type": "FormalParameter",
+      "name": "Metadata File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-OMERO server address",
+      "@type": "FormalParameter",
+      "name": "OMERO server address",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-ROIs File",
+      "@type": "FormalParameter",
+      "name": "ROIs File",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Select Metadata Type",
+      "@type": "FormalParameter",
+      "name": "Select Metadata Type",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-inputs-Target Dataset",
+      "@type": "FormalParameter",
+      "name": "Target Dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-image_upload_log",
+      "@type": "FormalParameter",
+      "name": "image_upload_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-metadata_import_log",
+      "@type": "FormalParameter",
+      "name": "metadata_import_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#omero_image_import__annotation_and_region_of_interests__rois__workflow-outputs-log",
+      "@type": "FormalParameter",
+      "name": "log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for OMERO Image Import, Annotation and Region of Interests (ROIs) Workflow</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1258/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1258/ro_crate?version=1</a>
+
+
+  <img src="Screenshot from 2025-01-28 14-08-37.png" style="width: 100%;"/>
+
+<p>
+  General workflow to upload data into OMERO using Galaxy
+
+A dataset for testing can be found at: https://zenodo.org/records/14205500
+
+**Important Security Note:** It is crucial to be aware that storing credentials as variables can pose security risks, particularly if accessed by administrators. Therefore, it is essential to handle user credentials securely and in accordance with best practices.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-2104-9519" target="_blank">Riccardo Massei</a>, Riccardo Massei</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-2024_OMERO_Basic_Upload.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-2024_OMERO_Basic_Upload.ga">OMERO Image Import, Annotation and Region of Interests (ROIs) Workflow</a>
+      
+        <br/>Size: 21492 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Screenshot%20from%202025-01-28%2014-08-37.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Screenshot from 2025-01-28 14-08-37.png">Screenshot%20from%202025-01-28%2014-08-37.png</a>
+      
+        <br/>Size: 191916 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

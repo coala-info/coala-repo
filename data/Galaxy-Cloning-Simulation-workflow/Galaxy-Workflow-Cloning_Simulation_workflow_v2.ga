@@ -1,0 +1,426 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "GoldenGate simulaton",
+    "format-version": "0.1",
+    "name": "Cloning Simulation workflow v2",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Assembly Plan"
+                }
+            ],
+            "label": "Assembly Plan",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 1092.9166717529297,
+                "height": 63.41667175292969,
+                "left": 938,
+                "right": 1138,
+                "top": 1029.5,
+                "width": 200,
+                "x": 938,
+                "y": 1029.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"csv\"]}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "4de93c82-d70a-4abe-833f-3952e4db3661",
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "JSON parameters file"
+                }
+            ],
+            "label": "JSON parameters file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 1232,
+                "height": 83.5,
+                "left": 833,
+                "right": 1033,
+                "top": 1148.5,
+                "width": 200,
+                "x": 833,
+                "y": 1148.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": true, \"format\": [\"json\"]}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "65c0c4e3-c0b4-4d65-b779-a089ee5978c7",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "GenBank collection for fragments not found in the database",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "GenBank collection for fragments not found in the database",
+                    "name": "Missing Fragments"
+                }
+            ],
+            "label": "Missing Fragments",
+            "name": "Input dataset collection",
+            "outputs": [],
+            "position": {
+                "bottom": 590.5,
+                "height": 83.5,
+                "left": 1406,
+                "right": 1606,
+                "top": 507,
+                "width": 200,
+                "x": 1406,
+                "y": 507
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": true, \"format\": [\"genbank\"], \"collection_type\": \"list\"}",
+            "tool_version": null,
+            "type": "data_collection_input",
+            "uuid": "899dc70d-d3c2-44ce-bc5e-3c502ccd0b85",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/parameters_maystro_workflow_1/parameters_maystro_workflow_1/0.1.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "user_json": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Workflow-1 Parameters Maystro",
+            "outputs": [
+                {
+                    "name": "output_json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "bottom": 1333.7333374023438,
+                "height": 135.73333740234375,
+                "left": 1082,
+                "right": 1282,
+                "top": 1198,
+                "width": 200,
+                "x": 1082,
+                "y": 1198
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/parameters_maystro_workflow_1/parameters_maystro_workflow_1/0.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "c4f98010d9ac",
+                "name": "parameters_maystro_workflow_1",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"annotation_column\": \"\", \"assembly_plan_name\": \"Type2sRestrictionAssembly\", \"db_uri\": \"\", \"enzyme\": \"auto\", \"execution\": \"false\", \"fragment_column\": \"\", \"sequence_column\": \"\", \"table_name\": \"\", \"topology\": \"circular\", \"user_json\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0",
+            "type": "tool",
+            "uuid": "48dc9477-49ed-40f5-868e-e33a72b5ffe7",
+            "workflow_outputs": [
+                {
+                    "label": "Workflow-1 Parameters",
+                    "output_name": "output_json",
+                    "uuid": "ab4a77bf-3316-4821-b87f-0915ef2fb07f"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_from_db/seq_form_db/0.3.0+galaxy2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "json_use|json_conf": {
+                    "id": 3,
+                    "output_name": "output_json"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Get sequences Data From DB",
+            "outputs": [
+                {
+                    "name": "output_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 809.5333404541016,
+                "height": 196.53334045410156,
+                "left": 1333,
+                "right": 1533,
+                "top": 613,
+                "width": 200,
+                "x": 1333,
+                "y": 613
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_from_db/seq_form_db/0.3.0+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "11a3752feb0a",
+                "name": "seq_from_db",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"json_use\": {\"use_json_paramers\": \"true\", \"__current_case__\": 1, \"json_conf\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.3.0+galaxy2",
+            "type": "tool",
+            "uuid": "75a0ac68-5cba-4ca1-97d8-dd3ac1372c4a",
+            "workflow_outputs": [
+                {
+                    "label": "GenBank Files collection",
+                    "output_name": "output_gb",
+                    "uuid": "92366c50-8067-4f2f-a22f-3577ead5d416"
+                },
+                {
+                    "label": "missing fragments",
+                    "output_name": "report",
+                    "uuid": "dff816ea-fcaf-4bb8-822a-d2a57afa452d"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/evaluate_manufacturability/evaluate_manufacturability/0.3.0+galaxy2",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "json_use|json_params": {
+                    "id": 3,
+                    "output_name": "output_json"
+                },
+                "setting|DB_genbank_files": {
+                    "id": 4,
+                    "output_name": "output_gb"
+                },
+                "setting|DB_report": {
+                    "id": 4,
+                    "output_name": "report"
+                },
+                "setting|genbank_files": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Evaluate Manufacturability",
+            "outputs": [
+                {
+                    "name": "annotated_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "report_pdf",
+                    "type": "pdf"
+                },
+                {
+                    "name": "report_tsv",
+                    "type": "tsv"
+                }
+            ],
+            "position": {
+                "bottom": 1059.933349609375,
+                "height": 348.933349609375,
+                "left": 1635,
+                "right": 1835,
+                "top": 711,
+                "width": 200,
+                "x": 1635,
+                "y": 711
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/evaluate_manufacturability/evaluate_manufacturability/0.3.0+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "8cafb888ff89",
+                "name": "evaluate_manufacturability",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"json_use\": {\"use_json_param\": \"true\", \"__current_case__\": 1, \"json_params\": {\"__class__\": \"ConnectedValue\"}}, \"setting\": {\"mode\": \"wkf\", \"__current_case__\": 1, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"DB_genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"DB_report\": {\"__class__\": \"ConnectedValue\"}}, \"use_file_names_as_ids\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.3.0+galaxy2",
+            "type": "tool",
+            "uuid": "7e7443df-fd0c-4d37-95f9-8e641f1d5171",
+            "workflow_outputs": [
+                {
+                    "label": "Manufacturability Report (PDF)",
+                    "output_name": "report_pdf",
+                    "uuid": "828c3fe4-281d-4b8c-ae7a-51c180431133"
+                },
+                {
+                    "label": "Manufacturability Report (tsv)",
+                    "output_name": "report_tsv",
+                    "uuid": "f1615b9b-8ad4-4fec-837c-9302f16dbe39"
+                },
+                {
+                    "label": "Evaluate Manufacturability (gb)",
+                    "output_name": "annotated_gb",
+                    "uuid": "f10e9ac8-80fa-4ce2-8322-d346a441e26f"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/cloning_simulation/cloning_simulation/0.2.0+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "assembly_csv": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "genbank_files": {
+                    "id": 5,
+                    "output_name": "annotated_gb"
+                },
+                "json_use|json_conf": {
+                    "id": 3,
+                    "output_name": "output_json"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Cloning Simulation",
+                    "name": "domesticated_input"
+                }
+            ],
+            "label": null,
+            "name": "Cloning Simulation",
+            "outputs": [
+                {
+                    "name": "construct_gb",
+                    "type": "input"
+                },
+                {
+                    "name": "output_zip",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "bottom": 1257.1333312988281,
+                "height": 298.1333312988281,
+                "left": 1908,
+                "right": 2108,
+                "top": 959,
+                "width": 200,
+                "x": 1908,
+                "y": 959
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/cloning_simulation/cloning_simulation/0.2.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "2655e08cd61a",
+                "name": "cloning_simulation",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"assembly_csv\": {\"__class__\": \"ConnectedValue\"}, \"domesticated_input\": {\"__class__\": \"RuntimeValue\"}, \"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"json_use\": {\"use_json_paramers\": \"true\", \"__current_case__\": 1, \"json_conf\": {\"__class__\": \"ConnectedValue\"}}, \"use_file_names_as_ids\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.0+galaxy1",
+            "type": "tool",
+            "uuid": "d057affe-6fa5-4f28-a9f5-052b8d037f2b",
+            "workflow_outputs": [
+                {
+                    "label": "simulation results (zip)",
+                    "output_name": "output_zip",
+                    "uuid": "e8cd687f-04b9-4f10-8b2e-f158de78eba6"
+                },
+                {
+                    "label": "simulation results (gb)",
+                    "output_name": "construct_gb",
+                    "uuid": "fc34dc23-9bba-4664-b783-151a74b3ee06"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.3.0+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "genbank_files": {
+                    "id": 6,
+                    "output_name": "construct_gb"
+                },
+                "json_use|json_conf": {
+                    "id": 3,
+                    "output_name": "output_json"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Save Sequence Data In DB",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1357.7333374023438,
+                "height": 145.73333740234375,
+                "left": 2190,
+                "right": 2390,
+                "top": 1212,
+                "width": 200,
+                "x": 2190,
+                "y": 1212
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/seq_to_db/seq_to_db/0.3.0+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "dad2c4c3450a",
+                "name": "seq_to_db",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"genbank_files\": {\"__class__\": \"ConnectedValue\"}, \"json_generating\": \"false\", \"json_use\": {\"use_json_paramers\": \"true\", \"__current_case__\": 1, \"json_conf\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.3.0+galaxy2",
+            "type": "tool",
+            "uuid": "abf85152-2938-4f33-875f-d0d66d863d83",
+            "workflow_outputs": [
+                {
+                    "label": "saving report",
+                    "output_name": "output",
+                    "uuid": "4dccb15a-0c6c-45f5-b84e-e6155ab8c2e8"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "3974beb8-df7a-4346-a96d-322c1bf4b323",
+    "version": 4
+}

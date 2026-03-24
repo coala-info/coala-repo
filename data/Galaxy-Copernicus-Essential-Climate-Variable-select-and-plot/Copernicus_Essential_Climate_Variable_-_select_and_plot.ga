@@ -1,0 +1,320 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Workflow with Copernicus Essential Climate Variable - select and plot", 
+    "steps": {
+        "0": {
+            "annotation": "Select variable of your choice as well as period of time, etc. and retrieve dataset.", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/cds_essential_variability/cds_essential_variability/0.1.4", 
+            "errors": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Copernicus Essential Climate Variables", 
+                    "name": "adv"
+                }, 
+                {
+                    "description": "runtime parameter for tool Copernicus Essential Climate Variables", 
+                    "name": "variable"
+                }, 
+                {
+                    "description": "runtime parameter for tool Copernicus Essential Climate Variables", 
+                    "name": "product_type"
+                }, 
+                {
+                    "description": "runtime parameter for tool Copernicus Essential Climate Variables", 
+                    "name": "month"
+                }
+            ], 
+            "label": null, 
+            "name": "Copernicus Essential Climate Variables", 
+            "outputs": [
+                {
+                    "name": "ofilename", 
+                    "type": "netcdf"
+                }
+            ], 
+            "position": {
+                "left": 200, 
+                "top": 269.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/cds_essential_variability/cds_essential_variability/0.1.4", 
+            "tool_shed_repository": {
+                "changeset_revision": "9ee8db6ffba3", 
+                "name": "cds_essential_variability", 
+                "owner": "climate", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"adv\": \"{\\\"resol\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"__page__\": null, \"product_type\": \"{\\\"__current_case__\\\": 0, \\\"product\\\": \\\"monthly_mean\\\", \\\"year\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"__rerun_remap_job_id__\": null, \"month\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"variable\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\"}", 
+            "tool_version": "0.1.4", 
+            "type": "tool", 
+            "uuid": "78d3d4d0-47bf-4fb5-9c2c-b7c495465286", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "Get metadata from retrieved dataset ", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.15.1", 
+            "errors": null, 
+            "id": 1, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "ofilename"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "NetCDF xarray Metadata Info", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "info", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 621, 
+                "top": 453.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.15.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "7edbe5ae8b72", 
+                "name": "xarray_metadata_info", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__rerun_remap_job_id__\": null, \"__page__\": null}", 
+            "tool_version": "0.15.1", 
+            "type": "tool", 
+            "uuid": "f0701694-29bc-408e-8d12-e6369010a079", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "Select a single location to extract timeseries", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.15.1", 
+            "errors": null, 
+            "id": 2, 
+            "input_connections": {
+                "input": {
+                    "id": 0, 
+                    "output_name": "ofilename"
+                }, 
+                "var_tab": {
+                    "id": 1, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NetCDF xarray Selection", 
+                    "name": "var"
+                }
+            ], 
+            "label": null, 
+            "name": "NetCDF xarray Selection", 
+            "outputs": [
+                {
+                    "name": "simpleoutput", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 918, 
+                "top": 290.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_select/xarray_select/0.15.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "225d0d275a24", 
+                "name": "xarray_select", 
+                "owner": "ecology", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"user_choice\": \"[]\", \"condi_source_coord\": \"{\\\"__current_case__\\\": 1, \\\"condi_coord\\\": {\\\"__current_case__\\\": 0, \\\"coord\\\": \\\"single\\\", \\\"lat_dim\\\": \\\"lat\\\", \\\"lat_val\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"lon_dim\\\": \\\"lon\\\", \\\"lon_val\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}, \\\"coord_source\\\": \\\"coord_from_stdin\\\"}\", \"var_tab\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"time\": \"{\\\"condi_datetime\\\": {\\\"__current_case__\\\": 0, \\\"datetime\\\": \\\"no\\\"}}\", \"var\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\"}", 
+            "tool_version": "0.15.1", 
+            "type": "tool", 
+            "uuid": "fed0190c-1058-4791-bb9a-850f9483f088", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/1.3.0", 
+            "errors": null, 
+            "id": 3, 
+            "input_connections": {
+                "input": {
+                    "id": 2, 
+                    "output_name": "simpleoutput"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute", 
+                    "name": "header_lines_conditional"
+                }, 
+                {
+                    "description": "runtime parameter for tool Compute", 
+                    "name": "cond"
+                }
+            ], 
+            "label": null, 
+            "name": "Compute", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 1251, 
+                "top": 369.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/column_maker/Add_a_column1/1.3.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "be25c075ed54", 
+                "name": "column_maker", 
+                "owner": "devteam", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"header_lines_conditional\": \"{\\\"__current_case__\\\": 1, \\\"header_lines_select\\\": \\\"yes\\\", \\\"header_new_column_name\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"__rerun_remap_job_id__\": null, \"cond\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"round\": \"\\\"no\\\"\", \"avoid_scientific_notation\": \"\\\"yes\\\"\"}", 
+            "tool_version": "1.3.0", 
+            "type": "tool", 
+            "uuid": "7067c067-9d7f-48c9-88ac-e6d40540126b", 
+            "workflow_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1", 
+            "errors": null, 
+            "id": 4, 
+            "input_connections": {
+                "infile": {
+                    "id": 3, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Text reformatting", 
+            "outputs": [
+                {
+                    "name": "outfile", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 1525, 
+                "top": 365.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/1.1.1", 
+            "tool_shed_repository": {
+                "changeset_revision": "9ff72e942410", 
+                "name": "text_processing", 
+                "owner": "bgruening", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"code\": \"\\\"gsub(/-/,\\\\\\\"\\\\\\\\t\\\\\\\",$2) {$2=$2} {print}\\\"\", \"chromInfo\": \"\\\"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"infile\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\"}", 
+            "tool_version": "1.1.1", 
+            "type": "tool", 
+            "uuid": "bfb376ed-6efe-4c15-af9a-2f92d16a35e3", 
+            "workflow_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0", 
+            "errors": null, 
+            "id": 5, 
+            "input_connections": {
+                "in_file": {
+                    "id": 4, 
+                    "output_name": "outfile"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Datamash", 
+            "outputs": [
+                {
+                    "name": "out_file", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 1758, 
+                "top": 360.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/datamash_ops/datamash_ops/1.1.0", 
+            "tool_shed_repository": {
+                "changeset_revision": "562f3c677828", 
+                "name": "datamash_ops", 
+                "owner": "iuc", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"operations\": \"[{\\\"__index__\\\": 0, \\\"op_column\\\": \\\"8\\\", \\\"op_name\\\": \\\"mean\\\"}]\", \"__page__\": null, \"ignore_case\": \"\\\"false\\\"\", \"chromInfo\": \"\\\"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\\\"\", \"__rerun_remap_job_id__\": null, \"header_in\": \"\\\"true\\\"\", \"in_file\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"need_sort\": \"\\\"true\\\"\", \"print_full_line\": \"\\\"false\\\"\", \"header_out\": \"\\\"false\\\"\", \"grouping\": \"\\\"2\\\"\"}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "uuid": "25108de2-4f47-45ca-9afe-4e6d5176c71d", 
+            "workflow_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_point/ggplot2_point/2.2.1+galaxy2", 
+            "errors": null, 
+            "id": 6, 
+            "input_connections": {
+                "input1": {
+                    "id": 5, 
+                    "output_name": "out_file"
+                }
+            }, 
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Scatterplot with ggplot2", 
+                    "name": "title"
+                }, 
+                {
+                    "description": "runtime parameter for tool Scatterplot with ggplot2", 
+                    "name": "ylab"
+                }
+            ], 
+            "label": null, 
+            "name": "Scatterplot with ggplot2", 
+            "outputs": [
+                {
+                    "name": "output1", 
+                    "type": "png"
+                }
+            ], 
+            "position": {
+                "left": 2093, 
+                "top": 360.5
+            }, 
+            "post_job_actions": {}, 
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/ggplot2_point/ggplot2_point/2.2.1+galaxy2", 
+            "tool_shed_repository": {
+                "changeset_revision": "87908c76ca8d", 
+                "name": "ggplot2_point", 
+                "owner": "iuc", 
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            }, 
+            "tool_state": "{\"adv\": \"{\\\"axis_text_customization\\\": {\\\"__current_case__\\\": 0, \\\"axis_customization\\\": \\\"default\\\"}, \\\"axis_title_customization\\\": {\\\"__current_case__\\\": 0, \\\"axis_customization\\\": \\\"default\\\"}, \\\"factor\\\": {\\\"__current_case__\\\": 0, \\\"factoring\\\": \\\"Default\\\"}, \\\"gridlinecust\\\": \\\"default\\\", \\\"legend\\\": \\\"yes\\\", \\\"plot_title_customization\\\": {\\\"__current_case__\\\": 0, \\\"axis_customization\\\": \\\"default\\\"}, \\\"points\\\": {\\\"__current_case__\\\": 0, \\\"pointoptions\\\": \\\"default\\\"}, \\\"scaling\\\": {\\\"__current_case__\\\": 0, \\\"plot_scaling\\\": \\\"Automatic\\\"}, \\\"theme\\\": \\\"bw\\\", \\\"transform\\\": \\\"none\\\", \\\"type\\\": \\\"pointslines\\\"}\", \"xlab\": \"\\\"Year (YYYY)\\\"\", \"input1\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"title\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"xplot\": \"\\\"1\\\"\", \"yplot\": \"\\\"2\\\"\", \"ylab\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"out\": \"{\\\"additional_output_format\\\": \\\"none\\\", \\\"dpi_output_dim\\\": \\\"300.0\\\", \\\"height_output_dim\\\": \\\"7.0\\\", \\\"unit_output_dim\\\": \\\"cm\\\", \\\"width_output_dim\\\": \\\"14.0\\\"}\"}", 
+            "tool_version": "2.2.1+galaxy2", 
+            "type": "tool", 
+            "uuid": "991a4bb8-584f-482e-a60a-89b5bd2fe9a7", 
+            "workflow_outputs": []
+        }
+    }, 
+    "tags": [], 
+    "uuid": "d7dbf4f9-121c-43c4-b818-ff99895bc090", 
+    "version": 3
+}

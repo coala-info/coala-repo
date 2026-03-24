@@ -1,0 +1,497 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_Long_reads_HiC_Assembly_QC_Hifiasm_v2602_(WF2).ga"
+      },
+      "datePublished": "2026-02-11 20:04:58 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/605?version=2",
+      "url": "https://workflowhub.eu/workflows/605/ro_crate?version=2",
+      "name": "Research Object Crate for ERGA Long reads+HiC Assembly+QC Hifiasm v2602 (WF2)",
+      "description": "The workflow takes a trimmed long reads collection, and Forward/Reverse HiC reads to run Hifiasm in HiC phasing mode. It produces both Pri/Alt and Hap1/Hap2 assemblies, and runs all the QC analysis (gfastats, BUSCO, and Merqury). The default Hifiasm purge level is aggressive (l3).",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines",
+      "sdDatePublished": "2026-03-24 16:22:40 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_Long_reads_HiC_Assembly_QC_Hifiasm_v2602_(WF2).ga"
+        },
+        {
+          "@id": "Cont_hifiasm_hic_2602.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_Long_reads_HiC_Assembly_QC_Hifiasm_v2602_(WF2).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/2.Contigging/Galaxy-Workflow-ERGA_Long_reads_HiC_Assembly_QC_Hifiasm_v2602_(WF2).ga",
+      "contentSize": 97066,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Cont_hifiasm_hic_2602.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes a trimmed long reads collection, and Forward/Reverse HiC reads to run Hifiasm in HiC phasing mode. It produces both Pri/Alt and Hap1/Hap2 assemblies, and runs all the QC analysis (gfastats, BUSCO, and Merqury). The default Hifiasm purge level is aggressive (l3).",
+      "name": "ERGA Long reads+HiC Assembly+QC Hifiasm v2602 (WF2)",
+      "keywords": "ERGA, Assembly+QC, Hi-C, HiFi",
+      "version": 2,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2026-02-11T20:03:26Z",
+      "dateModified": "2026-02-11T20:05:30Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/10"
+      },
+      "isBasedOn": "https://workflowhub.eu/workflows/605?version=1",
+      "input": [
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-(Trimmed)%20Long%20Reads%20Collection"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-Estimated%20genome%20size"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-HiC%20F%20trimmed"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-HiC%20R%20trimmed"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-Meryl%20Database"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-The%20Long%20Reads%20are%20PacBio%20HiFi"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-The%20Long%20reads%20are%20ONT"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-lineage"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_22"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Cont_hifiasm_hic_2602.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/2.Contigging/pics/Cont_hifiasm_hic_2602.png",
+      "contentSize": 836757
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/10",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy Long Reads &amp; Hi-C Pipelines (Hifiasm-HiC + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-(Trimmed) Long Reads Collection",
+      "@type": "FormalParameter",
+      "name": "(Trimmed) Long Reads Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-Estimated genome size",
+      "@type": "FormalParameter",
+      "name": "Estimated genome size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-HiC F trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC F trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-HiC R trimmed",
+      "@type": "FormalParameter",
+      "name": "HiC R trimmed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-Meryl Database",
+      "@type": "FormalParameter",
+      "name": "Meryl Database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-The Long Reads are PacBio HiFi",
+      "@type": "FormalParameter",
+      "name": "The Long Reads are PacBio HiFi",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-The Long reads are ONT",
+      "@type": "FormalParameter",
+      "name": "The Long reads are ONT",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-inputs-lineage",
+      "@type": "FormalParameter",
+      "name": "lineage",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_long_reads_hic_assembly_qc_hifiasm_v2602__wf2_-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

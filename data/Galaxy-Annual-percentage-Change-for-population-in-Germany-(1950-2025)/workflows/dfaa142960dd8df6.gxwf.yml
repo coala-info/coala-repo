@@ -1,0 +1,168 @@
+class: GalaxyWorkflow
+label: Climate Stripes
+creator:
+- class: Person
+  identifier: 0000-0002-1784-2920
+  name: Anne Fouilloux
+license: MIT
+tags:
+- ScienceLive
+uuid: d284fbe3-62c8-4750-a2f0-745fd2f11a0c
+report:
+  markdown: '
+
+    # Workflow Execution Report
+
+
+    ## Workflow Inputs
+
+    ```galaxy
+
+    invocation_inputs()
+
+    ```
+
+
+    ## Workflow Outputs
+
+    ```galaxy
+
+    invocation_outputs()
+
+    ```
+
+
+    ## Workflow
+
+    ```galaxy
+
+    workflow_display()
+
+    ```
+
+    '
+inputs:
+  files.tabular:
+    type: data
+    optional: false
+    format:
+    - tabular
+    doc: An input file with a header line and at least one column used to create the
+      stripes.
+    position:
+      left: 41.47806067376284
+      top: 0
+  Column name to use for plotting:
+    type: string
+    optional: false
+    position:
+      left: 43.95145071606338
+      top: 112.32170034134654
+  Plot Title:
+    type: string
+    optional: true
+    default: My stripes
+    position:
+      left: 44.21134396626111
+      top: 232.52729105848363
+  nxsplit:
+    type: int
+    optional: true
+    doc: Number of values per intervals
+    position:
+      left: 32.59625664700401
+      top: 325.57315096912095
+  xname (column name for the x-axis):
+    type: string
+    optional: true
+    doc: The column name to use for the x-axis.
+    position:
+      left: 0
+      top: 437.92359935083545
+  Date/time format for the x-axis column:
+    type: string
+    optional: true
+    doc: Date/time format to use when reading the column to be used for the x-axis.
+    position:
+      left: 15.091815299670955
+      top: 576.1533115764007
+  dates format for xlabels:
+    type: string
+    optional: true
+    doc: Format for plotting dates on the x-axis
+    position:
+      left: 31.360806654861108
+      top: 720.1881216576851
+  Matplotlib colormap:
+    type: string
+    optional: false
+    default: RdBu_r
+    doc: 'Parameter ''colormap'': valid options: winter,PRGn,hsv,gist_ncar,RdYlGn,summer,BrBG,Pastel1,autumn,PuBuGn,seismic,YlOrRd,Purples,Wistia,YlOrBr,tab10,tab20c,gist_heat,bone,gist_yarg,ocean,flag,RdGy,gist_earth,coolwarm,spring,PuBu,cool,gist_stern,gray,Reds,Greens,Accent,BuGn,RdGy_r,Set3,Pastel2,pink,OrRd,gist_rainbow,Blues,binary,gist_gray,PuOr,Set2,rainbow,copper,RdBu_r,Oranges,Set1,afmhot,BuPu,gnuplot2,brg,terrain,YlGnBu,tab20,Greys,bwr,RdPu,PuRd,tab20b,PiYG,hot,gnuplot,YlGn,Dark2,prism,Spectral,Paired,RdPu_r,RdBu,RdYlBu,GnBu,cubehelix,CMRmap,jet,nipy_spectral)
+      Using default: ''RdBu_r''.'
+    position:
+      left: 13.943350855261997
+      top: 850.26458704235
+outputs:
+  _anonymous_output_1:
+    outputSource: Column name to use for plotting
+  _anonymous_output_2:
+    outputSource: Plot Title
+  _anonymous_output_3:
+    outputSource: nxsplit
+  _anonymous_output_4:
+    outputSource: xname (column name for the x-axis)
+  _anonymous_output_5:
+    outputSource: Date/time format for the x-axis column
+  _anonymous_output_6:
+    outputSource: dates format for xlabels
+  _anonymous_output_7:
+    outputSource: Matplotlib colormap
+  stripes.png:
+    outputSource: Generate stripes/ofilename
+steps:
+  Generate stripes:
+    tool_id: toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.2
+    tool_version: 1.0.2
+    doc: 'Generate stripe from tabular file with at least one column. User needs to
+      specify the column name in the tool. '
+    position:
+      left: 584.463752547428
+      top: 125.28168803571039
+    tool_state:
+      adv:
+        colormap:
+          __class__: ConnectedValue
+        format_date:
+          __class__: ConnectedValue
+        format_plot:
+          __class__: ConnectedValue
+        nxsplit:
+          __class__: ConnectedValue
+        xname:
+          __class__: ConnectedValue
+      ifilename:
+        __class__: ConnectedValue
+      title:
+        __class__: ConnectedValue
+      variable:
+        __class__: ConnectedValue
+    in:
+      adv|colormap:
+        source: Matplotlib colormap
+      adv|format_plot:
+        source: dates format for xlabels
+      adv|format_date:
+        source: Date/time format for the x-axis column
+      adv|xname:
+        source: xname (column name for the x-axis)
+      variable:
+        source: Column name to use for plotting
+      ifilename:
+        source: files.tabular
+      adv|nxsplit:
+        source: nxsplit
+      title:
+        source: Plot Title
+    out:
+      ofilename:
+        rename: stripes.png

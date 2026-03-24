@@ -1,0 +1,267 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-kmer_counting.ga"
+      },
+      "datePublished": "2021-11-08 04:47:27 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.223.1",
+      "url": "https://workflowhub.eu/workflows/223/ro_crate?version=1",
+      "name": "Research Object Crate for kmer counting - meryl",
+      "description": "Kmer counting step, can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Estimates genome size and heterozygosity based on counts of kmers\n* Inputs: One set of short reads: e.g. R1.fq.gz\n* Outputs: GenomeScope graphs\n* Tools used: Meryl, GenomeScope\n* Input parameters: None required\n* Workflow steps: The tool meryl counts kmers in the input reads (k=21), then converts this into a histogram. GenomeScope: runs a model on the histogram; reports estimates. k-mer size set to 21. \n* Options: Use a different kmer counting tool. e.g. khmer.\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "sdDatePublished": "2026-03-24 18:08:26 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-kmer_counting.ga"
+        },
+        {
+          "@id": "Kmer_counting.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-kmer_counting.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9477,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Kmer_counting.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Kmer counting step, can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Estimates genome size and heterozygosity based on counts of kmers\n* Inputs: One set of short reads: e.g. R1.fq.gz\n* Outputs: GenomeScope graphs\n* Tools used: Meryl, GenomeScope\n* Input parameters: None required\n* Workflow steps: The tool meryl counts kmers in the input reads (k=21), then converts this into a histogram. GenomeScope: runs a model on the histogram; reports estimates. k-mer size set to 21. \n* Options: Use a different kmer counting tool. e.g. khmer.\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "name": "kmer counting - meryl",
+      "url": "https://workflowhub.eu/workflows/223?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T04:47:27Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.223.1",
+      "input": {
+        "@id": "#kmer_counting___meryl-inputs-Illumina%20reads%20R1"
+      },
+      "output": [
+        {
+          "@id": "#kmer_counting___meryl-outputs-Meryl%20on%20input%20dataset(s):%20read-db.meryldb"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-GenomeScope%20on%20input%20dataset(s)%20Transformed%20log%20plot"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-GenomeScope%20on%20input%20dataset(s)%20Log%20plot"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-GenomeScope%20on%20input%20dataset(s)%20Linear%20plot"
+        },
+        {
+          "@id": "#kmer_counting___meryl-outputs-GenomeScope%20on%20input%20dataset(s)%20Transformed%20linear%20plot"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Kmer_counting.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 368783
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-inputs-Illumina reads R1",
+      "@type": "FormalParameter",
+      "name": "Illumina reads R1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-Meryl on input dataset(s): read-db.meryldb",
+      "@type": "FormalParameter",
+      "name": "Meryl on input dataset(s): read-db.meryldb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-GenomeScope on input dataset(s) Transformed log plot",
+      "@type": "FormalParameter",
+      "name": "GenomeScope on input dataset(s) Transformed log plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-GenomeScope on input dataset(s) Log plot",
+      "@type": "FormalParameter",
+      "name": "GenomeScope on input dataset(s) Log plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-GenomeScope on input dataset(s) Linear plot",
+      "@type": "FormalParameter",
+      "name": "GenomeScope on input dataset(s) Linear plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#kmer_counting___meryl-outputs-GenomeScope on input dataset(s) Transformed linear plot",
+      "@type": "FormalParameter",
+      "name": "GenomeScope on input dataset(s) Transformed linear plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Metagenome and metatranscriptome assembly in CWL</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "src/workflows/metagenome_pipeline.cwl"
+      },
+      "datePublished": "2023-06-21 09:55:57 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/474?version=2",
+      "url": "https://workflowhub.eu/workflows/474/ro_crate?version=2",
+      "name": "Research Object Crate for Metagenome and metatranscriptome assembly in CWL",
+      "description": "# CWL-assembly\n[![Codacy Badge](https://api.codacy.com/project/badge/Grade/684724bbc0134960ab41748f4a4b732f)](https://www.codacy.com/app/mb1069/CWL-assembly?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EBI-Metagenomics/CWL-assembly&amp;utm_campaign=Badge_Grade)\n[![Build Status](https://travis-ci.org/EBI-Metagenomics/CWL-assembly.svg?branch=develop)](https://travis-ci.org/EBI-Metagenomics/CWL-assembly)\n\n## Description\n\nThis repository contains two workflows for metagenome and metatranscriptome assembly of short read data. MetaSPAdes is used as default for paired-end data, and MEGAHIT for single-end data and co-assemblies. MEGAHIT can be specified as the default assembler in the yaml file if preferred. Steps include:\n\n  * _QC_: removal of short reads, low quality regions, adapters and host decontamination\n  * _Assembly_: with metaSPADES or MEGAHIT\n  * _Post-assembly_: Host and PhiX decontamination, contig length filter (500bp), stats generation\n\n## Requirements - How to install\n\nThis pipeline requires a conda environment with cwltool, blastn, and metaspades. If created with `requirements.yml`, the environment will be called `cwl_assembly`. \n\n```\nconda env create -f requirements.yml\nconda activate cwl_assembly\npip install cwltool==3.1.20230601100705\n```\n\n## Databases\n\nYou will need to pre-download fasta files for host decontamination and generate the following databases accordingly:\n  * bwa index\n  * blast index\n    \nSpecify the locations in the yaml file when running the pipeline.\n\n## Main pipeline executables\n\n  * `src/workflows/metagenome_pipeline.cwl`\n  * `src/workflows/metatranscriptome_pipeline.cwl`\n\n## Example command\n\n```cwltool --singularity --outdir ${OUTDIR} ${CWL} ${YML}```\n\n`$CWL` is going to be one of the executables mentioned above\n`$YML` should be a config yaml file including entries among what follows. \nYou can find a yml template in the `examples` folder.\n\n## Example output directory structure\n```\nRoot directory\n    ├── megahit\n    │   └── 001 -------------------------------- Assembly root directory\n    │       ├── assembly_stats.json ------------ Human-readable assembly stats file\n    │       ├── coverage.tab ------------------- Coverage file\n    │       ├── log ---------------------------- CwlToil+megahit output log\n    |       ├── options.json ------------------- Megahit input options\n    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly\n    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive\n    ├── metaspades\n    │   └── 001 -------------------------------- Assembly root directory\n    │       ├── assembly_graph.fastg ----------- Assembly graph\n    │       ├── assembly_stats.json ------------ Human-readable assembly stats file\n    │       ├── coverage.tab ------------------- Coverage file\n    |       ├── params.txt --------------------- Metaspades input options\n    │       ├── spades.log --------------------- Metaspades output log\n    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly\n    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive\n    │&nbsp;\n    └── raw ------------------------------------ Raw data directory\n        ├── SRR6257420.fastq.qc_stats.tsv ------ Stats for cleaned fastq\n        ├── SRR6257420_fastp_clean_1.fastq.gz -- Cleaned paired-end file_1\n        └── SRR6257420_fastp_clean_2.fastq.gz -- Cleaned paired-end file_2\n```\n",
+      "isBasedOn": "https://github.com/EBI-Metagenomics/CWL-assembly.git",
+      "sdDatePublished": "2026-03-24 01:06:48 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "src/workflows/metagenome_pipeline.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "src/workflows/metagenome_pipeline.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 6441,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# CWL-assembly\n[![Codacy Badge](https://api.codacy.com/project/badge/Grade/684724bbc0134960ab41748f4a4b732f)](https://www.codacy.com/app/mb1069/CWL-assembly?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EBI-Metagenomics/CWL-assembly&amp;utm_campaign=Badge_Grade)\n[![Build Status](https://travis-ci.org/EBI-Metagenomics/CWL-assembly.svg?branch=develop)](https://travis-ci.org/EBI-Metagenomics/CWL-assembly)\n\n## Description\n\nThis repository contains two workflows for metagenome and metatranscriptome assembly of short read data. MetaSPAdes is used as default for paired-end data, and MEGAHIT for single-end data and co-assemblies. MEGAHIT can be specified as the default assembler in the yaml file if preferred. Steps include:\n\n  * _QC_: removal of short reads, low quality regions, adapters and host decontamination\n  * _Assembly_: with metaSPADES or MEGAHIT\n  * _Post-assembly_: Host and PhiX decontamination, contig length filter (500bp), stats generation\n\n## Requirements - How to install\n\nThis pipeline requires a conda environment with cwltool, blastn, and metaspades. If created with `requirements.yml`, the environment will be called `cwl_assembly`. \n\n```\nconda env create -f requirements.yml\nconda activate cwl_assembly\npip install cwltool==3.1.20230601100705\n```\n\n## Databases\n\nYou will need to pre-download fasta files for host decontamination and generate the following databases accordingly:\n  * bwa index\n  * blast index\n    \nSpecify the locations in the yaml file when running the pipeline.\n\n## Main pipeline executables\n\n  * `src/workflows/metagenome_pipeline.cwl`\n  * `src/workflows/metatranscriptome_pipeline.cwl`\n\n## Example command\n\n```cwltool --singularity --outdir ${OUTDIR} ${CWL} ${YML}```\n\n`$CWL` is going to be one of the executables mentioned above\n`$YML` should be a config yaml file including entries among what follows. \nYou can find a yml template in the `examples` folder.\n\n## Example output directory structure\n```\nRoot directory\n    ├── megahit\n    │   └── 001 -------------------------------- Assembly root directory\n    │       ├── assembly_stats.json ------------ Human-readable assembly stats file\n    │       ├── coverage.tab ------------------- Coverage file\n    │       ├── log ---------------------------- CwlToil+megahit output log\n    |       ├── options.json ------------------- Megahit input options\n    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly\n    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive\n    ├── metaspades\n    │   └── 001 -------------------------------- Assembly root directory\n    │       ├── assembly_graph.fastg ----------- Assembly graph\n    │       ├── assembly_stats.json ------------ Human-readable assembly stats file\n    │       ├── coverage.tab ------------------- Coverage file\n    |       ├── params.txt --------------------- Metaspades input options\n    │       ├── spades.log --------------------- Metaspades output log\n    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly\n    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive\n    │&nbsp;\n    └── raw ------------------------------------ Raw data directory\n        ├── SRR6257420.fastq.qc_stats.tsv ------ Stats for cleaned fastq\n        ├── SRR6257420_fastp_clean_1.fastq.gz -- Cleaned paired-end file_1\n        └── SRR6257420_fastp_clean_2.fastq.gz -- Cleaned paired-end file_2\n```\n",
+      "name": "Metagenome and metatranscriptome assembly in CWL",
+      "url": "https://workflowhub.eu/workflows/474?version=2",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/153"
+      },
+      "dateCreated": "2023-06-21T10:41:38Z",
+      "dateModified": "2023-06-21T10:41:38Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/474?version=1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/153",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "HoloFood at MGnify"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Metagenome and metatranscriptome assembly in CWL</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/474/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/474/ro_crate?version=2</a>
+
+
+<p>
+  # CWL-assembly
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/684724bbc0134960ab41748f4a4b732f)](https://www.codacy.com/app/mb1069/CWL-assembly?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EBI-Metagenomics/CWL-assembly&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/EBI-Metagenomics/CWL-assembly.svg?branch=develop)](https://travis-ci.org/EBI-Metagenomics/CWL-assembly)
+
+## Description
+
+This repository contains two workflows for metagenome and metatranscriptome assembly of short read data. MetaSPAdes is used as default for paired-end data, and MEGAHIT for single-end data and co-assemblies. MEGAHIT can be specified as the default assembler in the yaml file if preferred. Steps include:
+
+  * _QC_: removal of short reads, low quality regions, adapters and host decontamination
+  * _Assembly_: with metaSPADES or MEGAHIT
+  * _Post-assembly_: Host and PhiX decontamination, contig length filter (500bp), stats generation
+
+## Requirements - How to install
+
+This pipeline requires a conda environment with cwltool, blastn, and metaspades. If created with `requirements.yml`, the environment will be called `cwl_assembly`. 
+
+```
+conda env create -f requirements.yml
+conda activate cwl_assembly
+pip install cwltool==3.1.20230601100705
+```
+
+## Databases
+
+You will need to pre-download fasta files for host decontamination and generate the following databases accordingly:
+  * bwa index
+  * blast index
+    
+Specify the locations in the yaml file when running the pipeline.
+
+## Main pipeline executables
+
+  * `src/workflows/metagenome_pipeline.cwl`
+  * `src/workflows/metatranscriptome_pipeline.cwl`
+
+## Example command
+
+```cwltool --singularity --outdir ${OUTDIR} ${CWL} ${YML}```
+
+`$CWL` is going to be one of the executables mentioned above
+`$YML` should be a config yaml file including entries among what follows. 
+You can find a yml template in the `examples` folder.
+
+## Example output directory structure
+```
+Root directory
+    ├── megahit
+    │   └── 001 -------------------------------- Assembly root directory
+    │       ├── assembly_stats.json ------------ Human-readable assembly stats file
+    │       ├── coverage.tab ------------------- Coverage file
+    │       ├── log ---------------------------- CwlToil+megahit output log
+    |       ├── options.json ------------------- Megahit input options
+    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly
+    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive
+    ├── metaspades
+    │   └── 001 -------------------------------- Assembly root directory
+    │       ├── assembly_graph.fastg ----------- Assembly graph
+    │       ├── assembly_stats.json ------------ Human-readable assembly stats file
+    │       ├── coverage.tab ------------------- Coverage file
+    |       ├── params.txt --------------------- Metaspades input options
+    │       ├── spades.log --------------------- Metaspades output log
+    │       ├── SRR6257420.fasta.gz ------------ Archived and trimmed assembly
+    │       └── SRR6257420.fasta.gz.md5 -------- MD5 hash of above archive
+    │&nbsp;
+    └── raw ------------------------------------ Raw data directory
+        ├── SRR6257420.fastq.qc_stats.tsv ------ Stats for cleaned fastq
+        ├── SRR6257420_fastp_clean_1.fastq.gz -- Cleaned paired-end file_1
+        └── SRR6257420_fastp_clean_2.fastq.gz -- Cleaned paired-end file_2
+```
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_src/workflows/metagenome_pipeline.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="src/workflows/metagenome_pipeline.cwl">Metagenome and metatranscriptome assembly in CWL</a>
+      
+        <br/>Size: 6441 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

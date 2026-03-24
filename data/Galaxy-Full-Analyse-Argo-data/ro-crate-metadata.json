@@ -1,0 +1,389 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "full-analyse-argo-data"
+      },
+      "datePublished": "2024-09-02 15:58:31 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0009-0008-0622-604X"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1113?version=1",
+      "url": "https://workflowhub.eu/workflows/1113/ro_crate?version=1",
+      "name": "Research Object Crate for Full Analyse Argo data",
+      "description": "Process argo data with the Pangeo Ecosystem and visualise them with Ocean Data View (ODV)",
+      "sdDatePublished": "2026-03-24 19:28:47 +0000",
+      "hasPart": [
+        {
+          "@id": "full-analyse-argo-data"
+        },
+        {
+          "@id": "b1ce68db35b2a222.abstract.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "full-analyse-argo-data",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/u/marie.josse/w/full-analyse-argo-data",
+      "contentSize": 9773,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "b1ce68db35b2a222.abstract.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Process argo data with the Pangeo Ecosystem and visualise them with Ocean Data View (ODV)",
+      "name": "Full Analyse Argo data",
+      "keywords": "Earth-system, Ocean, pangeo",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/815"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/267"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/24"
+        }
+      ],
+      "dateCreated": "2024-09-02T15:09:35Z",
+      "dateModified": "2024-09-02T15:09:35Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#full_analyse_argo_data-inputs-Physical%20variables"
+        },
+        {
+          "@id": "#full_analyse_argo_data-inputs-Bio-GeoChemical%20variables"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#full_analyse_argo_data-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Argo%20phys%20data"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Ago%20BGC%20data"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Coordinate%20info%20phys"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-info%20phys"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-phys%20metadata%20tabular"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Coordinate%20info%20bgc"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-bgc%20metadata%20tabular"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-info%20bgc"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Timeseries%20phys%20tabular"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Timeseries%20plot%20phys"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Timeseries%20bgc%20tabular"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Timeseries%20plot%20bgc"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Netcdf%20phys"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Resulting%20map%20phys"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Netcdf%20bgc"
+        },
+        {
+          "@id": "#full_analyse_argo_data-outputs-Resulting%20map%20bgc"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "b1ce68db35b2a222.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 3719
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0008-0622-604X",
+      "@type": "Person",
+      "name": "Marie Jossé",
+      "identifier": "https://orcid.org/0009-0008-0622-604X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/815",
+      "@type": "Person",
+      "name": "Marie Jossé"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/267",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "FAIR-EASE"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-inputs-Physical variables",
+      "@type": "FormalParameter",
+      "name": "Physical variables",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-inputs-Bio-GeoChemical variables",
+      "@type": "FormalParameter",
+      "name": "Bio-GeoChemical variables",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Argo phys data",
+      "@type": "FormalParameter",
+      "name": "Argo phys data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Ago BGC data",
+      "@type": "FormalParameter",
+      "name": "Ago BGC data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Coordinate info phys",
+      "@type": "FormalParameter",
+      "name": "Coordinate info phys",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-info phys",
+      "@type": "FormalParameter",
+      "name": "info phys",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-phys metadata tabular",
+      "@type": "FormalParameter",
+      "name": "phys metadata tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Coordinate info bgc",
+      "@type": "FormalParameter",
+      "name": "Coordinate info bgc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-bgc metadata tabular",
+      "@type": "FormalParameter",
+      "name": "bgc metadata tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-info bgc",
+      "@type": "FormalParameter",
+      "name": "info bgc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Timeseries phys tabular",
+      "@type": "FormalParameter",
+      "name": "Timeseries phys tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Timeseries plot phys",
+      "@type": "FormalParameter",
+      "name": "Timeseries plot phys",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Timeseries bgc tabular",
+      "@type": "FormalParameter",
+      "name": "Timeseries bgc tabular",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Timeseries plot bgc",
+      "@type": "FormalParameter",
+      "name": "Timeseries plot bgc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Netcdf phys",
+      "@type": "FormalParameter",
+      "name": "Netcdf phys",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Resulting map phys",
+      "@type": "FormalParameter",
+      "name": "Resulting map phys",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Netcdf bgc",
+      "@type": "FormalParameter",
+      "name": "Netcdf bgc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#full_analyse_argo_data-outputs-Resulting map bgc",
+      "@type": "FormalParameter",
+      "name": "Resulting map bgc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

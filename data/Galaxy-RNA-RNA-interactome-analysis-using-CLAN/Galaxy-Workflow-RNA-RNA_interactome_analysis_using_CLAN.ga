@@ -1,0 +1,805 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "RNA-RNA interactome analysis using ChiRA tools suite. Aligner used is CLAN.",
+    "format-version": "0.1",
+    "name": "RNA-RNA interactome analysis using CLAN",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reads FASTQ file"
+                }
+            ],
+            "label": "Reads FASTQ file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 413,
+                "height": 81,
+                "left": 25.5,
+                "right": 225.5,
+                "top": 332,
+                "width": 200,
+                "x": 25.5,
+                "y": 332
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "314d3dc6-fe8a-403b-8d29-0fd3bfbe3bc9",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "e385f952-355d-4ba1-8b31-1c44d551a22a"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "1st reference FASTA file"
+                }
+            ],
+            "label": "1st reference FASTA file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 522,
+                "height": 81,
+                "left": 25.5,
+                "right": 225.5,
+                "top": 441,
+                "width": 200,
+                "x": 25.5,
+                "y": 441
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "fdbd79cd-e301-46e5-ade7-4444f9d618a4",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8b7cb432-df75-42da-b98e-679e936e8c14"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "2nd reference FASTA file"
+                }
+            ],
+            "label": "2nd reference FASTA file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 631,
+                "height": 81,
+                "left": 25.5,
+                "right": 225.5,
+                "top": 550,
+                "width": 200,
+                "x": 25.5,
+                "y": 550
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "e5ed93cc-e646-4468-8915-d76f78c25520",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "debf43bf-dbcf-4f55-9a7e-07c3accffb7d"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Annotation GTF file"
+                }
+            ],
+            "label": "Annotation GTF file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 740,
+                "height": 81,
+                "left": 25.5,
+                "right": 225.5,
+                "top": 659,
+                "width": 200,
+                "x": 25.5,
+                "y": 659
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "7a57b96b-30fb-4f85-9fae-d85cca9a5fcf",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "028f9c94-4ad2-4de3-b6cd-4ac99c588c2d"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Genomic FASTA file"
+                }
+            ],
+            "label": "Genomic FASTA file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 849,
+                "height": 81,
+                "left": 25.5,
+                "right": 225.5,
+                "top": 768,
+                "width": 200,
+                "x": 25.5,
+                "y": 768
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "cbefffef-5bac-4e7c-8422-7ca90c39f00d",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "6b75d62a-d59e-43b6-a6d3-1d5500bf8939"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.16.5",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "library|input_1": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Cutadapt",
+            "outputs": [
+                {
+                    "name": "out1",
+                    "type": "fastqsanger"
+                },
+                {
+                    "name": "report",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 514,
+                "height": 182,
+                "left": 311.5,
+                "right": 511.5,
+                "top": 332,
+                "width": 200,
+                "x": 311.5,
+                "y": 332
+            },
+            "post_job_actions": {
+                "HideDatasetActionreport": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "report"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.16.5",
+            "tool_shed_repository": {
+                "changeset_revision": "49370cb85f0f",
+                "name": "cutadapt",
+                "owner": "lparsons",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapter_options\": {\"error_rate\": \"0.1\", \"no_indels\": \"false\", \"count\": \"1\", \"overlap\": \"3\", \"match_read_wildcards\": \" \", \"no_trim\": \"false\", \"mask_adapter\": \"false\"}, \"filter_options\": {\"discard\": \"false\", \"discard_untrimmed\": \"false\", \"min\": \"16\", \"max\": \"0\", \"max_n\": \"\", \"pair_filter\": \"any\"}, \"library\": {\"type\": \"single\", \"__current_case__\": 0, \"input_1\": {\"__class__\": \"ConnectedValue\"}, \"r1\": {\"adapters\": [{\"__index__\": 0, \"adapter_source\": {\"adapter_source_list\": \"user\", \"__current_case__\": 0, \"adapter_name\": {\"__class__\": \"RuntimeValue\"}, \"adapter\": {\"__class__\": \"RuntimeValue\"}}}], \"front_adapters\": [{\"__index__\": 0, \"front_adapter_source\": {\"front_adapter_source_list\": \"user\", \"__current_case__\": 0, \"front_adapter_name\": {\"__class__\": \"RuntimeValue\"}, \"front_adapter\": {\"__class__\": \"RuntimeValue\"}}}], \"anywhere_adapters\": [], \"cut\": \"0\"}}, \"output_options\": {\"report\": \"true\", \"info_file\": \"false\", \"rest_file\": \"false\", \"wildcard_file\": \"false\", \"too_short_file\": \"false\", \"too_long_file\": \"false\", \"untrimmed_file\": \"false\", \"multiple_output\": \"false\"}, \"read_mod_options\": {\"quality_cutoff\": \"20\", \"nextseq_trim\": \"0\", \"trim_n\": \"false\", \"prefix\": \"\", \"suffix\": \"\", \"strip_suffix\": \"\", \"length\": \"0\", \"length_tag\": \"\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.16.5",
+            "type": "tool",
+            "uuid": "354894b3-ae49-4264-8135-f6dec1ab1b94",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out1",
+                    "uuid": "6d795c0b-8044-4fbd-86c3-aea0e6b4d1d1"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 834,
+                "height": 292,
+                "left": 311.5,
+                "right": 511.5,
+                "top": 542,
+                "width": 200,
+                "x": 311.5,
+                "y": 542
+            },
+            "post_job_actions": {
+                "HideDatasetActiontext_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "text_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": \"\", \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "903127ef-5aaa-4b4d-9beb-c61431b347d1",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "html_file",
+                    "uuid": "1e37adad-73a5-449e-ba04-8abdefb4ec8b"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_collapse/chira_collapse/1.4.3+galaxy0",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "in": {
+                    "id": 5,
+                    "output_name": "out1"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool ChiRA collapse",
+                    "name": "umi_len"
+                }
+            ],
+            "label": null,
+            "name": "ChiRA collapse",
+            "outputs": [
+                {
+                    "name": "out",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "bottom": 464,
+                "height": 132,
+                "left": 597.5,
+                "right": 797.5,
+                "top": 332,
+                "width": 200,
+                "x": 597.5,
+                "y": 332
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_collapse/chira_collapse/1.4.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "2b2bfeda00d0",
+                "name": "chira_collapse",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"in\": {\"__class__\": \"ConnectedValue\"}, \"umi_len\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.3+galaxy0",
+            "type": "tool",
+            "uuid": "0e7573e9-edb7-4f65-87c9-70877521d32f",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out",
+                    "uuid": "c409ab84-2c6e-425a-a74d-74b47b7609db"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input_file": {
+                    "id": 5,
+                    "output_name": "out1"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "adapters"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "contaminants"
+                },
+                {
+                    "description": "runtime parameter for tool FastQC",
+                    "name": "limits"
+                }
+            ],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 784,
+                "height": 292,
+                "left": 597.5,
+                "right": 797.5,
+                "top": 492,
+                "width": 200,
+                "x": 597.5,
+                "y": 492
+            },
+            "post_job_actions": {
+                "HideDatasetActiontext_file": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "text_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.72+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "e7b2202befea",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adapters\": {\"__class__\": \"RuntimeValue\"}, \"contaminants\": {\"__class__\": \"RuntimeValue\"}, \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"kmers\": \"7\", \"limits\": {\"__class__\": \"RuntimeValue\"}, \"min_length\": \"\", \"nogroup\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.72+galaxy1",
+            "type": "tool",
+            "uuid": "b02135d9-a0c4-47e1-8d99-d4d51a72fd07",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "html_file",
+                    "uuid": "e8c549ba-ac3b-4127-abcf-f7b8e1b1e898"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_map/chira_map/1.4.3+galaxy0",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "query": {
+                    "id": 7,
+                    "output_name": "out"
+                },
+                "reference|ref_fasta1": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "reference|ref_fasta2": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool ChiRA map",
+                    "name": "query"
+                },
+                {
+                    "description": "runtime parameter for tool ChiRA map",
+                    "name": "reference"
+                },
+                {
+                    "description": "runtime parameter for tool ChiRA map",
+                    "name": "reference"
+                }
+            ],
+            "label": null,
+            "name": "ChiRA map",
+            "outputs": [
+                {
+                    "name": "mapped_bed",
+                    "type": "bed"
+                }
+            ],
+            "position": {
+                "bottom": 573,
+                "height": 242,
+                "left": 878.5,
+                "right": 1078.5,
+                "top": 331,
+                "width": 200,
+                "x": 878.5,
+                "y": 331
+            },
+            "post_job_actions": {
+                "HideDatasetActionunmapped_fasta": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "unmapped_fasta"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_map/chira_map/1.4.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "92dbdc4d2722",
+                "name": "chira_map",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignment\": {\"aligner\": \"clan\", \"__current_case__\": 1, \"align_score\": \"10\", \"chimeric_overlap\": \"2\"}, \"query\": {\"__class__\": \"RuntimeValue\"}, \"reference\": {\"ref_type\": \"split\", \"__current_case__\": 0, \"ref_fasta1\": {\"__class__\": \"RuntimeValue\"}, \"ref_fasta2\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.3+galaxy0",
+            "type": "tool",
+            "uuid": "ffa03516-032e-4525-b0be-d18278a8ddae",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "mapped_bed",
+                    "uuid": "905f3a49-cd1d-4804-ba94-5ab548a5e82b"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_merge/chira_merge/1.4.3+galaxy0",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "alignments": {
+                    "id": 9,
+                    "output_name": "mapped_bed"
+                },
+                "annotation|gtf": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "reference|ref_fasta1": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "reference|ref_fasta2": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ChiRA merge",
+            "outputs": [
+                {
+                    "name": "segments_bed",
+                    "type": "bed"
+                },
+                {
+                    "name": "merged_bed",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 664,
+                "height": 332,
+                "left": 1169.5,
+                "right": 1369.5,
+                "top": 332,
+                "width": 200,
+                "x": 1169.5,
+                "y": 332
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_merge/chira_merge/1.4.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "bd57d16524fe",
+                "name": "chira_merge",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alignment_overlap\": \"0.7\", \"alignments\": {\"__class__\": \"ConnectedValue\"}, \"annotation\": {\"choice\": \"yes\", \"__current_case__\": 0, \"gtf\": {\"__class__\": \"ConnectedValue\"}}, \"chimeric_only\": \"false\", \"length_threshold\": \"0.9\", \"merge\": {\"mode\": \"overlap\", \"__current_case__\": 0, \"min_locus_size\": \"1\"}, \"reference\": {\"ref_type\": \"split\", \"__current_case__\": 0, \"ref_fasta1\": {\"__class__\": \"ConnectedValue\"}, \"ref_fasta2\": {\"__class__\": \"ConnectedValue\"}}, \"segment_overlap\": \"0.7\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.3+galaxy0",
+            "type": "tool",
+            "uuid": "0ae773e5-b4fc-4e9e-8624-5202e730bd94",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "segments_bed",
+                    "uuid": "b6d341e9-cf71-47b2-8e3d-c2c0e0211b96"
+                },
+                {
+                    "label": null,
+                    "output_name": "merged_bed",
+                    "uuid": "859ae32e-71af-42c2-ba57-ee062fa8f20c"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_quantify/chira_quantify/1.4.3+galaxy0",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "merged": {
+                    "id": 10,
+                    "output_name": "merged_bed"
+                },
+                "segments": {
+                    "id": 10,
+                    "output_name": "segments_bed"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ChiRA qauntify",
+            "outputs": [
+                {
+                    "name": "loci",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 534,
+                "height": 202,
+                "left": 1455.5,
+                "right": 1655.5,
+                "top": 332,
+                "width": 200,
+                "x": 1455.5,
+                "y": 332
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_quantify/chira_quantify/1.4.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "7fb3fc24be0e",
+                "name": "chira_quantify",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"crl\": \"true\", \"crl_share\": \"0.7\", \"em_threshold\": \"1e-05\", \"merged\": {\"__class__\": \"ConnectedValue\"}, \"min_locus_size\": \"10\", \"segments\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.3+galaxy0",
+            "type": "tool",
+            "uuid": "daa8ac1c-1fed-4a96-9121-366dfea1e3b6",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "loci",
+                    "uuid": "695321e0-39d9-45f7-b030-9224cf2d692f"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_extract/chira_extract/1.4.3+galaxy0",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "annotation|fasta_source|fasta": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "annotation|gtf": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "loci": {
+                    "id": 11,
+                    "output_name": "loci"
+                },
+                "reference|ref_fasta1": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "reference|ref_fasta2": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ChiRA extract",
+            "outputs": [
+                {
+                    "name": "chimeras",
+                    "type": "tabular"
+                },
+                {
+                    "name": "interactions",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 694,
+                "height": 362,
+                "left": 1741.5,
+                "right": 1941.5,
+                "top": 332,
+                "width": 200,
+                "x": 1741.5,
+                "y": 332
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/chira_extract/chira_extract/1.4.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "6977e9b7143d",
+                "name": "chira_extract",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"acc_width\": \"150\", \"accessibility\": \"false\", \"annotation\": {\"annot_choice\": \"yes\", \"__current_case__\": 0, \"gtf\": {\"__class__\": \"ConnectedValue\"}, \"fasta_source\": {\"fasta_source_selector\": \"history\", \"__current_case__\": 0, \"fasta\": {\"__class__\": \"ConnectedValue\"}}}, \"chimeric_overlap\": \"2\", \"hybridize\": \"true\", \"intarna_mode\": \"H\", \"loci\": {\"__class__\": \"ConnectedValue\"}, \"reference\": {\"ref_type\": \"split\", \"__current_case__\": 0, \"ref_fasta1\": {\"__class__\": \"ConnectedValue\"}, \"ref_fasta2\": {\"__class__\": \"ConnectedValue\"}}, \"score_cutoff\": \"0.0\", \"seed_bp\": \"5\", \"seed_interaction\": \"true\", \"seed_min_pu\": \"0.0\", \"summarize\": \"true\", \"temperature\": \"37.0\", \"tpm_cutoff\": \"0.0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.4.3+galaxy0",
+            "type": "tool",
+            "uuid": "e60e8574-7c77-4619-b5fa-0704870e88c8",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "chimeras",
+                    "uuid": "1c1239d2-9d1d-462a-bc6f-62f3378aa45e"
+                },
+                {
+                    "label": null,
+                    "output_name": "interactions",
+                    "uuid": "020a86cf-bae5-492a-a668-c823a01d69ea"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.0.0",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "tables_0|table": {
+                    "id": 12,
+                    "output_name": "chimeras"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Query Tabular",
+                    "name": "add_to_database"
+                }
+            ],
+            "label": null,
+            "name": "Query Tabular",
+            "outputs": [
+                {
+                    "name": "sqlitedb",
+                    "type": "sqlite"
+                }
+            ],
+            "position": {
+                "bottom": 514,
+                "height": 182,
+                "left": 2027.5,
+                "right": 2227.5,
+                "top": 332,
+                "width": 200,
+                "x": 2027.5,
+                "y": 332
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionsqlitedb": {
+                    "action_arguments": {
+                        "newtype": "chira.sqlite"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "sqlitedb"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.0.0",
+            "tool_shed_repository": {
+                "changeset_revision": "33d61c89fb8d",
+                "name": "query_tabular",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"add_to_database\": {\"withdb\": {\"__class__\": \"RuntimeValue\"}}, \"addqueries\": {\"queries\": []}, \"modify_database\": {\"sql_stmts\": []}, \"query_result\": {\"header\": \"yes\", \"__current_case__\": 0, \"header_prefix\": \"35\"}, \"save_db\": \"true\", \"sqlquery\": \"\", \"tables\": [{\"__index__\": 0, \"table\": {\"__class__\": \"ConnectedValue\"}, \"input_opts\": {\"linefilters\": []}, \"tbl_opts\": {\"table_name\": \"\", \"column_names_from_first_line\": \"true\", \"col_names\": \"\", \"load_named_columns\": \"false\", \"pkey_autoincr\": \"\", \"indexes\": []}}], \"workdb\": \"workdb.sqlite\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.0.0",
+            "type": "tool",
+            "uuid": "846185fd-2c77-4650-b9ab-a8c5c7ff718a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "sqlitedb",
+                    "uuid": "51541982-2656-411b-88dd-81c7e4bd8d11"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "RNA",
+        "transcriptomics"
+    ],
+    "uuid": "1fb3d994-a893-47b5-8fc2-8c059240d1cf",
+    "version": 2
+}

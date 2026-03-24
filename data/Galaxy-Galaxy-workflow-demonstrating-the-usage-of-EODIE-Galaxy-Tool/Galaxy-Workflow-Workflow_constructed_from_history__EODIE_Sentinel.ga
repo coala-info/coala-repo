@@ -1,0 +1,217 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This workflow demonstrates the usage of EODIE, a toolkit to extract object based timeseries information from Earth Observation data.",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0000-0002-1784-2920",
+            "name": "Anne Fouilloux"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "Workflow constructed from history 'EODIE Sentinel'",
+    "steps": {
+        "0": {
+            "annotation": "Sentinel2 input data. This input dataset corresponds to the data itself while sentinel2_tiles_world would be the corresponding shapefile for the tile.",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Sentinel2 input data. This input dataset corresponds to the data itself while sentinel2_tiles_world would be the corresponding shapefile for the tile.",
+                    "name": "S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234.tar"
+                }
+            ],
+            "label": "S2B_MSIL2A_20200626T095029_N0214_R079_T34VFN_20200626T123234.tar",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 263.03125,
+                "height": 123.03125,
+                "left": 202,
+                "right": 402,
+                "top": 140,
+                "width": 200,
+                "x": 202,
+                "y": 140
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "a8926564-2e42-4fae-96e8-675ee27a1b28",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "7f05d0bd-9193-493b-8e2f-ad3ee709ce4b"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "This input dataset corresponds to the Sentinel-2 tile shapefile, originally provided by https://fromgistors.blogspot.com/2016/10/how-to-identify-sentinel-2-granule.html,",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "This input dataset corresponds to the Sentinel-2 tile shapefile, originally provided by https://fromgistors.blogspot.com/2016/10/how-to-identify-sentinel-2-granule.html,",
+                    "name": "sentinel2_tiles_world"
+                }
+            ],
+            "label": "sentinel2_tiles_world",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 372.21875,
+                "height": 82.21875,
+                "left": 203,
+                "right": 403,
+                "top": 290,
+                "width": 200,
+                "x": 203,
+                "y": 290
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ab5b8511-7fca-4433-93ca-e749cf609339",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "cff660a9-439a-42c9-af75-c2d37cdd3f10"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "This input dataset is a shapefile corresponding the the area of interest e.g. on which statistics such as NDVI will be computed.",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "This input dataset is a shapefile corresponding the the area of interest e.g. on which statistics such as NDVI will be computed.",
+                    "name": "test_parcels_32635"
+                }
+            ],
+            "label": "test_parcels_32635",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 492.21875,
+                "height": 82.21875,
+                "left": 203,
+                "right": 403,
+                "top": 410,
+                "width": 200,
+                "x": 203,
+                "y": 410
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "00eb38fb-a516-4844-9a17-13e850fe56d4",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "64c7a105-d041-419d-b08a-bfd3e280e1e8"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "This step corresponds to EODIE tool itself. It is run with a set of inputs and option to generate statistics over the region of interest (passed as input).\nthe output is a list (one for each type of statistics e.g. ndvi, etc.).\nA logfile is also generated.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/eodie/eodie/1.0.2",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "input_type|input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "input_type|s2_shp": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool EODIE",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool EODIE",
+                    "name": "input_type"
+                },
+                {
+                    "description": "runtime parameter for tool EODIE",
+                    "name": "input_type"
+                }
+            ],
+            "label": null,
+            "name": "EODIE",
+            "outputs": [
+                {
+                    "name": "csv_files",
+                    "type": "input"
+                },
+                {
+                    "name": "logfile",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 370.84375,
+                "height": 204.84375,
+                "left": 548,
+                "right": 748,
+                "top": 166,
+                "width": 200,
+                "x": 548,
+                "y": 166
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/eodie/eodie/1.0.2",
+            "tool_shed_repository": {
+                "changeset_revision": "81b0ca76435d",
+                "name": "eodie",
+                "owner": "climate",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_options\": {\"start_date\": \"\", \"end_date\": \"\", \"statistics\": [{\"__index__\": 0, \"stats_input\": {\"stats\": \"mean\", \"__current_case__\": 0}}, {\"__index__\": 1, \"stats_input\": {\"stats\": \"median\", \"__current_case__\": 5}}, {\"__index__\": 2, \"stats_input\": {\"stats\": \"std\", \"__current_case__\": 4}}], \"indices\": [\"ndvi\"], \"exclude_splitshp\": \"false\", \"exclude_border\": \"false\", \"geotiff_out\": \"false\"}, \"identifier\": \"ID\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"input_type\": {\"platform\": \"s2\", \"__current_case__\": 2, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"s2_shp\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "3d6ddaef-246d-4ca6-aa9d-4f9d61d3683b",
+            "workflow_outputs": [
+                {
+                    "label": "EODIE statistics",
+                    "output_name": "csv_files",
+                    "uuid": "5a344b8b-04ff-4253-b413-47a99e50deb8"
+                },
+                {
+                    "label": "logfile",
+                    "output_name": "logfile",
+                    "uuid": "7ed19853-4777-4717-9af3-446ceeb5cda7"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "earth-observation",
+        "timeseries",
+        "ndvi"
+    ],
+    "uuid": "44ade102-5897-4a48-8043-92566151c682",
+    "version": 6
+}

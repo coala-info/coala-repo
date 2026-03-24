@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for End-to-end EI+ mass spectra prediction workflow using QCxMS</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-End-to-end_EI__mass_spectra_prediction_workflow_using_QCxMS.ga"
+      },
+      "datePublished": "2025-04-28 09:56:57 +0100",
+      "author": [
+        {
+          "@id": "#person-753"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6744-996X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-7036-9987"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.897.3",
+      "url": "https://workflowhub.eu/workflows/897/ro_crate?version=3",
+      "name": "Research Object Crate for End-to-end EI+ mass spectra prediction workflow using QCxMS",
+      "description": "High-Performance Computing (HPC) environments are integral to quantum chemistry and computationally intense research, yet their complexity poses challenges for non-HPC experts. Navigating these environments proves challenging for researchers lacking extensive computational knowledge, hindering efficient use of domain specific research software. The prediction of mass spectra for in silico annotation is therefore inaccessible for many wet lab scientists. Our main goal is to facilitate non-experts in HPC navigate this complexity and make semi-empirical Quantum Chemistry (QC)-based predictions available without needing advanced computational skills. To address this challenge, a comprehensive approach is proposed. We chose specific file formats for storing molecular structures, ensuring compatibility across diverse tools and platforms. The xTB quantum chemistry package for molecular geometry optimization is leveraged for its capability to balance between accuracy and computational cost, making it well-suited for non-HPC focused applications. Integrating QC-based Mass Spectrometry (QCxMS) into Galaxy enables the prediction of mass spectra and offers insights into molecular composition and properties. Our workflow demonstrates the utility of computing spectra using QCxMS along with complementary tools. We also present details of runtime performance metrics for four distinct molecules. This work highlights how non-HPC users can execute these predictions with ease, without requiring advanced computational skills. Additionally, a Docker image is created to encapsulate necessary tools, accompanied by user-friendly wrappers, simplifying the entire process for non-expert users. Within this context, potential improvements are considered, focusing on improving the Conda package for better performance by incorporating Fortran and Intel compiler optimizations. These considerations play a crucial role in refining the proposed methodology, enhancing user experience, and expanding the reach of semi-empirical predictions in quantum chemistry for mass spectra predictions.\n",
+      "sdDatePublished": "2026-03-24 17:35:50 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-End-to-end_EI__mass_spectra_prediction_workflow_using_QCxMS.ga"
+        },
+        {
+          "@id": "qcxms_v3_diagram.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-End-to-end_EI__mass_spectra_prediction_workflow_using_QCxMS.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 23744,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "qcxms_v3_diagram.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "High-Performance Computing (HPC) environments are integral to quantum chemistry and computationally intense research, yet their complexity poses challenges for non-HPC experts. Navigating these environments proves challenging for researchers lacking extensive computational knowledge, hindering efficient use of domain specific research software. The prediction of mass spectra for in silico annotation is therefore inaccessible for many wet lab scientists. Our main goal is to facilitate non-experts in HPC navigate this complexity and make semi-empirical Quantum Chemistry (QC)-based predictions available without needing advanced computational skills. To address this challenge, a comprehensive approach is proposed. We chose specific file formats for storing molecular structures, ensuring compatibility across diverse tools and platforms. The xTB quantum chemistry package for molecular geometry optimization is leveraged for its capability to balance between accuracy and computational cost, making it well-suited for non-HPC focused applications. Integrating QC-based Mass Spectrometry (QCxMS) into Galaxy enables the prediction of mass spectra and offers insights into molecular composition and properties. Our workflow demonstrates the utility of computing spectra using QCxMS along with complementary tools. We also present details of runtime performance metrics for four distinct molecules. This work highlights how non-HPC users can execute these predictions with ease, without requiring advanced computational skills. Additionally, a Docker image is created to encapsulate necessary tools, accompanied by user-friendly wrappers, simplifying the entire process for non-expert users. Within this context, potential improvements are considered, focusing on improving the Conda package for better performance by incorporating Fortran and Intel compiler optimizations. These considerations play a crucial role in refining the proposed methodology, enhancing user experience, and expanding the reach of semi-empirical predictions in quantum chemistry for mass spectra predictions.\n",
+      "name": "End-to-end EI+ mass spectra prediction workflow using QCxMS",
+      "url": "https://workflowhub.eu/workflows/897?version=3",
+      "keywords": "Exposomics, QCxMS, GC-MS, Metabolomics",
+      "version": 3,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/753"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/747"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/752"
+        },
+        {
+          "@id": "#RECETOX%20SpecDat"
+        }
+      ],
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/246"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/262"
+        }
+      ],
+      "dateCreated": "2025-04-28T08:47:44Z",
+      "dateModified": "2025-04-28T08:57:40Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.897.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/897?version=2",
+      "input": [
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Input%20Molecules%20with%20SMILES"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Number%20of%20conformers%20to%20generate"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Optimization%20Levels"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-QC%20Method"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-conformer_output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-XYZ%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-optimized%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-%5B.in%5D%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-%5B.xyz%5D%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-%5B.start%5D%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-res%20output"
+        },
+        {
+          "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-MSP%20output"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "qcxms_v3_diagram.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 198179
+    },
+    {
+      "@id": "#person-753",
+      "@type": "Person",
+      "name": "Zargham Ahmad",
+      "identifier": "https://workflowhub.eu/people/753"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6744-996X",
+      "@type": "Person",
+      "name": "Helge Hecht",
+      "identifier": "https://orcid.org/0000-0001-6744-996X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-7036-9987",
+      "@type": "Person",
+      "name": "Wudmir Rojas",
+      "identifier": "https://orcid.org/0000-0001-7036-9987"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "RECETOX SpecDat"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/753",
+      "@type": "Person",
+      "name": "Zargham Ahmad"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/747",
+      "@type": "Person",
+      "name": "Helge Hecht"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/752",
+      "@type": "Person",
+      "name": "Wudmir Rojas"
+    },
+    {
+      "@id": "#RECETOX SpecDat",
+      "@type": "Person",
+      "name": "RECETOX SpecDat"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/246",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "RECETOX SpecDatRI"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/262",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ELIXIR Metabolomics"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Input Molecules with SMILES",
+      "@type": "FormalParameter",
+      "name": "Input Molecules with SMILES",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Number of conformers to generate",
+      "@type": "FormalParameter",
+      "name": "Number of conformers to generate",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-Optimization Levels",
+      "@type": "FormalParameter",
+      "name": "Optimization Levels",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-inputs-QC Method",
+      "@type": "FormalParameter",
+      "name": "QC Method",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-conformer_output",
+      "@type": "FormalParameter",
+      "name": "conformer_output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-XYZ output",
+      "@type": "FormalParameter",
+      "name": "XYZ output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-optimized output",
+      "@type": "FormalParameter",
+      "name": "optimized output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-[.in] output",
+      "@type": "FormalParameter",
+      "name": "[.in] output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-[.xyz] output",
+      "@type": "FormalParameter",
+      "name": "[.xyz] output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-[.start] output",
+      "@type": "FormalParameter",
+      "name": "[.start] output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-res output",
+      "@type": "FormalParameter",
+      "name": "res output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#end_to_end_ei__mass_spectra_prediction_workflow_using_qcxms-outputs-MSP output",
+      "@type": "FormalParameter",
+      "name": "MSP output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for End-to-end EI+ mass spectra prediction workflow using QCxMS</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/897/ro_crate?version=3" target="_blank">https://workflowhub.eu/workflows/897/ro_crate?version=3</a>
+
+
+  <img src="qcxms_v3_diagram.png" style="width: 100%;"/>
+
+<p>
+  High-Performance Computing (HPC) environments are integral to quantum chemistry and computationally intense research, yet their complexity poses challenges for non-HPC experts. Navigating these environments proves challenging for researchers lacking extensive computational knowledge, hindering efficient use of domain specific research software. The prediction of mass spectra for in silico annotation is therefore inaccessible for many wet lab scientists. Our main goal is to facilitate non-experts in HPC navigate this complexity and make semi-empirical Quantum Chemistry (QC)-based predictions available without needing advanced computational skills. To address this challenge, a comprehensive approach is proposed. We chose specific file formats for storing molecular structures, ensuring compatibility across diverse tools and platforms. The xTB quantum chemistry package for molecular geometry optimization is leveraged for its capability to balance between accuracy and computational cost, making it well-suited for non-HPC focused applications. Integrating QC-based Mass Spectrometry (QCxMS) into Galaxy enables the prediction of mass spectra and offers insights into molecular composition and properties. Our workflow demonstrates the utility of computing spectra using QCxMS along with complementary tools. We also present details of runtime performance metrics for four distinct molecules. This work highlights how non-HPC users can execute these predictions with ease, without requiring advanced computational skills. Additionally, a Docker image is created to encapsulate necessary tools, accompanied by user-friendly wrappers, simplifying the entire process for non-expert users. Within this context, potential improvements are considered, focusing on improving the Conda package for better performance by incorporating Fortran and Intel compiler optimizations. These considerations play a crucial role in refining the proposed methodology, enhancing user experience, and expanding the reach of semi-empirical predictions in quantum chemistry for mass spectra predictions.
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/753" target="_blank">Zargham Ahmad</a>, <a href="https://orcid.org/0000-0001-6744-996X" target="_blank">Helge Hecht</a>, <a href="https://orcid.org/0000-0001-7036-9987" target="_blank">Wudmir Rojas</a>, RECETOX SpecDat</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-End-to-end_EI__mass_spectra_prediction_workflow_using_QCxMS.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-End-to-end_EI__mass_spectra_prediction_workflow_using_QCxMS.ga">End-to-end EI+ mass spectra prediction workflow using QCxMS</a>
+      
+        <br/>Size: 23744 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_qcxms_v3_diagram.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="qcxms_v3_diagram.png">qcxms_v3_diagram.png</a>
+      
+        <br/>Size: 198179 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

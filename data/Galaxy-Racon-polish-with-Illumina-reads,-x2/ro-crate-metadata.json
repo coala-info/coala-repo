@@ -1,0 +1,190 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Racon_polish_with_Illumina_reads_x2.ga"
+      },
+      "datePublished": "2021-11-08 05:50:40 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.228.1",
+      "url": "https://workflowhub.eu/workflows/228/ro_crate?version=1",
+      "name": "Research Object Crate for Racon polish with Illumina reads, x2",
+      "description": "Assembly polishing subworkflow: Racon polishing with short reads\n\nInputs: short reads and assembly (usually pre-polished with other tools first, e.g. Racon + long reads; Medaka)\n\nWorkflow steps: \n* minimap2: short reads (R1 only) are mapped to the assembly =&gt; overlaps.paf. Minimap2 setting is for short reads.\n* overlaps + short reads + assembly =&gt; Racon =&gt; polished assembly 1\n* using polished assembly 1 as input; repeat minimap2 + racon =&gt; polished assembly 2\n* Racon short-read polished assembly =&gt; Fasta statistics\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "sdDatePublished": "2026-03-24 18:08:45 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Racon_polish_with_Illumina_reads_x2.ga"
+        },
+        {
+          "@id": "Racon_polish_with_shortreads.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Racon_polish_with_Illumina_reads_x2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 13895,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Racon_polish_with_shortreads.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Assembly polishing subworkflow: Racon polishing with short reads\n\nInputs: short reads and assembly (usually pre-polished with other tools first, e.g. Racon + long reads; Medaka)\n\nWorkflow steps: \n* minimap2: short reads (R1 only) are mapped to the assembly =&gt; overlaps.paf. Minimap2 setting is for short reads.\n* overlaps + short reads + assembly =&gt; Racon =&gt; polished assembly 1\n* using polished assembly 1 as input; repeat minimap2 + racon =&gt; polished assembly 2\n* Racon short-read polished assembly =&gt; Fasta statistics\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "name": "Racon polish with Illumina reads, x2",
+      "url": "https://workflowhub.eu/workflows/228?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T05:50:40Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.228.1",
+      "input": [
+        {
+          "@id": "#racon_polish_with_illumina_reads__x2-inputs-Assembly%20to%20be%20polished"
+        },
+        {
+          "@id": "#racon_polish_with_illumina_reads__x2-inputs-Illumina%20reads,%20R1,%20in%20fastq.gz%20format"
+        }
+      ],
+      "output": {
+        "@id": "#racon_polish_with_illumina_reads__x2-outputs-Assembly%20polished%20by%20short%20reads%20using%20Racon"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Racon_polish_with_shortreads.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 226509
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_illumina_reads__x2-inputs-Assembly to be polished",
+      "@type": "FormalParameter",
+      "name": "Assembly to be polished",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_illumina_reads__x2-inputs-Illumina reads, R1, in fastq.gz format",
+      "@type": "FormalParameter",
+      "name": "Illumina reads, R1, in fastq.gz format",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#racon_polish_with_illumina_reads__x2-outputs-Assembly polished by short reads using Racon",
+      "@type": "FormalParameter",
+      "name": "Assembly polished by short reads using Racon",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

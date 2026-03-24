@@ -1,0 +1,253 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Synthetic Shaking Workflow (WF7601)",
+      "datePublished": "2025-05-09",
+      "description": "A workflow to produce synthetic shaking simulations for historic events.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": { "@id": "https://orcid.org/0000-0002-8207-1464" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7601.cwl" },
+        { "@id": "DT7601/" },
+        { "@id": "DT7606/" },
+        { "@id": "SS7601" },
+        { "@id": "SS7602" },
+        { "@id": "SS7603" }
+      ],
+      "mainEntity": { "@id": "WF7601.cwl" }
+    },
+    {
+      "@id": "WF7601.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Synthetic Shaking Workflow",
+      "author": [
+        { "@id": "https://ror.org/05a28rw58" },
+        { "@id": "https://ror.org/05sd8tv9" }
+      ],
+      "programmingLanguage": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl" }
+      ],
+      "input": [
+        { "@id": "#DT7601->WF7601.cwl" }
+      ],
+      "output": [
+        { "@id": "#WF7601.cwl->DT7606" }
+      ],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "#DT7601->WF7601.cwl",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "workExample": { "@id": "DT7601/" },
+      "name": "DT7601",
+      "valueRequired": true
+    },
+    {
+      "@id": "#WF7601.cwl->DT7606",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "workExample": { "@id": "DT7606/" },
+      "name": "SHAKE_MAP_LIBRARY",
+      "valueRequired": true
+    },
+    {
+      "@id": "DT7601/",
+      "@type": "Dataset",
+      "name": "Continuous seismic data (waveforms)",
+      "description": "Real-time continuous seismic data transmitted from an array of seismic stations, operated by seismic services.",
+      "license": "https://spdx.org/licenses/CC0-1.0",
+      "url": "https://orfeus.readthedocs.io/en/latest/overview.html",
+      "isPartOf": { "@id": "./" },
+      "creator": [{ "@id": "https://orcid.org/0000-0003-4639-719X" }]
+    },
+    {
+      "@id": "DT7606/",
+      "@type": "Dataset",
+      "name": "Evolutionary shake maps",
+      "description": "Ground motion shake maps calculated at every update to an earthquake data with intervals from minutes to days after the event.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [{ "@id": "https://orcid.org/0000-0003-4639-719X" }]
+    },
+    {
+      "@id": "SS7601",
+      "@type": "SoftwareSourceCode",
+      "name": "Swiss, Italian and European ShakeMap",
+      "description": "ShakeMap®, developed by the U.S. Geological Survey (USGS), facilitates communication of earthquake information beyond just magnitude and location...",
+      "license": "https://spdx.org/licenses/CC0-1.0",
+      "programmingLanguage": ["Python", "C++", "CUDA"],
+      "url": "https://github.com/usgs/shakemap",
+      "creator": [
+        { "@id": "https://orcid.org/0000-0003-2033-4537" },
+        { "@id": "https://orcid.org/0000-0001-8626-2703" },
+        { "@id": "https://orcid.org/0000-0001-8667-8549" },
+        { "@id": "https://orcid.org/0000-0001-6716-8551" },
+        { "@id": "https://orcid.org/0000-0002-6135-1141" },
+        { "@id": "https://orcid.org/0000-0003-4257-7863" },
+        { "@id": "https://orcid.org/0000-0002-9672-7428" }
+    ],
+      "organization": [
+        { "@id": "https://ror.org/05a28rw58" },
+        { "@id": "https://ror.org/05sd8tv9" }
+      ],
+      "isPartOf": { "@id": "./" }
+    },
+    {
+      "@id": "SS7602",
+      "@type": "SoftwareSourceCode",
+      "name": "SeisComP",
+      "description": "A seismological software for data acquisition, processing, distribution and interactive analysis.",
+      "license": "https://spdx.org/licenses/AGPL-3.0-only",
+      "programmingLanguage": ["Python", "C++"],
+      "url": "https://github.com/SeisComP",
+      "creator": [{ "@id": "0000-0003-4639-719X" }],
+      "organization": [{ "@id": "https://ror.org/05a28rw58" }],
+      "isPartOf": { "@id": "./" }
+    },
+    {
+      "@id": "SS7603",
+      "@type": "SoftwareSourceCode",
+      "name": "FinDer",
+      "description": "Finite fault earthquake early warning algorithm",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "programmingLanguage": [],
+      "url": "",
+      "creator": [{ "@id": "0000-0003-4639-719X" }],
+      "organization": [{ "@id": "https://ror.org/05a28rw58" }],
+      "isPartOf": { "@id": "./" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "0000-0003-4639-719X",
+      "@type": "Person",
+      "name": "Maren Böse",
+      "email": "maren.boese@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+     }
+    },
+    {
+      "@id": "0000-0003-2033-4537",
+      "@type": "Person",
+      "name": "Carlo Cauzzi",
+      "email": "carlo.cauzzi@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+     }
+    },
+    {
+      "@id": "0000-0001-8626-2703",
+      "@type": "Person",
+      "name": "John Clinton",
+      "email": "jclinton@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "0000-0001-8667-8549",
+      "@type": "Person",
+      "name": "Philipp Kästli",
+      "email": "kaestli@sed.ethz.ch",
+      "affiliation": {
+        "@id": "https://ror.org/05a28rw58"
+     }
+    },
+    {
+      "@id": "0000-0001-6716-8551",
+      "@type": "Person",
+      "name": "Alberto Michelini",
+      "email": "alberto.michelini@ingv.it",
+      "affiliation": {
+        "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "0000-0002-6135-1141",
+      "@type": "Person",
+      "name": "Licia Faenza",
+      "email": "licia.faenza@ingv.it",
+      "affiliation": {
+        "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "0000-0003-4257-7863",
+      "@type": "Person",
+      "name": "Ilaria Oliveri",
+      "email": "ilaria.oliveri@ingv.it",
+      "affiliation": {
+        "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "0000-0002-9672-7428",
+      "@type": "Person",
+      "name": "Valentino Lauciani",
+      "email": "valentino.lauciani@ingv.it",
+      "affiliation": {
+        "@id": "https://ror.org/05sd8tv9"
+      }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH)"
+    },
+    {
+      "@id": "https://ror.org/05sd8tv9",
+      "@type": "Organization",
+      "name": "Istituto Nazionale di Geofisica e Vulcanologia (INGV)"
+    }
+  ]
+}

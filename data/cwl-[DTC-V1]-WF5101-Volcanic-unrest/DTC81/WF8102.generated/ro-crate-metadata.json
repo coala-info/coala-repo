@@ -1,0 +1,967 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "TODO",
+      "description": "TODO",
+      "license": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.4"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.4"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "WF8102.cwl"
+        },
+        {
+          "@id": "DT810201"
+        },
+        {
+          "@id": "DT810202"
+        },
+        {
+          "@id": "DT810203"
+        },
+        {
+          "@id": "DT810204"
+        },
+        {
+          "@id": "P_phase_threshold"
+        },
+        {
+          "@id": "S_phase_threshold"
+        },
+        {
+          "@id": "blinding"
+        },
+        {
+          "@id": "depth_max"
+        },
+        {
+          "@id": "depth_min"
+        },
+        {
+          "@id": "frequency_range"
+        },
+        {
+          "@id": "lat_max"
+        },
+        {
+          "@id": "lat_min"
+        },
+        {
+          "@id": "lon_max"
+        },
+        {
+          "@id": "lon_min"
+        },
+        {
+          "@id": "model"
+        },
+        {
+          "@id": "model_weights"
+        },
+        {
+          "@id": "network_inventory"
+        },
+        {
+          "@id": "source_rock_density"
+        },
+        {
+          "@id": "source_wave_velocity"
+        },
+        {
+          "@id": "time_window_length"
+        },
+        {
+          "@id": "velocity_model"
+        },
+        {
+          "@id": "waveform_miniseed"
+        },
+        {
+          "@id": "ST810201.cwl"
+        },
+        {
+          "@id": "ST810202.cwl"
+        },
+        {
+          "@id": "ST810203.cwl"
+        },
+        {
+          "@id": "ST810204.cwl"
+        },
+        {
+          "@id": "ST810205.cwl"
+        },
+        {
+          "@id": "ST810206.cwl"
+        },
+        {
+          "@id": "ST810207.cwl"
+        },
+        {
+          "@id": "ST810208.cwl"
+        },
+        {
+          "@id": "ST810209.cwl"
+        },
+        {
+          "@id": "ST810210.cwl"
+        },
+        {
+          "@id": "ST810211.cwl"
+        }
+      ],
+      "mainEntity": {
+        "@id": "WF8102.cwl"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "WF8102.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "creator": {
+        "@id": "TODO"
+      },
+      "programmingLanguage": {
+        "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/#cwl"
+      },
+      "input": [
+        {
+          "@id": "#time_window_length-param"
+        },
+        {
+          "@id": "#depth_min-param"
+        },
+        {
+          "@id": "#network_inventory-param"
+        },
+        {
+          "@id": "#lat_max-param"
+        },
+        {
+          "@id": "#lon_min-param"
+        },
+        {
+          "@id": "#model_weights-param"
+        },
+        {
+          "@id": "#waveform_miniseed-param"
+        },
+        {
+          "@id": "#model-param"
+        },
+        {
+          "@id": "#velocity_model-param"
+        },
+        {
+          "@id": "#depth_max-param"
+        },
+        {
+          "@id": "#source_wave_velocity-param"
+        },
+        {
+          "@id": "#blinding-param"
+        },
+        {
+          "@id": "#P_phase_threshold-param"
+        },
+        {
+          "@id": "#lat_min-param"
+        },
+        {
+          "@id": "#lon_max-param"
+        },
+        {
+          "@id": "#S_phase_threshold-param"
+        },
+        {
+          "@id": "#frequency_range-param"
+        },
+        {
+          "@id": "#source_rock_density-param"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#DT810203-param"
+        },
+        {
+          "@id": "#DT810204-param"
+        },
+        {
+          "@id": "#DT810201-param"
+        },
+        {
+          "@id": "#DT810202-param"
+        }
+      ]
+    },
+    {
+      "@id": "#time_window_length-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "time_window_length"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#depth_min-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "depth_min"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#network_inventory-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "network_inventory"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#lat_max-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "lat_max"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#lon_min-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "lon_min"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#model_weights-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "model_weights"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#waveform_miniseed-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "waveform_miniseed"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#model-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "model"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#velocity_model-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "velocity_model"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#depth_max-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "depth_max"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#source_wave_velocity-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "source_wave_velocity"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#blinding-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "blinding"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#P_phase_threshold-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "P_phase_threshold"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#lat_min-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "lat_min"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#lon_max-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "lon_max"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#S_phase_threshold-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "S_phase_threshold"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#frequency_range-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "frequency_range"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#source_rock_density-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "source_rock_density"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT810203-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT810203"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT810204-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT810204"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT810201-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT810201"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "#DT810202-param",
+      "@type": "FormalParameter",
+      "additionalType": "Dataset",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE"
+      },
+      "description": "TODO",
+      "workExample": {
+        "@id": "DT810202"
+      },
+      "name": "TODO",
+      "valueRequired": true
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "ST810201",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810202",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810203",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810204",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810205",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810206",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810207",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810208",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810209",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810210",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "ST810211",
+      "@type": "SoftwareSourceCode",
+      "name": "TODO",
+      "description": "TODO",
+      "author": {},
+      "license": "",
+      "programmingLanguage": ""
+    },
+    {
+      "@id": "DT810201",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT810201-param"
+      }
+    },
+    {
+      "@id": "DT810202",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT810202-param"
+      }
+    },
+    {
+      "@id": "DT810203",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT810203-param"
+      }
+    },
+    {
+      "@id": "DT810204",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#DT810204-param"
+      }
+    },
+    {
+      "@id": "P_phase_threshold",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#P_phase_threshold-param"
+      }
+    },
+    {
+      "@id": "S_phase_threshold",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#S_phase_threshold-param"
+      }
+    },
+    {
+      "@id": "blinding",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#blinding-param"
+      }
+    },
+    {
+      "@id": "depth_max",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#depth_max-param"
+      }
+    },
+    {
+      "@id": "depth_min",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#depth_min-param"
+      }
+    },
+    {
+      "@id": "frequency_range",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#frequency_range-param"
+      }
+    },
+    {
+      "@id": "lat_max",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#lat_max-param"
+      }
+    },
+    {
+      "@id": "lat_min",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#lat_min-param"
+      }
+    },
+    {
+      "@id": "lon_max",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#lon_max-param"
+      }
+    },
+    {
+      "@id": "lon_min",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#lon_min-param"
+      }
+    },
+    {
+      "@id": "model",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#model-param"
+      }
+    },
+    {
+      "@id": "model_weights",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#model_weights-param"
+      }
+    },
+    {
+      "@id": "network_inventory",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#network_inventory-param"
+      }
+    },
+    {
+      "@id": "source_rock_density",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#source_rock_density-param"
+      }
+    },
+    {
+      "@id": "source_wave_velocity",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#source_wave_velocity-param"
+      }
+    },
+    {
+      "@id": "time_window_length",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#time_window_length-param"
+      }
+    },
+    {
+      "@id": "velocity_model",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#velocity_model-param"
+      }
+    },
+    {
+      "@id": "waveform_miniseed",
+      "@type": "Dataset",
+      "name": "TODO",
+      "abstract": "TODO",
+      "url": "TODO",
+      "author": {
+        "@id": "TODO"
+      },
+      "exampleOfWork": {
+        "@id": "#waveform_miniseed-param"
+      }
+    },
+    {
+      "@id": "TODO",
+      "@type": "Person",
+      "name": "TODO",
+      "affiliation": {
+        "@id": "TODO"
+      }
+    },
+    {
+      "@id": "TODO",
+      "@type": "Organization",
+      "name": "TODO"
+    }
+  ]
+}

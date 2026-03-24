@@ -1,0 +1,336 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "COVID-19: read pre-processing",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Forwards reads"
+                }
+            ],
+            "label": "Forwards reads",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 289.5,
+                "height": 81,
+                "left": -198,
+                "right": 2,
+                "top": 208.5,
+                "width": 200,
+                "x": -198,
+                "y": 208.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d69fc63d-bc3f-476e-ad26-beb8e28317fe",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "772a5a69-5c27-4ce0-ad12-d332af180a6d"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Reverse reads"
+                }
+            ],
+            "label": "Reverse reads",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 629.5,
+                "height": 81,
+                "left": -156,
+                "right": 44,
+                "top": 548.5,
+                "width": 200,
+                "x": -156,
+                "y": 548.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "8f2f7e42-ed22-47f9-b567-a1fb4c331be4",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "2b43472f-c708-4da0-9655-8366f6cf1f88"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "singlePaired|input_mate1": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "singlePaired|input_mate2": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Trim Galore!",
+                    "name": "singlePaired"
+                },
+                {
+                    "description": "runtime parameter for tool Trim Galore!",
+                    "name": "singlePaired"
+                }
+            ],
+            "label": null,
+            "name": "Trim Galore!",
+            "outputs": [
+                {
+                    "name": "trimmed_reads_pair1",
+                    "type": "input"
+                },
+                {
+                    "name": "trimmed_reads_pair2",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 407.5,
+                "height": 232,
+                "left": 100,
+                "right": 300,
+                "top": 175.5,
+                "width": 200,
+                "x": 100,
+                "y": 175.5
+            },
+            "post_job_actions": {
+                "HideDatasetActiontrimmed_reads_pair1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "trimmed_reads_pair1"
+                },
+                "HideDatasetActiontrimmed_reads_pair2": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "trimmed_reads_pair2"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.4.3.1",
+            "tool_shed_repository": {
+                "changeset_revision": "949f01671246",
+                "name": "trim_galore",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"params\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"rrbs\": {\"settingsType\": \"default\", \"__current_case__\": 0}, \"singlePaired\": {\"sPaired\": \"paired\", \"__current_case__\": 1, \"input_mate1\": {\"__class__\": \"RuntimeValue\"}, \"input_mate2\": {\"__class__\": \"RuntimeValue\"}, \"trimming\": {\"trimming_select\": \"\", \"__current_case__\": 0}, \"trim1\": \"false\", \"three_prime_clip_R1\": \"\", \"three_prime_clip_R2\": \"\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.4.3.1",
+            "type": "tool",
+            "uuid": "6fbdfbb0-f025-4779-ba9f-519ec886a251",
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "fastq_input|fastq_input1": {
+                    "id": 2,
+                    "output_name": "trimmed_reads_pair1"
+                },
+                "fastq_input|fastq_input2": {
+                    "id": 2,
+                    "output_name": "trimmed_reads_pair2"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM",
+                    "name": "fastq_input"
+                },
+                {
+                    "description": "runtime parameter for tool Map with BWA-MEM",
+                    "name": "fastq_input"
+                }
+            ],
+            "label": null,
+            "name": "Map with BWA-MEM",
+            "outputs": [
+                {
+                    "name": "bam_output",
+                    "type": "bam"
+                }
+            ],
+            "position": {
+                "bottom": 614,
+                "height": 182,
+                "left": 297.375,
+                "right": 497.375,
+                "top": 432,
+                "width": 200,
+                "x": 297.375,
+                "y": 432
+            },
+            "post_job_actions": {
+                "HideDatasetActionbam_output": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "bam_output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1",
+            "tool_shed_repository": {
+                "changeset_revision": "3fe632431b68",
+                "name": "bwa",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"analysis_type\": {\"analysis_type_selector\": \"illumina\", \"__current_case__\": 0}, \"fastq_input\": {\"fastq_input_selector\": \"paired\", \"__current_case__\": 0, \"fastq_input1\": {\"__class__\": \"RuntimeValue\"}, \"fastq_input2\": {\"__class__\": \"RuntimeValue\"}, \"iset_stats\": \"\"}, \"reference_source\": {\"reference_source_selector\": \"cached\", \"__current_case__\": 0, \"ref_file\": \"hg38\"}, \"rg\": {\"rg_selector\": \"do_not_set\", \"__current_case__\": 3}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.7.17.1",
+            "type": "tool",
+            "uuid": "74ae0c40-45bf-4189-b693-cae4fa441b2e",
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtool_filter2/samtool_filter2/1.8+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input1": {
+                    "id": 3,
+                    "output_name": "bam_output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Filter SAM or BAM, output SAM or BAM",
+                    "name": "bed_file"
+                }
+            ],
+            "label": null,
+            "name": "Filter SAM or BAM, output SAM or BAM",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "sam"
+                }
+            ],
+            "position": {
+                "bottom": 448,
+                "height": 242,
+                "left": 646,
+                "right": 846,
+                "top": 206,
+                "width": 200,
+                "x": 646,
+                "y": 206
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput1": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/samtool_filter2/samtool_filter2/1.8+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "649a225999a5",
+                "name": "samtool_filter2",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"bed_file\": {\"__class__\": \"RuntimeValue\"}, \"flag\": {\"filter\": \"yes\", \"__current_case__\": 1, \"reqBits\": [\"0x0004\", \"0x0008\"], \"skipBits\": null}, \"header\": \"-h\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"library\": \"\", \"mapq\": \"\", \"outputtype\": \"bam\", \"possibly_select_inverse\": \"false\", \"read_group\": \"\", \"regions\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.8+galaxy1",
+            "type": "tool",
+            "uuid": "15318ce2-3415-41bb-9d52-1d8e0bb0d3cb",
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_fastx/samtools_fastx/1.9+galaxy1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output1"
+                }
+            },
+            "inputs": [],
+            "label": "Filtered reads",
+            "name": "Samtools fastx",
+            "outputs": [
+                {
+                    "name": "forward",
+                    "type": "fasta"
+                },
+                {
+                    "name": "reverse",
+                    "type": "fasta"
+                }
+            ],
+            "position": {
+                "bottom": 602.21875,
+                "height": 222,
+                "left": 1040.28125,
+                "right": 1240.28125,
+                "top": 380.21875,
+                "width": 200,
+                "x": 1040.28125,
+                "y": 380.21875
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_fastx/samtools_fastx/1.9+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "a8d69aee190e",
+                "name": "samtools_fastx",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"copy_arb_tags\": \"\", \"copy_tags\": \"false\", \"exclusive_filter\": null, \"exclusive_filter_all\": null, \"idxout_cond\": {\"idxout_select\": \"no\", \"__current_case__\": 0}, \"inclusive_filter\": null, \"input\": {\"__class__\": \"ConnectedValue\"}, \"output_fmt_cond\": {\"output_fmt_select\": \"fastqsanger.gz\", \"__current_case__\": 2, \"default_quality\": \"\", \"output_quality\": \"false\", \"ilumina_casava\": \"false\"}, \"outputs\": [\"r1\", \"r2\"], \"read_numbering\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9+galaxy1",
+            "type": "tool",
+            "uuid": "d7d2ac92-4dd1-48e9-8ec3-841f368ee511",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "reverse",
+                    "uuid": "f49a6928-cc1d-4ba2-8239-c85e14263d33"
+                },
+                {
+                    "label": null,
+                    "output_name": "forward",
+                    "uuid": "9c236d53-a5fd-4c74-b205-205285f8e2b6"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "0b62433b-4c4a-4e21-b29b-36aa6fe2cd39",
+    "version": 3
+}

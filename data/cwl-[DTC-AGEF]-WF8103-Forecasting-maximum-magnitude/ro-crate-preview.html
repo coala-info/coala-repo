@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for [DTC-AGEF] WF8103: Forecasting maximum magnitude</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "WF8103.cwl"
+      },
+      "datePublished": "2025-10-14 10:09:04 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1985?version=1",
+      "url": "https://workflowhub.eu/workflows/1985/ro_crate?version=1",
+      "name": "Research Object Crate for [DTC-AGEF] WF8103: Forecasting maximum magnitude",
+      "description": "The workflow will primarily focus on estimation of the maximum magnitude using various deterministic and statistical models available in the literature. The workflow consists of 5 steps. The first four steps belong to the CB-AGEF1 and ultimately aim at creation of the advanced seismic catalog. The last 5th step (belonging to the CBAGEF3-1) takes the available hydraulic data and advanced seismicity catalog derived in steps 1-4 and performs the actual assessment of the maximum magnitude. Step 1 is an application existing on the platform performing picking of raw waveform data. The output of the Step 1 is passed to the Step 2 (Phase Association module, in development) which gathers the picks from waveform data originating from different stations and performs the coincidence trigger. The output sets of picks are then passed to the 3rd step which performs assessment of earthquake location using the TRMLoc module already available on the EPISODES platform. The information on the location event is then passed to step 4 which uses waveform data and location data to calculate basic source parameters. Steps 1-4 are perpetually performed and provide updates to the advanced seismic catalog. The advanced seismic catalog is then used in Step 5 to perform the assessment of the maximum magnitude. Last 5th step of the workflow is its key element - an application (software module) for the EPISODES platform to compute the maximum magnitude estimates based on the variety of deterministic and probabilistic models available in the literature. The input of the application is catalog data (location, time and magnitude) and hydraulic parameters (time and injection rate). The output data include general info (index and time) of time series, computed parameters as time series (e.g. b-value and seismogenic index), maximum magnitude estimates with corresponding standard errors of estimations and other supplementary parameters (number of events, cumulative fluid injection and seismic efficiency ratio). The maximum magnitude models consist of McGarr (2014), Hallo et al. (2014), Li et al. (2022), van der Elst et al. (2016) and Shapiro et al. (2013). In any model, where the Gutenberg-Richter (GR) b-value is needed there are four possibilities: constant b-value equal to 1, maximum-likelihood estimation assuming (a) the left-hand side truncated exponential (Aki 1965) and (b) the tapered GR (Pareto) frequency-magnitude distribution (Kagan 2002) and ‘b-positive’ estimator of van der Elst (2021). The user can compute simultaneously a maximum magnitude assessment using any combination of four b-values and, for example in van der Elst model, with different confidence levels. The application is at the moment tested on the EPISODES platform and is being implemented to be an official, stand-alone application as well.",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate",
+      "sdDatePublished": "2026-03-24 00:58:22 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "WF8103.cwl"
+        },
+        {
+          "@id": "WF8103.dot"
+        }
+      ]
+    },
+    {
+      "@id": "WF8103.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8103/WF8103.cwl",
+      "contentSize": 2870,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "WF8103.dot"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow will primarily focus on estimation of the maximum magnitude using various deterministic and statistical models available in the literature. The workflow consists of 5 steps. The first four steps belong to the CB-AGEF1 and ultimately aim at creation of the advanced seismic catalog. The last 5th step (belonging to the CBAGEF3-1) takes the available hydraulic data and advanced seismicity catalog derived in steps 1-4 and performs the actual assessment of the maximum magnitude. Step 1 is an application existing on the platform performing picking of raw waveform data. The output of the Step 1 is passed to the Step 2 (Phase Association module, in development) which gathers the picks from waveform data originating from different stations and performs the coincidence trigger. The output sets of picks are then passed to the 3rd step which performs assessment of earthquake location using the TRMLoc module already available on the EPISODES platform. The information on the location event is then passed to step 4 which uses waveform data and location data to calculate basic source parameters. Steps 1-4 are perpetually performed and provide updates to the advanced seismic catalog. The advanced seismic catalog is then used in Step 5 to perform the assessment of the maximum magnitude. Last 5th step of the workflow is its key element - an application (software module) for the EPISODES platform to compute the maximum magnitude estimates based on the variety of deterministic and probabilistic models available in the literature. The input of the application is catalog data (location, time and magnitude) and hydraulic parameters (time and injection rate). The output data include general info (index and time) of time series, computed parameters as time series (e.g. b-value and seismogenic index), maximum magnitude estimates with corresponding standard errors of estimations and other supplementary parameters (number of events, cumulative fluid injection and seismic efficiency ratio). The maximum magnitude models consist of McGarr (2014), Hallo et al. (2014), Li et al. (2022), van der Elst et al. (2016) and Shapiro et al. (2013). In any model, where the Gutenberg-Richter (GR) b-value is needed there are four possibilities: constant b-value equal to 1, maximum-likelihood estimation assuming (a) the left-hand side truncated exponential (Aki 1965) and (b) the tapered GR (Pareto) frequency-magnitude distribution (Kagan 2002) and ‘b-positive’ estimator of van der Elst (2021). The user can compute simultaneously a maximum magnitude assessment using any combination of four b-values and, for example in van der Elst model, with different confidence levels. The application is at the moment tested on the EPISODES platform and is being implemented to be an official, stand-alone application as well.",
+      "name": "[DTC-AGEF] WF8103: Forecasting maximum magnitude",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/182"
+      },
+      "dateCreated": "2025-10-14T09:09:48Z",
+      "dateModified": "2025-10-15T10:50:49Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-P_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-S_phase_threshold"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-blinding"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-depth_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-depth_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-frequency_range"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lat_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lat_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lon_max"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lon_min"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-model_weights"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-network_inventory"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-source_rock_density"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-source_wave_velocity"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-time_window_length"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-velocity_model"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-waveform_miniseed"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810401"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810402"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810403"
+        },
+        {
+          "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810404"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "WF8103.dot",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC81/WF8103/WF8103.dot",
+      "contentSize": 6605
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/182",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP8 - Anthropogenic geophysical extremes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-P_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "P_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-S_phase_threshold",
+      "@type": "FormalParameter",
+      "name": "S_phase_threshold",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-blinding",
+      "@type": "FormalParameter",
+      "name": "blinding",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-depth_max",
+      "@type": "FormalParameter",
+      "name": "depth_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-depth_min",
+      "@type": "FormalParameter",
+      "name": "depth_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-frequency_range",
+      "@type": "FormalParameter",
+      "name": "frequency_range",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lat_max",
+      "@type": "FormalParameter",
+      "name": "lat_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lat_min",
+      "@type": "FormalParameter",
+      "name": "lat_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lon_max",
+      "@type": "FormalParameter",
+      "name": "lon_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-lon_min",
+      "@type": "FormalParameter",
+      "name": "lon_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-model",
+      "@type": "FormalParameter",
+      "name": "model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-model_weights",
+      "@type": "FormalParameter",
+      "name": "model_weights",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-network_inventory",
+      "@type": "FormalParameter",
+      "name": "network_inventory",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-source_rock_density",
+      "@type": "FormalParameter",
+      "name": "source_rock_density",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-source_wave_velocity",
+      "@type": "FormalParameter",
+      "name": "source_wave_velocity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-time_window_length",
+      "@type": "FormalParameter",
+      "name": "time_window_length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-velocity_model",
+      "@type": "FormalParameter",
+      "name": "velocity_model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-inputs-waveform_miniseed",
+      "@type": "FormalParameter",
+      "name": "waveform_miniseed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810401",
+      "@type": "FormalParameter",
+      "name": "DT810401",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810402",
+      "@type": "FormalParameter",
+      "name": "DT810402",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810403",
+      "@type": "FormalParameter",
+      "name": "DT810403",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_agef__wf8103__forecasting_maximum_magnitude-outputs-DT810404",
+      "@type": "FormalParameter",
+      "name": "DT810404",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for [DTC-AGEF] WF8103: Forecasting maximum magnitude</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1985/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1985/ro_crate?version=1</a>
+
+
+  <img src="WF8103.dot" style="width: 100%;"/>
+
+<p>
+  The workflow will primarily focus on estimation of the maximum magnitude using various deterministic and statistical models available in the literature. The workflow consists of 5 steps. The first four steps belong to the CB-AGEF1 and ultimately aim at creation of the advanced seismic catalog. The last 5th step (belonging to the CBAGEF3-1) takes the available hydraulic data and advanced seismicity catalog derived in steps 1-4 and performs the actual assessment of the maximum magnitude. Step 1 is an application existing on the platform performing picking of raw waveform data. The output of the Step 1 is passed to the Step 2 (Phase Association module, in development) which gathers the picks from waveform data originating from different stations and performs the coincidence trigger. The output sets of picks are then passed to the 3rd step which performs assessment of earthquake location using the TRMLoc module already available on the EPISODES platform. The information on the location event is then passed to step 4 which uses waveform data and location data to calculate basic source parameters. Steps 1-4 are perpetually performed and provide updates to the advanced seismic catalog. The advanced seismic catalog is then used in Step 5 to perform the assessment of the maximum magnitude. Last 5th step of the workflow is its key element - an application (software module) for the EPISODES platform to compute the maximum magnitude estimates based on the variety of deterministic and probabilistic models available in the literature. The input of the application is catalog data (location, time and magnitude) and hydraulic parameters (time and injection rate). The output data include general info (index and time) of time series, computed parameters as time series (e.g. b-value and seismogenic index), maximum magnitude estimates with corresponding standard errors of estimations and other supplementary parameters (number of events, cumulative fluid injection and seismic efficiency ratio). The maximum magnitude models consist of McGarr (2014), Hallo et al. (2014), Li et al. (2022), van der Elst et al. (2016) and Shapiro et al. (2013). In any model, where the Gutenberg-Richter (GR) b-value is needed there are four possibilities: constant b-value equal to 1, maximum-likelihood estimation assuming (a) the left-hand side truncated exponential (Aki 1965) and (b) the tapered GR (Pareto) frequency-magnitude distribution (Kagan 2002) and ‘b-positive’ estimator of van der Elst (2021). The user can compute simultaneously a maximum magnitude assessment using any combination of four b-values and, for example in van der Elst model, with different confidence levels. The application is at the moment tested on the EPISODES platform and is being implemented to be an official, stand-alone application as well.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_WF8103.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="WF8103.cwl">[DTC-AGEF] WF8103: Forecasting maximum magnitude</a>
+      
+        <br/>Size: 2870 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_WF8103.dot">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="WF8103.dot">WF8103.dot</a>
+      
+        <br/>Size: 6605 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

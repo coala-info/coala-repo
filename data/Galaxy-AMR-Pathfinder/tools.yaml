@@ -1,0 +1,104 @@
+install_tool_dependencies: True
+install_repository_dependencies: True
+install_resolver_dependencies: True
+
+tools:
+- name: collection_element_identifiers
+  owner: iuc
+  revisions:
+  - d3c07d270a50
+  tool_panel_section_label: Collection Operations
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: shovill
+  owner: iuc
+  revisions:
+  - ad80238462c1
+  tool_panel_section_label: Assembly
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: srst2
+  owner: nml
+  revisions:
+  - e59fdf6145db
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: abritamr
+  owner: iuc
+  revisions:
+  - e909d3bc4687
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: amrfinderplus
+  owner: iuc
+  revisions:
+  - 7844dbe4f8e2
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: text_processing
+  owner: bgruening
+  revisions:
+  - d698c222f354
+  - f46f0e4f75c4
+  tool_panel_section_label: Text Manipulation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: rgi
+  owner: card
+  revisions:
+  - 84bd24ac33fd
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: abricate
+  owner: iuc
+  revisions:
+  - c2ef298da409
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: staramr
+  owner: nml
+  revisions:
+  - 3b22de20bd4b
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: hamronize_tool
+  owner: iuc
+  revisions:
+  - cbfa52c8f1ef
+  - 41c7e03b3eab
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: collapse_collections
+  owner: nml
+  revisions:
+  - 90981f86000f
+  tool_panel_section_label: Collection Operations
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: hamronize_summarize
+  owner: iuc
+  revisions:
+  - 243c87f34f39
+  - 88045b4d5597
+  tool_panel_section_label: Metagenomic Analysis
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: split_file_on_column
+  owner: bgruening
+  revisions:
+  - b60f2452580e
+  tool_panel_section_label: Collection Operations
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: concatenate_multiple_datasets
+  owner: artbio
+  revisions:
+  - 5b1b635232ed
+  tool_panel_section_label: Text Manipulation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: datamash_ops
+  owner: iuc
+  revisions:
+  - 4c07ddedc198
+  tool_panel_section_label: Join, Subtract and Group
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/
+- name: reshape2_cast
+  owner: iuc
+  revisions:
+  - d3b66a3a08ca
+  tool_panel_section_label: Text Manipulation
+  tool_shed_url: https://toolshed.g2.bx.psu.edu/

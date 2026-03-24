@@ -1,0 +1,291 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Assess_genome_quality.ga"
+      },
+      "datePublished": "2021-11-08 06:03:05 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.229.1",
+      "url": "https://workflowhub.eu/workflows/229/ro_crate?version=1",
+      "name": "Research Object Crate for Assess genome quality",
+      "description": "Assess genome quality; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Assesses the quality of the genome assembly: generate some statistics and determine if expected genes are present; align contigs to a reference genome.\n* Inputs: polished assembly;  reference_genome.fasta (e.g. of a closely-related species, if available). \n* Outputs:  Busco table of genes found; Quast HTML report, and link to Icarus contigs browser,  showing contigs aligned to a reference genome\n* Tools used: Busco, Quast\n* Input parameters: None required\n\nWorkflow steps: \n\nPolished assembly =&gt; Busco\n* First: predict genes in the assembly: using Metaeuk\n* Second: compare the set of predicted genes to the set of expected genes in a particular lineage. Default setting for lineage: Eukaryota\n\nPolished assembly and a reference genome =&gt; Quast\n* Contigs/scaffolds file: polished assembly\n* Type of assembly: Genome\n* Use a reference genome: Yes\n* Reference genome: Arabidopsis genome\n* Is the genome large (&gt; 100Mbp)? Yes. \n* All other settings as defaults, except second last setting: Distinguish contigs with more than 50% unaligned bases as a separate group of contigs?: change to No\n\nOptions\n\nGene prediction: \n* Change tool used by Busco to predict genes in the assembly: instead of Metaeuk, use Augustus. \n* To do this: select: Use Augustus; Use another predefined species model; then choose from the drop down list.\n* Select from a database of trained species models. list here:  https://github.com/Gaius-Augustus/Augustus/tree/master/config/species\n* Note: if using Augustus: it may fail if the input assembly is too small (e.g. a test-size data assembly). It can't do the training part properly. \n\nCompare genes found to other lineage: \n* Busco has databases of lineages and their expected genes. Option to change lineage. \n* Not all lineages are available - there is a mix of broader and narrower lineages. - list of lineages here: https://busco.ezlab.org/list_of_lineages.html. \n* To see the groups in taxonomic hierarchies: Eukaryotes:  https://busco.ezlab.org/frames/euka.htm\n* For example,  if you have a plant species from Fabales, you could set that as the lineage. \n* The narrower the taxonomic group, the more total genes are expected. \n\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n",
+      "sdDatePublished": "2026-03-24 18:07:48 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Assess_genome_quality.ga"
+        },
+        {
+          "@id": "Assess_genome.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Assess_genome_quality.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 10556,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Assess_genome.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Assess genome quality; can run alone or as part of a combined workflow for large genome assembly. \n\n* What it does: Assesses the quality of the genome assembly: generate some statistics and determine if expected genes are present; align contigs to a reference genome.\n* Inputs: polished assembly;  reference_genome.fasta (e.g. of a closely-related species, if available). \n* Outputs:  Busco table of genes found; Quast HTML report, and link to Icarus contigs browser,  showing contigs aligned to a reference genome\n* Tools used: Busco, Quast\n* Input parameters: None required\n\nWorkflow steps: \n\nPolished assembly =&gt; Busco\n* First: predict genes in the assembly: using Metaeuk\n* Second: compare the set of predicted genes to the set of expected genes in a particular lineage. Default setting for lineage: Eukaryota\n\nPolished assembly and a reference genome =&gt; Quast\n* Contigs/scaffolds file: polished assembly\n* Type of assembly: Genome\n* Use a reference genome: Yes\n* Reference genome: Arabidopsis genome\n* Is the genome large (&gt; 100Mbp)? Yes. \n* All other settings as defaults, except second last setting: Distinguish contigs with more than 50% unaligned bases as a separate group of contigs?: change to No\n\nOptions\n\nGene prediction: \n* Change tool used by Busco to predict genes in the assembly: instead of Metaeuk, use Augustus. \n* To do this: select: Use Augustus; Use another predefined species model; then choose from the drop down list.\n* Select from a database of trained species models. list here:  https://github.com/Gaius-Augustus/Augustus/tree/master/config/species\n* Note: if using Augustus: it may fail if the input assembly is too small (e.g. a test-size data assembly). It can't do the training part properly. \n\nCompare genes found to other lineage: \n* Busco has databases of lineages and their expected genes. Option to change lineage. \n* Not all lineages are available - there is a mix of broader and narrower lineages. - list of lineages here: https://busco.ezlab.org/list_of_lineages.html. \n* To see the groups in taxonomic hierarchies: Eukaryotes:  https://busco.ezlab.org/frames/euka.htm\n* For example,  if you have a plant species from Fabales, you could set that as the lineage. \n* The narrower the taxonomic group, the more total genes are expected. \n\n\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)\n",
+      "name": "Assess genome quality",
+      "url": "https://workflowhub.eu/workflows/229?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T06:03:05Z",
+      "dateModified": "2023-01-30T18:21:31Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.229.1",
+      "input": [
+        {
+          "@id": "#assess_genome_quality-inputs-Polished%20assembly"
+        },
+        {
+          "@id": "#assess_genome_quality-inputs-Reference%20genome"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#assess_genome_quality-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Busco%20summary%20image"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Busco%20short%20summary"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Quast%20on%20input%20dataset(s):%20Log"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Quast%20on%20input%20dataset(s):%20%20PDF%20report"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Quast%20on%20input%20dataset(s):%20tabular%20report"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-Quast%20on%20input%20dataset(s):%20%20HTML%20report"
+        },
+        {
+          "@id": "#assess_genome_quality-outputs-_anonymous_output_4"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Assess_genome.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 159462
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-inputs-Polished assembly",
+      "@type": "FormalParameter",
+      "name": "Polished assembly",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-inputs-Reference genome",
+      "@type": "FormalParameter",
+      "name": "Reference genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Busco summary image",
+      "@type": "FormalParameter",
+      "name": "Busco summary image",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Busco short summary",
+      "@type": "FormalParameter",
+      "name": "Busco short summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Quast on input dataset(s): Log",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s): Log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Quast on input dataset(s):  PDF report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s):  PDF report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Quast on input dataset(s): tabular report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s): tabular report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-Quast on input dataset(s):  HTML report",
+      "@type": "FormalParameter",
+      "name": "Quast on input dataset(s):  HTML report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#assess_genome_quality-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

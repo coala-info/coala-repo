@@ -1,0 +1,272 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy_Workflow_MsFinder_Workflow_GOLM_V2.ga"
+      },
+      "datePublished": "2024-06-06 14:56:54 +0100",
+      "author": [
+        {
+          "@id": "#person-753"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-6744-996X"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-5691-7000"
+        },
+        {
+          "@id": "#creator-1"
+        },
+        {
+          "@id": "#creator-2"
+        },
+        {
+          "@id": "#creator-3"
+        },
+        {
+          "@id": "#creator-4"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.888.2",
+      "url": "https://workflowhub.eu/workflows/888/ro_crate?version=2",
+      "name": "Research Object Crate for Theoretical fragment substructure generation and in silico mass spectral library high-resolution upcycling workflow",
+      "description": "# Galaxy Workflow Documentation: MS Finder Pipeline\n\nThis document outlines a MSFinder Galaxy workflow designed for peak annotation. The workflow consists of several steps aimed at preprocessing MS data, filtering, enhancing, and running MSFinder.\n\n## Step 1: Data Collection and Preprocessing\nCollect if the inchi and smiles are missing from the dataset, and subsequently filter out the spectra which are missing inchi and smiles.\n\n### 1.1 MSMetaEnhancer: Collect InChi, Isomeric_smiles, and Nominal_mass\n- Utilizes MSMetaEnhancer to collect InChi and Isomeric_smiles using PubChem and IDSM databases.\n- Utilizes MSMetaEnhancer to collect MW using RDkit (For GOLM).\n\n### 1.2 replace key\n- replace isomeric_smiles key to smiles using replace text tool\n- replace MW key to parent_mass using replace text tool (For GOLM)\n\n### 1.3 Matchms Filtering\n- Filters out invalid SMILES and InChi from the dataset using Matchms filtering.\n\n## Step 2: Complex Removal and Subsetting Dataset\nRemoves coordination complexes from the dataset.\n\n### 2.1 Remove Complexes and Subset Data\n- Removes complexes from the dataset.\n- Exports metadata using Matchms metadata export, cuts the SMILES column, removes complexes using Rem_Complex tool, and updates the dataset using Matchms subsetting.\n\n## Step 3: Data Key Manipulation\nAdd missing metadata required by the MSFinder for annotation.\n\n### 3.1 Matchms Remove Key\n- Removes existing keys such as adduct, charge, and ionmode from the dataset.\n\n### 3.2 Matchms Add Key\n- Adds necessary keys like charge, ionmode, and adduct to the dataset.\n\n### 3.3 Matchms Filtering\n- Derives precursor m/z using parent mass and adduct information using matchms filtering.\n\n### 3.4 Matchms Convert\n- Converts the dataset to Riken format for compatibility with MSFinder using matchms convert.\n\n## Step 4: Peak Annotation\n### 4.1 Recetox-MSFinder\n- Executes MSFinder with a 0.5 Da tolerance for both MS1 and MS2, including all element checks and an extended range for peak annotation.\n\n## Step 5: Error Handling and Refinement\nCheck the MSFinder output to see if the output is the results or the log file. If the output is log file remove the smile from the dataset using matchms subsetting tool and rerun MSFinder.\n\n### 5.1 Error Handling\n- Handles errors in peak annotation by removing SMILES that are not accepted by MSFinder.\n- Reruns MSFinder after error correction or with different parameter (if applicable).\n\n## Step 6: High-res Annotation\n### 6.1 High-Res Peak Overwriting\n- Utilizes the Use_Theoretical_mz_Annotations tool to Overwrite experimentally measured mz values for peaks with theoretical values from peak comments.\n",
+      "isBasedOn": "https://github.com/RECETOX/workflow-testing/blob/main/msfinder_workflow/Galaxy_Workflow_MsFinder_Workflow_GOLM_V2.ga",
+      "sdDatePublished": "2026-03-24 17:46:24 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy_Workflow_MsFinder_Workflow_GOLM_V2.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy_Workflow_MsFinder_Workflow_GOLM_V2.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 41205,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Galaxy Workflow Documentation: MS Finder Pipeline\n\nThis document outlines a MSFinder Galaxy workflow designed for peak annotation. The workflow consists of several steps aimed at preprocessing MS data, filtering, enhancing, and running MSFinder.\n\n## Step 1: Data Collection and Preprocessing\nCollect if the inchi and smiles are missing from the dataset, and subsequently filter out the spectra which are missing inchi and smiles.\n\n### 1.1 MSMetaEnhancer: Collect InChi, Isomeric_smiles, and Nominal_mass\n- Utilizes MSMetaEnhancer to collect InChi and Isomeric_smiles using PubChem and IDSM databases.\n- Utilizes MSMetaEnhancer to collect MW using RDkit (For GOLM).\n\n### 1.2 replace key\n- replace isomeric_smiles key to smiles using replace text tool\n- replace MW key to parent_mass using replace text tool (For GOLM)\n\n### 1.3 Matchms Filtering\n- Filters out invalid SMILES and InChi from the dataset using Matchms filtering.\n\n## Step 2: Complex Removal and Subsetting Dataset\nRemoves coordination complexes from the dataset.\n\n### 2.1 Remove Complexes and Subset Data\n- Removes complexes from the dataset.\n- Exports metadata using Matchms metadata export, cuts the SMILES column, removes complexes using Rem_Complex tool, and updates the dataset using Matchms subsetting.\n\n## Step 3: Data Key Manipulation\nAdd missing metadata required by the MSFinder for annotation.\n\n### 3.1 Matchms Remove Key\n- Removes existing keys such as adduct, charge, and ionmode from the dataset.\n\n### 3.2 Matchms Add Key\n- Adds necessary keys like charge, ionmode, and adduct to the dataset.\n\n### 3.3 Matchms Filtering\n- Derives precursor m/z using parent mass and adduct information using matchms filtering.\n\n### 3.4 Matchms Convert\n- Converts the dataset to Riken format for compatibility with MSFinder using matchms convert.\n\n## Step 4: Peak Annotation\n### 4.1 Recetox-MSFinder\n- Executes MSFinder with a 0.5 Da tolerance for both MS1 and MS2, including all element checks and an extended range for peak annotation.\n\n## Step 5: Error Handling and Refinement\nCheck the MSFinder output to see if the output is the results or the log file. If the output is log file remove the smile from the dataset using matchms subsetting tool and rerun MSFinder.\n\n### 5.1 Error Handling\n- Handles errors in peak annotation by removing SMILES that are not accepted by MSFinder.\n- Reruns MSFinder after error correction or with different parameter (if applicable).\n\n## Step 6: High-res Annotation\n### 6.1 High-Res Peak Overwriting\n- Utilizes the Use_Theoretical_mz_Annotations tool to Overwrite experimentally measured mz values for peaks with theoretical values from peak comments.\n",
+      "name": "Theoretical fragment substructure generation and in silico mass spectral library high-resolution upcycling workflow",
+      "url": "https://workflowhub.eu/workflows/888?version=2",
+      "keywords": "Bioinformatics, Cheminformatics, Metabolomics",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/753"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/747"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/751"
+        },
+        {
+          "@id": "#Research%20Infrastructure%20RECETOX%20RI%20(No%20LM2018121)%20financed%20by%20the%20Ministry%20of%20Education"
+        },
+        {
+          "@id": "#Youth%20and%20Sports"
+        },
+        {
+          "@id": "#and%20Operational%20Programme%20Research"
+        },
+        {
+          "@id": "#Development%20and%20Innovation%20-%20project%20CETOCOEN%20EXCELLENCE%20(No%20CZ.02.1.01/0.0/0.0/17_043/0009632)."
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/246"
+      },
+      "dateCreated": "2024-06-06T10:18:12Z",
+      "dateModified": "2024-06-19T09:35:34Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.888.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/888?version=1",
+      "input": {
+        "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-inputs-Spectral%20library%20file"
+      },
+      "output": [
+        {
+          "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-converted_library"
+        },
+        {
+          "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-output"
+        },
+        {
+          "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-_anonymous_output_1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#person-753",
+      "@type": "Person",
+      "name": "Zargham Ahmad",
+      "identifier": "https://workflowhub.eu/people/753"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6744-996X",
+      "@type": "Person",
+      "name": "Helge Hecht",
+      "identifier": "https://orcid.org/0000-0001-6744-996X"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-5691-7000",
+      "@type": "Person",
+      "name": "Elliott J. Price",
+      "identifier": "https://orcid.org/0000-0001-5691-7000"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Research Infrastructure RECETOX RI (No LM2018121) financed by the Ministry of Education"
+    },
+    {
+      "@id": "#creator-2",
+      "@type": "Person",
+      "name": "Youth and Sports"
+    },
+    {
+      "@id": "#creator-3",
+      "@type": "Person",
+      "name": "and Operational Programme Research"
+    },
+    {
+      "@id": "#creator-4",
+      "@type": "Person",
+      "name": "Development and Innovation - project CETOCOEN EXCELLENCE (No CZ.02.1.01/0.0/0.0/17_043/0009632)."
+    },
+    {
+      "@id": "https://workflowhub.eu/people/753",
+      "@type": "Person",
+      "name": "Zargham Ahmad"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/747",
+      "@type": "Person",
+      "name": "Helge Hecht"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/751",
+      "@type": "Person",
+      "name": "Elliott J. Price"
+    },
+    {
+      "@id": "#Research Infrastructure RECETOX RI (No LM2018121) financed by the Ministry of Education",
+      "@type": "Person",
+      "name": "Research Infrastructure RECETOX RI (No LM2018121) financed by the Ministry of Education"
+    },
+    {
+      "@id": "#Youth and Sports",
+      "@type": "Person",
+      "name": "Youth and Sports"
+    },
+    {
+      "@id": "#and Operational Programme Research",
+      "@type": "Person",
+      "name": "and Operational Programme Research"
+    },
+    {
+      "@id": "#Development and Innovation - project CETOCOEN EXCELLENCE (No CZ.02.1.01/0.0/0.0/17_043/0009632).",
+      "@type": "Person",
+      "name": "Development and Innovation - project CETOCOEN EXCELLENCE (No CZ.02.1.01/0.0/0.0/17_043/0009632)."
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/246",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "RECETOX SpecDatRI"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-inputs-Spectral library file",
+      "@type": "FormalParameter",
+      "name": "Spectral library file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-converted_library",
+      "@type": "FormalParameter",
+      "name": "converted_library",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#theoretical_fragment_substructure_generation_and_in_silico_mass_spectral_library_high_resolution_upcycling_workflow-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

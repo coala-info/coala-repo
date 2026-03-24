@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Source halo</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Source_halo(1).ga"
+      },
+      "datePublished": "2025-02-02 08:15:05 +0000",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1267?version=1",
+      "url": "https://workflowhub.eu/workflows/1267/ro_crate?version=1",
+      "name": "Research Object Crate for Source halo",
+      "description": "Calculate extended gamma-ray source halo using crbeam simulation",
+      "sdDatePublished": "2026-03-24 17:38:00 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Source_halo(1).ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Source_halo(1).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 39175,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Calculate extended gamma-ray source halo using crbeam simulation",
+      "name": "Source halo",
+      "url": "https://workflowhub.eu/workflows/1267?version=1",
+      "keywords": "astronomy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/305"
+      },
+      "dateCreated": "2025-02-02T08:20:04Z",
+      "dateModified": "2025-02-02T08:20:04Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#source_halo-inputs-%23main/Dec"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/EmaxSource"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/Emin"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/EminSource"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/IGMF"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/IGMF%20Lmax"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/N"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/RA"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/ThetaMax"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/ThetaMin"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/gamma"
+        },
+        {
+          "@id": "#source_halo-inputs-%23main/redshift"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#source_halo-outputs-%23main/mc_data"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/mc_fits"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/primary"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/ra_dec_weight"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/ring"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/sec_w_dec"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/sec_w_ra"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/sec_w_theta_min"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/sec_w_theta_min_max"
+        },
+        {
+          "@id": "#source_halo-outputs-%23main/secondary"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/305",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Astroparticle Lab"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/Dec",
+      "@type": "FormalParameter",
+      "name": "#main/Dec",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/EmaxSource",
+      "@type": "FormalParameter",
+      "name": "#main/EmaxSource",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/Emin",
+      "@type": "FormalParameter",
+      "name": "#main/Emin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/EminSource",
+      "@type": "FormalParameter",
+      "name": "#main/EminSource",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/IGMF",
+      "@type": "FormalParameter",
+      "name": "#main/IGMF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/IGMF Lmax",
+      "@type": "FormalParameter",
+      "name": "#main/IGMF Lmax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/N",
+      "@type": "FormalParameter",
+      "name": "#main/N",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/RA",
+      "@type": "FormalParameter",
+      "name": "#main/RA",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/ThetaMax",
+      "@type": "FormalParameter",
+      "name": "#main/ThetaMax",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/ThetaMin",
+      "@type": "FormalParameter",
+      "name": "#main/ThetaMin",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/gamma",
+      "@type": "FormalParameter",
+      "name": "#main/gamma",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-inputs-#main/redshift",
+      "@type": "FormalParameter",
+      "name": "#main/redshift",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/mc_data",
+      "@type": "FormalParameter",
+      "name": "#main/mc_data",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/mc_fits",
+      "@type": "FormalParameter",
+      "name": "#main/mc_fits",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/primary",
+      "@type": "FormalParameter",
+      "name": "#main/primary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/ra_dec_weight",
+      "@type": "FormalParameter",
+      "name": "#main/ra_dec_weight",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/ring",
+      "@type": "FormalParameter",
+      "name": "#main/ring",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/sec_w_dec",
+      "@type": "FormalParameter",
+      "name": "#main/sec_w_dec",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/sec_w_ra",
+      "@type": "FormalParameter",
+      "name": "#main/sec_w_ra",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/sec_w_theta_min",
+      "@type": "FormalParameter",
+      "name": "#main/sec_w_theta_min",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/sec_w_theta_min_max",
+      "@type": "FormalParameter",
+      "name": "#main/sec_w_theta_min_max",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#source_halo-outputs-#main/secondary",
+      "@type": "FormalParameter",
+      "name": "#main/secondary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Source halo</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1267/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1267/ro_crate?version=1</a>
+
+
+<p>
+  Calculate extended gamma-ray source halo using crbeam simulation
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Source_halo(1).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Source_halo(1).ga">Source halo</a>
+      
+        <br/>Size: 39175 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

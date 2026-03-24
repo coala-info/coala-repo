@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Genetic Design</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Genetic_Design.ga"
+      },
+      "datePublished": "2020-05-29 11:05:20 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9984-4689"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/23?version=1",
+      "url": "https://workflowhub.eu/workflows/23/ro_crate?version=1",
+      "name": "Research Object Crate for Genetic Design",
+      "description": "This workflow converts the top-ranking predicted pathways from the \"RetroSynthesis\" and \"Pathway Analysis\" workflows to plasmids intended to be expressed in the specified organism",
+      "isBasedOn": "https://galaxy-synbiocad.org/u/mdulac/w/genetic-design-1",
+      "sdDatePublished": "2026-03-24 18:13:52 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Genetic_Design.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Genetic_Design.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9991,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow converts the top-ranking predicted pathways from the \"RetroSynthesis\" and \"Pathway Analysis\" workflows to plasmids intended to be expressed in the specified organism",
+      "name": "Genetic Design",
+      "url": "https://workflowhub.eu/workflows/23?version=1",
+      "keywords": "Retrosynthesis, genetic design, pathway prediction",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/18"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/1"
+      },
+      "dateCreated": "2020-05-29T10:05:20Z",
+      "dateModified": "2023-01-16T13:41:35Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#genetic_design-inputs-GEM%20SBML"
+        },
+        {
+          "@id": "#genetic_design-inputs-List%20of%20genetic%20parts"
+        },
+        {
+          "@id": "#genetic_design-inputs-Max%20(UNIPROT)%20enzymes%20per%20reactions"
+        },
+        {
+          "@id": "#genetic_design-inputs-Top%20pathways%20to%20convert%20to%20SBOL"
+        },
+        {
+          "@id": "#genetic_design-inputs-rpSBML%20TAR"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#genetic_design-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#genetic_design-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#genetic_design-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#genetic_design-outputs-Pathway%20SBOLs"
+        },
+        {
+          "@id": "#genetic_design-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#genetic_design-outputs-_anonymous_output_10"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9984-4689",
+      "@type": "Person",
+      "name": "Melchior du Lac",
+      "identifier": "https://orcid.org/0000-0002-9984-4689"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/18",
+      "@type": "Person",
+      "name": "Melchior du Lac"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/1",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "IBISBA Workflows"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#genetic_design-inputs-GEM SBML",
+      "@type": "FormalParameter",
+      "name": "GEM SBML",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-inputs-List of genetic parts",
+      "@type": "FormalParameter",
+      "name": "List of genetic parts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-inputs-Max (UNIPROT) enzymes per reactions",
+      "@type": "FormalParameter",
+      "name": "Max (UNIPROT) enzymes per reactions",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-inputs-Top pathways to convert to SBOL",
+      "@type": "FormalParameter",
+      "name": "Top pathways to convert to SBOL",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-inputs-rpSBML TAR",
+      "@type": "FormalParameter",
+      "name": "rpSBML TAR",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-Pathway SBOLs",
+      "@type": "FormalParameter",
+      "name": "Pathway SBOLs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genetic_design-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Genetic Design</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/23/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/23/ro_crate?version=1</a>
+
+
+<p>
+  This workflow converts the top-ranking predicted pathways from the "RetroSynthesis" and "Pathway Analysis" workflows to plasmids intended to be expressed in the specified organism
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9984-4689" target="_blank">Melchior du Lac</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Genetic_Design.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Genetic_Design.ga">Genetic Design</a>
+      
+        <br/>Size: 9991 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

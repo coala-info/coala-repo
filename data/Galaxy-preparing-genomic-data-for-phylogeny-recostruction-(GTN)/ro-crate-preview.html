@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>preparing genomic data for phylogeny recostruction (GTN)</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://training.galaxyproject.org/training-material/topics/ecology/tutorials/phylogeny-data-prep/workflows/main_workflow.html"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "https://training.galaxyproject.org/training-material/topics/ecology/tutorials/phylogeny-data-prep/workflows/main_workflow.html",
+      "@type": "Dataset",
+      "name": "preparing genomic data for phylogeny recostruction (GTN)",
+      "description": "This workflow begins from a set of genome assemblies of different samples, strains, species. The genome is first annotated with Funnanotate. Predicted proteins are furtner annotated with Busco. Next, 'ProteinOrtho' finds orthologs across the samples and makes orthogroups. Orthogroups where all samples are represented are extracted. Orthologs in each orthogroup are aligned with ClustalW. The alignments are cleaned with ClipKIT and the concatenation matrix is built using PhyKit. This can be used for phylogeny reconstruction.\n\n## Associated Tutorial\n\nThis workflows is part of the tutorial [Preparing genomic data for phylogeny reconstruction](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/phylogeny-data-prep/tutorial.html), available in the [GTN](https://training.galaxyproject.org)\n\n\n\n\n\n## Thanks to...\n\n**Workflow Author(s)**: Miguel Roncoroni\n\n**Tutorial Author(s)**: [Miguel Roncoroni](https://training.galaxyproject.org/training-material/hall-of-fame/roncoronimiguel/), [Brigida Gallone](https://training.galaxyproject.org/training-material/hall-of-fame/brigidagallone/)\n\n[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)",
+      "version": "1.0",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "datePublished": "2025-06-02T09:46:40.929+00:00",
+      "mainEntity": {
+        "@id": "main-workflow.ga"
+      },
+      "hasPart": [
+        {
+          "@id": "main-workflow.ga"
+        },
+        {
+          "@id": "graph.png"
+        }
+      ]
+    },
+    {
+      "@id": "main-workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "author": [
+        {
+          "@id": "#247d32ca-b1ba-4c4d-9323-4603893c8266"
+        }
+      ],
+      "name": "preparing genomic data for phylogeny recostruction (GTN)",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "image": {
+        "@id": "graph.png"
+      }
+    },
+    {
+      "@id": "graph.png",
+      "@type": [
+        "File",
+        "ImageObject",
+        "WorkflowSketch"
+      ],
+      "contentSize": 227083
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "23.1"
+    },
+    {
+      "@id": "#247d32ca-b1ba-4c4d-9323-4603893c8266",
+      "@type": "Person",
+      "name": "Miguel Roncoroni"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/ResearchObject/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>preparing genomic data for phylogeny recostruction (GTN)</h1>
+  
+  <p>
+    This workflow begins from a set of genome assemblies of different samples, strains, species. The genome is first annotated with Funnanotate. Predicted proteins are furtner annotated with Busco. Next, 'ProteinOrtho' finds orthologs across the samples and makes orthogroups. Orthogroups where all samples are represented are extracted. Orthologs in each orthogroup are aligned with ClustalW. The alignments are cleaned with ClipKIT and the concatenation matrix is built using PhyKit. This can be used for phylogeny reconstruction.
+
+## Associated Tutorial
+
+This workflows is part of the tutorial [Preparing genomic data for phylogeny reconstruction](https://training.galaxyproject.org/training-material/topics/ecology/tutorials/phylogeny-data-prep/tutorial.html), available in the [GTN](https://training.galaxyproject.org)
+
+
+
+
+
+## Thanks to...
+
+**Workflow Author(s)**: Miguel Roncoroni
+
+**Tutorial Author(s)**: [Miguel Roncoroni](https://training.galaxyproject.org/training-material/hall-of-fame/roncoronimiguel/), [Brigida Gallone](https://training.galaxyproject.org/training-material/hall-of-fame/brigidagallone/)
+
+[![gtn star logo followed by the word workflows](https://training.galaxyproject.org/training-material/assets/branding/gtn-workflows.png)](https://training.galaxyproject.org/training-material/)
+  </p>
+  <dl>
+    
+    
+    
+    
+      <dt>License</dt>
+      <dd>https://spdx.org/licenses/CC-BY-4.0</dd>
+    
+  </dl>
+
+  <h2>Contents</h2>
+  <ul>
+    
+      <li>
+        <strong>preparing genomic data for phylogeny recostruction (GTN)</strong>
+        
+        
+      </li>
+    
+      <li>
+        <strong>graph.png</strong>
+        
+          <br/>Size: 227083
+        
+        
+      </li>
+    
+  </ul>
+</body>
+</html>

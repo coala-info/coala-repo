@@ -1,0 +1,19 @@
+cwl:tool: ../../tools/eggnog/eggnog.cwl
+destination: ./output
+input_fasta:
+   class: File
+   location: http://download.systemsbiology.nl/unlock/cwl/test_data/eggnog.fa
+data_dir:
+   class: Directory
+   location: /unlock/references/databases/eggnog
+db: 
+   class: File
+   location: /unlock/references/databases/eggnog/eggnog.db
+db_diamond:
+   class: File
+   location: /unlock/references/databases/eggnog/eggnog_proteins.dmnd
+
+identifier: eggnog
+codon: 11
+memory: 5000
+threads: 2

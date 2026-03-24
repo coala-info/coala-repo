@@ -1,0 +1,1127 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Calculate extended gamma-ray source halo using crbeam simulation",
+    "comments": [],
+    "format-version": "0.1",
+    "name": "Extended Source",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "Source Dec",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Source Dec",
+                    "name": "Dec"
+                }
+            ],
+            "label": "Dec",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 79.38291150855606,
+                "top": 0
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"5\", \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "46c326e3-402d-48a0-9b86-02f06c1cd462",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "e99c8032-fe1a-4f43-979d-7fc825b2987f"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "Source RA",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Source RA",
+                    "name": "RA"
+                }
+            ],
+            "label": "RA",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 83.01289377621393,
+                "top": 91.1529372893055
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"5\", \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "02790d04-1ea5-4316-b668-c5da5d452a7b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "3d4dd69f-dfca-4dec-9b11-430bf289aa35"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Maximal angular distance from center in degrees",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Maximal angular distance from center in degrees",
+                    "name": "ThetaMax"
+                }
+            ],
+            "label": "ThetaMax",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 83.99112091762277,
+                "top": 238.794829183947
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"5\", \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "87109ed2-6b2d-47a6-b12d-9f4a0dd0c87f",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "a9b3c956-09be-4816-9c15-17570103087f"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "Minimal angular distance from center in degrees",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Minimal angular distance from center in degrees",
+                    "name": "ThetaMin"
+                }
+            ],
+            "label": "ThetaMin",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 84.85493055574157,
+                "top": 338.66774286738445
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": \"0\", \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "805f4683-e6c2-4746-8b16-67f10a18f3f0",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "9cc4f1e2-0bd4-4a65-b001-0816036d8d23"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "source redshift",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "source redshift",
+                    "name": "redshift"
+                }
+            ],
+            "label": "redshift",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 483.09249230167995
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "b110f4b2-4214-448b-a991-85f89b656389",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "0f611dd3-7b07-4d0b-b0b2-21eac0a09324"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "number of particles to simulate",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "number of particles to simulate",
+                    "name": "N"
+                }
+            ],
+            "label": "N",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1.3184348127593326,
+                "top": 564.6633800388922
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"integer\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "c2344b32-61cc-48ff-83cc-1c33d45c0e10",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8a824d6a-a9cb-4316-9096-57246d9214f1"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "initial particle"
+                }
+            ],
+            "label": "initial particle",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 3.6848578587697807,
+                "top": 648.6044829164955
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"restrictOnConnections\": true, \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "ff9a1c59-4f42-43e9-a4bc-7bee42fd81f5",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "a2598c16-f136-490e-b91f-53af9898f9bb"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "maximal initial energy  [TeV]",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "maximal initial energy  [TeV]",
+                    "name": "EmaxSource"
+                }
+            ],
+            "label": "EmaxSource",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1.2846367279775777,
+                "top": 732.1438008710986
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "b03c7962-5c2a-4188-8dde-6c91e6caccd0",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "d5071265-4f41-4a88-99be-eb35e473b034"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "minimal energy of secondary photons  [TeV]",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "minimal energy of secondary photons  [TeV]",
+                    "name": "Emin"
+                }
+            ],
+            "label": "Emin",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 2.7721238658998635,
+                "top": 821.7306385867282
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "44915ba4-effe-499a-9cf7-8fef546077db",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "f7b15106-d736-41e0-9c66-f7af8e0db4e6"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "minimal source energy [TeV]",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "minimal source energy [TeV]",
+                    "name": "EminSource"
+                }
+            ],
+            "label": "EminSource",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 2.9411761910628167,
+                "top": 911.0131078355595
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "bf57f0e8-8b80-415e-9f4a-7fe9ad68694d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "4cb03889-0be7-4503-8b7f-7e5e476289a9"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "intrinsic spectrum slope",
+            "content_id": null,
+            "errors": null,
+            "id": 10,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "intrinsic spectrum slope",
+                    "name": "gamma"
+                }
+            ],
+            "label": "gamma",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.6422874133616996,
+                "top": 992.0806616422907
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "e682e6a0-0f53-40b0-9fc2-6c47f7987d31",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "875a1e16-d7b5-4dd2-aa95-7d348c2de2dc"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "intergalactic magnetic field amplitude  [fG]",
+            "content_id": null,
+            "errors": null,
+            "id": 11,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "intergalactic magnetic field amplitude  [fG]",
+                    "name": "IGMF"
+                }
+            ],
+            "label": "IGMF",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.7775416537428979,
+                "top": 1080.7509113694155
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "689f8ebe-c2da-4809-ada2-db78a7169868",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "60f808a8-4fa9-4a31-81dd-3acf751019cd"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "Maximal turbulent IGMF scale [Mpc]",
+            "content_id": null,
+            "errors": null,
+            "id": 12,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Maximal turbulent IGMF scale [Mpc]",
+                    "name": "IGMF Lmax"
+                }
+            ],
+            "label": "IGMF Lmax",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1.047988233251115,
+                "top": 1164.8948956075906
+            },
+            "tool_id": null,
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"float\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "3f24bca1-123f-433d-bfe5-4d32b092c87f",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "0dd18ced-929a-4bf3-b771-907f34db5a47"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 13,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "EBL"
+                }
+            ],
+            "label": "EBL",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 0.6631400283263209,
+                "top": 1248.78376249368
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"restrictOnConnections\": true, \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "8fc83036-88ee-4512-be8c-c93a206aa1b2",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "19bbb2aa-4178-422d-b959-9fab97cc1f92"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/crbeam_astro_tool/crbeam_astro_tool/0.0.2+galaxy0",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "C_data_product_|EBL": {
+                    "id": 13,
+                    "output_name": "output"
+                },
+                "C_data_product_|EGMF_fG": {
+                    "id": 11,
+                    "output_name": "output"
+                },
+                "C_data_product_|Emax": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "C_data_product_|Emin": {
+                    "id": 8,
+                    "output_name": "output"
+                },
+                "C_data_product_|EminSource": {
+                    "id": 9,
+                    "output_name": "output"
+                },
+                "C_data_product_|Gamma": {
+                    "id": 10,
+                    "output_name": "output"
+                },
+                "C_data_product_|Npart": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "C_data_product_|lmaxEGMF_Mpc": {
+                    "id": 12,
+                    "output_name": "output"
+                },
+                "C_data_product_|particle_type": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "C_data_product_|z_start": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                },
+                {
+                    "description": "runtime parameter for tool CRbeam",
+                    "name": "C_data_product_"
+                }
+            ],
+            "label": null,
+            "name": "CRbeam",
+            "outputs": [
+                {
+                    "name": "out_Generate_events_Event_file",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 320.9017843005748,
+                "top": 631.4192033997746
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionout_Generate_events_Event_file": {
+                    "action_arguments": {
+                        "newtype": "fits"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "out_Generate_events_Event_file"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/crbeam_astro_tool/crbeam_astro_tool/0.0.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "f40d05521dca",
+                "name": "crbeam_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"C_data_product_\": {\"DPselector_\": \"Generate_events\", \"__current_case__\": 0, \"src_name\": \"1ES 1215+303\", \"z_start\": {\"__class__\": \"ConnectedValue\"}, \"Npart\": {\"__class__\": \"ConnectedValue\"}, \"particle_type\": {\"__class__\": \"ConnectedValue\"}, \"Emax\": {\"__class__\": \"ConnectedValue\"}, \"Emin\": {\"__class__\": \"ConnectedValue\"}, \"EminSource\": {\"__class__\": \"ConnectedValue\"}, \"Gamma\": {\"__class__\": \"ConnectedValue\"}, \"EGMF_fG\": {\"__class__\": \"ConnectedValue\"}, \"lmaxEGMF_Mpc\": {\"__class__\": \"ConnectedValue\"}, \"jet_half_size\": \"180.0\", \"jet_direction\": \"0.0\", \"psf\": \"180.0\", \"window_size_RA\": \"4.0\", \"window_size_DEC\": \"4.0\", \"EBL\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.2+galaxy0",
+            "type": "tool",
+            "uuid": "4667cc77-dc7a-4f03-93a5-295637fd30b1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/astropy_fits2csv/astropy_fits2csv/0.1.0+galaxy0",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input_fits": {
+                    "id": 14,
+                    "output_name": "out_Generate_events_Event_file"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "astropy fits2csv",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 590.0783171005985,
+                "top": 603.9925198552206
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/astropy_fits2csv/astropy_fits2csv/0.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "01fbfdf7d10f",
+                "name": "astropy_fits2csv",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"hdu\": \"1\", \"input_fits\": {\"__class__\": \"ConnectedValue\"}, \"output_format\": \"tabular\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy0",
+            "type": "tool",
+            "uuid": "de08a9a6-cc9a-4a80-975f-cbefceccb80e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "mc_data",
+                    "output_name": "output",
+                    "uuid": "f2ed3ad3-e52b-40af-9be1-b7dfc91f487d"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "infile": {
+                    "id": 15,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "filter secondary",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 902.7456077983754,
+                "top": 539.4313101586409
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"$8>0 || NR == 1\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy1",
+            "type": "tool",
+            "uuid": "e1904a87-0286-44a7-a3e4-fc75bfb7d525",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "infile": {
+                    "id": 15,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "filter primary",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 678.9582837722373,
+                "top": 831.9160247459641
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"$8==0 && NR > 1\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy1",
+            "type": "tool",
+            "uuid": "94666404-3845-4984-b71e-ebf17165de6c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "addValue",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "exp": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "input": {
+                    "id": 16,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Add ThetaMin col",
+            "name": "Add column",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1160.5670373322487,
+                "top": 323.12448274219554
+            },
+            "post_job_actions": {},
+            "tool_id": "addValue",
+            "tool_state": "{\"exp\": {\"__class__\": \"ConnectedValue\"}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"iterate\": \"no\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "fcaa9e2e-dc36-408f-bd1e-066f93f725f4",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "C_data_product_|fn": {
+                    "id": 17,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Plot Tools",
+                    "name": "C_data_product_"
+                }
+            ],
+            "label": "SpectrumPrimaries",
+            "name": "Plot Tools",
+            "outputs": [
+                {
+                    "name": "out_spectrum_histogram_data",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_spectrum_histogram_picture",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1046.7198021416798,
+                "top": 842.3752939661945
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "2b1759ccaa8b",
+                "name": "plot_tools_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"C_data_product_\": {\"DPselector_\": \"spectrum\", \"__current_case__\": 1, \"fn\": {\"__class__\": \"ConnectedValue\"}, \"skiprows\": \"0\", \"sep\": \"whitespace\", \"column\": \"c1\", \"weight_col\": \"c2\", \"binning\": \"logarithmic\", \"minval\": \"0.0\", \"maxval\": \"0.0\", \"nbins\": \"15\", \"xlabel\": \"Energy, [eV]\", \"ylabel\": \"Flux E^2, [eV]\", \"spec_power\": \"2.0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "dad8156d-a219-4bdc-b1e7-087ad7f2f897",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "prim_spectrum_data",
+                    "output_name": "out_spectrum_histogram_data",
+                    "uuid": "3eb5e31c-712d-4e43-85a3-a4b0508bb8a3"
+                },
+                {
+                    "label": "prim_spectrum_plot",
+                    "output_name": "out_spectrum_histogram_picture",
+                    "uuid": "edaa3d27-02dc-4f39-ba9f-0dfed01ec130"
+                }
+            ]
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "addValue",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "exp": {
+                    "id": 2,
+                    "output_name": "output"
+                },
+                "input": {
+                    "id": 18,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Add ThetaMax col",
+            "name": "Add column",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1411.5428412315177,
+                "top": 220.87767628341484
+            },
+            "post_job_actions": {},
+            "tool_id": "addValue",
+            "tool_state": "{\"exp\": {\"__class__\": \"ConnectedValue\"}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"iterate\": \"no\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "cdb00adb-f8af-42c2-a88a-f25857fb807a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "infile": {
+                    "id": 20,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "filter theta",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1354.557261141558,
+                "top": 575.5045057222396
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"$3>=$12 && $3 <= $13\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy1",
+            "type": "tool",
+            "uuid": "c6a7e226-13fc-42b2-bb16-16063e500e68",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "addValue",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "exp": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "input": {
+                    "id": 21,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [],
+            "label": "Add RA",
+            "name": "Add column",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1831.6334269152496,
+                "top": 92.73232813295493
+            },
+            "post_job_actions": {},
+            "tool_id": "addValue",
+            "tool_state": "{\"exp\": {\"__class__\": \"ConnectedValue\"}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"iterate\": \"no\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "26f4503a-4e0e-4eda-b481-d156facf6c69",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "C_data_product_|fn": {
+                    "id": 21,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Plot Tools",
+                    "name": "C_data_product_"
+                }
+            ],
+            "label": "SecondarySpectrum",
+            "name": "Plot Tools",
+            "outputs": [
+                {
+                    "name": "out_spectrum_histogram_data",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_spectrum_histogram_picture",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1835.2328228393924,
+                "top": 470.19731454753594
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "2b1759ccaa8b",
+                "name": "plot_tools_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"C_data_product_\": {\"DPselector_\": \"spectrum\", \"__current_case__\": 1, \"fn\": {\"__class__\": \"ConnectedValue\"}, \"skiprows\": \"0\", \"sep\": \"whitespace\", \"column\": \"c1\", \"weight_col\": \"c2\", \"binning\": \"logarithmic\", \"minval\": \"0.0\", \"maxval\": \"0.0\", \"nbins\": \"15\", \"xlabel\": \"Energy, [eV]\", \"ylabel\": \"Flux E^2, [eV]\", \"spec_power\": \"2.0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "0e5acf14-5937-4f60-b193-678590bf3ba4",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "sec_spectrum_data",
+                    "output_name": "out_spectrum_histogram_data",
+                    "uuid": "bebb3bc0-c920-4bea-8648-38a6f2282a62"
+                },
+                {
+                    "label": "sec_spectrum_plot",
+                    "output_name": "out_spectrum_histogram_picture",
+                    "uuid": "cf93edfd-237b-42bb-bf27-b690c016ec34"
+                }
+            ]
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "addValue",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "exp": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "input": {
+                    "id": 22,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Add Dec",
+            "name": "Add column",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2082.2819648796026,
+                "top": 16.441625689153803
+            },
+            "post_job_actions": {},
+            "tool_id": "addValue",
+            "tool_state": "{\"exp\": {\"__class__\": \"ConnectedValue\"}, \"input\": {\"__class__\": \"ConnectedValue\"}, \"iterate\": \"no\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "9dca7d29-821f-4c21-bb47-52a262672ffd",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "25": {
+            "annotation": "Calculate RA and Dec for every event",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "infile": {
+                    "id": 24,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "Calc RA Dec",
+            "name": "Text reformatting",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2341.8602013278705,
+                "top": 159.59744415474333
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_awk_tool/9.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "86755160afbf",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"code\": \"{ phi=$4; theta=$3 ; ra_s=$13 ; dec_s=$14; w=$2; ra=theta*cos(phi*0.01745)+ra_s; dec=theta*sin(phi*0.01745)+dec_s; print ra \\\"\\\\t\\\" dec \\\"\\\\t\\\" w }\", \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "9.3+galaxy1",
+            "type": "tool",
+            "uuid": "f9d5f956-d796-4c5e-a2e9-609b59b3884d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "26": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "errors": null,
+            "id": 26,
+            "input_connections": {
+                "C_data_product_|fn": {
+                    "id": 25,
+                    "output_name": "outfile"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Plot Tools",
+                    "name": "C_data_product_"
+                }
+            ],
+            "label": "MakeSourceImage",
+            "name": "Plot Tools",
+            "outputs": [
+                {
+                    "name": "out_sky_plot_plot",
+                    "type": "auto"
+                },
+                {
+                    "name": "out_sky_plot_fits_image",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 2616.1778910837065,
+                "top": 199.4083228245347
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/astroteam/plot_tools_astro_tool/plot_tools_astro_tool/0.0.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "2b1759ccaa8b",
+                "name": "plot_tools_astro_tool",
+                "owner": "astroteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"C_data_product_\": {\"DPselector_\": \"sky_plot\", \"__current_case__\": 2, \"fn\": {\"__class__\": \"ConnectedValue\"}, \"skiprows\": \"0\", \"sep\": \"whitespace\", \"ra_col\": \"c1\", \"dec_col\": \"c2\", \"weight_col\": \"c3\", \"binsz\": \"0.02\", \"window_size_RA\": \"2.0\", \"window_size_DEC\": \"2.0\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1+galaxy0",
+            "type": "tool",
+            "uuid": "f3e92d8f-8fb0-4833-9a2b-c057d9e4fe7b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "source_fits_image",
+                    "output_name": "out_sky_plot_fits_image",
+                    "uuid": "a2664146-24ea-4df6-8b68-8b058b2e3095"
+                },
+                {
+                    "label": "source_image",
+                    "output_name": "out_sky_plot_plot",
+                    "uuid": "ed55d25a-c1f0-431d-b851-94c42caf4ea4"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "fb470fe4-bdcd-4f82-ad92-1ed2f03a3016",
+    "version": 9
+}

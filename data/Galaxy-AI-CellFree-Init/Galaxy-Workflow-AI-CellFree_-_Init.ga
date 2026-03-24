@@ -1,0 +1,174 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "AI-CellFree - Init",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/doe_synbio_sampler/doe_synbio_sampler/2.9.0+galaxy0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool iCFree sampler",
+                    "name": "input_file"
+                }
+            ],
+            "label": null,
+            "name": "iCFree sampler",
+            "outputs": [
+                {
+                    "name": "output_sampling",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "bottom": 531.5,
+                "height": 112,
+                "left": 453.5,
+                "right": 653.5,
+                "top": 419.5,
+                "width": 200,
+                "x": 453.5,
+                "y": 419.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/doe_synbio_sampler/doe_synbio_sampler/2.9.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "1833b1b04278",
+                "name": "doe_synbio_sampler",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"range_cond\": {\"range_param\": \"step\", \"__current_case__\": 0, \"by_step\": \"2.5\"}, \"rep\": [], \"seed_cond\": {\"seed_param\": \"random\", \"__current_case__\": 0}}, \"input_file\": {\"__class__\": \"RuntimeValue\"}, \"num_samples\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.9.0+galaxy0",
+            "type": "tool",
+            "uuid": "84f76420-2fca-4918-85dc-ea7702a448cf",
+            "workflow_outputs": [
+                {
+                    "label": "iCFree sampler",
+                    "output_name": "output_sampling",
+                    "uuid": "9f3e88cb-7888-4b24-b158-0215aeaea308"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/icfree_plate_designer/icfree_plate_designer/2.9.0+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "sampling_file": {
+                    "id": 0,
+                    "output_name": "output_sampling"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "iCFree plate designer",
+            "outputs": [
+                {
+                    "name": "output_source_plate",
+                    "type": "csv"
+                },
+                {
+                    "name": "output_destination_plate",
+                    "type": "csv"
+                }
+            ],
+            "position": {
+                "bottom": 632.5,
+                "height": 182,
+                "left": 722.5,
+                "right": 922.5,
+                "top": 450.5,
+                "width": 200,
+                "x": 722.5,
+                "y": 450.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/icfree_plate_designer/icfree_plate_designer/2.9.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "9cae753070e0",
+                "name": "icfree_plate_designer",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"start_well_src_plt\": \"A1\", \"start_well_dst_plt\": \"A1\", \"plate_dims\": \"16x24\", \"default_well_capacity\": \"60000\", \"default_dead_volume\": \"15000\", \"num_replicates\": \"1\", \"rep\": []}, \"sample_volume\": \"10000\", \"sampling_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.9.0+galaxy0",
+            "type": "tool",
+            "uuid": "2ad3c804-8b48-4e48-8d33-cb82e962240f",
+            "workflow_outputs": [
+                {
+                    "label": "iCFree plate designer - Source",
+                    "output_name": "output_source_plate",
+                    "uuid": "f4c49394-c04a-4661-96ac-8587abc27966"
+                },
+                {
+                    "label": "iCFree plate designer - Destination",
+                    "output_name": "output_destination_plate",
+                    "uuid": "175a2ff8-0683-4bcc-b53b-ef333f84749d"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/tduigou/icfree_instructor/icfree_instructor/2.9.0+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "destination_plate_file": {
+                    "id": 1,
+                    "output_name": "output_destination_plate"
+                },
+                "source_plate_file": {
+                    "id": 1,
+                    "output_name": "output_source_plate"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "iCFree instructor",
+            "outputs": [
+                {
+                    "name": "output_instructor",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 703.5,
+                "height": 182,
+                "left": 989.5,
+                "right": 1189.5,
+                "top": 521.5,
+                "width": 200,
+                "x": 989.5,
+                "y": 521.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/tduigou/icfree_instructor/icfree_instructor/2.9.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a97e39607eab",
+                "name": "icfree_instructor",
+                "owner": "tduigou",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"source_plate_type\": \"default:384PP_AQ_GP3\", \"max_transfer_volume\": null, \"split_threshold\": null, \"split_components\": \"\", \"dispense_order\": \"\"}, \"destination_plate_file\": {\"__class__\": \"ConnectedValue\"}, \"source_plate_file\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.9.0+galaxy0",
+            "type": "tool",
+            "uuid": "8740f84d-eccf-42f9-bf8d-e21e2a756053",
+            "workflow_outputs": [
+                {
+                    "label": "iCFree instructor - Instructions",
+                    "output_name": "output_instructor",
+                    "uuid": "665bdc81-5f57-48a6-9e52-be924968d985"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "2be80ef9-792c-4b9e-af3c-077d56a47383",
+    "version": 10
+}

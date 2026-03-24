@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>protein-ligand-complex-parameterization/main</title>
+  <script type="application/ld+json">{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2021-12-20T17:04:47.620664",
+      "hasPart": [
+        {
+          "@id": "protein-ligand-complex-parameterization.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "protein-ligand-complex-parameterization-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/protein-ligand-complex-parameterization",
+      "license": "MIT",
+      "mainEntity": {
+        "@id": "protein-ligand-complex-parameterization.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test1"
+        }
+      ],
+      "name": "protein-ligand-complex-parameterization/main",
+      "softwareVersion": "v0.1.2",
+      "sdDatePublished": "2021-12-21 03:01:01 +0000"
+    },
+    {
+      "@id": "protein-ligand-complex-parameterization.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#0000-0002-0621-6705"
+        }
+      ],
+      "name": "protein-ligand-complex-parameterization/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/protein-ligand-complex-parameterization",
+      "version": "0.1.2"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "protein-ligand-complex-parameterization-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.74.9"
+    },
+    {
+      "@id": "https://about.workflowhub.eu/Workflow-RO-Crate/",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate Profile",
+      "version": "0.2.0"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#0000-0002-0621-6705",
+      "@type": "Person",
+      "name": "Simon Bray"
+    },
+    {
+      "@id": "#test1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "protein-ligand-complex-parameterization-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "protein-ligand-complex-parameterization.ga"
+      },
+      "name": "test1"
+    },
+    {
+      "@id": "#test1_1",
+      "@type": "TestInstance",
+      "name": "test1_1",
+      "resource": "repos/iwc-workflows/protein-ligand-complex-parameterization/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>protein-ligand-complex-parameterization/main</h1>
+
+
+<p>
+  
+</p>
+  
+<dl>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_protein-ligand-complex-parameterization.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="protein-ligand-complex-parameterization.ga">protein-ligand-complex-parameterization/main</a>
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_README.md">
+      
+      
+      
+      <a class="data-entity-link" href="README.md">README.md</a>
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_protein-ligand-complex-parameterization-tests.yml">
+      
+      
+      
+      <a class="data-entity-link" href="protein-ligand-complex-parameterization-tests.yml">protein-ligand-complex-parameterization-tests.yml</a>
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

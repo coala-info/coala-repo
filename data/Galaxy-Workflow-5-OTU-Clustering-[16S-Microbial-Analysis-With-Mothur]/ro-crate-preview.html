@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Workflow 5: OTU Clustering [16S Microbial Analysis With Mothur]</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Workflow_5_%5Bgucfg2galaxy%5D__OTU_Clustering_%5B16S_Microbial_Analysis_With_Mothur%5D.ga"
+      },
+      "datePublished": "2023-11-09 05:18:51 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-3803-468X "
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/651?version=1",
+      "url": "https://workflowhub.eu/workflows/651/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow 5: OTU Clustering [16S Microbial Analysis With Mothur]",
+      "description": "The workflows in this collection are from the '16S Microbial Analysis with mothur' tutorial for analysis of 16S data (Saskia Hiltemann, Bérénice Batut, Dave Clements), adapted for pipeline use on galaxy australia (Ahmed Mehdi). The workflows developed in galaxy use mothur software package developed by Schloss et al https://pubmed.ncbi.nlm.nih.gov/19801464/. \n\nPlease also refer to the 16S tutorials available at Galaxy https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html and [https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html\n",
+      "isBasedOn": "https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html",
+      "sdDatePublished": "2026-03-24 17:55:03 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Workflow_5_%5Bgucfg2galaxy%5D__OTU_Clustering_%5B16S_Microbial_Analysis_With_Mothur%5D.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Workflow_5_%5Bgucfg2galaxy%5D__OTU_Clustering_%5B16S_Microbial_Analysis_With_Mothur%5D.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 17106,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflows in this collection are from the '16S Microbial Analysis with mothur' tutorial for analysis of 16S data (Saskia Hiltemann, Bérénice Batut, Dave Clements), adapted for pipeline use on galaxy australia (Ahmed Mehdi). The workflows developed in galaxy use mothur software package developed by Schloss et al https://pubmed.ncbi.nlm.nih.gov/19801464/. \n\nPlease also refer to the 16S tutorials available at Galaxy https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html and [https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html\n",
+      "name": "Workflow 5: OTU Clustering [16S Microbial Analysis With Mothur]",
+      "url": "https://workflowhub.eu/workflows/651?version=1",
+      "keywords": "Metagenomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/360"
+        },
+        {
+          "@id": "#B%C3%A9r%C3%A9nice%20Batut"
+        },
+        {
+          "@id": "#Dave%20Clements"
+        },
+        {
+          "@id": "#Ahmed%20Mehdi"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/41"
+      },
+      "dateCreated": "2023-11-09T05:20:20Z",
+      "dateModified": "2023-11-09T05:20:20Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/14"
+      },
+      "input": [
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-%23main/Count%20Table"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-%23main/Sequences"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-%23main/Taxonomy"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_10"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_11"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_2"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_3"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_4"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_5"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_6"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_7"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_8"
+        },
+        {
+          "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-%23main/_anonymous_output_9"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3803-468X ",
+      "@type": "Person",
+      "name": "Saskia Hiltemann",
+      "identifier": "https://orcid.org/0000-0003-3803-468X "
+    },
+    {
+      "@id": "https://workflowhub.eu/people/360",
+      "@type": "Person",
+      "name": "Saskia Hiltemann"
+    },
+    {
+      "@id": "#Bérénice Batut",
+      "@type": "Person",
+      "name": "Bérénice Batut"
+    },
+    {
+      "@id": "#Dave Clements",
+      "@type": "Person",
+      "name": "Dave Clements"
+    },
+    {
+      "@id": "#Ahmed Mehdi",
+      "@type": "Person",
+      "name": "Ahmed Mehdi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/41",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "QCIF Bioinformatics"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/14",
+      "@type": "Collection",
+      "name": "16S Microbial Analysis with mothur (on Galaxy Australia)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-#main/Count Table",
+      "@type": "FormalParameter",
+      "name": "#main/Count Table",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-#main/Sequences",
+      "@type": "FormalParameter",
+      "name": "#main/Sequences",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-inputs-#main/Taxonomy",
+      "@type": "FormalParameter",
+      "name": "#main/Taxonomy",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_5__otu_clustering__16s_microbial_analysis_with_mothur_-outputs-#main/_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Workflow 5: OTU Clustering [16S Microbial Analysis With Mothur]</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/651/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/651/ro_crate?version=1</a>
+
+
+<p>
+  The workflows in this collection are from the '16S Microbial Analysis with mothur' tutorial for analysis of 16S data (Saskia Hiltemann, Bérénice Batut, Dave Clements), adapted for pipeline use on galaxy australia (Ahmed Mehdi). The workflows developed in galaxy use mothur software package developed by Schloss et al https://pubmed.ncbi.nlm.nih.gov/19801464/. 
+
+Please also refer to the 16S tutorials available at Galaxy https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop-short/tutorial.html and [https://training.galaxyproject.org/training-material/topics/metagenomics/tutorials/mothur-miseq-sop/tutorial.html
+
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-3803-468X " target="_blank">Saskia Hiltemann</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Workflow_5_%5Bgucfg2galaxy%5D__OTU_Clustering_%5B16S_Microbial_Analysis_With_Mothur%5D.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Workflow_5_[gucfg2galaxy]__OTU_Clustering_[16S_Microbial_Analysis_With_Mothur].ga">Workflow 5: OTU Clustering [16S Microbial Analysis With Mothur]</a>
+      
+        <br/>Size: 17106 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

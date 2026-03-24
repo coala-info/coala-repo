@@ -1,0 +1,50 @@
+strict digraph {
+
+
+	"waveform_miniseed" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"waveform_miniseed" -> "ST810404" [ label="is input to", labeltooltip="waveform_miniseed - is input to - ST810404",  weight=0 ];
+
+	"DT810401" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810401" -> "ST810404" [ label="is input to", labeltooltip="DT810401 - is input to - ST810404",  weight=0 ];
+
+	"source_wave_velocity" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_wave_velocity" -> "ST810404" [ label="is input to", labeltooltip="source_wave_velocity - is input to - ST810404",  weight=0 ];
+
+	"source_rock_density" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_rock_density" -> "ST810404" [ label="is input to", labeltooltip="source_rock_density - is input to - ST810404",  weight=0 ];
+
+	"DT810403" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810403" -> "ST810404" [ label="is input to", labeltooltip="DT810403 - is input to - ST810404",  weight=0 ];
+
+	"network_inventory" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"network_inventory" -> "ST810404" [ label="is input to", labeltooltip="network_inventory - is input to - ST810404",  weight=0 ];
+
+	"time_window_length" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"time_window_length" -> "ST810404" [ label="is input to", labeltooltip="time_window_length - is input to - ST810404",  weight=0 ];
+
+	"ST810404" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810404" -> "DT810404" [ label="is output from", labeltooltip="DT810404 - is output from - ST810404",  weight=0 ];
+
+	"velocity_model" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"velocity_model" -> "ST810404" [ label="is input to", labeltooltip="velocity_model - is input to - ST810404",  weight=0 ];
+
+	"frequency_range" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"frequency_range" -> "ST810404" [ label="is input to", labeltooltip="frequency_range - is input to - ST810404",  weight=0 ];
+
+	"DT810404" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS8105" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS8106" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+}

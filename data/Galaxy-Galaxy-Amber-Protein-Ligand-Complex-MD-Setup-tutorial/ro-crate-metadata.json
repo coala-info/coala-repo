@@ -1,0 +1,971 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "biobb_wf_amber_complex_md_setup.ga"
+      },
+      "datePublished": "2023-05-03 14:53:23 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.298.3",
+      "url": "https://workflowhub.eu/workflows/298/ro_crate?version=3",
+      "name": "Research Object Crate for Galaxy Amber Protein Ligand Complex MD Setup tutorial",
+      "description": "# AMBER Protein MD Setup tutorials using BioExcel Building Blocks (biobb)\n***\n## This workflow must be run in **biobb.usegalaxy.es**. Please, [click here to access](https://biobb.usegalaxy.es/u/gbayarri/w/amber-protein-ligand-complex-md-setup).\n***\n\n**Based on the official [GROMACS tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**\n\n***\n\nThis tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)** wrapping the **Ambertools MD package**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_amber_complex_md_setup/galaxy",
+      "sdDatePublished": "2026-03-24 17:58:40 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "biobb_wf_amber_complex_md_setup.ga"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_complex_md_setup/galaxy/README.md"
+        }
+      ]
+    },
+    {
+      "@id": "biobb_wf_amber_complex_md_setup.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_complex_md_setup/galaxy/biobb_wf_amber_complex_md_setup.ga",
+      "contentSize": 96594,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# AMBER Protein MD Setup tutorials using BioExcel Building Blocks (biobb)\n***\n## This workflow must be run in **biobb.usegalaxy.es**. Please, [click here to access](https://biobb.usegalaxy.es/u/gbayarri/w/amber-protein-ligand-complex-md-setup).\n***\n\n**Based on the official [GROMACS tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**\n\n***\n\nThis tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)** wrapping the **Ambertools MD package**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "Galaxy Amber Protein Ligand Complex MD Setup tutorial",
+      "keywords": "",
+      "version": 3,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-05-03T13:52:05Z",
+      "dateModified": "2023-05-03T13:53:54Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.298.3",
+      "isBasedOn": "https://workflowhub.eu/workflows/298?version=2",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mypdb.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myremove_pdb_water.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myremove_ligand.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mypdb4amber_run.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myextract_heteroatoms.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myreduce_add_hydrogens.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mybabel_minimize.mol2"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.prmtop"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.inpcrd"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.frcmod"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.lib"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.top"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.crd"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.log"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.rst"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.cpout"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.mdinfo"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.cprst"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.trj"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myprocess_minout.dat"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myamber_to_pdb.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.parmtop"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.crd"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.pdb"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.crd"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.parmtop"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myprocess_mdout.dat"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_22"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_23"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_24"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_25"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_26"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_27"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_28"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_29"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_30"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_31"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_32"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_33"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_34"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_35"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_36"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.netcdf"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_37"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_38"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_39"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_40"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_rms.dat"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_41"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_rgyr.dat"
+        },
+        {
+          "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_image.trr"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_amber_complex_md_setup/galaxy/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mypdb.pdb",
+      "@type": "FormalParameter",
+      "name": "mypdb.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myremove_pdb_water.pdb",
+      "@type": "FormalParameter",
+      "name": "myremove_pdb_water.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myremove_ligand.pdb",
+      "@type": "FormalParameter",
+      "name": "myremove_ligand.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mypdb4amber_run.pdb",
+      "@type": "FormalParameter",
+      "name": "mypdb4amber_run.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myextract_heteroatoms.pdb",
+      "@type": "FormalParameter",
+      "name": "myextract_heteroatoms.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myreduce_add_hydrogens.pdb",
+      "@type": "FormalParameter",
+      "name": "myreduce_add_hydrogens.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mybabel_minimize.mol2",
+      "@type": "FormalParameter",
+      "name": "mybabel_minimize.mol2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.prmtop",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_ac.prmtop",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.inpcrd",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_ac.inpcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.frcmod",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_ac.frcmod",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myacpype_params_ac.lib",
+      "@type": "FormalParameter",
+      "name": "myacpype_params_ac.lib",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.pdb",
+      "@type": "FormalParameter",
+      "name": "myleap_gen_top.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.top",
+      "@type": "FormalParameter",
+      "name": "myleap_gen_top.top",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_gen_top.crd",
+      "@type": "FormalParameter",
+      "name": "myleap_gen_top.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.log",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.rst",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.rst",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.cpout",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.cpout",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.mdinfo",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.mdinfo",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.cprst",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.cprst",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.trj",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.trj",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myprocess_minout.dat",
+      "@type": "FormalParameter",
+      "name": "myprocess_minout.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myamber_to_pdb.pdb",
+      "@type": "FormalParameter",
+      "name": "myamber_to_pdb.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.pdb",
+      "@type": "FormalParameter",
+      "name": "myleap_solvate.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.parmtop",
+      "@type": "FormalParameter",
+      "name": "myleap_solvate.parmtop",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_solvate.crd",
+      "@type": "FormalParameter",
+      "name": "myleap_solvate.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.pdb",
+      "@type": "FormalParameter",
+      "name": "myleap_add_ions.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.crd",
+      "@type": "FormalParameter",
+      "name": "myleap_add_ions.crd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myleap_add_ions.parmtop",
+      "@type": "FormalParameter",
+      "name": "myleap_add_ions.parmtop",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-myprocess_mdout.dat",
+      "@type": "FormalParameter",
+      "name": "myprocess_mdout.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_23",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_23",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_24",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_24",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_25",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_25",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_26",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_26",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_27",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_27",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_28",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_28",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_29",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_29",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_30",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_30",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_31",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_31",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_32",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_32",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_33",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_33",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_34",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_34",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_35",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_35",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_36",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_36",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mysander_mdrun.netcdf",
+      "@type": "FormalParameter",
+      "name": "mysander_mdrun.netcdf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_37",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_37",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_38",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_38",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_39",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_39",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_40",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_40",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_rms.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_rms.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-_anonymous_output_41",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_41",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_rgyr.dat",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_rgyr.dat",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_amber_protein_ligand_complex_md_setup_tutorial-outputs-mycpptraj_image.trr",
+      "@type": "FormalParameter",
+      "name": "mycpptraj_image.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

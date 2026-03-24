@@ -1,0 +1,60 @@
+{
+   "event":{
+      "agency":"USER EVENT",
+      "time":"1992/06/28, 11:57:53",
+      "latitude":34.19,
+      "longitude":-116.44,
+      "magnitude":7.2,
+      "depth":7000,
+      "elapsedtime":2456,
+      "description":"California Landers manual trigger",
+      "cmt":{
+         "GCMT":{
+            "strike":69,
+            "dip":85,
+            "rake":-26
+         }
+      }
+   },
+   "id":"67d300099b16a807bd6ff720",
+   "region":{
+      "_id":"67d2fc3441d30d1c70c12312",
+      "available_ensemble":[
+         "statisticalCMT",
+         "onlyOne"
+      ],
+      "available_fmax":[
+         1.0
+      ],
+      "available_inference":"mlesmap",
+      "depth_in_m":40000,
+      "file_structure":"Marta_Salvus",
+      "id":"CALIFORNIA",
+      "max_latitude":35.5,
+      "max_longitude":-115.5,
+      "min_latitude":32.7,
+      "min_longitude":-120.0,
+      "path":"/workspace/EventRegion/CALIFORNIA"
+   },
+   "mlesdata":{
+      "gridSpacing":"40",
+      "gridSpacingLat":"53",
+      "gridSpacingLon":"70",
+      "modelname":[
+         {
+            "algorithm":"NN",
+            "modelPath":"0p05s_modelTest_NN_SplitRandom_9layers.h5",
+            "scalerFeature":"scaler_X_0p05.save",
+            "scalerTarget":"scaler_y_0p05.save"
+         }
+      ],
+      "period":"0.05"
+   },
+   "setup":{
+      "fmax_policy":"max",
+      "inference_type":"mlesmap",
+      "slipgen_version":"v550",
+      "source_ensemble":"onlyOne"
+   },
+   "base":"event_Test_onlyOne_California-StandAlone_Test"
+}

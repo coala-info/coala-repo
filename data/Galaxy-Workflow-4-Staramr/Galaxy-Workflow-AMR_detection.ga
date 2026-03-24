@@ -1,0 +1,577 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "https://doi.org/10.3390/microorganisms10020292  ",
+    "format-version": "0.1",
+    "name": "AMR detection",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy1",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Shovill",
+                    "name": "library"
+                },
+                {
+                    "description": "runtime parameter for tool Shovill",
+                    "name": "library"
+                }
+            ],
+            "label": null,
+            "name": "Shovill",
+            "outputs": [
+                {
+                    "name": "shovill_std_log",
+                    "type": "txt"
+                },
+                {
+                    "name": "contigs",
+                    "type": "fasta"
+                },
+                {
+                    "name": "contigs_graph",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 0,
+                "top": 2.583343505859375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "ad80238462c1",
+                "name": "shovill",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"namefmt\": \"contig%05d\", \"depth\": \"100\", \"gsize\": \"\", \"kmers\": \"\", \"opts\": \"\", \"keep_files\": {\"nocorr\": \"no_correction\", \"__current_case__\": 0}, \"minlen\": \"0\", \"mincov\": \"2\"}, \"assembler\": \"spades\", \"library\": {\"lib_type\": \"paired\", \"__current_case__\": 0, \"R1\": {\"__class__\": \"RuntimeValue\"}, \"R2\": {\"__class__\": \"RuntimeValue\"}}, \"log\": true, \"trim\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0+galaxy1",
+            "type": "tool",
+            "uuid": "812aac39-784e-4f57-92ac-a00bfc86babf",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "contigs",
+                    "uuid": "79f2d788-09a7-4ab3-bef0-1acb2c0ef676"
+                },
+                {
+                    "label": null,
+                    "output_name": "shovill_std_log",
+                    "uuid": "92dc3c91-71d7-4165-b3c9-ea10ba56f1e1"
+                },
+                {
+                    "label": null,
+                    "output_name": "contigs_graph",
+                    "uuid": "1263bb9e-c913-4f9e-b866-256d0933a4c3"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate/1.0.1",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "file_input": {
+                    "id": 0,
+                    "output_name": "contigs"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ABRicate",
+            "outputs": [
+                {
+                    "name": "report",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 243.1500244140625,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/abricate/abricate/1.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "3f3e247c053d",
+                "name": "abricate",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"db\": \"resfinder\", \"no_header\": false, \"min_dna_id\": \"80.0\", \"min_cov\": \"80.0\"}, \"file_input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "b1ea7504-e0c6-403e-bd47-687b6fa2b803",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "report",
+                    "uuid": "0bcf0913-d2a5-434e-83bf-11b782de8e7f"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.8.0+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "genomes": {
+                    "id": 0,
+                    "output_name": "contigs"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "staramr",
+            "outputs": [
+                {
+                    "name": "blast_hits",
+                    "type": "input"
+                },
+                {
+                    "name": "mlst",
+                    "type": "tabular"
+                },
+                {
+                    "name": "summary",
+                    "type": "tabular"
+                },
+                {
+                    "name": "detailed_summary",
+                    "type": "tabular"
+                },
+                {
+                    "name": "resfinder",
+                    "type": "tabular"
+                },
+                {
+                    "name": "plasmidfinder",
+                    "type": "tabular"
+                },
+                {
+                    "name": "pointfinder",
+                    "type": "tabular"
+                },
+                {
+                    "name": "settings",
+                    "type": "txt"
+                },
+                {
+                    "name": "excel",
+                    "type": "xlsx"
+                }
+            ],
+            "position": {
+                "left": 241.26666259765625,
+                "top": 164.8000030517578
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/staramr/staramr_search/0.8.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "be818ae858e4",
+                "name": "staramr",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced\": {\"pid_threshold\": \"98.0\", \"plength_resfinder\": \"60.0\", \"plength_pointfinder\": \"95.0\", \"plength_plasmidfinder\": \"60.0\", \"genome_size_lower_bound\": \"4000000\", \"genome_size_upper_bound\": \"6000000\", \"minimum_N50_value\": \"10000\", \"minimum_contig_length\": \"300\", \"unacceptable_number_contigs\": \"1000\", \"report_all_blast\": false, \"exclude_negatives\": false, \"exclude_resistance_phenotypes\": false, \"mlst_scheme\": \"auto\", \"exclude_genes\": {\"exclude_genes_condition\": \"default\", \"__current_case__\": 0}, \"plasmidfinder_type\": \"include_all\"}, \"genomes\": {\"__class__\": \"ConnectedValue\"}, \"pointfinder_db\": {\"use_pointfinder\": \"salmonella\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.8.0+galaxy0",
+            "type": "tool",
+            "uuid": "acd97dc8-c53f-4c98-88f7-89cd60e3d126",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "excel",
+                    "uuid": "d76937b2-a348-404d-a79e-ef4b8135eb65"
+                },
+                {
+                    "label": null,
+                    "output_name": "resfinder",
+                    "uuid": "00a4f53c-b23d-4e7b-b136-569387fd73fa"
+                },
+                {
+                    "label": null,
+                    "output_name": "blast_hits",
+                    "uuid": "f8eabc73-93ad-4b36-a727-67ffcfab708b"
+                },
+                {
+                    "label": null,
+                    "output_name": "mlst",
+                    "uuid": "6c1079eb-194e-426a-aae7-827d4f0a1a1d"
+                },
+                {
+                    "label": null,
+                    "output_name": "settings",
+                    "uuid": "9dc35947-ff05-46bd-a676-69ca13a33595"
+                },
+                {
+                    "label": null,
+                    "output_name": "summary",
+                    "uuid": "7eb8f9d5-3961-42fe-bea5-d073a611e221"
+                },
+                {
+                    "label": null,
+                    "output_name": "plasmidfinder",
+                    "uuid": "5d0081fa-af31-4c98-bc9e-8bbf2a0337fc"
+                },
+                {
+                    "label": null,
+                    "output_name": "pointfinder",
+                    "uuid": "43f45e07-8763-4950-8af4-0a7e3bddb6fa"
+                },
+                {
+                    "label": null,
+                    "output_name": "detailed_summary",
+                    "uuid": "5be87b51-7265-4ff1-bb7b-b53be18b57a4"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_tool/hamronize_tool/1.0.3+galaxy1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "report": {
+                    "id": 1,
+                    "output_name": "report"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "hamronize",
+            "outputs": [
+                {
+                    "name": "output_tsv",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 469.08331298828125,
+                "top": 71.48333740234375
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_tool/hamronize_tool/1.0.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "41c7e03b3eab",
+                "name": "hamronize_tool",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"analysis_software_version\": \"\", \"output_format\": \"tsv\", \"reference_database_version\": \"\", \"report\": {\"__class__\": \"ConnectedValue\"}, \"select_tool\": {\"tool\": \"abricate\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3+galaxy1",
+            "type": "tool",
+            "uuid": "e593e92d-e50d-4088-9479-a3ef8bd25ec8",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tsv",
+                    "uuid": "2af87c14-c4cf-4059-b38f-729511e541da"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_tool/hamronize_tool/1.0.3+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "report": {
+                    "id": 2,
+                    "output_name": "resfinder"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "hamronize",
+            "outputs": [
+                {
+                    "name": "output_tsv",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 465.4666748046875,
+                "top": 481.2333526611328
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_tool/hamronize_tool/1.0.3+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "41c7e03b3eab",
+                "name": "hamronize_tool",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"analysis_software_version\": \"\", \"output_format\": \"tsv\", \"reference_database_version\": \"\", \"report\": {\"__class__\": \"ConnectedValue\"}, \"select_tool\": {\"tool\": \"staramr\", \"__current_case__\": 2}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3+galaxy1",
+            "type": "tool",
+            "uuid": "bc9dac2f-9659-41ac-80ca-c0fb03858d0e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tsv",
+                    "uuid": "5208a3fe-f80d-4127-b904-f9b60bed3cbc"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_list": {
+                    "id": 3,
+                    "output_name": "output_tsv"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Collapse Collection",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 711.75,
+                "top": 118.91667175292969
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/collapse_collections/collapse_dataset/5.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "90981f86000f",
+                "name": "collapse_collections",
+                "owner": "nml",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filename\": {\"add_name\": false, \"__current_case__\": 1}, \"input_list\": {\"__class__\": \"ConnectedValue\"}, \"one_header\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "5.1.0",
+            "type": "tool",
+            "uuid": "3e0f7224-8a6d-465a-88a9-a1735309dee0",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "ffac5ad8-75fe-4882-a55b-5b776e89a06d"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.4",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "infile": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Replace",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 947.9999389648438,
+                "top": 189.7333526611328
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_find_and_replace/1.1.4",
+            "tool_shed_repository": {
+                "changeset_revision": "d698c222f354",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"find_and_replace\": [{\"__index__\": 0, \"find_pattern\": \"input_file_name\\tgene_symbol\\tgene_name\\treference_database_id\\treference_database_version\\treference_accession\\tanalysis_software_name\\tanalysis_software_version\\tsequence_identity\\tinput_sequence_id\\tinput_protein_start\\tinput_protein_stop\\tinput_gene_start\\tinput_gene_stop\\treference_protein_start\\treference_protein_stop\\treference_gene_start\\treference_gene_stop\\tstrand_orientation\\tcoverage_depth\\tcoverage_percentage\\tcoverage_ratio\\treference_gene_length\\treference_protein_length\\tinput_gene_length\\tinput_protein_length\\tdrug_class\\tantimicrobial_agent\\tresistance_mechanism\", \"replace_pattern\": \"\", \"is_regex\": false, \"global\": false, \"caseinsensitive\": false, \"wholewords\": false, \"skip_first_line\": true, \"searchwhere\": {\"searchwhere_select\": \"line\", \"__current_case__\": 0}}], \"infile\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.4",
+            "type": "tool",
+            "uuid": "11b3adef-addb-48ff-a051-1effec799eac",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "fa5ec4d6-2441-467c-8682-4ed2a0307f09"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "reports": [
+                    {
+                        "id": 4,
+                        "output_name": "output_tsv"
+                    },
+                    {
+                        "id": 6,
+                        "output_name": "outfile"
+                    }
+                ]
+            },
+            "inputs": [],
+            "label": null,
+            "name": "hamronize: summarize",
+            "outputs": [
+                {
+                    "name": "output_html",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "left": 1189.2333374023438,
+                "top": 240.50001525878906
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "243c87f34f39",
+                "name": "hamronize_summarize",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"reports\": {\"__class__\": \"ConnectedValue\"}, \"summary_type\": \"interactive\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3+galaxy2",
+            "type": "tool",
+            "uuid": "75a36ae7-44e5-4e43-9a7e-265bbc48a95b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_html",
+                    "uuid": "4e568d22-16c9-451e-b56b-771256286f8d"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "reports": [
+                    {
+                        "id": 4,
+                        "output_name": "output_tsv"
+                    },
+                    {
+                        "id": 6,
+                        "output_name": "outfile"
+                    }
+                ]
+            },
+            "inputs": [],
+            "label": null,
+            "name": "hamronize: summarize",
+            "outputs": [
+                {
+                    "name": "output_json",
+                    "type": "json"
+                }
+            ],
+            "position": {
+                "left": 1189.9999389648438,
+                "top": 397.7333526611328
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "243c87f34f39",
+                "name": "hamronize_summarize",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"reports\": {\"__class__\": \"ConnectedValue\"}, \"summary_type\": \"json\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3+galaxy2",
+            "type": "tool",
+            "uuid": "274df5db-62bd-4d34-a104-48da7f2f328d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_json",
+                    "uuid": "fa887c70-bf58-4869-95a6-93c472f67b5c"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "reports": [
+                    {
+                        "id": 4,
+                        "output_name": "output_tsv"
+                    },
+                    {
+                        "id": 6,
+                        "output_name": "outfile"
+                    }
+                ]
+            },
+            "inputs": [],
+            "label": null,
+            "name": "hamronize: summarize",
+            "outputs": [
+                {
+                    "name": "output_tsv",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1194.9999389648438,
+                "top": 486.7333526611328
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput_tsv": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output_tsv"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/hamronize_summarize/hamronize_summarize/1.0.3+galaxy2",
+            "tool_shed_repository": {
+                "changeset_revision": "243c87f34f39",
+                "name": "hamronize_summarize",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"reports\": {\"__class__\": \"ConnectedValue\"}, \"summary_type\": \"tsv\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3+galaxy2",
+            "type": "tool",
+            "uuid": "2dbc9caa-a1ca-476b-8e7d-ba6ad78ddd22",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [
+        "AMR",
+        "AMR-detection",
+        "10.3390/microorganisms10020292"
+    ],
+    "uuid": "be3affbf-3502-483a-97e5-7153b130ea03",
+    "version": 21
+}

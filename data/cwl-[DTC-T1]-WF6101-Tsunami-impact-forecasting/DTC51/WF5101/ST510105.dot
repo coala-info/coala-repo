@@ -1,0 +1,16 @@
+strict digraph {
+
+
+	"SS5113" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510105" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST510105" -> "DT5101" [ label="is output from", labeltooltip="DT5101 - is output from - ST510105",  weight=0 ];
+
+	"DT5101" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS5105" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS5108" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+}

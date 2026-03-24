@@ -1,0 +1,164 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Visualise_amount_of_objects_in_Museum_Collection.ga"
+      },
+      "datePublished": "2025-08-25 13:45:03 +0100",
+      "author": [
+
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/1884?version=1",
+      "url": "https://workflowhub.eu/workflows/1884/ro_crate?version=1",
+      "name": "Research Object Crate for Visualise amount of objects in Museum Collection",
+      "description": "This workflow applies text mining to a museum collection in tabular format to extract from which year most objects derive and what they are.\nThe first steps are filtering and data cleaning to put the data in correct format. \nDatamash allows showing how many documents from what year the museum catalogue contains.\nThe output is a chronological table which is visualised as a bar chart.\nFrom that, the year where most items derived from is extracted. The next step filters items only from that year.\nThe object description from all of those items is extracted to visualise what content the museum own from that year.",
+      "isBasedOn": "https://usegalaxy.eu/u/schnda/w/workflow-museum-itinerary-extract-year-with-most-objectsand-which",
+      "sdDatePublished": "2026-03-24 16:32:05 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Visualise_amount_of_objects_in_Museum_Collection.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Visualise_amount_of_objects_in_Museum_Collection.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 29921,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow applies text mining to a museum collection in tabular format to extract from which year most objects derive and what they are.\nThe first steps are filtering and data cleaning to put the data in correct format. \nDatamash allows showing how many documents from what year the museum catalogue contains.\nThe output is a chronological table which is visualised as a bar chart.\nFrom that, the year where most items derived from is extracted. The next step filters items only from that year.\nThe object description from all of those items is extracted to visualise what content the museum own from that year.",
+      "name": "Visualise amount of objects in Museum Collection",
+      "url": "https://workflowhub.eu/workflows/1884?version=1",
+      "keywords": "openrefine, culturedata, 4culture, Visualisation, tabulardata, textcleaning",
+      "version": 1,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "#Daniela%20Schneider"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2025-08-25T12:53:12Z",
+      "dateModified": "2025-08-25T12:53:12Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#visualise_amount_of_objects_in_museum_collection-inputs-Input"
+        },
+        {
+          "@id": "#visualise_amount_of_objects_in_museum_collection-inputs-stop_words_english"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#visualise_amount_of_objects_in_museum_collection-outputs-out_file1"
+        },
+        {
+          "@id": "#visualise_amount_of_objects_in_museum_collection-outputs-output"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Daniela Schneider",
+      "@type": "Person",
+      "name": "Daniela Schneider"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#visualise_amount_of_objects_in_museum_collection-inputs-Input",
+      "@type": "FormalParameter",
+      "name": "Input",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#visualise_amount_of_objects_in_museum_collection-inputs-stop_words_english",
+      "@type": "FormalParameter",
+      "name": "stop_words_english",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#visualise_amount_of_objects_in_museum_collection-outputs-out_file1",
+      "@type": "FormalParameter",
+      "name": "out_file1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#visualise_amount_of_objects_in_museum_collection-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

@@ -23,7 +23,11 @@ DATA_REPO_DATA_PATH = (os.environ.get("DATA_REPO_DATA_PATH") or "data").strip().
 
 
 def category_label(tool_id: str, cwl_count: int = 0) -> str:
-    """Map tool id to site category: R, bioconductor, python, perl, nextflow, CLI, or library."""
+    """Map tool id to site category: CWL, galaxy, R, bioconductor, python, perl, nextflow, CLI, or library."""
+    if tool_id.startswith("cwl-"):
+        return "CWL"
+    if tool_id.startswith("Galaxy-"):
+        return "galaxy"
     if tool_id.startswith("r-"):
         return "R"
     if tool_id.startswith("bioconductor-"):
@@ -37,6 +41,58 @@ def category_label(tool_id: str, cwl_count: int = 0) -> str:
     if cwl_count > 0:
         return "CLI"
     return "library"
+
+
+def _markdown_list_item_metadata_key_value(line: str) -> tuple[str, str] | None:
+    """Parse `- **Key**: value` or nf-style `- **Key:** value` from a metadata bullet line."""
+    line = line.strip()
+    if not line.startswith("- "):
+        return None
+    rest = line[2:].strip()
+    m = re.match(r"\*\*(.+?)\*\*\s*:?\s*(.*)$", rest)
+    if not m:
+        return None
+    key = m.group(1).strip().rstrip(":").strip()
+    val = m.group(2).strip()
+    return (key, val)
+
+
+def _parse_top_level_metadata_section(text: str) -> dict[str, str]:
+    """
+    Parse nf-core style `## Metadata` with bullet lines (Homepage, GitHub, etc.).
+    Returns canonical keys: homepage, github, conda_home, validation, docker_image,
+    conda_downloads, last_updated.
+    """
+    out: dict[str, str] = {}
+    sec = re.search(
+        r"(?m)^## Metadata\s*\n(.*?)(?=^## [^#]|\Z)",
+        text,
+        re.DOTALL,
+    )
+    if not sec:
+        return out
+    block = sec.group(1)
+    key_to_field = {
+        "homepage": "homepage",
+        "github": "github",
+        "conda": "conda_home",
+        "validation": "validation",
+        "docker image": "docker_image",
+        "docker": "docker_image",
+        "package": "conda_home",
+        "total downloads": "conda_downloads",
+        "last updated": "last_updated",
+    }
+    for line in block.split("\n"):
+        parsed = _markdown_list_item_metadata_key_value(line)
+        if not parsed:
+            continue
+        raw_key, val = parsed
+        nk = raw_key.lower().strip()
+        field = key_to_field.get(nk)
+        if field:
+            out[field] = val
+    return out
 
 
 def _parse_conda_downloads_num(s: str) -> int:
@@ -172,6 +228,24 @@ def parse_report(report_path: Path) -> dict:
                 validation_run = "pass"
             elif any(v == "FAIL" for v in values):
                 validation_run = "ongoing"
+
+    # nf-core pipeline reports: `## Metadata` + bullets (`**Homepage:**`); fill gaps
+    top_meta = _parse_top_level_metadata_section(text)
+    if top_meta:
+        if not homepage:
+            homepage = top_meta.get("homepage", "")
+        if not github:
+            github = top_meta.get("github", "")
+        if not conda_home:
+            conda_home = top_meta.get("conda_home", "")
+        if not validation:
+            validation = top_meta.get("validation", "")
+        if not docker_image:
+            docker_image = top_meta.get("docker_image", "")
+        if not conda_downloads:
+            conda_downloads = top_meta.get("conda_downloads", "")
+        if not last_updated:
+            last_updated = top_meta.get("last_updated", "")
 
     return {
         "runtime_summary_table": summary_table,
@@ -309,9 +383,17 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
     conda_downloads_raw = parsed.get("conda_downloads") or ""
     conda_downloads_num = _parse_conda_downloads_num(conda_downloads_raw)
 
+    category = category_label(tool_id, len(cwl_files))
+    if category == "CLI":
+        cwl_count_public = len(cwl_files)
+    elif category == "CWL":
+        cwl_count_public = 1
+    else:
+        cwl_count_public = 0
+
     index_entry = {
         "id": tool_id,
-        "category": category_label(tool_id, len(cwl_files)),
+        "category": category,
         "name": name,
         "description": description[:500] if description else "",
         "overview": overview[:500] if overview else "",
@@ -322,7 +404,7 @@ def build_tool(tool_id: str, tool_path: Path) -> dict | None:
         "conda_downloads": conda_downloads_raw,
         "conda_downloads_num": conda_downloads_num,
         "last_updated": parsed.get("last_updated") or "",
-        "cwl_count": len(cwl_files),
+        "cwl_count": cwl_count_public,
         "has_skill": has_skill,
         "runtime_summary": parsed.get("runtime_summary_table", []),
     }

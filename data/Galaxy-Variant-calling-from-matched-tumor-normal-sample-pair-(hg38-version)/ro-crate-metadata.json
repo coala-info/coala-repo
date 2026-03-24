@@ -1,0 +1,419 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Variant_calling_from_matched_tumor_normal_sample_pair_(hg38_version).ga"
+      },
+      "datePublished": "2023-10-27 14:31:58 +0100",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.628.1",
+      "url": "https://workflowhub.eu/workflows/628/ro_crate?version=1",
+      "name": "Research Object Crate for Variant calling from matched tumor/normal sample pair (hg38 version)",
+      "description": "Call somatic, germline and LoH event variants from PE Illumina sequencing data obtained from matched pairs of tumor and normal tissue samples.\n\nThis workflow can be used with whole-genome and whole-exome sequencing data as input. For WES data, parts of the analysis can be restricted to the exome capture kits target regions by providing the optional \"Regions of Interest\" bed dataset.\n\nThe current version uses bwa-mem for read mapping and varscan somatic for variant calling and somatic status classification.",
+      "sdDatePublished": "2026-03-24 17:55:57 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Variant_calling_from_matched_tumor_normal_sample_pair_(hg38_version).ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Variant_calling_from_matched_tumor_normal_sample_pair_(hg38_version).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://usegalaxy.eu/api/workflows/af30010868c97316/download?format=json-download",
+      "contentSize": 129767,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Call somatic, germline and LoH event variants from PE Illumina sequencing data obtained from matched pairs of tumor and normal tissue samples.\n\nThis workflow can be used with whole-genome and whole-exome sequencing data as input. For WES data, parts of the analysis can be restricted to the exome capture kits target regions by providing the optional \"Regions of Interest\" bed dataset.\n\nThe current version uses bwa-mem for read mapping and varscan somatic for variant calling and somatic status classification.",
+      "name": "Variant calling from matched tumor/normal sample pair (hg38 version)",
+      "keywords": "EOSC4Cancer",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "#Wolfgang%20Maier"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/24"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/334"
+        }
+      ],
+      "dateCreated": "2023-10-27T13:48:44Z",
+      "dateModified": "2025-05-08T10:01:22Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.628.1",
+      "input": [
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/Estimated%20normal%20tissue%20purity"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/Estimated%20tumor%20tissue%20purity"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/ID%20of%20matched%20normal%20sample"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/NORMAL%20sample%20forward%20reads"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/NORMAL%20sample%20reverse%20reads"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/Patient%20sex"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/Regions%20of%20interest"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/Sample%20ID%20(tumor%20tissue)"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/TUMOR%20sample%20forward%20reads"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-%23main/TUMOR%20sample%20reverse%20reads"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/VarScan%20Output"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/analysis_metadata"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/bamqc_html_normal"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/bamqc_html_tumor"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/bamqc_normal_genome_results"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/bamqc_tumor_genome_results"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_normal_fw_after"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_normal_fw_before"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_normal_rv_after"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_normal_rv_before"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_tumor_fw_after"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_tumor_fw_before"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_tumor_rv_after"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/fastqc_html_tumor_rv_before"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/multiqc_html_post_trim"
+        },
+        {
+          "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-%23main/multiqc_html_pre_trim"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#Wolfgang Maier",
+      "@type": "Person",
+      "name": "Wolfgang Maier"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/334",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC4Cancer"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/Estimated normal tissue purity",
+      "@type": "FormalParameter",
+      "name": "#main/Estimated normal tissue purity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/Estimated tumor tissue purity",
+      "@type": "FormalParameter",
+      "name": "#main/Estimated tumor tissue purity",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/ID of matched normal sample",
+      "@type": "FormalParameter",
+      "name": "#main/ID of matched normal sample",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/NORMAL sample forward reads",
+      "@type": "FormalParameter",
+      "name": "#main/NORMAL sample forward reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/NORMAL sample reverse reads",
+      "@type": "FormalParameter",
+      "name": "#main/NORMAL sample reverse reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/Patient sex",
+      "@type": "FormalParameter",
+      "name": "#main/Patient sex",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/Regions of interest",
+      "@type": "FormalParameter",
+      "name": "#main/Regions of interest",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/Sample ID (tumor tissue)",
+      "@type": "FormalParameter",
+      "name": "#main/Sample ID (tumor tissue)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/TUMOR sample forward reads",
+      "@type": "FormalParameter",
+      "name": "#main/TUMOR sample forward reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-inputs-#main/TUMOR sample reverse reads",
+      "@type": "FormalParameter",
+      "name": "#main/TUMOR sample reverse reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/VarScan Output",
+      "@type": "FormalParameter",
+      "name": "#main/VarScan Output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/analysis_metadata",
+      "@type": "FormalParameter",
+      "name": "#main/analysis_metadata",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/bamqc_html_normal",
+      "@type": "FormalParameter",
+      "name": "#main/bamqc_html_normal",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/bamqc_html_tumor",
+      "@type": "FormalParameter",
+      "name": "#main/bamqc_html_tumor",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/bamqc_normal_genome_results",
+      "@type": "FormalParameter",
+      "name": "#main/bamqc_normal_genome_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/bamqc_tumor_genome_results",
+      "@type": "FormalParameter",
+      "name": "#main/bamqc_tumor_genome_results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_normal_fw_after",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_normal_fw_after",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_normal_fw_before",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_normal_fw_before",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_normal_rv_after",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_normal_rv_after",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_normal_rv_before",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_normal_rv_before",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_tumor_fw_after",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_tumor_fw_after",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_tumor_fw_before",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_tumor_fw_before",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_tumor_rv_after",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_tumor_rv_after",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/fastqc_html_tumor_rv_before",
+      "@type": "FormalParameter",
+      "name": "#main/fastqc_html_tumor_rv_before",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/multiqc_html_post_trim",
+      "@type": "FormalParameter",
+      "name": "#main/multiqc_html_post_trim",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#variant_calling_from_matched_tumor_normal_sample_pair__hg38_version_-outputs-#main/multiqc_html_pre_trim",
+      "@type": "FormalParameter",
+      "name": "#main/multiqc_html_pre_trim",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

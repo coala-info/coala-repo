@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for De novo digitisation</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2022-12-14 16:06:43 +0000",
+      "author": [
+        {
+          "@id": "#person-89"
+        },
+        {
+          "@id": "#person-159"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-7341-1842"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://workflowhub.eu/workflows/373?version=2",
+      "url": "https://workflowhub.eu/workflows/373/ro_crate?version=2",
+      "name": "Research Object Crate for De novo digitisation",
+      "description": "An example workflow to allow users to run the Specimen Data Refinery tools on data provided in an input CSV file.",
+      "sdDatePublished": "2026-03-24 18:02:29 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+
+      ]
+    },
+    {
+      "@id": "#person-89",
+      "@type": "Person",
+      "name": "Paul Brack",
+      "identifier": "https://workflowhub.eu/people/89"
+    },
+    {
+      "@id": "#person-159",
+      "@type": "Person",
+      "name": "Oliver Woolland",
+      "identifier": "https://workflowhub.eu/people/159"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7341-1842",
+      "@type": "Person",
+      "name": "Laurence Livermore",
+      "identifier": "https://orcid.org/0000-0002-7341-1842"
+    },
+    {
+      "@id": "https://workflowhub.eu/workflows/373?version=2",
+      "@type": [
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "An example workflow to allow users to run the Specimen Data Refinery tools on data provided in an input CSV file.",
+      "name": "De novo digitisation",
+      "url": "https://workflowhub.eu/workflows/373?version=2",
+      "keywords": "Default-SDR",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/89"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/159"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/219"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/72"
+      },
+      "dateCreated": "2022-12-14T16:05:01Z",
+      "dateModified": "2022-12-14T16:06:43Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/373?version=1",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "input": [
+        {
+          "@id": "#de_novo_digitisation-inputs-DLA%20Region%20-%20Training%20Model"
+        },
+        {
+          "@id": "#de_novo_digitisation-inputs-DLA%20Text%20-%20Training%20Model"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#de_novo_digitisation-outputs-out_file1"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-list_output_txt"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-output"
+        },
+        {
+          "@id": "#de_novo_digitisation-outputs-html_file"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/people/89",
+      "@type": "Person",
+      "name": "Paul Brack"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/159",
+      "@type": "Person",
+      "name": "Oliver Woolland"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/219",
+      "@type": "Person",
+      "name": "Laurence Livermore"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/72",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Specimen Data Refinery"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-DLA Region - Training Model",
+      "@type": "FormalParameter",
+      "name": "DLA Region - Training Model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-inputs-DLA Text - Training Model",
+      "@type": "FormalParameter",
+      "name": "DLA Text - Training Model",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-out_file1",
+      "@type": "FormalParameter",
+      "name": "out_file1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-list_output_txt",
+      "@type": "FormalParameter",
+      "name": "list_output_txt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-output",
+      "@type": "FormalParameter",
+      "name": "output",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#de_novo_digitisation-outputs-html_file",
+      "@type": "FormalParameter",
+      "name": "html_file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for De novo digitisation</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/373/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/373/ro_crate?version=2</a>
+
+
+<p>
+  An example workflow to allow users to run the Specimen Data Refinery tools on data provided in an input CSV file.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://workflowhub.eu/people/89" target="_blank">Paul Brack</a>, <a href="https://workflowhub.eu/people/159" target="_blank">Oliver Woolland</a>, <a href="https://orcid.org/0000-0002-7341-1842" target="_blank">Laurence Livermore</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+</div>
+</div>
+</body>
+</html>

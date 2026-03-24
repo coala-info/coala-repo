@@ -1,0 +1,440 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.1"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/workflow/0.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "datePublished": "2024-08-21T08:08:26+00:00",
+      "hasPart": [
+        {
+          "@id": "workflows/a44ffd6c34f64433.gxwf.yml"
+        },
+        {
+          "@id": "workflows/a44ffd6c34f64433.abstract.cwl"
+        },
+        {
+          "@id": "workflows/a44ffd6c34f64433.ga"
+        },
+        {
+          "@id": "workflows/a44ffd6c34f64433.html"
+        },
+        {
+          "@id": "datasets/Regex_Find_And_Replace_on_data_11_31e7840b5aedca43f17b497c109f9250.fasta"
+        },
+        {
+          "@id": "datasets/Prodigal_Gene_Predictor_on_data_15___protein_translations_file_31e7840b5aedca4374cfd23e4ed3d5da.fasta"
+        },
+        {
+          "@id": "datasets/Regex_Find_And_Replace_on_data_19_31e7840b5aedca433cc63e1516943862.fasta"
+        },
+        {
+          "@id": "datasets/Sanntis_output_data_31e7840b5aedca4390780e07c9f86a59.gff3"
+        },
+        {
+          "@id": "datasets/Sanntis_output_data_genbank_31e7840b5aedca43d3dc3d19fd74d6a0.genbank"
+        },
+        {
+          "@id": "datasets/InterProScan_on_data_23_(tsv)_31e7840b5aedca43d660e51bac8b61ae.tabular"
+        },
+        {
+          "@id": "datasets_attrs.txt"
+        },
+        {
+          "@id": "jobs_attrs.txt"
+        },
+        {
+          "@id": "implicit_collection_jobs_attrs.txt"
+        },
+        {
+          "@id": "collections_attrs.txt"
+        },
+        {
+          "@id": "export_attrs.txt"
+        },
+        {
+          "@id": "libraries_attrs.txt"
+        },
+        {
+          "@id": "library_folders_attrs.txt"
+        },
+        {
+          "@id": "invocation_attrs.txt"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "mainEntity": {
+        "@id": "workflows/a44ffd6c34f64433.gxwf.yml"
+      },
+      "mentions": [
+        {
+          "@id": "#e9482d6f-3f96-4f54-bfc1-71b091416ca2"
+        }
+      ]
+    },
+    {
+      "@id": "workflows/a44ffd6c34f64433.gxwf.yml",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "input": [
+        {
+          "@id": "#ab15d3fd-b1db-4584-9c38-71de02b307e6"
+        }
+      ],
+      "name": "Marine Omics identifying biosynthetic gene clusters",
+      "output": [
+        {
+          "@id": "#660a2840-53c5-408d-86c5-d5a2777a038a"
+        },
+        {
+          "@id": "#e2b65e28-1d69-499d-942b-c37b4c78a37c"
+        },
+        {
+          "@id": "#304f24ee-cb35-4a0d-af25-66786cc64a18"
+        },
+        {
+          "@id": "#1f21b738-cfc6-46f9-ab5a-551552a39dee"
+        },
+        {
+          "@id": "#45fd5f1d-d9ad-4d88-90c9-f39ca3d90547"
+        }
+      ],
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      },
+      "subjectOf": {
+        "@id": "workflows/a44ffd6c34f64433.abstract.cwl"
+      }
+    },
+    {
+      "@id": "workflows/a44ffd6c34f64433.abstract.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "name": "workflows/a44ffd6c34f64433.abstract",
+      "programmingLanguage": {
+        "@id": "#cwl"
+      }
+    },
+    {
+      "@id": "workflows/a44ffd6c34f64433.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "workflows/a44ffd6c34f64433",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      }
+    },
+    {
+      "@id": "workflows/a44ffd6c34f64433.html",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "workflows/a44ffd6c34f64433",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy"
+      }
+    },
+    {
+      "@id": "datasets/Regex_Find_And_Replace_on_data_11_31e7840b5aedca43f17b497c109f9250.fasta",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#ab15d3fd-b1db-4584-9c38-71de02b307e6"
+      },
+      "name": "Regex Find And Replace on data 11"
+    },
+    {
+      "@id": "datasets/Prodigal_Gene_Predictor_on_data_15___protein_translations_file_31e7840b5aedca4374cfd23e4ed3d5da.fasta",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#660a2840-53c5-408d-86c5-d5a2777a038a"
+      },
+      "name": "Prodigal Gene Predictor on data 15 : protein translations file"
+    },
+    {
+      "@id": "datasets/Regex_Find_And_Replace_on_data_19_31e7840b5aedca433cc63e1516943862.fasta",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#e2b65e28-1d69-499d-942b-c37b4c78a37c"
+      },
+      "name": "Regex Find And Replace on data 19"
+    },
+    {
+      "@id": "datasets/Sanntis_output_data_31e7840b5aedca4390780e07c9f86a59.gff3",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#304f24ee-cb35-4a0d-af25-66786cc64a18"
+      },
+      "name": "Sanntis output data"
+    },
+    {
+      "@id": "datasets/Sanntis_output_data_genbank_31e7840b5aedca43d3dc3d19fd74d6a0.genbank",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#1f21b738-cfc6-46f9-ab5a-551552a39dee"
+      },
+      "name": "Sanntis output data genbank"
+    },
+    {
+      "@id": "datasets/InterProScan_on_data_23_(tsv)_31e7840b5aedca43d660e51bac8b61ae.tabular",
+      "@type": "File",
+      "encodingFormat": "text/plain",
+      "exampleOfWork": {
+        "@id": "#45fd5f1d-d9ad-4d88-90c9-f39ca3d90547"
+      },
+      "name": "InterProScan on data 23 (tsv)"
+    },
+    {
+      "@id": "datasets_attrs.txt",
+      "@type": "File",
+      "description": "datasets properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "jobs_attrs.txt",
+      "@type": "File",
+      "description": "jobs properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "implicit_collection_jobs_attrs.txt",
+      "@type": "File",
+      "description": "implicit collection jobs properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "collections_attrs.txt",
+      "@type": "File",
+      "description": "collections properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "export_attrs.txt",
+      "@type": "File",
+      "description": "export properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "libraries_attrs.txt",
+      "@type": "File",
+      "description": "libraries properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "library_folders_attrs.txt",
+      "@type": "File",
+      "description": "library folders properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "invocation_attrs.txt",
+      "@type": "File",
+      "description": "invocation properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/"
+      },
+      "name": "Common Workflow Language",
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#63d3a46d-cda4-4846-a212-90c742b01bdf",
+      "@type": "SoftwareApplication",
+      "name": "Galaxy workflow engine"
+    },
+    {
+      "@id": "#a49e94bf-f154-450d-a0de-af3dfb886d21",
+      "@type": "OrganizeAction",
+      "endTime": "2024-08-13T09:25:15.335090",
+      "instrument": {
+        "@id": "#63d3a46d-cda4-4846-a212-90c742b01bdf"
+      },
+      "name": "Run of Galaxy workflow engine",
+      "startTime": "2024-08-13T09:25:12.381555"
+    },
+    {
+      "@id": "#e9482d6f-3f96-4f54-bfc1-71b091416ca2",
+      "@type": "CreateAction",
+      "endTime": "2024-08-09T08:07:41.964442",
+      "instrument": {
+        "@id": "workflows/a44ffd6c34f64433.gxwf.yml"
+      },
+      "name": "Marine Omics identifying biosynthetic gene clusters",
+      "object": [
+        {
+          "@id": "datasets/Regex_Find_And_Replace_on_data_11_31e7840b5aedca43f17b497c109f9250.fasta"
+        }
+      ],
+      "result": [
+        {
+          "@id": "datasets/Prodigal_Gene_Predictor_on_data_15___protein_translations_file_31e7840b5aedca4374cfd23e4ed3d5da.fasta"
+        },
+        {
+          "@id": "datasets/Regex_Find_And_Replace_on_data_19_31e7840b5aedca433cc63e1516943862.fasta"
+        },
+        {
+          "@id": "datasets/Sanntis_output_data_31e7840b5aedca4390780e07c9f86a59.gff3"
+        },
+        {
+          "@id": "datasets/Sanntis_output_data_genbank_31e7840b5aedca43d3dc3d19fd74d6a0.genbank"
+        },
+        {
+          "@id": "datasets/InterProScan_on_data_23_(tsv)_31e7840b5aedca43d660e51bac8b61ae.tabular"
+        }
+      ],
+      "startTime": "2024-08-09T08:07:41.964440"
+    },
+    {
+      "@id": "#ab15d3fd-b1db-4584-9c38-71de02b307e6",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Regex Find And Replace on data 11"
+    },
+    {
+      "@id": "#660a2840-53c5-408d-86c5-d5a2777a038a",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Prodigal Gene Predictor on data 15 : protein translations file"
+    },
+    {
+      "@id": "#e2b65e28-1d69-499d-942b-c37b4c78a37c",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Regex Find And Replace on data 19"
+    },
+    {
+      "@id": "#304f24ee-cb35-4a0d-af25-66786cc64a18",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Sanntis output data"
+    },
+    {
+      "@id": "#1f21b738-cfc6-46f9-ab5a-551552a39dee",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "Sanntis output data genbank"
+    },
+    {
+      "@id": "#45fd5f1d-d9ad-4d88-90c9-f39ca3d90547",
+      "@type": "FormalParameter",
+      "additionalType": "File",
+      "description": "",
+      "name": "InterProScan on data 23 (tsv)"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.1",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.1",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.1"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0",
+      "@type": "CreativeWork",
+      "name": "Workflow RO-Crate",
+      "version": "1.0"
+    },
+    {
+      "@id": "#datasets_attrs.txt.provenance",
+      "@type": "CreativeWork",
+      "description": "datasets provenance properties",
+      "encodingFormat": "application/json",
+      "version": "2.0"
+    }
+  ]
+}

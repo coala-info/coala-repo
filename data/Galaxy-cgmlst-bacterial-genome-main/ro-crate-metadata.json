@@ -1,0 +1,183 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "GithubService": "https://w3id.org/ro/terms/test#GithubService",
+      "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
+      "PlanemoEngine": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "TravisService": "https://w3id.org/ro/terms/test#TravisService",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "datePublished": "2026-03-12T17:30:35.348781",
+      "hasPart": [
+        {
+          "@id": "cgmlst_bacterial_genome.ga"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "cgmlst_bacterial_genome-tests.yml"
+        }
+      ],
+      "isBasedOn": "https://github.com/iwc-workflows/cgmlst-bacterial-genome",
+      "license": "GPL-3.0-or-later",
+      "mainEntity": {
+        "@id": "cgmlst_bacterial_genome.ga"
+      },
+      "mentions": [
+        {
+          "@id": "#test_main_1"
+        }
+      ],
+      "name": "cgmlst-bacterial-genome/main"
+    },
+    {
+      "@id": "cgmlst_bacterial_genome.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "creator": [
+        {
+          "@id": "#2cacee5c-7245-42d2-9b6c-0bf51d6574c9"
+        },
+        {
+          "@id": "https://www.abromics.fr/"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6140-0379"
+        },
+        {
+          "@id": "https://orcid.org/0009-0005-6834-4058"
+        }
+      ],
+      "name": "cgmlst-bacterial-genome/main",
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "url": "https://github.com/iwc-workflows/cgmlst-bacterial-genome",
+      "version": "1.1"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "cgmlst_bacterial_genome-tests.yml",
+      "@type": [
+        "File",
+        "TestDefinition"
+      ],
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/terms/test#PlanemoEngine"
+      },
+      "engineVersion": ">=0.75.40"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "name": "Galaxy",
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "version": "v19_09"
+    },
+    {
+      "@id": "#2cacee5c-7245-42d2-9b6c-0bf51d6574c9",
+      "@type": "Person",
+      "name": "ABRomics"
+    },
+    {
+      "@id": "https://www.abromics.fr/",
+      "@type": "Organization",
+      "name": "abromics-consortium"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6140-0379",
+      "@type": "Person",
+      "name": "Clea Siguret"
+    },
+    {
+      "@id": "https://orcid.org/0009-0005-6834-4058",
+      "@type": "Person",
+      "name": "Hugo Lefeuvre"
+    },
+    {
+      "@id": "#test_main_1",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "cgmlst_bacterial_genome-tests.yml"
+      },
+      "instance": [
+        {
+          "@id": "#test_main_1_1"
+        }
+      ],
+      "mainEntity": {
+        "@id": "cgmlst_bacterial_genome.ga"
+      },
+      "name": "test_main_1"
+    },
+    {
+      "@id": "#test_main_1_1",
+      "@type": "TestInstance",
+      "name": "test_main_1_1",
+      "resource": "repos/iwc-workflows/cgmlst-bacterial-genome/actions/workflows/wftest.yml",
+      "runsOn": {
+        "@id": "https://w3id.org/ro/terms/test#GithubService"
+      },
+      "url": "https://api.github.com"
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#GithubService",
+      "@type": "TestService",
+      "name": "Github Actions",
+      "url": {
+        "@id": "https://github.com"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/terms/test#PlanemoEngine",
+      "@type": "SoftwareApplication",
+      "name": "Planemo",
+      "url": {
+        "@id": "https://github.com/galaxyproject/planemo"
+      }
+    }
+  ]
+}

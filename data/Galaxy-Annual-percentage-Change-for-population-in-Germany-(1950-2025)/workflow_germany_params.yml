@@ -1,0 +1,11 @@
+files.tabular:
+  class: File
+  path: population/Germany-Population-Annual--Change-2025-05-27-15-17.csv 
+  filetype: csv
+Column name to use for plotting: "Population"
+Plot Title: Annual percentage Change for population in Germany (1950 - 2025)
+nxsplit: null
+xname (column name for the x-axis): null
+Date/time format for the x-axis column: null
+dates format for xlabels: null
+Matplotlib colormap: Blues

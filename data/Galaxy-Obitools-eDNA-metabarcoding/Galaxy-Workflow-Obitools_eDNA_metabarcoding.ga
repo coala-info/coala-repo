@@ -1,0 +1,914 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Obitools eDNA metabarcoding",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "wolf_tutorial.zip?download=1"
+                }
+            ],
+            "label": "wolf_tutorial.zip?download=1",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 10,
+                "top": 10
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "91ba6261-1376-4af9-8942-25cf05c0575a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_illumina_pairend/obi_illumina_pairend/1.2.13",
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Illuminapairedend",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 10,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_illumina_pairend/obi_illumina_pairend/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "83fbdf93d51e",
+                "name": "obi_illumina_pairend",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"inputfastq3p\": null, \"inputfastq5p\": null, \"score\": \"40.0\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "23a748bc-31fb-43b1-b1d2-8ceb5b67b1bb",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/0.2",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Unzip",
+            "outputs": [
+                {
+                    "name": "unzipped",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/0.2",
+            "tool_shed_repository": {
+                "changeset_revision": "38eec75fbe9b",
+                "name": "unzip",
+                "owner": "imgteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"zip\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"extract_options\": {\"extract_all\": \"True\", \"__current_case__\": 0}, \"input_file\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2",
+            "type": "tool",
+            "uuid": "89b9a6b9-de7d-4162-9226-08931384a52f",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FastQC",
+            "outputs": [
+                {
+                    "name": "html_file",
+                    "type": "html"
+                },
+                {
+                    "name": "text_file",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.73+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "3d0c7bdf12f5",
+                "name": "fastqc",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastq\", \"adapters\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"contaminants\": null, \"input_file\": null, \"kmers\": \"7\", \"limits\": null, \"min_length\": null, \"nogroup\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.73+galaxy0",
+            "type": "tool",
+            "uuid": "fa1d390c-b752-4c34-83c9-1d8c6b5eea8c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastq_groomer/fastq_groomer/1.1.5",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FASTQ Groomer",
+            "outputs": [
+                {
+                    "name": "output_file",
+                    "type": "fastqsanger"
+                }
+            ],
+            "position": {
+                "left": 230,
+                "top": 250
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/fastq_groomer/fastq_groomer/1.1.5",
+            "tool_shed_repository": {
+                "changeset_revision": "47e5dbc3e790",
+                "name": "fastq_groomer",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fastq\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input_file\": null, \"input_type\": \"illumina\", \"options_type\": {\"options_type_selector\": \"basic\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.5",
+            "type": "tool",
+            "uuid": "48142dbe-42d9-4e45-83c0-0bebcfbce534",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 4,
+                    "output_name": "output_file"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obigrep",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 450,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "fe7ec8a3d35e",
+                "name": "obi_grep",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"options_grep\": {\"options_grep_selector\": \"predicat\", \"__current_case__\": 6, \"predicat\": \"mode!=\\\"joined\\\"\"}, \"out_format\": null, \"v\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "05f74a18-1d67-4515-87fe-be60a6b259ea",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "wc_gnu",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input1": {
+                    "id": 4,
+                    "output_name": "output_file"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Line/Word/Character count",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 450,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "wc_gnu",
+            "tool_state": "{\"__input_ext\": \"fastqsanger\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"include_header\": true, \"input1\": null, \"options\": [\"lines\"], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "6f9ead8f-6ae4-4380-ab3b-022e3730007c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "wc_gnu",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input1": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Line/Word/Character count",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 670,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "wc_gnu",
+            "tool_state": "{\"__input_ext\": \"fastqsanger\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"include_header\": true, \"input1\": null, \"options\": [\"lines\"], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "56ea6cdd-6787-4073-9c73-caa1b270ee9a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_ngsfilter/obi_ngsfilter/1.2.13",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NGSfilter",
+            "outputs": [
+                {
+                    "name": "unident",
+                    "type": "auto"
+                },
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 670,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_ngsfilter/obi_ngsfilter/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "3bf57dadf7cd",
+                "name": "obi_ngsfilter",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"bool\": true, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"inputextrafile\": null, \"mismatch\": \"2\", \"out_format\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "5d03a348-9a87-4c9e-9255-6bba89a35436",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_uniq/obi_uniq/1.2.13",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obiuniq",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 890,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_uniq/obi_uniq/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "ec215ed98831",
+                "name": "obi_uniq",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"mid\": false, \"options_attribute\": \"merge\", \"options_uniq\": \"sample\", \"prefix\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "3aae9daa-3344-4fc4-a57d-254e6830de50",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_annotate/obi_annotate/1.2.13",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obiannotate",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1110,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_annotate/obi_annotate/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "f82cefbbcea5",
+                "name": "obi_annotate",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"clearbool\": false, \"deletetag_key\": \"\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"key_selector\": {\"key\": \"count\", \"key2\": \"merged_sample\", \"key3\": \"\", \"key4\": \"\", \"key5\": \"\"}, \"length\": false, \"mclfile\": null, \"out_format\": null, \"pythonexpression\": \"\", \"rankname\": \"\", \"rename_tag\": {\"old_name\": \"\", \"new_name\": \"\"}, \"seqrank\": false, \"set_tag\": {\"key\": \"\", \"pythonexpression\": \"\"}, \"setdefinition_pythonexpression\": \"\", \"setid_pythonexpression\": \"\", \"setsequence_pythonexpression\": \"\", \"taglist\": null, \"uniqid\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "f931d606-6855-49e3-b4e9-447c862ee68d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_stat/obi_stat/1.2.13",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obistat",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 1330,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_stat/obi_stat/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "723a93febe89",
+                "name": "obi_stat",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"catattributes\": [{\"__index__\": 0, \"options_attributespe\": {\"options_attributespe_selector\": \"key\", \"__current_case__\": 1, \"options_catattribute_selector\": \"count\"}}], \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"options_attribute\": {\"options_attributebe_selector\": \"None\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "58fb5246-22cb-4922-88da-e2021a74c818",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input": {
+                    "id": 10,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obigrep",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1330,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "fe7ec8a3d35e",
+                "name": "obi_grep",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"options_grep\": {\"options_grep_selector\": \"predicat\", \"__current_case__\": 6, \"predicat\": \"count>=10\"}, \"out_format\": null, \"v\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "f1f7c18f-f27d-4d80-8eec-05697682cf03",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input": {
+                    "id": 12,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obigrep",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1550,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_grep/obi_grep/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "fe7ec8a3d35e",
+                "name": "obi_grep",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"options_grep\": {\"options_grep_selector\": \"lmin\", \"__current_case__\": 8, \"lmin\": \"80\"}, \"out_format\": null, \"v\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "6d635e9f-2e90-4a5a-9392-e8f3c903c7a6",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_clean/obi_clean/1.2.13",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input": {
+                    "id": 13,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obiclean",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "auto"
+                }
+            ],
+            "position": {
+                "left": 1770,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_clean/obi_clean/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "12baadec7809",
+                "name": "obi_clean",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"distance\": \"1\", \"head\": true, \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"key\": \"merged_sample\", \"out_format\": null, \"ratio\": \"0.05\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "9711bbdd-3ca1-4082-820b-007119d442d1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/ncbi_blastn_wrapper/2.10.1+galaxy0",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "query": {
+                    "id": 14,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "NCBI BLAST+ blastn",
+            "outputs": [
+                {
+                    "name": "output1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1990,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/ncbi_blastn_wrapper/2.10.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "5edc472ec434",
+                "name": "ncbi_blast_plus",
+                "owner": "devteam",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"adv_opts\": {\"adv_opts_selector\": \"advanced\", \"__current_case__\": 1, \"filter_query\": true, \"strand\": \"-strand both\", \"max_hits\": \"1\", \"max_hsps\": null, \"identity_cutoff\": \"0.0\", \"word_size\": null, \"ungapped\": false, \"parse_deflines\": false, \"adv_optional_id_files_opts\": {\"adv_optional_id_files_opts_selector\": \"none\", \"__current_case__\": 0}, \"qcov_hsp_perc\": \"0.0\", \"window_size\": null, \"gapopen\": null, \"gapextend\": null}, \"blast_type\": \"megablast\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"db_opts\": {\"db_opts_selector\": \"file\", \"__current_case__\": 2, \"database\": \"\", \"histdb\": \"\", \"subject\": null}, \"evalue_cutoff\": \"0.001\", \"output\": {\"out_format\": \"ext\", \"__current_case__\": 1}, \"query\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.10.1+galaxy0",
+            "type": "tool",
+            "uuid": "5556006f-e74f-498b-9245-18164facd09b",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.7",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "id_opts|input_tabular": {
+                    "id": 15,
+                    "output_name": "output1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter sequences by ID",
+            "outputs": [
+                {
+                    "name": "output_pos",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2210,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.7",
+            "tool_shed_repository": {
+                "changeset_revision": "141612f8c3e3",
+                "name": "seq_filter_by_id",
+                "owner": "peterjc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fasta\", \"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"id_opts\": {\"id_opts_selector\": \"tabular\", \"__current_case__\": 0, \"input_tabular\": null, \"columns\": [\"2\"]}, \"input_file\": null, \"output_choice_cond\": {\"output_choice\": \"pos\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.7",
+            "type": "tool",
+            "uuid": "206d8d82-8277-4918-92f2-74ace3a001e0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.7",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "id_opts|input_tabular": {
+                    "id": 15,
+                    "output_name": "output1"
+                },
+                "input_file": {
+                    "id": 14,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter sequences by ID",
+            "outputs": [
+                {
+                    "name": "output_pos",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 2210,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/peterjc/seq_filter_by_id/seq_filter_by_id/0.2.7",
+            "tool_shed_repository": {
+                "changeset_revision": "141612f8c3e3",
+                "name": "seq_filter_by_id",
+                "owner": "peterjc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"fasta\", \"adv_opts\": {\"adv_opts_selector\": \"basic\", \"__current_case__\": 0}, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"id_opts\": {\"id_opts_selector\": \"tabular\", \"__current_case__\": 0, \"input_tabular\": null, \"columns\": [\"1\"]}, \"input_file\": null, \"output_choice_cond\": {\"output_choice\": \"pos\", \"__current_case__\": 1}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2.7",
+            "type": "tool",
+            "uuid": "ddf095d8-cdbc-4cb6-ba3e-8732fc89b2a1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_tab/obi_tab/1.2.13",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "input": {
+                    "id": 16,
+                    "output_name": "output_pos"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obitab",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2430,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_tab/obi_tab/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "5f7003111e32",
+                "name": "obi_tab",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"additional_file\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"no_definition_option\": false, \"output_seq_option\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "3e3d6a63-478d-4476-ad1d-d262f0c66d2a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_tab/obi_tab/1.2.13",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "input": {
+                    "id": 17,
+                    "output_name": "output_pos"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "obitab",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2430,
+                "top": 130
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/obi_tab/obi_tab/1.2.13",
+            "tool_shed_repository": {
+                "changeset_revision": "5f7003111e32",
+                "name": "obi_tab",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"additional_file\": null, \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": null, \"input_format_options\": {\"options_inputtype\": null, \"options_seqtype\": null}, \"no_definition_option\": false, \"output_seq_option\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.2.13",
+            "type": "tool",
+            "uuid": "a646375e-431a-4be2-ae4c-9c263e6db257",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "join1",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "input1": {
+                    "id": 19,
+                    "output_name": "output"
+                },
+                "input2": {
+                    "id": 15,
+                    "output_name": "output1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Join two Datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2650,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "join1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"field1\": \"1\", \"field2\": \"1\", \"fill_empty_columns\": {\"fill_empty_columns_switch\": \"fill_empty\", \"__current_case__\": 1, \"fill_columns_by\": \"fill_unjoined_only\", \"do_fill_empty_columns\": {\"column_fill_type\": \"single_fill_value\", \"__current_case__\": 0, \"fill_value\": \"NA\"}}, \"header\": \"-H\", \"input1\": null, \"input2\": null, \"partial\": \"\", \"unmatched\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.3",
+            "type": "tool",
+            "uuid": "a61d2ae2-5d42-4c0b-b21d-8cc8d698ecef",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "join1",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "input1": {
+                    "id": 20,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 18,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Join two Datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2870,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "join1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"field1\": \"26\", \"field2\": \"1\", \"fill_empty_columns\": {\"fill_empty_columns_switch\": \"fill_empty\", \"__current_case__\": 1, \"fill_columns_by\": \"fill_unjoined_only\", \"do_fill_empty_columns\": {\"column_fill_type\": \"single_fill_value\", \"__current_case__\": 0, \"fill_value\": \"NA\"}}, \"header\": \"-H\", \"input1\": null, \"input2\": null, \"partial\": \"\", \"unmatched\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.3",
+            "type": "tool",
+            "uuid": "33e13b69-0604-4850-94ca-f2193231a4aa",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "input": {
+                    "id": 21,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Cut",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 3090,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "Cut1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"columnList\": \"c1,c3,c4,c5,c6,c7,c50,c54,c59,c51\", \"delimiter\": \"T\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "62655831-9f17-4191-a439-9561203f5fb0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "input": {
+                    "id": 22,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 3310,
+                "top": 10
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"__input_ext\": \"tabular\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"cond\": \"c3>1000 or c4>1000 or c5>1000 or c6>1000\", \"header_lines\": \"1\", \"input\": null, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "f5bf34d8-0181-4177-bbec-4aafed9208b1",
+            "when": null,
+            "workflow_outputs": []
+        }
+    },
+    "tags": [],
+    "uuid": "8dd976e6-a50c-4ad2-ad42-d5fc1f0bcb76",
+    "version": 0
+}

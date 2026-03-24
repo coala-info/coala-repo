@@ -1,0 +1,243 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Workflow 7 [gucfg2galaxy] : Beta Diversity [16S Microbial Analysis With Mothur] ",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Shared file from Make.shared"
+                }
+            ],
+            "label": "Shared file from Make.shared",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0.0,
+                "top": 27.867645263671875
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "d0c07e4f-abd7-4af3-bda4-ab143e6859bb",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_dist_shared/mothur_dist_shared/1.39.5.0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "otu": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Dist.shared",
+                    "name": "subsampling"
+                }
+            ],
+            "label": null,
+            "name": "Dist.shared",
+            "outputs": [
+                {
+                    "name": "distfiles",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 289.08087158203125,
+                "top": 0.992645263671875
+            },
+            "post_job_actions": {
+                "HideDatasetActiondistfiles": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "distfiles"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_dist_shared/mothur_dist_shared/1.39.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "f25598da7174",
+                "name": "mothur_dist_shared",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"calc\": [\"jclass\", \"thetayc\"], \"groups\": null, \"label\": null, \"otu\": {\"__class__\": \"ConnectedValue\"}, \"output\": \"lt\", \"savelog\": false, \"subsampling\": {\"use\": \"yes\", \"__current_case__\": 0, \"subsample\": {\"__class__\": \"RuntimeValue\"}, \"iters\": \"1000\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.39.5.0",
+            "type": "tool",
+            "uuid": "f3156419-97ee-42f2-bd9c-409749a15952",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_heatmap_sim/mothur_heatmap_sim/1.39.5.0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input|dist": {
+                    "id": 1,
+                    "output_name": "distfiles"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Heatmap.sim",
+                    "name": "count"
+                },
+                {
+                    "description": "runtime parameter for tool Heatmap.sim",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Heatmap.sim",
+            "outputs": [
+                {
+                    "name": "heatmap",
+                    "type": "svg"
+                }
+            ],
+            "position": {
+                "left": 686.066162109375,
+                "top": 0.0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_heatmap_sim/mothur_heatmap_sim/1.39.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "7f5707dd6073",
+                "name": "mothur_heatmap_sim",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"count\": {\"__class__\": \"RuntimeValue\"}, \"fontsize\": \"24\", \"input\": {\"source\": \"phylip\", \"__current_case__\": 2, \"dist\": {\"__class__\": \"RuntimeValue\"}}, \"savelog\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.39.5.0",
+            "type": "tool",
+            "uuid": "aa3080d1-4ec6-4c1b-8be8-532a7e12c81c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "heatmap",
+                    "uuid": "672a3a5a-6216-40d7-baf3-7c7fc72874af"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_tree_shared/mothur_tree_shared/1.39.5.0",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input|dist": {
+                    "id": 1,
+                    "output_name": "distfiles"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Tree.shared",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool Tree.shared",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Tree.shared",
+            "outputs": [
+                {
+                    "name": "tre",
+                    "type": "mothur.tre"
+                }
+            ],
+            "position": {
+                "left": 644.1176147460938,
+                "top": 437.9962921142578
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/mothur_tree_shared/mothur_tree_shared/1.39.5.0",
+            "tool_shed_repository": {
+                "changeset_revision": "43e2715e98c9",
+                "name": "mothur_tree_shared",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"calc\": [\"jclass\", \"thetayc\"], \"input\": {\"source\": \"phylip\", \"__current_case__\": 1, \"dist\": {\"__class__\": \"RuntimeValue\"}, \"name\": {\"__class__\": \"RuntimeValue\"}}, \"savelog\": false, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.39.5.0",
+            "type": "tool",
+            "uuid": "e6bebcdf-bb0a-4b50-82a1-8c0ca2711b5e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "tre",
+                    "uuid": "2acc42f1-bedf-43ee-8fe9-21fe7df3fd08"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/newick_utils/newick_display/1.6+galaxy1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "fileNewick": {
+                    "id": 3,
+                    "output_name": "tre"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Newick Display",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "svg"
+                }
+            ],
+            "position": {
+                "left": 1022.1874389648438,
+                "top": 55.97425842285156
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/newick_utils/newick_display/1.6+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "b4163d2f64ab",
+                "name": "newick_utils",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"condbranchlength\": {\"branchlength\": \"false\", \"__current_case__\": 1}, \"condbranchsupport\": {\"branchsupport\": \"false\", \"__current_case__\": 1}, \"fileNewick\": {\"__class__\": \"ConnectedValue\"}, \"leafFont\": \"sans-serif\", \"leafSize\": \"10px\", \"legend\": \"\", \"outformat\": \"png\", \"radial\": false, \"scalebar\": true, \"width\": \"800\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.6+galaxy1",
+            "type": "tool",
+            "uuid": "8f4bff39-d764-4357-aae5-246c01ac2dcf",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "275481fd-7bf7-40d5-bbcc-77b7e2ba8417"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "metagenomics"
+    ],
+    "uuid": "3bc9b610-f0d3-4f38-806f-98de3bce5239",
+    "version": 5
+}

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for RNA-RNA interactome analysis using BWA-MEM</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-RNA-RNA_interactome_analysis_using_BWA-MEM.ga"
+      },
+      "datePublished": "2020-11-03 19:46:07 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-5192-126X"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/66?version=1",
+      "url": "https://workflowhub.eu/workflows/66/ro_crate?version=1",
+      "name": "Research Object Crate for RNA-RNA interactome analysis using BWA-MEM",
+      "description": "RNA-RNA interactome analysis using ChiRA tools suite. The aligner used is BWA-MEM.",
+      "sdDatePublished": "2026-03-24 18:11:04 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-RNA-RNA_interactome_analysis_using_BWA-MEM.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-RNA-RNA_interactome_analysis_using_BWA-MEM.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 29083,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "RNA-RNA interactome analysis using ChiRA tools suite. The aligner used is BWA-MEM.",
+      "name": "RNA-RNA interactome analysis using BWA-MEM",
+      "url": "https://workflowhub.eu/workflows/66?version=1",
+      "keywords": "rna, Transcriptomics",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/77"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2020-11-03T19:46:07Z",
+      "dateModified": "2023-02-13T14:06:45Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-1st%20reference%20FASTA%20file"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-2nd%20reference%20FASTA%20file"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Annotation%20GTF%20file"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Genomic%20FASTA%20file"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Reads%20FASTQ%20file"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_16"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5192-126X",
+      "@type": "Person",
+      "name": "Pavankumar Videm",
+      "identifier": "https://orcid.org/0000-0002-5192-126X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/77",
+      "@type": "Person",
+      "name": "Pavankumar Videm"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-1st reference FASTA file",
+      "@type": "FormalParameter",
+      "name": "1st reference FASTA file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-2nd reference FASTA file",
+      "@type": "FormalParameter",
+      "name": "2nd reference FASTA file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Annotation GTF file",
+      "@type": "FormalParameter",
+      "name": "Annotation GTF file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Genomic FASTA file",
+      "@type": "FormalParameter",
+      "name": "Genomic FASTA file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-inputs-Reads FASTQ file",
+      "@type": "FormalParameter",
+      "name": "Reads FASTQ file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#rna_rna_interactome_analysis_using_bwa_mem-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for RNA-RNA interactome analysis using BWA-MEM</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/66/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/66/ro_crate?version=1</a>
+
+
+<p>
+  RNA-RNA interactome analysis using ChiRA tools suite. The aligner used is BWA-MEM.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-5192-126X" target="_blank">Pavankumar Videm</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-RNA-RNA_interactome_analysis_using_BWA-MEM.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-RNA-RNA_interactome_analysis_using_BWA-MEM.ga">RNA-RNA interactome analysis using BWA-MEM</a>
+      
+        <br/>Size: 29083 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

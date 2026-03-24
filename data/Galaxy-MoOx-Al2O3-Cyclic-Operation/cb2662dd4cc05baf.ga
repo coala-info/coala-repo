@@ -1,0 +1,1339 @@
+{
+    "a_galaxy_workflow": "true",
+    "format-version": "0.1",
+    "name": "Workflow constructed for reproduction of paper 7",
+    "annotation": "",
+    "tags": [],
+    "uuid": "2da2c7cd-3d06-473f-bef8-84ecd2bf11a1",
+    "steps": {
+        "0": {
+            "id": 0,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "52c6a6f0-746d-4335-adf3-2dc835a66641",
+            "label": "172091_MoOx_Al2O3_1.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172091_MoOx_Al2O3_1.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 0
+            }
+        },
+        "1": {
+            "id": 1,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "2b2feff7-e9b4-465d-bf70-6e53f06d97fc",
+            "label": "172137_MoOx_Al2O3_actif_42.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172137_MoOx_Al2O3_actif_42.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 120
+            }
+        },
+        "2": {
+            "id": 2,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "576f6afd-4b31-4eb6-8fc3-044ec0b3c3ee",
+            "label": "172179_MoOx_Al2O3_actif_84.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172179_MoOx_Al2O3_actif_84.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 240
+            }
+        },
+        "3": {
+            "id": 3,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "95e22613-4036-4028-8cad-68fee015ed17",
+            "label": "172097_MoOx_Al2O3_actif_2.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172097_MoOx_Al2O3_actif_2.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 360
+            }
+        },
+        "4": {
+            "id": 4,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "65ca9704-68b0-4868-93a5-d0d33b1099c2",
+            "label": "172098_MoOx_Al2O3_actif_3.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172098_MoOx_Al2O3_actif_3.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 480
+            }
+        },
+        "5": {
+            "id": 5,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "53dc906c-0589-49d7-ab99-f0fd57e025aa",
+            "label": "172099_MoOx_Al2O3_actif_4.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172099_MoOx_Al2O3_actif_4.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 600
+            }
+        },
+        "6": {
+            "id": 6,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "b6f3fe03-6935-49e1-a4f0-6b513aa529bc",
+            "label": "172102_MoOx_Al2O3_actif_7.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172102_MoOx_Al2O3_actif_7.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 720
+            }
+        },
+        "7": {
+            "id": 7,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "7a88d1b7-7257-43cc-b69d-1b5d25e589d0",
+            "label": "172103_MoOx_Al2O3_actif_8.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172103_MoOx_Al2O3_actif_8.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 840
+            }
+        },
+        "8": {
+            "id": 8,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "a1b4c1ac-dee8-45b7-b0b7-ea5dfdb24d92",
+            "label": "172104_MoOx_Al2O3_actif_9.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172104_MoOx_Al2O3_actif_9.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 960
+            }
+        },
+        "9": {
+            "id": 9,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "c8d778b6-2837-403a-a96f-4a01c9c32145",
+            "label": "172105_MoOx_Al2O3_actif_10.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172105_MoOx_Al2O3_actif_10.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1080
+            }
+        },
+        "10": {
+            "id": 10,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "fcfabde7-6e41-480c-b9c3-ad78864e45d0",
+            "label": "172231_MoOx_Al2O3_actif_136.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172231_MoOx_Al2O3_actif_136.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1200
+            }
+        },
+        "11": {
+            "id": 11,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "c727e319-29f9-4ab1-9fce-68759a5174b0",
+            "label": "172232_MoOx_Al2O3_actif_137.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172232_MoOx_Al2O3_actif_137.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1320
+            }
+        },
+        "12": {
+            "id": 12,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "b97b1a79-ff84-46e9-adda-4a2a356630e4",
+            "label": "172233_MoOx_Al2O3_actif_138.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172233_MoOx_Al2O3_actif_138.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1440
+            }
+        },
+        "13": {
+            "id": 13,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "d152de02-8828-4244-8c1d-0115e758c0d0",
+            "label": "172234_MoOx_Al2O3_actif_139.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172234_MoOx_Al2O3_actif_139.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1560
+            }
+        },
+        "14": {
+            "id": 14,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "1b399fa5-523f-4ddd-90e0-507e4a2f9063",
+            "label": "172235_MoOx_Al2O3_actif_140.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172235_MoOx_Al2O3_actif_140.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1680
+            }
+        },
+        "15": {
+            "id": 15,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "errors": null,
+            "uuid": "37fc979f-e126-4cf9-a121-af8832768dee",
+            "label": "172236_MoOx_Al2O3_actif_141.dat",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "172236_MoOx_Al2O3_actif_141.dat",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 1800
+            }
+        },
+        "16": {
+            "id": 16,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"500C Helium\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "98191e51-6ddd-4ca1-8da5-17681193d704",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 0
+            }
+        },
+        "17": {
+            "id": 17,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"O2/He\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "db59dc97-3d0f-49bf-beb0-eb5ec1519cda",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 120
+            }
+        },
+        "18": {
+            "id": 18,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"Propane dehydrogenation\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "330bda51-43d0-47c1-a23b-d71b3e19ad7d",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 240
+            }
+        },
+        "19": {
+            "id": 19,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"1st ODP step (4 min)\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "2c2511cf-bc9d-4813-b6d3-7c3567cbe7f8",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 360
+            }
+        },
+        "20": {
+            "id": 20,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"8 min Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "0fb6dd28-26d4-40b1-ad9a-257a700601e7",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 480
+            }
+        },
+        "21": {
+            "id": 21,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"10 min Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "354c1161-2940-4550-b64d-423eaad50993",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 600
+            }
+        },
+        "22": {
+            "id": 22,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"22 min Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "74e3796a-2ff2-4ebe-b718-327692fe372a",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 6,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 720
+            }
+        },
+        "23": {
+            "id": 23,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"34 min Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "53c7b49f-eab7-49a5-9449-1de903599e92",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 7,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 840
+            }
+        },
+        "24": {
+            "id": 24,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"50 min Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "8867a406-dae1-47b0-9168-61c78f5dfd44",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 960
+            }
+        },
+        "25": {
+            "id": 25,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"58 min End Propane\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "6a74e998-d0d7-4fb7-98c8-b60ad53ad7df",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1080
+            }
+        },
+        "26": {
+            "id": 26,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"2nd OPD step\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "7563bc02-66ce-4ede-ad56-2782ddad2be6",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 10,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1200
+            }
+        },
+        "27": {
+            "id": 27,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"6 min 2nd ODP\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "9e893391-9fb9-43f2-9bc0-47ff8b1f4322",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 11,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1320
+            }
+        },
+        "28": {
+            "id": 28,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"8 min 2nd ODP\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "1278accf-92bd-4ce6-9bbf-7d96b23a4543",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 12,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1440
+            }
+        },
+        "29": {
+            "id": 29,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"10 min 2nd ODP\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "68395a97-5c23-4656-b5b7-2e0aafd8d5f4",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 13,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1560
+            }
+        },
+        "30": {
+            "id": 30,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"14 min 2nd ODP\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "1d92c2a6-0209-4c0b-8c47-1bd80ccfebf3",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 14,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1800
+            }
+        },
+        "31": {
+            "id": 31,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_athena/larch_athena/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"annotation\": \"19 min 2nd ODP\", \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"merge_inputs\": {\"__current_case__\": 0, \"format\": {\"__current_case__\": 0, \"energy_column\": {\"__current_case__\": 0, \"energy_column\": \"auto\"}, \"format\": \"plaintext\", \"is_zipped\": {\"__current_case__\": 0, \"dat_file\": {\"__class__\": \"ConnectedValue\"}, \"is_zipped\": \"\"}, \"mu_column\": {\"__current_case__\": 0, \"mu_column\": \"auto\"}}, \"merge_inputs\": \"\"}, \"plot_graph\": null, \"processing\": {\"calibrate\": {\"__current_case__\": 0, \"calibrate\": \"\"}, \"pre_edge\": {\"__current_case__\": 0, \"pre_edge\": \"\"}, \"rebin\": false, \"xftf\": {\"__current_case__\": 0, \"xftf\": \"\"}}, \"zip_outputs\": false}",
+            "errors": "Tool is not installed",
+            "uuid": "14cbd507-8536-426d-ab8c-ab9ebfccb8d5",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "merge_inputs|format|is_zipped|dat_file": {
+                    "id": 15,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 220,
+                "top": 1680
+            }
+        },
+        "32": {
+            "id": 32,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "5d2443af-6d95-4995-9a6e-9f5f54459d72",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 16,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 0
+            }
+        },
+        "33": {
+            "id": 33,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "e07f0de7-02bd-4f4d-b42f-f69018f23e64",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 17,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 120
+            }
+        },
+        "34": {
+            "id": 34,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "5893b765-f326-496e-a979-96898b0f23dd",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 18,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 240
+            }
+        },
+        "35": {
+            "id": 35,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "5b0b9bd8-d850-4777-b214-fbe09e6aa376",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 19,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 360
+            }
+        },
+        "36": {
+            "id": 36,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "b2ad29ae-7f75-4ea4-b4a7-dadeaadf0e1c",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 20,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 480
+            }
+        },
+        "37": {
+            "id": 37,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "91110391-1dd8-444c-9c99-6010d525f568",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 21,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 600
+            }
+        },
+        "38": {
+            "id": 38,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "ecdb9f3a-926c-4944-9ae2-728deddf8856",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 22,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 720
+            }
+        },
+        "39": {
+            "id": 39,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "55b3a581-120f-4669-9e49-5331bdf5b848",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 23,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 840
+            }
+        },
+        "40": {
+            "id": 40,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "fe054ad6-2670-4c22-a024-cdd75957c2b7",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 24,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 960
+            }
+        },
+        "41": {
+            "id": 41,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "f8883fa4-639a-4b49-8b02-eb81d49ca3ed",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 25,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1080
+            }
+        },
+        "42": {
+            "id": 42,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "62362b8e-b115-4e96-988c-7b1a9744c3ee",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 26,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1200
+            }
+        },
+        "43": {
+            "id": 43,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "e5f59950-1cdb-4798-a46a-4a03347f6e48",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 27,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1320
+            }
+        },
+        "44": {
+            "id": 44,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "e37cef87-f100-4bfa-9376-98a3ed8e7ca3",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 28,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1440
+            }
+        },
+        "45": {
+            "id": 45,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "f0e43b57-241a-4cc7-b610-19d233a1e359",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 29,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1560
+            }
+        },
+        "46": {
+            "id": 46,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "c2d3f176-1812-4881-ae10-d754856bffa9",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 30,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1800
+            }
+        },
+        "47": {
+            "id": 47,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_version": "0.9.80+galaxy1",
+            "name": "toolshed.g2.bx.psu.edu/repos/muon-spectroscopy-computational-project/larch_plot/larch_plot/0.9.80+galaxy1",
+            "tool_state": "{\"__input_ext\": \"input\", \"__page__\": null, \"__rerun_remap_job_id__\": null, \"chromInfo\": \"/srv/galaxy/var/tool_data/shared/ucsc/chrom/?.len\", \"dat_files\": {\"__class__\": \"ConnectedValue\"}, \"plots\": [{\"__index__\": 0, \"variable\": {\"__current_case__\": 0, \"variable\": \"flat\", \"x_limit_max\": \"20150.0\", \"x_limit_min\": \"19970.0\", \"y_limit_max\": null, \"y_limit_min\": null}}]}",
+            "errors": "Tool is not installed",
+            "uuid": "4db3089b-e702-47a6-938c-97f66c37343f",
+            "label": null,
+            "annotation": "",
+            "when": null,
+            "post_job_actions": {},
+            "inputs": [],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {
+                "dat_files": {
+                    "id": 31,
+                    "output_name": "athena_project_file"
+                }
+            },
+            "position": {
+                "left": 440,
+                "top": 1680
+            }
+        }
+    },
+    "comments": []
+}

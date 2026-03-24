@@ -1,0 +1,446 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This workflow shows how to run a fully coupled CESM B1850 f19_g17 and make a simple plot using the first extracted dataset.",
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0000-0002-1784-2920",
+            "name": "Anne Fouilloux",
+            "url": "https://github.com/annefou"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "Workflow for running a fully coupled CESM B1850 f19_g17",
+    "steps": {
+        "0": {
+            "annotation": "Input dataset for running this version of the fully coupled CESM model.",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Input dataset for running this version of the fully coupled CESM model.",
+                    "name": "inputdata_cesm_2.1.3_B1850_f19_g17.tar"
+                }
+            ],
+            "label": "inputdata_cesm_2.1.3_B1850_f19_g17.tar",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 427.2502104346432,
+                "height": 68.71685791015625,
+                "left": 418.22573533698693,
+                "right": 552.2257353369869,
+                "top": 358.53335252448693,
+                "width": 134,
+                "x": 418.22573533698693,
+                "y": 358.53335252448693
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "cca3c892-a765-4001-ae76-dd196fd6e982",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "886d2922-5a52-4d8b-abf7-9c1dbd1e7998"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "User namelist for CAM (Atmosphere) restarts.",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "User namelist for CAM (Atmosphere) restarts.",
+                    "name": "user_nl_cam_rs"
+                }
+            ],
+            "label": "user_nl_cam_rs",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 554.6041227881587,
+                "height": 55.055145263671875,
+                "left": 418.22573533698693,
+                "right": 552.2257353369869,
+                "top": 499.54897752448693,
+                "width": 134,
+                "x": 418.22573533698693,
+                "y": 499.54897752448693
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "26146a93-2129-4bd8-ba71-6fedd66d5167",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "acf73e53-15d3-4ef5-9f69-ea846e3dbc34"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "Tool for running CESM in fully coupled mode.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/cesm/cesm/2.1.3+galaxy0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "adv_atm|user_nl_atm_customization": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "input_type|inputdata": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_atm"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_atm"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_glc"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_glc"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_ice"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_ice"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_lnd"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_lnd"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_ocn"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_ocn"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_rof"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "adv_rof"
+                },
+                {
+                    "description": "runtime parameter for tool CESM",
+                    "name": "input_type"
+                }
+            ],
+            "label": null,
+            "name": "CESM",
+            "outputs": [
+                {
+                    "name": "logs_files",
+                    "type": "input"
+                },
+                {
+                    "name": "history_files",
+                    "type": "input"
+                },
+                {
+                    "name": "work",
+                    "type": "tar"
+                },
+                {
+                    "name": "restart",
+                    "type": "tar"
+                },
+                {
+                    "name": "rinfo",
+                    "type": "txt"
+                },
+                {
+                    "name": "case_info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 876.7397807107043,
+                "height": 504.2064208984375,
+                "left": 696.397650419776,
+                "right": 830.397650419776,
+                "top": 372.5333598122668,
+                "width": 134,
+                "x": 696.397650419776,
+                "y": 372.5333598122668
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/cesm/cesm/2.1.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "7a7ba86e95a4",
+                "name": "cesm",
+                "owner": "climate",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv_atm\": {\"user_nl_atm_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"adv_glc\": {\"user_nl_glc_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"adv_ice\": {\"user_nl_ice_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"adv_lnd\": {\"user_nl_lnd_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"adv_ocn\": {\"user_nl_ocn_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"adv_period\": {\"condi_type_run\": {\"run_type\": \"startup\", \"__current_case__\": 0, \"run_startdate\": \"\"}, \"stopn\": \"1\", \"stop_option\": \"nmonths\", \"hist_option\": \"unset\"}, \"adv_restart\": {\"restn\": \"1\", \"restart_option\": \"nmonths\", \"interim_files\": \"false\"}, \"adv_rof\": {\"user_nl_rof_customization\": {\"__class__\": \"RuntimeValue\"}, \"inputs\": {\"__class__\": \"RuntimeValue\"}}, \"casename\": \"b1850_f19_g17\", \"condi_compset\": {\"compset\": \"B1850\", \"__current_case__\": 6, \"resolution\": \"f19_g17\"}, \"condi_user_mods\": {\"add_changes\": \"no\", \"__current_case__\": 1}, \"input_type\": {\"tarball\": \"yes\", \"__current_case__\": 0, \"inputdata\": {\"__class__\": \"RuntimeValue\"}}, \"save_workdir\": \"true\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.3+galaxy0",
+            "type": "tool",
+            "uuid": "fe38944b-7125-417d-b1e5-e5110890580f",
+            "workflow_outputs": [
+                {
+                    "label": "history files",
+                    "output_name": "history_files",
+                    "uuid": "f8790f3b-54af-4c93-a50d-7c5179d88638"
+                },
+                {
+                    "label": "work directory",
+                    "output_name": "work",
+                    "uuid": "ea3ba27f-484c-4f60-84f7-751f85293c58"
+                },
+                {
+                    "label": "restart files",
+                    "output_name": "restart",
+                    "uuid": "90547594-9a55-4481-bb96-b60666406add"
+                },
+                {
+                    "label": "restart info",
+                    "output_name": "rinfo",
+                    "uuid": "bf23c57a-1f56-4867-8dd4-3eb52faffe37"
+                },
+                {
+                    "label": "case_info",
+                    "output_name": "case_info",
+                    "uuid": "5596f200-ff7e-4edc-961b-3a4bd307a2fc"
+                },
+                {
+                    "label": "logfiles",
+                    "output_name": "logs_files",
+                    "uuid": "2f634665-4f09-456a-aeff-edd4ff6c57fa"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "__EXTRACT_DATASET__",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 2,
+                    "output_name": "history_files"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Extract dataset",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Extract dataset",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "data"
+                }
+            ],
+            "position": {
+                "bottom": 833.2819059001865,
+                "height": 89.74853515625,
+                "left": 974.4132426247668,
+                "right": 1108.4132426247668,
+                "top": 743.5333707439365,
+                "width": 134,
+                "x": 974.4132426247668,
+                "y": 743.5333707439365
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput": {
+                    "action_arguments": {
+                        "newtype": "netcdf"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "__EXTRACT_DATASET__",
+            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"which\": {\"which_dataset\": \"first\", \"__current_case__\": 0}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "4c27214e-307d-45b9-a1bb-ac3ce905af35",
+            "workflow_outputs": [
+                {
+                    "label": "input dataset(s) (extracted element)",
+                    "output_name": "output",
+                    "uuid": "8b173051-deea-4086-9e48-c79ae62b5234"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.15.1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NetCDF xarray Metadata Info",
+                    "name": "input"
+                }
+            ],
+            "label": "metadata of the netCDF file",
+            "name": "NetCDF xarray Metadata Info",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                },
+                {
+                    "name": "info",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 1041.2843154223997,
+                "height": 110.11029052734375,
+                "left": 1240.5070290636659,
+                "right": 1374.5070290636659,
+                "top": 931.1740248950559,
+                "width": 134,
+                "x": 1240.5070290636659,
+                "y": 931.1740248950559
+            },
+            "post_job_actions": {
+                "HideDatasetActioninfo": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "info"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_metadata_info/xarray_metadata_info/0.15.1",
+            "tool_shed_repository": {
+                "changeset_revision": "e8650cdf092f",
+                "name": "xarray_metadata_info",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.15.1",
+            "type": "tool",
+            "uuid": "a09348ca-1d90-487c-8d4b-59fe4e6e7aca",
+            "workflow_outputs": [
+                {
+                    "label": "metadata table of the netCDF file",
+                    "output_name": "output",
+                    "uuid": "7b9dc261-6053-4da8-8456-e1038d1dc2b2"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "Visualize the first dataset (date/time) from the generated output file.",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_mapplot/xarray_mapplot/0.18.2+galaxy0",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "var_tab": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool NetCDF xarray map plotting",
+                    "name": "input"
+                },
+                {
+                    "description": "runtime parameter for tool NetCDF xarray map plotting",
+                    "name": "var_tab"
+                }
+            ],
+            "label": null,
+            "name": "NetCDF xarray map plotting",
+            "outputs": [
+                {
+                    "name": "output_dir",
+                    "type": "input"
+                },
+                {
+                    "name": "version",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 925.3436552588619,
+                "height": 116.810302734375,
+                "left": 1530.4445181319961,
+                "right": 1664.4445181319961,
+                "top": 808.5333525244869,
+                "width": 134,
+                "x": 1530.4445181319961,
+                "y": 808.5333525244869
+            },
+            "post_job_actions": {
+                "HideDatasetActionversion": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "version"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/xarray_mapplot/xarray_mapplot/0.18.2+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "d7479b6dfbe8",
+                "name": "xarray_mapplot",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"borders\": \"0.1\", \"cmap\": \"cm.vik\", \"coastline\": \"0.4\", \"colorbar_label\": \"\", \"condi_datetime\": {\"datetime\": \"no\", \"__current_case__\": 0}, \"input\": {\"__class__\": \"RuntimeValue\"}, \"land\": \"0.1\", \"lat_dim\": \"lat\", \"lon_dim\": \"lon\", \"ocean\": \"0.1\", \"proj\": \"\", \"range\": \"\", \"shift\": \"\", \"threshold\": null, \"title\": \"\", \"var\": \"TREFHT\", \"var_tab\": {\"__class__\": \"RuntimeValue\"}, \"xlim\": \"\", \"ylim\": \"\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.18.2+galaxy0",
+            "type": "tool",
+            "uuid": "58b3b85d-211e-4504-a84e-0b14c5b23909",
+            "workflow_outputs": [
+                {
+                    "label": "maps",
+                    "output_name": "output_dir",
+                    "uuid": "41a54534-89dc-40b1-b0f1-258afd4529cb"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "climate",
+        "ESM"
+    ],
+    "uuid": "cfa6468d-d285-4bbd-a9b1-393bc4801de5",
+    "version": 10
+}

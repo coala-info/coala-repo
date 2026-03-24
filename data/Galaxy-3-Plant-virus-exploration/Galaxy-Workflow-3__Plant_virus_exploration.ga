@@ -1,0 +1,189 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "3: Plant virus exploration",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool fastp",
+                    "name": "single_paired"
+                },
+                {
+                    "description": "runtime parameter for tool fastp",
+                    "name": "single_paired"
+                }
+            ],
+            "label": "fastp: clean reads",
+            "name": "fastp",
+            "outputs": [
+                {
+                    "name": "out1",
+                    "type": "input"
+                },
+                {
+                    "name": "out2",
+                    "type": "input"
+                },
+                {
+                    "name": "report_html",
+                    "type": "html"
+                }
+            ],
+            "position": {
+                "bottom": 820.5,
+                "height": 262,
+                "left": 501.421875,
+                "right": 701.421875,
+                "top": 558.5,
+                "width": 200,
+                "x": 501.421875,
+                "y": 558.5
+            },
+            "post_job_actions": {
+                "RenameDatasetActionout1": {
+                    "action_arguments": {
+                        "newname": "clean_#{ in1 | basename }"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "out1"
+                },
+                "TagDatasetActionout1": {
+                    "action_arguments": {
+                        "tags": "Read_cleaned "
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "out1"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/fastp/fastp/0.20.1+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "dbf9c561ef29",
+                "name": "fastp",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"filter_options\": {\"quality_filtering_options\": {\"disable_quality_filtering\": \"false\", \"qualified_quality_phred\": \"\", \"unqualified_percent_limit\": \"\", \"n_base_limit\": \"\"}, \"length_filtering_options\": {\"disable_length_filtering\": \"false\", \"length_required\": \"\", \"length_limit\": \"\"}, \"low_complexity_filter\": {\"enable_low_complexity_filter\": \"false\", \"complexity_threshold\": \"\"}}, \"output_options\": {\"report_html\": \"true\", \"report_json\": \"false\"}, \"overrepresented_sequence_analysis\": {\"overrepresentation_analysis\": \"false\", \"overrepresentation_sampling\": \"\"}, \"read_mod_options\": {\"polyg_tail_trimming\": {\"trimming_select\": \"\", \"__current_case__\": 1, \"poly_g_min_len\": \"\"}, \"polyx_tail_trimming\": {\"polyx_trimming_select\": \"\", \"__current_case__\": 1}, \"umi_processing\": {\"umi\": \"false\", \"umi_loc\": \"\", \"umi_len\": \"\", \"umi_prefix\": \"\"}, \"cutting_by_quality_options\": {\"cut_by_quality5\": \"false\", \"cut_by_quality3\": \"false\", \"cut_window_size\": \"\", \"cut_mean_quality\": \"\"}, \"base_correction_options\": {\"correction\": \"false\"}}, \"single_paired\": {\"single_paired_selector\": \"paired\", \"__current_case__\": 1, \"in1\": {\"__class__\": \"RuntimeValue\"}, \"in2\": {\"__class__\": \"RuntimeValue\"}, \"adapter_trimming_options\": {\"disable_adapter_trimming\": \"false\", \"adapter_sequence1\": \"\", \"adapter_sequence2\": \"\"}, \"global_trimming_options\": {\"trim_front1\": \"\", \"trim_tail1\": \"\", \"trim_front2\": \"\", \"trim_tail2\": \"\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": null,
+            "type": "tool",
+            "uuid": "6ee425b7-7c24-462f-9ee1-a3c69b275b23",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "out2",
+                    "uuid": "3646fbbf-2c31-464c-8572-50da11ad7abf"
+                },
+                {
+                    "label": "fastp on input dataset(s): HTML report",
+                    "output_name": "report_html",
+                    "uuid": "a2184610-3c59-4dd8-ba8c-215c7f16fb16"
+                },
+                {
+                    "label": "fastp on input dataset(s): Read 1 output",
+                    "output_name": "out1",
+                    "uuid": "4802b886-5508-4fa7-a99d-b5816b5f9a7f"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "library|R1": {
+                    "id": 0,
+                    "output_name": "out1"
+                },
+                "library|R2": {
+                    "id": 0,
+                    "output_name": "out2"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Shovill",
+            "outputs": [
+                {
+                    "name": "shovill_std_log",
+                    "type": "txt"
+                },
+                {
+                    "name": "contigs",
+                    "type": "fasta"
+                },
+                {
+                    "name": "contigs_graph",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "bottom": 793.484375,
+                "height": 262,
+                "left": 896.453125,
+                "right": 1096.453125,
+                "top": 531.484375,
+                "width": 200,
+                "x": 896.453125,
+                "y": 531.484375
+            },
+            "post_job_actions": {
+                "HideDatasetActioncontigs_graph": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "contigs_graph"
+                },
+                "RenameDatasetActioncontigs": {
+                    "action_arguments": {
+                        "newname": "Contig_from_#{R1 | basename }.fasta"
+                    },
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "contigs"
+                },
+                "TagDatasetActioncontigs": {
+                    "action_arguments": {
+                        "tags": "Contig_to_explore"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "contigs"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/shovill/shovill/1.1.0+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "83ead2be47b2",
+                "name": "shovill",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adv\": {\"namefmt\": \"contig%05d\", \"depth\": \"100\", \"gsize\": \"\", \"kmers\": \"\", \"opts\": \"\", \"nocorr\": \"true\", \"minlen\": \"0\", \"mincov\": \"2\"}, \"assembler\": \"megahit\", \"library\": {\"lib_type\": \"paired\", \"__current_case__\": 0, \"R1\": {\"__class__\": \"ConnectedValue\"}, \"R2\": {\"__class__\": \"ConnectedValue\"}}, \"log\": \"true\", \"trim\": \"false\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": null,
+            "type": "tool",
+            "uuid": "c8f24e1c-4023-4e43-99da-669e63903627",
+            "workflow_outputs": [
+                {
+                    "label": "Shovill on input dataset(s) Log file",
+                    "output_name": "shovill_std_log",
+                    "uuid": "64137b10-b136-4b06-9df8-5bfcf32d132e"
+                },
+                {
+                    "label": "Shovill on input dataset(s): Contigs",
+                    "output_name": "contigs",
+                    "uuid": "82d943d4-4564-491a-b579-6354e663cac5"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "Virology",
+        "Exploration",
+        "DE_NOVO"
+    ],
+    "uuid": "3c4842a4-7195-4062-b677-8f189f085c46",
+    "version": 1
+}

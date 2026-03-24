@@ -1,0 +1,288 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "biobb_wf_godmd.ga"
+      },
+      "datePublished": "2023-08-11 09:37:28 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.558.1",
+      "url": "https://workflowhub.eu/workflows/558/ro_crate?version=1",
+      "name": "Research Object Crate for Galaxy Protein Conformational Transitions calculations tutorial",
+      "description": "# Protein Conformational Transitions calculations tutorial using BioExcel Building Blocks (biobb) and GOdMD\n\nThis tutorial aims to illustrate the process of computing a conformational transition between two known structural conformations of a protein, step by step, using the BioExcel Building Blocks library (biobb).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_godmd/galaxy",
+      "sdDatePublished": "2026-03-24 17:57:07 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "biobb_wf_godmd.ga"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_godmd/galaxy/README.md"
+        }
+      ]
+    },
+    {
+      "@id": "biobb_wf_godmd.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_godmd/galaxy/biobb_wf_godmd.ga",
+      "contentSize": 16355,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Protein Conformational Transitions calculations tutorial using BioExcel Building Blocks (biobb) and GOdMD\n\nThis tutorial aims to illustrate the process of computing a conformational transition between two known structural conformations of a protein, step by step, using the BioExcel Building Blocks library (biobb).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "Galaxy Protein Conformational Transitions calculations tutorial",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-08-11T08:36:46Z",
+      "dateModified": "2023-08-11T08:38:31Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.558.1",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/_anonymous_output_1"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/mygodmd_prep.aln"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin-target.godmd.dcd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin-target.godmd.ene.out"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin-target.godmd.log"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin-target.godmd.mdcrd"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin-target.godmd.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin.chains.nolig.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin.chains.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/origin.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/target.chains.pdb"
+        },
+        {
+          "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-%23main/target.pdb"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_godmd/galaxy/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "#main/_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/mygodmd_prep.aln",
+      "@type": "FormalParameter",
+      "name": "#main/mygodmd_prep.aln",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin-target.godmd.dcd",
+      "@type": "FormalParameter",
+      "name": "#main/origin-target.godmd.dcd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin-target.godmd.ene.out",
+      "@type": "FormalParameter",
+      "name": "#main/origin-target.godmd.ene.out",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin-target.godmd.log",
+      "@type": "FormalParameter",
+      "name": "#main/origin-target.godmd.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin-target.godmd.mdcrd",
+      "@type": "FormalParameter",
+      "name": "#main/origin-target.godmd.mdcrd",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin-target.godmd.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/origin-target.godmd.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin.chains.nolig.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/origin.chains.nolig.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin.chains.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/origin.chains.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/origin.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/origin.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/target.chains.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/target.chains.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#galaxy_protein_conformational_transitions_calculations_tutorial-outputs-#main/target.pdb",
+      "@type": "FormalParameter",
+      "name": "#main/target.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

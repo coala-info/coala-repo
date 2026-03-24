@@ -1,0 +1,897 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2024-03-05 08:48:02 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.776.1",
+      "url": "https://workflowhub.eu/workflows/776/ro_crate?version=1",
+      "name": "Research Object Crate for CWL Molecular Structure Checking",
+      "description": "# Molecular Structure Checking using BioExcel Building Blocks (biobb)\n\n***\n\nThis tutorial aims to illustrate the process of **checking** a **molecular structure** before using it as an input for a **Molecular Dynamics** simulation. The workflow uses the **BioExcel Building Blocks library (biobb)**. The particular structure used is the crystal structure of **human Adenylate Kinase 1A (AK1A)**, in complex with the **AP5A inhibitor** (PDB code [1Z83](https://www.rcsb.org/structure/1z83)).  \n\n**Structure checking** is a key step before setting up a protein system for **simulations**. A number of **common issues** found in structures at **Protein Data Bank** may compromise the success of the **simulation**, or may suggest that longer **equilibration** procedures are necessary.\n\nThe **workflow** shows how to:\n\n- Run **basic manipulations on structures** (selection of models, chains, alternative locations\n- Detect and fix **amide assignments** and **wrong chiralities**\n- Detect and fix **protein backbone** issues (missing fragments, and atoms, capping)\n- Detect and fix **missing side-chain atoms**\n- **Add hydrogen atoms** according to several criteria\n- Detect and classify **atomic clashes**\n- Detect possible **disulfide bonds (SS)**\n\nAn implementation of this workflow in a **web-based Graphical User Interface (GUI)** can be found in the [https://mmb.irbbarcelona.org/biobb-wfs/](https://mmb.irbbarcelona.org/biobb-wfs/) server (see [https://mmb.irbbarcelona.org/biobb-wfs/help/create/structure#check](https://mmb.irbbarcelona.org/biobb-wfs/help/create/structure#check)).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/main/biobb_wf_structure_checking/cwl",
+      "sdDatePublished": "2026-03-24 01:04:53 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-776-24d34210ccf7272242da38ea933da629060f5abc-diagram.svg"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/README.md"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/sequence.fasta"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/structure.pdb"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/workflow_input_descriptions.yml"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/amber_to_pdb.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/extract_chain.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/extract_model.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_altlocs.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_amides.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_backbone.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_chirality.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_pdb.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_side_chain.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_ssbonds.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/leap_gen_top.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/reduce_remove_hydrogens.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/remove_molecules.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/remove_pdb_water.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/sander_mdrun.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/structure_check.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/workflow.cwl",
+      "contentSize": 15044,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-776-24d34210ccf7272242da38ea933da629060f5abc-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Molecular Structure Checking using BioExcel Building Blocks (biobb)\n\n***\n\nThis tutorial aims to illustrate the process of **checking** a **molecular structure** before using it as an input for a **Molecular Dynamics** simulation. The workflow uses the **BioExcel Building Blocks library (biobb)**. The particular structure used is the crystal structure of **human Adenylate Kinase 1A (AK1A)**, in complex with the **AP5A inhibitor** (PDB code [1Z83](https://www.rcsb.org/structure/1z83)).  \n\n**Structure checking** is a key step before setting up a protein system for **simulations**. A number of **common issues** found in structures at **Protein Data Bank** may compromise the success of the **simulation**, or may suggest that longer **equilibration** procedures are necessary.\n\nThe **workflow** shows how to:\n\n- Run **basic manipulations on structures** (selection of models, chains, alternative locations\n- Detect and fix **amide assignments** and **wrong chiralities**\n- Detect and fix **protein backbone** issues (missing fragments, and atoms, capping)\n- Detect and fix **missing side-chain atoms**\n- **Add hydrogen atoms** according to several criteria\n- Detect and classify **atomic clashes**\n- Detect possible **disulfide bonds (SS)**\n\nAn implementation of this workflow in a **web-based Graphical User Interface (GUI)** can be found in the [https://mmb.irbbarcelona.org/biobb-wfs/](https://mmb.irbbarcelona.org/biobb-wfs/) server (see [https://mmb.irbbarcelona.org/biobb-wfs/help/create/structure#check](https://mmb.irbbarcelona.org/biobb-wfs/help/create/structure#check)).\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2023 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2023 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "CWL Molecular Structure Checking",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2024-03-05T08:41:19Z",
+      "dateModified": "2024-03-05T08:50:30Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.776.1",
+      "input": [
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step0_structure_check_init_input_structure_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step0_structure_check_init_output_summary_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_input_structure_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_output_structure_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step2_extract_chain_output_structure_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step2_extract_chain_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step3_fix_altlocs_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step3_fix_altlocs_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step4_fix_ssbonds_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step5_remove_molecules_ions_output_molecules_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step5_remove_molecules_ions_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step6_remove_molecules_ligands_output_molecules_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step6_remove_molecules_ligands_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step7_reduce_remove_hydrogens_output_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step8_remove_pdb_water_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step9_fix_amides_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step10_fix_chirality_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step11_fix_side_chain_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step12_fix_backbone_input_fasta_canonical_sequence_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step12_fix_backbone_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_top_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_crd_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_traj_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_rst_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_log_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_config"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step15_amber_to_pdb_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step16_fix_pdb_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-inputs-step17_structure_check_output_summary_path"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step0_structure_check_init_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step1_extract_model_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step2_extract_chain_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step3_fix_altlocs_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step4_fix_ssbonds_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step5_remove_molecules_ions_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step6_remove_molecules_ligands_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step7_reduce_remove_hydrogens_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step8_remove_pdb_water_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step9_fix_amides_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step10_fix_chirality_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step11_fix_side_chain_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step12_fix_backbone_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out2"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out3"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out2"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out3"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step15_amber_to_pdb_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step16_fix_pdb_out1"
+        },
+        {
+          "@id": "#cwl_molecular_structure_checking-outputs-step17_structure_check_out1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-776-24d34210ccf7272242da38ea933da629060f5abc-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 64539
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/sequence.fasta",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/structure.pdb",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/workflow_input_descriptions.yml",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/amber_to_pdb.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/extract_chain.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/extract_model.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_altlocs.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_amides.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_backbone.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_chirality.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_pdb.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_side_chain.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/fix_ssbonds.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/leap_gen_top.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/reduce_remove_hydrogens.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/remove_molecules.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/remove_pdb_water.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/sander_mdrun.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/main/biobb_wf_structure_checking/cwl/biobb_adapters/structure_check.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step0_structure_check_init_input_structure_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step0_structure_check_init_output_summary_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_input_structure_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_output_structure_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step1_extract_model_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step2_extract_chain_output_structure_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step2_extract_chain_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step3_fix_altlocs_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step3_fix_altlocs_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step4_fix_ssbonds_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step5_remove_molecules_ions_output_molecules_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step5_remove_molecules_ions_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step6_remove_molecules_ligands_output_molecules_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step6_remove_molecules_ligands_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step7_reduce_remove_hydrogens_output_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step8_remove_pdb_water_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step9_fix_amides_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step10_fix_chirality_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step11_fix_side_chain_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step12_fix_backbone_input_fasta_canonical_sequence_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step12_fix_backbone_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_top_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_output_crd_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step13_leap_gen_top_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_traj_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_rst_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step14_sander_mdrun_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step15_amber_to_pdb_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step16_fix_pdb_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-inputs-step17_structure_check_output_summary_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step0_structure_check_init_out1",
+      "@type": "FormalParameter",
+      "name": "output_summary_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step1_extract_model_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step2_extract_chain_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step3_fix_altlocs_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step4_fix_ssbonds_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step5_remove_molecules_ions_out1",
+      "@type": "FormalParameter",
+      "name": "output_molecules_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step6_remove_molecules_ligands_out1",
+      "@type": "FormalParameter",
+      "name": "output_molecules_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step7_reduce_remove_hydrogens_out1",
+      "@type": "FormalParameter",
+      "name": "output_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step8_remove_pdb_water_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step9_fix_amides_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step10_fix_chirality_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step11_fix_side_chain_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step12_fix_backbone_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out2",
+      "@type": "FormalParameter",
+      "name": "output_top_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step13_leap_gen_top_out3",
+      "@type": "FormalParameter",
+      "name": "output_crd_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out1",
+      "@type": "FormalParameter",
+      "name": "output_traj_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out2",
+      "@type": "FormalParameter",
+      "name": "output_rst_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step14_sander_mdrun_out3",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step15_amber_to_pdb_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step16_fix_pdb_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_molecular_structure_checking-outputs-step17_structure_check_out1",
+      "@type": "FormalParameter",
+      "name": "output_summary_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

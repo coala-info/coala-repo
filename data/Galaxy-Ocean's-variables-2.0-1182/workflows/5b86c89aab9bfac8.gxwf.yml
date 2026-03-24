@@ -1,0 +1,207 @@
+class: GalaxyWorkflow
+doc: Subset data on the Mediterreanean see and extract and visualise the Phosphate
+  variable
+label: Ocean's variables 2.0
+creator:
+- class: Person
+  identifier: 0009-0008-0622-604X
+  name: "Marie Joss\xE9"
+  url: https://github.com/Marie59
+license: CC-BY-4.0
+tags:
+- earth-system
+- Ocean
+uuid: 43af9a23-39a5-4ca9-b36f-c325ce104d3d
+report:
+  markdown: '
+
+    # Workflow Execution Report
+
+
+    ## Workflow Inputs
+
+    ```galaxy
+
+    invocation_inputs()
+
+    ```
+
+
+    ## Workflow Outputs
+
+    ```galaxy
+
+    invocation_outputs()
+
+    ```
+
+
+    ## Workflow
+
+    ```galaxy
+
+    workflow_display()
+
+    ```
+
+    '
+inputs:
+  Workflow fully interactive:
+    type: boolean
+    optional: false
+    doc: Choose whether you want to have only interactive tools (for more experimented
+      user) or if you want a workflow hat combines interactive and non-interactive
+      tools (easier)
+    position:
+      left: 29.80677214543107
+      top: 359.1046708180256
+  Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip:
+    type: data
+    optional: false
+    doc: The data here are Mediterranean Sea - Eutrophication and Acidity aggregated
+      datasets EMODnet Chemistry.
+    position:
+      left: 331.37356461320985
+      top: 474.6166042326029
+  Workflow semi automatic:
+    type: boolean
+    optional: false
+    doc: Choose whether you want to have only interactive tools (for more experimented
+      user) or if you want a workflow hat combines interactive and non-interactive
+      tools (easier)
+    position:
+      left: 30.803726616808316
+      top: 708.6669947644027
+  gebco_30sec_8.nc:
+    type: data
+    optional: false
+    doc: A bathymetry file in netcdf.
+    position:
+      left: 614.0977004616734
+      top: 903.4688531054738
+outputs:
+  _anonymous_output_1:
+    outputSource: Workflow fully interactive
+  _anonymous_output_2:
+    outputSource: Workflow semi automatic
+  Water_body_Phosphate_Mediterranean.nc:
+    outputSource: DIVAnd (create a climatology)/output_netcdf
+  Ocean variables visualisation interactive:
+    outputSource: ODV (visualisation) interactive/outputs_all
+  Ocean variables visualisation:
+    outputSource: ODV (visualisation)/outputs_all
+steps:
+  Ocean Data View:
+    tool_id: interactive_tool_odv
+    tool_version: v5.7.2
+    doc: Interactively subset you data.
+    position:
+      left: 604.0101209455609
+      top: 486.70594520850074
+    tool_state:
+      __input_ext: zip
+      chromInfo: /opt/galaxy/tool-data/shared/ucsc/chrom/?.len
+      method:
+        __current_case__: 1
+        folder:
+          __class__: ConnectedValue
+        type: zip
+    in:
+      method|folder:
+        source: Eutrophication_Med_profiles_2022_unrestricted_SNAPSHOT_2023-10-24T16-39-44.zip
+  Interactive DIVAnd jupyterlab:
+    tool_id: interactive_tool_divand
+    tool_version: 0.0.6
+    doc: Create a climatology interactively with notebooks
+    position:
+      left: 956.526945566784
+      top: 357.7537761235078
+    when: $(inputs.when)
+    tool_state:
+      input:
+        __class__: ConnectedValue
+      mode:
+        __current_case__: 0
+        mode_select: scratch
+    in:
+      input:
+        source: Ocean Data View/outputs_netcdf
+      when:
+        source: Workflow fully interactive
+  DIVAnd (create a climatology):
+    tool_id: toolshed.g2.bx.psu.edu/repos/ecology/divand_full_analysis/divand_full_analysis/0.1.0+galaxy0
+    tool_version: 0.1.0+galaxy0
+    doc: Create a climatology (not interactively)
+    position:
+      left: 958.2529539113443
+      top: 679.118779662132
+    when: $(inputs.when)
+    tool_state:
+      __input_ext: input
+      bathname:
+        __class__: ConnectedValue
+      chromInfo: /opt/galaxy/tool-data/shared/ucsc/chrom/?.len
+      enddate: '2017-01-01'
+      input_netcdf_identifier:
+        __class__: ConnectedValue
+      input_netcdf_identifier|__identifier__: data_from_Eutrophication_Med_profiles_2022_unrestricted.nc
+      latmax: '38.0'
+      latmin: '32.0'
+      longmax: '30.0'
+      longmin: '19.0'
+      selmax: '100'
+      selmin: '0'
+      startdate: '1950-12-31'
+      varname: phosphate
+    in:
+      input_netcdf_identifier:
+        source: Ocean Data View/outputs_netcdf
+      bathname:
+        source: gebco_30sec_8.nc
+      when:
+        source: Workflow semi automatic
+    out:
+      output_netcdf:
+        rename: Water_body_Phosphate_Mediterranean.nc
+  ODV (visualisation) interactive:
+    tool_id: interactive_tool_odv
+    tool_version: v5.7.2
+    doc: Final step to visualize in different way a ocean variable like the phosphate.
+    position:
+      left: 1317.571555631274
+      top: 358.7519190550188
+    when: $(inputs.when)
+    tool_state:
+      __input_ext: netcdf
+      chromInfo: /opt/galaxy/tool-data/shared/ucsc/chrom/?.len
+      method:
+        __current_case__: 0
+        infiles:
+          __class__: ConnectedValue
+        type: own_data
+    in:
+      method|infiles:
+        source: Interactive DIVAnd jupyterlab/output_netcdf
+      when:
+        source: Workflow fully interactive
+  ODV (visualisation):
+    tool_id: interactive_tool_odv
+    tool_version: v5.7.2
+    doc: Final step to visualize in different way a ocean variable like the phosphate.
+    position:
+      left: 1351.631142647093
+      top: 662.9057765448973
+    when: $(inputs.when)
+    tool_state:
+      __input_ext: netcdf
+      chromInfo: /opt/galaxy/tool-data/shared/ucsc/chrom/?.len
+      method:
+        __current_case__: 0
+        infiles:
+          __class__: ConnectedValue
+        type: own_data
+    in:
+      method|infiles:
+        source: DIVAnd (create a climatology)/output_netcdf
+      when:
+        source: Workflow semi automatic

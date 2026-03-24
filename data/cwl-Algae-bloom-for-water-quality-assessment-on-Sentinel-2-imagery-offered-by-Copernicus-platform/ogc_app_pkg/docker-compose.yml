@@ -1,0 +1,52 @@
+version: "3.9"
+name: algae-usecase
+services:
+  base:
+    image: ogc-ospd/algae-usecase/base:1.1.0
+    build:
+      # need parent context to find conda environment file
+      context: ..
+      dockerfile: ogc_app_pkg/base.dockerfile
+    restart: "no"
+  select-products-sentinel2:
+    image: ogc-ospd/algae-usecase/select-products-sentinel2:1.1.0
+    build:
+      context: .
+      dockerfile: select-products-sentinel2.dockerfile
+    restart: "no"
+    depends_on: [base]
+  download-band-sentinel2-product-safe:
+    image: ogc-ospd/algae-usecase/download-band-sentinel2-product-safe:1.1.0
+    build:
+      context: .
+      dockerfile: download-band-sentinel2-product-safe.dockerfile
+    restart: "no"
+    depends_on: [base]
+  download-band-sentinel2-stac-item:
+    image: ogc-ospd/algae-usecase/download-band-sentinel2-stac-item:1.1.0
+    build:
+      context: .
+      dockerfile: download-band-sentinel2-stac-item.dockerfile
+    restart: "no"
+    depends_on: [base]
+  calculate-band:
+    image: ogc-ospd/algae-usecase/calculate-band:1.1.0
+    build:
+      context: .
+      dockerfile: calculate-band.dockerfile
+    restart: "no"
+    depends_on: [base]
+  reproject-image:
+    image: ogc-ospd/algae-usecase/reproject-image:1.0.0
+    build:
+      context: .
+      dockerfile: reproject-image.dockerfile
+    restart: "no"
+    depends_on: [base]
+  plot-image:
+    image: ogc-ospd/algae-usecase/plot-image:1.0.0
+    build:
+      context: .
+      dockerfile: plot-image.dockerfile
+    restart: "no"
+    depends_on: [base]

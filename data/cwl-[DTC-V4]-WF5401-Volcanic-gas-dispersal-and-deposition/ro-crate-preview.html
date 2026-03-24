@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for [DTC-V4] WF5401: Volcanic gas dispersal and deposition</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "WF5401.cwl"
+      },
+      "datePublished": "2025-10-13 10:34:47 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1982?version=1",
+      "url": "https://workflowhub.eu/workflows/1982/ro_crate?version=1",
+      "name": "Research Object Crate for [DTC-V4] WF5401: Volcanic gas dispersal and deposition",
+      "description": "The DTC-V4 workflow (WF5401) relies on an atmospheric dispersion model to build the relationship between the plume height and SO2 flux (which taken together are called Eruption Source Parameters, or ESPs) and the SO2 ground concentrations. Here we use FALL3D dispersion model, however as the HMC scheme requires many thousands of forward runs we replace it with an Emulator, a function that approximates the model but runs much faster. So far, a simple interpolate-scale-sum emulator that makes use of the linear relationship between flux and ground concentration for basic FALL3D runs and gives adequate results is implemented. However, more sophisticated neural network (NN) based solutions that are more generally applicable are in development.\n\nIn using emulators within a Bayesian framework we are adopting the philosophy of \"emulate deterministic relationships, and sample stochastic ones\". The idea is to treat the time evolution of the state of the volcano as our parameter space and use\nemulators to calculate all variables (e.g. estimates of measured environmental parameters) that follow deterministically. In this way we can compose emulators together to represent different combinations of physical processes within flexible,\nsophisticated statistical models that can still be sampled adequately in reasonable time. As an example of this flexibility, we are experimenting with adding empirical relationships between plume height and ambient weather conditions identified during the 2021 Fagradalsfjall effusive eruption (Iceland), which will aid with the forecasting element of this DTC (i.e. the posterior distribution over ground concentrations beyond the last observations incorporated into the model).\n\nThe workflow is structured over four main steps:\n* WATCH AND FETCH (ST540102): this service is intended to grab the real-time measurements of SO2 concentration at the ground. The package needs to be executed while internet connection is available as it needs to connect to the API developed and maintained by the Environmental Agency of Iceland (data provider). Data is available for up to 25 stations around the Reykjanes peninsula (as of April 2025) which collect measurements with a temporal resolution of 10-minutes up to\n1 hour.\n* EMULATE (ST540103): This package is the core of DTC-V4 and it generates emulators, or fast forward models. These are functions that adequately approximate the output of a physics-based model such as Fall3D, for a given set of inputs, but perform the calculation at much faster speeds, facilitating their insertion into Monte Carlo Bayesian frameworks. It needs the availability of NWP data provided by external institutions (Copernicus, ECMWF) as well as from IMO itself. For the simple interpolate-scale-sum emulator provided here, this step just manages weather data – forward runs of Fall3D have been moved to the next (INFER) stage as this allows us to only perform a run when requested by the sampling algorithm saving computation time and disk space.\n* INFER (ST540104): This repository is intended for finding the posterior distribution over Eruption Source Parameters (ESPs, here, plume height and SO2 flux), as well as ground SO2 concentration, considering observations, for a given atmospheric dispersion emulator. This can be thought of as a kind of Source Term Estimation (STE) or Data Assimilation (DA), resulting in probabilistic estimates of ESPs and probabilistic forecasts of air quality that are then used for calculating concentration exceedence probabilities. Bayesian inference is performed using PyMC, a Software for Bayesian Data Analysis, which allows empirical relationships (e.g. between plume height and ambient atmospheric conditions) to be included in the model (not yet implemented).\n* VISUALIZE (ST540105): a repository for displaying the posterior distribution over Eruption Source Parameters (ESPs) and ground SO2 concentrations in an interactive website. The repository consists of a website that visualizes the probability distributions as time series of violin plots and maps of exceedence probabilities and concentrations. ",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/tree/main?ref_type=heads",
+      "sdDatePublished": "2026-03-24 00:59:15 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "WF5401.cwl"
+        },
+        {
+          "@id": "WF5401.dot"
+        }
+      ]
+    },
+    {
+      "@id": "WF5401.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC54/WF5401/WF5401.cwl",
+      "contentSize": 1135,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "WF5401.dot"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The DTC-V4 workflow (WF5401) relies on an atmospheric dispersion model to build the relationship between the plume height and SO2 flux (which taken together are called Eruption Source Parameters, or ESPs) and the SO2 ground concentrations. Here we use FALL3D dispersion model, however as the HMC scheme requires many thousands of forward runs we replace it with an Emulator, a function that approximates the model but runs much faster. So far, a simple interpolate-scale-sum emulator that makes use of the linear relationship between flux and ground concentration for basic FALL3D runs and gives adequate results is implemented. However, more sophisticated neural network (NN) based solutions that are more generally applicable are in development.\n\nIn using emulators within a Bayesian framework we are adopting the philosophy of \"emulate deterministic relationships, and sample stochastic ones\". The idea is to treat the time evolution of the state of the volcano as our parameter space and use\nemulators to calculate all variables (e.g. estimates of measured environmental parameters) that follow deterministically. In this way we can compose emulators together to represent different combinations of physical processes within flexible,\nsophisticated statistical models that can still be sampled adequately in reasonable time. As an example of this flexibility, we are experimenting with adding empirical relationships between plume height and ambient weather conditions identified during the 2021 Fagradalsfjall effusive eruption (Iceland), which will aid with the forecasting element of this DTC (i.e. the posterior distribution over ground concentrations beyond the last observations incorporated into the model).\n\nThe workflow is structured over four main steps:\n* WATCH AND FETCH (ST540102): this service is intended to grab the real-time measurements of SO2 concentration at the ground. The package needs to be executed while internet connection is available as it needs to connect to the API developed and maintained by the Environmental Agency of Iceland (data provider). Data is available for up to 25 stations around the Reykjanes peninsula (as of April 2025) which collect measurements with a temporal resolution of 10-minutes up to\n1 hour.\n* EMULATE (ST540103): This package is the core of DTC-V4 and it generates emulators, or fast forward models. These are functions that adequately approximate the output of a physics-based model such as Fall3D, for a given set of inputs, but perform the calculation at much faster speeds, facilitating their insertion into Monte Carlo Bayesian frameworks. It needs the availability of NWP data provided by external institutions (Copernicus, ECMWF) as well as from IMO itself. For the simple interpolate-scale-sum emulator provided here, this step just manages weather data – forward runs of Fall3D have been moved to the next (INFER) stage as this allows us to only perform a run when requested by the sampling algorithm saving computation time and disk space.\n* INFER (ST540104): This repository is intended for finding the posterior distribution over Eruption Source Parameters (ESPs, here, plume height and SO2 flux), as well as ground SO2 concentration, considering observations, for a given atmospheric dispersion emulator. This can be thought of as a kind of Source Term Estimation (STE) or Data Assimilation (DA), resulting in probabilistic estimates of ESPs and probabilistic forecasts of air quality that are then used for calculating concentration exceedence probabilities. Bayesian inference is performed using PyMC, a Software for Bayesian Data Analysis, which allows empirical relationships (e.g. between plume height and ambient atmospheric conditions) to be included in the model (not yet implemented).\n* VISUALIZE (ST540105): a repository for displaying the posterior distribution over Eruption Source Parameters (ESPs) and ground SO2 concentrations in an interactive website. The repository consists of a website that visualizes the probability distributions as time series of violin plots and maps of exceedence probabilities and concentrations. ",
+      "name": "[DTC-V4] WF5401: Volcanic gas dispersal and deposition",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/179"
+      },
+      "dateCreated": "2025-10-13T09:36:36Z",
+      "dateModified": "2025-10-15T10:27:57Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5401"
+        },
+        {
+          "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5402"
+        },
+        {
+          "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5403"
+        },
+        {
+          "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5404"
+        },
+        {
+          "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5405"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "WF5401.dot",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate/-/raw/main/DTC54/WF5401/WF5401.dot",
+      "contentSize": 1838
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/179",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP5 - Volcanoes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5401",
+      "@type": "FormalParameter",
+      "name": "DT5401",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5402",
+      "@type": "FormalParameter",
+      "name": "DT5402",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5403",
+      "@type": "FormalParameter",
+      "name": "DT5403",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5404",
+      "@type": "FormalParameter",
+      "name": "DT5404",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v4__wf5401__volcanic_gas_dispersal_and_deposition-outputs-DT5405",
+      "@type": "FormalParameter",
+      "name": "DT5405",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for [DTC-V4] WF5401: Volcanic gas dispersal and deposition</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/1982/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/1982/ro_crate?version=1</a>
+
+
+  <img src="WF5401.dot" style="width: 100%;"/>
+
+<p>
+  The DTC-V4 workflow (WF5401) relies on an atmospheric dispersion model to build the relationship between the plume height and SO2 flux (which taken together are called Eruption Source Parameters, or ESPs) and the SO2 ground concentrations. Here we use FALL3D dispersion model, however as the HMC scheme requires many thousands of forward runs we replace it with an Emulator, a function that approximates the model but runs much faster. So far, a simple interpolate-scale-sum emulator that makes use of the linear relationship between flux and ground concentration for basic FALL3D runs and gives adequate results is implemented. However, more sophisticated neural network (NN) based solutions that are more generally applicable are in development.
+
+In using emulators within a Bayesian framework we are adopting the philosophy of "emulate deterministic relationships, and sample stochastic ones". The idea is to treat the time evolution of the state of the volcano as our parameter space and use
+emulators to calculate all variables (e.g. estimates of measured environmental parameters) that follow deterministically. In this way we can compose emulators together to represent different combinations of physical processes within flexible,
+sophisticated statistical models that can still be sampled adequately in reasonable time. As an example of this flexibility, we are experimenting with adding empirical relationships between plume height and ambient weather conditions identified during the 2021 Fagradalsfjall effusive eruption (Iceland), which will aid with the forecasting element of this DTC (i.e. the posterior distribution over ground concentrations beyond the last observations incorporated into the model).
+
+The workflow is structured over four main steps:
+* WATCH AND FETCH (ST540102): this service is intended to grab the real-time measurements of SO2 concentration at the ground. The package needs to be executed while internet connection is available as it needs to connect to the API developed and maintained by the Environmental Agency of Iceland (data provider). Data is available for up to 25 stations around the Reykjanes peninsula (as of April 2025) which collect measurements with a temporal resolution of 10-minutes up to
+1 hour.
+* EMULATE (ST540103): This package is the core of DTC-V4 and it generates emulators, or fast forward models. These are functions that adequately approximate the output of a physics-based model such as Fall3D, for a given set of inputs, but perform the calculation at much faster speeds, facilitating their insertion into Monte Carlo Bayesian frameworks. It needs the availability of NWP data provided by external institutions (Copernicus, ECMWF) as well as from IMO itself. For the simple interpolate-scale-sum emulator provided here, this step just manages weather data – forward runs of Fall3D have been moved to the next (INFER) stage as this allows us to only perform a run when requested by the sampling algorithm saving computation time and disk space.
+* INFER (ST540104): This repository is intended for finding the posterior distribution over Eruption Source Parameters (ESPs, here, plume height and SO2 flux), as well as ground SO2 concentration, considering observations, for a given atmospheric dispersion emulator. This can be thought of as a kind of Source Term Estimation (STE) or Data Assimilation (DA), resulting in probabilistic estimates of ESPs and probabilistic forecasts of air quality that are then used for calculating concentration exceedence probabilities. Bayesian inference is performed using PyMC, a Software for Bayesian Data Analysis, which allows empirical relationships (e.g. between plume height and ambient atmospheric conditions) to be included in the model (not yet implemented).
+* VISUALIZE (ST540105): a repository for displaying the posterior distribution over Eruption Source Parameters (ESPs) and ground SO2 concentrations in an interactive website. The repository consists of a website that visualizes the probability distributions as time series of violin plots and maps of exceedence probabilities and concentrations. 
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_WF5401.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="WF5401.cwl">[DTC-V4] WF5401: Volcanic gas dispersal and deposition</a>
+      
+        <br/>Size: 1135 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_WF5401.dot">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="WF5401.dot">WF5401.dot</a>
+      
+        <br/>Size: 1838 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

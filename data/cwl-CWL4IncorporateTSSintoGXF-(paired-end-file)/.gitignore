@@ -1,0 +1,14 @@
+.DS_Store
+.project
+/data/.Rhistory
+/R/Package.test.R
+.Rhistory
+.Rproj.user
+.Rbuildignore
+.git
+TSSr.Rproj
+man/.Rapp.history
+/Meta/
+
+/doc/
+docs

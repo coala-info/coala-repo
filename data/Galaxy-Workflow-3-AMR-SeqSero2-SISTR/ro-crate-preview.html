@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Workflow 3: AMR - SeqSero2/SISTR</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-CFIA.ga"
+      },
+      "datePublished": "2024-03-25 09:36:01 +0000",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/407?version=1",
+      "url": "https://workflowhub.eu/workflows/407/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow 3: AMR - SeqSero2/SISTR",
+      "description": "With this galaxy pipeline you can use Salmonella sp. next generation sequencing results to predict bacterial AMR phenotypes and compare the results against gold standard Salmonella sp. phenotypes obtained from food.\n\nThis pipeline is based on the work of the National Food Agency of Canada.  \nDoi: [10.3389/fmicb.2020.00549](https://doi.org/10.3389/fmicb.2020.00549)\n\n| tool | version | license |\n| -- | -- | -- |\n| SeqSero2 | 1.2.1 | [GNU GPL v2.0](https://github.com/denglab/SeqSero2/blob/master/LICENSE) |\n| BBTools | 39.01 | [MIT License](https://github.com/kbaseapps/BBTools/blob/master/LICENSE) |\n| SRST2 | 0.2.0 | [BSD License](https://github.com/katholt/srst2/blob/master/LICENSE.txt) |\n| hamronize | 1.0.3 | [GNU LGPL v3.0](https://github.com/pha4ge/hAMRonization/blob/master/LICENSE.txt) |\n| SPAdes | v3.15.5 | [GNU GPL v2.0](https://github.com/ablab/spades/blob/main/LICENSE) |\n| SKESA | 3.0.0 | [Public Domain](https://github.com/ncbi/SKESA/blob/master/LICENSE) |\n| pilon | 1.1.0 | [GNU GPL v2.0](https://github.com/broadinstitute/pilon/blob/master/LICENSE) |\n| shovill | 1.0.4 | [GPL-3.0 license](https://github.com/tseemann/shovill/blob/master/LICENSE) |\n| sistr | 1.1.1 | [Apache-2.0 license](https://github.com/phac-nml/sistr_cmd/blob/master/LICENSE) |\n| MOB-Recon | 3.0.3 | [Apache-2.0 license](https://github.com/phac-nml/mob-suite/blob/master/LICENSE) |",
+      "sdDatePublished": "2026-03-24 17:42:07 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-CFIA.ga"
+        },
+        {
+          "@id": "AMR-CFIA.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-CFIA.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 37578,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "AMR-CFIA.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "With this galaxy pipeline you can use Salmonella sp. next generation sequencing results to predict bacterial AMR phenotypes and compare the results against gold standard Salmonella sp. phenotypes obtained from food.\n\nThis pipeline is based on the work of the National Food Agency of Canada.  \nDoi: [10.3389/fmicb.2020.00549](https://doi.org/10.3389/fmicb.2020.00549)\n\n| tool | version | license |\n| -- | -- | -- |\n| SeqSero2 | 1.2.1 | [GNU GPL v2.0](https://github.com/denglab/SeqSero2/blob/master/LICENSE) |\n| BBTools | 39.01 | [MIT License](https://github.com/kbaseapps/BBTools/blob/master/LICENSE) |\n| SRST2 | 0.2.0 | [BSD License](https://github.com/katholt/srst2/blob/master/LICENSE.txt) |\n| hamronize | 1.0.3 | [GNU LGPL v3.0](https://github.com/pha4ge/hAMRonization/blob/master/LICENSE.txt) |\n| SPAdes | v3.15.5 | [GNU GPL v2.0](https://github.com/ablab/spades/blob/main/LICENSE) |\n| SKESA | 3.0.0 | [Public Domain](https://github.com/ncbi/SKESA/blob/master/LICENSE) |\n| pilon | 1.1.0 | [GNU GPL v2.0](https://github.com/broadinstitute/pilon/blob/master/LICENSE) |\n| shovill | 1.0.4 | [GPL-3.0 license](https://github.com/tseemann/shovill/blob/master/LICENSE) |\n| sistr | 1.1.1 | [Apache-2.0 license](https://github.com/phac-nml/sistr_cmd/blob/master/LICENSE) |\n| MOB-Recon | 3.0.3 | [Apache-2.0 license](https://github.com/phac-nml/mob-suite/blob/master/LICENSE) |",
+      "name": "Workflow 3: AMR - SeqSero2/SISTR",
+      "url": "https://workflowhub.eu/workflows/407?version=1",
+      "keywords": "Bioinformatics, antimicrobial resistance",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/110"
+      },
+      "dateCreated": "2022-11-24T13:42:42Z",
+      "dateModified": "2024-09-09T08:23:33Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "AMR-CFIA.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 127987
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/110",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Seq4AMR"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Workflow 3: AMR - SeqSero2/SISTR</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/407/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/407/ro_crate?version=1</a>
+
+
+  <img src="AMR-CFIA.png" style="width: 100%;"/>
+
+<p>
+  With this galaxy pipeline you can use Salmonella sp. next generation sequencing results to predict bacterial AMR phenotypes and compare the results against gold standard Salmonella sp. phenotypes obtained from food.
+
+This pipeline is based on the work of the National Food Agency of Canada.  
+Doi: [10.3389/fmicb.2020.00549](https://doi.org/10.3389/fmicb.2020.00549)
+
+| tool | version | license |
+| -- | -- | -- |
+| SeqSero2 | 1.2.1 | [GNU GPL v2.0](https://github.com/denglab/SeqSero2/blob/master/LICENSE) |
+| BBTools | 39.01 | [MIT License](https://github.com/kbaseapps/BBTools/blob/master/LICENSE) |
+| SRST2 | 0.2.0 | [BSD License](https://github.com/katholt/srst2/blob/master/LICENSE.txt) |
+| hamronize | 1.0.3 | [GNU LGPL v3.0](https://github.com/pha4ge/hAMRonization/blob/master/LICENSE.txt) |
+| SPAdes | v3.15.5 | [GNU GPL v2.0](https://github.com/ablab/spades/blob/main/LICENSE) |
+| SKESA | 3.0.0 | [Public Domain](https://github.com/ncbi/SKESA/blob/master/LICENSE) |
+| pilon | 1.1.0 | [GNU GPL v2.0](https://github.com/broadinstitute/pilon/blob/master/LICENSE) |
+| shovill | 1.0.4 | [GPL-3.0 license](https://github.com/tseemann/shovill/blob/master/LICENSE) |
+| sistr | 1.1.1 | [Apache-2.0 license](https://github.com/phac-nml/sistr_cmd/blob/master/LICENSE) |
+| MOB-Recon | 3.0.3 | [Apache-2.0 license](https://github.com/phac-nml/mob-suite/blob/master/LICENSE) |
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-CFIA.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-CFIA.ga">Workflow 3: AMR - SeqSero2/SISTR</a>
+      
+        <br/>Size: 37578 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_AMR-CFIA.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="AMR-CFIA.png">AMR-CFIA.png</a>
+      
+        <br/>Size: 127987 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

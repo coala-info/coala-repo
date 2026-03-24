@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for VGP HiFi phased assembly with hifiasm and HiC data</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "hifiasm.ga"
+      },
+      "datePublished": "2022-04-06 02:22:44 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0001-6421-3484"
+        }
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/325?version=1",
+      "url": "https://workflowhub.eu/workflows/325/ro_crate?version=1",
+      "name": "Research Object Crate for VGP HiFi phased assembly with hifiasm and HiC data",
+      "description": "Performs Long Read assembly using PacBio data and Hifiasm. Part of VGP assembly pipeline. This workflow generate a phased assembly.",
+      "isBasedOn": "https://github.com/Delphine-L/iwc/tree/VGP/workflows/VGP-assembly-v2",
+      "sdDatePublished": "2026-03-24 18:05:14 +0000",
+      "hasPart": [
+        {
+          "@id": "hifiasm.ga"
+        },
+        {
+          "@id": "hifiasm.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "hifiasm.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 50590,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "subjectOf": {
+        "@id": "hifiasm.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Performs Long Read assembly using PacBio data and Hifiasm. Part of VGP assembly pipeline. This workflow generate a phased assembly.",
+      "name": "VGP HiFi phased assembly with hifiasm and HiC data",
+      "url": "https://workflowhub.eu/workflows/325?version=1",
+      "keywords": "vgp, Assembly, Galaxy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/248"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/24"
+      },
+      "dateCreated": "2022-04-06T01:23:56Z",
+      "dateModified": "2023-01-16T13:59:39Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-HiC%20forward%20reads"
+        },
+        {
+          "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-HiC%20reverse%20reads"
+        },
+        {
+          "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-Meryl%20Database"
+        },
+        {
+          "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-Pacbio%20Reads%20Collection"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "hifiasm.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 11731
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6421-3484",
+      "@type": "Person",
+      "name": "Delphine Lariviere",
+      "identifier": "https://orcid.org/0000-0001-6421-3484"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/248",
+      "@type": "Person",
+      "name": "Delphine Lariviere"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/24",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "usegalaxy-eu"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-HiC forward reads",
+      "@type": "FormalParameter",
+      "name": "HiC forward reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-HiC reverse reads",
+      "@type": "FormalParameter",
+      "name": "HiC reverse reads",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-Meryl Database",
+      "@type": "FormalParameter",
+      "name": "Meryl Database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#vgp_hifi_phased_assembly_with_hifiasm_and_hic_data-inputs-Pacbio Reads Collection",
+      "@type": "FormalParameter",
+      "name": "Pacbio Reads Collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for VGP HiFi phased assembly with hifiasm and HiC data</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/325/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/325/ro_crate?version=1</a>
+
+
+<p>
+  Performs Long Read assembly using PacBio data and Hifiasm. Part of VGP assembly pipeline. This workflow generate a phased assembly.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0001-6421-3484" target="_blank">Delphine Lariviere</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_hifiasm.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="hifiasm.ga">VGP HiFi phased assembly with hifiasm and HiC data</a>
+      
+        <br/>Size: 50590 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_hifiasm.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="hifiasm.cwl">hifiasm.cwl</a>
+      
+        <br/>Size: 11731 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

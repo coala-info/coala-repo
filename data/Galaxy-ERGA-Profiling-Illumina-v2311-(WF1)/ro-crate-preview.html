@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ERGA Profiling Illumina v2311 (WF1)</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga"
+      },
+      "datePublished": "2024-01-08 15:46:15 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-3679-9585"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/698?version=1",
+      "url": "https://workflowhub.eu/workflows/698/ro_crate?version=1",
+      "name": "Research Object Crate for ERGA Profiling Illumina v2311 (WF1)",
+      "description": "The workflow takes a trimmed Illumina paired-end reads collection, runs Meryl to create a K-mer database, Genomescope2 to estimate genome properties and Smudgeplot to estimate ploidy. The main results are K-mer ddatabase and genome profiling plots, tables, and values useful for downstream analysis. Default K-mer length and ploidy for Genomescope are 21 and 2, respectively. ",
+      "isBasedOn": "https://github.com/ERGA-consortium/pipelines/tree/main/assembly/galaxy",
+      "sdDatePublished": "2026-03-24 17:51:50 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga"
+        },
+        {
+          "@id": "Prof_illu_2311.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/1.Genome_Profiling/Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga",
+      "contentSize": 39713,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Prof_illu_2311.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "The workflow takes a trimmed Illumina paired-end reads collection, runs Meryl to create a K-mer database, Genomescope2 to estimate genome properties and Smudgeplot to estimate ploidy. The main results are K-mer ddatabase and genome profiling plots, tables, and values useful for downstream analysis. Default K-mer length and ploidy for Genomescope are 21 and 2, respectively. ",
+      "name": "ERGA Profiling Illumina v2311 (WF1)",
+      "keywords": "name:PROFILING, ERGA, illumina",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/445"
+        },
+        {
+          "@id": "#ERGA"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/163"
+      },
+      "dateCreated": "2024-01-08T15:55:18Z",
+      "dateModified": "2024-01-08T15:57:54Z",
+      "isPartOf": [
+        {
+          "@id": "https://workflowhub.eu/collections/17"
+        },
+        {
+          "@id": "https://workflowhub.eu/collections/18"
+        }
+      ],
+      "input": [
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-%23main/Ploidy"
+        },
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-%23main/Trimmed%20Illumina%20collection"
+        },
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-%23main/kmer%20length"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-%23main/Merged%20Meryl%20DB"
+        },
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-%23main/genome_size"
+        },
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-%23main/max_depth"
+        },
+        {
+          "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-%23main/transition_parameter"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Prof_illu_2311.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "url": "https://github.com/ERGA-consortium/pipelines/blob/main/assembly/galaxy/1.Genome_Profiling/pics/Prof_illu_2311.png",
+      "contentSize": 118483
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-3679-9585",
+      "@type": "Person",
+      "name": "Diego De Panis",
+      "identifier": "https://orcid.org/0000-0002-3679-9585"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/445",
+      "@type": "Person",
+      "name": "Diego De Panis"
+    },
+    {
+      "@id": "#ERGA",
+      "@type": "Person",
+      "name": "ERGA"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/163",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "ERGA Assembly"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/17",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (NextDenovo-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/18",
+      "@type": "Collection",
+      "name": "ERGA Assembly Galaxy ONT+Illumina &amp; HiC Pipelines (Flye-HyPo + Purge_Dups + YaHS)"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-#main/Ploidy",
+      "@type": "FormalParameter",
+      "name": "#main/Ploidy",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-#main/Trimmed Illumina collection",
+      "@type": "FormalParameter",
+      "name": "#main/Trimmed Illumina collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-inputs-#main/kmer length",
+      "@type": "FormalParameter",
+      "name": "#main/kmer length",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-#main/Merged Meryl DB",
+      "@type": "FormalParameter",
+      "name": "#main/Merged Meryl DB",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-#main/genome_size",
+      "@type": "FormalParameter",
+      "name": "#main/genome_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-#main/max_depth",
+      "@type": "FormalParameter",
+      "name": "#main/max_depth",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#erga_profiling_illumina_v2311__wf1_-outputs-#main/transition_parameter",
+      "@type": "FormalParameter",
+      "name": "#main/transition_parameter",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ERGA Profiling Illumina v2311 (WF1)</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/698/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/698/ro_crate?version=1</a>
+
+
+  <img src="Prof_illu_2311.png" style="width: 100%;"/>
+
+<p>
+  The workflow takes a trimmed Illumina paired-end reads collection, runs Meryl to create a K-mer database, Genomescope2 to estimate genome properties and Smudgeplot to estimate ploidy. The main results are K-mer ddatabase and genome profiling plots, tables, and values useful for downstream analysis. Default K-mer length and ploidy for Genomescope are 21 and 2, respectively. 
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-3679-9585" target="_blank">Diego De Panis</a>, ERGA</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ERGA_Profiling_Illumina_v2311_(WF1).ga">ERGA Profiling Illumina v2311 (WF1)</a>
+      
+        <br/>Size: 39713 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Prof_illu_2311.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Prof_illu_2311.png">Prof_illu_2311.png</a>
+      
+        <br/>Size: 118483 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

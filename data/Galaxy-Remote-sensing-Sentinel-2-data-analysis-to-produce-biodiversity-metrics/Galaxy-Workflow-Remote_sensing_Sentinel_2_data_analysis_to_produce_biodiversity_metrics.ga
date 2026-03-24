@@ -1,0 +1,562 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "Remote sensing Sentinel 2 data analysis to produce biodiversity metrics",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "SENTINEL2A_20230214-105638-781_L2A_T31UET_D.zip"
+                }
+            ],
+            "label": "SENTINEL2A_20230214-105638-781_L2A_T31UET_D.zip",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 145
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "039f620a-dc39-4367-b225-d5164f029b81",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "0c8de7c0-e3e9-40f5-b85f-bcf3b29653ac"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "SENTINEL2A_20230210-111817-461_L2A_T30TWS_D.zip"
+                }
+            ],
+            "label": "SENTINEL2A_20230210-111817-461_L2A_T30TWS_D.zip",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 703.2222290039062
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": \"\"}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ef4bdb96-2de6-4b40-8c33-31a510c47dce",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "8d1d047d-3d12-4636-a27d-1a3d1c09dd60"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Preprocess sentinel 2 data",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "csv"
+                },
+                {
+                    "name": "output_refl",
+                    "type": "zip"
+                },
+                {
+                    "name": "output_cloud",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 278.22222900390625,
+                "top": 168
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "33a1e15f7252",
+                "name": "srs_preprocess_s2",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"__input_ext\": \"input\", \"chromInfo\": \"/opt/galaxy/tool-data/shared/ucsc/chrom/?.len\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"source_s2\": \"THEIA\", \"type_s2\": \"2A\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "6f33c601-c95c-4258-88bc-89cd845c172b",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "17026d6f-d269-4bd7-98c8-800577aff119"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_refl",
+                    "uuid": "1a382640-d357-4d3d-a947-3068e6b7b565"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cloud",
+                    "uuid": "41d7f5ec-15d0-4480-a28a-f609464e11f2"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Preprocess sentinel 2 data",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Preprocess sentinel 2 data",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "csv"
+                },
+                {
+                    "name": "output_refl",
+                    "type": "zip"
+                },
+                {
+                    "name": "output_cloud",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 278.22222900390625,
+                "top": 726.2222290039062
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_preprocess_s2/srs_preprocess_s2/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "33a1e15f7252",
+                "name": "srs_preprocess_s2",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"__class__\": \"RuntimeValue\"}, \"source_s2\": \"THEIA\", \"type_s2\": \"2A\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "e4ea81fe-58a6-4ff9-8af4-d28b4f515aeb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_refl",
+                    "uuid": "e4fa9c08-0c81-4814-bafd-c3ead52ffc51"
+                },
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "6e9bd3c0-7100-4a63-8d7c-e709738b3cda"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cloud",
+                    "uuid": "8809f1f2-e2a8-4d70-85da-9a7f83a5da4c"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "method|input": {
+                    "id": 2,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute biodiversity indices",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Compute biodiversity indices",
+            "outputs": [
+                {
+                    "name": "plots_png",
+                    "type": "input"
+                },
+                {
+                    "name": "output_indices",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "5cae678042ec",
+                "name": "srs_global_indices",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alpha\": \"2\", \"method\": {\"type\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "e9d16e7e-7f4f-4f9b-8082-3e7fcd4fd11a",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "plots_png",
+                    "uuid": "8018ff9c-abf9-4dcf-9892-d99ecb90cb74"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_indices",
+                    "uuid": "b02a9f18-02ba-41d2-a84b-9504db7331af"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "method|input": {
+                    "id": 2,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute spectral indices",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Compute spectral indices",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_indices",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 223
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "b40aba3d9e5c",
+                "name": "srs_spectral_indices",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"choice\": \"N\", \"input_indice\": [\"NDVI\"], \"method\": {\"type\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "150f3119-59c1-46d1-8eea-2f214afee706",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "plots",
+                    "uuid": "be286a2a-79c3-4d35-bee8-6fc3ac286bd4"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_indices",
+                    "uuid": "4dbbad63-97f2-4775-8721-b0a66f501530"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "method|input": {
+                    "id": 2,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map diversity",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Map diversity",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_beta",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 406
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "9adccd3da70c",
+                "name": "srs_diversity_maps",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"method\": {\"origin\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"type\": \"beta\", \"typepca\": \"SPCA\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "bbcf9e3d-2de0-40b3-ac57-29af7fc737cb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "plots",
+                    "uuid": "556daa96-068f-4879-9e18-83e548599a33"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_beta",
+                    "uuid": "a3fdf37a-62c6-4299-b584-6db90c0623e0"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "method|input": {
+                    "id": 3,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Map diversity",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Map diversity",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_beta",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 588.2222290039062
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_diversity_maps/srs_diversity_maps/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "9adccd3da70c",
+                "name": "srs_diversity_maps",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"method\": {\"origin\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"type\": \"beta\", \"typepca\": \"SPCA\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "8f949898-df2b-445c-aa6a-86a5aed6a10c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_beta",
+                    "uuid": "78c52283-bed7-49fb-a18e-16d9adc4d74c"
+                },
+                {
+                    "label": null,
+                    "output_name": "plots",
+                    "uuid": "06b9bd57-a1be-47ba-ad42-231b56d05e4a"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "method|input": {
+                    "id": 3,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute biodiversity indices",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Compute biodiversity indices",
+            "outputs": [
+                {
+                    "name": "plots_png",
+                    "type": "input"
+                },
+                {
+                    "name": "output_indices",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 771.2222290039062
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_global_indices/srs_global_indices/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "5cae678042ec",
+                "name": "srs_global_indices",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"alpha\": \"2\", \"method\": {\"type\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "7e8d44d6-2331-4ed9-bc38-1e4c4c3ede43",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "plots_png",
+                    "uuid": "fbac8b3d-431b-4548-9951-203ddad8edc4"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_indices",
+                    "uuid": "0cf0bff4-e422-40dc-9966-0b66d57ff488"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "method|input": {
+                    "id": 3,
+                    "output_name": "output_refl"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Compute spectral indices",
+                    "name": "method"
+                }
+            ],
+            "label": null,
+            "name": "Compute spectral indices",
+            "outputs": [
+                {
+                    "name": "plots",
+                    "type": "input"
+                },
+                {
+                    "name": "output_indices",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 556.4444580078125,
+                "top": 994.2222290039062
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ecology/srs_spectral_indices/srs_spectral_indices/0.0.1",
+            "tool_shed_repository": {
+                "changeset_revision": "b40aba3d9e5c",
+                "name": "srs_spectral_indices",
+                "owner": "ecology",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"choice\": \"N\", \"input_indice\": [\"LAI_SAVI\", \"NDVI\"], \"method\": {\"type\": \"zipper\", \"__current_case__\": 0, \"input\": {\"__class__\": \"RuntimeValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.0.1",
+            "type": "tool",
+            "uuid": "8e43a43e-35ef-4b50-a91b-996e398102d4",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "plots",
+                    "uuid": "9a5b977d-4323-4927-ba60-c80420ec3a16"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_indices",
+                    "uuid": "696b9303-4afb-4add-99b1-7b4e9bd57a14"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "b07f1993-b434-416b-85d9-c985e1de8192",
+    "version": 1
+}

@@ -1,0 +1,251 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "DTC52/WF5201/WF5201.cwl"
+      },
+      "datePublished": "2025-02-13 16:50:01 +0000",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1230?version=2",
+      "url": "https://workflowhub.eu/workflows/1230/ro_crate?version=2",
+      "name": "Research Object Crate for [DTC-V2] WF5201: Forecast volcanic ash fallout and dispersal in the atmosphere",
+      "description": "Forecasting the atmospheric dispersal of volcanic products requires accurate input parameters for transport models, including meteorological data and ash/gas emission terms. Such forecasting builds upon three basic ingredients:\n1. Meteorological Data. Typically derived from global, regional, or local-scale models, meteorological data drive the transport and deposition of volcanic particles.\n2. Transport Models. These models simulate atmospheric dispersal, incorporating processes such as wind advection, turbulent diffusion, and particle sedimentation. Besides atmospheric density and viscosity, sedimentation velocities depend also on particle size, density, and shape, which affect the particle drag coefficients and atmospheric residence times. Some transport models (e.g. FALL3D) include volcanic ash aggregation and aerosol chemistry, two aspects that can improve the accuracy of dispersal forecasts.\n3. Emission Models. Emission models provide the so-called Eruption Source Parameters (ESP), needed to characterize the near vent properties of volcanic plumes (that are a kind of clouds which are connected to their source). The ESP, including eruption start and duration, cloud injection height, vertical mass distribution across the eruption column, Total Grain Size Distribution (TGSD), and Mass Eruption Rate (MER) are essential inputs to transport models. While some parameters (e.g., eruption start and end times, column height) can be directly observed, others like MER must be estimated by means of indirect methods, which introduces significant input uncertainties that propagate through the modelling workflow.\n\nThe DTC-V2 workflow (WF5201) configures and runs an ensemble of FALL3D model realizations, potentially assimilating in the model different sources of data (groundbased or satellite-based observations). A major advantage of the ensemble model approach is that it allows delivering both deterministic (e.g. ensemble mean) and probabilistic (e.g. fraction of ensemble members exceeding a given condition) forecasts, reflecting the inherent uncertainties in the ESPs. On a coarse-grain, the workflow requires four main steps:\n1. Get atmospheric data from Numerical Weather Prediction (NWP) models, assumed to be run and delivered by a third party. DTC-V2 can ingest either NWP forecast data (up to a few days ahead) or reanalyses (for past events or “what if” scenarios). Different agencies (e.g. ECMWF, National Weather Services, etc.) serve global/regional data at various spatial and temporal resolutions.\n2. Get the Eruption Source Parameters (ESP) from different sources; e.g. from volcano monitoring data provided by State Volcano Observatories (SVO). In case ESPs from several sources are available, the workflow assigns a ranked\npriority as shown in Table 1.\n3. Setup the FALL3D model and run an ensemble of simulations in the FENIX RI or HPC (leonardo@CINECA). The different ensemble members, each representing a single deterministic scenario, are set by perturbing some critical ESPs (e.g. eruption column height) within their uncertainty range. The model allows introducing both absolute and relative errors for all ESP around the observed value.\n4. Post-process the results",
+      "isBasedOn": "https://gitlab.com/dtgeo/metadata/cwl-ro-crate.git",
+      "sdDatePublished": "2026-03-24 00:58:51 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "DTC52/WF5201/WF5201.cwl"
+        },
+        {
+          "@id": "DTC52/WF5201/WF5201.png"
+        }
+      ]
+    },
+    {
+      "@id": "DTC52/WF5201/WF5201.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 4783,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "DTC52/WF5201/WF5201.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Forecasting the atmospheric dispersal of volcanic products requires accurate input parameters for transport models, including meteorological data and ash/gas emission terms. Such forecasting builds upon three basic ingredients:\n1. Meteorological Data. Typically derived from global, regional, or local-scale models, meteorological data drive the transport and deposition of volcanic particles.\n2. Transport Models. These models simulate atmospheric dispersal, incorporating processes such as wind advection, turbulent diffusion, and particle sedimentation. Besides atmospheric density and viscosity, sedimentation velocities depend also on particle size, density, and shape, which affect the particle drag coefficients and atmospheric residence times. Some transport models (e.g. FALL3D) include volcanic ash aggregation and aerosol chemistry, two aspects that can improve the accuracy of dispersal forecasts.\n3. Emission Models. Emission models provide the so-called Eruption Source Parameters (ESP), needed to characterize the near vent properties of volcanic plumes (that are a kind of clouds which are connected to their source). The ESP, including eruption start and duration, cloud injection height, vertical mass distribution across the eruption column, Total Grain Size Distribution (TGSD), and Mass Eruption Rate (MER) are essential inputs to transport models. While some parameters (e.g., eruption start and end times, column height) can be directly observed, others like MER must be estimated by means of indirect methods, which introduces significant input uncertainties that propagate through the modelling workflow.\n\nThe DTC-V2 workflow (WF5201) configures and runs an ensemble of FALL3D model realizations, potentially assimilating in the model different sources of data (groundbased or satellite-based observations). A major advantage of the ensemble model approach is that it allows delivering both deterministic (e.g. ensemble mean) and probabilistic (e.g. fraction of ensemble members exceeding a given condition) forecasts, reflecting the inherent uncertainties in the ESPs. On a coarse-grain, the workflow requires four main steps:\n1. Get atmospheric data from Numerical Weather Prediction (NWP) models, assumed to be run and delivered by a third party. DTC-V2 can ingest either NWP forecast data (up to a few days ahead) or reanalyses (for past events or “what if” scenarios). Different agencies (e.g. ECMWF, National Weather Services, etc.) serve global/regional data at various spatial and temporal resolutions.\n2. Get the Eruption Source Parameters (ESP) from different sources; e.g. from volcano monitoring data provided by State Volcano Observatories (SVO). In case ESPs from several sources are available, the workflow assigns a ranked\npriority as shown in Table 1.\n3. Setup the FALL3D model and run an ensemble of simulations in the FENIX RI or HPC (leonardo@CINECA). The different ensemble members, each representing a single deterministic scenario, are set by perturbing some critical ESPs (e.g. eruption column height) within their uncertainty range. The model allows introducing both absolute and relative errors for all ESP around the observed value.\n4. Post-process the results",
+      "name": "[DTC-V2] WF5201: Forecast volcanic ash fallout and dispersal in the atmosphere",
+      "url": "https://workflowhub.eu/workflows/1230?version=2",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "#Marco%20Salvi"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/179"
+      },
+      "dateCreated": "2025-02-21T13:27:46Z",
+      "dateModified": "2025-10-15T10:41:23Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/1230?version=1",
+      "input": {
+        "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-inputs-DT5210"
+      },
+      "output": [
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5201"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5202"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5203"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5204"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5205"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5206"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5207"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5208"
+        },
+        {
+          "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5209"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "DTC52/WF5201/WF5201.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 97445
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Marco Salvi"
+    },
+    {
+      "@id": "#Marco Salvi",
+      "@type": "Person",
+      "name": "Marco Salvi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/179",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "WP5 - Volcanoes"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-inputs-DT5210",
+      "@type": "FormalParameter",
+      "name": "DT5210",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5201",
+      "@type": "FormalParameter",
+      "name": "DT5201",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5202",
+      "@type": "FormalParameter",
+      "name": "DT5202",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5203",
+      "@type": "FormalParameter",
+      "name": "DT5203",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5204",
+      "@type": "FormalParameter",
+      "name": "DT5204",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5205",
+      "@type": "FormalParameter",
+      "name": "DT5205",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5206",
+      "@type": "FormalParameter",
+      "name": "DT5206",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5207",
+      "@type": "FormalParameter",
+      "name": "DT5207",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5208",
+      "@type": "FormalParameter",
+      "name": "DT5208",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#_dtc_v2__wf5201__forecast_volcanic_ash_fallout_and_dispersal_in_the_atmosphere-outputs-DT5209",
+      "@type": "FormalParameter",
+      "name": "DT5209",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "From a cBioPortal patient mutation table, extract, format data and run PyClone-vi",
+    "comments": [],
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "",
+            "name": "Jeanne Ch\u00e8neby"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "MIT",
+    "name": "clonal_population (imported from uploaded file)",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "Raw table from cBioPortal patient mutation",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Raw table from cBioPortal patient mutation",
+                    "name": "raw_patient_mutation_table"
+                }
+            ],
+            "label": "raw_patient_mutation_table",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 0,
+                "top": 389.9999990621144
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"tabular\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "ad7de8a5-886e-4da2-a8ac-264a183ae52a",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "Missing CN data",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Missing CN data",
+                    "name": "all_CN"
+                }
+            ],
+            "label": "all_CN",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 600,
+                "top": 520
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"tabular\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "8377339b-5ad6-48ee-83fe-c2324f9146f8",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "cBioPortal Study ID",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "cBioPortal Study ID",
+                    "name": "study_id"
+                }
+            ],
+            "label": "study_id",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 2100,
+                "top": 250
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "e6304e45-6185-4113-bbe7-9b7504565b57",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "cBioPortal patient ID",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "cBioPortal patient ID",
+                    "name": "case_id"
+                }
+            ],
+            "label": "case_id",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 2097.946591756808,
+                "top": 533.9625337445696
+            },
+            "tool_id": null,
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "777c9e34-d440-4abb-9792-d750d50a14e2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "tables_0|table": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Query Tabular",
+                    "name": "add_to_database"
+                }
+            ],
+            "label": "extract_format_pyclone_input",
+            "name": "Query Tabular",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 300,
+                "top": 370
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/query_tabular/query_tabular/3.3.2",
+            "tool_shed_repository": {
+                "changeset_revision": "cf4397560712",
+                "name": "query_tabular",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"add_to_database\": {\"withdb\": {\"__class__\": \"RuntimeValue\"}}, \"addqueries\": {\"queries\": []}, \"modify_database\": {\"sql_stmts\": []}, \"query_result\": {\"header\": \"yes\", \"__current_case__\": 0, \"header_prefix\": \"\"}, \"save_db\": false, \"sqlquery\": \"SELECT\\n    patient_id || ':' || chromosome || ':' || start_pos || ':' || ref AS mutation_id,\\n    sample_id,\\n    ref_reads AS ref_counts,\\n    variant_reads AS alt_counts\\nFROM (\\n    SELECT\\n        SUBSTR(samples, 1, first_occurrence - 1) AS patient_id,        chromosome,\\n        start_pos,\\n        ref,\\n        samples,\\n        ref_reads,\\n        variant_reads,\\n        SUBSTR(samples, first_occurrence + 1) AS sample_id\\n    FROM (\\n        SELECT\\n            chromosome,\\n            start_pos,\\n            ref,\\n            samples,\\n            ref_reads,\\n            variant_reads,\\n            INSTR(samples, '-') AS first_occurrence\\n        FROM\\n            t1\\n    ) AS Occurrences\\n) AS Result;\\n\", \"tables\": [{\"__index__\": 0, \"table\": {\"__class__\": \"ConnectedValue\"}, \"input_opts\": {\"linefilters\": []}, \"tbl_opts\": {\"table_name\": \"\", \"column_names_from_first_line\": true, \"col_names\": \"\", \"load_named_columns\": false, \"pkey_autoincr\": \"\", \"indexes\": []}}], \"workdb\": \"workdb.sqlite\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "3.3.2",
+            "type": "tool",
+            "uuid": "52a22d8b-dfe9-4e4f-8237-bbffc926aa19",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "Merge mutation and event name",
+            "content_id": "mergeCols1",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input1": {
+                    "id": 4,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "merge_id",
+            "name": "Merge Columns",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 600,
+                "top": 370
+            },
+            "post_job_actions": {},
+            "tool_id": "mergeCols1",
+            "tool_state": "{\"col1\": \"1\", \"col2\": \"2\", \"columns\": [], \"input1\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.1",
+            "type": "tool",
+            "uuid": "3c307f4f-0e87-4025-9eb7-e9d298b414c7",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "Join mutation with copy Number data",
+            "content_id": "join1",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input1": {
+                    "id": 5,
+                    "output_name": "out_file1"
+                },
+                "input2": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "join_mutation_cn",
+            "name": "Join two Datasets",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 900.0000773339921,
+                "top": 370.00001276778374
+            },
+            "post_job_actions": {
+                "DeleteIntermediatesActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "DeleteIntermediatesAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "join1",
+            "tool_state": "{\"field1\": \"5\", \"field2\": \"6\", \"fill_empty_columns\": {\"fill_empty_columns_switch\": \"no_fill\", \"__current_case__\": 0}, \"header\": \"-H\", \"input1\": {\"__class__\": \"ConnectedValue\"}, \"input2\": {\"__class__\": \"ConnectedValue\"}, \"partial\": \"\", \"unmatched\": \"\", \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.1.3",
+            "type": "tool",
+            "uuid": "9c060225-af6b-4e83-958c-75212a73d805",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "From the merge mutation CN table, select only PyClone-VI input",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input": {
+                    "id": 6,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "select_column_pyclone_final",
+            "name": "Cut",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 1200,
+                "top": 370
+            },
+            "post_job_actions": {
+                "DeleteIntermediatesActionout_file1": {
+                    "action_arguments": {},
+                    "action_type": "DeleteIntermediatesAction",
+                    "output_name": "out_file1"
+                }
+            },
+            "tool_id": "Cut1",
+            "tool_state": "{\"columnList\": \"c1,c2,c3,c4,c8,c9,c10\", \"delimiter\": \"T\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "ba9004a0-277d-4655-9027-2faac287e70c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "Filter1",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input": {
+                    "id": 7,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "remove_uncomplete_row",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "left": 1500,
+                "top": 370
+            },
+            "post_job_actions": {},
+            "tool_id": "Filter1",
+            "tool_state": "{\"cond\": \"(c3!='\\\"\\\" or c4!=\\\"\\\" or c5!='\\\"\\\" or c6!=\\\"\\\" or c7 !=\\\"\\\")\", \"header_lines\": \"1\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.1",
+            "type": "tool",
+            "uuid": "597874b7-0184-48d5-a223-3bdef7a1b207",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "Run PyClone with data",
+            "content_id": "pyclone_vi",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input_file": {
+                    "id": 8,
+                    "output_name": "out_file1"
+                }
+            },
+            "inputs": [],
+            "label": "run_pyclone",
+            "name": "pyclone_vi",
+            "outputs": [
+                {
+                    "name": "ofile",
+                    "type": "tabular"
+                },
+                {
+                    "name": "ofileh5",
+                    "type": "h5"
+                }
+            ],
+            "position": {
+                "left": 1800,
+                "top": 370
+            },
+            "post_job_actions": {},
+            "tool_id": "pyclone_vi",
+            "tool_state": "{\"annealing_power\": \"1.0\", \"convergence_threshold\": \"1e-05\", \"density\": \"binomial\", \"input_file\": {\"__class__\": \"ConnectedValue\"}, \"max_iters\": \"1\", \"mix_weight_prior\": \"1.0\", \"num_annealing_steps\": \"1\", \"num_clusters\": \"10\", \"num_grid_points\": \"100\", \"num_restarts\": \"1\", \"precision\": \"200\", \"seed\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.1.0+galaxy1",
+            "type": "tool",
+            "uuid": "abe05267-0bf1-4452-8b70-029550487ef2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "Make clonal evolution graph from PyClone-Vi output",
+            "content_id": "plot_cellular_prevalence",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_file": {
+                    "id": 9,
+                    "output_name": "ofile"
+                }
+            },
+            "inputs": [],
+            "label": "make_plot",
+            "name": "Cluster Prevalence Over Samples",
+            "outputs": [
+                {
+                    "name": "output_file",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 2100,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "plot_cellular_prevalence",
+            "tool_state": "{\"input_file\": {\"__class__\": \"ConnectedValue\"}, \"timepoints\": [{\"__index__\": 0, \"event_id\": \"R1\", \"start_date\": \"10\"}, {\"__index__\": 1, \"event_id\": \"R2\", \"start_date\": \"20\"}, {\"__index__\": 2, \"event_id\": \"R3\", \"start_date\": \"30\"}, {\"__index__\": 3, \"event_id\": \"R4\", \"start_date\": \"40\"}, {\"__index__\": 4, \"event_id\": \"R5\", \"start_date\": \"50\"}, {\"__index__\": 5, \"event_id\": \"R6\", \"start_date\": \"60\"}, {\"__index__\": 6, \"event_id\": \"R7\", \"start_date\": \"70\"}, {\"__index__\": 7, \"event_id\": \"R8\", \"start_date\": \"80\"}, {\"__index__\": 8, \"event_id\": \"R9\", \"start_date\": \"90\"}], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0",
+            "type": "tool",
+            "uuid": "1b3d3d78-028f-4e63-9ef7-7694147421e0",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "export_cbioportal_timeline",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "case_id": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "input_data": {
+                    "id": 9,
+                    "output_name": "ofile"
+                },
+                "study_id": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "export_timeline_pyclone",
+            "name": "Load PyClone-VI output to cBioPortal Timeline",
+            "outputs": [
+                {
+                    "name": "meta_file",
+                    "type": "txt"
+                },
+                {
+                    "name": "data_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2500,
+                "top": 380
+            },
+            "post_job_actions": {},
+            "tool_id": "export_cbioportal_timeline",
+            "tool_state": "{\"case_id\": {\"__class__\": \"ConnectedValue\"}, \"input_data\": {\"__class__\": \"ConnectedValue\"}, \"study_id\": {\"__class__\": \"ConnectedValue\"}, \"timepoints\": [{\"__index__\": 0, \"event_id\": \"R1\", \"start_date\": \"10\", \"stop_date\": null}, {\"__index__\": 1, \"event_id\": \"R2\", \"start_date\": \"20\", \"stop_date\": null}, {\"__index__\": 2, \"event_id\": \"R3\", \"start_date\": \"30\", \"stop_date\": null}, {\"__index__\": 3, \"event_id\": \"R4\", \"start_date\": \"40\", \"stop_date\": null}, {\"__index__\": 4, \"event_id\": \"R5\", \"start_date\": \"50\", \"stop_date\": null}, {\"__index__\": 5, \"event_id\": \"R6\", \"start_date\": \"60\", \"stop_date\": null}, {\"__index__\": 6, \"event_id\": \"R7\", \"start_date\": \"70\", \"stop_date\": null}, {\"__index__\": 7, \"event_id\": \"R8\", \"start_date\": \"80\", \"stop_date\": null}, {\"__index__\": 8, \"event_id\": \"R9\", \"start_date\": \"90\", \"stop_date\": null}], \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.3",
+            "type": "tool",
+            "uuid": "2c5b2793-4760-43c6-a40b-29d180ccbb08",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "data_file",
+                    "output_name": "data_file",
+                    "uuid": "8bc5753a-9ad9-4e29-a472-c502436fd44a"
+                },
+                {
+                    "label": "meta_file",
+                    "output_name": "meta_file",
+                    "uuid": "dd86abd8-f379-46bc-8f43-cb7b447969ef"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "Add a link to the PyClone-VI plot to the cBioportal database",
+            "content_id": "export_cbioportal_image",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "case_id": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "input_data": {
+                    "id": 10,
+                    "output_name": "output_file"
+                },
+                "study_id": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "link_plot_cbioport",
+            "name": "Link image to cBioPortal resource",
+            "outputs": [
+                {
+                    "name": "meta_definition_file",
+                    "type": "txt"
+                },
+                {
+                    "name": "data_definition_file",
+                    "type": "tabular"
+                },
+                {
+                    "name": "meta_patient_file",
+                    "type": "txt"
+                },
+                {
+                    "name": "data_patient_file",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 2500,
+                "top": 0
+            },
+            "post_job_actions": {},
+            "tool_id": "export_cbioportal_image",
+            "tool_state": "{\"case_id\": {\"__class__\": \"ConnectedValue\"}, \"image_name\": \"\", \"input_data\": {\"__class__\": \"ConnectedValue\"}, \"overwrite\": true, \"study_id\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": 0, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.0",
+            "type": "tool",
+            "uuid": "4fe73b94-22c9-483f-818c-e1646050d17d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "data_patient_file",
+                    "output_name": "data_patient_file",
+                    "uuid": "c64ab4ea-1486-4118-a6a3-d9db6efce7a4"
+                },
+                {
+                    "label": "meta_definition_file",
+                    "output_name": "meta_definition_file",
+                    "uuid": "8bd59fc0-fb91-47ff-b1d1-9449fb5e82b9"
+                },
+                {
+                    "label": "data_definition_file",
+                    "output_name": "data_definition_file",
+                    "uuid": "232a2453-484c-43f3-af4f-c331814e71e4"
+                },
+                {
+                    "label": "meta_patient_file",
+                    "output_name": "meta_patient_file",
+                    "uuid": "956bfd17-9767-429e-b850-b5f8cd3c17c2"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "d190ff50-a891-4f23-8bf6-7c670e40ca2a",
+    "version": 1
+}

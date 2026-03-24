@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Tango: Numerical reconciliation of bacterial fermentation in cheese production</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "packed.cwl"
+      },
+      "datePublished": "2024-05-03 07:57:39 +0100",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/873?version=1",
+      "url": "https://workflowhub.eu/workflows/873/ro_crate?version=1",
+      "name": "Research Object Crate for Tango: Numerical reconciliation of bacterial fermentation in cheese production",
+      "description": "Complete workflow for TANGO as reported in Lecomte et al (2024),\n\"Revealing the dynamics and mechanisms of bacterial interactions in\ncheese production with metabolic modelling\", Metabolic Eng. 83:24-38\nhttps://doi.org/10.1016/j.ymben.2024.02.014\n\n1. Parameters for individual models are obtained by optimization\n2. Individual dynamics and community dynamics are simulated\n3. Figures for the manuscript are assembled from the results.",
+      "isBasedOn": "https://forgemia.inra.fr/tango/tango_models.git",
+      "sdDatePublished": "2026-03-24 01:04:30 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "packed.cwl"
+        },
+        {
+          "@id": "workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "packed.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 58757,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Complete workflow for TANGO as reported in Lecomte et al (2024),\n\"Revealing the dynamics and mechanisms of bacterial interactions in\ncheese production with metabolic modelling\", Metabolic Eng. 83:24-38\nhttps://doi.org/10.1016/j.ymben.2024.02.014\n\n1. Parameters for individual models are obtained by optimization\n2. Individual dynamics and community dynamics are simulated\n3. Figures for the manuscript are assembled from the results.",
+      "name": "Tango: Numerical reconciliation of bacterial fermentation in cheese production",
+      "url": "https://workflowhub.eu/workflows/873?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/139"
+      },
+      "dateCreated": "2024-05-03T07:03:12Z",
+      "dateModified": "2024-05-03T07:08:20Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-%23main/community"
+        },
+        {
+          "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-%23main/pure_culture"
+        },
+        {
+          "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-%23main/which_figures"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-outputs-%23main/figures"
+        },
+        {
+          "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-outputs-%23main/results"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 11509
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/139",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "MISTIC"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-#main/community",
+      "@type": "FormalParameter",
+      "name": "#main/community",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-#main/pure_culture",
+      "@type": "FormalParameter",
+      "name": "#main/pure_culture",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-inputs-#main/which_figures",
+      "@type": "FormalParameter",
+      "name": "#main/which_figures",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-outputs-#main/figures",
+      "@type": "FormalParameter",
+      "name": "#main/figures",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#tango__numerical_reconciliation_of_bacterial_fermentation_in_cheese_production-outputs-#main/results",
+      "@type": "FormalParameter",
+      "name": "#main/results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Tango: Numerical reconciliation of bacterial fermentation in cheese production</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/873/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/873/ro_crate?version=1</a>
+
+
+  <img src="workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg" style="width: 100%;"/>
+
+<p>
+  Complete workflow for TANGO as reported in Lecomte et al (2024),
+"Revealing the dynamics and mechanisms of bacterial interactions in
+cheese production with metabolic modelling", Metabolic Eng. 83:24-38
+https://doi.org/10.1016/j.ymben.2024.02.014
+
+1. Parameters for individual models are obtained by optimization
+2. Individual dynamics and community dynamics are simulated
+3. Figures for the manuscript are assembled from the results.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>GPL-3.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_packed.cwl">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="packed.cwl">Tango: Numerical reconciliation of bacterial fermentation in cheese production</a>
+      
+        <br/>Size: 58757 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg">workflow-873-fd9ed7efc8aa53c9af4651a987673db364ecd9fa-diagram.svg</a>
+      
+        <br/>Size: 11509 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

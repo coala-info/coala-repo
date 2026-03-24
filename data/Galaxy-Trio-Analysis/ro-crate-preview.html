@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Trio Analysis</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "main_workflow.ga"
+      },
+      "datePublished": "2023-07-13 09:10:21 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-2556-2125"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.363.2",
+      "url": "https://workflowhub.eu/workflows/363/ro_crate?version=2",
+      "name": "Research Object Crate for Trio Analysis",
+      "description": "To discover causal mutations of inherited diseases it’s common practice to do a trio analysis. In a trio analysis DNA is sequenced of both the patient and parents. Using this method, it’s possible to identify multiple inheritance patterns. Some examples of these patterns are autosomal recessive, autosomal dominant, and de-novo variants, which are represented in the figure below. To elaborate, the most left tree shows an autosomal dominant inhertitance pattern where the offspring inherits a faulty copy of the gene from one of the parents.\n\nTo discover these mutations either whole exome sequencing (WES) or whole genome sequencing (WGS) can be used. With these technologies it is possible to uncover the DNA of the parents and offspring to find (shared) mutations in the DNA. These mutations can include insertions/deletions (indels), loss of heterozygosity (LOH), single nucleotide variants (SNVs), copy number variations (CNVs), and fusion genes.\n\nIn this workflow  we will also make use of the HTSGET protocol, which is a program to download our data securely and savely. This protocol has been implemented in the EGA Download Client Tool: toolshed.g2.bx.psu.edu/repos/iuc/ega_download_client/pyega3/4.0.0+galaxy0 tool, so we don’t have to leave Galaxy to retrieve our data.\n\nWe will not start our analysis from scratch, since the main goal of this tutorial is to use the HTSGET protocol to download variant information from an online archive and to find the causative variant from those variants. If you want to learn how to do the analysis from scratch, using the raw reads, you can have a look at the Exome sequencing data analysis for diagnosing a genetic disease tutorial.",
+      "isBasedOn": "https://github.com/galaxyproject/training-material/blob/main/topics/variant-analysis/tutorials/trio-analysis/workflows/main_workflow.ga",
+      "sdDatePublished": "2026-03-24 17:59:22 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "main_workflow.ga"
+        }
+      ]
+    },
+    {
+      "@id": "main_workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/galaxyproject/training-material/blob/main/topics/variant-analysis/tutorials/trio-analysis/workflows/main_workflow.ga",
+      "contentSize": 29328,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "To discover causal mutations of inherited diseases it’s common practice to do a trio analysis. In a trio analysis DNA is sequenced of both the patient and parents. Using this method, it’s possible to identify multiple inheritance patterns. Some examples of these patterns are autosomal recessive, autosomal dominant, and de-novo variants, which are represented in the figure below. To elaborate, the most left tree shows an autosomal dominant inhertitance pattern where the offspring inherits a faulty copy of the gene from one of the parents.\n\nTo discover these mutations either whole exome sequencing (WES) or whole genome sequencing (WGS) can be used. With these technologies it is possible to uncover the DNA of the parents and offspring to find (shared) mutations in the DNA. These mutations can include insertions/deletions (indels), loss of heterozygosity (LOH), single nucleotide variants (SNVs), copy number variations (CNVs), and fusion genes.\n\nIn this workflow  we will also make use of the HTSGET protocol, which is a program to download our data securely and savely. This protocol has been implemented in the EGA Download Client Tool: toolshed.g2.bx.psu.edu/repos/iuc/ega_download_client/pyega3/4.0.0+galaxy0 tool, so we don’t have to leave Galaxy to retrieve our data.\n\nWe will not start our analysis from scratch, since the main goal of this tutorial is to use the HTSGET protocol to download variant information from an online archive and to find the causative variant from those variants. If you want to learn how to do the analysis from scratch, using the raw reads, you can have a look at the Exome sequencing data analysis for diagnosing a genetic disease tutorial.",
+      "name": "Trio Analysis",
+      "keywords": "variant-analysis",
+      "version": 2,
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/287"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2023-03-01T15:35:32Z",
+      "dateModified": "2023-09-05T08:11:49Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.363.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/363?version=1",
+      "input": {
+        "@id": "#trio_analysis-inputs-pedigree"
+      },
+      "output": [
+        {
+          "@id": "#trio_analysis-outputs-EGA%20Download%20Client:%20authorized%20datasets"
+        },
+        {
+          "@id": "#trio_analysis-outputs-List%20of%20files%20in%20EGAD00001008392"
+        },
+        {
+          "@id": "#trio_analysis-outputs-List%20of%20Case%205%20VCFs"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20VCFs.gz"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20VCFs"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20VCFs%20(Fixed%20Header%20and%20Chr)"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20Normalized%20VCFs"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20Normalized%20VCFs%20(Removed%20%3CNON_REF%3E)"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20Merged%20VCF"
+        },
+        {
+          "@id": "#trio_analysis-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20SnpEff%20Annotated%20vcf"
+        },
+        {
+          "@id": "#trio_analysis-outputs-SnpEff%20Annotated%20vcf_bgzip"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20gene.iobio%20results"
+        },
+        {
+          "@id": "#trio_analysis-outputs-GEMINI%20Database"
+        },
+        {
+          "@id": "#trio_analysis-outputs-Case%205%20GEMINI%20results"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2556-2125",
+      "@type": "Person",
+      "name": "Jasper Ouwerkerk",
+      "identifier": "https://orcid.org/0000-0003-2556-2125"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/287",
+      "@type": "Person",
+      "name": "Jasper Ouwerkerk"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-inputs-pedigree",
+      "@type": "FormalParameter",
+      "name": "pedigree",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-EGA Download Client: authorized datasets",
+      "@type": "FormalParameter",
+      "name": "EGA Download Client: authorized datasets",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-List of files in EGAD00001008392",
+      "@type": "FormalParameter",
+      "name": "List of files in EGAD00001008392",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-List of Case 5 VCFs",
+      "@type": "FormalParameter",
+      "name": "List of Case 5 VCFs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 VCFs.gz",
+      "@type": "FormalParameter",
+      "name": "Case 5 VCFs.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 VCFs",
+      "@type": "FormalParameter",
+      "name": "Case 5 VCFs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 VCFs (Fixed Header and Chr)",
+      "@type": "FormalParameter",
+      "name": "Case 5 VCFs (Fixed Header and Chr)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 Normalized VCFs",
+      "@type": "FormalParameter",
+      "name": "Case 5 Normalized VCFs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 Normalized VCFs (Removed <NON_REF>)",
+      "@type": "FormalParameter",
+      "name": "Case 5 Normalized VCFs (Removed <NON_REF>)",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 Merged VCF",
+      "@type": "FormalParameter",
+      "name": "Case 5 Merged VCF",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 SnpEff Annotated vcf",
+      "@type": "FormalParameter",
+      "name": "Case 5 SnpEff Annotated vcf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-SnpEff Annotated vcf_bgzip",
+      "@type": "FormalParameter",
+      "name": "SnpEff Annotated vcf_bgzip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 gene.iobio results",
+      "@type": "FormalParameter",
+      "name": "Case 5 gene.iobio results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-GEMINI Database",
+      "@type": "FormalParameter",
+      "name": "GEMINI Database",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#trio_analysis-outputs-Case 5 GEMINI results",
+      "@type": "FormalParameter",
+      "name": "Case 5 GEMINI results",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Trio Analysis</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/363/ro_crate?version=2" target="_blank">https://workflowhub.eu/workflows/363/ro_crate?version=2</a>
+
+
+<p>
+  To discover causal mutations of inherited diseases it’s common practice to do a trio analysis. In a trio analysis DNA is sequenced of both the patient and parents. Using this method, it’s possible to identify multiple inheritance patterns. Some examples of these patterns are autosomal recessive, autosomal dominant, and de-novo variants, which are represented in the figure below. To elaborate, the most left tree shows an autosomal dominant inhertitance pattern where the offspring inherits a faulty copy of the gene from one of the parents.
+
+To discover these mutations either whole exome sequencing (WES) or whole genome sequencing (WGS) can be used. With these technologies it is possible to uncover the DNA of the parents and offspring to find (shared) mutations in the DNA. These mutations can include insertions/deletions (indels), loss of heterozygosity (LOH), single nucleotide variants (SNVs), copy number variations (CNVs), and fusion genes.
+
+In this workflow  we will also make use of the HTSGET protocol, which is a program to download our data securely and savely. This protocol has been implemented in the EGA Download Client Tool: toolshed.g2.bx.psu.edu/repos/iuc/ega_download_client/pyega3/4.0.0+galaxy0 tool, so we don’t have to leave Galaxy to retrieve our data.
+
+We will not start our analysis from scratch, since the main goal of this tutorial is to use the HTSGET protocol to download variant information from an online archive and to find the causative variant from those variants. If you want to learn how to do the analysis from scratch, using the raw reads, you can have a look at the Exome sequencing data analysis for diagnosing a genetic disease tutorial.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0003-2556-2125" target="_blank">Jasper Ouwerkerk</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_main_workflow.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="main_workflow.ga">Trio Analysis</a>
+      
+        <br/>Size: 29328 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

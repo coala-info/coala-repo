@@ -1,0 +1,400 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "16S_biodiversity_for_overlap_paired_end.ga"
+      },
+      "datePublished": "2021-11-10 00:15:14 +0000",
+      "author": [
+
+      ],
+      "license": "GPL-3.0",
+      "identifier": "https://workflowhub.eu/workflows/232?version=1",
+      "url": "https://workflowhub.eu/workflows/232/ro_crate?version=1",
+      "name": "Research Object Crate for 16S_biodiversity_for_overlap_paired_end",
+      "description": "MetaDEGalaxy: Galaxy workflow for differential abundance analysis of 16s metagenomic data",
+      "sdDatePublished": "2026-03-24 18:07:38 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "16S_biodiversity_for_overlap_paired_end.ga"
+        }
+      ]
+    },
+    {
+      "@id": "16S_biodiversity_for_overlap_paired_end.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 62961,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "MetaDEGalaxy: Galaxy workflow for differential abundance analysis of 16s metagenomic data",
+      "name": "16S_biodiversity_for_overlap_paired_end",
+      "url": "https://workflowhub.eu/workflows/232?version=1",
+      "keywords": "MetaDEGalaxy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/GPL-3.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/41"
+      },
+      "dateCreated": "2021-11-10T00:15:14Z",
+      "dateModified": "2024-04-17T04:19:28Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "input": {
+        "@id": "#16s_biodiversity_for_overlap_paired_end-inputs-%22Input%20Dataset%20Collection%22"
+      },
+      "output": [
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_22"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_23"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_24"
+        },
+        {
+          "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_25"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/41",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "QCIF Bioinformatics"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-inputs-\"Input Dataset Collection\"",
+      "@type": "FormalParameter",
+      "name": "\"Input Dataset Collection\"",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_23",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_23",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_24",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_24",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#16s_biodiversity_for_overlap_paired_end-outputs-_anonymous_output_25",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_25",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

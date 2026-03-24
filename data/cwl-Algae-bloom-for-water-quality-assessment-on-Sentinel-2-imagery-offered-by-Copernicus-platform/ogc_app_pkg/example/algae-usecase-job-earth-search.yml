@@ -1,0 +1,7 @@
+collection: "sentinel-2-l2a"
+toi: ["2019-06-25", "2019-07-03"]
+aoi:
+  class: File
+  path: algae-usecase-region.geojson
+  format: "iana:application/geo+json"
+cloud_cover: 0.1

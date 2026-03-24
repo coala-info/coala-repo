@@ -1,0 +1,211 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "WF7202 – Short-Term Earthquake Forecasting (STEF)",
+      "description": "A workflow that produces short-term earthquake forecasts based on the most recent earthquake catalog data. It integrates real-time and high-resolution seismic event catalogs to generate forecasts using the ETAS model.",
+      "datePublished": "2025-05-06",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "author": { "@id": "https://orcid.org/0000-0002-5262-3168" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "keywords": ["earthquake forecasting", "ETAS", "seismicity"],
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "hasPart": [
+        { "@id": "WF7202.cwl" },
+        { "@id": "ST720204" },
+        { "@id": "SS7501" },
+        { "@id": "SS7502" },
+        { "@id": "SS7203" },
+        { "@id": "SS7504" },
+        { "@id": "DT7201/" },
+        { "@id": "DT7202/" },
+        { "@id": "DT7203/" },
+        { "@id": "DT7204/" }
+      ],
+      "mainEntity": { "@id": "WF7202.cwl" }
+    },
+    {
+      "@id": "WF7202.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "Short-Term Earthquake Forecasting based on ETAS",
+      "description": "A CWL-based workflow that processes real-time and high-resolution seismic event catalogs to generate short-term earthquake forecasts using the ETAS model.",
+      "programmingLanguage": [
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+        }
+      ],
+      "author": { "@id": "https://orcid.org/0000-0002-5262-3168" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "ST720204",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "name": "ETAS Forecast Process",
+      "programmingLanguage": [
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+        }
+      ],
+      "author": { "@id": "https://orcid.org/0000-0002-5262-3168" },
+      "conformsTo": [
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ]
+    },
+    {
+      "@id": "SS7501",
+      "@type": "SoftwareSourceCode",
+      "name": "ETAS Repository",
+      "description": "Repository containing the code to calibrate ETAS and issue a forecast using ETAS.",
+      "license": "https://spdx.org/licenses/MIT",
+      "programmingLanguage": ["Python"],
+      "url": "https://github.com/lmizrahi/etas",
+      "doi": "10.5281/zenodo.6951562",
+      "creator": { "@id": "https://orcid.org/0000-0002-5262-3168" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "SS7502",
+      "@type": "SoftwareSourceCode",
+      "name": "Forecast Webservice",
+      "description": "Web service that visualizes the short-term forecasts and provides them for further analysis.",
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" },
+        { "@id": "https://orcid.org/0009-0009-4291-2503" }
+      ],
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "license": "https://spdx.org/licenses/MIT",
+      "programmingLanguage": ["Python"]
+    },
+    {
+      "@id": "SS7203",
+      "@type": "SoftwareSourceCode",
+      "name": "HERMES Scheduler",
+      "description": "Decides when a new forecast needs to be produced and when the model needs to be updated.",
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" },
+        { "@id": "https://orcid.org/0009-0009-4291-2503" }
+      ],
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "license": "https://spdx.org/licenses/AGPL-3.0-only.html",
+      "programmingLanguage": ["Python"]
+    },
+    {
+      "@id": "SS7504",
+      "@type": "SoftwareSourceCode",
+      "name": "CSEP Testing",
+      "description": "Runs CSEP tests on short-term forecasts.",
+      "creator": { "@id": "https://orcid.org/0000-0002-5262-3168" },
+      "publisher": { "@id": "https://ror.org/05a28rw58" },
+      "license": "https://spdx.org/licenses/MIT",
+      "programmingLanguage": ["Python"]
+    },
+    {
+      "@id": "DT7201/",
+      "@type": "Dataset",
+      "name": "Short-term earthquake forecasts",
+      "description": "Earthquake forecasts that are regularly issued by the workflow. In the format of simulated catalog, and a grid of probabilities/rates.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "doi.org/10.5281/zenodo.6583992",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" }
+      ]
+    },
+    {
+      "@id": "DT7202/",
+      "@type": "Dataset",
+      "name": "Swiss National Earthquake Catalogue",
+      "description": "Earthquake catalog of Switzerland provided by the Swiss Seismological Service.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "http://eida.ethz.ch/fdsnws/event/1/",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" }
+      ]
+    },
+    {
+      "@id": "DT7203/",
+      "@type": "Dataset",
+      "name": "EMSC catalog",
+      "description": "Earthquake catalog of Europe provided by EMSC.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "www.seismicportal.eu/fdsnws/event/1/query",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" }
+      ]
+    },
+    {
+      "@id": "DT7204/",
+      "@type": "Dataset",
+      "name": "Forecast Test Results",
+      "description": "Results of CSEP tests that are regularly produced by workflow 7202.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "url": "https://doi.org/10.1785/0220220033",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0002-5262-3168" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5262-3168",
+      "@type": "Person",
+      "name": "Leila Mizrahi",
+      "email": "leila.mizrahi@ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://orcid.org/0009-0009-4291-2503",
+      "@type": "Person",
+      "name": "Nicolas Schmid",
+      "email": "nicolas.schmid@sed.ethz.ch",
+      "affiliation": { "@id": "https://ror.org/05a28rw58" }
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH Zürich)"
+    }
+  ]
+}

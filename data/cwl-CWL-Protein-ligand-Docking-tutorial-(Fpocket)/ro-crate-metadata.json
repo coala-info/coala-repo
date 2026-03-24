@@ -1,0 +1,498 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2023-06-06 15:59:46 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8291-8071"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0513-0288"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.259.2",
+      "url": "https://workflowhub.eu/workflows/259/ro_crate?version=2",
+      "name": "Research Object Crate for CWL Protein-ligand Docking tutorial (Fpocket)",
+      "description": "# Protein-ligand Docking tutorials using BioExcel Building Blocks (biobb)\n\nThis tutorials aim to illustrate the process of **protein-ligand docking**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular examples used are based on the **Mitogen-activated protein kinase 14** (p38-α) protein (PDB code [3HEC](https://www.rcsb.org/structure/3HEC)), a well-known **Protein Kinase enzyme**,\n in complex with the FDA-approved **Imatinib** (PDB Ligand code [STI](https://www.rcsb.org/ligand/STI), DrugBank Ligand Code [DB00619](https://go.drugbank.com/drugs/DB00619)) and **Dasatinib** (PDB Ligand code [1N1](https://www.rcsb.org/ligand/1N1), DrugBank Ligand Code [DB01254](https://go.drugbank.com/drugs/DB01254)), small **kinase inhibitors** molecules used to treat certain types of **cancer**.\n\nThe tutorials will guide you through the process of identifying the **active site cavity** (pocket) without previous knowledge, and the final prediction of the **protein-ligand complex**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2022 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2022 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "isBasedOn": "https://github.com/bioexcel/biobb_workflows/tree/master/biobb_wf_virtual_screening/cwl",
+      "sdDatePublished": "2026-03-24 01:17:06 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-259-992192ca9b524bac76e6eb011757e51e55dbc278-diagram.svg"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/README.md"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/all_pockets.zip"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/ligand.pdb"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/protein.pdb"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/workflow_input_descriptions.yml"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/autodock_vina_run.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/babel_convert.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/box.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/fpocket_select.cwl"
+        },
+        {
+          "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/str_check_add_hydrogens.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "url": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/workflow.cwl",
+      "contentSize": 6352,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-259-992192ca9b524bac76e6eb011757e51e55dbc278-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# Protein-ligand Docking tutorials using BioExcel Building Blocks (biobb)\n\nThis tutorials aim to illustrate the process of **protein-ligand docking**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular examples used are based on the **Mitogen-activated protein kinase 14** (p38-α) protein (PDB code [3HEC](https://www.rcsb.org/structure/3HEC)), a well-known **Protein Kinase enzyme**,\n in complex with the FDA-approved **Imatinib** (PDB Ligand code [STI](https://www.rcsb.org/ligand/STI), DrugBank Ligand Code [DB00619](https://go.drugbank.com/drugs/DB00619)) and **Dasatinib** (PDB Ligand code [1N1](https://www.rcsb.org/ligand/1N1), DrugBank Ligand Code [DB01254](https://go.drugbank.com/drugs/DB01254)), small **kinase inhibitors** molecules used to treat certain types of **cancer**.\n\nThe tutorials will guide you through the process of identifying the **active site cavity** (pocket) without previous knowledge, and the final prediction of the **protein-ligand complex**.\n\n***\n\n## Copyright &amp; Licensing\nThis software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) &amp; [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).\n\n* (c) 2015-2022 [Barcelona Supercomputing Center](https://www.bsc.es/)\n* (c) 2015-2022 [Institute for Research in Biomedicine](https://www.irbbarcelona.org/)\n\nLicensed under the\n[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), see the file LICENSE for details.\n\n![](https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png \"Bioexcel\")",
+      "name": "CWL Protein-ligand Docking tutorial (Fpocket)",
+      "keywords": "",
+      "version": 2,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/57"
+        },
+        {
+          "@id": "https://workflowhub.eu/people/47"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2023-06-06T14:57:00Z",
+      "dateModified": "2023-06-06T15:02:00Z",
+      "isPartOf": [
+
+      ],
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.259.2",
+      "isBasedOn": "https://workflowhub.eu/workflows/259?version=1",
+      "input": [
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_input_pockets_zip"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_output_pocket_pdb"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_output_pocket_pqr"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_config"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step2_box_output_pdb_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step2_box_config"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_input_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_output_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_config"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_input_structure_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_output_structure_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_config"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step5_autodock_vina_run_output_pdbqt_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step5_autodock_vina_run_output_log_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step6_babel_convert_pose_pdb_output_path"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step6_babel_convert_pose_pdb_config"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step1_fpocket_select_out1"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step1_fpocket_select_out2"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step2_box_out1"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step3_babel_convert_prep_lig_out1"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step4_str_check_add_hydrogens_out1"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step5_autodock_vina_run_out1"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step5_autodock_vina_run_out2"
+        },
+        {
+          "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step6_babel_convert_pose_pdb_out1"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-259-992192ca9b524bac76e6eb011757e51e55dbc278-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 28572
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/README.md",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/all_pockets.zip",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/ligand.pdb",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/protein.pdb",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/workflow_input_descriptions.yml",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/autodock_vina_run.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/babel_convert.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/box.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/fpocket_select.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://github.com/bioexcel/biobb_workflows/blob/master/biobb_wf_virtual_screening/cwl/biobb_adapters/str_check_add_hydrogens.cwl",
+      "@type": "File"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8291-8071",
+      "@type": "Person",
+      "name": "Adam Hospital",
+      "identifier": "https://orcid.org/0000-0002-8291-8071"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0513-0288",
+      "@type": "Person",
+      "name": "Genís Bayarri",
+      "identifier": "https://orcid.org/0000-0003-0513-0288"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/57",
+      "@type": "Person",
+      "name": "Adam Hospital"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/47",
+      "@type": "Person",
+      "name": "Genís Bayarri"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_input_pockets_zip",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_output_pocket_pdb",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_output_pocket_pqr",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step1_fpocket_select_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step2_box_output_pdb_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step2_box_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_input_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_output_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step3_babel_convert_prep_lig_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_input_structure_path",
+      "@type": "FormalParameter",
+      "name": "Input file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_output_structure_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step4_str_check_add_hydrogens_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step5_autodock_vina_run_output_pdbqt_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step5_autodock_vina_run_output_log_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step6_babel_convert_pose_pdb_output_path",
+      "@type": "FormalParameter",
+      "name": "Output file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-inputs-step6_babel_convert_pose_pdb_config",
+      "@type": "FormalParameter",
+      "name": "Config file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step1_fpocket_select_out1",
+      "@type": "FormalParameter",
+      "name": "output_pocket_pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step1_fpocket_select_out2",
+      "@type": "FormalParameter",
+      "name": "output_pocket_pqr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step2_box_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdb_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step3_babel_convert_prep_lig_out1",
+      "@type": "FormalParameter",
+      "name": "output_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step4_str_check_add_hydrogens_out1",
+      "@type": "FormalParameter",
+      "name": "output_structure_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step5_autodock_vina_run_out1",
+      "@type": "FormalParameter",
+      "name": "output_pdbqt_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step5_autodock_vina_run_out2",
+      "@type": "FormalParameter",
+      "name": "output_log_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cwl_protein_ligand_docking_tutorial__fpocket_-outputs-step6_babel_convert_pose_pdb_out1",
+      "@type": "FormalParameter",
+      "name": "output_path",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

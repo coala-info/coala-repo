@@ -1,0 +1,2083 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "This workflow takes a fragment file as input and performs the standard steps of scATAC-seq analysis: filtering, dimension reduction, embedding and visualization of marker genes with SnapATAC2.\nIn an alternative step, the fragment file can also be generated from a BAM file. ",
+    "comments": [
+        {
+            "child_steps": [
+                35,
+                36,
+                37,
+                38,
+                34,
+                9
+            ],
+            "color": "none",
+            "data": {
+                "title": "Manual Cell Type Annotation"
+            },
+            "id": 9,
+            "position": [
+                6867.1,
+                461.4
+            ],
+            "size": [
+                1668.6,
+                647.9
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                32,
+                33,
+                8
+            ],
+            "color": "none",
+            "data": {
+                "title": "Marker gene visualization"
+            },
+            "id": 8,
+            "position": [
+                6136.6,
+                461.1
+            ],
+            "size": [
+                696,
+                647
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                27,
+                28,
+                29,
+                30,
+                31
+            ],
+            "color": "none",
+            "data": {
+                "title": "Gene Matrix, Filtering and Normalisation with Scanpy"
+            },
+            "id": 7,
+            "position": [
+                4394.8,
+                460.40000000000003
+            ],
+            "size": [
+                1721,
+                650
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                24,
+                25,
+                26
+            ],
+            "color": "none",
+            "data": {
+                "title": "Clustering analysis"
+            },
+            "id": 6,
+            "position": [
+                3405.8510151584364,
+                458.36933781831624
+            ],
+            "size": [
+                963,
+                651
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                22,
+                23
+            ],
+            "color": "none",
+            "data": {
+                "title": "Dimension reduction"
+            },
+            "id": 5,
+            "position": [
+                2854.151015158436,
+                461.6693378183162
+            ],
+            "size": [
+                536,
+                647
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                17,
+                18,
+                19,
+                20,
+                21
+            ],
+            "color": "none",
+            "data": {
+                "title": "Filtering"
+            },
+            "id": 4,
+            "position": [
+                1788.6510151584362,
+                454.06933781831617
+            ],
+            "size": [
+                1048,
+                659
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                11,
+                15
+            ],
+            "color": "none",
+            "data": {
+                "title": "Make Fragment file from BAM file"
+            },
+            "id": 2,
+            "position": [
+                614.3,
+                642.9
+            ],
+            "size": [
+                661.5,
+                384.3
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                10,
+                12,
+                13,
+                14,
+                16
+            ],
+            "color": "none",
+            "data": {
+                "title": "Preprocessing and QC"
+            },
+            "id": 1,
+            "position": [
+                534.8999999999999,
+                0
+            ],
+            "size": [
+                888.3,
+                578.2
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                7,
+                6,
+                5,
+                4
+            ],
+            "color": "none",
+            "data": {
+                "title": "Filter Inputs"
+            },
+            "id": 3,
+            "position": [
+                1460,
+                730
+            ],
+            "size": [
+                260,
+                390
+            ],
+            "type": "frame"
+        },
+        {
+            "child_steps": [
+                0,
+                1,
+                3,
+                2
+            ],
+            "color": "none",
+            "data": {
+                "title": "Input datasets"
+            },
+            "id": 0,
+            "position": [
+                0,
+                314.6
+            ],
+            "size": [
+                242.8,
+                416.2
+            ],
+            "type": "frame"
+        }
+    ],
+    "creator": [
+        {
+            "class": "Person",
+            "name": "Timon Schlegel"
+        }
+    ],
+    "format-version": "0.1",
+    "license": "CC-BY-4.0",
+    "name": "Standard processing of single cell ATAC-seq data with SnapATAC2",
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Fragment_file"
+                }
+            ],
+            "label": "Fragment_file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 19.97018491581389,
+                "top": 354.56754754491556
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "786e3604-6116-4649-9eb1-246faf3e10b9",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "1": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 1,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "chromosome_sizes.tabular"
+                }
+            ],
+            "label": "chromosome_sizes.tabular",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 20.97018491581389,
+                "top": 455.5596085802506
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "aa5f01c0-3591-4a26-8e6a-f8d6974b13ea",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 2,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "gene_annotation"
+                }
+            ],
+            "label": "gene_annotation",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 22.799999999999997,
+                "top": 550
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "2a9b119e-8df6-463e-a027-f077a3ec7ba2",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "3": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 3,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "Bam-file"
+                }
+            ],
+            "label": "Bam-file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 22.799999999999997,
+                "top": 650
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": true, \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "848f8791-1936-4072-b057-c5fee770ffa1",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "4": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 4,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_counts"
+                }
+            ],
+            "label": "min_counts",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1480,
+                "top": 770
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 1000, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "7486133e-bd84-4ae1-b581-d01a304fc00d",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "5": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 5,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "min_tsse"
+                }
+            ],
+            "label": "min_tsse",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1480,
+                "top": 860
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 5.0, \"parameter_type\": \"float\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "0068ec1d-62f5-4969-a621-d3c87c17729c",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "6": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 6,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "max_counts"
+                }
+            ],
+            "label": "max_counts",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1480,
+                "top": 930
+            },
+            "tool_id": null,
+            "tool_state": "{\"default\": 100000, \"parameter_type\": \"integer\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "17498000-ff88-4022-83ee-70eb8b80f62e",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "7": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 7,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "",
+                    "name": "max_tsse"
+                }
+            ],
+            "label": "max_tsse",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 1480,
+                "top": 1030
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"float\", \"optional\": true}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "87d6fdf0-e2e0-4e8c-86fa-08f7f041b7da",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "8": {
+            "annotation": "Comma-separated list of obs/cells and vars/genes. \nFor example: leiden, CD3D, CD8A, CD4, MS4A1, NKG7, CD14, FCER1A",
+            "content_id": null,
+            "errors": null,
+            "id": 8,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Comma-separated list of obs/cells and vars/genes. \nFor example: leiden, CD3D, CD8A, CD4, MS4A1, NKG7, CD14, FCER1A",
+                    "name": "Keys for annotations of obs/cells or vars/genes"
+                }
+            ],
+            "label": "Keys for annotations of obs/cells or vars/genes",
+            "name": "Input parameter",
+            "outputs": [],
+            "position": {
+                "left": 6270.0966908661185,
+                "top": 925.3289621684261
+            },
+            "tool_id": null,
+            "tool_state": "{\"parameter_type\": \"text\", \"optional\": false}",
+            "tool_version": null,
+            "type": "parameter_input",
+            "uuid": "c469528b-cdaf-4a26-97f7-0a611e870688",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "9": {
+            "annotation": "Tabular file, containing leiden clusters and the corresponding cell type annotations. ",
+            "content_id": null,
+            "errors": null,
+            "id": 9,
+            "input_connections": {},
+            "inputs": [
+                {
+                    "description": "Tabular file, containing leiden clusters and the corresponding cell type annotations. ",
+                    "name": "Replace_file"
+                }
+            ],
+            "label": "Replace_file",
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "left": 7239.246262020649,
+                "top": 972.2617918997179
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false, \"format\": [\"tabular\"], \"tag\": null}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "aab4fc58-ddd8-4540-8063-a2519d159748",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "method|chrom_sizes": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "method|fragment_file": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.import_data",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 574.7183311687418,
+                "top": 111.57859526385401
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.import_data\", \"__current_case__\": 1, \"fragment_file\": {\"__class__\": \"ConnectedValue\"}, \"chrom_sizes\": {\"__class__\": \"ConnectedValue\"}, \"min_num_fragments\": \"200\", \"sorted_by_barcode\": false, \"whitelist\": {\"__class__\": \"RuntimeValue\"}, \"chrM\": \"chrM, M\", \"shift_left\": \"0\", \"shift_right\": \"0\", \"chunk_size\": \"2000\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "934c558c-16a5-4cc7-9e8e-e78d36e51576",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "11": {
+            "annotation": "Not all regular expressions work. Simple expressions such as \"(................):\" are successful. This example expression captures 16bp long cell barcodes if they are located at the beginning of the read names field and followed by a colon. ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "method|bam_file": {
+                    "id": 3,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.make_fragment_file",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "fragments_out",
+                    "type": "interval"
+                }
+            ],
+            "position": {
+                "left": 676.0314907537673,
+                "top": 690.0711788031348
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.make_fragment_file\", \"__current_case__\": 0, \"bam_file\": {\"__class__\": \"ConnectedValue\"}, \"is_paired\": true, \"barcode\": {\"extract_type\": \"from_read_names\", \"__current_case__\": 1, \"barcode_regex\": \"(................):\"}, \"umi_tag\": \"\", \"umi_regex\": \"\", \"shift_left\": \"4\", \"shift_right\": \"-5\", \"min_mapq\": \"30\", \"chunk_size\": \"50000000\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "4ee3316f-59d9-4221-9c99-aa3026f14d10",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "method|adata": {
+                    "id": 10,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Plotting",
+                    "name": "method"
+                }
+            ],
+            "label": "pl.frag_size_distr",
+            "name": "SnapATAC2 Plotting",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 929.0484628301276,
+                "top": 50.363557618794744
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "370d45e0d1a8",
+                "name": "snapatac2_plotting",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pl.frag_size_distr\", \"__current_case__\": 0, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"log_scale\": false, \"width\": \"600\", \"height\": \"400\", \"out_file\": \"png\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "4ed79f65-2792-44ff-b17e-27b892e5fd10",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "plot frag_size",
+                    "output_name": "out_png",
+                    "uuid": "b23618d7-53ac-43e0-9477-2c527080cc9d"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "method|adata": {
+                    "id": 10,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Plotting",
+                    "name": "method"
+                }
+            ],
+            "label": "pl.frag_size_distr_log",
+            "name": "SnapATAC2 Plotting",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 924.7878217859592,
+                "top": 178.50521031008577
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "370d45e0d1a8",
+                "name": "snapatac2_plotting",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pl.frag_size_distr\", \"__current_case__\": 0, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"log_scale\": true, \"width\": \"600\", \"height\": \"400\", \"out_file\": \"png\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "5bf51f65-db8d-4258-8d46-fb22d57c4ad7",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "plot log frag_size",
+                    "output_name": "out_png",
+                    "uuid": "e4a25fa3-a3fb-4591-b4c5-a9ada3c67cd3"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "method|adata": {
+                    "id": 10,
+                    "output_name": "anndata_out"
+                },
+                "method|gene_anno": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "metrics.tsse",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 929.3191068126845,
+                "top": 321.5929676948151
+            },
+            "post_job_actions": {
+                "TagDatasetActionanndata_out": {
+                    "action_arguments": {
+                        "tags": "non_filtered_matrix"
+                    },
+                    "action_type": "TagDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"metrics.tsse\", \"__current_case__\": 12, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"gene_anno\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "f51eeeb3-4733-49d4-b87a-7a2910d31b5e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata tsse",
+                    "output_name": "anndata_out",
+                    "uuid": "2caa95c0-b5b2-4019-baab-630ef0ad16b4"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "After pp.make_fragment_file the new fragment file is sorted by barcode. ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "method|chrom_sizes": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "method|fragment_file": {
+                    "id": 11,
+                    "output_name": "fragments_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.import_data-sorted_by_barcodes",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 985.9679120853273,
+                "top": 703.9571480740287
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.import_data\", \"__current_case__\": 1, \"fragment_file\": {\"__class__\": \"ConnectedValue\"}, \"chrom_sizes\": {\"__class__\": \"ConnectedValue\"}, \"min_num_fragments\": \"200\", \"sorted_by_barcode\": true, \"whitelist\": {\"__class__\": \"RuntimeValue\"}, \"chrM\": \"chrM, M\", \"shift_left\": \"0\", \"shift_right\": \"0\", \"chunk_size\": \"2000\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "75186015-8808-43cb-8535-f925015cc440",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata",
+                    "output_name": "anndata_out",
+                    "uuid": "71cdda3b-9c54-42ec-8437-1c73ca9a9028"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "method|adata": {
+                    "id": 14,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Plotting",
+                    "name": "method"
+                }
+            ],
+            "label": "pl.tsse",
+            "name": "SnapATAC2 Plotting",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 1186.9672018887231,
+                "top": 181.36234265283736
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "370d45e0d1a8",
+                "name": "snapatac2_plotting",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pl.tsse\", \"__current_case__\": 1, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"min_fragment\": \"500\", \"width\": \"600\", \"height\": \"400\", \"out_file\": \"png\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "6a36df80-284d-4156-8ecc-25d536e45924",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "plot tsse",
+                    "output_name": "out_png",
+                    "uuid": "7457c10d-f3a8-42c2-95c0-677d33a682e7"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "Filters should be selected after inspecting the quality control plots (especially TSSe)",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "method|adata": {
+                    "id": 14,
+                    "output_name": "anndata_out"
+                },
+                "method|max_counts": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "method|max_tsse": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "method|min_counts": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "method|min_tsse": {
+                    "id": 5,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.filter_cells",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 1850,
+                "top": 500
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.filter_cells\", \"__current_case__\": 4, \"adata\": {\"__class__\": \"RuntimeValue\"}, \"min_counts\": {\"__class__\": \"ConnectedValue\"}, \"min_tsse\": {\"__class__\": \"ConnectedValue\"}, \"max_counts\": {\"__class__\": \"ConnectedValue\"}, \"max_tsse\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "b9e0ff8d-97f5-4a11-99d2-3cd3ae49103f",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata filter cells",
+                    "output_name": "anndata_out",
+                    "uuid": "617bd9c8-b57c-4e01-8223-dbc719cc7405"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "method|adata": {
+                    "id": 17,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.add_tile_matrix",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 2197.2974986072263,
+                "top": 531.5176822961781
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.add_tile_matrix\", \"__current_case__\": 2, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"bin_size\": \"500\", \"chunk_size\": \"500\", \"exclude_chroms\": \"chrM, chrY, M, Y\", \"min_frag_size\": null, \"max_frag_size\": null, \"counting_strategy\": \"insertion\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "9a43eaa6-c26f-4783-a6e2-62672522813f",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata tile matrix",
+                    "output_name": "anndata_out",
+                    "uuid": "1304584a-2675-4623-88b7-ae516759ebe2"
+                }
+            ]
+        },
+        "19": {
+            "annotation": "The ideal number of selected features should be tested for each dataset. ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "method|adata": {
+                    "id": 18,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.select_features",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 2215.63933532155,
+                "top": 793.2107306253445
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.select_features\", \"__current_case__\": 5, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"n_features\": \"250000\", \"filter_lower_quantile\": \"0.005\", \"filter_upper_quantile\": \"0.005\", \"whitelist\": {\"__class__\": \"RuntimeValue\"}, \"blacklist\": {\"__class__\": \"RuntimeValue\"}, \"max_iter\": \"1\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "a3a42ea6-3773-4a81-95c1-c56210968246",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata select features",
+                    "output_name": "anndata_out",
+                    "uuid": "b40d5c3c-9641-4205-a836-50f40a811ff7"
+                }
+            ]
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "method|adata": {
+                    "id": 19,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.scrublet",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 2538.991666804627,
+                "top": 949.4798428594668
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.scrublet\", \"__current_case__\": 6, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"features\": \"\", \"n_comps\": \"15\", \"sim_doublet_ratio\": \"2.0\", \"expected_doublet_rate\": \"0.1\", \"n_neighbors\": null, \"use_approx_neighbors\": false, \"random_state\": \"0\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "4d36e20f-c0a6-4806-bacd-1b357da4da2d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata scrublet",
+                    "output_name": "anndata_out",
+                    "uuid": "20b5fd51-be31-4710-ab19-76ddc66b644b"
+                }
+            ]
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "method|adata": {
+                    "id": 20,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.filter_doublets",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 2588.7329633142845,
+                "top": 663.8944755224237
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.filter_doublets\", \"__current_case__\": 7, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"probability_threshold\": \"0.5\", \"score_threshold\": null}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "92cde4cd-8cae-4587-aca6-84788b8b6ec8",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata filter doublets",
+                    "output_name": "anndata_out",
+                    "uuid": "1aa635fc-cc01-426f-9ff3-ae74d50b1075"
+                }
+            ]
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "method|adata": {
+                    "id": 21,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Clustering",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Clustering",
+                    "name": "method"
+                }
+            ],
+            "label": "tl.spectral",
+            "name": "SnapATAC2 Clustering",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 3010.774448094945,
+                "top": 556.0676235661738
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "afb90d3485df",
+                "name": "snapatac2_clustering",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"tl.spectral\", \"__current_case__\": 0, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"n_comps\": \"30\", \"features\": {\"__class__\": \"RuntimeValue\"}, \"random_state\": \"0\", \"sample_size\": null, \"chunk_size\": \"20000\", \"distance_metric\": \"cosine\", \"weighted_by_sd\": true}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "bc2d64d0-54e8-4147-aa6f-3634a3a01f3d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata spectral",
+                    "output_name": "anndata_out",
+                    "uuid": "4cf247a4-81ae-46e7-9d52-7fca1eecdda7"
+                }
+            ]
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "method|adata": {
+                    "id": 22,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Clustering",
+                    "name": "method"
+                }
+            ],
+            "label": "tl.umap",
+            "name": "SnapATAC2 Clustering",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 3051.712527828772,
+                "top": 841.6746200330715
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "afb90d3485df",
+                "name": "snapatac2_clustering",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"tl.umap\", \"__current_case__\": 1, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"n_comps\": \"2\", \"use_dims\": null, \"use_rep\": \"X_spectral\", \"key_added\": \"umap\", \"random_state\": \"0\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "5c6c164d-19b6-4aaf-93bc-ca978e0ee5b3",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata umap",
+                    "output_name": "anndata_out",
+                    "uuid": "a346980b-ba9a-4380-97c6-fa5fca46e852"
+                }
+            ]
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "method|adata": {
+                    "id": 23,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Clustering",
+                    "name": "method"
+                }
+            ],
+            "label": "pp.knn",
+            "name": "SnapATAC2 Clustering",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 3489.997366261425,
+                "top": 667.2386060771821
+            },
+            "post_job_actions": {
+                "HideDatasetActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "afb90d3485df",
+                "name": "snapatac2_clustering",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.knn\", \"__current_case__\": 2, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"n_neighbors\": \"50\", \"use_dims\": \"\", \"use_rep\": \"X_spectral\", \"algorithm\": \"kdtree\", \"random_state\": \"0\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "b93d6626-9d12-498a-b766-69bd8d6f7302",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata knn",
+                    "output_name": "anndata_out",
+                    "uuid": "ad223bf6-46f2-4578-9048-4244868e4821"
+                }
+            ]
+        },
+        "25": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "method|adata": {
+                    "id": 24,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Clustering",
+                    "name": "method"
+                }
+            ],
+            "label": "tl.leiden",
+            "name": "SnapATAC2 Clustering",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 3790,
+                "top": 620
+            },
+            "post_job_actions": {
+                "DeleteIntermediatesActionanndata_out": {
+                    "action_arguments": {},
+                    "action_type": "DeleteIntermediatesAction",
+                    "output_name": "anndata_out"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_clustering/snapatac2_clustering/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "afb90d3485df",
+                "name": "snapatac2_clustering",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"tl.leiden\", \"__current_case__\": 3, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"resolution\": \"1.0\", \"objective_function\": \"modularity\", \"min_cluster_size\": \"5\", \"n_iterations\": \"-1\", \"random_state\": \"0\", \"key_added\": \"leiden\", \"weighted\": false}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "9533d5b2-46be-4e84-b7e2-570aedf807eb",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata_leiden_clustering",
+                    "output_name": "anndata_out",
+                    "uuid": "67321a06-828a-4996-ac33-03ce42e6b217"
+                }
+            ]
+        },
+        "26": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "errors": null,
+            "id": 26,
+            "input_connections": {
+                "method|adata": {
+                    "id": 25,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Plotting",
+                    "name": "method"
+                }
+            ],
+            "label": "pl.umap",
+            "name": "SnapATAC2 Plotting",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 4127.204258334524,
+                "top": 534.0748356757703
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_plotting/snapatac2_plotting/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "370d45e0d1a8",
+                "name": "snapatac2_plotting",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pl.umap\", \"__current_case__\": 2, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"color\": \"leiden\", \"use_rep\": \"X_umap\", \"marker_size\": null, \"marker_opacity\": \"1.0\", \"sample_size\": null, \"width\": \"600\", \"height\": \"500\", \"out_file\": \"png\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "7c9cc1ee-e9b9-4cd9-bb16-3d86915d4ac9",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "umap_leiden-clusters",
+                    "output_name": "out_png",
+                    "uuid": "ca29173a-24ff-4fca-ba8e-37662a4007f6"
+                }
+            ]
+        },
+        "27": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "errors": null,
+            "id": 27,
+            "input_connections": {
+                "method|adata": {
+                    "id": 25,
+                    "output_name": "anndata_out"
+                },
+                "method|gene_anno": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                },
+                {
+                    "description": "runtime parameter for tool SnapATAC2 Preprocessing",
+                    "name": "method"
+                }
+            ],
+            "label": "make_gene_matrix",
+            "name": "SnapATAC2 Preprocessing",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 4513.680135419619,
+                "top": 781.9723996031015
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/snapatac2_preprocessing/snapatac2_preprocessing/2.6.4+galaxy1",
+            "tool_shed_repository": {
+                "changeset_revision": "fef8f61cb34c",
+                "name": "snapatac2_preprocessing",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.make_gene_matrix\", \"__current_case__\": 3, \"adata\": {\"__class__\": \"ConnectedValue\"}, \"gene_anno\": {\"__class__\": \"ConnectedValue\"}, \"chunk_size\": \"500\", \"use_x\": false, \"id_type\": \"gene\", \"transcript_name_key\": \"transcript_name\", \"transcript_id_key\": \"transcript_id\", \"gene_name_key\": \"gene_name\", \"gene_id_key\": \"gene_id\", \"min_frag_size\": null, \"max_frag_size\": null, \"counting_strategy\": \"insertion\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "2.6.4+galaxy1",
+            "type": "tool",
+            "uuid": "0771907f-4a36-43b3-8f35-740b03521691",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata gene matrix",
+                    "output_name": "anndata_out",
+                    "uuid": "73d4d887-cf3b-4d82-9e17-a484b19a31de"
+                }
+            ]
+        },
+        "28": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.9.6+galaxy3",
+            "errors": null,
+            "id": 28,
+            "input_connections": {
+                "adata": {
+                    "id": 27,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [],
+            "label": "scanpy_filter_genes",
+            "name": "Filter",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 4867.436475213905,
+                "top": 577.4812733437685
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_filter/scanpy_filter/1.9.6+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "d636ce5cde16",
+                "name": "scanpy_filter",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.filter_genes\", \"__current_case__\": 1, \"filter\": {\"filter\": \"min_cells\", \"__current_case__\": 2, \"min_cells\": \"5\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy3",
+            "type": "tool",
+            "uuid": "ef3cace7-0323-49b8-8f68-d558fc970422",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata filter genes",
+                    "output_name": "anndata_out",
+                    "uuid": "c28933a3-d0bb-48fc-afd8-100b9cebfe50"
+                }
+            ]
+        },
+        "29": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.9.6+galaxy3",
+            "errors": null,
+            "id": 29,
+            "input_connections": {
+                "adata": {
+                    "id": 28,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Normalize",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 5199.571945926951,
+                "top": 559.3328161085777
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.9.6+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "d844935c906c",
+                "name": "scanpy_normalize",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.normalize_total\", \"__current_case__\": 0, \"target_sum\": null, \"exclude_highly_expressed\": {\"exclude_highly_expressed\": \"False\", \"__current_case__\": 1}, \"key_added\": \"\", \"layers\": \"\", \"layer_norm\": \"None\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy3",
+            "type": "tool",
+            "uuid": "fad63266-8107-4791-9dfe-72de3ba9cc8c",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata normalize",
+                    "output_name": "anndata_out",
+                    "uuid": "71c53c93-36a3-4b46-811c-c9230b5b219c"
+                }
+            ]
+        },
+        "30": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.9.6+galaxy4",
+            "errors": null,
+            "id": 30,
+            "input_connections": {
+                "adata": {
+                    "id": 29,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [],
+            "label": "pp.log1p",
+            "name": "Inspect and manipulate",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 5524.398835062394,
+                "top": 560.0237842861073
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_inspect/scanpy_inspect/1.9.6+galaxy4",
+            "tool_shed_repository": {
+                "changeset_revision": "ca086f24422f",
+                "name": "scanpy_inspect",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"pp.log1p\", \"__current_case__\": 5}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy4",
+            "type": "tool",
+            "uuid": "4f097d50-0ccf-4628-891f-698b9c11abd3",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata log1p",
+                    "output_name": "anndata_out",
+                    "uuid": "262a566d-cdf4-48ac-ae4f-9e0851233b1e"
+                }
+            ]
+        },
+        "31": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.9.6+galaxy3",
+            "errors": null,
+            "id": 31,
+            "input_connections": {
+                "adata": {
+                    "id": 30,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [],
+            "label": "external.pp.magic",
+            "name": "Normalize",
+            "outputs": [
+                {
+                    "name": "anndata_out",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 5872.086956493308,
+                "top": 543.2768617443896
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_normalize/scanpy_normalize/1.9.6+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "d844935c906c",
+                "name": "scanpy_normalize",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"method\": {\"method\": \"external.pp.magic\", \"__current_case__\": 4, \"name_list\": \"all_genes\", \"knn\": \"5\", \"decay\": \"1\", \"knn_max\": null, \"t\": \"3\", \"n_pca\": \"100\", \"solver\": \"approximate\", \"knn_dist\": \"euclidean\", \"random_state\": \"0\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy3",
+            "type": "tool",
+            "uuid": "ffbb51ee-5917-4ad5-891c-2131cca81752",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata_magic",
+                    "output_name": "anndata_out",
+                    "uuid": "d3e4b036-b057-4180-8ebc-824b21ee7575"
+                }
+            ]
+        },
+        "32": {
+            "annotation": "This step only copies 'obsm' annotations. Other annotations can also be copied with this tool. ",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.9.3+galaxy0",
+            "errors": null,
+            "id": 32,
+            "input_connections": {
+                "copy_e|embedding_sources": {
+                    "id": 25,
+                    "output_name": "anndata_out"
+                },
+                "input_obj_file": {
+                    "id": 31,
+                    "output_name": "anndata_out"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool AnnData Operations",
+                    "name": "copy_e"
+                }
+            ],
+            "label": "Copy obsm",
+            "name": "AnnData Operations",
+            "outputs": [
+                {
+                    "name": "output_h5ad",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 6262.874636497004,
+                "top": 564.1397165041963
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/ebi-gxa/anndata_ops/anndata_ops/1.9.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "a4774b7b2e85",
+                "name": "anndata_ops",
+                "owner": "ebi-gxa",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"add_cell_metadata\": {\"default\": false, \"__current_case__\": 1}, \"copy_adata_to_raw\": false, \"copy_e\": {\"default\": true, \"__current_case__\": 0, \"embedding_keys\": [{\"__index__\": 0, \"contains\": null}], \"embedding_sources\": {\"__class__\": \"ConnectedValue\"}}, \"copy_l\": {\"default\": false, \"__current_case__\": 1}, \"copy_o\": {\"default\": false, \"__current_case__\": 1}, \"copy_r\": {\"default\": false, \"__current_case__\": 1}, \"copy_u\": {\"default\": false, \"__current_case__\": 1}, \"copy_x\": {\"default\": false, \"__current_case__\": 1}, \"field_unique\": null, \"gene_flags\": [], \"gene_symbols_field\": \"index\", \"input_obj_file\": {\"__class__\": \"ConnectedValue\"}, \"modifications\": [], \"output_format\": \"anndata_h5ad\", \"sanitize_varm\": false, \"split_on_obs\": {\"default\": false, \"__current_case__\": 1}, \"swap_layer_to_x\": {\"default\": false, \"__current_case__\": 1}, \"top_genes\": \"50\", \"var_modifications\": [], \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.3+galaxy0",
+            "type": "tool",
+            "uuid": "0552076b-22a5-4d7d-a9c6-013c5388aa1e",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata_gene-matrix_leiden",
+                    "output_name": "output_h5ad",
+                    "uuid": "0c3f14fd-c6de-4af7-9e81-425f680ece50"
+                }
+            ]
+        },
+        "33": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.9.6+galaxy3",
+            "errors": null,
+            "id": 33,
+            "input_connections": {
+                "adata": {
+                    "id": 32,
+                    "output_name": "output_h5ad"
+                },
+                "method|color": {
+                    "id": 8,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Plot",
+                    "name": "method"
+                }
+            ],
+            "label": "umap_plot_with_scanpy",
+            "name": "Plot",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 6578.342217976417,
+                "top": 759.4084323967407
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.9.6+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "f7446fd8d5e7",
+                "name": "scanpy_plot",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"format\": \"png\", \"method\": {\"method\": \"pl.umap\", \"__current_case__\": 14, \"color\": {\"__class__\": \"ConnectedValue\"}, \"use_raw\": false, \"edges\": {\"edges\": \"False\", \"__current_case__\": 1}, \"arrows\": false, \"sort_order\": true, \"groups\": \"\", \"plot\": {\"components\": [], \"projection\": \"2d\", \"legend_loc\": \"right margin\", \"legend_fontsize\": null, \"legend_fontweight\": \"normal\", \"size\": null, \"color_map\": null, \"palette\": null, \"frameon\": true, \"ncols\": \"2\", \"wspace\": \"0.1\", \"hspace\": \"0.25\", \"title\": \"\"}, \"matplotlib_pyplot_scatter\": {\"alpha\": null, \"vmin\": null, \"vmax\": null, \"linewidths\": \"0.0\", \"edgecolors\": null}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy3",
+            "type": "tool",
+            "uuid": "40539b38-a631-4af0-b4a0-56611de8b3e6",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "umap_marker-genes",
+                    "output_name": "out_png",
+                    "uuid": "eae2e49e-0731-49b0-b2f8-10ef4956723d"
+                }
+            ]
+        },
+        "34": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.3+galaxy0",
+            "errors": null,
+            "id": 34,
+            "input_connections": {
+                "input": {
+                    "id": 32,
+                    "output_name": "output_h5ad"
+                }
+            },
+            "inputs": [],
+            "label": "Inspect observations",
+            "name": "Inspect AnnData",
+            "outputs": [
+                {
+                    "name": "obs",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 6907.660294327972,
+                "top": 680.9308907614027
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/anndata_inspect/anndata_inspect/0.10.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "6f0d0c784f09",
+                "name": "anndata_inspect",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"inspect\": {\"info\": \"obs\", \"__current_case__\": 3}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.10.3+galaxy0",
+            "type": "tool",
+            "uuid": "37590b99-5507-405d-8000-26b102cae450",
+            "when": null,
+            "workflow_outputs": []
+        },
+        "35": {
+            "annotation": "",
+            "content_id": "Cut1",
+            "errors": null,
+            "id": 35,
+            "input_connections": {
+                "input": {
+                    "id": 34,
+                    "output_name": "obs"
+                }
+            },
+            "inputs": [],
+            "label": "Cut leiden from table",
+            "name": "Cut",
+            "outputs": [
+                {
+                    "name": "out_file1",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "left": 7243.57139785132,
+                "top": 805.5918074906932
+            },
+            "post_job_actions": {},
+            "tool_id": "Cut1",
+            "tool_state": "{\"columnList\": \"c8\", \"delimiter\": \"T\", \"input\": {\"__class__\": \"ConnectedValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.0.2",
+            "type": "tool",
+            "uuid": "7a85a3a1-ee6a-447c-b8b5-7129165b5f9d",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "leiden annotation",
+                    "output_name": "out_file1",
+                    "uuid": "fc89ecbd-0adb-4808-a60f-1ba734f6e420"
+                }
+            ]
+        },
+        "36": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/replace_column_by_key_value_file/replace_column_with_key_value_file/0.2",
+            "errors": null,
+            "id": 36,
+            "input_connections": {
+                "original_file": {
+                    "id": 35,
+                    "output_name": "out_file1"
+                },
+                "replace_information": {
+                    "id": 9,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [],
+            "label": "Replace leiden",
+            "name": "Replace column",
+            "outputs": [
+                {
+                    "name": "outfile_replace",
+                    "type": "txt"
+                }
+            ],
+            "position": {
+                "left": 7563.390154939628,
+                "top": 714.8720707586833
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutfile_replace": {
+                    "action_arguments": {
+                        "newtype": "tabular"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "outfile_replace"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/replace_column_by_key_value_file/replace_column_with_key_value_file/0.2",
+            "tool_shed_repository": {
+                "changeset_revision": "d533e4b75800",
+                "name": "replace_column_by_key_value_file",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"column_replace\": \"1\", \"delimiter\": \"tab\", \"original_file\": {\"__class__\": \"ConnectedValue\"}, \"pass_comments\": \"#\", \"replace_information\": {\"__class__\": \"ConnectedValue\"}, \"skip_lines\": \"0\", \"unknowns_strategy\": \"skip\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.2",
+            "type": "tool",
+            "uuid": "f8bcb007-8fb7-49df-94bc-3674f736e4f3",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "cell type annotation",
+                    "output_name": "outfile_replace",
+                    "uuid": "0ff7d198-4b90-4d29-86d7-ad7620b2b460"
+                }
+            ]
+        },
+        "37": {
+            "annotation": "Add cell type annotations to the AnnData object",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.3+galaxy0",
+            "errors": null,
+            "id": 37,
+            "input_connections": {
+                "input": {
+                    "id": 32,
+                    "output_name": "output_h5ad"
+                },
+                "manipulate|new_annot": {
+                    "id": 36,
+                    "output_name": "outfile_replace"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Manipulate AnnData",
+                    "name": "manipulate"
+                }
+            ],
+            "label": "add_cell-types",
+            "name": "Manipulate AnnData",
+            "outputs": [
+                {
+                    "name": "anndata",
+                    "type": "h5ad"
+                }
+            ],
+            "position": {
+                "left": 7904.465647831622,
+                "top": 529.7790878349768
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/anndata_manipulate/anndata_manipulate/0.10.3+galaxy0",
+            "tool_shed_repository": {
+                "changeset_revision": "ed4996a16f7f",
+                "name": "anndata_manipulate",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"input\": {\"__class__\": \"ConnectedValue\"}, \"manipulate\": {\"function\": \"add_annotation\", \"__current_case__\": 6, \"var_obs\": \"obs\", \"new_annot\": {\"__class__\": \"ConnectedValue\"}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "0.10.3+galaxy0",
+            "type": "tool",
+            "uuid": "787b568d-84db-46a8-a601-ba07c3b85cf7",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "anndata_cell_type",
+                    "output_name": "anndata",
+                    "uuid": "3079bbeb-12c1-4596-91e6-cdef37fe80d0"
+                }
+            ]
+        },
+        "38": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.9.6+galaxy3",
+            "errors": null,
+            "id": 38,
+            "input_connections": {
+                "adata": {
+                    "id": 37,
+                    "output_name": "anndata"
+                }
+            },
+            "inputs": [],
+            "label": "Plot cell types",
+            "name": "Plot",
+            "outputs": [
+                {
+                    "name": "out_png",
+                    "type": "png"
+                }
+            ],
+            "position": {
+                "left": 8259.697077852366,
+                "top": 563.5673448508458
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/scanpy_plot/scanpy_plot/1.9.6+galaxy3",
+            "tool_shed_repository": {
+                "changeset_revision": "f7446fd8d5e7",
+                "name": "scanpy_plot",
+                "owner": "iuc",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"adata\": {\"__class__\": \"ConnectedValue\"}, \"advanced_common\": {\"show_log\": false}, \"format\": \"png\", \"method\": {\"method\": \"pl.umap\", \"__current_case__\": 14, \"color\": \"cell_type\", \"use_raw\": false, \"edges\": {\"edges\": \"False\", \"__current_case__\": 1}, \"arrows\": false, \"sort_order\": true, \"groups\": \"\", \"plot\": {\"components\": [], \"projection\": \"2d\", \"legend_loc\": \"on data\", \"legend_fontsize\": null, \"legend_fontweight\": \"normal\", \"size\": null, \"color_map\": null, \"palette\": null, \"frameon\": true, \"ncols\": \"4\", \"wspace\": \"0.1\", \"hspace\": \"0.25\", \"title\": \"\"}, \"matplotlib_pyplot_scatter\": {\"alpha\": null, \"vmin\": null, \"vmax\": null, \"linewidths\": \"0.0\", \"edgecolors\": null}}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.9.6+galaxy3",
+            "type": "tool",
+            "uuid": "e7b84bbe-f882-486e-a8cc-fbc1a8f586f0",
+            "when": null,
+            "workflow_outputs": [
+                {
+                    "label": "umap_cell-type",
+                    "output_name": "out_png",
+                    "uuid": "85a56fac-c8fb-4a36-80bf-0735179625db"
+                }
+            ]
+        }
+    },
+    "tags": [
+        "scATAC-seq",
+        "epigenetics"
+    ],
+    "uuid": "a0d5b272-b445-400c-8a4b-53380128687c",
+    "version": 10
+}

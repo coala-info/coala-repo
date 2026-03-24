@@ -1,0 +1,183 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": [
+        { "@id": "https://w3id.org/ro/crate/1.1" },
+        { "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0" }
+      ],
+      "about": { "@id": "./" }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.4",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/workflow/0.4",
+      "@type": "CreativeWork",
+      "name": "Workflow Run Crate",
+      "version": "0.4"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "identifier": "https://www.commonwl.org/",
+      "name": "Common Workflow Language",
+      "url": "https://www.commonwl.org/"
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "WF7402: Kinematic Inversion Workflow",
+      "datePublished": "2025-05-16",
+      "description": "Performs automatic kinematic source inversion using seismic data.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "creator": [
+        { "@id": "https://orcid.org/0000-0003-1147-5872" },
+        { "@id": "https://orcid.org/0000-0002-4827-7987" }
+      ],
+      "hasPart": [
+        { "@id": "WF7402.cwl" },
+        { "@id": "DT7403/" },
+        { "@id": "DT7404/" },
+        { "@id": "DT7405/" },
+        { "@id": "SS7403" },
+        { "@id": "SS7401" }
+      ],
+      "mainEntity": { "@id": "WF7402.cwl" }
+    },
+    {
+      "@id": "WF7402.cwl",
+      "@type": ["File", "SoftwareSourceCode", "ComputationalWorkflow"],
+      "name": "WF7402: Kinematic Inversion Workflow",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "creator": [
+        { "@id": "https://orcid.org/0000-0003-1147-5872" },
+        { "@id": "https://orcid.org/0000-0002-4827-7987" },
+        { "@id": "https://orcid.org/0000-0002-8207-1464" }
+      ],
+      "license": "https://spdx.org/licenses/CC-BY-4.0"
+    },
+    {
+      "@id": "DT7403/",
+      "@type": "Dataset",
+      "name": "Seismograms, GPS offsets, Fault geometry, velocity model, point source characteristics",
+      "description": "This dataset contains all the input data needed for the kinematic source inversion, such as the fault geometry, the velocity model, as well as the seismic and geodetic data transmitted from an array of seismic and GPS stations.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0000-0003-1147-5872" },
+      { "@id": "https://orcid.org/0000-0002-4827-7987" }
+      ]
+    },
+    {
+      "@id": "DT7404/",
+      "@type": "Dataset",
+      "name": "Kinematic slip model",
+      "description": "Output of the kinematic inversion workflow consisting of the slip distribution on a given fault geometry as well as the model predictions.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0000-0003-1147-5872" },
+      { "@id": "https://orcid.org/0000-0002-4827-7987" }
+      ]
+    },
+    {
+      "@id": "DT7405/",
+      "@type": "Dataset",
+      "name": "Kinematically-informed dynamic rupture model",
+      "description": "Output of the kinematic inversion workflow consisting of the kinematically-informed dynamic rupture simulation results.",
+      "license": "https://spdx.org/licenses/CC-BY-4.0",
+      "isPartOf": { "@id": "./" },
+      "creator": [
+      { "@id": "https://orcid.org/0000-0003-1147-5872" },
+      { "@id": "https://orcid.org/0000-0002-4827-7987" }
+      ]
+    },
+    {
+      "@id": "SS7401",
+      "@type": "SoftwareSourceCode",
+      "name": "SeisSol",
+      "description": "SeisSol is a high-performance computational seismology software to simulate complex earthquake scenarios. It supports various rheologies (elastic, anisotropic-elastic, acoustic, viscoelastic, poroelastic), boundary conditions and dynamic rupture laws. SeisSol uses high-order discontinuous Galerkin discretisation with an Arbitrary DERivative (ADER) local time stepping on unstructured adaptive tetrahedral meshes.",
+      "license": "https://spdx.org/licenses/BSD-3-Clause",
+      "programmingLanguage": [
+      "Python >= 3.5",
+      "C++",
+      "Fortran"
+      ],
+      "url": "https://github.com/SeisSol/SeisSol",
+      "organization": [
+        { "@id": "https://ror.org/05591te55" }
+      ],
+      "person": [
+      { "@id": "https://orcid.org/0000-0003-0112-8412" }
+      ]
+    },
+    {
+      "@id": "SS7403",
+      "@type": "SoftwareSourceCode",
+      "name": "SLIPNEAR",
+      "description": "Rapid, automated kinematic finite-fault source inversion based on local and regional broadband and strong motion seismic data.",
+      "license": "Proprietary",
+      "programmingLanguage": [],
+      "url": "https://doi.org/10.5281/zenodo.7038298",
+      "organization": [
+        { "@id": "https://ror.org/05xtktk35" }
+      ],
+      "person": [
+      { "@id": "https://orcid.org/0000-0003-1147-5872" }
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-1147-5872",
+      "@type": "Person",
+      "name": "Bertrand Delouis",
+      "email": "Bertrand.Delouis@geoazur.unice.fr",
+      "affiliation": { "@id": "#geoazur" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-4827-7987",
+      "@type": "Person",
+      "name": "Jean-Paul Ampuero",
+      "email": "ampuero@geoazur.unice.fr",
+      "affiliation": { "@id": "#geoazur" }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8207-1464",
+      "@type": "Person",
+      "name": "Johannes Kemper",
+      "email": "johannes.kemper@eaps.ethz.ch",
+      "affiliation": {
+         "@id": "https://ror.org/05a28rw58"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-0112-8412",
+      "@type": "Person",
+      "name": "Alice-Agnes Gabriel",
+      "affiliation": { "@id": "#lmu" },
+      "email": "gabriel@geophysik.uni-muenchen.de"
+    },
+    {
+      "@id": "https://ror.org/05xtktk35",
+      "@type": "Organization",
+      "name": "Géoazur"
+    },
+    {
+      "@id": "https://ror.org/05591te55",
+      "@type": "Organization",
+      "name": "Ludwig-Maximilians-Universität München (LMU)"
+    },
+    {
+      "@id": "https://ror.org/05a28rw58",
+      "@type": "Organization",
+      "name": "Eidgenössische Technische Hochschule Zürich (ETH)"
+    }
+  ]
+}

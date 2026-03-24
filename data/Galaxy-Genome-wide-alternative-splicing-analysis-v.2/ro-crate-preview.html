@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Genome-wide alternative splicing analysis v.2</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "main_workflow.ga"
+      },
+      "datePublished": "2023-06-11 20:17:56 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-5752-2155"
+        }
+      ],
+      "license": "CC-BY-NC-4.0",
+      "identifier": "https://workflowhub.eu/workflows/482?version=7",
+      "url": "https://workflowhub.eu/workflows/482/ro_crate?version=7",
+      "name": "Research Object Crate for Genome-wide alternative splicing analysis v.2",
+      "description": "Genome-wide alternative splicing analysis v.2",
+      "sdDatePublished": "2026-03-24 17:57:56 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "main_workflow.ga"
+        },
+        {
+          "@id": "example.png"
+        },
+        {
+          "@id": "main_workflow.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "main_workflow.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 109284,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "example.png"
+      },
+      "subjectOf": {
+        "@id": "main_workflow.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Genome-wide alternative splicing analysis v.2",
+      "name": "Genome-wide alternative splicing analysis v.2",
+      "url": "https://workflowhub.eu/workflows/482?version=7",
+      "keywords": "Transcriptomics, Alternative splicing, isoform switching",
+      "version": 7,
+      "license": "https://spdx.org/licenses/CC-BY-NC-4.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/247"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/12"
+      },
+      "dateCreated": "2023-06-11T19:17:35Z",
+      "dateModified": "2023-06-11T19:17:56Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/482?version=6",
+      "input": [
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Active%20sites%20dataset"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-CPAT%20header"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Control%20IDs"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Genome%20annotation"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Pfam-A%20HMM%20Stockholm%20file"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Pfam-A%20HMM%20library"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-RNA-seq%20data%20collection"
+        },
+        {
+          "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Reference%20genome"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "example.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 214419
+    },
+    {
+      "@id": "main_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 30115
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5752-2155",
+      "@type": "Person",
+      "name": "Cristóbal Gallardo",
+      "identifier": "https://orcid.org/0000-0002-5752-2155"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/247",
+      "@type": "Person",
+      "name": "Cristóbal Gallardo"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/12",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Training Network"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Active sites dataset",
+      "@type": "FormalParameter",
+      "name": "Active sites dataset",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-CPAT header",
+      "@type": "FormalParameter",
+      "name": "CPAT header",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Control IDs",
+      "@type": "FormalParameter",
+      "name": "Control IDs",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Genome annotation",
+      "@type": "FormalParameter",
+      "name": "Genome annotation",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Pfam-A HMM Stockholm file",
+      "@type": "FormalParameter",
+      "name": "Pfam-A HMM Stockholm file",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Pfam-A HMM library",
+      "@type": "FormalParameter",
+      "name": "Pfam-A HMM library",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-RNA-seq data collection",
+      "@type": "FormalParameter",
+      "name": "RNA-seq data collection",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#genome_wide_alternative_splicing_analysis_v_2-inputs-Reference genome",
+      "@type": "FormalParameter",
+      "name": "Reference genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Genome-wide alternative splicing analysis v.2</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/482/ro_crate?version=7" target="_blank">https://workflowhub.eu/workflows/482/ro_crate?version=7</a>
+
+
+  <img src="example.png" style="width: 100%;"/>
+
+<p>
+  Genome-wide alternative splicing analysis v.2
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-5752-2155" target="_blank">Cristóbal Gallardo</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>CC-BY-NC-4.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_main_workflow.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="main_workflow.ga">Genome-wide alternative splicing analysis v.2</a>
+      
+        <br/>Size: 109284 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_example.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="example.png">example.png</a>
+      
+        <br/>Size: 214419 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_main_workflow.cwl">
+      
+      
+      
+        <strong>Main Workflow Description: </strong>
+      
+      <a class="data-entity-link" href="main_workflow.cwl">main_workflow.cwl</a>
+      
+        <br/>Size: 30115 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

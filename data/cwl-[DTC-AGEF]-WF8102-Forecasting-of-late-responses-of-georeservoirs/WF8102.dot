@@ -1,0 +1,136 @@
+strict digraph {
+
+
+	"model" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"model" -> "ST810201" [ label="is input to", labeltooltip="model - is input to - ST810201",  weight=0 ];
+
+	"blinding" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"blinding" -> "ST810201" [ label="is input to", labeltooltip="blinding - is input to - ST810201",  weight=0 ];
+
+	"velocity_model" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"velocity_model" -> "ST810202" [ label="is input to", labeltooltip="velocity_model - is input to - ST810202",  weight=0 ];
+
+	"velocity_model" -> "ST810203" [ label="is input to", labeltooltip="velocity_model - is input to - ST810203",  weight=0 ];
+
+	"velocity_model" -> "ST810204" [ label="is input to", labeltooltip="velocity_model - is input to - ST810204",  weight=0 ];
+
+	"ST810203" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810203" -> "DT810203" [ label="is output from", labeltooltip="DT810203 - is output from - ST810203",  weight=0 ];
+
+	"depth_max" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"depth_max" -> "ST810202" [ label="is input to", labeltooltip="depth_max - is input to - ST810202",  weight=0 ];
+
+	"ST810210" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lat_max" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lat_max" -> "ST810202" [ label="is input to", labeltooltip="lat_max - is input to - ST810202",  weight=0 ];
+
+	"ST810202" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810202" -> "DT810202" [ label="is output from", labeltooltip="DT810202 - is output from - ST810202",  weight=0 ];
+
+	"lon_max" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lon_max" -> "ST810202" [ label="is input to", labeltooltip="lon_max - is input to - ST810202",  weight=0 ];
+
+	"waveform_miniseed" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"waveform_miniseed" -> "ST810201" [ label="is input to", labeltooltip="waveform_miniseed - is input to - ST810201",  weight=0 ];
+
+	"waveform_miniseed" -> "ST810203" [ label="is input to", labeltooltip="waveform_miniseed - is input to - ST810203",  weight=0 ];
+
+	"waveform_miniseed" -> "ST810204" [ label="is input to", labeltooltip="waveform_miniseed - is input to - ST810204",  weight=0 ];
+
+	"DT810202" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810202" -> "ST810203" [ label="is input to", labeltooltip="DT810202 - is input to - ST810203",  weight=0 ];
+
+	"depth_min" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"depth_min" -> "ST810202" [ label="is input to", labeltooltip="depth_min - is input to - ST810202",  weight=0 ];
+
+	"DT810204" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"S_phase_threshold" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"S_phase_threshold" -> "ST810201" [ label="is input to", labeltooltip="S_phase_threshold - is input to - ST810201",  weight=0 ];
+
+	"model_weights" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"model_weights" -> "ST810201" [ label="is input to", labeltooltip="model_weights - is input to - ST810201",  weight=0 ];
+
+	"source_wave_velocity" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_wave_velocity" -> "ST810204" [ label="is input to", labeltooltip="source_wave_velocity - is input to - ST810204",  weight=0 ];
+
+	"network_inventory" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"network_inventory" -> "ST810203" [ label="is input to", labeltooltip="network_inventory - is input to - ST810203",  weight=0 ];
+
+	"network_inventory" -> "ST810204" [ label="is input to", labeltooltip="network_inventory - is input to - ST810204",  weight=0 ];
+
+	"network_inventory" -> "ST810202" [ label="is input to", labeltooltip="network_inventory - is input to - ST810202",  weight=0 ];
+
+	"time_window_length" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"time_window_length" -> "ST810204" [ label="is input to", labeltooltip="time_window_length - is input to - ST810204",  weight=0 ];
+
+	"ST810208" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lat_min" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lat_min" -> "ST810202" [ label="is input to", labeltooltip="lat_min - is input to - ST810202",  weight=0 ];
+
+	"ST810207" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_rock_density" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"source_rock_density" -> "ST810204" [ label="is input to", labeltooltip="source_rock_density - is input to - ST810204",  weight=0 ];
+
+	"DT810201" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810201" -> "ST810202" [ label="is input to", labeltooltip="DT810201 - is input to - ST810202",  weight=0 ];
+
+	"DT810201" -> "ST810203" [ label="is input to", labeltooltip="DT810201 - is input to - ST810203",  weight=0 ];
+
+	"DT810201" -> "ST810204" [ label="is input to", labeltooltip="DT810201 - is input to - ST810204",  weight=0 ];
+
+	"ST810201" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810201" -> "DT810201" [ label="is output from", labeltooltip="DT810201 - is output from - ST810201",  weight=0 ];
+
+	"ST810205" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810209" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810211" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lon_min" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"lon_min" -> "ST810202" [ label="is input to", labeltooltip="lon_min - is input to - ST810202",  weight=0 ];
+
+	"ST810204" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810204" -> "DT810204" [ label="is output from", labeltooltip="DT810204 - is output from - ST810204",  weight=0 ];
+
+	"P_phase_threshold" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"P_phase_threshold" -> "ST810201" [ label="is input to", labeltooltip="P_phase_threshold - is input to - ST810201",  weight=0 ];
+
+	"DT810203" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810203" -> "ST810204" [ label="is input to", labeltooltip="DT810203 - is input to - ST810204",  weight=0 ];
+
+	"frequency_range" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"frequency_range" -> "ST810204" [ label="is input to", labeltooltip="frequency_range - is input to - ST810204",  weight=0 ];
+
+	"ST810206" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+}

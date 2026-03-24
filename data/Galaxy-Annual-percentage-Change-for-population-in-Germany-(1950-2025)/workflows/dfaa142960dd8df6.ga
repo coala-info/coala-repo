@@ -1,0 +1,352 @@
+{
+    "a_galaxy_workflow": "true",
+    "format-version": "0.1",
+    "name": "Climate Stripes",
+    "annotation": "",
+    "tags": [
+        "ScienceLive"
+    ],
+    "uuid": "d284fbe3-62c8-4750-a2f0-745fd2f11a0c",
+    "steps": {
+        "0": {
+            "id": 0,
+            "type": "data_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input dataset",
+            "tool_state": "{\"optional\": false, \"format\": [\"tabular\"], \"tag\": null}",
+            "errors": null,
+            "uuid": "13e0e8ff-f3aa-41c5-83e0-2a9a44fbab2a",
+            "label": "files.tabular",
+            "annotation": "An input file with a header line and at least one column used to create the stripes.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "files.tabular",
+                    "description": "An input file with a header line and at least one column used to create the stripes."
+                }
+            ],
+            "workflow_outputs": [],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 41.47806067376284,
+                "top": 0
+            }
+        },
+        "1": {
+            "id": 1,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "errors": null,
+            "uuid": "8a3c5b05-ff76-4fad-9bce-d97ef55aa3a5",
+            "label": "Column name to use for plotting",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Column name to use for plotting",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "a86ffdfe-306e-4bb6-9db7-c03e377f6594"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 43.95145071606338,
+                "top": 112.32170034134654
+            }
+        },
+        "2": {
+            "id": 2,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"default\": \"My stripes\", \"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "errors": null,
+            "uuid": "b56fe512-288b-434b-b12b-9abcf169ffde",
+            "label": "Plot Title",
+            "annotation": "",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Plot Title",
+                    "description": ""
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "61810a9e-2c66-488d-865c-31b7076b4996"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 44.21134396626111,
+                "top": 232.52729105848363
+            }
+        },
+        "3": {
+            "id": 3,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"validators\": [{\"min\": null, \"max\": null, \"negate\": false, \"type\": \"in_range\"}], \"parameter_type\": \"integer\", \"optional\": true}",
+            "errors": null,
+            "uuid": "637f8903-3bcf-4545-8c8b-3dc83b1265a9",
+            "label": "nxsplit",
+            "annotation": "Number of values per intervals",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "nxsplit",
+                    "description": "Number of values per intervals"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "60d22635-33a8-4bff-b344-986458435fbb"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 32.59625664700401,
+                "top": 325.57315096912095
+            }
+        },
+        "4": {
+            "id": 4,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "errors": null,
+            "uuid": "c6c3a817-42a2-4ed0-bf17-f56368d1d3e1",
+            "label": "xname (column name for the x-axis)",
+            "annotation": "The column name to use for the x-axis.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "xname (column name for the x-axis)",
+                    "description": "The column name to use for the x-axis."
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "eeb1478b-59ba-439a-8f34-9791708269de"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 0,
+                "top": 437.92359935083545
+            }
+        },
+        "5": {
+            "id": 5,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "errors": null,
+            "uuid": "418b7669-750c-4b53-8511-2cc5b2a824e4",
+            "label": "Date/time format for the x-axis column",
+            "annotation": "Date/time format to use when reading the column to be used for the x-axis.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Date/time format for the x-axis column",
+                    "description": "Date/time format to use when reading the column to be used for the x-axis."
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "87aa29f2-0607-4c85-9455-c5a32bbc1449"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 15.091815299670955,
+                "top": 576.1533115764007
+            }
+        },
+        "6": {
+            "id": 6,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": true}",
+            "errors": null,
+            "uuid": "5e7fcf10-bf0b-4ed8-8b96-133df3c0cb7e",
+            "label": "dates format for xlabels",
+            "annotation": "Format for plotting dates on the x-axis",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "dates format for xlabels",
+                    "description": "Format for plotting dates on the x-axis"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "ddda1f0b-9a6b-4717-b09a-c8edd3ae685a"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 31.360806654861108,
+                "top": 720.1881216576851
+            }
+        },
+        "7": {
+            "id": 7,
+            "type": "parameter_input",
+            "content_id": null,
+            "tool_id": null,
+            "tool_version": null,
+            "name": "Input parameter",
+            "tool_state": "{\"default\": \"RdBu_r\", \"multiple\": false, \"validators\": [], \"parameter_type\": \"text\", \"optional\": false}",
+            "errors": null,
+            "uuid": "6ed5aeb2-e362-48b7-a116-23de371a9cd9",
+            "label": "Matplotlib colormap",
+            "annotation": "Parameter 'colormap': valid options: winter,PRGn,hsv,gist_ncar,RdYlGn,summer,BrBG,Pastel1,autumn,PuBuGn,seismic,YlOrRd,Purples,Wistia,YlOrBr,tab10,tab20c,gist_heat,bone,gist_yarg,ocean,flag,RdGy,gist_earth,coolwarm,spring,PuBu,cool,gist_stern,gray,Reds,Greens,Accent,BuGn,RdGy_r,Set3,Pastel2,pink,OrRd,gist_rainbow,Blues,binary,gist_gray,PuOr,Set2,rainbow,copper,RdBu_r,Oranges,Set1,afmhot,BuPu,gnuplot2,brg,terrain,YlGnBu,tab20,Greys,bwr,RdPu,PuRd,tab20b,PiYG,hot,gnuplot,YlGn,Dark2,prism,Spectral,Paired,RdPu_r,RdBu,RdYlBu,GnBu,cubehelix,CMRmap,jet,nipy_spectral) Using default: 'RdBu_r'.",
+            "when": null,
+            "inputs": [
+                {
+                    "name": "Matplotlib colormap",
+                    "description": "Parameter 'colormap': valid options: winter,PRGn,hsv,gist_ncar,RdYlGn,summer,BrBG,Pastel1,autumn,PuBuGn,seismic,YlOrRd,Purples,Wistia,YlOrBr,tab10,tab20c,gist_heat,bone,gist_yarg,ocean,flag,RdGy,gist_earth,coolwarm,spring,PuBu,cool,gist_stern,gray,Reds,Greens,Accent,BuGn,RdGy_r,Set3,Pastel2,pink,OrRd,gist_rainbow,Blues,binary,gist_gray,PuOr,Set2,rainbow,copper,RdBu_r,Oranges,Set1,afmhot,BuPu,gnuplot2,brg,terrain,YlGnBu,tab20,Greys,bwr,RdPu,PuRd,tab20b,PiYG,hot,gnuplot,YlGn,Dark2,prism,Spectral,Paired,RdPu_r,RdBu,RdYlBu,GnBu,cubehelix,CMRmap,jet,nipy_spectral) Using default: 'RdBu_r'."
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "label": null,
+                    "uuid": "95c01501-ec80-4241-8dc0-d224d8845c36"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {},
+            "position": {
+                "left": 13.943350855261997,
+                "top": 850.26458704235
+            }
+        },
+        "8": {
+            "id": 8,
+            "type": "tool",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.2",
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.2",
+            "tool_version": "1.0.2",
+            "name": "toolshed.g2.bx.psu.edu/repos/climate/climate_stripes/climate_stripes/1.0.2",
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"adv\": {\"colormap\": {\"__class__\": \"ConnectedValue\"}, \"format_date\": {\"__class__\": \"ConnectedValue\"}, \"format_plot\": {\"__class__\": \"ConnectedValue\"}, \"nxsplit\": {\"__class__\": \"ConnectedValue\"}, \"xname\": {\"__class__\": \"ConnectedValue\"}}, \"ifilename\": {\"__class__\": \"ConnectedValue\"}, \"title\": {\"__class__\": \"ConnectedValue\"}, \"variable\": {\"__class__\": \"ConnectedValue\"}}",
+            "errors": "Tool is not installed",
+            "uuid": "0cc01990-8043-46bb-b627-2d38cf10eb5a",
+            "label": "Generate stripes",
+            "annotation": "Generate stripe from tabular file with at least one column. User needs to specify the column name in the tool. ",
+            "when": null,
+            "post_job_actions": {
+                "RenameDatasetActionofilename": {
+                    "action_type": "RenameDatasetAction",
+                    "output_name": "ofilename",
+                    "action_arguments": {
+                        "newname": "stripes.png"
+                    }
+                }
+            },
+            "inputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "ofilename",
+                    "label": "stripes.png",
+                    "uuid": "8413b0d2-5eb1-419f-a1ed-a329fcf7366b"
+                }
+            ],
+            "outputs": [],
+            "input_connections": {
+                "adv|colormap": {
+                    "id": 7,
+                    "output_name": "output"
+                },
+                "adv|format_plot": {
+                    "id": 6,
+                    "output_name": "output"
+                },
+                "adv|format_date": {
+                    "id": 5,
+                    "output_name": "output"
+                },
+                "adv|xname": {
+                    "id": 4,
+                    "output_name": "output"
+                },
+                "variable": {
+                    "id": 1,
+                    "output_name": "output"
+                },
+                "ifilename": {
+                    "id": 0,
+                    "output_name": "output"
+                },
+                "adv|nxsplit": {
+                    "id": 3,
+                    "output_name": "output"
+                },
+                "title": {
+                    "id": 2,
+                    "output_name": "output"
+                }
+            },
+            "position": {
+                "left": 584.463752547428,
+                "top": 125.28168803571039
+            }
+        }
+    },
+    "comments": [],
+    "report": {
+        "markdown": "\n# Workflow Execution Report\n\n## Workflow Inputs\n```galaxy\ninvocation_inputs()\n```\n\n## Workflow Outputs\n```galaxy\ninvocation_outputs()\n```\n\n## Workflow\n```galaxy\nworkflow_display()\n```\n"
+    },
+    "creator": [
+        {
+            "class": "Person",
+            "identifier": "0000-0002-1784-2920",
+            "name": "Anne Fouilloux"
+        }
+    ],
+    "license": "MIT"
+}

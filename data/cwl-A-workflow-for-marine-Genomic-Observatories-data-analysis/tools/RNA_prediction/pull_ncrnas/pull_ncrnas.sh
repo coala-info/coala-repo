@@ -1,0 +1,1 @@
+../../../docker/scripts_bash/pull_ncrnas.sh

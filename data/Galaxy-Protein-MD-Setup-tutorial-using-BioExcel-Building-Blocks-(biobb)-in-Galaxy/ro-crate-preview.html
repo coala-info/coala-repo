@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in Galaxy</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-biobb-wf-md-setup-protein.ga"
+      },
+      "datePublished": "2021-09-26 20:50:02 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.194.1",
+      "url": "https://workflowhub.eu/workflows/194/ro_crate?version=1",
+      "name": "Research Object Crate for Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in Galaxy",
+      "description": "Galaxy workflow example that illustrate the process of setting up a simulation system containing a protein, step by step, using the [BioExcel Building Blocks](/projects/11) library (biobb). The particular example used is the Lysozyme protein (PDB code 1AKI). This workflow returns a resulting protein structure and simulated 3D trajectories.\n\nDesigned for running on the https://dev.usegalaxy.es Galaxy instance.",
+      "sdDatePublished": "2026-03-24 18:06:30 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-biobb-wf-md-setup-protein.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-biobb-wf-md-setup-protein.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 60779,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Galaxy workflow example that illustrate the process of setting up a simulation system containing a protein, step by step, using the [BioExcel Building Blocks](/projects/11) library (biobb). The particular example used is the Lysozyme protein (PDB code 1AKI). This workflow returns a resulting protein structure and simulated 3D trajectories.\n\nDesigned for running on the https://dev.usegalaxy.es Galaxy instance.",
+      "name": "Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in Galaxy",
+      "url": "https://workflowhub.eu/workflows/194?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/11"
+      },
+      "dateCreated": "2021-09-26T19:50:02Z",
+      "dateModified": "2023-01-16T13:53:08Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/3"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.194.1",
+      "input": [
+
+      ],
+      "output": [
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb.pdb"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-myfix_side_chain.pdb"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb2gmx.gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb2gmx.zip"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-myeditconf.gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mysolvate.zip"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mysolvate.gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygrompp.tpr"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygenion.gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygenion.zip"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.edr"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.log"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.xtc"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.cpt"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.trr"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.gro"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_min.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_nvt.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_npt.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_21"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_22"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_23"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_24"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_25"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-rmsd_first.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_image.xtc"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_trjconv_str.xtc"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-rmsd_exp.xvg"
+        },
+        {
+          "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_rgyr.xvg"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/11",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "BioBB Building Blocks"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/3",
+      "@type": "Collection",
+      "name": "BioExcel Building Blocks (BioBB) Protein MD Setup Tutorials"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb.pdb",
+      "@type": "FormalParameter",
+      "name": "mypdb.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-myfix_side_chain.pdb",
+      "@type": "FormalParameter",
+      "name": "myfix_side_chain.pdb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb2gmx.gro",
+      "@type": "FormalParameter",
+      "name": "mypdb2gmx.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mypdb2gmx.zip",
+      "@type": "FormalParameter",
+      "name": "mypdb2gmx.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-myeditconf.gro",
+      "@type": "FormalParameter",
+      "name": "myeditconf.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mysolvate.zip",
+      "@type": "FormalParameter",
+      "name": "mysolvate.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mysolvate.gro",
+      "@type": "FormalParameter",
+      "name": "mysolvate.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygrompp.tpr",
+      "@type": "FormalParameter",
+      "name": "mygrompp.tpr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygenion.gro",
+      "@type": "FormalParameter",
+      "name": "mygenion.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygenion.zip",
+      "@type": "FormalParameter",
+      "name": "mygenion.zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.edr",
+      "@type": "FormalParameter",
+      "name": "mymdrun.edr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.log",
+      "@type": "FormalParameter",
+      "name": "mymdrun.log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.xtc",
+      "@type": "FormalParameter",
+      "name": "mymdrun.xtc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.cpt",
+      "@type": "FormalParameter",
+      "name": "mymdrun.cpt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.xvg",
+      "@type": "FormalParameter",
+      "name": "mymdrun.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.trr",
+      "@type": "FormalParameter",
+      "name": "mymdrun.trr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mymdrun.gro",
+      "@type": "FormalParameter",
+      "name": "mymdrun.gro",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_min.xvg",
+      "@type": "FormalParameter",
+      "name": "energy_min.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_nvt.xvg",
+      "@type": "FormalParameter",
+      "name": "energy_nvt.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-energy_npt.xvg",
+      "@type": "FormalParameter",
+      "name": "energy_npt.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_22",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_22",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_23",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_23",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_24",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_24",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-_anonymous_output_25",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_25",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-rmsd_first.xvg",
+      "@type": "FormalParameter",
+      "name": "rmsd_first.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_image.xtc",
+      "@type": "FormalParameter",
+      "name": "mygmx_image.xtc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_trjconv_str.xtc",
+      "@type": "FormalParameter",
+      "name": "mygmx_trjconv_str.xtc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-rmsd_exp.xvg",
+      "@type": "FormalParameter",
+      "name": "rmsd_exp.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#protein_md_setup_tutorial_using_bioexcel_building_blocks__biobb__in_galaxy-outputs-mygmx_rgyr.xvg",
+      "@type": "FormalParameter",
+      "name": "mygmx_rgyr.xvg",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in Galaxy</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/194/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/194/ro_crate?version=1</a>
+
+
+<p>
+  Galaxy workflow example that illustrate the process of setting up a simulation system containing a protein, step by step, using the [BioExcel Building Blocks](/projects/11) library (biobb). The particular example used is the Lysozyme protein (PDB code 1AKI). This workflow returns a resulting protein structure and simulated 3D trajectories.
+
+Designed for running on the https://dev.usegalaxy.es Galaxy instance.
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-biobb-wf-md-setup-protein.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-biobb-wf-md-setup-protein.ga">Protein MD Setup tutorial using BioExcel Building Blocks (biobb) in Galaxy</a>
+      
+        <br/>Size: 60779 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

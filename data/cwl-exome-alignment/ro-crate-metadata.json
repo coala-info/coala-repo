@@ -1,0 +1,196 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "workflow.cwl"
+      },
+      "datePublished": "2021-11-19 10:06:37 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/239?version=1",
+      "url": "https://workflowhub.eu/workflows/239/ro_crate?version=1",
+      "name": "Research Object Crate for exome-alignment",
+      "description": "Exome Alignment Workflow\n",
+      "isBasedOn": "https://github.com/inab/ipc_workflows/tree/main/exome/alignment",
+      "sdDatePublished": "2026-03-24 01:18:12 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "workflow.cwl"
+        },
+        {
+          "@id": "workflow-239-0b2bfbc160dca7ad3facfde5d12ad101079b5b1a-diagram.svg"
+        }
+      ]
+    },
+    {
+      "@id": "workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 2241,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-239-0b2bfbc160dca7ad3facfde5d12ad101079b5b1a-diagram.svg"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Exome Alignment Workflow\n",
+      "name": "exome-alignment",
+      "url": "https://workflowhub.eu/workflows/239?version=1",
+      "keywords": "cancer, pediatric, Alignment",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/4"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/35"
+      },
+      "dateCreated": "2021-11-19T10:06:37Z",
+      "dateModified": "2023-01-16T13:55:02Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#exome_alignment-inputs-fastq_files"
+        },
+        {
+          "@id": "#exome_alignment-inputs-reference_fasta"
+        },
+        {
+          "@id": "#exome_alignment-inputs-readgroup"
+        },
+        {
+          "@id": "#exome_alignment-inputs-sample_name"
+        }
+      ],
+      "output": {
+        "@id": "#exome_alignment-outputs-sorted_bam"
+      },
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-239-0b2bfbc160dca7ad3facfde5d12ad101079b5b1a-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 11999
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4929-1219",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas",
+      "identifier": "https://orcid.org/0000-0003-4929-1219"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/4",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/35",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "iPC: individualizedPaediatricCure"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#exome_alignment-inputs-fastq_files",
+      "@type": "FormalParameter",
+      "name": "fastq_files",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#exome_alignment-inputs-reference_fasta",
+      "@type": "FormalParameter",
+      "name": "reference_fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#exome_alignment-inputs-readgroup",
+      "@type": "FormalParameter",
+      "name": "readgroup",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#exome_alignment-inputs-sample_name",
+      "@type": "FormalParameter",
+      "name": "sample_name",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#exome_alignment-outputs-sorted_bam",
+      "@type": "FormalParameter",
+      "name": "sorted_bam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

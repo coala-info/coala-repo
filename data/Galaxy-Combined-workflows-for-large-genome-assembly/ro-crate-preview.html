@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Combined workflows for large genome assembly</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga"
+      },
+      "datePublished": "2021-11-08 06:08:25 +0000",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-9906-0673"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.230.1",
+      "url": "https://workflowhub.eu/workflows/230/ro_crate?version=1",
+      "name": "Research Object Crate for Combined workflows for large genome assembly",
+      "description": "Combined workflow for large genome assembly\n\nThe tutorial document for this workflow is here: https://doi.org/10.5281/zenodo.5655813\n\n\nWhat it does:  A workflow for genome assembly, containing subworkflows:\n* Data QC\n* Kmer counting\n* Trim and filter reads\n* Assembly with Flye\n* Assembly polishing\n* Assess genome quality\n\nInputs: \n* long reads and short reads in fastq format\n* reference genome for Quast\n\nOutputs: \n* Data information - QC, kmers\n* Filtered, trimmed reads\n* Genome assembly, assembly graph, stats\n* Polished assembly, stats\n* Quality metrics - Busco, Quast\n\nOptions\n* Omit some steps - e.g. Data QC and kmer counting\n* Replace a module with one using a different tool - e.g. change assembly tool\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "sdDatePublished": "2026-03-24 18:07:19 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga"
+        },
+        {
+          "@id": "Combined_workflows.png"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 191181,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "image": {
+        "@id": "Combined_workflows.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Combined workflow for large genome assembly\n\nThe tutorial document for this workflow is here: https://doi.org/10.5281/zenodo.5655813\n\n\nWhat it does:  A workflow for genome assembly, containing subworkflows:\n* Data QC\n* Kmer counting\n* Trim and filter reads\n* Assembly with Flye\n* Assembly polishing\n* Assess genome quality\n\nInputs: \n* long reads and short reads in fastq format\n* reference genome for Quast\n\nOutputs: \n* Data information - QC, kmers\n* Filtered, trimmed reads\n* Genome assembly, assembly graph, stats\n* Polished assembly, stats\n* Quality metrics - Busco, Quast\n\nOptions\n* Omit some steps - e.g. Data QC and kmer counting\n* Replace a module with one using a different tool - e.g. change assembly tool\n\nInfrastructure_deployment_metadata: Galaxy Australia (Galaxy)",
+      "name": "Combined workflows for large genome assembly",
+      "url": "https://workflowhub.eu/workflows/230?version=1",
+      "keywords": "Large-genome-assembly",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/200"
+      },
+      "producer": [
+        {
+          "@id": "https://workflowhub.eu/projects/54"
+        },
+        {
+          "@id": "https://workflowhub.eu/projects/30"
+        }
+      ],
+      "dateCreated": "2021-11-08T06:08:25Z",
+      "dateModified": "2023-01-16T13:54:36Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/6"
+      },
+      "identifier": "https://doi.org/10.48546/workflowhub.workflow.230.1",
+      "input": [
+
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "Combined_workflows.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 440166
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9906-0673",
+      "@type": "Person",
+      "name": "Anna Syme",
+      "identifier": "https://orcid.org/0000-0002-9906-0673"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/200",
+      "@type": "Person",
+      "name": "Anna Syme"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/54",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Galaxy Australia"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/30",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "Australian BioCommons"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/6",
+      "@type": "Collection",
+      "name": "BioCommons ‘Bring Your Own Data’ Expansion Project"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Combined workflows for large genome assembly</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/230/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/230/ro_crate?version=1</a>
+
+
+  <img src="Combined_workflows.png" style="width: 100%;"/>
+
+<p>
+  Combined workflow for large genome assembly
+
+The tutorial document for this workflow is here: https://doi.org/10.5281/zenodo.5655813
+
+
+What it does:  A workflow for genome assembly, containing subworkflows:
+* Data QC
+* Kmer counting
+* Trim and filter reads
+* Assembly with Flye
+* Assembly polishing
+* Assess genome quality
+
+Inputs: 
+* long reads and short reads in fastq format
+* reference genome for Quast
+
+Outputs: 
+* Data information - QC, kmers
+* Filtered, trimmed reads
+* Genome assembly, assembly graph, stats
+* Polished assembly, stats
+* Quality metrics - Busco, Quast
+
+Options
+* Omit some steps - e.g. Data QC and kmer counting
+* Replace a module with one using a different tool - e.g. change assembly tool
+
+Infrastructure_deployment_metadata: Galaxy Australia (Galaxy)
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-9906-0673" target="_blank">Anna Syme</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>Apache-2.0</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Combined_workflows_for_large_genome_assembly.ga">Combined workflows for large genome assembly</a>
+      
+        <br/>Size: 191181 bytes
+      
+      
+    </div>
+  
+    <div class="data-entity" id="__data_entity_Combined_workflows.png">
+      
+      
+        <strong>Main Workflow Diagram: </strong>
+      
+      
+      <a class="data-entity-link" href="Combined_workflows.png">Combined_workflows.png</a>
+      
+        <br/>Size: 440166 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

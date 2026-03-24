@@ -1,0 +1,12 @@
+2025-03-15 18:48:42.3310 20170519 TM FScon3613 TRACE TEST POSITIVE RATIO:	0.3911 (32832.0/(32832.0+51109.0))
+Confusion table
+          ||======================
+PREDICTED || positive | negative | Recall
+TRUTH     ||======================
+ positive ||   21,384 |   11,448 | 0.6513
+ negative ||    6,763 |   44,346 | 0.8677
+          ||======================
+Precision ||   0.7597 |   0.7948 |
+ 
+2025-03-15 18:48:54.2269 20170519 TM FScon3613 TRACE Original Count: 7725 
+2025-03-15 18:48:54.2269 20170519 TM FScon3613 TRACE New Count: 19339 

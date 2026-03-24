@@ -1,0 +1,149 @@
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE target file: "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3507.quant" 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE source files: [|"C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3501.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3503.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3505.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3509.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3511.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3513.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3515.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3517.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3601.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3603.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3605.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3607.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3609.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3611.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3613.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3615.quant";
+  "C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quant\20170519 TM FScon3617.quant"|] 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE Output directory: C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalign 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE Parameters: { Placeholder = true } 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE Init align function 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE Init align function: finished 
+2025-03-03 17:47:10.4534 20170519 TM FScon3507 TRACE Reading and preparing .quant files for alignment 
+2025-03-03 17:47:35.1196 20170519 TM FScon3507 TRACE Reading and preparing .quant files for alignment: finished 
+2025-03-03 17:47:35.1196 20170519 TM FScon3507 TRACE Performing Alignments 
+2025-03-03 17:47:35.1196 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3501 
+2025-03-03 17:47:35.1386 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:35.1386 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:35.1386 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:35.3117 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:35.3117 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:36.9405 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3501: finished 
+2025-03-03 17:47:36.9405 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3503 
+2025-03-03 17:47:36.9713 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:36.9713 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:36.9713 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:37.2534 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:37.2534 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:39.1369 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3503: finished 
+2025-03-03 17:47:39.1369 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3505 
+2025-03-03 17:47:39.1732 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:39.1732 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:39.1732 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:39.4501 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:39.4501 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:41.3304 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3505: finished 
+2025-03-03 17:47:41.3304 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3509 
+2025-03-03 17:47:41.3587 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:41.3587 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:41.3587 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:41.6393 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:41.6393 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:44.0302 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3509: finished 
+2025-03-03 17:47:44.0302 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3511 
+2025-03-03 17:47:44.0587 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:44.0587 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:44.0587 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:44.2814 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:114.000000 
+2025-03-03 17:47:44.2814 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:46.1448 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3511: finished 
+2025-03-03 17:47:46.1448 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3513 
+2025-03-03 17:47:46.1615 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:46.1615 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:46.1615 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:46.3025 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:46.3025 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:47.4938 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3513: finished 
+2025-03-03 17:47:47.4938 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3515 
+2025-03-03 17:47:47.5151 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:47.5151 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:47.5151 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:47.7187 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:47.7187 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:49.3327 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3515: finished 
+2025-03-03 17:47:49.3327 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3517 
+2025-03-03 17:47:49.3572 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:49.3572 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:49.3572 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:49.7326 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:49.7326 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:51.8272 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3517: finished 
+2025-03-03 17:47:51.8272 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3601 
+2025-03-03 17:47:51.8527 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:51.8527 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:51.8527 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:52.0611 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:1.000000 
+2025-03-03 17:47:52.0611 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:53.5451 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3601: finished 
+2025-03-03 17:47:53.5451 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3603 
+2025-03-03 17:47:53.5679 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:53.5679 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:53.5679 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:53.8528 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:1.000000 
+2025-03-03 17:47:53.8528 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:55.3319 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3603: finished 
+2025-03-03 17:47:55.3319 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3605 
+2025-03-03 17:47:55.3585 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:55.3585 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:55.3585 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:55.5726 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:47:55.5726 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:57.0128 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3605: finished 
+2025-03-03 17:47:57.0128 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3607 
+2025-03-03 17:47:57.0330 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:57.0330 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:57.0330 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:57.3003 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:177.000000 
+2025-03-03 17:47:57.3003 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:47:58.9483 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3607: finished 
+2025-03-03 17:47:58.9483 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3609 
+2025-03-03 17:47:58.9802 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:47:58.9802 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:47:58.9802 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:47:59.2522 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:1.000000 
+2025-03-03 17:47:59.2522 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:48:00.9307 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3609: finished 
+2025-03-03 17:48:00.9307 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3611 
+2025-03-03 17:48:00.9529 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:48:00.9529 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:48:00.9529 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:48:01.1278 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:26.000000 
+2025-03-03 17:48:01.1278 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:48:03.0303 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3611: finished 
+2025-03-03 17:48:03.0303 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3613 
+2025-03-03 17:48:03.0602 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:48:03.0602 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:48:03.0602 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:48:03.2574 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:48:03.2574 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:48:04.5278 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3613: finished 
+2025-03-03 17:48:04.5278 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3615 
+2025-03-03 17:48:04.5514 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:48:04.5554 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:48:04.5554 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:48:04.7400 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:48:04.7558 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:48:05.9663 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3615: finished 
+2025-03-03 17:48:05.9663 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3617 
+2025-03-03 17:48:05.9790 20170519 TM FScon3507 TRACE Sampling test and train data 
+2025-03-03 17:48:05.9790 20170519 TM FScon3507 TRACE Training Spline 
+2025-03-03 17:48:05.9790 20170519 TM FScon3507 TRACE Optimizing Lambdas 
+2025-03-03 17:48:06.0957 20170519 TM FScon3507 TRACE Optimizing Lambdas:Finished, selected lamda:200.000000 
+2025-03-03 17:48:06.0957 20170519 TM FScon3507 TRACE Training Spline:Finished 
+2025-03-03 17:48:06.9670 20170519 TM FScon3507 TRACE Performing Alignment 20170519 TM FScon3507 vs 20170519 TM FScon3617: finished 
+2025-03-03 17:48:06.9871 20170519 TM FScon3507 TRACE Performing Alignments: finished 
+2025-03-03 17:48:06.9871 20170519 TM FScon3507 TRACE Transfer identifications 
+2025-03-03 17:48:07.1181 20170519 TM FScon3507 TRACE Writing Results 
+2025-03-03 17:48:07.1181 20170519 TM FScon3507 TRACE outFilePath:C:\Users\ottj\repos\RatioLFQComparisons\runs\DilutionSeriesConstant\quantalign\20170519 TM FScon3507.align 
+2025-03-03 17:48:08.2499 20170519 TM FScon3507 TRACE Writing Results:finished 

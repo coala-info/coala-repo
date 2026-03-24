@@ -1,0 +1,28 @@
+{
+   "id":"67d300099b16a807bd6ff720",
+   "region":{
+      "_id":"67d2fc3441d30d1c70c12312",
+      "available_ensemble":[
+         "statisticalCMT",
+         "onlyOne"
+      ],
+      "available_fmax":[
+         1.0
+      ],
+      "available_inference":"mlesmap",
+      "depth_in_m":40000,
+      "file_structure":"Marta_Salvus",
+      "id":"CALIFORNIA",
+      "max_latitude":35.5,
+      "max_longitude":-115.5,
+      "min_latitude":32.7,
+      "min_longitude":-120.0,
+      "path":"/workspace/EventRegion/CALIFORNIA"
+   },
+   "setup":{
+      "fmax_policy":"max",
+      "inference_type":"mlesmap",
+      "slipgen_version":"v550",
+      "source_ensemble":"onlyOne"
+   }
+}

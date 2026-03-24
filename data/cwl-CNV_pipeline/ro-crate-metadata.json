@@ -1,0 +1,741 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "structuralvariants/cwl/workflow.cwl"
+      },
+      "datePublished": "2022-10-11 08:48:48 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0003-4929-1219"
+        },
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/278?version=11",
+      "url": "https://workflowhub.eu/workflows/278/ro_crate?version=11",
+      "name": "Research Object Crate for CNV_pipeline",
+      "description": "# StructuralVariants Workflow\n",
+      "isBasedOn": "https://gitlab.bsc.es/lrodrig1/structuralvariants_poc/-/tree/1.1.3/structuralvariants/cwl",
+      "sdDatePublished": "2026-03-24 01:11:51 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "structuralvariants/cwl/workflow.cwl"
+        },
+        {
+          "@id": "workflow-278-93fbc4e51770d953fc44104a7b09436f75719470-diagram.svg"
+        },
+        {
+          "@id": "structuralvariants/cwl/abstract_workflow/abstract_workflow.cwl"
+        }
+      ]
+    },
+    {
+      "@id": "structuralvariants/cwl/workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9474,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "workflow-278-93fbc4e51770d953fc44104a7b09436f75719470-diagram.svg"
+      },
+      "subjectOf": {
+        "@id": "structuralvariants/cwl/abstract_workflow/abstract_workflow.cwl"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "# StructuralVariants Workflow\n",
+      "name": "CNV_pipeline",
+      "url": "https://workflowhub.eu/workflows/278?version=11",
+      "keywords": "cancer, CODEX2, ExomeDepth, manta, TransBioNet, variant calling, GRIDSS, structural variants",
+      "version": 11,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": [
+        {
+          "@id": "https://workflowhub.eu/people/4"
+        },
+        {
+          "@id": "#Daniel%20L%C3%B3pez-L%C3%B3pez"
+        }
+      ],
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/70"
+      },
+      "dateCreated": "2022-10-11T11:04:44Z",
+      "dateModified": "2023-01-16T13:57:59Z",
+      "isPartOf": [
+
+      ],
+      "isBasedOn": "https://workflowhub.eu/workflows/278?version=10",
+      "input": [
+        {
+          "@id": "#cnv_pipeline-inputs-fastq1"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-fastq2"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-generate_bwa_indexes"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_fasta"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_fai"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_amb"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_ann"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_bwt"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_pac"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-reference_sa"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-bed"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-samples"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-threads_fastqc"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-threads_fastp"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-threads_bwa_mem"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-threads_samtools"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-threads_gridss"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-bwt_algorithm"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-read_group"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-min_mapping_quality"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-bits_set"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-manta_exome"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-manta_min_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-manta_max_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-manta_min_q"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-blacklist"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-gridss_min_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-gridss_max_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-gridss_min_q"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-exomeDepth_min_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-exomeDepth_max_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-exomeDepth_min_bf"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-codex_min_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-codex_max_len"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-codex_min_lratio"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-enable_manta"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-enable_gridss"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-enable_exomeDepth"
+        },
+        {
+          "@id": "#cnv_pipeline-inputs-enable_codex"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cnv_pipeline-outputs-fastqc_raw_zip"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-fastqc_raw_html"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-html_report"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-json_report"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-fastqc_paired_zip"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-fastqc_paired_html"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_bam_filtering"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_manta"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_gridss"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_exomedepth"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_codex"
+        },
+        {
+          "@id": "#cnv_pipeline-outputs-output_all"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "workflow-278-93fbc4e51770d953fc44104a7b09436f75719470-diagram.svg",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 72914
+    },
+    {
+      "@id": "structuralvariants/cwl/abstract_workflow/abstract_workflow.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "HowTo"
+      ],
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "contentSize": 9694
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4929-1219",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas",
+      "identifier": "https://orcid.org/0000-0003-4929-1219"
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Daniel López-López"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/4",
+      "@type": "Person",
+      "name": "Laura Rodriguez-Navas"
+    },
+    {
+      "@id": "#Daniel López-López",
+      "@type": "Person",
+      "name": "Daniel López-López"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/70",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "TransBioNet"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-fastq1",
+      "@type": "FormalParameter",
+      "name": "fastq1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-fastq2",
+      "@type": "FormalParameter",
+      "name": "fastq2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-generate_bwa_indexes",
+      "@type": "FormalParameter",
+      "name": "generate_bwa_indexes",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_fasta",
+      "@type": "FormalParameter",
+      "name": "reference_fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_fai",
+      "@type": "FormalParameter",
+      "name": "reference_fai",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_amb",
+      "@type": "FormalParameter",
+      "name": "reference_amb",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_ann",
+      "@type": "FormalParameter",
+      "name": "reference_ann",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_bwt",
+      "@type": "FormalParameter",
+      "name": "reference_bwt",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_pac",
+      "@type": "FormalParameter",
+      "name": "reference_pac",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-reference_sa",
+      "@type": "FormalParameter",
+      "name": "reference_sa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-bed",
+      "@type": "FormalParameter",
+      "name": "bed",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-samples",
+      "@type": "FormalParameter",
+      "name": "samples",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-threads_fastqc",
+      "@type": "FormalParameter",
+      "name": "threads_fastqc",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-threads_fastp",
+      "@type": "FormalParameter",
+      "name": "threads_fastp",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-threads_bwa_mem",
+      "@type": "FormalParameter",
+      "name": "threads_bwa_mem",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-threads_samtools",
+      "@type": "FormalParameter",
+      "name": "threads_samtools",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-threads_gridss",
+      "@type": "FormalParameter",
+      "name": "threads_gridss",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-bwt_algorithm",
+      "@type": "FormalParameter",
+      "name": "bwt_algorithm",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-read_group",
+      "@type": "FormalParameter",
+      "name": "read_group",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-min_mapping_quality",
+      "@type": "FormalParameter",
+      "name": "min_mapping_quality",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-bits_set",
+      "@type": "FormalParameter",
+      "name": "bits_set",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-manta_exome",
+      "@type": "FormalParameter",
+      "name": "manta_exome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-manta_min_len",
+      "@type": "FormalParameter",
+      "name": "manta_min_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-manta_max_len",
+      "@type": "FormalParameter",
+      "name": "manta_max_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-manta_min_q",
+      "@type": "FormalParameter",
+      "name": "manta_min_q",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-blacklist",
+      "@type": "FormalParameter",
+      "name": "blacklist",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-gridss_min_len",
+      "@type": "FormalParameter",
+      "name": "gridss_min_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-gridss_max_len",
+      "@type": "FormalParameter",
+      "name": "gridss_max_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-gridss_min_q",
+      "@type": "FormalParameter",
+      "name": "gridss_min_q",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-exomeDepth_min_len",
+      "@type": "FormalParameter",
+      "name": "exomeDepth_min_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-exomeDepth_max_len",
+      "@type": "FormalParameter",
+      "name": "exomeDepth_max_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-exomeDepth_min_bf",
+      "@type": "FormalParameter",
+      "name": "exomeDepth_min_bf",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-codex_min_len",
+      "@type": "FormalParameter",
+      "name": "codex_min_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-codex_max_len",
+      "@type": "FormalParameter",
+      "name": "codex_max_len",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-codex_min_lratio",
+      "@type": "FormalParameter",
+      "name": "codex_min_lratio",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-enable_manta",
+      "@type": "FormalParameter",
+      "name": "enable_manta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-enable_gridss",
+      "@type": "FormalParameter",
+      "name": "enable_gridss",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-enable_exomeDepth",
+      "@type": "FormalParameter",
+      "name": "enable_exomeDepth",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-inputs-enable_codex",
+      "@type": "FormalParameter",
+      "name": "enable_codex",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-fastqc_raw_zip",
+      "@type": "FormalParameter",
+      "name": "fastqc_raw_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-fastqc_raw_html",
+      "@type": "FormalParameter",
+      "name": "fastqc_raw_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-html_report",
+      "@type": "FormalParameter",
+      "name": "html_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-json_report",
+      "@type": "FormalParameter",
+      "name": "json_report",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-fastqc_paired_zip",
+      "@type": "FormalParameter",
+      "name": "fastqc_paired_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-fastqc_paired_html",
+      "@type": "FormalParameter",
+      "name": "fastqc_paired_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_bam_filtering",
+      "@type": "FormalParameter",
+      "name": "output_bam_filtering",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_manta",
+      "@type": "FormalParameter",
+      "name": "output_manta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_gridss",
+      "@type": "FormalParameter",
+      "name": "output_gridss",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_exomedepth",
+      "@type": "FormalParameter",
+      "name": "output_exomedepth",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_codex",
+      "@type": "FormalParameter",
+      "name": "output_codex",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cnv_pipeline-outputs-output_all",
+      "@type": "FormalParameter",
+      "name": "output_all",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

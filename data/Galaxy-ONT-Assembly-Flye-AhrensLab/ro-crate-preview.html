@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ONT -- Assembly-Flye-AhrensLab</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ONT_--_Assembly-Flye-AhrensLab.ga"
+      },
+      "datePublished": "2020-08-05 14:01:18 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/51?version=1",
+      "url": "https://workflowhub.eu/workflows/51/ro_crate?version=1",
+      "name": "Research Object Crate for ONT -- Assembly-Flye-AhrensLab",
+      "description": "Genome assembly: Flye-based WF for highly repetitive genomes [Schmid et al. NAR 2018]",
+      "sdDatePublished": "2026-03-24 18:11:38 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ONT_--_Assembly-Flye-AhrensLab.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ONT_--_Assembly-Flye-AhrensLab.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 18132,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Genome assembly: Flye-based WF for highly repetitive genomes [Schmid et al. NAR 2018]",
+      "name": "ONT -- Assembly-Flye-AhrensLab",
+      "url": "https://workflowhub.eu/workflows/51?version=1",
+      "keywords": "name:ONT, ONT",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "#Milad%20Miladi"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/17"
+      },
+      "dateCreated": "2020-08-05T13:01:18Z",
+      "dateModified": "2023-02-13T14:06:46Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#ont____assembly_flye_ahrenslab-inputs-PkorrP19E3_ONT_fast5.tar.gz"
+        },
+        {
+          "@id": "#ont____assembly_flye_ahrenslab-inputs-ftp://biftp.informatik.uni-freiburg.de/pub/T0/Ahrens/SRR6982805.fastq"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Milad Miladi"
+    },
+    {
+      "@id": "#Milad Miladi",
+      "@type": "Person",
+      "name": "Milad Miladi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/17",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "NanoGalaxy"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ont____assembly_flye_ahrenslab-inputs-PkorrP19E3_ONT_fast5.tar.gz",
+      "@type": "FormalParameter",
+      "name": "PkorrP19E3_ONT_fast5.tar.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ont____assembly_flye_ahrenslab-inputs-ftp://biftp.informatik.uni-freiburg.de/pub/T0/Ahrens/SRR6982805.fastq",
+      "@type": "FormalParameter",
+      "name": "ftp://biftp.informatik.uni-freiburg.de/pub/T0/Ahrens/SRR6982805.fastq",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ONT -- Assembly-Flye-AhrensLab</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/51/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/51/ro_crate?version=1</a>
+
+
+<p>
+  Genome assembly: Flye-based WF for highly repetitive genomes [Schmid et al. NAR 2018]
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Milad Miladi</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ONT_--_Assembly-Flye-AhrensLab.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ONT_--_Assembly-Flye-AhrensLab.ga">ONT -- Assembly-Flye-AhrensLab</a>
+      
+        <br/>Size: 18132 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

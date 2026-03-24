@@ -1,0 +1,14 @@
+strict digraph {
+
+
+	"simulation_params" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"simulation_params" -> "ST810111" [ label="is input to", labeltooltip="simulation_params - is input to - ST810111",  weight=0 ];
+
+	"DT810111" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810111" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810111" -> "DT810111" [ label="is output from", labeltooltip="DT810111 - is output from - ST810111",  weight=0 ];
+
+}

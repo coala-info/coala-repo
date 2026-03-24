@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for ONT --Tutorial-Nanopolish-variants</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-ONT_--Tutorial-Nanopolish-variants.ga"
+      },
+      "datePublished": "2020-08-05 13:52:50 +0100",
+      "author": [
+        {
+          "@id": "#creator-1"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/50?version=1",
+      "url": "https://workflowhub.eu/workflows/50/ro_crate?version=1",
+      "name": "Research Object Crate for ONT --Tutorial-Nanopolish-variants",
+      "description": "Basic workflows inspired by the Nanopolish tutorials",
+      "sdDatePublished": "2026-03-24 18:11:48 +0000",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-ONT_--Tutorial-Nanopolish-variants.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-ONT_--Tutorial-Nanopolish-variants.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 9930,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Basic workflows inspired by the Nanopolish tutorials",
+      "name": "ONT --Tutorial-Nanopolish-variants",
+      "url": "https://workflowhub.eu/workflows/50?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "#Milad%20Miladi"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/17"
+      },
+      "dateCreated": "2020-08-05T12:52:50Z",
+      "dateModified": "2023-02-13T14:06:46Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#ont___tutorial_nanopolish_variants-inputs-draft.fa"
+        },
+        {
+          "@id": "#ont___tutorial_nanopolish_variants-inputs-fast5_files.tar.gz"
+        },
+        {
+          "@id": "#ont___tutorial_nanopolish_variants-inputs-reads.fasta"
+        }
+      ],
+      "output": [
+
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "#creator-1",
+      "@type": "Person",
+      "name": "Milad Miladi"
+    },
+    {
+      "@id": "#Milad Miladi",
+      "@type": "Person",
+      "name": "Milad Miladi"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/17",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "NanoGalaxy"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#ont___tutorial_nanopolish_variants-inputs-draft.fa",
+      "@type": "FormalParameter",
+      "name": "draft.fa",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ont___tutorial_nanopolish_variants-inputs-fast5_files.tar.gz",
+      "@type": "FormalParameter",
+      "name": "fast5_files.tar.gz",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#ont___tutorial_nanopolish_variants-inputs-reads.fasta",
+      "@type": "FormalParameter",
+      "name": "reads.fasta",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for ONT --Tutorial-Nanopolish-variants</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/50/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/50/ro_crate?version=1</a>
+
+
+<p>
+  Basic workflows inspired by the Nanopolish tutorials
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd>Milad Miladi</dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-ONT_--Tutorial-Nanopolish-variants.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-ONT_--Tutorial-Nanopolish-variants.ga">ONT --Tutorial-Nanopolish-variants</a>
+      
+        <br/>Size: 9930 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>

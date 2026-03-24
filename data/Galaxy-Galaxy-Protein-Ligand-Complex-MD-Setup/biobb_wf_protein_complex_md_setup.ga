@@ -1,0 +1,2150 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "",
+    "format-version": "0.1",
+    "name": "GMX Protein Ligand Complex MD Setup",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": "biobb_io_pdb_ext",
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Pdb",
+            "outputs": [
+                {
+                    "name": "output_pdb_path",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "left": 0,
+                "top": 689.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_pdb_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "tool_id": "biobb_io_pdb_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"outname_output_pdb_path\": \"mypdb_prot.pdb\", \"properties\": {\"pdb_code\": \"3htb\", \"filter\": \"\", \"api_id\": \"pdbe\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "19e4d049-e19e-4593-9de3-40410c372b58",
+            "workflow_outputs": [
+                {
+                    "label": "mypdb_prot.pdb",
+                    "output_name": "output_pdb_path",
+                    "uuid": "4a1ab802-8fec-49dc-85d0-1dedbd2c9ea6"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "biobb_structure_utils_extract_heteroatoms_ext",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 0,
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ExtractHeteroatoms",
+            "outputs": [
+                {
+                    "name": "output_heteroatom_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 339.984375,
+                "top": 435
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_heteroatom_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_heteroatom_path"
+                }
+            },
+            "tool_id": "biobb_structure_utils_extract_heteroatoms_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_heteroatom_path\": \"myextract_heteroatoms.pdb\", \"properties\": {\"heteroatoms\": \"[{\\\"name\\\": \\\"JZ4\\\"}]\", \"water\": \"false\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "d4036951-bf14-4b0c-898c-9500d67c40cf",
+            "workflow_outputs": [
+                {
+                    "label": "myextract_heteroatoms.pdb",
+                    "output_name": "output_heteroatom_path",
+                    "uuid": "79a58496-22a6-4970-aea2-e9e15f3c3342"
+                }
+            ]
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "biobb_structure_utils_extract_molecule_ext",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 0,
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ExtractMolecule",
+            "outputs": [
+                {
+                    "name": "output_molecule_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 340,
+                "top": 669
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_molecule_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_molecule_path"
+                }
+            },
+            "tool_id": "biobb_structure_utils_extract_molecule_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_molecule_path\": \"myextract_molecule.pdb\", \"properties\": {\"molecule_type\": \"all\", \"chains\": \"[]\", \"binary_path\": \"check_structure\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "9f061867-7dc5-4072-9259-3bfd1b7c029e",
+            "workflow_outputs": [
+                {
+                    "label": "myextract_molecule.pdb",
+                    "output_name": "output_molecule_path",
+                    "uuid": "bee4ca93-13a7-43da-a62d-b227e6aa61b6"
+                }
+            ]
+        },
+        "3": {
+            "annotation": "",
+            "content_id": "biobb_chemistry_reduce_add_hydrogens_ext",
+            "errors": null,
+            "id": 3,
+            "input_connections": {
+                "input_path": {
+                    "id": 1,
+                    "output_name": "output_heteroatom_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "ReduceAddHydrogens",
+            "outputs": [
+                {
+                    "name": "output_path",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "left": 658.328125,
+                "top": 437.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_path"
+                }
+            },
+            "tool_id": "biobb_chemistry_reduce_add_hydrogens_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_path\": \"myreduce_add_hydrogens.pdb\", \"properties\": {\"flip\": \"false\", \"noflip\": \"false\", \"nuclear\": \"true\", \"nooh\": \"false\", \"oh\": \"true\", \"his\": \"false\", \"noheth\": \"false\", \"rotnh3\": \"true\", \"norotnh3\": \"false\", \"rotexist\": \"false\", \"rotexoh\": \"false\", \"allalt\": \"true\", \"onlya\": \"false\", \"charges\": \"false\", \"dorotmet\": \"false\", \"noadjust\": \"false\", \"metal_bump\": \"0.0\", \"non_metal_bump\": \"0.0\", \"build\": \"false\", \"binary_path\": \"reduce\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "776495d3-3c46-44f9-a5aa-f62eebc484f2",
+            "workflow_outputs": [
+                {
+                    "label": "myreduce_add_hydrogens.pdb",
+                    "output_name": "output_path",
+                    "uuid": "480e1ad2-c17d-42eb-98c8-dafc899e1d75"
+                }
+            ]
+        },
+        "4": {
+            "annotation": "",
+            "content_id": "biobb_model_fix_side_chain_ext",
+            "errors": null,
+            "id": 4,
+            "input_connections": {
+                "input_pdb_path": {
+                    "id": 2,
+                    "output_name": "output_molecule_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "FixSideChain",
+            "outputs": [
+                {
+                    "name": "output_pdb_path",
+                    "type": "pdb"
+                }
+            ],
+            "position": {
+                "left": 676.328125,
+                "top": 663.015625
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_pdb_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "tool_id": "biobb_model_fix_side_chain_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_pdb_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_pdb_path\": \"myfix_side_chain.pdb\", \"properties\": {\"use_modeller\": \"false\", \"modeller_key\": null, \"binary_path\": \"check_structure\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "a2130bda-0e84-4d24-9958-78831a4156ab",
+            "workflow_outputs": [
+                {
+                    "label": "myfix_side_chain.pdb",
+                    "output_name": "output_pdb_path",
+                    "uuid": "14cddbe3-acdc-4344-bb91-c50e8e353e8a"
+                }
+            ]
+        },
+        "5": {
+            "annotation": "",
+            "content_id": "biobb_chemistry_babel_minimize_ext",
+            "errors": null,
+            "id": 5,
+            "input_connections": {
+                "input_path": {
+                    "id": 3,
+                    "output_name": "output_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "BabelMinimize",
+            "outputs": [
+                {
+                    "name": "output_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 980.015625,
+                "top": 446.015625
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_path": {
+                    "action_arguments": {
+                        "newtype": "mol2"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_path"
+                }
+            },
+            "tool_id": "biobb_chemistry_babel_minimize_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_path\": \"mybabel_minimize.mol2\", \"properties\": {\"criteria\": \"1e-10\", \"method\": \"sd\", \"force_field\": \"GAFF\", \"hydrogens\": \"false\", \"steps\": \"2500\", \"cutoff\": \"false\", \"rvdw\": \"6.0\", \"rele\": \"10.0\", \"frequency\": \"10\", \"binary_path\": \"obminimize\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "a144b6d1-9bce-41db-aaa5-0468175b96a1",
+            "workflow_outputs": [
+                {
+                    "label": "mybabel_minimize.mol2",
+                    "output_name": "output_path",
+                    "uuid": "8fa8e168-2f2e-40ef-be0e-bd852c751d97"
+                }
+            ]
+        },
+        "6": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_pdb2gmx_ext",
+            "errors": null,
+            "id": 6,
+            "input_connections": {
+                "input_pdb_path": {
+                    "id": 4,
+                    "output_name": "output_pdb_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Pdb2gmx",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 959.3125,
+                "top": 664.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_top_zip_path": {
+                    "action_arguments": {
+                        "newtype": "zip"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_pdb2gmx_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_pdb_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mypdb2gmx.gro\", \"outname_output_top_zip_path\": \"mypdb2gmx.zip\", \"properties\": {\"water_type\": \"spce\", \"force_field\": \"amber99sb-ildn\", \"ignh\": \"false\", \"his\": null, \"merge\": \"false\", \"gmx_lib\": null, \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "79108de4-0d00-472e-8c35-b9a41784b3c5",
+            "workflow_outputs": [
+                {
+                    "label": "mypdb2gmx.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "9014f1a8-f88b-4c36-8740-c6e6a0dade7b"
+                },
+                {
+                    "label": "mypdb2gmx.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "c5b319f3-a616-47de-9bcb-44aa7d79d48f"
+                }
+            ]
+        },
+        "7": {
+            "annotation": "",
+            "content_id": "biobb_chemistry_acpype_params_gmx_ext",
+            "errors": null,
+            "id": 7,
+            "input_connections": {
+                "input_path": {
+                    "id": 5,
+                    "output_name": "output_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AcpypeParamsGmx",
+            "outputs": [
+                {
+                    "name": "output_path_gro",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_path_itp",
+                    "type": "itp"
+                },
+                {
+                    "name": "output_path_top",
+                    "type": "top"
+                }
+            ],
+            "position": {
+                "left": 1325,
+                "top": 252
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_path_gro": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_path_gro"
+                },
+                "ChangeDatatypeActionoutput_path_itp": {
+                    "action_arguments": {
+                        "newtype": "itp"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_path_itp"
+                },
+                "ChangeDatatypeActionoutput_path_top": {
+                    "action_arguments": {
+                        "newtype": "top"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_path_top"
+                }
+            },
+            "tool_id": "biobb_chemistry_acpype_params_gmx_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_path_gro\": \"myacpype_params_gmx.gro\", \"outname_output_path_itp\": \"myacpype_params_gmx.itp\", \"outname_output_path_top\": \"myacpype_params_gmx.top\", \"properties\": {\"basename\": \"JZ4params\", \"charge\": \"0\", \"binary_path\": \"acpype\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "125e09c0-e216-48b0-a8ef-5ac39107f742",
+            "workflow_outputs": [
+                {
+                    "label": "myacpype_params_gmx.itp",
+                    "output_name": "output_path_itp",
+                    "uuid": "353faf2b-7019-4877-af24-2419ecb37d58"
+                },
+                {
+                    "label": "myacpype_params_gmx.gro",
+                    "output_name": "output_path_gro",
+                    "uuid": "7a79cae9-f489-4232-a63a-29f53da88858"
+                },
+                {
+                    "label": "myacpype_params_gmx.top",
+                    "output_name": "output_path_top",
+                    "uuid": "dff4dd92-bc48-41a1-841a-31c32d256519"
+                }
+            ]
+        },
+        "8": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "errors": null,
+            "id": 8,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 6,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_path": {
+                    "id": 6,
+                    "output_name": "output_gro_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxTrjconvStr",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": null,
+            "name": "GmxTrjconvStr",
+            "outputs": [
+                {
+                    "name": "output_str_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 1324.53125,
+                "top": 655.015625
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_str_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_str_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_str_path\": \"mygmx_trjconv_str_prot.pdb\", \"properties\": {\"selection\": \"System\", \"pbc\": \"none\", \"center\": \"true\", \"ur\": \"compact\", \"fit\": \"none\", \"binary_path\": \"gmx\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "d15b3365-9a78-4b7f-ba9f-bed67722091e",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_trjconv_str_prot.pdb",
+                    "output_name": "output_str_path",
+                    "uuid": "e2232b4b-a12d-490b-89f3-57d89108df58"
+                }
+            ]
+        },
+        "9": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_make_ndx_ext",
+            "errors": null,
+            "id": 9,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 7,
+                    "output_name": "output_path_gro"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MakeNdx",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": null,
+            "name": "MakeNdx",
+            "outputs": [
+                {
+                    "name": "output_ndx_path",
+                    "type": "ndx"
+                }
+            ],
+            "position": {
+                "left": 1638.5,
+                "top": 168.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_ndx_path": {
+                    "action_arguments": {
+                        "newtype": "ndx"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_ndx_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_make_ndx_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_ndx_path\": \"mymake_ndx.ndx\", \"properties\": {\"selection\": \"0 & ! a H*\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "ab65140c-7af5-44de-a477-f5458984b1dd",
+            "workflow_outputs": [
+                {
+                    "label": "mymake_ndx.ndx",
+                    "output_name": "output_ndx_path",
+                    "uuid": "1415f1cc-4326-4018-b14e-a93e718f2cb3"
+                }
+            ]
+        },
+        "10": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "errors": null,
+            "id": 10,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 7,
+                    "output_name": "output_path_gro"
+                },
+                "input_top_path": {
+                    "id": 7,
+                    "output_name": "output_path_gro"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxTrjconvStr",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": null,
+            "name": "GmxTrjconvStr",
+            "outputs": [
+                {
+                    "name": "output_str_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 1656.515625,
+                "top": 355.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_str_path": {
+                    "action_arguments": {
+                        "newtype": "pdb"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_str_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_str_path\": \"mygmx_trjconv_str_lig.pdb\", \"properties\": {\"selection\": \"System\", \"pbc\": \"none\", \"center\": \"true\", \"ur\": \"compact\", \"fit\": \"none\", \"binary_path\": \"gmx\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "026efb90-0682-49b3-a8cc-9a8edd37560e",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_trjconv_str_lig.pdb",
+                    "output_name": "output_str_path",
+                    "uuid": "55155cab-9530-4464-ab6f-4e30cc876ce5"
+                }
+            ]
+        },
+        "11": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_genrestr_ext",
+            "errors": null,
+            "id": 11,
+            "input_connections": {
+                "input_ndx_path": {
+                    "id": 9,
+                    "output_name": "output_ndx_path"
+                },
+                "input_structure_path": {
+                    "id": 7,
+                    "output_name": "output_path_gro"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Genrestr",
+            "outputs": [
+                {
+                    "name": "output_itp_path",
+                    "type": "itp"
+                }
+            ],
+            "position": {
+                "left": 1888.5625,
+                "top": 0
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_itp_path": {
+                    "action_arguments": {
+                        "newtype": "itp"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_itp_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_genrestr_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_ndx_path\": {\"__class__\": \"ConnectedValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_itp_path\": \"mygenrestr.itp\", \"properties\": {\"restrained_group\": \"System\", \"force_constants\": \"1000 1000 1000\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "9beaa9b7-32b4-4cfd-9072-180fbf7bd881",
+            "workflow_outputs": [
+                {
+                    "label": "mygenrestr.itp",
+                    "output_name": "output_itp_path",
+                    "uuid": "3aeef911-5910-4da8-9ba0-b003084c6c47"
+                }
+            ]
+        },
+        "12": {
+            "annotation": "",
+            "content_id": "biobb_structure_utils_cat_pdb_ext",
+            "errors": null,
+            "id": 12,
+            "input_connections": {
+                "input_structure1": {
+                    "id": 8,
+                    "output_name": "output_str_path"
+                },
+                "input_structure2": {
+                    "id": 10,
+                    "output_name": "output_str_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "CatPdb",
+            "outputs": [
+                {
+                    "name": "output_structure_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 1939.5625,
+                "top": 827.03125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_structure_utils_cat_pdb_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_structure1\": {\"__class__\": \"ConnectedValue\"}, \"input_structure2\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_structure_path\": \"mycat_pdb.pdb\", \"properties\": {\"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "12835a64-8559-4c90-9301-8d7bea609693",
+            "workflow_outputs": [
+                {
+                    "label": "mycat_pdb.pdb",
+                    "output_name": "output_structure_path",
+                    "uuid": "ea36b207-9c93-4d18-b328-883ccc09c902"
+                }
+            ]
+        },
+        "13": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_append_ligand_ext",
+            "errors": null,
+            "id": 13,
+            "input_connections": {
+                "input_itp_path": {
+                    "id": 7,
+                    "output_name": "output_path_itp"
+                },
+                "input_posres_itp_path": {
+                    "id": 11,
+                    "output_name": "output_itp_path"
+                },
+                "input_top_zip_path": {
+                    "id": 6,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "AppendLigand",
+            "outputs": [
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 2159.5625,
+                "top": 419.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_top_zip_path": {
+                    "action_arguments": {
+                        "newtype": "zip"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_append_ligand_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_itp_path\": {\"__class__\": \"ConnectedValue\"}, \"input_posres_itp_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_top_zip_path\": \"myappend_ligand.zip\", \"properties\": {\"posres_name\": \"POSRES_JZ4\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "c1f49b24-c36a-4ee2-8ead-f2cde4d73ce0",
+            "workflow_outputs": [
+                {
+                    "label": "myappend_ligand.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "be7adb0c-d1d9-4f33-8e2f-ae3dc7c87ad8"
+                }
+            ]
+        },
+        "14": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_editconf_ext",
+            "errors": null,
+            "id": 14,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 12,
+                    "output_name": "output_structure_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "Editconf",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 2442.5625,
+                "top": 803.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_editconf_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"myeditconf.gro\", \"properties\": {\"distance_to_molecule\": \"0.8\", \"box_vector_lenghts\": null, \"box_type\": \"octahedron\", \"center_molecule\": \"true\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\", \"output_format\": \"pdb\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "63a1f177-1fbc-4eac-be9d-c5b21546bb03",
+            "workflow_outputs": [
+                {
+                    "label": "myeditconf.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "6716c1d3-b088-4c46-bd1e-38f92c091b5f"
+                }
+            ]
+        },
+        "15": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_solvate_ext",
+            "errors": null,
+            "id": 15,
+            "input_connections": {
+                "input_solute_gro_path": {
+                    "id": 14,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 13,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Solvate",
+                    "name": "input_solvent_gro_path"
+                }
+            ],
+            "label": null,
+            "name": "Solvate",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "text"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 2743.546875,
+                "top": 582.03125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_top_zip_path": {
+                    "action_arguments": {
+                        "newtype": "zip"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_solvate_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_solute_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_solvent_gro_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mysolvate.gro\", \"outname_output_top_zip_path\": \"mysolvate.zip\", \"properties\": {\"shell\": \"0.0\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\", \"output_format\": \"gro\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "f2d0081c-1493-4aef-8911-ed5b2c00a4b0",
+            "workflow_outputs": [
+                {
+                    "label": "mysolvate.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "0f78847b-7de9-4fd2-9b81-5cbd55396f20"
+                },
+                {
+                    "label": "mysolvate.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "d275949f-6c4d-4ae0-aafa-fe5e1f4dadf5"
+                }
+            ]
+        },
+        "16": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_grompp_ext",
+            "errors": null,
+            "id": 16,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 15,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 15,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": "Grompp Ion",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "left": 3088.0625,
+                "top": 603.53125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_tpr_path": {
+                    "action_arguments": {
+                        "newtype": "tpr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp_ion.tpr\", \"properties\": {\"mdp\": \"{\\\"nsteps\\\": \\\"5000\\\"}\", \"simulation_type\": \"minimization\", \"maxwarn\": \"1\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "7ebc9073-8960-4c70-b57a-a0d4c906ed64",
+            "workflow_outputs": [
+                {
+                    "label": "mygrompp_ion.tpr",
+                    "output_name": "output_tpr_path",
+                    "uuid": "5d5381f0-3851-49ea-afc6-d692d232a042"
+                }
+            ]
+        },
+        "17": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_genion_ext",
+            "errors": null,
+            "id": 17,
+            "input_connections": {
+                "input_top_zip_path": {
+                    "id": 15,
+                    "output_name": "output_top_zip_path"
+                },
+                "input_tpr_path": {
+                    "id": 16,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Genion",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": null,
+            "name": "Genion",
+            "outputs": [
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_top_zip_path",
+                    "type": "zip"
+                }
+            ],
+            "position": {
+                "left": 3377.0625,
+                "top": 1234.53125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_top_zip_path": {
+                    "action_arguments": {
+                        "newtype": "zip"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_genion_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_gro_path\": \"mygenion.gro\", \"outname_output_top_zip_path\": \"mygenion.zip\", \"properties\": {\"replaced_group\": \"SOL\", \"neutral\": \"true\", \"concentration\": \"0.05\", \"seed\": \"1993\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "5e3f0258-2abd-4a4b-a61d-9bf473a2cc35",
+            "workflow_outputs": [
+                {
+                    "label": "mygenion.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "ab934f4e-1f72-4f88-be0e-3310d36f62d1"
+                },
+                {
+                    "label": "mygenion.zip",
+                    "output_name": "output_top_zip_path",
+                    "uuid": "268b5543-fc22-4802-850b-987062b43a05"
+                }
+            ]
+        },
+        "18": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_grompp_ext",
+            "errors": null,
+            "id": 18,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 17,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 17,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": "Grompp Min",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "left": 3623.0625,
+                "top": 604.53125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_tpr_path": {
+                    "action_arguments": {
+                        "newtype": "tpr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"properties\": {\"mdp\": \"{\\\"nsteps\\\": \\\"5000\\\", \\\"emstep\\\": 0.01, \\\"emtol\\\": \\\"500\\\"}\", \"simulation_type\": \"minimization\", \"maxwarn\": \"0\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "87e436a1-fe10-4638-a6eb-debf151408a8",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "98bef546-06ab-4221-bc5b-ce528cffca09"
+                }
+            ]
+        },
+        "19": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_mdrun_ext",
+            "errors": null,
+            "id": 19,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 18,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "Mdrun Min",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 3908.0625,
+                "top": 710.53125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_edr_path": {
+                    "action_arguments": {
+                        "newtype": "edr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_edr_path"
+                },
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_log_path": {
+                    "action_arguments": {
+                        "newtype": "log"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_log_path"
+                },
+                "ChangeDatatypeActionoutput_trr_path": {
+                    "action_arguments": {
+                        "newtype": "trr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_trr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"properties\": {\"mpi_bin\": \"\", \"mpi_np\": \"0\", \"mpi_flags\": \"\", \"checkpoint_time\": \"15\", \"num_threads\": \"0\", \"num_threads_mpi\": \"0\", \"num_threads_omp\": \"0\", \"num_threads_omp_pme\": \"0\", \"use_gpu\": \"false\", \"gpu_id\": \"\", \"gpu_tasks\": \"\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "4cbabe52-959c-415e-9521-54b267760f6c",
+            "workflow_outputs": [
+                {
+                    "label": "mymdrun.edr",
+                    "output_name": "output_edr_path",
+                    "uuid": "f1741f9c-94b2-45a1-98d8-2f7a64aefddc"
+                },
+                {
+                    "label": "mymdrun.log",
+                    "output_name": "output_log_path",
+                    "uuid": "ba77ace2-2a46-4178-a4a6-d4c5638f9a07"
+                },
+                {
+                    "label": "mymdrun.cpt",
+                    "output_name": "output_cpt_path",
+                    "uuid": "bf19b8f1-a39d-4aec-be88-56a85626987a"
+                },
+                {
+                    "label": "mymdrun.xvg",
+                    "output_name": "output_dhdl_path",
+                    "uuid": "ee3f6640-a889-4df2-b75f-e2b1cad91fc2"
+                },
+                {
+                    "label": "mymdrun.trr",
+                    "output_name": "output_trr_path",
+                    "uuid": "269fff0c-6125-400a-be28-9c80e9ec6e26"
+                },
+                {
+                    "label": "mymdrun.gro",
+                    "output_name": "output_gro_path",
+                    "uuid": "6b5a010a-9d63-46d7-b82e-6bfd136152a4"
+                },
+                {
+                    "label": "mymdrun.xtc",
+                    "output_name": "output_xtc_path",
+                    "uuid": "f82171bd-d667-4b3b-b233-92c8dc29726d"
+                }
+            ]
+        },
+        "20": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_make_ndx_ext",
+            "errors": null,
+            "id": 20,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 19,
+                    "output_name": "output_gro_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool MakeNdx",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": null,
+            "name": "MakeNdx",
+            "outputs": [
+                {
+                    "name": "output_ndx_path",
+                    "type": "ndx"
+                }
+            ],
+            "position": {
+                "left": 4253.0625,
+                "top": 629.53125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_ndx_path": {
+                    "action_arguments": {
+                        "newtype": "ndx"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_ndx_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_make_ndx_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_ndx_path\": \"mymake_ndx.ndx\", \"properties\": {\"selection\": \"\\\\\\\"Protein\\\\\\\"|\\\\\\\"Other\\\\\\\"\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "2b4b594d-15fc-4b8b-b6f7-e2cd94ea8424",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_ndx_path",
+                    "uuid": "8e670e6f-f11b-4b89-99a9-64d52a91189e"
+                }
+            ]
+        },
+        "21": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 21,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 19,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "GmxEnergy Min",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 4179.0625,
+                "top": 1080.515625
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"properties\": {\"xvg\": \"none\", \"terms\": [\"Potential\"], \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "d89cf6a2-ff9c-46c8-b581-26eaf2ee3f7c",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_energy.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "10d24abb-527a-4d1c-af62-43a826ff43ef"
+                }
+            ]
+        },
+        "22": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_grompp_ext",
+            "errors": null,
+            "id": 22,
+            "input_connections": {
+                "input_gro_path": {
+                    "id": 19,
+                    "output_name": "output_gro_path"
+                },
+                "input_ndx_path": {
+                    "id": 20,
+                    "output_name": "output_ndx_path"
+                },
+                "input_top_zip_path": {
+                    "id": 17,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_cpt_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                }
+            ],
+            "label": "Grompp NVT",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "left": 4594.671875,
+                "top": 734.5
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_tpr_path": {
+                    "action_arguments": {
+                        "newtype": "tpr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"properties\": {\"mdp\": \"{\\\"nsteps\\\": \\\"5000\\\", \\\"tc-grps\\\": \\\"Protein_Other Water_and_ions\\\", \\\"Define\\\": \\\"-DPOSRES -DPOSRES_JZ4\\\"}\", \"simulation_type\": \"nvt\", \"maxwarn\": \"0\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "89424df4-834a-4800-bd2b-6541cc300430",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "04270afd-c4ea-408c-9f94-aade4ed1be52"
+                }
+            ]
+        },
+        "23": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_mdrun_ext",
+            "errors": null,
+            "id": 23,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 22,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "Mdrun NVT",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 4935.046875,
+                "top": 651.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_edr_path": {
+                    "action_arguments": {
+                        "newtype": "edr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_edr_path"
+                },
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_log_path": {
+                    "action_arguments": {
+                        "newtype": "log"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_log_path"
+                },
+                "ChangeDatatypeActionoutput_trr_path": {
+                    "action_arguments": {
+                        "newtype": "trr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_trr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"properties\": {\"mpi_bin\": \"\", \"mpi_np\": \"0\", \"mpi_flags\": \"\", \"checkpoint_time\": \"15\", \"num_threads\": \"0\", \"num_threads_mpi\": \"0\", \"num_threads_omp\": \"0\", \"num_threads_omp_pme\": \"0\", \"use_gpu\": \"false\", \"gpu_id\": \"\", \"gpu_tasks\": \"\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "205790ce-53ef-4d72-9a02-07c75536def4",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "0a72b9bb-e4eb-410f-86cb-6bdae662b45a"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "0d63ca40-5ba7-43b0-9304-933c1724b806"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "8ef57ea8-62ea-487a-8f80-ef8a9b0cbdc8"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "58461590-c42c-4484-a704-34c8a16a3749"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "87dc3387-87df-4c5c-a28d-70666617cfd7"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "cab2dbc5-7a32-4129-9ccb-151680363423"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "6bb09cb8-3d90-41ce-87ee-36e210c84660"
+                }
+            ]
+        },
+        "24": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 24,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 23,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "GmxEnergy NVT",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 5217.046875,
+                "top": 1056.28125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"properties\": {\"xvg\": \"none\", \"terms\": [\"Temperature\"], \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "4273d422-5276-4425-b706-c4c5664b406c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_xvg_path",
+                    "uuid": "5983cdfe-f4b0-4241-8d4e-0f5eccdaa1a8"
+                }
+            ]
+        },
+        "25": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_grompp_ext",
+            "errors": null,
+            "id": 25,
+            "input_connections": {
+                "input_cpt_path": {
+                    "id": 23,
+                    "output_name": "output_cpt_path"
+                },
+                "input_gro_path": {
+                    "id": 23,
+                    "output_name": "output_gro_path"
+                },
+                "input_ndx_path": {
+                    "id": 20,
+                    "output_name": "output_ndx_path"
+                },
+                "input_top_zip_path": {
+                    "id": 17,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                }
+            ],
+            "label": "Grompp NPT",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "left": 5294.046875,
+                "top": 738.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_tpr_path": {
+                    "action_arguments": {
+                        "newtype": "tpr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"ConnectedValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"properties\": {\"mdp\": \"{\\\"type\\\": \\\"npt\\\", \\\"nsteps\\\": \\\"5000\\\", \\\"tc-grps\\\": \\\"Protein_Other Water_and_ions\\\", \\\"Define\\\": \\\"-DPOSRES -DPOSRES_JZ4\\\"}\", \"simulation_type\": \"npt\", \"maxwarn\": \"0\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "7d641224-d6c1-4c53-a9fc-e0cb033e76a6",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "a78d29b0-9095-4c3d-afa9-fc8f1d19b2fe"
+                }
+            ]
+        },
+        "26": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_mdrun_ext",
+            "errors": null,
+            "id": 26,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 25,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "Mdrun NPT",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 5603.046875,
+                "top": 681.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_edr_path": {
+                    "action_arguments": {
+                        "newtype": "edr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_edr_path"
+                },
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_log_path": {
+                    "action_arguments": {
+                        "newtype": "log"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_log_path"
+                },
+                "ChangeDatatypeActionoutput_trr_path": {
+                    "action_arguments": {
+                        "newtype": "trr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_trr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"properties\": {\"mpi_bin\": \"\", \"mpi_np\": \"0\", \"mpi_flags\": \"\", \"checkpoint_time\": \"15\", \"num_threads\": \"0\", \"num_threads_mpi\": \"0\", \"num_threads_omp\": \"0\", \"num_threads_omp_pme\": \"0\", \"use_gpu\": \"false\", \"gpu_id\": \"\", \"gpu_tasks\": \"\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "9ad5c5c4-4334-4488-b962-7c77ca283d13",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "c0d78383-e1ad-4013-a24b-3253fc59bfd5"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "2cd2cf10-c1b4-4212-9f46-0ca323a644d8"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "03ed8142-4165-4186-8a69-33e1ef6b4ca7"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "e1560876-91c1-4461-8e44-9d0ddd3b024d"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "13adc3e3-4094-4f66-b91f-d6b5beebb863"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "fa093d22-b632-46d1-bac6-c4f4d0f7f269"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "81d7b325-4176-4004-8f84-cd818b1b7318"
+                }
+            ]
+        },
+        "27": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_energy_ext",
+            "errors": null,
+            "id": 27,
+            "input_connections": {
+                "input_energy_path": {
+                    "id": 26,
+                    "output_name": "output_edr_path"
+                }
+            },
+            "inputs": [],
+            "label": "GmxEnergy NPT",
+            "name": "GmxEnergy",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 5885.046875,
+                "top": 1087.28125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_energy_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_energy_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_energy.xvg\", \"properties\": {\"xvg\": \"none\", \"terms\": [\"Pressure\", \"Density\"], \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "b2423992-58f0-4dcd-b4ff-ea316aa9d282",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_xvg_path",
+                    "uuid": "473ef206-e993-4e41-86fc-c32f62668f09"
+                }
+            ]
+        },
+        "28": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_grompp_ext",
+            "errors": null,
+            "id": 28,
+            "input_connections": {
+                "input_cpt_path": {
+                    "id": 26,
+                    "output_name": "output_cpt_path"
+                },
+                "input_gro_path": {
+                    "id": 26,
+                    "output_name": "output_gro_path"
+                },
+                "input_top_zip_path": {
+                    "id": 17,
+                    "output_name": "output_top_zip_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_mdp_path"
+                },
+                {
+                    "description": "runtime parameter for tool Grompp",
+                    "name": "input_ndx_path"
+                }
+            ],
+            "label": "Grompp MD",
+            "name": "Grompp",
+            "outputs": [
+                {
+                    "name": "output_tpr_path",
+                    "type": "tpr"
+                }
+            ],
+            "position": {
+                "left": 5939.046875,
+                "top": 756.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_tpr_path": {
+                    "action_arguments": {
+                        "newtype": "tpr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_grompp_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"ConnectedValue\"}, \"input_gro_path\": {\"__class__\": \"ConnectedValue\"}, \"input_mdp_path\": {\"__class__\": \"RuntimeValue\"}, \"input_ndx_path\": {\"__class__\": \"RuntimeValue\"}, \"input_top_zip_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_tpr_path\": \"mygrompp.tpr\", \"properties\": {\"mdp\": \"{\\\"nsteps\\\": \\\"25000\\\"}\", \"simulation_type\": \"free\", \"maxwarn\": \"0\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "40c03a2e-e830-4524-9e7f-e2d77cc9fe4c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_tpr_path",
+                    "uuid": "ecf73555-3c43-4af1-bb16-b429d35089f3"
+                }
+            ]
+        },
+        "29": {
+            "annotation": "",
+            "content_id": "biobb_gromacs_mdrun_ext",
+            "errors": null,
+            "id": 29,
+            "input_connections": {
+                "input_tpr_path": {
+                    "id": 28,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Mdrun",
+                    "name": "input_cpt_path"
+                }
+            ],
+            "label": "Mdrun MD",
+            "name": "Mdrun",
+            "outputs": [
+                {
+                    "name": "output_trr_path",
+                    "type": "trr"
+                },
+                {
+                    "name": "output_gro_path",
+                    "type": "gro"
+                },
+                {
+                    "name": "output_edr_path",
+                    "type": "edr"
+                },
+                {
+                    "name": "output_log_path",
+                    "type": "log"
+                },
+                {
+                    "name": "output_xtc_path",
+                    "type": "xtc"
+                },
+                {
+                    "name": "output_cpt_path",
+                    "type": "cpt"
+                },
+                {
+                    "name": "output_dhdl_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 6300.046875,
+                "top": 728.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_edr_path": {
+                    "action_arguments": {
+                        "newtype": "edr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_edr_path"
+                },
+                "ChangeDatatypeActionoutput_gro_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_gro_path"
+                },
+                "ChangeDatatypeActionoutput_log_path": {
+                    "action_arguments": {
+                        "newtype": "log"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_log_path"
+                },
+                "ChangeDatatypeActionoutput_trr_path": {
+                    "action_arguments": {
+                        "newtype": "trr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_trr_path"
+                }
+            },
+            "tool_id": "biobb_gromacs_mdrun_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_cpt_path\": {\"__class__\": \"RuntimeValue\"}, \"input_tpr_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_cpt_path\": \"mymdrun.cpt\", \"outname_output_dhdl_path\": \"mymdrun.xvg\", \"outname_output_edr_path\": \"mymdrun.edr\", \"outname_output_gro_path\": \"mymdrun.gro\", \"outname_output_log_path\": \"mymdrun.log\", \"outname_output_trr_path\": \"mymdrun.trr\", \"outname_output_xtc_path\": \"mymdrun.xtc\", \"properties\": {\"mpi_bin\": \"\", \"mpi_np\": \"0\", \"mpi_flags\": \"\", \"checkpoint_time\": \"15\", \"num_threads\": \"0\", \"num_threads_mpi\": \"0\", \"num_threads_omp\": \"0\", \"num_threads_omp_pme\": \"0\", \"use_gpu\": \"false\", \"gpu_id\": \"\", \"gpu_tasks\": \"\", \"gmx_lib\": \"\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "63f30745-a86c-4640-80f4-8076e2dc6b6a",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_xtc_path",
+                    "uuid": "88b8d2fd-cc68-45d3-b3e2-591ed1a0f6ac"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_trr_path",
+                    "uuid": "8958817e-62f5-4fb4-b42d-9a06aebf9498"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_gro_path",
+                    "uuid": "92d1c95f-4db4-42ac-b7b0-3c23d9b96b75"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_edr_path",
+                    "uuid": "942d5bca-27d1-4d63-8eb0-337f9a7efcbb"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_cpt_path",
+                    "uuid": "6dc6c258-9ebe-4b3f-a394-915d20b2d039"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_log_path",
+                    "uuid": "74173622-c6ec-437a-86f6-01456c85af35"
+                },
+                {
+                    "label": null,
+                    "output_name": "output_dhdl_path",
+                    "uuid": "ad2a12f4-04b5-4931-8ec1-5f7b49957f5b"
+                }
+            ]
+        },
+        "30": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_rgyr_ext",
+            "errors": null,
+            "id": 30,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 18,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 29,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRgyr",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": null,
+            "name": "GmxRgyr",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 6616.046875,
+                "top": 357.28125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_rgyr_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rgyr.xvg\", \"properties\": {\"xvg\": \"none\", \"selection\": \"Backbone\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "22f5229b-d213-4711-8bee-11bac18fdb12",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_rgyr.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "faf87b78-56c5-4f7d-b493-87651b1c9fc8"
+                }
+            ]
+        },
+        "31": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_rms_ext",
+            "errors": null,
+            "id": 31,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 18,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 29,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRms",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": "GmxRms Exp.",
+            "name": "GmxRms",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 6660.046875,
+                "top": 657.28125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_rms_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rms.xvg\", \"properties\": {\"xvg\": \"none\", \"selection\": \"Backbone\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "cfeda79f-c4d4-4efc-a4ad-00d5a032a87c",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_xvg_path",
+                    "uuid": "f99cd173-ba85-4c54-a625-1562b652fb39"
+                }
+            ]
+        },
+        "32": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_rms_ext",
+            "errors": null,
+            "id": 32,
+            "input_connections": {
+                "input_structure_path": {
+                    "id": 28,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 29,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool GmxRms",
+                    "name": "input_index_path"
+                }
+            ],
+            "label": null,
+            "name": "GmxRms",
+            "outputs": [
+                {
+                    "name": "output_xvg_path",
+                    "type": "xvg"
+                }
+            ],
+            "position": {
+                "left": 6666.046875,
+                "top": 1087.28125
+            },
+            "post_job_actions": {},
+            "tool_id": "biobb_analysis_gmx_rms_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"RuntimeValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_xvg_path\": \"mygmx_rms_exp.xvg\", \"properties\": {\"xvg\": \"none\", \"selection\": \"Backbone\", \"binary_path\": \"gmx\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "cec18808-d7d4-472f-b994-353e86f7af52",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_rms_exp.xvg",
+                    "output_name": "output_xvg_path",
+                    "uuid": "e95d06c9-3cfb-4345-841b-98c0f043e658"
+                }
+            ]
+        },
+        "33": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "errors": null,
+            "id": 33,
+            "input_connections": {
+                "input_index_path": {
+                    "id": 20,
+                    "output_name": "output_ndx_path"
+                },
+                "input_structure_path": {
+                    "id": 29,
+                    "output_name": "output_trr_path"
+                },
+                "input_top_path": {
+                    "id": 28,
+                    "output_name": "output_tpr_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GmxTrjconvStr",
+            "outputs": [
+                {
+                    "name": "output_str_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 6947.046875,
+                "top": 858.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_str_path": {
+                    "action_arguments": {
+                        "newtype": "gro"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_str_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_trjconv_str_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"ConnectedValue\"}, \"input_structure_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_str_path\": \"mygmx_trjconv_str.gro\", \"properties\": {\"selection\": \"System\", \"pbc\": \"none\", \"center\": \"true\", \"ur\": \"compact\", \"fit\": \"none\", \"binary_path\": \"gmx\", \"output_format\": \"gro\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "e1cddf8c-1ded-43bd-85ad-e19d702b0cd1",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output_str_path",
+                    "uuid": "4ce0b547-ea4e-417a-9efd-c6b2e415cf14"
+                }
+            ]
+        },
+        "34": {
+            "annotation": "",
+            "content_id": "biobb_analysis_gmx_image_ext",
+            "errors": null,
+            "id": 34,
+            "input_connections": {
+                "input_index_path": {
+                    "id": 20,
+                    "output_name": "output_ndx_path"
+                },
+                "input_top_path": {
+                    "id": 28,
+                    "output_name": "output_tpr_path"
+                },
+                "input_traj_path": {
+                    "id": 29,
+                    "output_name": "output_trr_path"
+                }
+            },
+            "inputs": [],
+            "label": null,
+            "name": "GmxImage",
+            "outputs": [
+                {
+                    "name": "output_traj_path",
+                    "type": "text"
+                }
+            ],
+            "position": {
+                "left": 7002.046875,
+                "top": 437.28125
+            },
+            "post_job_actions": {
+                "ChangeDatatypeActionoutput_traj_path": {
+                    "action_arguments": {
+                        "newtype": "trr"
+                    },
+                    "action_type": "ChangeDatatypeAction",
+                    "output_name": "output_traj_path"
+                }
+            },
+            "tool_id": "biobb_analysis_gmx_image_ext",
+            "tool_state": "{\"config\": {\"sele\": \"option3\", \"__current_case__\": 2}, \"input_index_path\": {\"__class__\": \"ConnectedValue\"}, \"input_top_path\": {\"__class__\": \"ConnectedValue\"}, \"input_traj_path\": {\"__class__\": \"ConnectedValue\"}, \"outname_output_traj_path\": \"mygmx_image.trr\", \"properties\": {\"fit_selection\": \"Protein-H\", \"center_selection\": \"Protein-H\", \"cluster_selection\": \"System\", \"output_selection\": \"System\", \"pbc\": \"mol\", \"center\": \"true\", \"ur\": \"compact\", \"fit\": \"none\", \"binary_path\": \"gmx\", \"output_format\": \"trr\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "4.0.0",
+            "type": "tool",
+            "uuid": "495a4009-6eb6-4af4-a57f-2ee2cc42d252",
+            "workflow_outputs": [
+                {
+                    "label": "mygmx_image.trr",
+                    "output_name": "output_traj_path",
+                    "uuid": "2ae22355-3d37-4369-9991-132dee5c2cae"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "e9e32172-8fd6-4aec-8964-456c9f3b4532",
+    "version": 4
+}

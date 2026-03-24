@@ -1,0 +1,86 @@
+---
+name: workflow-7-gucfg2galaxy-beta-diversity-16s-microbial-analysi
+description: "This metagenomics workflow processes shared files from Mothur to perform beta diversity analysis using tools like dist.shared, heatmap.sim, and tree.shared to generate distance matrices and visualizations. Use this skill when you need to compare microbial community composition across different samples and visualize these relationships through heatmaps and phylogenetic trees."
+homepage: https://workflowhub.eu/workflows/653
+---
+
+# Workflow 7 [gucfg2galaxy] : Beta Diversity [16S Microbial Analysis With Mothur]
+
+## Overview
+
+This workflow is designed for beta diversity analysis within 16S microbial studies using the [Mothur](https://mothur.org/) toolset. It processes a shared file—typically generated from the `Make.shared` command—to compare microbial community structures across different samples and quantify their dissimilarities.
+
+The pipeline begins by utilizing the `Dist.shared` tool to calculate distance matrices between samples. These matrices serve as the mathematical foundation for assessing how much microbial communities differ from one another, which is essential for understanding ecological patterns in metagenomics data.
+
+To visualize these relationships, the workflow generates a similarity heatmap via `Heatmap.sim` and performs cluster analysis using `Tree.shared`. The resulting dendrogram is then processed through `Newick Display` to provide a clear graphical representation of sample clustering, allowing researchers to identify distinct groupings and community shifts.
+
+## Inputs and data preparation
+
+| Step | Label | Type | Notes |
+| --- | --- | --- | --- |
+| 0 | Shared file from Make.shared | data_input |  |
+
+
+The primary input for this workflow is a Mothur-generated shared file containing OTU abundance data, which should be uploaded as a single dataset to ensure compatibility with the distance calculation steps. While this file often results from previous collection-based processing, verify that the format strictly adheres to the Mothur specification to avoid tool execution errors. For comprehensive details on upstream data preparation and specific parameter configurations, please consult the accompanying README.md. You can streamline the setup of these inputs by using `planemo workflow_job_init` to create a template job.yml file for your execution.
+
+## Steps (tools)
+
+| Step | Name | Tool ID | Notes |
+| --- | --- | --- | --- |
+| 1 | Dist.shared | toolshed.g2.bx.psu.edu/repos/iuc/mothur_dist_shared/mothur_dist_shared/1.39.5.0 |  |
+| 2 | Heatmap.sim | toolshed.g2.bx.psu.edu/repos/iuc/mothur_heatmap_sim/mothur_heatmap_sim/1.39.5.0 |  |
+| 3 | Tree.shared | toolshed.g2.bx.psu.edu/repos/iuc/mothur_tree_shared/mothur_tree_shared/1.39.5.0 |  |
+| 4 | Newick Display | toolshed.g2.bx.psu.edu/repos/iuc/newick_utils/newick_display/1.6+galaxy1 |  |
+
+
+## Workflow outputs (marked in Galaxy)
+
+| Step | Label | Output name |
+| --- | --- | --- |
+| 2 | heatmap | heatmap |
+| 3 | tre | tre |
+| 4 | output | output |
+
+
+## How to run (Planemo)
+
+### Local Galaxy (default engine)
+
+```bash
+planemo run Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga job.yml --download_outputs --output_directory . --output_json output.json
+```
+
+Optional: `--galaxy_root /path/to/galaxy` speeds up spinning up a local Galaxy.
+
+### Docker Galaxy
+
+Append e.g. `--engine docker_galaxy --ignore_dependency_problems` (requires Docker).
+
+### External Galaxy (usegalaxy.org / EU / …)
+
+```bash
+planemo run Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga job.yml --engine external_galaxy --galaxy_url SERVER_URL --galaxy_user_key YOUR_API_KEY
+```
+
+Create a reusable profile: `planemo profile_create myprofile --galaxy_url ... --galaxy_user_key ... --engine external_galaxy` then `planemo run Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga job.yml --profile myprofile`.
+
+### Job file
+
+- Generate a template: `planemo workflow_job_init Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga -o job.yml`
+- Lint: `planemo workflow_lint Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga`
+
+See **[Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)** in the Planemo documentation.
+
+## Invocation outputs
+
+After a successful run with `--download_outputs`, files appear under your chosen `--output_directory`. `--output_json` records CWL-style metadata for outputs (paths, checksums).
+
+On an external Galaxy, use `planemo invocation_download INVOCATION_ID --profile ...` to fetch outputs, or track progress with `planemo workflow_track INVOCATION_ID`.
+
+Workflow steps marked as **workflow outputs** in the editor are listed under **Workflow outputs**; exact filenames depend on tools and Galaxy configuration.
+
+## Files
+
+- `Galaxy-Workflow-Workflow_7_[gucfg2galaxy]___Beta_Diversity_[16S_Microbial_Analysis_With_Mothur]_.ga` — Galaxy workflow export (JSON)
+- `job.yml` — inputs/parameters for `planemo run` (create with `planemo workflow_job_init`)
+- [Planemo: Running Galaxy workflows](https://planemo.readthedocs.io/en/master/running.html)

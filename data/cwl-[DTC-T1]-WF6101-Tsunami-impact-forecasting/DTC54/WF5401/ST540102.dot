@@ -1,0 +1,14 @@
+strict digraph {
+
+
+	"DT5401" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT5401" -> "SS5401" [ label="is input to", labeltooltip="DT5401 - is input to - SS5401",  weight=0 ];
+
+	"DT5402" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS5401" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS5401" -> "DT5402" [ label="is output from", labeltooltip="DT5402 - is output from - SS5401",  weight=0 ];
+
+}

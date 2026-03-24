@@ -1,0 +1,558 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "CWL/workflows/CUTnRUN.cwl"
+      },
+      "datePublished": "2025-06-27 15:06:00 +0100",
+      "author": [
+
+      ],
+      "license": "Apache-2.0",
+      "identifier": "https://workflowhub.eu/workflows/1765?version=1",
+      "url": "https://workflowhub.eu/workflows/1765/ro_crate?version=1",
+      "name": "Research Object Crate for CUT'N'RUN data processing workflow",
+      "description": "This workflow supports processing of bulk CUT'N'RUN data from raw reads to genome-wide accessiblity tracks (bigWig) and CUT'N'RUN peaks. The main steps include read trimming using trimGalore, alignment with bowtie2, coverage generation using samtools and peak calling with MACS2.\n",
+      "isBasedOn": "https://github.com/CompEpigen/ChIPseq_workflows",
+      "sdDatePublished": "2026-03-24 01:02:07 +0000",
+      "creativeWorkStatus": "Stable",
+      "hasPart": [
+        {
+          "@id": "CWL/workflows/CUTnRUN.cwl"
+        },
+        {
+          "@id": "CWL/workflows/graph_images/CUTNRUN_cwlviewer.png"
+        }
+      ]
+    },
+    {
+      "@id": "CWL/workflows/CUTnRUN.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 11449,
+      "programmingLanguage": {
+        "@id": "#cwl"
+      },
+      "image": {
+        "@id": "CWL/workflows/graph_images/CUTNRUN_cwlviewer.png"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "This workflow supports processing of bulk CUT'N'RUN data from raw reads to genome-wide accessiblity tracks (bigWig) and CUT'N'RUN peaks. The main steps include read trimming using trimGalore, alignment with bowtie2, coverage generation using samtools and peak calling with MACS2.\n",
+      "name": "CUT'N'RUN data processing workflow",
+      "url": "https://workflowhub.eu/workflows/1765?version=1",
+      "keywords": "",
+      "version": 1,
+      "license": "https://spdx.org/licenses/Apache-2.0",
+      "creator": {
+        "@id": "https://orcid.org/0000-0003-3716-7739"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/334"
+      },
+      "dateCreated": "2025-06-30T08:51:33Z",
+      "dateModified": "2025-06-30T08:51:33Z",
+      "isPartOf": {
+        "@id": "https://workflowhub.eu/collections/32"
+      },
+      "input": [
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-sample_id"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-fastq1"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-fastq2"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-is_paired_end"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-adapter1"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-adapter2"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-genome"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-genome_spike_in"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-fragment_size"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-effective_genome_size"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-bin_size"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-ignoreForNormalization"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-macs2_qvalue"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-inputs-broad_peaks"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-raw_fastqc_zip"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-raw_fastqc_html"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-trim_galore_log"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-trimmed_fastqc_html"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-trimmed_fastqc_zip"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-bowtie2_log"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-fastqc_zip"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-fastqc_html"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-bam"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-bam_spike_in"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-spike_in_counts"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-bigwig"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_coverage_plot"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_coverage_tsv"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_plot"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_tsv"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_stderr"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_crosscorr_summary"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_crosscorr_plot"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-qc_phantompeakqualtools_stderr"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-peaks_bed_macs2"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-peaks_xls_macs2"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-multiqc_zip"
+        },
+        {
+          "@id": "#cut_n_run_data_processing_workflow-outputs-multiqc_html"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "CWL/workflows/graph_images/CUTNRUN_cwlviewer.png",
+      "@type": [
+        "File",
+        "ImageObject"
+      ],
+      "contentSize": 281345
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-3716-7739",
+      "@type": "Person",
+      "name": "Kersten Breuer"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/334",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "EOSC4Cancer"
+    },
+    {
+      "@id": "https://workflowhub.eu/collections/32",
+      "@type": "Collection",
+      "name": "Epigenomic workflows"
+    },
+    {
+      "@id": "#cwl",
+      "@type": "ComputerLanguage",
+      "name": "Common Workflow Language",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-sample_id",
+      "@type": "FormalParameter",
+      "name": "sample_id",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-fastq1",
+      "@type": "FormalParameter",
+      "name": "fastq1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-fastq2",
+      "@type": "FormalParameter",
+      "name": "fastq2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-is_paired_end",
+      "@type": "FormalParameter",
+      "name": "is_paired_end",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-adapter1",
+      "@type": "FormalParameter",
+      "name": "adapter1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-adapter2",
+      "@type": "FormalParameter",
+      "name": "adapter2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-genome",
+      "@type": "FormalParameter",
+      "name": "genome",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-genome_spike_in",
+      "@type": "FormalParameter",
+      "name": "genome_spike_in",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-fragment_size",
+      "@type": "FormalParameter",
+      "name": "fragment_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-effective_genome_size",
+      "@type": "FormalParameter",
+      "name": "effective_genome_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-bin_size",
+      "@type": "FormalParameter",
+      "name": "bin_size",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-ignoreForNormalization",
+      "@type": "FormalParameter",
+      "name": "ignoreForNormalization",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-macs2_qvalue",
+      "@type": "FormalParameter",
+      "name": "macs2_qvalue",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-inputs-broad_peaks",
+      "@type": "FormalParameter",
+      "name": "broad_peaks",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-raw_fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "raw_fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-raw_fastqc_html",
+      "@type": "FormalParameter",
+      "name": "raw_fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-trim_galore_log",
+      "@type": "FormalParameter",
+      "name": "trim_galore_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-trimmed_fastqc_html",
+      "@type": "FormalParameter",
+      "name": "trimmed_fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-trimmed_fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "trimmed_fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-bowtie2_log",
+      "@type": "FormalParameter",
+      "name": "bowtie2_log",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-fastqc_zip",
+      "@type": "FormalParameter",
+      "name": "fastqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-fastqc_html",
+      "@type": "FormalParameter",
+      "name": "fastqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-bam",
+      "@type": "FormalParameter",
+      "name": "bam",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-bam_spike_in",
+      "@type": "FormalParameter",
+      "name": "bam_spike_in",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-spike_in_counts",
+      "@type": "FormalParameter",
+      "name": "spike_in_counts",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-bigwig",
+      "@type": "FormalParameter",
+      "name": "bigwig",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_coverage_plot",
+      "@type": "FormalParameter",
+      "name": "qc_plot_coverage_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_coverage_tsv",
+      "@type": "FormalParameter",
+      "name": "qc_plot_coverage_tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_plot",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_tsv",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_plot_fingerprint_stderr",
+      "@type": "FormalParameter",
+      "name": "qc_plot_fingerprint_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_crosscorr_summary",
+      "@type": "FormalParameter",
+      "name": "qc_crosscorr_summary",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_crosscorr_plot",
+      "@type": "FormalParameter",
+      "name": "qc_crosscorr_plot",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-qc_phantompeakqualtools_stderr",
+      "@type": "FormalParameter",
+      "name": "qc_phantompeakqualtools_stderr",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-peaks_bed_macs2",
+      "@type": "FormalParameter",
+      "name": "peaks_bed_macs2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-peaks_xls_macs2",
+      "@type": "FormalParameter",
+      "name": "peaks_xls_macs2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-multiqc_zip",
+      "@type": "FormalParameter",
+      "name": "multiqc_zip",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#cut_n_run_data_processing_workflow-outputs-multiqc_html",
+      "@type": "FormalParameter",
+      "name": "multiqc_html",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}

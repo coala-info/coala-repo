@@ -1,0 +1,28 @@
+strict digraph {
+
+
+	"DT810408" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"SS8105" [ color="2", colorscheme="ylorbr3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810408" [ color="2", colorscheme="greens3", fillcolor="1", style="filled",  weight=0 ];
+
+	"ST810408" -> "DT810408" [ label="is output from", labeltooltip="DT810408 - is output from - ST810408",  weight=0 ];
+
+	"DT810405" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"DT810405" -> "ST810408" [ label="is input to", labeltooltip="DT810405 - is input to - ST810408",  weight=0 ];
+
+	"Mc" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"Mc" -> "ST810408" [ label="is input to", labeltooltip="Mc - is input to - ST810408",  weight=0 ];
+
+	"Mmax" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"Mmax" -> "ST810408" [ label="is input to", labeltooltip="Mmax - is input to - ST810408",  weight=0 ];
+
+	"kde_method" [ color="2", colorscheme="blues3", fillcolor="1", style="filled",  weight=0 ];
+
+	"kde_method" -> "ST810408" [ label="is input to", labeltooltip="kde_method - is input to - ST810408",  weight=0 ];
+
+}

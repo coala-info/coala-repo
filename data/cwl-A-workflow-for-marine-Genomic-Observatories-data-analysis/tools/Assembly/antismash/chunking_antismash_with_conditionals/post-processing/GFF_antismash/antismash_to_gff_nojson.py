@@ -1,0 +1,1 @@
+../../../../../../docker/scripts_python3/antismash_to_gff_nojson.py

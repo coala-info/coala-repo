@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Object Crate for Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'</title>
+  <script type="application/ld+json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ]
+    },
+    {
+      "@id": "ro-crate-preview.html",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "mainEntity": {
+        "@id": "Galaxy-Workflow-Workflow_constructed_from_history__test_dwc_from_PNDB_Data_package_EML_DwC_annotations_.ga"
+      },
+      "datePublished": "2021-04-09 16:45:27 +0100",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-8504-068X"
+        }
+      ],
+      "license": "MIT",
+      "identifier": "https://workflowhub.eu/workflows/117?version=1",
+      "url": "https://workflowhub.eu/workflows/117/ro_crate?version=1",
+      "name": "Research Object Crate for Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'",
+      "description": "Workflow to take DataOne data packages (raw datasets + metadata written in Ecological Metadata Standard) as input and create a DwC occurence.csv file almost ready to put in a Dawrin core Archive using eml-annotations at the attribute level",
+      "sdDatePublished": "2026-03-24 18:10:05 +0000",
+      "creativeWorkStatus": "Work-in-progress",
+      "hasPart": [
+        {
+          "@id": "Galaxy-Workflow-Workflow_constructed_from_history__test_dwc_from_PNDB_Data_package_EML_DwC_annotations_.ga"
+        }
+      ]
+    },
+    {
+      "@id": "Galaxy-Workflow-Workflow_constructed_from_history__test_dwc_from_PNDB_Data_package_EML_DwC_annotations_.ga",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 49971,
+      "programmingLanguage": {
+        "@id": "#galaxy"
+      },
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/"
+      },
+      "description": "Workflow to take DataOne data packages (raw datasets + metadata written in Ecological Metadata Standard) as input and create a DwC occurence.csv file almost ready to put in a Dawrin core Archive using eml-annotations at the attribute level",
+      "name": "Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'",
+      "url": "https://workflowhub.eu/workflows/117?version=1",
+      "keywords": "DataOne, Data package, EML, Ecological metadata language, eml-annotation, Darwin core, Galaxy-E, Galaxy",
+      "version": 1,
+      "license": "https://spdx.org/licenses/MIT",
+      "creator": {
+        "@id": "https://workflowhub.eu/people/51"
+      },
+      "producer": {
+        "@id": "https://workflowhub.eu/projects/19"
+      },
+      "dateCreated": "2021-04-09T15:45:27Z",
+      "dateModified": "2023-11-09T21:04:38Z",
+      "isPartOf": [
+
+      ],
+      "input": [
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_2021021_observateur.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_observation.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_organisme.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_secteur_geog.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_sortie.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_taxon.tsv"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-Kakila_database_of_marine_mammal_observation_data_in_the_AGOA_sanctuary_-_French_Antilles.xml"
+        }
+      ],
+      "output": [
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_1"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_2"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_3"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_4"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_5"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_6"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_7"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_8"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_9"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_10"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_11"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_12"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_13"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_14"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_15"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_16"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_17"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_18"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_19"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_20"
+        },
+        {
+          "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_21"
+        }
+      ],
+      "sdPublisher": {
+        "@id": "https://about.workflowhub.eu/"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-8504-068X",
+      "@type": "Person",
+      "name": "Yvan Le Bras",
+      "identifier": "https://orcid.org/0000-0002-8504-068X"
+    },
+    {
+      "@id": "https://workflowhub.eu/people/51",
+      "@type": "Person",
+      "name": "Yvan Le Bras"
+    },
+    {
+      "@id": "https://workflowhub.eu/projects/19",
+      "@type": [
+        "Project",
+        "Organization"
+      ],
+      "name": "PNDB"
+    },
+    {
+      "@id": "#galaxy",
+      "@type": "ComputerLanguage",
+      "name": "Galaxy",
+      "identifier": {
+        "@id": "https://galaxyproject.org/"
+      },
+      "url": {
+        "@id": "https://galaxyproject.org/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_2021021_observateur.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_2021021_observateur.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_observation.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_20210221_observation.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_organisme.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_20210221_organisme.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_secteur_geog.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_20210221_secteur_geog.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_sortie.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_20210221_sortie.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-BDD_Kakila_v2_20210221_taxon.tsv",
+      "@type": "FormalParameter",
+      "name": "BDD_Kakila_v2_20210221_taxon.tsv",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-inputs-Kakila_database_of_marine_mammal_observation_data_in_the_AGOA_sanctuary_-_French_Antilles.xml",
+      "@type": "FormalParameter",
+      "name": "Kakila_database_of_marine_mammal_observation_data_in_the_AGOA_sanctuary_-_French_Antilles.xml",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_1",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_1",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_2",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_2",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_3",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_3",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_4",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_4",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_5",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_5",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_6",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_6",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_7",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_7",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_8",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_8",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_9",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_9",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_10",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_10",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_11",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_11",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_12",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_12",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_13",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_13",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_14",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_14",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_15",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_15",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_16",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_16",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_17",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_17",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_18",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_18",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_19",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_19",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_20",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_20",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "#workflow_constructed_from_history__test_dwc_from_pndb_data_package_eml_dwc_annotations_-outputs-_anonymous_output_21",
+      "@type": "FormalParameter",
+      "name": "_anonymous_output_21",
+      "dct:conformsTo": {
+        "@id": "https://bioschemas.org/profiles/FormalParameter/1.0-RELEASE/"
+      }
+    },
+    {
+      "@id": "https://about.workflowhub.eu/",
+      "@type": "Organization",
+      "name": "WorkflowHub",
+      "url": "https://about.workflowhub.eu/"
+    }
+  ]
+}</script>
+  <meta name="generator" content="https://github.com/fbacall/ro-crate-ruby">
+  <meta name="keywords" content="RO-Crate">
+  <style type="text/css">
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      color: #333;
+      font-size: 14px;
+      background: #eee;
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrapper {
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 1em;
+    }
+
+    .data-entity {
+      margin: 0.5em 0;
+      background: #fafafa;
+      border-left: 3px solid #ddd;
+      padding: 0.5em;
+    }
+
+    .main-workflow {
+      background: #bddfff;
+      border-color: #a2cdff !important;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<h1>Research Object Crate for Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'</h1>
+
+  Original URL: <a href="https://workflowhub.eu/workflows/117/ro_crate?version=1" target="_blank">https://workflowhub.eu/workflows/117/ro_crate?version=1</a>
+
+
+<p>
+  Workflow to take DataOne data packages (raw datasets + metadata written in Ecological Metadata Standard) as input and create a DwC occurence.csv file almost ready to put in a Dawrin core Archive using eml-annotations at the attribute level
+</p>
+  
+<dl>
+  
+    <dt>Author</dt>
+    <dd><a href="https://orcid.org/0000-0002-8504-068X" target="_blank">Yvan Le Bras</a></dd>
+  
+  
+  
+  
+    <dt>License</dt>
+    <dd>MIT</dd>
+  
+</dl>
+
+<h2>Contents</h2>
+<div id="contents">
+  
+    <div class="data-entity main-workflow" id="__data_entity_Galaxy-Workflow-Workflow_constructed_from_history__test_dwc_from_PNDB_Data_package_EML_DwC_annotations_.ga">
+      
+        <strong>Main Workflow: </strong>
+      
+      
+      
+      <a class="data-entity-link" href="Galaxy-Workflow-Workflow_constructed_from_history__test_dwc_from_PNDB_Data_package_EML_DwC_annotations_.ga">Workflow constructed from history 'test dwc from PNDB Data package EML DwC annotations'</a>
+      
+        <br/>Size: 49971 bytes
+      
+      
+    </div>
+  
+</div>
+</div>
+</body>
+</html>
